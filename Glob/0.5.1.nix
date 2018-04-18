@@ -1,0 +1,33 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.6";
+        identifier = {
+          name = "Glob";
+          version = "0.5.1";
+        };
+        license = "BSD-3-Clause";
+        copyright = "";
+        maintainer = "Matti Niemenmaa <matti.niemenmaa+glob@iki.fi>";
+        author = "Matti Niemenmaa";
+        homepage = "http://iki.fi/matti.niemenmaa/glob/";
+        url = "";
+        synopsis = "Globbing library";
+        description = "A library for globbing: matching patterns against file paths.";
+        buildType = "Simple";
+      };
+      components = {
+        Glob = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.containers
+            hsPkgs.directory
+            hsPkgs.dlist
+            hsPkgs.filepath
+            hsPkgs.mtl
+          ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
+        };
+      };
+    }

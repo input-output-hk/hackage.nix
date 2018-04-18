@@ -1,0 +1,37 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.2";
+        identifier = {
+          name = "loli";
+          version = "2010.10.9";
+        };
+        license = "BSD-3-Clause";
+        copyright = "";
+        maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
+        author = "Jinjing Wang";
+        homepage = "http://github.com/nfjinjing/loli";
+        url = "";
+        synopsis = "A minimum web dev DSL in Haskell";
+        description = "A simple library for fast web prototyping in Haskell.";
+        buildType = "Simple";
+      };
+      components = {
+        loli = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.data-default
+            hsPkgs.hack
+            hsPkgs.hack-contrib
+            hsPkgs.utf8-string
+            hsPkgs.mps
+            hsPkgs.mtl
+            hsPkgs.containers
+            hsPkgs.template
+            hsPkgs.bytestring
+          ];
+        };
+      };
+    }

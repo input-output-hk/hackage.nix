@@ -1,0 +1,29 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.2";
+        identifier = {
+          name = "statistics-fusion";
+          version = "0.1";
+        };
+        license = "BSD-3-Clause";
+        copyright = "Copyright (c) Don Stewart 2008,";
+        maintainer = "dons@galois.com";
+        author = "Don Stewart";
+        homepage = "http://code.haskell.org/~dons/code/statistics-fusion";
+        url = "";
+        synopsis = "High performance statisticspackage  using stream fusion";
+        description = "High performance statistics package using stream fusion";
+        buildType = "Simple";
+      };
+      components = {
+        statistics-fusion = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.uvector
+          ];
+        };
+      };
+    }

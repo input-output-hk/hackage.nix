@@ -1,0 +1,40 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {
+      development = false;
+    } // flags;
+    in {
+      package = {
+        specVersion = "1.18";
+        identifier = {
+          name = "ats-storable";
+          version = "0.1.0.3";
+        };
+        license = "BSD-3-Clause";
+        copyright = "Copyright: (c) 2018 Vanessa McHale";
+        maintainer = "vamchale@gmail.com";
+        author = "Vanessa McHale";
+        homepage = "https://github.com//ats-generic#readme";
+        url = "";
+        synopsis = "Marshal ATS types into Haskell";
+        description = "Facilities for sharing types between ATS and Haskell";
+        buildType = "Custom";
+      };
+      components = {
+        ats-storable = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.composition-prelude
+          ];
+        };
+        tests = {
+          ats-generic-test = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.ats-storable
+              hsPkgs.hspec
+            ];
+          };
+        };
+      };
+    }

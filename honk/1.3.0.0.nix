@@ -1,0 +1,26 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.10";
+        identifier = {
+          name = "honk";
+          version = "1.3.0.0";
+        };
+        license = "Apache-2.0";
+        copyright = "";
+        maintainer = "lambda.fairy@gmail.com";
+        author = "Chris Wong";
+        homepage = "https://lambda.xyz/honk/";
+        url = "";
+        synopsis = "Cross-platform interface to the PC speaker.";
+        description = "A unified, cross-platform interface to the PC speaker.\n\nBeep to your heart's content!";
+        buildType = "Simple";
+      };
+      components = {
+        honk = {
+          depends  = [ hsPkgs.base ];
+        };
+      };
+    }

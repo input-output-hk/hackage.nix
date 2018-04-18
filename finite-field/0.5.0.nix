@@ -1,0 +1,49 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.10";
+        identifier = {
+          name = "finite-field";
+          version = "0.5.0";
+        };
+        license = "BSD-3-Clause";
+        copyright = "";
+        maintainer = "masahiro.sakai@gmail.com";
+        author = "Masahiro Sakai (masahiro.sakai@gmail.com)";
+        homepage = "";
+        url = "";
+        synopsis = "Finite Fields";
+        description = "This is an implementation of finite fields.\nCurrently only prime fields are supported.";
+        buildType = "Simple";
+      };
+      components = {
+        finite-field = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.template-haskell
+            hsPkgs.deepseq
+            hsPkgs.type-level-numbers
+            hsPkgs.algebra
+          ];
+        };
+        tests = {
+          TestPrimeField = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.containers
+              hsPkgs.test-framework
+              hsPkgs.test-framework-th
+              hsPkgs.test-framework-hunit
+              hsPkgs.test-framework-quickcheck2
+              hsPkgs.HUnit
+              hsPkgs.QuickCheck
+              hsPkgs.finite-field
+              hsPkgs.primes
+              hsPkgs.type-level-numbers
+            ];
+          };
+        };
+      };
+    }

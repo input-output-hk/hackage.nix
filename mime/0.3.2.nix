@@ -1,0 +1,28 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {
+      split-base = true;
+    } // flags;
+    in {
+      package = {
+        specVersion = "1.2.0";
+        identifier = {
+          name = "mime";
+          version = "0.3.2";
+        };
+        license = "BSD-3-Clause";
+        copyright = "(c) 2006-2009 Galois Inc.";
+        maintainer = "Sigbjorn Finne <sigbjorn.finne@gmail.com>";
+        author = "Sigbjorn Finne, Galois, Inc.";
+        homepage = "";
+        url = "";
+        synopsis = "Working with MIME types.";
+        description = "Working with MIME types.";
+        buildType = "Simple";
+      };
+      components = {
+        mime = {
+          depends  = [ hsPkgs.base ];
+        };
+      };
+    }

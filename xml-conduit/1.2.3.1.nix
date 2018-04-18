@@ -1,0 +1,62 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.8";
+        identifier = {
+          name = "xml-conduit";
+          version = "1.2.3.1";
+        };
+        license = "BSD-3-Clause";
+        copyright = "";
+        maintainer = "Michael Snoyman <michael@snoyman.com>";
+        author = "Michael Snoyman <michael@snoyman.com>, Aristid Breitkreuz <aristidb@googlemail.com>";
+        homepage = "http://github.com/snoyberg/xml";
+        url = "";
+        synopsis = "Pure-Haskell utilities for dealing with XML with the conduit package.";
+        description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/xml-conduit>.";
+        buildType = "Simple";
+      };
+      components = {
+        xml-conduit = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.conduit
+            hsPkgs.conduit-extra
+            hsPkgs.resourcet
+            hsPkgs.bytestring
+            hsPkgs.text
+            hsPkgs.containers
+            hsPkgs.xml-types
+            hsPkgs.attoparsec
+            hsPkgs.blaze-builder
+            hsPkgs.transformers
+            hsPkgs.data-default
+            hsPkgs.system-filepath
+            hsPkgs.monad-control
+            hsPkgs.blaze-markup
+            hsPkgs.blaze-html
+            hsPkgs.deepseq
+          ];
+        };
+        tests = {
+          test = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.containers
+              hsPkgs.text
+              hsPkgs.transformers
+              hsPkgs.bytestring
+              hsPkgs.xml-conduit
+              hsPkgs.hspec
+              hsPkgs.HUnit
+              hsPkgs.xml-types
+              hsPkgs.conduit
+              hsPkgs.blaze-markup
+              hsPkgs.resourcet
+            ];
+          };
+        };
+      };
+    }

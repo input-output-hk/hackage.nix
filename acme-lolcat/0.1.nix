@@ -1,0 +1,32 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.14";
+        identifier = {
+          name = "acme-lolcat";
+          version = "0.1";
+        };
+        license = "BSD-3-Clause";
+        copyright = "2013,2014 Antonio Nikishaev";
+        maintainer = "Antonio Nikishaev <me@lelf.lu>";
+        author = "Antonio Nikishaev <me@lelf.lu>";
+        homepage = "https://github.com/llelf/acme-lolcat";
+        url = "";
+        synopsis = "LOLSPEAK translator";
+        description = "LOLSPEAK translator";
+        buildType = "Simple";
+      };
+      components = {
+        acme-lolcat = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.parsec
+            hsPkgs.text
+            hsPkgs.random
+            hsPkgs.random-shuffle
+          ];
+        };
+      };
+    }

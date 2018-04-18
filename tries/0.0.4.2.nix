@@ -1,0 +1,82 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {
+      lookup = false;
+    } // flags;
+    in {
+      package = {
+        specVersion = "1.10";
+        identifier = {
+          name = "tries";
+          version = "0.0.4.2";
+        };
+        license = "BSD-3-Clause";
+        copyright = "";
+        maintainer = "Athan Clark <athan.clark@gmail.com>";
+        author = "Athan Clark <athan.clark@gmail.com>";
+        homepage = "";
+        url = "";
+        synopsis = "Various trie implementations in Haskell";
+        description = "";
+        buildType = "Simple";
+      };
+      components = {
+        tries = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.bytestring
+            hsPkgs.bytestring-trie
+            hsPkgs.composition
+            hsPkgs.composition-extra
+            hsPkgs.containers
+            hsPkgs.deepseq
+            hsPkgs.hashable
+            hsPkgs.keys
+            hsPkgs.rose-trees
+            hsPkgs.semigroups
+            hsPkgs.sets
+            hsPkgs.unordered-containers
+            hsPkgs.QuickCheck
+            hsPkgs.quickcheck-instances
+          ];
+        };
+        tests = {
+          test = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.tries
+              hsPkgs.containers
+              hsPkgs.mtl
+              hsPkgs.tasty
+              hsPkgs.tasty-quickcheck
+              hsPkgs.QuickCheck
+              hsPkgs.quickcheck-instances
+            ];
+          };
+        };
+        benchmarks = {
+          bench = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.tries
+              hsPkgs.criterion
+              hsPkgs.rose-trees
+              hsPkgs.mtl
+              hsPkgs.unordered-containers
+              hsPkgs.containers
+            ];
+          };
+          bench-lookup = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.tries
+              hsPkgs.criterion
+              hsPkgs.rose-trees
+              hsPkgs.mtl
+              hsPkgs.unordered-containers
+              hsPkgs.containers
+            ];
+          };
+        };
+      };
+    }

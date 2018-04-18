@@ -1,0 +1,47 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.10";
+        identifier = {
+          name = "tianbar";
+          version = "0.1.2.0";
+        };
+        license = "MIT";
+        copyright = "";
+        maintainer = "koterpillar@gmail.com";
+        author = "Alexey Kotlyarov";
+        homepage = "https://github.com/koterpillar/tianbar";
+        url = "";
+        synopsis = "A desktop bar based on WebKit";
+        description = "A desktop bar using WebKit for rendering as much as possible.\nBased on Taffybar.";
+        buildType = "Simple";
+      };
+      components = {
+        tianbar = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.dbus
+            hsPkgs.xmonad
+            hsPkgs.xmonad-contrib
+            hsPkgs.utf8-string
+          ];
+        };
+        exes = {
+          tianbar = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.split
+              hsPkgs.MissingH
+              hsPkgs.dbus
+              hsPkgs.gtk
+              hsPkgs.gtk-traymanager
+              hsPkgs.webkit
+              hsPkgs.xdg-basedir
+              hsPkgs.process
+            ];
+          };
+        };
+      };
+    }

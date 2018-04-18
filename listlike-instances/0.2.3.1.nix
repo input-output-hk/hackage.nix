@@ -1,0 +1,32 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.6";
+        identifier = {
+          name = "listlike-instances";
+          version = "0.2.3.1";
+        };
+        license = "BSD-3-Clause";
+        copyright = "";
+        maintainer = "jwlato@gmail.com";
+        author = "John W. Lato";
+        homepage = "http://jwlato.webfactional.com/haskell/listlike-instances";
+        url = "";
+        synopsis = "Extra instances of the ListLike class";
+        description = "Provides ListLike instances for Vector and Text types";
+        buildType = "Simple";
+      };
+      components = {
+        listlike-instances = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.bytestring
+            hsPkgs.ListLike
+            hsPkgs.text
+            hsPkgs.vector
+          ];
+        };
+      };
+    }

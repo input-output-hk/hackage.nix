@@ -1,0 +1,27 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "0";
+        identifier = {
+          name = "hmpfr";
+          version = "0.1.1";
+        };
+        license = "BSD-3-Clause";
+        copyright = "";
+        maintainer = "Aleš Bizjak <ales.bizjak0@gmail.com>";
+        author = "Aleš Bizjak";
+        homepage = "http://code.haskell.org/hmpfr/";
+        url = "";
+        synopsis = "Haskell binding to MPFR library";
+        description = "Haskell binding to MPFR library. Tested with MPFR 2.3.1 and 2.3.2.\nSome simple examples of usage can be found in test/Demo.hs.";
+        buildType = "Simple";
+      };
+      components = {
+        hmpfr = {
+          depends  = [ hsPkgs.base ];
+          libs = [ pkgs.mpfr ];
+        };
+      };
+    }

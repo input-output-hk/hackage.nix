@@ -1,0 +1,29 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.10";
+        identifier = {
+          name = "bug";
+          version = "1";
+        };
+        license = "MIT";
+        copyright = "(c) 2017, Nikita Volkov";
+        maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
+        author = "Nikita Volkov <nikita.y.volkov@mail.ru>";
+        homepage = "https://github.com/nikita-volkov/bug";
+        url = "";
+        synopsis = "Better alternatives to the \"error\" function";
+        description = "";
+        buildType = "Simple";
+      };
+      components = {
+        bug = {
+          depends  = [
+            hsPkgs.template-haskell
+            hsPkgs.base
+          ];
+        };
+      };
+    }
