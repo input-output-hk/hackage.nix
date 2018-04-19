@@ -53,7 +53,7 @@ let
             hsPkgs.vector-algorithms
             hsPkgs.PSQueue
           ] ++ pkgs.lib.optional (!(_flags.portable || system.isWindows)) hsPkgs.unix) ++ pkgs.lib.optional _flags.libev hsPkgs.hlibev;
-          libs = optionals _flags.gnutls [
+          libs = pkgs.lib.optionals _flags.gnutls [
             pkgs.gnutls
             pkgs.gcrypt
           ];

@@ -20,7 +20,7 @@ let
       };
       components = {
         ghc-server = {
-          depends  = pkgs.lib.optional compiler.isGhc hsPkgs.ghc ++ optionals compiler.isGhc [
+          depends  = pkgs.lib.optional compiler.isGhc hsPkgs.ghc ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.ghc
             hsPkgs.base
             hsPkgs.text

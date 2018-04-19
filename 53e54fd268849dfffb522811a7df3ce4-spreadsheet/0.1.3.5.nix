@@ -31,7 +31,7 @@ let
         };
         exes = {
           csvreplace = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.spreadsheet
               hsPkgs.utility-ht
               hsPkgs.transformers

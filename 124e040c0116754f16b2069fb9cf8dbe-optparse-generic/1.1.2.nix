@@ -29,7 +29,7 @@ let
             hsPkgs.time
             hsPkgs.void
             hsPkgs.bytestring
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.singletons
             hsPkgs.tagged
             hsPkgs.th-desugar

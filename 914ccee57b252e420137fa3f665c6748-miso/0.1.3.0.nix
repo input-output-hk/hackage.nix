@@ -50,7 +50,7 @@ let
         };
         exes = {
           todo-mvc = {
-            depends  = optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.containers
@@ -58,14 +58,14 @@ let
             ];
           };
           mario = {
-            depends  = optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.miso
             ];
           };
           simple = {
-            depends  = optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.containers
@@ -73,7 +73,7 @@ let
             ];
           };
           tests = {
-            depends  = optionals (!(!compiler.isGhcjs || !_flags.tests)) [
+            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.tests)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.miso

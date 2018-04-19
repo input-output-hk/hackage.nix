@@ -33,7 +33,7 @@ let
         };
         exes = {
           runtests = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.text
               hsPkgs.bytestring
               hsPkgs.base

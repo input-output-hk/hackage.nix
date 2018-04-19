@@ -71,7 +71,7 @@ let
               hsPkgs.mime-mail
               hsPkgs.HStringTemplate
               hsPkgs.lifted-base
-            ] ++ optionals (!_flags.minimal) [
+            ] ++ pkgs.lib.optionals (!_flags.minimal) [
               hsPkgs.snowball
               hsPkgs.tokenize
             ];

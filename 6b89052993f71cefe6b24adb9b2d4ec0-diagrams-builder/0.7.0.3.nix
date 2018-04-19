@@ -45,7 +45,7 @@ let
         };
         exes = {
           diagrams-builder-cairo = {
-            depends  = optionals _flags.cairo [
+            depends  = pkgs.lib.optionals _flags.cairo [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.directory
@@ -57,7 +57,7 @@ let
             ];
           };
           diagrams-builder-svg = {
-            depends  = optionals _flags.svg [
+            depends  = pkgs.lib.optionals _flags.svg [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.directory
@@ -70,7 +70,7 @@ let
             ];
           };
           diagrams-builder-ps = {
-            depends  = optionals (_flags.ps || _flags.postscript) [
+            depends  = pkgs.lib.optionals (_flags.ps || _flags.postscript) [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.directory
@@ -82,7 +82,7 @@ let
             ];
           };
           diagrams-builder-rasterific = {
-            depends  = optionals _flags.rasterific [
+            depends  = pkgs.lib.optionals _flags.rasterific [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.directory

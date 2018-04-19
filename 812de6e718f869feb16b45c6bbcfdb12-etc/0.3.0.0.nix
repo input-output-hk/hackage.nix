@@ -32,7 +32,7 @@ let
             hsPkgs.text
             hsPkgs.typed-process
             hsPkgs.unliftio
-          ] ++ optionals _flags.extra [
+          ] ++ pkgs.lib.optionals _flags.extra [
             hsPkgs.ansi-wl-pprint
             hsPkgs.edit-distance
           ]) ++ pkgs.lib.optional _flags.cli hsPkgs.optparse-applicative) ++ pkgs.lib.optional _flags.yaml hsPkgs.yaml;

@@ -31,10 +31,10 @@ let
             hsPkgs.time
           ] ++ pkgs.lib.optional (_flags.fast-bignum && compiler.isGhc) hsPkgs.integer-gmp;
           libs = if system.isWindows
-            then optionals system.isX86_64 [
+            then pkgs.lib.optionals system.isX86_64 [
               pkgs.eay32
               pkgs.ssl
-            ] ++ optionals system.isI386 [
+            ] ++ pkgs.lib.optionals system.isI386 [
               pkgs.eay32
               pkgs.ssl32
             ]

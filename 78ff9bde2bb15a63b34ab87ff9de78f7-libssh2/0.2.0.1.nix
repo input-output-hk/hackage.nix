@@ -33,7 +33,7 @@ let
         };
         exes = {
           hs-ssh-client = {
-            depends  = optionals _flags.example-client [
+            depends  = pkgs.lib.optionals _flags.example-client [
               hsPkgs.base
               hsPkgs.utf8-string
               hsPkgs.libssh2

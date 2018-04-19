@@ -36,7 +36,7 @@ let
               ]
               else [
                 hsPkgs.base
-              ]) ++ pkgs.lib.optional (compiler.isGhc && _flags.templatehaskell) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.extensible-exceptions) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && _flags.base4) hsPkgs.tf-random) ++ optionals compiler.isUhc [
+              ]) ++ pkgs.lib.optional (compiler.isGhc && _flags.templatehaskell) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.extensible-exceptions) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && _flags.base4) hsPkgs.tf-random) ++ pkgs.lib.optionals compiler.isUhc [
             hsPkgs.old-time
             hsPkgs.old-locale
           ];

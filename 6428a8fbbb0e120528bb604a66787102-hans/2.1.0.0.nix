@@ -53,7 +53,7 @@ let
               hsPkgs.time
               hsPkgs.old-locale
               hsPkgs.hans
-            ] ++ pkgs.lib.optional _flags.bounded-channels hsPkgs.BoundedChan) ++ optionals _flags.halvm [
+            ] ++ pkgs.lib.optional _flags.bounded-channels hsPkgs.BoundedChan) ++ pkgs.lib.optionals _flags.halvm [
               hsPkgs.XenDevice
               hsPkgs.RendezvousLib
               hsPkgs.HALVMCore

@@ -41,7 +41,7 @@ let
         };
         exes = {
           RNAforestry = {
-            depends  = optionals _flags.rnaforestry [
+            depends  = pkgs.lib.optionals _flags.rnaforestry [
               hsPkgs.base
               hsPkgs.cmdargs
               hsPkgs.containers

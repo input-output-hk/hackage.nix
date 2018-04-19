@@ -36,7 +36,7 @@ let
         };
         exes = {
           cartel-visual-test = {
-            depends  = optionals _flags.visual [
+            depends  = pkgs.lib.optionals _flags.visual [
               hsPkgs.multiarg
               hsPkgs.QuickCheck
               hsPkgs.random

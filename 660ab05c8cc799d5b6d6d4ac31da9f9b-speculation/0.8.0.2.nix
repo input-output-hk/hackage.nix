@@ -26,7 +26,7 @@ let
       };
       components = {
         speculation = {
-          depends  = optionals (!(!_flags.lib)) [
+          depends  = pkgs.lib.optionals (!(!_flags.lib)) [
             hsPkgs.base
             hsPkgs.parallel
             hsPkgs.stm
@@ -34,7 +34,7 @@ let
         };
         exes = {
           test-speculation = {
-            depends  = optionals (!(!_flags.tests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.stm
               hsPkgs.containers
@@ -46,7 +46,7 @@ let
             ];
           };
           benchmark-speculation = {
-            depends  = optionals (!(!_flags.benchmarks)) [
+            depends  = pkgs.lib.optionals (!(!_flags.benchmarks)) [
               hsPkgs.base
               hsPkgs.stm
               hsPkgs.containers

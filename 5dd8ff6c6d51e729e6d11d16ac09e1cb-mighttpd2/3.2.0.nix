@@ -70,7 +70,7 @@ let
               hsPkgs.wai-app-file-cgi
               hsPkgs.wai-logger
               hsPkgs.warp
-            ] ++ optionals _flags.tls [
+            ] ++ pkgs.lib.optionals _flags.tls [
               hsPkgs.tls
               hsPkgs.warp-tls
             ];
@@ -99,7 +99,7 @@ let
               hsPkgs.hspec
               hsPkgs.mighttpd2
               hsPkgs.http-client
-            ] ++ optionals _flags.tls [
+            ] ++ pkgs.lib.optionals _flags.tls [
               hsPkgs.tls
               hsPkgs.warp-tls
             ];

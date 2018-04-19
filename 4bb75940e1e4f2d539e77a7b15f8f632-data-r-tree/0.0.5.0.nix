@@ -43,7 +43,7 @@ let
             ];
           };
           strict = {
-            depends  = optionals (!(!_flags.test-strict)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-strict)) [
               hsPkgs.data-r-tree
               hsPkgs.base
               hsPkgs.deepseq

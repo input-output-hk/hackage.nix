@@ -45,7 +45,7 @@ let
         };
         exes = {
           render-midi = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.synthesizer-midi
               hsPkgs.synthesizer-core
               hsPkgs.sox
@@ -59,7 +59,7 @@ let
             ];
           };
           test = {
-            depends  = optionals _flags.buildtests [
+            depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.synthesizer-midi
               hsPkgs.synthesizer-core
               hsPkgs.storablevector

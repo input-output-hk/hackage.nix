@@ -34,7 +34,7 @@ let
         };
         exes = {
           texmath = {
-            depends  = optionals _flags.executable [
+            depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.texmath
               hsPkgs.xml

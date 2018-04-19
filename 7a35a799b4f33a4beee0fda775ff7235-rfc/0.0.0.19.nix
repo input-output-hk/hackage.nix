@@ -50,11 +50,11 @@ let
             hsPkgs.text
             hsPkgs.bifunctors
             hsPkgs.lifted-base
-          ] ++ optionals _flags.browser [
+          ] ++ pkgs.lib.optionals _flags.browser [
             hsPkgs.aeson
             hsPkgs.attoparsec
             hsPkgs.miso
-          ]) ++ optionals (!_flags.browser) [
+          ]) ++ pkgs.lib.optionals (!_flags.browser) [
             hsPkgs.servant-server
             hsPkgs.wai
             hsPkgs.aeson

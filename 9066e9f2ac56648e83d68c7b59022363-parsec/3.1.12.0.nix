@@ -25,7 +25,7 @@ let
             hsPkgs.mtl
             hsPkgs.bytestring
             hsPkgs.text
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];

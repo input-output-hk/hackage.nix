@@ -43,7 +43,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.uuid-types
             hsPkgs.vector
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.semigroups
             hsPkgs.transformers
             hsPkgs.transformers-compat

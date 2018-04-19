@@ -28,7 +28,7 @@ let
             hsPkgs.pandoc-types
             hsPkgs.filepath
             hsPkgs.safe
-          ] ++ optionals _flags.plugins [
+          ] ++ pkgs.lib.optionals _flags.plugins [
             hsPkgs.ghc
             hsPkgs.ghc-paths
           ];
@@ -72,10 +72,10 @@ let
               hsPkgs.feed
               hsPkgs.xss-sanitize
               hsPkgs.json
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.syb
-            ]) ++ optionals _flags.plugins [
+            ]) ++ pkgs.lib.optionals _flags.plugins [
               hsPkgs.ghc
               hsPkgs.ghc-paths
             ];
@@ -86,7 +86,7 @@ let
               hsPkgs.HTTP
               hsPkgs.url
               hsPkgs.filepath
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.syb
             ];

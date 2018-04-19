@@ -41,7 +41,7 @@ let
         };
         exes = {
           create-pathtype-test = {
-            depends  = optionals _flags.buildtools [
+            depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.utility-ht
               hsPkgs.base
             ];

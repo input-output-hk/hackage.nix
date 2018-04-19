@@ -32,7 +32,7 @@ let
             hsPkgs.json
             hsPkgs.filepath
             hsPkgs.pandoc-types
-          ] ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ optionals _flags.network [
+          ] ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ pkgs.lib.optionals _flags.network [
             hsPkgs.network
             hsPkgs.HTTP
           ]) ++ (if compiler.isGhc

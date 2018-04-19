@@ -35,7 +35,7 @@ let
               hsPkgs.gtk
               hsPkgs.cairo
               hsPkgs.glade
-            ] ++ optionals _flags.tests [
+            ] ++ pkgs.lib.optionals _flags.tests [
               hsPkgs.numeric-prelude
               hsPkgs.lazysmallcheck
             ];

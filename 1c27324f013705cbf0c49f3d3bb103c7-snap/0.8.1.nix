@@ -56,7 +56,7 @@ let
             hsPkgs.vector
             hsPkgs.vector-algorithms
             hsPkgs.xmlhtml
-          ] ++ optionals _flags.hint [
+          ] ++ pkgs.lib.optionals _flags.hint [
             hsPkgs.hint
             hsPkgs.old-time
           ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;

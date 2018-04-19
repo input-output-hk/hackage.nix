@@ -51,7 +51,7 @@ let
             hsPkgs.fclabels
             hsPkgs.extra
             hsPkgs.pipes
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.convertible) ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.convertible) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.random
             hsPkgs.ghc-prim
           ];

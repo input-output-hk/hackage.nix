@@ -49,7 +49,7 @@ let
             hsPkgs.text
             hsPkgs.djinn-ghc
             hsPkgs.fclabels
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.convertible) ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.convertible) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.random
             hsPkgs.ghc-prim
           ];

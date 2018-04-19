@@ -55,7 +55,7 @@ let
             ];
           };
           doctests = {
-            depends  = optionals (compiler.isGhc && compiler.isGhc) [
+            depends  = pkgs.lib.optionals (compiler.isGhc && compiler.isGhc) [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.process

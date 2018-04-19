@@ -32,7 +32,7 @@ let
         };
         exes = {
           example = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.async
               hsPkgs.base
               hsPkgs.random

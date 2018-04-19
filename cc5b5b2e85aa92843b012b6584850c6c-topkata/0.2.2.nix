@@ -32,13 +32,13 @@ let
               hsPkgs.OpenGL
               hsPkgs.array
               hsPkgs.random
-            ] ++ optionals _flags.sound [
+            ] ++ pkgs.lib.optionals _flags.sound [
               hsPkgs.OpenAL
               hsPkgs.ALUT
             ]) ++ pkgs.lib.optional _flags.ftgl hsPkgs.FTGL;
           };
           pdflaby = {
-            depends  = optionals _flags.pdflaby [
+            depends  = pkgs.lib.optionals _flags.pdflaby [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.array

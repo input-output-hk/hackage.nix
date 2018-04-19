@@ -36,7 +36,7 @@ let
         };
         exes = {
           diagrams-builder-cairo = {
-            depends  = optionals _flags.cairo [
+            depends  = pkgs.lib.optionals _flags.cairo [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.directory

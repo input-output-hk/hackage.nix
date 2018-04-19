@@ -55,7 +55,7 @@ let
         };
         exes = {
           exference = {
-            depends  = optionals _flags.build-executables [
+            depends  = pkgs.lib.optionals _flags.build-executables [
               hsPkgs.exference
               hsPkgs.base
               hsPkgs.containers

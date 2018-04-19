@@ -45,7 +45,7 @@ let
               else [ hsPkgs.base ]);
             libs = [
               pkgs.z
-            ] ++ optionals _flags.curses [
+            ] ++ pkgs.lib.optionals _flags.curses [
               pkgs.curses
               pkgs.curl
             ];

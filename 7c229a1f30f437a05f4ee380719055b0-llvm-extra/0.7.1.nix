@@ -32,14 +32,14 @@ let
             hsPkgs.transformers
             hsPkgs.utility-ht
             hsPkgs.base
-          ] ++ optionals ((system.isI386 || system.isX86_64) && _flags.cpuid) [
+          ] ++ pkgs.lib.optionals ((system.isI386 || system.isX86_64) && _flags.cpuid) [
             hsPkgs.unsafe
             hsPkgs.cpuid
           ];
         };
         exes = {
           tone-llvm = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-extra
               hsPkgs.llvm-tf
               hsPkgs.tfp
@@ -51,7 +51,7 @@ let
             ];
           };
           prepare-intrinsics = {
-            depends  = optionals _flags.buildtools [
+            depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.parsec
               hsPkgs.containers
               hsPkgs.transformers

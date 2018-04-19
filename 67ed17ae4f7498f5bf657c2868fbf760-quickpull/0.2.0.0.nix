@@ -39,7 +39,7 @@ let
             ];
           };
           quickpull-test-gen = {
-            depends  = optionals _flags.build-test-gen [
+            depends  = pkgs.lib.optionals _flags.build-test-gen [
               hsPkgs.base
               hsPkgs.QuickCheck
               hsPkgs.directory

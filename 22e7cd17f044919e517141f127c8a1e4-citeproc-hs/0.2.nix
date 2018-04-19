@@ -29,7 +29,7 @@ let
             hsPkgs.directory
             hsPkgs.mtl
             hsPkgs.hxt
-          ] ++ optionals _flags.bibutils [
+          ] ++ pkgs.lib.optionals _flags.bibutils [
             hsPkgs.hs-bibutils
             hsPkgs.filepath
             hsPkgs.directory

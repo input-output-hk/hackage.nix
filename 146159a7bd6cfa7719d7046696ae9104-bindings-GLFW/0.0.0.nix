@@ -27,18 +27,18 @@ let
             hsPkgs.base
             hsPkgs.bindings-DSL
           ];
-          libs = optionals (system.isLinux || system.isFreebsd) [
+          libs = pkgs.lib.optionals (system.isLinux || system.isFreebsd) [
             pkgs.GL
             pkgs.X11
             pkgs.Xi
             pkgs.Xrandr
             pkgs.Xxf86vm
             pkgs.pthread
-          ] ++ optionals system.isWindows [
+          ] ++ pkgs.lib.optionals system.isWindows [
             pkgs.opengl32
             pkgs.Gdi32
           ];
-          frameworks = optionals system.isOsx [
+          frameworks = pkgs.lib.optionals system.isOsx [
             pkgs.AGL
             pkgs.Cocoa
             pkgs.OpenGL

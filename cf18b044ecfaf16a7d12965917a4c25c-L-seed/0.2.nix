@@ -31,10 +31,10 @@ let
             hsPkgs.old-time
             hsPkgs.mtl
             hsPkgs.parsec
-          ] ++ optionals _flags.renderercairo [
+          ] ++ pkgs.lib.optionals _flags.renderercairo [
             hsPkgs.cairo
             hsPkgs.gtk
-          ]) ++ optionals _flags.database [
+          ]) ++ pkgs.lib.optionals _flags.database [
             hsPkgs.HDBC-odbc
             hsPkgs.HDBC
             hsPkgs.random-shuffle

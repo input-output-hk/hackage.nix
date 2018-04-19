@@ -31,7 +31,7 @@ let
         };
         exes = {
           loopback = {
-            depends  = optionals _flags.build-examples [
+            depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.cacophony

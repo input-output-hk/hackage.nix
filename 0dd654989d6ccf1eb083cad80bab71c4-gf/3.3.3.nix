@@ -50,7 +50,7 @@ let
               hsPkgs.pretty
               hsPkgs.mtl
               hsPkgs.haskeline
-            ] ++ optionals _flags.server [
+            ] ++ pkgs.lib.optionals _flags.server [
               hsPkgs.httpd-shed
               hsPkgs.network
               hsPkgs.silently

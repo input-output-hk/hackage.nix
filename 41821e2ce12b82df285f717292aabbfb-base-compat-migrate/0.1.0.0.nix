@@ -29,7 +29,7 @@ let
         };
         exes = {
           base-compat-migrate-generate = {
-            depends  = optionals _flags.exe [
+            depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.bytestring

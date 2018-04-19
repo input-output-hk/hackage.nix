@@ -32,7 +32,7 @@ let
         };
         exes = {
           sample = {
-            depends  = optionals (!(!_flags.build-samples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.build-samples)) [
               hsPkgs.base
               hsPkgs.lens
               hsPkgs.lens-regex

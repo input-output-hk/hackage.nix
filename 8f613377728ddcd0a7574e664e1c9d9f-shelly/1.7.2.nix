@@ -46,21 +46,21 @@ let
         };
         exes = {
           drain = {
-            depends  = optionals _flags.build-examples [
+            depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.base
               hsPkgs.shelly
               hsPkgs.text
             ];
           };
           run-handles = {
-            depends  = optionals _flags.build-examples [
+            depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.base
               hsPkgs.shelly
               hsPkgs.text
             ];
           };
           Color = {
-            depends  = optionals _flags.build-examples [
+            depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.shelly

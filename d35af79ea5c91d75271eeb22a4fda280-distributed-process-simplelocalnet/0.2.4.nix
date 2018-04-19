@@ -38,7 +38,7 @@ let
         };
         exes = {
           TestSimpleLocalnet = {
-            depends  = optionals _flags.build-example [
+            depends  = pkgs.lib.optionals _flags.build-example [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.network

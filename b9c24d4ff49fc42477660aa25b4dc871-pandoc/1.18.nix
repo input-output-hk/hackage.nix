@@ -83,7 +83,7 @@ let
             ]
             else [
               hsPkgs.network
-            ])) ++ optionals _flags.https [
+            ])) ++ pkgs.lib.optionals _flags.https [
             hsPkgs.http-client
             hsPkgs.http-client-tls
             hsPkgs.http-types
@@ -115,7 +115,7 @@ let
               ])) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
           };
           trypandoc = {
-            depends  = optionals _flags.trypandoc [
+            depends  = pkgs.lib.optionals _flags.trypandoc [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.pandoc

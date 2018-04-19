@@ -89,7 +89,7 @@ let
               hsPkgs.text
               hsPkgs.streaming-commons
               hsPkgs.async
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.atomic-primops) ++ optionals ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) [
+            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.atomic-primops) ++ pkgs.lib.optionals ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) [
               hsPkgs.unix
               hsPkgs.hashable
               hsPkgs.http-date

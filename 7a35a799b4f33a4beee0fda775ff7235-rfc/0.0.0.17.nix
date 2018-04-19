@@ -49,10 +49,10 @@ let
             hsPkgs.lifted-async
             hsPkgs.text
             hsPkgs.bifunctors
-          ] ++ optionals _flags.browser [
+          ] ++ pkgs.lib.optionals _flags.browser [
             hsPkgs.aeson
             hsPkgs.attoparsec
-          ]) ++ optionals (!_flags.browser) [
+          ]) ++ pkgs.lib.optionals (!_flags.browser) [
             hsPkgs.servant-server
             hsPkgs.wai
             hsPkgs.aeson

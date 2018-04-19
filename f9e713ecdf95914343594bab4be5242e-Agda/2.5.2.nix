@@ -59,14 +59,14 @@ let
             hsPkgs.transformers-compat
             hsPkgs.unordered-containers
             hsPkgs.xhtml
-          ] ++ optionals _flags.uhc [
+          ] ++ pkgs.lib.optionals _flags.uhc [
             hsPkgs.shuffle
             hsPkgs.uhc-light
             hsPkgs.uhc-util
             hsPkgs.uulib
           ]) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-orphans) ++ pkgs.lib.optional compiler.isGhc hsPkgs.void) ++ [
             hsPkgs.zlib
-          ]) ++ optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.fail
             hsPkgs.semigroups
           ];

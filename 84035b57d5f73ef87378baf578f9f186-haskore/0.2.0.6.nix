@@ -49,7 +49,7 @@ let
         };
         exes = {
           autotrack = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.haskore
               hsPkgs.bytestring
               hsPkgs.base

@@ -25,7 +25,7 @@ let
       components = {
         exes = {
           patch-image-llvm = {
-            depends  = optionals _flags.llvm [
+            depends  = pkgs.lib.optionals _flags.llvm [
               hsPkgs.knead
               hsPkgs.llvm-extra
               hsPkgs.llvm-tf
@@ -51,7 +51,7 @@ let
             ];
           };
           patch-image-cuda = {
-            depends  = optionals _flags.cuda [
+            depends  = pkgs.lib.optionals _flags.cuda [
               hsPkgs.accelerate-fourier
               hsPkgs.accelerate-arithmetic
               hsPkgs.accelerate-utility
@@ -70,7 +70,7 @@ let
             ];
           };
           patch-image-draft = {
-            depends  = optionals _flags.builddraft [
+            depends  = pkgs.lib.optionals _flags.builddraft [
               hsPkgs.JuicyPixels
               hsPkgs.GeomAlgLib
               hsPkgs.utility-ht

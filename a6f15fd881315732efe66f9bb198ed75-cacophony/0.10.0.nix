@@ -38,7 +38,7 @@ let
         };
         exes = {
           noise-repl = {
-            depends  = optionals _flags.build-tools [
+            depends  = pkgs.lib.optionals _flags.build-tools [
               hsPkgs.attoparsec
               hsPkgs.base
               hsPkgs.base16-bytestring

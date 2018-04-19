@@ -63,14 +63,14 @@ let
             hsPkgs.oo-prototypes
             hsPkgs.yi-rope
             hsPkgs.exceptions
-          ] ++ pkgs.lib.optional _flags.hint hsPkgs.hint) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ optionals _flags.testing [
+          ] ++ pkgs.lib.optional _flags.hint hsPkgs.hint) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optionals _flags.testing [
             hsPkgs.QuickCheck
             hsPkgs.random
-          ]) ++ optionals _flags.pango [
+          ]) ++ pkgs.lib.optionals _flags.pango [
             hsPkgs.gtk
             hsPkgs.glib
             hsPkgs.pango
-          ]) ++ optionals _flags.vty [
+          ]) ++ pkgs.lib.optionals _flags.vty [
             hsPkgs.unix-compat
             hsPkgs.vty
           ];

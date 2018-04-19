@@ -25,7 +25,7 @@ let
             hsPkgs.bindings-DSL
             hsPkgs.zlib
           ];
-          libs = optionals (!system.isWindows) [
+          libs = pkgs.lib.optionals (!system.isWindows) [
             pkgs.ssl
             pkgs.crypto
           ];

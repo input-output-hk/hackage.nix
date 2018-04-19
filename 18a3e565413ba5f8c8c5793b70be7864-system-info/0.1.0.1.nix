@@ -20,7 +20,7 @@ let
       };
       components = {
         system-info = {
-          depends  = pkgs.lib.optional system.isLinux hsPkgs.base ++ optionals system.isWindows [
+          depends  = pkgs.lib.optional system.isLinux hsPkgs.base ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.base
             hsPkgs.Win32
           ];

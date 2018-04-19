@@ -31,7 +31,7 @@ let
             hsPkgs.bytestring
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ optionals _flags.debug-typed-queries [
+          ] ++ pkgs.lib.optionals _flags.debug-typed-queries [
             hsPkgs.rawstring-qm
             hsPkgs.haskell-src-exts
           ];

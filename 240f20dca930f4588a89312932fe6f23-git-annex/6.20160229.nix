@@ -107,13 +107,13 @@ let
               ]
               else [
                 hsPkgs.unix
-              ])) ++ optionals _flags.testsuite [
+              ])) ++ pkgs.lib.optionals _flags.testsuite [
               hsPkgs.tasty
               hsPkgs.tasty-hunit
               hsPkgs.tasty-quickcheck
               hsPkgs.tasty-rerun
               hsPkgs.crypto-api
-            ]) ++ optionals _flags.s3 [
+            ]) ++ pkgs.lib.optionals _flags.s3 [
               hsPkgs.conduit
               hsPkgs.conduit-extra
               hsPkgs.aws
@@ -123,10 +123,10 @@ let
                 then [ hsPkgs.hfsevents ]
                 else if system.isWindows
                   then [ hsPkgs.Win32-notify ]
-                  else pkgs.lib.optional (!system.isSolaris && !system.isLinux && _flags.android) hsPkgs.hinotify)) ++ optionals (_flags.dbus && system.isLinux) [
+                  else pkgs.lib.optional (!system.isSolaris && !system.isLinux && _flags.android) hsPkgs.hinotify)) ++ pkgs.lib.optionals (_flags.dbus && system.isLinux) [
               hsPkgs.dbus
               hsPkgs.fdo-notify
-            ]) ++ pkgs.lib.optional _flags.android hsPkgs.data-endian) ++ optionals _flags.webapp [
+            ]) ++ pkgs.lib.optional _flags.android hsPkgs.data-endian) ++ pkgs.lib.optionals _flags.webapp [
               hsPkgs.yesod
               hsPkgs.yesod-default
               hsPkgs.yesod-static
@@ -144,14 +144,14 @@ let
               hsPkgs.shakespeare
               hsPkgs.securemem
               hsPkgs.byteable
-            ]) ++ optionals _flags.pairing [
+            ]) ++ pkgs.lib.optionals _flags.pairing [
               hsPkgs.network-multicast
               hsPkgs.network-info
-            ]) ++ optionals (_flags.xmpp && !system.isWindows) [
+            ]) ++ pkgs.lib.optionals (_flags.xmpp && !system.isWindows) [
               hsPkgs.network-protocol-xmpp
               hsPkgs.gnutls
               hsPkgs.xml-types
-            ]) ++ pkgs.lib.optional _flags.torrentparser hsPkgs.torrent) ++ pkgs.lib.optional (_flags.magicmime && !system.isWindows) hsPkgs.magic) ++ pkgs.lib.optional _flags.concurrentoutput hsPkgs.concurrent-output) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ optionals _flags.benchmark [
+            ]) ++ pkgs.lib.optional _flags.torrentparser hsPkgs.torrent) ++ pkgs.lib.optional (_flags.magicmime && !system.isWindows) hsPkgs.magic) ++ pkgs.lib.optional _flags.concurrentoutput hsPkgs.concurrent-output) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals _flags.benchmark [
               hsPkgs.criterion
               hsPkgs.deepseq
             ];

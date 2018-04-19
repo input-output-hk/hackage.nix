@@ -57,7 +57,7 @@ let
             hsPkgs.transformers-compat
             hsPkgs.unordered-containers
             hsPkgs.xhtml
-          ] ++ optionals _flags.uhc [
+          ] ++ pkgs.lib.optionals _flags.uhc [
             hsPkgs.shuffle
             hsPkgs.uhc-light
             hsPkgs.uhc-util

@@ -37,7 +37,7 @@ let
             else [
               hsPkgs.base
               hsPkgs.base
-            ])) ++ optionals _flags.readline [
+            ])) ++ pkgs.lib.optionals _flags.readline [
             hsPkgs.readline
             hsPkgs.process
             hsPkgs.network

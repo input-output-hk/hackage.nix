@@ -34,7 +34,7 @@ let
               hsPkgs.time
               hsPkgs.transformers
               hsPkgs.unix
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.Cabal) ++ pkgs.lib.optional compiler.isGhc hsPkgs.Cabal) ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.Cabal) ++ pkgs.lib.optional compiler.isGhc hsPkgs.Cabal) ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.Cabal
               hsPkgs.bin-package-db
             ];

@@ -23,7 +23,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.bytestring
             hsPkgs.text
           ];

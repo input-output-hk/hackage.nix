@@ -33,7 +33,7 @@ let
         };
         exes = {
           certificate = {
-            depends  = optionals _flags.executable [
+            depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.RSA
               hsPkgs.hexdump
               hsPkgs.haskell98

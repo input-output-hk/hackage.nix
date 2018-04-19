@@ -36,7 +36,7 @@ let
         };
         exes = {
           mcmc-demo = {
-            depends  = optionals _flags.synthesis [
+            depends  = pkgs.lib.optionals _flags.synthesis [
               hsPkgs.array-forth
               hsPkgs.base
               hsPkgs.mcmc-synthesis
@@ -53,7 +53,7 @@ let
             ];
           };
           chart = {
-            depends  = optionals _flags.chart [
+            depends  = pkgs.lib.optionals _flags.chart [
               hsPkgs.array-forth
               hsPkgs.base
               hsPkgs.Chart

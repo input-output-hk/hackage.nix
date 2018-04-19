@@ -35,7 +35,7 @@ let
               hsPkgs.SDL-mixer
               hsPkgs.SDL-ttf
               hsPkgs.IfElse
-            ] ++ pkgs.lib.optional _flags.wiimote hsPkgs.hcwiid) ++ optionals _flags.kinect [
+            ] ++ pkgs.lib.optional _flags.wiimote hsPkgs.hcwiid) ++ pkgs.lib.optionals _flags.kinect [
               hsPkgs.freenect
               hsPkgs.vector
             ];

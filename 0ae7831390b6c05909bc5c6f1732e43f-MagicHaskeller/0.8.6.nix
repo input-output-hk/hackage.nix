@@ -32,7 +32,7 @@ let
             hsPkgs.directory
             hsPkgs.bytestring
             hsPkgs.mtl
-          ] ++ optionals _flags.ghcapi [
+          ] ++ pkgs.lib.optionals _flags.ghcapi [
             hsPkgs.ghc
             hsPkgs.old-time
             hsPkgs.ghc-paths

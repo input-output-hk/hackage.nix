@@ -28,7 +28,7 @@ let
           ] ++ (if _flags.integer-simple
             then [ hsPkgs.integer-simple ]
             else [ hsPkgs.integer-gmp ]);
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.wsock32
             pkgs.user32
             pkgs.shell32

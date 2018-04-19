@@ -29,7 +29,7 @@ let
         };
         exes = {
           sha256sum = {
-            depends  = optionals _flags.exe [
+            depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.cryptohash-sha256
               hsPkgs.base
               hsPkgs.bytestring

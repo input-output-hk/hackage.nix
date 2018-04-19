@@ -28,10 +28,10 @@ let
             hsPkgs.bytestring
             hsPkgs.file-embed
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
-          libs = (optionals _flags.enable_dotnet [
+          libs = (pkgs.lib.optionals _flags.enable_dotnet [
             pkgs.oleaut32
             pkgs.ole32
-          ] ++ optionals _flags.enable_mono [
+          ] ++ pkgs.lib.optionals _flags.enable_mono [
             pkgs."glib-2.0"
             pkgs."mono-2.0"
           ]) ++ (if !_flags.enable_dotnet && !_flags.enable_mono && system.isWindows

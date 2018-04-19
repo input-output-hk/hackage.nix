@@ -43,7 +43,7 @@ let
         };
         exes = {
           bench-dp-latency = {
-            depends  = optionals _flags.install-benchmarks [
+            depends  = pkgs.lib.optionals _flags.install-benchmarks [
               hsPkgs.base
               hsPkgs.network-transport-zeromq
               hsPkgs.bytestring
@@ -52,7 +52,7 @@ let
             ];
           };
           bench-dp-throughput = {
-            depends  = optionals _flags.install-benchmarks [
+            depends  = pkgs.lib.optionals _flags.install-benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
               hsPkgs.network-transport-zeromq
@@ -61,7 +61,7 @@ let
             ];
           };
           bench-dp-channels = {
-            depends  = optionals _flags.install-benchmarks [
+            depends  = pkgs.lib.optionals _flags.install-benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
               hsPkgs.network-transport-zeromq
@@ -91,7 +91,7 @@ let
             ];
           };
           test-ch-core = {
-            depends  = optionals _flags.distributed-process-tests [
+            depends  = pkgs.lib.optionals _flags.distributed-process-tests [
               hsPkgs.base
               hsPkgs.network-transport-zeromq
               hsPkgs.distributed-process-tests
@@ -105,7 +105,7 @@ let
             ];
           };
           test-ch-closure = {
-            depends  = optionals _flags.distributed-process-tests [
+            depends  = pkgs.lib.optionals _flags.distributed-process-tests [
               hsPkgs.base
               hsPkgs.network-transport-zeromq
               hsPkgs.distributed-process-tests
@@ -119,7 +119,7 @@ let
             ];
           };
           test-ch-stat = {
-            depends  = optionals _flags.distributed-process-tests [
+            depends  = pkgs.lib.optionals _flags.distributed-process-tests [
               hsPkgs.base
               hsPkgs.network-transport-zeromq
               hsPkgs.distributed-process-tests

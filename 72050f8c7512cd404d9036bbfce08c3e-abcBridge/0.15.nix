@@ -37,7 +37,7 @@ let
         };
         exes = {
           find-segfault = {
-            depends  = optionals (!(!_flags.enable-extra-tests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.enable-extra-tests)) [
               hsPkgs.base
               hsPkgs.base-compat
               hsPkgs.abcBridge

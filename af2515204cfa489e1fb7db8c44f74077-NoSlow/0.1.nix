@@ -30,7 +30,7 @@ let
               hsPkgs.base
               hsPkgs.template-haskell
               hsPkgs.criterion
-            ] ++ optionals _flags.dph-prim-seq [
+            ] ++ pkgs.lib.optionals _flags.dph-prim-seq [
               hsPkgs.dph-prim-seq
               hsPkgs.dph-base
             ]) ++ pkgs.lib.optional _flags.vector hsPkgs.vector) ++ pkgs.lib.optional _flags.uvector hsPkgs.uvector) ++ pkgs.lib.optional _flags.storablevector hsPkgs.storablevector;

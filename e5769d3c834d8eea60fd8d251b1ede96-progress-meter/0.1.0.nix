@@ -27,7 +27,7 @@ let
             hsPkgs.base
             hsPkgs.containers
             hsPkgs.stm
-          ] ++ optionals _flags.devel [
+          ] ++ pkgs.lib.optionals _flags.devel [
             hsPkgs.rapid
             hsPkgs.rapid-term
           ];

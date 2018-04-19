@@ -30,13 +30,13 @@ let
         };
         exes = {
           unmed2 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.med-module
               hsPkgs.base
             ];
           };
           animed = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.med-module
               hsPkgs.hps
               hsPkgs.optparse-applicative

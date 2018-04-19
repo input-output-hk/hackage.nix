@@ -209,7 +209,7 @@ let
                 hsPkgs.bindings-uname
                 hsPkgs.pid1
                 hsPkgs.unix
-              ])) ++ optionals (!_flags.disable-git-info) [
+              ])) ++ pkgs.lib.optionals (!_flags.disable-git-info) [
               hsPkgs.gitrev
               hsPkgs.optparse-simple
             ];

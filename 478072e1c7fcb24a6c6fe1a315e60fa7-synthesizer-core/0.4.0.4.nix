@@ -60,7 +60,7 @@ let
           test = {};
           speedtest = {};
           speedtest-exp = {
-            depends  = optionals _flags.splitbase [
+            depends  = pkgs.lib.optionals _flags.splitbase [
               hsPkgs.old-time
               hsPkgs.directory
             ];

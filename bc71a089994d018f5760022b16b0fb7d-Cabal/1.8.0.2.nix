@@ -28,7 +28,7 @@ let
             hsPkgs.filepath
           ] ++ [ hsPkgs.base ]) ++ [
             hsPkgs.base
-          ]) ++ optionals _flags.base3 [
+          ]) ++ pkgs.lib.optionals _flags.base3 [
             hsPkgs.directory
             hsPkgs.process
             hsPkgs.old-time

@@ -49,7 +49,7 @@ let
             ];
           };
           generatemanpage = {
-            depends  = optionals _flags.generatemanpage [
+            depends  = pkgs.lib.optionals _flags.generatemanpage [
               hsPkgs.base
               hsPkgs.Cabal
               hsPkgs.pandoc

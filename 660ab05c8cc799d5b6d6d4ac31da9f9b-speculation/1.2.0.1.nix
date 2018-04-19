@@ -35,7 +35,7 @@ let
         };
         exes = {
           test-speculation = {
-            depends  = optionals (!(!_flags.tests)) ([
+            depends  = pkgs.lib.optionals (!(!_flags.tests)) ([
               hsPkgs.ghc-prim
               hsPkgs.tag-bits
               hsPkgs.stm
@@ -49,7 +49,7 @@ let
             ] ++ [ hsPkgs.base ]);
           };
           benchmark-speculation = {
-            depends  = optionals (!(!_flags.benchmarks)) ([
+            depends  = pkgs.lib.optionals (!(!_flags.benchmarks)) ([
               hsPkgs.ghc-prim
               hsPkgs.transformers
               hsPkgs.tag-bits

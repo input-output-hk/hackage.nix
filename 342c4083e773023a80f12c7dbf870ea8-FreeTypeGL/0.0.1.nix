@@ -32,7 +32,7 @@ let
         };
         exes = {
           hellobye = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.FreeTypeGL
               hsPkgs.GLFW-b

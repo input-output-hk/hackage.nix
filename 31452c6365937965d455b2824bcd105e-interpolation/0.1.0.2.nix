@@ -30,7 +30,7 @@ let
         };
         exes = {
           interpolation-plot = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.interpolation
               hsPkgs.gnuplot
               hsPkgs.utility-ht
@@ -38,7 +38,7 @@ let
             ];
           };
           interpolation-fit = {
-            depends  = optionals (_flags.buildexamples && _flags.hmatrix) [
+            depends  = pkgs.lib.optionals (_flags.buildexamples && _flags.hmatrix) [
               hsPkgs.interpolation
               hsPkgs.hmatrix-banded
               hsPkgs.hmatrix

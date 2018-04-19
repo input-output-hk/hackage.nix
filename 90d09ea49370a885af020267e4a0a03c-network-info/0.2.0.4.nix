@@ -21,7 +21,7 @@ let
       components = {
         network-info = {
           depends  = [ hsPkgs.base ];
-          libs = pkgs.lib.optional system.isWindows pkgs.iphlpapi ++ optionals system.isSolaris [
+          libs = pkgs.lib.optional system.isWindows pkgs.iphlpapi ++ pkgs.lib.optionals system.isSolaris [
             pkgs.socket
             pkgs.nsl
           ];

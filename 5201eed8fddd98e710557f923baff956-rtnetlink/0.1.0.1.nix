@@ -37,14 +37,14 @@ let
         };
         exes = {
           rtnl-link = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.rtnetlink
             ];
           };
           rtnl-address = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.socket
               hsPkgs.split

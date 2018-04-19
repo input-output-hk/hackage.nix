@@ -37,7 +37,7 @@ let
         };
         exes = {
           testIteratee = {
-            depends  = optionals _flags.buildtests [
+            depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.mtl
               hsPkgs.QuickCheck
               hsPkgs.test-framework

@@ -67,7 +67,7 @@ let
             hsPkgs.old-time
             hsPkgs.deepseq-generics
             hsPkgs.JuicyPixels
-          ] ++ optionals _flags.https [
+          ] ++ pkgs.lib.optionals _flags.https [
             hsPkgs.http-client
             hsPkgs.http-client-tls
             hsPkgs.http-types

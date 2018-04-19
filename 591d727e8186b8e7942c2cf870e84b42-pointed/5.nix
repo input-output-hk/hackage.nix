@@ -33,10 +33,10 @@ let
           depends  = (((((((([
             hsPkgs.base
             hsPkgs.data-default-class
-          ] ++ pkgs.lib.optional _flags.comonad hsPkgs.comonad) ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.kan-extensions hsPkgs.kan-extensions) ++ pkgs.lib.optional _flags.semigroupoids hsPkgs.semigroupoids) ++ pkgs.lib.optional _flags.semigroups hsPkgs.semigroups) ++ pkgs.lib.optional _flags.stm hsPkgs.stm) ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged) ++ optionals _flags.transformers [
+          ] ++ pkgs.lib.optional _flags.comonad hsPkgs.comonad) ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.kan-extensions hsPkgs.kan-extensions) ++ pkgs.lib.optional _flags.semigroupoids hsPkgs.semigroupoids) ++ pkgs.lib.optional _flags.semigroups hsPkgs.semigroups) ++ pkgs.lib.optional _flags.stm hsPkgs.stm) ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged) ++ pkgs.lib.optionals _flags.transformers [
             hsPkgs.transformers
             hsPkgs.transformers-compat
-          ]) ++ optionals _flags.unordered-containers [
+          ]) ++ pkgs.lib.optionals _flags.unordered-containers [
             hsPkgs.hashable
             hsPkgs.unordered-containers
           ];

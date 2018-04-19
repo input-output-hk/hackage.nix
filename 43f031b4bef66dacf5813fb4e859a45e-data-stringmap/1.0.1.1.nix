@@ -33,7 +33,7 @@ let
         };
         tests = {
           properties = {
-            depends  = optionals (!(!_flags.test-properties)) ([
+            depends  = pkgs.lib.optionals (!(!_flags.test-properties)) ([
               hsPkgs.data-stringmap
               hsPkgs.base
               hsPkgs.containers
@@ -47,7 +47,7 @@ let
             ] ++ pkgs.lib.optional _flags.with-sizeable hsPkgs.data-size);
           };
           strict = {
-            depends  = optionals (!(!_flags.test-strict)) ([
+            depends  = pkgs.lib.optionals (!(!_flags.test-strict)) ([
               hsPkgs.data-stringmap
               hsPkgs.base
               hsPkgs.bytestring

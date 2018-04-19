@@ -27,7 +27,7 @@ let
             hsPkgs.hBDD
             hsPkgs.unix
           ];
-          libs = pkgs.lib.optional system.isOsx pkgs.cudd ++ optionals system.isLinux [
+          libs = pkgs.lib.optional system.isOsx pkgs.cudd ++ pkgs.lib.optionals system.isLinux [
             pkgs.cudd
             pkgs.mtr
             pkgs.st

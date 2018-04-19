@@ -108,7 +108,7 @@ let
               ])) ++ pkgs.lib.optional (_flags.forcechar8 && compiler.isGhc) hsPkgs.base;
           };
           toyfmf = {
-            depends  = optionals _flags.buildtoyfmf [
+            depends  = pkgs.lib.optionals _flags.buildtoyfmf [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.toysolver

@@ -34,7 +34,7 @@ let
         };
         exes = {
           accelerate-cufft-demo = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.accelerate-cufft
               hsPkgs.accelerate-llvm-ptx
               hsPkgs.accelerate
@@ -42,7 +42,7 @@ let
             ];
           };
           accelerate-cufft-demo-merged = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.accelerate-llvm-ptx
               hsPkgs.accelerate
               hsPkgs.cufft
@@ -51,7 +51,7 @@ let
             ];
           };
           accelerate-cufft-demo-separate = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.accelerate-llvm-ptx
               hsPkgs.accelerate
               hsPkgs.cufft
@@ -60,7 +60,7 @@ let
             ];
           };
           cufft-demo = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.cufft
               hsPkgs.cuda
               hsPkgs.base

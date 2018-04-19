@@ -32,7 +32,7 @@ let
         };
         exes = {
           test_sha = {
-            depends  = optionals _flags.test ([
+            depends  = pkgs.lib.optionals _flags.test ([
               hsPkgs.array
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
             ] ++ [ hsPkgs.binary ]);
           };
           sha1 = {
-            depends  = optionals _flags.exe [
+            depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.directory
@@ -50,7 +50,7 @@ let
             ];
           };
           sha384 = {
-            depends  = optionals _flags.exe [
+            depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.directory

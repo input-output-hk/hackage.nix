@@ -35,7 +35,7 @@ let
         };
         exes = {
           benchuuid = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.random
               hsPkgs.binary
               hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
             ];
           };
           testuuid = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.random
               hsPkgs.binary
               hsPkgs.bytestring

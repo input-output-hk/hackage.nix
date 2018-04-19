@@ -38,7 +38,7 @@ let
         };
         exes = {
           sdl2-mixer-basic = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.data-default-class
               hsPkgs.sdl2
@@ -46,14 +46,14 @@ let
             ];
           };
           sdl2-mixer-raw = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.sdl2
               hsPkgs.sdl2-mixer
             ];
           };
           sdl2-mixer-jumbled = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.data-default-class
               hsPkgs.sdl2
@@ -61,7 +61,7 @@ let
             ];
           };
           sdl2-mixer-music = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.data-default-class
               hsPkgs.sdl2
@@ -69,7 +69,7 @@ let
             ];
           };
           sdl2-mixer-effect = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.data-default-class
               hsPkgs.sdl2

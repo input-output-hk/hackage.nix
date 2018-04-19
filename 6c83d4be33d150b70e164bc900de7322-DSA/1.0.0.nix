@@ -31,7 +31,7 @@ let
             hsPkgs.crypto-pubkey-types
             hsPkgs.SHA
             hsPkgs.tagged
-          ] ++ optionals _flags.gmp [
+          ] ++ pkgs.lib.optionals _flags.gmp [
             hsPkgs.ghc-prim
             hsPkgs.integer-gmp
           ];
@@ -52,7 +52,7 @@ let
               hsPkgs.test-framework-hunit
               hsPkgs.test-framework-quickcheck2
               hsPkgs.SHA
-            ] ++ optionals _flags.gmp [
+            ] ++ pkgs.lib.optionals _flags.gmp [
               hsPkgs.ghc-prim
               hsPkgs.integer-gmp
             ];

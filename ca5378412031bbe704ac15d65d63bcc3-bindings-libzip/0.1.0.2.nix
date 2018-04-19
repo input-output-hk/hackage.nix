@@ -26,7 +26,7 @@ let
             hsPkgs.base
             hsPkgs.bindings-DSL
           ];
-          libs = optionals _flags.nopkgconfig [
+          libs = pkgs.lib.optionals _flags.nopkgconfig [
             pkgs.zip
             pkgs.z
           ];

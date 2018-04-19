@@ -25,7 +25,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.colour
-          ] ++ optionals system.isWindows [
+          ] ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.base-compat
             hsPkgs.Win32
             hsPkgs.process
@@ -35,7 +35,7 @@ let
           ansi-terminal-example = {
             depends  = [
               hsPkgs.base
-            ] ++ optionals system.isWindows [
+            ] ++ pkgs.lib.optionals system.isWindows [
               hsPkgs.base-compat
               hsPkgs.Win32
             ];

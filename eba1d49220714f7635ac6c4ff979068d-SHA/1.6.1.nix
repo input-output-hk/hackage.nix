@@ -32,7 +32,7 @@ let
         };
         exes = {
           test_sha = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.binary

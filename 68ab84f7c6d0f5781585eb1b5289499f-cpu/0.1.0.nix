@@ -26,7 +26,7 @@ let
         };
         exes = {
           cpuid = {
-            depends  = optionals _flags.executable [
+            depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.cpu
               hsPkgs.bytestring

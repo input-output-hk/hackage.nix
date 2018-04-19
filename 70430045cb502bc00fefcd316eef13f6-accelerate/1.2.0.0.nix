@@ -57,7 +57,7 @@ let
             hsPkgs.unique
             hsPkgs.unordered-containers
             hsPkgs.vector
-          ] ++ optionals _flags.ekg [
+          ] ++ pkgs.lib.optionals _flags.ekg [
             hsPkgs.async
             hsPkgs.ekg
             hsPkgs.ekg-core

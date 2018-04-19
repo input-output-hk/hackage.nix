@@ -36,7 +36,7 @@ let
           texmath-cgi = {
             depends  = [
               hsPkgs.utf8-string
-            ] ++ optionals _flags.cgi [
+            ] ++ pkgs.lib.optionals _flags.cgi [
               hsPkgs.cgi
               hsPkgs.json
             ];

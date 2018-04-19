@@ -41,7 +41,7 @@ let
             hsPkgs.text
             hsPkgs.vector
             hsPkgs.texmath
-          ] ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ optionals _flags.network [
+          ] ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ pkgs.lib.optionals _flags.network [
             hsPkgs.network
             hsPkgs.HTTP
           ]) ++ (if _flags.hexpat

@@ -45,7 +45,7 @@ let
             hsPkgs.directory
             hsPkgs.groom
             hsPkgs.random
-          ] ++ optionals (!_flags.devel) [
+          ] ++ pkgs.lib.optionals (!_flags.devel) [
             hsPkgs.HUnit
             hsPkgs.blaze-html
             hsPkgs.blaze-markup

@@ -29,7 +29,7 @@ let
             hsPkgs.bytestring
             hsPkgs.deepseq
             hsPkgs.entropy
-          ] ++ pkgs.lib.optional _flags.usecereal hsPkgs.cereal) ++ pkgs.lib.optional _flags.usebinary hsPkgs.binary) ++ optionals _flags.usearbitrary [
+          ] ++ pkgs.lib.optional _flags.usecereal hsPkgs.cereal) ++ pkgs.lib.optional _flags.usebinary hsPkgs.binary) ++ pkgs.lib.optionals _flags.usearbitrary [
             hsPkgs.QuickCheck
             hsPkgs.blake2
             hsPkgs.cryptohash

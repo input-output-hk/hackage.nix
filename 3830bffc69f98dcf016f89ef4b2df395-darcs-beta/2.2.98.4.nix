@@ -48,7 +48,7 @@ let
             hsPkgs.containers
             hsPkgs.array
             hsPkgs.random
-          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ optionals _flags.http [
+          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.http [
             hsPkgs.network
             hsPkgs.HTTP
           ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional _flags.bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.zlib hsPkgs.zlib) ++ pkgs.lib.optional _flags.utf8-string hsPkgs.utf8-string) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
@@ -75,7 +75,7 @@ let
               hsPkgs.containers
               hsPkgs.array
               hsPkgs.random
-            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ optionals _flags.http [
+            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.http [
               hsPkgs.network
               hsPkgs.HTTP
             ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional _flags.bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.zlib hsPkgs.zlib) ++ pkgs.lib.optional _flags.utf8-string hsPkgs.utf8-string) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
@@ -90,7 +90,7 @@ let
               hsPkgs.containers
               hsPkgs.array
               hsPkgs.random
-            ] ++ optionals (!(!_flags.test)) [
+            ] ++ pkgs.lib.optionals (!(!_flags.test)) [
               hsPkgs.base
               hsPkgs.regex-compat
               hsPkgs.mtl

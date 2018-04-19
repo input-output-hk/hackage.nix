@@ -34,10 +34,10 @@ let
             hsPkgs.gtk
             hsPkgs.cairo
             hsPkgs.ghc-heap-view
-          ] ++ optionals _flags.graph [
+          ] ++ pkgs.lib.optionals _flags.graph [
             hsPkgs.graphviz
             hsPkgs.xdot
-          ]) ++ pkgs.lib.optional _flags.full hsPkgs.svgcairo) ++ optionals _flags.sdl [
+          ]) ++ pkgs.lib.optional _flags.full hsPkgs.svgcairo) ++ pkgs.lib.optionals _flags.sdl [
             hsPkgs.SDL
             hsPkgs.cairo
           ];

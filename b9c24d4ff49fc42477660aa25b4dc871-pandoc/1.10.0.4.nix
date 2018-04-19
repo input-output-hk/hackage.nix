@@ -59,7 +59,7 @@ let
             ]
             else [
               hsPkgs.blaze-html
-            ])) ++ optionals _flags.embed_data_files [
+            ])) ++ pkgs.lib.optionals _flags.embed_data_files [
             hsPkgs.file-embed
             hsPkgs.template-haskell
           ];

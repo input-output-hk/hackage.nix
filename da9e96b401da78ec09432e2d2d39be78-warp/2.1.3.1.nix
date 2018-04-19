@@ -95,7 +95,7 @@ let
               hsPkgs.text
               hsPkgs.conduit-extra
               hsPkgs.streaming-commons
-            ] ++ optionals ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) [
+            ] ++ pkgs.lib.optionals ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) [
               hsPkgs.unix
               hsPkgs.hashable
               hsPkgs.http-date

@@ -34,7 +34,7 @@ let
             hsPkgs.constraints
             hsPkgs.profunctors
             hsPkgs.singletons
-          ] ++ pkgs.lib.optional _flags.aeson hsPkgs.aeson) ++ pkgs.lib.optional (_flags.binary || _flags.bytes) hsPkgs.binary) ++ pkgs.lib.optional _flags.bytes hsPkgs.bytes) ++ pkgs.lib.optional (_flags.cereal || _flags.bytes) hsPkgs.cereal) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional _flags.quickcheck hsPkgs.QuickCheck) ++ optionals _flags.serialise [
+          ] ++ pkgs.lib.optional _flags.aeson hsPkgs.aeson) ++ pkgs.lib.optional (_flags.binary || _flags.bytes) hsPkgs.binary) ++ pkgs.lib.optional _flags.bytes hsPkgs.bytes) ++ pkgs.lib.optional (_flags.cereal || _flags.bytes) hsPkgs.cereal) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional _flags.quickcheck hsPkgs.QuickCheck) ++ pkgs.lib.optionals _flags.serialise [
             hsPkgs.cborg
             hsPkgs.serialise
           ];

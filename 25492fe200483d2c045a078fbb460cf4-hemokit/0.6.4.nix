@@ -44,7 +44,7 @@ let
         };
         exes = {
           hemokit-mouse = {
-            depends  = optionals (_flags.mouse && !system.isWindows) [
+            depends  = pkgs.lib.optionals (_flags.mouse && !system.isWindows) [
               hsPkgs.base
               hsPkgs.hemokit
               hsPkgs.pretty-show
@@ -85,7 +85,7 @@ let
             ];
           };
           hemokit-fft = {
-            depends  = optionals _flags.fft [
+            depends  = pkgs.lib.optionals _flags.fft [
               hsPkgs.base
               hsPkgs.hemokit
               hsPkgs.conduit
@@ -96,7 +96,7 @@ let
             ];
           };
           hemokit-headmap = {
-            depends  = optionals (_flags.headmap && !system.isWindows) [
+            depends  = pkgs.lib.optionals (_flags.headmap && !system.isWindows) [
               hsPkgs.base
               hsPkgs.hemokit
               hsPkgs.cairo

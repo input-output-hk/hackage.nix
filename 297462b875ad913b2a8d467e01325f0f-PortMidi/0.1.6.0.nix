@@ -24,7 +24,7 @@ let
           libs = if system.isLinux || system.isFreebsd
             then [ pkgs.asound ]
             else pkgs.lib.optional (!system.isOsx && system.isWindows) pkgs.winmm;
-          frameworks = optionals (!(system.isLinux || system.isFreebsd) && system.isOsx) [
+          frameworks = pkgs.lib.optionals (!(system.isLinux || system.isFreebsd) && system.isOsx) [
             pkgs.CoreMIDI
             pkgs.CoreFoundation
             pkgs.CoreAudio

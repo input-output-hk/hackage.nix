@@ -33,7 +33,7 @@ let
         };
         exes = {
           tutorial = {
-            depends  = optionals (!(!_flags.tutorial)) [
+            depends  = pkgs.lib.optionals (!(!_flags.tutorial)) [
               hsPkgs.base
               hsPkgs.cassava-streams
               hsPkgs.io-streams

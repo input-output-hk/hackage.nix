@@ -44,10 +44,10 @@ let
             hsPkgs.process
             hsPkgs.haskeline
             hsPkgs.parallel
-          ] ++ optionals (!_flags.custom-binary) [
+          ] ++ pkgs.lib.optionals (!_flags.custom-binary) [
             hsPkgs.binary
             hsPkgs.data-binary-ieee754
-          ]) ++ optionals _flags.server ([
+          ]) ++ pkgs.lib.optionals _flags.server ([
             hsPkgs.httpd-shed
             hsPkgs.network
             hsPkgs.json
@@ -65,7 +65,7 @@ let
               hsPkgs.unix
               hsPkgs.terminfo
             ]);
-          libs = optionals _flags.c-runtime [
+          libs = pkgs.lib.optionals _flags.c-runtime [
             pkgs.gu
             pkgs.pgf
           ];

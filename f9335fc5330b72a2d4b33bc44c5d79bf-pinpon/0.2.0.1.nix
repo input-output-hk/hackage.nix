@@ -61,7 +61,7 @@ let
         };
         exes = {
           pinpon = {
-            depends  = optionals (!(!_flags.pinpon-executable)) [
+            depends  = pkgs.lib.optionals (!(!_flags.pinpon-executable)) [
               hsPkgs.amazonka
               hsPkgs.amazonka-sns
               hsPkgs.base
@@ -80,7 +80,7 @@ let
             ];
           };
           pinpon-gpio = {
-            depends  = optionals (!(!_flags.pinpon-gpio-executable)) [
+            depends  = pkgs.lib.optionals (!(!_flags.pinpon-gpio-executable)) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.exceptions
@@ -103,7 +103,7 @@ let
             ];
           };
           pinpon-ring = {
-            depends  = optionals (!(!_flags.pinpon-ring-executable)) [
+            depends  = pkgs.lib.optionals (!(!_flags.pinpon-ring-executable)) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.exceptions
@@ -125,14 +125,14 @@ let
         };
         tests = {
           doctest = {
-            depends  = optionals (!(!_flags.test-doctests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.protolude
             ];
           };
           hlint = {
-            depends  = optionals (!(!_flags.test-hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
               hsPkgs.protolude
@@ -150,7 +150,7 @@ let
               hsPkgs.protolude
               hsPkgs.quickcheck-instances
               hsPkgs.servant-swagger
-            ] ++ optionals (!(!_flags.test-hlint)) [
+            ] ++ pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
               hsPkgs.protolude

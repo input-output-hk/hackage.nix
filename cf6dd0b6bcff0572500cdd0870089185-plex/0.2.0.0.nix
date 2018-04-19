@@ -38,7 +38,7 @@ let
               hsPkgs.deepseq
               hsPkgs.bytestring
               hsPkgs.unix
-            ] ++ optionals _flags.buildexe [
+            ] ++ pkgs.lib.optionals _flags.buildexe [
               hsPkgs.async
               hsPkgs.base
               hsPkgs.plex

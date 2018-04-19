@@ -27,7 +27,7 @@ let
             hsPkgs.exceptions
             hsPkgs.selda
             hsPkgs.text
-          ] ++ optionals (!_flags.haste) [
+          ] ++ pkgs.lib.optionals (!_flags.haste) [
             hsPkgs.direct-sqlite
             hsPkgs.directory
           ];

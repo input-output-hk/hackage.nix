@@ -32,11 +32,11 @@ let
             hsPkgs.process
             hsPkgs.text
             hsPkgs.mtl
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.ghc
             hsPkgs.haddock-api
             hsPkgs.haddock-library
-          ]) ++ optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.ghc
             hsPkgs.haddock-api
             hsPkgs.haddock-library

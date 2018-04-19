@@ -42,7 +42,7 @@ let
         };
         exes = {
           getdata = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.http-client
@@ -51,7 +51,7 @@ let
             ];
           };
           plot = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
               hsPkgs.microlens
@@ -70,7 +70,7 @@ let
             ];
           };
           plot2 = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
               hsPkgs.microlens
@@ -88,7 +88,7 @@ let
             ];
           };
           demo = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.list-t
               hsPkgs.microlens
@@ -103,7 +103,7 @@ let
             ];
           };
           tutorial = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
               hsPkgs.microlens
@@ -116,7 +116,7 @@ let
             ];
           };
           benchdemo = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
               hsPkgs.foldl
@@ -124,7 +124,7 @@ let
             ];
           };
           missing = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
               hsPkgs.vinyl
@@ -133,7 +133,7 @@ let
             ];
           };
           kata04 = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
               hsPkgs.vinyl

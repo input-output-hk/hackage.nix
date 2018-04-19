@@ -27,7 +27,7 @@ let
             hsPkgs.pandoc
             hsPkgs.filepath
             hsPkgs.safe
-          ] ++ optionals _flags.plugins [
+          ] ++ pkgs.lib.optionals _flags.plugins [
             hsPkgs.ghc
             hsPkgs.ghc-paths
           ];
@@ -68,10 +68,10 @@ let
               hsPkgs.ConfigFile
               hsPkgs.feed
               hsPkgs.cautious-file
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.syb
-            ]) ++ optionals _flags.plugins [
+            ]) ++ pkgs.lib.optionals _flags.plugins [
               hsPkgs.ghc
               hsPkgs.ghc-paths
             ];
@@ -82,7 +82,7 @@ let
               hsPkgs.HTTP
               hsPkgs.url
               hsPkgs.filepath
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.syb
             ];

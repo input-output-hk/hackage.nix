@@ -72,7 +72,7 @@ let
               hsPkgs.directory
               hsPkgs.filepath
               hsPkgs.base
-            ] ++ optionals _flags.httpserver [
+            ] ++ pkgs.lib.optionals _flags.httpserver [
               hsPkgs.httpd-shed
               hsPkgs.network
               hsPkgs.cgi

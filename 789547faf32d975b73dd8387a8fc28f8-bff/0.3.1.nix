@@ -38,14 +38,14 @@ let
         };
         exes = {
           bff-shell = {
-            depends  = optionals _flags.binaries [
+            depends  = pkgs.lib.optionals _flags.binaries [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.hint
             ];
           };
           bff-cgi = {
-            depends  = optionals _flags.binaries [
+            depends  = pkgs.lib.optionals _flags.binaries [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.xhtml
@@ -59,7 +59,7 @@ let
           };
           bff-stats-print = {};
           bff-stats-render = {
-            depends  = optionals _flags.render [
+            depends  = pkgs.lib.optionals _flags.render [
               hsPkgs.Chart
               hsPkgs.data-accessor
               hsPkgs.colour

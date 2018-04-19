@@ -27,12 +27,12 @@ let
       components = {
         gsl-random = {
           depends  = [ hsPkgs.base ];
-          libs = (((optionals _flags.atlas [
+          libs = (((pkgs.lib.optionals _flags.atlas [
             pkgs.gsl
             pkgs.cblas
             pkgs.atlas
             pkgs.m
-          ] ++ optionals _flags.gsl [
+          ] ++ pkgs.lib.optionals _flags.gsl [
             pkgs.gsl
             pkgs.gslcblas
             pkgs.m
@@ -52,11 +52,11 @@ let
               pkgs.mkl_sequential
               pkgs.mkl_core
               pkgs.m
-            ])) ++ optionals _flags.veclib [
+            ])) ++ pkgs.lib.optionals _flags.veclib [
             pkgs.gsl
             pkgs.cblas
             pkgs.m
-          ]) ++ optionals (!_flags.atlas && !_flags.gsl && !_flags.mkl && !_flags.veclib && !_flags.custom) [
+          ]) ++ pkgs.lib.optionals (!_flags.atlas && !_flags.gsl && !_flags.mkl && !_flags.veclib && !_flags.custom) [
             pkgs.gsl
             pkgs.gslcblas
             pkgs.m

@@ -90,7 +90,7 @@ let
           };
           markdown2pdf = {};
           test-pandoc = {
-            depends  = optionals (!(!_flags.tests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.Diff
               hsPkgs.test-framework

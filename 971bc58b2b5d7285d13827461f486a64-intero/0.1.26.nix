@@ -37,7 +37,7 @@ let
               hsPkgs.time
               hsPkgs.network
               hsPkgs.random
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.ghci
               hsPkgs.ghc-boot-th
             ]) ++ (if system.isWindows

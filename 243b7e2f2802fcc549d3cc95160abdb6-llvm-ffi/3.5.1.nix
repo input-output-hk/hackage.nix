@@ -32,14 +32,14 @@ let
         };
         exes = {
           llvm-ffi-example = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-ffi
               hsPkgs.utility-ht
               hsPkgs.base
             ];
           };
           llvm-diff-ffi = {
-            depends  = optionals _flags.buildtools [
+            depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.utility-ht
               hsPkgs.regex-posix
               hsPkgs.containers
@@ -47,7 +47,7 @@ let
             ];
           };
           llvm-function-mangler = {
-            depends  = optionals _flags.buildtools [
+            depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.utility-ht
               hsPkgs.regex-posix
               hsPkgs.containers
@@ -55,7 +55,7 @@ let
             ];
           };
           llvm-intrinsic-mangler = {
-            depends  = optionals _flags.buildtools [
+            depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.bytestring
               hsPkgs.regex-posix
               hsPkgs.base

@@ -61,7 +61,7 @@ let
         };
         exes = {
           example = {
-            depends  = optionals _flags.build-examples ([
+            depends  = pkgs.lib.optionals _flags.build-examples ([
               hsPkgs.base
               hsPkgs.base-compat
               hsPkgs.base64-bytestring
@@ -115,7 +115,7 @@ let
             ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.tagged;
           };
           example-tests = {
-            depends  = optionals _flags.build-examples (([
+            depends  = pkgs.lib.optionals _flags.build-examples (([
               hsPkgs.base
               hsPkgs.base-compat
               hsPkgs.base64-bytestring

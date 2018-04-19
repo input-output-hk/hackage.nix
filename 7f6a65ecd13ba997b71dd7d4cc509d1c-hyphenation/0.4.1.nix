@@ -26,7 +26,7 @@ let
             hsPkgs.base
             hsPkgs.containers
             hsPkgs.unordered-containers
-          ] ++ optionals _flags.embed [
+          ] ++ pkgs.lib.optionals _flags.embed [
             hsPkgs.file-embed
             hsPkgs.bytestring
           ];

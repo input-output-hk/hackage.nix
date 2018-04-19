@@ -51,12 +51,12 @@ let
             hsPkgs.tagsoup
             hsPkgs.text
             hsPkgs.time
-          ] ++ optionals _flags.previewserver [
+          ] ++ pkgs.lib.optionals _flags.previewserver [
             hsPkgs.snap-core
             hsPkgs.snap-server
             hsPkgs.fsnotify
             hsPkgs.system-filepath
-          ]) ++ optionals _flags.checkexternal [
+          ]) ++ pkgs.lib.optionals _flags.checkexternal [
             hsPkgs.http-conduit
             hsPkgs.http-types
           ];
@@ -105,12 +105,12 @@ let
               hsPkgs.tagsoup
               hsPkgs.text
               hsPkgs.time
-            ] ++ optionals _flags.previewserver [
+            ] ++ pkgs.lib.optionals _flags.previewserver [
               hsPkgs.snap-core
               hsPkgs.snap-server
               hsPkgs.fsnotify
               hsPkgs.system-filepath
-            ]) ++ optionals _flags.checkexternal [
+            ]) ++ pkgs.lib.optionals _flags.checkexternal [
               hsPkgs.http-conduit
               hsPkgs.http-types
             ];

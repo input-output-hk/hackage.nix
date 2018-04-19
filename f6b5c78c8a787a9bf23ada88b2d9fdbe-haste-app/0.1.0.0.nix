@@ -31,7 +31,7 @@ let
             hsPkgs.haste-lib
             hsPkgs.haste-prim
             hsPkgs.containers
-          ] ++ optionals (!_flags.haste) [
+          ] ++ pkgs.lib.optionals (!_flags.haste) [
             hsPkgs.bytestring
             hsPkgs.filepath
             hsPkgs.http-types

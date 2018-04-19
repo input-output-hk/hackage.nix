@@ -30,7 +30,7 @@ let
             then [ pkgs.libpq ]
             else [
               pkgs.pq
-            ] ++ optionals system.isOpenbsd [
+            ] ++ pkgs.lib.optionals system.isOpenbsd [
               pkgs.crypto
               pkgs.ssl
             ];

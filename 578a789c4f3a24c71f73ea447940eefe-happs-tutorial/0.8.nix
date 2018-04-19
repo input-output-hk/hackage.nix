@@ -44,7 +44,7 @@ let
               hsPkgs.parsec
               hsPkgs.happstack-helpers
               hsPkgs.DebugTraceHelpers
-            ] ++ optionals _flags.base4 [
+            ] ++ pkgs.lib.optionals _flags.base4 [
               hsPkgs.base
               hsPkgs.syb
             ];

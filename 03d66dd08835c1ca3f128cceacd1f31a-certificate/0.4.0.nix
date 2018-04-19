@@ -35,13 +35,13 @@ let
         };
         exes = {
           certificate = {
-            depends  = optionals _flags.executable [
+            depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.cmdargs
               hsPkgs.text
             ];
           };
           Tests = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.HUnit

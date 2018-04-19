@@ -31,7 +31,7 @@ let
             else if !system.isOsx && system.isWindows
               then [ pkgs.opengl32 ]
               else [ pkgs.Xrandr pkgs.X11 ];
-          frameworks = optionals (!_flags.dynamic && system.isOsx) [
+          frameworks = pkgs.lib.optionals (!_flags.dynamic && system.isOsx) [
             pkgs.AGL
             pkgs.Carbon
             pkgs.OpenGL

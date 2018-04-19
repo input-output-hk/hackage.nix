@@ -42,7 +42,7 @@ let
             ];
           };
           TestQC = {
-            depends  = optionals _flags.use-mock-network [
+            depends  = pkgs.lib.optionals _flags.use-mock-network [
               hsPkgs.base
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

@@ -24,7 +24,7 @@ let
             hsPkgs.base
             hsPkgs.ghc-prim
             hsPkgs.semigroupoids
-          ] ++ optionals (!(compiler.isGhc && compiler.isGhc)) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.isGhc)) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];

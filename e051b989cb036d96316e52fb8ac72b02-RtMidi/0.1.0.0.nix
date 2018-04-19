@@ -28,10 +28,10 @@ let
           depends  = [ hsPkgs.base ];
           libs = (([
             pkgs."stdc++"
-          ] ++ optionals _flags.alsa [
+          ] ++ pkgs.lib.optionals _flags.alsa [
             pkgs.asound
             pkgs.pthread
-          ]) ++ pkgs.lib.optional _flags.jack pkgs.jack) ++ optionals _flags.core [
+          ]) ++ pkgs.lib.optional _flags.jack pkgs.jack) ++ pkgs.lib.optionals _flags.core [
             pkgs.CoreMIDI
             pkgs.CoreAudio
             pkgs.CoreFoundation

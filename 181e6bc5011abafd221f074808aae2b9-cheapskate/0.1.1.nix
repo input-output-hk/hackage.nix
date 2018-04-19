@@ -46,7 +46,7 @@ let
             ];
           };
           cheapskate-dingus = {
-            depends  = optionals _flags.dingus [
+            depends  = pkgs.lib.optionals _flags.dingus [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.cheapskate

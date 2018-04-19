@@ -51,7 +51,7 @@ let
             ]
             else [
               hsPkgs.network
-            ])) ++ optionals system.isWindows [
+            ])) ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.Win32
             hsPkgs.safe
           ];

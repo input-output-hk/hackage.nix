@@ -34,7 +34,7 @@ let
         };
         exes = {
           Benchmarks = {
-            depends  = optionals _flags.benchmark [
+            depends  = pkgs.lib.optionals _flags.benchmark [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.crypto-api

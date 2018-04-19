@@ -38,7 +38,7 @@ let
         };
         exes = {
           runtests = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.HUnit
               hsPkgs.test-framework-hunit

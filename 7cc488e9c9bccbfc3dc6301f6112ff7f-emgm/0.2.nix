@@ -39,7 +39,7 @@ let
               hsPkgs.template-haskell
             ] ++ [
               hsPkgs.template-haskell
-            ]) ++ optionals _flags.test [
+            ]) ++ pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.HUnit
             ];

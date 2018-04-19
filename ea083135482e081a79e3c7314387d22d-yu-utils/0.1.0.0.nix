@@ -32,7 +32,7 @@ let
             hsPkgs.gitrev
             hsPkgs.cmdargs
             hsPkgs.signal
-          ] ++ optionals (!_flags.client) [
+          ] ++ pkgs.lib.optionals (!_flags.client) [
             hsPkgs.yesod-core
             hsPkgs.blaze-markup
             hsPkgs.blaze-html

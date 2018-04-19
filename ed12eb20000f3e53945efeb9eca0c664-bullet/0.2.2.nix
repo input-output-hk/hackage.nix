@@ -24,7 +24,7 @@ let
             hsPkgs.base
             hsPkgs.vect
           ];
-          libs = optionals (!system.isLinux) [
+          libs = pkgs.lib.optionals (!system.isLinux) [
             pkgs.BulletSoftBody
             pkgs.BulletDynamics
             pkgs.BulletCollision

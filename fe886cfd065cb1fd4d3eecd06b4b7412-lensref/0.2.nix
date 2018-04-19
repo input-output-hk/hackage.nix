@@ -27,7 +27,7 @@ let
             hsPkgs.transformers
             hsPkgs.mtl
             hsPkgs.monad-control
-          ] ++ optionals _flags.tests [
+          ] ++ pkgs.lib.optionals _flags.tests [
             hsPkgs.operational
             hsPkgs.containers
             hsPkgs.lens

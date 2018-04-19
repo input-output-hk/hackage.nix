@@ -91,7 +91,7 @@ let
             ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-compat;
           };
           trypandoc = {
-            depends  = (optionals _flags.trypandoc [
+            depends  = (pkgs.lib.optionals _flags.trypandoc [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.pandoc

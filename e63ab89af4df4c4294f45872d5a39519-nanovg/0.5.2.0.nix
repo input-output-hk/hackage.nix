@@ -29,7 +29,7 @@ let
             hsPkgs.text
             hsPkgs.vector
           ];
-          libs = optionals (!system.isOsx) [
+          libs = pkgs.lib.optionals (!system.isOsx) [
             pkgs.GLU
             pkgs.GL
             pkgs.m
@@ -39,7 +39,7 @@ let
         };
         exes = {
           example00 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.gl

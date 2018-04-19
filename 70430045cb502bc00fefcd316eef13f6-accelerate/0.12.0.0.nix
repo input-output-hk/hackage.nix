@@ -32,7 +32,7 @@ let
             hsPkgs.containers
             hsPkgs.ghc-prim
             hsPkgs.pretty
-          ] ++ optionals _flags.more-pp [
+          ] ++ pkgs.lib.optionals _flags.more-pp [
             hsPkgs.bytestring
             hsPkgs.blaze-html
             hsPkgs.text

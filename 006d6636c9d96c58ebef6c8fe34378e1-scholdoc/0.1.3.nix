@@ -71,7 +71,7 @@ let
             ]
             else [
               hsPkgs.network
-            ])) ++ optionals _flags.https [
+            ])) ++ pkgs.lib.optionals _flags.https [
             hsPkgs.http-client
             hsPkgs.http-client-tls
             hsPkgs.http-types
@@ -97,7 +97,7 @@ let
               else [ hsPkgs.network ]);
           };
           tryscholdoc = {
-            depends  = optionals _flags.tryscholdoc [
+            depends  = pkgs.lib.optionals _flags.tryscholdoc [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.scholdoc

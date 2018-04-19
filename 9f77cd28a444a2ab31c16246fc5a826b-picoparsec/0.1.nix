@@ -31,7 +31,7 @@ let
             hsPkgs.monoid-subclasses
             hsPkgs.text
             hsPkgs.scientific
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.bytestring
             hsPkgs.text
           ];

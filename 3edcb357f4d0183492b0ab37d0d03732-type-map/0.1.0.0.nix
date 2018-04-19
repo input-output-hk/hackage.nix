@@ -28,13 +28,13 @@ let
         };
         tests = {
           type-map-test = {
-            depends  = optionals compiler.isGhc [
+            depends  = pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.type-map
             ];
           };
           type-map-static-test = {
-            depends  = optionals compiler.isGhc [
+            depends  = pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.test-framework

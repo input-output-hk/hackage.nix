@@ -24,7 +24,7 @@ let
       components = {
         exes = {
           vigilance-server = {
-            depends  = optionals (!_flags.no-server) [
+            depends  = pkgs.lib.optionals (!_flags.no-server) [
               hsPkgs.base
               hsPkgs.async
               hsPkgs.aeson
@@ -68,7 +68,7 @@ let
             ];
           };
           vigilance = {
-            depends  = optionals (!_flags.no-client) [
+            depends  = pkgs.lib.optionals (!_flags.no-client) [
               hsPkgs.base
               hsPkgs.async
               hsPkgs.aeson

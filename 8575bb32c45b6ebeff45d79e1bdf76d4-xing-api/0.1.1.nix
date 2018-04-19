@@ -42,7 +42,7 @@ let
         };
         exes = {
           xing-api-cli-demo = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.monad-control
@@ -52,7 +52,7 @@ let
             ];
           };
           xing-api-yesod-demo = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.containers
@@ -67,7 +67,7 @@ let
             ];
           };
           xing-api-minimal-demo = {
-            depends  = optionals _flags.minimal-demo [
+            depends  = pkgs.lib.optionals _flags.minimal-demo [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.xing-api

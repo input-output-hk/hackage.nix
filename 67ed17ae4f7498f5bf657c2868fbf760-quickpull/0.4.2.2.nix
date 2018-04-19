@@ -40,7 +40,7 @@ let
           quickpull-test-gen = {
             depends  = [
               hsPkgs.barecheck
-            ] ++ optionals _flags.build-test-gen ([
+            ] ++ pkgs.lib.optionals _flags.build-test-gen ([
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.filepath

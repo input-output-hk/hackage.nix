@@ -25,7 +25,7 @@ let
       components = {
         exes = {
           yampasynth-wav = {
-            depends  = optionals _flags.wav [
+            depends  = pkgs.lib.optionals _flags.wav [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
             ];
           };
           yampasynth-openal = {
-            depends  = optionals _flags.openal [
+            depends  = pkgs.lib.optionals _flags.openal [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.containers
@@ -45,7 +45,7 @@ let
             ];
           };
           yampasynth-gtk = {
-            depends  = optionals _flags.gtk [
+            depends  = pkgs.lib.optionals _flags.gtk [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.containers

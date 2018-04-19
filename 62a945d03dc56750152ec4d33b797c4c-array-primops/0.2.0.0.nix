@@ -20,7 +20,7 @@ let
       };
       components = {
         array-primops = {
-          depends  = optionals compiler.isGhc [
+          depends  = pkgs.lib.optionals compiler.isGhc [
             hsPkgs.base
             hsPkgs.ghc-prim
           ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;

@@ -50,7 +50,7 @@ let
               hsPkgs.directory
               hsPkgs.filepath
               hsPkgs.unordered-containers
-            ] ++ optionals (!compiler.isGhc) [
+            ] ++ pkgs.lib.optionals (!compiler.isGhc) [
               hsPkgs.fail
               hsPkgs.semigroups
             ];

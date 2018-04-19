@@ -49,13 +49,13 @@ let
               hsPkgs.parsec
               hsPkgs.HTTP
               hsPkgs.stm
-            ] ++ optionals (_flags.with_xft || _flags.all_extensions) [
+            ] ++ pkgs.lib.optionals (_flags.with_xft || _flags.all_extensions) [
               hsPkgs.utf8-string
               hsPkgs.X11-xft
-            ]) ++ pkgs.lib.optional (_flags.with_utf8 || _flags.all_extensions) hsPkgs.utf8-string) ++ pkgs.lib.optional (_flags.with_inotify || _flags.all_extensions) hsPkgs.hinotify) ++ pkgs.lib.optional (_flags.with_mpd || _flags.all_extensions) hsPkgs.libmpd) ++ optionals (_flags.with_alsa || _flags.all_extensions) [
+            ]) ++ pkgs.lib.optional (_flags.with_utf8 || _flags.all_extensions) hsPkgs.utf8-string) ++ pkgs.lib.optional (_flags.with_inotify || _flags.all_extensions) hsPkgs.hinotify) ++ pkgs.lib.optional (_flags.with_mpd || _flags.all_extensions) hsPkgs.libmpd) ++ pkgs.lib.optionals (_flags.with_alsa || _flags.all_extensions) [
               hsPkgs.alsa-mixer
               hsPkgs.alsa-core
-            ]) ++ optionals (_flags.with_datezone || _flags.all_extensions) [
+            ]) ++ pkgs.lib.optionals (_flags.with_datezone || _flags.all_extensions) [
               hsPkgs.timezone-olson
               hsPkgs.timezone-series
             ]) ++ pkgs.lib.optional (_flags.with_mpris || _flags.all_extensions) hsPkgs.dbus) ++ pkgs.lib.optional (_flags.with_dbus || _flags.all_extensions) hsPkgs.dbus;

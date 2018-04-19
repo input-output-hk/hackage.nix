@@ -33,7 +33,7 @@ let
         };
         exes = {
           sorting = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.vinyl-vectors
               hsPkgs.base
               hsPkgs.vector-algorithms

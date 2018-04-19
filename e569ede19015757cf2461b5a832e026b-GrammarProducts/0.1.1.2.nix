@@ -42,7 +42,7 @@ let
         };
         exes = {
           AlignGlobal = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
               hsPkgs.containers

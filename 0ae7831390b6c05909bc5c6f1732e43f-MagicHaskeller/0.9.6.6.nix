@@ -40,7 +40,7 @@ let
             hsPkgs.html
             hsPkgs.pretty
             hsPkgs.hashable
-          ] ++ pkgs.lib.optional _flags.tfrandom hsPkgs.tf-random) ++ optionals (_flags.ghcapi && !system.isWindows) [
+          ] ++ pkgs.lib.optional _flags.tfrandom hsPkgs.tf-random) ++ pkgs.lib.optionals (_flags.ghcapi && !system.isWindows) [
             hsPkgs.ghc
             hsPkgs.ghc-paths
           ]) ++ pkgs.lib.optional _flags.readfile hsPkgs.haskell-src) ++ [

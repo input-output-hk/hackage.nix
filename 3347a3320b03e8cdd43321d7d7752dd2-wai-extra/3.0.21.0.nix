@@ -58,7 +58,7 @@ let
         };
         exes = {
           example = {
-            depends  = optionals _flags.build-example [
+            depends  = pkgs.lib.optionals _flags.build-example [
               hsPkgs.base
               hsPkgs.wai-extra
               hsPkgs.warp

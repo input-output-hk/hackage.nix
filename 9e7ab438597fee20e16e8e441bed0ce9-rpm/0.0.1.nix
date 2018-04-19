@@ -33,7 +33,7 @@ let
         };
         exes = {
           test-rpm = {
-            depends  = optionals (!(!_flags.tests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck

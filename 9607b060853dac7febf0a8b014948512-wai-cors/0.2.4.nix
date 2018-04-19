@@ -33,7 +33,7 @@ let
             hsPkgs.charset
             hsPkgs.http-types
             hsPkgs.parsers
-          ] ++ optionals _flags.wai-1 [
+          ] ++ pkgs.lib.optionals _flags.wai-1 [
             hsPkgs.wai
             hsPkgs.resourcet
             hsPkgs.transformers
@@ -61,7 +61,7 @@ let
               hsPkgs.process
               hsPkgs.text
               hsPkgs.wai-cors
-            ] ++ optionals (!(_flags.wai-1 || _flags.wai-2)) [
+            ] ++ pkgs.lib.optionals (!(_flags.wai-1 || _flags.wai-2)) [
               hsPkgs.wai-websockets
               hsPkgs.warp
               hsPkgs.wai
@@ -76,7 +76,7 @@ let
               hsPkgs.tasty
               hsPkgs.tasty-hunit
               hsPkgs.wai-cors
-            ] ++ optionals (!(_flags.wai-1 || _flags.wai-2)) [
+            ] ++ pkgs.lib.optionals (!(_flags.wai-1 || _flags.wai-2)) [
               hsPkgs.wai-extra
               hsPkgs.wai-websockets
               hsPkgs.warp

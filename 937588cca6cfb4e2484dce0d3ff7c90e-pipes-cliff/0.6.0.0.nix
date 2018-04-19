@@ -34,7 +34,7 @@ let
         };
         exes = {
           numsToLess = {
-            depends  = optionals _flags.tests [
+            depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.base
               hsPkgs.pipes
               hsPkgs.pipes-safe
@@ -45,7 +45,7 @@ let
             ];
           };
           alphaNumbers = {
-            depends  = optionals _flags.tests [
+            depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.base
               hsPkgs.pipes
               hsPkgs.pipes-safe
@@ -56,7 +56,7 @@ let
             ];
           };
           limitedAlphaNumbers = {
-            depends  = optionals _flags.tests [
+            depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.base
               hsPkgs.pipes
               hsPkgs.pipes-safe
@@ -67,7 +67,7 @@ let
             ];
           };
           alphaNumbersByteString = {
-            depends  = optionals _flags.tests [
+            depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.base
               hsPkgs.pipes
               hsPkgs.pipes-safe
@@ -78,7 +78,7 @@ let
             ];
           };
           standardOutputAndError = {
-            depends  = optionals _flags.tests [
+            depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.base
               hsPkgs.pipes
               hsPkgs.pipes-safe

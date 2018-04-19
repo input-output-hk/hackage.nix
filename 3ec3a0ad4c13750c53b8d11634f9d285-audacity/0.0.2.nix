@@ -41,7 +41,7 @@ let
         };
         exes = {
           sox-split = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.audacity
               hsPkgs.soxlib
               hsPkgs.storablevector
@@ -54,7 +54,7 @@ let
             ];
           };
           sox-concat = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.audacity
               hsPkgs.soxlib
               hsPkgs.storablevector
@@ -67,7 +67,7 @@ let
             ];
           };
           audacity-concat = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.audacity
               hsPkgs.soxlib
               hsPkgs.storablevector
@@ -80,7 +80,7 @@ let
             ];
           };
           audacity-combine = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.audacity
               hsPkgs.soxlib
               hsPkgs.storablevector

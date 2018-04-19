@@ -46,7 +46,7 @@ let
         };
         tests = {
           properties = {
-            depends  = optionals (!(!_flags.properties)) [
+            depends  = pkgs.lib.optionals (!(!_flags.properties)) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.containers

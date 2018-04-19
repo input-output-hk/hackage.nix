@@ -30,7 +30,7 @@ let
         };
         exes = {
           reactiva-banana-threepenny-Animation = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.process
               hsPkgs.random
               hsPkgs.filepath
@@ -40,14 +40,14 @@ let
             ];
           };
           reactiva-banana-threepenny-Arithmetic = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.reactive-banana
               hsPkgs.threepenny-gui
             ];
           };
           reactiva-banana-threepenny-Asteroids = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.random
               hsPkgs.filepath
               hsPkgs.reactive-banana
@@ -56,28 +56,28 @@ let
             ];
           };
           reactiva-banana-threepenny-BarTab = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.reactive-banana
               hsPkgs.threepenny-gui
               hsPkgs.base
             ];
           };
           reactiva-banana-threepenny-Counter = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.reactive-banana
               hsPkgs.threepenny-gui
               hsPkgs.base
             ];
           };
           reactiva-banana-threepenny-CurrencyConverter = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.reactive-banana
               hsPkgs.threepenny-gui
               hsPkgs.base
             ];
           };
           reactiva-banana-threepenny-CRUD = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.containers
               hsPkgs.reactive-banana
               hsPkgs.threepenny-gui
@@ -85,7 +85,7 @@ let
             ];
           };
           reactiva-banana-threepenny-NetMonitor = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.process
               hsPkgs.reactive-banana
               hsPkgs.threepenny-gui
@@ -93,7 +93,7 @@ let
             ];
           };
           reactiva-banana-threepenny-TicTacToe = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.array
               hsPkgs.filepath
               hsPkgs.reactive-banana
@@ -102,14 +102,14 @@ let
             ];
           };
           reactiva-banana-threepenny-TwoCounters = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.reactive-banana
               hsPkgs.threepenny-gui
               hsPkgs.base
             ];
           };
           reactiva-banana-threepenny-Wave = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.reactive-banana
               hsPkgs.threepenny-gui
               hsPkgs.base

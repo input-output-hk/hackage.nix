@@ -46,7 +46,7 @@ let
               hsPkgs.happstack-data
               hsPkgs.happstack-ixset
               hsPkgs.happstack-state
-            ] ++ optionals _flags.base4 [
+            ] ++ pkgs.lib.optionals _flags.base4 [
               hsPkgs.base
               hsPkgs.syb
             ];

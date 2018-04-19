@@ -37,7 +37,7 @@ let
         };
         exes = {
           runtests = {
-            depends  = optionals _flags.buildtests [
+            depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
               hsPkgs.testpack
@@ -52,7 +52,7 @@ let
               else [ pkgs.odbc ];
           };
           stresstest = {
-            depends  = optionals _flags.buildstresstest [
+            depends  = pkgs.lib.optionals _flags.buildstresstest [
               hsPkgs.base
               hsPkgs.HDBC
               hsPkgs.HDBC-odbc

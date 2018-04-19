@@ -24,7 +24,7 @@ let
         blink1 = {
           depends  = ([
             hsPkgs.base
-          ] ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ optionals _flags.usb [
+          ] ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optionals _flags.usb [
             hsPkgs.usb
             hsPkgs.vector
             hsPkgs.text
@@ -36,7 +36,7 @@ let
             depends  = ([
               hsPkgs.base
               hsPkgs.blink1
-            ] ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ optionals _flags.usb [
+            ] ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optionals _flags.usb [
               hsPkgs.usb
               hsPkgs.vector
               hsPkgs.text

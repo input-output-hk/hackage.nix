@@ -31,42 +31,42 @@ let
         };
         exes = {
           dsp-demo-article = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.dsp
               hsPkgs.array
               hsPkgs.base
             ];
           };
           dsp-demo-fft-bench = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.dsp
               hsPkgs.array
               hsPkgs.base
             ];
           };
           dsp-demo-fft-test = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.dsp
               hsPkgs.array
               hsPkgs.base
             ];
           };
           dsp-demo-freq = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.dsp
               hsPkgs.array
               hsPkgs.base
             ];
           };
           dsp-demo-iir = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.dsp
               hsPkgs.array
               hsPkgs.base
             ];
           };
           dsp-demo-noise = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.dsp
               hsPkgs.array
               hsPkgs.base

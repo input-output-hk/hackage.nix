@@ -52,7 +52,7 @@ let
               hsPkgs.utf8-string
               hsPkgs.vector
               hsPkgs.vector-binary-instances
-            ] ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optional system.isOsx hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ optionals _flags.llvm [
+            ] ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optional system.isOsx hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optionals _flags.llvm [
               hsPkgs.llvm-general
               hsPkgs.llvm-general-pure
             ];

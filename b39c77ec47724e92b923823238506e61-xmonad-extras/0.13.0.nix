@@ -50,10 +50,10 @@ let
             ])) ++ pkgs.lib.optional _flags.with_sound hsPkgs.alsa-mixer) ++ [
             hsPkgs.hint
             hsPkgs.network
-          ]) ++ optionals _flags.with_mpd [
+          ]) ++ pkgs.lib.optionals _flags.with_mpd [
             hsPkgs.libmpd
             hsPkgs.bytestring
-          ]) ++ pkgs.lib.optional _flags.with_regex_posix hsPkgs.regex-posix) ++ optionals (_flags.with_template_haskell && _flags.with_hlist) [
+          ]) ++ pkgs.lib.optional _flags.with_regex_posix hsPkgs.regex-posix) ++ pkgs.lib.optionals (_flags.with_template_haskell && _flags.with_hlist) [
             hsPkgs.template-haskell
             hsPkgs.HList
           ];

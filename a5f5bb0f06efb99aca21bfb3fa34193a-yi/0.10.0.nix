@@ -72,14 +72,14 @@ let
             ]
             else [
               hsPkgs.binary
-            ])) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ optionals _flags.testing [
+            ])) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optionals _flags.testing [
             hsPkgs.QuickCheck
             hsPkgs.random
-          ]) ++ optionals _flags.pango [
+          ]) ++ pkgs.lib.optionals _flags.pango [
             hsPkgs.gtk
             hsPkgs.glib
             hsPkgs.pango
-          ]) ++ optionals _flags.vty [
+          ]) ++ pkgs.lib.optionals _flags.vty [
             hsPkgs.unix-compat
             hsPkgs.vty
           ];

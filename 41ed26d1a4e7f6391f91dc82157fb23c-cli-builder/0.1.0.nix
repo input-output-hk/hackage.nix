@@ -40,7 +40,7 @@ let
             ];
           };
           doc-test = {
-            depends  = optionals (!(!_flags.test-doctest)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doctest)) [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.filemanip

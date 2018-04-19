@@ -43,35 +43,35 @@ let
         };
         exes = {
           threepenny-examples-bartab = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.filepath
             ];
           };
           threepenny-examples-buttons = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.filepath
             ];
           };
           threepenny-examples-dragndropexample = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.filepath
             ];
           };
           threepenny-examples-drummachine = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.filepath
             ];
           };
           threepenny-examples-missing-dollars = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.threepenny-gui
@@ -79,7 +79,7 @@ let
             ];
           };
           threepenny-examples-use-words = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.filepath
@@ -87,7 +87,7 @@ let
             ];
           };
           threepenny-examples-chat = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.transformers

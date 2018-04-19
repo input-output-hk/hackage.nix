@@ -25,7 +25,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
-          ] ++ optionals _flags.with-conduit [
+          ] ++ pkgs.lib.optionals _flags.with-conduit [
             hsPkgs.conduit
             hsPkgs.exceptions
           ];

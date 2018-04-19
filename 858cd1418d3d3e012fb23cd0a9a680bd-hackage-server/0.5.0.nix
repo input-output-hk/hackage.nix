@@ -74,7 +74,7 @@ let
               hsPkgs.HStringTemplate
               hsPkgs.lifted-base
               hsPkgs.QuickCheck
-            ] ++ optionals (!_flags.minimal) [
+            ] ++ pkgs.lib.optionals (!_flags.minimal) [
               hsPkgs.snowball
               hsPkgs.tokenize
             ];

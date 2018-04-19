@@ -51,7 +51,7 @@ let
               hsPkgs.split
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
-            ] ++ optionals _flags.warp-tests ([
+            ] ++ pkgs.lib.optionals _flags.warp-tests ([
               hsPkgs.case-insensitive
               hsPkgs.http-types
               hsPkgs.wai

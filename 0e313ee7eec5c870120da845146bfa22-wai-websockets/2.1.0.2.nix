@@ -38,7 +38,7 @@ let
         };
         exes = {
           wai-websockets-example = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.conduit
               hsPkgs.wai-websockets

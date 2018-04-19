@@ -30,7 +30,7 @@ let
             hsPkgs.text
             hsPkgs.utf8-string
             hsPkgs.exceptions
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.ghc-prim
             hsPkgs.split
           ];

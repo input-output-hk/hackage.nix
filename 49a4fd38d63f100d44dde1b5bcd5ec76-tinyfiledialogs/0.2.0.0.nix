@@ -24,7 +24,7 @@ let
             hsPkgs.base
             hsPkgs.text
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.bytestring;
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.comdlg32
             pkgs.ole32
           ];

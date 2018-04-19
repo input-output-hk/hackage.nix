@@ -30,7 +30,7 @@ let
         };
         exes = {
           sox-concat = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.audacity
               hsPkgs.soxlib
               hsPkgs.storablevector

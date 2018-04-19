@@ -24,7 +24,7 @@ let
         void = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals (!compiler.isGhc) ([
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) ([
             hsPkgs.deepseq
             hsPkgs.hashable
             hsPkgs.semigroups

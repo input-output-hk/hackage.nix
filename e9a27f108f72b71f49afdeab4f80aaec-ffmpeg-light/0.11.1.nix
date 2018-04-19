@@ -41,7 +41,7 @@ let
               hsPkgs.mtl
               hsPkgs.transformers
               hsPkgs.JuicyPixels
-            ] ++ optionals _flags.builddemo [
+            ] ++ pkgs.lib.optionals _flags.builddemo [
               hsPkgs.ffmpeg-light
               hsPkgs.time
             ];
@@ -53,7 +53,7 @@ let
               hsPkgs.mtl
               hsPkgs.transformers
               hsPkgs.JuicyPixels
-            ] ++ optionals _flags.buildrasterdemo [
+            ] ++ pkgs.lib.optionals _flags.buildrasterdemo [
               hsPkgs.ffmpeg-light
               hsPkgs.Rasterific
             ];

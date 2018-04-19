@@ -33,7 +33,7 @@ let
         };
         exes = {
           yampa-examples-sdl-bouncingbox = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.random
               hsPkgs.deepseq
@@ -42,7 +42,7 @@ let
             ];
           };
           yampa-examples-sdl-circlingmouse = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.random
               hsPkgs.deepseq
@@ -51,7 +51,7 @@ let
             ];
           };
           yampa-examples-sdl-wiimote = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.random
               hsPkgs.deepseq
@@ -63,13 +63,13 @@ let
         };
         tests = {
           hlint = {
-            depends  = optionals (!(!_flags.test-hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
           haddock-coverage = {
-            depends  = optionals (!(!_flags.test-doc-coverage)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doc-coverage)) [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.filepath
@@ -78,7 +78,7 @@ let
             ];
           };
           regression = {
-            depends  = optionals (!(!_flags.test-regression)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-regression)) [
               hsPkgs.base
               hsPkgs.Yampa
             ];

@@ -29,7 +29,7 @@ let
             hsPkgs.aeson
             hsPkgs.bytestring
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional _flags.cassava hsPkgs.cassava) ++ optionals _flags.rawstring-qm [
+          ] ++ pkgs.lib.optional _flags.cassava hsPkgs.cassava) ++ pkgs.lib.optionals _flags.rawstring-qm [
             hsPkgs.rawstring-qm
             hsPkgs.text
           ];

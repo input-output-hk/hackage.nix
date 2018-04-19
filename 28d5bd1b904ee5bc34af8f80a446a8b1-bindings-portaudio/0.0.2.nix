@@ -30,7 +30,7 @@ let
             hsPkgs.base
             hsPkgs.bindings-DSL
           ];
-          libs = optionals (system.isWindows && !_flags.mingw-external) ([
+          libs = pkgs.lib.optionals (system.isWindows && !_flags.mingw-external) ([
             pkgs.winmm
             pkgs.ole32
           ] ++ pkgs.lib.optional _flags.wdmks pkgs.Setupapi);

@@ -51,7 +51,7 @@ let
               hsPkgs.wai-logger
               hsPkgs.wai-logger-prefork
               hsPkgs.warp
-            ] ++ pkgs.lib.optional _flags.rev-proxy hsPkgs.http-conduit) ++ optionals _flags.tls [
+            ] ++ pkgs.lib.optional _flags.rev-proxy hsPkgs.http-conduit) ++ pkgs.lib.optionals _flags.tls [
               hsPkgs.tls
               hsPkgs.warp-tls
             ];
@@ -99,7 +99,7 @@ let
               hsPkgs.wai-logger-prefork
               hsPkgs.warp
               hsPkgs.hspec
-            ] ++ pkgs.lib.optional _flags.rev-proxy hsPkgs.http-conduit) ++ optionals _flags.tls [
+            ] ++ pkgs.lib.optional _flags.rev-proxy hsPkgs.http-conduit) ++ pkgs.lib.optionals _flags.tls [
               hsPkgs.tls
               hsPkgs.warp-tls
             ];

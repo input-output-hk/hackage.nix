@@ -46,7 +46,7 @@ let
               then [ hsPkgs.Win32 ]
               else pkgs.lib.optional (!system.isOsx) hsPkgs.X11);
             libs = pkgs.lib.optional system.isWindows pkgs.psapi;
-            frameworks = optionals (!system.isWindows && system.isOsx) [
+            frameworks = pkgs.lib.optionals (!system.isWindows && system.isOsx) [
               pkgs.Foundation
               pkgs.Carbon
               pkgs.IOKit

@@ -31,7 +31,7 @@ let
         };
         exes = {
           test8color = {
-            depends  = optionals _flags.visual [
+            depends  = pkgs.lib.optionals _flags.visual [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
             ];
           };
           test256color = {
-            depends  = optionals _flags.visual [
+            depends  = pkgs.lib.optionals _flags.visual [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
             ];
           };
           colorTest = {
-            depends  = optionals _flags.visual [
+            depends  = pkgs.lib.optionals _flags.visual [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.bytestring

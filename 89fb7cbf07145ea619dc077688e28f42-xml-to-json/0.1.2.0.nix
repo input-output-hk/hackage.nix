@@ -33,7 +33,7 @@ let
             hsPkgs.hxt-expat
             hsPkgs.containers
             hsPkgs.regex-posix
-          ] ++ optionals (!system.isWindows) [
+          ] ++ pkgs.lib.optionals (!system.isWindows) [
             hsPkgs.hxt-curl
             hsPkgs.curl
           ];

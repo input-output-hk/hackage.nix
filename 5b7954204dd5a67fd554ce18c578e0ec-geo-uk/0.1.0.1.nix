@@ -29,7 +29,7 @@ let
             hsPkgs.bytestring
             hsPkgs.th-lift
             hsPkgs.template-haskell
-          ] ++ optionals _flags.embeded [
+          ] ++ pkgs.lib.optionals _flags.embeded [
             hsPkgs.bzlib
             hsPkgs.file-embed
           ];

@@ -26,7 +26,7 @@ let
         };
         exes = {
           grover = {
-            depends  = optionals _flags.programs [
+            depends  = pkgs.lib.optionals _flags.programs [
               hsPkgs.base
               hsPkgs.QuickCheck
               hsPkgs.tasty
@@ -35,7 +35,7 @@ let
             ];
           };
           telly = {
-            depends  = optionals _flags.programs [
+            depends  = pkgs.lib.optionals _flags.programs [
               hsPkgs.base
               hsPkgs.QuickCheck
               hsPkgs.tasty

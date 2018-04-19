@@ -44,13 +44,13 @@ let
             hsPkgs.mtl
             hsPkgs.template-haskell
             hsPkgs.time
-          ] ++ optionals system.isOsx [
+          ] ++ pkgs.lib.optionals system.isOsx [
             hsPkgs.bytestring
             hsPkgs.cereal
             hsPkgs.ghc-prim
             hsPkgs.unix
             hsPkgs.vector
-          ]) ++ optionals system.isLinux [
+          ]) ++ pkgs.lib.optionals system.isLinux [
             hsPkgs.bytestring
             hsPkgs.cereal
             hsPkgs.ghc-prim

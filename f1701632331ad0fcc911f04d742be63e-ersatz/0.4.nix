@@ -40,7 +40,7 @@ let
         };
         exes = {
           ersatz-regexp-grid = {
-            depends  = optionals _flags.examples ([
+            depends  = pkgs.lib.optionals _flags.examples ([
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.ersatz
@@ -50,7 +50,7 @@ let
             ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim);
           };
           ersatz-sudoku = {
-            depends  = optionals _flags.examples ([
+            depends  = pkgs.lib.optionals _flags.examples ([
               hsPkgs.array
               hsPkgs.base
               hsPkgs.ersatz
@@ -68,7 +68,7 @@ let
             ];
           };
           hlint = {
-            depends  = optionals (!(!_flags.test-hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];

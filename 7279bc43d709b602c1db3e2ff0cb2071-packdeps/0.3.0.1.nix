@@ -37,14 +37,14 @@ let
         };
         exes = {
           packdeps = {
-            depends  = optionals (!_flags.web) [
+            depends  = pkgs.lib.optionals (!_flags.web) [
               hsPkgs.base
               hsPkgs.Cabal
               hsPkgs.packdeps
             ];
           };
           packdeps-yesod = {
-            depends  = optionals _flags.web [
+            depends  = pkgs.lib.optionals _flags.web [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.bytestring

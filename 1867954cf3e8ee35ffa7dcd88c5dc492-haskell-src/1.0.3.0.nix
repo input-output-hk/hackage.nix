@@ -25,7 +25,7 @@ let
             hsPkgs.syb
             hsPkgs.pretty
             hsPkgs.array
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.semigroups
             hsPkgs.fail
           ];

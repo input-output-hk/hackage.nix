@@ -45,7 +45,7 @@ let
               ]
               else [
                 hsPkgs.base
-              ])) ++ optionals _flags.with_xft [
+              ])) ++ pkgs.lib.optionals _flags.with_xft [
               hsPkgs.utf8-string
               hsPkgs.X11-xft
             ]) ++ pkgs.lib.optional (_flags.with_utf8 && compiler.isGhc) hsPkgs.utf8-string) ++ pkgs.lib.optional _flags.with_inotify hsPkgs.hinotify;

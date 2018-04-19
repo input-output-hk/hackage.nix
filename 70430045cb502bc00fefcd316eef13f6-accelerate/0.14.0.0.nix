@@ -36,7 +36,7 @@ let
             hsPkgs.hashable
             hsPkgs.hashtables
             hsPkgs.pretty
-          ] ++ optionals _flags.more-pp [
+          ] ++ pkgs.lib.optionals _flags.more-pp [
             hsPkgs.bytestring
             hsPkgs.blaze-html
             hsPkgs.blaze-markup

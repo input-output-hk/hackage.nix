@@ -34,7 +34,7 @@ let
             then [ hsPkgs.base hsPkgs.syb ]
             else [ hsPkgs.base ])) ++ [
             hsPkgs.syb-with-class
-          ]) ++ optionals _flags.tests [
+          ]) ++ pkgs.lib.optionals _flags.tests [
             hsPkgs.QuickCheck
             hsPkgs.HUnit
           ];

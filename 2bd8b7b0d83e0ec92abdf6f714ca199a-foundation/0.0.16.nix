@@ -41,7 +41,7 @@ let
             ];
           };
           doctest = {
-            depends  = optionals (!_flags.minimal-deps && _flags.doctest) [
+            depends  = pkgs.lib.optionals (!_flags.minimal-deps && _flags.doctest) [
               hsPkgs.base
               hsPkgs.doctest
             ];
@@ -49,12 +49,12 @@ let
         };
         benchmarks = {
           bench = {
-            depends  = optionals (!(_flags.minimal-deps || compiler.isGhc)) ([
+            depends  = pkgs.lib.optionals (!(_flags.minimal-deps || compiler.isGhc)) ([
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.basement
               hsPkgs.foundation
-            ] ++ optionals _flags.bench-all [
+            ] ++ pkgs.lib.optionals _flags.bench-all [
               hsPkgs.text
               hsPkgs.attoparsec
               hsPkgs.vector

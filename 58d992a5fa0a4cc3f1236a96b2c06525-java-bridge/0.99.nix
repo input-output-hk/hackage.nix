@@ -29,7 +29,7 @@ let
             hsPkgs.base
             hsPkgs.directory
             hsPkgs.filepath
-          ] ++ optionals (!_flags.only_core) [
+          ] ++ pkgs.lib.optionals (!_flags.only_core) [
             hsPkgs.cpphs
             hsPkgs.strings
             hsPkgs.mtl
@@ -38,7 +38,7 @@ let
           ]) ++ (if system.isOsx
             then [ hsPkgs.unix ]
             else pkgs.lib.optional system.isLinux hsPkgs.unix);
-          frameworks = optionals system.isOsx (pkgs.lib.optional _flags.osx_gui pkgs.Cocoa ++ pkgs.lib.optional _flags.osx_framework pkgs.JavaVM);
+          frameworks = pkgs.lib.optionals system.isOsx (pkgs.lib.optional _flags.osx_gui pkgs.Cocoa ++ pkgs.lib.optional _flags.osx_framework pkgs.JavaVM);
         };
       };
     }

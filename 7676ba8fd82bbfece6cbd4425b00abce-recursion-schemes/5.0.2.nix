@@ -30,7 +30,7 @@ let
             hsPkgs.semigroups
             hsPkgs.transformers
             hsPkgs.transformers-compat
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats) ++ optionals _flags.template-haskell [
+          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats) ++ pkgs.lib.optionals _flags.template-haskell [
             hsPkgs.template-haskell
             hsPkgs.base-orphans
           ];

@@ -28,7 +28,7 @@ let
               hsPkgs.containers
               hsPkgs.haskeline
               hsPkgs.parsec
-            ] ++ optionals _flags.plot-gtk-ui [
+            ] ++ pkgs.lib.optionals _flags.plot-gtk-ui [
               hsPkgs.plot-gtk-ui
               hsPkgs.gtk
               hsPkgs.transformers

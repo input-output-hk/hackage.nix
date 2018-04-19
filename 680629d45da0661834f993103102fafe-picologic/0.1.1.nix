@@ -33,7 +33,7 @@ let
         };
         exes = {
           picologic = {
-            depends  = optionals _flags.shell [
+            depends  = pkgs.lib.optionals _flags.shell [
               hsPkgs.base
               hsPkgs.picosat
               hsPkgs.containers

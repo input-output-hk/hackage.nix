@@ -28,7 +28,7 @@ let
             else [ hsPkgs.unix ]) ++ [
             hsPkgs.base
           ];
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.kernel32
             pkgs.msvcrt
           ];
@@ -40,7 +40,7 @@ let
               else [ hsPkgs.unix ]) ++ [
               hsPkgs.base
             ];
-            libs = optionals system.isWindows [
+            libs = pkgs.lib.optionals system.isWindows [
               pkgs.kernel32
               pkgs.msvcrt
             ];

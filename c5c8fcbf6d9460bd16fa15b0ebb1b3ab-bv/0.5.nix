@@ -27,14 +27,14 @@ let
         bv = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals (compiler.isGhc && _flags.gmp) [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && _flags.gmp) [
             hsPkgs.integer-gmp
             hsPkgs.ghc-prim
           ];
         };
         exes = {
           bv-tester = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.QuickCheck
               hsPkgs.test-framework-quickcheck2

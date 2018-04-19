@@ -44,7 +44,7 @@ let
               hsPkgs.threepenny-gui
               hsPkgs.casing
               hsPkgs.text
-            ] ++ optionals _flags.buildexamples [
+            ] ++ pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.threepenny-editors
               hsPkgs.containers
             ];
@@ -59,7 +59,7 @@ let
               hsPkgs.threepenny-gui
               hsPkgs.casing
               hsPkgs.text
-            ] ++ optionals _flags.buildexamples [
+            ] ++ pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.threepenny-editors
               hsPkgs.containers
             ];
@@ -74,7 +74,7 @@ let
               hsPkgs.threepenny-gui
               hsPkgs.casing
               hsPkgs.text
-            ] ++ optionals _flags.buildexamples [
+            ] ++ pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.threepenny-editors
               hsPkgs.haskell-src-exts
             ];

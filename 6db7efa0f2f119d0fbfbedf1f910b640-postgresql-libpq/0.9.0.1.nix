@@ -26,7 +26,7 @@ let
           ];
           libs = [
             pkgs.pq
-          ] ++ optionals system.isOpenbsd [
+          ] ++ pkgs.lib.optionals system.isOpenbsd [
             pkgs.crypto
             pkgs.ssl
           ];

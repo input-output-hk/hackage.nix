@@ -23,7 +23,7 @@ let
       components = {
         ghc-prim = {
           depends  = [ hsPkgs.rts ];
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.user32
             pkgs.mingw32
             pkgs.mingwex

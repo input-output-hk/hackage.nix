@@ -71,7 +71,7 @@ let
               hsPkgs.time
               hsPkgs.text
               hsPkgs.lvish
-            ] ++ optionals _flags.generic [
+            ] ++ pkgs.lib.optionals _flags.generic [
               hsPkgs.par-classes
               hsPkgs.par-collections
             ]) ++ pkgs.lib.optional _flags.chaselev hsPkgs.chaselev-deque;

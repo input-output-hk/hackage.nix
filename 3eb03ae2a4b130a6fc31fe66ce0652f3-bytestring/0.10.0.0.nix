@@ -23,7 +23,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.ghc-prim
             hsPkgs.base
           ];

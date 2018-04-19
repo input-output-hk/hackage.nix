@@ -31,7 +31,7 @@ let
         };
         exes = {
           adp-multi-monadiccp-benchmarks = {
-            depends  = optionals (!(!_flags.buildbenchmark)) [
+            depends  = pkgs.lib.optionals (!(!_flags.buildbenchmark)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.adp-multi

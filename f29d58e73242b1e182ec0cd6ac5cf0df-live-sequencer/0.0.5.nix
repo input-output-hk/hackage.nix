@@ -57,7 +57,7 @@ let
             ];
           };
           live-sequencer-gui = {
-            depends  = optionals _flags.gui [
+            depends  = pkgs.lib.optionals _flags.gui [
               hsPkgs.wx
               hsPkgs.wxcore
               hsPkgs.stm
@@ -81,7 +81,7 @@ let
               hsPkgs.directory
               hsPkgs.filepath
               hsPkgs.base
-            ] ++ optionals _flags.httpserver [
+            ] ++ pkgs.lib.optionals _flags.httpserver [
               hsPkgs.httpd-shed
               hsPkgs.network
               hsPkgs.cgi
@@ -89,7 +89,7 @@ let
             ];
           };
           live-mplayer-control = {
-            depends  = optionals _flags.mplayer [
+            depends  = pkgs.lib.optionals _flags.mplayer [
               hsPkgs.midi-alsa
               hsPkgs.midi
               hsPkgs.alsa-seq

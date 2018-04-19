@@ -39,7 +39,7 @@ let
             hsPkgs.persistent-template
             hsPkgs.persistent
             hsPkgs.bytestring
-          ] ++ optionals _flags.tester [
+          ] ++ pkgs.lib.optionals _flags.tester [
             hsPkgs.blaze-html
             hsPkgs.esqueleto
           ];

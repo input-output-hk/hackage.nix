@@ -35,7 +35,7 @@ let
         };
         exes = {
           edit-distance-tests = {
-            depends  = optionals (!(!_flags.tests)) ([
+            depends  = pkgs.lib.optionals (!(!_flags.tests)) ([
               hsPkgs.test-framework
               hsPkgs.QuickCheck
               hsPkgs.test-framework-quickcheck

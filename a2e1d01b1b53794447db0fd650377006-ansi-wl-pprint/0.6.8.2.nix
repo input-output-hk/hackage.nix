@@ -29,7 +29,7 @@ let
         };
         exes = {
           ansi-wl-pprint-example = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base
               hsPkgs.ansi-terminal

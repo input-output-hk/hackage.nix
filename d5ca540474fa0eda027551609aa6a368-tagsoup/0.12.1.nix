@@ -31,7 +31,7 @@ let
         };
         exes = {
           tagsoup = {
-            depends  = optionals _flags.testprog [
+            depends  = pkgs.lib.optionals _flags.testprog [
               hsPkgs.QuickCheck
               hsPkgs.time
               hsPkgs.deepseq

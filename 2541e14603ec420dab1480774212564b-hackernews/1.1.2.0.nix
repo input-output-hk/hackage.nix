@@ -59,7 +59,7 @@ let
               ];
           };
           ghcjs-tests = {
-            depends  = optionals compiler.isGhcjs [
+            depends  = pkgs.lib.optionals compiler.isGhcjs [
               hsPkgs.base
               hsPkgs.hackernews
               hsPkgs.ghcjs-base

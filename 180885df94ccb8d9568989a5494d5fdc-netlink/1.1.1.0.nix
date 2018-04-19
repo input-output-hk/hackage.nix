@@ -52,7 +52,7 @@ let
             ];
           };
           Generate = {
-            depends  = optionals _flags.generators [
+            depends  = pkgs.lib.optionals _flags.generators [
               hsPkgs.base
               hsPkgs.language-c
               hsPkgs.containers
@@ -61,7 +61,7 @@ let
             ];
           };
           GenerateGenl = {
-            depends  = optionals _flags.generators [
+            depends  = pkgs.lib.optionals _flags.generators [
               hsPkgs.base
               hsPkgs.language-c
               hsPkgs.containers
@@ -70,7 +70,7 @@ let
             ];
           };
           GenerateNL80211 = {
-            depends  = optionals _flags.generators [
+            depends  = pkgs.lib.optionals _flags.generators [
               hsPkgs.base
               hsPkgs.language-c
               hsPkgs.containers

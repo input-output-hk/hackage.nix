@@ -34,7 +34,7 @@ let
         };
         tests = {
           hunit = {
-            depends  = optionals (!(!_flags.test-hunit)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hunit)) [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.pipes

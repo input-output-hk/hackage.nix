@@ -43,7 +43,7 @@ let
         };
         exes = {
           NeedlemanWunsch = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
               hsPkgs.PrimitiveArray
@@ -52,7 +52,7 @@ let
             ];
           };
           Nussinov = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
               hsPkgs.PrimitiveArray
@@ -61,7 +61,7 @@ let
             ];
           };
           PartNussinov = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
               hsPkgs.log-domain
@@ -71,7 +71,7 @@ let
             ];
           };
           Durbin = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
               hsPkgs.PrimitiveArray

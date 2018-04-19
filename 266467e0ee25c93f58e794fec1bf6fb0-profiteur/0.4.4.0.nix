@@ -35,7 +35,7 @@ let
               hsPkgs.text
               hsPkgs.unordered-containers
               hsPkgs.vector
-            ] ++ optionals _flags.embed-data-files [
+            ] ++ pkgs.lib.optionals _flags.embed-data-files [
               hsPkgs.file-embed
               hsPkgs.template-haskell
             ];

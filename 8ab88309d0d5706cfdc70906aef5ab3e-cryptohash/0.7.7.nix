@@ -26,7 +26,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
-          ] ++ optionals _flags.cryptoapi [
+          ] ++ pkgs.lib.optionals _flags.cryptoapi [
             hsPkgs.crypto-api
             hsPkgs.tagged
             hsPkgs.cereal
@@ -34,7 +34,7 @@ let
         };
         exes = {
           Bench = {
-            depends  = optionals _flags.benchmark [
+            depends  = pkgs.lib.optionals _flags.benchmark [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.criterion

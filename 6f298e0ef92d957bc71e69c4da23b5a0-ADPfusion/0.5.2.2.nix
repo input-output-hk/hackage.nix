@@ -49,7 +49,7 @@ let
         };
         exes = {
           NeedlemanWunsch = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
               hsPkgs.primitive
@@ -59,7 +59,7 @@ let
             ];
           };
           spectest = {
-            depends  = optionals _flags.spectest [
+            depends  = pkgs.lib.optionals _flags.spectest [
               hsPkgs.base
               hsPkgs.ADPfusion
               hsPkgs.PrimitiveArray
@@ -87,7 +87,7 @@ let
         };
         benchmarks = {
           TestBacktrackingStructures = {
-            depends  = optionals _flags.btstruc [
+            depends  = pkgs.lib.optionals _flags.btstruc [
               hsPkgs.base
               hsPkgs.template-haskell
               hsPkgs.fmlist

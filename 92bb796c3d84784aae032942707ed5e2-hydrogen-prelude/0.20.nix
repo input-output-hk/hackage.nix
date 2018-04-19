@@ -44,7 +44,7 @@ let
             hsPkgs.time
             hsPkgs.transformers
             hsPkgs.uuid
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.ghc-prim
             hsPkgs.text
           ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.binary;

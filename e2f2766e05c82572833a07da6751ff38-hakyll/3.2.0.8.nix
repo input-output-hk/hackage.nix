@@ -43,7 +43,7 @@ let
             hsPkgs.tagsoup
             hsPkgs.time
             hsPkgs.unix
-          ] ++ optionals _flags.previewserver [
+          ] ++ pkgs.lib.optionals _flags.previewserver [
             hsPkgs.snap-core
             hsPkgs.snap-server
           ];

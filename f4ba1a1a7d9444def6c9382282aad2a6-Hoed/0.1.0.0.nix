@@ -30,19 +30,19 @@ let
         };
         exes = {
           hoed-examples-SternBrocot = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
             ];
           };
           hoed-examples-GDM-hello = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
             ];
           };
           hoed-examples-TH-hello = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
             ];

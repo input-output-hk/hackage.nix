@@ -48,7 +48,7 @@ let
               hsPkgs.tasty-quickcheck
               hsPkgs.text
               hsPkgs.text-show
-            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.nats
               hsPkgs.transformers
               hsPkgs.transformers-compat

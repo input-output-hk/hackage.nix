@@ -47,13 +47,13 @@ let
             ];
           };
           hlint = {
-            depends  = optionals (!(!_flags.hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
           doctests = {
-            depends  = optionals (!(!_flags.doctest)) [
+            depends  = pkgs.lib.optionals (!(!_flags.doctest)) [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.directory

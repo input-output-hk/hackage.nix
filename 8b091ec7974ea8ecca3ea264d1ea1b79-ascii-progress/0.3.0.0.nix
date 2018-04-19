@@ -33,7 +33,7 @@ let
         };
         exes = {
           example = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.ansi-terminal
               hsPkgs.concurrent-output
               hsPkgs.async
@@ -43,7 +43,7 @@ let
             ];
           };
           download-example = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.HTTP
               hsPkgs.concurrent-output
               hsPkgs.ansi-terminal
@@ -59,7 +59,7 @@ let
             ];
           };
           multi-example = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.ansi-terminal
               hsPkgs.concurrent-output
               hsPkgs.async
@@ -69,7 +69,7 @@ let
             ];
           };
           crazy-multi-example = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.ansi-terminal
               hsPkgs.concurrent-output
               hsPkgs.async

@@ -54,7 +54,7 @@ let
             hsPkgs.array
             hsPkgs.random
             hsPkgs.zlib
-          ] ++ pkgs.lib.optional system.isWindows hsPkgs.unix-compat) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ optionals _flags.http [
+          ] ++ pkgs.lib.optional system.isWindows hsPkgs.unix-compat) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.http [
             hsPkgs.network
             hsPkgs.HTTP
           ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
@@ -86,7 +86,7 @@ let
               hsPkgs.QuickCheck
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2
-            ] ++ pkgs.lib.optional system.isWindows hsPkgs.unix-compat) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ optionals _flags.http [
+            ] ++ pkgs.lib.optional system.isWindows hsPkgs.unix-compat) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.http [
               hsPkgs.network
               hsPkgs.HTTP
             ];
@@ -113,7 +113,7 @@ let
               hsPkgs.array
               hsPkgs.random
               hsPkgs.zlib
-            ] ++ pkgs.lib.optional system.isWindows hsPkgs.unix-compat) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ optionals _flags.http [
+            ] ++ pkgs.lib.optional system.isWindows hsPkgs.unix-compat) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.http [
               hsPkgs.network
               hsPkgs.HTTP
             ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
@@ -133,7 +133,7 @@ let
               hsPkgs.hashed-storage
               hsPkgs.random
               hsPkgs.zlib
-            ] ++ optionals (!(!_flags.test)) [
+            ] ++ pkgs.lib.optionals (!(!_flags.test)) [
               hsPkgs.base
               hsPkgs.extensible-exceptions
               hsPkgs.regex-compat
@@ -146,7 +146,7 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.test-framework-quickcheck2
-            ]) ++ pkgs.lib.optional system.isWindows hsPkgs.unix-compat) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ optionals _flags.http [
+            ]) ++ pkgs.lib.optional system.isWindows hsPkgs.unix-compat) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optionals _flags.http [
               hsPkgs.network
               hsPkgs.HTTP
             ];

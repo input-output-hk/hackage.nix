@@ -33,7 +33,7 @@ let
         };
         exes = {
           dev-example = {
-            depends  = optionals (!(!_flags.dev)) [
+            depends  = pkgs.lib.optionals (!(!_flags.dev)) [
               hsPkgs.base
               hsPkgs.unagi-bloomfilter
             ];
@@ -41,7 +41,7 @@ let
         };
         tests = {
           tests = {
-            depends  = optionals _flags.dev [
+            depends  = pkgs.lib.optionals _flags.dev [
               hsPkgs.base
               hsPkgs.QuickCheck
               hsPkgs.random
@@ -54,7 +54,7 @@ let
         };
         benchmarks = {
           bench = {
-            depends  = optionals _flags.dev [
+            depends  = pkgs.lib.optionals _flags.dev [
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.unagi-bloomfilter

@@ -40,7 +40,7 @@ let
         };
         exes = {
           test-couch = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.aeson
               hsPkgs.attoparsec
               hsPkgs.attoparsec-enumerator

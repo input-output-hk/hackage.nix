@@ -32,7 +32,7 @@ let
             hsPkgs.mtl
             hsPkgs.parsec
             hsPkgs.directory
-          ] ++ optionals _flags.useffi [
+          ] ++ pkgs.lib.optionals _flags.useffi [
             hsPkgs.ghc
             hsPkgs.ghc-paths
           ];
@@ -49,7 +49,7 @@ let
               hsPkgs.mtl
               hsPkgs.parsec
               hsPkgs.directory
-            ] ++ optionals _flags.useffi [
+            ] ++ pkgs.lib.optionals _flags.useffi [
               hsPkgs.ghc
               hsPkgs.ghc-paths
             ];
@@ -68,7 +68,7 @@ let
               hsPkgs.ghc-paths
               hsPkgs.process
               hsPkgs.filepath
-            ] ++ optionals _flags.useffi [
+            ] ++ pkgs.lib.optionals _flags.useffi [
               hsPkgs.ghc
               hsPkgs.ghc-paths
             ];

@@ -51,7 +51,7 @@ let
               hsPkgs.transformers
               hsPkgs.hslogger
               hsPkgs.jsc
-            ] ++ optionals compiler.isGhc ([
+            ] ++ pkgs.lib.optionals compiler.isGhc ([
               hsPkgs.glib
             ] ++ (if _flags.gtk3
               then [

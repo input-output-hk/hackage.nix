@@ -40,7 +40,7 @@ let
             ];
           };
           clckwrks-dot-com-backups = {
-            depends  = optionals _flags.backups [
+            depends  = pkgs.lib.optionals _flags.backups [
               hsPkgs.archive
               hsPkgs.base
               hsPkgs.Extra

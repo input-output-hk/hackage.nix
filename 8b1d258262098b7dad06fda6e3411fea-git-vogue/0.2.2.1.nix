@@ -83,7 +83,7 @@ let
             ];
           };
           git-vogue-ghc-mod = {
-            depends  = optionals _flags.ghc-mod [
+            depends  = pkgs.lib.optionals _flags.ghc-mod [
               hsPkgs.base
               hsPkgs.ghc-mod
               hsPkgs.git-vogue

@@ -48,16 +48,16 @@ let
             ]
             else [
               hsPkgs.base
-            ])) ++ optionals (_flags.with_parsec && _flags.with_split) [
+            ])) ++ pkgs.lib.optionals (_flags.with_parsec && _flags.with_split) [
             hsPkgs.parsec
             hsPkgs.split
           ]) ++ [
             hsPkgs.hint
             hsPkgs.network
-          ]) ++ optionals _flags.with_mpd [
+          ]) ++ pkgs.lib.optionals _flags.with_mpd [
             hsPkgs.libmpd
             hsPkgs.bytestring
-          ]) ++ pkgs.lib.optional _flags.with_regex_posix hsPkgs.regex-posix) ++ optionals (compiler.isGhc && _flags.with_template_haskell && _flags.with_hlist) [
+          ]) ++ pkgs.lib.optional _flags.with_regex_posix hsPkgs.regex-posix) ++ pkgs.lib.optionals (compiler.isGhc && _flags.with_template_haskell && _flags.with_hlist) [
             hsPkgs.template-haskell
             hsPkgs.HList
           ];

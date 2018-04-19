@@ -22,7 +22,7 @@ let
         ghcjs-base-stub = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals (!compiler.isGhcjs) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
             hsPkgs.aeson
             hsPkgs.attoparsec
             hsPkgs.containers

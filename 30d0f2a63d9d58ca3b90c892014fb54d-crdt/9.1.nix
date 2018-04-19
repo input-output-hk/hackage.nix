@@ -35,7 +35,7 @@ let
             hsPkgs.stm
             hsPkgs.time
             hsPkgs.vector
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
             hsPkgs.transformers

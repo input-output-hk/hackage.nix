@@ -26,14 +26,14 @@ let
             hsPkgs.base
             hsPkgs.hpio
             hsPkgs.mellon-core
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];
         };
         tests = {
           hlint = {
-            depends  = optionals (!(!_flags.test-hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];

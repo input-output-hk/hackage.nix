@@ -40,7 +40,7 @@ let
         };
         exes = {
           xmonad = {
-            depends  = pkgs.lib.optional _flags.testing hsPkgs.QuickCheck ++ optionals (_flags.testing && _flags.small_base) [
+            depends  = pkgs.lib.optional _flags.testing hsPkgs.QuickCheck ++ pkgs.lib.optionals (_flags.testing && _flags.small_base) [
               hsPkgs.filepath
               hsPkgs.process
               hsPkgs.directory

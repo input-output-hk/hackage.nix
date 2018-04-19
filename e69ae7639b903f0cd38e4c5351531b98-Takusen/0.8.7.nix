@@ -47,7 +47,7 @@ let
         };
         exes = {
           takusen_tests = {
-            depends  = (optionals (!(!_flags.buildtests)) [
+            depends  = (pkgs.lib.optionals (!(!_flags.buildtests)) [
               hsPkgs.Takusen
               hsPkgs.base
               hsPkgs.mtl

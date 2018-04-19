@@ -29,10 +29,10 @@ let
             ]
             else [
               hsPkgs.base
-            ]) ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ optionals system.isFreebsd [
+            ]) ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optionals system.isFreebsd [
             hsPkgs.unix
             hsPkgs.directory
-          ]) ++ optionals (system.isOpenbsd || system.isNetbsd) [
+          ]) ++ pkgs.lib.optionals (system.isOpenbsd || system.isNetbsd) [
             hsPkgs.unix
             hsPkgs.directory
           ]) ++ pkgs.lib.optional system.isSolaris hsPkgs.unix;

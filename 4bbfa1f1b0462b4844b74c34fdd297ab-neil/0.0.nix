@@ -36,7 +36,7 @@ let
             depends  = [
               hsPkgs.containers
               hsPkgs.cmdargs
-            ] ++ optionals (!_flags.small) [
+            ] ++ pkgs.lib.optionals (!_flags.small) [
               hsPkgs.json
               hsPkgs.GoogleChart
               hsPkgs.old-time

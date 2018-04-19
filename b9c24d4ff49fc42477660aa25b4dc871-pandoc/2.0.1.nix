@@ -97,7 +97,7 @@ let
             ];
           };
           trypandoc = {
-            depends  = optionals _flags.trypandoc [
+            depends  = pkgs.lib.optionals _flags.trypandoc [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.pandoc
@@ -108,7 +108,7 @@ let
             ];
           };
           weigh-pandoc = {
-            depends  = optionals _flags.weigh-pandoc [
+            depends  = pkgs.lib.optionals _flags.weigh-pandoc [
               hsPkgs.pandoc
               hsPkgs.base
               hsPkgs.text

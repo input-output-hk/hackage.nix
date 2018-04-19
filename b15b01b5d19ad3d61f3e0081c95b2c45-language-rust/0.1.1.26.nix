@@ -29,7 +29,7 @@ let
             hsPkgs.transformers
             hsPkgs.array
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ optionals _flags.usebytestrings [
+          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optionals _flags.usebytestrings [
             hsPkgs.utf8-string
             hsPkgs.bytestring
           ]) ++ pkgs.lib.optional _flags.enablequasiquotes hsPkgs.template-haskell;

@@ -36,7 +36,7 @@ let
               hsPkgs.containers
               hsPkgs.dlist
               hsPkgs.binary
-            ] ++ optionals _flags.testing [
+            ] ++ pkgs.lib.optionals _flags.testing [
               hsPkgs.template-haskell
               hsPkgs.HUnit
               hsPkgs.QuickCheck

@@ -62,7 +62,7 @@ let
             ];
           };
           server-test-suite = {
-            depends  = optionals _flags.server-test [
+            depends  = pkgs.lib.optionals _flags.server-test [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.hspec

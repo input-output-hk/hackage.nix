@@ -39,14 +39,14 @@ let
         };
         exes = {
           stunnel = {
-            depends  = optionals _flags.executable [
+            depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.network
               hsPkgs.haskell98
               hsPkgs.RSA
             ];
           };
           Tests = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.QuickCheck

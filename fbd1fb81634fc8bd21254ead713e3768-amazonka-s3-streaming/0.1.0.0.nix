@@ -35,7 +35,7 @@ let
             hsPkgs.dlist
             hsPkgs.lifted-async
             hsPkgs.mmap
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.semigroups
             hsPkgs.transformers
           ];

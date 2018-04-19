@@ -38,7 +38,7 @@ let
               ]
               else [
                 hsPkgs.time
-              ])) ++ optionals _flags.https [
+              ])) ++ pkgs.lib.optionals _flags.https [
               hsPkgs.bytestring
               hsPkgs.http-client
               hsPkgs.http-client-tls

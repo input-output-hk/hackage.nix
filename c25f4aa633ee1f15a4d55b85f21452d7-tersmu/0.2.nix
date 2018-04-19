@@ -34,7 +34,7 @@ let
             ];
           };
           tersmuBot = {
-            depends  = optionals _flags.ircbot [
+            depends  = pkgs.lib.optionals _flags.ircbot [
               hsPkgs.base
               hsPkgs.base
               hsPkgs.process

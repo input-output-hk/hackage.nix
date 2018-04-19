@@ -34,7 +34,7 @@ let
         };
         exes = {
           demo = {
-            depends  = optionals (!(!_flags.demo)) [
+            depends  = pkgs.lib.optionals (!(!_flags.demo)) [
               hsPkgs.record
               hsPkgs.base-prelude
               hsPkgs.base
@@ -43,7 +43,7 @@ let
         };
         tests = {
           doctest = {
-            depends  = optionals (!(!_flags.doctest)) [
+            depends  = pkgs.lib.optionals (!(!_flags.doctest)) [
               hsPkgs.doctest
               hsPkgs.directory
               hsPkgs.filepath

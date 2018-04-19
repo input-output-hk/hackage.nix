@@ -52,7 +52,7 @@ let
         };
         exes = {
           hgeometry-examples = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.hgeometry
               hsPkgs.lens

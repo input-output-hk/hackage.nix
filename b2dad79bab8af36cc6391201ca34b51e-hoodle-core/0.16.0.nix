@@ -72,7 +72,7 @@ let
             hsPkgs.hoodle-publish
             hsPkgs.hoodle-render
             hsPkgs.hoodle-types
-          ] ++ pkgs.lib.optional _flags.dyre hsPkgs.dyre) ++ optionals _flags.hub [
+          ] ++ pkgs.lib.optional _flags.dyre hsPkgs.dyre) ++ pkgs.lib.optionals _flags.hub [
             hsPkgs.dbus
             hsPkgs.http-client
             hsPkgs.http-conduit

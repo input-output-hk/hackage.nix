@@ -47,7 +47,7 @@ let
         exes = {
           llsdutil = {};
           testllsd = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
             ];

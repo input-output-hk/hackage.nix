@@ -28,11 +28,11 @@ let
             hsPkgs.bytestring
             hsPkgs.cereal
             hsPkgs.tagged
-          ] ++ optionals _flags.tests [
+          ] ++ pkgs.lib.optionals _flags.tests [
             hsPkgs.QuickCheck
             hsPkgs.directory
             hsPkgs.filepath
-          ]) ++ optionals _flags.benchmarks [
+          ]) ++ pkgs.lib.optionals _flags.benchmarks [
             hsPkgs.criterion
             hsPkgs.deepseq
           ];

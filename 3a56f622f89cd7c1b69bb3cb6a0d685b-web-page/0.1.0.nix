@@ -37,7 +37,7 @@ let
         };
         exes = {
           web-page-test = {
-            depends  = optionals _flags.testprogram [
+            depends  = pkgs.lib.optionals _flags.testprogram [
               hsPkgs.base
               hsPkgs.blaze-html
               hsPkgs.bytestring

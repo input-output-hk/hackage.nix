@@ -60,7 +60,7 @@ let
             hsPkgs.yaml
             hsPkgs.vector
             hsPkgs.hslua
-          ] ++ optionals _flags.http-conduit [
+          ] ++ pkgs.lib.optionals _flags.http-conduit [
             hsPkgs.http-conduit
             hsPkgs.http-types
           ];

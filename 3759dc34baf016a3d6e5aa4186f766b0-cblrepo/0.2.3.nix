@@ -41,7 +41,7 @@ let
             ];
           };
           tests = {
-            depends  = optionals _flags.buildtests [
+            depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.base
               hsPkgs.test-framework-th
               hsPkgs.HUnit

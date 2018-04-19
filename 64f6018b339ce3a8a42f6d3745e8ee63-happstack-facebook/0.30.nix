@@ -52,10 +52,10 @@ let
             hsPkgs.web-routes-mtl
             hsPkgs.filepath
             hsPkgs.text
-          ] ++ optionals _flags.base4 [
+          ] ++ pkgs.lib.optionals _flags.base4 [
             hsPkgs.base
             hsPkgs.syb
-          ]) ++ optionals _flags.formlets [
+          ]) ++ pkgs.lib.optionals _flags.formlets [
             hsPkgs.happstack-extra
             hsPkgs.formlets
             hsPkgs.formlets-hsp

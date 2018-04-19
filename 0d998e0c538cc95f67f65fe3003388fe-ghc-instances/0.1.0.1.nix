@@ -42,7 +42,7 @@ let
             then [ hsPkgs.Win32 ]
             else [
               hsPkgs.unix
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-compact) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot) ++ optionals compiler.isGhc [
+            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-compact) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.haskell98
             hsPkgs.haskell2010
             hsPkgs.old-locale

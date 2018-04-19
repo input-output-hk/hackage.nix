@@ -62,7 +62,7 @@ let
             ];
           };
           examples = {
-            depends  = optionals (!_flags.no-examples) [
+            depends  = pkgs.lib.optionals (!_flags.no-examples) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.raw-strings-qq

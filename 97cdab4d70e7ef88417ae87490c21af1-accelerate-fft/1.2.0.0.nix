@@ -28,12 +28,12 @@ let
             hsPkgs.accelerate
             hsPkgs.bytestring
             hsPkgs.lens-accelerate
-          ] ++ optionals _flags.llvm-cpu [
+          ] ++ pkgs.lib.optionals _flags.llvm-cpu [
             hsPkgs.accelerate-llvm
             hsPkgs.accelerate-llvm-native
             hsPkgs.carray
             hsPkgs.fft
-          ]) ++ optionals _flags.llvm-ptx [
+          ]) ++ pkgs.lib.optionals _flags.llvm-ptx [
             hsPkgs.accelerate-llvm
             hsPkgs.accelerate-llvm-ptx
             hsPkgs.containers

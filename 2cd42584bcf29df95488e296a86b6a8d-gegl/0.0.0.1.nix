@@ -37,13 +37,13 @@ let
         };
         exes = {
           example00 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.gegl
             ];
           };
           example01 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.SDL
               hsPkgs.gegl
@@ -53,7 +53,7 @@ let
             ];
           };
           example02 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
               hsPkgs.gegl

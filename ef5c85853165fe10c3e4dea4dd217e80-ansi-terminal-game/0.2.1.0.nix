@@ -37,7 +37,7 @@ let
         };
         exes = {
           alone-in-a-room = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.ansi-terminal-game
             ];

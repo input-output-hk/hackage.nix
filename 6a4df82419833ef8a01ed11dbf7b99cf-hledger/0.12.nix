@@ -64,11 +64,11 @@ let
               hsPkgs.split
               hsPkgs.time
               hsPkgs.utf8-string
-            ] ++ optionals _flags.chart [
+            ] ++ pkgs.lib.optionals _flags.chart [
               hsPkgs.Chart
               hsPkgs.colour
               hsPkgs.gtk2hs-buildtools
-            ]) ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ optionals _flags.web [
+            ]) ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ pkgs.lib.optionals _flags.web [
               hsPkgs.io-storage
               hsPkgs.yesod
               hsPkgs.hamlet

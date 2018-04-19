@@ -30,7 +30,7 @@ let
         };
         exes = {
           html5-entity-generate = {
-            depends  = optionals _flags.generator [
+            depends  = pkgs.lib.optionals _flags.generator [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.unordered-containers

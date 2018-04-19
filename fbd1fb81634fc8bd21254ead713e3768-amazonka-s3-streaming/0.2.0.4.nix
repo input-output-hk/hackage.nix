@@ -39,7 +39,7 @@ let
             hsPkgs.mmap
             hsPkgs.deepseq
             hsPkgs.http-client
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.semigroups
             hsPkgs.transformers
           ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.foundation;

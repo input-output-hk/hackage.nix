@@ -31,7 +31,7 @@ let
             hsPkgs.constraints
             hsPkgs.profunctors
             hsPkgs.singletons
-          ] ++ pkgs.lib.optional _flags.aeson hsPkgs.aeson) ++ optionals _flags.bytes [
+          ] ++ pkgs.lib.optional _flags.aeson hsPkgs.aeson) ++ pkgs.lib.optionals _flags.bytes [
             hsPkgs.bytes
             hsPkgs.binary
             hsPkgs.cereal

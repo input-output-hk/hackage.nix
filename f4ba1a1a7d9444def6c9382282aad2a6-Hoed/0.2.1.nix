@@ -40,7 +40,7 @@ let
         };
         exes = {
           hoed-examples-Foldl = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -48,7 +48,7 @@ let
             ];
           };
           hoed-examples-HeadOnEmpty1 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -56,7 +56,7 @@ let
             ];
           };
           hoed-examples-Ho = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -64,7 +64,7 @@ let
             ];
           };
           hoed-examples-HeadOnEmpty2 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -72,7 +72,7 @@ let
             ];
           };
           hoed-examples-IndirectRecursion = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -80,7 +80,7 @@ let
             ];
           };
           hoed-examples-Pretty = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -89,7 +89,7 @@ let
             ];
           };
           hoed-examples-Example1 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -97,7 +97,7 @@ let
             ];
           };
           hoed-examples-Example3 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -105,7 +105,7 @@ let
             ];
           };
           hoed-examples-Example4 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -113,7 +113,7 @@ let
             ];
           };
           hoed-examples-Insort1 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -121,7 +121,7 @@ let
             ];
           };
           hoed-examples-Insort2 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -129,7 +129,7 @@ let
             ];
           };
           hoed-examples-DoublingServer1 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -138,7 +138,7 @@ let
             ];
           };
           hoed-examples-DoublingServer2 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -147,7 +147,7 @@ let
             ];
           };
           hoed-examples-DoublingServer3 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -156,7 +156,7 @@ let
             ];
           };
           hoed-examples-DoublingServer4 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -165,7 +165,7 @@ let
             ];
           };
           hoed-examples-DoublingServer5 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -174,7 +174,7 @@ let
             ];
           };
           hoed-examples-Hashmap = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -183,7 +183,7 @@ let
             ];
           };
           hoed-examples-Responsibility = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -192,7 +192,7 @@ let
             ];
           };
           hoed-examples-TightRope1 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -200,7 +200,7 @@ let
             ];
           };
           hoed-examples-TightRope2 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -208,7 +208,7 @@ let
             ];
           };
           hoed-examples-TightRope3 = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -216,7 +216,7 @@ let
             ];
           };
           hoed-examples-AskName = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -224,7 +224,7 @@ let
             ];
           };
           hoed-tests-DoublingServer = {
-            depends  = optionals _flags.validate [
+            depends  = pkgs.lib.optionals _flags.validate [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -233,7 +233,7 @@ let
             ];
           };
           hoed-tests-Insort2 = {
-            depends  = optionals _flags.validate [
+            depends  = pkgs.lib.optionals _flags.validate [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -241,7 +241,7 @@ let
             ];
           };
           hoed-tests-Example1 = {
-            depends  = optionals _flags.validate [
+            depends  = pkgs.lib.optionals _flags.validate [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -249,7 +249,7 @@ let
             ];
           };
           hoed-tests-Example3 = {
-            depends  = optionals _flags.validate [
+            depends  = pkgs.lib.optionals _flags.validate [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -257,7 +257,7 @@ let
             ];
           };
           hoed-tests-Example4 = {
-            depends  = optionals _flags.validate [
+            depends  = pkgs.lib.optionals _flags.validate [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui
@@ -265,7 +265,7 @@ let
             ];
           };
           hoed-tests-IndirectRecursion = {
-            depends  = optionals _flags.validate [
+            depends  = pkgs.lib.optionals _flags.validate [
               hsPkgs.base
               hsPkgs.Hoed
               hsPkgs.threepenny-gui

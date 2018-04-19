@@ -28,7 +28,7 @@ let
             hsPkgs.profunctors
             hsPkgs.semigroupoids
             hsPkgs.base
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.semigroups
             hsPkgs.transformers
           ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.bifunctors) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;

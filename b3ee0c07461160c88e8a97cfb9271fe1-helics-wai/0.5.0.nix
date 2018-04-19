@@ -33,7 +33,7 @@ let
         };
         exes = {
           helics-wai-example = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.wai
               hsPkgs.helics-wai

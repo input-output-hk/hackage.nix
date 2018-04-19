@@ -50,7 +50,7 @@ let
         };
         exes = {
           penny-test = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.random-shuffle
               hsPkgs.base
@@ -76,7 +76,7 @@ let
             ];
           };
           penny-gibberish = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.random-shuffle
               hsPkgs.random

@@ -29,7 +29,7 @@ let
         };
         exes = {
           stream-monad-benchmarks = {
-            depends  = optionals _flags.benchmarks [
+            depends  = pkgs.lib.optionals _flags.benchmarks [
               hsPkgs.base
               hsPkgs.logict
               hsPkgs.criterion

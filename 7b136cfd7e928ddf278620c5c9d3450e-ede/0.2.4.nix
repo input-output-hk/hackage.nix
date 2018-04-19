@@ -47,7 +47,7 @@ let
         };
         exes = {
           ede = {
-            depends  = optionals (!(!_flags.build-executable)) [
+            depends  = pkgs.lib.optionals (!(!_flags.build-executable)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.bytestring

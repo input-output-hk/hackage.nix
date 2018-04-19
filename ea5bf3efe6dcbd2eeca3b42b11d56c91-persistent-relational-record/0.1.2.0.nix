@@ -57,7 +57,7 @@ let
             ];
           };
           examples = {
-            depends  = optionals (!(!_flags.test-examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-examples)) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.conduit

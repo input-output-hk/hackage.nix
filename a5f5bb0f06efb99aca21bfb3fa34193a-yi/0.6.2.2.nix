@@ -65,21 +65,21 @@ let
               hsPkgs.utf8-string
               hsPkgs.uniplate
               hsPkgs.unix-compat
-            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional (_flags.vty && !system.isWindows) hsPkgs.vty) ++ optionals _flags.pango ([
+            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional (_flags.vty && !system.isWindows) hsPkgs.vty) ++ pkgs.lib.optionals _flags.pango ([
               hsPkgs.gtk
               hsPkgs.glib
-            ] ++ pkgs.lib.optional _flags.gnome hsPkgs.gconf)) ++ optionals _flags.cocoa [
+            ] ++ pkgs.lib.optional _flags.gnome hsPkgs.gconf)) ++ pkgs.lib.optionals _flags.cocoa [
               hsPkgs.HOC
               hsPkgs.HOC-AppKit
               hsPkgs.HOC-Foundation
-            ]) ++ pkgs.lib.optional _flags.ghcinterpreter hsPkgs.hint) ++ optionals _flags.scion [
+            ]) ++ pkgs.lib.optional _flags.ghcinterpreter hsPkgs.hint) ++ pkgs.lib.optionals _flags.scion [
               hsPkgs.ghc
               hsPkgs.ghc-syb
               hsPkgs.scion
-            ]) ++ optionals _flags.ghcapi [
+            ]) ++ pkgs.lib.optionals _flags.ghcapi [
               hsPkgs.ghc
               hsPkgs.old-time
-            ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.cautious-file) ++ optionals _flags.testing [
+            ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.cautious-file) ++ pkgs.lib.optionals _flags.testing [
               hsPkgs.QuickCheck
               hsPkgs.random
             ];

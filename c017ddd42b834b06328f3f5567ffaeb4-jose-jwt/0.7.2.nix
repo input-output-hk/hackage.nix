@@ -58,7 +58,7 @@ let
             ];
           };
           doctests = {
-            depends  = optionals (!(!_flags.doctest)) [
+            depends  = pkgs.lib.optionals (!(!_flags.doctest)) [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.cryptonite

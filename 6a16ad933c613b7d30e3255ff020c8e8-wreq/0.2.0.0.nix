@@ -42,7 +42,7 @@ let
         };
         exes = {
           httpbin = {
-            depends  = optionals (!(!_flags.httpbin)) [
+            depends  = pkgs.lib.optionals (!(!_flags.httpbin)) [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
               hsPkgs.base
@@ -75,7 +75,7 @@ let
             ];
           };
           doctest = {
-            depends  = optionals (!(!_flags.doctest)) [
+            depends  = pkgs.lib.optionals (!(!_flags.doctest)) [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.doctest

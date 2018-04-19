@@ -39,7 +39,7 @@ let
         };
         exes = {
           runtests = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.hspec

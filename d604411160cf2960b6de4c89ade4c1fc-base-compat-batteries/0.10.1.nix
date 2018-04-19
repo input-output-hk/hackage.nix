@@ -23,10 +23,10 @@ let
           depends  = ((([
             hsPkgs.base
             hsPkgs.base-compat
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.tagged) ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.tagged) ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.nats
             hsPkgs.void
-          ]) ++ optionals (!compiler.isGhc) [
+          ]) ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
             hsPkgs.transformers

@@ -32,7 +32,7 @@ let
             hsPkgs.time
             hsPkgs.unix
             hsPkgs.SHA
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.old-locale
             hsPkgs.time
           ];

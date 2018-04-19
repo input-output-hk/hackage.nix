@@ -42,7 +42,7 @@ let
         };
         exes = {
           gsl-ode = {
-            depends  = optionals _flags.gsl-example [
+            depends  = pkgs.lib.optionals _flags.gsl-example [
               hsPkgs.base
               hsPkgs.inline-c
               hsPkgs.vector

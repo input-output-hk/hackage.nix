@@ -37,7 +37,7 @@ let
             hsPkgs.async
             hsPkgs.io-streams
             hsPkgs.GenericPretty
-          ] ++ pkgs.lib.optional _flags.hydra hsPkgs.hydra-print) ++ optionals _flags.fusion [
+          ] ++ pkgs.lib.optional _flags.hydra hsPkgs.hydra-print) ++ pkgs.lib.optionals _flags.fusion [
             hsPkgs.handa-gdata
             hsPkgs.http-conduit
           ];

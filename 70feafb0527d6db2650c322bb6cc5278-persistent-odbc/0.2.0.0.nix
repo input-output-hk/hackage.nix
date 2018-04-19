@@ -40,14 +40,14 @@ let
             hsPkgs.persistent-template
             hsPkgs.persistent
             hsPkgs.bytestring
-          ] ++ optionals _flags.tester [
+          ] ++ pkgs.lib.optionals _flags.tester [
             hsPkgs.blaze-html
             hsPkgs.esqueleto
           ];
         };
         exes = {
           TestODBC = {
-            depends  = optionals _flags.tester [
+            depends  = pkgs.lib.optionals _flags.tester [
               hsPkgs.base
               hsPkgs.persistent-odbc
               hsPkgs.blaze-html

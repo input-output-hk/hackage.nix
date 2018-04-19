@@ -32,7 +32,7 @@ let
         };
         exes = {
           search-demo = {
-            depends  = optionals (!(!_flags.build-search-demo)) [
+            depends  = pkgs.lib.optionals (!(!_flags.build-search-demo)) [
               hsPkgs.full-text-search
               hsPkgs.base
               hsPkgs.text

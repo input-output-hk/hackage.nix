@@ -30,7 +30,7 @@ let
             hsPkgs.streaming-commons
             hsPkgs.async
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.process;
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.Shell32
             pkgs.msvcrt
           ];

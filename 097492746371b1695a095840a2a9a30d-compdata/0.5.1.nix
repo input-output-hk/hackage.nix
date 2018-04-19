@@ -36,7 +36,7 @@ let
         };
         exes = {
           benchmark = {
-            depends  = optionals (!(!_flags.benchmark)) [
+            depends  = pkgs.lib.optionals (!(!_flags.benchmark)) [
               hsPkgs.base
               hsPkgs.template-haskell
               hsPkgs.containers

@@ -38,7 +38,7 @@ let
             hsPkgs.time
             hsPkgs.unordered-containers
             hsPkgs.vector
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.ghc-prim
             hsPkgs.dlist
           ];

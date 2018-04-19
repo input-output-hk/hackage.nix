@@ -25,7 +25,7 @@ let
         Cabal = {
           depends  = ((([
             hsPkgs.filepath
-          ] ++ pkgs.lib.optional _flags.base4 hsPkgs.base) ++ pkgs.lib.optional _flags.base3 hsPkgs.base) ++ pkgs.lib.optional (!_flags.base3 && !_flags.base4) hsPkgs.base) ++ optionals (_flags.base3 || _flags.base4) [
+          ] ++ pkgs.lib.optional _flags.base4 hsPkgs.base) ++ pkgs.lib.optional _flags.base3 hsPkgs.base) ++ pkgs.lib.optional (!_flags.base3 && !_flags.base4) hsPkgs.base) ++ pkgs.lib.optionals (_flags.base3 || _flags.base4) [
             hsPkgs.directory
             hsPkgs.process
             hsPkgs.old-time

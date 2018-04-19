@@ -22,7 +22,7 @@ let
       };
       components = {
         hp2any-graph = {
-          depends  = optionals (!_flags.serveronly) [
+          depends  = pkgs.lib.optionals (!_flags.serveronly) [
             hsPkgs.base
             hsPkgs.hp2any-core
             hsPkgs.OpenGL
@@ -30,7 +30,7 @@ let
         };
         exes = {
           hp2any-graph = {
-            depends  = optionals (!_flags.serveronly) [
+            depends  = pkgs.lib.optionals (!_flags.serveronly) [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.directory

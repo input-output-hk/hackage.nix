@@ -23,7 +23,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.base
             hsPkgs.syb
             hsPkgs.ghc-prim

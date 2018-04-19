@@ -33,7 +33,7 @@ let
         };
         exes = {
           echo-server = {
-            depends  = optionals _flags.build-examples [
+            depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.aeson
               hsPkgs.async
               hsPkgs.auto-update
@@ -54,7 +54,7 @@ let
             ];
           };
           echo-client = {
-            depends  = optionals _flags.build-examples [
+            depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.aeson
               hsPkgs.async
               hsPkgs.base
@@ -74,7 +74,7 @@ let
         };
         tests = {
           hlint = {
-            depends  = optionals (!(!_flags.hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];

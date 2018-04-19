@@ -74,15 +74,15 @@ let
             then [ hsPkgs.Win32 ]
             else [
               hsPkgs.unix
-            ])) ++ optionals (compiler.isGhc && compiler.isGhc) ([
+            ])) ++ pkgs.lib.optionals (compiler.isGhc && compiler.isGhc) ([
             hsPkgs.ghc
             hsPkgs.ghc-boot
             hsPkgs.directory
-          ] ++ pkgs.lib.optional _flags.docs hsPkgs.haddock-api)) ++ optionals (compiler.isGhc && compiler.isGhc) ([
+          ] ++ pkgs.lib.optional _flags.docs hsPkgs.haddock-api)) ++ pkgs.lib.optionals (compiler.isGhc && compiler.isGhc) ([
             hsPkgs.ghc
             hsPkgs.ghc-boot
             hsPkgs.directory
-          ] ++ pkgs.lib.optional _flags.docs hsPkgs.haddock-api)) ++ optionals compiler.isGhc ([
+          ] ++ pkgs.lib.optional _flags.docs hsPkgs.haddock-api)) ++ pkgs.lib.optionals compiler.isGhc ([
             hsPkgs.ghc
             hsPkgs.bin-package-db
             hsPkgs.directory

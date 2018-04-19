@@ -33,7 +33,7 @@ let
         };
         tests = {
           tests = {
-            depends  = optionals (!(!_flags.test-properties)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.transformers

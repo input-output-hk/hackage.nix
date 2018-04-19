@@ -30,14 +30,14 @@ let
             hsPkgs.protolude
             hsPkgs.time
             hsPkgs.transformers
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];
         };
         tests = {
           doctest = {
-            depends  = optionals (!(!_flags.test-doctests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.QuickCheck
               hsPkgs.base
               hsPkgs.doctest
@@ -46,7 +46,7 @@ let
             ];
           };
           hlint = {
-            depends  = optionals (!(!_flags.test-hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
               hsPkgs.protolude

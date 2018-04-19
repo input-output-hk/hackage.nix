@@ -55,7 +55,7 @@ let
         };
         exes = {
           example = {
-            depends  = optionals _flags.build-examples ([
+            depends  = pkgs.lib.optionals _flags.build-examples ([
               hsPkgs.base
               hsPkgs.base-compat
               hsPkgs.blaze-html

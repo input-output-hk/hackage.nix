@@ -55,7 +55,7 @@ let
         };
         exes = {
           PollExample = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.containers

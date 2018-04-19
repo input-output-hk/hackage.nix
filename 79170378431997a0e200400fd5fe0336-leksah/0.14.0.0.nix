@@ -84,7 +84,7 @@ let
             else [
               hsPkgs.gtk
               hsPkgs.gtksourceview2
-            ])) ++ optionals _flags.webkit ([
+            ])) ++ pkgs.lib.optionals _flags.webkit ([
             hsPkgs.jsaddle
             hsPkgs.ghcjs-codemirror
             hsPkgs.hamlet
@@ -99,7 +99,7 @@ let
             else [
               hsPkgs.webkit
               hsPkgs.webkit-javascriptcore
-            ]))) ++ optionals (_flags.loc && system.isLinux) [
+            ]))) ++ pkgs.lib.optionals (_flags.loc && system.isLinux) [
             hsPkgs.hgettext
             hsPkgs.setlocale
           ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.binary-shared;
@@ -111,14 +111,14 @@ let
               hsPkgs.leksah
               hsPkgs.base
               hsPkgs.gtk3
-            ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ optionals (system.isLinux && _flags.loc) [
+            ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optionals (system.isLinux && _flags.loc) [
               hsPkgs.hgettext
               hsPkgs.setlocale
             ];
             libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
           };
           bewleksah = {
-            depends  = optionals (!(!_flags.webkit)) ([
+            depends  = pkgs.lib.optionals (!(!_flags.webkit)) ([
               hsPkgs.leksah
               hsPkgs.base
               hsPkgs.jsaddle

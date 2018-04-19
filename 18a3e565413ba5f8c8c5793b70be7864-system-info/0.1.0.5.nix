@@ -20,7 +20,7 @@ let
       };
       components = {
         system-info = {
-          depends  = pkgs.lib.optional (system.isLinux || system.isFreebsd) hsPkgs.base ++ optionals system.isWindows [
+          depends  = pkgs.lib.optional (system.isLinux || system.isFreebsd) hsPkgs.base ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.base
             hsPkgs.Win32
           ];

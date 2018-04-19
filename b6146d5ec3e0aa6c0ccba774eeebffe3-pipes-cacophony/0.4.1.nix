@@ -34,7 +34,7 @@ let
         };
         exes = {
           loopback = {
-            depends  = optionals _flags.build-examples [
+            depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.cacophony
@@ -47,7 +47,7 @@ let
         };
         tests = {
           hlint = {
-            depends  = optionals (!(!_flags.hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];

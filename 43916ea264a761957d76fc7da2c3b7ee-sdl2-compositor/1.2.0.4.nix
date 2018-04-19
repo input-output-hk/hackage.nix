@@ -38,7 +38,7 @@ let
         };
         exes = {
           sdl2-comp-example = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.sdl2
               hsPkgs.stm
@@ -52,7 +52,7 @@ let
             ];
           };
           sdl2-comp-res-independent = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.sdl2
               hsPkgs.stm

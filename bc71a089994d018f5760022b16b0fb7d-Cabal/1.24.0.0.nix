@@ -65,7 +65,7 @@ let
               hsPkgs.bytestring
               hsPkgs.regex-posix
               hsPkgs.old-time
-            ] ++ optionals (!system.isWindows) [
+            ] ++ pkgs.lib.optionals (!system.isWindows) [
               hsPkgs.unix
               hsPkgs.exceptions
             ];

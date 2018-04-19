@@ -48,7 +48,7 @@ let
             hsPkgs.vector
             hsPkgs.lifted-async
             hsPkgs.text
-          ] ++ pkgs.lib.optional _flags.browser hsPkgs.aeson) ++ optionals (!_flags.browser) [
+          ] ++ pkgs.lib.optional _flags.browser hsPkgs.aeson) ++ pkgs.lib.optionals (!_flags.browser) [
             hsPkgs.servant-server
             hsPkgs.wai
             hsPkgs.aeson

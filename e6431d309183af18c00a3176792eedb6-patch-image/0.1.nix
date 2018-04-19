@@ -41,7 +41,7 @@ let
             ];
           };
           patch-image-draft = {
-            depends  = optionals _flags.builddraft [
+            depends  = pkgs.lib.optionals _flags.builddraft [
               hsPkgs.JuicyPixels
               hsPkgs.GeomAlgLib
               hsPkgs.utility-ht

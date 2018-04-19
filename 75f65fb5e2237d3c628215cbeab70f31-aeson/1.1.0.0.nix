@@ -49,7 +49,7 @@ let
             ]
             else [
               hsPkgs.bytestring
-            ])) ++ optionals (!compiler.isGhc) [
+            ])) ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.semigroups
             hsPkgs.transformers
             hsPkgs.transformers-compat
@@ -94,7 +94,7 @@ let
               ]
               else [
                 hsPkgs.bytestring
-              ])) ++ optionals (!compiler.isGhc) [
+              ])) ++ pkgs.lib.optionals (!compiler.isGhc) [
               hsPkgs.semigroups
               hsPkgs.transformers
               hsPkgs.transformers-compat

@@ -54,7 +54,7 @@ let
             hsPkgs.test-framework
             hsPkgs.test-framework-hunit
             hsPkgs.test-framework-quickcheck2
-          ] ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-ptx hsPkgs.accelerate-llvm-ptx) ++ optionals _flags.codespeed [
+          ] ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-ptx hsPkgs.accelerate-llvm-ptx) ++ pkgs.lib.optionals _flags.codespeed [
             hsPkgs.aeson
             hsPkgs.bytestring
             hsPkgs.HTTP
@@ -69,7 +69,7 @@ let
         };
         exes = {
           accelerate-smvm = {
-            depends  = optionals (!(!_flags.smvm)) [
+            depends  = pkgs.lib.optionals (!(!_flags.smvm)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples
@@ -83,7 +83,7 @@ let
             ];
           };
           accelerate-crystal = {
-            depends  = optionals (!(!_flags.crystal)) [
+            depends  = pkgs.lib.optionals (!(!_flags.crystal)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples
@@ -93,7 +93,7 @@ let
             ];
           };
           accelerate-tunnel = {
-            depends  = optionals (!(!_flags.tunnel)) [
+            depends  = pkgs.lib.optionals (!(!_flags.tunnel)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples
@@ -104,7 +104,7 @@ let
             ];
           };
           accelerate-canny = {
-            depends  = optionals (!(!_flags.canny)) [
+            depends  = pkgs.lib.optionals (!(!_flags.canny)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples
@@ -117,7 +117,7 @@ let
             ];
           };
           accelerate-mandelbrot = {
-            depends  = optionals (!(!_flags.mandelbrot)) [
+            depends  = pkgs.lib.optionals (!(!_flags.mandelbrot)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples
@@ -129,7 +129,7 @@ let
             ];
           };
           accelerate-fluid = {
-            depends  = optionals (!(!_flags.fluid)) [
+            depends  = pkgs.lib.optionals (!(!_flags.fluid)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples
@@ -142,7 +142,7 @@ let
             ];
           };
           accelerate-nbody = {
-            depends  = optionals (!(!_flags.nbody)) [
+            depends  = pkgs.lib.optionals (!(!_flags.nbody)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples
@@ -154,7 +154,7 @@ let
             ];
           };
           accelerate-smoothlife = {
-            depends  = optionals (!(!_flags.smoothlife)) [
+            depends  = pkgs.lib.optionals (!(!_flags.smoothlife)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples
@@ -167,7 +167,7 @@ let
             ];
           };
           accelerate-hashcat = {
-            depends  = optionals (!(!_flags.hashcat)) [
+            depends  = pkgs.lib.optionals (!(!_flags.hashcat)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples
@@ -180,7 +180,7 @@ let
             ];
           };
           accelerate-fft = {
-            depends  = optionals (!(!_flags.fft)) [
+            depends  = pkgs.lib.optionals (!(!_flags.fft)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples
@@ -192,7 +192,7 @@ let
             ];
           };
           accelerate-pagerank = {
-            depends  = optionals (!(!_flags.pagerank)) [
+            depends  = pkgs.lib.optionals (!(!_flags.pagerank)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples
@@ -206,7 +206,7 @@ let
             ];
           };
           accelerate-ray = {
-            depends  = optionals (!(!_flags.ray)) [
+            depends  = pkgs.lib.optionals (!(!_flags.ray)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples
@@ -220,7 +220,7 @@ let
             ];
           };
           accelerate-kmeans = {
-            depends  = optionals (!(!_flags.kmeans)) [
+            depends  = pkgs.lib.optionals (!(!_flags.kmeans)) [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.accelerate-examples

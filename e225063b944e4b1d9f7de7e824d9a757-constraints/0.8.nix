@@ -29,7 +29,7 @@ let
             hsPkgs.mtl
             hsPkgs.transformers
             hsPkgs.transformers-compat
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.newtype
             hsPkgs.tagged
           ];

@@ -27,7 +27,7 @@ let
         };
         exes = {
           llvm-diff-ffi = {
-            depends  = optionals _flags.buildtools [
+            depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.utility-ht
               hsPkgs.regex-posix
               hsPkgs.containers
@@ -35,7 +35,7 @@ let
             ];
           };
           llvm-function-mangler = {
-            depends  = optionals _flags.buildtools [
+            depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.utility-ht
               hsPkgs.regex-posix
               hsPkgs.containers
@@ -43,7 +43,7 @@ let
             ];
           };
           llvm-intrinsic-mangler = {
-            depends  = optionals _flags.buildtools [
+            depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.bytestring
               hsPkgs.base
             ];

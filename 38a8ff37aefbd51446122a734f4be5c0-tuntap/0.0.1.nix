@@ -24,7 +24,7 @@ let
             hsPkgs.base
             hsPkgs.bytestring
           ] ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optional (system.isOsx || system.isFreebsd) hsPkgs.unix;
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.Iphlpapi
             pkgs.ws2_32
           ];

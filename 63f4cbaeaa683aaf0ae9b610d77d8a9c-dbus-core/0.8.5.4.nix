@@ -39,7 +39,7 @@ let
         };
         exes = {
           dbus-core-tests = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

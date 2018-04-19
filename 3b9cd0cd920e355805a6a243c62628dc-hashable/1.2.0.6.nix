@@ -27,7 +27,7 @@ let
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.ghc-prim
             hsPkgs.text
           ]) ++ pkgs.lib.optional (compiler.isGhc && _flags.integer-gmp) hsPkgs.integer-gmp;
@@ -59,7 +59,7 @@ let
               hsPkgs.ghc-prim
               hsPkgs.siphash
               hsPkgs.text
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.ghc-prim
               hsPkgs.text
             ]) ++ pkgs.lib.optional (compiler.isGhc && _flags.integer-gmp) hsPkgs.integer-gmp;

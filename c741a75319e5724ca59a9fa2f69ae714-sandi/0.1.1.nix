@@ -29,7 +29,7 @@ let
         };
         exes = {
           tests = {
-            depends  = optionals _flags.tests [
+            depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.sandi
               hsPkgs.base
               hsPkgs.bytestring

@@ -22,7 +22,7 @@ let
       };
       components = {
         packdeps = {
-          depends  = optionals (!_flags.web) [
+          depends  = pkgs.lib.optionals (!_flags.web) [
             hsPkgs.base
             hsPkgs.tar
             hsPkgs.split
@@ -39,7 +39,7 @@ let
           packdeps = {};
           packdeps-yesod = {};
           save-newest = {
-            depends  = optionals _flags.web [
+            depends  = pkgs.lib.optionals _flags.web [
               hsPkgs.yesod-newsfeed
               hsPkgs.yesod
               hsPkgs.hamlet

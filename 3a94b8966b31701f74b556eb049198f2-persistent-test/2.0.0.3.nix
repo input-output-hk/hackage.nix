@@ -75,21 +75,21 @@ let
             hsPkgs.exceptions
             hsPkgs.tagged
             hsPkgs.old-locale
-          ] ++ pkgs.lib.optional (!_flags.postgresql && !_flags.mysql && !_flags.mongodb && !_flags.zookeeper) hsPkgs.persistent-sqlite) ++ optionals _flags.postgresql [
+          ] ++ pkgs.lib.optional (!_flags.postgresql && !_flags.mysql && !_flags.mongodb && !_flags.zookeeper) hsPkgs.persistent-sqlite) ++ pkgs.lib.optionals _flags.postgresql [
             hsPkgs.persistent-postgresql
             hsPkgs.postgresql-simple
             hsPkgs.postgresql-libpq
-          ]) ++ optionals _flags.mysql [
+          ]) ++ pkgs.lib.optionals _flags.mysql [
             hsPkgs.persistent-mysql
             hsPkgs.mysql-simple
             hsPkgs.mysql
-          ]) ++ optionals _flags.mongodb [
+          ]) ++ pkgs.lib.optionals _flags.mongodb [
             hsPkgs.persistent-mongoDB
             hsPkgs.mongoDB
             hsPkgs.cereal
             hsPkgs.bson
             hsPkgs.process
-          ]) ++ optionals _flags.zookeeper [
+          ]) ++ pkgs.lib.optionals _flags.zookeeper [
             hsPkgs.persistent-zookeeper
             hsPkgs.hzk
             hsPkgs.binary

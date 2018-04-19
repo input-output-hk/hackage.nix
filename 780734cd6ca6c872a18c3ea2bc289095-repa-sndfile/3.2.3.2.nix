@@ -26,7 +26,7 @@ let
             hsPkgs.base
             hsPkgs.hsndfile
             hsPkgs.repa
-          ] ++ optionals _flags.example [
+          ] ++ pkgs.lib.optionals _flags.example [
             hsPkgs.hsndfile-vector
             hsPkgs.vector
           ];

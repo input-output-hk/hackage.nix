@@ -33,7 +33,7 @@ let
         semigroups = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals compiler.isGhc ((((((((((pkgs.lib.optional compiler.isGhc hsPkgs.nats ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ (if _flags.bytestring && _flags.bytestring-builder
+          ] ++ pkgs.lib.optionals compiler.isGhc ((((((((((pkgs.lib.optional compiler.isGhc hsPkgs.nats ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ (if _flags.bytestring && _flags.bytestring-builder
             then [
               hsPkgs.bytestring
               hsPkgs.bytestring-builder

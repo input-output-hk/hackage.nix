@@ -41,7 +41,7 @@ let
             hsPkgs.utf8-string
             hsPkgs.old-locale
             hsPkgs.unix-compat
-          ] ++ optionals (!_flags.no-hxt) [
+          ] ++ pkgs.lib.optionals (!_flags.no-hxt) [
             hsPkgs.hxt
             hsPkgs.hxt-unicode
           ];
@@ -68,7 +68,7 @@ let
               hsPkgs.cmdargs
               hsPkgs.directory
               hsPkgs.unix-compat
-            ] ++ optionals (!_flags.no-hxt) [
+            ] ++ pkgs.lib.optionals (!_flags.no-hxt) [
               hsPkgs.hxt
               hsPkgs.hxt-unicode
             ];

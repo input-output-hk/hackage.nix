@@ -42,7 +42,7 @@ let
         };
         exes = {
           test = {
-            depends  = optionals _flags.buildtests ([
+            depends  = pkgs.lib.optionals _flags.buildtests ([
               hsPkgs.bytestring
               hsPkgs.QuickCheck
             ] ++ (if _flags.splitbase
@@ -52,7 +52,7 @@ let
               else [ hsPkgs.base ]));
           };
           speedtest = {
-            depends  = optionals _flags.buildtests ([
+            depends  = pkgs.lib.optionals _flags.buildtests ([
               hsPkgs.sample-frame
               hsPkgs.deepseq
             ] ++ [ hsPkgs.base ]);

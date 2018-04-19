@@ -41,7 +41,7 @@ let
               else [ hsPkgs.base ]);
           };
           regression-suite = {
-            depends  = optionals _flags.travis [
+            depends  = pkgs.lib.optionals _flags.travis [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.shelly

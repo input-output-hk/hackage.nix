@@ -35,7 +35,7 @@ let
         };
         exes = {
           resize = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -47,7 +47,7 @@ let
             ];
           };
           extent = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -59,7 +59,7 @@ let
             ];
           };
           floodfill = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -71,7 +71,7 @@ let
             ];
           };
           cyclops = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -83,7 +83,7 @@ let
             ];
           };
           clipmask = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -95,7 +95,7 @@ let
             ];
           };
           paint-trans = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -107,7 +107,7 @@ let
             ];
           };
           round-mask = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -119,7 +119,7 @@ let
             ];
           };
           make-tile = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -131,7 +131,7 @@ let
             ];
           };
           draw-shapes = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -143,7 +143,7 @@ let
             ];
           };
           text-effects = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -155,7 +155,7 @@ let
             ];
           };
           gel = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -168,7 +168,7 @@ let
             ];
           };
           reflect = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -180,7 +180,7 @@ let
             ];
           };
           3dlogo = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -192,7 +192,7 @@ let
             ];
           };
           affine = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -204,7 +204,7 @@ let
             ];
           };
           grayscale = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -216,7 +216,7 @@ let
             ];
           };
           modulate = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -228,7 +228,7 @@ let
             ];
           };
           landscape3d = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -240,7 +240,7 @@ let
             ];
           };
           tilt-shift = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -252,7 +252,7 @@ let
             ];
           };
           bunny = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -264,7 +264,7 @@ let
             ];
           };
           pixel-mod = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers
@@ -276,7 +276,7 @@ let
             ];
           };
           wandtest = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
               hsPkgs.transformers

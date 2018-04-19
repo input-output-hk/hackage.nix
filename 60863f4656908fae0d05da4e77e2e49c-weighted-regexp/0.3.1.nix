@@ -30,13 +30,13 @@ let
         };
         exes = {
           quickcheck-re = {
-            depends  = optionals _flags.quickcheck [
+            depends  = pkgs.lib.optionals _flags.quickcheck [
               hsPkgs.base
               hsPkgs.QuickCheck
             ];
           };
           criterion-re = {
-            depends  = optionals _flags.criterion [
+            depends  = pkgs.lib.optionals _flags.criterion [
               hsPkgs.base
               hsPkgs.criterion
             ];

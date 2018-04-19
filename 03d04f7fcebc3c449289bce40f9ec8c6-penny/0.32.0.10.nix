@@ -56,7 +56,7 @@ let
         };
         exes = {
           penny-gibberish = {
-            depends  = optionals _flags.build-gibberish [
+            depends  = pkgs.lib.optionals _flags.build-gibberish [
               hsPkgs.penny
               hsPkgs.base
               hsPkgs.multiarg

@@ -42,7 +42,7 @@ let
         };
         exes = {
           AlignNewickTrees = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.cmdargs
               hsPkgs.containers
@@ -60,7 +60,7 @@ let
             ];
           };
           AffineAlignNewickTreesSmall = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.cmdargs
               hsPkgs.containers

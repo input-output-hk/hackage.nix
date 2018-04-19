@@ -31,7 +31,7 @@ let
             hsPkgs.bindings-DSL
             hsPkgs.vector
           ];
-          libs = optionals (system.isWindows && _flags.bundle) ([
+          libs = pkgs.lib.optionals (system.isWindows && _flags.bundle) ([
             pkgs.winmm
             pkgs.ole32
           ] ++ pkgs.lib.optional _flags.wdmks pkgs.Setupapi);

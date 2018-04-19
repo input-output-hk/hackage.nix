@@ -26,7 +26,7 @@ let
         };
         exes = {
           hsyslog-example = {
-            depends  = optionals _flags.install-examples [
+            depends  = pkgs.lib.optionals _flags.install-examples [
               hsPkgs.base
               hsPkgs.hsyslog
               hsPkgs.bytestring

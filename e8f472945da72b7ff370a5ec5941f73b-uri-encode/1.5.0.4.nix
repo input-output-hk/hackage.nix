@@ -34,7 +34,7 @@ let
         };
         exes = {
           uri-encode = {
-            depends  = optionals _flags.tools ([
+            depends  = pkgs.lib.optionals _flags.tools ([
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.text
@@ -44,7 +44,7 @@ let
               else [ hsPkgs.network ]));
           };
           uri-decode = {
-            depends  = optionals _flags.tools ([
+            depends  = pkgs.lib.optionals _flags.tools ([
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.text

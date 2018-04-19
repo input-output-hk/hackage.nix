@@ -34,7 +34,7 @@ let
       };
       components = {
         darcs-beta = {
-          depends  = optionals (!(!_flags.library)) ((((([
+          depends  = pkgs.lib.optionals (!(!_flags.library)) ((((([
             hsPkgs.base
             hsPkgs.extensible-exceptions
             hsPkgs.regex-compat
@@ -56,10 +56,10 @@ let
             hsPkgs.array
             hsPkgs.random
             hsPkgs.zlib
-          ] ++ optionals system.isWindows [
+          ] ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.unix-compat
             hsPkgs.regex-posix
-          ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ optionals _flags.http [
+          ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.http [
             hsPkgs.network
             hsPkgs.HTTP
           ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo);
@@ -89,17 +89,17 @@ let
               hsPkgs.array
               hsPkgs.random
               hsPkgs.zlib
-            ] ++ optionals system.isWindows [
+            ] ++ pkgs.lib.optionals system.isWindows [
               hsPkgs.unix-compat
               hsPkgs.regex-posix
-            ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ optionals _flags.http [
+            ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.http [
               hsPkgs.network
               hsPkgs.HTTP
             ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
             libs = pkgs.lib.optional _flags.curl pkgs.curl;
           };
           darcs-test = {
-            depends  = optionals (!(!_flags.test)) ((((([
+            depends  = pkgs.lib.optionals (!(!_flags.test)) ((((([
               hsPkgs.base
               hsPkgs.extensible-exceptions
               hsPkgs.regex-compat
@@ -128,10 +128,10 @@ let
               hsPkgs.tar
               hsPkgs.random
               hsPkgs.zlib
-            ] ++ optionals system.isWindows [
+            ] ++ pkgs.lib.optionals system.isWindows [
               hsPkgs.unix-compat
               hsPkgs.regex-posix
-            ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ optionals _flags.http [
+            ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optionals _flags.http [
               hsPkgs.network
               hsPkgs.HTTP
             ]);

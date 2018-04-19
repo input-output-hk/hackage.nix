@@ -38,7 +38,7 @@ let
             hsPkgs.html
             hsPkgs.network
             hsPkgs.pretty
-          ] ++ optionals (_flags.ghcapi && !system.isWindows) [
+          ] ++ pkgs.lib.optionals (_flags.ghcapi && !system.isWindows) [
             hsPkgs.ghc
             hsPkgs.ghc-paths
           ]) ++ pkgs.lib.optional _flags.readfile hsPkgs.haskell-src) ++ pkgs.lib.optional _flags.ghc7 hsPkgs.ghc;

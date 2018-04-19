@@ -33,7 +33,7 @@ let
             hsPkgs.x509-system
             hsPkgs.x509-store
             hsPkgs.pem
-          ] ++ optionals _flags.openssl [
+          ] ++ pkgs.lib.optionals _flags.openssl [
             hsPkgs.HsOpenSSL
             hsPkgs.HsOpenSSL-x509-system
           ];

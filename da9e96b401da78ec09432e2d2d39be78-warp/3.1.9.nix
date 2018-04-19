@@ -105,7 +105,7 @@ let
               hsPkgs.http2
               hsPkgs.word8
               hsPkgs.hashable
-            ] ++ optionals ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) [
+            ] ++ pkgs.lib.optionals ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) [
               hsPkgs.unix
               hsPkgs.http-date
             ];

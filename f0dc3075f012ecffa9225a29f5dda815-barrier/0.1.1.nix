@@ -35,13 +35,13 @@ let
         };
         exes = {
           barrier-data-generator = {
-            depends  = optionals _flags.generator [
+            depends  = pkgs.lib.optionals _flags.generator [
               hsPkgs.base
               hsPkgs.freetype2
             ];
           };
           barrier-example = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.lens-family-core
@@ -49,7 +49,7 @@ let
             ];
           };
           barrier-test-result-generator = {
-            depends  = optionals _flags.test-results [
+            depends  = pkgs.lib.optionals _flags.test-results [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.lens-family-core

@@ -35,7 +35,7 @@ let
         };
         exes = {
           speedtest = {
-            depends  = optionals _flags.buildbenchmarks [
+            depends  = pkgs.lib.optionals _flags.buildbenchmarks [
               hsPkgs.storablevector
               hsPkgs.storable-record
               hsPkgs.storable-tuple

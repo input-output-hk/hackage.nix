@@ -43,7 +43,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.utf8-string
             hsPkgs.vector
-          ] ++ optionals (!_flags.devel) [
+          ] ++ pkgs.lib.optionals (!_flags.devel) [
             hsPkgs.HUnit
             hsPkgs.bytestring
             hsPkgs.time

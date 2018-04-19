@@ -52,7 +52,7 @@ let
           ]) ++ pkgs.lib.optional _flags.use_cpphs hsPkgs.cpphs) ++ [
             hsPkgs.ghc
             hsPkgs.template-haskell
-          ]) ++ pkgs.lib.optional _flags.seqable_only hsPkgs.generics-sop) ++ optionals (!_flags.demo_mode) [
+          ]) ++ pkgs.lib.optional _flags.seqable_only hsPkgs.generics-sop) ++ pkgs.lib.optionals (!_flags.demo_mode) [
             hsPkgs.hashtables
             hsPkgs.hashable
           ];

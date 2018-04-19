@@ -71,7 +71,7 @@ let
               hsPkgs.dlist
               hsPkgs.unix-compat
               hsPkgs.async
-            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional _flags.testsuite hsPkgs.HUnit) ++ pkgs.lib.optional _flags.tdfa hsPkgs.regex-tdfa) ++ pkgs.lib.optional _flags.cryptohash hsPkgs.cryptohash) ++ pkgs.lib.optional _flags.s3 hsPkgs.hS3) ++ optionals _flags.webdav [
+            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional _flags.testsuite hsPkgs.HUnit) ++ pkgs.lib.optional _flags.tdfa hsPkgs.regex-tdfa) ++ pkgs.lib.optional _flags.cryptohash hsPkgs.cryptohash) ++ pkgs.lib.optional _flags.s3 hsPkgs.hS3) ++ pkgs.lib.optionals _flags.webdav [
               hsPkgs.DAV
               hsPkgs.http-conduit
               hsPkgs.xml-conduit
@@ -80,7 +80,7 @@ let
               then [ hsPkgs.hinotify ]
               else if system.isOsx
                 then [ hsPkgs.hfsevents ]
-                else pkgs.lib.optional (!system.isWindows && !system.isSolaris && !system.isLinux && _flags.android) hsPkgs.hinotify)) ++ pkgs.lib.optional (system.isLinux && _flags.dbus) hsPkgs.dbus) ++ optionals (_flags.webapp && !system.isWindows) [
+                else pkgs.lib.optional (!system.isWindows && !system.isSolaris && !system.isLinux && _flags.android) hsPkgs.hinotify)) ++ pkgs.lib.optional (system.isLinux && _flags.dbus) hsPkgs.dbus) ++ pkgs.lib.optionals (_flags.webapp && !system.isWindows) [
               hsPkgs.yesod
               hsPkgs.yesod-default
               hsPkgs.yesod-static
@@ -99,10 +99,10 @@ let
               hsPkgs.template-haskell
               hsPkgs.data-default
               hsPkgs.aeson
-            ]) ++ optionals _flags.pairing [
+            ]) ++ pkgs.lib.optionals _flags.pairing [
               hsPkgs.network-multicast
               hsPkgs.network-info
-            ]) ++ optionals (_flags.xmpp && !system.isWindows) [
+            ]) ++ pkgs.lib.optionals (_flags.xmpp && !system.isWindows) [
               hsPkgs.network-protocol-xmpp
               hsPkgs.gnutls
               hsPkgs.xml-types

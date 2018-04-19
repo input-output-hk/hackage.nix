@@ -37,173 +37,173 @@ let
         };
         exes = {
           lazyfoo-lesson-01 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-02 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-03 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-04 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-05 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-07 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-08 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-09 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-10 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-11 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-12 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-13 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-14 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-15 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-17 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-18 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-19 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.vector
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-20 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.vector
               hsPkgs.sdl2
             ];
           };
           lazyfoo-lesson-43 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           twinklebear-lesson-01 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           twinklebear-lesson-02 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           twinklebear-lesson-04 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           twinklebear-lesson-04a = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           twinklebear-lesson-05 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           audio-example = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.vector
               hsPkgs.sdl2
             ];
           };
           eventwatch-example = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2
             ];
           };
           userevent-example = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.sdl2
             ];
           };
           opengl-example = {
-            depends  = optionals _flags.opengl-example [
+            depends  = pkgs.lib.optionals _flags.opengl-example [
               hsPkgs.base
               hsPkgs.OpenGL
               hsPkgs.bytestring

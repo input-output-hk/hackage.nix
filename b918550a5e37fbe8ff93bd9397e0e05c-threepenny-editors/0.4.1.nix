@@ -34,7 +34,7 @@ let
         };
         exes = {
           person = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.data-default
               hsPkgs.generics-sop

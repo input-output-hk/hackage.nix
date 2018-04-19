@@ -53,7 +53,7 @@ let
           test-tool = {
             depends  = [
               hsPkgs.base
-            ] ++ optionals (!compiler.isGhcjs) [
+            ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
               hsPkgs.QuickCheck
               hsPkgs.bytestring
               hsPkgs.doctest

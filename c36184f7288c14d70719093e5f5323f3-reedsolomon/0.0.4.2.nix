@@ -38,7 +38,7 @@ let
         };
         exes = {
           reedsolomon-simple-encoder = {
-            depends  = optionals (!system.isWindows && _flags.examples) [
+            depends  = pkgs.lib.optionals (!system.isWindows && _flags.examples) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.vector
@@ -49,7 +49,7 @@ let
             ];
           };
           reedsolomon-simple-decoder = {
-            depends  = optionals (!system.isWindows && _flags.examples) [
+            depends  = pkgs.lib.optionals (!system.isWindows && _flags.examples) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.vector
@@ -60,7 +60,7 @@ let
             ];
           };
           reedsolomon-simple-bench = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.vector
               hsPkgs.random
@@ -70,7 +70,7 @@ let
             ];
           };
           reedsolomon-profiling = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.vector
               hsPkgs.deepseq

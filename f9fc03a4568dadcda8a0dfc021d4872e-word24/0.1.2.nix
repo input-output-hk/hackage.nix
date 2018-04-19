@@ -29,7 +29,7 @@ let
         };
         exes = {
           testWord24 = {
-            depends  = optionals _flags.buildtests [
+            depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.QuickCheck
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

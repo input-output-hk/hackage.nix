@@ -31,7 +31,7 @@ let
         };
         exes = {
           telnet = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.pipes-core
               hsPkgs.pipes-extra
@@ -40,7 +40,7 @@ let
             ];
           };
           compress = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.pipes-core
               hsPkgs.pipes-extra
@@ -48,7 +48,7 @@ let
             ];
           };
           decompress = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.pipes-core
               hsPkgs.pipes-extra

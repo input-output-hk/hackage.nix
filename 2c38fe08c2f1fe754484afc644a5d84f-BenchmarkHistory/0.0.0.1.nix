@@ -35,7 +35,7 @@ let
         };
         exes = {
           BenchmarkHistogram = {
-            depends  = optionals _flags.exe [
+            depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.BenchmarkHistory
               hsPkgs.Chart

@@ -68,7 +68,7 @@ let
             ];
           };
           properties = {
-            depends  = optionals (!(!_flags.test-properties)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.lens
               hsPkgs.QuickCheck
@@ -79,7 +79,7 @@ let
             ];
           };
           hunit = {
-            depends  = optionals (!(!_flags.test-hunit)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hunit)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.HUnit

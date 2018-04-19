@@ -32,7 +32,7 @@ let
         };
         exes = {
           GAPcriterion = {
-            depends  = optionals _flags.devel [
+            depends  = pkgs.lib.optionals _flags.devel [
               hsPkgs.criterion
               hsPkgs.QuickCheck
             ];

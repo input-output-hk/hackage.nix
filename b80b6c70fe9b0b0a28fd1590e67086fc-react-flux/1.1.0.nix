@@ -70,7 +70,7 @@ let
             ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
           };
           route-example = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.react-flux
               hsPkgs.time

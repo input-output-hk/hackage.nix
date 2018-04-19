@@ -61,7 +61,7 @@ let
               hsPkgs.xml
             ] ++ [
               hsPkgs.darcs
-            ]) ++ optionals _flags.highlighting [
+            ]) ++ pkgs.lib.optionals _flags.highlighting [
               hsPkgs.highlighter
               hsPkgs.highlighting-kate
             ]) ++ pkgs.lib.optional _flags.ssh hsPkgs.ssh;

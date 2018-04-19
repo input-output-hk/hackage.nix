@@ -26,7 +26,7 @@ let
       components = {
         exes = {
           intricacy = {
-            depends  = optionals _flags.game ([
+            depends  = pkgs.lib.optionals _flags.game ([
               hsPkgs.base
               hsPkgs.base
               hsPkgs.mtl
@@ -42,12 +42,12 @@ let
               hsPkgs.binary
               hsPkgs.network-fancy
               hsPkgs.cryptohash
-            ] ++ optionals _flags.sdl [
+            ] ++ pkgs.lib.optionals _flags.sdl [
               hsPkgs.SDL
               hsPkgs.SDL-ttf
               hsPkgs.SDL-gfx
             ]) ++ pkgs.lib.optional _flags.curses hsPkgs.hscurses;
-            libs = optionals (_flags.game && (_flags.sdl && system.isWindows)) [
+            libs = pkgs.lib.optionals (_flags.game && (_flags.sdl && system.isWindows)) [
               pkgs.SDL_ttf
               pkgs.SDL
               pkgs.SDL_gfx
@@ -55,7 +55,7 @@ let
             ];
           };
           intricacy-server = {
-            depends  = optionals _flags.server [
+            depends  = pkgs.lib.optionals _flags.server [
               hsPkgs.base
               hsPkgs.base
               hsPkgs.mtl

@@ -42,7 +42,7 @@ let
         };
         exes = {
           gnuplot-demo = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.gnuplot
               hsPkgs.time
               hsPkgs.array

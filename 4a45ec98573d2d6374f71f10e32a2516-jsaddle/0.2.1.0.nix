@@ -50,7 +50,7 @@ let
               hsPkgs.transformers
               hsPkgs.hslogger
               hsPkgs.jsaddle
-            ] ++ pkgs.lib.optional (compiler.isGhcjs && _flags.jsffi) hsPkgs.ghcjs-base) ++ optionals (!compiler.isGhcjs || _flags.webkit) ([
+            ] ++ pkgs.lib.optional (compiler.isGhcjs && _flags.jsffi) hsPkgs.ghcjs-base) ++ pkgs.lib.optionals (!compiler.isGhcjs || _flags.webkit) ([
               hsPkgs.glib
             ] ++ (if _flags.gtk3
               then [

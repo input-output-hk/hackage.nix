@@ -69,27 +69,27 @@ let
             hsPkgs.uniplate
             hsPkgs.unix-compat
             hsPkgs.unordered-containers
-          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ optionals _flags.testing [
+          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optionals _flags.testing [
             hsPkgs.QuickCheck
             hsPkgs.random
-          ]) ++ optionals _flags.cocoa [
+          ]) ++ pkgs.lib.optionals _flags.cocoa [
             hsPkgs.HOC
             hsPkgs.HOC-AppKit
             hsPkgs.HOC-Foundation
-          ]) ++ optionals _flags.pango [
+          ]) ++ pkgs.lib.optionals _flags.pango [
             hsPkgs.gtk
             hsPkgs.glib
             hsPkgs.pango
-          ]) ++ optionals _flags.vte [
+          ]) ++ pkgs.lib.optionals _flags.vte [
             hsPkgs.gtk
             hsPkgs.glib
             hsPkgs.pango
             hsPkgs.vte
             hsPkgs.executable-path
-          ]) ++ optionals _flags.vty [
+          ]) ++ pkgs.lib.optionals _flags.vty [
             hsPkgs.unix-compat
             hsPkgs.vty
-          ]) ++ optionals _flags.scion [
+          ]) ++ pkgs.lib.optionals _flags.scion [
             hsPkgs.scion
             hsPkgs.ghc
             hsPkgs.ghc-syb-utils

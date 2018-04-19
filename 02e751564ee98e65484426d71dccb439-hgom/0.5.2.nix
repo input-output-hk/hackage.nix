@@ -31,7 +31,7 @@ let
               hsPkgs.mtl
               hsPkgs.directory
               hsPkgs.filepath
-            ] ++ optionals _flags.test [
+            ] ++ pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

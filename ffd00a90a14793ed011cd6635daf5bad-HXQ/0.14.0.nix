@@ -37,7 +37,7 @@ let
               hsPkgs.HDBC
               hsPkgs.HDBC-odbc
             ]
-            else optionals _flags.sqlite [
+            else pkgs.lib.optionals _flags.sqlite [
               hsPkgs.HDBC
               hsPkgs.HDBC-sqlite3
             ]);
@@ -53,7 +53,7 @@ let
                 hsPkgs.HDBC
                 hsPkgs.HDBC-odbc
               ]
-              else optionals _flags.sqlite [
+              else pkgs.lib.optionals _flags.sqlite [
                 hsPkgs.HDBC
                 hsPkgs.HDBC-odbc
               ]);

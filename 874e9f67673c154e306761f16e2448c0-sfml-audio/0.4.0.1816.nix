@@ -24,7 +24,7 @@ let
           libs = ([
             pkgs."stdc++"
             pkgs.sndfile
-          ] ++ optionals system.isLinux [
+          ] ++ pkgs.lib.optionals system.isLinux [
             pkgs.openal
             pkgs.pthread
           ]) ++ pkgs.lib.optional system.isWindows pkgs.openal32;

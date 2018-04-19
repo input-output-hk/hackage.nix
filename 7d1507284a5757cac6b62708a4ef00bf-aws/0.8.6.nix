@@ -60,7 +60,7 @@ let
         };
         exes = {
           GetObject = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.http-conduit
@@ -68,14 +68,14 @@ let
             ];
           };
           SimpleDb = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.text
             ];
           };
           Sqs = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.text

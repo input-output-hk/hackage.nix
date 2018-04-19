@@ -27,7 +27,7 @@ let
             hsPkgs.rts
             hsPkgs.ghc-prim
           ] ++ pkgs.lib.optional (!(_flags.integer-gmp && !_flags.integer-simple || !_flags.integer-gmp && _flags.integer-simple)) hsPkgs.invalid-cabal-flag-settings) ++ pkgs.lib.optional _flags.integer-simple hsPkgs.integer-simple) ++ pkgs.lib.optional _flags.integer-gmp hsPkgs.integer-gmp;
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.wsock32
             pkgs.user32
             pkgs.shell32

@@ -36,7 +36,7 @@ let
             hsPkgs.time
             hsPkgs.vector
             hsPkgs.vector-algorithms
-          ] ++ optionals _flags.chart [
+          ] ++ pkgs.lib.optionals _flags.chart [
             hsPkgs.Chart
             hsPkgs.data-accessor
           ];

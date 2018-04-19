@@ -34,7 +34,7 @@ let
             hsPkgs.text
             hsPkgs.time
             hsPkgs.tostring
-          ] ++ optionals (!_flags.minimal) [
+          ] ++ pkgs.lib.optionals (!_flags.minimal) [
             hsPkgs.aeson
             hsPkgs.attoparsec
             hsPkgs.parallel

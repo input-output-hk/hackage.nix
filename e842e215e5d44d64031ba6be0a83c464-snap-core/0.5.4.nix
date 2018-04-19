@@ -47,7 +47,7 @@ let
             hsPkgs.unix-compat
             hsPkgs.vector
             hsPkgs.zlib
-          ] ++ optionals (!(_flags.portable || system.isWindows)) [
+          ] ++ pkgs.lib.optionals (!(_flags.portable || system.isWindows)) [
             hsPkgs.bytestring-mmap
             hsPkgs.unix
           ];

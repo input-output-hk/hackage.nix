@@ -63,7 +63,7 @@ let
               hsPkgs.time
               hsPkgs.tls
               hsPkgs.x509
-            ] ++ pkgs.lib.optional _flags.hans hsPkgs.hans) ++ pkgs.lib.optional (_flags.network && !system.isHalvm) hsPkgs.network) ++ optionals system.isHalvm [
+            ] ++ pkgs.lib.optional _flags.hans hsPkgs.hans) ++ pkgs.lib.optional (_flags.network && !system.isHalvm) hsPkgs.network) ++ pkgs.lib.optionals system.isHalvm [
               hsPkgs.HALVMCore
               hsPkgs.XenDevice
             ];

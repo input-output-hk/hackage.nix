@@ -29,7 +29,7 @@ let
             hsPkgs.pandoc-types
             hsPkgs.filepath
             hsPkgs.safe
-          ] ++ optionals _flags.plugins [
+          ] ++ pkgs.lib.optionals _flags.plugins [
             hsPkgs.ghc
             hsPkgs.ghc-paths
           ];
@@ -79,7 +79,7 @@ let
               hsPkgs.http-client
               hsPkgs.http-client-tls
               hsPkgs.aeson
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.syb
             ]) ++ (if _flags.network-uri
@@ -89,7 +89,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ optionals _flags.plugins [
+              ])) ++ pkgs.lib.optionals _flags.plugins [
               hsPkgs.ghc
               hsPkgs.ghc-paths
             ];
@@ -100,7 +100,7 @@ let
               hsPkgs.HTTP
               hsPkgs.url
               hsPkgs.filepath
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.syb
             ];

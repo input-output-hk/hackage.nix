@@ -33,7 +33,7 @@ let
             hsPkgs.url
             hsPkgs.data-default
             hsPkgs.transformers
-          ] ++ optionals compiler.isGhcjs [
+          ] ++ pkgs.lib.optionals compiler.isGhcjs [
             hsPkgs.aeson
             hsPkgs.bifunctors
           ];

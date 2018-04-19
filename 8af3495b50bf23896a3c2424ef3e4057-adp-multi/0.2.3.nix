@@ -34,7 +34,7 @@ let
         };
         exes = {
           adp-multi-benchmarks = {
-            depends  = optionals (!(!_flags.buildbenchmark)) [
+            depends  = pkgs.lib.optionals (!(!_flags.buildbenchmark)) [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.containers
@@ -52,7 +52,7 @@ let
             ];
           };
           adp-multi-benchmarks2 = {
-            depends  = optionals (!(!_flags.buildbenchmark2)) [
+            depends  = pkgs.lib.optionals (!(!_flags.buildbenchmark2)) [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.containers
@@ -69,7 +69,7 @@ let
             ];
           };
           adp-test = {
-            depends  = optionals (!(!_flags.buildtests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.buildtests)) [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.containers

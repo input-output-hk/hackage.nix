@@ -32,7 +32,7 @@ let
         };
         exes = {
           rainbox-mosaic = {
-            depends  = optionals _flags.mosaic [
+            depends  = pkgs.lib.optionals _flags.mosaic [
               hsPkgs.base
               hsPkgs.rainbow
               hsPkgs.text

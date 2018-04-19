@@ -30,7 +30,7 @@ let
         semigroups = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals compiler.isGhc ((((((((pkgs.lib.optional compiler.isGhc hsPkgs.nats ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged) ++ pkgs.lib.optional _flags.text hsPkgs.text) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional (_flags.hashable && _flags.unordered-containers) hsPkgs.unordered-containers);
+          ] ++ pkgs.lib.optionals compiler.isGhc ((((((((pkgs.lib.optional compiler.isGhc hsPkgs.nats ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged) ++ pkgs.lib.optional _flags.text hsPkgs.text) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional (_flags.hashable && _flags.unordered-containers) hsPkgs.unordered-containers);
         };
       };
     }

@@ -29,7 +29,7 @@ let
           depends  = (([
             hsPkgs.base
             hsPkgs.mtl
-          ] ++ pkgs.lib.optional _flags.ghcjs hsPkgs.ghcjs-base) ++ pkgs.lib.optional (_flags.ghcjs && _flags.jsffi) hsPkgs.ghcjs-base) ++ optionals (!_flags.ghcjs || _flags.webkit) ([
+          ] ++ pkgs.lib.optional _flags.ghcjs hsPkgs.ghcjs-base) ++ pkgs.lib.optional (_flags.ghcjs && _flags.jsffi) hsPkgs.ghcjs-base) ++ pkgs.lib.optionals (!_flags.ghcjs || _flags.webkit) ([
             hsPkgs.glib
             hsPkgs.transformers
           ] ++ (if _flags.gtk3

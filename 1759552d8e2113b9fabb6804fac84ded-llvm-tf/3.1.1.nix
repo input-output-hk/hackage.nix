@@ -40,35 +40,35 @@ let
         };
         exes = {
           llvm-align = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
           llvm-arith = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
           llvm-array = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
           llvm-brainf = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
           llvm-call-conv = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.llvm-ffi
               hsPkgs.tfp
@@ -76,28 +76,28 @@ let
             ];
           };
           llvm-dot-prod = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
           llvm-fibonacci = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
           llvm-hello-jit = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
           llvm-intrinsic = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.non-empty
@@ -105,28 +105,28 @@ let
             ];
           };
           llvm-list = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
           llvm-struct = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
           llvm-varargs = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
           llvm-vector = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.transformers

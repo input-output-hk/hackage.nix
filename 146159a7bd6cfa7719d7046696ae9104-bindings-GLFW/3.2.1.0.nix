@@ -33,7 +33,7 @@ let
             hsPkgs.base
             hsPkgs.bindings-DSL
           ];
-          libs = optionals (!_flags.system-glfw) (optionals (system.isLinux || system.isFreebsd) [
+          libs = pkgs.lib.optionals (!_flags.system-glfw) (pkgs.lib.optionals (system.isLinux || system.isFreebsd) [
             pkgs.GL
             pkgs.X11
             pkgs.Xi
@@ -42,11 +42,11 @@ let
             pkgs.Xcursor
             pkgs.Xinerama
             pkgs.pthread
-          ] ++ optionals system.isWindows [
+          ] ++ pkgs.lib.optionals system.isWindows [
             pkgs.opengl32
             pkgs.Gdi32
           ]);
-          frameworks = optionals (!_flags.system-glfw && system.isOsx) [
+          frameworks = pkgs.lib.optionals (!_flags.system-glfw && system.isOsx) [
             pkgs.AGL
             pkgs.Cocoa
             pkgs.OpenGL

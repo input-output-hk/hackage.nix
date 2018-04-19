@@ -36,7 +36,7 @@ let
             hsPkgs.pretty
             hsPkgs.mtl
           ] ++ pkgs.lib.optional (!_flags.custom-binary) hsPkgs.binary;
-          libs = optionals _flags.c-runtime [
+          libs = pkgs.lib.optionals _flags.c-runtime [
             pkgs.gu
             pkgs.pgf
           ];
@@ -62,7 +62,7 @@ let
               hsPkgs.haskeline
               hsPkgs.parallel
               hsPkgs.utf8-string
-            ] ++ optionals _flags.server [
+            ] ++ pkgs.lib.optionals _flags.server [
               hsPkgs.httpd-shed
               hsPkgs.network
               hsPkgs.json
@@ -71,7 +71,7 @@ let
               then [ hsPkgs.Win32 ]
               else [
                 hsPkgs.unix
-              ])) ++ optionals (!_flags.custom-binary) [
+              ])) ++ pkgs.lib.optionals (!_flags.custom-binary) [
               hsPkgs.binary
               hsPkgs.data-binary-ieee754
             ];

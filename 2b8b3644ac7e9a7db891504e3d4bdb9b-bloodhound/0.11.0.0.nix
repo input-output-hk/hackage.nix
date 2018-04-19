@@ -67,7 +67,7 @@ let
             ];
           };
           doctests = {
-            depends  = optionals compiler.isGhc [
+            depends  = pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.bloodhound

@@ -32,7 +32,7 @@ let
             hsPkgs.cryptonite-openssl
             hsPkgs.foundation
             hsPkgs.integer-gmp
-          ] ++ optionals _flags.scrape-bds [
+          ] ++ pkgs.lib.optionals _flags.scrape-bds [
             hsPkgs.mcl
             hsPkgs.vector
           ];

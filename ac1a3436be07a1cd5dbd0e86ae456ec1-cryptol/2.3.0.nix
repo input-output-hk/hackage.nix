@@ -81,7 +81,7 @@ let
             ];
           };
           cryptol-server = {
-            depends  = optionals _flags.server [
+            depends  = pkgs.lib.optionals _flags.server [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
               hsPkgs.base

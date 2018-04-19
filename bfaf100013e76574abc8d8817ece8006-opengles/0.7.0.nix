@@ -32,7 +32,7 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.EGL pkgs.GLESv2 ];
-          frameworks = optionals system.isIos [
+          frameworks = pkgs.lib.optionals system.isIos [
             pkgs.QuartzCore
             pkgs.OpenGLES
           ];

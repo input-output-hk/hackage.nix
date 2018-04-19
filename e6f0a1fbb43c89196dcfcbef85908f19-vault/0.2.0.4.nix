@@ -25,7 +25,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.containers
-          ] ++ optionals (compiler.isGhc && _flags.useghc) [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && _flags.useghc) [
             hsPkgs.unordered-containers
             hsPkgs.hashable
           ];

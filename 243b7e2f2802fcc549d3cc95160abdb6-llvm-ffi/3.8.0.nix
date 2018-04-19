@@ -35,7 +35,7 @@ let
         };
         exes = {
           llvm-ffi-example = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-ffi
               hsPkgs.utility-ht
               hsPkgs.base

@@ -21,20 +21,20 @@ let
       components = {
         proteaaudio = {
           depends  = [ hsPkgs.base ];
-          libs = (optionals system.isWindows [
+          libs = (pkgs.lib.optionals system.isWindows [
             pkgs."stdc++"
             pkgs.ole32
             pkgs.dsound
             pkgs.winmm
-          ] ++ optionals system.isLinux [
+          ] ++ pkgs.lib.optionals system.isLinux [
             pkgs."stdc++"
             pkgs.pthread
             pkgs.asound
-          ]) ++ optionals system.isOsx [
+          ]) ++ pkgs.lib.optionals system.isOsx [
             pkgs."stdc++"
             pkgs.pthread
           ];
-          frameworks = optionals system.isOsx [
+          frameworks = pkgs.lib.optionals system.isOsx [
             pkgs.CoreFoundation
             pkgs.CoreAudio
           ];

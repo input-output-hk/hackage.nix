@@ -20,11 +20,11 @@ let
       };
       components = {
         hcom = {
-          depends  = optionals system.isWindows [
+          depends  = pkgs.lib.optionals system.isWindows [
             hsPkgs.old-time
             hsPkgs.base
           ];
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.kernel32
             pkgs.user32
             pkgs.ole32

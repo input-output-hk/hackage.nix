@@ -40,7 +40,7 @@ let
             hsPkgs.utf8-string
             hsPkgs.base-unicode-symbols
             hsPkgs.dates
-          ] ++ optionals _flags.with_curses [
+          ] ++ pkgs.lib.optionals _flags.with_curses [
             hsPkgs.hscurses
             hsPkgs.setlocale
           ];

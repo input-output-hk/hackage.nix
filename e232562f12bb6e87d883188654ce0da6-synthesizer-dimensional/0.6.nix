@@ -41,7 +41,7 @@ let
         exes = {
           rain = {};
           demonstration = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.explicit-exception
               hsPkgs.old-time
             ];

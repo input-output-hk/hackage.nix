@@ -28,7 +28,7 @@ let
         };
         exes = {
           test = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.HUnit
             ];

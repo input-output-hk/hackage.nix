@@ -49,7 +49,7 @@ let
               hsPkgs.filestore
               hsPkgs.datetime
               hsPkgs.zlib
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.syb
             ]) ++ (if _flags.happstack

@@ -33,14 +33,14 @@ let
         semigroups = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals compiler.isGhc ((((((((((pkgs.lib.optional compiler.isGhc hsPkgs.nats ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ (if _flags.bytestring && _flags.bytestring-builder
+          ] ++ pkgs.lib.optionals compiler.isGhc ((((((((((pkgs.lib.optional compiler.isGhc hsPkgs.nats ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ (if _flags.bytestring && _flags.bytestring-builder
             then [
               hsPkgs.bytestring
               hsPkgs.bytestring-builder
             ]
             else [
               hsPkgs.bytestring
-            ])) ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged) ++ pkgs.lib.optional _flags.text hsPkgs.text) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional (_flags.hashable && _flags.unordered-containers) hsPkgs.unordered-containers) ++ optionals _flags.transformers [
+            ])) ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged) ++ pkgs.lib.optional _flags.text hsPkgs.text) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional (_flags.hashable && _flags.unordered-containers) hsPkgs.unordered-containers) ++ pkgs.lib.optionals _flags.transformers [
             hsPkgs.transformers
             hsPkgs.transformers-compat
           ]);

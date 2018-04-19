@@ -37,13 +37,13 @@ let
         };
         exes = {
           numeric-prelude-demo = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.numeric-prelude
               hsPkgs.base
             ];
           };
           numeric-prelude-gaussian = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.gnuplot
               hsPkgs.HTam
               hsPkgs.numeric-prelude
@@ -55,7 +55,7 @@ let
         };
         tests = {
           numeric-prelude-test = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.HUnit
               hsPkgs.numeric-prelude
               hsPkgs.QuickCheck

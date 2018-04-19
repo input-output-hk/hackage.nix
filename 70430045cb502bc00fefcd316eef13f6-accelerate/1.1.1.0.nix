@@ -45,7 +45,7 @@ let
             hsPkgs.transformers
             hsPkgs.unique
             hsPkgs.unordered-containers
-          ] ++ optionals _flags.ekg [
+          ] ++ pkgs.lib.optionals _flags.ekg [
             hsPkgs.async
             hsPkgs.ekg
             hsPkgs.ekg-core

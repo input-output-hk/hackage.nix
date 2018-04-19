@@ -20,7 +20,7 @@ let
       };
       components = {
         microlens = {
-          depends  = pkgs.lib.optional compiler.isGhc hsPkgs.base ++ optionals (!compiler.isGhc) [
+          depends  = pkgs.lib.optional compiler.isGhc hsPkgs.base ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.base
             hsPkgs.transformers
           ];

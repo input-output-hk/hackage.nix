@@ -78,11 +78,11 @@ let
             then [ hsPkgs.Win32 ]
             else [
               hsPkgs.unix
-            ])) ++ pkgs.lib.optional system.isOsx hsPkgs.gtk3-mac-integration) ++ optionals _flags.yi [
+            ])) ++ pkgs.lib.optional system.isOsx hsPkgs.gtk3-mac-integration) ++ pkgs.lib.optionals _flags.yi [
             hsPkgs.yi
             hsPkgs.yi-language
             hsPkgs.yi-rope
-          ]) ++ pkgs.lib.optional (_flags.yi && _flags.dyre) hsPkgs.dyre) ++ optionals (_flags.loc && system.isLinux) [
+          ]) ++ pkgs.lib.optional (_flags.yi && _flags.dyre) hsPkgs.dyre) ++ pkgs.lib.optionals (_flags.loc && system.isLinux) [
             hsPkgs.hgettext
             hsPkgs.setlocale
           ]) ++ (if _flags.network-uri
@@ -101,7 +101,7 @@ let
               hsPkgs.leksah
               hsPkgs.base
               hsPkgs.gtk3
-            ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ optionals (system.isLinux && _flags.loc) [
+            ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optionals (system.isLinux && _flags.loc) [
               hsPkgs.hgettext
               hsPkgs.setlocale
             ];

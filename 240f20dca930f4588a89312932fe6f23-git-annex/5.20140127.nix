@@ -82,12 +82,12 @@ let
               ]
               else [
                 hsPkgs.unix
-              ])) ++ optionals _flags.testsuite [
+              ])) ++ pkgs.lib.optionals _flags.testsuite [
               hsPkgs.tasty
               hsPkgs.tasty-hunit
               hsPkgs.tasty-quickcheck
               hsPkgs.optparse-applicative
-            ]) ++ pkgs.lib.optional _flags.tdfa hsPkgs.regex-tdfa) ++ pkgs.lib.optional _flags.cryptohash hsPkgs.cryptohash) ++ pkgs.lib.optional _flags.s3 hsPkgs.hS3) ++ optionals _flags.webdav [
+            ]) ++ pkgs.lib.optional _flags.tdfa hsPkgs.regex-tdfa) ++ pkgs.lib.optional _flags.cryptohash hsPkgs.cryptohash) ++ pkgs.lib.optional _flags.s3 hsPkgs.hS3) ++ pkgs.lib.optionals _flags.webdav [
               hsPkgs.DAV
               hsPkgs.http-conduit
               hsPkgs.xml-conduit
@@ -98,7 +98,7 @@ let
                 then [ hsPkgs.hfsevents ]
                 else if system.isWindows
                   then [ hsPkgs.Win32-notify ]
-                  else pkgs.lib.optional (!system.isSolaris && !system.isLinux && _flags.android) hsPkgs.hinotify)) ++ pkgs.lib.optional (system.isLinux && _flags.dbus) hsPkgs.dbus) ++ pkgs.lib.optional _flags.android hsPkgs.data-endian) ++ optionals _flags.webapp [
+                  else pkgs.lib.optional (!system.isSolaris && !system.isLinux && _flags.android) hsPkgs.hinotify)) ++ pkgs.lib.optional (system.isLinux && _flags.dbus) hsPkgs.dbus) ++ pkgs.lib.optional _flags.android hsPkgs.data-endian) ++ pkgs.lib.optionals _flags.webapp [
               hsPkgs.yesod
               hsPkgs.yesod-default
               hsPkgs.yesod-static
@@ -118,10 +118,10 @@ let
               hsPkgs.data-default
               hsPkgs.aeson
               hsPkgs.network-conduit
-            ]) ++ optionals _flags.pairing [
+            ]) ++ pkgs.lib.optionals _flags.pairing [
               hsPkgs.network-multicast
               hsPkgs.network-info
-            ]) ++ optionals (_flags.xmpp && !system.isWindows) [
+            ]) ++ pkgs.lib.optionals (_flags.xmpp && !system.isWindows) [
               hsPkgs.network-protocol-xmpp
               hsPkgs.gnutls
               hsPkgs.xml-types

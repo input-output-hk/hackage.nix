@@ -41,7 +41,7 @@ let
               hsPkgs.tasty
               hsPkgs.tasty-hunit
               hsPkgs.tasty-quickcheck
-            ] ++ optionals (!compiler.isGhc) [
+            ] ++ pkgs.lib.optionals (!compiler.isGhc) [
               hsPkgs.semigroups
               hsPkgs.transformers
             ];

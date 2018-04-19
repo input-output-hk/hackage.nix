@@ -50,7 +50,7 @@ let
             ];
           };
           fibon-analyse = {
-            depends  = optionals _flags.analyse [
+            depends  = pkgs.lib.optionals _flags.analyse [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.mtl

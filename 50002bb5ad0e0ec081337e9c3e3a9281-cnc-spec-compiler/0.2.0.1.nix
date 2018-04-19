@@ -43,7 +43,7 @@ let
               hsPkgs.zlib
               hsPkgs.binary
               hsPkgs.ansi-terminal
-            ] ++ optionals (!_flags.basicbuild) [
+            ] ++ pkgs.lib.optionals (!_flags.basicbuild) [
               hsPkgs.hubigraph
               hsPkgs.graphviz
               hsPkgs.HaXml

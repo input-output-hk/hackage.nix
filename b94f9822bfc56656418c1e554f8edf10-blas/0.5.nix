@@ -33,7 +33,7 @@ let
             hsPkgs.storable-complex
             hsPkgs.QuickCheck
           ];
-          libs = (((optionals _flags.atlas [
+          libs = (((pkgs.lib.optionals _flags.atlas [
             pkgs.cblas
             pkgs.atlas
           ] ++ pkgs.lib.optional _flags.gsl pkgs.gslcblas) ++ (if _flags.mkl && system.isX86_64
@@ -48,7 +48,7 @@ let
               pkgs.mkl_intel
               pkgs.mkl_sequential
               pkgs.mkl_core
-            ])) ++ pkgs.lib.optional _flags.veclib pkgs.cblas) ++ optionals (!_flags.atlas && !_flags.gsl && !_flags.mkl && !_flags.veclib && !_flags.custom) [
+            ])) ++ pkgs.lib.optional _flags.veclib pkgs.cblas) ++ pkgs.lib.optionals (!_flags.atlas && !_flags.gsl && !_flags.mkl && !_flags.veclib && !_flags.custom) [
             pkgs.cblas
             pkgs.atlas
           ];

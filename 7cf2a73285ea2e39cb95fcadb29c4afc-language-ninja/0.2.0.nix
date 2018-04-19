@@ -115,7 +115,7 @@ let
               hsPkgs.turtle
               hsPkgs.unordered-containers
               hsPkgs.versions
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.ghc
               hsPkgs.haddock-api
               hsPkgs.haddock-library

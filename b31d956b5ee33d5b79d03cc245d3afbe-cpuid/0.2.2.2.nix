@@ -22,7 +22,7 @@ let
       };
       components = {
         cpuid = {
-          depends  = optionals (system.isI386 || system.isX86_64) [
+          depends  = pkgs.lib.optionals (system.isI386 || system.isX86_64) [
             hsPkgs.data-accessor
             hsPkgs.enumset
             hsPkgs.base

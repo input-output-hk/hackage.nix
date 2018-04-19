@@ -53,7 +53,7 @@ let
         };
         exes = {
           mock-mellon-server = {
-            depends  = optionals (!(!_flags.mock-example)) [
+            depends  = pkgs.lib.optionals (!(!_flags.mock-example)) [
               hsPkgs.base
               hsPkgs.mellon-core
               hsPkgs.mellon-web
@@ -61,7 +61,7 @@ let
             ];
           };
           gpio-mellon-server = {
-            depends  = optionals (!(!_flags.gpio-example)) [
+            depends  = pkgs.lib.optionals (!(!_flags.gpio-example)) [
               hsPkgs.base
               hsPkgs.exceptions
               hsPkgs.hpio
@@ -77,7 +77,7 @@ let
             ];
           };
           mellon-schedule-unlock = {
-            depends  = optionals (!(!_flags.client-unlock-example)) [
+            depends  = pkgs.lib.optionals (!(!_flags.client-unlock-example)) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.exceptions
@@ -97,13 +97,13 @@ let
         };
         tests = {
           hlint = {
-            depends  = optionals (!(!_flags.test-hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
           doctest = {
-            depends  = optionals (!(!_flags.test-doctests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.doctest
             ];

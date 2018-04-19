@@ -33,7 +33,7 @@ let
         };
         exes = {
           ersatz-toysat-regexp-grid = {
-            depends  = optionals _flags.examples ([
+            depends  = pkgs.lib.optionals _flags.examples ([
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.ersatz
@@ -44,7 +44,7 @@ let
             ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim);
           };
           ersatz-toysat-sudoku = {
-            depends  = optionals _flags.examples ([
+            depends  = pkgs.lib.optionals _flags.examples ([
               hsPkgs.array
               hsPkgs.base
               hsPkgs.ersatz

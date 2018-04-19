@@ -32,7 +32,7 @@ let
               hsPkgs.extra
               hsPkgs.containers
               hsPkgs.cmdargs
-            ] ++ optionals (!_flags.small) [
+            ] ++ pkgs.lib.optionals (!_flags.small) [
               hsPkgs.GoogleChart
               hsPkgs.old-time
               hsPkgs.json

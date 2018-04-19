@@ -30,7 +30,7 @@ let
             hsPkgs.http-types
             hsPkgs.network
             hsPkgs.wai
-          ] ++ optionals (!system.isWindows) [
+          ] ++ pkgs.lib.optionals (!system.isWindows) [
             hsPkgs.unix
             hsPkgs.unix-time
           ];

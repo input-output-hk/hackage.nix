@@ -33,7 +33,7 @@ let
               hsPkgs.containers
               hsPkgs.bytestring
               hsPkgs.mtl
-            ] ++ optionals _flags.generic [
+            ] ++ pkgs.lib.optionals _flags.generic [
               hsPkgs.mtl
               hsPkgs.syb
             ]) ++ pkgs.lib.optional _flags.parsec hsPkgs.parsec) ++ pkgs.lib.optional _flags.pretty hsPkgs.pretty

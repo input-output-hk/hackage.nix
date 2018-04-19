@@ -61,17 +61,17 @@ let
               hsPkgs.utf8-string
               hsPkgs.uniplate
               hsPkgs.unix-compat
-            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ optionals _flags.gtk [
+            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ pkgs.lib.optionals _flags.gtk [
               hsPkgs.gtk
               hsPkgs.glib
-            ]) ++ pkgs.lib.optional _flags.pango hsPkgs.gtk) ++ optionals _flags.cocoa [
+            ]) ++ pkgs.lib.optional _flags.pango hsPkgs.gtk) ++ pkgs.lib.optionals _flags.cocoa [
               hsPkgs.HOC
               hsPkgs.HOC-AppKit
               hsPkgs.HOC-Foundation
-            ]) ++ pkgs.lib.optional _flags.ghcinterpreter hsPkgs.hint) ++ optionals _flags.ghcapi [
+            ]) ++ pkgs.lib.optional _flags.ghcinterpreter hsPkgs.hint) ++ pkgs.lib.optionals _flags.ghcapi [
               hsPkgs.ghc
               hsPkgs.old-time
-            ]) ++ optionals _flags.testing [
+            ]) ++ pkgs.lib.optionals _flags.testing [
               hsPkgs.QuickCheck
               hsPkgs.random
             ];

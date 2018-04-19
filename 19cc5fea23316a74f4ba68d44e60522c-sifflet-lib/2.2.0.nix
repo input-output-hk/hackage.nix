@@ -34,7 +34,7 @@ let
             hsPkgs.parsec
             hsPkgs.process
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
-          libs = optionals (!system.isWindows) [
+          libs = pkgs.lib.optionals (!system.isWindows) [
             pkgs."gdk-x11-2.0"
             pkgs."gtk-x11-2.0"
           ];

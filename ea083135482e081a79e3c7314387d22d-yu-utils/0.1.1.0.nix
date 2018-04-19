@@ -33,7 +33,7 @@ let
             hsPkgs.cmdargs
             hsPkgs.signal
             hsPkgs.exceptions
-          ] ++ optionals (!_flags.client) [
+          ] ++ pkgs.lib.optionals (!_flags.client) [
             hsPkgs.yesod-core
             hsPkgs.blaze-markup
             hsPkgs.blaze-html

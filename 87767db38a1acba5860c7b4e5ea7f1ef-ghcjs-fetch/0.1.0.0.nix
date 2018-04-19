@@ -34,7 +34,7 @@ let
         };
         tests = {
           ghcjs-fetch-test = {
-            depends  = optionals (!(!compiler.isGhcjs)) [
+            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.ghcjs-base

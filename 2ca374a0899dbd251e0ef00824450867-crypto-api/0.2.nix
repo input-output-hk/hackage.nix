@@ -29,10 +29,10 @@ let
             hsPkgs.cereal
             hsPkgs.tagged
             hsPkgs.filepath
-          ] ++ optionals _flags.tests [
+          ] ++ pkgs.lib.optionals _flags.tests [
             hsPkgs.QuickCheck
             hsPkgs.directory
-          ]) ++ optionals _flags.benchmarks [
+          ]) ++ pkgs.lib.optionals _flags.benchmarks [
             hsPkgs.criterion
             hsPkgs.deepseq
           ];

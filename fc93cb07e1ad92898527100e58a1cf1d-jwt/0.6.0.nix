@@ -74,7 +74,7 @@ let
             ];
           };
           doctests = {
-            depends  = optionals _flags.doctests [
+            depends  = pkgs.lib.optionals _flags.doctests [
               hsPkgs.base
               hsPkgs.jwt
               hsPkgs.doctest

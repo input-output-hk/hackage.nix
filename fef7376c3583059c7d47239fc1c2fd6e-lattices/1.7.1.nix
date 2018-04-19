@@ -31,7 +31,7 @@ let
             hsPkgs.semigroupoids
             hsPkgs.universe-base
             hsPkgs.universe-reverse-instances
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.void
             hsPkgs.transformers
           ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;

@@ -69,7 +69,7 @@ let
             hsPkgs.http-client-tls
             hsPkgs.aeson
             hsPkgs.uuid
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.base
             hsPkgs.syb
           ]) ++ (if _flags.network-uri
@@ -79,7 +79,7 @@ let
             ]
             else [
               hsPkgs.network
-            ])) ++ optionals _flags.plugins [
+            ])) ++ pkgs.lib.optionals _flags.plugins [
             hsPkgs.ghc
             hsPkgs.ghc-paths
           ];
@@ -114,7 +114,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ optionals compiler.isGhc [
+              ])) ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.syb
             ];

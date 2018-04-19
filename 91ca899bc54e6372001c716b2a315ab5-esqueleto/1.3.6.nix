@@ -52,11 +52,11 @@ let
               hsPkgs.monad-control
               hsPkgs.monad-logger
               hsPkgs.esqueleto
-            ] ++ optionals _flags.postgresql [
+            ] ++ pkgs.lib.optionals _flags.postgresql [
               hsPkgs.postgresql-simple
               hsPkgs.postgresql-libpq
               hsPkgs.persistent-postgresql
-            ]) ++ optionals _flags.mysql [
+            ]) ++ pkgs.lib.optionals _flags.mysql [
               hsPkgs.mysql-simple
               hsPkgs.mysql
               hsPkgs.persistent-mysql

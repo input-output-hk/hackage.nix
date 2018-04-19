@@ -25,7 +25,7 @@ let
       };
       components = {
         HStringTemplate = {
-          depends  = (pkgs.lib.optional _flags.syb-with-class hsPkgs.syb-with-class ++ optionals _flags.quasi-quotation [
+          depends  = (pkgs.lib.optional _flags.syb-with-class hsPkgs.syb-with-class ++ pkgs.lib.optionals _flags.quasi-quotation [
             hsPkgs.template-haskell
             hsPkgs.mtl
           ]) ++ (if _flags.smaller-base

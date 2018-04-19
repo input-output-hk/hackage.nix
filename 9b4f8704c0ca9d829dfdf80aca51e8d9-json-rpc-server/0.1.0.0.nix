@@ -35,7 +35,7 @@ let
         };
         exes = {
           demo = {
-            depends  = optionals _flags.demo [
+            depends  = pkgs.lib.optionals _flags.demo [
               hsPkgs.base
               hsPkgs.json-rpc-server
               hsPkgs.mtl

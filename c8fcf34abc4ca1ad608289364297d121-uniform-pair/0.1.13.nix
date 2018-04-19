@@ -24,7 +24,7 @@ let
             hsPkgs.base
             hsPkgs.prelude-extras
             hsPkgs.deepseq
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.semigroups
             hsPkgs.transformers
             hsPkgs.transformers-compat

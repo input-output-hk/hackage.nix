@@ -28,7 +28,7 @@ let
             hsPkgs.array
             hsPkgs.template-haskell
             hsPkgs.mtl
-          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.readline) ++ optionals _flags.db [
+          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.readline) ++ pkgs.lib.optionals _flags.db [
             hsPkgs.HDBC
             hsPkgs.HDBC-sqlite3
           ];
@@ -41,7 +41,7 @@ let
               hsPkgs.array
               hsPkgs.template-haskell
               hsPkgs.mtl
-            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.readline) ++ optionals _flags.db [
+            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.readline) ++ pkgs.lib.optionals _flags.db [
               hsPkgs.HDBC
               hsPkgs.HDBC-sqlite3
             ];

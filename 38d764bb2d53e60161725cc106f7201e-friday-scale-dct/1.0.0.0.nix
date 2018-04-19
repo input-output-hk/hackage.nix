@@ -33,7 +33,7 @@ let
         };
         exes = {
           example = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.base-compat
               hsPkgs.JuicyPixels

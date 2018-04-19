@@ -53,7 +53,7 @@ let
             hsPkgs.transformers-compat
             hsPkgs.vector
             hsPkgs.vector-algorithms
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ optionals _flags.embed-data-files [
+          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.embed-data-files [
             hsPkgs.file-embed
             hsPkgs.template-haskell
           ];

@@ -30,7 +30,7 @@ let
             hsPkgs.haskell98
             hsPkgs.random
           ];
-          libs = optionals _flags.runtimegecode [
+          libs = pkgs.lib.optionals _flags.runtimegecode [
             pkgs.gecodesupport
             pkgs.gecodeset
             pkgs.gecodeint

@@ -52,7 +52,7 @@ let
         };
         exes = {
           simple = {
-            depends  = optionals (!(!_flags.build-samples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.build-samples)) [
               hsPkgs.base
               hsPkgs.transformers-base
               hsPkgs.transformers
@@ -70,7 +70,7 @@ let
             ];
           };
           userstream = {
-            depends  = optionals (!(!_flags.build-samples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.build-samples)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.transformers-base
@@ -95,7 +95,7 @@ let
             ];
           };
           oauth_callback = {
-            depends  = optionals (!(!_flags.build-samples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.build-samples)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.transformers-base
@@ -113,7 +113,7 @@ let
             ];
           };
           oauth_pin = {
-            depends  = optionals (!(!_flags.build-samples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.build-samples)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.transformers-base

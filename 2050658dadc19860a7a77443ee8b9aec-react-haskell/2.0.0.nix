@@ -32,7 +32,7 @@ let
             hsPkgs.aeson
             hsPkgs.text
             hsPkgs.unordered-containers
-          ] ++ optionals _flags.ghcjs [
+          ] ++ pkgs.lib.optionals _flags.ghcjs [
             hsPkgs.ghcjs-base
             hsPkgs.ghcjs-prim
             hsPkgs.ghcjs-dom

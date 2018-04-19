@@ -37,7 +37,7 @@ let
         };
         exes = {
           example = {
-            depends  = optionals (!(!_flags.build-examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.build-examples)) [
               hsPkgs.base
               hsPkgs.http-client
               hsPkgs.playlists-http

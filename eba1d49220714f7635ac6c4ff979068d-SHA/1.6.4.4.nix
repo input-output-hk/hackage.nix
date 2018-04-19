@@ -31,7 +31,7 @@ let
         };
         exes = {
           sha1 = {
-            depends  = optionals _flags.exe [
+            depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.directory
@@ -39,7 +39,7 @@ let
             ];
           };
           sha224 = {
-            depends  = optionals _flags.exe [
+            depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.directory
@@ -47,7 +47,7 @@ let
             ];
           };
           sha256 = {
-            depends  = optionals _flags.exe [
+            depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.directory
@@ -55,7 +55,7 @@ let
             ];
           };
           sha384 = {
-            depends  = optionals _flags.exe [
+            depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.directory
@@ -63,7 +63,7 @@ let
             ];
           };
           sha512 = {
-            depends  = optionals _flags.exe [
+            depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.directory

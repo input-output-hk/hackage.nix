@@ -22,7 +22,7 @@ let
         blink1 = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals system.isLinux [
+          ] ++ pkgs.lib.optionals system.isLinux [
             hsPkgs.unix
             hsPkgs.ioctl
           ];

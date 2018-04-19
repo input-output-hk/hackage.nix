@@ -34,7 +34,7 @@ let
             hsPkgs.deepseq
             hsPkgs.vector
           ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.Advapi32
             pkgs.Kernel32
           ];
@@ -65,7 +65,7 @@ let
           liquidspec = {
             depends  = [
               hsPkgs.base
-            ] ++ optionals _flags.liquidhaskell [
+            ] ++ pkgs.lib.optionals _flags.liquidhaskell [
               hsPkgs.liquidhaskell
               hsPkgs.directory
               hsPkgs.filepath

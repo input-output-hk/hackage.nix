@@ -34,7 +34,7 @@ let
             hsPkgs.hxt
             hsPkgs.split
             hsPkgs.data-default-class
-          ] ++ optionals _flags.graphics [
+          ] ++ pkgs.lib.optionals _flags.graphics [
             hsPkgs.diagrams-lib
             hsPkgs.diagrams-cairo
           ];

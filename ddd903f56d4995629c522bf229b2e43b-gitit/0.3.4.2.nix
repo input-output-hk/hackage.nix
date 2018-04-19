@@ -44,7 +44,7 @@ let
               hsPkgs.SHA
               hsPkgs.HTTP
               hsPkgs.HStringTemplate
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.syb
             ];

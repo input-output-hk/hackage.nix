@@ -31,21 +31,21 @@ let
         };
         exes = {
           adns-reverse-lookup = {
-            depends  = optionals _flags.install-examples [
+            depends  = pkgs.lib.optionals _flags.install-examples [
               hsPkgs.base
               hsPkgs.network
               hsPkgs.hsdns
             ];
           };
           adns-srv-test = {
-            depends  = optionals _flags.install-examples [
+            depends  = pkgs.lib.optionals _flags.install-examples [
               hsPkgs.base
               hsPkgs.network
               hsPkgs.hsdns
             ];
           };
           adns-test-and-traverse = {
-            depends  = optionals _flags.install-examples [
+            depends  = pkgs.lib.optionals _flags.install-examples [
               hsPkgs.base
               hsPkgs.hsdns
             ];

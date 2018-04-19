@@ -24,7 +24,7 @@ let
         Hipmunk = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals _flags.small_base [
+          ] ++ pkgs.lib.optionals _flags.small_base [
             hsPkgs.array
             hsPkgs.containers
           ];

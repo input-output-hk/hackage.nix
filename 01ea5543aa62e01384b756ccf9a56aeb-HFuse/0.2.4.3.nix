@@ -31,7 +31,7 @@ let
         };
         exes = {
           HelloFS = {
-            depends  = optionals _flags.developer [
+            depends  = pkgs.lib.optionals _flags.developer [
               hsPkgs.base
               hsPkgs.HFuse
               hsPkgs.unix

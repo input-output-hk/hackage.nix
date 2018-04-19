@@ -52,11 +52,11 @@ let
               hsPkgs.regex-tdfa
               hsPkgs.rosezipper
               hsPkgs.utf8-string
-            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ pkgs.lib.optional _flags.gtk hsPkgs.gtk) ++ pkgs.lib.optional _flags.pango hsPkgs.gtk) ++ optionals _flags.cocoa [
+            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ pkgs.lib.optional _flags.gtk hsPkgs.gtk) ++ pkgs.lib.optional _flags.pango hsPkgs.gtk) ++ pkgs.lib.optionals _flags.cocoa [
               hsPkgs.HOC
               hsPkgs.HOC-AppKit
               hsPkgs.HOC-Foundation
-            ]) ++ optionals _flags.ghcapi [
+            ]) ++ pkgs.lib.optionals _flags.ghcapi [
               hsPkgs.ghc
               hsPkgs.haskell98
               hsPkgs.ghc-paths

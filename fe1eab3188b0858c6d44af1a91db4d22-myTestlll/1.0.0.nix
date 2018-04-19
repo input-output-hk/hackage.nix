@@ -39,7 +39,7 @@ let
             hsPkgs.pure-fft
             hsPkgs.stm
             hsPkgs.arrows
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.base
             hsPkgs.syb
             hsPkgs.ghc-prim

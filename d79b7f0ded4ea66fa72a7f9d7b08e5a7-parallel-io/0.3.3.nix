@@ -33,7 +33,7 @@ let
         };
         exes = {
           benchmark = {
-            depends  = optionals (!(!_flags.benchmark)) [
+            depends  = pkgs.lib.optionals (!(!_flags.benchmark)) [
               hsPkgs.base
               hsPkgs.extensible-exceptions
               hsPkgs.containers
@@ -42,7 +42,7 @@ let
             ];
           };
           tests = {
-            depends  = optionals (!(!_flags.tests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.extensible-exceptions
               hsPkgs.containers
@@ -53,7 +53,7 @@ let
             ];
           };
           fuzz = {
-            depends  = optionals (!(!_flags.fuzz)) [
+            depends  = pkgs.lib.optionals (!(!_flags.fuzz)) [
               hsPkgs.base
               hsPkgs.extensible-exceptions
               hsPkgs.containers
@@ -61,7 +61,7 @@ let
             ];
           };
           fuzz-seq = {
-            depends  = optionals (!(!_flags.fuzz)) [
+            depends  = pkgs.lib.optionals (!(!_flags.fuzz)) [
               hsPkgs.base
               hsPkgs.extensible-exceptions
               hsPkgs.containers

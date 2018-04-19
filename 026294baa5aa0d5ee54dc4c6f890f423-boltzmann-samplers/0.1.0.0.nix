@@ -39,7 +39,7 @@ let
         };
         tests = {
           test-tree = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.QuickCheck
               hsPkgs.optparse-generic
@@ -49,7 +49,7 @@ let
         };
         benchmarks = {
           bench-binarytree = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.deepseq

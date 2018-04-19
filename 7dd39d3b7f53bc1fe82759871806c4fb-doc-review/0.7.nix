@@ -55,7 +55,7 @@ let
             ];
           };
           doc-review-test = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.MonadRandom
               hsPkgs.array
               hsPkgs.text

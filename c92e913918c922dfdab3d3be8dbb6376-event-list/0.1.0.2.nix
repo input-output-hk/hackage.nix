@@ -37,7 +37,7 @@ let
         };
         exes = {
           test = {
-            depends  = optionals _flags.buildtests ([
+            depends  = pkgs.lib.optionals _flags.buildtests ([
               hsPkgs.QuickCheck
             ] ++ pkgs.lib.optional _flags.splitbase hsPkgs.random);
           };

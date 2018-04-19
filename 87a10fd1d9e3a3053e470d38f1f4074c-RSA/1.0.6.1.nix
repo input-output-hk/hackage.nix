@@ -39,7 +39,7 @@ let
         };
         exes = {
           test_rsa = {
-            depends  = optionals (!_flags.skiptests) (([
+            depends  = pkgs.lib.optionals (!_flags.skiptests) (([
               hsPkgs.bytestring
               hsPkgs.test-framework
             ] ++ [

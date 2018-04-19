@@ -56,7 +56,7 @@ let
           monitorService = {
             depends  = [
               hsPkgs.base
-            ] ++ optionals (!compiler.isGhcjs) [
+            ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
               hsPkgs.transformers
               hsPkgs.transient
               hsPkgs.transient-universe

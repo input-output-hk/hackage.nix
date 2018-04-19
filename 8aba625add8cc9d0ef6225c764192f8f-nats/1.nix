@@ -22,7 +22,7 @@ let
       };
       components = {
         nats = {
-          depends  = optionals (!compiler.isGhc) ([
+          depends  = pkgs.lib.optionals (!compiler.isGhc) ([
             hsPkgs.base
           ] ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable);
         };

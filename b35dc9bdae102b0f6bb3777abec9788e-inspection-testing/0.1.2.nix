@@ -51,7 +51,7 @@ let
             ];
           };
           text = {
-            depends  = optionals _flags.more-tests [
+            depends  = pkgs.lib.optionals _flags.more-tests [
               hsPkgs.inspection-testing
               hsPkgs.base
               hsPkgs.text
@@ -59,7 +59,7 @@ let
             ];
           };
           generic-lens = {
-            depends  = optionals _flags.more-tests [
+            depends  = pkgs.lib.optionals _flags.more-tests [
               hsPkgs.inspection-testing
               hsPkgs.base
               hsPkgs.generic-lens

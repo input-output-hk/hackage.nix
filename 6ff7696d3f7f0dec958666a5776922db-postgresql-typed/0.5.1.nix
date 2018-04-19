@@ -41,7 +41,7 @@ let
             hsPkgs.network
             hsPkgs.attoparsec
             hsPkgs.utf8-string
-          ] ++ optionals _flags.md5 [
+          ] ++ pkgs.lib.optionals _flags.md5 [
             hsPkgs.cryptonite
             hsPkgs.memory
           ]) ++ (if _flags.binary
@@ -65,7 +65,7 @@ let
             ];
           };
           hdbc = {
-            depends  = optionals _flags.hdbc [
+            depends  = pkgs.lib.optionals _flags.hdbc [
               hsPkgs.base
               hsPkgs.network
               hsPkgs.time

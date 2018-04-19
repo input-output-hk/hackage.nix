@@ -37,7 +37,7 @@ let
         };
         exes = {
           list-known-versions = {
-            depends  = optionals _flags.install-examples [
+            depends  = pkgs.lib.optionals _flags.install-examples [
               hsPkgs.base
               hsPkgs.Cabal
               hsPkgs.containers
@@ -46,7 +46,7 @@ let
             ];
           };
           show-meta-data = {
-            depends  = optionals _flags.install-examples [
+            depends  = pkgs.lib.optionals _flags.install-examples [
               hsPkgs.base
               hsPkgs.Cabal
               hsPkgs.containers
@@ -55,7 +55,7 @@ let
             ];
           };
           show-package-versions = {
-            depends  = optionals _flags.install-examples [
+            depends  = pkgs.lib.optionals _flags.install-examples [
               hsPkgs.base
               hsPkgs.Cabal
               hsPkgs.containers

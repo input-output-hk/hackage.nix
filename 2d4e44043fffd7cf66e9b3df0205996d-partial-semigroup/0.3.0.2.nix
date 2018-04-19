@@ -58,7 +58,7 @@ let
             depends  = [
               hsPkgs.base
               hsPkgs.partial-semigroup
-            ] ++ optionals _flags.generics-in-base (optionals _flags.enable-hedgehog [
+            ] ++ pkgs.lib.optionals _flags.generics-in-base (pkgs.lib.optionals _flags.enable-hedgehog [
               hsPkgs.base
               hsPkgs.hedgehog
             ] ++ (if _flags.semigroup-in-base

@@ -71,10 +71,10 @@ let
               hsPkgs.wai-logger
               hsPkgs.warp
               hsPkgs.wai-http2-extra
-            ] ++ optionals _flags.tls [
+            ] ++ pkgs.lib.optionals _flags.tls [
               hsPkgs.async
               hsPkgs.tls-session-manager
-            ]) ++ optionals _flags.tls [
+            ]) ++ pkgs.lib.optionals _flags.tls [
               hsPkgs.tls
               hsPkgs.warp-tls
             ];
@@ -103,7 +103,7 @@ let
               hsPkgs.hspec
               hsPkgs.mighttpd2
               hsPkgs.http-client
-            ] ++ optionals _flags.tls [
+            ] ++ pkgs.lib.optionals _flags.tls [
               hsPkgs.tls
               hsPkgs.warp-tls
             ];

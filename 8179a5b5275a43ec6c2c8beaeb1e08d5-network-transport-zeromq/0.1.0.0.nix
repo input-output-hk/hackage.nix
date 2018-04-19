@@ -51,7 +51,7 @@ let
             ];
           };
           bench-dp-throughput = {
-            depends  = optionals _flags.benchmarks [
+            depends  = pkgs.lib.optionals _flags.benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
               hsPkgs.network-transport-zeromq
@@ -60,7 +60,7 @@ let
             ];
           };
           bench-dp-channels = {
-            depends  = optionals _flags.benchmarks [
+            depends  = pkgs.lib.optionals _flags.benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
               hsPkgs.network-transport-zeromq

@@ -39,7 +39,7 @@ let
         };
         exes = {
           openid-test = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.monadLib
               hsPkgs.network

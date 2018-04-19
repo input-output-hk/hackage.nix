@@ -56,7 +56,7 @@ let
           monitorService = {
             depends  = [
               hsPkgs.base
-            ] ++ optionals (!compiler.isGhcjs) [
+            ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
               hsPkgs.transformers
               hsPkgs.transient
               hsPkgs.transient-universe
@@ -67,7 +67,7 @@ let
           test-transient1 = {
             depends  = [
               hsPkgs.base
-            ] ++ optionals (!compiler.isGhcjs) [
+            ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
               hsPkgs.mtl
               hsPkgs.transient
               hsPkgs.random
@@ -97,7 +97,7 @@ let
           test-transient = {
             depends  = [
               hsPkgs.base
-            ] ++ optionals (!compiler.isGhcjs) [
+            ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
               hsPkgs.mtl
               hsPkgs.transient
               hsPkgs.random

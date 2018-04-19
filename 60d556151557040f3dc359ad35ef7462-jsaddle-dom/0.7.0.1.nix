@@ -27,7 +27,7 @@ let
             hsPkgs.text
             hsPkgs.jsaddle
             hsPkgs.lens
-          ] ++ optionals compiler.isGhcjs [
+          ] ++ pkgs.lib.optionals compiler.isGhcjs [
             hsPkgs.ghcjs-base
             hsPkgs.ghcjs-prim
             hsPkgs.ghc-prim

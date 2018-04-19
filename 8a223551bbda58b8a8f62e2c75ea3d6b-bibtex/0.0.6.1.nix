@@ -37,7 +37,7 @@ let
         exes = {
           publication-overview = {};
           hackage-bibtex = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.old-time
               hsPkgs.Cabal
               hsPkgs.tar

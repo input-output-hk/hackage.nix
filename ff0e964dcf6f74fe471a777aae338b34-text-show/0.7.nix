@@ -51,7 +51,7 @@ let
               hsPkgs.tasty-quickcheck
               hsPkgs.text
               hsPkgs.text-show
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ pkgs.lib.optional compiler.isGhc hsPkgs.bytestring-builder) ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ pkgs.lib.optional compiler.isGhc hsPkgs.bytestring-builder) ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.nats
               hsPkgs.transformers
               hsPkgs.transformers-compat

@@ -32,7 +32,7 @@ let
             hsPkgs.pretty
             hsPkgs.parsec
           ];
-          libs = optionals _flags.runtimegecode [
+          libs = pkgs.lib.optionals _flags.runtimegecode [
             pkgs.gecodesupport
             pkgs.gecodeset
             pkgs.gecodeint

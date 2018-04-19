@@ -37,7 +37,7 @@ let
         };
         exes = {
           examples = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.z3
               hsPkgs.containers

@@ -34,7 +34,7 @@ let
             hsPkgs.containers
             hsPkgs.regex-posix
             hsPkgs.tagsoup
-          ] ++ optionals (!system.isWindows) [
+          ] ++ pkgs.lib.optionals (!system.isWindows) [
             hsPkgs.hxt-curl
             hsPkgs.curl
           ];

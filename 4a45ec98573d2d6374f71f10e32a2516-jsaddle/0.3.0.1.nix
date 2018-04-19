@@ -56,7 +56,7 @@ let
               hsPkgs.vector
               hsPkgs.text
               hsPkgs.jsaddle
-            ] ++ optionals (!compiler.isGhcjs) ([
+            ] ++ pkgs.lib.optionals (!compiler.isGhcjs) ([
               hsPkgs.glib
             ] ++ (if _flags.gtk3
               then [

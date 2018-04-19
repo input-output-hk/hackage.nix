@@ -65,7 +65,7 @@ let
             else [
               hsPkgs.unix
             ])) ++ pkgs.lib.optional _flags.libcurl hsPkgs.curl;
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.kernel32
             pkgs."pango-1.0"
             pkgs."glib-2.0"
@@ -114,7 +114,7 @@ let
               else [
                 hsPkgs.unix
               ])) ++ pkgs.lib.optional _flags.libcurl hsPkgs.curl;
-            libs = optionals system.isWindows [
+            libs = pkgs.lib.optionals system.isWindows [
               pkgs.kernel32
               pkgs."pango-1.0"
               pkgs."glib-2.0"

@@ -43,7 +43,7 @@ let
         };
         exes = {
           Hit = {
-            depends  = optionals _flags.executable [
+            depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.containers
@@ -58,7 +58,7 @@ let
             ];
           };
           Tests = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.QuickCheck

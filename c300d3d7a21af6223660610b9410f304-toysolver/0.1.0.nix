@@ -56,10 +56,10 @@ let
             hsPkgs.data-interval
             hsPkgs.finite-field
             hsPkgs.sign
-          ] ++ optionals _flags.exceptions06 [
+          ] ++ pkgs.lib.optionals _flags.exceptions06 [
             hsPkgs.temporary
             hsPkgs.exceptions
-          ]) ++ optionals (!_flags.exceptions06) [
+          ]) ++ pkgs.lib.optionals (!_flags.exceptions06) [
             hsPkgs.temporary
             hsPkgs.exceptions
           ]) ++ (if _flags.random1013
@@ -103,7 +103,7 @@ let
             ] ++ pkgs.lib.optional (_flags.forcechar8 && compiler.isGhc) hsPkgs.base;
           };
           toyfmf = {
-            depends  = optionals _flags.buildtoyfmf [
+            depends  = pkgs.lib.optionals _flags.buildtoyfmf [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.toysolver

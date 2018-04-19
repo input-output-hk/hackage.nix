@@ -27,7 +27,7 @@ let
             hsPkgs.containers
             hsPkgs.transformers
             hsPkgs.vault
-          ] ++ optionals _flags.useextensions [
+          ] ++ pkgs.lib.optionals _flags.useextensions [
             hsPkgs.QuickCheck
             hsPkgs.fclabels
             hsPkgs.unordered-containers

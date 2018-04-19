@@ -142,7 +142,7 @@ let
             ];
           };
           toyfmf = {
-            depends  = optionals _flags.buildtoyfmf ([
+            depends  = pkgs.lib.optionals _flags.buildtoyfmf ([
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.intern

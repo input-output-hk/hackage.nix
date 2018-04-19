@@ -39,7 +39,7 @@ let
         };
         exes = {
           board-games = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.httpd-shed
               hsPkgs.network-uri
               hsPkgs.html

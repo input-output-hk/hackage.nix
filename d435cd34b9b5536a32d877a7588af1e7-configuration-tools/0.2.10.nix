@@ -44,7 +44,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.yaml
             hsPkgs.profunctors
-          ] ++ optionals _flags.remote-configs [
+          ] ++ pkgs.lib.optionals _flags.remote-configs [
             hsPkgs.base64-bytestring
             hsPkgs.connection
             hsPkgs.data-default
@@ -72,7 +72,7 @@ let
               hsPkgs.text
               hsPkgs.unordered-containers
               hsPkgs.yaml
-            ] ++ optionals _flags.remote-configs [
+            ] ++ pkgs.lib.optionals _flags.remote-configs [
               hsPkgs.enclosed-exceptions
               hsPkgs.http-types
               hsPkgs.monad-control

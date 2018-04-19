@@ -35,7 +35,7 @@ let
         };
         exes = {
           alsa-minisynth = {
-            depends  = optionals _flags.buildsynthesizer [
+            depends  = pkgs.lib.optionals _flags.buildsynthesizer [
               hsPkgs.alsa-seq
               hsPkgs.alsa-core
               hsPkgs.containers
@@ -47,7 +47,7 @@ let
             ];
           };
           alsa-sine = {
-            depends  = optionals _flags.buildsynthesizer [
+            depends  = pkgs.lib.optionals _flags.buildsynthesizer [
               hsPkgs.alsa-core
               hsPkgs.storablevector
               hsPkgs.storable-record
@@ -56,7 +56,7 @@ let
             ];
           };
           alsa-duplex = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.alsa-core
               hsPkgs.storable-record
               hsPkgs.sample-frame
@@ -64,7 +64,7 @@ let
             ];
           };
           alsa-play = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.alsa-core
               hsPkgs.storable-record
               hsPkgs.sample-frame
@@ -72,7 +72,7 @@ let
             ];
           };
           alsa-record = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.alsa-core
               hsPkgs.storable-record
               hsPkgs.sample-frame
@@ -80,7 +80,7 @@ let
             ];
           };
           alsa-volume-meter = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.alsa-core
               hsPkgs.storable-record
               hsPkgs.sample-frame

@@ -41,7 +41,7 @@ let
         };
         exes = {
           rain = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.synthesizer-dimensional
               hsPkgs.synthesizer-core
               hsPkgs.numeric-prelude
@@ -52,7 +52,7 @@ let
             ];
           };
           demonstration = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.explicit-exception
               hsPkgs.old-time
               hsPkgs.synthesizer-dimensional
@@ -71,7 +71,7 @@ let
             ];
           };
           traumzauberbaum = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.synthesizer-dimensional
               hsPkgs.synthesizer-core
               hsPkgs.numeric-prelude

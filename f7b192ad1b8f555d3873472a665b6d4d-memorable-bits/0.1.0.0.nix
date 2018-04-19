@@ -35,10 +35,10 @@ let
             hsPkgs.split
             hsPkgs.random
             hsPkgs.mtl
-          ] ++ optionals _flags.network-ip-inst [
+          ] ++ pkgs.lib.optionals _flags.network-ip-inst [
             hsPkgs.network-ip
             hsPkgs.data-dword
-          ]) ++ pkgs.lib.optional _flags.data-dword-inst hsPkgs.data-dword) ++ optionals _flags.cryptonite-inst [
+          ]) ++ pkgs.lib.optional _flags.data-dword-inst hsPkgs.data-dword) ++ pkgs.lib.optionals _flags.cryptonite-inst [
             hsPkgs.cryptonite
             hsPkgs.memory
           ];

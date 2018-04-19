@@ -73,7 +73,7 @@ let
             ];
           };
           Hunt-Strictness = {
-            depends  = optionals (!(!_flags.test-strict)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-strict)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.deepseq

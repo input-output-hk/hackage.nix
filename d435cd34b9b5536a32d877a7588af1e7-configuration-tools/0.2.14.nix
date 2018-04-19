@@ -53,7 +53,7 @@ let
             else [
               hsPkgs.mtl
               hsPkgs.transformers
-            ])) ++ optionals _flags.remote-configs [
+            ])) ++ pkgs.lib.optionals _flags.remote-configs [
             hsPkgs.base64-bytestring
             hsPkgs.connection
             hsPkgs.data-default
@@ -88,7 +88,7 @@ let
               else [
                 hsPkgs.mtl
                 hsPkgs.transformers
-              ])) ++ optionals _flags.remote-configs [
+              ])) ++ pkgs.lib.optionals _flags.remote-configs [
               hsPkgs.enclosed-exceptions
               hsPkgs.http-types
               hsPkgs.monad-control

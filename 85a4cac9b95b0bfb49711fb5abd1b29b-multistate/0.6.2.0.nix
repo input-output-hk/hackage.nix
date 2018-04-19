@@ -31,7 +31,7 @@ let
         };
         exes = {
           multistate-example = {
-            depends  = optionals _flags.build-example [
+            depends  = pkgs.lib.optionals _flags.build-example [
               hsPkgs.multistate
               hsPkgs.base
               hsPkgs.mtl

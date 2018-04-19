@@ -36,7 +36,7 @@ let
         };
         exes = {
           roundtrip = {
-            depends  = optionals (compiler.isGhc && _flags.roundtrip) [
+            depends  = pkgs.lib.optionals (compiler.isGhc && _flags.roundtrip) [
               hsPkgs.HUnit
               hsPkgs.base
               hsPkgs.containers
@@ -51,7 +51,7 @@ let
             ];
           };
           static = {
-            depends  = optionals _flags.roundtrip [
+            depends  = pkgs.lib.optionals _flags.roundtrip [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.filepath

@@ -30,14 +30,14 @@ let
         };
         exes = {
           senoid = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.AC-Angle
             ];
           };
           image2term = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.friday
@@ -48,7 +48,7 @@ let
         };
         tests = {
           spec = {
-            depends  = optionals (!_flags.no-tests) [
+            depends  = pkgs.lib.optionals (!_flags.no-tests) [
               hsPkgs.base
               hsPkgs.hspec
               hsPkgs.QuickCheck

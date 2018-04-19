@@ -49,7 +49,7 @@ let
               hsPkgs.time
               hsPkgs.transformers
               hsPkgs.vector
-            ] ++ optionals (!system.isWindows) [
+            ] ++ pkgs.lib.optionals (!system.isWindows) [
               hsPkgs.brick
               hsPkgs.vty
             ];

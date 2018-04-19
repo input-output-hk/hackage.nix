@@ -30,7 +30,7 @@ let
         };
         exes = {
           midi-dump = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.midi-simple
               hsPkgs.pipes
@@ -39,7 +39,7 @@ let
             ];
           };
           re-encode = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.midi-simple
               hsPkgs.pipes

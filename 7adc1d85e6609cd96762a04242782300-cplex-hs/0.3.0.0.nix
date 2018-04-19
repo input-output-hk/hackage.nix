@@ -28,7 +28,7 @@ let
             hsPkgs.transformers
             hsPkgs.vector
           ];
-          libs = optionals system.isLinux [
+          libs = pkgs.lib.optionals system.isLinux [
             pkgs.cplex
             pkgs.m
             pkgs.pthread

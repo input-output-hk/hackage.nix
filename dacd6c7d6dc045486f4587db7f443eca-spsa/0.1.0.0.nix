@@ -26,7 +26,7 @@ let
             hsPkgs.base
             hsPkgs.random
             hsPkgs.hmatrix
-          ] ++ optionals _flags.developer [
+          ] ++ pkgs.lib.optionals _flags.developer [
             hsPkgs.test-framework
             hsPkgs.test-framework-quickcheck2
             hsPkgs.QuickCheck

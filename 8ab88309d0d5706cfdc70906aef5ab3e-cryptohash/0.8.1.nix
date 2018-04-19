@@ -26,7 +26,7 @@ let
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.ghc-prim
-          ] ++ optionals _flags.cryptoapi [
+          ] ++ pkgs.lib.optionals _flags.cryptoapi [
             hsPkgs.crypto-api
             hsPkgs.tagged
             hsPkgs.cereal

@@ -59,7 +59,7 @@ let
               hsPkgs.csv
               hsPkgs.split
               hsPkgs.utf8-string
-            ] ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ optionals _flags.happs [
+            ] ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ pkgs.lib.optionals _flags.happs [
               hsPkgs.happstack
               hsPkgs.happstack-data
               hsPkgs.happstack-server

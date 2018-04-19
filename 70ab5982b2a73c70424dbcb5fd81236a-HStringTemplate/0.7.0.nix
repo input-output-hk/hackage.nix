@@ -42,7 +42,7 @@ let
             hsPkgs.utf8-string
             hsPkgs.blaze-builder
             hsPkgs.void
-          ] ++ pkgs.lib.optional _flags.syb-with-class hsPkgs.syb-with-class) ++ optionals _flags.quasi-quotation [
+          ] ++ pkgs.lib.optional _flags.syb-with-class hsPkgs.syb-with-class) ++ pkgs.lib.optionals _flags.quasi-quotation [
             hsPkgs.template-haskell
             hsPkgs.mtl
           ];

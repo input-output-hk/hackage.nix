@@ -32,7 +32,7 @@ let
               hsPkgs.base
               hsPkgs.random
             ]
-            else optionals _flags.base4 [
+            else pkgs.lib.optionals _flags.base4 [
               hsPkgs.base
               hsPkgs.random
             ]);

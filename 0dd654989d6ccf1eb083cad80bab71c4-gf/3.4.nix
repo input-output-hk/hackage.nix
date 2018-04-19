@@ -53,7 +53,7 @@ let
               hsPkgs.mtl
               hsPkgs.haskeline
               hsPkgs.parallel
-            ] ++ optionals _flags.server [
+            ] ++ pkgs.lib.optionals _flags.server [
               hsPkgs.httpd-shed
               hsPkgs.network
               hsPkgs.utf8-string

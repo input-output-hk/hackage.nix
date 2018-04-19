@@ -51,11 +51,11 @@ let
               pkgs.mkl_intel
               pkgs.mkl_sequential
               pkgs.mkl_core
-            ]) ++ pkgs.lib.optional system.isOsx pkgs.gsl) ++ optionals system.isFreebsd [
+            ]) ++ pkgs.lib.optional system.isOsx pkgs.gsl) ++ pkgs.lib.optionals system.isFreebsd [
             pkgs.gsl
             pkgs.blas
             pkgs.lapack
-          ]) ++ optionals system.isWindows [
+          ]) ++ pkgs.lib.optionals system.isWindows [
             pkgs.gsl-0
             pkgs.blas
             pkgs.lapack

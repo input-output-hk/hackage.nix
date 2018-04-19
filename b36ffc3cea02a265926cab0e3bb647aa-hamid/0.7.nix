@@ -26,7 +26,7 @@ let
             hsPkgs.newtype
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
           libs = pkgs.lib.optional system.isWindows pkgs.winmm;
-          frameworks = optionals system.isOsx [
+          frameworks = pkgs.lib.optionals system.isOsx [
             pkgs.CoreFoundation
             pkgs.CoreAudio
             pkgs.CoreMIDI

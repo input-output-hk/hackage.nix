@@ -42,7 +42,7 @@ let
               hsPkgs.base
               hsPkgs.text
               hsPkgs.network-uri
-            ] ++ optionals _flags.buildsample [
+            ] ++ pkgs.lib.optionals _flags.buildsample [
               hsPkgs.giphy-api
               hsPkgs.lens
               hsPkgs.optparse-applicative

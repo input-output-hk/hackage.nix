@@ -24,7 +24,7 @@ let
         string-combinators = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals _flags.stringable [
+          ] ++ pkgs.lib.optionals _flags.stringable [
             hsPkgs.bytestring
             hsPkgs.dstring
             hsPkgs.text

@@ -31,7 +31,7 @@ let
         };
         exes = {
           btrfs-defrag = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.btrfs
               hsPkgs.unix
@@ -39,13 +39,13 @@ let
             ];
           };
           btrfs-clone-range = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.btrfs
             ];
           };
           btrfs-list-subvols = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.btrfs
             ];

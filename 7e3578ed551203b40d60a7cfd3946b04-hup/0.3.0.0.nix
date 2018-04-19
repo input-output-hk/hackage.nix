@@ -70,7 +70,7 @@ let
               hsPkgs.transformers
               hsPkgs.wai
               hsPkgs.wai-extra
-            ] ++ optionals _flags.enablewebtests [
+            ] ++ pkgs.lib.optionals _flags.enablewebtests [
               hsPkgs.network
               hsPkgs.vector
               hsPkgs.warp

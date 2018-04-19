@@ -45,7 +45,7 @@ let
               hsPkgs.testpack
               hsPkgs.time
               hsPkgs.utf8-string
-            ] ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ optionals _flags.web [
+            ] ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ pkgs.lib.optionals _flags.web [
               hsPkgs.hsp
               hsPkgs.hsx
               hsPkgs.xhtml
@@ -56,7 +56,7 @@ let
               hsPkgs.hack-handler-simpleserver
               hsPkgs.HTTP
               hsPkgs.applicative-extras
-            ]) ++ optionals _flags.webhappstack [
+            ]) ++ pkgs.lib.optionals _flags.webhappstack [
               hsPkgs.hsp
               hsPkgs.hsx
               hsPkgs.xhtml
@@ -71,7 +71,7 @@ let
               hsPkgs.happstack-state
               hsPkgs.HTTP
               hsPkgs.applicative-extras
-            ]) ++ optionals _flags.chart [
+            ]) ++ pkgs.lib.optionals _flags.chart [
               hsPkgs.Chart
               hsPkgs.colour
             ];

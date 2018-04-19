@@ -42,7 +42,7 @@ let
             hsPkgs.filepath
             hsPkgs.directory
             hsPkgs.groom
-          ] ++ optionals _flags.devel [
+          ] ++ pkgs.lib.optionals _flags.devel [
             hsPkgs.HUnit
             hsPkgs.blaze-html
             hsPkgs.blaze-markup

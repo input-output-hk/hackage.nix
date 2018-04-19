@@ -49,7 +49,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.vector
             hsPkgs.zlib-enum
-          ] ++ optionals (!(_flags.portable || system.isWindows)) [
+          ] ++ pkgs.lib.optionals (!(_flags.portable || system.isWindows)) [
             hsPkgs.bytestring-mmap
             hsPkgs.unix
           ];

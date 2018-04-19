@@ -34,7 +34,7 @@ let
         };
         exes = {
           example = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.GLFW-b
               hsPkgs.OpenGL

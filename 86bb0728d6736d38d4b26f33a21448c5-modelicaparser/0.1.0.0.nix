@@ -30,7 +30,7 @@ let
         };
         tests = {
           test-parsers = {
-            depends  = optionals _flags.buildtests [
+            depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.modelicaparser
               hsPkgs.base
               hsPkgs.containers
@@ -40,7 +40,7 @@ let
             ];
           };
           test-real-code = {
-            depends  = optionals _flags.buildtests [
+            depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.modelicaparser
               hsPkgs.base
               hsPkgs.containers

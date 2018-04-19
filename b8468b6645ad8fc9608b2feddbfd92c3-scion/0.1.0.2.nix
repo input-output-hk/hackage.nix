@@ -54,7 +54,7 @@ let
               hsPkgs.json
               hsPkgs.multiset
               hsPkgs.time
-            ] ++ optionals _flags.server [
+            ] ++ pkgs.lib.optionals _flags.server [
               hsPkgs.bytestring
               hsPkgs.network
               hsPkgs.network-bytestring

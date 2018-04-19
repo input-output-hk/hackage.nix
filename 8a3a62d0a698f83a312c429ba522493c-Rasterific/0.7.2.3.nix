@@ -35,7 +35,7 @@ let
             hsPkgs.bytestring
             hsPkgs.containers
             hsPkgs.transformers
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
           ]) ++ pkgs.lib.optional (!_flags.embed_linear) hsPkgs.linear;

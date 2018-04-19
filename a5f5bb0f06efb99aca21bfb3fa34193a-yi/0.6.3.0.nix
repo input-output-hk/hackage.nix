@@ -63,27 +63,27 @@ let
             hsPkgs.utf8-string
             hsPkgs.uniplate
             hsPkgs.unix-compat
-          ] ++ optionals (!system.isWindows) [
+          ] ++ pkgs.lib.optionals (!system.isWindows) [
             hsPkgs.cautious-file
             hsPkgs.unix
-          ]) ++ optionals _flags.testing [
+          ]) ++ pkgs.lib.optionals _flags.testing [
             hsPkgs.QuickCheck
             hsPkgs.random
-          ]) ++ optionals _flags.cocoa [
+          ]) ++ pkgs.lib.optionals _flags.cocoa [
             hsPkgs.HOC
             hsPkgs.HOC-AppKit
             hsPkgs.HOC-Foundation
-          ]) ++ optionals _flags.pango [
+          ]) ++ pkgs.lib.optionals _flags.pango [
             hsPkgs.gtk
             hsPkgs.glib
             hsPkgs.pango
-          ]) ++ optionals _flags.vte [
+          ]) ++ pkgs.lib.optionals _flags.vte [
             hsPkgs.gtk
             hsPkgs.glib
             hsPkgs.pango
             hsPkgs.vte
             hsPkgs.executable-path
-          ]) ++ optionals _flags.vty [
+          ]) ++ pkgs.lib.optionals _flags.vty [
             hsPkgs.unix-compat
             hsPkgs.vty
           ];

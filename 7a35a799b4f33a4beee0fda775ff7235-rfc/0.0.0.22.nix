@@ -50,12 +50,12 @@ let
             hsPkgs.monad-control
             hsPkgs.freer-simple
             hsPkgs.natural-transformation
-          ] ++ optionals _flags.browser [
+          ] ++ pkgs.lib.optionals _flags.browser [
             hsPkgs.aeson
             hsPkgs.attoparsec
             hsPkgs.miso
             hsPkgs.servant
-          ]) ++ optionals (!_flags.browser) [
+          ]) ++ pkgs.lib.optionals (!_flags.browser) [
             hsPkgs.servant-server
             hsPkgs.servant
             hsPkgs.servant-docs

@@ -39,7 +39,7 @@ let
             hsPkgs.data-hash
             hsPkgs.dyre
             hsPkgs.utf8-string
-          ] ++ optionals _flags.with_curses [
+          ] ++ pkgs.lib.optionals _flags.with_curses [
             hsPkgs.hscurses
             hsPkgs.setlocale
           ];

@@ -38,7 +38,7 @@ let
         };
         exes = {
           ipopt-hs_Tests = {
-            depends  = optionals _flags.build_examples [
+            depends  = pkgs.lib.optionals _flags.build_examples [
               hsPkgs.base
               hsPkgs.vector
               hsPkgs.ipopt-hs

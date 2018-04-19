@@ -30,7 +30,7 @@ let
               hsPkgs.OpenGL
               hsPkgs.array
               hsPkgs.random
-            ] ++ optionals _flags.sound [
+            ] ++ pkgs.lib.optionals _flags.sound [
               hsPkgs.OpenAL
               hsPkgs.ALUT
             ];

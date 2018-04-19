@@ -50,7 +50,7 @@ let
         };
         exes = {
           docs = {
-            depends  = optionals (!_flags.disable-docs) [
+            depends  = pkgs.lib.optionals (!_flags.disable-docs) [
               hsPkgs.base
               hsPkgs.hakyll
               hsPkgs.split

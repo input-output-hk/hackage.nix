@@ -30,7 +30,7 @@ let
             hsPkgs.network
             hsPkgs.text
             hsPkgs.utf8-string
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.ghc-prim
             hsPkgs.split
           ];

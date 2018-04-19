@@ -37,7 +37,7 @@ let
             ];
           };
           gtg = {
-            depends  = optionals _flags.gui [
+            depends  = pkgs.lib.optionals _flags.gui [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.HTTP

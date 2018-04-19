@@ -31,7 +31,7 @@ let
             hsPkgs.network-uri
             hsPkgs.containers
             hsPkgs.url
-          ] ++ optionals compiler.isGhcjs [
+          ] ++ pkgs.lib.optionals compiler.isGhcjs [
             hsPkgs.aeson
             hsPkgs.bifunctors
           ];

@@ -36,7 +36,7 @@ let
         };
         exes = {
           aeson-pretty = {
-            depends  = optionals (!_flags.lib-only) [
+            depends  = pkgs.lib.optionals (!_flags.lib-only) [
               hsPkgs.aeson
               hsPkgs.attoparsec
               hsPkgs.base

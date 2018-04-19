@@ -62,11 +62,11 @@ let
               hsPkgs.edit-distance
               hsPkgs.process
               hsPkgs.SafeSemaphore
-            ] ++ pkgs.lib.optional _flags.s3 hsPkgs.hS3) ++ optionals _flags.webdav [
+            ] ++ pkgs.lib.optional _flags.s3 hsPkgs.hS3) ++ pkgs.lib.optionals _flags.webdav [
               hsPkgs.DAV
               hsPkgs.http-conduit
               hsPkgs.xml-conduit
-            ]) ++ pkgs.lib.optional (_flags.assistant && !system.isWindows && !system.isSolaris) hsPkgs.stm) ++ pkgs.lib.optional (system.isLinux && _flags.inotify) hsPkgs.hinotify) ++ pkgs.lib.optional (system.isLinux && _flags.dbus) hsPkgs.dbus) ++ optionals (_flags.webapp && _flags.assistant) [
+            ]) ++ pkgs.lib.optional (_flags.assistant && !system.isWindows && !system.isSolaris) hsPkgs.stm) ++ pkgs.lib.optional (system.isLinux && _flags.inotify) hsPkgs.hinotify) ++ pkgs.lib.optional (system.isLinux && _flags.dbus) hsPkgs.dbus) ++ pkgs.lib.optionals (_flags.webapp && _flags.assistant) [
               hsPkgs.yesod
               hsPkgs.yesod-static
               hsPkgs.case-insensitive
@@ -83,10 +83,10 @@ let
               hsPkgs.template-haskell
               hsPkgs.yesod-default
               hsPkgs.data-default
-            ]) ++ optionals (_flags.pairing && _flags.webapp) [
+            ]) ++ pkgs.lib.optionals (_flags.pairing && _flags.webapp) [
               hsPkgs.network-multicast
               hsPkgs.network-info
-            ]) ++ optionals (_flags.xmpp && _flags.assistant) [
+            ]) ++ pkgs.lib.optionals (_flags.xmpp && _flags.assistant) [
               hsPkgs.network-protocol-xmpp
               hsPkgs.gnutls
               hsPkgs.xml-types

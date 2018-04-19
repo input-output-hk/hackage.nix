@@ -44,7 +44,7 @@ let
             hsPkgs.filepath
           ] ++ [
             hsPkgs.base
-          ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ optionals _flags.tests [
+          ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.tests [
             hsPkgs.QuickCheck
             hsPkgs.HUnit
           ];

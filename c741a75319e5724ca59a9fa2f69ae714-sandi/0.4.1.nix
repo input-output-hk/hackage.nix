@@ -26,7 +26,7 @@ let
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.stringsearch
-          ] ++ optionals _flags.with-conduit [
+          ] ++ pkgs.lib.optionals _flags.with-conduit [
             hsPkgs.conduit
             hsPkgs.exceptions
           ];

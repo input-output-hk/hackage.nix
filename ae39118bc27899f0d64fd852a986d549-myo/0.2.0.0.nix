@@ -33,7 +33,7 @@ let
             hsPkgs.text
             hsPkgs.scientific
             hsPkgs.unordered-containers
-          ] ++ optionals _flags.foreign-api [
+          ] ++ pkgs.lib.optionals _flags.foreign-api [
             hsPkgs.base
             hsPkgs.containers
             hsPkgs.template-haskell

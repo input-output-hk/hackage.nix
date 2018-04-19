@@ -54,7 +54,7 @@ let
           runtests = {
             depends  = [
               hsPkgs.base
-            ] ++ optionals _flags.test [
+            ] ++ pkgs.lib.optionals _flags.test [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2
               hsPkgs.test-framework-hunit

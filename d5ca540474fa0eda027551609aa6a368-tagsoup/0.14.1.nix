@@ -31,7 +31,7 @@ let
         };
         exes = {
           test-tagsoup = {
-            depends  = optionals _flags.testprog [
+            depends  = pkgs.lib.optionals _flags.testprog [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.bytestring

@@ -31,7 +31,7 @@ let
         };
         exes = {
           dbus-model-parse = {
-            depends  = optionals _flags.executable [
+            depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.groom
               hsPkgs.udbus

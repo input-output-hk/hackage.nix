@@ -53,7 +53,7 @@ let
               ]
               else [
                 hsPkgs.base
-              ])) ++ optionals (!_flags.curl && (!_flags.libwww && _flags.http)) [
+              ])) ++ pkgs.lib.optionals (!_flags.curl && (!_flags.libwww && _flags.http)) [
               hsPkgs.network
               hsPkgs.HTTP
             ]) ++ pkgs.lib.optional _flags.external-bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.external-zlib hsPkgs.zlib) ++ pkgs.lib.optional _flags.terminfo hsPkgs.terminfo) ++ pkgs.lib.optional _flags.haskeline hsPkgs.haskeline;

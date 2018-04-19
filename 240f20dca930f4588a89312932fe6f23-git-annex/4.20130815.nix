@@ -68,17 +68,17 @@ let
               hsPkgs.random
               hsPkgs.dlist
               hsPkgs.unix-compat
-            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional _flags.testsuite hsPkgs.HUnit) ++ pkgs.lib.optional _flags.tdfa hsPkgs.regex-tdfa) ++ pkgs.lib.optional _flags.s3 hsPkgs.hS3) ++ optionals _flags.webdav [
+            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional _flags.testsuite hsPkgs.HUnit) ++ pkgs.lib.optional _flags.tdfa hsPkgs.regex-tdfa) ++ pkgs.lib.optional _flags.s3 hsPkgs.hS3) ++ pkgs.lib.optionals _flags.webdav [
               hsPkgs.DAV
               hsPkgs.http-conduit
               hsPkgs.xml-conduit
               hsPkgs.http-types
-            ]) ++ optionals (_flags.assistant && !system.isWindows && !system.isSolaris) [
+            ]) ++ pkgs.lib.optionals (_flags.assistant && !system.isWindows && !system.isSolaris) [
               hsPkgs.async
               hsPkgs.stm
             ]) ++ pkgs.lib.optional _flags.android hsPkgs.data-endian) ++ (if _flags.assistant && (system.isLinux && _flags.inotify)
               then [ hsPkgs.hinotify ]
-              else pkgs.lib.optional system.isOsx hsPkgs.hfsevents)) ++ pkgs.lib.optional (system.isLinux && _flags.dbus) hsPkgs.dbus) ++ optionals _flags.webapp [
+              else pkgs.lib.optional system.isOsx hsPkgs.hfsevents)) ++ pkgs.lib.optional (system.isLinux && _flags.dbus) hsPkgs.dbus) ++ pkgs.lib.optionals _flags.webapp [
               hsPkgs.yesod
               hsPkgs.yesod-default
               hsPkgs.yesod-static
@@ -97,10 +97,10 @@ let
               hsPkgs.aeson
               hsPkgs.template-haskell
               hsPkgs.data-default
-            ]) ++ optionals _flags.pairing [
+            ]) ++ pkgs.lib.optionals _flags.pairing [
               hsPkgs.network-multicast
               hsPkgs.network-info
-            ]) ++ optionals _flags.xmpp [
+            ]) ++ pkgs.lib.optionals _flags.xmpp [
               hsPkgs.network-protocol-xmpp
               hsPkgs.gnutls
               hsPkgs.xml-types

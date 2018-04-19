@@ -67,7 +67,7 @@ let
             then [ hsPkgs.Win32 ]
             else [
               hsPkgs.unix
-            ])) ++ pkgs.lib.optional _flags.hint hsPkgs.hint) ++ optionals _flags.testing [
+            ])) ++ pkgs.lib.optional _flags.hint hsPkgs.hint) ++ pkgs.lib.optionals _flags.testing [
             hsPkgs.QuickCheck
             hsPkgs.random
           ];

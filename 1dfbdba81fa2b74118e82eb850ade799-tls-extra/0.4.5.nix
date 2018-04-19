@@ -41,7 +41,7 @@ let
         };
         exes = {
           stunnel = {
-            depends  = optionals _flags.executable [
+            depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.network
               hsPkgs.cmdargs
               hsPkgs.cprng-aes
@@ -49,28 +49,28 @@ let
             ];
           };
           checkciphers = {
-            depends  = optionals _flags.executable [
+            depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.network
               hsPkgs.cmdargs
               hsPkgs.cprng-aes
             ];
           };
           retrievecertificate = {
-            depends  = optionals _flags.executable [
+            depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.network
               hsPkgs.cmdargs
               hsPkgs.cprng-aes
             ];
           };
           simpleclient = {
-            depends  = optionals _flags.executable [
+            depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.network
               hsPkgs.cmdargs
               hsPkgs.cprng-aes
             ];
           };
           Tests = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.QuickCheck

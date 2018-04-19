@@ -34,7 +34,7 @@ let
         exes = {
           texmath = {};
           texmath-cgi = {
-            depends  = optionals _flags.cgi [
+            depends  = pkgs.lib.optionals _flags.cgi [
               hsPkgs.cgi
               hsPkgs.json
               hsPkgs.utf8-string

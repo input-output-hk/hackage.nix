@@ -25,7 +25,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
-          ] ++ optionals _flags.base4 [
+          ] ++ pkgs.lib.optionals _flags.base4 [
             hsPkgs.base
             hsPkgs.syb
           ];

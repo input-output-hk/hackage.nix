@@ -35,7 +35,7 @@ let
             ]
             else [
               hsPkgs.base
-            ])) ++ pkgs.lib.optional _flags.mtl hsPkgs.mtl) ++ optionals _flags.monadsfd [
+            ])) ++ pkgs.lib.optional _flags.mtl hsPkgs.mtl) ++ pkgs.lib.optionals _flags.monadsfd [
             hsPkgs.transformers
             hsPkgs.monads-fd
           ];

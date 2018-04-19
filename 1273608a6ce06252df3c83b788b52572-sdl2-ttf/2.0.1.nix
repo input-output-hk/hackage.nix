@@ -33,7 +33,7 @@ let
         };
         exes = {
           sdl2-ttf-example = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.sdl2

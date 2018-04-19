@@ -47,7 +47,7 @@ let
             hsPkgs.text
             hsPkgs.time
             hsPkgs.lrucache
-          ] ++ optionals _flags.previewserver [
+          ] ++ pkgs.lib.optionals _flags.previewserver [
             hsPkgs.snap-core
             hsPkgs.snap-server
           ]) ++ pkgs.lib.optional _flags.unixfilter hsPkgs.unix;

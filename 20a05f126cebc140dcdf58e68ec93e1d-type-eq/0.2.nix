@@ -22,7 +22,7 @@ let
         type-eq = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.semigroupoids
             hsPkgs.groupoids
           ];

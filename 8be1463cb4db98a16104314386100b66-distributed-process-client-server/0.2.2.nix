@@ -36,7 +36,7 @@ let
             hsPkgs.time
             hsPkgs.transformers
             hsPkgs.exceptions
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.template-haskell
             hsPkgs.derive
             hsPkgs.uniplate

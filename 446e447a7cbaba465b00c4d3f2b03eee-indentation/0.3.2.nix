@@ -27,10 +27,10 @@ let
             hsPkgs.base
             hsPkgs.mtl
             hsPkgs.indentation-core
-          ] ++ optionals _flags.parsec [
+          ] ++ pkgs.lib.optionals _flags.parsec [
             hsPkgs.parsec
             hsPkgs.indentation-parsec
-          ]) ++ optionals _flags.trifecta [
+          ]) ++ pkgs.lib.optionals _flags.trifecta [
             hsPkgs.trifecta
             hsPkgs.parsers
             hsPkgs.indentation-trifecta

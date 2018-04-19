@@ -33,7 +33,7 @@ let
         };
         exes = {
           ttrender = {
-            depends  = optionals _flags.ttrender [
+            depends  = pkgs.lib.optionals _flags.ttrender [
               hsPkgs.base
               hsPkgs.colour
               hsPkgs.json

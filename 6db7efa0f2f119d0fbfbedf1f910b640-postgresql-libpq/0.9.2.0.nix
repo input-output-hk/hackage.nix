@@ -26,9 +26,9 @@ let
             hsPkgs.base
             hsPkgs.bytestring
           ];
-          libs = optionals (!_flags.use-pkg-config) ([
+          libs = pkgs.lib.optionals (!_flags.use-pkg-config) ([
             pkgs.pq
-          ] ++ optionals system.isOpenbsd [
+          ] ++ pkgs.lib.optionals system.isOpenbsd [
             pkgs.crypto
             pkgs.ssl
           ]);

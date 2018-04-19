@@ -33,7 +33,7 @@ let
               hsPkgs.random
               hsPkgs.parallel
             ]
-            else optionals _flags.base4 [
+            else pkgs.lib.optionals _flags.base4 [
               hsPkgs.base
               hsPkgs.random
               hsPkgs.parallel

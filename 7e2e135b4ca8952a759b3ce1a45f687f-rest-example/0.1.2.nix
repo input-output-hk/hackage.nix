@@ -49,7 +49,7 @@ let
         };
         exes = {
           rest-example-happstack = {
-            depends  = optionals _flags.happstack [
+            depends  = pkgs.lib.optionals _flags.happstack [
               hsPkgs.base
               hsPkgs.happstack-server
               hsPkgs.mtl
@@ -59,7 +59,7 @@ let
             ];
           };
           rest-example-wai = {
-            depends  = optionals _flags.wai [
+            depends  = pkgs.lib.optionals _flags.wai [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.rest-core
@@ -70,7 +70,7 @@ let
             ];
           };
           rest-example-snap = {
-            depends  = optionals _flags.snap [
+            depends  = pkgs.lib.optionals _flags.snap [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.rest-core
@@ -81,7 +81,7 @@ let
             ];
           };
           rest-example-gen = {
-            depends  = optionals _flags.gen [
+            depends  = pkgs.lib.optionals _flags.gen [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.rest-core

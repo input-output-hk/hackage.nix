@@ -32,7 +32,7 @@ let
             hsPkgs.temporary
             hsPkgs.HTTP
             hsPkgs.network-uri
-          ] ++ optionals _flags.download-extras [
+          ] ++ pkgs.lib.optionals _flags.download-extras [
             hsPkgs.feed
             hsPkgs.tagsoup
             hsPkgs.xml

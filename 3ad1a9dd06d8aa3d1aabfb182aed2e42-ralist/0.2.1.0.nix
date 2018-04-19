@@ -24,14 +24,14 @@ let
         ralist = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];
         };
         tests = {
           hspec = {
-            depends  = optionals (!(!_flags.test-hspec)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hspec)) [
               hsPkgs.base
               hsPkgs.ralist
               hsPkgs.hspec

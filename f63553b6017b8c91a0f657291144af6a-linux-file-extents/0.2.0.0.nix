@@ -29,7 +29,7 @@ let
         };
         exes = {
           print-extents = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.linux-file-extents
             ];

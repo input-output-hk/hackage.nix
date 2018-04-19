@@ -84,7 +84,7 @@ let
             ];
           };
           lambdacube-bulletexample = {
-            depends  = optionals _flags.bulletinstalled [
+            depends  = pkgs.lib.optionals _flags.bulletinstalled [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.bytestring

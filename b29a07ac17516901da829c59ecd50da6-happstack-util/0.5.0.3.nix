@@ -44,14 +44,14 @@ let
             hsPkgs.filepath
           ] ++ [
             hsPkgs.base
-          ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ optionals _flags.tests [
+          ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.tests [
             hsPkgs.QuickCheck
             hsPkgs.HUnit
           ];
         };
         exes = {
           happstack-util-tests = {
-            depends  = optionals _flags.tests [
+            depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.network
               hsPkgs.HUnit
             ];

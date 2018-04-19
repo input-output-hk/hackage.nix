@@ -37,7 +37,7 @@ let
         };
         exes = {
           smoke-test = {
-            depends  = optionals _flags.build-toys [
+            depends  = pkgs.lib.optionals _flags.build-toys [
               hsPkgs.base
               hsPkgs.caramia
               hsPkgs.sdl2
@@ -45,21 +45,21 @@ let
             ];
           };
           memory-info = {
-            depends  = optionals _flags.build-toys [
+            depends  = pkgs.lib.optionals _flags.build-toys [
               hsPkgs.base
               hsPkgs.caramia
               hsPkgs.sdl2
             ];
           };
           gl-info = {
-            depends  = optionals _flags.build-toys [
+            depends  = pkgs.lib.optionals _flags.build-toys [
               hsPkgs.base
               hsPkgs.sdl2
               hsPkgs.OpenGLRaw
             ];
           };
           query-objects = {
-            depends  = optionals _flags.build-toys [
+            depends  = pkgs.lib.optionals _flags.build-toys [
               hsPkgs.base
               hsPkgs.caramia
               hsPkgs.sdl2
@@ -69,7 +69,7 @@ let
             ];
           };
           textures = {
-            depends  = optionals _flags.build-toys [
+            depends  = pkgs.lib.optionals _flags.build-toys [
               hsPkgs.base
               hsPkgs.caramia
               hsPkgs.sdl2

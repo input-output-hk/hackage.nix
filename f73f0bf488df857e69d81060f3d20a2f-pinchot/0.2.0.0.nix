@@ -32,7 +32,7 @@ let
         };
         exes = {
           print-postal-grammar = {
-            depends  = optionals _flags.executables [
+            depends  = pkgs.lib.optionals _flags.executables [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.transformers
@@ -41,7 +41,7 @@ let
             ];
           };
           postal-parser = {
-            depends  = optionals _flags.executables [
+            depends  = pkgs.lib.optionals _flags.executables [
               hsPkgs.pretty-show
               hsPkgs.base
               hsPkgs.containers

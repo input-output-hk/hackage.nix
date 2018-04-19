@@ -42,7 +42,7 @@ let
               hsPkgs.process
               hsPkgs.text
               hsPkgs.time
-            ] ++ optionals _flags.hgettext [
+            ] ++ pkgs.lib.optionals _flags.hgettext [
               hsPkgs.hgettext
               hsPkgs.setlocale
             ];

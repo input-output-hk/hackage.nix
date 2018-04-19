@@ -26,7 +26,7 @@ let
             hsPkgs.base
             hsPkgs.network
           ] ++ pkgs.lib.optional (!(system.isWindows && !_flags.portable) && !(system.isLinux && !_flags.portable)) hsPkgs.bytestring;
-          libs = optionals (system.isWindows && !_flags.portable) [
+          libs = pkgs.lib.optionals (system.isWindows && !_flags.portable) [
             pkgs.kernel32
             pkgs.mswsock
           ];

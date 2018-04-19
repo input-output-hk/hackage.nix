@@ -47,7 +47,7 @@ let
               hsPkgs.uuid
               hsPkgs.scientific
             ]
-            else (pkgs.lib.optional _flags.text hsPkgs.text ++ pkgs.lib.optional _flags.uuid hsPkgs.uuid) ++ pkgs.lib.optional _flags.scientific hsPkgs.scientific)) ++ optionals _flags.aeson [
+            else (pkgs.lib.optional _flags.text hsPkgs.text ++ pkgs.lib.optional _flags.uuid hsPkgs.uuid) ++ pkgs.lib.optional _flags.scientific hsPkgs.scientific)) ++ pkgs.lib.optionals _flags.aeson [
             hsPkgs.aeson
             hsPkgs.attoparsec
           ];

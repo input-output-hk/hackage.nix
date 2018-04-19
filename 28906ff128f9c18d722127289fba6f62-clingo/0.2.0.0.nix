@@ -38,27 +38,27 @@ let
         };
         exes = {
           version = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clingo
             ];
           };
           dot-propagator = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clingo
               hsPkgs.text
             ];
           };
           control = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clingo
               hsPkgs.text
             ];
           };
           configuration = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clingo
               hsPkgs.text
@@ -66,42 +66,42 @@ let
             ];
           };
           theory-atoms = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clingo
               hsPkgs.text
             ];
           };
           symbolic-atoms = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clingo
               hsPkgs.text
             ];
           };
           ast = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clingo
               hsPkgs.text
             ];
           };
           backend = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clingo
               hsPkgs.text
             ];
           };
           model = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clingo
               hsPkgs.text
             ];
           };
           solve-async = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clingo
               hsPkgs.text
@@ -110,7 +110,7 @@ let
             ];
           };
           statistics = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clingo
               hsPkgs.text
@@ -119,7 +119,7 @@ let
             ];
           };
           propagator = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clingo
               hsPkgs.text

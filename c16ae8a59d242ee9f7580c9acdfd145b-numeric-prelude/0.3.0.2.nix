@@ -45,7 +45,7 @@ let
             depends  = pkgs.lib.optional _flags.buildtests hsPkgs.HUnit;
           };
           test-gaussian = {
-            depends  = optionals _flags.buildtests [
+            depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.gnuplot
               hsPkgs.HTam
             ];

@@ -44,7 +44,7 @@ let
         };
         exes = {
           distributed-process-throughput = {
-            depends  = optionals _flags.benchmarks [
+            depends  = pkgs.lib.optionals _flags.benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
               hsPkgs.network-transport-tcp
@@ -53,7 +53,7 @@ let
             ];
           };
           distributed-process-latency = {
-            depends  = optionals _flags.benchmarks [
+            depends  = pkgs.lib.optionals _flags.benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
               hsPkgs.network-transport-tcp
@@ -62,7 +62,7 @@ let
             ];
           };
           distributed-process-channels = {
-            depends  = optionals _flags.benchmarks [
+            depends  = pkgs.lib.optionals _flags.benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
               hsPkgs.network-transport-tcp
@@ -71,7 +71,7 @@ let
             ];
           };
           distributed-process-spawns = {
-            depends  = optionals _flags.benchmarks [
+            depends  = pkgs.lib.optionals _flags.benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
               hsPkgs.network-transport-tcp

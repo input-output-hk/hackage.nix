@@ -34,7 +34,7 @@ let
             hsPkgs.ghc-prim
             hsPkgs.haskell98
             hsPkgs.pretty
-          ] ++ pkgs.lib.optional _flags.llvm hsPkgs.llvm) ++ optionals _flags.cuda [
+          ] ++ pkgs.lib.optional _flags.llvm hsPkgs.llvm) ++ pkgs.lib.optionals _flags.cuda [
             hsPkgs.binary
             hsPkgs.bytestring
             hsPkgs.containers

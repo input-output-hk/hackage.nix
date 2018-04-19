@@ -50,7 +50,7 @@ let
         };
         tests = {
           properties = {
-            depends  = optionals (!(!_flags.test-properties)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.angle
               hsPkgs.QuickCheck

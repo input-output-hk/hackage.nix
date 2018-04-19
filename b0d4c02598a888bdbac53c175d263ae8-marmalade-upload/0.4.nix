@@ -37,7 +37,7 @@ let
               hsPkgs.http-client
               hsPkgs.http-client-multipart
             ] ++ pkgs.lib.optional (!system.isOsx) hsPkgs.udbus;
-            frameworks = optionals system.isOsx [
+            frameworks = pkgs.lib.optionals system.isOsx [
               pkgs.Security
               pkgs.CoreFoundation
             ];

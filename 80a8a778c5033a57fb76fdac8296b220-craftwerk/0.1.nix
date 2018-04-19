@@ -32,25 +32,25 @@ let
         };
         exes = {
           example1 = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.craftwerk
             ];
           };
           example2 = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.craftwerk
             ];
           };
           example3 = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.craftwerk
             ];
           };
           test-craftwerk = {
-            depends  = optionals (!(!_flags.tests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.craftwerk
               hsPkgs.test-framework

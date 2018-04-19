@@ -38,11 +38,11 @@ let
             else [
               pkgs.blas
               pkgs.lapack
-            ]) ++ optionals system.isFreebsd [
+            ]) ++ pkgs.lib.optionals system.isFreebsd [
             pkgs.blas
             pkgs.lapack
             pkgs.gfortran
-          ]) ++ optionals system.isWindows [
+          ]) ++ pkgs.lib.optionals system.isWindows [
             pkgs.blas
             pkgs.lapack
           ];

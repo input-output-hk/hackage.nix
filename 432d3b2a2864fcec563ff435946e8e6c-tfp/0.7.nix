@@ -29,7 +29,7 @@ let
         };
         exes = {
           tfp-test = {
-            depends  = optionals _flags.build-test [
+            depends  = pkgs.lib.optionals _flags.build-test [
               hsPkgs.base
               hsPkgs.template-haskell
               hsPkgs.QuickCheck

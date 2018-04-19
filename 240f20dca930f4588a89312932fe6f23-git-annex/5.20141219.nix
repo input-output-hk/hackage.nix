@@ -97,7 +97,7 @@ let
               ]
               else [
                 hsPkgs.unix
-              ])) ++ optionals _flags.testsuite [
+              ])) ++ pkgs.lib.optionals _flags.testsuite [
               hsPkgs.tasty
               hsPkgs.tasty-hunit
               hsPkgs.tasty-quickcheck
@@ -108,13 +108,13 @@ let
               then [ hsPkgs.regex-tdfa ]
               else [
                 hsPkgs.regex-compat
-              ])) ++ pkgs.lib.optional _flags.cryptohash hsPkgs.cryptohash) ++ optionals _flags.s3 [
+              ])) ++ pkgs.lib.optional _flags.cryptohash hsPkgs.cryptohash) ++ pkgs.lib.optionals _flags.s3 [
               hsPkgs.conduit
               hsPkgs.resourcet
               hsPkgs.conduit-extra
               hsPkgs.aws
               hsPkgs.http-client
-            ]) ++ optionals _flags.webdav [
+            ]) ++ pkgs.lib.optionals _flags.webdav [
               hsPkgs.DAV
               hsPkgs.http-client
             ]) ++ (if _flags.assistant && (system.isLinux && _flags.inotify)
@@ -123,10 +123,10 @@ let
                 then [ hsPkgs.hfsevents ]
                 else if system.isWindows
                   then [ hsPkgs.Win32-notify ]
-                  else pkgs.lib.optional (!system.isSolaris && !system.isLinux && _flags.android) hsPkgs.hinotify)) ++ optionals system.isLinux (pkgs.lib.optional _flags.dbus hsPkgs.dbus ++ optionals (_flags.desktopnotify && _flags.dbus) [
+                  else pkgs.lib.optional (!system.isSolaris && !system.isLinux && _flags.android) hsPkgs.hinotify)) ++ pkgs.lib.optionals system.isLinux (pkgs.lib.optional _flags.dbus hsPkgs.dbus ++ pkgs.lib.optionals (_flags.desktopnotify && _flags.dbus) [
               hsPkgs.dbus
               hsPkgs.fdo-notify
-            ])) ++ pkgs.lib.optional _flags.android hsPkgs.data-endian) ++ optionals _flags.webapp [
+            ])) ++ pkgs.lib.optional _flags.android hsPkgs.data-endian) ++ pkgs.lib.optionals _flags.webapp [
               hsPkgs.yesod
               hsPkgs.yesod-default
               hsPkgs.yesod-static
@@ -144,14 +144,14 @@ let
               hsPkgs.aeson
               hsPkgs.path-pieces
               hsPkgs.shakespeare
-            ]) ++ optionals (_flags.webapp && _flags.webapp-secure) [
+            ]) ++ pkgs.lib.optionals (_flags.webapp && _flags.webapp-secure) [
               hsPkgs.warp-tls
               hsPkgs.securemem
               hsPkgs.byteable
-            ]) ++ optionals _flags.pairing [
+            ]) ++ pkgs.lib.optionals _flags.pairing [
               hsPkgs.network-multicast
               hsPkgs.network-info
-            ]) ++ optionals (_flags.xmpp && !system.isWindows) [
+            ]) ++ pkgs.lib.optionals (_flags.xmpp && !system.isWindows) [
               hsPkgs.network-protocol-xmpp
               hsPkgs.gnutls
               hsPkgs.xml-types

@@ -35,7 +35,7 @@ let
             hsPkgs.time
             hsPkgs.uniplate
             hsPkgs.wl-pprint
-          ] ++ optionals _flags.logging [
+          ] ++ pkgs.lib.optionals _flags.logging [
             hsPkgs.HDBC
             hsPkgs.HDBC-sqlite3
           ];

@@ -48,10 +48,10 @@ let
             hsPkgs.vector
             hsPkgs.lifted-async
             hsPkgs.text
-          ] ++ optionals _flags.browser [
+          ] ++ pkgs.lib.optionals _flags.browser [
             hsPkgs.aeson
             hsPkgs.attoparsec
-          ]) ++ optionals (!_flags.browser) [
+          ]) ++ pkgs.lib.optionals (!_flags.browser) [
             hsPkgs.servant-server
             hsPkgs.wai
             hsPkgs.aeson

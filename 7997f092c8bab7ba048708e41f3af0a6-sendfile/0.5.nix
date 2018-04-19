@@ -27,7 +27,7 @@ let
             hsPkgs.network
           ] ++ (if system.isWindows && !_flags.portable
             then [ hsPkgs.Win32 ]
-            else optionals (!(system.isLinux && !_flags.portable) && !(system.isFreebsd && !_flags.portable)) [
+            else pkgs.lib.optionals (!(system.isLinux && !_flags.portable) && !(system.isFreebsd && !_flags.portable)) [
               hsPkgs.bytestring
               hsPkgs.network-bytestring
             ]);

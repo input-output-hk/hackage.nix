@@ -47,7 +47,7 @@ let
               hsPkgs.random
               hsPkgs.network
               hsPkgs.recaptcha
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.syb
             ];

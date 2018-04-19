@@ -37,7 +37,7 @@ let
                 hsPkgs.system-filepath
                 hsPkgs.system-fileio
               ]
-              else optionals system.isOsx [
+              else pkgs.lib.optionals system.isOsx [
                 hsPkgs.hfsevents
                 hsPkgs.system-filepath
                 hsPkgs.system-fileio

@@ -31,7 +31,7 @@ let
         };
         exes = {
           csvreplace = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.spreadsheet
               hsPkgs.optparse-applicative
               hsPkgs.utility-ht
@@ -40,7 +40,7 @@ let
             ];
           };
           csvextract = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.spreadsheet
               hsPkgs.optparse-applicative
               hsPkgs.containers

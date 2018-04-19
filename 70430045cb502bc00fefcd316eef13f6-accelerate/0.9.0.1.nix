@@ -39,7 +39,7 @@ let
             hsPkgs.ghc-prim
             hsPkgs.mtl
             hsPkgs.pretty
-          ] ++ pkgs.lib.optional _flags.llvm hsPkgs.llvm) ++ optionals _flags.cuda [
+          ] ++ pkgs.lib.optional _flags.llvm hsPkgs.llvm) ++ pkgs.lib.optionals _flags.cuda [
             hsPkgs.binary
             hsPkgs.bytestring
             hsPkgs.cuda
@@ -49,7 +49,7 @@ let
             hsPkgs.transformers
             hsPkgs.unix
             hsPkgs.zlib
-          ]) ++ pkgs.lib.optional _flags.io hsPkgs.bytestring) ++ optionals _flags.more-pp [
+          ]) ++ pkgs.lib.optional _flags.io hsPkgs.bytestring) ++ pkgs.lib.optionals _flags.more-pp [
             hsPkgs.bytestring
             hsPkgs.blaze-html
             hsPkgs.text

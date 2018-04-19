@@ -38,7 +38,7 @@ let
             else [
               pkgs.blas
               pkgs.lapack
-            ]) ++ optionals system.isFreebsd ([
+            ]) ++ pkgs.lib.optionals system.isFreebsd ([
             pkgs.gfortran
           ] ++ (if _flags.openblas
             then [ pkgs.openblas ]

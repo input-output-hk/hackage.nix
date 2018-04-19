@@ -33,7 +33,7 @@ let
             hsPkgs.rasterific-svg
             hsPkgs.FontyFruity
             hsPkgs.JuicyPixels
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];

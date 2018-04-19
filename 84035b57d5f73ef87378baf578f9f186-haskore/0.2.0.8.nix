@@ -49,7 +49,7 @@ let
         };
         exes = {
           flipsong = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.haskore
               hsPkgs.midi
               hsPkgs.bytestring
@@ -57,7 +57,7 @@ let
             ];
           };
           autotrack = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.haskore
               hsPkgs.bytestring
               hsPkgs.base

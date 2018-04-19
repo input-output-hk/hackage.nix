@@ -77,7 +77,7 @@ let
             ];
           };
           properties = {
-            depends  = optionals (!(!_flags.test-properties)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.lens
               hsPkgs.QuickCheck
@@ -88,7 +88,7 @@ let
             ];
           };
           hunit = {
-            depends  = optionals (!(!_flags.test-hunit)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hunit)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.HUnit
@@ -100,7 +100,7 @@ let
             ];
           };
           doctests = {
-            depends  = optionals (!(!_flags.test-doctests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.containers
@@ -121,7 +121,7 @@ let
             ];
           };
           hlint = {
-            depends  = optionals (!(!_flags.test-hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];

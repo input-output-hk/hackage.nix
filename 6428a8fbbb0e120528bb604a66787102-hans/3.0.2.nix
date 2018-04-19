@@ -37,14 +37,14 @@ let
             hsPkgs.random
             hsPkgs.monadLib
             hsPkgs.SHA
-          ] ++ optionals system.isHalvm [
+          ] ++ pkgs.lib.optionals system.isHalvm [
             hsPkgs.XenDevice
             hsPkgs.HALVMCore
           ]) ++ pkgs.lib.optional (system.isOsx || system.isLinux) hsPkgs.unix;
         };
         exes = {
           echo-server = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.hans

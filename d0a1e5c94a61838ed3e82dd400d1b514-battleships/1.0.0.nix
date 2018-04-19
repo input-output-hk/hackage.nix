@@ -58,7 +58,7 @@ let
             hsPkgs.shakespeare-js
             hsPkgs.yaml
             hsPkgs.filepath
-          ] ++ optionals _flags.library-only [
+          ] ++ pkgs.lib.optionals _flags.library-only [
             hsPkgs.warp
             hsPkgs.directory
           ];

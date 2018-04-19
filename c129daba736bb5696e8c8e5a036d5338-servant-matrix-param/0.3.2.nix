@@ -27,13 +27,13 @@ let
           depends  = (([
             hsPkgs.base
             hsPkgs.servant
-          ] ++ pkgs.lib.optional _flags.with-servant-aeson-specs hsPkgs.servant-aeson-specs) ++ optionals _flags.with-servant-server [
+          ] ++ pkgs.lib.optional _flags.with-servant-aeson-specs hsPkgs.servant-aeson-specs) ++ pkgs.lib.optionals _flags.with-servant-server [
             hsPkgs.servant-server
             hsPkgs.http-api-data
             hsPkgs.containers
             hsPkgs.string-conversions
             hsPkgs.text
-          ]) ++ optionals _flags.with-servant-client [
+          ]) ++ pkgs.lib.optionals _flags.with-servant-client [
             hsPkgs.servant-client
             hsPkgs.text
           ];

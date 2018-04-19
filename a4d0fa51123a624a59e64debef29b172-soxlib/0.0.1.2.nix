@@ -35,7 +35,7 @@ let
         };
         exes = {
           soxlib-demo = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.soxlib
               hsPkgs.storablevector
               hsPkgs.base

@@ -38,7 +38,7 @@ let
               hsPkgs.time
               hsPkgs.tls
               hsPkgs.tls-extra
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.exceptions
               hsPkgs.lens
             ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.MonadCatchIO-transformers;

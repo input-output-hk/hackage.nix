@@ -42,7 +42,7 @@ let
         };
         exes = {
           BenchmarkBimaps = {
-            depends  = optionals _flags.benchmark [
+            depends  = pkgs.lib.optionals _flags.benchmark [
               hsPkgs.base
               hsPkgs.bimaps
               hsPkgs.criterion

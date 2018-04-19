@@ -33,7 +33,7 @@ let
         exes = {
           Arithmetic = {};
           Asteroids = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.random
               hsPkgs.executable-path
               hsPkgs.filepath

@@ -34,7 +34,7 @@ let
         };
         exes = {
           haskell-mpi-testsuite = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.testrunner
@@ -44,7 +44,7 @@ let
             libs = [ pkgs.mpi ];
           };
           haskell-mpi-comprunclean = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.process
             ];

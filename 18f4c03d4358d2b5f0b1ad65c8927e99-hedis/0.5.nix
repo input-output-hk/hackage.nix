@@ -38,7 +38,7 @@ let
         };
         exes = {
           hedis-benchmark = {
-            depends  = optionals _flags.benchmark [
+            depends  = pkgs.lib.optionals _flags.benchmark [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.hedis
@@ -46,7 +46,7 @@ let
             ];
           };
           hedis-test = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.hedis

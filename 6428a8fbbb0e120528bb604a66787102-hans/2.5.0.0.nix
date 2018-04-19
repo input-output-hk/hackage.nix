@@ -56,13 +56,13 @@ let
               hsPkgs.time
               hsPkgs.old-locale
               hsPkgs.hans
-            ] ++ pkgs.lib.optional _flags.bounded-channels hsPkgs.BoundedChan) ++ optionals system.isHalvm [
+            ] ++ pkgs.lib.optional _flags.bounded-channels hsPkgs.BoundedChan) ++ pkgs.lib.optionals system.isHalvm [
               hsPkgs.XenDevice
               hsPkgs.HALVMCore
             ];
           };
           web-server = {
-            depends  = optionals (!system.isHalvm && _flags.web-server) [
+            depends  = pkgs.lib.optionals (!system.isHalvm && _flags.web-server) [
               hsPkgs.base
               hsPkgs.cereal
               hsPkgs.bytestring
@@ -86,20 +86,20 @@ let
               hsPkgs.time
               hsPkgs.old-locale
               hsPkgs.hans
-            ] ++ optionals system.isHalvm [
+            ] ++ pkgs.lib.optionals system.isHalvm [
               hsPkgs.XenDevice
               hsPkgs.HALVMCore
             ];
           };
           tcp-test-client = {
-            depends  = optionals (!system.isHalvm) [
+            depends  = pkgs.lib.optionals (!system.isHalvm) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.network
             ];
           };
           test-suite = {
-            depends  = optionals _flags.enable-tests [
+            depends  = pkgs.lib.optionals _flags.enable-tests [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.bytestring

@@ -69,7 +69,7 @@ let
             hsPkgs.sandi
             hsPkgs.unix-compat
             hsPkgs.cryptohash
-          ] ++ optionals system.isWindows [
+          ] ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.unix-compat
             hsPkgs.Win32
           ]) ++ (if _flags.use-local-data-map-strict
@@ -86,7 +86,7 @@ let
             else [
               hsPkgs.time
               hsPkgs.old-locale
-            ])) ++ optionals _flags.http ([
+            ])) ++ pkgs.lib.optionals _flags.http ([
             hsPkgs.HTTP
           ] ++ (if _flags.network-uri
             then [

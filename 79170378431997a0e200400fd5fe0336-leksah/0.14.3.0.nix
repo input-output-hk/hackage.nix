@@ -81,7 +81,7 @@ let
             ]
             else [
               hsPkgs.gtk-mac-integration
-            ])) ++ optionals _flags.yi [
+            ])) ++ pkgs.lib.optionals _flags.yi [
             hsPkgs.yi
             hsPkgs.yi-language
             hsPkgs.yi-rope
@@ -101,7 +101,7 @@ let
             else [
               hsPkgs.webkit
               hsPkgs.webkit-javascriptcore
-            ])) ++ optionals (_flags.loc && system.isLinux) [
+            ])) ++ pkgs.lib.optionals (_flags.loc && system.isLinux) [
             hsPkgs.hgettext
             hsPkgs.setlocale
           ]) ++ (if _flags.network-uri
@@ -120,7 +120,7 @@ let
               hsPkgs.leksah
               hsPkgs.base
               hsPkgs.gtk3
-            ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ optionals (system.isLinux && _flags.loc) [
+            ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optionals (system.isLinux && _flags.loc) [
               hsPkgs.hgettext
               hsPkgs.setlocale
             ];

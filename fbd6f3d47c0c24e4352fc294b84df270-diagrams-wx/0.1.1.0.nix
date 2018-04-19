@@ -33,7 +33,7 @@ let
         };
         exes = {
           diagrams-wx-demo = {
-            depends  = optionals _flags.buildexample [
+            depends  = pkgs.lib.optionals _flags.buildexample [
               hsPkgs.base
               hsPkgs.diagrams-wx
               hsPkgs.cairo

@@ -42,7 +42,7 @@ let
             hsPkgs.filepath
             hsPkgs.directory
             hsPkgs.groom
-          ] ++ optionals _flags.devel [
+          ] ++ pkgs.lib.optionals _flags.devel [
             hsPkgs.HUnit
             hsPkgs.blaze-html
             hsPkgs.blaze-markup
@@ -80,7 +80,7 @@ let
             ];
           };
           fay-tests = {
-            depends  = optionals _flags.devel [
+            depends  = pkgs.lib.optionals _flags.devel [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.haskell-src-exts
@@ -106,7 +106,7 @@ let
             ];
           };
           fay-docs = {
-            depends  = optionals _flags.devel [
+            depends  = pkgs.lib.optionals _flags.devel [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.haskell-src-exts

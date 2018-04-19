@@ -37,7 +37,7 @@ let
         };
         exes = {
           reedsolomon-simple-encoder = {
-            depends  = optionals (!system.isWindows) [
+            depends  = pkgs.lib.optionals (!system.isWindows) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.vector
@@ -48,7 +48,7 @@ let
             ];
           };
           reedsolomon-simple-decoder = {
-            depends  = optionals (!system.isWindows) [
+            depends  = pkgs.lib.optionals (!system.isWindows) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.vector

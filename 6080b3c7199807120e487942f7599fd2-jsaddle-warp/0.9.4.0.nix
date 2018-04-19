@@ -22,7 +22,7 @@ let
         jsaddle-warp = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals (!compiler.isGhcjs) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
             hsPkgs.aeson
             hsPkgs.bytestring
             hsPkgs.containers

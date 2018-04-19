@@ -66,7 +66,7 @@ let
             ];
           };
           doctests = {
-            depends  = optionals compiler.isGhc [
+            depends  = pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.doctest

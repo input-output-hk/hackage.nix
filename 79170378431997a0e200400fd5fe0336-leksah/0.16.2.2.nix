@@ -92,14 +92,14 @@ let
             then [ hsPkgs.gi-webkit2 ]
             else [
               hsPkgs.gi-webkit
-            ])) ++ optionals _flags.yi [
+            ])) ++ pkgs.lib.optionals _flags.yi [
             hsPkgs.yi
             hsPkgs.yi-language
             hsPkgs.yi-rope
-          ]) ++ pkgs.lib.optional (_flags.yi && _flags.dyre) hsPkgs.dyre) ++ optionals _flags.codemirror [
+          ]) ++ pkgs.lib.optional (_flags.yi && _flags.dyre) hsPkgs.dyre) ++ pkgs.lib.optionals _flags.codemirror [
             hsPkgs.jsaddle
             hsPkgs.lens
-          ]) ++ optionals (_flags.loc && system.isLinux) [
+          ]) ++ pkgs.lib.optionals (_flags.loc && system.isLinux) [
             hsPkgs.hgettext
             hsPkgs.setlocale
           ]) ++ (if _flags.network-uri
@@ -109,7 +109,7 @@ let
             ]
             else [
               hsPkgs.network
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.binary-shared) ++ optionals (!compiler.isGhcjs) [
+            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.binary-shared) ++ pkgs.lib.optionals (!compiler.isGhcjs) [
             hsPkgs.ghc
             hsPkgs.haskell-src-exts
             hsPkgs.leksah-server
@@ -123,7 +123,7 @@ let
               hsPkgs.base
               hsPkgs.gi-gtk-hs
               hsPkgs.stm
-            ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ optionals (system.isLinux && _flags.loc) [
+            ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optionals (system.isLinux && _flags.loc) [
               hsPkgs.hgettext
               hsPkgs.setlocale
             ]) ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.leksah-server;

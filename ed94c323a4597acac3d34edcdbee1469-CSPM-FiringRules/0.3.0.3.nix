@@ -29,7 +29,7 @@ let
             hsPkgs.base
             hsPkgs.containers
             hsPkgs.mtl
-          ] ++ optionals _flags.quickcheck [
+          ] ++ pkgs.lib.optionals _flags.quickcheck [
             hsPkgs.QuickCheck
             hsPkgs.random
           ];

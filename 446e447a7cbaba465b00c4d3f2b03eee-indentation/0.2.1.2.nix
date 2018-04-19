@@ -26,7 +26,7 @@ let
           depends  = ([
             hsPkgs.base
             hsPkgs.mtl
-          ] ++ pkgs.lib.optional _flags.parsec hsPkgs.parsec) ++ optionals _flags.trifecta [
+          ] ++ pkgs.lib.optional _flags.parsec hsPkgs.parsec) ++ pkgs.lib.optionals _flags.trifecta [
             hsPkgs.trifecta
             hsPkgs.parsers
           ];

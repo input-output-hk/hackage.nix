@@ -28,7 +28,7 @@ let
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.ghc-prim
             hsPkgs.text
           ]) ++ pkgs.lib.optional (compiler.isGhc && _flags.integer-gmp) hsPkgs.integer-gmp;
@@ -36,7 +36,7 @@ let
         };
         exes = {
           hashable-examples = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.hashable
             ];
@@ -68,7 +68,7 @@ let
               hsPkgs.ghc-prim
               hsPkgs.siphash
               hsPkgs.text
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.ghc-prim
               hsPkgs.text
             ]) ++ pkgs.lib.optional (compiler.isGhc && _flags.integer-gmp) hsPkgs.integer-gmp;

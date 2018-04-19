@@ -45,7 +45,7 @@ let
         };
         exes = {
           render-midi = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.synthesizer-midi
               hsPkgs.synthesizer-core
               hsPkgs.sox

@@ -49,7 +49,7 @@ let
               hsPkgs.vector
               hsPkgs.text
               hsPkgs.jsaddle
-            ] ++ optionals (!compiler.isGhcjs) [
+            ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
               hsPkgs.haskell-gi-base
               hsPkgs.gi-glib
               hsPkgs.gi-gtk

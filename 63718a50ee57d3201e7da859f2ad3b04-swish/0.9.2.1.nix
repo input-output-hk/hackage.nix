@@ -51,7 +51,7 @@ let
             ];
           };
           runw3ctests = {
-            depends  = optionals _flags.w3ctests ([
+            depends  = pkgs.lib.optionals _flags.w3ctests ([
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.directory

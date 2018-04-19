@@ -45,7 +45,7 @@ let
             ]
             else [
               hsPkgs.network
-            ])) ++ optionals (system.isLinux || system.isFreebsd || system.isOsx) [
+            ])) ++ pkgs.lib.optionals (system.isLinux || system.isFreebsd || system.isOsx) [
             hsPkgs.unix
             hsPkgs.hashable
           ];

@@ -33,7 +33,7 @@ let
         };
         exes = {
           cairo-canvas-test = {
-            depends  = optionals _flags.builddemo [
+            depends  = pkgs.lib.optionals _flags.builddemo [
               hsPkgs.base
               hsPkgs.sdl2
               hsPkgs.cairo

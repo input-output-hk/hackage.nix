@@ -42,7 +42,7 @@ let
               hsPkgs.mtl
               hsPkgs.filepath
               hsPkgs.utf8-string
-            ] ++ optionals _flags.test [
+            ] ++ pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.time
               hsPkgs.containers

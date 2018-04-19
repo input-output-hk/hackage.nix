@@ -103,7 +103,7 @@ let
               hsPkgs.word8
               hsPkgs.hashable
               hsPkgs.unordered-containers
-            ] ++ optionals ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) [
+            ] ++ pkgs.lib.optionals ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) [
               hsPkgs.unix
               hsPkgs.http-date
             ];

@@ -31,7 +31,7 @@ let
             hsPkgs.text
             hsPkgs.utf8-string
             hsPkgs.cereal
-          ] ++ optionals _flags.create [
+          ] ++ pkgs.lib.optionals _flags.create [
             hsPkgs.idna
             hsPkgs.conduit
           ];

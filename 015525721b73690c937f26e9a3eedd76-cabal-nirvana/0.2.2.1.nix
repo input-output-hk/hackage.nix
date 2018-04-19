@@ -34,7 +34,7 @@ let
             ];
           };
           cabal-nirvana-generate = {
-            depends  = optionals _flags.generate [
+            depends  = pkgs.lib.optionals _flags.generate [
               hsPkgs.Cabal
               hsPkgs.containers
               hsPkgs.transformers

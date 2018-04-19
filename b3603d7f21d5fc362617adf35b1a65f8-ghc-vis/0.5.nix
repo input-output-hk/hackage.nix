@@ -32,7 +32,7 @@ let
             hsPkgs.gtk
             hsPkgs.cairo
             hsPkgs.ghc-heap-view
-          ] ++ optionals _flags.graph [
+          ] ++ pkgs.lib.optionals _flags.graph [
             hsPkgs.graphviz
             hsPkgs.xdot
           ];

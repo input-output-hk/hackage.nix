@@ -26,7 +26,7 @@ let
             hsPkgs.base
             hsPkgs.random
             hsPkgs.containers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers) ++ pkgs.lib.optional (compiler.isGhc && _flags.templatehaskell) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.tf-random) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.nats) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.semigroups) ++ optionals compiler.isUhc [
+          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers) ++ pkgs.lib.optional (compiler.isGhc && _flags.templatehaskell) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.tf-random) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.nats) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optionals compiler.isUhc [
             hsPkgs.old-time
             hsPkgs.old-locale
           ];

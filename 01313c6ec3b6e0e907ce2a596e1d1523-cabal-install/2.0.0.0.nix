@@ -81,7 +81,7 @@ let
               then [ hsPkgs.Win32 ]
               else [
                 hsPkgs.unix
-              ])) ++ pkgs.lib.optional _flags.debug-conflict-sets hsPkgs.base) ++ pkgs.lib.optional _flags.debug-tracetree hsPkgs.tracetree) ++ optionals _flags.monolithic [
+              ])) ++ pkgs.lib.optional _flags.debug-conflict-sets hsPkgs.base) ++ pkgs.lib.optional _flags.debug-tracetree hsPkgs.tracetree) ++ pkgs.lib.optionals _flags.monolithic [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
               hsPkgs.array

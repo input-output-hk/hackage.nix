@@ -66,7 +66,7 @@ let
             ];
           };
           tests = {
-            depends  = optionals _flags.build-tests [
+            depends  = pkgs.lib.optionals _flags.build-tests [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base
               hsPkgs.bytestring

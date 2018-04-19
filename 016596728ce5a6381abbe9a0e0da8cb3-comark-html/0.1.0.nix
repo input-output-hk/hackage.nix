@@ -31,7 +31,7 @@ let
         };
         exes = {
           comark-html-profile = {
-            depends  = optionals _flags.profile [
+            depends  = pkgs.lib.optionals _flags.profile [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.comark-html

@@ -25,7 +25,7 @@ let
             hsPkgs.wai
             hsPkgs.warp
           ];
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.QtCore4
             pkgs.QtGui4
             pkgs.QtNetwork4

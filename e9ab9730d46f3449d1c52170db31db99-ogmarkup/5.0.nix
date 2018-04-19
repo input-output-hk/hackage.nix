@@ -43,7 +43,7 @@ let
         };
         benchmarks = {
           ogmarkup-bench = {
-            depends  = optionals _flags.bench [
+            depends  = pkgs.lib.optionals _flags.bench [
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.ogmarkup

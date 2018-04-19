@@ -28,18 +28,18 @@ let
             hsPkgs.base
             hsPkgs.accelerate
             hsPkgs.bytestring
-          ] ++ optionals _flags.cuda [
+          ] ++ pkgs.lib.optionals _flags.cuda [
             hsPkgs.accelerate-cuda
             hsPkgs.cuda
             hsPkgs.cufft
             hsPkgs.file-embed
-          ]) ++ optionals _flags.llvm-cpu [
+          ]) ++ pkgs.lib.optionals _flags.llvm-cpu [
             hsPkgs.accelerate-llvm
             hsPkgs.accelerate-llvm-native
             hsPkgs.carray
             hsPkgs.fft
             hsPkgs.storable-complex
-          ]) ++ optionals _flags.llvm-ptx [
+          ]) ++ pkgs.lib.optionals _flags.llvm-ptx [
             hsPkgs.accelerate-llvm
             hsPkgs.accelerate-llvm-ptx
             hsPkgs.cuda

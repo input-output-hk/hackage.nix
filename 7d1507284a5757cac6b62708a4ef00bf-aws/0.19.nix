@@ -63,7 +63,7 @@ let
         };
         exes = {
           GetObjectV4 = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.http-conduit
@@ -73,7 +73,7 @@ let
             ];
           };
           GetObject = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.http-conduit
@@ -82,7 +82,7 @@ let
             ];
           };
           GetObjectGoogle = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.http-conduit
@@ -91,7 +91,7 @@ let
             ];
           };
           MultipartUpload = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.bytestring
@@ -103,7 +103,7 @@ let
             ];
           };
           MultipartTransfer = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.http-conduit
@@ -113,7 +113,7 @@ let
             ];
           };
           NukeBucket = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.http-conduit
@@ -124,7 +124,7 @@ let
             ];
           };
           PutBucketNearLine = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.http-conduit
@@ -135,14 +135,14 @@ let
             ];
           };
           SimpleDb = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.text
             ];
           };
           DynamoDb = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.aws
               hsPkgs.base
               hsPkgs.data-default
@@ -153,7 +153,7 @@ let
             ];
           };
           Sqs = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.errors

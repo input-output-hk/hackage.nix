@@ -37,7 +37,7 @@ let
         };
         exes = {
           Tests = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
             ];
           };
           Benchmarks = {
-            depends  = optionals _flags.benchmark [
+            depends  = pkgs.lib.optionals _flags.benchmark [
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.mtl

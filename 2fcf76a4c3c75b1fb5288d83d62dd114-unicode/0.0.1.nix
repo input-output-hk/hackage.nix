@@ -30,7 +30,7 @@ let
         };
         exes = {
           visualize-unicode = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.unicode
               hsPkgs.containers
               hsPkgs.utility-ht

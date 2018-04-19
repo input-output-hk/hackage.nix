@@ -31,7 +31,7 @@ let
         };
         exes = {
           dev-example = {
-            depends  = optionals (!(!_flags.dev)) [
+            depends  = pkgs.lib.optionals (!(!_flags.dev)) [
               hsPkgs.base
               hsPkgs.stm
               hsPkgs.unagi-chan

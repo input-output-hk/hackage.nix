@@ -63,7 +63,7 @@ let
             hsPkgs.unordered-containers
           ] ++ pkgs.lib.optional _flags.enable-cluster-counting hsPkgs.text-icu) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optional compiler.isGhc hsPkgs.void) ++ [
             hsPkgs.zlib
-          ]) ++ optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.fail
             hsPkgs.semigroups
           ];

@@ -28,7 +28,7 @@ let
           testWord24 = {
             depends  = [
               hsPkgs.base
-            ] ++ optionals _flags.buildtests [
+            ] ++ pkgs.lib.optionals _flags.buildtests [
               hsPkgs.QuickCheck
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

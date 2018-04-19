@@ -48,7 +48,7 @@ let
               hsPkgs.mtl
               hsPkgs.transformers
               hsPkgs.JuicyPixels
-            ] ++ optionals _flags.buildrasterdemo [
+            ] ++ pkgs.lib.optionals _flags.buildrasterdemo [
               hsPkgs.ffmpeg-light
               hsPkgs.Rasterific
               hsPkgs.linear

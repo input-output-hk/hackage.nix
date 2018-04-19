@@ -32,7 +32,7 @@ let
         };
         exes = {
           multistate-test = {
-            depends  = optionals _flags.build-test [
+            depends  = pkgs.lib.optionals _flags.build-test [
               hsPkgs.multistate
               hsPkgs.base
               hsPkgs.tfp
@@ -40,7 +40,7 @@ let
             ];
           };
           multistate-example = {
-            depends  = optionals _flags.build-example [
+            depends  = pkgs.lib.optionals _flags.build-example [
               hsPkgs.multistate
               hsPkgs.base
               hsPkgs.mtl

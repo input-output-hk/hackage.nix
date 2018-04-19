@@ -25,7 +25,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.glib
-          ] ++ optionals _flags.buildtests [
+          ] ++ pkgs.lib.optionals _flags.buildtests [
             hsPkgs.test-framework
             hsPkgs.test-framework-hunit
             hsPkgs.test-framework-quickcheck2

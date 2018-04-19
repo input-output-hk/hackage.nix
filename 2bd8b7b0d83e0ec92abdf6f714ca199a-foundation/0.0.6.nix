@@ -59,7 +59,7 @@ let
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.foundation
-            ] ++ optionals _flags.bench-all [
+            ] ++ pkgs.lib.optionals _flags.bench-all [
               hsPkgs.text
               hsPkgs.attoparsec
               hsPkgs.vector

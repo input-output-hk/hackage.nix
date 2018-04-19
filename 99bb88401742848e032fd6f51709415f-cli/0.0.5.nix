@@ -29,7 +29,7 @@ let
         };
         exes = {
           Example = {
-            depends  = optionals _flags.executable [
+            depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.cli
               hsPkgs.directory

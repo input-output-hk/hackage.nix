@@ -43,7 +43,7 @@ let
               hsPkgs.regex-base
               hsPkgs.regex-compat
               hsPkgs.regex-posix
-            ] ++ pkgs.lib.optional _flags.dynamic hsPkgs.ghc) ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ pkgs.lib.optional _flags.gtk hsPkgs.gtk) ++ optionals _flags.cocoa [
+            ] ++ pkgs.lib.optional _flags.dynamic hsPkgs.ghc) ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ pkgs.lib.optional _flags.gtk hsPkgs.gtk) ++ pkgs.lib.optionals _flags.cocoa [
               hsPkgs.HOC
               hsPkgs.HOC-AppKit
               hsPkgs.HOC-Foundation

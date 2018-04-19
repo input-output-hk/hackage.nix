@@ -50,7 +50,7 @@ let
               hsPkgs.HUnit
               hsPkgs.tamarin-prover-utils
               hsPkgs.tamarin-prover-term
-            ] ++ optionals (!_flags.no-gui) [
+            ] ++ pkgs.lib.optionals (!_flags.no-gui) [
               hsPkgs.bytestring
               hsPkgs.blaze-html
               hsPkgs.http-types

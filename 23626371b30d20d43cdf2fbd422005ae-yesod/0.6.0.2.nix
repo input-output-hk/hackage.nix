@@ -57,7 +57,7 @@ let
             depends  = [ hsPkgs.parsec ];
           };
           runtests = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2
               hsPkgs.test-framework-hunit

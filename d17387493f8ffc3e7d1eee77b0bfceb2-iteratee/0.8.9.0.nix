@@ -33,14 +33,14 @@ let
             hsPkgs.parallel
             hsPkgs.transformers
             hsPkgs.transformers-base
-          ] ++ optionals (!system.isWindows) [
+          ] ++ pkgs.lib.optionals (!system.isWindows) [
             hsPkgs.unix
             hsPkgs.unix-bytestring
           ];
         };
         exes = {
           testIteratee = {
-            depends  = optionals _flags.buildtests [
+            depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.mtl

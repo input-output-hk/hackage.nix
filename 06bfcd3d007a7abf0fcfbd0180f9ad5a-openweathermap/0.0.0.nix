@@ -32,7 +32,7 @@ let
         };
         exes = {
           openweathermap = {
-            depends  = optionals _flags.cmd [
+            depends  = pkgs.lib.optionals _flags.cmd [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.openweathermap

@@ -34,7 +34,7 @@ let
             ];
           };
           test = {
-            depends  = optionals (!(!_flags.test)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test)) [
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.HUnit

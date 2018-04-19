@@ -24,7 +24,7 @@ let
             hsPkgs.base
             hsPkgs.base
             hsPkgs.containers
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.unordered-containers
             hsPkgs.hashable
           ];

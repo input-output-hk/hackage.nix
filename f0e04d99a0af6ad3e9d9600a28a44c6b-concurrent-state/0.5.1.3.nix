@@ -32,7 +32,7 @@ let
         };
         exes = {
           chat-server = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.concurrent-state
               hsPkgs.network

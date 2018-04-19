@@ -43,7 +43,7 @@ let
               hsPkgs.HAppS-Data
               hsPkgs.SHA
               hsPkgs.HTTP
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.syb
             ];

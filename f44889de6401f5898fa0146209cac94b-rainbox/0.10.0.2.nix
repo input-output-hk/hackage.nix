@@ -34,7 +34,7 @@ let
         };
         exes = {
           rainbox-mosaic = {
-            depends  = optionals _flags.mosaic [
+            depends  = pkgs.lib.optionals _flags.mosaic [
               hsPkgs.base
               hsPkgs.rainbow
               hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
             ];
           };
           rainbox-grid = {
-            depends  = optionals _flags.grid [
+            depends  = pkgs.lib.optionals _flags.grid [
               hsPkgs.base
               hsPkgs.rainbow
               hsPkgs.bytestring

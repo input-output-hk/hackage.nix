@@ -27,7 +27,7 @@ let
             hsPkgs.bytestring
             hsPkgs.vector
             hsPkgs.crypto-random
-          ] ++ optionals (compiler.isGhc && _flags.integer-gmp) [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && _flags.integer-gmp) [
             hsPkgs.integer-gmp
             hsPkgs.ghc-prim
           ];

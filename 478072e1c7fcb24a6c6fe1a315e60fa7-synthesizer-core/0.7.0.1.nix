@@ -54,7 +54,7 @@ let
         };
         exes = {
           test = {
-            depends  = optionals _flags.buildtests [
+            depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.synthesizer-core
               hsPkgs.storablevector
               hsPkgs.storable-tuple
@@ -70,7 +70,7 @@ let
             ];
           };
           fouriertest = {
-            depends  = optionals _flags.buildprofilers [
+            depends  = pkgs.lib.optionals _flags.buildprofilers [
               hsPkgs.synthesizer-core
               hsPkgs.numeric-prelude
               hsPkgs.timeit
@@ -81,7 +81,7 @@ let
             ];
           };
           speedtest = {
-            depends  = optionals _flags.buildprofilers [
+            depends  = pkgs.lib.optionals _flags.buildprofilers [
               hsPkgs.synthesizer-core
               hsPkgs.numeric-prelude
               hsPkgs.old-time
@@ -93,20 +93,20 @@ let
             ];
           };
           speedtest-exp = {
-            depends  = optionals _flags.buildprofilers ([
+            depends  = pkgs.lib.optionals _flags.buildprofilers ([
               hsPkgs.synthesizer-core
               hsPkgs.storablevector
               hsPkgs.binary
               hsPkgs.bytestring
               hsPkgs.array
               hsPkgs.base
-            ] ++ optionals _flags.splitbase [
+            ] ++ pkgs.lib.optionals _flags.splitbase [
               hsPkgs.old-time
               hsPkgs.directory
             ]);
           };
           speedtest-simple = {
-            depends  = optionals _flags.buildprofilers [
+            depends  = pkgs.lib.optionals _flags.buildprofilers [
               hsPkgs.synthesizer-core
               hsPkgs.binary
               hsPkgs.bytestring

@@ -58,7 +58,7 @@ let
         };
         tests = {
           gargoyle-psql-test = {
-            depends  = optionals (!(!_flags.enable-psql-test)) [
+            depends  = pkgs.lib.optionals (!(!_flags.enable-psql-test)) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.directory

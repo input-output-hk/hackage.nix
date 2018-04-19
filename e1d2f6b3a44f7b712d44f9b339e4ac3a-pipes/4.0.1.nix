@@ -26,7 +26,7 @@ let
             hsPkgs.base
             hsPkgs.transformers
             hsPkgs.void
-          ] ++ optionals (!_flags.haskell98) [
+          ] ++ pkgs.lib.optionals (!_flags.haskell98) [
             hsPkgs.mmorph
             hsPkgs.mtl
           ];

@@ -37,7 +37,7 @@ let
         };
         exes = {
           sdl2-gfx-example = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.linear
               hsPkgs.sdl2

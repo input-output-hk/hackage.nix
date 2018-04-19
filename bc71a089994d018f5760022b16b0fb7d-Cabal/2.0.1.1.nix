@@ -46,10 +46,10 @@ let
               hsPkgs.process
             ])) ++ [
             hsPkgs.binary
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ optionals system.isWindows [
+          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.Win32
             hsPkgs.base
-          ]) ++ optionals _flags.parsec [
+          ]) ++ pkgs.lib.optionals _flags.parsec [
             hsPkgs.transformers
             hsPkgs.parsec
           ];
@@ -91,7 +91,7 @@ let
               hsPkgs.directory
               hsPkgs.filepath
               hsPkgs.Cabal
-            ] ++ optionals _flags.parsec-struct-diff [
+            ] ++ pkgs.lib.optionals _flags.parsec-struct-diff [
               hsPkgs.generics-sop
               hsPkgs.these
               hsPkgs.singleton-bool

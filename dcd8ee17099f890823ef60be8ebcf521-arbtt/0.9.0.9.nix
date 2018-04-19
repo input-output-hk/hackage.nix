@@ -46,7 +46,7 @@ let
             libs = if system.isWindows
               then [ pkgs.psapi ]
               else pkgs.lib.optional (!system.isOsx) pkgs.Xss;
-            frameworks = optionals (!system.isWindows && system.isOsx) [
+            frameworks = pkgs.lib.optionals (!system.isWindows && system.isOsx) [
               pkgs.Foundation
               pkgs.Carbon
               pkgs.IOKit

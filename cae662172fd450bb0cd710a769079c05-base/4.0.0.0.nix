@@ -20,12 +20,12 @@ let
       };
       components = {
         base = {
-          depends  = optionals compiler.isGhc [
+          depends  = pkgs.lib.optionals compiler.isGhc [
             hsPkgs.rts
             hsPkgs.ghc-prim
             hsPkgs.integer
           ];
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.wsock32
             pkgs.msvcrt
             pkgs.kernel32

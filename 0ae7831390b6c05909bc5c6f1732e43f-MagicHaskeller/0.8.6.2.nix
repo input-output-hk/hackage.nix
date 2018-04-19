@@ -34,7 +34,7 @@ let
             hsPkgs.directory
             hsPkgs.bytestring
             hsPkgs.mtl
-          ] ++ optionals (_flags.ghcapi && !system.isWindows) [
+          ] ++ pkgs.lib.optionals (_flags.ghcapi && !system.isWindows) [
             hsPkgs.ghc
             hsPkgs.old-time
             hsPkgs.ghc-paths

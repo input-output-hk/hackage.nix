@@ -37,7 +37,7 @@ let
         };
         exes = {
           getdata = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.http-client
@@ -45,7 +45,7 @@ let
             ];
           };
           plot = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
               hsPkgs.lens-family-core
@@ -63,7 +63,7 @@ let
             ];
           };
           plot2 = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
               hsPkgs.lens-family-core
@@ -81,7 +81,7 @@ let
             ];
           };
           demo = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.list-t
               hsPkgs.lens-family-core
@@ -96,7 +96,7 @@ let
             ];
           };
           tutorial = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
               hsPkgs.lens-family-core
@@ -109,7 +109,7 @@ let
             ];
           };
           benchdemo = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
               hsPkgs.lens-family-core
@@ -118,14 +118,14 @@ let
             ];
           };
           missing = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
               hsPkgs.vinyl
             ];
           };
           kata04 = {
-            depends  = optionals _flags.demos [
+            depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
               hsPkgs.vinyl

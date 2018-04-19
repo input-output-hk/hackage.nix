@@ -22,10 +22,10 @@ let
         bitwise = {
           depends  = ([
             hsPkgs.base
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.bytestring
             hsPkgs.array
-          ]) ++ optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.bytestring
             hsPkgs.array
           ];

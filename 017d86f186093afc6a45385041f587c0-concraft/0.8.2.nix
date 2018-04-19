@@ -50,7 +50,7 @@ let
         };
         exes = {
           concraft-analyse-model = {
-            depends  = optionals _flags.buildanatool [
+            depends  = pkgs.lib.optionals _flags.buildanatool [
               hsPkgs.cmdargs
               hsPkgs.logfloat
             ];

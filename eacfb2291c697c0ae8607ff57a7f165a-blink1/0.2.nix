@@ -24,10 +24,10 @@ let
         blink1 = {
           depends  = ([
             hsPkgs.base
-          ] ++ optionals system.isLinux [
+          ] ++ pkgs.lib.optionals system.isLinux [
             hsPkgs.unix
             hsPkgs.ioctl
-          ]) ++ optionals _flags.usb [
+          ]) ++ pkgs.lib.optionals _flags.usb [
             hsPkgs.usb
             hsPkgs.bindings-libusb
             hsPkgs.vector

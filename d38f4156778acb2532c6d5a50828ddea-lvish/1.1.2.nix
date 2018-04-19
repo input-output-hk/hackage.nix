@@ -38,10 +38,10 @@ let
             hsPkgs.bits-atomic
             hsPkgs.missing-foreign
             hsPkgs.containers
-          ] ++ optionals _flags.generic [
+          ] ++ pkgs.lib.optionals _flags.generic [
             hsPkgs.par-classes
             hsPkgs.par-collections
-          ]) ++ optionals _flags.debug [
+          ]) ++ pkgs.lib.optionals _flags.debug [
             hsPkgs.fgl
             hsPkgs.graphviz
             hsPkgs.text
@@ -71,10 +71,10 @@ let
               hsPkgs.time
               hsPkgs.text
               hsPkgs.lvish
-            ] ++ optionals _flags.generic [
+            ] ++ pkgs.lib.optionals _flags.generic [
               hsPkgs.par-classes
               hsPkgs.par-collections
-            ]) ++ optionals _flags.debug [
+            ]) ++ pkgs.lib.optionals _flags.debug [
               hsPkgs.fgl
               hsPkgs.graphviz
               hsPkgs.text

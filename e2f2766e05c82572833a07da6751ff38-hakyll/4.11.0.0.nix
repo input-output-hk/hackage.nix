@@ -59,13 +59,13 @@ let
             hsPkgs.yaml
             hsPkgs.optparse-applicative
             hsPkgs.file-embed
-          ] ++ optionals _flags.previewserver [
+          ] ++ pkgs.lib.optionals _flags.previewserver [
             hsPkgs.wai
             hsPkgs.warp
             hsPkgs.wai-app-static
             hsPkgs.http-types
             hsPkgs.fsnotify
-          ]) ++ pkgs.lib.optional _flags.watchserver hsPkgs.fsnotify) ++ optionals _flags.checkexternal [
+          ]) ++ pkgs.lib.optional _flags.watchserver hsPkgs.fsnotify) ++ pkgs.lib.optionals _flags.checkexternal [
             hsPkgs.http-conduit
             hsPkgs.http-types
           ];
@@ -129,13 +129,13 @@ let
               hsPkgs.vector
               hsPkgs.yaml
               hsPkgs.optparse-applicative
-            ] ++ optionals _flags.previewserver [
+            ] ++ pkgs.lib.optionals _flags.previewserver [
               hsPkgs.wai
               hsPkgs.warp
               hsPkgs.wai-app-static
               hsPkgs.http-types
               hsPkgs.fsnotify
-            ]) ++ pkgs.lib.optional _flags.watchserver hsPkgs.fsnotify) ++ optionals _flags.checkexternal [
+            ]) ++ pkgs.lib.optional _flags.watchserver hsPkgs.fsnotify) ++ pkgs.lib.optionals _flags.checkexternal [
               hsPkgs.http-conduit
               hsPkgs.http-types
             ];

@@ -22,7 +22,7 @@ let
       };
       components = {
         proto-lens-protoc = {
-          depends  = optionals (!_flags.only-executable) [
+          depends  = pkgs.lib.optionals (!_flags.only-executable) [
             hsPkgs.Cabal
             hsPkgs.base
             hsPkgs.bytestring

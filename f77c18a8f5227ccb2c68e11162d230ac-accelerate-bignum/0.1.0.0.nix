@@ -28,11 +28,11 @@ let
             hsPkgs.ghc-prim
             hsPkgs.template-haskell
             hsPkgs.accelerate
-          ] ++ optionals _flags.llvm-cpu [
+          ] ++ pkgs.lib.optionals _flags.llvm-cpu [
             hsPkgs.accelerate-llvm
             hsPkgs.accelerate-llvm-native
             hsPkgs.llvm-hs-pure
-          ]) ++ optionals _flags.llvm-ptx [
+          ]) ++ pkgs.lib.optionals _flags.llvm-ptx [
             hsPkgs.accelerate-llvm
             hsPkgs.accelerate-llvm-ptx
             hsPkgs.llvm-hs-pure

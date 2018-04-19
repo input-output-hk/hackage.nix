@@ -78,7 +78,7 @@ let
             else [
               hsPkgs.time
               hsPkgs.old-locale
-            ])) ++ optionals _flags.http ([
+            ])) ++ pkgs.lib.optionals _flags.http ([
             hsPkgs.HTTP
           ] ++ (if _flags.network-uri
             then [

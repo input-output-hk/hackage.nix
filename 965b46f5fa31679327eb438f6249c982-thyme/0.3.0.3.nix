@@ -72,7 +72,7 @@ let
             ];
           };
           hlint = {
-            depends  = optionals _flags.hlint [
+            depends  = pkgs.lib.optionals _flags.hlint [
               hsPkgs.base
               hsPkgs.hlint
             ];

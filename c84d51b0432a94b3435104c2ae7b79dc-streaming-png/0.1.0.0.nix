@@ -40,7 +40,7 @@ let
         };
         exes = {
           streaming-png-demo = {
-            depends  = optionals _flags.build-demo [
+            depends  = pkgs.lib.optionals _flags.build-demo [
               hsPkgs.JuicyPixels
               hsPkgs.base
               hsPkgs.criterion

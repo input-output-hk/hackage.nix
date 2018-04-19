@@ -33,7 +33,7 @@ let
             hsPkgs.scientific
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
           ]) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.void;

@@ -54,7 +54,7 @@ let
               hsPkgs.network
               hsPkgs.xml
               hsPkgs.deepseq
-            ] ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optional system.isFreebsd hsPkgs.unix) ++ pkgs.lib.optional system.isOsx hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ optionals _flags.llvm [
+            ] ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optional system.isFreebsd hsPkgs.unix) ++ pkgs.lib.optional system.isOsx hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optionals _flags.llvm [
               hsPkgs.llvm-general
               hsPkgs.llvm-general-pure
             ]) ++ pkgs.lib.optional _flags.ffi hsPkgs.libffi) ++ pkgs.lib.optional _flags.gmp hsPkgs.libffi;

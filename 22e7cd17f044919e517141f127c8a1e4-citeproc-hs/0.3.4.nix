@@ -35,10 +35,10 @@ let
             hsPkgs.bytestring
             hsPkgs.filepath
             hsPkgs.pandoc-types
-          ] ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ optionals _flags.network [
+          ] ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ pkgs.lib.optionals _flags.network [
             hsPkgs.network
             hsPkgs.HTTP
-          ]) ++ optionals _flags.embed_data_files [
+          ]) ++ pkgs.lib.optionals _flags.embed_data_files [
             hsPkgs.template-haskell
             hsPkgs.file-embed
           ]) ++ (if compiler.isGhc

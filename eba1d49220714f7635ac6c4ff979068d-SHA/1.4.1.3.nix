@@ -37,7 +37,7 @@ let
               hsPkgs.bytestring
               hsPkgs.binary
               hsPkgs.array
-            ] ++ optionals (!(!_flags.test)) [
+            ] ++ pkgs.lib.optionals (!(!_flags.test)) [
               hsPkgs.QuickCheck
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

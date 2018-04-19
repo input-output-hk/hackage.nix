@@ -26,7 +26,7 @@ let
             hsPkgs.transformers-compat
             hsPkgs.process
             hsPkgs.ansi-wl-pprint
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.semigroups
             hsPkgs.fail
           ];

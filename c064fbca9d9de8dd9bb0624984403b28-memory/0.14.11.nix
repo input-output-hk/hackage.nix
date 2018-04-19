@@ -27,7 +27,7 @@ let
           depends  = (([
             hsPkgs.base
             hsPkgs.ghc-prim
-          ] ++ pkgs.lib.optional _flags.support_bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.support_deepseq hsPkgs.deepseq) ++ optionals _flags.support_foundation [
+          ] ++ pkgs.lib.optional _flags.support_bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.support_deepseq hsPkgs.deepseq) ++ pkgs.lib.optionals _flags.support_foundation [
             hsPkgs.basement
             hsPkgs.foundation
           ];

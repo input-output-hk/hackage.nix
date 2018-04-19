@@ -27,12 +27,12 @@ let
             hsPkgs.base
             hsPkgs.data-default-class
             hsPkgs.bytestring
-          ] ++ optionals (!(_flags.dummy && !system.isLinux)) [
+          ] ++ pkgs.lib.optionals (!(_flags.dummy && !system.isLinux)) [
             hsPkgs.time
             hsPkgs.unix
             hsPkgs.bytestring-show
           ];
-          libs = optionals (!(_flags.dummy && !system.isLinux)) [
+          libs = pkgs.lib.optionals (!(_flags.dummy && !system.isLinux)) [
             pkgs.newrelic-collector-client
             pkgs.newrelic-transaction
             pkgs.newrelic-common
@@ -40,7 +40,7 @@ let
         };
         exes = {
           helics-example = {
-            depends  = optionals _flags.example [
+            depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.helics
               hsPkgs.bytestring

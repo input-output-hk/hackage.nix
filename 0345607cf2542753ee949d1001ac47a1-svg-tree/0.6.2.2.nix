@@ -34,7 +34,7 @@ let
             hsPkgs.transformers
             hsPkgs.mtl
             hsPkgs.lens
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];

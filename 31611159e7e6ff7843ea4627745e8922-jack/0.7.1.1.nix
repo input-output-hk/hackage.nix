@@ -39,13 +39,13 @@ let
         };
         exes = {
           jack-amplify = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.base
             ];
           };
           jack-capture = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.explicit-exception
               hsPkgs.transformers
@@ -54,7 +54,7 @@ let
             ];
           };
           jack-impulse-train = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.explicit-exception
               hsPkgs.transformers
@@ -63,14 +63,14 @@ let
             ];
           };
           jack-midimon = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.midi
               hsPkgs.base
             ];
           };
           jack-melody = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.midi
               hsPkgs.event-list
@@ -81,7 +81,7 @@ let
             ];
           };
           jack-synth = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.midi
               hsPkgs.event-list

@@ -33,7 +33,7 @@ let
         };
         exes = {
           pooled-io-demo = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.pooled-io
               hsPkgs.base
             ];

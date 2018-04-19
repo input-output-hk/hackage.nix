@@ -40,7 +40,7 @@ let
         };
         tests = {
           properties = {
-            depends  = optionals (!(!_flags.test-properties)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.hybrid-vectors
@@ -56,13 +56,13 @@ let
             ];
           };
           hlint = {
-            depends  = optionals (!(!_flags.test-hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
           doctests = {
-            depends  = optionals (!(!_flags.test-doctests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.containers

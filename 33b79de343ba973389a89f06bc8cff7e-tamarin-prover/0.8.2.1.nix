@@ -52,7 +52,7 @@ let
               hsPkgs.tamarin-prover-utils
               hsPkgs.tamarin-prover-term
               hsPkgs.tamarin-prover-theory
-            ] ++ optionals (!_flags.no-gui) [
+            ] ++ pkgs.lib.optionals (!_flags.no-gui) [
               hsPkgs.bytestring
               hsPkgs.blaze-html
               hsPkgs.http-types

@@ -43,7 +43,7 @@ let
         };
         exes = {
           login-test = {
-            depends  = optionals _flags.toys [
+            depends  = pkgs.lib.optionals _flags.toys [
               hsPkgs.base
               hsPkgs.bet
             ];

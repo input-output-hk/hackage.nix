@@ -42,10 +42,10 @@ let
             hsPkgs.formatting
             hsPkgs.composition
             hsPkgs.env-locale
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.double-conversion) ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.double-conversion) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.transformers-compat
             hsPkgs.old-locale
-          ]) ++ optionals _flags.ibus [
+          ]) ++ pkgs.lib.optionals _flags.ibus [
             hsPkgs.ibus-hs
             hsPkgs.dbus
           ]) ++ pkgs.lib.optional (compiler.isGhc && _flags.pulse) hsPkgs.pulseaudio;

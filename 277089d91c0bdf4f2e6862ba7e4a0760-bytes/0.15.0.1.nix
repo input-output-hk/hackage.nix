@@ -38,7 +38,7 @@ let
         };
         tests = {
           doctests = {
-            depends  = optionals (!(!_flags.test-doctests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.bytes
               hsPkgs.directory

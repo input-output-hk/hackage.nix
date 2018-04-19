@@ -41,7 +41,7 @@ let
           ] ++ [
             hsPkgs.bytestring
             hsPkgs.text
-          ]) ++ optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.ghc-prim
             hsPkgs.dlist
           ]) ++ (if _flags.blaze-builder

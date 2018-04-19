@@ -42,7 +42,7 @@ let
         };
         exes = {
           echo-server = {
-            depends  = optionals _flags.build-examples [
+            depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.aeson
               hsPkgs.attoparsec
               hsPkgs.auto-update
@@ -62,7 +62,7 @@ let
             ];
           };
           echo-client = {
-            depends  = optionals _flags.build-examples [
+            depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.attoparsec
               hsPkgs.base
               hsPkgs.base16-bytestring
@@ -80,13 +80,13 @@ let
         };
         tests = {
           hlint = {
-            depends  = optionals (!(!_flags.hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
           vectors = {
-            depends  = optionals (!(!_flags.vectors)) [
+            depends  = pkgs.lib.optionals (!(!_flags.vectors)) [
               hsPkgs.aeson
               hsPkgs.async
               hsPkgs.base

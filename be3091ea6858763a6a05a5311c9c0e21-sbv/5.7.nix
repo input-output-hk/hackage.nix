@@ -42,7 +42,7 @@ let
         };
         exes = {
           SBVUnitTests = {
-            depends  = optionals compiler.isGhc [
+            depends  = pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.directory
@@ -56,7 +56,7 @@ let
         };
         tests = {
           SBVBasicTests = {
-            depends  = optionals compiler.isGhc [
+            depends  = pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.directory

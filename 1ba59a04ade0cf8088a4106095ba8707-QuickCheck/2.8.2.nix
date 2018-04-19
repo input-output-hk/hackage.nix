@@ -29,7 +29,7 @@ let
             hsPkgs.containers
           ] ++ [
             hsPkgs.base
-          ]) ++ pkgs.lib.optional (_flags.base4point8 || _flags.base4 || _flags.base3) hsPkgs.random) ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers) ++ pkgs.lib.optional (compiler.isGhc && _flags.templatehaskell) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.extensible-exceptions) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && (_flags.base4point8 || _flags.base4)) hsPkgs.tf-random) ++ optionals compiler.isUhc [
+          ]) ++ pkgs.lib.optional (_flags.base4point8 || _flags.base4 || _flags.base3) hsPkgs.random) ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers) ++ pkgs.lib.optional (compiler.isGhc && _flags.templatehaskell) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.extensible-exceptions) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && (_flags.base4point8 || _flags.base4)) hsPkgs.tf-random) ++ pkgs.lib.optionals compiler.isUhc [
             hsPkgs.old-time
             hsPkgs.old-locale
           ];

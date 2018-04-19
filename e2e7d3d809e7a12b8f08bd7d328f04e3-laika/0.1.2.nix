@@ -36,7 +36,7 @@ let
         };
         exes = {
           demo = {
-            depends  = optionals (!(!_flags.demo)) [
+            depends  = pkgs.lib.optionals (!(!_flags.demo)) [
               hsPkgs.laika
               hsPkgs.text
               hsPkgs.record

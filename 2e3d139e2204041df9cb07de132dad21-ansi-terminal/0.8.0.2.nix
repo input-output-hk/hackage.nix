@@ -25,7 +25,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.colour
-          ] ++ optionals system.isWindows [
+          ] ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.base-compat
             hsPkgs.containers
             hsPkgs.Win32

@@ -216,7 +216,7 @@ let
               hsPkgs.async
               hsPkgs.criterion
               hsPkgs.store
-            ] ++ optionals _flags.comparison-bench [
+            ] ++ pkgs.lib.optionals _flags.comparison-bench [
               hsPkgs.cereal
               hsPkgs.binary
               hsPkgs.vector-binary-instances

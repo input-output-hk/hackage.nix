@@ -41,7 +41,7 @@ let
             hsPkgs.html
             hsPkgs.pretty
             hsPkgs.hashable
-          ] ++ pkgs.lib.optional _flags.tfrandom hsPkgs.tf-random) ++ optionals (_flags.ghcapi && !system.isWindows) [
+          ] ++ pkgs.lib.optional _flags.tfrandom hsPkgs.tf-random) ++ pkgs.lib.optionals (_flags.ghcapi && !system.isWindows) [
             hsPkgs.ghc
             hsPkgs.ghc-paths
           ]) ++ pkgs.lib.optional _flags.readfile hsPkgs.haskell-src) ++ [
@@ -72,7 +72,7 @@ let
               hsPkgs.abstract-par
               hsPkgs.ghc-paths
               hsPkgs.ghc
-            ] ++ optionals (!system.isWindows) ((([
+            ] ++ pkgs.lib.optionals (!system.isWindows) ((([
               hsPkgs.unix
             ] ++ pkgs.lib.optional _flags.tfrandom hsPkgs.tf-random) ++ pkgs.lib.optional _flags.readfile hsPkgs.haskell-src) ++ pkgs.lib.optional _flags.ghc7 hsPkgs.ghc)) ++ [
               hsPkgs.network

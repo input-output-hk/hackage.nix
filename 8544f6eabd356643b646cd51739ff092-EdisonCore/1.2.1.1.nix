@@ -26,7 +26,7 @@ let
             hsPkgs.mtl
             hsPkgs.QuickCheck
             hsPkgs.EdisonAPI
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.containers
             hsPkgs.array
           ];

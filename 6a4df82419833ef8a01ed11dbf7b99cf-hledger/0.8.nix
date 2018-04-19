@@ -58,7 +58,7 @@ let
               hsPkgs.utf8-string
               hsPkgs.HUnit
               hsPkgs.safe
-            ] ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ optionals _flags.web [
+            ] ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ pkgs.lib.optionals _flags.web [
               hsPkgs.hsp
               hsPkgs.hsx
               hsPkgs.xhtml
@@ -73,7 +73,7 @@ let
               hsPkgs.happstack-state
               hsPkgs.HTTP
               hsPkgs.applicative-extras
-            ]) ++ optionals _flags.chart [
+            ]) ++ pkgs.lib.optionals _flags.chart [
               hsPkgs.Chart
               hsPkgs.colour
             ];

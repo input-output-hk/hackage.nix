@@ -38,7 +38,7 @@ let
             ];
           };
           midimory-reactive = {
-            depends  = optionals _flags.reactive [
+            depends  = pkgs.lib.optionals _flags.reactive [
               hsPkgs.reactive-banana-wx
               hsPkgs.reactive-banana
               hsPkgs.wx

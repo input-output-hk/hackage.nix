@@ -26,10 +26,10 @@ let
             hsPkgs.vector
             hsPkgs.primitive
           ];
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.blas
             pkgs.lapack
-          ] ++ optionals (!system.isWindows && !system.isOsx) [
+          ] ++ pkgs.lib.optionals (!system.isWindows && !system.isOsx) [
             pkgs.blas
             pkgs.lapack
           ];

@@ -21,7 +21,7 @@ let
       components = {
         exes = {
           ghci-ng = {
-            depends  = (pkgs.lib.optional compiler.isGhc hsPkgs.ghc ++ optionals compiler.isGhc [
+            depends  = (pkgs.lib.optional compiler.isGhc hsPkgs.ghc ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.bytestring

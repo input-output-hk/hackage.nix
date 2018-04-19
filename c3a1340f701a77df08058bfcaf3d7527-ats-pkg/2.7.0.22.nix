@@ -58,7 +58,7 @@ let
         };
         exes = {
           atspkg = {
-            depends  = optionals (!_flags.no-executable) [
+            depends  = pkgs.lib.optionals (!_flags.no-executable) [
               hsPkgs.base
               hsPkgs.ats-pkg
               hsPkgs.optparse-applicative

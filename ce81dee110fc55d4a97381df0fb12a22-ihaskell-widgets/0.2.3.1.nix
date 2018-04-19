@@ -32,10 +32,10 @@ let
             hsPkgs.scientific
             hsPkgs.unix
             hsPkgs.ihaskell
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.singletons) ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.singletons) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.singletons
             hsPkgs.nats
-          ]) ++ optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.singletons
             hsPkgs.nats
           ];

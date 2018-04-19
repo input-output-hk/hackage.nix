@@ -47,7 +47,7 @@ let
             hsPkgs.time
             hsPkgs.unix-compat
             hsPkgs.vector
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!(_flags.portable || system.isWindows)) hsPkgs.unix) ++ optionals _flags.openssl [
+          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!(_flags.portable || system.isWindows)) hsPkgs.unix) ++ pkgs.lib.optionals _flags.openssl [
             hsPkgs.HsOpenSSL
             hsPkgs.openssl-streams
           ];
@@ -74,7 +74,7 @@ let
               hsPkgs.time
               hsPkgs.unix-compat
               hsPkgs.vector
-            ] ++ pkgs.lib.optional (!(_flags.portable || system.isWindows)) hsPkgs.unix) ++ optionals _flags.openssl [
+            ] ++ pkgs.lib.optional (!(_flags.portable || system.isWindows)) hsPkgs.unix) ++ pkgs.lib.optionals _flags.openssl [
               hsPkgs.HsOpenSSL
               hsPkgs.openssl-streams
             ];
@@ -102,7 +102,7 @@ let
               hsPkgs.transformers
               hsPkgs.unix-compat
               hsPkgs.vector
-            ] ++ optionals _flags.openssl [
+            ] ++ pkgs.lib.optionals _flags.openssl [
               hsPkgs.HsOpenSSL
               hsPkgs.openssl-streams
             ]) ++ pkgs.lib.optional (!(_flags.portable || system.isWindows)) hsPkgs.unix;
@@ -146,7 +146,7 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.test-framework-quickcheck2
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!(_flags.portable || system.isWindows)) hsPkgs.unix) ++ optionals _flags.openssl [
+            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!(_flags.portable || system.isWindows)) hsPkgs.unix) ++ pkgs.lib.optionals _flags.openssl [
               hsPkgs.HsOpenSSL
               hsPkgs.openssl-streams
             ];

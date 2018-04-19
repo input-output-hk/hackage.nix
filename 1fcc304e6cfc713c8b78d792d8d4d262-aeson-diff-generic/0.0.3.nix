@@ -44,7 +44,7 @@ let
             hsPkgs.uuid-types
             hsPkgs.vector
             hsPkgs.lens
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.semigroups
             hsPkgs.transformers
             hsPkgs.transformers-compat

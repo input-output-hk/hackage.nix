@@ -53,7 +53,7 @@ let
             hsPkgs.vector
             hsPkgs.vector-algorithms
             hsPkgs.mmorph
-          ] ++ optionals _flags.monitoring [
+          ] ++ pkgs.lib.optionals _flags.monitoring [
             hsPkgs.hedis
             hsPkgs.unix
           ];

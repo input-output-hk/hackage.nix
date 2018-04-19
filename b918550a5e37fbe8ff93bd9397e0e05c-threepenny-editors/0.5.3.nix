@@ -45,7 +45,7 @@ let
               hsPkgs.profunctors
               hsPkgs.threepenny-gui
               hsPkgs.casing
-            ] ++ optionals _flags.buildexamples [
+            ] ++ pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.threepenny-editors
               hsPkgs.containers
             ];
@@ -60,7 +60,7 @@ let
               hsPkgs.profunctors
               hsPkgs.threepenny-gui
               hsPkgs.casing
-            ] ++ optionals _flags.buildexamples [
+            ] ++ pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.threepenny-editors
               hsPkgs.haskell-src-exts
             ];

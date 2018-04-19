@@ -52,7 +52,7 @@ let
             ];
           };
           TestCHInTCP = {
-            depends  = optionals _flags.tcp [
+            depends  = pkgs.lib.optionals _flags.tcp [
               hsPkgs.base
               hsPkgs.distributed-process-tests
               hsPkgs.network

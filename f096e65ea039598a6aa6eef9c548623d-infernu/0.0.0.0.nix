@@ -35,7 +35,7 @@ let
             hsPkgs.parsec
             hsPkgs.fgl
             hsPkgs.optparse-applicative
-          ] ++ optionals _flags.quickcheck [
+          ] ++ pkgs.lib.optionals _flags.quickcheck [
             hsPkgs.QuickCheck
             hsPkgs.derive
           ];
@@ -47,7 +47,7 @@ let
               hsPkgs.parsec
               hsPkgs.infernu
               hsPkgs.optparse-applicative
-            ] ++ optionals _flags.quickcheck [
+            ] ++ pkgs.lib.optionals _flags.quickcheck [
               hsPkgs.QuickCheck
               hsPkgs.derive
             ];
@@ -56,7 +56,7 @@ let
             depends  = [
               hsPkgs.base
               hsPkgs.infernu
-            ] ++ optionals _flags.quickcheck [
+            ] ++ pkgs.lib.optionals _flags.quickcheck [
               hsPkgs.QuickCheck
               hsPkgs.derive
             ];
@@ -65,7 +65,7 @@ let
             depends  = [
               hsPkgs.base
               hsPkgs.infernu
-            ] ++ optionals _flags.quickcheck [
+            ] ++ pkgs.lib.optionals _flags.quickcheck [
               hsPkgs.QuickCheck
               hsPkgs.derive
             ];

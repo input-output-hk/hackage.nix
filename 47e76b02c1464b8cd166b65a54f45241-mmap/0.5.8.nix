@@ -29,7 +29,7 @@ let
         };
         exes = {
           mmaptest = {
-            depends  = optionals _flags.mmaptest [
+            depends  = pkgs.lib.optionals _flags.mmaptest [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.HUnit

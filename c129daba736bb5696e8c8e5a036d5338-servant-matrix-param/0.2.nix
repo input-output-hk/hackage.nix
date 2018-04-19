@@ -26,7 +26,7 @@ let
           depends  = ([
             hsPkgs.base
             hsPkgs.servant
-          ] ++ pkgs.lib.optional _flags.with-servant-aeson-specs hsPkgs.servant-aeson-specs) ++ optionals _flags.with-servant-server [
+          ] ++ pkgs.lib.optional _flags.with-servant-aeson-specs hsPkgs.servant-aeson-specs) ++ pkgs.lib.optionals _flags.with-servant-server [
             hsPkgs.servant-server
             hsPkgs.containers
             hsPkgs.string-conversions

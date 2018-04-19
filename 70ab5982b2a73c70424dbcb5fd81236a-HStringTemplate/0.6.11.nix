@@ -24,7 +24,7 @@ let
       };
       components = {
         HStringTemplate = {
-          depends  = ((pkgs.lib.optional _flags.syb-with-class hsPkgs.syb-with-class ++ optionals _flags.quasi-quotation [
+          depends  = ((pkgs.lib.optional _flags.syb-with-class hsPkgs.syb-with-class ++ pkgs.lib.optionals _flags.quasi-quotation [
             hsPkgs.template-haskell
             hsPkgs.mtl
           ]) ++ (if _flags.smaller-base
@@ -63,7 +63,7 @@ let
               hsPkgs.text
               hsPkgs.utf8-string
               hsPkgs.blaze-builder
-            ])) ++ optionals compiler.isGhc [
+            ])) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.ghc-prim
             hsPkgs.dlist
           ];

@@ -35,7 +35,7 @@ let
         };
         exes = {
           tests = {
-            depends  = optionals _flags.tests [
+            depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.HTF
               hsPkgs.MissingH
               hsPkgs.hxt

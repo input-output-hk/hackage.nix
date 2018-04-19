@@ -39,7 +39,7 @@ let
               pkgs."stdc++"
             ]
             else [ pkgs."stdc++" ];
-          frameworks = optionals (!(system.isWindows && !_flags.usepkgconfig) && (system.isOsx && !_flags.usepkgconfig)) [
+          frameworks = pkgs.lib.optionals (!(system.isWindows && !_flags.usepkgconfig) && (system.isOsx && !_flags.usepkgconfig)) [
             pkgs.QtCore
             pkgs.QtGui
             pkgs.QtWidgets

@@ -80,7 +80,7 @@ let
             then [ hsPkgs.gtk3 ]
             else [
               hsPkgs.gtk
-            ])) ++ optionals _flags.hub [
+            ])) ++ pkgs.lib.optionals _flags.hub [
             hsPkgs.dbus
             hsPkgs.http-client
             hsPkgs.http-conduit

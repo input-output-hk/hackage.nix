@@ -32,7 +32,7 @@ let
         };
         exes = {
           private-hackage-uploader = {
-            depends  = optionals (!_flags.library-only) [
+            depends  = pkgs.lib.optionals (!_flags.library-only) [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.shelly

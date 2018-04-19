@@ -48,7 +48,7 @@ let
             ];
           };
           examples = {
-            depends  = optionals _flags.build-examples [
+            depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.base
               hsPkgs.attoparsec
               hsPkgs.bytestring

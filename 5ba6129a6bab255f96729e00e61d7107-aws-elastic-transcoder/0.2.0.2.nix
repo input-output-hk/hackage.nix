@@ -42,7 +42,7 @@ let
         };
         exes = {
           SubmitETS = {
-            depends  = optionals (!(!_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.aws-elastic-transcoder

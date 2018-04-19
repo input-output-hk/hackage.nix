@@ -47,7 +47,7 @@ let
             hsPkgs.split
             hsPkgs.transformers-compat
             hsPkgs.mtl-compat
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];
@@ -63,7 +63,7 @@ let
               hsPkgs.cmdargs
               hsPkgs.split
               hsPkgs.clafer
-            ] ++ optionals (!compiler.isGhc) [
+            ] ++ pkgs.lib.optionals (!compiler.isGhc) [
               hsPkgs.fail
               hsPkgs.semigroups
             ];
@@ -88,7 +88,7 @@ let
               hsPkgs.transformers-compat
               hsPkgs.mtl-compat
               hsPkgs.clafer
-            ] ++ optionals (!compiler.isGhc) [
+            ] ++ pkgs.lib.optionals (!compiler.isGhc) [
               hsPkgs.fail
               hsPkgs.semigroups
             ];

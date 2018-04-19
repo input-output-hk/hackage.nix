@@ -46,7 +46,7 @@ let
             ];
           };
           yackage-upload = {
-            depends  = optionals _flags.upload [
+            depends  = pkgs.lib.optionals _flags.upload [
               hsPkgs.base
               hsPkgs.http-enumerator
               hsPkgs.blaze-builder

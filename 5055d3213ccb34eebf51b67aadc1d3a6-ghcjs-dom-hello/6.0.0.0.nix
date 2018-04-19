@@ -28,7 +28,7 @@ let
             hsPkgs.base
             hsPkgs.ghcjs-dom
             hsPkgs.mtl
-          ] ++ optionals (!compiler.isGhcjs) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
             hsPkgs.jsaddle
             hsPkgs.jsaddle-warp
           ];

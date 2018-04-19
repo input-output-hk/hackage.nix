@@ -56,18 +56,18 @@ let
             else [
               hsPkgs.network
               hsPkgs.network-bytestring
-            ])) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ optionals _flags.base4 [
+            ])) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.base4 [
             hsPkgs.base
             hsPkgs.syb
           ]) ++ pkgs.lib.optional _flags.tests hsPkgs.HUnit;
-          libs = optionals _flags.https [
+          libs = pkgs.lib.optionals _flags.https [
             pkgs.cryptopp
             pkgs.ssl
           ];
         };
         exes = {
           happstack-server-tests = {
-            depends  = optionals _flags.tests [
+            depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.HUnit
               hsPkgs.parsec
             ];

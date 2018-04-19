@@ -50,7 +50,7 @@ let
               hsPkgs.transformers
               hsPkgs.ffmpeg-light
               hsPkgs.JuicyPixels
-            ] ++ optionals _flags.buildrasterdemo [
+            ] ++ pkgs.lib.optionals _flags.buildrasterdemo [
               hsPkgs.Rasterific
               hsPkgs.linear
             ];

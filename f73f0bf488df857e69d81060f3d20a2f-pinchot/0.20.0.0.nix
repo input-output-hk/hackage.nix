@@ -37,7 +37,7 @@ let
         };
         exes = {
           newman = {
-            depends  = optionals (!(!_flags.executables)) [
+            depends  = pkgs.lib.optionals (!(!_flags.executables)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.transformers
@@ -51,7 +51,7 @@ let
             ];
           };
           newmanPretty = {
-            depends  = optionals (!(!_flags.executables)) [
+            depends  = pkgs.lib.optionals (!(!_flags.executables)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.transformers

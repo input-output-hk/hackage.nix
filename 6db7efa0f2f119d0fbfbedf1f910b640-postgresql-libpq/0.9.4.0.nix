@@ -26,9 +26,9 @@ let
             hsPkgs.base
             hsPkgs.bytestring
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
-          libs = optionals (!_flags.use-pkg-config) ([
+          libs = pkgs.lib.optionals (!_flags.use-pkg-config) ([
             pkgs.pq
-          ] ++ optionals system.isOpenbsd [
+          ] ++ pkgs.lib.optionals system.isOpenbsd [
             pkgs.crypto
             pkgs.ssl
           ]);

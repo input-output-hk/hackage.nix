@@ -28,7 +28,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
-          ] ++ optionals compiler.isGhc ([
+          ] ++ pkgs.lib.optionals compiler.isGhc ([
             hsPkgs.glib
             hsPkgs.transformers
           ] ++ (if _flags.gtk3

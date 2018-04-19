@@ -33,7 +33,7 @@ let
             hsPkgs.GLUT
             hsPkgs.bmp
             hsPkgs.gloss-rendering
-          ] ++ optionals _flags.glfw [
+          ] ++ pkgs.lib.optionals _flags.glfw [
             hsPkgs.GLFW-b
             hsPkgs.bindings-GLFW
           ];

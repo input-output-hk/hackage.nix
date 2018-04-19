@@ -54,7 +54,7 @@ let
             ];
           };
           NussinovFG = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
               hsPkgs.FormalGrammars
@@ -64,7 +64,7 @@ let
             ];
           };
           NeedlemanWunschFG = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
               hsPkgs.containers

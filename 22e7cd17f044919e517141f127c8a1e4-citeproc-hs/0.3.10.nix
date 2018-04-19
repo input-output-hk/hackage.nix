@@ -36,7 +36,7 @@ let
             hsPkgs.bytestring
             hsPkgs.filepath
             hsPkgs.pandoc-types
-          ] ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ optionals _flags.network [
+          ] ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ pkgs.lib.optionals _flags.network [
             hsPkgs.network
             hsPkgs.network-uri
             hsPkgs.HTTP
@@ -44,10 +44,10 @@ let
             then [ hsPkgs.hexpat ]
             else [
               hsPkgs.xml
-            ])) ++ optionals _flags.embed_data_files [
+            ])) ++ pkgs.lib.optionals _flags.embed_data_files [
             hsPkgs.template-haskell
             hsPkgs.file-embed
-          ]) ++ optionals _flags.unicode_collation [
+          ]) ++ pkgs.lib.optionals _flags.unicode_collation [
             hsPkgs.text
             hsPkgs.text-icu
           ]) ++ (if compiler.isGhc

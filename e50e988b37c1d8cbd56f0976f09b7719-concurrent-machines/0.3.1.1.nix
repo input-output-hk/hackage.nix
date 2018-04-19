@@ -48,7 +48,7 @@ let
             ];
           };
           splotime = {
-            depends  = optionals _flags.splot [
+            depends  = pkgs.lib.optionals _flags.splot [
               hsPkgs.base
               hsPkgs.concurrent-machines
               hsPkgs.machines

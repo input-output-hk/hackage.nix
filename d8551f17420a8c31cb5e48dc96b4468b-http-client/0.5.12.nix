@@ -51,7 +51,7 @@ let
             ]
             else [
               hsPkgs.network
-            ])) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ optionals system.isWindows [
+            ])) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.Win32
             hsPkgs.safe
           ];

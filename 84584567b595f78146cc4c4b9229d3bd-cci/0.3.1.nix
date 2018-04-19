@@ -30,14 +30,14 @@ let
         };
         exes = {
           cci-example-client = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.cci
             ];
           };
           cci-example-pingpong = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.cci
@@ -45,14 +45,14 @@ let
             ];
           };
           cci-example-server = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.cci
             ];
           };
           cci-example-registration-benchmark = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.cci

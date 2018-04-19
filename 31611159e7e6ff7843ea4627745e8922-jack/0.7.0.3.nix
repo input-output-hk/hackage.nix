@@ -40,13 +40,13 @@ let
         };
         exes = {
           amplify = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.base
             ];
           };
           capture = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.explicit-exception
               hsPkgs.transformers
@@ -55,7 +55,7 @@ let
             ];
           };
           impulse-train = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.explicit-exception
               hsPkgs.transformers
@@ -64,14 +64,14 @@ let
             ];
           };
           midimon = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.midi
               hsPkgs.base
             ];
           };
           synth = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.midi
               hsPkgs.event-list

@@ -24,7 +24,7 @@ let
         micro-recursion-schemes = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals _flags.template-haskell [
+          ] ++ pkgs.lib.optionals _flags.template-haskell [
             hsPkgs.th-abstraction
             hsPkgs.template-haskell
           ];

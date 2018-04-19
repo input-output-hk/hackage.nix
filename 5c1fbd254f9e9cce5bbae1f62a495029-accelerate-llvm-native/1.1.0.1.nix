@@ -46,13 +46,13 @@ let
             hsPkgs.template-haskell
             hsPkgs.time
             hsPkgs.unique
-          ] ++ optionals system.isOsx [
+          ] ++ pkgs.lib.optionals system.isOsx [
             hsPkgs.bytestring
             hsPkgs.cereal
             hsPkgs.ghc-prim
             hsPkgs.unix
             hsPkgs.vector
-          ]) ++ optionals system.isLinux [
+          ]) ++ pkgs.lib.optionals system.isLinux [
             hsPkgs.bytestring
             hsPkgs.cereal
             hsPkgs.ghc-prim

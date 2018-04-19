@@ -31,7 +31,7 @@ let
             hsPkgs.half
             hsPkgs.primitive
             hsPkgs.text
-          ] ++ pkgs.lib.optional _flags.optimize-gmp hsPkgs.integer-gmp) ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optional _flags.optimize-gmp hsPkgs.integer-gmp) ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];

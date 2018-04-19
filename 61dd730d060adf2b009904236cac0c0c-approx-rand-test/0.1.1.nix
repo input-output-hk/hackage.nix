@@ -44,7 +44,7 @@ let
               hsPkgs.mersenne-random-pure64
               hsPkgs.monad-mersenne-random
               hsPkgs.statistics
-            ] ++ optionals _flags.withcairo [
+            ] ++ pkgs.lib.optionals _flags.withcairo [
               hsPkgs.Chart
               hsPkgs.colour
               hsPkgs.data-accessor
@@ -64,7 +64,7 @@ let
               hsPkgs.monad-mersenne-random
               hsPkgs.mtl
               hsPkgs.statistics
-            ] ++ optionals _flags.withcairo [
+            ] ++ pkgs.lib.optionals _flags.withcairo [
               hsPkgs.Chart
               hsPkgs.colour
               hsPkgs.data-accessor

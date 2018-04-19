@@ -29,7 +29,7 @@ let
               pkgs.Xrandr
             ]
             else pkgs.lib.optional (!system.isOsx && system.isWindows) pkgs.opengl32;
-          frameworks = optionals (!system.isLinux && system.isOsx) [
+          frameworks = pkgs.lib.optionals (!system.isLinux && system.isOsx) [
             pkgs.AGL
             pkgs.Cocoa
             pkgs.OpenGL

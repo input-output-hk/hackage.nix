@@ -53,7 +53,7 @@ let
               hsPkgs.time
               hsPkgs.transformers
               hsPkgs.vector
-            ] ++ optionals _flags.with-chart [
+            ] ++ pkgs.lib.optionals _flags.with-chart [
               hsPkgs.Chart
               hsPkgs.Chart-cairo
               hsPkgs.colour

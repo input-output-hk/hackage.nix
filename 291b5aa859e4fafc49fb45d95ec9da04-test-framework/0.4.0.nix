@@ -42,7 +42,7 @@ let
         };
         exes = {
           test-framework-tests = {
-            depends  = optionals (!(!_flags.tests)) ([
+            depends  = pkgs.lib.optionals (!(!_flags.tests)) ([
               hsPkgs.HUnit
               hsPkgs.QuickCheck
               hsPkgs.ansi-terminal

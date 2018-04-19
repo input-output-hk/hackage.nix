@@ -45,10 +45,10 @@ let
             ]
             else [
               hsPkgs.base
-            ])) ++ optionals (_flags.with_parsec && _flags.with_split) [
+            ])) ++ pkgs.lib.optionals (_flags.with_parsec && _flags.with_split) [
             hsPkgs.parsec
             hsPkgs.split
-          ]) ++ optionals _flags.with_hint [
+          ]) ++ pkgs.lib.optionals _flags.with_hint [
             hsPkgs.hint
             hsPkgs.network
           ]) ++ pkgs.lib.optional _flags.with_mpd hsPkgs.libmpd;

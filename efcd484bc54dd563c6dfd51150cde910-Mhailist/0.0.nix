@@ -38,7 +38,7 @@ let
             ];
           };
           Test = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.directory

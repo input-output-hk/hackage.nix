@@ -25,7 +25,7 @@ let
         tagged = {
           depends  = ((([
             hsPkgs.base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.template-haskell) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ optionals _flags.transformers [
+          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.template-haskell) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optionals _flags.transformers [
             hsPkgs.transformers
             hsPkgs.transformers-compat
           ];

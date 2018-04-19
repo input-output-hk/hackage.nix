@@ -25,7 +25,7 @@ let
           depends  = [
             hsPkgs.accelerate
             hsPkgs.base
-          ] ++ optionals _flags.cuda [
+          ] ++ pkgs.lib.optionals _flags.cuda [
             hsPkgs.accelerate-cuda
             hsPkgs.cuda
             hsPkgs.cufft

@@ -35,7 +35,7 @@ let
         };
         exes = {
           zerobin = {
-            depends  = optionals _flags.cli [
+            depends  = pkgs.lib.optionals _flags.cli [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.docopt
@@ -44,7 +44,7 @@ let
             ];
           };
           zerobin-nodejs = {
-            depends  = optionals _flags.nodejs [
+            depends  = pkgs.lib.optionals _flags.nodejs [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.bytestring

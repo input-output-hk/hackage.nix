@@ -29,13 +29,13 @@ let
             hsPkgs.primitive
             hsPkgs.vector
           ];
-          libs = ((optionals _flags.openblas [
+          libs = ((pkgs.lib.optionals _flags.openblas [
             pkgs.openblas
             pkgs.pthread
-          ] ++ optionals (system.isWindows && !_flags.openblas) [
+          ] ++ pkgs.lib.optionals (system.isWindows && !_flags.openblas) [
             pkgs.blas
             pkgs.lapack
-          ]) ++ optionals (!system.isWindows && !system.isOsx && !_flags.openblas) [
+          ]) ++ pkgs.lib.optionals (!system.isWindows && !system.isOsx && !_flags.openblas) [
             pkgs.blas
             pkgs.lapack
           ]) ++ pkgs.lib.optional _flags.cblas pkgs.cblas;

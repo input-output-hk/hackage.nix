@@ -38,14 +38,14 @@ let
         };
         exes = {
           bff-shell = {
-            depends  = optionals _flags.binaries [
+            depends  = pkgs.lib.optionals _flags.binaries [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.hint
             ];
           };
           bff-cgi = {
-            depends  = optionals _flags.binaries [
+            depends  = pkgs.lib.optionals _flags.binaries [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.xhtml

@@ -32,7 +32,7 @@ let
             hsPkgs.template-haskell
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];

@@ -36,7 +36,7 @@ let
             hsPkgs.stm
             hsPkgs.time
             hsPkgs.transformers
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.template-haskell
             hsPkgs.derive
             hsPkgs.uniplate
@@ -45,7 +45,7 @@ let
         };
         exes = {
           leaks = {
-            depends  = optionals _flags.perf [
+            depends  = pkgs.lib.optionals _flags.perf [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.directory

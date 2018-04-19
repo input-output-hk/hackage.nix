@@ -33,7 +33,7 @@ let
         };
         exes = {
           courses = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.hexml

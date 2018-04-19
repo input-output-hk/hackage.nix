@@ -26,7 +26,7 @@ let
             hsPkgs.template-haskell
             hsPkgs.filepath
             hsPkgs.mtl
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.base
             hsPkgs.syb
           ]) ++ (if _flags.small_base

@@ -25,11 +25,11 @@ let
         keyring = {
           depends  = ([
             hsPkgs.base
-          ] ++ optionals system.isOsx [
+          ] ++ pkgs.lib.optionals system.isOsx [
             hsPkgs.utf8-string
             hsPkgs.bytestring
           ]) ++ pkgs.lib.optional (!system.isOsx || _flags.allbackends) hsPkgs.udbus;
-          frameworks = optionals system.isOsx [
+          frameworks = pkgs.lib.optionals system.isOsx [
             pkgs.Security
             pkgs.CoreFoundation
           ];

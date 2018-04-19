@@ -24,7 +24,7 @@ let
       components = {
         exes = {
           cabal-dev = {
-            depends  = optionals (!_flags.no-cabal-dev) (((([
+            depends  = pkgs.lib.optionals (!_flags.no-cabal-dev) (((([
               hsPkgs.bytestring
               hsPkgs.directory
               hsPkgs.filepath
@@ -51,7 +51,7 @@ let
             ];
           };
           cabal-dev-test = {
-            depends  = optionals (!(_flags.no-cabal-dev || !_flags.build-tests)) ([
+            depends  = pkgs.lib.optionals (!(_flags.no-cabal-dev || !_flags.build-tests)) ([
               hsPkgs.MonadRandom
               hsPkgs.random
               hsPkgs.test-framework

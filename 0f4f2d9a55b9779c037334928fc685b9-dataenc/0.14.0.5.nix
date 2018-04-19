@@ -30,7 +30,7 @@ let
         };
         exes = {
           tests = {
-            depends  = optionals _flags.tests [
+            depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.HUnit

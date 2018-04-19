@@ -31,7 +31,7 @@ let
             hsPkgs.tagged
             hsPkgs.random
             hsPkgs.filepath
-          ] ++ optionals _flags.alg-tests [
+          ] ++ pkgs.lib.optionals _flags.alg-tests [
             hsPkgs.QuickCheck
             hsPkgs.parsec
             hsPkgs.directory

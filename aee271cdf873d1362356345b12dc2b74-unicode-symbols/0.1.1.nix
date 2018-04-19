@@ -24,7 +24,7 @@ let
         unicode-symbols = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals _flags.containers [
+          ] ++ pkgs.lib.optionals _flags.containers [
             hsPkgs.containers
             hsPkgs.containers
           ];

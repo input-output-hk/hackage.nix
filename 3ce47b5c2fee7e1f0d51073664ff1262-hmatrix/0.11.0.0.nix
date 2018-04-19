@@ -33,7 +33,7 @@ let
             hsPkgs.array
             hsPkgs.storable-complex
             hsPkgs.process
-          ] ++ pkgs.lib.optional _flags.vector hsPkgs.vector) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ optionals _flags.tests [
+          ] ++ pkgs.lib.optional _flags.vector hsPkgs.vector) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ pkgs.lib.optionals _flags.tests [
             hsPkgs.QuickCheck
             hsPkgs.HUnit
             hsPkgs.random
@@ -52,7 +52,7 @@ let
               pkgs.mkl_intel
               pkgs.mkl_sequential
               pkgs.mkl_core
-            ]) ++ pkgs.lib.optional system.isOsx pkgs.gsl) ++ optionals system.isWindows [
+            ]) ++ pkgs.lib.optional system.isOsx pkgs.gsl) ++ pkgs.lib.optionals system.isWindows [
             pkgs.gsl-0
             pkgs.blas
             pkgs.lapack

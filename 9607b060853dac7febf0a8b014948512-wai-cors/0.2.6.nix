@@ -31,7 +31,7 @@ let
             hsPkgs.bytestring
             hsPkgs.case-insensitive
             hsPkgs.http-types
-          ] ++ optionals (_flags.wai-1 && !_flags.wai-2) [
+          ] ++ pkgs.lib.optionals (_flags.wai-1 && !_flags.wai-2) [
             hsPkgs.wai
             hsPkgs.resourcet
             hsPkgs.transformers
@@ -59,7 +59,7 @@ let
               hsPkgs.process
               hsPkgs.text
               hsPkgs.wai-cors
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.filepath) ++ optionals (!(_flags.wai-1 || _flags.wai-2 || compiler.isGhc)) [
+            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.filepath) ++ pkgs.lib.optionals (!(_flags.wai-1 || _flags.wai-2 || compiler.isGhc)) [
               hsPkgs.wai-websockets
               hsPkgs.warp
               hsPkgs.wai
@@ -74,7 +74,7 @@ let
               hsPkgs.tasty
               hsPkgs.tasty-hunit
               hsPkgs.wai-cors
-            ] ++ optionals (!(_flags.wai-1 || _flags.wai-2 || compiler.isGhc)) [
+            ] ++ pkgs.lib.optionals (!(_flags.wai-1 || _flags.wai-2 || compiler.isGhc)) [
               hsPkgs.wai-extra
               hsPkgs.wai-websockets
               hsPkgs.warp

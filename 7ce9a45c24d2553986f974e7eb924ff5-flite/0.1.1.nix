@@ -32,7 +32,7 @@ let
         };
         exes = {
           flite-pure = {
-            depends  = optionals _flags.pure [
+            depends  = pkgs.lib.optionals _flags.pure [
               hsPkgs.base
               hsPkgs.haskell98
               hsPkgs.array
@@ -40,7 +40,7 @@ let
             ];
           };
           flite = {
-            depends  = optionals (!_flags.pure) [
+            depends  = pkgs.lib.optionals (!_flags.pure) [
               hsPkgs.base
               hsPkgs.haskell98
               hsPkgs.array

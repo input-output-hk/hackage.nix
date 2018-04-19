@@ -38,7 +38,7 @@ let
         };
         exes = {
           roundtrip = {
-            depends  = optionals (compiler.isGhc && _flags.roundtrip) ([
+            depends  = pkgs.lib.optionals (compiler.isGhc && _flags.roundtrip) ([
               hsPkgs.HUnit
               hsPkgs.base
               hsPkgs.containers
@@ -54,7 +54,7 @@ let
             ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot);
           };
           static = {
-            depends  = optionals _flags.roundtrip ([
+            depends  = pkgs.lib.optionals _flags.roundtrip ([
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.filemanip
@@ -64,7 +64,7 @@ let
             ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot);
           };
           prepare-hackage = {
-            depends  = optionals _flags.roundtrip ([
+            depends  = pkgs.lib.optionals _flags.roundtrip ([
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.directory

@@ -32,7 +32,7 @@ let
         };
         exes = {
           aes128_test = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.crypto-api-tests
               hsPkgs.test-framework

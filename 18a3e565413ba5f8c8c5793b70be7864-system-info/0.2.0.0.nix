@@ -26,7 +26,7 @@ let
             hsPkgs.attoparsec
             hsPkgs.text
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
-          libs = optionals system.isWindows [
+          libs = pkgs.lib.optionals system.isWindows [
             pkgs.ole32
             pkgs.oleaut32
             pkgs.wbemuuid

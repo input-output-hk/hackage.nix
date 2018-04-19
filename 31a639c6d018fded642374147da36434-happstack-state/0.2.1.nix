@@ -43,7 +43,7 @@ let
             then [ hsPkgs.base hsPkgs.syb ]
             else [
               hsPkgs.base
-            ])) ++ optionals _flags.tests [
+            ])) ++ pkgs.lib.optionals _flags.tests [
             hsPkgs.QuickCheck
             hsPkgs.HUnit
           ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;

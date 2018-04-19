@@ -41,12 +41,12 @@ let
             else [
               pkgs.blas
               pkgs.lapack
-            ]) ++ pkgs.lib.optional system.isOsx pkgs.gsl) ++ optionals system.isFreebsd [
+            ]) ++ pkgs.lib.optional system.isOsx pkgs.gsl) ++ pkgs.lib.optionals system.isFreebsd [
             pkgs.blas
             pkgs.lapack
             pkgs.gfortran
             pkgs.gsl
-          ]) ++ optionals system.isWindows [
+          ]) ++ pkgs.lib.optionals system.isWindows [
             pkgs.blas
             pkgs.lapack
             pkgs.gsl-0

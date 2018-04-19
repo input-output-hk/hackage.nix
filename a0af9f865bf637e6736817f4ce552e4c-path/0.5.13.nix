@@ -45,7 +45,7 @@ let
             ];
           };
           validity-test = {
-            depends  = optionals _flags.validity [
+            depends  = pkgs.lib.optionals _flags.validity [
               hsPkgs.QuickCheck
               hsPkgs.aeson
               hsPkgs.base

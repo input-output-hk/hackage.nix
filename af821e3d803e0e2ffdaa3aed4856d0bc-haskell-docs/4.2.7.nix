@@ -37,13 +37,13 @@ let
             hsPkgs.text
             hsPkgs.text
             hsPkgs.unordered-containers
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.haddock-api
             hsPkgs.haddock-library
-          ]) ++ optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.haddock-api
             hsPkgs.haddock-library
-          ]) ++ optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.haddock-api
             hsPkgs.haddock-library
           ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock-api;

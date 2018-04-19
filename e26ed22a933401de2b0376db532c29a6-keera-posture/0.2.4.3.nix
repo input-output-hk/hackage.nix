@@ -103,13 +103,13 @@ let
         };
         tests = {
           hlint = {
-            depends  = optionals (!(!_flags.test-hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
           haddock-coverage = {
-            depends  = optionals (!(!_flags.test-doc-coverage)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doc-coverage)) [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.filepath

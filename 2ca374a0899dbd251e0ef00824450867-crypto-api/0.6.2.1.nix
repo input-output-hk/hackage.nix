@@ -30,11 +30,11 @@ let
             hsPkgs.tagged
             hsPkgs.largeword
             hsPkgs.array
-          ] ++ optionals _flags.tests [
+          ] ++ pkgs.lib.optionals _flags.tests [
             hsPkgs.QuickCheck
             hsPkgs.directory
             hsPkgs.filepath
-          ]) ++ optionals _flags.benchmarks [
+          ]) ++ pkgs.lib.optionals _flags.benchmarks [
             hsPkgs.criterion
             hsPkgs.deepseq
           ];

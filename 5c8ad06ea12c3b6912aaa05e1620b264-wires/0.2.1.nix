@@ -33,13 +33,13 @@ let
         };
         exes = {
           wires-feedback = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.wires
             ];
           };
           wires-ping-pong = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clock
               hsPkgs.containers

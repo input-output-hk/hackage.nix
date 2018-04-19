@@ -32,7 +32,7 @@ let
         };
         exes = {
           Animation = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.process
               hsPkgs.random
               hsPkgs.executable-path
@@ -44,7 +44,7 @@ let
             ];
           };
           Arithmetic = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.process
               hsPkgs.reactive-banana
               hsPkgs.wx
@@ -53,7 +53,7 @@ let
             ];
           };
           Asteroids = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.random
               hsPkgs.executable-path
               hsPkgs.filepath
@@ -64,7 +64,7 @@ let
             ];
           };
           Counter = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.reactive-banana
               hsPkgs.wx
               hsPkgs.wxcore
@@ -72,7 +72,7 @@ let
             ];
           };
           CurrencyConverter = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.process
               hsPkgs.reactive-banana
               hsPkgs.wx
@@ -81,7 +81,7 @@ let
             ];
           };
           CRUD = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.containers
               hsPkgs.reactive-banana
               hsPkgs.wx
@@ -90,7 +90,7 @@ let
             ];
           };
           NetMonitor = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.process
               hsPkgs.reactive-banana
               hsPkgs.wx
@@ -99,7 +99,7 @@ let
             ];
           };
           TicTacToe = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.array
               hsPkgs.reactive-banana
               hsPkgs.wx
@@ -108,7 +108,7 @@ let
             ];
           };
           TwoCounters = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.reactive-banana
               hsPkgs.wx
               hsPkgs.wxcore
@@ -116,7 +116,7 @@ let
             ];
           };
           Wave = {
-            depends  = optionals _flags.buildexamples [
+            depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.reactive-banana
               hsPkgs.wx
               hsPkgs.wxcore

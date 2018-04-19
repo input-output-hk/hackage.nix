@@ -26,7 +26,7 @@ let
         };
         exes = {
           freetype-example1 = {
-            depends  = optionals _flags.examples [
+            depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.freetype2
               hsPkgs.array

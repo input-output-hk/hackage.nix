@@ -22,7 +22,7 @@ let
         hmpfr = {
           depends  = [
             hsPkgs.base
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.base
             hsPkgs.integer
           ];

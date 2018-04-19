@@ -44,7 +44,7 @@ let
         };
         exes = {
           cloud-haskell-azure-echo = {
-            depends  = optionals _flags.build-demos [
+            depends  = pkgs.lib.optionals _flags.build-demos [
               hsPkgs.base
               hsPkgs.distributed-process-azure
               hsPkgs.distributed-process
@@ -52,7 +52,7 @@ let
             ];
           };
           cloud-haskell-azure-ping = {
-            depends  = optionals _flags.build-demos [
+            depends  = pkgs.lib.optionals _flags.build-demos [
               hsPkgs.base
               hsPkgs.distributed-process-azure
               hsPkgs.distributed-process
@@ -64,7 +64,7 @@ let
             ];
           };
           cloud-haskell-azure-fib = {
-            depends  = optionals _flags.build-demos [
+            depends  = pkgs.lib.optionals _flags.build-demos [
               hsPkgs.base
               hsPkgs.distributed-process-azure
               hsPkgs.distributed-process

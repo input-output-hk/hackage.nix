@@ -60,7 +60,7 @@ let
         exes = {
           test = {};
           fouriertest = {
-            depends  = optionals _flags.buildprofilers [
+            depends  = pkgs.lib.optionals _flags.buildprofilers [
               hsPkgs.storablevector
               hsPkgs.utility-ht
               hsPkgs.storable-tuple
@@ -70,7 +70,7 @@ let
           };
           speedtest = {};
           speedtest-exp = {
-            depends  = optionals _flags.splitbase [
+            depends  = pkgs.lib.optionals _flags.splitbase [
               hsPkgs.old-time
               hsPkgs.directory
             ];

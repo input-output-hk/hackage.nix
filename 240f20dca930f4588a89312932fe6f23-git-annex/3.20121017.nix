@@ -58,7 +58,7 @@ let
               hsPkgs.bloomfilter
               hsPkgs.edit-distance
               hsPkgs.process
-            ] ++ pkgs.lib.optional _flags.s3 hsPkgs.hS3) ++ pkgs.lib.optional _flags.assistant hsPkgs.stm) ++ pkgs.lib.optional (system.isLinux && _flags.inotify) hsPkgs.hinotify) ++ pkgs.lib.optional (system.isLinux && _flags.dbus) hsPkgs.dbus) ++ optionals (_flags.webapp && _flags.assistant) [
+            ] ++ pkgs.lib.optional _flags.s3 hsPkgs.hS3) ++ pkgs.lib.optional _flags.assistant hsPkgs.stm) ++ pkgs.lib.optional (system.isLinux && _flags.inotify) hsPkgs.hinotify) ++ pkgs.lib.optional (system.isLinux && _flags.dbus) hsPkgs.dbus) ++ pkgs.lib.optionals (_flags.webapp && _flags.assistant) [
               hsPkgs.yesod
               hsPkgs.yesod-static
               hsPkgs.case-insensitive
@@ -75,7 +75,7 @@ let
               hsPkgs.template-haskell
               hsPkgs.yesod-default
               hsPkgs.data-default
-            ]) ++ optionals (_flags.pairing && _flags.webapp) [
+            ]) ++ pkgs.lib.optionals (_flags.pairing && _flags.webapp) [
               hsPkgs.network-multicast
               hsPkgs.network-info
             ];

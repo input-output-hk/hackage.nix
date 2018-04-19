@@ -41,7 +41,7 @@ let
               hsPkgs.text
               hsPkgs.transformers
               hsPkgs.unordered-containers
-            ] ++ optionals compiler.isGhcjs [
+            ] ++ pkgs.lib.optionals compiler.isGhcjs [
               hsPkgs.ghcjs-base
               hsPkgs.ghcjs-prim
             ]) ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.ghcjs-base-stub;

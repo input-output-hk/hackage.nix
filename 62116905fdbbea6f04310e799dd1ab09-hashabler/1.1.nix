@@ -35,7 +35,7 @@ let
         };
         tests = {
           tests = {
-            depends  = optionals _flags.dev ([
+            depends  = pkgs.lib.optionals _flags.dev ([
               hsPkgs.base
               hsPkgs.hashabler
               hsPkgs.directory
@@ -49,7 +49,7 @@ let
         };
         benchmarks = {
           bench = {
-            depends  = optionals _flags.dev [
+            depends  = pkgs.lib.optionals _flags.dev [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.bytestring
@@ -62,7 +62,7 @@ let
             ];
           };
           viz = {
-            depends  = optionals _flags.dev [
+            depends  = pkgs.lib.optionals _flags.dev [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.bytestring
@@ -76,7 +76,7 @@ let
             ];
           };
           core = {
-            depends  = optionals _flags.dev [
+            depends  = pkgs.lib.optionals _flags.dev [
               hsPkgs.base
               hsPkgs.hashabler
             ];

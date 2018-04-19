@@ -49,7 +49,7 @@ let
               pkgs.libGLESv2
             ]
             else [ pkgs.opengl32 ]);
-          frameworks = optionals system.isIos [
+          frameworks = pkgs.lib.optionals system.isIos [
             pkgs.QuartzCore
             pkgs.OpenGLES
           ] ++ pkgs.lib.optional system.isOsx pkgs.OpenGL;

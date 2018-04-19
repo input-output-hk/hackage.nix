@@ -31,13 +31,13 @@ let
         };
         tests = {
           hlint = {
-            depends  = optionals (!(!_flags.test-hlint)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
           haddock-coverage = {
-            depends  = optionals (!(!_flags.test-doc-coverage)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doc-coverage)) [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.filepath
@@ -46,7 +46,7 @@ let
             ];
           };
           unit-tests = {
-            depends  = optionals (!(!_flags.test-unit-tests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-unit-tests)) [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.keera-hails-reactivevalues

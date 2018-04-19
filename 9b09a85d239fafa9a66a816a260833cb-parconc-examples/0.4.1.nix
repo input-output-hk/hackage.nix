@@ -245,7 +245,7 @@ let
             depends  = ([
               hsPkgs.base
               hsPkgs.fclabels
-            ] ++ optionals _flags.accelerate [
+            ] ++ pkgs.lib.optionals _flags.accelerate [
               hsPkgs.accelerate
               hsPkgs.accelerate-io
             ]) ++ pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda;
@@ -586,7 +586,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ optionals _flags.distributed [
+              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -604,7 +604,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ optionals _flags.distributed [
+              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -622,7 +622,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ optionals _flags.distributed [
+              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -640,7 +640,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ optionals _flags.distributed [
+              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -658,7 +658,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ optionals _flags.distributed [
+              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -676,7 +676,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ optionals _flags.distributed [
+              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -698,7 +698,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ optionals _flags.distributed [
+              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -720,7 +720,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ optionals _flags.distributed [
+              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -742,7 +742,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ optionals _flags.distributed [
+              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static

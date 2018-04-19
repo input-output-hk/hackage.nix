@@ -41,7 +41,7 @@ let
         };
         tests = {
           doctests = {
-            depends  = optionals (!(!_flags.test-doctests || compiler.isGhc)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doctests || compiler.isGhc)) [
               hsPkgs.base
               hsPkgs.bytes
               hsPkgs.directory

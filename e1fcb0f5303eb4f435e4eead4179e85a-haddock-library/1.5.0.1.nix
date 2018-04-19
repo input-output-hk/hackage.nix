@@ -34,7 +34,7 @@ let
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.deepseq
-            ] ++ optionals (!compiler.isGhc) [
+            ] ++ pkgs.lib.optionals (!compiler.isGhc) [
               hsPkgs.semigroups
               hsPkgs.fail
             ];

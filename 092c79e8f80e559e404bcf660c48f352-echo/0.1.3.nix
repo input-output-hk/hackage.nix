@@ -25,7 +25,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.process
-          ] ++ optionals system.isWindows [
+          ] ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.mintty
             hsPkgs.Win32
           ];

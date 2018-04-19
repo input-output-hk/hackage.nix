@@ -31,7 +31,7 @@ let
         };
         exes = {
           test-concurrent-extra = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.base-unicode-symbols
               hsPkgs.HUnit

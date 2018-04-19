@@ -26,12 +26,12 @@ let
           depends  = ([
             hsPkgs.base
             hsPkgs.accelerate
-          ] ++ optionals _flags.llvm-cpu [
+          ] ++ pkgs.lib.optionals _flags.llvm-cpu [
             hsPkgs.accelerate-llvm
             hsPkgs.accelerate-llvm-native
             hsPkgs.blas-hs
             hsPkgs.llvm-hs-pure
-          ]) ++ optionals _flags.llvm-ptx [
+          ]) ++ pkgs.lib.optionals _flags.llvm-ptx [
             hsPkgs.accelerate-llvm
             hsPkgs.accelerate-llvm-ptx
             hsPkgs.bytestring

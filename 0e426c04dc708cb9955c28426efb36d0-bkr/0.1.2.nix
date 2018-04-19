@@ -28,7 +28,7 @@ let
             hsPkgs.pureMD5
             hsPkgs.strict
             hsPkgs.bytestring
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.directory
             hsPkgs.aws
             hsPkgs.haskell98
@@ -40,7 +40,7 @@ let
             hsPkgs.random
             hsPkgs.HDBC
             hsPkgs.http-conduit
-          ]) ++ optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.directory
             hsPkgs.aws
             hsPkgs.unix
@@ -62,7 +62,7 @@ let
               hsPkgs.pureMD5
               hsPkgs.strict
               hsPkgs.bytestring
-            ] ++ optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.directory
               hsPkgs.aws
               hsPkgs.haskell98
@@ -74,7 +74,7 @@ let
               hsPkgs.random
               hsPkgs.HDBC
               hsPkgs.http-conduit
-            ]) ++ optionals compiler.isGhc [
+            ]) ++ pkgs.lib.optionals compiler.isGhc [
               hsPkgs.directory
               hsPkgs.aws
               hsPkgs.unix

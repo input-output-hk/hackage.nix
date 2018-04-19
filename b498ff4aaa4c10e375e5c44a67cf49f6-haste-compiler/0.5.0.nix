@@ -109,7 +109,7 @@ let
               hsPkgs.bytestring
               hsPkgs.shellmate
               hsPkgs.ghc
-            ] ++ optionals (!system.isWindows) [
+            ] ++ pkgs.lib.optionals (!system.isWindows) [
               hsPkgs.unix
               hsPkgs.terminfo
             ];

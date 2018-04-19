@@ -41,7 +41,7 @@ let
             depends  = pkgs.lib.optional _flags.executable hsPkgs.network;
           };
           Tests = {
-            depends  = optionals _flags.test [
+            depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.QuickCheck
               hsPkgs.test-framework

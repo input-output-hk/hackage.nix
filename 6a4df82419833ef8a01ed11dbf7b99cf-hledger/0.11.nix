@@ -63,14 +63,14 @@ let
               hsPkgs.safe
               hsPkgs.time
               hsPkgs.utf8-string
-            ] ++ optionals _flags.chart [
+            ] ++ pkgs.lib.optionals _flags.chart [
               hsPkgs.Chart
               hsPkgs.colour
-            ]) ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ optionals _flags.web [
+            ]) ++ pkgs.lib.optional _flags.vty hsPkgs.vty) ++ pkgs.lib.optionals _flags.web [
               hsPkgs.io-storage
               hsPkgs.yesod
               hsPkgs.convertible-text
-            ]) ++ optionals _flags.web610 [
+            ]) ++ pkgs.lib.optionals _flags.web610 [
               hsPkgs.hsp
               hsPkgs.hsx
               hsPkgs.xhtml

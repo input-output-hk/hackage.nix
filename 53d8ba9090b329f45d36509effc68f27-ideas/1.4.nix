@@ -43,7 +43,7 @@ let
             hsPkgs.old-time
             hsPkgs.old-locale
             hsPkgs.xhtml
-          ] ++ optionals _flags.logging [
+          ] ++ pkgs.lib.optionals _flags.logging [
             hsPkgs.HDBC
             hsPkgs.HDBC-sqlite3
           ]) ++ (if _flags.network-uri

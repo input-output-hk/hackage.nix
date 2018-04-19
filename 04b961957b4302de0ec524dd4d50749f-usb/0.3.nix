@@ -27,7 +27,7 @@ let
             hsPkgs.bindings-libusb
             hsPkgs.bytestring
             hsPkgs.text
-          ] ++ optionals _flags.enumerator [
+          ] ++ pkgs.lib.optionals _flags.enumerator [
             hsPkgs.iteratee
             hsPkgs.transformers
             hsPkgs.MonadCatchIO-transformers

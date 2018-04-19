@@ -31,7 +31,7 @@ let
             hsPkgs.void
             hsPkgs.bytestring
             hsPkgs.semigroups
-          ] ++ optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals compiler.isGhc [
             hsPkgs.singletons
             hsPkgs.tagged
             hsPkgs.th-desugar

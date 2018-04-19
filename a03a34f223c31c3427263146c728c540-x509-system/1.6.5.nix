@@ -31,7 +31,7 @@ let
             hsPkgs.pem
             hsPkgs.x509
             hsPkgs.x509-store
-          ] ++ optionals system.isWindows [
+          ] ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.Win32
             hsPkgs.asn1-encoding
           ];

@@ -35,7 +35,7 @@ let
         };
         exes = {
           demo-server = {
-            depends  = optionals _flags.demo [
+            depends  = pkgs.lib.optionals _flags.demo [
               hsPkgs.base
               hsPkgs.json-rpc-client
               hsPkgs.json-rpc-server
@@ -46,7 +46,7 @@ let
             ];
           };
           demo-client = {
-            depends  = optionals _flags.demo [
+            depends  = pkgs.lib.optionals _flags.demo [
               hsPkgs.base
               hsPkgs.json-rpc-client
               hsPkgs.json-rpc-server

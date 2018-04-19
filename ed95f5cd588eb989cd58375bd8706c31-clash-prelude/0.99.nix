@@ -48,7 +48,7 @@ let
         };
         tests = {
           doctests = {
-            depends  = optionals (!(!_flags.doctests)) [
+            depends  = pkgs.lib.optionals (!(!_flags.doctests)) [
               hsPkgs.base
               hsPkgs.doctest
             ];
@@ -56,7 +56,7 @@ let
         };
         benchmarks = {
           benchmark-clash-prelude = {
-            depends  = optionals (!(!_flags.benchmarks)) [
+            depends  = pkgs.lib.optionals (!(!_flags.benchmarks)) [
               hsPkgs.base
               hsPkgs.clash-prelude
               hsPkgs.criterion

@@ -34,7 +34,7 @@ let
         };
         exes = {
           prednote-visual-tests = {
-            depends  = optionals _flags.visual-tests [
+            depends  = pkgs.lib.optionals _flags.visual-tests [
               hsPkgs.QuickCheck
               hsPkgs.quickpull
               hsPkgs.base

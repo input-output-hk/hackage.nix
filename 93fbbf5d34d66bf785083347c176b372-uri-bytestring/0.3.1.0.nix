@@ -31,7 +31,7 @@ let
             hsPkgs.template-haskell
             hsPkgs.th-lift-instances
             hsPkgs.containers
-          ] ++ optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
             hsPkgs.th-lift
             hsPkgs.semigroups
           ];

@@ -151,7 +151,7 @@ let
               hsPkgs.stack
               hsPkgs.text
               hsPkgs.transformers
-            ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ optionals (!_flags.disable-git-info) [
+            ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optionals (!_flags.disable-git-info) [
               hsPkgs.gitrev
               hsPkgs.optparse-simple
             ];
