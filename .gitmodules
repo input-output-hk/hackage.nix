@@ -1,0 +1,3 @@
+[submodule "all-cabal-hashes"]
+	path = all-cabal-hashes
+	url = https://github.com/commercialhaskell/all-cabal-hashes.git
