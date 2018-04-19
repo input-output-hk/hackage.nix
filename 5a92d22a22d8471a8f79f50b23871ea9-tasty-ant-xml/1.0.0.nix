@@ -1,0 +1,37 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.10";
+        identifier = {
+          name = "tasty-ant-xml";
+          version = "1.0.0";
+        };
+        license = "BSD-3-Clause";
+        copyright = "Oliver Charles 2013";
+        maintainer = "ollie@ocharles.org.uk";
+        author = "Oliver Charles";
+        homepage = "http://github.com/ocharles/tasty-ant-xml";
+        url = "";
+        synopsis = "A tasty ingredient to output test results in XML, using the Ant schema. This XML can be consumed by the Jenkins continuous integration framework.";
+        description = "";
+        buildType = "Simple";
+      };
+      components = {
+        tasty-ant-xml = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.containers
+            hsPkgs.generic-deriving
+            hsPkgs.mtl
+            hsPkgs.reducers
+            hsPkgs.stm
+            hsPkgs.tagged
+            hsPkgs.tasty
+            hsPkgs.transformers
+            hsPkgs.xml
+          ];
+        };
+      };
+    }

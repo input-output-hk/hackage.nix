@@ -1,0 +1,82 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.22";
+        identifier = {
+          name = "gnss-converters";
+          version = "0.3.6";
+        };
+        license = "BSD-3-Clause";
+        copyright = "Copyright (C) 2016, 2017 Swift Navigation, Inc.";
+        maintainer = "Swift Navigation <dev@swiftnav.com>";
+        author = "Mark Fine <mark@swiftnav.com>, Joshua Gross <josh@swiftnav.com>";
+        homepage = "http://github.com/swift-nav/gnss-converters";
+        url = "";
+        synopsis = "GNSS Converters.";
+        description = "Haskell bindings for GNSS converters.";
+        buildType = "Simple";
+      };
+      components = {
+        gnss-converters = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.basic-prelude
+            hsPkgs.exceptions
+            hsPkgs.extra
+            hsPkgs.lens
+            hsPkgs.monad-control
+            hsPkgs.mtl
+            hsPkgs.resourcet
+            hsPkgs.rtcm
+            hsPkgs.sbp
+            hsPkgs.time
+            hsPkgs.transformers-base
+          ];
+        };
+        exes = {
+          sbp2rtcm3 = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.basic-prelude
+              hsPkgs.gnss-converters
+            ];
+          };
+          rtcm32sbp = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.basic-prelude
+              hsPkgs.binary-conduit
+              hsPkgs.conduit
+              hsPkgs.conduit-extra
+              hsPkgs.gnss-converters
+              hsPkgs.resourcet
+            ];
+          };
+        };
+        tests = {
+          test = {
+            depends  = [
+              hsPkgs.HUnit-approx
+              hsPkgs.base
+              hsPkgs.basic-prelude
+              hsPkgs.binary
+              hsPkgs.binary-conduit
+              hsPkgs.bytestring
+              hsPkgs.conduit
+              hsPkgs.conduit-extra
+              hsPkgs.gnss-converters
+              hsPkgs.lens
+              hsPkgs.resourcet
+              hsPkgs.rtcm
+              hsPkgs.sbp
+              hsPkgs.tasty
+              hsPkgs.tasty-hunit
+              hsPkgs.text
+              hsPkgs.unordered-containers
+            ];
+          };
+        };
+      };
+    }

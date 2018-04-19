@@ -1,0 +1,38 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.10";
+        identifier = {
+          name = "repl-toolkit";
+          version = "0.3.0.0";
+        };
+        license = "Apache-2.0";
+        copyright = "";
+        maintainer = "janos.tapolczai@gmail.com";
+        author = "Janos Tapolczai";
+        homepage = "https://github.com/ombocomp/repl-toolkit";
+        url = "";
+        synopsis = "Toolkit for quickly whipping up command-line interfaces.";
+        description = "A simple toolkit for quickly whipping up REPLs, input validation and sets of commands included.";
+        buildType = "Simple";
+      };
+      components = {
+        repl-toolkit = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.functor-monadic
+            hsPkgs.text
+            hsPkgs.ListLike
+            hsPkgs.exceptions
+            hsPkgs.parsec
+            hsPkgs.numericpeano
+            hsPkgs.listsafe
+            hsPkgs.monad-loops
+            hsPkgs.mtl
+            hsPkgs.transformers
+          ];
+        };
+      };
+    }

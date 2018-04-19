@@ -1,0 +1,33 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.10";
+        identifier = {
+          name = "purescript-bridge";
+          version = "0.3.1.1";
+        };
+        license = "AGPL-3.0-only";
+        copyright = "";
+        maintainer = "robert.klotzner@gmx.at";
+        author = "Robert Klotzner";
+        homepage = "";
+        url = "";
+        synopsis = "Generate PureScript data types from Haskell data types";
+        description = "";
+        buildType = "Simple";
+      };
+      components = {
+        purescript-bridge = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.containers
+            hsPkgs.directory
+            hsPkgs.filepath
+            hsPkgs.text
+            hsPkgs.generic-deriving
+          ];
+        };
+      };
+    }

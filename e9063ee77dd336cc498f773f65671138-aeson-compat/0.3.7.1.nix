@@ -1,0 +1,71 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.10";
+        identifier = {
+          name = "aeson-compat";
+          version = "0.3.7.1";
+        };
+        license = "BSD-3-Clause";
+        copyright = "";
+        maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
+        author = "Oleg Grenrus <oleg.grenrus@iki.fi>";
+        homepage = "https://github.com/phadej/aeson-compat#readme";
+        url = "";
+        synopsis = "Compatibility layer for aeson";
+        description = "Compatibility layer for @aeson@";
+        buildType = "Simple";
+      };
+      components = {
+        aeson-compat = {
+          depends  = ([
+            hsPkgs.base
+            hsPkgs.base-compat
+            hsPkgs.aeson
+            hsPkgs.attoparsec
+            hsPkgs.attoparsec-iso8601
+            hsPkgs.bytestring
+            hsPkgs.containers
+            hsPkgs.exceptions
+            hsPkgs.hashable
+            hsPkgs.scientific
+            hsPkgs.text
+            hsPkgs.time
+            hsPkgs.time-locale-compat
+            hsPkgs.unordered-containers
+            hsPkgs.vector
+            hsPkgs.tagged
+          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+        };
+        tests = {
+          aeson-compat-test = {
+            depends  = ([
+              hsPkgs.base
+              hsPkgs.base-compat
+              hsPkgs.aeson
+              hsPkgs.attoparsec
+              hsPkgs.bytestring
+              hsPkgs.containers
+              hsPkgs.exceptions
+              hsPkgs.hashable
+              hsPkgs.scientific
+              hsPkgs.text
+              hsPkgs.time
+              hsPkgs.time-locale-compat
+              hsPkgs.unordered-containers
+              hsPkgs.vector
+              hsPkgs.tagged
+              hsPkgs.aeson-compat
+              hsPkgs.base-orphans
+              hsPkgs.tasty
+              hsPkgs.tasty-hunit
+              hsPkgs.tasty-quickcheck
+              hsPkgs.QuickCheck
+              hsPkgs.quickcheck-instances
+            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+          };
+        };
+      };
+    }

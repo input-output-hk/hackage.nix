@@ -1,0 +1,33 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.2.3";
+        identifier = {
+          name = "AspectAG";
+          version = "0.3";
+        };
+        license = "LicenseRef-LGPL";
+        copyright = "Universiteit Utrecht";
+        maintainer = "Marcos Viera <mviera@fing.edu.uy>";
+        author = "";
+        homepage = "http://www.cs.uu.nl/wiki/bin/view/Center/AspectAG";
+        url = "";
+        synopsis = "Attribute Grammars in the form of an EDSL";
+        description = "Library of strongly typed Attribute Grammars implemented using type-level programming";
+        buildType = "Simple";
+      };
+      components = {
+        AspectAG = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.haskell98
+            hsPkgs.template-haskell
+            hsPkgs.HList
+            hsPkgs.containers
+            hsPkgs.mtl
+          ];
+        };
+      };
+    }

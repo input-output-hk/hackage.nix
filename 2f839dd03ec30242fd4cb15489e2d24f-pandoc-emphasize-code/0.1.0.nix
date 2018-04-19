@@ -1,0 +1,58 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.8";
+        identifier = {
+          name = "pandoc-emphasize-code";
+          version = "0.1.0";
+        };
+        license = "MPL-2.0";
+        copyright = "";
+        maintainer = "Oskar Wickström";
+        author = "Oskar Wickström";
+        homepage = "https://github.com/owickstrom/pandoc-emphasize-code";
+        url = "";
+        synopsis = "A Pandoc filter for emphasizing code in fenced blocks";
+        description = "A Pandoc filter for emphasizing sections of code in fenced blocks.";
+        buildType = "Simple";
+      };
+      components = {
+        pandoc-emphasize-code = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.unordered-containers
+            hsPkgs.process
+            hsPkgs.hashable
+            hsPkgs.filepath
+            hsPkgs.text
+            hsPkgs.mtl
+            hsPkgs.pandoc-types
+          ];
+        };
+        exes = {
+          pandoc-emphasize-code = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.pandoc-types
+              hsPkgs.pandoc-emphasize-code
+            ];
+          };
+        };
+        tests = {
+          filter-tests = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.unordered-containers
+              hsPkgs.pandoc-types
+              hsPkgs.pandoc-emphasize-code
+              hsPkgs.tasty
+              hsPkgs.tasty-hunit
+              hsPkgs.tasty-hspec
+              hsPkgs.tasty-discover
+            ];
+          };
+        };
+      };
+    }

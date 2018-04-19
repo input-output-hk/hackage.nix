@@ -1,0 +1,53 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.24";
+        identifier = {
+          name = "geni-gui";
+          version = "0.25";
+        };
+        license = "LicenseRef-GPL";
+        copyright = "";
+        maintainer = "geni-users@loria.fr";
+        author = "Carlos Areces and Eric Kow";
+        homepage = "http://projects.haskell.org/GenI";
+        url = "";
+        synopsis = "GenI graphical user interface";
+        description = "";
+        buildType = "Custom";
+      };
+      components = {
+        geni-gui = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.GenI
+            hsPkgs.cabal-macosx
+            hsPkgs.array
+            hsPkgs.containers
+            hsPkgs.directory
+            hsPkgs.filepath
+            hsPkgs.yaml-light
+            hsPkgs.hslogger
+            hsPkgs.json
+            hsPkgs.mtl
+            hsPkgs.process
+            hsPkgs.transformers
+            hsPkgs.wx
+            hsPkgs.wxcore
+            hsPkgs.text
+            hsPkgs.graphviz
+          ];
+        };
+        exes = {
+          geni-gui = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.GenI
+              hsPkgs.geni-gui
+            ];
+          };
+        };
+      };
+    }

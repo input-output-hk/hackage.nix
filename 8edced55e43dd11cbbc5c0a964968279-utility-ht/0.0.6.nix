@@ -1,0 +1,33 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {
+      buildtests = false;
+    } // flags;
+    in {
+      package = {
+        specVersion = "1.6";
+        identifier = {
+          name = "utility-ht";
+          version = "0.0.6";
+        };
+        license = "BSD-3-Clause";
+        copyright = "";
+        maintainer = "Henning Thielemann <haskell@henning-thielemann.de>";
+        author = "Henning Thielemann <haskell@henning-thielemann.de>";
+        homepage = "";
+        url = "";
+        synopsis = "Various small helper functions for Lists, Maybes, Tuples, Functions";
+        description = "Various small helper functions for Lists, Maybes, Tuples, Functions.\nSome of these functions are improved implementations of standard functions.\nThey have the same name as their standard counterparts.\n\nAll modules are plain Haskell 98.\nThe package depends exclusively on the @base@ package\nand only that portions of @base@ that are simple to port.\nThus you do not risk a dependency avalanche by importing it.\nHowever, further splitting the base package might invalidate this statement.\n\nAlternative packages: @Useful@, @MissingH@";
+        buildType = "Simple";
+      };
+      components = {
+        utility-ht = {
+          depends  = [ hsPkgs.base ];
+        };
+        exes = {
+          test = {
+            depends  = pkgs.lib.optional _flags.buildtests hsPkgs.QuickCheck;
+          };
+        };
+      };
+    }

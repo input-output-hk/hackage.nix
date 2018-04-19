@@ -1,0 +1,32 @@
+{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      package = {
+        specVersion = "1.2";
+        identifier = {
+          name = "alex-meta";
+          version = "0.2.0.1";
+        };
+        license = "BSD-3-Clause";
+        copyright = "";
+        maintainer = "jonas.duregard@gmail.com";
+        author = "Jonas Duregard";
+        homepage = "";
+        url = "";
+        synopsis = "Quasi-quoter for Alex lexers";
+        description = "";
+        buildType = "Simple";
+      };
+      components = {
+        alex-meta = {
+          depends  = [
+            hsPkgs.template-haskell
+            hsPkgs.haskell-src-meta
+            hsPkgs.base
+            hsPkgs.array
+            hsPkgs.containers
+          ];
+        };
+      };
+    }
