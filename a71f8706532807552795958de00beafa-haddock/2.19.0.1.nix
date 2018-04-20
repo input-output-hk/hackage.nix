@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       in-ghc-tree = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "2.0";
         identifier = {

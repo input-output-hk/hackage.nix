@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -28,6 +29,10 @@ let
             hsPkgs.mtl
             hsPkgs.glib
             hsPkgs.gtk
+          ];
+          pkgconfig = [
+            pkgconfPkgs."gnome-vfs-2.0"
+            pkgconfPkgs."gnome-vfs-module-2.0"
           ];
         };
       };

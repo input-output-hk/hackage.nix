@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       have-quartz-gtk = false;
       use-deprecated = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.24";
         identifier = {
@@ -28,6 +29,9 @@ let
             hsPkgs.glib
             hsPkgs.pango
             hsPkgs.gtk
+          ];
+          pkgconfig = [
+            pkgconfPkgs."gtkglext-1.0"
           ];
         };
       };

@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       cairo_pdf = true;
@@ -6,6 +6,7 @@ let
       cairo_svg = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -30,6 +31,9 @@ let
             hsPkgs.mtl
             hsPkgs.array
           ];
+          pkgconfig = (([
+            pkgconfPkgs.cairo
+          ] ++ pkgs.lib.optional _flags.cairo_pdf pkgconfPkgs.cairo-pdf) ++ pkgs.lib.optional _flags.cairo_ps pkgconfPkgs.cairo-ps) ++ pkgs.lib.optional _flags.cairo_svg pkgconfPkgs.cairo-svg;
         };
       };
     }

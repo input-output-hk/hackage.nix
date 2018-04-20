@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       ghc_6_10 = true;
       ghc_6_8 = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.2";
         identifier = {

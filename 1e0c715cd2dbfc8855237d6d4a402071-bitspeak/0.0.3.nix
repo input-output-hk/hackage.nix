@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.2.3";
         identifier = {
@@ -26,6 +27,11 @@ let
               hsPkgs.bindings-DSL
               hsPkgs.bindings-glib
               hsPkgs.bindings-gobject
+            ];
+            pkgconfig = [
+              pkgconfPkgs."gdk-2.0"
+              pkgconfPkgs."gtk+-2.0"
+              pkgconfPkgs.pango
             ];
           };
         };

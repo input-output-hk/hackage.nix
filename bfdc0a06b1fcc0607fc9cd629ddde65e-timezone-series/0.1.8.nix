@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       time_pre_1_6 = false;
       time_1_6_and_1_7 = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {

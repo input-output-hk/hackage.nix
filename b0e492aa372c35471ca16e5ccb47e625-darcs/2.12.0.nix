@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       curl = true;
@@ -16,6 +16,7 @@ let
       network-uri = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.16";
         identifier = {
@@ -89,6 +90,7 @@ let
               hsPkgs.network
             ]))) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
           libs = pkgs.lib.optional (_flags.curl && !_flags.pkgconfig) pkgs.curl;
+          pkgconfig = pkgs.lib.optional (_flags.curl && _flags.pkgconfig) pkgconfPkgs.libcurl;
         };
         exes = {
           darcs = {

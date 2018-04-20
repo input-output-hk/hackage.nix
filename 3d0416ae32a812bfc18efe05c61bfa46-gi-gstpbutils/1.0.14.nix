@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       enable-overloading = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.24";
         identifier = {
@@ -38,6 +39,9 @@ let
             hsPkgs.transformers
           ] ++ [
             hsPkgs.haskell-gi-overloading
+          ];
+          pkgconfig = [
+            pkgconfPkgs."gstreamer-pbutils-1.0"
           ];
         };
       };

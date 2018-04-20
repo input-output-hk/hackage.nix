@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       new-data-object = true;
@@ -6,6 +6,7 @@ let
       haxml_1_13 = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.2";
         identifier = {

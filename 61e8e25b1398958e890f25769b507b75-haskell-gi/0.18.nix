@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -36,6 +37,10 @@ let
             hsPkgs.xdg-basedir
             hsPkgs.xml-conduit
             hsPkgs.text
+          ];
+          pkgconfig = [
+            pkgconfPkgs."gobject-introspection-1.0"
+            pkgconfPkgs."gobject-2.0"
           ];
         };
         exes = {

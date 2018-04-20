@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       support_aesni = true;
@@ -12,6 +12,7 @@ let
       check_alignment = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.18";
         identifier = {

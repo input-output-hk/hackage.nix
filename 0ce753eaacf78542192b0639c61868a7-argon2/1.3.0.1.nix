@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       use-system-library = false;
@@ -6,6 +6,7 @@ let
       non-optimised-c = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.22";
         identifier = {
@@ -31,6 +32,7 @@ let
             hsPkgs.text-short
           ];
           libs = pkgs.lib.optional (_flags.use-system-library && !_flags.pkg-config) pkgs.argon2;
+          pkgconfig = pkgs.lib.optional (_flags.use-system-library && _flags.pkg-config) pkgconfPkgs.libargon2;
         };
         tests = {
           tests = {

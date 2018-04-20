@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       overloaded-methods = true;
@@ -6,6 +6,7 @@ let
       overloaded-signals = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.24";
         identifier = {
@@ -38,6 +39,9 @@ let
             hsPkgs.containers
             hsPkgs.text
             hsPkgs.transformers
+          ];
+          pkgconfig = [
+            pkgconfPkgs."vte-2.91"
           ];
         };
       };

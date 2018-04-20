@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       vty = false;
@@ -6,6 +6,7 @@ let
       expose_internal = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -57,6 +58,10 @@ let
             else if _flags.vty
               then [ hsPkgs.vty ]
               else [ hsPkgs.gtk ]);
+          pkgconfig = [
+            pkgconfPkgs."gtk+-2.0"
+            pkgconfPkgs.x11
+          ];
         };
         exes = {
           LambdaHack = {

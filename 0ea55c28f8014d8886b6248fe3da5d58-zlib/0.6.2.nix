@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       non-blocking-ffi = false;
       pkg-config = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -28,6 +29,7 @@ let
             hsPkgs.bytestring
           ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
           libs = pkgs.lib.optional (!_flags.pkg-config && !system.isWindows) pkgs.z;
+          pkgconfig = pkgs.lib.optional _flags.pkg-config pkgconfPkgs.zlib;
         };
         tests = {
           tests = {

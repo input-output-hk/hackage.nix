@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       hgettext = true;
@@ -6,6 +6,7 @@ let
       threaded = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.24";
         identifier = {
@@ -46,6 +47,9 @@ let
               hsPkgs.hgettext
               hsPkgs.setlocale
             ];
+            pkgconfig = [
+              pkgconfPkgs."glib-2.0"
+            ];
           };
           test-monitor = {
             depends  = [
@@ -62,6 +66,9 @@ let
               hsPkgs.pango
               hsPkgs.pcap
               hsPkgs.text
+            ];
+            pkgconfig = [
+              pkgconfPkgs."glib-2.0"
             ];
           };
           dump-messages = {

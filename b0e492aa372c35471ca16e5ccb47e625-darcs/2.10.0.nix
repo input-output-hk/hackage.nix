@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       curl = true;
@@ -18,6 +18,7 @@ let
       use-time-1point5 = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -89,6 +90,7 @@ let
             hsPkgs.HTTP
           ]) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optional _flags.hashed-storage-diff hsPkgs.lcs) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
           libs = pkgs.lib.optional (_flags.curl && !_flags.pkgconfig) pkgs.curl;
+          pkgconfig = pkgs.lib.optional (_flags.curl && _flags.pkgconfig) pkgconfPkgs.libcurl;
         };
         exes = {
           darcs = {

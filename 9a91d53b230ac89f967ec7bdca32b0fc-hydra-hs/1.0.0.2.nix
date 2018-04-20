@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       usepkgconfig = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -29,6 +30,9 @@ let
           libs = if !system.isX86_64
             then pkgs.lib.optional (!_flags.usepkgconfig) pkgs.sixense
             else pkgs.lib.optional (!_flags.usepkgconfig) pkgs.sixense_x64;
+          pkgconfig = if !system.isX86_64
+            then pkgs.lib.optional _flags.usepkgconfig pkgconfPkgs.libsixense
+            else pkgs.lib.optional _flags.usepkgconfig pkgconfPkgs.libsixense_x64;
         };
         tests = {
           hydra-test = {

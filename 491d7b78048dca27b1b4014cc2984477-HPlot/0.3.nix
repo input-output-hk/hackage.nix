@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "0";
         identifier = {
@@ -26,6 +27,9 @@ let
             hsPkgs.glade
             hsPkgs.glib
           ];
+          pkgconfig = [
+            pkgconfPkgs.plplotd-gnome2
+          ];
         };
         exes = {
           Example = {
@@ -38,6 +42,9 @@ let
               hsPkgs.gtk
               hsPkgs.glade
               hsPkgs.glib
+            ];
+            pkgconfig = [
+              pkgconfPkgs.plplotd-gnome2
             ];
           };
         };

@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.22";
         identifier = {
@@ -37,6 +38,9 @@ let
             hsPkgs.containers
             hsPkgs.text
             hsPkgs.transformers
+          ];
+          pkgconfig = [
+            pkgconfPkgs."webkit2gtk-4.0"
           ];
         };
       };

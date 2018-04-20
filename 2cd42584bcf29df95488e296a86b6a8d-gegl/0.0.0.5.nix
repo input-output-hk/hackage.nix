@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       examples = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -34,6 +35,9 @@ let
             hsPkgs.babl
           ];
           libs = [ pkgs."gegl-0.3" ];
+          pkgconfig = [
+            pkgconfPkgs."gegl-0.3"
+          ];
         };
         exes = {
           example00 = {

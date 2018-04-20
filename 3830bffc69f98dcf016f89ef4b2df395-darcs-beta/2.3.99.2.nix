@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       curl = true;
@@ -15,6 +15,7 @@ let
       deps-only = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -57,6 +58,7 @@ let
             hsPkgs.HTTP
           ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
           libs = pkgs.lib.optional _flags.curl pkgs.curl;
+          pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
         };
         exes = {
           witnesses = {};
@@ -85,6 +87,7 @@ let
               hsPkgs.HTTP
             ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
             libs = pkgs.lib.optional _flags.curl pkgs.curl;
+            pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
           };
           unit = {
             depends  = ((([

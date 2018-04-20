@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       closure_signals = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -26,6 +27,10 @@ let
             hsPkgs.base
             hsPkgs.utf8-string
             hsPkgs.containers
+          ];
+          pkgconfig = [
+            pkgconfPkgs."glib-2.0"
+            pkgconfPkgs."gobject-2.0"
           ];
         };
       };

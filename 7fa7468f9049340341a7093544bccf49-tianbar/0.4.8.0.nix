@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -50,6 +51,9 @@ let
               hsPkgs.transformers
               hsPkgs.webkit
               hsPkgs.xdg-basedir
+            ];
+            pkgconfig = [
+              pkgconfPkgs."gtk+-2.0"
             ];
           };
         };

@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       examples = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -33,6 +34,9 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.SDL2 ];
+          pkgconfig = [
+            pkgconfPkgs.sdl2
+          ];
         };
         exes = {
           lazyfoo-lesson-01 = {

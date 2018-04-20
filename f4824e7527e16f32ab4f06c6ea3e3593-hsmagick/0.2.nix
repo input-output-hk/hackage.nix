@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "0";
         identifier = {
@@ -37,6 +38,15 @@ let
             pkgs.z
             pkgs.m
             pkgs.pthread
+          ];
+          pkgconfig = [
+            pkgconfPkgs.GraphicsMagick
+            pkgconfPkgs.lcms
+            pkgconfPkgs.freetype2
+            pkgconfPkgs.sm
+            pkgconfPkgs.ice
+            pkgconfPkgs.x11
+            pkgconfPkgs."libxml-2.0"
           ];
         };
       };

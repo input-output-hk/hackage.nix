@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       splitbase = true;
       base4 = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.14";
         identifier = {
@@ -38,6 +39,10 @@ let
             ])) ++ (if _flags.base4
             then [ hsPkgs.base hsPkgs.syb ]
             else [ hsPkgs.base ]);
+          pkgconfig = [
+            pkgconfPkgs.fftw3f
+            pkgconfPkgs.fftw3
+          ];
         };
         tests = {
           test-fft = {

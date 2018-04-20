@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       buildtests = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -32,10 +33,21 @@ let
             hsPkgs.HUnit
             hsPkgs.QuickCheck
           ];
+          pkgconfig = [
+            pkgconfPkgs.libxfconf-0
+          ];
         };
         exes = {
-          tests = {};
-          testGlib = {};
+          tests = {
+            pkgconfig = [
+              pkgconfPkgs.libxfconf-0
+            ];
+          };
+          testGlib = {
+            pkgconfig = [
+              pkgconfPkgs.libxfconf-0
+            ];
+          };
         };
       };
     }

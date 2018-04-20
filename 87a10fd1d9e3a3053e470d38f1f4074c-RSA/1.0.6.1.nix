@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       skiptests = true;
@@ -9,6 +9,7 @@ let
       hasarbitraryword8 = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.2";
         identifier = {

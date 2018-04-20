@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       pkgconfig = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.14";
         identifier = {
@@ -27,6 +28,7 @@ let
             hsPkgs.text
             hsPkgs.bytestring
           ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          pkgconfig = pkgs.lib.optional _flags.pkgconfig pkgconfPkgs.libcmark;
         };
         tests = {
           test-cmark = {

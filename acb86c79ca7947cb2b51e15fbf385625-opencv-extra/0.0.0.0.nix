@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       internal-documentation = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.23";
         identifier = {
@@ -37,6 +38,9 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs."stdc++" ];
+          pkgconfig = [
+            pkgconfPkgs.opencv
+          ];
         };
         tests = {
           doc-images-opencv-extra = {

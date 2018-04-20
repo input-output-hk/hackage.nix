@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.18";
         identifier = {
@@ -21,6 +22,9 @@ let
       components = {
         webkitgtk3-javascriptcore = {
           depends  = [ hsPkgs.base ];
+          pkgconfig = [
+            pkgconfPkgs."webkitgtk-3.0"
+          ];
         };
       };
     }

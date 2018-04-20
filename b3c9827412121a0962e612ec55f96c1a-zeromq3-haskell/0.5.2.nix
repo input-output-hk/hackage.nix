@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -30,6 +31,9 @@ let
             hsPkgs.MonadCatchIO-transformers
           ];
           libs = pkgs.lib.optional system.isFreebsd pkgs.pthread;
+          pkgconfig = [
+            pkgconfPkgs.libzmq
+          ];
         };
         tests = {
           zeromq-haskell-tests = {

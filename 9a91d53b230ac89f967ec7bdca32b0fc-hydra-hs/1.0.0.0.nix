@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       usepkgconfig = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -27,6 +28,7 @@ let
             hsPkgs.hmatrix
           ];
           libs = pkgs.lib.optional (!_flags.usepkgconfig) pkgs.sixense;
+          pkgconfig = pkgs.lib.optional _flags.usepkgconfig pkgconfPkgs.libsixense;
         };
         tests = {
           hydra-test = {

@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       pkgconfig = true;
@@ -6,6 +6,7 @@ let
       buildexamples = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.14";
         identifier = {
@@ -37,6 +38,9 @@ let
             hsPkgs.base
           ];
           libs = pkgs.lib.optional (!_flags.pkgconfig) pkgs.jack;
+          pkgconfig = [
+            pkgconfPkgs.jack
+          ];
         };
         exes = {
           jack-amplify = {

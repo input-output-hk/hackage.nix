@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       ghcapi = false;
@@ -9,6 +9,7 @@ let
       testing = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.4";
         identifier = {

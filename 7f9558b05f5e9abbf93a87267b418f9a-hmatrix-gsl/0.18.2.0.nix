@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       onlygsl = false;
       disable-default-paths = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -33,6 +34,7 @@ let
           ];
           libs = ((pkgs.lib.optional system.isOsx pkgs.gsl ++ pkgs.lib.optional system.isFreebsd pkgs.gsl) ++ pkgs.lib.optional system.isWindows pkgs.gsl-0) ++ pkgs.lib.optional _flags.onlygsl pkgs.gsl;
           frameworks = pkgs.lib.optional system.isOsx pkgs.Accelerate;
+          pkgconfig = pkgs.lib.optional (!_flags.onlygsl) pkgconfPkgs.gsl;
         };
       };
     }

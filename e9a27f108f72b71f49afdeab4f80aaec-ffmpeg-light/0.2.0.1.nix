@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       builddemo = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -28,6 +29,12 @@ let
             hsPkgs.transformers
             hsPkgs.mtl
             hsPkgs.JuicyPixels
+          ];
+          pkgconfig = [
+            pkgconfPkgs.libavutil
+            pkgconfPkgs.libavformat
+            pkgconfPkgs.libavcodec
+            pkgconfPkgs.libswscale
           ];
         };
         exes = {

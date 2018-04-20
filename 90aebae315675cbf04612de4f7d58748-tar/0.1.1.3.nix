@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       bytestring-in-base = true;
       split-base = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.2";
         identifier = {

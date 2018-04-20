@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -25,6 +26,7 @@ let
             hsPkgs.haskell98
           ];
           libs = [ pkgs.OgreMain ];
+          pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs.OGRE;
         };
       };
     }

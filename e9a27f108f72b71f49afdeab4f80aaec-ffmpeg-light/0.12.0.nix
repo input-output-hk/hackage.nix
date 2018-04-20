@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       builddemo = false;
@@ -6,6 +6,7 @@ let
       buildvplaydemo = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -33,6 +34,13 @@ let
             hsPkgs.mtl
             hsPkgs.JuicyPixels
             hsPkgs.bytestring
+          ];
+          pkgconfig = [
+            pkgconfPkgs.libavutil
+            pkgconfPkgs.libavformat
+            pkgconfPkgs.libavcodec
+            pkgconfPkgs.libswscale
+            pkgconfPkgs.libavdevice
           ];
         };
         exes = {

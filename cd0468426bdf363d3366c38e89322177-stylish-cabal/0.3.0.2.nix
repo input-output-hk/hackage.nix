@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       werror = false;
@@ -6,6 +6,7 @@ let
       test-strictness = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "2.0";
         identifier = {

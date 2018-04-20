@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -43,6 +44,7 @@ let
             hsPkgs.vector
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
           libs = pkgs.lib.optional system.isWindows pkgs.R;
+          pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs.libR;
         };
         tests = {
           tests = {

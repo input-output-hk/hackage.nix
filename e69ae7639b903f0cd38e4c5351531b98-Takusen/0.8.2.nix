@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       odbc = false;
@@ -7,6 +7,7 @@ let
       sqlite = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.4";
         identifier = {
@@ -40,6 +41,7 @@ let
             else [
               pkgs.clntsh
             ])) ++ pkgs.lib.optional _flags.postgres pkgs.pq) ++ pkgs.lib.optional _flags.sqlite pkgs.sqlite3;
+          pkgconfig = pkgs.lib.optional (_flags.sqlite && !system.isWindows) pkgconfPkgs.sqlite3;
         };
       };
     }

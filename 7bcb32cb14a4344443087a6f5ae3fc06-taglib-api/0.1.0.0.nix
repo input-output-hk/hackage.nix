@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       usepkgconfig = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -29,6 +30,7 @@ let
             hsPkgs.transformers
           ];
           libs = pkgs.lib.optional (!_flags.usepkgconfig) pkgs.tag_c;
+          pkgconfig = pkgs.lib.optional _flags.usepkgconfig pkgconfPkgs.taglib_c;
         };
       };
     }

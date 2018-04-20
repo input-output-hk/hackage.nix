@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       developer = false;
@@ -7,6 +7,7 @@ let
       specificpkgconfig = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -29,6 +30,9 @@ let
             hsPkgs.enumset
             hsPkgs.base
           ];
+          pkgconfig = if _flags.specificpkgconfig
+            then [ pkgconfPkgs."llvm-3.5" ]
+            else [ pkgconfPkgs.llvm ];
         };
         exes = {
           llvm-ffi-example = {

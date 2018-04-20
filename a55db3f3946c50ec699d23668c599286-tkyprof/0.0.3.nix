@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       production = false;
@@ -6,6 +6,7 @@ let
       devel = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -51,6 +52,7 @@ let
               hsPkgs.yesod-json
               hsPkgs.yesod-static
             ] ++ pkgs.lib.optional (_flags.production && !_flags.web) hsPkgs.wai-handler-webkit;
+            pkgconfig = pkgs.lib.optional (_flags.production && !_flags.web) pkgconfPkgs.QtWebKit;
           };
           prof2json = {
             depends  = [

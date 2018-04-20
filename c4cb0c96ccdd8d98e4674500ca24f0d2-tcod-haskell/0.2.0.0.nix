@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       examples = false;
       use-pkg-config = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -33,6 +34,7 @@ let
             hsPkgs.vector
           ];
           libs = pkgs.lib.optional (!_flags.use-pkg-config) pkgs.tcod;
+          pkgconfig = pkgs.lib.optional _flags.use-pkg-config pkgconfPkgs.libtcod;
         };
         exes = {
           tcod-haskell-sample01 = {

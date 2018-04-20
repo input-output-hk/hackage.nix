@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       debug = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.2";
         identifier = {
@@ -31,6 +32,12 @@ let
             hsPkgs.glib
             hsPkgs.gtk
             hsPkgs.array
+          ];
+          pkgconfig = [
+            pkgconfPkgs."glib-2.0"
+            pkgconfPkgs."gobject-2.0"
+            pkgconfPkgs."clutter-1.0"
+            pkgconfPkgs.pango
           ];
         };
       };

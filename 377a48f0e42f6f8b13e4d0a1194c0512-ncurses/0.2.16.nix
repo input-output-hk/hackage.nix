@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       use-pkgconfig = false;
       force-narrow-library = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -39,6 +40,15 @@ let
               pkgs.panelw
               pkgs.ncursesw
               pkgs.pthread
+            ];
+          pkgconfig = if _flags.use-pkgconfig && _flags.force-narrow-library
+            then [
+              pkgconfPkgs.ncurses
+              pkgconfPkgs.panel
+            ]
+            else [
+              pkgconfPkgs.ncursesw
+              pkgconfPkgs.panelw
             ];
         };
       };

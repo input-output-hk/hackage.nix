@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       developer = false;
@@ -10,6 +10,7 @@ let
       llvm307 = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -32,6 +33,25 @@ let
             hsPkgs.enumset
             hsPkgs.base
           ];
+          pkgconfig = if _flags.llvm304
+            then if _flags.specificpkgconfig
+              then [ pkgconfPkgs."llvm-3.4" ]
+              else [ pkgconfPkgs.llvm ]
+            else if _flags.llvm305
+              then if _flags.specificpkgconfig
+                then [ pkgconfPkgs."llvm-3.5" ]
+                else [ pkgconfPkgs.llvm ]
+              else if _flags.llvm306
+                then if _flags.specificpkgconfig
+                  then [ pkgconfPkgs."llvm-3.6" ]
+                  else [ pkgconfPkgs.llvm ]
+                else if _flags.llvm307
+                  then if _flags.specificpkgconfig
+                    then [ pkgconfPkgs."llvm-3.7" ]
+                    else [ pkgconfPkgs.llvm ]
+                  else if _flags.specificpkgconfig
+                    then [ pkgconfPkgs."llvm-3.8" ]
+                    else [ pkgconfPkgs.llvm ];
         };
         exes = {
           llvm-ffi-example = {

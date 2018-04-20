@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       webkit2 = true;
@@ -12,6 +12,7 @@ let
       gtk-320 = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.18";
         identifier = {
@@ -115,6 +116,7 @@ let
             hsPkgs.leksah-server
           ];
           libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
+          pkgconfig = pkgs.lib.optional _flags.gtk-318 pkgconfPkgs."gtk+-3.0" ++ pkgs.lib.optional _flags.gtk-320 pkgconfPkgs."gtk+-3.0";
         };
         exes = {
           leksah = {

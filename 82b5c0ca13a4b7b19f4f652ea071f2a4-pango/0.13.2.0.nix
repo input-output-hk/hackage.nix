@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       new-exception = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.24";
         identifier = {
@@ -34,6 +35,10 @@ let
             hsPkgs.cairo
             hsPkgs.text
           ] ++ [ hsPkgs.base ];
+          pkgconfig = [
+            pkgconfPkgs.cairo
+            pkgconfPkgs.pangocairo
+          ] ++ [ pkgconfPkgs.pango ];
         };
       };
     }

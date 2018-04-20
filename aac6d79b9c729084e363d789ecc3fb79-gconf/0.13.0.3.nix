@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -24,6 +25,9 @@ let
             hsPkgs.base
             hsPkgs.glib
             hsPkgs.text
+          ];
+          pkgconfig = [
+            pkgconfPkgs."gconf-2.0"
           ];
         };
       };

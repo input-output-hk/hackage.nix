@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       stdcall = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -26,6 +27,10 @@ let
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.transformers
+          ];
+          pkgconfig = [
+            pkgconfPkgs.hidapi-hidraw
+            pkgconfPkgs.hidapi-libusb
           ];
         };
       };

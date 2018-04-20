@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       deprecated = true;
@@ -6,6 +6,7 @@ let
       have-quartz-gtk = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -35,6 +36,10 @@ let
             hsPkgs.cairo
           ] ++ pkgs.lib.optional _flags.have-gio hsPkgs.gio;
           libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
+          pkgconfig = [
+            pkgconfPkgs."gthread-2.0"
+            pkgconfPkgs."gtk+-2.0"
+          ];
         };
       };
     }

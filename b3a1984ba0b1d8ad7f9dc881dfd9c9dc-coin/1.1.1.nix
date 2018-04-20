@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       debug-db = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.16";
         identifier = {
@@ -46,6 +47,9 @@ let
               hsPkgs.aeson
               hsPkgs.bytestring
             ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
+            pkgconfig = [
+              pkgconfPkgs."gtk+-3.0"
+            ];
           };
         };
       };

@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       system-libyaml = false;
@@ -6,6 +6,7 @@ let
       buildtests = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.2";
         identifier = {
@@ -30,6 +31,7 @@ let
             hsPkgs.bytestring
             hsPkgs.enumerator
           ];
+          pkgconfig = pkgs.lib.optional _flags.system-libyaml pkgconfPkgs."yaml-0.1";
         };
         exes = {
           runtests = {
@@ -43,6 +45,7 @@ let
               hsPkgs.bytestring
               hsPkgs.enumerator
             ];
+            pkgconfig = pkgs.lib.optional _flags.system-libyaml pkgconfPkgs."yaml-0.1";
           };
         };
       };

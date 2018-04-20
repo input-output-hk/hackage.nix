@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -26,6 +27,9 @@ let
             hsPkgs.bytestring
           ];
           libs = [ pkgs.idn ];
+          pkgconfig = [
+            pkgconfPkgs.libidn
+          ];
         };
         tests = {
           gnuidn_tests = {
@@ -39,6 +43,9 @@ let
               hsPkgs.text
             ];
             libs = [ pkgs.idn ];
+            pkgconfig = [
+              pkgconfPkgs.libidn
+            ];
           };
         };
       };

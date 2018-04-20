@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       usepkgconfig = false;
       threadedtestsuite = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -46,6 +47,10 @@ let
             pkgs.QtGui
             pkgs.QtScript
             pkgs.QtDeclarative
+          ];
+          pkgconfig = pkgs.lib.optionals (!(system.isWindows && !_flags.usepkgconfig) && !(system.isOsx && !_flags.usepkgconfig)) [
+            pkgconfPkgs.QtScript
+            pkgconfPkgs.QtDeclarative
           ];
         };
         tests = {

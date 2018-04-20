@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       test-doctests = true;
       test-hlint = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.16";
         identifier = {

@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -30,6 +31,7 @@ let
             pkgs."stdc++"
           ] ++ pkgs.lib.optional system.isWindows pkgs.QtCore4;
           frameworks = pkgs.lib.optional system.isOsx pkgs.QtCore;
+          pkgconfig = pkgs.lib.optional system.isLinux pkgconfPkgs.QtCore;
         };
       };
     }

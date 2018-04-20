@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       example = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -28,6 +29,10 @@ let
             hsPkgs.sdl2
             hsPkgs.template-haskell
             hsPkgs.text
+          ];
+          pkgconfig = [
+            pkgconfPkgs.sdl2
+            pkgconfPkgs.SDL2_ttf
           ];
         };
         exes = {

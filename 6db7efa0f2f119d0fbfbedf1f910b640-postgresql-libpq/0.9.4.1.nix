@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       use-pkg-config = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -34,6 +35,7 @@ let
               pkgs.crypto
               pkgs.ssl
             ];
+          pkgconfig = pkgs.lib.optional _flags.use-pkg-config pkgconfPkgs.libpq;
         };
       };
     }

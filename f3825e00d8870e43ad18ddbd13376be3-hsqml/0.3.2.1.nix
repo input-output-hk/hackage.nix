@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       usepkgconfig = false;
@@ -7,6 +7,7 @@ let
       useexithook = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.14";
         identifier = {
@@ -49,6 +50,13 @@ let
             pkgs.QtWidgets
             pkgs.QtQml
             pkgs.QtQuick
+          ];
+          pkgconfig = pkgs.lib.optionals (!(system.isWindows && !_flags.usepkgconfig) && !(system.isOsx && !_flags.usepkgconfig)) [
+            pkgconfPkgs.Qt5Core
+            pkgconfPkgs.Qt5Gui
+            pkgconfPkgs.Qt5Widgets
+            pkgconfPkgs.Qt5Qml
+            pkgconfPkgs.Qt5Quick
           ];
         };
         tests = {

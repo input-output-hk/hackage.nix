@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -27,6 +28,9 @@ let
             hsPkgs.cairo
             hsPkgs.mtl
             hsPkgs.gtk3
+          ];
+          pkgconfig = [
+            pkgconfPkgs."webkitgtk-3.0"
           ];
         };
       };

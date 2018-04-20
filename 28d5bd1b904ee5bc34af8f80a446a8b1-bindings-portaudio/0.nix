@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       wasapi = false;
@@ -8,6 +8,7 @@ let
       mingw-external = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -35,6 +36,7 @@ let
             pkgs.ole32
             pkgs.uuid
           ] ++ pkgs.lib.optional _flags.wdmks pkgs.Setupapi);
+          pkgconfig = pkgs.lib.optional (system.isLinux || system.isFreebsd || system.isOsx) pkgconfPkgs."portaudio-2.0";
         };
       };
     }

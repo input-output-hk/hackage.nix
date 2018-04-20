@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       developer = false;
       buildtools = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -24,6 +25,9 @@ let
       components = {
         llvm-ffi = {
           depends  = [ hsPkgs.base ];
+          pkgconfig = [
+            pkgconfPkgs.llvm
+          ];
         };
         exes = {
           llvm-diff-ffi = {

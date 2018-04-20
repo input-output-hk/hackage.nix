@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       stdcall = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -27,6 +28,7 @@ let
             hsPkgs.mtl
           ];
           libs = pkgs.lib.optional system.isWindows pkgs.OpenAL32;
+          pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs.openal;
         };
       };
     }

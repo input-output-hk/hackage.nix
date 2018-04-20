@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       prim-supports-any = false;
@@ -6,6 +6,7 @@ let
       ghc_8_2 = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.23";
         identifier = {

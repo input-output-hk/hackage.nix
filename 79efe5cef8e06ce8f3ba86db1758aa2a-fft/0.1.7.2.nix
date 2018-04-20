@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       splitbase = true;
@@ -6,6 +6,7 @@ let
       buildtests = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -40,10 +41,16 @@ let
             ]) ++ (if _flags.base4
             then [ hsPkgs.base hsPkgs.syb ]
             else [ hsPkgs.base ]);
+          pkgconfig = [
+            pkgconfPkgs.fftw3
+          ];
         };
         exes = {
           test-fft = {
             depends  = pkgs.lib.optional _flags.buildtests hsPkgs.QuickCheck;
+            pkgconfig = [
+              pkgconfPkgs.fftw3
+            ];
           };
         };
       };

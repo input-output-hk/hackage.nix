@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       system-lua = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -26,6 +27,7 @@ let
             hsPkgs.base
             hsPkgs.mtl
           ];
+          pkgconfig = pkgs.lib.optional _flags.system-lua pkgconfPkgs.lua;
         };
         tests = {
           simple-test = {

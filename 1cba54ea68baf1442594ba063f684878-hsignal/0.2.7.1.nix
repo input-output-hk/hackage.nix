@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       openblas = false;
       onlygsl = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -51,6 +52,7 @@ let
             pkgs.gsl-0
           ]) ++ pkgs.lib.optional _flags.onlygsl pkgs.gsl;
           frameworks = pkgs.lib.optional system.isOsx pkgs.Accelerate;
+          pkgconfig = pkgs.lib.optional (!_flags.onlygsl) pkgconfPkgs.gsl;
         };
       };
     }

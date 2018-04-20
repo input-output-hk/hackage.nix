@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.18";
         identifier = {
@@ -34,6 +35,9 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs."clang-3.8" ];
+          pkgconfig = [
+            pkgconfPkgs.ncurses
+          ];
         };
       };
     }

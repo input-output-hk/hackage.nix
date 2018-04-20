@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       systemlib = false;
@@ -10,6 +10,7 @@ let
       json1 = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -47,6 +48,7 @@ let
             hsPkgs.unordered-containers
           ];
           libs = pkgs.lib.optional (_flags.systemlib && !_flags.use-pkgconfig) pkgs.sqlite3 ++ pkgs.lib.optional (!system.isWindows) pkgs.pthread;
+          pkgconfig = pkgs.lib.optional (_flags.systemlib && _flags.use-pkgconfig) pkgconfPkgs.sqlite3;
         };
         exes = {
           sanity = {

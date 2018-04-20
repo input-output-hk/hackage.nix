@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       no-exe = false;
@@ -7,6 +7,7 @@ let
       no-unicode = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -43,6 +44,7 @@ let
             hsPkgs.enclosed-exceptions
             hsPkgs.semigroups
           ];
+          pkgconfig = pkgs.lib.optional _flags.system-libyaml pkgconfPkgs."yaml-0.1";
         };
         exes = {
           yaml2json = {

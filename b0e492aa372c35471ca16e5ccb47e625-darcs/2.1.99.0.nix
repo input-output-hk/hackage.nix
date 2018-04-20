@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       curl = true;
@@ -15,6 +15,7 @@ let
       base3 = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -57,6 +58,7 @@ let
             hsPkgs.HTTP
           ]) ++ pkgs.lib.optional _flags.external-bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.external-zlib hsPkgs.zlib) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optional _flags.haskeline hsPkgs.haskeline;
           libs = (pkgs.lib.optional _flags.curl pkgs.curl ++ pkgs.lib.optional (!_flags.external-zlib) pkgs.z) ++ pkgs.lib.optional _flags.curses pkgs.curses;
+          pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
         };
         exes = {
           darcs = {
@@ -84,6 +86,7 @@ let
               hsPkgs.HTTP
             ]) ++ pkgs.lib.optional _flags.external-bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.external-zlib hsPkgs.zlib) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optional (_flags.haskeline && !system.isWindows) hsPkgs.haskeline;
             libs = ((pkgs.lib.optional (!_flags.external-zlib) pkgs.z ++ pkgs.lib.optional _flags.curl pkgs.curl) ++ pkgs.lib.optional (!_flags.external-zlib) pkgs.z) ++ pkgs.lib.optional _flags.curses pkgs.curses;
+            pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
           };
         };
       };

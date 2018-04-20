@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       usepkgconfig = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -31,6 +32,7 @@ let
             hsPkgs.crypto-cipher-types
           ];
           libs = pkgs.lib.optional (!_flags.usepkgconfig) pkgs.nettle;
+          pkgconfig = pkgs.lib.optional _flags.usepkgconfig pkgconfPkgs.nettle;
         };
         tests = {
           test-ciphers = {

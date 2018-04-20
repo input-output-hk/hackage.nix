@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       gdk-318 = true;
@@ -6,6 +6,7 @@ let
       gtk-320 = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -44,6 +45,15 @@ let
             hsPkgs.gi-gtk-hs
             hsPkgs.haskell-gi-overloading
           ] ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.ghc;
+          pkgconfig = ([
+            pkgconfPkgs."gdk-3.0"
+          ] ++ (if _flags.gtk-318
+            then [ pkgconfPkgs."gtk+-3.0" ]
+            else [
+              pkgconfPkgs."gdk-3.0"
+            ])) ++ (if _flags.gtk-320
+            then [ pkgconfPkgs."gtk+-3.0" ]
+            else [ pkgconfPkgs."gdk-3.0" ]);
         };
       };
     }

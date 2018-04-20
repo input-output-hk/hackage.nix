@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       pkgconfig = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -27,6 +28,7 @@ let
             hsPkgs.base
           ];
           libs = pkgs.lib.optional (!_flags.pkgconfig) pkgs.asound;
+          pkgconfig = pkgs.lib.optional _flags.pkgconfig pkgconfPkgs.alsa;
         };
       };
     }

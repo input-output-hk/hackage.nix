@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       curl = true;
@@ -14,6 +14,7 @@ let
       test = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -53,6 +54,7 @@ let
             hsPkgs.HTTP
           ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional _flags.bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.zlib hsPkgs.zlib) ++ pkgs.lib.optional _flags.utf8-string hsPkgs.utf8-string) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
           libs = pkgs.lib.optional _flags.curl pkgs.curl ++ pkgs.lib.optional (!_flags.zlib) pkgs.z;
+          pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
         };
         exes = {
           witnesses = {
@@ -80,6 +82,7 @@ let
               hsPkgs.HTTP
             ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional _flags.bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.zlib hsPkgs.zlib) ++ pkgs.lib.optional _flags.utf8-string hsPkgs.utf8-string) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
             libs = (pkgs.lib.optional (!_flags.zlib) pkgs.z ++ pkgs.lib.optional _flags.curl pkgs.curl) ++ pkgs.lib.optional (!_flags.zlib) pkgs.z;
+            pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
           };
           unit = {
             depends  = ((((([

@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       build_examples = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -31,6 +32,9 @@ let
             hsPkgs.lens
             hsPkgs.ansi-wl-pprint
             hsPkgs.vector-space
+          ];
+          pkgconfig = [
+            pkgconfPkgs.ipopt
           ];
         };
         exes = {

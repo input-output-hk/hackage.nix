@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       buildexamples = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -31,6 +32,10 @@ let
             hsPkgs.text
             hsPkgs.system-filepath
           ];
+          pkgconfig = [
+            pkgconfPkgs.ImageMagick
+            pkgconfPkgs.MagickWand
+          ];
         };
         exes = {
           resize = {
@@ -44,6 +49,10 @@ let
               hsPkgs.system-filepath
               hsPkgs.imagemagick
             ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
+            ];
           };
           extent = {
             depends  = [
@@ -55,6 +64,10 @@ let
               hsPkgs.text
               hsPkgs.system-filepath
               hsPkgs.imagemagick
+            ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
             ];
           };
           floodfill = {
@@ -68,6 +81,10 @@ let
               hsPkgs.system-filepath
               hsPkgs.imagemagick
             ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
+            ];
           };
           cyclops = {
             depends  = [
@@ -79,6 +96,10 @@ let
               hsPkgs.text
               hsPkgs.system-filepath
               hsPkgs.imagemagick
+            ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
             ];
           };
           clipmask = {
@@ -92,6 +113,10 @@ let
               hsPkgs.system-filepath
               hsPkgs.imagemagick
             ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
+            ];
           };
           paint-trans = {
             depends  = [
@@ -103,6 +128,10 @@ let
               hsPkgs.text
               hsPkgs.system-filepath
               hsPkgs.imagemagick
+            ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
             ];
           };
           round-mask = {
@@ -116,6 +145,10 @@ let
               hsPkgs.system-filepath
               hsPkgs.imagemagick
             ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
+            ];
           };
           make-tile = {
             depends  = [
@@ -127,6 +160,10 @@ let
               hsPkgs.text
               hsPkgs.system-filepath
               hsPkgs.imagemagick
+            ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
             ];
           };
           draw-shapes = {
@@ -140,6 +177,10 @@ let
               hsPkgs.system-filepath
               hsPkgs.imagemagick
             ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
+            ];
           };
           text-effects = {
             depends  = [
@@ -151,6 +192,10 @@ let
               hsPkgs.text
               hsPkgs.system-filepath
               hsPkgs.imagemagick
+            ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
             ];
           };
           gel = {
@@ -165,6 +210,10 @@ let
               hsPkgs.lifted-base
               hsPkgs.imagemagick
             ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
+            ];
           };
           reflect = {
             depends  = [
@@ -176,6 +225,10 @@ let
               hsPkgs.text
               hsPkgs.system-filepath
               hsPkgs.imagemagick
+            ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
             ];
           };
           3dlogo = {
@@ -189,6 +242,10 @@ let
               hsPkgs.system-filepath
               hsPkgs.imagemagick
             ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
+            ];
           };
           affine = {
             depends  = [
@@ -200,6 +257,10 @@ let
               hsPkgs.text
               hsPkgs.system-filepath
               hsPkgs.imagemagick
+            ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
             ];
           };
           grayscale = {
@@ -213,6 +274,10 @@ let
               hsPkgs.system-filepath
               hsPkgs.imagemagick
             ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
+            ];
           };
           modulate = {
             depends  = [
@@ -224,6 +289,10 @@ let
               hsPkgs.text
               hsPkgs.system-filepath
               hsPkgs.imagemagick
+            ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
             ];
           };
           landscape3d = {
@@ -237,6 +306,10 @@ let
               hsPkgs.system-filepath
               hsPkgs.imagemagick
             ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
+            ];
           };
           tilt-shift = {
             depends  = [
@@ -248,6 +321,10 @@ let
               hsPkgs.text
               hsPkgs.system-filepath
               hsPkgs.imagemagick
+            ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
             ];
           };
           bunny = {
@@ -261,6 +338,10 @@ let
               hsPkgs.system-filepath
               hsPkgs.imagemagick
             ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
+            ];
           };
           pixel-mod = {
             depends  = [
@@ -273,6 +354,10 @@ let
               hsPkgs.system-filepath
               hsPkgs.imagemagick
             ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
+            ];
           };
           wandtest = {
             depends  = [
@@ -284,6 +369,10 @@ let
               hsPkgs.text
               hsPkgs.system-filepath
               hsPkgs.imagemagick
+            ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
             ];
           };
         };
@@ -305,6 +394,10 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.test-framework-quickcheck2
+            ];
+            pkgconfig = [
+              pkgconfPkgs.ImageMagick
+              pkgconfPkgs.MagickWand
             ];
           };
         };

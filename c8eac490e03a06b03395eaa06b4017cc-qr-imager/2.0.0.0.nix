@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.18";
         identifier = {
@@ -33,6 +34,9 @@ let
             hsPkgs.haskell-qrencode
             hsPkgs.process
             hsPkgs.split
+          ];
+          pkgconfig = [
+            pkgconfPkgs.libqrencode
           ];
         };
         tests = {

@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       odbc = false;
@@ -8,6 +8,7 @@ let
       buildtests = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -44,6 +45,7 @@ let
             else [
               pkgs.clntsh
             ])) ++ pkgs.lib.optional _flags.postgres pkgs.pq) ++ pkgs.lib.optional _flags.sqlite pkgs.sqlite3;
+          pkgconfig = pkgs.lib.optional (_flags.sqlite && !system.isWindows) pkgconfPkgs.sqlite3;
         };
         exes = {
           takusen_tests = {

@@ -1,10 +1,11 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       mpfr = true;
       mpfrrounded = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.9.2";
         identifier = {

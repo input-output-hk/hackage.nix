@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -28,6 +29,7 @@ let
             hsPkgs.monad-control
           ];
           libs = pkgs.lib.optional system.isWindows pkgs.groonga;
+          pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs.groonga;
         };
       };
     }

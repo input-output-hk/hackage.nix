@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       examples = false;
@@ -6,6 +6,7 @@ let
       no-linear = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -34,6 +35,9 @@ let
             hsPkgs.vector
           ] ++ pkgs.lib.optional (!_flags.no-linear) hsPkgs.linear;
           libs = [ pkgs.SDL2 ];
+          pkgconfig = [
+            pkgconfPkgs.sdl2
+          ];
         };
         exes = {
           lazyfoo-lesson-01 = {

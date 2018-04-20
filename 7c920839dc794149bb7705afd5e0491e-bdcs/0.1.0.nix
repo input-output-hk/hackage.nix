@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       scripts = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -66,6 +67,9 @@ let
             hsPkgs.unix
             hsPkgs.unordered-containers
             hsPkgs.xml-conduit
+          ];
+          pkgconfig = [
+            pkgconfPkgs.ostree-1
           ];
         };
         exes = {

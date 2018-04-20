@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.24";
         identifier = {
@@ -38,6 +39,9 @@ let
             hsPkgs.text
             hsPkgs.transformers
           ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.haskell-gi-overloading;
+          pkgconfig = [
+            pkgconfPkgs."gtk+-3.0"
+          ];
         };
       };
     }

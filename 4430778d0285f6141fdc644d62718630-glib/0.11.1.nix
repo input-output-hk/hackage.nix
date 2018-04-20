@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       closure_signals = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6.0";
         identifier = {
@@ -26,6 +27,10 @@ let
             hsPkgs.base
             hsPkgs.containers
             hsPkgs.haskell98
+          ];
+          pkgconfig = [
+            pkgconfPkgs."glib-2.0"
+            pkgconfPkgs."gobject-2.0"
           ];
         };
       };

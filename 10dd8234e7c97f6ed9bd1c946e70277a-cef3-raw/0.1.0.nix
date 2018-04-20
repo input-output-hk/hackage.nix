@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -25,6 +26,7 @@ let
             hsPkgs.bindings-DSL
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
           libs = pkgs.lib.optional system.isLinux pkgs.cef ++ pkgs.lib.optional system.isWindows pkgs.libcef;
+          pkgconfig = pkgs.lib.optional system.isLinux pkgconfPkgs."gtk+-2.0";
         };
       };
     }

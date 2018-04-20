@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       example = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -33,6 +34,9 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.SDL2_mixer ];
+          pkgconfig = [
+            pkgconfPkgs.SDL2_mixer
+          ];
         };
         exes = {
           sdl2-mixer-basic = {

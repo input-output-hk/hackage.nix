@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -22,6 +23,9 @@ let
         sdl2 = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.SDL2 ];
+          pkgconfig = [
+            pkgconfPkgs.sdl2
+          ];
         };
       };
     }

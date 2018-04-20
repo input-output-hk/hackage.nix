@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -30,6 +31,15 @@ let
             hsPkgs.glib
             hsPkgs.cairo
             hsPkgs.tk
+          ];
+          pkgconfig = [
+            pkgconfPkgs.poppler-glib
+            pkgconfPkgs."gobject-2.0"
+            pkgconfPkgs."glib-2.0"
+            pkgconfPkgs.cairo
+            pkgconfPkgs."gdk-2.0"
+            pkgconfPkgs."gdk-pixbuf-2.0"
+            pkgconfPkgs.pango
           ];
         };
       };

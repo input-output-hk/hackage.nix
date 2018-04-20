@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.6";
         identifier = {
@@ -25,6 +26,7 @@ let
             hsPkgs.bindings-DSL
           ];
           libs = pkgs.lib.optional system.isWindows pkgs."libusb-1.0";
+          pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs."libusb-1.0";
         };
       };
     }

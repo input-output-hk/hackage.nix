@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       gtk3 = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -33,6 +34,22 @@ let
           ] ++ (if _flags.gtk3
             then [ hsPkgs.gtk3 ]
             else [ hsPkgs.gtk ]);
+          pkgconfig = if _flags.gtk3
+            then [
+              pkgconfPkgs.poppler-glib
+              pkgconfPkgs.cairo
+              pkgconfPkgs."gdk-3.0"
+              pkgconfPkgs.pango
+            ]
+            else [
+              pkgconfPkgs.poppler-glib
+              pkgconfPkgs."gobject-2.0"
+              pkgconfPkgs."glib-2.0"
+              pkgconfPkgs.cairo
+              pkgconfPkgs."gdk-2.0"
+              pkgconfPkgs."gdk-pixbuf-2.0"
+              pkgconfPkgs.pango
+            ];
         };
       };
     }

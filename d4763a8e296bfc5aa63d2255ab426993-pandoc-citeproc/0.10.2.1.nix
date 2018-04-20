@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       bibutils = true;
@@ -8,6 +8,7 @@ let
       debug = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.12";
         identifier = {

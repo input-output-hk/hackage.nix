@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       system-lua = false;
@@ -11,6 +11,7 @@ let
       use-pkgconfig = false;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.8";
         identifier = {
@@ -41,6 +42,13 @@ let
           libs = if (_flags.system-lua || _flags.luajit || _flags.lua501 || _flags.lua502) && _flags.luajit
             then pkgs.lib.optional (!_flags.use-pkgconfig) pkgs."luajit-5.1"
             else pkgs.lib.optional (!_flags.use-pkgconfig) pkgs.lua;
+          pkgconfig = if (_flags.system-lua || _flags.luajit || _flags.lua501 || _flags.lua502) && _flags.luajit
+            then pkgs.lib.optional _flags.use-pkgconfig pkgconfPkgs.luajit
+            else if _flags.use-pkgconfig && _flags.lua501
+              then [ pkgconfPkgs."lua5.1" ]
+              else if _flags.lua502
+                then [ pkgconfPkgs."lua5.2" ]
+                else [ pkgconfPkgs."lua5.3" ];
         };
         tests = {
           test-hslua = {

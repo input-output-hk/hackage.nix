@@ -1,4 +1,4 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       developer = false;
@@ -6,6 +6,7 @@ let
       network-uri = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.9.2";
         identifier = {

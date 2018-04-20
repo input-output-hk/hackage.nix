@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "0";
         identifier = {
@@ -26,6 +27,7 @@ let
             hsPkgs.X11
             hsPkgs.utf8-string
           ];
+          pkgconfig = [ pkgconfPkgs.xft ];
         };
       };
     }

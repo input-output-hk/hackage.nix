@@ -1,9 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {
       applicativeinbase = true;
     } // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.5.5";
         identifier = {

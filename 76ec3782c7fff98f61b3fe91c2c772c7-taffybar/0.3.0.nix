@@ -1,7 +1,8 @@
-{ compiler, flags ? {}, hsPkgs, pkgs, system }:
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
 let
     _flags = {} // flags;
     in {
+      flags = _flags;
       package = {
         specVersion = "1.10";
         identifier = {
@@ -47,6 +48,9 @@ let
             hsPkgs.X11
             hsPkgs.split
           ];
+          pkgconfig = [
+            pkgconfPkgs."gtk+-2.0"
+          ];
         };
         exes = {
           taffybar = {
@@ -56,6 +60,9 @@ let
               hsPkgs.gtk
               hsPkgs.xdg-basedir
               hsPkgs.filepath
+            ];
+            pkgconfig = [
+              pkgconfPkgs."gtk+-2.0"
             ];
           };
         };
