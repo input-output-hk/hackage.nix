@@ -37,7 +37,7 @@ let
               hsPkgs.base
               hsPkgs.ghcjs-dom
               hsPkgs.mtl
-            ] ++ (if !compiler.isGhcjs && (system.isOsx || system.isIos)
+            ] ++ (if !(compiler.isGhcjs && true) && (system.isOsx || system.isIos)
               then [
                 hsPkgs.jsaddle-wkwebview
               ]

@@ -31,6 +31,7 @@ let
           pkgconfig = [
             pkgconfPkgs.rdkafka
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           simple = {

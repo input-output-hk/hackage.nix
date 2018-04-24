@@ -35,6 +35,10 @@ let
               hsPkgs.core-compiler
               hsPkgs.array
             ];
+            build-tools = [
+              hsPkgs.happy
+              hsPkgs.alex
+            ];
           };
         };
       };

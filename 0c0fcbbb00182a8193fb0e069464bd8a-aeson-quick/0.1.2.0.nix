@@ -29,7 +29,7 @@ let
             hsPkgs.text
             hsPkgs.unordered-containers
             hsPkgs.vector
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.5") hsPkgs.ghc-prim;
         };
         tests = {
           aeson-quick-test = {

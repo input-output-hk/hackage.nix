@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.smallcheck
             hsPkgs.smallcheck-series
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers) ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
         };
       };
     }

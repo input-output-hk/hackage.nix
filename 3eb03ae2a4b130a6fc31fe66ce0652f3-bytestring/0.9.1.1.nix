@@ -23,7 +23,7 @@ let
         bytestring = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.gt "6.8.2") hsPkgs.ghc-prim;
         };
       };
     }

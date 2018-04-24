@@ -46,6 +46,10 @@ let
             hsPkgs.sbv
             hsPkgs.partial-order
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           camfort = {

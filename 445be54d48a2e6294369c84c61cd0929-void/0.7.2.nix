@@ -25,11 +25,11 @@ let
         void = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optionals (!compiler.isGhc) ([
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.9")) ([
             hsPkgs.deepseq
             hsPkgs.hashable
             hsPkgs.semigroups
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim);
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") hsPkgs.ghc-prim);
         };
       };
     }

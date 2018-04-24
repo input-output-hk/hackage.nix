@@ -52,7 +52,7 @@ let
             hsPkgs.conduit
             hsPkgs.conduit-extra
             hsPkgs.async
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.time;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") hsPkgs.time;
         };
         exes = {
           buildwrapper = {
@@ -83,7 +83,7 @@ let
               hsPkgs.conduit
               hsPkgs.conduit-extra
               hsPkgs.async
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.time;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") hsPkgs.time;
           };
         };
         tests = {
@@ -112,7 +112,7 @@ let
               hsPkgs.conduit
               hsPkgs.conduit-extra
               hsPkgs.async
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.time;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") hsPkgs.time;
           };
         };
       };

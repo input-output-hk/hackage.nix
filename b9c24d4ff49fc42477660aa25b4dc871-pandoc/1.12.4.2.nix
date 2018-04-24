@@ -66,6 +66,10 @@ let
             hsPkgs.http-conduit
             hsPkgs.http-types
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           pandoc = {

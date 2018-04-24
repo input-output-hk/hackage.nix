@@ -31,6 +31,10 @@ let
             hsPkgs.pretty
             hsPkgs.containers
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           dtab = {

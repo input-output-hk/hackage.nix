@@ -47,6 +47,10 @@ let
               hsPkgs.base
               hsPkgs.utf8-string
             ]);
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         exes = {
           agda-mode = {

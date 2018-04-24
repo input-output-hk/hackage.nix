@@ -36,6 +36,7 @@ let
             pkgs.cblas
             pkgs.blas
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           tests = {

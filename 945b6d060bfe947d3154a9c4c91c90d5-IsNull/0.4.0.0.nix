@@ -26,7 +26,7 @@ let
             hsPkgs.containers
             hsPkgs.text
             hsPkgs.bytestring
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-compat;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.base-compat;
         };
         tests = {
           test = {
@@ -43,7 +43,7 @@ let
               hsPkgs.quickcheck-instances
               hsPkgs.HUnit
               hsPkgs.hspec
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-compat;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.base-compat;
           };
         };
       };

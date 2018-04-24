@@ -28,7 +28,7 @@ let
             hsPkgs.lens
             hsPkgs.containers
             hsPkgs.parsec
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.monomorphic;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6.1") hsPkgs.monomorphic;
         };
       };
     }

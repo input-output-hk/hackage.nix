@@ -30,7 +30,7 @@ let
             hsPkgs.bytestring
             hsPkgs.bytestring-trie
             hsPkgs.ghc-prim
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
         };
         exes = {
           hpp = {

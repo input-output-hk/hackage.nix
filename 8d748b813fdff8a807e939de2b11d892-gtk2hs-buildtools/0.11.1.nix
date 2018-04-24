@@ -36,6 +36,10 @@ let
               hsPkgs.haskell98
               hsPkgs.filepath
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

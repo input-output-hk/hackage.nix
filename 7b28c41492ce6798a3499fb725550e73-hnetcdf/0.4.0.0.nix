@@ -32,6 +32,7 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.netcdf ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           example1 = {

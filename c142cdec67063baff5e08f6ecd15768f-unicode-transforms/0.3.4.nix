@@ -73,7 +73,7 @@ let
               hsPkgs.path-io
               hsPkgs.text
               hsPkgs.unicode-transforms
-            ] ++ pkgs.lib.optional _flags.has-icu hsPkgs.text-icu) ++ pkgs.lib.optional compiler.isGhc hsPkgs.path;
+            ] ++ pkgs.lib.optional _flags.has-icu hsPkgs.text-icu) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.path;
           };
         };
       };

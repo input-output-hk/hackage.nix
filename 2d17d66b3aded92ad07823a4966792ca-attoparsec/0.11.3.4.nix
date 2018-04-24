@@ -32,7 +32,7 @@ let
             hsPkgs.deepseq
             hsPkgs.text
             hsPkgs.scientific
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.4") [
             hsPkgs.bytestring
             hsPkgs.text
           ];

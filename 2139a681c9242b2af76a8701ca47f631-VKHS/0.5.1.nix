@@ -47,12 +47,17 @@ let
             hsPkgs.time
           ];
           libs = [ pkgs.curl ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           vknews = {
             libs = [ pkgs.curl ];
+            build-tools = [ hsPkgs.hsc2hs ];
           };
-          vkq = { libs = [ pkgs.curl ]; };
+          vkq = {
+            libs = [ pkgs.curl ];
+            build-tools = [ hsPkgs.hsc2hs ];
+          };
         };
       };
     }

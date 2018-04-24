@@ -31,6 +31,7 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.IL ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

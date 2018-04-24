@@ -22,6 +22,7 @@ let
       components = {
         termbox-bindings = {
           depends  = [ hsPkgs.base ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           example = {

@@ -44,7 +44,7 @@ let
             hsPkgs.vector
             hsPkgs.unordered-containers
             hsPkgs.scientific
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           test = {

@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optionals (!_flags.haste) [
             hsPkgs.bytestring
             hsPkgs.postgresql-libpq
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.11") hsPkgs.transformers;
         };
       };
     }

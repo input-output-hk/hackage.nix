@@ -26,7 +26,7 @@ let
           depends  = ([
             hsPkgs.base
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional compiler.isGhc hsPkgs.void;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.void;
         };
         exes = {
           generate_readme = {
@@ -56,7 +56,7 @@ let
               hsPkgs.tasty-hunit
               hsPkgs.tasty-quickcheck
               hsPkgs.text
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
           };
         };
         benchmarks = {

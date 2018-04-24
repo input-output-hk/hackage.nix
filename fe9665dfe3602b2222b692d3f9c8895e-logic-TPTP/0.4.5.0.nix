@@ -33,6 +33,10 @@ let
             hsPkgs.transformers
             hsPkgs.transformers-compat
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

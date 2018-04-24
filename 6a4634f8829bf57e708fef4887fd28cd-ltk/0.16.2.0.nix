@@ -44,7 +44,7 @@ let
             hsPkgs.gi-gtk
             hsPkgs.gi-gtk-hs
             hsPkgs.haskell-gi-overloading
-          ] ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.ghc;
+          ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.ghc;
           pkgconfig = ([
             pkgconfPkgs."gdk-3.0"
           ] ++ (if _flags.gtk-318

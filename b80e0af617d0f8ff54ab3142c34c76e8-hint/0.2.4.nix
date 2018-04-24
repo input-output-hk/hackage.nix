@@ -21,7 +21,7 @@ let
       };
       components = {
         hint = {
-          depends  = if compiler.isGhc
+          depends  = if compiler.isGhc && compiler.version.ge "6.8"
             then [
               hsPkgs.base
               hsPkgs.haskell-src

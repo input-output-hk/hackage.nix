@@ -31,7 +31,7 @@ let
             hsPkgs.deepseq
             hsPkgs.mtl
             hsPkgs.tree-view
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ pkgs.lib.optional _flags.th hsPkgs.template-haskell;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged) ++ pkgs.lib.optional _flags.th hsPkgs.template-haskell;
         };
         tests = {
           examples = {

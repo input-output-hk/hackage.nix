@@ -31,7 +31,7 @@ let
             hsPkgs.lens
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional (compiler.isGhcjs && _flags.jsffi) hsPkgs.ghcjs-base) ++ (if (!compiler.isGhcjs || _flags.webkit) && _flags.gtk3
+          ] ++ pkgs.lib.optional (compiler.isGhcjs && true && _flags.jsffi) hsPkgs.ghcjs-base) ++ (if (!(compiler.isGhcjs && true) || _flags.webkit) && _flags.gtk3
             then [
               hsPkgs.webkitgtk3
               hsPkgs.webkitgtk3-javascriptcore
@@ -51,7 +51,7 @@ let
               hsPkgs.transformers
               hsPkgs.hslogger
               hsPkgs.jsaddle
-            ] ++ pkgs.lib.optional (compiler.isGhcjs && _flags.jsffi) hsPkgs.ghcjs-base) ++ pkgs.lib.optionals (!compiler.isGhcjs || _flags.webkit) ([
+            ] ++ pkgs.lib.optional (compiler.isGhcjs && true && _flags.jsffi) hsPkgs.ghcjs-base) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true) || _flags.webkit) ([
               hsPkgs.glib
             ] ++ (if _flags.gtk3
               then [

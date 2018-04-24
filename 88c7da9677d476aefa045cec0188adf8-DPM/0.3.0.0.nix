@@ -47,6 +47,10 @@ let
             hsPkgs.network
             hsPkgs.array
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           dpm-tests = {

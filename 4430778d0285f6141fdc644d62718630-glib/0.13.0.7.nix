@@ -34,6 +34,9 @@ let
             pkgconfPkgs."glib-2.0"
             pkgconfPkgs."gobject-2.0"
           ];
+          build-tools = [
+            hsPkgs.gtk2hsC2hs
+          ];
         };
       };
     }

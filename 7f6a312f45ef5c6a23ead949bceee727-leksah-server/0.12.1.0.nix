@@ -46,17 +46,17 @@ let
             hsPkgs.attoparsec-enumerator
             hsPkgs.attoparsec
             hsPkgs.transformers
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.4"
             then [ hsPkgs.haddock ]
-            else if compiler.isGhc
+            else if compiler.isGhc && compiler.version.ge "7.2"
               then [ hsPkgs.haddock ]
-              else if compiler.isGhc
+              else if compiler.isGhc && compiler.version.ge "7.0"
                 then [ hsPkgs.haddock ]
-                else if compiler.isGhc
+                else if compiler.isGhc && compiler.version.ge "6.12"
                   then [ hsPkgs.haddock ]
                   else [
                     hsPkgs.haddock-leksah
-                  ])) ++ (if compiler.isGhc
+                  ])) ++ (if compiler.isGhc && compiler.version.ge "7.2"
             then [ hsPkgs.process ]
             else [
               hsPkgs.process-leksah
@@ -94,17 +94,17 @@ let
               hsPkgs.attoparsec-enumerator
               hsPkgs.attoparsec
               hsPkgs.transformers
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.4"
               then [ hsPkgs.haddock ]
-              else if compiler.isGhc
+              else if compiler.isGhc && compiler.version.ge "7.2"
                 then [ hsPkgs.haddock ]
-                else if compiler.isGhc
+                else if compiler.isGhc && compiler.version.ge "7.0"
                   then [ hsPkgs.haddock ]
-                  else if compiler.isGhc
+                  else if compiler.isGhc && compiler.version.ge "6.12"
                     then [ hsPkgs.haddock ]
                     else [
                       hsPkgs.haddock-leksah
-                    ])) ++ (if compiler.isGhc
+                    ])) ++ (if compiler.isGhc && compiler.version.ge "7.2"
               then [ hsPkgs.process ]
               else [
                 hsPkgs.process-leksah
@@ -129,7 +129,7 @@ let
               hsPkgs.attoparsec-enumerator
               hsPkgs.attoparsec
               hsPkgs.transformers
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
               then [ hsPkgs.process ]
               else [ hsPkgs.process-leksah ]);
           };
@@ -143,7 +143,7 @@ let
               hsPkgs.HUnit
               hsPkgs.transformers
               hsPkgs.enumerator
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
               then [ hsPkgs.process ]
               else [ hsPkgs.process-leksah ]);
           };

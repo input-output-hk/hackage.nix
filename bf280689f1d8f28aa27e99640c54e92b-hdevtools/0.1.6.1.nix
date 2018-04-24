@@ -35,13 +35,13 @@ let
               hsPkgs.time
               hsPkgs.transformers
               hsPkgs.unix
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.Cabal) ++ pkgs.lib.optional compiler.isGhc hsPkgs.Cabal) ++ pkgs.lib.optionals compiler.isGhc [
+            ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.Cabal) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.7") hsPkgs.Cabal) ++ pkgs.lib.optionals (compiler.isGhc && (compiler.version.ge "7.9" && compiler.version.lt "8.0")) [
               hsPkgs.Cabal
               hsPkgs.bin-package-db
-            ]) ++ pkgs.lib.optionals compiler.isGhc [
+            ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0") [
               hsPkgs.Cabal
               hsPkgs.ghc-boot
-            ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot;
+            ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.2") hsPkgs.ghc-boot;
           };
         };
       };

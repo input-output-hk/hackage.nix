@@ -29,6 +29,10 @@ let
             hsPkgs.template-haskell
             hsPkgs.array
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

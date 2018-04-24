@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.deepseq
             hsPkgs.text
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
         };
       };
     }

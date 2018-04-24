@@ -38,6 +38,10 @@ let
             else [
               hsPkgs.base
             ])) ++ pkgs.lib.optional _flags.usebytestrings hsPkgs.bytestring;
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
       };
     }

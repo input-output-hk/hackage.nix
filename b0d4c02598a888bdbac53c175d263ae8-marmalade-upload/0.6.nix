@@ -41,6 +41,7 @@ let
               hsPkgs.deepseq
             ]);
           libs = pkgs.lib.optional _flags.libmagic pkgs.magic;
+          build-tools = pkgs.lib.optional _flags.libmagic hsPkgs.hsc2hs;
         };
         exes = {
           marmalade-upload = {

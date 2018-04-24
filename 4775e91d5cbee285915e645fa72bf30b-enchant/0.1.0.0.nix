@@ -27,6 +27,7 @@ let
           pkgconfig = [
             pkgconfPkgs.enchant
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           enchant-examples-spell-check = {

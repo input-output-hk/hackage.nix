@@ -45,7 +45,7 @@ let
             hsPkgs.old-locale
             hsPkgs.directory
             hsPkgs.process
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.parsec
               hsPkgs.syb

@@ -30,6 +30,7 @@ let
             hsPkgs.OpenGL
           ];
           libs = pkgs.lib.optional _flags.use_font_config pkgs.fontconfig;
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           hellobye = {

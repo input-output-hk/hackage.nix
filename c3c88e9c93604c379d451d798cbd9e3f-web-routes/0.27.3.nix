@@ -30,7 +30,7 @@ let
             hsPkgs.mtl
             hsPkgs.text
             hsPkgs.utf8-string
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2") [
             hsPkgs.ghc-prim
             hsPkgs.split
           ];

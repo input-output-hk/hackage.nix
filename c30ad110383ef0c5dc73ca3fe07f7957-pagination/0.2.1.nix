@@ -27,7 +27,7 @@ let
             hsPkgs.base
             hsPkgs.deepseq
             hsPkgs.exceptions
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           tests = {
@@ -37,7 +37,7 @@ let
               hsPkgs.exceptions
               hsPkgs.hspec
               hsPkgs.pagination
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
       };

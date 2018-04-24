@@ -45,10 +45,10 @@ let
             hsPkgs.time
             hsPkgs.transformers
             hsPkgs.uuid
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.6") [
             hsPkgs.ghc-prim
             hsPkgs.text
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.binary;
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") hsPkgs.binary;
         };
       };
     }

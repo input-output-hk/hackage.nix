@@ -29,6 +29,7 @@ let
             hsPkgs.unix
             hsPkgs.unordered-containers
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           pi-lcd-demo = {

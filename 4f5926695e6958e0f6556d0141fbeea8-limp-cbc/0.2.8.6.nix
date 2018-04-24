@@ -40,6 +40,7 @@ let
             pkgs.CoinMP
             pkgs."stdc++"
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

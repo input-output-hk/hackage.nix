@@ -21,7 +21,7 @@ let
       };
       components = {
         configurator-export = {
-          depends  = if compiler.isGhc
+          depends  = if compiler.isGhc && compiler.version.ge "7.10"
             then [
               hsPkgs.base
               hsPkgs.base-compat

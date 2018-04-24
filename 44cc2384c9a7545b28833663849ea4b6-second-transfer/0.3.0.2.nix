@@ -42,6 +42,7 @@ let
             hsPkgs.hashable
           ];
           libs = [ pkgs.ssl pkgs.crypto ];
+          build-tools = [ hsPkgs.cpphs ];
         };
         tests = {
           compiling-ok = {

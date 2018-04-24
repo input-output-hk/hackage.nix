@@ -27,7 +27,7 @@ let
             hsPkgs.array
             hsPkgs.base
             hsPkgs.bytestring
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.ghc-prim
               hsPkgs.base
@@ -35,7 +35,7 @@ let
             ]
             else [
               hsPkgs.extensible-exceptions
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.integer-gmp) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.integer;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.11") hsPkgs.integer-gmp) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9" && (compiler.isGhc && compiler.version.lt "6.11")) hsPkgs.integer;
         };
       };
     }

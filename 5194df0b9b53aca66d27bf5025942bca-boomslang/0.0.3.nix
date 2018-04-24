@@ -22,7 +22,7 @@ let
       components = {
         exes = {
           boomslang = {
-            depends  = if compiler.isGhc
+            depends  = if compiler.isGhc && compiler.version.ge "6.12"
               then [
                 hsPkgs.GLFW-b
                 hsPkgs.MonadRandom

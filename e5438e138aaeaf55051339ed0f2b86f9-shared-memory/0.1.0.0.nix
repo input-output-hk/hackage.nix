@@ -25,6 +25,7 @@ let
             hsPkgs.base
             hsPkgs.unix
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           test-shared-memory-example = {

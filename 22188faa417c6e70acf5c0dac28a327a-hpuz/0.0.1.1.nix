@@ -28,6 +28,7 @@ let
             hsPkgs.parsec
           ];
           libs = [ pkgs.puz ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

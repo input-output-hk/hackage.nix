@@ -32,6 +32,7 @@ let
           pkgconfig = [
             pkgconfPkgs.ipopt
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           ipopt-hs_Test1 = {

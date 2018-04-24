@@ -45,7 +45,7 @@ let
             hsPkgs.text-metrics
             hsPkgs.unordered-containers
             hsPkgs.yaml
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.void) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.void) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           tests = {
@@ -61,7 +61,7 @@ let
               hsPkgs.mmark
               hsPkgs.modern-uri
               hsPkgs.text
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
         benchmarks = {

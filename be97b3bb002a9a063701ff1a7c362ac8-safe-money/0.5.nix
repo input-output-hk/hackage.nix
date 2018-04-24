@@ -34,7 +34,7 @@ let
           depends  = (((((((([
             hsPkgs.base
             hsPkgs.constraints
-          ] ++ pkgs.lib.optional _flags.aeson hsPkgs.aeson) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ pkgs.lib.optional _flags.cereal hsPkgs.cereal) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional _flags.serialise hsPkgs.serialise) ++ pkgs.lib.optional (_flags.store && !compiler.isGhcjs) hsPkgs.store) ++ pkgs.lib.optional _flags.vector-space hsPkgs.vector-space) ++ pkgs.lib.optionals _flags.xmlbf [
+          ] ++ pkgs.lib.optional _flags.aeson hsPkgs.aeson) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ pkgs.lib.optional _flags.cereal hsPkgs.cereal) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional _flags.serialise hsPkgs.serialise) ++ pkgs.lib.optional (_flags.store && !(compiler.isGhcjs && true)) hsPkgs.store) ++ pkgs.lib.optional _flags.vector-space hsPkgs.vector-space) ++ pkgs.lib.optionals _flags.xmlbf [
             hsPkgs.xmlbf
             hsPkgs.text
           ];
@@ -49,7 +49,7 @@ let
               hsPkgs.tasty
               hsPkgs.tasty-hunit
               hsPkgs.tasty-quickcheck
-            ] ++ pkgs.lib.optional _flags.aeson hsPkgs.aeson) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ pkgs.lib.optional _flags.cereal hsPkgs.cereal) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional _flags.serialise hsPkgs.serialise) ++ pkgs.lib.optional (_flags.store && !compiler.isGhcjs) hsPkgs.store) ++ pkgs.lib.optional _flags.vector-space hsPkgs.vector-space) ++ pkgs.lib.optionals _flags.xmlbf [
+            ] ++ pkgs.lib.optional _flags.aeson hsPkgs.aeson) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ pkgs.lib.optional _flags.cereal hsPkgs.cereal) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional _flags.serialise hsPkgs.serialise) ++ pkgs.lib.optional (_flags.store && !(compiler.isGhcjs && true)) hsPkgs.store) ++ pkgs.lib.optional _flags.vector-space hsPkgs.vector-space) ++ pkgs.lib.optionals _flags.xmlbf [
               hsPkgs.xmlbf
               hsPkgs.text
             ];

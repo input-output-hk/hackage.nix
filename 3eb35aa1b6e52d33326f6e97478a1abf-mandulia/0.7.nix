@@ -36,6 +36,7 @@ let
               hsPkgs.GLUT
               hsPkgs.hslua
             ];
+            build-tools = [ hsPkgs.hsc2hs ];
           };
         };
       };

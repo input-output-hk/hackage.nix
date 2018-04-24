@@ -26,7 +26,7 @@ let
             hsPkgs.bytestring
             hsPkgs.deepseq
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.bytestring-builder;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.bytestring-builder;
         };
         tests = {
           test = {

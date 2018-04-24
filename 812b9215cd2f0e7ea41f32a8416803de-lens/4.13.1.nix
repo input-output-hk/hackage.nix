@@ -97,7 +97,7 @@ let
             ];
           };
           doctests = {
-            depends  = pkgs.lib.optionals (!(!_flags.test-doctests || compiler.isGhc)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.containers

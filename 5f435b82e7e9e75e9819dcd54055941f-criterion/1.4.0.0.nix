@@ -54,7 +54,7 @@ let
             hsPkgs.transformers-compat
             hsPkgs.vector
             hsPkgs.vector-algorithms
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.embed-data-files [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.embed-data-files [
             hsPkgs.file-embed
             hsPkgs.template-haskell
           ];
@@ -67,7 +67,7 @@ let
               hsPkgs.criterion
               hsPkgs.optparse-applicative
               hsPkgs.semigroups
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
           };
         };
         tests = {

@@ -34,6 +34,10 @@ let
             hsPkgs.Cabal
             hsPkgs.ghc
           ] ++ pkgs.lib.optional (!_flags.in-ghc-tree) hsPkgs.ghc-paths;
+          build-tools = pkgs.lib.optionals (!_flags.in-ghc-tree) [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           haddock = {

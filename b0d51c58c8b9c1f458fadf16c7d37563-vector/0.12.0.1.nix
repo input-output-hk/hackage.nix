@@ -31,7 +31,7 @@ let
             hsPkgs.primitive
             hsPkgs.ghc-prim
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.gt "8.0")) hsPkgs.semigroups;
         };
         tests = {
           vector-tests-O0 = {

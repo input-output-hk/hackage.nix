@@ -39,6 +39,7 @@ let
             pkgconfPkgs.libavcodec
             pkgconfPkgs.libswscale
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           demo = {

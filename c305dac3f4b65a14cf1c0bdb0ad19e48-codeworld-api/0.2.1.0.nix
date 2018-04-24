@@ -31,7 +31,7 @@ let
             hsPkgs.random
             hsPkgs.cereal
             hsPkgs.cereal-text
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [
               hsPkgs.ghcjs-base
               hsPkgs.ghcjs-dom

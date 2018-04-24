@@ -70,7 +70,7 @@ let
             ]
             else [
               hsPkgs.random
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.ghc-prim;
         };
         exes = {
           toysolver = {
@@ -101,7 +101,7 @@ let
               hsPkgs.unbounded-delays
               hsPkgs.vector-space
               hsPkgs.toysolver
-            ] ++ pkgs.lib.optional (_flags.forcechar8 && compiler.isGhc) hsPkgs.base;
+            ] ++ pkgs.lib.optional (_flags.forcechar8 && (compiler.isGhc && true)) hsPkgs.base;
           };
           toyfmf = {
             depends  = pkgs.lib.optionals _flags.buildtoyfmf [

@@ -27,7 +27,7 @@ let
             hsPkgs.transformers
             hsPkgs.random
             hsPkgs.QuickCheck
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.6") [
             hsPkgs.ghc-prim
             hsPkgs.one-liner
           ];

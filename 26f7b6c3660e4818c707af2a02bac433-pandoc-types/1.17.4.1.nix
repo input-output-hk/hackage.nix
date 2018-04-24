@@ -30,7 +30,7 @@ let
             hsPkgs.aeson
             hsPkgs.transformers
             hsPkgs.QuickCheck
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ (if compiler.isGhc
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ (if compiler.isGhc && compiler.version.lt "7.10"
             then [ hsPkgs.deepseq-generics ]
             else [ hsPkgs.deepseq ]);
         };

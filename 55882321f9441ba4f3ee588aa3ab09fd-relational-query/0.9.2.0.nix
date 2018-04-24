@@ -36,7 +36,7 @@ let
             hsPkgs.sql-words
             hsPkgs.names-th
             hsPkgs.persistable-record
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc-prim;
         };
         tests = {
           sqls = {
@@ -46,7 +46,7 @@ let
               hsPkgs.relational-query
               hsPkgs.containers
               hsPkgs.transformers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc-prim;
           };
           sqlsArrow = {
             depends  = [
@@ -55,7 +55,7 @@ let
               hsPkgs.relational-query
               hsPkgs.containers
               hsPkgs.transformers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc-prim;
           };
         };
       };

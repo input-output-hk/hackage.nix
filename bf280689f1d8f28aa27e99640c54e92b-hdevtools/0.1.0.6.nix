@@ -33,7 +33,7 @@ let
               hsPkgs.network
               hsPkgs.time
               hsPkgs.unix
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.Cabal) ++ pkgs.lib.optional compiler.isGhc hsPkgs.Cabal;
+            ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.Cabal) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.7") hsPkgs.Cabal;
           };
         };
       };

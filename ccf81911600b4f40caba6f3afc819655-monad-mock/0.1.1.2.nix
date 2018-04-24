@@ -32,7 +32,7 @@ let
             hsPkgs.mtl
             hsPkgs.template-haskell
             hsPkgs.transformers-base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.transformers;
         };
         tests = {
           monad-stub-test-suite = {

@@ -25,6 +25,7 @@ let
             hsPkgs.base
             hsPkgs.containers
           ];
+          build-tools = [ hsPkgs.ghc ];
         };
       };
     }

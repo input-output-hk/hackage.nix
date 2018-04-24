@@ -34,7 +34,7 @@ let
             hsPkgs.safe
             hsPkgs.websockets
             hsPkgs.mtl
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.4.1")) hsPkgs.semigroups;
         };
         tests = {
           test = {

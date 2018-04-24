@@ -26,6 +26,7 @@ let
             hsPkgs.vector
             hsPkgs.primitive
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

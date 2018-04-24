@@ -42,6 +42,10 @@ let
             hsPkgs.transformers
             hsPkgs.vector
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

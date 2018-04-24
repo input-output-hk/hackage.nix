@@ -33,15 +33,15 @@ let
             hsPkgs.process
             hsPkgs.text
             hsPkgs.mtl
-          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.2" && (compiler.isGhc && compiler.version.lt "8.3")) [
             hsPkgs.ghc
             hsPkgs.haddock-api
             hsPkgs.haddock-library
-          ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.isGhc) [
+          ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0" && (compiler.isGhc && compiler.version.lt "8.2")) [
             hsPkgs.ghc
             hsPkgs.haddock-api
             hsPkgs.haddock-library
-          ]) ++ pkgs.lib.optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") [
             hsPkgs.ghc
             hsPkgs.haddock-api
             hsPkgs.haddock-library

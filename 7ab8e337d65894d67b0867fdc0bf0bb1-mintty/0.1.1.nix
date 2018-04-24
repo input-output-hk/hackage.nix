@@ -31,6 +31,7 @@ let
               hsPkgs.filepath
               hsPkgs.Win32
             ]);
+          build-tools = pkgs.lib.optional (system.isWindows && !_flags.win32-2-5) hsPkgs.hsc2hs;
         };
       };
     }

@@ -51,7 +51,7 @@ let
           ]) ++ pkgs.lib.optionals _flags.unicode_collation [
             hsPkgs.text
             hsPkgs.text-icu
-          ]) ++ (if compiler.isGhc
+          ]) ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.base
               hsPkgs.syb

@@ -27,7 +27,7 @@ let
             hsPkgs.transformers-compat
             hsPkgs.process
             hsPkgs.ansi-wl-pprint
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8")) hsPkgs.semigroups;
         };
         tests = {
           optparse-applicative-tests = {
@@ -35,7 +35,7 @@ let
               hsPkgs.base
               hsPkgs.optparse-applicative
               hsPkgs.QuickCheck
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8")) hsPkgs.semigroups;
           };
         };
       };

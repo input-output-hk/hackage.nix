@@ -33,7 +33,7 @@ let
             hsPkgs.profunctors
             hsPkgs.ansi-wl-pprint
             hsPkgs.exceptions
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           test-unbound-generics = {
@@ -55,7 +55,7 @@ let
               hsPkgs.criterion
               hsPkgs.deepseq
               hsPkgs.unbound-generics
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.unix) ++ (if compiler.isGhc || compiler.isGhc
+            ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.unix) ++ (if compiler.isGhc && false || compiler.isGhc && false
               then [ hsPkgs.deepseq-generics ]
               else [ hsPkgs.deepseq ]);
           };

@@ -26,6 +26,7 @@ let
             hsPkgs.alsa-core
           ];
           libs = [ pkgs.asound ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

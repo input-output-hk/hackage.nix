@@ -61,7 +61,7 @@ let
             hsPkgs.xml-types
           ] ++ [
             hsPkgs.bytestring
-          ]) ++ pkgs.lib.optional (_flags.with-th && compiler.isGhc) hsPkgs.template-haskell;
+          ]) ++ pkgs.lib.optional (_flags.with-th && (compiler.isGhc && compiler.version.ge "7.6.1")) hsPkgs.template-haskell;
         };
         tests = {
           tests = {

@@ -37,6 +37,7 @@ let
             hsPkgs.microlens-platform
             hsPkgs.oo-prototypes
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         tests = {
           tasty = {

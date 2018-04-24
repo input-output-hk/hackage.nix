@@ -26,6 +26,7 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.loris ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

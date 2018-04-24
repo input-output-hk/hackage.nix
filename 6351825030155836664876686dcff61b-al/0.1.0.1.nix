@@ -22,6 +22,7 @@ let
       components = {
         al = {
           depends  = [ hsPkgs.base ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

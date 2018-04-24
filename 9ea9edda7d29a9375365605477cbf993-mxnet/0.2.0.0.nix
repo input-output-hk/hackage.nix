@@ -30,6 +30,7 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.mxnet ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           mxnet-test = {

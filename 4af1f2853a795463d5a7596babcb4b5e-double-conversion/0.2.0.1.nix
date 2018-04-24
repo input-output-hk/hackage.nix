@@ -28,7 +28,7 @@ let
             hsPkgs.bytestring
             hsPkgs.ghc-prim
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.integer-gmp) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.integer;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.11") hsPkgs.integer-gmp) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9" && (compiler.isGhc && compiler.version.lt "6.11")) hsPkgs.integer;
           libs = [ pkgs."stdc++" ];
         };
       };

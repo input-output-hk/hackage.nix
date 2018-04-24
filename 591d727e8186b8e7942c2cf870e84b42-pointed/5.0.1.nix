@@ -34,7 +34,7 @@ let
           depends  = (((((((((([
             hsPkgs.base
             hsPkgs.data-default-class
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.generic-deriving) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.comonad hsPkgs.comonad) ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.kan-extensions hsPkgs.kan-extensions) ++ pkgs.lib.optional _flags.semigroupoids hsPkgs.semigroupoids) ++ pkgs.lib.optional _flags.semigroups hsPkgs.semigroups) ++ pkgs.lib.optional _flags.stm hsPkgs.stm) ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged) ++ pkgs.lib.optionals _flags.transformers [
+          ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.0" && compiler.version.lt "7.2")) hsPkgs.generic-deriving) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6")) hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.comonad hsPkgs.comonad) ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.kan-extensions hsPkgs.kan-extensions) ++ pkgs.lib.optional _flags.semigroupoids hsPkgs.semigroupoids) ++ pkgs.lib.optional _flags.semigroups hsPkgs.semigroups) ++ pkgs.lib.optional _flags.stm hsPkgs.stm) ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged) ++ pkgs.lib.optionals _flags.transformers [
             hsPkgs.transformers
             hsPkgs.transformers-compat
           ]) ++ pkgs.lib.optionals _flags.unordered-containers [

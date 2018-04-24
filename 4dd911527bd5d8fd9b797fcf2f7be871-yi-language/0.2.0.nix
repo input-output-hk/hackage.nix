@@ -37,6 +37,7 @@ let
             hsPkgs.transformers-base
             hsPkgs.unordered-containers
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         tests = {
           spec = {

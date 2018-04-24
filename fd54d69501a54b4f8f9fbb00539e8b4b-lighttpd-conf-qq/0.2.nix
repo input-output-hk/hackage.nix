@@ -30,6 +30,7 @@ let
             hsPkgs.bytestring
             hsPkgs.packedstring
           ];
+          build-tools = [ hsPkgs.ghc ];
         };
       };
     }

@@ -34,7 +34,7 @@ let
               hsPkgs.network-uri
               hsPkgs.network
             ]
-            else if compiler.isGhc
+            else if compiler.isGhc && compiler.version.ge "7.10"
               then [
                 hsPkgs.network-uri
                 hsPkgs.network

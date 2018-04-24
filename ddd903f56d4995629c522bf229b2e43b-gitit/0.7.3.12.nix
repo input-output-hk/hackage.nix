@@ -72,7 +72,7 @@ let
               hsPkgs.ConfigFile
               hsPkgs.feed
               hsPkgs.xss-sanitize
-            ] ++ pkgs.lib.optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
               hsPkgs.base
               hsPkgs.syb
             ]) ++ pkgs.lib.optionals _flags.plugins [
@@ -86,7 +86,7 @@ let
               hsPkgs.HTTP
               hsPkgs.url
               hsPkgs.filepath
-            ] ++ pkgs.lib.optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
               hsPkgs.base
               hsPkgs.syb
             ];

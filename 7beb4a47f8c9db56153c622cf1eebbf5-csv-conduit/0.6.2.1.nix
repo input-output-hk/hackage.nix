@@ -41,7 +41,7 @@ let
             hsPkgs.mtl
             hsPkgs.mmorph
             hsPkgs.primitive
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1") hsPkgs.ghc-prim;
         };
         exes = {
           bench = {

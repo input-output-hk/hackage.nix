@@ -23,6 +23,7 @@ let
         hsndfile = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.sndfile ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

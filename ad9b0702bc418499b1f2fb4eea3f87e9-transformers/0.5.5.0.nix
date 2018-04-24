@@ -23,7 +23,7 @@ let
         transformers = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.5")) hsPkgs.ghc-prim;
         };
       };
     }

@@ -36,6 +36,7 @@ let
             pkgs.newrelic-transaction
             pkgs.newrelic-common
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           helics-example = {

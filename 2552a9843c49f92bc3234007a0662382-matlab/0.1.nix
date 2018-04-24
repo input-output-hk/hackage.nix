@@ -35,6 +35,9 @@ let
           libs = [
             pkgs.mx
           ] ++ pkgs.lib.optional _flags.engine pkgs.eng;
+          build-tools = if _flags.mcr
+            then [ hsPkgs.mcr ]
+            else [ hsPkgs.matlab ];
         };
       };
     }

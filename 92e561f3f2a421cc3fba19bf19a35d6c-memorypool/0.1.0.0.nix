@@ -27,7 +27,7 @@ let
             hsPkgs.containers
             hsPkgs.transformers
             hsPkgs.unsafe
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.void;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.void;
         };
       };
     }

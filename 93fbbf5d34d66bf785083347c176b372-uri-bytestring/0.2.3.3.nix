@@ -31,7 +31,7 @@ let
             hsPkgs.template-haskell
             hsPkgs.th-lift-instances
             hsPkgs.containers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.th-lift;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.th-lift;
         };
         tests = {
           test = {

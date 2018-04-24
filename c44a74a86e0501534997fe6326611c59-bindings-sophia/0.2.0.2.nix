@@ -26,6 +26,7 @@ let
             hsPkgs.bindings-DSL
           ];
           libs = [ pkgs.pthread ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

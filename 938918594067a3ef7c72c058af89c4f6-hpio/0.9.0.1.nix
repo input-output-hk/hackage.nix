@@ -43,7 +43,7 @@ let
             hsPkgs.transformers-base
             hsPkgs.unix
             hsPkgs.unix-bytestring
-          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];
@@ -91,7 +91,7 @@ let
         };
         tests = {
           doctest = {
-            depends  = pkgs.lib.optionals (!(!_flags.test-doctests || compiler.isGhc)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doctests || compiler.isGhc && compiler.version.lt "7.10")) [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.filepath

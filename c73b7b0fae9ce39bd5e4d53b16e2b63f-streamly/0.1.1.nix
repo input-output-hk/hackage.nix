@@ -38,7 +38,7 @@ let
             hsPkgs.stm
             hsPkgs.transformers
             hsPkgs.transformers-base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optionals (_flags.examples || _flags.examples-sdl) [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optionals (_flags.examples || _flags.examples-sdl) [
             hsPkgs.http-conduit
             hsPkgs.path-io
             hsPkgs.random
@@ -73,7 +73,7 @@ let
               hsPkgs.base
               hsPkgs.hspec
               hsPkgs.containers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.transformers;
           };
         };
         benchmarks = {
@@ -84,7 +84,7 @@ let
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.mtl
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers) ++ pkgs.lib.optionals _flags.extra-benchmarks [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.transformers) ++ pkgs.lib.optionals _flags.extra-benchmarks [
               hsPkgs.list-t
               hsPkgs.logict
               hsPkgs.machines

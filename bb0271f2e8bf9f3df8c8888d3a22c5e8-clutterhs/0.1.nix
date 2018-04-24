@@ -39,6 +39,7 @@ let
             pkgconfPkgs."clutter-1.0"
             pkgconfPkgs.pango
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

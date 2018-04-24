@@ -55,6 +55,7 @@ let
             pkgs.CoreFoundation
             pkgs.CoreVideo
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           main = {

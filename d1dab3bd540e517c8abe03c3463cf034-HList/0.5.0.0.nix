@@ -56,7 +56,7 @@ let
             ];
           };
           doctests = {
-            depends  = pkgs.lib.optionals (compiler.isGhc && compiler.isGhc) [
+            depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.9" && (compiler.isGhc && compiler.version.le "7.11")) [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.process
@@ -74,7 +74,7 @@ let
               hsPkgs.template-haskell
               hsPkgs.array
               hsPkgs.syb
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.11") hsPkgs.semigroups;
           };
         };
       };

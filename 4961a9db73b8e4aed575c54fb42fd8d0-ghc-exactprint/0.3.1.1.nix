@@ -37,7 +37,7 @@ let
         };
         exes = {
           roundtrip = {
-            depends  = pkgs.lib.optionals (compiler.isGhc && _flags.roundtrip) [
+            depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.2" && _flags.roundtrip) [
               hsPkgs.HUnit
               hsPkgs.base
               hsPkgs.containers

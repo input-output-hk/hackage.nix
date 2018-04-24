@@ -28,7 +28,7 @@ let
             hsPkgs.containers
             hsPkgs.lens
             hsPkgs.yaml-light
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers-compat;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10.1") hsPkgs.transformers-compat;
         };
         tests = {
           doctests = {

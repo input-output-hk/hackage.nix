@@ -40,6 +40,11 @@ let
             pkgconfPkgs."gthread-2.0"
             pkgconfPkgs."gtk+-3.0"
           ];
+          build-tools = [
+            hsPkgs.gtk2hsC2hs
+            hsPkgs.gtk2hsHookGenerator
+            hsPkgs.gtk2hsTypeGen
+          ];
         };
         exes = {
           gtk2hs-demo-actionMenu = {

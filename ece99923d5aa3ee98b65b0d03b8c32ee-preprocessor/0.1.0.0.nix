@@ -32,7 +32,7 @@ let
             hsPkgs.ghc-paths
             hsPkgs.microlens
             hsPkgs.process
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.template-haskell;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.template-haskell;
         };
         tests = {
           preprocessor-test = {

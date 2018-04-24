@@ -27,6 +27,10 @@ let
             hsPkgs.bytestring
             hsPkgs.pretty
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

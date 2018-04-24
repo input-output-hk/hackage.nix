@@ -27,7 +27,7 @@ let
             hsPkgs.comonad
             hsPkgs.prelude-extras
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.ghc-prim;
         };
         tests = {
           Simple = {

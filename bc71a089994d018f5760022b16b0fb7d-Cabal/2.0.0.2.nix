@@ -47,13 +47,14 @@ let
               hsPkgs.process
             ])) ++ [
             hsPkgs.binary
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals system.isWindows [
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.Win32
             hsPkgs.base
           ]) ++ pkgs.lib.optionals _flags.parsec [
             hsPkgs.transformers
             hsPkgs.parsec
           ];
+          build-tools = pkgs.lib.optional _flags.parsec hsPkgs.alex;
         };
         tests = {
           unit-tests = {

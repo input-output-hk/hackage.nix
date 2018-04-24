@@ -23,7 +23,7 @@ let
         logfloat = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.ghc-prim;
         };
       };
     }

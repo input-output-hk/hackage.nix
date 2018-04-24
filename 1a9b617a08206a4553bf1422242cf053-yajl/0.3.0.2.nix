@@ -27,6 +27,7 @@ let
             hsPkgs.text
           ];
           libs = [ pkgs.yajl ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

@@ -34,6 +34,10 @@ let
           ] ++ (if _flags.emu
             then [ pkgs.cudartemu ]
             else [ pkgs.cudart ]);
+          build-tools = [
+            hsPkgs.c2hs
+            hsPkgs.hsc2hs
+          ];
         };
       };
     }

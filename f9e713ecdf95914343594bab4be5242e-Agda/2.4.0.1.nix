@@ -51,7 +51,7 @@ let
             hsPkgs.equivalence
             hsPkgs.boxes
             hsPkgs.text
-          ] ++ pkgs.lib.optional _flags.epic hsPkgs.epic) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ (if compiler.isGhc
+          ] ++ pkgs.lib.optional _flags.epic hsPkgs.epic) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ (if compiler.isGhc && compiler.version.lt "7.6"
             then [
               hsPkgs.old-time
               hsPkgs.directory
@@ -60,6 +60,10 @@ let
               hsPkgs.time
               hsPkgs.directory
             ]);
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         exes = {
           agda = {

@@ -24,7 +24,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+          ] ++ pkgs.lib.optional (compiler.isGhcjs && compiler.version.ge "0.1") hsPkgs.ghcjs-base;
         };
       };
     }

@@ -33,6 +33,10 @@ let
             hsPkgs.optparse-applicative
             hsPkgs.structural-induction
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           tip = {

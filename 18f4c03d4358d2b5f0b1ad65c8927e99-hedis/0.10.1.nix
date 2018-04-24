@@ -41,7 +41,7 @@ let
             hsPkgs.HTTP
             hsPkgs.errors
             hsPkgs.network-uri
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           hedis-test = {

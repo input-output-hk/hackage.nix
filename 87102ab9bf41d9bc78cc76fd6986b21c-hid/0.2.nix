@@ -32,6 +32,7 @@ let
             pkgconfPkgs.hidapi-hidraw
             pkgconfPkgs.hidapi-libusb
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

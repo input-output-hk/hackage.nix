@@ -67,7 +67,7 @@ let
             then [ hsPkgs.Win32 ]
             else [
               hsPkgs.unix
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.th-lift-instances;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.th-lift-instances;
         };
         tests = {
           doctest = {

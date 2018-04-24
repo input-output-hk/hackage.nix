@@ -25,7 +25,7 @@ let
         number-length = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
         };
         tests = {
           unit-tests = {
@@ -36,7 +36,7 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.test-framework-quickcheck2
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
           };
         };
         benchmarks = {
@@ -45,7 +45,7 @@ let
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.number-length
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
           };
         };
       };

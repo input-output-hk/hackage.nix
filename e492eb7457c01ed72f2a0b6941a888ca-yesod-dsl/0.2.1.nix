@@ -42,6 +42,10 @@ let
             hsPkgs.aeson-pretty
             hsPkgs.hscolour
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           yesod-dsl = {

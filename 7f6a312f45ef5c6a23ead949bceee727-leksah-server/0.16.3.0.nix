@@ -66,7 +66,7 @@ let
             ]
             else [
               hsPkgs.network
-            ])) ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.ghc;
+            ])) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.ghc;
           libs = pkgs.lib.optionals system.isWindows [
             pkgs.kernel32
             pkgs."pango-1.0"
@@ -117,7 +117,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.ghc;
+              ])) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.ghc;
             libs = pkgs.lib.optionals system.isWindows [
               pkgs.kernel32
               pkgs."pango-1.0"
@@ -159,7 +159,7 @@ let
               hsPkgs.directory
               hsPkgs.filepath
               hsPkgs.text
-            ] ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.doctest;
+            ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.doctest;
           };
         };
       };

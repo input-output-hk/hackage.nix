@@ -39,6 +39,9 @@ let
             pkgs."LLVM-3.2svn"
             pkgs."stdc++"
           ];
+          build-tools = [
+            hsPkgs.llvm-config
+          ];
         };
         tests = {
           test = {

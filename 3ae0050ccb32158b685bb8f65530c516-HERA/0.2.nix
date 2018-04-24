@@ -23,6 +23,7 @@ let
         HERA = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.mpfr ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

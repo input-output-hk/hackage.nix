@@ -30,7 +30,7 @@ let
               hsPkgs.directory
               hsPkgs.monad-parallel
               hsPkgs.hsyslog
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
               then [
                 hsPkgs.hdaemonize-buildfix
               ]

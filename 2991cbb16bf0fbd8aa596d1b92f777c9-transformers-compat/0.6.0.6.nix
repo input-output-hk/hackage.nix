@@ -44,7 +44,7 @@ let
                   ] ++ pkgs.lib.optional _flags.mtl hsPkgs.mtl
                   else [
                     hsPkgs.transformers
-                  ])) ++ pkgs.lib.optional (compiler.isGhc || _flags.generic-deriving) hsPkgs.ghc-prim) ++ pkgs.lib.optional (_flags.generic-deriving && (compiler.isGhc && _flags.generic-deriving)) hsPkgs.generic-deriving;
+                  ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" || _flags.generic-deriving) hsPkgs.ghc-prim) ++ pkgs.lib.optional (_flags.generic-deriving && (compiler.isGhc && compiler.version.lt "8.0" && _flags.generic-deriving)) hsPkgs.generic-deriving;
         };
         tests = {
           spec = {
@@ -56,7 +56,7 @@ let
               hsPkgs.tagged
               hsPkgs.transformers
               hsPkgs.transformers-compat
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.generic-deriving;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.generic-deriving;
           };
         };
       };

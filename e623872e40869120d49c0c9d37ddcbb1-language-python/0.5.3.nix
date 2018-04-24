@@ -30,6 +30,10 @@ let
             hsPkgs.monads-tf
             hsPkgs.utf8-string
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
       };
     }

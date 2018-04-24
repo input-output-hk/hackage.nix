@@ -81,7 +81,7 @@ let
             hsPkgs.vector
             hsPkgs.vector-space
             hsPkgs.xml-conduit
-          ] ++ pkgs.lib.optional _flags.opencl hsPkgs.OpenCL) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional _flags.opencl hsPkgs.OpenCL) ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.ghc-prim;
         };
         exes = {
           toysolver = {
@@ -150,7 +150,7 @@ let
               hsPkgs.logic-TPTP
               hsPkgs.text
               hsPkgs.toysolver
-            ] ++ (if compiler.isGhc && _flags.logictptp045
+            ] ++ (if compiler.isGhc && compiler.version.lt "7.9" && _flags.logictptp045
               then [ hsPkgs.logic-TPTP ]
               else [
                 hsPkgs.transformers-compat

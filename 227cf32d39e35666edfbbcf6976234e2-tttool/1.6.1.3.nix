@@ -49,7 +49,7 @@ let
               hsPkgs.spool
               hsPkgs.zlib
               hsPkgs.natural-sort
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ (if _flags.old-locale
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.5") hsPkgs.ghc-prim) ++ (if _flags.old-locale
               then [
                 hsPkgs.time
                 hsPkgs.old-locale

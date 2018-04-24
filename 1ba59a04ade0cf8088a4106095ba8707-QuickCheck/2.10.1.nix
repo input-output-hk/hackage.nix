@@ -27,10 +27,10 @@ let
             hsPkgs.base
             hsPkgs.random
             hsPkgs.containers
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && true) [
             hsPkgs.transformers
             hsPkgs.deepseq
-          ]) ++ pkgs.lib.optional (compiler.isGhc && _flags.templatehaskell) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.tf-random) ++ pkgs.lib.optionals compiler.isUhc [
+          ]) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.templatehaskell) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.tf-random) ++ pkgs.lib.optionals (compiler.isUhc && true) [
             hsPkgs.old-time
             hsPkgs.old-locale
           ];
@@ -46,7 +46,7 @@ let
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
-            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
           };
           test-quickcheck-generators = {
             depends  = [
@@ -58,7 +58,7 @@ let
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
-            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
           };
         };
       };

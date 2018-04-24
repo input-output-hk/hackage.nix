@@ -34,6 +34,7 @@ let
             hsPkgs.syb
             hsPkgs.ghc-prim
           ];
+          build-tools = [ hsPkgs.alex ];
         };
       };
     }

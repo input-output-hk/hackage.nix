@@ -35,7 +35,7 @@ let
               hsPkgs.rank1dynamic
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.constraints;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") hsPkgs.constraints;
           };
         };
       };

@@ -42,6 +42,7 @@ let
               pkgs.open-rte
               pkgs.open-pal
             ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           haskell-mpi-testsuite = {
@@ -63,6 +64,7 @@ let
                 pkgs.open-rte
                 pkgs.open-pal
               ];
+            build-tools = [ hsPkgs.c2hs ];
           };
           haskell-mpi-comprunclean = {
             depends  = pkgs.lib.optionals _flags.test [

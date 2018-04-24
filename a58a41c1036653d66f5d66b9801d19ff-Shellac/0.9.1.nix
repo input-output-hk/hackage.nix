@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.haskell98
             hsPkgs.mtl
-          ] ++ pkgs.lib.optional (!system.isWindows && compiler.isGhc) hsPkgs.unix) ++ pkgs.lib.optional compiler.isGhc hsPkgs.directory;
+          ] ++ pkgs.lib.optional (!system.isWindows && (compiler.isGhc && compiler.version.ge "6.8")) hsPkgs.unix) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.8") hsPkgs.directory;
         };
       };
     }

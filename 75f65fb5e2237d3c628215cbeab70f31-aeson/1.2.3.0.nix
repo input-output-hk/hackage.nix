@@ -52,12 +52,12 @@ let
             ]
             else [
               hsPkgs.bytestring
-            ])) ++ pkgs.lib.optionals (!compiler.isGhc) [
+            ])) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.semigroups
             hsPkgs.transformers
             hsPkgs.transformers-compat
             hsPkgs.fail
-          ]) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+          ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         tests = {
           tests = {
@@ -98,11 +98,11 @@ let
               ]
               else [
                 hsPkgs.bytestring
-              ])) ++ pkgs.lib.optionals (!compiler.isGhc) [
+              ])) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
               hsPkgs.semigroups
               hsPkgs.transformers
               hsPkgs.transformers-compat
-            ]) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats) ++ pkgs.lib.optional compiler.isGhc hsPkgs.hashable-time;
+            ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") hsPkgs.hashable-time;
           };
         };
       };

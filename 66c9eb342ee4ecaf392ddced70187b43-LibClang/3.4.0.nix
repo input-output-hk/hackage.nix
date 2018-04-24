@@ -38,6 +38,7 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.ncurses ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

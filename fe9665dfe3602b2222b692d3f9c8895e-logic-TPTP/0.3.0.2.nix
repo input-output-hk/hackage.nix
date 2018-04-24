@@ -31,6 +31,10 @@ let
             hsPkgs.utf8-prelude
             hsPkgs.mtl
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

@@ -29,6 +29,7 @@ let
             hsPkgs.bindings-DSL
           ];
           libs = [ pkgs."stdc++" ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           yoga-example = {

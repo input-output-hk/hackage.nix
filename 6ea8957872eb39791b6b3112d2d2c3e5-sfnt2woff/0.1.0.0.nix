@@ -26,6 +26,7 @@ let
             hsPkgs.bytestring
           ];
           libs = [ pkgs.z ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           sfnt2woff = {

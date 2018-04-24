@@ -34,6 +34,10 @@ let
             hsPkgs.th-lift
             hsPkgs.array
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

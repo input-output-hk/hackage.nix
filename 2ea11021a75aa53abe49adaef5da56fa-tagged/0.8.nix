@@ -23,7 +23,7 @@ let
         tagged = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.template-haskell;
+          ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.template-haskell;
         };
       };
     }

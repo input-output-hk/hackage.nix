@@ -46,7 +46,7 @@ let
             hsPkgs.transformers
             hsPkgs.unordered-containers
             hsPkgs.utf8-string
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.fail;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.fail;
         };
         tests = {
           doctests = {

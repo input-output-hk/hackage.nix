@@ -34,7 +34,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.bytestring
             hsPkgs.template-haskell
-          ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
         };
         exes = {
           todo = {
@@ -58,7 +58,7 @@ let
               hsPkgs.react-flux
               hsPkgs.time
               hsPkgs.deepseq
-            ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+            ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
           test-client-14 = {
             depends  = [
@@ -66,7 +66,7 @@ let
               hsPkgs.react-flux
               hsPkgs.time
               hsPkgs.deepseq
-            ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+            ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
           route-example = {
             depends  = pkgs.lib.optionals _flags.example [
@@ -79,7 +79,7 @@ let
               hsPkgs.transformers
               hsPkgs.bytestring
               hsPkgs.deepseq
-            ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+            ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
         };
       };

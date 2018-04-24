@@ -28,7 +28,7 @@ let
             hsPkgs.time
             hsPkgs.bytestring
             hsPkgs.relational-query
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc-prim;
         };
       };
     }

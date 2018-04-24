@@ -31,6 +31,11 @@ let
             pkgs.bfd
             pkgs.opcodes
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+            hsPkgs.hsc2hs
+          ];
         };
       };
     }

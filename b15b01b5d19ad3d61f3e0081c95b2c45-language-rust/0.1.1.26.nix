@@ -30,10 +30,14 @@ let
             hsPkgs.transformers
             hsPkgs.array
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optionals _flags.usebytestrings [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups) ++ pkgs.lib.optionals _flags.usebytestrings [
             hsPkgs.utf8-string
             hsPkgs.bytestring
           ]) ++ pkgs.lib.optional _flags.enablequasiquotes hsPkgs.template-haskell;
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         tests = {
           unit-tests = {
@@ -61,7 +65,7 @@ let
               hsPkgs.language-rust
               hsPkgs.base
               hsPkgs.prettyprinter
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
           };
         };
         benchmarks = {

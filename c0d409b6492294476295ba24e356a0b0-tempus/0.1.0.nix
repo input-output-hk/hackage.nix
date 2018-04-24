@@ -34,6 +34,7 @@ let
               hsPkgs.haskeline
               hsPkgs.executable-path
             ] ++ [ hsPkgs.base ];
+            build-tools = [ hsPkgs.happy ];
           };
         };
       };

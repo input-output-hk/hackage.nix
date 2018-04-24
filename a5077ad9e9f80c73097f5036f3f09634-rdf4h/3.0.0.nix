@@ -39,7 +39,7 @@ let
             hsPkgs.text-binary
             hsPkgs.utf8-string
             hsPkgs.hgal
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ [
             hsPkgs.network-uri
             hsPkgs.network
           ];
@@ -51,7 +51,7 @@ let
               hsPkgs.rdf4h
               hsPkgs.containers
               hsPkgs.text
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ [
               hsPkgs.network-uri
               hsPkgs.network
             ];
@@ -72,7 +72,7 @@ let
               hsPkgs.text
               hsPkgs.directory
               hsPkgs.safe
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ [
               hsPkgs.network-uri
               hsPkgs.network
             ];

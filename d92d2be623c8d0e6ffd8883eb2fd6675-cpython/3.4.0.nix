@@ -29,6 +29,7 @@ let
           pkgconfig = [
             pkgconfPkgs."python-3.4"
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

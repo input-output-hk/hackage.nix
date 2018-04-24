@@ -30,7 +30,7 @@ let
             hsPkgs.mtl
             hsPkgs.template-haskell
             hsPkgs.th-orphans
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.transformers;
         };
         tests = {
           test-fixture-test-suite = {

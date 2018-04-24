@@ -24,7 +24,7 @@ let
           depends  = [
             hsPkgs.transformers
             hsPkgs.containers
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && compiler.version.ge "0.1"
             then [
               hsPkgs.base
               hsPkgs.mtl

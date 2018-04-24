@@ -33,6 +33,10 @@ let
             hsPkgs.bytestring
             hsPkgs.fgl
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           fortran-src = {

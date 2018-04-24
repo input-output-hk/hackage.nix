@@ -24,6 +24,7 @@ let
       components = {
         hsyslog = {
           depends  = [ hsPkgs.base ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           hsyslog-example = {

@@ -26,6 +26,7 @@ let
             hsPkgs.array
           ];
           libs = [ pkgs.RNA pkgs.gomp ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

@@ -27,6 +27,7 @@ let
             hsPkgs.unix
           ];
           libs = [ pkgs.pq ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

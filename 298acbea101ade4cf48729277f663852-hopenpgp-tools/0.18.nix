@@ -44,6 +44,10 @@ let
               hsPkgs.wl-pprint-extras
               hsPkgs.yaml
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
           hokey = {
             depends  = [
@@ -106,6 +110,10 @@ let
               hsPkgs.unordered-containers
               hsPkgs.wl-pprint-extras
               hsPkgs.yaml
+            ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
             ];
           };
         };

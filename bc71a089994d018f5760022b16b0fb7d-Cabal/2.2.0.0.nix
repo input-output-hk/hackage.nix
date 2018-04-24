@@ -49,7 +49,7 @@ let
               hsPkgs.process
             ])) ++ [
             hsPkgs.binary
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ (if system.isWindows
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ (if system.isWindows
             then [ hsPkgs.Win32 ]
             else [ hsPkgs.unix ]);
         };
@@ -85,7 +85,7 @@ let
               hsPkgs.tasty-golden
               hsPkgs.Diff
               hsPkgs.Cabal
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tree-diff;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") hsPkgs.tree-diff;
           };
           check-tests = {
             depends  = [
@@ -120,7 +120,7 @@ let
               hsPkgs.base-orphans
               hsPkgs.optparse-applicative
               hsPkgs.tar
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tree-diff;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") hsPkgs.tree-diff;
           };
         };
       };

@@ -28,7 +28,7 @@ let
             hsPkgs.array
             hsPkgs.base
             hsPkgs.bytestring
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.ghc-prim
               hsPkgs.base
@@ -36,11 +36,11 @@ let
             ]
             else [
               hsPkgs.extensible-exceptions
-            ])) ++ (if compiler.isGhc && _flags.integer-simple
+            ])) ++ (if compiler.isGhc && compiler.version.ge "6.11" && _flags.integer-simple
             then [ hsPkgs.integer-simple ]
             else [
               hsPkgs.integer-gmp
-            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.integer;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9" && (compiler.isGhc && compiler.version.lt "6.11")) hsPkgs.integer;
         };
         tests = {
           tests = {
@@ -57,11 +57,11 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.test-framework-quickcheck2
-            ] ++ (if compiler.isGhc && _flags.integer-simple
+            ] ++ (if compiler.isGhc && compiler.version.ge "6.11" && _flags.integer-simple
               then [ hsPkgs.integer-simple ]
               else [
                 hsPkgs.integer-gmp
-              ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.integer;
+              ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9" && (compiler.isGhc && compiler.version.lt "6.11")) hsPkgs.integer;
           };
         };
       };

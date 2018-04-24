@@ -34,7 +34,7 @@ let
             hsPkgs.lens
             hsPkgs.template-haskell
             hsPkgs.mixed-types-num
-          ] ++ (if _flags.mpfr && compiler.isGhc
+          ] ++ (if _flags.mpfr && (compiler.isGhc && compiler.version.ge "7.10")
             then if _flags.mpfrrounded
               then [ hsPkgs.rounded ]
               else [

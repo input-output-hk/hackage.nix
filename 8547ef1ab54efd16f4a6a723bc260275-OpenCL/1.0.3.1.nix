@@ -28,6 +28,7 @@ let
           ];
           libs = pkgs.lib.optional system.isLinux pkgs.OpenCL;
           frameworks = pkgs.lib.optional system.isLinux pkgs.OpenCL ++ pkgs.lib.optional system.isOsx pkgs.OpenCL;
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           tests = {

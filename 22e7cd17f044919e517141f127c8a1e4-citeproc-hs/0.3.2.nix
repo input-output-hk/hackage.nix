@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ pkgs.lib.optionals _flags.network [
             hsPkgs.network
             hsPkgs.HTTP
-          ]) ++ (if compiler.isGhc
+          ]) ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.base
               hsPkgs.syb

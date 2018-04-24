@@ -26,6 +26,7 @@ let
             hsPkgs.cereal
             hsPkgs.base
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           heatshrink-test = {

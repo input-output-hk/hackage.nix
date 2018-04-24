@@ -31,7 +31,7 @@ let
             hsPkgs.deepseq
             hsPkgs.unsafe
             hsPkgs.QuickCheck
-          ] ++ (if compiler.isJhc
+          ] ++ (if compiler.isJhc && true
             then [
               hsPkgs.statethread
               hsPkgs.base

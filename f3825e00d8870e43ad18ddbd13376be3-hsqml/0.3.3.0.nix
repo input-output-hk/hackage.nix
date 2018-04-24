@@ -58,6 +58,7 @@ let
             pkgconfPkgs.Qt5Qml
             pkgconfPkgs.Qt5Quick
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           hsqml-test1 = {

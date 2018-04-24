@@ -25,6 +25,10 @@ let
             hsPkgs.base
             hsPkgs.filepath
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         exes = {
           c2hs = {

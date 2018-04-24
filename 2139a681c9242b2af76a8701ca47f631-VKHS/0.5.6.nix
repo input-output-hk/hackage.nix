@@ -50,6 +50,7 @@ let
         exes = {
           vknews = {
             libs = [ pkgs.curl ];
+            build-tools = [ hsPkgs.hsc2hs ];
           };
           vkq = {};
         };

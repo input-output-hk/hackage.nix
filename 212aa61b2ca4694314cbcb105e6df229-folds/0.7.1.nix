@@ -43,7 +43,7 @@ let
             hsPkgs.transformers
             hsPkgs.unordered-containers
             hsPkgs.vector
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.11") hsPkgs.semigroups;
         };
         tests = {
           hlint = {
@@ -53,7 +53,7 @@ let
             ];
           };
           doctests = {
-            depends  = pkgs.lib.optionals (!(!_flags.test-doctests || compiler.isGhc)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.directory

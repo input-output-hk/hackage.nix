@@ -47,7 +47,7 @@ let
             hsPkgs.time
             hsPkgs.utf8-string
             hsPkgs.wizards
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty-show;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.pretty-show;
         };
         exes = {
           hledger = {
@@ -75,7 +75,7 @@ let
               hsPkgs.time
               hsPkgs.utf8-string
               hsPkgs.wizards
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty-show;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.pretty-show;
           };
         };
         tests = {
@@ -108,7 +108,7 @@ let
               hsPkgs.time
               hsPkgs.transformers
               hsPkgs.wizards
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty-show;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.pretty-show;
           };
         };
       };

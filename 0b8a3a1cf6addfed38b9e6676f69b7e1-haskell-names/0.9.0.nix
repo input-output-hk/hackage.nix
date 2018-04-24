@@ -33,7 +33,7 @@ let
             hsPkgs.bytestring
             hsPkgs.data-lens-light
             hsPkgs.traverse-with-class
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.8") hsPkgs.tagged;
         };
         tests = {
           test = {

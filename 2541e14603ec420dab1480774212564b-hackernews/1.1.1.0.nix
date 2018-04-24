@@ -25,7 +25,7 @@ let
             hsPkgs.servant
             hsPkgs.QuickCheck
             hsPkgs.quickcheck-instances
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [
               hsPkgs.aeson
               hsPkgs.attoparsec
@@ -46,7 +46,7 @@ let
         };
         exes = {
           example = {
-            depends  = if compiler.isGhcjs
+            depends  = if compiler.isGhcjs && true
               then [
                 hsPkgs.base
                 hsPkgs.hackernews
@@ -60,7 +60,7 @@ let
               ];
           };
           ghcjs-tests = {
-            depends  = pkgs.lib.optionals compiler.isGhcjs [
+            depends  = pkgs.lib.optionals (compiler.isGhcjs && true) [
               hsPkgs.base
               hsPkgs.hackernews
               hsPkgs.ghcjs-base

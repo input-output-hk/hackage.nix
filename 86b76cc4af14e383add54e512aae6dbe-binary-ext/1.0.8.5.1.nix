@@ -27,7 +27,7 @@ let
             hsPkgs.containers
             hsPkgs.array
             hsPkgs.binary
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
         };
         tests = {
           qc = {
@@ -41,7 +41,7 @@ let
               hsPkgs.QuickCheck
               hsPkgs.array
               hsPkgs.containers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           read-write-file = {
             depends  = [
@@ -54,7 +54,7 @@ let
               hsPkgs.HUnit
               hsPkgs.array
               hsPkgs.containers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
         };
       };

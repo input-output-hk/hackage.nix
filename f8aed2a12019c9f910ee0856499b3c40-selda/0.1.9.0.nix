@@ -33,7 +33,7 @@ let
             hsPkgs.text
             hsPkgs.time
             hsPkgs.unordered-containers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers) ++ pkgs.lib.optional (!_flags.haste && _flags.localcache) hsPkgs.psqueues;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.11") hsPkgs.transformers) ++ pkgs.lib.optional (!_flags.haste && _flags.localcache) hsPkgs.psqueues;
         };
       };
     }

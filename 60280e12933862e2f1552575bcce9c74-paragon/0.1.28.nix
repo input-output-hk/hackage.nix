@@ -39,6 +39,7 @@ let
           ] ++ (if _flags.base4
             then [ hsPkgs.base hsPkgs.syb ]
             else [ hsPkgs.base ]);
+          build-tools = [ hsPkgs.alex ];
         };
         exes = {
           parac = {
@@ -58,6 +59,7 @@ let
             ] ++ (if _flags.base4
               then [ hsPkgs.base hsPkgs.syb ]
               else [ hsPkgs.base ]);
+            build-tools = [ hsPkgs.alex ];
           };
         };
       };

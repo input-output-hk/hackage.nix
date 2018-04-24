@@ -30,7 +30,7 @@ let
             hsPkgs.mtl
             hsPkgs.HDBC
             hsPkgs.utf8-string
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.base;
           libs = [ pkgs.sqlite3 ];
         };
         exes = {

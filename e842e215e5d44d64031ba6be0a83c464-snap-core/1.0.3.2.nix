@@ -56,7 +56,7 @@ let
             ]
             else [
               hsPkgs.old-locale
-            ])) ++ pkgs.lib.optionals (!compiler.isGhc) [
+            ])) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.fail
             hsPkgs.semigroups
           ]) ++ [
@@ -107,7 +107,7 @@ let
               ])) ++ [
               hsPkgs.network-uri
               hsPkgs.network
-            ]) ++ pkgs.lib.optionals (!compiler.isGhc) [
+            ]) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
               hsPkgs.fail
               hsPkgs.semigroups
             ];

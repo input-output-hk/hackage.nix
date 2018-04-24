@@ -55,7 +55,7 @@ let
             hsPkgs.utf8-string
             hsPkgs.vector
             hsPkgs.xml-conduit
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) hsPkgs.ghc-prim;
         };
         exes = {
           GetObject = {

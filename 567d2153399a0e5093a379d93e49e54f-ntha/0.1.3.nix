@@ -30,6 +30,10 @@ let
             hsPkgs.z3
             hsPkgs.mtl
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         exes = {
           ntha = {

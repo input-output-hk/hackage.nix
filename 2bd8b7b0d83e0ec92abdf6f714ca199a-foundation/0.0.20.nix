@@ -58,7 +58,7 @@ let
         };
         benchmarks = {
           bench = {
-            depends  = pkgs.lib.optionals (!(_flags.minimal-deps || compiler.isGhc)) ([
+            depends  = pkgs.lib.optionals (!(_flags.minimal-deps || compiler.isGhc && compiler.version.lt "7.10")) ([
               hsPkgs.base
               hsPkgs.gauge
               hsPkgs.basement

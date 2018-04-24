@@ -30,7 +30,7 @@ let
             hsPkgs.bytestring
             hsPkgs.network
             hsPkgs.time
-          ] ++ (if _flags.fast-bignum && compiler.isGhc
+          ] ++ (if _flags.fast-bignum && (compiler.isGhc && compiler.version.ge "6.11")
             then [ hsPkgs.integer-gmp ]
             else [
               hsPkgs.ghc-prim

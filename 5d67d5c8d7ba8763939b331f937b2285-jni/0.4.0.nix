@@ -32,6 +32,7 @@ let
             hsPkgs.thread-local-storage
           ] ++ [ hsPkgs.inline-c ];
           libs = [ pkgs.jvm ];
+          build-tools = [ hsPkgs.cpphs ];
         };
       };
     }

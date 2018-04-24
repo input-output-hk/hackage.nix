@@ -34,6 +34,7 @@ let
             pkgconfPkgs.libaosd
             pkgconfPkgs.libaosd-text
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           test-aosd = {

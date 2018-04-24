@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.deepseq
             hsPkgs.hashable
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.10")) [
             hsPkgs.nats
             hsPkgs.void
           ];

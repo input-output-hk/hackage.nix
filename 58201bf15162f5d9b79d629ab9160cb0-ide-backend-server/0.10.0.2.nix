@@ -47,15 +47,15 @@ let
               hsPkgs.file-embed
               hsPkgs.ide-backend-common
               hsPkgs.network
-            ] ++ pkgs.lib.optional system.isWindows hsPkgs.unix-compat) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals compiler.isGhc [
+            ] ++ pkgs.lib.optional system.isWindows hsPkgs.unix-compat) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals (compiler.isGhc && false) [
               hsPkgs.old-time
               hsPkgs.haddock
               hsPkgs.Cabal
-            ]) ++ pkgs.lib.optionals compiler.isGhc [
+            ]) ++ pkgs.lib.optionals (compiler.isGhc && false) [
               hsPkgs.time
               hsPkgs.haddock-api
               hsPkgs.Cabal
-            ]) ++ pkgs.lib.optionals (compiler.isGhc || compiler.isGhc) [
+            ]) ++ pkgs.lib.optionals (compiler.isGhc && false || compiler.isGhc && false) [
               hsPkgs.time
               hsPkgs.haddock-api
               hsPkgs.Cabal

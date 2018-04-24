@@ -51,6 +51,10 @@ let
             hsPkgs.transformers
             hsPkgs.utf8-string
           ] ++ pkgs.lib.optional _flags.self-contained hsPkgs.heredoc;
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           cryptol = {

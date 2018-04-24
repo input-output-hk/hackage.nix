@@ -35,6 +35,10 @@ let
               hsPkgs.strict
               hsPkgs.Cabal
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

@@ -61,7 +61,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.vector
             hsPkgs.void
-          ] ++ pkgs.lib.optional (!system.isI386 && !system.isX86_64 && !system.isIa64 && !compiler.isGhcjs) hsPkgs.base;
+          ] ++ pkgs.lib.optional (!system.isI386 && !system.isX86_64 && !system.isIa64 && !(compiler.isGhcjs && true)) hsPkgs.base;
         };
         tests = {
           store-test = {

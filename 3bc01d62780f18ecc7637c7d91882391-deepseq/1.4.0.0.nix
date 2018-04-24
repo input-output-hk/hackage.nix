@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.base
             hsPkgs.array
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") hsPkgs.ghc-prim;
         };
         tests = {
           deepseq-generics-tests = {

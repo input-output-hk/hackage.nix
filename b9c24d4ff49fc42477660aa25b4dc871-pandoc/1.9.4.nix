@@ -59,7 +59,7 @@ let
             ]
             else [
               hsPkgs.blaze-html
-            ])) ++ (if compiler.isGhc
+            ])) ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [ hsPkgs.base hsPkgs.syb ]
             else [ hsPkgs.base ]);
         };
@@ -98,7 +98,7 @@ let
               ]
               else [
                 hsPkgs.blaze-html
-              ])) ++ (if compiler.isGhc
+              ])) ++ (if compiler.isGhc && compiler.version.ge "6.10"
               then [ hsPkgs.base hsPkgs.syb ]
               else [ hsPkgs.base ]);
           };
@@ -136,7 +136,7 @@ let
               ]
               else [
                 hsPkgs.blaze-html
-              ])) ++ (if compiler.isGhc
+              ])) ++ (if compiler.isGhc && compiler.version.ge "6.10"
               then [ hsPkgs.base hsPkgs.syb ]
               else [
                 hsPkgs.base

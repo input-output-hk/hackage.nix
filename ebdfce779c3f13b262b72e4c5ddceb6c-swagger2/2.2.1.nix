@@ -43,7 +43,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.vector
             hsPkgs.uuid-types
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           spec = {
@@ -67,7 +67,7 @@ let
               hsPkgs.unordered-containers
               hsPkgs.vector
               hsPkgs.lens
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
           doctests = {
             depends  = [

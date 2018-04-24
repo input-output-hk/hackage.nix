@@ -54,7 +54,7 @@ let
           ]) ++ pkgs.lib.optionals _flags.with_hint [
             hsPkgs.hint
             hsPkgs.network
-          ]) ++ pkgs.lib.optional _flags.with_mpd hsPkgs.libmpd) ++ pkgs.lib.optionals (compiler.isGhc && _flags.with_template_haskell && _flags.with_hlist) [
+          ]) ++ pkgs.lib.optional _flags.with_mpd hsPkgs.libmpd) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.12.1" && _flags.with_template_haskell && _flags.with_hlist) [
             hsPkgs.template-haskell
             hsPkgs.HList
           ];

@@ -45,15 +45,15 @@ let
               hsPkgs.zlib
               hsPkgs.file-embed
               hsPkgs.ide-backend-common
-            ] ++ pkgs.lib.optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals (compiler.isGhc && false) [
               hsPkgs.old-time
               hsPkgs.haddock
               hsPkgs.Cabal
-            ]) ++ pkgs.lib.optionals compiler.isGhc [
+            ]) ++ pkgs.lib.optionals (compiler.isGhc && false) [
               hsPkgs.time
               hsPkgs.haddock-api
               hsPkgs.Cabal
-            ]) ++ pkgs.lib.optionals (compiler.isGhc || compiler.isGhc) [
+            ]) ++ pkgs.lib.optionals (compiler.isGhc && false || compiler.isGhc && false) [
               hsPkgs.time
               hsPkgs.haddock-api
               hsPkgs.Cabal

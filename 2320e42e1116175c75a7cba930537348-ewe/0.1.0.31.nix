@@ -29,6 +29,10 @@ let
               hsPkgs.containers
               hsPkgs.array
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

@@ -78,6 +78,7 @@ let
             hsPkgs.zlib
             hsPkgs.deepseq
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
+          build-tools = [ hsPkgs.cpphs ];
         };
         exes = {
           stack = {

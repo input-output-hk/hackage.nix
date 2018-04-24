@@ -42,7 +42,7 @@ let
             hsPkgs.template-haskell
             hsPkgs.deepseq
             hsPkgs.word-wrap
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         exes = {
           brick-readme-demo = {

@@ -36,6 +36,10 @@ let
             pkgs.dddmp
             pkgs.m
           ];
+          build-tools = [
+            hsPkgs.c2hs
+            hsPkgs.hsc2hs
+          ];
         };
       };
     }

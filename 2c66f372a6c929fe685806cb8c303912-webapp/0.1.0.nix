@@ -56,6 +56,11 @@ let
             hsPkgs.directory
             hsPkgs.optparse-applicative
           ];
+          build-tools = [
+            hsPkgs.hsc2hs
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         exes = {
           example = {

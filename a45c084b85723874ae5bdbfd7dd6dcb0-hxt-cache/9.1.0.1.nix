@@ -33,7 +33,7 @@ let
             hsPkgs.time
             hsPkgs.unix
             hsPkgs.SHA
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.10") [
             hsPkgs.old-locale
             hsPkgs.time
           ];

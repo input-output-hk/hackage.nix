@@ -37,7 +37,7 @@ let
             hsPkgs.text
             hsPkgs.unordered-containers
             hsPkgs.vector
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           tests = {
@@ -50,7 +50,7 @@ let
               hsPkgs.megaparsec
               hsPkgs.stache
               hsPkgs.text
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
           mustache-spec = {
             depends  = [

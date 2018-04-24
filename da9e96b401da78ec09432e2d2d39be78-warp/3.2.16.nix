@@ -48,7 +48,7 @@ let
             hsPkgs.word8
             hsPkgs.hashable
             hsPkgs.http-date
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ (if _flags.network-bytestring
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups) ++ (if _flags.network-bytestring
             then [
               hsPkgs.network
               hsPkgs.network-bytestring
@@ -101,7 +101,7 @@ let
               hsPkgs.word8
               hsPkgs.hashable
               hsPkgs.http-date
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) hsPkgs.unix;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups) ++ pkgs.lib.optional ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) hsPkgs.unix;
           };
         };
         benchmarks = {
@@ -118,7 +118,7 @@ let
               hsPkgs.network
               hsPkgs.network
               hsPkgs.unix-compat
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) hsPkgs.unix;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups) ++ pkgs.lib.optional ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) hsPkgs.unix;
           };
         };
       };

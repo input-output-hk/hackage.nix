@@ -28,6 +28,7 @@ let
             hsPkgs.ieee754
             hsPkgs.bindings-DSL
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           yoga-example = {

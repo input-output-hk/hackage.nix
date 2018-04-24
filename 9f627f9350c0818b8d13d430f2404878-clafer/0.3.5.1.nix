@@ -47,6 +47,7 @@ let
             hsPkgs.test-framework-quickcheck2
             hsPkgs.test-framework-th
           ];
+          build-tools = [ hsPkgs.ghc ];
         };
         exes = {
           clafer = {
@@ -77,6 +78,7 @@ let
               hsPkgs.test-framework-th
               hsPkgs.clafer
             ];
+            build-tools = [ hsPkgs.ghc ];
           };
         };
         tests = {
@@ -108,6 +110,7 @@ let
               hsPkgs.test-framework-th
               hsPkgs.clafer
             ];
+            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

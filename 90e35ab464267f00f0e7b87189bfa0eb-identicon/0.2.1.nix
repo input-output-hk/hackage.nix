@@ -27,7 +27,7 @@ let
             hsPkgs.base
             hsPkgs.JuicyPixels
             hsPkgs.bytestring
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           tests = {
@@ -38,7 +38,7 @@ let
               hsPkgs.bytestring
               hsPkgs.hspec
               hsPkgs.identicon
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
         benchmarks = {

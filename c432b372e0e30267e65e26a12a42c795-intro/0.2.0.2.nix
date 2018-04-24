@@ -38,7 +38,7 @@ let
             hsPkgs.transformers
             hsPkgs.unordered-containers
             hsPkgs.writer-cps-mtl
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
           test = {
@@ -71,7 +71,7 @@ let
               hsPkgs.megaparsec
               hsPkgs.profunctors
               hsPkgs.quickcheck-instances
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
           };
         };
       };

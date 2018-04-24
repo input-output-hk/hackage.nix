@@ -36,7 +36,7 @@ let
             hsPkgs.text
             hsPkgs.tf-random
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         exes = {
           mida = {
@@ -64,7 +64,7 @@ let
               hsPkgs.tf-random
               hsPkgs.transformers
               hsPkgs.yaml
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
         tests = {

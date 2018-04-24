@@ -26,7 +26,7 @@ let
         explicit-exception = {
           depends  = [
             hsPkgs.transformers
-          ] ++ (if compiler.isJhc
+          ] ++ (if compiler.isJhc && true
             then [
               hsPkgs.applicative
               hsPkgs.base

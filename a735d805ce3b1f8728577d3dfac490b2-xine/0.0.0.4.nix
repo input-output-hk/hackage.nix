@@ -29,6 +29,7 @@ let
           pkgconfig = [
             pkgconfPkgs.libxine
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

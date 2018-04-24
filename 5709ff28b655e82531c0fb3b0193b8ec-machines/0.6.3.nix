@@ -35,7 +35,7 @@ let
             hsPkgs.transformers-compat
             hsPkgs.mtl
             hsPkgs.void
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.fail;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.fail;
         };
         tests = {
           doctests = {

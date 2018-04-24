@@ -25,6 +25,7 @@ let
             hsPkgs.base
             hsPkgs.time
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

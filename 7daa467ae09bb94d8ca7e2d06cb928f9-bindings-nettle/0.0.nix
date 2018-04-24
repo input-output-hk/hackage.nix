@@ -25,6 +25,7 @@ let
           pkgconfig = [
             pkgconfPkgs.nettle
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

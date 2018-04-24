@@ -30,7 +30,7 @@ let
             hsPkgs.yesod
             hsPkgs.wai
             hsPkgs.word8
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.iproute;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.iproute;
         };
         tests = {
           spec = {

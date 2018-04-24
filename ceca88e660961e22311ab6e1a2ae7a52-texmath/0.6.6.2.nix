@@ -29,7 +29,7 @@ let
             hsPkgs.parsec
             hsPkgs.containers
             hsPkgs.pandoc-types
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [ hsPkgs.base hsPkgs.syb ]
             else [ hsPkgs.base ]);
         };

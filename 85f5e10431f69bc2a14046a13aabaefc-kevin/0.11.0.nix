@@ -40,10 +40,10 @@ let
               hsPkgs.time
               hsPkgs.tls
               hsPkgs.tls-extra
-            ] ++ pkgs.lib.optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.7") [
               hsPkgs.exceptions
               hsPkgs.lens
-            ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.MonadCatchIO-transformers;
+            ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.MonadCatchIO-transformers;
           };
         };
       };

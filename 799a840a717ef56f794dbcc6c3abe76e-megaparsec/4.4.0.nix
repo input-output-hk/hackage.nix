@@ -29,7 +29,7 @@ let
             hsPkgs.mtl
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];

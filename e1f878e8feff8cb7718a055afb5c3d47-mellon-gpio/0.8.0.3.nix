@@ -27,7 +27,7 @@ let
             hsPkgs.base
             hsPkgs.hpio
             hsPkgs.mellon-core
-          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];

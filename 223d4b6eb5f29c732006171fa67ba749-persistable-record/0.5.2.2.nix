@@ -30,7 +30,7 @@ let
             hsPkgs.transformers
             hsPkgs.dlist
             hsPkgs.names-th
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc-prim;
         };
         tests = {
           nested = {
@@ -38,7 +38,7 @@ let
               hsPkgs.base
               hsPkgs.quickcheck-simple
               hsPkgs.persistable-record
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc-prim;
           };
         };
       };

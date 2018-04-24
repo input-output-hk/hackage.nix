@@ -32,7 +32,7 @@ let
             hsPkgs.pandoc
             hsPkgs.pandoc-types
             hsPkgs.text
-          ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ (if compiler.isGhc
+          ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ (if compiler.isGhc && compiler.version.lt "7.6"
             then [
               hsPkgs.old-time
               hsPkgs.directory

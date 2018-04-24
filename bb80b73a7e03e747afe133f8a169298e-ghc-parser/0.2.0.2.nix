@@ -25,6 +25,10 @@ let
             hsPkgs.base
             hsPkgs.ghc
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.cpphs
+          ];
         };
       };
     }

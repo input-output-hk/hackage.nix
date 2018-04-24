@@ -26,6 +26,7 @@ let
             hsPkgs.bytestring
           ];
           libs = [ pkgs.netsnmp ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           tests = {

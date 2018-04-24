@@ -31,6 +31,10 @@ let
             hsPkgs.mtl
             hsPkgs.pointed
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

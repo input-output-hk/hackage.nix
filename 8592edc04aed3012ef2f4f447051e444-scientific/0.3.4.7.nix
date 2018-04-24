@@ -33,7 +33,7 @@ let
             hsPkgs.vector
             hsPkgs.containers
             hsPkgs.binary
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.bytestring-builder) ++ (if _flags.integer-simple
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.bytestring-builder) ++ (if _flags.integer-simple
             then [ hsPkgs.integer-simple ]
             else [ hsPkgs.integer-gmp ]);
         };
@@ -52,7 +52,7 @@ let
               hsPkgs.smallcheck
               hsPkgs.QuickCheck
               hsPkgs.text
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.bytestring-builder;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.bytestring-builder;
           };
         };
         benchmarks = {

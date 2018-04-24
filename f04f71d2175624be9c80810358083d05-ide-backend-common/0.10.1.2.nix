@@ -48,7 +48,7 @@ let
             hsPkgs.network
             hsPkgs.process
             hsPkgs.base64-bytestring
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ (if system.isWindows
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ (if system.isWindows
             then [
               hsPkgs.Win32
               hsPkgs.time

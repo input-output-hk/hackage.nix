@@ -29,7 +29,7 @@ let
             hsPkgs.transient-universe
             hsPkgs.mtl
             hsPkgs.ghcjs-perch
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && compiler.version.ge "0.1"
             then [ hsPkgs.ghcjs-base ]
             else [
               hsPkgs.bytestring

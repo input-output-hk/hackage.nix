@@ -59,7 +59,7 @@ let
             hsPkgs.vector
             hsPkgs.vector-algorithms
             hsPkgs.xmlhtml
-          ] ++ (if compiler.isGhc && compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.0" && (compiler.isGhc && compiler.version.lt "7.4")
             then [ hsPkgs.aeson-native ]
             else [
               hsPkgs.aeson

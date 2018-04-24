@@ -26,6 +26,10 @@ let
             hsPkgs.array
             hsPkgs.monadLib
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

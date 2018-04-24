@@ -45,14 +45,14 @@ let
             hsPkgs.setenv
             hsPkgs.split
             hsPkgs.yaml
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.debug hsPkgs.pretty-show) ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ (if _flags.unicode_collation
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.debug hsPkgs.pretty-show) ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ (if _flags.unicode_collation
             then [
               hsPkgs.text
               hsPkgs.text-icu
             ]
             else [
               hsPkgs.rfc5051
-            ])) ++ (if compiler.isGhc
+            ])) ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.base
               hsPkgs.syb
@@ -61,6 +61,9 @@ let
               hsPkgs.time
             ]
             else [ hsPkgs.base ]);
+          build-tools = pkgs.lib.optionals _flags.embed_data_files ([
+            hsPkgs.hsb2hs
+          ] ++ pkgs.lib.optional system.isOsx hsPkgs.cpphs);
         };
         exes = {
           pandoc-citeproc = {

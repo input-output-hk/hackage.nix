@@ -42,6 +42,10 @@ let
               hsPkgs.semigroups
             ]
             else [ hsPkgs.base ]);
+          build-tools = [
+            hsPkgs.hsc2hs
+            hsPkgs.llvm-config
+          ];
         };
         tests = {
           test = {

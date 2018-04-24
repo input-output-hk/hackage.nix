@@ -44,6 +44,7 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.tensorflow ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           FFITest = {

@@ -57,7 +57,7 @@ let
             hsPkgs.fgl
             hsPkgs.fgl-visualize
             hsPkgs.dotgen
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.located-base) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.ascii-progress;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.2") hsPkgs.located-base) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.ascii-progress;
         };
         exes = {
           fixpoint = {

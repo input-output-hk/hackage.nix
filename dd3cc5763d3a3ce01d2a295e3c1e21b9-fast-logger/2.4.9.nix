@@ -30,7 +30,7 @@ let
             hsPkgs.directory
             hsPkgs.filepath
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.bytestring-builder) ++ (if system.isWindows
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.bytestring-builder) ++ (if system.isWindows
             then [
               hsPkgs.time
               hsPkgs.Win32

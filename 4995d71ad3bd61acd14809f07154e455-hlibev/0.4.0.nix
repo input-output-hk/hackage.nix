@@ -26,6 +26,7 @@ let
             hsPkgs.network
           ];
           libs = [ pkgs.ev ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

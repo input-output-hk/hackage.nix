@@ -42,7 +42,7 @@ let
               hsPkgs.lens
               hsPkgs.mtl
               hsPkgs.parsec
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim);
+            ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) hsPkgs.ghc-prim);
           };
           ersatz-toysat-sudoku = {
             depends  = pkgs.lib.optionals _flags.examples ([
@@ -51,7 +51,7 @@ let
               hsPkgs.ersatz
               hsPkgs.ersatz-toysat
               hsPkgs.mtl
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim);
+            ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) hsPkgs.ghc-prim);
           };
         };
       };

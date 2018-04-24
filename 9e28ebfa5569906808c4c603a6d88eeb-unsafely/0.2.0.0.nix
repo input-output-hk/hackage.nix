@@ -30,13 +30,13 @@ let
             depends  = [
               hsPkgs.base
               hsPkgs.unsafely
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
           };
           safe-unsafe = {
             depends  = [
               hsPkgs.base
               hsPkgs.unsafely
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
           };
         };
       };

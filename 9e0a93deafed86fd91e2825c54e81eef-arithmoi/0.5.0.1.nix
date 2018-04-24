@@ -33,7 +33,7 @@ let
             hsPkgs.mtl
             hsPkgs.exact-pi
             hsPkgs.integer-logarithms
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats) ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
           spec = {
@@ -49,7 +49,7 @@ let
               hsPkgs.smallcheck
               hsPkgs.transformers
               hsPkgs.integer-gmp
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats;
           };
         };
         benchmarks = {
@@ -61,7 +61,7 @@ let
               hsPkgs.containers
               hsPkgs.random
               hsPkgs.integer-logarithms
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats;
           };
         };
       };

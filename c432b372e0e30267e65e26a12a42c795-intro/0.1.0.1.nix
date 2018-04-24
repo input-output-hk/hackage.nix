@@ -39,7 +39,7 @@ let
             hsPkgs.transformers
             hsPkgs.unordered-containers
             hsPkgs.writer-cps-mtl
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
           compat = {
@@ -63,7 +63,7 @@ let
               hsPkgs.writer-cps-mtl
               hsPkgs.intro
               hsPkgs.lens
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
           };
         };
       };

@@ -44,7 +44,7 @@ let
             hsPkgs.shell-conduit
             hsPkgs.conduit
             hsPkgs.conduit-extra
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.6"
             then [ hsPkgs.time ]
             else [ hsPkgs.old-time ]);
         };

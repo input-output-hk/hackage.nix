@@ -27,6 +27,7 @@ let
             hsPkgs.deepseq
           ];
           libs = [ pkgs.GeoIP ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

@@ -31,6 +31,7 @@ let
             hsPkgs.zlib
           ];
           libs = [ pkgs.z ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

@@ -28,7 +28,7 @@ let
             hsPkgs.hashable
             hsPkgs.transformers
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
           libs = pkgs.lib.optional system.isWindows pkgs.ws2_32;
         };
       };

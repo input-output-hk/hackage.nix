@@ -37,6 +37,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.containers
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

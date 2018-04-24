@@ -26,7 +26,7 @@ let
             hsPkgs.mtl
             hsPkgs.bytestring
             hsPkgs.text
-          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];
@@ -40,7 +40,7 @@ let
               hsPkgs.HUnit
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
       };

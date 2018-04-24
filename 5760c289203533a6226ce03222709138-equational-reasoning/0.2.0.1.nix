@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.void
             hsPkgs.template-haskell
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "7.8"
             then [
               hsPkgs.singletons
               hsPkgs.tagged

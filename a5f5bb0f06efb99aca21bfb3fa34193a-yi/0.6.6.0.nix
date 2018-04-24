@@ -95,6 +95,7 @@ let
             hsPkgs.ghc
             hsPkgs.ghc-syb-utils
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         exes = {
           parserTest = {
@@ -110,6 +111,7 @@ let
             depends  = [
               hsPkgs.base
             ] ++ pkgs.lib.optional (!_flags.dochack) hsPkgs.yi;
+            build-tools = [ hsPkgs.alex ];
           };
         };
       };

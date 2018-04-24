@@ -33,7 +33,7 @@ let
             hsPkgs.flat
             hsPkgs.model
             hsPkgs.either
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [ hsPkgs.ghcjs-base ]
             else [
               hsPkgs.cryptonite

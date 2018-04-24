@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.containers
             hsPkgs.dependent-sum
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.dependent-sum;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") hsPkgs.dependent-sum;
         };
       };
     }

@@ -29,7 +29,7 @@ let
             hsPkgs.haskell98
             hsPkgs.array
             hsPkgs.template-haskell
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "6.10"
             then [ hsPkgs.readline ]
             else [
               hsPkgs.editline
@@ -45,7 +45,7 @@ let
         };
         exes = {
           xquery = {
-            depends  = (if compiler.isGhc
+            depends  = (if compiler.isGhc && compiler.version.lt "6.10"
               then [ hsPkgs.readline ]
               else [
                 hsPkgs.editline

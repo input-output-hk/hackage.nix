@@ -26,6 +26,7 @@ let
             hsPkgs.bindings-DSL
           ];
           libs = [ pkgs.friso ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

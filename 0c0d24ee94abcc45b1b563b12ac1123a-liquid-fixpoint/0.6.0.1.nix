@@ -58,7 +58,7 @@ let
             hsPkgs.fgl-visualize
             hsPkgs.dotgen
             hsPkgs.time
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.located-base) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.ascii-progress;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.2") hsPkgs.located-base) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.ascii-progress;
         };
         exes = {
           fixpoint = {
@@ -125,7 +125,7 @@ let
                 hsPkgs.fgl-visualize
                 hsPkgs.dotgen
                 hsPkgs.time
-              ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.located-base
+              ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.2") hsPkgs.located-base
               else [
                 hsPkgs.liquid-fixpoint
               ]);

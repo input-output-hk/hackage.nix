@@ -23,6 +23,7 @@ let
         clipper = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs."stdc++" ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

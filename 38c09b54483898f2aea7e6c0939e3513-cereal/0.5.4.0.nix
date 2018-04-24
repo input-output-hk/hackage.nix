@@ -29,7 +29,7 @@ let
             hsPkgs.containers
             hsPkgs.array
             hsPkgs.ghc-prim
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.fail) ++ (if _flags.bytestring-builder
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.fail) ++ (if _flags.bytestring-builder
             then [
               hsPkgs.bytestring
               hsPkgs.bytestring-builder

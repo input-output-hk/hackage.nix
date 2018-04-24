@@ -44,6 +44,7 @@ let
               pkgs.sfml-network
               pkgs.sfml-audio
             ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

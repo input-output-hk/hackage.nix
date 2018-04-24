@@ -30,6 +30,7 @@ let
             hsPkgs.bytestring
             hsPkgs.text
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           fltkhs-fluidtohs = {

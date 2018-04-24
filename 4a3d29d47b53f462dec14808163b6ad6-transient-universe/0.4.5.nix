@@ -30,7 +30,7 @@ let
             hsPkgs.time
             hsPkgs.transformers
             hsPkgs.transient
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && compiler.version.ge "0.1"
             then [
               hsPkgs.ghcjs-base
               hsPkgs.ghcjs-prim
@@ -57,7 +57,7 @@ let
           monitorService = {
             depends  = [
               hsPkgs.base
-            ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
+            ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && compiler.version.ge "0.1")) [
               hsPkgs.transformers
               hsPkgs.transient
               hsPkgs.transient-universe
@@ -68,7 +68,7 @@ let
           test-transient1 = {
             depends  = [
               hsPkgs.base
-            ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
+            ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && compiler.version.ge "0.1")) [
               hsPkgs.mtl
               hsPkgs.transient
               hsPkgs.random
@@ -98,7 +98,7 @@ let
           test-transient = {
             depends  = [
               hsPkgs.base
-            ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
+            ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && compiler.version.ge "0.1")) [
               hsPkgs.mtl
               hsPkgs.transient
               hsPkgs.random

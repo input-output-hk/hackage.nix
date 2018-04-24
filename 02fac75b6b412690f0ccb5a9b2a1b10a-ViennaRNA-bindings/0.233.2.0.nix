@@ -26,6 +26,7 @@ let
             hsPkgs.array
             hsPkgs.bytestring
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           properties = {
@@ -40,6 +41,7 @@ let
               hsPkgs.tasty-th
               hsPkgs.ViennaRNA-bindings
             ];
+            build-tools = [ hsPkgs.c2hs ];
           };
         };
       };

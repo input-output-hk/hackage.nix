@@ -36,6 +36,7 @@ let
           pkgconfig = [
             pkgconfPkgs.jack
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           amplify = {

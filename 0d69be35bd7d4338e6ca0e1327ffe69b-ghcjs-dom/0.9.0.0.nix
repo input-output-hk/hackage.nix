@@ -27,7 +27,7 @@ let
             hsPkgs.base
             hsPkgs.transformers
             hsPkgs.text
-          ] ++ (if compiler.isGhcjs && _flags.jsffi
+          ] ++ (if compiler.isGhcjs && true && _flags.jsffi
             then [ hsPkgs.ghcjs-dom-jsffi ]
             else [
               hsPkgs.ghcjs-dom-jsaddle

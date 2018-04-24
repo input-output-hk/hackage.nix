@@ -32,10 +32,10 @@ let
             hsPkgs.scientific
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.fail
             hsPkgs.semigroups
-          ]) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.tagged;
+          ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.tagged;
         };
         tests = {
           old-tests = {
@@ -63,7 +63,7 @@ let
               hsPkgs.test-framework-quickcheck2
               hsPkgs.text
               hsPkgs.transformers
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.tagged;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.tagged;
           };
         };
         benchmarks = {

@@ -23,7 +23,7 @@ let
         jsaddle-warp = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             hsPkgs.aeson
             hsPkgs.containers
             hsPkgs.http-types

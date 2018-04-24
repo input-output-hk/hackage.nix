@@ -53,7 +53,7 @@ let
             hsPkgs.extra
             hsPkgs.pipes
             hsPkgs.safe
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.convertible) ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.convertible) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.5") [
             hsPkgs.random
             hsPkgs.ghc-prim
           ];
@@ -99,7 +99,7 @@ let
           spec = {
             depends  = [
               hsPkgs.hspec
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.executable-path;
+            ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.executable-path;
           };
         };
       };

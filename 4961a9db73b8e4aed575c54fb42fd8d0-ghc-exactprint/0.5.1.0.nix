@@ -34,11 +34,11 @@ let
             hsPkgs.mtl
             hsPkgs.syb
             hsPkgs.free
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.11") hsPkgs.ghc-boot;
         };
         exes = {
           roundtrip = {
-            depends  = pkgs.lib.optionals (compiler.isGhc && _flags.roundtrip) ([
+            depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.2" && _flags.roundtrip) ([
               hsPkgs.HUnit
               hsPkgs.base
               hsPkgs.containers
@@ -51,7 +51,7 @@ let
               hsPkgs.syb
               hsPkgs.temporary
               hsPkgs.time
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot);
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.11") hsPkgs.ghc-boot);
           };
           static = {
             depends  = pkgs.lib.optionals _flags.roundtrip ([
@@ -61,7 +61,7 @@ let
               hsPkgs.filepath
               hsPkgs.ghc
               hsPkgs.Diff
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot);
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.11") hsPkgs.ghc-boot);
           };
           prepare-hackage = {
             depends  = pkgs.lib.optionals _flags.roundtrip ([
@@ -75,7 +75,7 @@ let
               hsPkgs.HUnit
               hsPkgs.text
               hsPkgs.turtle
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot);
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.11") hsPkgs.ghc-boot);
           };
         };
         tests = {
@@ -93,7 +93,7 @@ let
               hsPkgs.syb
               hsPkgs.silently
               hsPkgs.filemanip
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.11") hsPkgs.ghc-boot;
           };
         };
       };

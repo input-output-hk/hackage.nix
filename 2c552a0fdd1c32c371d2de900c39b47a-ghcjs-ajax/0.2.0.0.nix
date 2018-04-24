@@ -26,7 +26,7 @@ let
             hsPkgs.text
             hsPkgs.http-types
             hsPkgs.aeson
-          ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
         };
       };
     }

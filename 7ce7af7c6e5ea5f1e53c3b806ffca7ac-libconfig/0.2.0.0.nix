@@ -109,6 +109,7 @@ let
                           hsPkgs.transformers
                         ];
           libs = [ pkgs.config ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           doctest = {

@@ -53,6 +53,7 @@ let
             pkgconfPkgs.QtScript
             pkgconfPkgs.QtDeclarative
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           hsqml-test1 = {

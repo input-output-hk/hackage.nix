@@ -23,8 +23,9 @@ let
         bindings-cctools = {
           depends  = ([
             hsPkgs.bindings-DSL
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+          ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.base) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.base;
           libs = [ pkgs.dttools ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

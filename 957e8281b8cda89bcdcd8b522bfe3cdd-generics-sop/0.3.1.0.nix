@@ -26,7 +26,7 @@ let
             hsPkgs.template-haskell
             hsPkgs.ghc-prim
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.tagged) ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.tagged) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.transformers-compat
             hsPkgs.transformers
           ];

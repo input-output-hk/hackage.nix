@@ -39,6 +39,7 @@ let
             hsPkgs.formatting
             hsPkgs.transformers
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         exes = {
           morte = {

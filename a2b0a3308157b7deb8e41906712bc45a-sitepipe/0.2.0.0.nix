@@ -43,7 +43,7 @@ let
             hsPkgs.shelly
             hsPkgs.MissingH
             hsPkgs.containers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.pandoc;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.2") hsPkgs.pandoc;
         };
       };
     }

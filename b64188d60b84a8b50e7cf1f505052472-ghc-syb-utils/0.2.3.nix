@@ -24,7 +24,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.syb
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.0"
             then [ hsPkgs.ghc ]
             else [
               hsPkgs.ghc

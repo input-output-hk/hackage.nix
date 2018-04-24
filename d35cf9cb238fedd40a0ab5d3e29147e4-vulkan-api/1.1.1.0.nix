@@ -37,6 +37,7 @@ let
           depends  = [ hsPkgs.base ];
           libs = pkgs.lib.optionals (_flags.usenativeffi-1-0 || _flags.usenativeffi-1-1) (pkgs.lib.optional system.isWindows pkgs.vulkan-1 ++ pkgs.lib.optional (!system.isWindows && !system.isOsx) pkgs.vulkan);
           frameworks = pkgs.lib.optional ((_flags.usenativeffi-1-0 || _flags.usenativeffi-1-1) && system.isOsx) pkgs.MoltenVK;
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

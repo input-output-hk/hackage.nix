@@ -25,6 +25,10 @@ let
             hsPkgs.base
             hsPkgs.bytestring
           ];
+          build-tools = [
+            hsPkgs.c2hs
+            hsPkgs.hsc2hs
+          ];
         };
         exes = {
           nvidia-device-query = {

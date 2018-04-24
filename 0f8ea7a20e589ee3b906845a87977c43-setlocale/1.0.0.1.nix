@@ -22,6 +22,7 @@ let
       components = {
         setlocale = {
           depends  = [ hsPkgs.base ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

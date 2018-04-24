@@ -29,7 +29,7 @@ let
             hsPkgs.filepath
             hsPkgs.transformers
             hsPkgs.process
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional _flags.quotation hsPkgs.template-haskell;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional _flags.quotation hsPkgs.template-haskell;
         };
         exes = {
           cmdargs = {

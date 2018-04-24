@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.old-time
             hsPkgs.filepath
-          ] ++ (if !compiler.isNhc98 && system.isWindows
+          ] ++ (if !(compiler.isNhc98 && true) && system.isWindows
             then [ hsPkgs.Win32 ]
             else [ hsPkgs.unix ]);
         };

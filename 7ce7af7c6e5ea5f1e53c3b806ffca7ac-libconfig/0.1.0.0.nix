@@ -23,6 +23,7 @@ let
         libconfig = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.config ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           doctest = {

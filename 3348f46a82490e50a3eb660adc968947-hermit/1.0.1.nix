@@ -41,6 +41,10 @@ let
             hsPkgs.terminal-size
             hsPkgs.transformers
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           hermit = {

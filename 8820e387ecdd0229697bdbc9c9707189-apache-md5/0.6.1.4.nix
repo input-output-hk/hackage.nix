@@ -27,7 +27,7 @@ let
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq;
           libs = [ pkgs.crypto ];
         };
         tests = {
@@ -42,7 +42,7 @@ let
               hsPkgs.HUnit
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
             libs = [ pkgs.crypto ];
           };
         };
@@ -54,7 +54,7 @@ let
               hsPkgs.deepseq
               hsPkgs.criterion
               hsPkgs.MonadRandom
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
             libs = [ pkgs.crypto ];
           };
         };

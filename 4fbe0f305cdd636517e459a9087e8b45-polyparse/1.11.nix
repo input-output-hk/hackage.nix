@@ -23,7 +23,7 @@ let
         polyparse = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && true) [
             hsPkgs.bytestring
             hsPkgs.text
           ];

@@ -39,6 +39,7 @@ let
             hsPkgs.exceptions
           ];
           libs = [ pkgs.pq ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           tests = {

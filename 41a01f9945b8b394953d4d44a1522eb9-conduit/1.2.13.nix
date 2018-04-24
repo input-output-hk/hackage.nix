@@ -33,7 +33,7 @@ let
             hsPkgs.mmorph
             hsPkgs.monad-control
             hsPkgs.primitive
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.void) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.void) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.11")) hsPkgs.semigroups;
         };
         tests = {
           test = {
@@ -49,7 +49,7 @@ let
               hsPkgs.exceptions
               hsPkgs.safe
               hsPkgs.split
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.void) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.void) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.11")) hsPkgs.semigroups;
           };
         };
         benchmarks = {

@@ -38,7 +38,7 @@ let
             hsPkgs.tagged
             hsPkgs.template-haskell
             hsPkgs.text
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           tests = {
@@ -51,7 +51,7 @@ let
               hsPkgs.megaparsec
               hsPkgs.modern-uri
               hsPkgs.text
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
         benchmarks = {

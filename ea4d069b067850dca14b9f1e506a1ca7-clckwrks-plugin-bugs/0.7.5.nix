@@ -54,6 +54,7 @@ let
               hsPkgs.network-uri
             ]
             else [ hsPkgs.network ]);
+          build-tools = [ hsPkgs.hsx2hs ];
         };
       };
     }

@@ -55,7 +55,7 @@ let
               hsPkgs.microlens
               hsPkgs.monad-control
               hsPkgs.yaml
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.o-clock;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.2.2") hsPkgs.o-clock;
           };
           how-to = {
             depends  = [

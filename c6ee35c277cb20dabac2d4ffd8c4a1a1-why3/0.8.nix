@@ -35,6 +35,10 @@ let
             hsPkgs.profunctors
             hsPkgs.text
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

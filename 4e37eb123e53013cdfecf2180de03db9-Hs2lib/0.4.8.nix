@@ -28,6 +28,7 @@ let
             hsPkgs.filepath
             hsPkgs.syb
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           Hs2lib = {

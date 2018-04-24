@@ -27,7 +27,8 @@ let
             hsPkgs.cpphs
             hsPkgs.base
             hsPkgs.ghc-prim
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
+          build-tools = [ hsPkgs.happy ];
         };
         tests = {
           test = {

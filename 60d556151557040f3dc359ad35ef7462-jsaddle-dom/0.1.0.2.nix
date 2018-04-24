@@ -28,7 +28,7 @@ let
             hsPkgs.text
             hsPkgs.jsaddle
             hsPkgs.lens
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [
               hsPkgs.ghcjs-base
               hsPkgs.ghcjs-prim

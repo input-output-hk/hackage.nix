@@ -37,7 +37,7 @@ let
             hsPkgs.mtl
             hsPkgs.syb
             hsPkgs.syz
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10.2") hsPkgs.base;
         };
         exes = {
           ghc-hare = {
@@ -50,7 +50,7 @@ let
               hsPkgs.optparse-simple
               hsPkgs.Cabal
               hsPkgs.HaRe
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10.2") hsPkgs.base;
           };
         };
         tests = {
@@ -79,7 +79,7 @@ let
               hsPkgs.parsec
               hsPkgs.case-insensitive
               hsPkgs.HaRe
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10.2") hsPkgs.base;
           };
         };
       };

@@ -27,7 +27,7 @@ let
             hsPkgs.servant
             hsPkgs.aeson
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
         };
       };
     }

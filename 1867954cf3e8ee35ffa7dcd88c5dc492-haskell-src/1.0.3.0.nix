@@ -26,10 +26,11 @@ let
             hsPkgs.syb
             hsPkgs.pretty
             hsPkgs.array
-          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.semigroups
             hsPkgs.fail
           ];
+          build-tools = [ hsPkgs.happy ];
         };
       };
     }

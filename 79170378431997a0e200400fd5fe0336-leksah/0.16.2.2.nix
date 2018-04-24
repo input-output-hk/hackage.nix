@@ -110,7 +110,7 @@ let
             ]
             else [
               hsPkgs.network
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.binary-shared) ++ pkgs.lib.optionals (!compiler.isGhcjs) [
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") hsPkgs.binary-shared) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             hsPkgs.ghc
             hsPkgs.haskell-src-exts
             hsPkgs.leksah-server
@@ -128,7 +128,7 @@ let
             ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optionals (system.isLinux && _flags.loc) [
               hsPkgs.hgettext
               hsPkgs.setlocale
-            ]) ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.leksah-server;
+            ]) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.leksah-server;
             libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
           };
         };

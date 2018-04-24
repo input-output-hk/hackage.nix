@@ -30,7 +30,7 @@ let
             hsPkgs.semigroups
             hsPkgs.prelude-extras
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.syb-extras;
+          ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.syb-extras;
         };
       };
     }

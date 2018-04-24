@@ -21,7 +21,7 @@ let
       };
       components = {
         pandoc-types = {
-          depends  = if compiler.isGhc
+          depends  = if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.base
               hsPkgs.syb

@@ -66,7 +66,7 @@ let
             hsPkgs.oo-prototypes
             hsPkgs.yi-rope
             hsPkgs.exceptions
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "7.8"
             then [
               hsPkgs.derive
               hsPkgs.binary

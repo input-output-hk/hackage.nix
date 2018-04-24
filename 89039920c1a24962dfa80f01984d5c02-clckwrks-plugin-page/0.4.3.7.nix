@@ -54,6 +54,7 @@ let
             hsPkgs.web-routes-happstack
             hsPkgs.web-routes-th
           ];
+          build-tools = [ hsPkgs.hsx2hs ];
         };
       };
     }

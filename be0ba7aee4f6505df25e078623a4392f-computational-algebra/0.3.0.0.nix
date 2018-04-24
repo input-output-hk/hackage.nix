@@ -34,7 +34,7 @@ let
             hsPkgs.sized-vector
             hsPkgs.singletons
             hsPkgs.equational-reasoning
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.monomorphic;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6.1") hsPkgs.monomorphic;
         };
       };
     }

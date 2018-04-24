@@ -26,7 +26,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.ghc-prim
               hsPkgs.base

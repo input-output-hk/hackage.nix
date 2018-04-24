@@ -35,6 +35,10 @@ let
             hsPkgs.process
             hsPkgs.hslogger
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           harmony = {

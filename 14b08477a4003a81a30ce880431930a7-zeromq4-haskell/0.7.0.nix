@@ -31,7 +31,7 @@ let
             hsPkgs.transformers
             hsPkgs.monad-control
             hsPkgs.transformers-base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
           libs = pkgs.lib.optional system.isWindows pkgs.zmq ++ pkgs.lib.optional system.isFreebsd pkgs.pthread;
           pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs.libzmq;
         };

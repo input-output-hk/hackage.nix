@@ -23,11 +23,12 @@ let
         hmpfr = {
           depends  = ([
             hsPkgs.base
-          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10" && (compiler.isGhc && compiler.version.lt "6.12")) [
             hsPkgs.base
             hsPkgs.integer
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.integer-gmp;
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.12") hsPkgs.integer-gmp;
           libs = [ pkgs.mpfr ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

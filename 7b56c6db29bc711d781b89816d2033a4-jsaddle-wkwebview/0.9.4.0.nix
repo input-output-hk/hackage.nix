@@ -34,7 +34,7 @@ let
           frameworks = [
             pkgs.Foundation
             pkgs.WebKit
-          ] ++ (if !compiler.isGhcjs && system.isIos
+          ] ++ (if !(compiler.isGhcjs && true) && system.isIos
             then [
               pkgs.UIKit
               pkgs.UserNotifications

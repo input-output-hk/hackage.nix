@@ -23,6 +23,7 @@ let
         loris = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.loris ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

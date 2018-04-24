@@ -42,6 +42,7 @@ let
               hsPkgs.base
               hsPkgs.process
             ];
+            build-tools = [ hsPkgs.alex ];
           };
         };
       };

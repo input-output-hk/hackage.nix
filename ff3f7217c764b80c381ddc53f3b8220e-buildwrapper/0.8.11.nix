@@ -47,7 +47,7 @@ let
             hsPkgs.transformers
             hsPkgs.deepseq
             hsPkgs.ghc-pkg-lib
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.time;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") hsPkgs.time;
         };
         exes = {
           buildwrapper = {
@@ -75,7 +75,7 @@ let
               hsPkgs.bytestring
               hsPkgs.transformers
               hsPkgs.ghc-pkg-lib
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.time;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") hsPkgs.time;
           };
         };
         tests = {
@@ -101,7 +101,7 @@ let
               hsPkgs.unordered-containers
               hsPkgs.containers
               hsPkgs.ghc-pkg-lib
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.time;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") hsPkgs.time;
           };
         };
       };

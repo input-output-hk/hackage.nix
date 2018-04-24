@@ -82,7 +82,7 @@ let
             then [ hsPkgs.Win32 ]
             else [
               hsPkgs.unix
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8") hsPkgs.ghc-boot;
         };
         exes = {
           tutd = {

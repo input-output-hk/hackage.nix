@@ -21,7 +21,7 @@ let
       };
       components = {
         pandoc-types = {
-          depends  = (if compiler.isGhc
+          depends  = (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.base
               hsPkgs.syb
@@ -30,7 +30,7 @@ let
             else [
               hsPkgs.base
               hsPkgs.containers
-            ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1") hsPkgs.ghc-prim;
         };
       };
     }

@@ -26,7 +26,7 @@ let
             hsPkgs.deepseq
             hsPkgs.semigroupoids
             hsPkgs.streams
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.bifunctors;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2") hsPkgs.bifunctors;
         };
         tests = {
           doctests = {

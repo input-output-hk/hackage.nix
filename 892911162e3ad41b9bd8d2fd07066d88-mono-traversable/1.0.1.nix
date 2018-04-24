@@ -32,7 +32,7 @@ let
             hsPkgs.vector
             hsPkgs.vector-algorithms
             hsPkgs.split
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
           test = {

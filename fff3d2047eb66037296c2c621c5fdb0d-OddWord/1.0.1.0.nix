@@ -34,7 +34,7 @@ let
             ];
           };
           oddword-tests-typelits = {
-            depends  = pkgs.lib.optionals (_flags.typelitssupport && compiler.isGhc) [
+            depends  = pkgs.lib.optionals (_flags.typelitssupport && (compiler.isGhc && compiler.version.ge "7.8")) [
               hsPkgs.base
               hsPkgs.OddWord
             ];

@@ -23,7 +23,7 @@ let
         data-has = {
           depends  = ([
             hsPkgs.base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-compat) ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.base-compat) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers;
         };
         benchmarks = {
           bench = {

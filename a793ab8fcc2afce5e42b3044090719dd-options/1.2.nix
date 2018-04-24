@@ -26,7 +26,7 @@ let
             hsPkgs.containers
             hsPkgs.monads-tf
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional (!system.isWindows && compiler.isGhc) hsPkgs.bytestring;
+          ] ++ pkgs.lib.optional (!system.isWindows && (compiler.isGhc && compiler.version.lt "7.2")) hsPkgs.bytestring;
         };
         tests = {
           options_tests = {
@@ -37,7 +37,7 @@ let
               hsPkgs.containers
               hsPkgs.monads-tf
               hsPkgs.transformers
-            ] ++ pkgs.lib.optional (!system.isWindows && compiler.isGhc) hsPkgs.bytestring;
+            ] ++ pkgs.lib.optional (!system.isWindows && (compiler.isGhc && compiler.version.lt "7.2")) hsPkgs.bytestring;
           };
         };
       };

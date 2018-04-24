@@ -31,7 +31,7 @@ let
             hsPkgs.bytestring
             hsPkgs.text
             hsPkgs.parallel
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.ghc-prim;
         };
         tests = {
           doctests = {

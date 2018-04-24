@@ -33,6 +33,7 @@ let
               hsPkgs.bzlib
               hsPkgs.bytestring
             ];
+            build-tools = [ hsPkgs.happy ];
           };
         };
       };

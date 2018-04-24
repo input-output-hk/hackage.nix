@@ -28,7 +28,7 @@ let
             hsPkgs.base
             hsPkgs.data-default-class
             hsPkgs.template-haskell
-          ] ++ pkgs.lib.optional (compiler.isGhc && _flags.force-functor-classes) hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8" && _flags.force-functor-classes) hsPkgs.transformers;
         };
         tests = {
           unit-tests = {
@@ -40,9 +40,9 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.overloaded-records
-            ] ++ (if compiler.isGhc && _flags.force-functor-classes
+            ] ++ (if compiler.isGhc && compiler.version.lt "8" && _flags.force-functor-classes
               then [ hsPkgs.transformers ]
-              else pkgs.lib.optional compiler.isGhc hsPkgs.transformers);
+              else pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers);
           };
         };
       };

@@ -31,6 +31,7 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.mp3lame ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

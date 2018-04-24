@@ -26,7 +26,7 @@ let
           depends  = ([
             hsPkgs.directory
             hsPkgs.filepath
-          ] ++ pkgs.lib.optional (!compiler.isNhc98 && !system.isWindows) hsPkgs.unix) ++ [
+          ] ++ pkgs.lib.optional (!(compiler.isNhc98 && true) && !system.isWindows) hsPkgs.unix) ++ [
             hsPkgs.base
           ];
         };

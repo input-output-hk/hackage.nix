@@ -39,7 +39,7 @@ let
             hsPkgs.parallel-io
             hsPkgs.utf8-string
             hsPkgs.ghc-paths
-          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ (if compiler.isGhc
+          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ (if compiler.isGhc && compiler.version.ge "7.0"
             then [
               hsPkgs.containers
               hsPkgs.directory
@@ -76,7 +76,7 @@ let
               hsPkgs.parallel-io
               hsPkgs.utf8-string
               hsPkgs.ghc-paths
-            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ (if compiler.isGhc
+            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ (if compiler.isGhc && compiler.version.ge "7.0"
               then [
                 hsPkgs.containers
                 hsPkgs.directory

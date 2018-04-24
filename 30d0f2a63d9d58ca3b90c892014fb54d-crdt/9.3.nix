@@ -34,7 +34,7 @@ let
             hsPkgs.time
             hsPkgs.vector
             hsPkgs.network-info
-          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8")) [
             hsPkgs.fail
             hsPkgs.semigroups
             hsPkgs.transformers

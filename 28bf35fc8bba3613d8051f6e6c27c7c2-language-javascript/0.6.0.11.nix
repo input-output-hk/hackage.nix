@@ -30,7 +30,11 @@ let
             hsPkgs.bytestring
             hsPkgs.text
             hsPkgs.utf8-string
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         tests = {
           testsuite = {

@@ -34,14 +34,14 @@ let
             hsPkgs.deepseq
             hsPkgs.mtl
             hsPkgs.vector
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.transformers;
         };
         exes = {
           raaz = {
             depends  = [
               hsPkgs.base
               hsPkgs.raaz
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.transformers;
           };
         };
         tests = {

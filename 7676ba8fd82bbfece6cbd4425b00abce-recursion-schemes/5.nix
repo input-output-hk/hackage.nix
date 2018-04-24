@@ -28,7 +28,7 @@ let
             hsPkgs.free
             hsPkgs.transformers
             hsPkgs.transformers-compat
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.5") hsPkgs.ghc-prim;
         };
       };
     }

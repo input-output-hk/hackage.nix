@@ -28,7 +28,7 @@ let
             hsPkgs.containers-unicode-symbols
             hsPkgs.fingertree
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.integer-gmp;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1") hsPkgs.integer-gmp;
         };
         tests = {
           test-numerals = {
@@ -42,7 +42,7 @@ let
               hsPkgs.test-framework-quickcheck2
               hsPkgs.text
               hsPkgs.numerals
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.integer-gmp;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1") hsPkgs.integer-gmp;
           };
         };
       };

@@ -29,7 +29,7 @@ let
             hsPkgs.exceptions
             hsPkgs.selda
             hsPkgs.text
-          ] ++ pkgs.lib.optional (!_flags.haste) hsPkgs.postgresql-libpq) ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (!_flags.haste) hsPkgs.postgresql-libpq) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.11") hsPkgs.transformers;
         };
       };
     }

@@ -26,6 +26,9 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.gfortran ];
+          build-tools = [
+            hsPkgs.gfortran
+          ];
         };
         tests = {
           test = {

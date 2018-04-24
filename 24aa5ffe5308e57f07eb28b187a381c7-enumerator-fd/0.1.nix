@@ -24,7 +24,7 @@ let
           depends  = [
             hsPkgs.monads-fd
             hsPkgs.enumerator
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [ hsPkgs.base ]
             else [
               hsPkgs.base

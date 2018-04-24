@@ -35,7 +35,7 @@ let
             ]
             else [
               hsPkgs.base
-            ] ++ (if compiler.isJhc
+            ] ++ (if compiler.isJhc && true
               then [
                 hsPkgs.containers
                 hsPkgs.applicative

@@ -28,6 +28,10 @@ let
             hsPkgs.bytestring
             hsPkgs.array
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
       };
     }

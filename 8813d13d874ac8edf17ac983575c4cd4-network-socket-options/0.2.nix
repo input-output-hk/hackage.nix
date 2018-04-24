@@ -25,6 +25,7 @@ let
             hsPkgs.base
             hsPkgs.network
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

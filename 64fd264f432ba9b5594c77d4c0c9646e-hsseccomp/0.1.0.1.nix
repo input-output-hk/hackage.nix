@@ -23,6 +23,7 @@ let
         hsseccomp = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.seccomp ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           seccomp-test = {

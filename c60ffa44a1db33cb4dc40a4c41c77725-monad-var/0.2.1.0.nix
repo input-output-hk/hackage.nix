@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.base-compat
             hsPkgs.stm
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.transformers;
         };
       };
     }

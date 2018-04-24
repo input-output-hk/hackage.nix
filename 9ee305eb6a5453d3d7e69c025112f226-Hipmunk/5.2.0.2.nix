@@ -38,6 +38,7 @@ let
               hsPkgs.StateVar
             ];
           libs = [ pkgs.m ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

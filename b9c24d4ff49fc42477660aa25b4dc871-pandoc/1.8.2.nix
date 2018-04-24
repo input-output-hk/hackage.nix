@@ -53,7 +53,7 @@ let
             hsPkgs.dlist
             hsPkgs.tagsoup
             hsPkgs.base64-bytestring
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [ hsPkgs.base hsPkgs.syb ]
             else [
               hsPkgs.base
@@ -85,7 +85,7 @@ let
               hsPkgs.dlist
               hsPkgs.tagsoup
               hsPkgs.base64-bytestring
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
               then [ hsPkgs.base hsPkgs.syb ]
               else [
                 hsPkgs.base

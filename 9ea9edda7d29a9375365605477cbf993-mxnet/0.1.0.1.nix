@@ -26,6 +26,7 @@ let
             hsPkgs.c2hs-extra
           ];
           libs = [ pkgs.mxnet ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

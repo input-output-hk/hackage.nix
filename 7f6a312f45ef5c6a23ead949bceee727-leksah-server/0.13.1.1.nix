@@ -51,7 +51,7 @@ let
             hsPkgs.text
           ] ++ [
             hsPkgs.haddock
-          ]) ++ (if compiler.isGhc
+          ]) ++ (if compiler.isGhc && compiler.version.ge "7.2"
             then [ hsPkgs.process ]
             else [
               hsPkgs.process-leksah
@@ -94,7 +94,7 @@ let
               hsPkgs.text
             ] ++ [
               hsPkgs.haddock
-            ]) ++ (if compiler.isGhc
+            ]) ++ (if compiler.isGhc && compiler.version.ge "7.2"
               then [ hsPkgs.process ]
               else [
                 hsPkgs.process-leksah
@@ -120,7 +120,7 @@ let
               hsPkgs.attoparsec
               hsPkgs.transformers
               hsPkgs.text
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
               then [ hsPkgs.process ]
               else [ hsPkgs.process-leksah ]);
           };
@@ -134,7 +134,7 @@ let
               hsPkgs.HUnit
               hsPkgs.transformers
               hsPkgs.conduit
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
               then [ hsPkgs.process ]
               else [ hsPkgs.process-leksah ]);
           };

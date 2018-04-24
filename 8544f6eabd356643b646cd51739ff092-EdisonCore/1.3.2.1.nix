@@ -28,7 +28,7 @@ let
             hsPkgs.EdisonAPI
             hsPkgs.containers
             hsPkgs.array
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
       };
     }

@@ -27,7 +27,7 @@ let
             hsPkgs.deepseq
             hsPkgs.finite-typelits
             hsPkgs.primitive
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.indexed-list-literals;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.3") hsPkgs.indexed-list-literals;
         };
       };
     }

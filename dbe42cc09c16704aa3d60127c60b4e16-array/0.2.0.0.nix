@@ -23,7 +23,7 @@ let
         array = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optional (!compiler.isNhc98) hsPkgs.syb;
+          ] ++ pkgs.lib.optional (!(compiler.isNhc98 && true)) hsPkgs.syb;
         };
       };
     }

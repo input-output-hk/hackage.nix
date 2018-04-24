@@ -26,7 +26,7 @@ let
             hsPkgs.cereal
             hsPkgs.bytestring
             hsPkgs.containers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.utility-ht;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.0.0") hsPkgs.utility-ht;
         };
       };
     }

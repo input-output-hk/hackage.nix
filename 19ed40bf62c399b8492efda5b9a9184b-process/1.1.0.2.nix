@@ -27,12 +27,12 @@ let
             hsPkgs.directory
             hsPkgs.filepath
             hsPkgs.deepseq
-          ] ++ (if !compiler.isNhc98 && system.isWindows
+          ] ++ (if !(compiler.isNhc98 && true) && system.isWindows
             then [ hsPkgs.Win32 ]
             else [ hsPkgs.unix ])) ++ [
             hsPkgs.base
           ];
-          libs = pkgs.lib.optional (!compiler.isNhc98 && system.isWindows) pkgs.kernel32;
+          libs = pkgs.lib.optional (!(compiler.isNhc98 && true) && system.isWindows) pkgs.kernel32;
         };
       };
     }

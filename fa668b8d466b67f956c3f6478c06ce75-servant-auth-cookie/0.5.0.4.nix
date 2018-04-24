@@ -113,7 +113,7 @@ let
               hsPkgs.servant-server
               hsPkgs.transformers
               hsPkgs.time
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.tagged;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.tagged;
           };
           example-tests = {
             depends  = pkgs.lib.optionals _flags.build-examples (([
@@ -157,7 +157,7 @@ let
                 else [
                   hsPkgs.servant
                   hsPkgs.bytestring-conversion
-                ])) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.tagged);
+                ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.tagged);
           };
         };
         benchmarks = {

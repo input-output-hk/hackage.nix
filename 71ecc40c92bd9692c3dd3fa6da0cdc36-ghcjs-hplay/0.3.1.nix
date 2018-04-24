@@ -21,7 +21,7 @@ let
       };
       components = {
         ghcjs-hplay = {
-          depends  = if compiler.isGhcjs
+          depends  = if compiler.isGhcjs && compiler.version.ge "0.1"
             then [
               hsPkgs.base
               hsPkgs.ghcjs-base

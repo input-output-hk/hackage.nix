@@ -33,7 +33,7 @@ let
             hsPkgs.transformers
             hsPkgs.exceptions
             hsPkgs.yaml
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.void;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.void;
         };
         exes = {
           dotenv = {
@@ -65,7 +65,7 @@ let
               hsPkgs.exceptions
               hsPkgs.hspec-megaparsec
               hsPkgs.yaml
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.void;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.void;
           };
         };
       };

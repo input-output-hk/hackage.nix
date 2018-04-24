@@ -41,7 +41,7 @@ let
             hsPkgs.transformers
             hsPkgs.utf8-string
             hsPkgs.HUnit
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty-show;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.pretty-show;
         };
         tests = {
           tests = {
@@ -66,7 +66,7 @@ let
               hsPkgs.test-framework-hunit
               hsPkgs.time
               hsPkgs.transformers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty-show;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.pretty-show;
           };
         };
       };

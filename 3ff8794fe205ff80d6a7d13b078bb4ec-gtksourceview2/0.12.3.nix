@@ -30,6 +30,11 @@ let
           pkgconfig = [
             pkgconfPkgs."gtksourceview-2.0"
           ];
+          build-tools = [
+            hsPkgs.gtk2hsC2hs
+            hsPkgs.gtk2hsHookGenerator
+            hsPkgs.gtk2hsTypeGen
+          ];
         };
       };
     }

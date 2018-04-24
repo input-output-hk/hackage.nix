@@ -38,6 +38,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.derive
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         tests = {
           spec = {

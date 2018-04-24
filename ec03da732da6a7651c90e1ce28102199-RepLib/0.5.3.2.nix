@@ -26,7 +26,7 @@ let
             hsPkgs.template-haskell
             hsPkgs.mtl
             hsPkgs.containers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.type-equality;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.type-equality;
         };
       };
     }

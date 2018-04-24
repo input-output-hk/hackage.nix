@@ -63,9 +63,13 @@ let
             hsPkgs.uhc-light
             hsPkgs.uhc-util
             hsPkgs.uulib
-          ]) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-orphans) ++ pkgs.lib.optional compiler.isGhc hsPkgs.void) ++ [
+          ]) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.base-orphans) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.void) ++ [
             hsPkgs.zlib
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ] ++ pkgs.lib.optional _flags.cpphs hsPkgs.cpphs;
         };
         exes = {
           agda = {

@@ -29,7 +29,7 @@ let
             hsPkgs.containers
             hsPkgs.unordered-containers
             hsPkgs.zlib
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional _flags.embed hsPkgs.file-embed;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.11")) hsPkgs.semigroups) ++ pkgs.lib.optional _flags.embed hsPkgs.file-embed;
         };
         tests = {
           doctests = {

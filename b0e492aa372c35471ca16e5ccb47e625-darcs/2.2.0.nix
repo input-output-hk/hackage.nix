@@ -59,6 +59,7 @@ let
           ]) ++ pkgs.lib.optional _flags.external-bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.external-zlib hsPkgs.zlib) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optional _flags.haskeline hsPkgs.haskeline;
           libs = (pkgs.lib.optional _flags.curl pkgs.curl ++ pkgs.lib.optional (!_flags.external-zlib) pkgs.z) ++ pkgs.lib.optional _flags.curses pkgs.curses;
           pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
+          build-tools = pkgs.lib.optional (!_flags.curl && _flags.libwww) hsPkgs.libwww-config;
         };
         exes = {
           darcs = {
@@ -87,6 +88,7 @@ let
             ]) ++ pkgs.lib.optional _flags.external-bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.external-zlib hsPkgs.zlib) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optional (_flags.haskeline && !system.isWindows) hsPkgs.haskeline;
             libs = ((pkgs.lib.optional (!_flags.external-zlib) pkgs.z ++ pkgs.lib.optional _flags.curl pkgs.curl) ++ pkgs.lib.optional (!_flags.external-zlib) pkgs.z) ++ pkgs.lib.optional _flags.curses pkgs.curses;
             pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
+            build-tools = pkgs.lib.optional (!_flags.curl && _flags.libwww) hsPkgs.libwww-config;
           };
         };
       };

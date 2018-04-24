@@ -27,6 +27,7 @@ let
             hsPkgs.cuda
           ];
           libs = [ pkgs.nvvm ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           test-simple = {

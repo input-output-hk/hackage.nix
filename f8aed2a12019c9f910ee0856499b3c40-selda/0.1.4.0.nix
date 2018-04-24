@@ -30,7 +30,7 @@ let
             hsPkgs.mtl
             hsPkgs.text
             hsPkgs.time
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers) ++ pkgs.lib.optionals (!_flags.haste && _flags.localcache) [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.11") hsPkgs.transformers) ++ pkgs.lib.optionals (!_flags.haste && _flags.localcache) [
             hsPkgs.hashable
             hsPkgs.psqueues
             hsPkgs.unordered-containers

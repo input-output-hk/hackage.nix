@@ -33,7 +33,7 @@ let
             hsPkgs.extra
             hsPkgs.parsec
             hsPkgs.pretty
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.4") [
             hsPkgs.either
             hsPkgs.contravariant
             hsPkgs.semigroupoids

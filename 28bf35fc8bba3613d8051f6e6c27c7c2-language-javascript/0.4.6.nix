@@ -30,6 +30,12 @@ let
             hsPkgs.containers
             hsPkgs.utf8-light
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         exes = {
           runtests = {

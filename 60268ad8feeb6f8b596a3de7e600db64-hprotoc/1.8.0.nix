@@ -39,6 +39,7 @@ let
               hsPkgs.mtl
               hsPkgs.QuickCheck
             ] ++ [ hsPkgs.base ];
+            build-tools = [ hsPkgs.alex ];
           };
         };
       };

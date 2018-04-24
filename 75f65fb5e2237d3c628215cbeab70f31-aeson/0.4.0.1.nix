@@ -40,7 +40,7 @@ let
             hsPkgs.time
             hsPkgs.unordered-containers
             hsPkgs.vector
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2.1") [
             hsPkgs.ghc-prim
             hsPkgs.dlist
           ];

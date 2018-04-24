@@ -38,7 +38,7 @@ let
             hsPkgs.text
             hsPkgs.text
             hsPkgs.unordered-containers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock-api) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock-api) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "7.8.4") hsPkgs.haddock-api) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "7.8.3") hsPkgs.haddock) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.haddock) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.haddock) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.haddock) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8.4") hsPkgs.haddock-api) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.2") hsPkgs.haddock;
         };
         exes = {
           haskell-docs = {

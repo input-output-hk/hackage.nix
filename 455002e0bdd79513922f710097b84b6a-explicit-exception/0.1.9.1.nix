@@ -28,7 +28,7 @@ let
             hsPkgs.transformers
             hsPkgs.semigroups
             hsPkgs.deepseq
-          ] ++ (if compiler.isJhc
+          ] ++ (if compiler.isJhc && true
             then [
               hsPkgs.applicative
               hsPkgs.base

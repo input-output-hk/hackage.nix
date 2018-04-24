@@ -33,10 +33,10 @@ let
             hsPkgs.scientific
             hsPkgs.unix
             hsPkgs.ihaskell
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.singletons) ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.2") hsPkgs.singletons) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.eq "7.10.1") [
             hsPkgs.singletons
             hsPkgs.nats
-          ]) ++ pkgs.lib.optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.10.1") [
             hsPkgs.singletons
             hsPkgs.nats
           ];

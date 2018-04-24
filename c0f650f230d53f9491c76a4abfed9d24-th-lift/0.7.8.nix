@@ -24,7 +24,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "6.12"
             then [
               hsPkgs.packedstring
               hsPkgs.template-haskell
@@ -39,7 +39,7 @@ let
               hsPkgs.base
               hsPkgs.ghc-prim
               hsPkgs.th-lift
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.lt "6.12"
               then [
                 hsPkgs.packedstring
                 hsPkgs.template-haskell

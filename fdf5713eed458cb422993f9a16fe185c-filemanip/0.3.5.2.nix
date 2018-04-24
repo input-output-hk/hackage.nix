@@ -28,7 +28,7 @@ let
             hsPkgs.filepath
             hsPkgs.mtl
             hsPkgs.unix-compat
-          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
         };
       };
     }

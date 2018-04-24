@@ -33,7 +33,7 @@ let
             hsPkgs.containers
             hsPkgs.directory
             hsPkgs.bytestring
-          ]) ++ pkgs.lib.optional (!(!_flags.legacy-encoding && compiler.isGhc)) hsPkgs.utf8-string) ++ (if system.isWindows
+          ]) ++ pkgs.lib.optional (!(!_flags.legacy-encoding && (compiler.isGhc && compiler.version.ge "7.4"))) hsPkgs.utf8-string) ++ (if system.isWindows
             then [ hsPkgs.Win32 ]
             else [
               hsPkgs.unix

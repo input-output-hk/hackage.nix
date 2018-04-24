@@ -102,7 +102,7 @@ let
             ]))) ++ pkgs.lib.optionals (_flags.loc && system.isLinux) [
             hsPkgs.hgettext
             hsPkgs.setlocale
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.binary-shared;
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") hsPkgs.binary-shared;
           libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
         };
         exes = {

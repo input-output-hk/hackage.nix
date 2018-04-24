@@ -32,6 +32,11 @@ let
           pkgconfig = [
             pkgconfPkgs.gtk-mac-integration-gtk3
           ];
+          build-tools = [
+            hsPkgs.gtk2hsC2hs
+            hsPkgs.gtk2hsHookGenerator
+            hsPkgs.gtk2hsTypeGen
+          ];
         };
       };
     }

@@ -28,7 +28,7 @@ let
             hsPkgs.dlist
             hsPkgs.filepath
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
         };
         tests = {
           glob-tests = {
@@ -44,7 +44,7 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.test-framework-quickcheck2
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
           };
         };
       };

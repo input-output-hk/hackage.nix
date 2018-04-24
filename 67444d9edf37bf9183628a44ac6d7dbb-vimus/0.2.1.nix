@@ -40,6 +40,7 @@ let
             hsPkgs.time-locale-compat
           ];
           libs = [ pkgs.ncursesw ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           vimus = {

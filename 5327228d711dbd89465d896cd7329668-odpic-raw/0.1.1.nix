@@ -26,6 +26,7 @@ let
             hsPkgs.bytestring
           ];
           libs = [ pkgs.odpic ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

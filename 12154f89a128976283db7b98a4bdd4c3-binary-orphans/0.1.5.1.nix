@@ -35,7 +35,7 @@ let
             hsPkgs.vector
             hsPkgs.text-binary
             hsPkgs.vector-binary-instances
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.10")) [
             hsPkgs.void
             hsPkgs.nats
           ];
@@ -59,7 +59,7 @@ let
               hsPkgs.quickcheck-instances
               hsPkgs.tasty
               hsPkgs.tasty-quickcheck
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optionals (!compiler.isGhc) [
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.10")) [
               hsPkgs.void
               hsPkgs.nats
             ];

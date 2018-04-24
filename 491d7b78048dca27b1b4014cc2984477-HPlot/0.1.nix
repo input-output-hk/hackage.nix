@@ -30,6 +30,7 @@ let
           pkgconfig = [
             pkgconfPkgs.plplotd-gnome2
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           Example = {

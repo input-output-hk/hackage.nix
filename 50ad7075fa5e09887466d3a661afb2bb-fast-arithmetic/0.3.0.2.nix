@@ -23,7 +23,7 @@ let
       };
       components = {
         fast-arithmetic = {
-          depends  = if compiler.isGhc
+          depends  = if compiler.isGhc && compiler.version.lt "7.10"
             then [
               hsPkgs.base
               hsPkgs.composition-prelude

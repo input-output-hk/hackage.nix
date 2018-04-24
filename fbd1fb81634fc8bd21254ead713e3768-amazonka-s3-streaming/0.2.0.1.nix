@@ -38,7 +38,7 @@ let
             hsPkgs.mmap
             hsPkgs.deepseq
             hsPkgs.http-client
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.11") [
             hsPkgs.semigroups
             hsPkgs.transformers
           ];

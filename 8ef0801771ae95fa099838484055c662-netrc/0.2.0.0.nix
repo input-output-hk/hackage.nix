@@ -28,7 +28,7 @@ let
             hsPkgs.deepseq
             hsPkgs.bytestring
             hsPkgs.parsec
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ (if _flags.bytestring_has_builder
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ (if _flags.bytestring_has_builder
             then [ hsPkgs.bytestring ]
             else [
               hsPkgs.bytestring

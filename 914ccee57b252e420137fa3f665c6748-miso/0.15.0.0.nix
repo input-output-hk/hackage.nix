@@ -35,7 +35,7 @@ let
             hsPkgs.servant
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [
               hsPkgs.ghcjs-base
               hsPkgs.containers
@@ -52,7 +52,7 @@ let
         };
         exes = {
           todo-mvc = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.containers
@@ -60,7 +60,7 @@ let
             ];
           };
           threejs = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.ghcjs-base
@@ -69,7 +69,7 @@ let
             ];
           };
           file-reader = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.containers
@@ -78,7 +78,7 @@ let
             ];
           };
           xhr = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.containers
@@ -87,7 +87,7 @@ let
             ];
           };
           canvas2d = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.ghcjs-base
@@ -95,7 +95,7 @@ let
             ];
           };
           router = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.containers
@@ -104,7 +104,7 @@ let
             ];
           };
           websocket = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.containers
@@ -112,14 +112,14 @@ let
             ];
           };
           mario = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.miso
             ];
           };
           svg = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.aeson
@@ -127,13 +127,13 @@ let
             ];
           };
           compose-update = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.base
               hsPkgs.miso
             ];
           };
           simple = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.examples)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.containers
@@ -141,7 +141,7 @@ let
             ];
           };
           tests = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs || !_flags.tests)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.tests)) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.bytestring

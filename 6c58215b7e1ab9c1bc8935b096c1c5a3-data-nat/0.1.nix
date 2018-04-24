@@ -24,7 +24,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.ghc-prim;
         };
       };
     }

@@ -32,7 +32,7 @@ let
               hsPkgs.filepath
               hsPkgs.random
               hsPkgs.text
-            ] ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.zlib;
+            ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.zlib;
           };
         };
         tests = {
@@ -46,7 +46,7 @@ let
               hsPkgs.filepath
               hsPkgs.random
               hsPkgs.text
-            ] ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.zlib;
+            ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.zlib;
           };
         };
       };

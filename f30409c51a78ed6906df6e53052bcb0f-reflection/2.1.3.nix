@@ -26,7 +26,7 @@ let
         reflection = {
           depends  = (([
             hsPkgs.base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (_flags.template-haskell && compiler.isGhc) hsPkgs.template-haskell;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (_flags.template-haskell && (compiler.isGhc && true)) hsPkgs.template-haskell;
         };
       };
     }

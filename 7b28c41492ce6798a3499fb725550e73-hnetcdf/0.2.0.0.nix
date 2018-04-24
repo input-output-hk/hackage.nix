@@ -33,6 +33,7 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.netcdf ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           test-raw-metadata = {

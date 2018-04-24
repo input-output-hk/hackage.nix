@@ -42,6 +42,7 @@ let
             hsPkgs.text-show
           ];
           libs = [ pkgs.pq ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           tests = {

@@ -33,7 +33,7 @@ let
             hsPkgs.streaming
             hsPkgs.text
             hsPkgs.vector
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.jvm-streaming;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.gt "8.0.1") hsPkgs.jvm-streaming;
         };
         exes = {
           sparkle = {

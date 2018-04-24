@@ -33,7 +33,7 @@ let
             hsPkgs.scientific
             hsPkgs.transformers
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.bytestring;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.4") hsPkgs.bytestring;
         };
         tests = {
           tests = {

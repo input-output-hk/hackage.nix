@@ -38,6 +38,7 @@ let
             pkgs.newrelic-transaction
             pkgs.newrelic-common
           ];
+          build-tools = pkgs.lib.optional (!(_flags.dummy && !system.isLinux)) hsPkgs.hsc2hs;
         };
         exes = {
           helics-example = {

@@ -23,6 +23,7 @@ let
         NetSNMP = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.netsnmp ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

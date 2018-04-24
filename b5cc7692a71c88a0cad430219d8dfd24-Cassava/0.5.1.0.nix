@@ -44,7 +44,7 @@ let
             else [
               hsPkgs.bytestring
               hsPkgs.text-short
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats) ++ pkgs.lib.optionals (!compiler.isGhc) [
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];
@@ -67,7 +67,7 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.test-framework-quickcheck2
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats) ++ pkgs.lib.optionals (!compiler.isGhc) [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
               hsPkgs.fail
               hsPkgs.semigroups
             ];

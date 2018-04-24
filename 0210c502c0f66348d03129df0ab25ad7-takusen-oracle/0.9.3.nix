@@ -32,6 +32,9 @@ let
           libs = if system.isWindows
             then [ pkgs.oci ]
             else [ pkgs.clntsh ];
+          build-tools = [
+            hsPkgs.sqlplus
+          ];
         };
         exes = {
           takusen_tests = {

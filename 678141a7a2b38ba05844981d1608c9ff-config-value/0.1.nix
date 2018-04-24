@@ -28,6 +28,10 @@ let
             hsPkgs.pretty
             hsPkgs.text
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

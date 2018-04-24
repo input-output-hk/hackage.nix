@@ -52,7 +52,7 @@ let
               hsPkgs.OptDir
               hsPkgs.time
               hsPkgs.old-locale
-            ] ++ pkgs.lib.optional (_flags.forcechar8 && compiler.isGhc) hsPkgs.base;
+            ] ++ pkgs.lib.optional (_flags.forcechar8 && (compiler.isGhc && true)) hsPkgs.base;
           };
           lp2yices = {
             depends  = [

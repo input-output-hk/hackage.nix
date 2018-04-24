@@ -38,6 +38,7 @@ let
               pkgs.ncursesw
               pkgs.pthread
             ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

@@ -31,6 +31,10 @@ let
               hsPkgs.array
               hsPkgs.BNFC
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

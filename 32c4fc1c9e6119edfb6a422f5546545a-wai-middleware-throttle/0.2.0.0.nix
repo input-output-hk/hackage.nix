@@ -30,7 +30,7 @@ let
             hsPkgs.http-types
             hsPkgs.stm
             hsPkgs.token-bucket
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.blaze-builder;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.blaze-builder;
         };
         tests = {
           spec = {
@@ -52,6 +52,9 @@ let
               hsPkgs.base
               hsPkgs.process
               hsPkgs.regex-compat
+            ];
+            build-tools = [
+              hsPkgs.haddock
             ];
           };
           hlint = {

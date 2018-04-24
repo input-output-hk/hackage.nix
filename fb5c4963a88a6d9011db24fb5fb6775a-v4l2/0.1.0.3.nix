@@ -30,6 +30,7 @@ let
             hsPkgs.bindings-posix
             hsPkgs.ioctl
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

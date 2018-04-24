@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.containers
             hsPkgs.ghc-prim
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.template-haskell;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.template-haskell;
         };
       };
     }

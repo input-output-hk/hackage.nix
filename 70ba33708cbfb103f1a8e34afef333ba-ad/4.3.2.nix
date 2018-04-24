@@ -34,7 +34,7 @@ let
             hsPkgs.nats
             hsPkgs.reflection
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ pkgs.lib.optional _flags.herbie hsPkgs.HerbiePlugin;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged) ++ pkgs.lib.optional _flags.herbie hsPkgs.HerbiePlugin;
         };
         tests = {
           doctests = {

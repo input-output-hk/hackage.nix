@@ -25,6 +25,7 @@ let
             hsPkgs.base
             hsPkgs.bindings-DSL
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

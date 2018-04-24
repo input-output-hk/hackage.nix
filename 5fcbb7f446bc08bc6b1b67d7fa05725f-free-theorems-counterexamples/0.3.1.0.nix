@@ -28,7 +28,7 @@ let
             hsPkgs.pretty
             hsPkgs.containers
             hsPkgs.HUnit
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [ hsPkgs.base hsPkgs.syb ]
             else [ hsPkgs.base ]);
         };

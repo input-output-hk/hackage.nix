@@ -36,6 +36,7 @@ let
             hsPkgs.process
             hsPkgs.containers
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         exes = {
           jukebox = {
@@ -55,6 +56,7 @@ let
               hsPkgs.containers
               hsPkgs.jukebox
             ];
+            build-tools = [ hsPkgs.alex ];
           };
         };
       };

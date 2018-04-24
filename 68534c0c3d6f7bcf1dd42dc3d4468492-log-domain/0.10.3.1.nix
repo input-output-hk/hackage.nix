@@ -38,7 +38,7 @@ let
             hsPkgs.semigroups
             hsPkgs.safecopy
             hsPkgs.vector
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.generic-deriving;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.generic-deriving;
         };
         tests = {
           doctests = {

@@ -29,6 +29,7 @@ let
             hsPkgs.unix
           ];
           libs = [ pkgs.bdd pkgs.mem ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.transformers
             hsPkgs.uniplate
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
           nsis-test = {

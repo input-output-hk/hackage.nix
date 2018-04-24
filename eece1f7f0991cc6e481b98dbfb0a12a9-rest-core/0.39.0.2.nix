@@ -48,7 +48,7 @@ let
             hsPkgs.uri-encode
             hsPkgs.utf8-string
             hsPkgs.uuid
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
           rest-tests = {

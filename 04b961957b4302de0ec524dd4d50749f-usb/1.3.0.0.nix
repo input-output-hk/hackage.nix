@@ -27,7 +27,7 @@ let
             hsPkgs.bytestring
             hsPkgs.text
             hsPkgs.vector
-          ] ++ pkgs.lib.optional (!system.isWindows && compiler.isGhc) hsPkgs.containers) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (!system.isWindows && (compiler.isGhc && compiler.version.gt "7")) hsPkgs.containers) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1") hsPkgs.ghc-prim;
         };
       };
     }

@@ -43,7 +43,7 @@ let
             hsPkgs.deepseq
             hsPkgs.hslogger
             hsPkgs.network
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.12"
             then [ hsPkgs.haddock ]
             else [
               hsPkgs.haddock-leksah
@@ -73,7 +73,7 @@ let
               hsPkgs.process-leksah
               hsPkgs.deepseq
               hsPkgs.network
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "6.12"
               then [ hsPkgs.haddock ]
               else [
                 hsPkgs.haddock-leksah

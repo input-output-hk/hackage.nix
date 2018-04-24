@@ -69,6 +69,7 @@ let
               hsPkgs.zip-archive
               hsPkgs.temporary
             ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
+            build-tools = [ hsPkgs.zip ];
           };
         };
       };

@@ -34,7 +34,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.bytestring
             hsPkgs.template-haskell
-          ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
         };
         exes = {
           todo = {
@@ -43,7 +43,7 @@ let
               hsPkgs.react-flux
               hsPkgs.deepseq
               hsPkgs.text
-            ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+            ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
           todo-node = {
             depends  = [
@@ -51,14 +51,14 @@ let
               hsPkgs.react-flux
               hsPkgs.deepseq
               hsPkgs.text
-            ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+            ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
           purecss-side-menu = {
             depends  = [
               hsPkgs.base
               hsPkgs.react-flux
               hsPkgs.deepseq
-            ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+            ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
           test-client = {
             depends  = [
@@ -68,7 +68,7 @@ let
               hsPkgs.text
               hsPkgs.deepseq
               hsPkgs.aeson
-            ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+            ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
           route-example = {
             depends  = pkgs.lib.optionals _flags.example [
@@ -81,7 +81,7 @@ let
               hsPkgs.transformers
               hsPkgs.bytestring
               hsPkgs.deepseq
-            ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+            ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
         };
       };

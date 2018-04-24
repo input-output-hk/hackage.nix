@@ -53,7 +53,7 @@ let
             hsPkgs.transformers
             hsPkgs.uglymemo
             hsPkgs.utf8-string
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           doctests = {
@@ -91,7 +91,7 @@ let
               hsPkgs.transformers
               hsPkgs.uglymemo
               hsPkgs.utf8-string
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
           hunittests = {
             depends  = [
@@ -129,7 +129,7 @@ let
               hsPkgs.transformers
               hsPkgs.uglymemo
               hsPkgs.utf8-string
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
       };

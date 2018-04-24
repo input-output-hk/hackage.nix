@@ -31,6 +31,7 @@ let
             pkgs.z3
             pkgs.gomp
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

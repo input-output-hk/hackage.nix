@@ -37,6 +37,10 @@ let
               hsPkgs.dlist
               hsPkgs.filepath
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

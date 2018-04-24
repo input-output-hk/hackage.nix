@@ -31,6 +31,10 @@ let
             hsPkgs.semigroups
             hsPkgs.utf8-string
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         tests = {
           testsuite = {

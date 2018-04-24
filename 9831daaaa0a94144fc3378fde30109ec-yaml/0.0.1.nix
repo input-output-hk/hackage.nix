@@ -28,6 +28,7 @@ let
             hsPkgs.bytestring
             hsPkgs.haskell98
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

@@ -24,6 +24,7 @@ let
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           tests = {

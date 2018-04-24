@@ -27,7 +27,7 @@ let
             hsPkgs.bindings-libusb
             hsPkgs.bytestring
             hsPkgs.text
-          ] ++ pkgs.lib.optional (compiler.isGhc && !system.isWindows) hsPkgs.containers) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.gt "7" && !system.isWindows) hsPkgs.containers) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1") hsPkgs.ghc-prim;
         };
       };
     }

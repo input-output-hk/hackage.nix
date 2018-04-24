@@ -32,6 +32,7 @@ let
             hsPkgs.pretty
           ];
           libs = [ pkgs.wlc ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

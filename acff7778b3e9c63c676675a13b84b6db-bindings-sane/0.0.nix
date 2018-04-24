@@ -28,6 +28,7 @@ let
           pkgconfig = [
             pkgconfPkgs.sane-backends
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

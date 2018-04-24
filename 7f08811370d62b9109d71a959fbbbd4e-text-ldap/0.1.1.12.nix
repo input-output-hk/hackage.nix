@@ -29,7 +29,7 @@ let
             hsPkgs.attoparsec
             hsPkgs.dlist
             hsPkgs.memory
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
         };
         exes = {
           parseTest = {
@@ -49,7 +49,7 @@ let
               hsPkgs.text-ldap
               hsPkgs.QuickCheck
               hsPkgs.quickcheck-simple
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
           };
         };
       };

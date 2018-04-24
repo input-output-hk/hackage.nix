@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.array
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.ghc-prim;
         };
         tests = {
           map-lazy-properties = {

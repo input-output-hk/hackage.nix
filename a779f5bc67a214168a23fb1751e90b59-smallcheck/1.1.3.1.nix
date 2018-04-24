@@ -27,7 +27,7 @@ let
             hsPkgs.logict
             hsPkgs.ghc-prim
             hsPkgs.pretty
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats;
         };
       };
     }

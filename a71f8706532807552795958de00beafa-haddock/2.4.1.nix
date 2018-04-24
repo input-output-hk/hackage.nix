@@ -33,7 +33,7 @@ let
               hsPkgs.pretty
               hsPkgs.containers
               hsPkgs.array
-            ] ++ pkgs.lib.optional (!_flags.in-ghc-tree) hsPkgs.ghc-paths) ++ (if compiler.isGhc
+            ] ++ pkgs.lib.optional (!_flags.in-ghc-tree) hsPkgs.ghc-paths) ++ (if compiler.isGhc && compiler.version.ge "6.9"
               then [
                 hsPkgs.Cabal
                 hsPkgs.base

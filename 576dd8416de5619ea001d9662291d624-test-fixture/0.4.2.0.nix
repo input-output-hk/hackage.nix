@@ -38,7 +38,7 @@ let
               hsPkgs.mtl
               hsPkgs.template-haskell
               hsPkgs.transformers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.th-to-exp;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0.0.0") hsPkgs.th-to-exp;
           };
         };
       };

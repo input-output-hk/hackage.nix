@@ -27,7 +27,7 @@ let
             hsPkgs.transformers-abort
             hsPkgs.mtl
             hsPkgs.monad-control
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.7"
             then [ hsPkgs.base ]
             else [
               hsPkgs.base

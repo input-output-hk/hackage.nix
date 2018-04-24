@@ -71,7 +71,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ (if system.isWindows
+              ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ (if system.isWindows
               then [ hsPkgs.Win32 ]
               else [ hsPkgs.unix ]);
           };
@@ -106,7 +106,7 @@ let
             ] ++ pkgs.lib.optional _flags.old-directory hsPkgs.old-time) ++ [
               hsPkgs.network-uri
               hsPkgs.network
-            ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ (if system.isWindows
+            ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ (if system.isWindows
               then [ hsPkgs.Win32 ]
               else [ hsPkgs.unix ]);
           };

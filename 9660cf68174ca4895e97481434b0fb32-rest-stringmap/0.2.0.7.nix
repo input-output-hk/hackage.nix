@@ -30,7 +30,7 @@ let
             hsPkgs.json-schema
             hsPkgs.tostring
             hsPkgs.unordered-containers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
         };
       };
     }

@@ -30,6 +30,10 @@ let
             hsPkgs.z3
             hsPkgs.z3-encoding
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         exes = {
           ntha = {

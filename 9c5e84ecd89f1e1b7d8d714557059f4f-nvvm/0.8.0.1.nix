@@ -27,6 +27,7 @@ let
             hsPkgs.cuda
             hsPkgs.template-haskell
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

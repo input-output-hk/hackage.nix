@@ -34,7 +34,7 @@ let
             hsPkgs.text
             hsPkgs.time
             hsPkgs.uuid
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.base;
         };
         tests = {
           sqlvalues = {

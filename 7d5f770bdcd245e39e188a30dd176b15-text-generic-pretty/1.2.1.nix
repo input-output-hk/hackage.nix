@@ -51,6 +51,7 @@ let
               hsPkgs.unordered-containers
               hsPkgs.time
             ];
+            build-tools = [ hsPkgs.hsc2hs ];
           };
         };
       };

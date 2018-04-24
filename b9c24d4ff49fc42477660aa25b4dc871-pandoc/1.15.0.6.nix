@@ -87,6 +87,7 @@ let
             hsPkgs.http-client-tls
             hsPkgs.http-types
           ];
+          build-tools = pkgs.lib.optional _flags.embed_data_files hsPkgs.hsb2hs;
         };
         exes = {
           pandoc = {

@@ -70,14 +70,14 @@ let
             hsPkgs.zip-archive
             hsPkgs.fsnotify
             hsPkgs.async
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "7.10.3"
             then [
               hsPkgs.zlib
               hsPkgs.process
             ]
             else [ hsPkgs.process ])) ++ [
             hsPkgs.safe
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagsoup) ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optional system.isFreebsd hsPkgs.unix) ++ pkgs.lib.optional system.isOsx hsPkgs.unix) ++ pkgs.lib.optionals system.isWindows [
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8.4") hsPkgs.tagsoup) ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optional system.isFreebsd hsPkgs.unix) ++ pkgs.lib.optional system.isOsx hsPkgs.unix) ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.mintty
             hsPkgs.Win32
           ]) ++ pkgs.lib.optional _flags.ffi hsPkgs.libffi) ++ pkgs.lib.optional _flags.gmp hsPkgs.libffi;

@@ -34,7 +34,7 @@ let
               hsPkgs.pretty
               hsPkgs.containers
               hsPkgs.array
-            ] ++ pkgs.lib.optional (!_flags.in-ghc-tree) hsPkgs.ghc-paths) ++ pkgs.lib.optional compiler.isGhc hsPkgs.Cabal;
+            ] ++ pkgs.lib.optional (!_flags.in-ghc-tree) hsPkgs.ghc-paths) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.Cabal;
           };
         };
       };

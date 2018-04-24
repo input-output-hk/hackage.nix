@@ -35,7 +35,7 @@ let
             hsPkgs.semigroups
             hsPkgs.transformers
             hsPkgs.transformers-compat
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.generic-deriving) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.contravariant hsPkgs.contravariant) ++ pkgs.lib.optional _flags.distributive hsPkgs.distributive) ++ pkgs.lib.optional _flags.comonad hsPkgs.comonad) ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged;
+          ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.0" && compiler.version.lt "7.4")) hsPkgs.generic-deriving) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.contravariant hsPkgs.contravariant) ++ pkgs.lib.optional _flags.distributive hsPkgs.distributive) ++ pkgs.lib.optional _flags.comonad hsPkgs.comonad) ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged;
         };
         tests = {
           doctests = {

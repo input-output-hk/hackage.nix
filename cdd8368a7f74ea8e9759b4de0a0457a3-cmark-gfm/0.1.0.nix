@@ -27,7 +27,7 @@ let
             hsPkgs.base
             hsPkgs.text
             hsPkgs.bytestring
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
           pkgconfig = pkgs.lib.optional _flags.pkgconfig pkgconfPkgs.libcmark-gfm;
         };
         tests = {

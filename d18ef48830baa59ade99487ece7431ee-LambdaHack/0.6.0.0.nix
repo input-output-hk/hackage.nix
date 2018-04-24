@@ -54,7 +54,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.vector
             hsPkgs.vector-binary-instances
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [ hsPkgs.ghcjs-dom ]
             else if _flags.vty
               then [ hsPkgs.vty ]
@@ -65,7 +65,7 @@ let
                   else [
                     hsPkgs.sdl2
                     hsPkgs.sdl2-ttf
-                  ])) ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.zlib;
+                  ])) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.zlib;
         };
         exes = {
           LambdaHack = {
@@ -97,7 +97,7 @@ let
               hsPkgs.unordered-containers
               hsPkgs.vector
               hsPkgs.vector-binary-instances
-            ] ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.zlib;
+            ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.zlib;
           };
         };
         tests = {
@@ -130,7 +130,7 @@ let
               hsPkgs.unordered-containers
               hsPkgs.vector
               hsPkgs.vector-binary-instances
-            ] ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.zlib;
+            ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.zlib;
           };
         };
       };

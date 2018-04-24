@@ -48,7 +48,11 @@ let
               hsPkgs.pretty
               hsPkgs.filepath
               hsPkgs.random
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.hashtables;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.7") hsPkgs.hashtables;
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

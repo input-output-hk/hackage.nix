@@ -29,6 +29,10 @@ let
               hsPkgs.data-lens-light
               hsPkgs.mtl
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

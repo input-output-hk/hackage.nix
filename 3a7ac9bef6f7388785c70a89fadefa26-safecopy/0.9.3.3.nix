@@ -32,7 +32,7 @@ let
             hsPkgs.text
             hsPkgs.time
             hsPkgs.vector
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.gt "8.0")) hsPkgs.semigroups;
         };
         tests = {
           instances = {

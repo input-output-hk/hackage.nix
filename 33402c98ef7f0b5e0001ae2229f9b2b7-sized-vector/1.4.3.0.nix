@@ -30,7 +30,7 @@ let
             hsPkgs.monomorphic
             hsPkgs.template-haskell
             hsPkgs.type-natural
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.singletons) ++ pkgs.lib.optional compiler.isGhc hsPkgs.singletons;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.singletons) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.7") hsPkgs.singletons;
         };
       };
     }

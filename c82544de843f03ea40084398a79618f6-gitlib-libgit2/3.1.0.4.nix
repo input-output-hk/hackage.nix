@@ -50,7 +50,7 @@ let
             hsPkgs.time
             hsPkgs.transformers
             hsPkgs.transformers-base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.missing-foreign;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.missing-foreign;
         };
         tests = {
           smoke = {

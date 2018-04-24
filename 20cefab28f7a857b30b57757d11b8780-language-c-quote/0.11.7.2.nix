@@ -38,12 +38,19 @@ let
             hsPkgs.symbol
             hsPkgs.template-haskell
           ] ++ (if _flags.full-haskell-antiquotes
-            then pkgs.lib.optional compiler.isGhc hsPkgs.safe ++ [
+            then pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.safe ++ [
               hsPkgs.haskell-src-meta
             ]
             else [
               hsPkgs.haskell-exp-parser
             ]);
+          build-tools = pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.4") [
+            hsPkgs.alex
+            hsPkgs.happy
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.4") [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         tests = {
           unit = {

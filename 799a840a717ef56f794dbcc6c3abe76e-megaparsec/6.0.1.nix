@@ -34,10 +34,10 @@ let
             hsPkgs.scientific
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.fail
             hsPkgs.semigroups
-          ]) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.void;
+          ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.void;
         };
         tests = {
           tests = {
@@ -53,7 +53,7 @@ let
               hsPkgs.scientific
               hsPkgs.text
               hsPkgs.transformers
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.void;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.void;
           };
         };
         benchmarks = {
@@ -64,7 +64,7 @@ let
               hsPkgs.deepseq
               hsPkgs.megaparsec
               hsPkgs.text
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.void;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.void;
           };
           bench-memory = {
             depends  = ([
@@ -73,7 +73,7 @@ let
               hsPkgs.megaparsec
               hsPkgs.text
               hsPkgs.weigh
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.void;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.void;
           };
         };
       };

@@ -27,7 +27,7 @@ let
             hsPkgs.bytestring
             hsPkgs.case-insensitive
             hsPkgs.http-types
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [ hsPkgs.ghcjs-base ]
             else [
               hsPkgs.ghcjs-base-stub
@@ -35,7 +35,7 @@ let
         };
         tests = {
           ghcjs-fetch-test = {
-            depends  = pkgs.lib.optionals (!(!compiler.isGhcjs)) [
+            depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true))) [
               hsPkgs.aeson
               hsPkgs.base
               hsPkgs.ghcjs-base

@@ -41,6 +41,10 @@ let
               hsPkgs.download-curl
               hsPkgs.async
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

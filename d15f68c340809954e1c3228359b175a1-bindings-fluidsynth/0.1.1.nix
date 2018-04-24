@@ -28,6 +28,7 @@ let
           pkgconfig = [
             pkgconfPkgs.fluidsynth
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

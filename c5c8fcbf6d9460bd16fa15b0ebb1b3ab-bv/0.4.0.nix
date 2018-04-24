@@ -26,7 +26,7 @@ let
         bv = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optionals (compiler.isGhc && _flags.gmp) [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && true && _flags.gmp) [
             hsPkgs.integer-gmp
             hsPkgs.ghc-prim
           ];

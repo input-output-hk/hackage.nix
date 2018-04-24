@@ -38,7 +38,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.uuid
             hsPkgs.vector
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.bytestring-builder;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.bytestring-builder;
         };
         tests = {
           test = {
@@ -63,6 +63,9 @@ let
               hsPkgs.transformers
               hsPkgs.unordered-containers
               hsPkgs.uuid
+            ];
+            build-tools = [
+              hsPkgs.couchdb
             ];
           };
         };

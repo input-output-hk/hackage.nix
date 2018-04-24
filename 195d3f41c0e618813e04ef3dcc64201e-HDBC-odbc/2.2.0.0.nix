@@ -29,7 +29,7 @@ let
             hsPkgs.HDBC
             hsPkgs.utf8-string
             hsPkgs.bytestring
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.base;
           libs = if system.isWindows || system.isWindows
             then [ pkgs.odbc32 ]
             else [ pkgs.odbc ];

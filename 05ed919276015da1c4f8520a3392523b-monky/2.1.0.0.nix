@@ -43,13 +43,13 @@ let
             hsPkgs.formatting
             hsPkgs.composition
             hsPkgs.env-locale
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.double-conversion) ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.double-conversion) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.10") [
             hsPkgs.transformers-compat
             hsPkgs.old-locale
           ]) ++ pkgs.lib.optionals _flags.ibus [
             hsPkgs.ibus-hs
             hsPkgs.dbus
-          ]) ++ pkgs.lib.optional (compiler.isGhc && _flags.pulse) hsPkgs.pulseaudio;
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8" && _flags.pulse) hsPkgs.pulseaudio;
         };
         exes = {
           monky = {

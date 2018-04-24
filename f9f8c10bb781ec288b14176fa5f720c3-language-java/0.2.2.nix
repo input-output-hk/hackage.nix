@@ -27,7 +27,8 @@ let
             hsPkgs.pretty
             hsPkgs.cpphs
             hsPkgs.parsec
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.syb;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.syb;
+          build-tools = [ hsPkgs.alex ];
         };
       };
     }

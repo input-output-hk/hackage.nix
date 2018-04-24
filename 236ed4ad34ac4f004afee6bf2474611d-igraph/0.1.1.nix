@@ -28,6 +28,7 @@ let
             hsPkgs.hashable
           ];
           libs = [ pkgs.igraph ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

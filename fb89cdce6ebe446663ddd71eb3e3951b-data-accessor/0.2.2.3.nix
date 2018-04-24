@@ -33,7 +33,7 @@ let
             ] ++ [ hsPkgs.base ]
             else [
               hsPkgs.base
-            ] ++ pkgs.lib.optional compiler.isJhc hsPkgs.containers);
+            ] ++ pkgs.lib.optional (compiler.isJhc && true) hsPkgs.containers);
         };
       };
     }

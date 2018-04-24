@@ -23,7 +23,7 @@ let
         is = {
           depends  = ((([
             hsPkgs.base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.template-haskell) ++ pkgs.lib.optional compiler.isGhc hsPkgs.template-haskell) ++ pkgs.lib.optional compiler.isGhc hsPkgs.template-haskell) ++ pkgs.lib.optional compiler.isGhc hsPkgs.template-haskell;
+          ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.template-haskell;
         };
         tests = {
           test = {

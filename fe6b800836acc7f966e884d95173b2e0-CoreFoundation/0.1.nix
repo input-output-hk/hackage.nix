@@ -38,6 +38,7 @@ let
           frameworks = [
             pkgs.CoreFoundation
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

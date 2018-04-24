@@ -39,7 +39,7 @@ let
             hsPkgs.system-filepath
             hsPkgs.Chart-diagrams
             hsPkgs.lens
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "7.10") hsPkgs.transformers;
         };
         exes = {
           wrd = {

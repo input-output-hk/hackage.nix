@@ -28,6 +28,7 @@ let
             hsPkgs.mtl
             hsPkgs.containers
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

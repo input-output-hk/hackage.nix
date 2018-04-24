@@ -37,7 +37,7 @@ let
             hsPkgs.transformers
             hsPkgs.unordered-containers
             hsPkgs.attoparsec
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
         };
         exes = {
           ersatz-regexp-grid = {
@@ -48,7 +48,7 @@ let
               hsPkgs.lens
               hsPkgs.mtl
               hsPkgs.parsec
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim);
+            ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) hsPkgs.ghc-prim);
           };
           ersatz-sudoku = {
             depends  = pkgs.lib.optionals _flags.examples ([
@@ -56,7 +56,7 @@ let
               hsPkgs.base
               hsPkgs.ersatz
               hsPkgs.mtl
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim);
+            ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) hsPkgs.ghc-prim);
           };
         };
         tests = {

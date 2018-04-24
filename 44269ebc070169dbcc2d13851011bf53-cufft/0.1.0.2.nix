@@ -25,6 +25,7 @@ let
             hsPkgs.base
             hsPkgs.cuda
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

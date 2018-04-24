@@ -55,6 +55,10 @@ let
               hsPkgs.old-locale
               hsPkgs.time
             ]);
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           migration-tool = {

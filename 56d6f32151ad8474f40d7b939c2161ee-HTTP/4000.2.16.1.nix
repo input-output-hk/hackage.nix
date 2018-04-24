@@ -36,7 +36,7 @@ let
             hsPkgs.bytestring
           ] ++ [
             hsPkgs.mtl
-          ]) ++ (if compiler.isGhc
+          ]) ++ (if compiler.isGhc && compiler.version.lt "6.12"
             then [ hsPkgs.network ]
             else if _flags.network-uri
               then [
@@ -46,6 +46,7 @@ let
               else [
                 hsPkgs.network
               ])) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
+          build-tools = [ hsPkgs.ghc ];
         };
         tests = {
           test = {
@@ -79,6 +80,7 @@ let
                 hsPkgs.conduit
                 hsPkgs.conduit-extra
               ]));
+            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

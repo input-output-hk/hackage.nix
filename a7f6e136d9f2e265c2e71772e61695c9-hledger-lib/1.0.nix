@@ -52,7 +52,7 @@ let
             hsPkgs.HUnit
             hsPkgs.parsec
             hsPkgs.semigroups
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ (if _flags.oldtime
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ (if _flags.oldtime
             then [
               hsPkgs.time
               hsPkgs.old-locale
@@ -90,7 +90,7 @@ let
               hsPkgs.HUnit
               hsPkgs.doctest
               hsPkgs.Glob
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
           };
           hunittests = {
             depends  = ([
@@ -123,7 +123,7 @@ let
               hsPkgs.hledger-lib
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ (if _flags.oldtime
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ (if _flags.oldtime
               then [
                 hsPkgs.time
                 hsPkgs.old-locale

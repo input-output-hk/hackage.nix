@@ -58,7 +58,7 @@ let
               ]
               else [
                 hsPkgs.type-level-numbers
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged;
+              ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.tagged;
           };
         };
       };

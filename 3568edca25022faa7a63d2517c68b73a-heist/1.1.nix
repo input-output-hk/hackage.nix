@@ -47,7 +47,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.vector
             hsPkgs.xmlhtml
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           testsuite = {
@@ -84,7 +84,7 @@ let
               hsPkgs.unordered-containers
               hsPkgs.vector
               hsPkgs.xmlhtml
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
         benchmarks = {
@@ -120,7 +120,7 @@ let
               hsPkgs.unordered-containers
               hsPkgs.vector
               hsPkgs.xmlhtml
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
       };

@@ -30,6 +30,10 @@ let
             hsPkgs.mtl
             hsPkgs.transformers
           ];
+          build-tools = [
+            hsPkgs.c2hsc
+            hsPkgs.hsc2hs
+          ];
         };
       };
     }

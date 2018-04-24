@@ -26,17 +26,17 @@ let
             hsPkgs.deepseq
             hsPkgs.parallel
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base) ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.ghcjs-base-stub;
+          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.ghcjs-base-stub;
         };
         exes = {
           javascript-extras-test = {
             depends  = ([
               hsPkgs.base
               hsPkgs.javascript-extras
-            ] ++ pkgs.lib.optionals compiler.isGhcjs [
+            ] ++ pkgs.lib.optionals (compiler.isGhcjs && true) [
               hsPkgs.ghcjs-base
               hsPkgs.ghcjs-prim
-            ]) ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.ghcjs-base-stub;
+            ]) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.ghcjs-base-stub;
           };
         };
       };

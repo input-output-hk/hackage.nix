@@ -43,6 +43,7 @@ let
               hsPkgs.process
               hsPkgs.syb
             ];
+            build-tools = [ hsPkgs.happy ];
           };
         };
       };

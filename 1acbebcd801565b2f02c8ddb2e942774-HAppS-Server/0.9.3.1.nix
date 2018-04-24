@@ -45,7 +45,7 @@ let
             hsPkgs.old-locale
             hsPkgs.directory
             hsPkgs.process
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.syb) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional _flags.base4 hsPkgs.base;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.syb) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional _flags.base4 hsPkgs.base;
         };
       };
     }

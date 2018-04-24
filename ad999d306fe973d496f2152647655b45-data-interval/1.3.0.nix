@@ -28,7 +28,7 @@ let
             hsPkgs.deepseq
             hsPkgs.hashable
             hsPkgs.extended-reals
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
           test-interval = {
@@ -47,7 +47,7 @@ let
               hsPkgs.tasty-th
               hsPkgs.HUnit
               hsPkgs.QuickCheck
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers;
           };
         };
       };

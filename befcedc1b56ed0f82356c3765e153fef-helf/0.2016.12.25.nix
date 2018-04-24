@@ -30,6 +30,10 @@ let
               hsPkgs.pretty
               hsPkgs.QuickCheck
             ];
+            build-tools = [
+              hsPkgs.happy
+              hsPkgs.alex
+            ];
           };
         };
       };

@@ -45,7 +45,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.vector
             hsPkgs.void
-          ] ++ pkgs.lib.optional (_flags.template-haskell && compiler.isGhc) hsPkgs.template-haskell;
+          ] ++ pkgs.lib.optional (_flags.template-haskell && (compiler.isGhc && true)) hsPkgs.template-haskell;
         };
         tests = {
           doctests = {

@@ -27,7 +27,7 @@ let
             hsPkgs.pretty
             hsPkgs.syb
             hsPkgs.th-orphans
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.4"
             then [ hsPkgs.template-haskell ]
             else [
               hsPkgs.template-haskell

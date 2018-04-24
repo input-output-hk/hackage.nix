@@ -30,6 +30,10 @@ let
               hsPkgs.directory
               hsPkgs.mtl
             ];
+            build-tools = [
+              hsPkgs.happy
+              hsPkgs.alex
+            ];
           };
         };
       };

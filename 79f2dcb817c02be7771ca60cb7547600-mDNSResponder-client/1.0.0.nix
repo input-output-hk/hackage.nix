@@ -30,6 +30,7 @@ let
             hsPkgs.data-endian
             hsPkgs.transformers
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           test = {

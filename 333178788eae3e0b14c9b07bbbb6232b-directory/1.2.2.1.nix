@@ -35,6 +35,10 @@ let
               hsPkgs.base
               hsPkgs.directory
             ];
+            build-tools = [
+              hsPkgs.python
+              hsPkgs.which
+            ];
           };
         };
       };

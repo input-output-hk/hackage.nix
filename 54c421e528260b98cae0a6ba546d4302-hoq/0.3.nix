@@ -33,6 +33,10 @@ let
               hsPkgs.pretty
               hsPkgs.readline
             ];
+            build-tools = [
+              hsPkgs.happy
+              hsPkgs.alex
+            ];
           };
         };
       };

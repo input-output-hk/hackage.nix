@@ -28,7 +28,7 @@ let
             hsPkgs.syb
             hsPkgs.template-haskell
             hsPkgs.th-orphans
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.safe;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.safe;
         };
         tests = {
           unit = {

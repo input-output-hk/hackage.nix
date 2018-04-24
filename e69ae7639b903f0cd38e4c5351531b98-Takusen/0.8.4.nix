@@ -31,7 +31,7 @@ let
             hsPkgs.base
             hsPkgs.mtl
             hsPkgs.time
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.old-time) ++ [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.8") hsPkgs.old-time) ++ [
             hsPkgs.base
           ];
           libs = (((if _flags.odbc && system.isWindows
@@ -46,6 +46,9 @@ let
               pkgs.clntsh
             ])) ++ pkgs.lib.optional _flags.postgres pkgs.pq) ++ pkgs.lib.optional _flags.sqlite pkgs.sqlite3;
           pkgconfig = pkgs.lib.optional (_flags.sqlite && !system.isWindows) pkgconfPkgs.sqlite3;
+          build-tools = (pkgs.lib.optional _flags.oracle hsPkgs.sqlplus ++ pkgs.lib.optional _flags.postgres hsPkgs.pg_config) ++ [
+            hsPkgs.sqlite3
+          ];
         };
         exes = {
           takusen_tests = {
@@ -54,7 +57,7 @@ let
               hsPkgs.mtl
               hsPkgs.time
               hsPkgs.QuickCheck
-            ] ++ pkgs.lib.optional (!(!_flags.buildtests)) hsPkgs.Takusen) ++ pkgs.lib.optional compiler.isGhc hsPkgs.old-time) ++ [
+            ] ++ pkgs.lib.optional (!(!_flags.buildtests)) hsPkgs.Takusen) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.8") hsPkgs.old-time) ++ [
               hsPkgs.base
             ];
           };

@@ -33,6 +33,10 @@ let
             hsPkgs.composition-prelude
             hsPkgs.ansi-terminal
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         tests = {
           language-ats-test = {

@@ -34,7 +34,7 @@ let
             hsPkgs.hs-bibutils
             hsPkgs.filepath
             hsPkgs.directory
-          ]) ++ (if compiler.isGhc
+          ]) ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [ hsPkgs.base hsPkgs.syb ]
             else [ hsPkgs.base ]);
           libs = pkgs.lib.optional _flags.bibutils pkgs.bibutils;

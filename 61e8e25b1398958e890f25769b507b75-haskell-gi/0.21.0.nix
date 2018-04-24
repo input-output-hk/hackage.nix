@@ -39,11 +39,12 @@ let
             hsPkgs.xml-conduit
             hsPkgs.regex-tdfa
             hsPkgs.text
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           pkgconfig = [
             pkgconfPkgs."gobject-introspection-1.0"
             pkgconfPkgs."gobject-2.0"
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           haskell-gi = {

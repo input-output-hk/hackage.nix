@@ -31,6 +31,11 @@ let
             hsPkgs.bytestring
             hsPkgs.utf8-string
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         tests = {
           test-language-javascript = {

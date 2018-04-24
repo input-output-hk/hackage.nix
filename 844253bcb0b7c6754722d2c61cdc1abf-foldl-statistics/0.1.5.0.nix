@@ -29,7 +29,7 @@ let
             hsPkgs.containers
             hsPkgs.unordered-containers
             hsPkgs.hashable
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
           foldl-statistics-test = {
@@ -43,7 +43,7 @@ let
               hsPkgs.vector
               hsPkgs.quickcheck-instances
               hsPkgs.profunctors
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
           };
         };
         benchmarks = {
@@ -56,7 +56,7 @@ let
               hsPkgs.criterion
               hsPkgs.vector
               hsPkgs.mwc-random
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
           };
         };
       };

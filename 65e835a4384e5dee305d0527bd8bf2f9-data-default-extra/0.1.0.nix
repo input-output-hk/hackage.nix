@@ -34,7 +34,7 @@ let
             hsPkgs.base
             hsPkgs.data-default-class
             hsPkgs.data-default-instances-new-base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.with-bytestring hsPkgs.data-default-instances-bytestring) ++ pkgs.lib.optional _flags.with-case-insensitive hsPkgs.data-default-instances-case-insensitive) ++ pkgs.lib.optional _flags.with-containers hsPkgs.data-default-instances-containers) ++ pkgs.lib.optional _flags.with-dlist hsPkgs.data-default-instances-dlist) ++ pkgs.lib.optional _flags.with-text hsPkgs.data-default-instances-text) ++ pkgs.lib.optional _flags.with-old-locale hsPkgs.data-default-instances-old-locale) ++ pkgs.lib.optional _flags.with-unordered-containers hsPkgs.data-default-instances-unordered-containers) ++ pkgs.lib.optional _flags.with-vector hsPkgs.data-default-instances-vector;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.with-bytestring hsPkgs.data-default-instances-bytestring) ++ pkgs.lib.optional _flags.with-case-insensitive hsPkgs.data-default-instances-case-insensitive) ++ pkgs.lib.optional _flags.with-containers hsPkgs.data-default-instances-containers) ++ pkgs.lib.optional _flags.with-dlist hsPkgs.data-default-instances-dlist) ++ pkgs.lib.optional _flags.with-text hsPkgs.data-default-instances-text) ++ pkgs.lib.optional _flags.with-old-locale hsPkgs.data-default-instances-old-locale) ++ pkgs.lib.optional _flags.with-unordered-containers hsPkgs.data-default-instances-unordered-containers) ++ pkgs.lib.optional _flags.with-vector hsPkgs.data-default-instances-vector;
         };
       };
     }

@@ -25,6 +25,7 @@ let
             hsPkgs.base
             hsPkgs.Win32
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

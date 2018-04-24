@@ -32,7 +32,7 @@ let
             hsPkgs.time
             hsPkgs.xml
             hsPkgs.hostname
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.base-orphans) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.base-orphans) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           test-framework-tests = {

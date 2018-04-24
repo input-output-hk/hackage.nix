@@ -58,7 +58,7 @@ let
             hsPkgs.uuid
             hsPkgs.vector
             hsPkgs.ipython-kernel
-          ] ++ pkgs.lib.optional _flags.binpkgdb hsPkgs.bin-package-db) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot;
+          ] ++ pkgs.lib.optional _flags.binpkgdb hsPkgs.bin-package-db) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.ghc-boot;
         };
         exes = {
           ihaskell = {

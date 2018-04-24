@@ -37,6 +37,7 @@ let
             pkgs.GLEW
           ];
           frameworks = pkgs.lib.optional system.isOsx pkgs.OpenGL;
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           example00 = {

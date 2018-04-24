@@ -30,6 +30,7 @@ let
             hsPkgs.tagged
             hsPkgs.crypto-api
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           runtests = {

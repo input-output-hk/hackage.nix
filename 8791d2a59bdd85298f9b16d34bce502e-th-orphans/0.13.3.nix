@@ -28,7 +28,7 @@ let
             hsPkgs.th-reify-many
             hsPkgs.th-lift-instances
             hsPkgs.mtl
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.generic-deriving) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.generic-deriving) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
         };
         tests = {
           test = {

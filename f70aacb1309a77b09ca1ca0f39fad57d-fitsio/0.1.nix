@@ -25,6 +25,7 @@ let
             hsPkgs.base
             hsPkgs.mtl
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

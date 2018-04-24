@@ -29,10 +29,10 @@ let
             hsPkgs.profunctors
             hsPkgs.semigroupoids
             hsPkgs.base
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8") [
             hsPkgs.semigroups
             hsPkgs.transformers
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.bifunctors) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2") hsPkgs.bifunctors) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
         };
       };
     }

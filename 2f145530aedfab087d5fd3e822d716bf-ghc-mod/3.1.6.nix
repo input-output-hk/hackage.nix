@@ -36,7 +36,7 @@ let
             hsPkgs.syb
             hsPkgs.time
             hsPkgs.transformers
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "7.7"
             then [
               hsPkgs.convertible
               hsPkgs.Cabal
@@ -78,14 +78,14 @@ let
               hsPkgs.time
               hsPkgs.transformers
               hsPkgs.hspec
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.lt "7.7"
               then [
                 hsPkgs.convertible
                 hsPkgs.Cabal
               ]
               else [
                 hsPkgs.Cabal
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.executable-path;
+              ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6.0") hsPkgs.executable-path;
           };
         };
       };

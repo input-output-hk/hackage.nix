@@ -39,7 +39,7 @@ let
             hsPkgs.text
             hsPkgs.lens-family
             hsPkgs.lens-family-th
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.ghc-prim;
         };
         tests = {
           amqp-tests = {

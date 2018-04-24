@@ -35,6 +35,7 @@ let
             hsPkgs.containers
             hsPkgs.uglymemo
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         exes = {
           jukebox = {

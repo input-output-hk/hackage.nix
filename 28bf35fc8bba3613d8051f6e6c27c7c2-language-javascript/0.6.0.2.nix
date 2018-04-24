@@ -31,6 +31,10 @@ let
             hsPkgs.text
             hsPkgs.utf8-string
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         tests = {
           testsuite = {

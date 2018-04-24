@@ -29,6 +29,7 @@ let
             hsPkgs.template-haskell
           ];
           libs = [ pkgs.ocilib ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           test = {

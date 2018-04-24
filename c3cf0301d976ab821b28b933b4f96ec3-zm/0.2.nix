@@ -33,7 +33,7 @@ let
             hsPkgs.pretty
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [ hsPkgs.ghcjs-base ]
             else [
               hsPkgs.cryptonite

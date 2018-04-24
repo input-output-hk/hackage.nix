@@ -47,7 +47,7 @@ let
               then [ hsPkgs.vty ]
               else if _flags.curses
                 then [ hsPkgs.hscurses ]
-                else pkgs.lib.optional (!(_flags.std || compiler.isGhc)) hsPkgs.gtk);
+                else pkgs.lib.optional (!(_flags.std || compiler.isGhc && compiler.version.eq "7.6.1")) hsPkgs.gtk);
         };
         exes = {
           LambdaHack = {

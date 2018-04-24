@@ -29,7 +29,7 @@ let
             hsPkgs.mtl
             hsPkgs.parsec
             hsPkgs.pretty
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.syb;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.gt "6.8.2") hsPkgs.syb;
         };
       };
     }

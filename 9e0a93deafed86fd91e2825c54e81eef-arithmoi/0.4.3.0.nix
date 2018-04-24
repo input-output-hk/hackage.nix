@@ -31,7 +31,7 @@ let
             hsPkgs.containers
             hsPkgs.random
             hsPkgs.mtl
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats) ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
           spec = {
@@ -47,7 +47,7 @@ let
               hsPkgs.smallcheck
               hsPkgs.transformers
               hsPkgs.transformers-compat
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats;
           };
         };
         benchmarks = {

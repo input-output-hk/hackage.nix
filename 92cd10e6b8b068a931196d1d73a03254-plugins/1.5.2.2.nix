@@ -33,7 +33,7 @@ let
             hsPkgs.process
             hsPkgs.ghc
             hsPkgs.ghc-prim
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-paths;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") hsPkgs.ghc-paths;
         };
       };
     }

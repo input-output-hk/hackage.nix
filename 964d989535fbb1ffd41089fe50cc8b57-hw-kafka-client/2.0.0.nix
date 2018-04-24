@@ -33,6 +33,7 @@ let
             hsPkgs.unix
           ];
           libs = [ pkgs.rdkafka ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           kafka-client-example = {

@@ -43,6 +43,7 @@ let
             pkgs.MagickWand
             pkgs.MagickCore
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           experiment = {

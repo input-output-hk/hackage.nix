@@ -28,7 +28,7 @@ let
             hsPkgs.base
             hsPkgs.array
             hsPkgs.ghc-prim
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats) ++ (if _flags.integer-gmp
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats) ++ (if _flags.integer-gmp
             then [ hsPkgs.integer-gmp ]
             else [ hsPkgs.integer-simple ]);
         };
@@ -43,7 +43,7 @@ let
               hsPkgs.tasty-hunit
               hsPkgs.QuickCheck
               hsPkgs.smallcheck
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
           };
         };
       };

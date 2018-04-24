@@ -29,7 +29,7 @@ let
             hsPkgs.mono-traversable
             hsPkgs.primitive
             hsPkgs.QuickCheck
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           test-suite = {
@@ -42,7 +42,7 @@ let
               hsPkgs.tasty
               hsPkgs.tasty-hunit
               hsPkgs.tasty-quickcheck
-            ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+            ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
               hsPkgs.semigroups
               hsPkgs.transformers
             ];
@@ -55,7 +55,7 @@ let
               hsPkgs.bv-little
               hsPkgs.criterion
               hsPkgs.deepseq
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
       };

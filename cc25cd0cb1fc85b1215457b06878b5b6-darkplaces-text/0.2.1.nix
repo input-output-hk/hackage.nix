@@ -30,6 +30,7 @@ let
             hsPkgs.vector
             hsPkgs.ansi-terminal
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         tests = {
           tests = {

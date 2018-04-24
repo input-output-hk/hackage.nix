@@ -27,7 +27,7 @@ let
             hsPkgs.bytestring
             hsPkgs.array
             hsPkgs.containers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.integer;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.integer;
         };
       };
     }

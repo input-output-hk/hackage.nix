@@ -29,6 +29,7 @@ let
             pkgs.csfml-network
             pkgs.csfml-audio
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

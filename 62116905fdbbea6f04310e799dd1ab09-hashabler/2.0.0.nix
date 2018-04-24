@@ -33,7 +33,7 @@ let
             hsPkgs.primitive
             hsPkgs.ghc-prim
             hsPkgs.template-haskell
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers) ++ pkgs.lib.optional (_flags.integer-gmp && !compiler.isGhcjs) hsPkgs.integer-gmp;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.9") hsPkgs.transformers) ++ pkgs.lib.optional (_flags.integer-gmp && !(compiler.isGhcjs && true)) hsPkgs.integer-gmp;
         };
         tests = {
           tests = {
@@ -46,7 +46,7 @@ let
               hsPkgs.primitive
               hsPkgs.random
               hsPkgs.QuickCheck
-            ] ++ pkgs.lib.optional (_flags.integer-gmp && !compiler.isGhcjs) hsPkgs.integer-gmp);
+            ] ++ pkgs.lib.optional (_flags.integer-gmp && !(compiler.isGhcjs && true)) hsPkgs.integer-gmp);
           };
         };
         benchmarks = {

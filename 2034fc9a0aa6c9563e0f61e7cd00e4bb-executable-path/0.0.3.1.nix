@@ -24,7 +24,7 @@ let
           depends  = (((([
             hsPkgs.base
             hsPkgs.filepath
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.directory) ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optionals system.isFreebsd [
+          ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.directory) ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optionals system.isFreebsd [
             hsPkgs.unix
             hsPkgs.directory
           ]) ++ pkgs.lib.optionals (system.isOpenbsd || system.isNetbsd) [

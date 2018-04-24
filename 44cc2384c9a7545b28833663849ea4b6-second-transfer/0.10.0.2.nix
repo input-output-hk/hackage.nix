@@ -55,6 +55,7 @@ let
             hsPkgs.mmorph
           ];
           libs = (pkgs.lib.optional (system.isOsx && _flags.enable-botan) pkgs.second_transfer__enable_tls ++ pkgs.lib.optional system.isLinux pkgs."stdc++") ++ pkgs.lib.optional (_flags.enable-botan && system.isLinux) pkgs."botan-1.11";
+          build-tools = [ hsPkgs.cpphs ];
         };
         tests = {
           hunit-tests = {
@@ -76,6 +77,7 @@ let
               hsPkgs.second-transfer
               hsPkgs.stm
             ];
+            build-tools = [ hsPkgs.cpphs ];
           };
         };
       };

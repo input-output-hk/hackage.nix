@@ -30,6 +30,7 @@ let
             pkgs.bfd
             pkgs.opcodes
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

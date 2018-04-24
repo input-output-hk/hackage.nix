@@ -27,7 +27,7 @@ let
             hsPkgs.vector
             hsPkgs.vector-space
             hsPkgs.vector-th-unbox
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "7.10"
             then [
               hsPkgs.pretty
               hsPkgs.prettyclass

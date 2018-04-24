@@ -38,7 +38,7 @@ let
             hsPkgs.reflection
             hsPkgs.singletons
             hsPkgs.template-haskell
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.th-lift) ++ pkgs.lib.optional _flags.doclinks hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.11") hsPkgs.th-lift) ++ pkgs.lib.optional _flags.doclinks hsPkgs.transformers;
         };
         tests = {
           doctests = {

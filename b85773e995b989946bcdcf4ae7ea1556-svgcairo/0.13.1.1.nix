@@ -31,6 +31,10 @@ let
           pkgconfig = [
             pkgconfPkgs."librsvg-2.0"
           ];
+          build-tools = [
+            hsPkgs.gtk2hsC2hs
+            hsPkgs.gtk2hsTypeGen
+          ];
         };
       };
     }

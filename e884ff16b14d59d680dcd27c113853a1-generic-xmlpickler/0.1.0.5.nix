@@ -26,7 +26,7 @@ let
             hsPkgs.generic-deriving
             hsPkgs.hxt
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         tests = {
           tests = {
@@ -38,7 +38,7 @@ let
               hsPkgs.tasty
               hsPkgs.tasty-hunit
               hsPkgs.tasty-th
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
           };
         };
       };

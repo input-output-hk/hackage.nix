@@ -30,7 +30,7 @@ let
             hsPkgs.time
             hsPkgs.void
             hsPkgs.bytestring
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.8") [
             hsPkgs.singletons
             hsPkgs.tagged
           ];

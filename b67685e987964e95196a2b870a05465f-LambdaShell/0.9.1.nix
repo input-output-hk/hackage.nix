@@ -30,7 +30,7 @@ let
               hsPkgs.readline
               hsPkgs.Shellac
               hsPkgs.Shellac-readline
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.containers;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.8") hsPkgs.containers;
             libs = [ pkgs.readline ];
           };
         };

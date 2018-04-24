@@ -60,7 +60,7 @@ let
               hsPkgs.process
               hsPkgs.text
               hsPkgs.wai-cors
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.filepath) ++ pkgs.lib.optionals (!(_flags.wai-1 || _flags.wai-2 || compiler.isGhc)) [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.filepath) ++ pkgs.lib.optionals (!(_flags.wai-1 || _flags.wai-2 || compiler.isGhc && compiler.version.lt "7.10")) [
               hsPkgs.wai-websockets
               hsPkgs.warp
               hsPkgs.wai
@@ -75,7 +75,7 @@ let
               hsPkgs.tasty
               hsPkgs.tasty-hunit
               hsPkgs.wai-cors
-            ] ++ pkgs.lib.optionals (!(_flags.wai-1 || _flags.wai-2 || compiler.isGhc)) [
+            ] ++ pkgs.lib.optionals (!(_flags.wai-1 || _flags.wai-2 || compiler.isGhc && compiler.version.lt "7.10")) [
               hsPkgs.wai-extra
               hsPkgs.wai-websockets
               hsPkgs.warp

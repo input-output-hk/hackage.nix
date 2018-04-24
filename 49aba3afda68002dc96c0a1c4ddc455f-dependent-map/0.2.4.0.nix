@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.containers
             hsPkgs.dependent-sum
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
         };
       };
     }

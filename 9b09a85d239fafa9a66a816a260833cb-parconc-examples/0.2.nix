@@ -520,7 +520,7 @@ let
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           ping-multi = {
             depends  = [
@@ -531,7 +531,7 @@ let
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           ping-tc = {
             depends  = [
@@ -542,7 +542,7 @@ let
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           ping-tc-merge = {
             depends  = [
@@ -553,7 +553,7 @@ let
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           ping-tc-notify = {
             depends  = [
@@ -564,7 +564,7 @@ let
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           ping-fail = {
             depends  = [
@@ -575,7 +575,7 @@ let
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           distrib-chat = {
             depends  = [
@@ -590,7 +590,7 @@ let
               hsPkgs.distributed-static
               hsPkgs.transformers
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           distrib-chat-noslave = {
             depends  = [
@@ -605,7 +605,7 @@ let
               hsPkgs.distributed-static
               hsPkgs.transformers
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           distrib-db = {
             depends  = [
@@ -620,7 +620,7 @@ let
               hsPkgs.distributed-static
               hsPkgs.transformers
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           mvar4 = {
             depends  = [ hsPkgs.base ];

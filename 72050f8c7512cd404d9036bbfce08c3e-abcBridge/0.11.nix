@@ -33,6 +33,7 @@ let
           libs = [
             pkgs.abc
           ] ++ pkgs.lib.optional _flags.enable-pthreads pkgs.pthread;
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           long-test = {

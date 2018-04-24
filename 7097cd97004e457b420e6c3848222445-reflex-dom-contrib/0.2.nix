@@ -39,7 +39,7 @@ let
             hsPkgs.string-conv
             hsPkgs.text
             hsPkgs.time
-          ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
         };
       };
     }

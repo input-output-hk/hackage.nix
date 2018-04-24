@@ -37,7 +37,7 @@ let
               hsPkgs.yi-mode-haskell
               hsPkgs.yi-mode-javascript
               hsPkgs.yi-rope
-            ] ++ pkgs.lib.optional _flags.vty hsPkgs.yi-frontend-vty) ++ pkgs.lib.optional (_flags.pango && compiler.isGhc) hsPkgs.yi-frontend-pango) ++ pkgs.lib.optional _flags.vim hsPkgs.yi-keymap-vim) ++ pkgs.lib.optional _flags.emacs hsPkgs.yi-keymap-emacs;
+            ] ++ pkgs.lib.optional _flags.vty hsPkgs.yi-frontend-vty) ++ pkgs.lib.optional (_flags.pango && (compiler.isGhc && compiler.version.lt "8.2")) hsPkgs.yi-frontend-pango) ++ pkgs.lib.optional _flags.vim hsPkgs.yi-keymap-vim) ++ pkgs.lib.optional _flags.emacs hsPkgs.yi-keymap-emacs;
           };
         };
       };

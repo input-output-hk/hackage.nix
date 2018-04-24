@@ -57,6 +57,10 @@ let
             hsPkgs.transformers-base
             hsPkgs.utf8-string
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           cryptol = {

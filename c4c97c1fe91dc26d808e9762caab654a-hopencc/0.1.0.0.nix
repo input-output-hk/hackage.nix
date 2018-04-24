@@ -29,6 +29,7 @@ let
           pkgconfig = [
             pkgconfPkgs.opencc
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           test-opencc = {

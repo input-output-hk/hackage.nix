@@ -50,7 +50,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.xml-conduit
             hsPkgs.xml-types
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats) ++ (if _flags.old-locale
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.nats) ++ (if _flags.old-locale
             then [
               hsPkgs.old-locale
               hsPkgs.time

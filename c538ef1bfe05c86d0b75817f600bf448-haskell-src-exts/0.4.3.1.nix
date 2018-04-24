@@ -27,6 +27,7 @@ let
             hsPkgs.pretty
             hsPkgs.cpphs
           ];
+          build-tools = [ hsPkgs.happy ];
         };
       };
     }

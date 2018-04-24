@@ -28,7 +28,7 @@ let
             hsPkgs.mtl
             hsPkgs.HUnit
             hsPkgs.QuickCheck
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base) ++ (if _flags.splitbase
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.base) ++ (if _flags.splitbase
             then [
               hsPkgs.base
               hsPkgs.containers

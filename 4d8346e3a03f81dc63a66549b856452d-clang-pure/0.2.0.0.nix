@@ -35,6 +35,7 @@ let
             hsPkgs.microlens-contra
           ];
           libs = [ pkgs.clang ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           find-classes = {

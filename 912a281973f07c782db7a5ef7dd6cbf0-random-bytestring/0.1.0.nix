@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.mwc-random
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats;
         };
         benchmarks = {
           benchmark = {
@@ -35,7 +35,7 @@ let
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.criterion
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats;
           };
           benchmark-compare = {
             depends  = [
@@ -49,7 +49,7 @@ let
               hsPkgs.mwc-random
               hsPkgs.primitive
               hsPkgs.random
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.nats;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats;
           };
           eventlog-compare = {
             depends  = [

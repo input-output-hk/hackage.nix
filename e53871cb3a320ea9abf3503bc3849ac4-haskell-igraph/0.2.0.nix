@@ -40,6 +40,7 @@ let
             hsPkgs.diagrams-cairo
           ];
           libs = [ pkgs.igraph ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           tests = {

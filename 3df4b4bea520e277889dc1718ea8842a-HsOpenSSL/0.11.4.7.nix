@@ -30,7 +30,7 @@ let
             hsPkgs.bytestring
             hsPkgs.network
             hsPkgs.time
-          ] ++ pkgs.lib.optional (_flags.fast-bignum && compiler.isGhc) hsPkgs.integer-gmp;
+          ] ++ pkgs.lib.optional (_flags.fast-bignum && (compiler.isGhc && compiler.version.ge "7.10.1")) hsPkgs.integer-gmp;
           libs = if system.isWindows
             then pkgs.lib.optionals system.isX86_64 [
               pkgs.eay32

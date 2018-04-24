@@ -70,7 +70,7 @@ let
             hsPkgs.safe
             hsPkgs.fsnotify
             hsPkgs.async
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "7.10.3"
             then [
               hsPkgs.zlib
               hsPkgs.process

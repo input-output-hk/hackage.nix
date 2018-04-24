@@ -28,7 +28,7 @@ let
             hsPkgs.ghc-prim
             hsPkgs.bytestring
             hsPkgs.aeson
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "7.10"
             then [ hsPkgs.deepseq-generics ]
             else [ hsPkgs.deepseq ]);
         };

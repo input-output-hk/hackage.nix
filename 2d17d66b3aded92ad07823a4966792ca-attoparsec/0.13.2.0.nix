@@ -32,7 +32,7 @@ let
             hsPkgs.scientific
             hsPkgs.transformers
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.bytestring) ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.4") hsPkgs.bytestring) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.fail
             hsPkgs.semigroups
           ];
@@ -52,7 +52,7 @@ let
               hsPkgs.text
               hsPkgs.transformers
               hsPkgs.vector
-            ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+            ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
               hsPkgs.fail
               hsPkgs.semigroups
             ];
@@ -78,7 +78,7 @@ let
               hsPkgs.transformers
               hsPkgs.unordered-containers
               hsPkgs.vector
-            ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+            ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
               hsPkgs.fail
               hsPkgs.semigroups
             ];

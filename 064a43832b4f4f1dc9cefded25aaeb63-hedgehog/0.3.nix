@@ -44,7 +44,7 @@ let
             hsPkgs.transformers
             hsPkgs.transformers-base
             hsPkgs.wl-pprint-annotated
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
           test = {
@@ -55,7 +55,7 @@ let
               hsPkgs.pretty-show
               hsPkgs.text
               hsPkgs.transformers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
           };
         };
       };

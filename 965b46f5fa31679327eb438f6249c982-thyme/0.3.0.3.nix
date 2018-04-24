@@ -42,7 +42,7 @@ let
             hsPkgs.transformers
             hsPkgs.vector
             hsPkgs.vector-space
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6.1") hsPkgs.ghc-prim;
         };
         tests = {
           sanity = {

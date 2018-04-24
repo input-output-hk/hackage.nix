@@ -31,6 +31,10 @@ let
             pkgs.cuda
             pkgs.cudart
           ];
+          build-tools = [
+            hsPkgs.c2hs
+            hsPkgs.hsc2hs
+          ];
         };
       };
     }

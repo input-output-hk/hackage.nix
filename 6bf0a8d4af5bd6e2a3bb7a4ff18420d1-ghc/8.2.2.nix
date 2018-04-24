@@ -42,11 +42,15 @@ let
             hsPkgs.ghc-boot-th
             hsPkgs.ghci
             hsPkgs.hoopl
-          ] ++ pkgs.lib.optional (!(system.isLinux && system.isX86_64 && compiler.isGhc)) hsPkgs.base) ++ pkgs.lib.optional (!_flags.buildable) hsPkgs.base) ++ (if system.isWindows
+          ] ++ pkgs.lib.optional (!(system.isLinux && system.isX86_64 && (compiler.isGhc && compiler.version.eq "8.2.2"))) hsPkgs.base) ++ pkgs.lib.optional (!_flags.buildable) hsPkgs.base) ++ (if system.isWindows
             then [ hsPkgs.Win32 ]
             else [
               hsPkgs.unix
             ] ++ pkgs.lib.optional _flags.terminfo hsPkgs.terminfo);
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

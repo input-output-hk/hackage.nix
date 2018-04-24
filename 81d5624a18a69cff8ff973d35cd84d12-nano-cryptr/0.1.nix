@@ -26,6 +26,7 @@ let
             hsPkgs.bytestring
           ];
           libs = [ pkgs.crypt ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

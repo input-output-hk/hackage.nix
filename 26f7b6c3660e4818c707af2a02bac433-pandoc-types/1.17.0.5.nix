@@ -29,7 +29,7 @@ let
             hsPkgs.bytestring
             hsPkgs.aeson
             hsPkgs.QuickCheck
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "7.10"
             then [ hsPkgs.deepseq-generics ]
             else [ hsPkgs.deepseq ]);
         };

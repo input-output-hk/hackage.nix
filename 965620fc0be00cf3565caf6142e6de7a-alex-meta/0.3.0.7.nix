@@ -29,6 +29,10 @@ let
             hsPkgs.containers
             hsPkgs.QuickCheck
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

@@ -53,7 +53,7 @@ let
             hsPkgs.transformers-compat
             hsPkgs.vector
             hsPkgs.vector-algorithms
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         exes = {
           criterion-report = {
@@ -61,7 +61,7 @@ let
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.optparse-applicative
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
           };
         };
         tests = {

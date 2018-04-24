@@ -26,6 +26,7 @@ let
           pkgconfig = [
             pkgconfPkgs."libxml-2.0"
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

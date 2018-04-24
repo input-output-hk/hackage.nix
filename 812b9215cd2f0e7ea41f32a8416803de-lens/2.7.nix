@@ -42,7 +42,7 @@ let
             hsPkgs.array
             hsPkgs.filepath
             hsPkgs.parallel
-          ] ++ pkgs.lib.optional _flags.template-haskell hsPkgs.template-haskell) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional _flags.template-haskell hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.ghc-prim;
         };
         tests = {
           doctests = {

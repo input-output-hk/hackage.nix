@@ -83,6 +83,7 @@ let
               hsPkgs.QuickCheck
               hsPkgs.random
             ];
+            build-tools = [ hsPkgs.alex ];
           };
         };
       };

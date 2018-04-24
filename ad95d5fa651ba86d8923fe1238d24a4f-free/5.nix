@@ -36,7 +36,7 @@ let
             hsPkgs.template-haskell
             hsPkgs.exceptions
             hsPkgs.containers
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.fail;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.fail;
         };
       };
     }

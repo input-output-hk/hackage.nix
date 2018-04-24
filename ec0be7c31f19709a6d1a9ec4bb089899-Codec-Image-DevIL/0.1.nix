@@ -26,6 +26,7 @@ let
             hsPkgs.array
           ];
           libs = [ pkgs.IL ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

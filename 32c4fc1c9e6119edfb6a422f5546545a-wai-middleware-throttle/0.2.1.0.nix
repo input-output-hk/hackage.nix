@@ -31,7 +31,7 @@ let
             hsPkgs.stm
             hsPkgs.token-bucket
             hsPkgs.hashable
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.blaze-builder;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.blaze-builder;
         };
         tests = {
           spec = {

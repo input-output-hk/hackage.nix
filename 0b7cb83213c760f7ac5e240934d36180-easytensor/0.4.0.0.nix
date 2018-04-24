@@ -27,7 +27,7 @@ let
             hsPkgs.base
             hsPkgs.ghc-prim
             hsPkgs.dimensions
-          ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
         };
         tests = {
           et-test = {

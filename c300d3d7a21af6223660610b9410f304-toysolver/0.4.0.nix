@@ -72,9 +72,9 @@ let
           ] ++ [
             hsPkgs.temporary
             hsPkgs.exceptions
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.MemoTrie) ++ [
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.MemoTrie) ++ [
             hsPkgs.transformers
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ]) ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.ghc-prim;
         };
         exes = {
           toysolver = {
@@ -112,7 +112,7 @@ let
               else [
                 hsPkgs.time
                 hsPkgs.old-locale
-              ])) ++ pkgs.lib.optional (_flags.forcechar8 && compiler.isGhc) hsPkgs.base;
+              ])) ++ pkgs.lib.optional (_flags.forcechar8 && (compiler.isGhc && true)) hsPkgs.base;
           };
           toysmt = {
             depends  = ([
@@ -124,7 +124,7 @@ let
               hsPkgs.transformers
               hsPkgs.transformers-compat
               hsPkgs.toysolver
-            ] ++ pkgs.lib.optional _flags.usehaskeline hsPkgs.haskeline) ++ pkgs.lib.optional (_flags.forcechar8 && compiler.isGhc) hsPkgs.base;
+            ] ++ pkgs.lib.optional _flags.usehaskeline hsPkgs.haskeline) ++ pkgs.lib.optional (_flags.forcechar8 && (compiler.isGhc && true)) hsPkgs.base;
           };
           toyfmf = {
             depends  = pkgs.lib.optionals _flags.buildtoyfmf ([
@@ -132,7 +132,7 @@ let
               hsPkgs.containers
               hsPkgs.toysolver
               hsPkgs.logic-TPTP
-            ] ++ pkgs.lib.optional (compiler.isGhc && _flags.transformers051) hsPkgs.logic-TPTP);
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.9" && _flags.transformers051) hsPkgs.logic-TPTP);
           };
           lpconvert = {
             depends  = [

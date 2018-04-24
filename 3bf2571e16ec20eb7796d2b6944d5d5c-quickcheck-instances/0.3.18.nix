@@ -42,7 +42,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.uuid-types
             hsPkgs.vector
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats) ++ (if _flags.bytestring-builder
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats) ++ (if _flags.bytestring-builder
             then [
               hsPkgs.bytestring-builder
               hsPkgs.bytestring

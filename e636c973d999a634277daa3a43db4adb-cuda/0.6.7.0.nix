@@ -26,6 +26,7 @@ let
             hsPkgs.bytestring
             hsPkgs.Cabal
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           nvidia-device-query = {

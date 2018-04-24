@@ -32,6 +32,10 @@ let
               hsPkgs.BNFC
               hsPkgs.filepath
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

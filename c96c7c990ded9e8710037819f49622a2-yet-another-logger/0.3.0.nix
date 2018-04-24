@@ -48,7 +48,7 @@ let
             hsPkgs.transformers
             hsPkgs.transformers-base
             hsPkgs.void
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats) ++ (if _flags.old-time
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.nats) ++ (if _flags.old-time
             then [
               hsPkgs.old-locale
               hsPkgs.time
@@ -82,7 +82,7 @@ let
               hsPkgs.transformers-base
               hsPkgs.void
               hsPkgs.yet-another-logger
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.nats;
           };
         };
       };

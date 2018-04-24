@@ -26,7 +26,7 @@ let
             hsPkgs.unix
             hsPkgs.stm
             hsPkgs.containers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.transformers;
           libs = [ pkgs.pulse ];
         };
         exes = {

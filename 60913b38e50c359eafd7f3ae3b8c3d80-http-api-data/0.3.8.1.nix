@@ -37,7 +37,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.uri-bytestring
             hsPkgs.uuid-types
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional _flags.use-text-show hsPkgs.text-show;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional _flags.use-text-show hsPkgs.text-show;
         };
         tests = {
           spec = {

@@ -26,7 +26,7 @@ let
             hsPkgs.containers
             hsPkgs.pointed
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers;
         };
         tests = {
           grouped-list-examples = {

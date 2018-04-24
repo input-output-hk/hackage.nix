@@ -57,7 +57,7 @@ let
             hsPkgs.optparse-applicative
             hsPkgs.template-haskell
             hsPkgs.syb
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.convertible) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.convertible) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.ghc-boot;
         };
         exes = {
           ghc-mod = {

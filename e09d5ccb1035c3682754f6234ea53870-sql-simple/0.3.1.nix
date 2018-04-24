@@ -29,7 +29,7 @@ let
             hsPkgs.containers
             hsPkgs.monad-control
             hsPkgs.transformers-base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
         };
       };
     }

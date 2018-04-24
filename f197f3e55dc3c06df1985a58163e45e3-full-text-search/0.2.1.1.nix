@@ -51,6 +51,10 @@ let
               hsPkgs.time
               hsPkgs.mtl
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
         tests = {

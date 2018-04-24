@@ -34,7 +34,7 @@ let
             hsPkgs.transformers
             hsPkgs.transformers-compat
             hsPkgs.unordered-containers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.void) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-orphans;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.void) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.base-orphans;
         };
       };
     }

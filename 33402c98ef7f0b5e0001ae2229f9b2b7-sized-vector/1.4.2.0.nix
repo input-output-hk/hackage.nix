@@ -29,7 +29,7 @@ let
             hsPkgs.equational-reasoning
             hsPkgs.hashable
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.singletons) ++ pkgs.lib.optional compiler.isGhc hsPkgs.singletons;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.singletons) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.7") hsPkgs.singletons;
         };
       };
     }

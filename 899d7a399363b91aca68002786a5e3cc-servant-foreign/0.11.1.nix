@@ -28,7 +28,7 @@ let
             hsPkgs.base-compat
             hsPkgs.lens
             hsPkgs.http-types
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           spec = {

@@ -40,7 +40,7 @@ let
               hsPkgs.resourcet
               hsPkgs.mtl
               hsPkgs.http-types
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.8"
               then [ hsPkgs.haddock-api ]
               else [ hsPkgs.haddock ]);
           };

@@ -27,7 +27,7 @@ let
             hsPkgs.base-compat
             hsPkgs.containers
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           test-alga = {
@@ -39,7 +39,7 @@ let
               hsPkgs.containers
               hsPkgs.extra
               hsPkgs.QuickCheck
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
         benchmarks = {

@@ -33,6 +33,7 @@ let
               pkgs."stdc++"
             ]
             else [ pkgs."stdc++" ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           test-Omega = {
@@ -47,6 +48,7 @@ let
                 pkgs."stdc++"
               ]
               else [ pkgs."stdc++" ];
+            build-tools = [ hsPkgs.hsc2hs ];
           };
         };
       };

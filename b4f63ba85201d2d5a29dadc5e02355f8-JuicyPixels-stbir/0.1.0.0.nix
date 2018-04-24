@@ -27,6 +27,7 @@ let
             hsPkgs.vector
             hsPkgs.data-default-class
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

@@ -28,6 +28,7 @@ let
             hsPkgs.parsec
             hsPkgs.random
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

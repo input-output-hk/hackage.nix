@@ -30,7 +30,7 @@ let
             hsPkgs.non-negative
             hsPkgs.utility-ht
             hsPkgs.transformers
-          ] ++ (if compiler.isJhc
+          ] ++ (if compiler.isJhc && true
             then [
               hsPkgs.statethread
               hsPkgs.base

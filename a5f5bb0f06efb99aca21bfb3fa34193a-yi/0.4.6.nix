@@ -62,6 +62,7 @@ let
               hsPkgs.haskell98
               hsPkgs.ghc-paths
             ]) ++ pkgs.lib.optional _flags.testing hsPkgs.QuickCheck;
+            build-tools = [ hsPkgs.alex ];
           };
         };
       };

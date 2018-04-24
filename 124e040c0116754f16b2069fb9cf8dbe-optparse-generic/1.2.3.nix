@@ -32,7 +32,7 @@ let
             hsPkgs.void
             hsPkgs.bytestring
             hsPkgs.semigroups
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.8") [
             hsPkgs.singletons
             hsPkgs.tagged
             hsPkgs.th-desugar

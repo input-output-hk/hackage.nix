@@ -40,6 +40,10 @@ let
               hsPkgs.text
               hsPkgs.transformers
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
           hokey = {
             depends  = [
@@ -95,6 +99,10 @@ let
               hsPkgs.transformers
               hsPkgs.unordered-containers
               hsPkgs.yaml
+            ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
             ];
           };
         };

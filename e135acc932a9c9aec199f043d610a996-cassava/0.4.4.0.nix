@@ -33,7 +33,7 @@ let
             hsPkgs.text
             hsPkgs.unordered-containers
             hsPkgs.vector
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         tests = {
           unit-tests = {
@@ -71,7 +71,7 @@ let
               hsPkgs.text
               hsPkgs.unordered-containers
               hsPkgs.vector
-            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
           };
         };
       };

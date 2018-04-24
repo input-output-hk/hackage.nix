@@ -32,7 +32,7 @@ let
             hsPkgs.random
             hsPkgs.ref-fd
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0.1") hsPkgs.semigroups;
         };
       };
     }

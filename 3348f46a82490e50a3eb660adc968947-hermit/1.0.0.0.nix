@@ -42,6 +42,10 @@ let
           ] ++ (if system.isWindows
             then [ hsPkgs.Win32 ]
             else [ hsPkgs.terminfo ]);
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           hermit = {

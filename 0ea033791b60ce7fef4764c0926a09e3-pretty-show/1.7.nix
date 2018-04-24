@@ -30,6 +30,7 @@ let
             hsPkgs.filepath
             hsPkgs.ghc-prim
           ];
+          build-tools = [ hsPkgs.happy ];
         };
         exes = {
           ppsh = {

@@ -28,6 +28,7 @@ let
             hsPkgs.storable-complex
             hsPkgs.template-haskell
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

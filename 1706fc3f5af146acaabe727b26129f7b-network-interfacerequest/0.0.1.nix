@@ -27,6 +27,7 @@ let
             hsPkgs.base
             hsPkgs.bytestring
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

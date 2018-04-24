@@ -28,7 +28,7 @@ let
             hsPkgs.containers
             hsPkgs.hspec-expectations
             hsPkgs.megaparsec
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           tests = {
@@ -39,7 +39,7 @@ let
               hsPkgs.hspec-expectations
               hsPkgs.hspec-megaparsec
               hsPkgs.megaparsec
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
       };

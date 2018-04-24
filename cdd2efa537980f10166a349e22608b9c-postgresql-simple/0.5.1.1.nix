@@ -38,7 +38,7 @@ let
             hsPkgs.uuid-types
             hsPkgs.scientific
             hsPkgs.vector
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) hsPkgs.ghc-prim;
         };
         tests = {
           test = {
@@ -54,7 +54,7 @@ let
               hsPkgs.text
               hsPkgs.time
               hsPkgs.vector
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) hsPkgs.ghc-prim;
           };
         };
       };

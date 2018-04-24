@@ -69,6 +69,7 @@ let
               hsPkgs.ghc-prim
               hsPkgs.cabal-helper
             ];
+            build-tools = [ hsPkgs.cabal ];
           };
         };
       };

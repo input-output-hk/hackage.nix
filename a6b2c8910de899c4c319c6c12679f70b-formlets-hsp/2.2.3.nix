@@ -30,6 +30,7 @@ let
             hsPkgs.mtl
             hsPkgs.applicative-extras
           ];
+          build-tools = [ hsPkgs.trhsx ];
         };
       };
     }

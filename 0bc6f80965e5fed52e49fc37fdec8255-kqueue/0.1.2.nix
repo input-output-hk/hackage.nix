@@ -29,6 +29,7 @@ let
             hsPkgs.time
             hsPkgs.unix
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

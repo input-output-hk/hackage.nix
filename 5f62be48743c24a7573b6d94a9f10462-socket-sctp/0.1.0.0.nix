@@ -27,6 +27,7 @@ let
             hsPkgs.socket
           ];
           libs = [ pkgs.sctp ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           SendReceiveMessage = {

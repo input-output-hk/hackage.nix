@@ -33,7 +33,7 @@ let
               hsPkgs.optparse-applicative
               hsPkgs.random
               hsPkgs.text
-            ] ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.zlib;
+            ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.zlib;
           };
         };
         tests = {
@@ -48,7 +48,7 @@ let
               hsPkgs.optparse-applicative
               hsPkgs.random
               hsPkgs.text
-            ] ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.zlib;
+            ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.zlib;
           };
         };
       };

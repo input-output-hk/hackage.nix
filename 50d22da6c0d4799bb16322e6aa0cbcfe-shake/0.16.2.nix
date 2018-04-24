@@ -42,8 +42,8 @@ let
             hsPkgs.unordered-containers
             hsPkgs.utf8-string
           ] ++ (if _flags.portable
-            then pkgs.lib.optional compiler.isGhc hsPkgs.old-time
-            else pkgs.lib.optional (!system.isWindows) hsPkgs.unix)) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            then pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.old-time
+            else pkgs.lib.optional (!system.isWindows) hsPkgs.unix)) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         exes = {
           shake = {
@@ -66,8 +66,8 @@ let
               hsPkgs.unordered-containers
               hsPkgs.utf8-string
             ] ++ (if _flags.portable
-              then pkgs.lib.optional compiler.isGhc hsPkgs.old-time
-              else pkgs.lib.optional (!system.isWindows) hsPkgs.unix)) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+              then pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.old-time
+              else pkgs.lib.optional (!system.isWindows) hsPkgs.unix)) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
           };
         };
         tests = {
@@ -92,8 +92,8 @@ let
               hsPkgs.unordered-containers
               hsPkgs.utf8-string
             ] ++ (if _flags.portable
-              then pkgs.lib.optional compiler.isGhc hsPkgs.old-time
-              else pkgs.lib.optional (!system.isWindows) hsPkgs.unix)) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+              then pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.old-time
+              else pkgs.lib.optional (!system.isWindows) hsPkgs.unix)) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
           };
         };
       };

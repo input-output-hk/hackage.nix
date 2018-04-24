@@ -28,6 +28,7 @@ let
             hsPkgs.hsx
             hsPkgs.text
           ];
+          build-tools = pkgs.lib.optional (!system.isWindows) hsPkgs.trhsx;
         };
       };
     }

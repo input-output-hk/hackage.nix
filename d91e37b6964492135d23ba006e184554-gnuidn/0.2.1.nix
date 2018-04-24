@@ -30,6 +30,7 @@ let
           pkgconfig = [
             pkgconfPkgs.libidn
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

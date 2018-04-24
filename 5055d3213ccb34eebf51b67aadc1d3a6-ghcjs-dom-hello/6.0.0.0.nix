@@ -29,7 +29,7 @@ let
             hsPkgs.base
             hsPkgs.ghcjs-dom
             hsPkgs.mtl
-          ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             hsPkgs.jsaddle
             hsPkgs.jsaddle-warp
           ];
@@ -40,7 +40,7 @@ let
               hsPkgs.base
               hsPkgs.ghcjs-dom-hello
               hsPkgs.mtl
-            ] ++ (if !compiler.isGhcjs && (system.isOsx || system.isIos)
+            ] ++ (if !(compiler.isGhcjs && true) && (system.isOsx || system.isIos)
               then [
                 hsPkgs.jsaddle-wkwebview
               ]

@@ -27,7 +27,7 @@ let
             hsPkgs.text
             hsPkgs.deepseq
             hsPkgs.hashable
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           test-case-insensitive = {

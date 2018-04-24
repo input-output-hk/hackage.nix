@@ -28,6 +28,7 @@ let
             hsPkgs.pretty
             hsPkgs.cpphs
           ] ++ [ hsPkgs.base ];
+          build-tools = [ hsPkgs.happy ];
         };
         tests = {
           test = {

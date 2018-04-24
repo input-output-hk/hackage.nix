@@ -21,7 +21,7 @@ let
       };
       components = {
         ghc-server = {
-          depends  = pkgs.lib.optional compiler.isGhc hsPkgs.ghc ++ pkgs.lib.optionals compiler.isGhc [
+          depends  = pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.4") [
             hsPkgs.ghc
             hsPkgs.base
             hsPkgs.text

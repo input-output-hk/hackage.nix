@@ -56,6 +56,7 @@ let
             pkgs.CoreVideo
           ];
           pkgconfig = pkgs.lib.optional _flags.system-glfw pkgconfPkgs.glfw3;
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           main = {

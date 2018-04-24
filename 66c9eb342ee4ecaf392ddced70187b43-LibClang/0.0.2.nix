@@ -26,6 +26,9 @@ let
             hsPkgs.ffi
             hsPkgs.greencard
           ];
+          build-tools = [
+            hsPkgs.greencard
+          ];
         };
       };
     }

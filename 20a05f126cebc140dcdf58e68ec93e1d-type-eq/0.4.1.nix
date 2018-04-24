@@ -22,6 +22,7 @@ let
       components = {
         type-eq = {
           depends  = [ hsPkgs.base ];
+          build-tools = [ hsPkgs.cpphs ];
         };
       };
     }

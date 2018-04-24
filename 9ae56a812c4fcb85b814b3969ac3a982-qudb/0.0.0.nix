@@ -30,6 +30,10 @@ let
               hsPkgs.deepseq
               hsPkgs.directory
             ];
+            build-tools = [
+              hsPkgs.happy
+              hsPkgs.alex
+            ];
           };
         };
       };

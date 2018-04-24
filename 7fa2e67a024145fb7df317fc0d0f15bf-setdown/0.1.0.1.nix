@@ -35,6 +35,10 @@ let
               hsPkgs.mtl
               hsPkgs.cmdargs
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

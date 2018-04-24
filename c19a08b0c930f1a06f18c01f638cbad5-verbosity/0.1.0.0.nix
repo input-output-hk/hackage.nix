@@ -29,7 +29,7 @@ let
         verbosity = {
           depends  = (([
             hsPkgs.base
-          ] ++ pkgs.lib.optional (_flags.ghc-generics && compiler.isGhc) hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ pkgs.lib.optional _flags.data-default hsPkgs.data-default-class;
+          ] ++ pkgs.lib.optional (_flags.ghc-generics && (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6"))) hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ pkgs.lib.optional _flags.data-default hsPkgs.data-default-class;
         };
       };
     }

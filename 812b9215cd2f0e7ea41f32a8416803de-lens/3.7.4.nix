@@ -55,7 +55,7 @@ let
             else [
               hsPkgs.nats
               hsPkgs.semigroups
-            ])) ++ pkgs.lib.optional _flags.template-haskell hsPkgs.template-haskell) ++ (if compiler.isGhc
+            ])) ++ pkgs.lib.optional _flags.template-haskell hsPkgs.template-haskell) ++ (if compiler.isGhc && compiler.version.ge "7.2"
             then [ hsPkgs.ghc-prim ]
             else [
               hsPkgs.generic-deriving
@@ -118,7 +118,7 @@ let
               hsPkgs.deepseq
               hsPkgs.lens
               hsPkgs.transformers
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
               then [ hsPkgs.ghc-prim ]
               else [
                 hsPkgs.generic-deriving

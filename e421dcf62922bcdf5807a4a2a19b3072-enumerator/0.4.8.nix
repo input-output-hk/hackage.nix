@@ -25,7 +25,7 @@ let
             hsPkgs.transformers
             hsPkgs.bytestring
             hsPkgs.text
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [ hsPkgs.base ]
             else [
               hsPkgs.base

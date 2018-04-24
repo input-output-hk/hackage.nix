@@ -39,7 +39,7 @@ let
               hsPkgs.foundation
               hsPkgs.process
               hsPkgs.extra
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
           };
         };
       };

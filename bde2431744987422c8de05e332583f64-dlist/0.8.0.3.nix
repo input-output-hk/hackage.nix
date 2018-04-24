@@ -33,7 +33,7 @@ let
               hsPkgs.base
               hsPkgs.Cabal
               hsPkgs.QuickCheck
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.gt "8"
               then [
                 hsPkgs.QuickCheck
                 hsPkgs.quickcheck-instances

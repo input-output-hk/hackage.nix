@@ -28,6 +28,7 @@ let
             hsPkgs.resourcet
           ];
           libs = [ pkgs.stemmer ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

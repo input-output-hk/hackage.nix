@@ -26,6 +26,7 @@ let
             hsPkgs.array
           ];
           libs = [ pkgs.rtlsdr ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

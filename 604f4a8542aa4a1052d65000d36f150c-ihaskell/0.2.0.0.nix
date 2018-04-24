@@ -78,6 +78,10 @@ let
               hsPkgs.mtl
               hsPkgs.template-haskell
             ];
+            build-tools = [
+              hsPkgs.happy
+              hsPkgs.cpphs
+            ];
           };
         };
         tests = {

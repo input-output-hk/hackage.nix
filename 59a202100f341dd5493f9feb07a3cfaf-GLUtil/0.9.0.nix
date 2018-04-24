@@ -34,7 +34,8 @@ let
             hsPkgs.OpenGL
             hsPkgs.transformers
             hsPkgs.vector
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.hpp;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.1") hsPkgs.hpp;
+          build-tools = pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10.1")) hsPkgs.cpphs;
         };
       };
     }

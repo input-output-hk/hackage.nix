@@ -36,6 +36,10 @@ let
             hsPkgs.process
             hsPkgs.file-embed
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         exes = {
           atsfmt = {

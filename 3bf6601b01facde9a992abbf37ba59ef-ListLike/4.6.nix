@@ -32,7 +32,7 @@ let
             hsPkgs.fmlist
             hsPkgs.utf8-string
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.4")) hsPkgs.semigroups;
         };
         tests = {
           listlike-tests = {
@@ -50,7 +50,7 @@ let
               hsPkgs.text
               hsPkgs.vector
               hsPkgs.utf8-string
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.4")) hsPkgs.semigroups;
           };
         };
       };

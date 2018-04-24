@@ -45,12 +45,12 @@ let
             hsPkgs.haskell-src-exts
             hsPkgs.text
             hsPkgs.djinn-ghc
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.8"
             then [ hsPkgs.Cabal ]
             else [
               hsPkgs.convertible
               hsPkgs.Cabal
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.random;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.4.2") hsPkgs.random;
         };
         exes = {
           ghc-mod = {
@@ -108,12 +108,12 @@ let
               hsPkgs.haskell-src-exts
               hsPkgs.text
               hsPkgs.djinn-ghc
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.8"
               then [ hsPkgs.Cabal ]
               else [
                 hsPkgs.convertible
                 hsPkgs.Cabal
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.executable-path;
+              ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.executable-path;
           };
         };
       };

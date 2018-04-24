@@ -33,7 +33,7 @@ let
             hsPkgs.cmdargs
             hsPkgs.gtk
             hsPkgs.split
-          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2.1") [
             hsPkgs.cairo
             hsPkgs.gtk
           ];

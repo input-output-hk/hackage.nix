@@ -40,6 +40,10 @@ let
               hsPkgs.curl
               hsPkgs.download-curl
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

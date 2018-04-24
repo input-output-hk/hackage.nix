@@ -26,6 +26,7 @@ let
             hsPkgs.bytestring
           ];
           libs = [ pkgs.qrencode ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

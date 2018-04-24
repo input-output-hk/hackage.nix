@@ -30,7 +30,7 @@ let
             hsPkgs.mtl
             hsPkgs.transformers
             hsPkgs.transformers-compat
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.8") [
             hsPkgs.newtype
             hsPkgs.tagged
           ];

@@ -26,6 +26,7 @@ let
             pkgconfPkgs.raptor2
             pkgconfPkgs.redland
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

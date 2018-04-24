@@ -29,7 +29,7 @@ let
             hsPkgs.containers
             hsPkgs.time
             hsPkgs.old-locale
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.base
               hsPkgs.base

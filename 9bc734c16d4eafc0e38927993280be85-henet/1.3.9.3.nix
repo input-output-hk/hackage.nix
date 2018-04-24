@@ -28,6 +28,7 @@ let
             hsPkgs.bytestring
             hsPkgs.typesafe-endian
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

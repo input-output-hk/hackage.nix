@@ -36,6 +36,10 @@ let
               hsPkgs.deepseq
               hsPkgs.derive
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

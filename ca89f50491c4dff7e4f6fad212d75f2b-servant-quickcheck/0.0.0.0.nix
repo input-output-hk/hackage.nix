@@ -45,7 +45,7 @@ let
             hsPkgs.case-insensitive
             hsPkgs.hspec
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.bifunctors;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.bifunctors;
         };
         tests = {
           spec = {

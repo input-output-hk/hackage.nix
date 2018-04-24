@@ -23,6 +23,7 @@ let
         bindings-yices = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.yices ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

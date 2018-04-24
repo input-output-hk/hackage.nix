@@ -28,7 +28,7 @@ let
             hsPkgs.array
             hsPkgs.ghc-prim
             hsPkgs.integer-gmp
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         tests = {
           spec = {
@@ -41,7 +41,7 @@ let
               hsPkgs.tasty-hunit
               hsPkgs.QuickCheck
               hsPkgs.smallcheck
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
           };
         };
       };

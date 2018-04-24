@@ -27,7 +27,7 @@ let
             hsPkgs.base
             hsPkgs.hashable
             hsPkgs.semigroups
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") hsPkgs.ghc-prim;
         };
       };
     }

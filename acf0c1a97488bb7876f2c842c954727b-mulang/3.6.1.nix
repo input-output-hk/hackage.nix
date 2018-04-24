@@ -40,6 +40,10 @@ let
             hsPkgs.hashable
             hsPkgs.process
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         exes = {
           mulang = {
@@ -51,6 +55,10 @@ let
               hsPkgs.process
               hsPkgs.neat-interpolation
               hsPkgs.mulang
+            ];
+            build-tools = [
+              hsPkgs.happy
+              hsPkgs.alex
             ];
           };
         };
@@ -64,6 +72,10 @@ let
               hsPkgs.hspec
               hsPkgs.neat-interpolation
               hsPkgs.mulang
+            ];
+            build-tools = [
+              hsPkgs.happy
+              hsPkgs.alex
             ];
           };
         };

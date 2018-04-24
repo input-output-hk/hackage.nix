@@ -40,7 +40,11 @@ let
             hsPkgs.haskeline
             hsPkgs.utf8-string
             hsPkgs.xhtml
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.ghc-prim;
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
       };
     }

@@ -94,6 +94,7 @@ let
               hsPkgs.process
               hsPkgs.temporary
             ];
+            build-tools = [ hsPkgs.git ];
           };
         };
       };

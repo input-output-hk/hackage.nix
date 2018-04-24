@@ -38,7 +38,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.vector
             hsPkgs.tagged
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         tests = {
           aeson-compat-test = {
@@ -65,7 +65,7 @@ let
               hsPkgs.tasty-quickcheck
               hsPkgs.QuickCheck
               hsPkgs.quickcheck-instances
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
           };
         };
       };

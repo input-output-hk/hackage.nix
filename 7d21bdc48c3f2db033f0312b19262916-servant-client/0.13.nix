@@ -43,7 +43,7 @@ let
             hsPkgs.stm
             hsPkgs.transformers-base
             hsPkgs.transformers-compat
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           spec = {

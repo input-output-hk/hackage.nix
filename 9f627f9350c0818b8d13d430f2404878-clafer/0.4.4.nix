@@ -48,9 +48,14 @@ let
             hsPkgs.split
             hsPkgs.transformers-compat
             hsPkgs.mtl-compat
-          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.fail
             hsPkgs.semigroups
+          ];
+          build-tools = [
+            hsPkgs.ghc
+            hsPkgs.alex
+            hsPkgs.happy
           ];
         };
         exes = {
@@ -64,10 +69,11 @@ let
               hsPkgs.cmdargs
               hsPkgs.split
               hsPkgs.clafer
-            ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+            ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
               hsPkgs.fail
               hsPkgs.semigroups
             ];
+            build-tools = [ hsPkgs.ghc ];
           };
         };
         tests = {
@@ -89,16 +95,18 @@ let
               hsPkgs.transformers-compat
               hsPkgs.mtl-compat
               hsPkgs.clafer
-            ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+            ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
               hsPkgs.fail
               hsPkgs.semigroups
             ];
+            build-tools = [ hsPkgs.ghc ];
           };
           doctests = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
+            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

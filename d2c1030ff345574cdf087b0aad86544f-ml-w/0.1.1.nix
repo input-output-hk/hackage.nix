@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.mtl
             hsPkgs.parsec
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty;
+          ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.pretty;
         };
         exes = {
           ML = {
@@ -33,7 +33,7 @@ let
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.parsec
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty;
+            ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.pretty;
           };
         };
       };

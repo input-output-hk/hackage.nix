@@ -41,7 +41,7 @@ let
             else [
               hsPkgs.network-uri
               hsPkgs.network
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.intern) ++ pkgs.lib.optional compiler.isGhc hsPkgs.intern) ++ pkgs.lib.optional compiler.isGhc hsPkgs.directory) ++ pkgs.lib.optional compiler.isGhc hsPkgs.directory;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.4.0") hsPkgs.intern) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4.0") hsPkgs.intern) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6.0") hsPkgs.directory) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6.0") hsPkgs.directory;
         };
         exes = {
           Swish = {

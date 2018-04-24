@@ -31,6 +31,7 @@ let
             hsPkgs.singletons
           ] ++ [ hsPkgs.inline-c ];
           libs = [ pkgs.jvm ];
+          build-tools = [ hsPkgs.cpphs ];
         };
       };
     }

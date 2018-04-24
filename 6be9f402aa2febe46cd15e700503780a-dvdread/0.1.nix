@@ -29,6 +29,7 @@ let
           pkgconfig = [
             pkgconfPkgs.dvdread
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

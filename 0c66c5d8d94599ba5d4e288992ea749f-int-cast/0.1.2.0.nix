@@ -23,7 +23,7 @@ let
         int-cast = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         tests = {
           int-cast-test = {
@@ -33,7 +33,7 @@ let
               hsPkgs.QuickCheck
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
           };
         };
       };

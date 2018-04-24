@@ -22,6 +22,7 @@ let
       components = {
         hsyscall = {
           depends  = [ hsPkgs.base ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

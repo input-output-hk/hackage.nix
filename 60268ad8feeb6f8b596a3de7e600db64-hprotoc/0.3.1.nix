@@ -43,6 +43,7 @@ let
                 hsPkgs.QuickCheck
               ]
               else [ hsPkgs.base ]);
+            build-tools = [ hsPkgs.alex ];
           };
         };
       };

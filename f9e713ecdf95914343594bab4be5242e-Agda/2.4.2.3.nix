@@ -53,7 +53,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.xhtml
             hsPkgs.zlib
-          ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-orphans) ++ (if compiler.isGhc
+          ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.base-orphans) ++ (if compiler.isGhc && compiler.version.lt "7.6"
             then [
               hsPkgs.directory
               hsPkgs.ghc-prim
@@ -63,6 +63,10 @@ let
               hsPkgs.directory
               hsPkgs.time
             ]);
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ] ++ pkgs.lib.optional _flags.cpphs hsPkgs.cpphs;
         };
         exes = {
           agda = {

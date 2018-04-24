@@ -30,7 +30,7 @@ let
             hsPkgs.mtl
             hsPkgs.aeson
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
         };
         exes = {
           todo = {
@@ -44,7 +44,7 @@ let
             depends  = [
               hsPkgs.base
               hsPkgs.react-flux
-            ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+            ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
           route-example = {
             depends  = pkgs.lib.optionals _flags.example [
@@ -57,7 +57,7 @@ let
               hsPkgs.transformers
               hsPkgs.bytestring
               hsPkgs.deepseq
-            ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+            ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
         };
       };

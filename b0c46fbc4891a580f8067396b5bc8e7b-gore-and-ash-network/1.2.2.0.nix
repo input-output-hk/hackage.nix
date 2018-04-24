@@ -40,6 +40,7 @@ let
             hsPkgs.typesafe-endian
             hsPkgs.unordered-containers
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

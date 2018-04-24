@@ -62,6 +62,7 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
             ];
+            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

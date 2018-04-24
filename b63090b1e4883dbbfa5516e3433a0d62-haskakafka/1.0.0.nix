@@ -29,6 +29,7 @@ let
             hsPkgs.unix
           ];
           libs = [ pkgs.rdkafka ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           tests = {

@@ -46,6 +46,7 @@ let
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ (if _flags.lens
             then [ hsPkgs.lens ]
             else [ hsPkgs.profunctors ]);
+          build-tools = pkgs.lib.optional system.isOsx hsPkgs.cpphs;
         };
         tests = {
           sanity = {

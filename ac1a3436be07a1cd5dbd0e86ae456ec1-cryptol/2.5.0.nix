@@ -58,6 +58,10 @@ let
             hsPkgs.mtl
             hsPkgs.time
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           cryptol = {

@@ -38,6 +38,10 @@ let
             hsPkgs.syb
             hsPkgs.uniplate
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           yesod-dsl = {

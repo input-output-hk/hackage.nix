@@ -83,6 +83,7 @@ let
             hsPkgs.rosezipper
             hsPkgs.pureMD5
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         exes = {
           parserTest = {
@@ -100,6 +101,7 @@ let
               hsPkgs.base
               hsPkgs.yi
             ];
+            build-tools = [ hsPkgs.alex ];
           };
         };
         tests = {

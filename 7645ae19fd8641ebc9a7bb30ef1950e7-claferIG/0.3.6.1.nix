@@ -46,6 +46,7 @@ let
             hsPkgs.test-framework-th
             hsPkgs.clafer
           ];
+          build-tools = [ hsPkgs.ghc ];
         };
         exes = {
           claferIG = {
@@ -74,6 +75,7 @@ let
               hsPkgs.QuickCheck
               hsPkgs.HUnit
             ];
+            build-tools = [ hsPkgs.ghc ];
           };
         };
         tests = {

@@ -64,6 +64,7 @@ let
             ]) ++ (if system.isWindows
               then [ hsPkgs.Win32 ]
               else [ hsPkgs.unix ]);
+            build-tools = [ hsPkgs.happy ];
           };
         };
       };

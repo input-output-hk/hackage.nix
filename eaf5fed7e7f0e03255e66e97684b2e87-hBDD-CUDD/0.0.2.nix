@@ -35,6 +35,7 @@ let
             pkgs.util
             pkgs.epd
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

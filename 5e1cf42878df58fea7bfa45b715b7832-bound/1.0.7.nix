@@ -36,7 +36,7 @@ let
             hsPkgs.profunctors
             hsPkgs.template-haskell
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional (_flags.template-haskell && compiler.isGhc) hsPkgs.template-haskell;
+          ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) hsPkgs.ghc-prim) ++ pkgs.lib.optional (_flags.template-haskell && (compiler.isGhc && true)) hsPkgs.template-haskell;
         };
         tests = {
           Simple = {

@@ -27,6 +27,7 @@ let
             hsPkgs.bytestring
           ];
           libs = pkgs.lib.optional system.isWindows pkgs.ws2_32;
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           UDP = {

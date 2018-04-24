@@ -29,6 +29,7 @@ let
             hsPkgs.deepseq
           ] ++ pkgs.lib.optional (!(system.isWindows || _flags.allow-non-windows)) hsPkgs.base;
           libs = [ pkgs.dnsapi ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

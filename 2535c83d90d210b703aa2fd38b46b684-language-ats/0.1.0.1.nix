@@ -34,6 +34,10 @@ let
             hsPkgs.unordered-containers
             hsPkgs.composition-prelude
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         tests = {
           language-ats-test = {

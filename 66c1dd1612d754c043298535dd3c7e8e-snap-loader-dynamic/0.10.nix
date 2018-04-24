@@ -30,7 +30,7 @@ let
             hsPkgs.template-haskell
           ] ++ [
             hsPkgs.hint
-          ]) ++ (if compiler.isGhc
+          ]) ++ (if compiler.isGhc && compiler.version.ge "7.6.0"
             then [ hsPkgs.directory ]
             else [
               hsPkgs.directory

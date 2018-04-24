@@ -43,6 +43,7 @@ let
             hsPkgs.aeson
             hsPkgs.case-insensitive
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

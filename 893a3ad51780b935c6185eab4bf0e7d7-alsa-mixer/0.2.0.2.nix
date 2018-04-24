@@ -27,6 +27,7 @@ let
             hsPkgs.unix
           ];
           libs = [ pkgs.asound ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

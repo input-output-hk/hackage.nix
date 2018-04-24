@@ -26,7 +26,7 @@ let
             hsPkgs.transformers
             hsPkgs.containers
             hsPkgs.array
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.deepseq) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.deepseq) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
         };
         tests = {
           fgl-tests = {

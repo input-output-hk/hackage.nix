@@ -40,7 +40,7 @@ let
             hsPkgs.string-conversions
             hsPkgs.network-uri
             hsPkgs.vault
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           spec = {
@@ -57,7 +57,7 @@ let
               hsPkgs.hspec
               hsPkgs.QuickCheck
               hsPkgs.quickcheck-instances
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
           doctests = {
             depends  = [

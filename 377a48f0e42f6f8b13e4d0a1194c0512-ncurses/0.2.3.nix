@@ -31,6 +31,7 @@ let
             pkgs.panelw
             pkgs.ncursesw
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

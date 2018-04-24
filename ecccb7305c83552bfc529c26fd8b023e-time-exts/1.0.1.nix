@@ -32,6 +32,7 @@ let
             hsPkgs.time
             hsPkgs.timezone-olson
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

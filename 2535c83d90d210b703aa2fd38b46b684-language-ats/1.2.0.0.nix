@@ -36,6 +36,10 @@ let
             hsPkgs.mtl
             hsPkgs.transformers
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         tests = {
           language-ats-test = {

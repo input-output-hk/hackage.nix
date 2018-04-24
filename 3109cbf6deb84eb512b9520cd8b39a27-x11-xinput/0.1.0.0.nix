@@ -28,6 +28,7 @@ let
             hsPkgs.X11
           ];
           libs = [ pkgs.Xi ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

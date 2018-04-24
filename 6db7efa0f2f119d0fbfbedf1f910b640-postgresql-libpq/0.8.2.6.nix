@@ -37,6 +37,7 @@ let
             pkgs.roken
             pkgs.heimbase
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

@@ -42,7 +42,7 @@ let
             hsPkgs.stm
             hsPkgs.streaming-commons
             hsPkgs.unliftio-core
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.typed-process;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") hsPkgs.typed-process;
         };
         tests = {
           test = {

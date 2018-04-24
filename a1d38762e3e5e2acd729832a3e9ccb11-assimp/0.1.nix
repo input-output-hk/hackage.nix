@@ -27,6 +27,10 @@ let
             hsPkgs.vect
           ];
           libs = [ pkgs.assimp ];
+          build-tools = [
+            hsPkgs.c2hs
+            hsPkgs.hsc2hs
+          ];
         };
       };
     }

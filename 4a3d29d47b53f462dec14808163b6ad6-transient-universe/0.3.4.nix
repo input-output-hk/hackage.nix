@@ -33,7 +33,7 @@ let
             hsPkgs.time
             hsPkgs.transformers
             hsPkgs.transient
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && compiler.version.ge "0.1"
             then [
               hsPkgs.ghcjs-base
               hsPkgs.ghcjs-prim
@@ -55,7 +55,7 @@ let
         };
         exes = {
           monitorService = {
-            depends  = if !compiler.isGhcjs
+            depends  = if !(compiler.isGhcjs && compiler.version.ge "0.1")
               then [
                 hsPkgs.base
                 hsPkgs.transient

@@ -42,7 +42,7 @@ let
               hsPkgs.transformers
               hsPkgs.vector
               hsPkgs.vty
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty-show) ++ (if _flags.old-locale
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.pretty-show) ++ (if _flags.old-locale
               then [
                 hsPkgs.time
                 hsPkgs.old-locale

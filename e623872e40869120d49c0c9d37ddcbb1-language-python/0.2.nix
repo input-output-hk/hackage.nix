@@ -29,6 +29,10 @@ let
             hsPkgs.transformers
             hsPkgs.monads-tf
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
       };
     }

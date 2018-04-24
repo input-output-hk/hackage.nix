@@ -28,6 +28,7 @@ let
             hsPkgs.bytestring
           ];
           libs = [ pkgs.nfc ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           print-mifare-uid-forever = {

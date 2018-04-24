@@ -31,7 +31,7 @@ let
             hsPkgs.mtl
             hsPkgs.mmorph
             hsPkgs.monad-control
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.void;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.void;
         };
         tests = {
           test = {
@@ -47,7 +47,7 @@ let
               hsPkgs.exceptions
               hsPkgs.safe
               hsPkgs.split
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.void;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.void;
           };
         };
         benchmarks = {

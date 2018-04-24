@@ -26,7 +26,7 @@ let
             hsPkgs.containers
             hsPkgs.text
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
           wl-pprint = {
@@ -38,7 +38,7 @@ let
               hsPkgs.wl-pprint-annotated
               hsPkgs.tasty
               hsPkgs.tasty-hunit
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
           };
         };
       };

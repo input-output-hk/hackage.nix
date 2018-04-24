@@ -32,7 +32,7 @@ let
             hsPkgs.vector
             hsPkgs.transformers
             hsPkgs.hashtables
-          ] ++ pkgs.lib.optional (_flags.opengl && !compiler.isGhcjs) hsPkgs.gl) ++ pkgs.lib.optional (_flags.webgl && compiler.isGhcjs) hsPkgs.ghcjs-base;
+          ] ++ pkgs.lib.optional (_flags.opengl && !(compiler.isGhcjs && true)) hsPkgs.gl) ++ pkgs.lib.optional (_flags.webgl && (compiler.isGhcjs && true)) hsPkgs.ghcjs-base;
         };
       };
     }

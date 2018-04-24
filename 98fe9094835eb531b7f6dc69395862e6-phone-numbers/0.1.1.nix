@@ -30,6 +30,7 @@ let
             pkgs."stdc++"
             pkgs.protobuf
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           test = {

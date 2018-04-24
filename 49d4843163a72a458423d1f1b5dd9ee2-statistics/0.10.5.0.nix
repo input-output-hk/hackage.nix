@@ -33,7 +33,7 @@ let
             hsPkgs.vector
             hsPkgs.vector-algorithms
             hsPkgs.vector-binary-instances
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
         };
         tests = {
           tests = {

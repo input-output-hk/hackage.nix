@@ -38,6 +38,7 @@ let
           pkgconfig = [
             pkgconfPkgs.ncurses
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

@@ -37,7 +37,7 @@ let
               hsPkgs.base
               hsPkgs.cassava
               hsPkgs.template-haskell
-            ] ++ (if _flags.build-examples && compiler.isGhc
+            ] ++ (if _flags.build-examples && (compiler.isGhc && compiler.version.lt "8.0.1")
               then [
                 hsPkgs.cassava-embed
                 hsPkgs.th-lift

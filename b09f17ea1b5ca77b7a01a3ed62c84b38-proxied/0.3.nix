@@ -23,7 +23,7 @@ let
         proxied = {
           depends  = ([
             hsPkgs.base
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.generic-deriving) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.tagged;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) hsPkgs.generic-deriving) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.tagged;
         };
       };
     }

@@ -26,7 +26,7 @@ let
             hsPkgs.mtl
             hsPkgs.QuickCheck
             hsPkgs.EdisonAPI
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.8") [
             hsPkgs.containers
             hsPkgs.array
           ];

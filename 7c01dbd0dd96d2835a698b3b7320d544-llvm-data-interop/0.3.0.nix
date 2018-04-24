@@ -41,6 +41,7 @@ let
             hsPkgs.deepseq
           ];
           libs = [ pkgs."stdc++" ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

@@ -534,7 +534,7 @@ let
               hsPkgs.network
               hsPkgs.binary
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -546,7 +546,7 @@ let
               hsPkgs.network
               hsPkgs.binary
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -558,7 +558,7 @@ let
               hsPkgs.network
               hsPkgs.binary
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -570,7 +570,7 @@ let
               hsPkgs.network
               hsPkgs.binary
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -582,7 +582,7 @@ let
               hsPkgs.network
               hsPkgs.binary
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -594,7 +594,7 @@ let
               hsPkgs.network
               hsPkgs.binary
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -610,7 +610,7 @@ let
               hsPkgs.binary
               hsPkgs.transformers
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -626,7 +626,7 @@ let
               hsPkgs.binary
               hsPkgs.transformers
               hsPkgs.template-haskell
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static
@@ -642,7 +642,7 @@ let
               hsPkgs.binary
               hsPkgs.template-haskell
               hsPkgs.transformers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.distributed [
               hsPkgs.distributed-process
               hsPkgs.distributed-process-simplelocalnet
               hsPkgs.distributed-static

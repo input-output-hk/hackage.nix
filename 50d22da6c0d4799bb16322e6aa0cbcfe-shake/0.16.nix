@@ -42,7 +42,7 @@ let
             hsPkgs.deepseq
             hsPkgs.primitive
           ] ++ (if _flags.portable
-            then pkgs.lib.optional compiler.isGhc hsPkgs.old-time
+            then pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.old-time
             else pkgs.lib.optional (!system.isWindows) hsPkgs.unix)) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
@@ -66,7 +66,7 @@ let
               hsPkgs.deepseq
               hsPkgs.primitive
             ] ++ (if _flags.portable
-              then pkgs.lib.optional compiler.isGhc hsPkgs.old-time
+              then pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.old-time
               else pkgs.lib.optional (!system.isWindows) hsPkgs.unix)) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
           };
         };
@@ -92,7 +92,7 @@ let
               hsPkgs.primitive
               hsPkgs.QuickCheck
             ] ++ (if _flags.portable
-              then pkgs.lib.optional compiler.isGhc hsPkgs.old-time
+              then pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.old-time
               else pkgs.lib.optional (!system.isWindows) hsPkgs.unix)) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
           };
         };

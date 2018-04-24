@@ -37,7 +37,7 @@ let
               ]
               else [
                 hsPkgs.base
-              ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers) ++ pkgs.lib.optional (compiler.isGhc && _flags.templatehaskell) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.extensible-exceptions) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && _flags.base4) hsPkgs.tf-random) ++ pkgs.lib.optionals compiler.isUhc [
+              ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7") hsPkgs.transformers) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.12" && _flags.templatehaskell) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.7" && (compiler.isGhc && compiler.version.lt "6.13")) hsPkgs.ghc) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9" && (compiler.isGhc && compiler.version.lt "7.0")) hsPkgs.extensible-exceptions) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7" && _flags.base4) hsPkgs.tf-random) ++ pkgs.lib.optionals (compiler.isUhc && true) [
             hsPkgs.old-time
             hsPkgs.old-locale
           ];

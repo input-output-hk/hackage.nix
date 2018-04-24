@@ -29,6 +29,7 @@ let
             hsPkgs.time
             hsPkgs.bytestring
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           btrfs-defrag = {

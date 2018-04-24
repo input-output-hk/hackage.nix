@@ -27,6 +27,10 @@ let
             hsPkgs.base
             hsPkgs.random
           ];
+          build-tools = [
+            hsPkgs.gcc
+            hsPkgs.hsc2hs
+          ];
         };
         exes = {
           runTestu = {

@@ -23,6 +23,7 @@ let
         wiringPi = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.wiringPi ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           pwm-example = {

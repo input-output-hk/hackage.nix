@@ -33,7 +33,7 @@ let
             else [
               hsPkgs.time
               hsPkgs.old-locale
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         tests = {
           tests = {

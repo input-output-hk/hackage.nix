@@ -31,6 +31,10 @@ let
             hsPkgs.array
             hsPkgs.optparse-applicative
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           tip = {

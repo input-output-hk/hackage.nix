@@ -30,6 +30,7 @@ let
             hsPkgs.deepseq
             hsPkgs.scientific
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         tests = {
           dhall-lex-test = {

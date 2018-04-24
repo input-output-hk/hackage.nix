@@ -36,7 +36,7 @@ let
               hsPkgs.syb
               hsPkgs.containers
               hsPkgs.time
-            ] ++ pkgs.lib.optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0.1") [
               hsPkgs.ghci
               hsPkgs.ghc-boot-th
             ]) ++ (if system.isWindows

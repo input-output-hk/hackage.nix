@@ -29,7 +29,7 @@ let
             hsPkgs.lens
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [
               hsPkgs.ghcjs-base
               hsPkgs.ghcjs-prim
@@ -57,7 +57,7 @@ let
               hsPkgs.vector
               hsPkgs.text
               hsPkgs.jsaddle
-            ] ++ pkgs.lib.optionals (!compiler.isGhcjs) ([
+            ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) ([
               hsPkgs.glib
             ] ++ (if _flags.gtk3
               then [

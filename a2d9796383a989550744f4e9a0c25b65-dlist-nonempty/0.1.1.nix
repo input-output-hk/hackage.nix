@@ -27,7 +27,7 @@ let
             hsPkgs.deepseq
             hsPkgs.dlist
             hsPkgs.semigroupoids
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
           test = {
@@ -37,7 +37,7 @@ let
               hsPkgs.Cabal
               hsPkgs.QuickCheck
               hsPkgs.quickcheck-instances
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
         benchmarks = {
@@ -49,7 +49,7 @@ let
               hsPkgs.dlist-nonempty
               hsPkgs.dlist-instances
               hsPkgs.criterion
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
       };

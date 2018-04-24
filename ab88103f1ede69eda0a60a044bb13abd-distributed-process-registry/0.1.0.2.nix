@@ -40,7 +40,7 @@ let
             hsPkgs.stm
             hsPkgs.time
             hsPkgs.transformers
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.5") [
             hsPkgs.template-haskell
             hsPkgs.derive
             hsPkgs.uniplate
@@ -76,7 +76,7 @@ let
               hsPkgs.test-framework-hunit
               hsPkgs.transformers
               hsPkgs.rematch
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.5") hsPkgs.ghc-prim;
           };
         };
       };

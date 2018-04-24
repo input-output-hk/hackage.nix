@@ -26,6 +26,7 @@ let
             hsPkgs.syb
           ];
           libs = [ pkgs.virt ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

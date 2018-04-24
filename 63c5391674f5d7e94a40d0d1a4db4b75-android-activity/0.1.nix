@@ -25,6 +25,7 @@ let
             hsPkgs.base
             hsPkgs.data-default
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

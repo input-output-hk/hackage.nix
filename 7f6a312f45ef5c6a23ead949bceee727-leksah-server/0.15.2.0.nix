@@ -50,13 +50,13 @@ let
             hsPkgs.text
             hsPkgs.HTTP
             hsPkgs.process
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
             then [
               hsPkgs.haddock-api
               hsPkgs.haddock-library
               hsPkgs.bin-package-db
             ]
-            else if compiler.isGhc
+            else if compiler.isGhc && compiler.version.ge "7.8"
               then [ hsPkgs.haddock-api ]
               else [
                 hsPkgs.haddock
@@ -105,13 +105,13 @@ let
               hsPkgs.HTTP
               hsPkgs.process
               hsPkgs.leksah-server
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
               then [
                 hsPkgs.haddock-api
                 hsPkgs.haddock-library
                 hsPkgs.bin-package-db
               ]
-              else if compiler.isGhc
+              else if compiler.isGhc && compiler.version.ge "7.8"
                 then [ hsPkgs.haddock-api ]
                 else [
                   hsPkgs.haddock

@@ -37,6 +37,10 @@ let
             hsPkgs.th-lift
             hsPkgs.split
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         tests = {
           test = {

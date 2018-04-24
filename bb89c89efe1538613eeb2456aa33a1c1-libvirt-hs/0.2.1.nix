@@ -29,6 +29,7 @@ let
           pkgconfig = [
             pkgconfPkgs.libvirt
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

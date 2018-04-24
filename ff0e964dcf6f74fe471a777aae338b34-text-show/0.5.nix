@@ -36,7 +36,7 @@ let
             else [
               hsPkgs.integer-gmp
               hsPkgs.text
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ (if compiler.isGhc
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.tagged) ++ (if compiler.isGhc && compiler.version.lt "7.9"
             then [
               hsPkgs.nats
               hsPkgs.void
@@ -60,7 +60,7 @@ let
               hsPkgs.tasty-quickcheck
               hsPkgs.text
               hsPkgs.text-show
-            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc-prim) ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ pkgs.lib.optionals compiler.isGhc ([
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.tagged) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.9") ([
               hsPkgs.nats
               hsPkgs.void
             ] ++ (if _flags.transformers-four

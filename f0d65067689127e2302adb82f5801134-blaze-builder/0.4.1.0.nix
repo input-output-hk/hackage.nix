@@ -25,14 +25,14 @@ let
             hsPkgs.base
             hsPkgs.deepseq
             hsPkgs.text
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "7.8"
             then [
               hsPkgs.bytestring
               hsPkgs.bytestring-builder
             ]
             else [
               hsPkgs.bytestring
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
           test = {

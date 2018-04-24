@@ -55,6 +55,7 @@ let
               hsPkgs.x509-store
               hsPkgs.x509-system
             ];
+            build-tools = [ hsPkgs.hsc2hs ];
           };
         };
       };

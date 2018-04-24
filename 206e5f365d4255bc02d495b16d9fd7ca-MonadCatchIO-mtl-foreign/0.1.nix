@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.MonadCatchIO-mtl
             hsPkgs.mtl
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.primitive;
+          ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.primitive;
         };
       };
     }

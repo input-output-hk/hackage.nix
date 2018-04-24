@@ -29,6 +29,7 @@ let
             hsPkgs.containers
           ];
           libs = [ pkgs.adns ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           adns-reverse-lookup = {

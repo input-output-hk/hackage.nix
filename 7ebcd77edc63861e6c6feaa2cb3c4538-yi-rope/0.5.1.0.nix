@@ -30,7 +30,7 @@ let
             hsPkgs.fingertree
             hsPkgs.text
             hsPkgs.text-icu
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.charsetdetect-ae;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.charsetdetect-ae;
         };
         tests = {
           spec = {

@@ -41,6 +41,10 @@ let
               hsPkgs.mtl
               hsPkgs.hwhile
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
         tests = {

@@ -28,7 +28,7 @@ let
             hsPkgs.time
             hsPkgs.old-locale
             hsPkgs.network
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.11"
             then [ hsPkgs.integer-gmp ]
             else [ hsPkgs.integer ]);
           libs = if system.isWindows

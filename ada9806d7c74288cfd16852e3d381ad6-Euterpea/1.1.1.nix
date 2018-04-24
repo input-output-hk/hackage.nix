@@ -36,7 +36,7 @@ let
             hsPkgs.markov-chain
             hsPkgs.pure-fft
             hsPkgs.UISF
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
             hsPkgs.base
             hsPkgs.ghc-prim
           ];

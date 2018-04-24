@@ -26,7 +26,8 @@ let
             hsPkgs.array
             hsPkgs.pretty
             hsPkgs.parsec
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.syb;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.syb;
+          build-tools = [ hsPkgs.alex ];
         };
         tests = {
           test-java-parse = {

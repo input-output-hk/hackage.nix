@@ -29,7 +29,7 @@ let
             hsPkgs.transient-universe
             hsPkgs.mtl
             hsPkgs.ghcjs-perch
-          ] ++ pkgs.lib.optional compiler.isGhcjs hsPkgs.ghcjs-base;
+          ] ++ pkgs.lib.optional (compiler.isGhcjs && compiler.version.ge "0.1") hsPkgs.ghcjs-base;
         };
       };
     }

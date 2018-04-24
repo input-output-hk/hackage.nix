@@ -40,6 +40,10 @@ let
               hsPkgs.filepath
               hsPkgs.random
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

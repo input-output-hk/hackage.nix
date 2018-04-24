@@ -87,6 +87,7 @@ let
             hsPkgs.pureMD5
             hsPkgs.ghc-paths
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         exes = {
           parserTest = {
@@ -104,6 +105,7 @@ let
               hsPkgs.base
               hsPkgs.yi
             ];
+            build-tools = [ hsPkgs.alex ];
           };
         };
         tests = {

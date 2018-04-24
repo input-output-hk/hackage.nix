@@ -58,7 +58,7 @@ let
             hsPkgs.text
             hsPkgs.utf8-string
             hsPkgs.wizards
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ (if compiler.isGhc
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ (if compiler.isGhc && compiler.version.ge "7.10"
             then [ hsPkgs.shakespeare ]
             else [
               hsPkgs.shakespeare
@@ -106,7 +106,7 @@ let
               hsPkgs.text
               hsPkgs.utf8-string
               hsPkgs.wizards
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ (if compiler.isGhc
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ (if compiler.isGhc && compiler.version.ge "7.10"
               then [ hsPkgs.shakespeare ]
               else [
                 hsPkgs.shakespeare
@@ -157,7 +157,7 @@ let
               hsPkgs.wizards
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ (if compiler.isGhc
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ (if compiler.isGhc && compiler.version.ge "7.10"
               then [ hsPkgs.shakespeare ]
               else [
                 hsPkgs.shakespeare

@@ -22,6 +22,7 @@ let
       components = {
         c2hs-extra = {
           depends  = [ hsPkgs.base ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

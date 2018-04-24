@@ -30,6 +30,7 @@ let
             hsPkgs.mtl
           ];
           libs = [ pkgs.z pkgs.bz2 ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

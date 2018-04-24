@@ -32,7 +32,7 @@ let
             hsPkgs.streaming
             hsPkgs.resourcet
             hsPkgs.exceptions
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "7.8"
             then [
               hsPkgs.bytestring
               hsPkgs.bytestring-builder

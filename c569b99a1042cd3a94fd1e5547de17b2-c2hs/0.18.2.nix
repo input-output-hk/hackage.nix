@@ -63,6 +63,7 @@ let
               hsPkgs.text
               hsPkgs.transformers
             ];
+            build-tools = [ hsPkgs.c2hs ];
           };
           test-system = {
             depends  = [
@@ -74,6 +75,7 @@ let
               hsPkgs.text
               hsPkgs.transformers
             ];
+            build-tools = [ hsPkgs.c2hs ];
           };
         };
       };

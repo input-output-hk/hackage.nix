@@ -38,7 +38,7 @@ let
               ]
               else [
                 hsPkgs.base
-              ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc) hsPkgs.ghc) ++ pkgs.lib.optional compiler.isGhc hsPkgs.extensible-exceptions) ++ pkgs.lib.optional compiler.isGhc hsPkgs.template-haskell;
+              ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.7" && (compiler.isGhc && compiler.version.lt "6.13")) hsPkgs.ghc) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.extensible-exceptions) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.12") hsPkgs.template-haskell;
         };
       };
     }

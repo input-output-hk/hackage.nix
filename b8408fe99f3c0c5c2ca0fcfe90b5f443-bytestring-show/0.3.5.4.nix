@@ -29,7 +29,7 @@ let
             hsPkgs.bytestring
             hsPkgs.array
             hsPkgs.containers
-          ] ++ pkgs.lib.optional _flags.integer-simple hsPkgs.integer-simple) ++ pkgs.lib.optional (compiler.isGhc && !_flags.integer-simple) hsPkgs.integer-gmp) ++ pkgs.lib.optional (compiler.isGhc && compiler.isGhc && !_flags.integer-simple) hsPkgs.integer;
+          ] ++ pkgs.lib.optional _flags.integer-simple hsPkgs.integer-simple) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.11" && !_flags.integer-simple) hsPkgs.integer-gmp) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9" && (compiler.isGhc && compiler.version.lt "6.11") && !_flags.integer-simple) hsPkgs.integer;
         };
       };
     }

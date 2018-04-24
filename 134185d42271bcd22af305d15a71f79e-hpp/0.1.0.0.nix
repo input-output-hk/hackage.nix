@@ -26,7 +26,7 @@ let
             hsPkgs.directory
             hsPkgs.time
             hsPkgs.filepath
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers;
         };
         exes = {
           hpp = {

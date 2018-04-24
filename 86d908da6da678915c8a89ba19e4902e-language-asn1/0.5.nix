@@ -32,7 +32,7 @@ let
             ]
             else [
               hsPkgs.base
-            ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+            ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
         };
         exes = {
           LanguageASN1Testsuite = {

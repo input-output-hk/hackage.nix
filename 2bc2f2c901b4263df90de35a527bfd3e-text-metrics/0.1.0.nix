@@ -26,7 +26,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.text
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         tests = {
           tests = {
@@ -36,7 +36,7 @@ let
               hsPkgs.hspec
               hsPkgs.text
               hsPkgs.text-metrics
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
           };
         };
         benchmarks = {
@@ -47,7 +47,7 @@ let
               hsPkgs.deepseq
               hsPkgs.text
               hsPkgs.text-metrics
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
           };
         };
       };

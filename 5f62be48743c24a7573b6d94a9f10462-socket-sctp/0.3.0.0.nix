@@ -27,6 +27,7 @@ let
             hsPkgs.socket
           ];
           libs = pkgs.lib.optional (!system.isFreebsd) pkgs.sctp;
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           SendReceiveMessage = {
@@ -52,6 +53,7 @@ let
               hsPkgs.socket
               hsPkgs.socket-sctp
             ];
+            build-tools = [ hsPkgs.hsc2hs ];
           };
           Notifications = {
             depends  = [

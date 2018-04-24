@@ -30,7 +30,7 @@ let
             hsPkgs.random
             hsPkgs.stateref
             hsPkgs.template-haskell
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.mwc-random) ++ [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.mwc-random) ++ [
             hsPkgs.mtl
           ]) ++ (if _flags.splitbase
             then [ hsPkgs.base hsPkgs.syb ]

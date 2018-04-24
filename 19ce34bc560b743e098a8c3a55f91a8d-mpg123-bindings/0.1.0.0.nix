@@ -23,6 +23,7 @@ let
         mpg123-bindings = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.mpg123 ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

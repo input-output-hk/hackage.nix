@@ -31,6 +31,7 @@ let
           pkgconfig = [
             pkgconfPkgs.hidapi-libusb
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

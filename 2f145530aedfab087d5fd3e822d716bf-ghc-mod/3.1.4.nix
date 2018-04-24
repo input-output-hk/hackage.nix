@@ -37,7 +37,7 @@ let
             hsPkgs.syb
             hsPkgs.time
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.convertible;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.convertible;
         };
         exes = {
           ghc-mod = {
@@ -75,7 +75,7 @@ let
               hsPkgs.time
               hsPkgs.transformers
               hsPkgs.hspec
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.convertible) ++ pkgs.lib.optional compiler.isGhc hsPkgs.executable-path;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.convertible) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6.0") hsPkgs.executable-path;
           };
         };
       };

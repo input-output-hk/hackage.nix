@@ -39,7 +39,7 @@ let
           test-transient = {
             depends  = [
               hsPkgs.base
-            ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
+            ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && compiler.version.ge "0.1")) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.transformers

@@ -62,12 +62,16 @@ let
             hsPkgs.time
             hsPkgs.transformers
             hsPkgs.unordered-containers
-          ] ++ pkgs.lib.optional _flags.enable-cluster-counting hsPkgs.text-icu) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optional compiler.isGhc hsPkgs.void) ++ [
+          ] ++ pkgs.lib.optional _flags.enable-cluster-counting hsPkgs.text-icu) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.void) ++ [
             hsPkgs.zlib
-          ]) ++ pkgs.lib.optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") [
             hsPkgs.fail
             hsPkgs.semigroups
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ] ++ pkgs.lib.optional _flags.cpphs hsPkgs.cpphs;
         };
         exes = {
           agda = {

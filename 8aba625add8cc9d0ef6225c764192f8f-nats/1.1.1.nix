@@ -25,7 +25,7 @@ let
       };
       components = {
         nats = {
-          depends  = pkgs.lib.optionals compiler.isGhc ((([
+          depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.9") ((([
             hsPkgs.base
           ] ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ pkgs.lib.optional _flags.template-haskell hsPkgs.template-haskell) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable);
         };

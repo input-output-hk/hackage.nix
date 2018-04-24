@@ -29,6 +29,7 @@ let
             hsPkgs.monad-loops
             hsPkgs.unix
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

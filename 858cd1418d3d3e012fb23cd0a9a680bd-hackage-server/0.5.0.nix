@@ -80,6 +80,10 @@ let
               hsPkgs.tokenize
             ];
             libs = pkgs.lib.optional (!system.isOsx) pkgs.crypt;
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
           hackage-mirror = {
             depends  = [

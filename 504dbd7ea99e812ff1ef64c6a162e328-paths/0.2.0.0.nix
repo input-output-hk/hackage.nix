@@ -32,7 +32,7 @@ let
             hsPkgs.template-haskell
             hsPkgs.text
             hsPkgs.time
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.transformers) ++ (if _flags.directory--lt-1_2
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.transformers) ++ (if _flags.directory--lt-1_2
             then [
               hsPkgs.directory
               hsPkgs.old-time

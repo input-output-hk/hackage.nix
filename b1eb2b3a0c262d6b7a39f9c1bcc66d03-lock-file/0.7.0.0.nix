@@ -28,7 +28,7 @@ let
             hsPkgs.data-default-class
             hsPkgs.directory
             hsPkgs.exceptions
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.transformers;
         };
         tests = {
           lock-file-unit-tests = {
@@ -42,7 +42,7 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.test-framework-quickcheck2
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.transformers;
           };
         };
       };

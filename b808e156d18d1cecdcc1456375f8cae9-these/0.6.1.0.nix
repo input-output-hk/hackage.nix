@@ -35,7 +35,7 @@ let
             hsPkgs.hashable
             hsPkgs.unordered-containers
             hsPkgs.data-default-class
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.5") hsPkgs.ghc-prim;
         };
         tests = {
           test = {

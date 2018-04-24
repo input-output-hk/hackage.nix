@@ -42,7 +42,7 @@ let
             hsPkgs.zip-archive
             hsPkgs.utf8-string
             hsPkgs.old-time
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [ hsPkgs.base hsPkgs.syb ]
             else [
               hsPkgs.base

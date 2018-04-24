@@ -32,6 +32,7 @@ let
             pkgs.csound64
             pkgs.sndfile
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

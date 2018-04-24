@@ -34,6 +34,7 @@ let
             pkgs.Security
             pkgs.CoreFoundation
           ];
+          build-tools = pkgs.lib.optional system.isOsx hsPkgs.hsc2hs;
         };
         exes = {
           keyring-example = {

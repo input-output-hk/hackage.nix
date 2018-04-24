@@ -27,6 +27,7 @@ let
             hsPkgs.reflection
           ];
           libs = [ pkgs.odpic ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           odpic-raw-test = {

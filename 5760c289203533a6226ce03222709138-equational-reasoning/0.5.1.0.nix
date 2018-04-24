@@ -28,7 +28,7 @@ let
             hsPkgs.th-extras
             hsPkgs.void
             hsPkgs.singletons
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "8.4"
             then [ hsPkgs.th-desugar ]
             else [
               hsPkgs.semigroups

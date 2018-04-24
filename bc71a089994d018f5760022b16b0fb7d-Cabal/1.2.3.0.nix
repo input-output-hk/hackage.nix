@@ -36,7 +36,7 @@ let
             ]
             else [
               hsPkgs.base
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.unix;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "6.3") hsPkgs.unix;
         };
       };
     }

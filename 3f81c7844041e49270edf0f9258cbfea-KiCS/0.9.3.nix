@@ -34,6 +34,7 @@ let
             hsPkgs.unix
             hsPkgs.curry-frontend
           ];
+          build-tools = [ hsPkgs.kics ];
         };
         exes = {
           kics = {

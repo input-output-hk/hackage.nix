@@ -70,7 +70,7 @@ let
             hsPkgs.zip-archive
             hsPkgs.fsnotify
             hsPkgs.async
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ (if system.isWindows
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ (if system.isWindows
             then [
               hsPkgs.mintty
               hsPkgs.Win32

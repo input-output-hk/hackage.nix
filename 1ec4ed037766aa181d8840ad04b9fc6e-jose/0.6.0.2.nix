@@ -44,7 +44,7 @@ let
             hsPkgs.quickcheck-instances
             hsPkgs.x509
             hsPkgs.vector
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.bifunctors) ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.bifunctors) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
         };
         exes = {
           example = {
@@ -88,7 +88,7 @@ let
               hsPkgs.hspec
               hsPkgs.QuickCheck
               hsPkgs.quickcheck-instances
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.bifunctors) ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.bifunctors) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
           };
         };
       };

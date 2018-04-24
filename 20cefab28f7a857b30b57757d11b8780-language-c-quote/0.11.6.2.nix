@@ -42,6 +42,13 @@ let
             else [
               hsPkgs.haskell-exp-parser
             ]);
+          build-tools = pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.4") [
+            hsPkgs.alex
+            hsPkgs.happy
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.4") [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         tests = {
           unit = {

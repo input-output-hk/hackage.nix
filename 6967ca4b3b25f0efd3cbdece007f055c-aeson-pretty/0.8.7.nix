@@ -32,7 +32,7 @@ let
             hsPkgs.vector
             hsPkgs.text
             hsPkgs.unordered-containers
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         exes = {
           aeson-pretty = {

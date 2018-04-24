@@ -26,7 +26,7 @@ let
             hsPkgs.bytestring
             hsPkgs.containers
             hsPkgs.array
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
         };
         tests = {
           qc = {
@@ -39,7 +39,7 @@ let
               hsPkgs.QuickCheck
               hsPkgs.array
               hsPkgs.containers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           read-write-file = {
             depends  = [
@@ -51,7 +51,7 @@ let
               hsPkgs.HUnit
               hsPkgs.array
               hsPkgs.containers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
         };
         benchmarks = {
@@ -61,7 +61,7 @@ let
               hsPkgs.bytestring
               hsPkgs.array
               hsPkgs.containers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           get = {
             depends  = [
@@ -74,7 +74,7 @@ let
               hsPkgs.mtl
               hsPkgs.array
               hsPkgs.containers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           put = {
             depends  = [
@@ -84,7 +84,7 @@ let
               hsPkgs.deepseq
               hsPkgs.array
               hsPkgs.containers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           generics-bench = {
             depends  = [
@@ -99,7 +99,7 @@ let
               hsPkgs.criterion
               hsPkgs.array
               hsPkgs.containers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
           builder = {
             depends  = [
@@ -110,7 +110,7 @@ let
               hsPkgs.mtl
               hsPkgs.array
               hsPkgs.containers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
         };
       };

@@ -23,7 +23,7 @@ let
         type-hint = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.tagged;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.7")) hsPkgs.tagged;
         };
       };
     }

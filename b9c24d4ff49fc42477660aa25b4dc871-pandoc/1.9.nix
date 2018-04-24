@@ -52,7 +52,7 @@ let
             hsPkgs.zlib
             hsPkgs.highlighting-kate
             hsPkgs.temporary
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [ hsPkgs.base hsPkgs.syb ]
             else [ hsPkgs.base ]);
         };
@@ -85,7 +85,7 @@ let
               hsPkgs.zlib
               hsPkgs.highlighting-kate
               hsPkgs.temporary
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
               then [ hsPkgs.base hsPkgs.syb ]
               else [ hsPkgs.base ]);
           };

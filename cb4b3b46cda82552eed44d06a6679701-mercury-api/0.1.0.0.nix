@@ -30,6 +30,7 @@ let
             hsPkgs.text
             hsPkgs.unordered-containers
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           tmr-params = {

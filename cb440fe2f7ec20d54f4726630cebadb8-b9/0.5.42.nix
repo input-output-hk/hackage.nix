@@ -54,7 +54,7 @@ let
             hsPkgs.bifunctors
             hsPkgs.free
             hsPkgs.boxes
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         exes = {
           b9c = {
@@ -82,7 +82,7 @@ let
               hsPkgs.unordered-containers
               hsPkgs.bytestring
               hsPkgs.text
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
         };
       };

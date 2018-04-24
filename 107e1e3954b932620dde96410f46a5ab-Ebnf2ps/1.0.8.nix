@@ -31,6 +31,7 @@ let
               hsPkgs.array
               hsPkgs.haskell98
             ];
+            build-tools = [ hsPkgs.happy ];
           };
         };
       };

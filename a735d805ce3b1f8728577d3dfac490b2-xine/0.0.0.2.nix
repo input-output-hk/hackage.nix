@@ -26,6 +26,7 @@ let
             hsPkgs.containers
           ];
           libs = [ pkgs.xine ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

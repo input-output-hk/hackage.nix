@@ -27,7 +27,7 @@ let
             hsPkgs.transformers-compat
             hsPkgs.process
             hsPkgs.ansi-wl-pprint
-          ] ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8")) [
             hsPkgs.semigroups
             hsPkgs.fail
           ];
@@ -39,7 +39,7 @@ let
               hsPkgs.bytestring
               hsPkgs.optparse-applicative
               hsPkgs.QuickCheck
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8")) hsPkgs.semigroups;
           };
         };
       };

@@ -26,7 +26,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.ListLike
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         exes = {
           earley-english = {
@@ -101,7 +101,7 @@ let
               hsPkgs.deepseq
               hsPkgs.criterion
               hsPkgs.parsec
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
           };
         };
       };

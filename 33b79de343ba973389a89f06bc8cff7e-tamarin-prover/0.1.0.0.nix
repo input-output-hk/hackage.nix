@@ -63,7 +63,7 @@ let
               hsPkgs.parallel
               hsPkgs.tamarin-prover-utils
               hsPkgs.tamarin-prover-term
-            ] ++ pkgs.lib.optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.2") [
               hsPkgs.template-haskell
               hsPkgs.data-default
               hsPkgs.wai-extra

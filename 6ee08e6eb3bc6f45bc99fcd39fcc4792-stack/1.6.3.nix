@@ -117,6 +117,7 @@ let
               hsPkgs.pid1
               hsPkgs.unix
             ]);
+          build-tools = pkgs.lib.optional (!system.isWindows) hsPkgs.hsc2hs;
         };
         exes = {
           stack = {
@@ -214,6 +215,7 @@ let
               hsPkgs.gitrev
               hsPkgs.optparse-simple
             ];
+            build-tools = pkgs.lib.optional (!system.isWindows) hsPkgs.hsc2hs;
           };
         };
         tests = {
@@ -309,6 +311,7 @@ let
                 hsPkgs.pid1
                 hsPkgs.unix
               ]);
+            build-tools = pkgs.lib.optional (!system.isWindows) hsPkgs.hsc2hs;
           };
           stack-test = {
             depends  = [
@@ -405,6 +408,7 @@ let
                 hsPkgs.pid1
                 hsPkgs.unix
               ]);
+            build-tools = pkgs.lib.optional (!system.isWindows) hsPkgs.hsc2hs;
           };
         };
       };

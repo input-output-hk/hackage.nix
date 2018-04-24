@@ -34,6 +34,7 @@ let
           pkgconfig = [
             pkgconfPkgs.libssh2
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           hs-ssh-client = {

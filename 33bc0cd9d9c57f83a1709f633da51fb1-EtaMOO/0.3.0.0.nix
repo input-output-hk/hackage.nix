@@ -59,6 +59,7 @@ let
             pkgconfig = [
               pkgconfPkgs.libpcre
             ];
+            build-tools = [ hsPkgs.hsc2hs ];
           };
         };
       };

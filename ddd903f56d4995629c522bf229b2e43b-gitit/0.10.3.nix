@@ -75,10 +75,10 @@ let
               hsPkgs.tagsoup
               hsPkgs.blaze-html
               hsPkgs.json
-            ] ++ pkgs.lib.optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
               hsPkgs.base
               hsPkgs.syb
-            ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.network) ++ pkgs.lib.optionals _flags.plugins [
+            ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.0.3") hsPkgs.network) ++ pkgs.lib.optionals _flags.plugins [
               hsPkgs.ghc
               hsPkgs.ghc-paths
             ];
@@ -89,7 +89,7 @@ let
               hsPkgs.HTTP
               hsPkgs.url
               hsPkgs.filepath
-            ] ++ pkgs.lib.optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
               hsPkgs.base
               hsPkgs.syb
             ];

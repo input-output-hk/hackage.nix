@@ -65,7 +65,7 @@ let
             hsPkgs.yi-language
             hsPkgs.oo-prototypes
             hsPkgs.yi-rope
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "7.8"
             then [
               hsPkgs.derive
               hsPkgs.binary

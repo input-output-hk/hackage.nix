@@ -31,6 +31,10 @@ let
               hsPkgs.prelude-extras
               hsPkgs.readline
             ];
+            build-tools = [
+              hsPkgs.happy
+              hsPkgs.alex
+            ];
           };
         };
       };

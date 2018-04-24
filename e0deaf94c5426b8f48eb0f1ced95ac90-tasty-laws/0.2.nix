@@ -28,7 +28,7 @@ let
             hsPkgs.smallcheck-series
             hsPkgs.tasty
             hsPkgs.tasty-smallcheck
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers) ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
         };
         tests = {
           tasty = {
@@ -38,7 +38,7 @@ let
               hsPkgs.tasty
               hsPkgs.smallcheck-laws
               hsPkgs.tasty-laws
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
           };
         };
       };

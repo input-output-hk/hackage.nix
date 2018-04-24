@@ -44,6 +44,7 @@ let
               hsPkgs.base
               hsPkgs.hlint
             ];
+            build-tools = [ hsPkgs.happy ];
           };
           haddock = {
             depends  = [

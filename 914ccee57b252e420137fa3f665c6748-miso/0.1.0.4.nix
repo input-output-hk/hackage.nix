@@ -30,7 +30,7 @@ let
             hsPkgs.bytestring
             hsPkgs.containers
             hsPkgs.text
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [
               hsPkgs.ghcjs-base
               hsPkgs.http-types

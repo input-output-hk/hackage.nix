@@ -26,6 +26,7 @@ let
             hsPkgs.bytestring
           ];
           libs = [ pkgs.crypto ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           check-low-level-digest-api = {

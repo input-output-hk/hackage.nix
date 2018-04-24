@@ -39,6 +39,7 @@ let
             hsPkgs.json
             hsPkgs.uniplate
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         exes = {
           scyther-proof = {

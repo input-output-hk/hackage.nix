@@ -47,7 +47,7 @@ let
             hsPkgs.transformers
             hsPkgs.utf8-string
             hsPkgs.HUnit
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty-show) ++ (if _flags.old-locale
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.pretty-show) ++ (if _flags.old-locale
             then [
               hsPkgs.time
               hsPkgs.old-locale
@@ -80,7 +80,7 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.transformers
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty-show) ++ (if _flags.old-locale
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.pretty-show) ++ (if _flags.old-locale
               then [
                 hsPkgs.time
                 hsPkgs.old-locale

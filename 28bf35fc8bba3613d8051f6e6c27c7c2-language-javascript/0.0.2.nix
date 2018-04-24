@@ -29,6 +29,10 @@ let
             hsPkgs.mtl
             hsPkgs.containers
           ];
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         exes = {
           runtests = {

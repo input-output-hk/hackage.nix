@@ -26,6 +26,7 @@ let
             hsPkgs.array
             hsPkgs.semigroups
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

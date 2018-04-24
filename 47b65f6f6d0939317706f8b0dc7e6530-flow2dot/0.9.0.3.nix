@@ -28,7 +28,7 @@ let
             hsPkgs.QuickCheck
             hsPkgs.parsec
             hsPkgs.utf8-string
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.haskell98;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.2.1") hsPkgs.haskell98;
         };
         exes = { flow2dot = {}; };
       };

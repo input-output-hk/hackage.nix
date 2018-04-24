@@ -28,7 +28,7 @@ let
             hsPkgs.bytestring
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           libs = [ pkgs.tag_c ];
         };
         tests = {
@@ -39,6 +39,9 @@ let
               hsPkgs.filepath
               hsPkgs.hspec
               hsPkgs.htaglib
+            ];
+            build-tools = [
+              hsPkgs.hspec-discover
             ];
           };
         };

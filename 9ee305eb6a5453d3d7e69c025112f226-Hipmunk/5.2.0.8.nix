@@ -41,6 +41,7 @@ let
           libs = [
             pkgs.m
           ] ++ pkgs.lib.optional _flags.system-chipmunk pkgs.chipmunk;
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

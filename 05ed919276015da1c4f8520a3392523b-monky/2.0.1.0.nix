@@ -43,7 +43,7 @@ let
             hsPkgs.formatting
             hsPkgs.composition
             hsPkgs.env-locale
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.double-conversion) ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.double-conversion) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.10") [
             hsPkgs.transformers-compat
             hsPkgs.old-locale
           ]) ++ pkgs.lib.optionals _flags.ibus [

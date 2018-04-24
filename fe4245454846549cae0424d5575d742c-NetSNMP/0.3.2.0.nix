@@ -27,6 +27,7 @@ let
             hsPkgs.utf8-string
           ];
           libs = [ pkgs.netsnmp ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           tests = {

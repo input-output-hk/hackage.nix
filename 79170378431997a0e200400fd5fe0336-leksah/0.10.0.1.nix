@@ -66,7 +66,7 @@ let
               then [ hsPkgs.Win32 ]
               else [
                 hsPkgs.unix
-              ]) ++ pkgs.lib.optional system.isOsx hsPkgs.ige-mac-integration) ++ pkgs.lib.optional (compiler.isGhc && _flags.yi) hsPkgs.yi) ++ pkgs.lib.optional (compiler.isGhc && _flags.yi && _flags.dyre) hsPkgs.dyre) ++ (if compiler.isGhc
+              ]) ++ pkgs.lib.optional system.isOsx hsPkgs.ige-mac-integration) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "6.12.3" && _flags.yi) hsPkgs.yi) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "6.12.3" && _flags.yi && _flags.dyre) hsPkgs.dyre) ++ (if compiler.isGhc && compiler.version.lt "6.12.3"
               then [
                 hsPkgs.Cabal
                 hsPkgs.base

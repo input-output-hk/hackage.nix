@@ -23,7 +23,7 @@ let
         th-lift = {
           depends  = [
             hsPkgs.base
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "6.12"
             then [
               hsPkgs.packedstring
               hsPkgs.template-haskell
@@ -37,7 +37,7 @@ let
             depends  = [
               hsPkgs.base
               hsPkgs.th-lift
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.lt "6.12"
               then [
                 hsPkgs.packedstring
                 hsPkgs.template-haskell

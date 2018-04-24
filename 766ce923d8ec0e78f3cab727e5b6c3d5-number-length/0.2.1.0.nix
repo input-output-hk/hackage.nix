@@ -34,7 +34,7 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
               hsPkgs.test-framework-quickcheck2
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ pkgs.lib.optional compiler.isGhc hsPkgs.quickcheck-instances;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10") hsPkgs.quickcheck-instances;
           };
         };
         benchmarks = {

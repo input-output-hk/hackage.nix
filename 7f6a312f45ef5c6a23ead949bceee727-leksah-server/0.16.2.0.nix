@@ -51,25 +51,25 @@ let
             hsPkgs.process
             hsPkgs.base-compat
             hsPkgs.aeson
-          ] ++ (if !compiler.isGhcjs && compiler.isGhc
+          ] ++ (if !(compiler.isGhcjs && true) && (compiler.isGhc && compiler.version.ge "8.2")
             then [
               hsPkgs.haddock-api
               hsPkgs.haddock-library
               hsPkgs.ghc-boot
             ]
-            else if compiler.isGhc
+            else if compiler.isGhc && compiler.version.ge "8.0"
               then [
                 hsPkgs.haddock-api
                 hsPkgs.haddock-library
                 hsPkgs.ghc-boot
               ]
-              else if compiler.isGhc
+              else if compiler.isGhc && compiler.version.ge "7.10"
                 then [
                   hsPkgs.haddock-api
                   hsPkgs.haddock-library
                   hsPkgs.bin-package-db
                 ]
-                else if compiler.isGhc
+                else if compiler.isGhc && compiler.version.ge "7.8"
                   then [ hsPkgs.haddock-api ]
                   else [
                     hsPkgs.haddock
@@ -84,7 +84,7 @@ let
             ]
             else [
               hsPkgs.network
-            ])) ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.ghc;
+            ])) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.ghc;
           libs = pkgs.lib.optionals system.isWindows [
             pkgs.kernel32
             pkgs."pango-1.0"
@@ -120,25 +120,25 @@ let
               hsPkgs.process
               hsPkgs.leksah-server
               hsPkgs.base-compat
-            ] ++ (if !compiler.isGhcjs && compiler.isGhc
+            ] ++ (if !(compiler.isGhcjs && true) && (compiler.isGhc && compiler.version.ge "8.2")
               then [
                 hsPkgs.haddock-api
                 hsPkgs.haddock-library
                 hsPkgs.ghc-boot
               ]
-              else if compiler.isGhc
+              else if compiler.isGhc && compiler.version.ge "8.0"
                 then [
                   hsPkgs.haddock-api
                   hsPkgs.haddock-library
                   hsPkgs.ghc-boot
                 ]
-                else if compiler.isGhc
+                else if compiler.isGhc && compiler.version.ge "7.10"
                   then [
                     hsPkgs.haddock-api
                     hsPkgs.haddock-library
                     hsPkgs.bin-package-db
                   ]
-                  else if compiler.isGhc
+                  else if compiler.isGhc && compiler.version.ge "7.8"
                     then [ hsPkgs.haddock-api ]
                     else [
                       hsPkgs.haddock
@@ -153,7 +153,7 @@ let
               ]
               else [
                 hsPkgs.network
-              ])) ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.ghc;
+              ])) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.ghc;
             libs = pkgs.lib.optionals system.isWindows [
               pkgs.kernel32
               pkgs."pango-1.0"
@@ -195,7 +195,7 @@ let
               hsPkgs.directory
               hsPkgs.filepath
               hsPkgs.text
-            ] ++ pkgs.lib.optional (!compiler.isGhcjs) hsPkgs.doctest;
+            ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.doctest;
           };
         };
       };

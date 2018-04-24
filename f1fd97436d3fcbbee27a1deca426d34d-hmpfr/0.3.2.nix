@@ -23,8 +23,9 @@ let
         hmpfr = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.integer-simple;
+          ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.integer-simple;
           libs = [ pkgs.mpfr ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

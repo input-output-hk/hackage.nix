@@ -52,7 +52,7 @@ let
             hsPkgs.miso
             hsPkgs.url
             hsPkgs.mono-traversable
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [
               hsPkgs.aeson
               hsPkgs.bifunctors

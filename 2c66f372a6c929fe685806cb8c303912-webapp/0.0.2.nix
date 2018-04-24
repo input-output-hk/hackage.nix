@@ -54,6 +54,7 @@ let
             hsPkgs.directory
             hsPkgs.optparse-applicative
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

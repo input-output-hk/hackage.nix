@@ -66,7 +66,7 @@ let
             hsPkgs.stm
             hsPkgs.async
             hsPkgs.lifted-base
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         exes = {
           keter = {

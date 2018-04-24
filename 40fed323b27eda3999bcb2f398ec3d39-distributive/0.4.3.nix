@@ -28,7 +28,7 @@ let
             hsPkgs.tagged
             hsPkgs.transformers
             hsPkgs.transformers-compat
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") hsPkgs.base;
         };
         tests = {
           doctests = {

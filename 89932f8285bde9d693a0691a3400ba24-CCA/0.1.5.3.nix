@@ -24,7 +24,7 @@ let
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
             hsPkgs.base
             hsPkgs.syb
             hsPkgs.ghc-prim
@@ -38,6 +38,7 @@ let
               hsPkgs.containers
               hsPkgs.haskell-src
             ];
+            build-tools = [ hsPkgs.happy ];
           };
         };
       };

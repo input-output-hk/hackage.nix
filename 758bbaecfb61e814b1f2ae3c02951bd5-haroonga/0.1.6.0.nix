@@ -31,6 +31,7 @@ let
           pkgconfig = [
             pkgconfPkgs.groonga
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

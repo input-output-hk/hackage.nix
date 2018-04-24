@@ -42,7 +42,7 @@ let
             hsPkgs.servant
             hsPkgs.text
             hsPkgs.unordered-containers
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats) ++ (if _flags.old-locale
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.nats) ++ (if _flags.old-locale
             then [
               hsPkgs.old-locale
               hsPkgs.time

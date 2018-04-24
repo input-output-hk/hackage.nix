@@ -48,7 +48,7 @@ let
               hsPkgs.optparse-applicative
               hsPkgs.spool
               hsPkgs.zlib
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ (if _flags.old-locale
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.5") hsPkgs.ghc-prim) ++ (if _flags.old-locale
               then [
                 hsPkgs.time
                 hsPkgs.old-locale

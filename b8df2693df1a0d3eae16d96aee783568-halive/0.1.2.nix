@@ -36,7 +36,7 @@ let
             hsPkgs.stm
             hsPkgs.time
             hsPkgs.signal
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8") hsPkgs.ghc-boot;
         };
         exes = {
           halive = {

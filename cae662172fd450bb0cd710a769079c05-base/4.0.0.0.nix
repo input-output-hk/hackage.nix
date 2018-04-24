@@ -21,7 +21,7 @@ let
       };
       components = {
         base = {
-          depends  = pkgs.lib.optionals compiler.isGhc [
+          depends  = pkgs.lib.optionals (compiler.isGhc && true) [
             hsPkgs.rts
             hsPkgs.ghc-prim
             hsPkgs.integer

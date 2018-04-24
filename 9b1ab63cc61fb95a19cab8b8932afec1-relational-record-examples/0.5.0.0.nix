@@ -33,7 +33,7 @@ let
             hsPkgs.relational-query-HDBC
             hsPkgs.template-haskell
             hsPkgs.relational-schemas
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc-prim;
         };
         exes = {
           examples = {
@@ -44,7 +44,7 @@ let
               hsPkgs.relational-record-examples
               hsPkgs.template-haskell
               hsPkgs.time
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc-prim;
           };
           specialized-examples = {
             depends  = [
@@ -54,7 +54,7 @@ let
               hsPkgs.relational-record-examples
               hsPkgs.template-haskell
               hsPkgs.time
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc-prim;
           };
         };
       };

@@ -43,7 +43,7 @@ let
             hsPkgs.transformers
             hsPkgs.unordered-containers
             hsPkgs.vector
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats) ++ (if _flags.old-locale
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats) ++ (if _flags.old-locale
             then [
               hsPkgs.time
               hsPkgs.old-locale
@@ -72,14 +72,14 @@ let
               hsPkgs.unordered-containers
               hsPkgs.vector
               hsPkgs.quickcheck-instances
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups) ++ (if _flags.old-locale
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ (if _flags.old-locale
               then [
                 hsPkgs.time
                 hsPkgs.old-locale
               ]
               else [
                 hsPkgs.time
-              ])) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+              ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
           };
         };
       };

@@ -68,7 +68,7 @@ let
               hsPkgs.utf8-string
             ])) ++ [
             hsPkgs.base
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haskeline) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.http ([
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.0") hsPkgs.haskeline) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.http ([
             hsPkgs.HTTP
           ] ++ (if _flags.network-uri
             then [
@@ -80,6 +80,7 @@ let
               hsPkgs.network
             ]))) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo);
           libs = pkgs.lib.optional (!(!_flags.library) && _flags.curl) pkgs.curl;
+          build-tools = pkgs.lib.optional (!(!_flags.library)) hsPkgs.ghc;
         };
         exes = {
           darcs = {
@@ -113,7 +114,7 @@ let
                 hsPkgs.utf8-string
               ])) ++ [
               hsPkgs.base
-            ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haskeline) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.http ([
+            ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.0") hsPkgs.haskeline) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optionals _flags.http ([
               hsPkgs.HTTP
             ] ++ (if _flags.network-uri
               then [
@@ -125,6 +126,7 @@ let
                 hsPkgs.network
               ]))) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
             libs = pkgs.lib.optional _flags.curl pkgs.curl;
+            build-tools = [ hsPkgs.ghc ];
           };
           darcs-test = {
             depends  = pkgs.lib.optionals (!(!_flags.test)) ((((((([
@@ -165,7 +167,7 @@ let
                 hsPkgs.utf8-string
               ])) ++ [
               hsPkgs.base
-            ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haskeline) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optionals _flags.http ([
+            ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.0") hsPkgs.haskeline) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optionals _flags.http ([
               hsPkgs.HTTP
             ] ++ (if _flags.network-uri
               then [
@@ -177,6 +179,7 @@ let
                 hsPkgs.network
               ])));
             libs = pkgs.lib.optional (!(!_flags.test) && _flags.curl) pkgs.curl;
+            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

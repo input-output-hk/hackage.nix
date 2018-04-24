@@ -28,7 +28,7 @@ let
             hsPkgs.syntactic
             hsPkgs.tagged
             hsPkgs.template-haskell
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-orphans;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.base-orphans;
         };
         tests = {
           examples = {

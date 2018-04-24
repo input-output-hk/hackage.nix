@@ -39,11 +39,11 @@ let
               ]
               else [
                 hsPkgs.base
-              ])) ++ (if compiler.isGhc && _flags.ghciinterruptedexception
+              ])) ++ (if compiler.isGhc && compiler.version.ge "6.7" && _flags.ghciinterruptedexception
             then [ hsPkgs.base hsPkgs.ghc ]
             else [
               hsPkgs.base
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.extensible-exceptions;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.extensible-exceptions;
         };
       };
     }

@@ -28,7 +28,7 @@ let
             hsPkgs.semigroups
             hsPkgs.transformers
             hsPkgs.transformers-compat
-          ] ++ pkgs.lib.optional (_flags.tagged && !compiler.isGhc) hsPkgs.tagged) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (_flags.tagged && !(compiler.isGhc && compiler.version.ge "7.7")) hsPkgs.tagged) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
         };
       };
     }

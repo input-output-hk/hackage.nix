@@ -26,6 +26,7 @@ let
             hsPkgs.haskell98
           ];
           libs = [ pkgs.antlr3c ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           antlrcmkenums = {

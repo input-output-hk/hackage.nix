@@ -23,6 +23,7 @@ let
         hapstone = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.capstone ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           hapstone-test = {

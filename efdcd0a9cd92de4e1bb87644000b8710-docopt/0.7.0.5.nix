@@ -27,7 +27,7 @@ let
             hsPkgs.base
             hsPkgs.parsec
             hsPkgs.containers
-          ] ++ pkgs.lib.optionals (compiler.isGhc && _flags.template-haskell) [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10" && _flags.template-haskell) [
             hsPkgs.template-haskell
             hsPkgs.th-lift
           ];

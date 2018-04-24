@@ -50,11 +50,11 @@ let
             hsPkgs.strict
             hsPkgs.text
             hsPkgs.HTTP
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.8"
             then [ hsPkgs.haddock-api ]
             else [
               hsPkgs.haddock
-            ])) ++ (if compiler.isGhc
+            ])) ++ (if compiler.isGhc && compiler.version.ge "7.2"
             then [ hsPkgs.process ]
             else [
               hsPkgs.process-leksah
@@ -102,11 +102,11 @@ let
               hsPkgs.strict
               hsPkgs.text
               hsPkgs.HTTP
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.8"
               then [ hsPkgs.haddock-api ]
               else [
                 hsPkgs.haddock
-              ])) ++ (if compiler.isGhc
+              ])) ++ (if compiler.isGhc && compiler.version.ge "7.2"
               then [ hsPkgs.process ]
               else [
                 hsPkgs.process-leksah
@@ -139,7 +139,7 @@ let
               hsPkgs.attoparsec
               hsPkgs.transformers
               hsPkgs.text
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
               then [ hsPkgs.process ]
               else [ hsPkgs.process-leksah ]);
           };
@@ -155,7 +155,7 @@ let
               hsPkgs.conduit
               hsPkgs.conduit-extra
               hsPkgs.resourcet
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
               then [ hsPkgs.process ]
               else [ hsPkgs.process-leksah ]);
           };

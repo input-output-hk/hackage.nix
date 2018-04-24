@@ -32,7 +32,7 @@ let
             hsPkgs.lens
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ (if compiler.isGhc && _flags.gtk3
+          ] ++ (if compiler.isGhc && true && _flags.gtk3
             then [
               hsPkgs.webkitgtk3
               hsPkgs.webkitgtk3-javascriptcore
@@ -52,7 +52,7 @@ let
               hsPkgs.transformers
               hsPkgs.hslogger
               hsPkgs.jsaddle
-            ] ++ pkgs.lib.optionals compiler.isGhc ([
+            ] ++ pkgs.lib.optionals (compiler.isGhc && true) ([
               hsPkgs.glib
             ] ++ (if _flags.gtk3
               then [

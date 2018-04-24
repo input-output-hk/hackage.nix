@@ -33,6 +33,7 @@ let
             pkgs."stdc++"
           ];
           pkgconfig = pkgs.lib.optional system.isLinux pkgconfPkgs.bullet;
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

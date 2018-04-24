@@ -38,6 +38,7 @@ let
             hsPkgs.array
             hsPkgs.utf8-string
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         exes = {
           fast-tags = {

@@ -35,7 +35,7 @@ let
             hsPkgs.bytestring
             hsPkgs.memory
             hsPkgs.ghc-prim
-          ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optional (compiler.isGhc && _flags.integer-gmp) hsPkgs.integer-gmp) ++ pkgs.lib.optional _flags.support_deepseq hsPkgs.deepseq;
+          ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.integer-gmp) hsPkgs.integer-gmp) ++ pkgs.lib.optional _flags.support_deepseq hsPkgs.deepseq;
           libs = pkgs.lib.optional system.isWindows pkgs.advapi32;
         };
         tests = {

@@ -27,7 +27,7 @@ let
             hsPkgs.mtl
             hsPkgs.transformers
             hsPkgs.lens
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
         };
         tests = {
           spec = {

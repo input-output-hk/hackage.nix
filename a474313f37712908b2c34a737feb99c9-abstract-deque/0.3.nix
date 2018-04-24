@@ -29,7 +29,7 @@ let
             hsPkgs.random
             hsPkgs.containers
             hsPkgs.time
-          ] ++ pkgs.lib.optional (_flags.usecas && compiler.isGhc && !system.isWindows) hsPkgs.atomic-primops;
+          ] ++ pkgs.lib.optional (_flags.usecas && (compiler.isGhc && compiler.version.ge "7.4") && !system.isWindows) hsPkgs.atomic-primops;
         };
       };
     }

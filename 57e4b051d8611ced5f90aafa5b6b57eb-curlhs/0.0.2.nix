@@ -27,6 +27,7 @@ let
             hsPkgs.time
           ];
           libs = [ pkgs.curl ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

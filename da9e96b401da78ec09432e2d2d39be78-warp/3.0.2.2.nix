@@ -40,7 +40,7 @@ let
             hsPkgs.wai
             hsPkgs.text
             hsPkgs.streaming-commons
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.atomic-primops) ++ (if _flags.network-bytestring
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") hsPkgs.atomic-primops) ++ (if _flags.network-bytestring
             then [
               hsPkgs.network
               hsPkgs.network-bytestring
@@ -90,7 +90,7 @@ let
               hsPkgs.text
               hsPkgs.streaming-commons
               hsPkgs.async
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.atomic-primops) ++ pkgs.lib.optionals ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") hsPkgs.atomic-primops) ++ pkgs.lib.optionals ((system.isLinux || system.isFreebsd || system.isOsx) && _flags.allow-sendfilefd) [
               hsPkgs.unix
               hsPkgs.hashable
               hsPkgs.http-date

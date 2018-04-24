@@ -53,7 +53,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.xhtml
             hsPkgs.zlib
-          ] ++ pkgs.lib.optional _flags.epic hsPkgs.epic) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ (if compiler.isGhc
+          ] ++ pkgs.lib.optional _flags.epic hsPkgs.epic) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ (if compiler.isGhc && compiler.version.lt "7.6"
             then [
               hsPkgs.directory
               hsPkgs.old-time
@@ -62,6 +62,10 @@ let
               hsPkgs.directory
               hsPkgs.time
             ]);
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ] ++ pkgs.lib.optional _flags.cpphs hsPkgs.cpphs;
         };
         exes = {
           agda = {

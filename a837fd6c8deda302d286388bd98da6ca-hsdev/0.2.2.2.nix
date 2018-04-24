@@ -69,12 +69,12 @@ let
             then [ hsPkgs.Win32 ]
             else [
               hsPkgs.unix
-            ])) ++ pkgs.lib.optionals compiler.isGhc [
+            ])) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0") [
             hsPkgs.haddock-api
             hsPkgs.ghc
             hsPkgs.ghc-boot
             hsPkgs.directory
-          ]) ++ pkgs.lib.optionals compiler.isGhc [
+          ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") [
             hsPkgs.haddock-api
             hsPkgs.ghc
             hsPkgs.bin-package-db

@@ -33,6 +33,7 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.hdf5 ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           spec = {

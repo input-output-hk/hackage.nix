@@ -36,6 +36,10 @@ let
             hsPkgs.directory
             hsPkgs.fgl
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           fortran-src = {

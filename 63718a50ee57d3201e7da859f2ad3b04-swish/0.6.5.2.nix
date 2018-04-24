@@ -36,7 +36,7 @@ let
             hsPkgs.polyparse
             hsPkgs.text
             hsPkgs.time
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.intern) ++ pkgs.lib.optional compiler.isGhc hsPkgs.intern;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.4.0") hsPkgs.intern) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4.0") hsPkgs.intern;
         };
         exes = {
           Swish = {

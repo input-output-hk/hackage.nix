@@ -27,7 +27,7 @@ let
           depends  = [
             hsPkgs.xml
             hsPkgs.parsec
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.base
               hsPkgs.containers

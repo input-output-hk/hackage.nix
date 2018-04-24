@@ -26,7 +26,7 @@ let
             hsPkgs.primitive
             hsPkgs.time
             hsPkgs.vector
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
         };
         tests = {
           tests = {

@@ -30,6 +30,7 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.OpenAL32;
           frameworks = pkgs.lib.optional (!system.isWindows && system.isOsx) pkgs.OpenAL;
           pkgconfig = pkgs.lib.optional (!system.isWindows && !system.isOsx) pkgconfPkgs.openal;
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

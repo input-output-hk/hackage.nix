@@ -28,7 +28,7 @@ let
             hsPkgs.deepseq
           ] ++ [
             hsPkgs.base
-          ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
         };
         exes = {
           basic-tests = {
@@ -37,7 +37,7 @@ let
               hsPkgs.deepseq
             ] ++ [
               hsPkgs.base
-            ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+            ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
           };
           extended-tests = {
             depends  = ([
@@ -45,7 +45,7 @@ let
               hsPkgs.deepseq
             ] ++ [
               hsPkgs.base
-            ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+            ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
           };
           terminal-tests = {
             depends  = ([
@@ -53,7 +53,7 @@ let
               hsPkgs.deepseq
             ] ++ [
               hsPkgs.base
-            ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+            ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
           };
           optimize-tests = {
             depends  = ([
@@ -61,7 +61,7 @@ let
               hsPkgs.deepseq
             ] ++ [
               hsPkgs.base
-            ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+            ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
           };
         };
       };

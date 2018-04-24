@@ -37,6 +37,10 @@ let
             hsPkgs.transformers
             hsPkgs.text
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         tests = {
           sexp-grammar-test = {

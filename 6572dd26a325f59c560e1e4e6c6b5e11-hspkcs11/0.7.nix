@@ -27,6 +27,7 @@ let
             hsPkgs.utf8-string
             hsPkgs.bytestring
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           pkcs11-tests = {

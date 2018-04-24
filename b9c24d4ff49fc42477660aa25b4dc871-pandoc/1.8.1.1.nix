@@ -52,7 +52,7 @@ let
             hsPkgs.json
             hsPkgs.dlist
             hsPkgs.tagsoup
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [ hsPkgs.base hsPkgs.syb ]
             else [
               hsPkgs.base
@@ -83,7 +83,7 @@ let
               hsPkgs.json
               hsPkgs.dlist
               hsPkgs.tagsoup
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
               then [ hsPkgs.base hsPkgs.syb ]
               else [
                 hsPkgs.base

@@ -96,6 +96,10 @@ let
               hsPkgs.unix
               hsPkgs.utf8-string
             ];
+            build-tools = [
+              hsPkgs.happy
+              hsPkgs.cpphs
+            ];
           };
         };
         tests = {

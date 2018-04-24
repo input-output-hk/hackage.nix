@@ -70,7 +70,7 @@ let
               hsPkgs.old-locale
               hsPkgs.unbounded-delays
               hsPkgs.toysolver
-            ] ++ pkgs.lib.optional (_flags.forcechar8 && compiler.isGhc) hsPkgs.base;
+            ] ++ pkgs.lib.optional (_flags.forcechar8 && (compiler.isGhc && true)) hsPkgs.base;
           };
           toyfmf = {
             depends  = [

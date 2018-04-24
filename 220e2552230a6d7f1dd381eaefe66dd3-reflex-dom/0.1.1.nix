@@ -40,7 +40,7 @@ let
             hsPkgs.data-default
             hsPkgs.aeson
             hsPkgs.time
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [ hsPkgs.ghcjs-base ]
             else [
               hsPkgs.glib

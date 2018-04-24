@@ -26,6 +26,7 @@ let
             hsPkgs.haskell98
             hsPkgs.xmms2-client
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

@@ -36,6 +36,7 @@ let
             pkgconfPkgs.ImageMagick
             pkgconfPkgs.MagickWand
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           resize = {

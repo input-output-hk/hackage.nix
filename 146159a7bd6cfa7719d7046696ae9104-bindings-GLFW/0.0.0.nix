@@ -46,6 +46,7 @@ let
             pkgs.IOKit
             pkgs.CoreFoundation
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           main = {

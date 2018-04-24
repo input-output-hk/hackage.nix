@@ -32,6 +32,7 @@ let
             hsPkgs.yi-language
             hsPkgs.yi-rope
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         tests = {
           spec = {

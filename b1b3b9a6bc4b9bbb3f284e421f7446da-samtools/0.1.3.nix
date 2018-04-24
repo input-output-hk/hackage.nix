@@ -31,6 +31,7 @@ let
             hsPkgs.seqloc
           ];
           libs = [ pkgs.z ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           samtest = {
@@ -44,6 +45,7 @@ let
               hsPkgs.filepath
             ];
             libs = [ pkgs.z ];
+            build-tools = [ hsPkgs.c2hs ];
           };
         };
       };

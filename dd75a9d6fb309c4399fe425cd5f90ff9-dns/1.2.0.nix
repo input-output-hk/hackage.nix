@@ -21,7 +21,7 @@ let
       };
       components = {
         dns = {
-          depends  = if compiler.isGhc
+          depends  = if compiler.isGhc && compiler.version.ge "7"
             then [
               hsPkgs.base
               hsPkgs.attoparsec

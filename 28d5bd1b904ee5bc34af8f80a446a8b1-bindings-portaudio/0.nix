@@ -37,6 +37,7 @@ let
             pkgs.uuid
           ] ++ pkgs.lib.optional _flags.wdmks pkgs.Setupapi);
           pkgconfig = pkgs.lib.optional (system.isLinux || system.isFreebsd || system.isOsx) pkgconfPkgs."portaudio-2.0";
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

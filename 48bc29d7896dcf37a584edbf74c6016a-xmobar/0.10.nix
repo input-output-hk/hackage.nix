@@ -49,7 +49,7 @@ let
               ])) ++ pkgs.lib.optionals _flags.with_xft [
               hsPkgs.utf8-string
               hsPkgs.X11-xft
-            ]) ++ pkgs.lib.optional (_flags.with_utf8 && compiler.isGhc) hsPkgs.utf8-string) ++ pkgs.lib.optional _flags.with_inotify hsPkgs.hinotify;
+            ]) ++ pkgs.lib.optional (_flags.with_utf8 && (compiler.isGhc && compiler.version.lt "6.12.1")) hsPkgs.utf8-string) ++ pkgs.lib.optional _flags.with_inotify hsPkgs.hinotify;
           };
         };
       };

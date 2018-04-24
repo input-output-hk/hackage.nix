@@ -40,7 +40,7 @@ let
               hsPkgs.mtl
               hsPkgs.zlib
               hsPkgs.binary
-            ]) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+            ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
         };
       };
     }

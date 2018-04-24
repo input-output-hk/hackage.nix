@@ -47,7 +47,7 @@ let
             hsPkgs.transformers
             hsPkgs.transformers-base
             hsPkgs.void
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.nats;
         };
         exes = {
           example = {
@@ -76,7 +76,7 @@ let
               hsPkgs.transformers-base
               hsPkgs.void
               hsPkgs.yet-another-logger
-            ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+            ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.nats;
           };
         };
       };

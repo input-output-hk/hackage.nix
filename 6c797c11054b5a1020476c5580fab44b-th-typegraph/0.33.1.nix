@@ -35,7 +35,7 @@ let
             hsPkgs.template-haskell
             hsPkgs.th-desugar
             hsPkgs.th-orphans
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [ hsPkgs.microlens-compat ]
             else [ hsPkgs.lens ]);
         };
@@ -60,7 +60,7 @@ let
               hsPkgs.th-desugar
               hsPkgs.th-orphans
               hsPkgs.th-reify-many
-            ] ++ (if compiler.isGhcjs
+            ] ++ (if compiler.isGhcjs && true
               then [ hsPkgs.microlens-compat ]
               else [ hsPkgs.lens ]);
           };

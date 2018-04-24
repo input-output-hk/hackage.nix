@@ -59,7 +59,7 @@ let
             hsPkgs.unix
             hsPkgs.webkitgtk3
             hsPkgs.zeromq4-haskell
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.integer-simple;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.integer-simple;
         };
         exes = {
           hbro = {

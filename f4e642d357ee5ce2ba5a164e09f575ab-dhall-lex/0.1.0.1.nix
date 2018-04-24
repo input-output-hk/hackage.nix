@@ -29,6 +29,7 @@ let
             hsPkgs.bytestring
             hsPkgs.deepseq
           ];
+          build-tools = [ hsPkgs.alex ];
         };
         tests = {
           dhall-lex-test = {

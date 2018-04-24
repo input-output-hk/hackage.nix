@@ -27,6 +27,7 @@ let
             hsPkgs.array
             hsPkgs.parsec
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

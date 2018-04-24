@@ -36,6 +36,7 @@ let
             pkgs.m
             pkgs.GLEW
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           example00 = {

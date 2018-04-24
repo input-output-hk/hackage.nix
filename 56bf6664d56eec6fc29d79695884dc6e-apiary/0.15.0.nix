@@ -42,7 +42,7 @@ let
             hsPkgs.case-insensitive
             hsPkgs.unordered-containers
             hsPkgs.hashable
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ (if _flags.wai3
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged) ++ (if _flags.wai3
             then [
               hsPkgs.wai
               hsPkgs.wai-extra

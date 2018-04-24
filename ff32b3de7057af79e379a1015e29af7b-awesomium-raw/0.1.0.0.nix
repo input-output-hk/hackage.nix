@@ -25,6 +25,7 @@ let
           libs = [
             pkgs."awesomium-1.6.5"
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

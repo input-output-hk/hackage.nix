@@ -34,7 +34,7 @@ let
             hsPkgs.bencoding
             hsPkgs.network
             hsPkgs.containers
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         tests = {
           spec = {

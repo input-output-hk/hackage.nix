@@ -31,7 +31,7 @@ let
             hsPkgs.containers
             hsPkgs.network-uri
             hsPkgs.text
-          ] ++ (if compiler.isGhcjs
+          ] ++ (if compiler.isGhcjs && true
             then [
               hsPkgs.ghcjs-base
               hsPkgs.containers

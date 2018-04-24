@@ -28,6 +28,7 @@ let
             hsPkgs.base
             hsPkgs.array
           ];
+          build-tools = [ hsPkgs.happy ];
         };
         exes = {
           quickcheck-re = {

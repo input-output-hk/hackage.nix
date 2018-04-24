@@ -41,6 +41,10 @@ let
             hsPkgs.bytestring
             hsPkgs.aeson-pretty
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           yesod-dsl = {

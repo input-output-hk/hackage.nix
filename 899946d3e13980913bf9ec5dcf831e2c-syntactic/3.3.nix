@@ -32,7 +32,7 @@ let
             hsPkgs.mtl
             hsPkgs.syb
             hsPkgs.tree-view
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-orphans) ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ pkgs.lib.optional _flags.th hsPkgs.template-haskell;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.base-orphans) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged) ++ pkgs.lib.optional _flags.th hsPkgs.template-haskell;
         };
         tests = {
           examples = {

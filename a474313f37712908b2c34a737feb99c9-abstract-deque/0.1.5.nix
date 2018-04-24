@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.containers
             hsPkgs.HUnit
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.IORefCAS;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") hsPkgs.IORefCAS;
         };
         tests = {
           test-abstract-deque = {

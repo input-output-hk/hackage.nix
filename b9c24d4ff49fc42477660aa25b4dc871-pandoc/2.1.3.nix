@@ -75,7 +75,7 @@ let
             hsPkgs.http-client-tls
             hsPkgs.http-types
             hsPkgs.case-insensitive
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-compat) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ (if _flags.network-uri
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") hsPkgs.base-compat) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ (if _flags.network-uri
             then [
               hsPkgs.network-uri
               hsPkgs.network
@@ -89,7 +89,7 @@ let
             depends  = ([
               hsPkgs.pandoc
               hsPkgs.base
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-compat;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") hsPkgs.base-compat;
           };
           trypandoc = {
             depends  = (pkgs.lib.optionals _flags.trypandoc [
@@ -100,7 +100,7 @@ let
               hsPkgs.wai-extra
               hsPkgs.wai
               hsPkgs.http-types
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-compat;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") hsPkgs.base-compat;
           };
         };
         tests = {
@@ -129,7 +129,7 @@ let
               hsPkgs.zip-archive
               hsPkgs.xml
               hsPkgs.Glob
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-compat;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") hsPkgs.base-compat;
           };
         };
         benchmarks = {
@@ -140,7 +140,7 @@ let
               hsPkgs.text
               hsPkgs.weigh
               hsPkgs.mtl
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-compat;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") hsPkgs.base-compat;
           };
           benchmark-pandoc = {
             depends  = ([
@@ -151,7 +151,7 @@ let
               hsPkgs.base
               hsPkgs.text
               hsPkgs.criterion
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base-compat;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") hsPkgs.base-compat;
           };
         };
       };

@@ -31,6 +31,7 @@ let
               hsPkgs.array
             ]
             else [ hsPkgs.base ];
+          build-tools = [ hsPkgs.happy ];
         };
       };
     }

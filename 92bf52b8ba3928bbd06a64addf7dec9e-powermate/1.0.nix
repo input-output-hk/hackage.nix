@@ -26,6 +26,7 @@ let
             hsPkgs.unix
             hsPkgs.directory
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         exes = {
           powermate-print = {

@@ -49,7 +49,7 @@ let
             hsPkgs.tabular
             hsPkgs.utf8-string
             hsPkgs.wizards
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
             then [ hsPkgs.shakespeare ]
             else [
               hsPkgs.shakespeare
@@ -61,7 +61,7 @@ let
             ]
             else [
               hsPkgs.time
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty-show) ++ pkgs.lib.optional (!system.isWindows && _flags.curses) hsPkgs.terminfo;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.pretty-show) ++ pkgs.lib.optional (!system.isWindows && _flags.curses) hsPkgs.terminfo;
         };
         exes = {
           hledger = {
@@ -90,7 +90,7 @@ let
               hsPkgs.text
               hsPkgs.utf8-string
               hsPkgs.wizards
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
               then [ hsPkgs.shakespeare ]
               else [
                 hsPkgs.shakespeare
@@ -102,7 +102,7 @@ let
               ]
               else [
                 hsPkgs.time
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty-show;
+              ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.pretty-show;
           };
         };
         tests = {
@@ -133,12 +133,12 @@ let
               hsPkgs.text
               hsPkgs.transformers
               hsPkgs.wizards
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
               then [ hsPkgs.shakespeare ]
               else [
                 hsPkgs.shakespeare
                 hsPkgs.shakespeare-text
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.pretty-show) ++ (if _flags.old-locale
+              ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.pretty-show) ++ (if _flags.old-locale
               then [
                 hsPkgs.time
                 hsPkgs.old-locale

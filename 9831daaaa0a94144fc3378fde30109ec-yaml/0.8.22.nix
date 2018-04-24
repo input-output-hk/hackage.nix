@@ -42,7 +42,7 @@ let
             hsPkgs.filepath
             hsPkgs.directory
             hsPkgs.semigroups
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.template-haskell;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8.1") hsPkgs.template-haskell;
           pkgconfig = pkgs.lib.optional _flags.system-libyaml pkgconfPkgs."yaml-0.1";
         };
         exes = {

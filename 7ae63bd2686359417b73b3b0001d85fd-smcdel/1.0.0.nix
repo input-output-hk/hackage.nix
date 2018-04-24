@@ -47,6 +47,10 @@ let
               hsPkgs.process
               hsPkgs.smcdel
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
           smcdel-web = {
             depends  = [
@@ -58,6 +62,10 @@ let
               hsPkgs.smcdel
               hsPkgs.template-haskell
               hsPkgs.text
+            ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
             ];
           };
         };

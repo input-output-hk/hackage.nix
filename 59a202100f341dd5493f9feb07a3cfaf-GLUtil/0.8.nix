@@ -34,6 +34,7 @@ let
             hsPkgs.transformers
             hsPkgs.vector
           ];
+          build-tools = [ hsPkgs.cpphs ];
         };
       };
     }

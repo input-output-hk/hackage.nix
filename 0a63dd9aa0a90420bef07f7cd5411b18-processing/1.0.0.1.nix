@@ -29,7 +29,7 @@ let
             hsPkgs.mainland-pretty
             hsPkgs.blaze-html
             hsPkgs.multiset
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
       };
     }

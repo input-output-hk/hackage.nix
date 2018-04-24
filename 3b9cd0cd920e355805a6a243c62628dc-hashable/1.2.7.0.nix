@@ -30,11 +30,11 @@ let
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && true) [
             hsPkgs.ghc-prim
             hsPkgs.text
-          ]) ++ pkgs.lib.optional (compiler.isGhc && _flags.integer-gmp) hsPkgs.integer-gmp;
-          libs = pkgs.lib.optional (!compiler.isGhc && system.isWindows) pkgs.advapi32;
+          ]) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.integer-gmp) hsPkgs.integer-gmp;
+          libs = pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "6.8") && system.isWindows) pkgs.advapi32;
         };
         exes = {
           hashable-examples = {
@@ -70,11 +70,11 @@ let
               hsPkgs.ghc-prim
               hsPkgs.siphash
               hsPkgs.text
-            ] ++ pkgs.lib.optionals compiler.isGhc [
+            ] ++ pkgs.lib.optionals (compiler.isGhc && true) [
               hsPkgs.ghc-prim
               hsPkgs.text
-            ]) ++ pkgs.lib.optional (compiler.isGhc && _flags.integer-gmp) hsPkgs.integer-gmp;
-            libs = pkgs.lib.optional (!compiler.isGhc && system.isWindows) pkgs.advapi32;
+            ]) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.integer-gmp) hsPkgs.integer-gmp;
+            libs = pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "6.8") && system.isWindows) pkgs.advapi32;
           };
         };
       };

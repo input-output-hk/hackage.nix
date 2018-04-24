@@ -43,7 +43,7 @@ let
             hsPkgs.ansi-terminal
             hsPkgs.extra
             hsPkgs.refact
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.cpphs) ++ pkgs.lib.optional _flags.gpl hsPkgs.hscolour;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.cpphs) ++ pkgs.lib.optional _flags.gpl hsPkgs.hscolour;
         };
         exes = {
           hlint = {

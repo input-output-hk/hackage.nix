@@ -43,7 +43,7 @@ let
             hsPkgs.transformers
             hsPkgs.transformers-compat
             hsPkgs.void
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.ghc-boot;
         };
         tests = {
           spec = {
@@ -70,7 +70,7 @@ let
               hsPkgs.transformers
               hsPkgs.transformers-compat
               hsPkgs.void
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot) ++ pkgs.lib.optional (!_flags.developer) hsPkgs.text-show;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.ghc-boot) ++ pkgs.lib.optional (!_flags.developer) hsPkgs.text-show;
           };
         };
       };

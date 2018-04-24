@@ -29,7 +29,7 @@ let
             hsPkgs.semigroups
             hsPkgs.text
             hsPkgs.template-haskell
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.bytestring-builder) ++ (if compiler.isGhc
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.tagged) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.bytestring-builder) ++ (if compiler.isGhc && compiler.version.lt "7.9"
             then [
               hsPkgs.nats
               hsPkgs.transformers
@@ -51,7 +51,7 @@ let
               hsPkgs.tasty-quickcheck
               hsPkgs.text
               hsPkgs.text-show
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.tagged) ++ pkgs.lib.optional compiler.isGhc hsPkgs.bytestring-builder) ++ pkgs.lib.optionals compiler.isGhc [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.tagged) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.bytestring-builder) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.9") [
               hsPkgs.nats
               hsPkgs.transformers
               hsPkgs.transformers-compat

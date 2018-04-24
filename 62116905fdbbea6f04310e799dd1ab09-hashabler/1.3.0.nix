@@ -33,7 +33,7 @@ let
             hsPkgs.primitive
             hsPkgs.ghc-prim
             hsPkgs.template-haskell
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers) ++ pkgs.lib.optional _flags.integer-gmp hsPkgs.integer-gmp;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.9") hsPkgs.transformers) ++ pkgs.lib.optional _flags.integer-gmp hsPkgs.integer-gmp;
         };
         tests = {
           tests = {

@@ -26,7 +26,7 @@ let
             hsPkgs.data-type
             hsPkgs.mtl
             hsPkgs.QuickCheck
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.special-functors;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "6.6.1") hsPkgs.special-functors;
         };
       };
     }

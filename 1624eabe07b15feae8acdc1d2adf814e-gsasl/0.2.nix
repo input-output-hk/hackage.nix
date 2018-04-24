@@ -26,6 +26,7 @@ let
           pkgconfig = [
             pkgconfPkgs.libgsasl
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

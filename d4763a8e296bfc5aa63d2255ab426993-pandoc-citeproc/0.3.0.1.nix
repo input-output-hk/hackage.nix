@@ -44,7 +44,7 @@ let
             hsPkgs.split
             hsPkgs.yaml
             hsPkgs.pandoc
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ pkgs.lib.optionals _flags.network [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.bibutils hsPkgs.hs-bibutils) ++ pkgs.lib.optionals _flags.network [
             hsPkgs.network
             hsPkgs.HTTP
           ]) ++ (if _flags.hexpat
@@ -58,7 +58,7 @@ let
             ]
             else [
               hsPkgs.rfc5051
-            ])) ++ (if compiler.isGhc
+            ])) ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.base
               hsPkgs.syb

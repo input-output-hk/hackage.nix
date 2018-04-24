@@ -30,6 +30,7 @@ let
               hsPkgs.unix
               hsPkgs.array
             ];
+            build-tools = [ hsPkgs.happy ];
           };
         };
       };

@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.text
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
           libs = [
             pkgs.icuuc
           ] ++ (if system.isWindows

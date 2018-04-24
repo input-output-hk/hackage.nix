@@ -29,6 +29,7 @@ let
             pkgs.omega
             pkgs."stdc++"
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

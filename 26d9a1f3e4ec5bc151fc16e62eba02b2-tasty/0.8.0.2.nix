@@ -35,7 +35,7 @@ let
             hsPkgs.unbounded-delays
             hsPkgs.async
             hsPkgs.ansi-terminal
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
       };
     }

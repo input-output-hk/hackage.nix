@@ -41,7 +41,7 @@ let
             hsPkgs.text
             hsPkgs.time
             hsPkgs.transformers
-          ] ++ pkgs.lib.optionals compiler.isGhcjs [
+          ] ++ pkgs.lib.optionals (compiler.isGhcjs && true) [
             hsPkgs.ghcjs-base
             hsPkgs.ghcjs-prim
           ];

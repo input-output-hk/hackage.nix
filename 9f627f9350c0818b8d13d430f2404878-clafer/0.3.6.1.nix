@@ -49,6 +49,7 @@ let
             hsPkgs.test-framework-th
             hsPkgs.text
           ] ++ [ hsPkgs.HaXml ];
+          build-tools = [ hsPkgs.ghc ];
         };
         exes = {
           clafer = {
@@ -81,6 +82,7 @@ let
               hsPkgs.text
               hsPkgs.clafer
             ] ++ [ hsPkgs.HaXml ];
+            build-tools = [ hsPkgs.ghc ];
           };
         };
         tests = {
@@ -114,6 +116,7 @@ let
               hsPkgs.text
               hsPkgs.clafer
             ] ++ [ hsPkgs.HaXml ];
+            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

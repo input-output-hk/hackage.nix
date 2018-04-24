@@ -23,6 +23,7 @@ let
         broker-haskell = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.broker ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
         tests = {
           tests = {

@@ -28,11 +28,11 @@ let
             hsPkgs.filepath
             hsPkgs.extensible-exceptions
             hsPkgs.exceptions
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.8"
             then [
               hsPkgs.random
               hsPkgs.directory
-            ] ++ (if compiler.isGhc
+            ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
               then [
                 hsPkgs.base
                 hsPkgs.base

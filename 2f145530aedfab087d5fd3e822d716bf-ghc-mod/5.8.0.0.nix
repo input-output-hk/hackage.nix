@@ -57,7 +57,7 @@ let
             hsPkgs.transformers-base
             hsPkgs.cabal-helper
             hsPkgs.ghc
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot) ++ pkgs.lib.optional compiler.isGhc hsPkgs.convertible;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.ghc-boot) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.convertible;
         };
         exes = {
           ghc-mod = {
@@ -114,12 +114,15 @@ let
               hsPkgs.cabal-helper
               hsPkgs.ghc
               hsPkgs.ghc-mod
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.convertible) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-boot;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.convertible) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.ghc-boot;
           };
           shelltest = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
+            ];
+            build-tools = [
+              hsPkgs.shelltest
             ];
           };
         };

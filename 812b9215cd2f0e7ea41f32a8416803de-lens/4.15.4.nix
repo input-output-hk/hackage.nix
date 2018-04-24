@@ -65,7 +65,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.vector
             hsPkgs.void
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.generic-deriving;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.generic-deriving;
         };
         tests = {
           templates = {

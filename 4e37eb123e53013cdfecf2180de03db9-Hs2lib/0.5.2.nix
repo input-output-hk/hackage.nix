@@ -32,6 +32,10 @@ let
             hsPkgs.syb
             hsPkgs.random
           ];
+          build-tools = [
+            hsPkgs.hsc2hs
+            hsPkgs.cpphs
+          ];
         };
         exes = {
           Hs2lib = {

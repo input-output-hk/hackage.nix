@@ -59,7 +59,7 @@ let
             ]
             else [
               hsPkgs.rfc5051
-            ])) ++ (if compiler.isGhc
+            ])) ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.base
               hsPkgs.syb

@@ -31,6 +31,10 @@ let
               hsPkgs.MissingH
               hsPkgs.filepath
             ];
+            build-tools = [
+              hsPkgs.alex
+              hsPkgs.happy
+            ];
           };
         };
       };

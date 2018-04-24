@@ -31,6 +31,10 @@ let
               hsPkgs.pretty
               hsPkgs.IfElse
             ];
+            build-tools = [
+              hsPkgs.happy
+              hsPkgs.alex
+            ];
           };
         };
       };

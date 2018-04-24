@@ -42,7 +42,7 @@ let
             ]
             else [
               hsPkgs.base
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ [
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ [
             hsPkgs.network-uri
             hsPkgs.network
           ];
@@ -63,7 +63,7 @@ let
               ]
               else [
                 hsPkgs.base
-              ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ [
+              ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ [
               hsPkgs.network-uri
               hsPkgs.network
             ];
@@ -87,7 +87,7 @@ let
               hsPkgs.knob
               hsPkgs.unordered-containers
               hsPkgs.hashable
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ [
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ [
               hsPkgs.network-uri
               hsPkgs.network
             ];

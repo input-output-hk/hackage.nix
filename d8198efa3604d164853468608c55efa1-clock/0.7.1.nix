@@ -25,7 +25,7 @@ let
         clock = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.6") [
             hsPkgs.base
             hsPkgs.ghc-prim
           ];

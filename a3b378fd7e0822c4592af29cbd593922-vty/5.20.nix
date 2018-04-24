@@ -43,7 +43,7 @@ let
             hsPkgs.unix
             hsPkgs.utf8-string
             hsPkgs.vector
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         exes = {
           vty-mode-demo = {

@@ -27,6 +27,7 @@ let
             hsPkgs.transformers
           ];
           libs = [ pkgs.IL ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

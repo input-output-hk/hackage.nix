@@ -28,6 +28,7 @@ let
             hsPkgs.Codec-Image-DevIL
             hsPkgs.transformers
           ];
+          build-tools = [ hsPkgs.hsc2hs ];
         };
       };
     }

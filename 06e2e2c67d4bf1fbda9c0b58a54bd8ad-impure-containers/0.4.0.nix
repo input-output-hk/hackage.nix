@@ -34,7 +34,7 @@ let
             hsPkgs.vector
             hsPkgs.containers
             hsPkgs.ghc-prim
-          ] ++ pkgs.lib.optional (!_flags.portable && _flags.unsafe-tricks && compiler.isGhc) hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (!_flags.portable && _flags.unsafe-tricks && (compiler.isGhc && true)) hsPkgs.ghc-prim;
         };
         tests = {
           impure-containers-test = {

@@ -39,7 +39,7 @@ let
             hsPkgs.string-conversions
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ (if !compiler.isGhcjs
+          ] ++ (if !(compiler.isGhcjs && true)
             then [
               hsPkgs.http-client
               hsPkgs.http-client-tls

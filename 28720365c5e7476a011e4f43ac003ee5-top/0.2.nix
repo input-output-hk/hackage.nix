@@ -40,7 +40,7 @@ let
             hsPkgs.extra
             hsPkgs.time
             hsPkgs.pretty
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.th-lift) ++ (if compiler.isGhcjs
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.th-lift) ++ (if compiler.isGhcjs && true
             then [ hsPkgs.ghcjs-base ]
             else [
               hsPkgs.websockets

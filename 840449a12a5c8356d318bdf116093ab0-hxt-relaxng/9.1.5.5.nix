@@ -32,7 +32,7 @@ let
             hsPkgs.hxt-regex-xmlschema
           ] ++ (if _flags.network-uri
             then [ hsPkgs.network-uri ]
-            else if compiler.isGhc
+            else if compiler.isGhc && compiler.version.ge "7.10"
               then [ hsPkgs.network-uri ]
               else [ hsPkgs.network ]);
         };

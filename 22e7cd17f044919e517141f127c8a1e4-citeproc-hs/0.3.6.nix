@@ -46,7 +46,7 @@ let
             ])) ++ pkgs.lib.optionals _flags.embed_data_files [
             hsPkgs.template-haskell
             hsPkgs.file-embed
-          ]) ++ (if compiler.isGhc
+          ]) ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.base
               hsPkgs.syb

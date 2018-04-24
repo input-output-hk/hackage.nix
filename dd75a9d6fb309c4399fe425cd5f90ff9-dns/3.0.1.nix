@@ -39,7 +39,7 @@ let
             hsPkgs.psqueues
             hsPkgs.safe
             hsPkgs.time
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.semigroups) ++ pkgs.lib.optional system.isWindows hsPkgs.split;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups) ++ pkgs.lib.optional system.isWindows hsPkgs.split;
           libs = pkgs.lib.optional system.isWindows pkgs.iphlpapi;
         };
         tests = {

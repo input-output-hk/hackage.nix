@@ -34,11 +34,12 @@ let
             hsPkgs.bytestring
             hsPkgs.deepseq
             hsPkgs.vector
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.transformers;
           libs = pkgs.lib.optionals system.isWindows [
             pkgs.Advapi32
             pkgs.Kernel32
           ];
+          build-tools = pkgs.lib.optional system.isWindows hsPkgs.hsc2hs;
         };
         exes = {
           raaz = {
@@ -46,7 +47,7 @@ let
               hsPkgs.base
               hsPkgs.optparse-applicative
               hsPkgs.raaz
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.transformers;
           };
         };
         tests = {

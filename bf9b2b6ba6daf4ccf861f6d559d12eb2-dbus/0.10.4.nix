@@ -37,7 +37,7 @@ let
             hsPkgs.unix
             hsPkgs.vector
             hsPkgs.xml-types
-          ] ++ (if compiler.isGhc
+          ] ++ (if compiler.isGhc && compiler.version.lt "6.12"
             then if _flags.network-bytestring-610
               then [ hsPkgs.network ]
               else [

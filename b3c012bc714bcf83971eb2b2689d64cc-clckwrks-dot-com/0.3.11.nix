@@ -38,6 +38,7 @@ let
               hsPkgs.text
               hsPkgs.web-plugins
             ];
+            build-tools = [ hsPkgs.hsx2hs ];
           };
           clckwrks-dot-com-backups = {
             depends  = pkgs.lib.optionals _flags.backups [

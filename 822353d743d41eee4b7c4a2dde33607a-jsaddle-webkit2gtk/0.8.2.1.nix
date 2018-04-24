@@ -23,7 +23,7 @@ let
         jsaddle-webkit2gtk = {
           depends  = ([
             hsPkgs.base
-          ] ++ pkgs.lib.optionals (!compiler.isGhcjs) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             hsPkgs.aeson
             hsPkgs.base
             hsPkgs.bytestring

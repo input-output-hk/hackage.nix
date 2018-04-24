@@ -28,11 +28,11 @@ let
             hsPkgs.array
             hsPkgs.base
             hsPkgs.distributive
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.herbie hsPkgs.HerbiePlugin;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.herbie hsPkgs.HerbiePlugin;
         };
         tests = {
           doctests = {
-            depends  = pkgs.lib.optionals (!(!_flags.test-doctests || compiler.isGhc)) [
+            depends  = pkgs.lib.optionals (!(!_flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.doctest

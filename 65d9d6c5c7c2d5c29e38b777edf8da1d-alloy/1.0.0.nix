@@ -21,7 +21,7 @@ let
       };
       components = {
         alloy = {
-          depends  = if compiler.isGhc
+          depends  = if compiler.isGhc && compiler.version.lt "6.10"
             then [
               hsPkgs.base
               hsPkgs.containers

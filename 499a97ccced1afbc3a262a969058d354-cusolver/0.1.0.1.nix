@@ -29,6 +29,7 @@ let
             hsPkgs.half
             hsPkgs.storable-complex
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
       };
     }

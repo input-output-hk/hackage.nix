@@ -27,6 +27,10 @@ let
             hsPkgs.text
             hsPkgs.time
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
       };
     }

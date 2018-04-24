@@ -24,15 +24,15 @@ let
           depends  = ((([
             hsPkgs.base
             hsPkgs.base-compat
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.tagged) ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.tagged) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.10")) [
             hsPkgs.nats
             hsPkgs.void
-          ]) ++ pkgs.lib.optionals (!compiler.isGhc) [
+          ]) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             hsPkgs.fail
             hsPkgs.semigroups
             hsPkgs.transformers
             hsPkgs.transformers-compat
-          ]) ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.bifunctors;
+          ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.2")) hsPkgs.bifunctors;
         };
         tests = {
           spec = {

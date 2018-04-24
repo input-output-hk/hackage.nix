@@ -42,7 +42,7 @@ let
             hsPkgs.mtl
             hsPkgs.network-uri
             hsPkgs.network
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         exes = {
           rdf4h = {
@@ -53,7 +53,7 @@ let
               hsPkgs.text
               hsPkgs.network-uri
               hsPkgs.network
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
           };
         };
         tests = {
@@ -73,7 +73,7 @@ let
               hsPkgs.safe
               hsPkgs.network-uri
               hsPkgs.network
-            ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
           };
         };
         benchmarks = {

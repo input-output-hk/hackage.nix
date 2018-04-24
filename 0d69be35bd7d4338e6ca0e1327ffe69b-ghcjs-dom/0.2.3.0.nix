@@ -31,11 +31,11 @@ let
             hsPkgs.base
             hsPkgs.transformers
             hsPkgs.text
-          ] ++ pkgs.lib.optionals (compiler.isGhcjs && _flags.jsffi) [
+          ] ++ pkgs.lib.optionals (compiler.isGhcjs && true && _flags.jsffi) [
             hsPkgs.ghcjs-base
             hsPkgs.ghcjs-prim
             hsPkgs.ghc-prim
-          ]) ++ pkgs.lib.optionals (!compiler.isGhcjs || _flags.webkit) ([
+          ]) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true) || _flags.webkit) ([
             hsPkgs.glib
             hsPkgs.transformers
           ] ++ (if _flags.gtk3

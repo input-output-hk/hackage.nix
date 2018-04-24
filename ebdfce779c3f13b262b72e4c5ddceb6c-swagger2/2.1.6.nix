@@ -43,7 +43,7 @@ let
             hsPkgs.unordered-containers
             hsPkgs.vector
             hsPkgs.uuid-types
-          ] ++ pkgs.lib.optional (!compiler.isGhc) hsPkgs.nats;
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         tests = {
           spec = {

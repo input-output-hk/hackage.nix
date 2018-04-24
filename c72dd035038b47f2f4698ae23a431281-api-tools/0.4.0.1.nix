@@ -44,6 +44,10 @@ let
             hsPkgs.unordered-containers
             hsPkgs.vector
           ];
+          build-tools = [
+            hsPkgs.alex
+            hsPkgs.happy
+          ];
         };
         exes = {
           migration-tool = {

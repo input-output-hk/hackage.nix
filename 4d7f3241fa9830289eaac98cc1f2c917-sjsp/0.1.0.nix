@@ -32,6 +32,10 @@ let
               hsPkgs.blaze-builder
               hsPkgs.unordered-containers
             ];
+            build-tools = [
+              hsPkgs.happy
+              hsPkgs.alex
+            ];
           };
         };
       };

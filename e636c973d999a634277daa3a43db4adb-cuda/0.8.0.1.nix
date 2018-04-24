@@ -27,6 +27,7 @@ let
             hsPkgs.filepath
             hsPkgs.template-haskell
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         exes = {
           nvidia-device-query = {

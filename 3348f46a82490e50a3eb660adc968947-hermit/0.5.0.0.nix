@@ -39,6 +39,10 @@ let
             hsPkgs.temporary
             hsPkgs.transformers
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.terminfo;
+          build-tools = [
+            hsPkgs.happy
+            hsPkgs.alex
+          ];
         };
         exes = {
           hermit = {

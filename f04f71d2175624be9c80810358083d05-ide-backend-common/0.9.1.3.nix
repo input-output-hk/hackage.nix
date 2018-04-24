@@ -44,7 +44,7 @@ let
             hsPkgs.attoparsec
             hsPkgs.template-haskell
             hsPkgs.pretty-show
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
       };
     }

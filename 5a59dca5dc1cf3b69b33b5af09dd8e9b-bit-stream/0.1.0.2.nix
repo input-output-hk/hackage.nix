@@ -25,7 +25,7 @@ let
             hsPkgs.base
             hsPkgs.ghc-prim
             hsPkgs.vector
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.transformers;
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers;
         };
         exes = {
           find-foo = {

@@ -35,7 +35,7 @@ let
             hsPkgs.text
             hsPkgs.unordered-containers
             hsPkgs.bytestring
-          ] ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock) ++ pkgs.lib.optional compiler.isGhc hsPkgs.haddock;
+          ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.haddock) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.haddock) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.haddock) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.haddock) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") hsPkgs.haddock) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.2") hsPkgs.haddock;
         };
         exes = {
           haskell-docs = {

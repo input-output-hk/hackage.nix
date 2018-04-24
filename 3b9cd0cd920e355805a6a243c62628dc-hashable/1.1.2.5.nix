@@ -26,10 +26,10 @@ let
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
-          ] ++ pkgs.lib.optionals compiler.isGhc [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && true) [
             hsPkgs.ghc-prim
             hsPkgs.text
-          ]) ++ pkgs.lib.optional (compiler.isGhc && _flags.integer-gmp) hsPkgs.integer-gmp;
+          ]) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.integer-gmp) hsPkgs.integer-gmp;
         };
         tests = {
           tests = {

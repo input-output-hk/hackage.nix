@@ -26,6 +26,7 @@ let
             hsPkgs.bytestring
             hsPkgs.mtl
           ];
+          build-tools = [ hsPkgs.c2hs ];
         };
         tests = {
           tests = {

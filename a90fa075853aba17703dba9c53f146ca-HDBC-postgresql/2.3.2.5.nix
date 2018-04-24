@@ -39,7 +39,7 @@ let
             else [
               hsPkgs.time
               hsPkgs.old-locale
-            ])) ++ pkgs.lib.optional compiler.isGhc hsPkgs.base;
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.base;
           libs = [ pkgs.pq ];
         };
         exes = {
