@@ -1,0 +1,30 @@
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      flags = _flags;
+      package = {
+        specVersion = "1.10";
+        identifier = {
+          name = "ca";
+          version = "0.0.0.1";
+        };
+        license = "BSD-3-Clause";
+        copyright = "";
+        maintainer = "strake888@gmail.com";
+        author = "M Farkas-Dyck";
+        homepage = "";
+        url = "";
+        synopsis = "Cellular Automata";
+        description = "";
+        buildType = "Simple";
+      };
+      components = {
+        ca = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.alg
+          ];
+        };
+      };
+    }

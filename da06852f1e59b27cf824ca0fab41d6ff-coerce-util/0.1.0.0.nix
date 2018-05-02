@@ -1,0 +1,27 @@
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
+let
+    _flags = {} // flags;
+    in {
+      flags = _flags;
+      package = {
+        specVersion = "1.10";
+        identifier = {
+          name = "coerce-util";
+          version = "0.1.0.0";
+        };
+        license = "MIT";
+        copyright = "2018 (C) chessai";
+        maintainer = "chessai1996@gmail.com";
+        author = "chessai";
+        homepage = "https://github.com/chessai/coerce-util.git";
+        url = "";
+        synopsis = "utils for Data.Coerce";
+        description = "This library provides some convenience utilities for working with 'Data.Coerce'.";
+        buildType = "Simple";
+      };
+      components = {
+        coerce-util = {
+          depends  = [ hsPkgs.base ];
+        };
+      };
+    }
