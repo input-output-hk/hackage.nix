@@ -38,7 +38,9 @@ let
               hsPkgs.containers
               hsPkgs.haskell-src
             ];
-            build-tools = [ hsPkgs.happy ];
+            build-tools = [
+              hsPkgs.buildPackages.happy
+            ];
           };
         };
       };

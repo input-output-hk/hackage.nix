@@ -45,7 +45,6 @@ let
             else [
               hsPkgs.base
             ])) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
-          build-tools = pkgs.lib.optional (!system.isWindows) hsPkgs.unzip;
         };
         exes = {
           zip-archive = {

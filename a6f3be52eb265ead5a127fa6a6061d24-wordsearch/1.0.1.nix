@@ -27,7 +27,6 @@ let
             hsPkgs.array
             hsPkgs.fclabels
           ];
-          build-tools = [ hsPkgs.ghc ];
         };
         exes = {
           wordsearch = {
@@ -36,7 +35,6 @@ let
               hsPkgs.containers
               hsPkgs.fclabels
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

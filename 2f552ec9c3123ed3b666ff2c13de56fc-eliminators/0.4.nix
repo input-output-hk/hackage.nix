@@ -40,6 +40,9 @@ let
               hsPkgs.singletons
               hsPkgs.singleton-nats
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

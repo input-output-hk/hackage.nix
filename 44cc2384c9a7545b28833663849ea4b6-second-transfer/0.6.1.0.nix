@@ -49,7 +49,9 @@ let
             hsPkgs.time
           ];
           libs = [ pkgs.ssl pkgs.crypto ];
-          build-tools = [ hsPkgs.cpphs ];
+          build-tools = [
+            hsPkgs.buildPackages.cpphs
+          ];
         };
         tests = {
           compiling-ok = {
@@ -87,7 +89,9 @@ let
               hsPkgs.stm
               hsPkgs.deepseq
             ];
-            build-tools = [ hsPkgs.cpphs ];
+            build-tools = [
+              hsPkgs.buildPackages.cpphs
+            ];
           };
         };
       };

@@ -31,7 +31,9 @@ let
           pkgconfig = [
             pkgconfPkgs.gnome-keyring-1
           ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

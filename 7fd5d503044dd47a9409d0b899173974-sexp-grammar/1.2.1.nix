@@ -38,8 +38,8 @@ let
             hsPkgs.wl-pprint-text
           ];
           build-tools = [
-            hsPkgs.alex
-            hsPkgs.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
           ];
         };
         tests = {

@@ -64,6 +64,9 @@ let
               hsPkgs.text
               hsPkgs.wai
             ] ++ pkgs.lib.optional _flags.hpc-coveralls hsPkgs.hpc-coveralls;
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ] ++ pkgs.lib.optional _flags.hpc-coveralls hsPkgs.buildPackages.hpc-coveralls;
           };
         };
       };

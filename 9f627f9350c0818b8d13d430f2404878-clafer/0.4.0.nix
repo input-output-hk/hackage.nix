@@ -46,7 +46,6 @@ let
             hsPkgs.string-conversions
             hsPkgs.split
           ];
-          build-tools = [ hsPkgs.ghc ];
         };
         exes = {
           clafer = {
@@ -60,7 +59,6 @@ let
               hsPkgs.split
               hsPkgs.clafer
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
         tests = {
@@ -81,14 +79,12 @@ let
               hsPkgs.tasty-th
               hsPkgs.clafer
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
           doctests = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

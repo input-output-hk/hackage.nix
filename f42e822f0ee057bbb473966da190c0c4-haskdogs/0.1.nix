@@ -28,9 +28,6 @@ let
               hsPkgs.HSH
               hsPkgs.filepath
             ];
-            build-tools = [
-              hsPkgs.hasktags
-            ];
           };
         };
       };

@@ -28,7 +28,9 @@ let
             hsPkgs.bytestring
           ];
           libs = [ pkgs.rdkafka ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         tests = {
           tests = {

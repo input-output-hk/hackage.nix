@@ -63,6 +63,9 @@ let
                 hsPkgs.transformers-compat
               ]
               else [ hsPkgs.transformers ]);
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

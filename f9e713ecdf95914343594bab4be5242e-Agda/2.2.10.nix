@@ -48,8 +48,8 @@ let
               hsPkgs.utf8-string
             ])) ++ pkgs.lib.optional _flags.epic hsPkgs.epic;
           build-tools = [
-            hsPkgs.happy
-            hsPkgs.alex
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
           ];
         };
         exes = {

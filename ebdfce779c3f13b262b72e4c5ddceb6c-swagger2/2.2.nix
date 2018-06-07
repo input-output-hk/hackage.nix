@@ -67,6 +67,9 @@ let
               hsPkgs.vector
               hsPkgs.lens
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
           doctests = {
             depends  = [

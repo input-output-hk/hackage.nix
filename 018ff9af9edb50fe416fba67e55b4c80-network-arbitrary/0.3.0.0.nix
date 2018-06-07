@@ -43,6 +43,9 @@ let
               hsPkgs.QuickCheck
               hsPkgs.test-invariant
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

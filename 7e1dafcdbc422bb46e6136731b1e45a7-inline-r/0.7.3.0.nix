@@ -44,8 +44,8 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.R;
           pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs.libR;
           build-tools = [
-            hsPkgs.c2hs
-            hsPkgs.hsc2hs
+            hsPkgs.buildPackages.c2hs
+            hsPkgs.buildPackages.hsc2hs
           ];
         };
         tests = {

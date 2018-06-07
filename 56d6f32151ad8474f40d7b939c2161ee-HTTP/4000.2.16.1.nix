@@ -46,7 +46,6 @@ let
               else [
                 hsPkgs.network
               ])) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
-          build-tools = [ hsPkgs.ghc ];
         };
         tests = {
           test = {
@@ -80,7 +79,6 @@ let
                 hsPkgs.conduit
                 hsPkgs.conduit-extra
               ]));
-            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

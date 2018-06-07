@@ -21,7 +21,10 @@ let
       };
       components = {
         tagged = {
-          depends  = [ hsPkgs.base ];
+          depends  = [
+            hsPkgs.base
+            hsPkgs.base
+          ];
         };
       };
     }

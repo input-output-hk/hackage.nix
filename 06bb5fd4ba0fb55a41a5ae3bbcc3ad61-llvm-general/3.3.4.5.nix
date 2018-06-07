@@ -38,9 +38,6 @@ let
             hsPkgs.pretty
           ];
           libs = [ pkgs."stdc++" ];
-          build-tools = [
-            hsPkgs.llvm-config
-          ];
         };
         tests = {
           test = {

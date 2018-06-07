@@ -99,7 +99,6 @@ let
             ]))) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optional _flags.hashed-storage-diff hsPkgs.lcs) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
           libs = pkgs.lib.optional (_flags.curl && !_flags.pkgconfig) pkgs.curl;
           pkgconfig = pkgs.lib.optional (_flags.curl && _flags.pkgconfig) pkgconfPkgs.libcurl;
-          build-tools = [ hsPkgs.ghc ];
         };
         exes = {
           darcs = {
@@ -109,7 +108,6 @@ let
               hsPkgs.filepath
               hsPkgs.regex-compat-tdfa
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
         tests = {
@@ -136,7 +134,6 @@ let
               hsPkgs.test-framework-hunit
               hsPkgs.test-framework-quickcheck2
             ] ++ [ hsPkgs.text ];
-            build-tools = [ hsPkgs.ghc ];
           };
           hashed-storage-test = {
             depends  = [

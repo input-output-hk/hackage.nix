@@ -54,7 +54,7 @@ let
             hsPkgs.transformers
             hsPkgs.parsec
           ];
-          build-tools = pkgs.lib.optional _flags.parsec hsPkgs.alex;
+          build-tools = pkgs.lib.optional _flags.parsec hsPkgs.buildPackages.alex;
         };
         tests = {
           unit-tests = {

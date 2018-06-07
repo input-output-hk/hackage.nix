@@ -33,6 +33,9 @@ let
               hsPkgs.newtype-generics
               hsPkgs.hspec
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
         benchmarks = {

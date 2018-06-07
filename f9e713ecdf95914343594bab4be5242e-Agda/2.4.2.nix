@@ -61,9 +61,9 @@ let
               hsPkgs.directory
             ]);
           build-tools = [
-            hsPkgs.happy
-            hsPkgs.alex
-            hsPkgs.cpphs
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.cpphs
           ];
         };
         exes = {

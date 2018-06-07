@@ -23,7 +23,9 @@ let
         fftwRaw = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.fftw3 ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

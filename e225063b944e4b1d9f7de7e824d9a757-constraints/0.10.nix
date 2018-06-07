@@ -40,6 +40,9 @@ let
               hsPkgs.constraints
               hsPkgs.hspec
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

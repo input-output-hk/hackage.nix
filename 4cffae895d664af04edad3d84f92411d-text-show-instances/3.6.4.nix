@@ -125,6 +125,9 @@ let
                 hsPkgs.terminfo
                 hsPkgs.unix
               ]);
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

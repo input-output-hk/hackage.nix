@@ -50,7 +50,6 @@ let
             hsPkgs.test-framework-th
             hsPkgs.text
           ];
-          build-tools = [ hsPkgs.ghc ];
         };
         exes = {
           clafer = {
@@ -84,7 +83,6 @@ let
               hsPkgs.text
               hsPkgs.clafer
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
         tests = {
@@ -119,7 +117,6 @@ let
               hsPkgs.text
               hsPkgs.clafer
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

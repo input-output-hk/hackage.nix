@@ -43,8 +43,8 @@ let
             hsPkgs.hscolour
           ];
           build-tools = [
-            hsPkgs.alex
-            hsPkgs.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
           ];
         };
         exes = {

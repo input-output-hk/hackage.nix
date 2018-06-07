@@ -23,7 +23,9 @@ let
         hmpfr = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.mpfr ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

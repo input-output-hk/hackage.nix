@@ -26,7 +26,6 @@ let
             hsPkgs.ghc-prim
             hsPkgs.vector
           ];
-          build-tools = [ hsPkgs.ghc ];
         };
       };
     }

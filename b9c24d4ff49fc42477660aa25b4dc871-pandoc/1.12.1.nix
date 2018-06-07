@@ -65,8 +65,8 @@ let
             hsPkgs.http-types
           ];
           build-tools = [
-            hsPkgs.alex
-            hsPkgs.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
           ];
         };
         exes = {

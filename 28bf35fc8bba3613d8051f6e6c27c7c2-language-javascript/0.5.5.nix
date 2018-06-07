@@ -32,9 +32,9 @@ let
             hsPkgs.utf8-string
           ];
           build-tools = [
-            hsPkgs.happy
-            hsPkgs.alex
-            hsPkgs.happy
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
           ];
         };
         tests = {

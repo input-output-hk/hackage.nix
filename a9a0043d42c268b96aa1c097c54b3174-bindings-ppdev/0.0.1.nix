@@ -26,7 +26,9 @@ let
             hsPkgs.bindings-DSL
             hsPkgs.ioctl
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

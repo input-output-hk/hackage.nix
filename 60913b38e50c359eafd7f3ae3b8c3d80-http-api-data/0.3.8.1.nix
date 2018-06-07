@@ -55,6 +55,9 @@ let
               hsPkgs.bytestring
               hsPkgs.uuid-types
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
           doctests = {
             depends  = [

@@ -33,8 +33,8 @@ let
             hsPkgs.random
           ];
           build-tools = [
-            hsPkgs.hsc2hs
-            hsPkgs.cpphs
+            hsPkgs.buildPackages.hsc2hs
+            hsPkgs.buildPackages.cpphs
           ];
         };
         exes = {

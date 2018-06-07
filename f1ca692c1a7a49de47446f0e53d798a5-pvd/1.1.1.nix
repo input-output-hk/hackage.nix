@@ -31,7 +31,9 @@ let
               hsPkgs.mtl
             ];
             libs = [ pkgs.IL pkgs.pthread ];
-            build-tools = [ hsPkgs.hsc2hs ];
+            build-tools = [
+              hsPkgs.buildPackages.hsc2hs
+            ];
           };
           pvc = {
             depends  = [

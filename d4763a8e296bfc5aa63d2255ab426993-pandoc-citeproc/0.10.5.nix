@@ -61,7 +61,7 @@ let
               hsPkgs.time
             ]
             else [ hsPkgs.base ]);
-          build-tools = pkgs.lib.optional (_flags.embed_data_files && system.isOsx) hsPkgs.cpphs;
+          build-tools = pkgs.lib.optional (_flags.embed_data_files && system.isOsx) hsPkgs.buildPackages.cpphs;
         };
         exes = {
           pandoc-citeproc = {

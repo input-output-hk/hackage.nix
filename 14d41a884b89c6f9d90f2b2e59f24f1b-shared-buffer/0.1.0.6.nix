@@ -26,7 +26,9 @@ let
             hsPkgs.unix
             hsPkgs.bytestring
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         tests = {
           shared-buffer-tests = {
@@ -39,7 +41,9 @@ let
               hsPkgs.unix
               hsPkgs.bytestring
             ];
-            build-tools = [ hsPkgs.hsc2hs ];
+            build-tools = [
+              hsPkgs.buildPackages.hsc2hs
+            ];
           };
         };
       };

@@ -23,7 +23,9 @@ let
         FModExRaw = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.fmodex ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

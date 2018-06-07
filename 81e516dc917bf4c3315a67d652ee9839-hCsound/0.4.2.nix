@@ -41,7 +41,9 @@ let
           frameworks = if system.isOsx && _flags.useframework && _flags.usedouble
             then [ pkgs.CsoundLib64 ]
             else [ pkgs.CsoundLib ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

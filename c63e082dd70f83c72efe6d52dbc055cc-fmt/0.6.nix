@@ -52,6 +52,9 @@ let
               hsPkgs.base
               hsPkgs.doctest
             ];
+            build-tools = [
+              hsPkgs.buildPackages.doctest-discover
+            ];
           };
         };
         benchmarks = {

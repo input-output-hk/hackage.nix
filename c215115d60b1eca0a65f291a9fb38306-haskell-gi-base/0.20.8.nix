@@ -31,7 +31,9 @@ let
             pkgconfPkgs."gobject-2.0"
             pkgconfPkgs."glib-2.0"
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

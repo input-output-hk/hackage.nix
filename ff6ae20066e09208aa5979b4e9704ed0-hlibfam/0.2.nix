@@ -23,7 +23,9 @@ let
         hlibfam = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.fam ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

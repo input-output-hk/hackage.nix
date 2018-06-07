@@ -85,8 +85,8 @@ let
               hsPkgs.template-haskell
             ];
             build-tools = [
-              hsPkgs.happy
-              hsPkgs.cpphs
+              hsPkgs.buildPackages.happy
+              hsPkgs.buildPackages.cpphs
             ];
           };
         };

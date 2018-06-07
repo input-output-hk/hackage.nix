@@ -39,11 +39,6 @@ let
             pkgconfPkgs."gstreamer-net-0.10"
             pkgconfPkgs."gstreamer-plugins-base-0.10"
           ];
-          build-tools = [
-            hsPkgs.gtk2hsC2hs
-            hsPkgs.gtk2hsTypeGen
-            hsPkgs.gtk2hsHookGenerator
-          ];
         };
       };
     }

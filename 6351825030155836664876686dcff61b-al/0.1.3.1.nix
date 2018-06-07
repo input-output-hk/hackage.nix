@@ -30,7 +30,9 @@ let
           libs = if system.isWindows
             then [ pkgs.OpenAL32 ]
             else [ pkgs.openal ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

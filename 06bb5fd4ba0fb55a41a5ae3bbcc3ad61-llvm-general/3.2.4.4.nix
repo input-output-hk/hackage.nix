@@ -37,9 +37,6 @@ let
             hsPkgs.setenv
           ];
           libs = [ pkgs."stdc++" ];
-          build-tools = [
-            hsPkgs.llvm-config
-          ];
         };
         tests = {
           test = {

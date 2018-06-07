@@ -33,7 +33,9 @@ let
             hsPkgs.filemanip
             hsPkgs.filepath
           ];
-          build-tools = [ hsPkgs.alex ];
+          build-tools = [
+            hsPkgs.buildPackages.alex
+          ];
         };
         exes = {
           illuminate = {
@@ -44,7 +46,9 @@ let
               hsPkgs.xhtml
               hsPkgs.html
             ];
-            build-tools = [ hsPkgs.alex ];
+            build-tools = [
+              hsPkgs.buildPackages.alex
+            ];
           };
         };
       };

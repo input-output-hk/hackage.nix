@@ -25,7 +25,9 @@ let
             hsPkgs.bindings-DSL
           ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.base) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.base;
           libs = [ pkgs.dttools ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

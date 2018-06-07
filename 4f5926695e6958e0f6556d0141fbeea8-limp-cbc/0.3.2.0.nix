@@ -44,7 +44,9 @@ let
               pkgs."stdc++"
             ]
             else [ pkgs."stdc++" ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         tests = {
           test = {

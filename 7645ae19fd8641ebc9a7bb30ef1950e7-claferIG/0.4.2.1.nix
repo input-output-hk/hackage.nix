@@ -40,7 +40,6 @@ let
             hsPkgs.mtl-compat
             hsPkgs.clafer
           ] ++ [ hsPkgs.HaXml ];
-          build-tools = [ hsPkgs.ghc ];
         };
         exes = {
           claferIG = {
@@ -59,7 +58,6 @@ let
               hsPkgs.clafer
               hsPkgs.claferIG
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
         tests = {

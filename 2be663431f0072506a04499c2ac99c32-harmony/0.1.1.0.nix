@@ -36,8 +36,8 @@ let
             hsPkgs.hslogger
           ];
           build-tools = [
-            hsPkgs.alex
-            hsPkgs.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
           ];
         };
         exes = {

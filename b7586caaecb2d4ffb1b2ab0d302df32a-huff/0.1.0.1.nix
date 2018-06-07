@@ -34,7 +34,9 @@ let
             hsPkgs.array
             hsPkgs.template-haskell
           ];
-          build-tools = [ hsPkgs.alex ];
+          build-tools = [
+            hsPkgs.buildPackages.alex
+          ];
         };
         exes = {
           blocksWorld = {

@@ -38,7 +38,6 @@ let
             hsPkgs.gitit
             hsPkgs.clafer
           ];
-          build-tools = [ hsPkgs.ghc ];
         };
       };
     }

@@ -56,8 +56,8 @@ let
               hsPkgs.time
             ]);
           build-tools = [
-            hsPkgs.alex
-            hsPkgs.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
           ];
         };
         exes = {

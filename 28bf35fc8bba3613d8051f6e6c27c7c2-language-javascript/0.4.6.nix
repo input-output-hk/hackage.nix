@@ -31,10 +31,10 @@ let
             hsPkgs.utf8-light
           ];
           build-tools = [
-            hsPkgs.alex
-            hsPkgs.happy
-            hsPkgs.happy
-            hsPkgs.alex
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
           ];
         };
         exes = {

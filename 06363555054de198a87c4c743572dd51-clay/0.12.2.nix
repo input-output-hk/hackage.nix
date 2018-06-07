@@ -31,7 +31,6 @@ let
           Test-Clay = {
             depends  = [
               hsPkgs.base
-              hsPkgs.base
               hsPkgs.mtl
               hsPkgs.text
               hsPkgs.hspec-expectations

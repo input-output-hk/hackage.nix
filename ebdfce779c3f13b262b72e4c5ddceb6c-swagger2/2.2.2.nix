@@ -68,6 +68,9 @@ let
               hsPkgs.QuickCheck
               hsPkgs.quickcheck-instances
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
           doctests = {
             depends  = [

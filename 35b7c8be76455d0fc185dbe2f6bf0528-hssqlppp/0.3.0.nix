@@ -31,7 +31,9 @@ let
             hsPkgs.uniplate
             hsPkgs.transformers
           ];
-          build-tools = [ hsPkgs.cpphs ];
+          build-tools = [
+            hsPkgs.buildPackages.cpphs
+          ];
         };
       };
     }

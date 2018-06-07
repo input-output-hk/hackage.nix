@@ -61,6 +61,9 @@ let
               hsPkgs.markdown-unlit
               hsPkgs.text
             ];
+            build-tools = [
+              hsPkgs.buildPackages.markdown-unlit
+            ];
           };
           pure-how-to = {
             depends  = [
@@ -69,6 +72,9 @@ let
               hsPkgs.markdown-unlit
               hsPkgs.mtl
               hsPkgs.text
+            ];
+            build-tools = [
+              hsPkgs.buildPackages.markdown-unlit
             ];
           };
         };
@@ -87,6 +93,9 @@ let
               hsPkgs.QuickCheck
               hsPkgs.universum
               hsPkgs.unordered-containers
+            ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
             ];
           };
         };

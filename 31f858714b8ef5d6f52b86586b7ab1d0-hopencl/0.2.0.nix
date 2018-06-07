@@ -27,7 +27,9 @@ let
           ];
           libs = pkgs.lib.optional (!system.isWindows && !system.isOsx) pkgs.OpenCL;
           frameworks = pkgs.lib.optional (!system.isWindows && system.isOsx) pkgs.OpenCL;
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         tests = {
           unit = {

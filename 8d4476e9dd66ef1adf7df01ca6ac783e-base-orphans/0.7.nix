@@ -34,6 +34,9 @@ let
               hsPkgs.base-orphans
               hsPkgs.hspec
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

@@ -39,7 +39,6 @@ let
             hsPkgs.transformers-compat
             hsPkgs.clafer
           ];
-          build-tools = [ hsPkgs.ghc ];
         };
       };
     }

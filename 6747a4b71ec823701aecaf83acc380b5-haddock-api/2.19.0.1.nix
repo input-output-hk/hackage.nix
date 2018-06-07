@@ -58,6 +58,9 @@ let
               hsPkgs.ghc-boot
               hsPkgs.transformers
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

@@ -35,7 +35,9 @@ let
               pkgs.z3
               pkgs.gomp
             ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         exes = {
           examples = {

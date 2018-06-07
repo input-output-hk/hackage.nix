@@ -28,7 +28,6 @@ let
             hsPkgs.hsp
             hsPkgs.text
           ];
-          build-tools = [ hsPkgs.hsx2hs ];
         };
       };
     }

@@ -29,7 +29,9 @@ let
             hsPkgs.cpphs
             hsPkgs.parsec
           ] ++ [ hsPkgs.base ];
-          build-tools = [ hsPkgs.alex ];
+          build-tools = [
+            hsPkgs.buildPackages.alex
+          ];
         };
       };
     }

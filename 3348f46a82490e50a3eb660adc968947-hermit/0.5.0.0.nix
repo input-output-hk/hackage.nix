@@ -40,8 +40,8 @@ let
             hsPkgs.transformers
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.terminfo;
           build-tools = [
-            hsPkgs.happy
-            hsPkgs.alex
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
           ];
         };
         exes = {

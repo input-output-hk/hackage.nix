@@ -43,6 +43,9 @@ let
               hsPkgs.tasty-hedgehog
               hsPkgs.tasty-hunit
             ];
+            build-tools = [
+              hsPkgs.buildPackages.tasty-discover
+            ];
           };
         };
       };

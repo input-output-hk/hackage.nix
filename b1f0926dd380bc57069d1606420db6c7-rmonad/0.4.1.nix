@@ -26,7 +26,6 @@ let
             hsPkgs.containers
             hsPkgs.transformers
           ];
-          build-tools = [ hsPkgs.ghc ];
         };
       };
     }

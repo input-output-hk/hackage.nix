@@ -68,7 +68,9 @@ let
               hsPkgs.filepath
               hsPkgs.hspec
             ];
-            build-tools = [ hsPkgs.hsc2hs ];
+            build-tools = [
+              hsPkgs.buildPackages.hsc2hs
+            ];
           };
         };
       };

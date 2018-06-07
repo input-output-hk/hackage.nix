@@ -29,7 +29,9 @@ let
             hsPkgs.network-interfacerequest
             hsPkgs.foreign-storable-asymmetric
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

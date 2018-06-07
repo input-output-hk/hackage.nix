@@ -32,8 +32,8 @@ let
             hsPkgs.utf8-string
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           build-tools = [
-            hsPkgs.happy
-            hsPkgs.alex
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
           ];
         };
         tests = {

@@ -67,9 +67,9 @@ let
             hsPkgs.zlib
           ];
           build-tools = [
-            hsPkgs.alex
-            hsPkgs.happy
-          ] ++ pkgs.lib.optional _flags.cpphs hsPkgs.cpphs;
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
+          ] ++ pkgs.lib.optional _flags.cpphs hsPkgs.buildPackages.cpphs;
         };
         exes = {
           agda = {

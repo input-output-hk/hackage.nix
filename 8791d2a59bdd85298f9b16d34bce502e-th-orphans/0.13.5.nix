@@ -38,6 +38,9 @@ let
               hsPkgs.hspec
               hsPkgs.template-haskell
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

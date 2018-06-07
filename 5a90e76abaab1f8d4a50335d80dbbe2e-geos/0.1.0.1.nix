@@ -32,7 +32,9 @@ let
           ];
           libs = [ pkgs.geos_c ];
           frameworks = [ pkgs.GEOS ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         tests = {
           test = {
@@ -47,7 +49,9 @@ let
             ];
             libs = [ pkgs.geos_c ];
             frameworks = [ pkgs.GEOS ];
-            build-tools = [ hsPkgs.hsc2hs ];
+            build-tools = [
+              hsPkgs.buildPackages.hsc2hs
+            ];
           };
         };
       };

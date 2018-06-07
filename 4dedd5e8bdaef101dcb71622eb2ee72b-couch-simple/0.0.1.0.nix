@@ -64,9 +64,6 @@ let
               hsPkgs.unordered-containers
               hsPkgs.uuid
             ];
-            build-tools = [
-              hsPkgs.couchdb
-            ];
           };
         };
       };

@@ -52,8 +52,8 @@ let
               then [ hsPkgs.Win32 ]
               else [ hsPkgs.unix ]);
             build-tools = [
-              hsPkgs.happy
-              hsPkgs.alex
+              hsPkgs.buildPackages.happy
+              hsPkgs.buildPackages.alex
             ];
           };
         };

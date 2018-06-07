@@ -56,7 +56,9 @@ let
             hsPkgs.vector
             hsPkgs.vty
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         exes = {
           glirc2 = {

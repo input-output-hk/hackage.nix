@@ -26,7 +26,9 @@ let
             hsPkgs.unix
           ];
           libs = [ pkgs.expect pkgs.tcl ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

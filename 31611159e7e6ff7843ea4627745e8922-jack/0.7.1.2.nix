@@ -41,7 +41,9 @@ let
           pkgconfig = [
             pkgconfPkgs.jack
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         exes = {
           jack-amplify = {

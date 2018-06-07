@@ -53,9 +53,8 @@ let
             hsPkgs.semigroups
           ];
           build-tools = [
-            hsPkgs.ghc
-            hsPkgs.alex
-            hsPkgs.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
           ];
         };
         exes = {
@@ -73,7 +72,6 @@ let
               hsPkgs.fail
               hsPkgs.semigroups
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
         tests = {
@@ -99,14 +97,12 @@ let
               hsPkgs.fail
               hsPkgs.semigroups
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
           doctests = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

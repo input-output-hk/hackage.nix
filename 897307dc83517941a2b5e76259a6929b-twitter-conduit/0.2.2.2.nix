@@ -96,6 +96,9 @@ let
               else [
                 hsPkgs.network
               ])) ++ pkgs.lib.optional _flags.lens-aeson hsPkgs.lens-aeson;
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

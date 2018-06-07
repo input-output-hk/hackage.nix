@@ -32,7 +32,9 @@ let
             hsPkgs.stm
           ];
           libs = [ pkgs.clang ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

@@ -27,7 +27,7 @@ let
             hsPkgs.greencard
           ];
           build-tools = [
-            hsPkgs.greencard
+            hsPkgs.buildPackages.greencard
           ];
         };
       };

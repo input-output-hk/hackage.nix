@@ -41,7 +41,7 @@ let
             pkgs.gu
             pkgs.pgf
           ];
-          build-tools = pkgs.lib.optional _flags.c-runtime hsPkgs.hsc2hs;
+          build-tools = pkgs.lib.optional _flags.c-runtime hsPkgs.buildPackages.hsc2hs;
         };
         exes = {
           gf = {
@@ -78,8 +78,8 @@ let
               hsPkgs.data-binary-ieee754
             ];
             build-tools = [
-              hsPkgs.happy
-              hsPkgs.alex
+              hsPkgs.buildPackages.happy
+              hsPkgs.buildPackages.alex
             ];
           };
           pgf-shell = {

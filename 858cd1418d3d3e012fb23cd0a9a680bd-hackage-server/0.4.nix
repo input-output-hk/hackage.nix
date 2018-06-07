@@ -78,8 +78,8 @@ let
             ];
             libs = pkgs.lib.optional (!system.isOsx) pkgs.crypt;
             build-tools = [
-              hsPkgs.alex
-              hsPkgs.happy
+              hsPkgs.buildPackages.alex
+              hsPkgs.buildPackages.happy
             ];
           };
           hackage-mirror = {

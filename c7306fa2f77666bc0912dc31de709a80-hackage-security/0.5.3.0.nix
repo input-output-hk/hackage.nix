@@ -62,6 +62,9 @@ let
               hsPkgs.network
             ]
             else [ hsPkgs.network ]);
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         tests = {
           TestSuite = {

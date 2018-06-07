@@ -26,8 +26,7 @@ let
             hsPkgs.random
           ];
           build-tools = [
-            hsPkgs.gcc
-            hsPkgs.hsc2hs
+            hsPkgs.buildPackages.hsc2hs
           ];
         };
       };

@@ -43,7 +43,6 @@ let
             ] ++ [
               hsPkgs.base
             ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.12") hsPkgs.containers) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "6.10") hsPkgs.containers) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "6.8") hsPkgs.containers) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
-            build-tools = [ hsPkgs.cabal ];
           };
           ghc-pkg-6_8-compat = {
             depends  = [

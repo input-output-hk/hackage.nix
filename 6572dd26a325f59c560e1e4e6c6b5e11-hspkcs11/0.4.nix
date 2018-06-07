@@ -27,7 +27,9 @@ let
             hsPkgs.utf8-string
             hsPkgs.bytestring
           ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         exes = {
           pkcs11-tests = {

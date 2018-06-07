@@ -68,7 +68,6 @@ let
               hsPkgs.HUnit
               hsPkgs.zip-archive
             ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
-            build-tools = [ hsPkgs.zip ];
           };
         };
       };

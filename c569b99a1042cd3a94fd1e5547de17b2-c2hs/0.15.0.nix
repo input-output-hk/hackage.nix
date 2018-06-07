@@ -26,8 +26,8 @@ let
             hsPkgs.filepath
           ];
           build-tools = [
-            hsPkgs.happy
-            hsPkgs.alex
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
           ];
         };
         exes = {

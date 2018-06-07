@@ -43,7 +43,9 @@ let
             pkgconfPkgs.libswscale
             pkgconfPkgs.libavdevice
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         exes = {
           demo = {

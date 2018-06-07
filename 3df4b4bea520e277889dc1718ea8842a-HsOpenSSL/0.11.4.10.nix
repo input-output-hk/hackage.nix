@@ -40,7 +40,9 @@ let
               pkgs.ssl32
             ]
             else [ pkgs.crypto pkgs.ssl ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         tests = {
           test-dsa = {

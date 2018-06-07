@@ -37,11 +37,11 @@ let
             hsPkgs.symbol
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.0" && (compiler.isGhc && compiler.version.lt "7.2")) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.template-haskell;
           build-tools = pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.4") [
-            hsPkgs.alex
-            hsPkgs.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
           ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.4") [
-            hsPkgs.alex
-            hsPkgs.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
           ];
         };
         tests = {

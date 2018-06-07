@@ -26,7 +26,9 @@ let
             hsPkgs.bytestring
           ];
           libs = pkgs.lib.optional system.isWindows pkgs.ws2_32;
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         tests = {
           basic = {

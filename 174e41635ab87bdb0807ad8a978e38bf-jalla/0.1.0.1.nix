@@ -36,7 +36,9 @@ let
             pkgs.cblas
             pkgs.f77blas
           ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         tests = {
           tests = {

@@ -70,9 +70,9 @@ let
             pkgs.pgf
             pkgs.gu
           ];
-          build-tools = pkgs.lib.optional _flags.c-runtime hsPkgs.hsc2hs ++ [
-            hsPkgs.happy
-            hsPkgs.alex
+          build-tools = pkgs.lib.optional _flags.c-runtime hsPkgs.buildPackages.hsc2hs ++ [
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
           ];
         };
         exes = {

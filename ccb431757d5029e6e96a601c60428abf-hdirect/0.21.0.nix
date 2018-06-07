@@ -27,7 +27,9 @@ let
             hsPkgs.pretty
             hsPkgs.array
           ];
-          build-tools = [ hsPkgs.happy ];
+          build-tools = [
+            hsPkgs.buildPackages.happy
+          ];
         };
         exes = {
           hdirect = {
@@ -37,7 +39,9 @@ let
               hsPkgs.pretty
               hsPkgs.array
             ];
-            build-tools = [ hsPkgs.happy ];
+            build-tools = [
+              hsPkgs.buildPackages.happy
+            ];
           };
         };
       };

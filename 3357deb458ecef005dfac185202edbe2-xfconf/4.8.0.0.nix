@@ -36,31 +36,16 @@ let
           pkgconfig = [
             pkgconfPkgs.libxfconf-0
           ];
-          build-tools = [
-            hsPkgs.gtk2hsC2hs
-            hsPkgs.gtk2hsHookGenerator
-            hsPkgs.gtk2hsTypeGen
-          ];
         };
         exes = {
           tests = {
             pkgconfig = [
               pkgconfPkgs.libxfconf-0
             ];
-            build-tools = [
-              hsPkgs.gtk2hsC2hs
-              hsPkgs.gtk2hsHookGenerator
-              hsPkgs.gtk2hsTypeGen
-            ];
           };
           testGlib = {
             pkgconfig = [
               pkgconfPkgs.libxfconf-0
-            ];
-            build-tools = [
-              hsPkgs.gtk2hsC2hs
-              hsPkgs.gtk2hsHookGenerator
-              hsPkgs.gtk2hsTypeGen
             ];
           };
         };

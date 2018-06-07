@@ -31,8 +31,8 @@ let
             hsPkgs.z3-encoding
           ];
           build-tools = [
-            hsPkgs.happy
-            hsPkgs.alex
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
           ];
         };
         exes = {

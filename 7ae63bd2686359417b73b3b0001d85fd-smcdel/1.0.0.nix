@@ -48,8 +48,8 @@ let
               hsPkgs.smcdel
             ];
             build-tools = [
-              hsPkgs.alex
-              hsPkgs.happy
+              hsPkgs.buildPackages.alex
+              hsPkgs.buildPackages.happy
             ];
           };
           smcdel-web = {
@@ -64,8 +64,8 @@ let
               hsPkgs.text
             ];
             build-tools = [
-              hsPkgs.alex
-              hsPkgs.happy
+              hsPkgs.buildPackages.alex
+              hsPkgs.buildPackages.happy
             ];
           };
         };

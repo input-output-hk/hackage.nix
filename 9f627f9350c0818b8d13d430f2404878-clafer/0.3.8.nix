@@ -46,7 +46,6 @@ let
             hsPkgs.split
             hsPkgs.text
           ] ++ [ hsPkgs.HaXml ];
-          build-tools = [ hsPkgs.ghc ];
         };
         exes = {
           clafer = {
@@ -60,7 +59,6 @@ let
               hsPkgs.split
               hsPkgs.clafer
             ] ++ [ hsPkgs.HaXml ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
         tests = {
@@ -79,7 +77,6 @@ let
               hsPkgs.tasty-th
               hsPkgs.clafer
             ] ++ [ hsPkgs.HaXml ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

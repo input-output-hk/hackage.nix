@@ -35,7 +35,6 @@ let
           ] ++ [
             hsPkgs.mtl
           ]) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
-          build-tools = [ hsPkgs.ghc ];
         };
         tests = {
           test = {
@@ -58,7 +57,6 @@ let
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

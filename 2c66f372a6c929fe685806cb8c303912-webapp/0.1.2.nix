@@ -56,9 +56,9 @@ let
             hsPkgs.optparse-applicative
           ];
           build-tools = [
-            hsPkgs.hsc2hs
-            hsPkgs.happy
-            hsPkgs.alex
+            hsPkgs.buildPackages.hsc2hs
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
           ];
         };
       };

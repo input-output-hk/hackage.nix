@@ -25,6 +25,9 @@ let
             hsPkgs.base
             hsPkgs.markdown-unlit
           ];
+          build-tools = [
+            hsPkgs.buildPackages.markdown-unlit
+          ];
         };
         tests = {
           quickcheck = {
@@ -39,6 +42,10 @@ let
               hsPkgs.mockery
               hsPkgs.shake
             ];
+            build-tools = [
+              hsPkgs.buildPackages.markdown-unlit
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
           spec = {
             depends  = [
@@ -48,6 +55,10 @@ let
               hsPkgs.hspec
               hsPkgs.interpolate
               hsPkgs.markdown-unlit
+            ];
+            build-tools = [
+              hsPkgs.buildPackages.markdown-unlit
+              hsPkgs.buildPackages.hspec-discover
             ];
           };
         };

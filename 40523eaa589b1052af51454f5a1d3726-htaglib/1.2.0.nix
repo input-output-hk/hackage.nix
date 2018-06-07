@@ -41,7 +41,7 @@ let
               hsPkgs.htaglib
             ];
             build-tools = [
-              hsPkgs.hspec-discover
+              hsPkgs.buildPackages.hspec-discover
             ];
           };
         };

@@ -40,7 +40,9 @@ let
             hsPkgs.text-show
           ];
           libs = [ pkgs.pq ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         tests = {
           hpqtypes-tests = {

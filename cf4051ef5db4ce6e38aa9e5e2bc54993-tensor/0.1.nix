@@ -25,7 +25,6 @@ let
             hsPkgs.base
             hsPkgs.vector
           ];
-          build-tools = [ hsPkgs.ghc ];
         };
       };
     }

@@ -31,7 +31,7 @@ let
               then [ hsPkgs.process ]
               else [ hsPkgs.unix ]);
           libs = pkgs.lib.optional system.isWindows pkgs.Crypt32;
-          build-tools = pkgs.lib.optional system.isWindows hsPkgs.hsc2hs;
+          build-tools = pkgs.lib.optional system.isWindows hsPkgs.buildPackages.hsc2hs;
         };
       };
     }

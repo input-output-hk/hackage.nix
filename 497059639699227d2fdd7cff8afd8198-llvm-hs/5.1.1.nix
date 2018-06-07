@@ -43,8 +43,7 @@ let
             ]
             else [ hsPkgs.base ]);
           build-tools = [
-            hsPkgs.hsc2hs
-            hsPkgs.llvm-config
+            hsPkgs.buildPackages.hsc2hs
           ];
         };
         tests = {

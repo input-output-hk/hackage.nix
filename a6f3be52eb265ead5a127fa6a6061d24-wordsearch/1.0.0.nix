@@ -28,7 +28,6 @@ let
             hsPkgs.fclabels
             hsPkgs.data-default
           ];
-          build-tools = [ hsPkgs.ghc ];
         };
         exes = {
           wordSearch = {
@@ -36,7 +35,6 @@ let
               hsPkgs.base
               hsPkgs.fclabels
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

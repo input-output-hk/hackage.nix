@@ -62,10 +62,6 @@ let
             hsPkgs.formlets-hsp
           ];
         };
-        exes = {
-          demo = {
-            build-tools = [ hsPkgs.trhsx ];
-          };
-        };
+        exes = { demo = {}; };
       };
     }

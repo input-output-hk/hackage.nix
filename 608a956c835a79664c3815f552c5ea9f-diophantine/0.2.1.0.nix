@@ -25,7 +25,9 @@ let
             hsPkgs.base
             hsPkgs.array
           ];
-          build-tools = [ hsPkgs.happy ];
+          build-tools = [
+            hsPkgs.buildPackages.happy
+          ];
         };
       };
     }

@@ -49,7 +49,9 @@ let
               hsPkgs.HOC-AppKit
               hsPkgs.HOC-Foundation
             ];
-            build-tools = [ hsPkgs.alex ];
+            build-tools = [
+              hsPkgs.buildPackages.alex
+            ];
           };
         };
       };

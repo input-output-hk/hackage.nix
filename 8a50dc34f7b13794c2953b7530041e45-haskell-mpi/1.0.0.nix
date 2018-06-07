@@ -32,7 +32,9 @@ let
             hsPkgs.array
           ];
           libs = [ pkgs.mpi ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         exes = {
           haskell-mpi-testsuite = {
@@ -44,7 +46,9 @@ let
               hsPkgs.unix
             ];
             libs = [ pkgs.mpi ];
-            build-tools = [ hsPkgs.c2hs ];
+            build-tools = [
+              hsPkgs.buildPackages.c2hs
+            ];
           };
           haskell-mpi-comprunclean = {
             depends  = pkgs.lib.optionals _flags.test [

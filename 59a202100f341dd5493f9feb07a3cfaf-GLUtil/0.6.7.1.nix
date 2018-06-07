@@ -32,7 +32,9 @@ let
             hsPkgs.OpenGL
             hsPkgs.vector
           ];
-          build-tools = [ hsPkgs.cpphs ];
+          build-tools = [
+            hsPkgs.buildPackages.cpphs
+          ];
         };
       };
     }

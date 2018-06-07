@@ -32,9 +32,9 @@ let
             pkgs.opcodes
           ];
           build-tools = [
-            hsPkgs.alex
-            hsPkgs.happy
-            hsPkgs.hsc2hs
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.hsc2hs
           ];
         };
       };

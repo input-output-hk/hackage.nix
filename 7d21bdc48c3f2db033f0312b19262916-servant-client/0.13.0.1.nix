@@ -74,6 +74,9 @@ let
               hsPkgs.servant
               hsPkgs.servant-server
             ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

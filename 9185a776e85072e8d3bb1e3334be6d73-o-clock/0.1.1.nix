@@ -52,12 +52,18 @@ let
               hsPkgs.doctest
               hsPkgs.Glob
             ];
+            build-tools = [
+              hsPkgs.buildPackages.doctest
+            ];
           };
           readme-test = {
             depends  = [
               hsPkgs.base
               hsPkgs.o-clock
               hsPkgs.markdown-unlit
+            ];
+            build-tools = [
+              hsPkgs.buildPackages.markdown-unlit
             ];
           };
         };

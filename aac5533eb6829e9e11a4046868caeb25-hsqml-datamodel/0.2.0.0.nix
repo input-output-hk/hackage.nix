@@ -54,7 +54,9 @@ let
             pkgconfPkgs.Qt5Qml
             pkgconfPkgs.Qt5Quick
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

@@ -41,8 +41,8 @@ let
             hsPkgs.process
           ];
           build-tools = [
-            hsPkgs.happy
-            hsPkgs.alex
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
           ];
         };
         exes = {
@@ -57,8 +57,8 @@ let
               hsPkgs.mulang
             ];
             build-tools = [
-              hsPkgs.happy
-              hsPkgs.alex
+              hsPkgs.buildPackages.happy
+              hsPkgs.buildPackages.alex
             ];
           };
         };
@@ -74,8 +74,8 @@ let
               hsPkgs.mulang
             ];
             build-tools = [
-              hsPkgs.happy
-              hsPkgs.alex
+              hsPkgs.buildPackages.happy
+              hsPkgs.buildPackages.alex
             ];
           };
         };

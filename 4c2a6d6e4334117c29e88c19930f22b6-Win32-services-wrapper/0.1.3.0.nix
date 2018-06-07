@@ -31,7 +31,6 @@ let
             hsPkgs.directory
             hsPkgs.base
           ];
-          build-tools = [ hsPkgs.ghc ];
         };
       };
     }

@@ -27,8 +27,8 @@ let
             hsPkgs.extensible-exceptions
           ];
           build-tools = [
-            hsPkgs.c2hs
-            hsPkgs.hsc2hs
+            hsPkgs.buildPackages.c2hs
+            hsPkgs.buildPackages.hsc2hs
           ];
         };
       };

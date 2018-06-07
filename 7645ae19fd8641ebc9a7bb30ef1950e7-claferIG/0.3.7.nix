@@ -39,7 +39,6 @@ let
             hsPkgs.string-conversions
             hsPkgs.clafer
           ];
-          build-tools = [ hsPkgs.ghc ];
         };
         exes = {
           claferIG = {
@@ -56,7 +55,6 @@ let
               hsPkgs.mtl
               hsPkgs.transformers
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
         tests = {

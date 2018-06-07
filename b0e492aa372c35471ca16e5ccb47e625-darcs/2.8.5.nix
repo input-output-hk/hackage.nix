@@ -80,7 +80,6 @@ let
               hsPkgs.network
             ]))) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo);
           libs = pkgs.lib.optional (!(!_flags.library) && _flags.curl) pkgs.curl;
-          build-tools = pkgs.lib.optional (!(!_flags.library)) hsPkgs.ghc;
         };
         exes = {
           darcs = {
@@ -126,7 +125,6 @@ let
                 hsPkgs.network
               ]))) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
             libs = pkgs.lib.optional _flags.curl pkgs.curl;
-            build-tools = [ hsPkgs.ghc ];
           };
           darcs-test = {
             depends  = pkgs.lib.optionals (!(!_flags.test)) ((((((([
@@ -179,7 +177,6 @@ let
                 hsPkgs.network
               ])));
             libs = pkgs.lib.optional (!(!_flags.test) && _flags.curl) pkgs.curl;
-            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

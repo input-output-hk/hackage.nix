@@ -102,7 +102,9 @@ let
             hsPkgs.rosezipper
             hsPkgs.pureMD5
           ];
-          build-tools = [ hsPkgs.alex ];
+          build-tools = [
+            hsPkgs.buildPackages.alex
+          ];
         };
         exes = {
           parserTest = {
@@ -118,7 +120,9 @@ let
             depends  = [
               hsPkgs.base
             ] ++ pkgs.lib.optional (!_flags.dochack) hsPkgs.yi;
-            build-tools = [ hsPkgs.alex ];
+            build-tools = [
+              hsPkgs.buildPackages.alex
+            ];
           };
         };
         tests = {

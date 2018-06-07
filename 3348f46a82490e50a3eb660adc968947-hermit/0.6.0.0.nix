@@ -42,8 +42,8 @@ let
             then [ hsPkgs.Win32 ]
             else [ hsPkgs.terminfo ]);
           build-tools = [
-            hsPkgs.alex
-            hsPkgs.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
           ];
         };
         exes = {

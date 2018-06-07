@@ -34,7 +34,9 @@ let
               hsPkgs.template-haskell
               hsPkgs.cpphs
             ];
-            build-tools = [ hsPkgs.happy ];
+            build-tools = [
+              hsPkgs.buildPackages.happy
+            ];
           };
         };
         tests = {

@@ -31,7 +31,9 @@ let
             hsPkgs.Cabal
             hsPkgs.template-haskell
           ];
-          build-tools = [ hsPkgs.cpphs ];
+          build-tools = [
+            hsPkgs.buildPackages.cpphs
+          ];
         };
       };
     }

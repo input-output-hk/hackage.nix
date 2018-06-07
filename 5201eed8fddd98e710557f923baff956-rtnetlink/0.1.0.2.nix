@@ -35,7 +35,9 @@ let
             hsPkgs.unix
             hsPkgs.pretty-hex
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         exes = {
           rtnl-link = {

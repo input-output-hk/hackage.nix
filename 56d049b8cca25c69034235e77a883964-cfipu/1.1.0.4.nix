@@ -30,7 +30,6 @@ let
               hsPkgs.dequeue
               hsPkgs.data-default
             ];
-            build-tools = [ hsPkgs.ghc ];
           };
         };
       };

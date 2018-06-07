@@ -27,7 +27,9 @@ let
             hsPkgs.bytestring
             hsPkgs.time
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         tests = {
           hspec = {

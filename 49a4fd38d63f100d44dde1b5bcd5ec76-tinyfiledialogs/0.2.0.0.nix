@@ -29,7 +29,9 @@ let
             pkgs.comdlg32
             pkgs.ole32
           ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

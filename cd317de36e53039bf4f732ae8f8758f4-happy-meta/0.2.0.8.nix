@@ -29,7 +29,9 @@ let
             hsPkgs.containers
             hsPkgs.mtl
           ];
-          build-tools = [ hsPkgs.happy ];
+          build-tools = [
+            hsPkgs.buildPackages.happy
+          ];
         };
       };
     }

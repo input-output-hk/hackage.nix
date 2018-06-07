@@ -41,7 +41,9 @@ let
               hsPkgs.hslogger
             ];
             libs = [ pkgs.zip ];
-            build-tools = [ hsPkgs.cpphs ];
+            build-tools = [
+              hsPkgs.buildPackages.cpphs
+            ];
           };
           mumrik = {
             depends  = [
@@ -63,7 +65,9 @@ let
               hsPkgs.hslogger
             ];
             libs = [ pkgs.zip ];
-            build-tools = [ hsPkgs.cpphs ];
+            build-tools = [
+              hsPkgs.buildPackages.cpphs
+            ];
           };
         };
       };

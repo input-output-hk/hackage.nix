@@ -30,7 +30,9 @@ let
           pkgconfig = [
             pkgconfPkgs.libidn
           ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         tests = {
           gnuidn_tests = {
@@ -47,7 +49,9 @@ let
             pkgconfig = [
               pkgconfPkgs.libidn
             ];
-            build-tools = [ hsPkgs.c2hs ];
+            build-tools = [
+              hsPkgs.buildPackages.c2hs
+            ];
           };
         };
       };

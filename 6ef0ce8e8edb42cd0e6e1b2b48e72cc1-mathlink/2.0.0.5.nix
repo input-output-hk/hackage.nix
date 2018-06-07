@@ -29,7 +29,9 @@ let
             hsPkgs.containers
             hsPkgs.ix-shapable
           ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

@@ -32,7 +32,9 @@ let
           pkgconfig = [
             pkgconfPkgs.libudev
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         exes = {
           hidraw = {

@@ -29,7 +29,9 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs."stdc++" ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

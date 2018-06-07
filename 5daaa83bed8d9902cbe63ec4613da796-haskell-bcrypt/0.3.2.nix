@@ -25,7 +25,9 @@ let
             hsPkgs.base
             hsPkgs.bytestring
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         tests = {
           test-haskell-bcrypt = {
@@ -35,7 +37,9 @@ let
               hsPkgs.random
               hsPkgs.base
             ];
-            build-tools = [ hsPkgs.hsc2hs ];
+            build-tools = [
+              hsPkgs.buildPackages.hsc2hs
+            ];
           };
         };
       };

@@ -61,6 +61,9 @@ let
               hsPkgs.transformers
               hsPkgs.markdown-unlit
             ];
+            build-tools = [
+              hsPkgs.buildPackages.markdown-unlit
+            ];
           };
         };
         tests = {
@@ -84,6 +87,9 @@ let
               hsPkgs.lens-aeson
               hsPkgs.warp
               hsPkgs.wreq
+            ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
             ];
           };
         };

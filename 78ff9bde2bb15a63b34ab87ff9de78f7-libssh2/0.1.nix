@@ -28,7 +28,9 @@ let
             hsPkgs.time
           ];
           libs = [ pkgs.ssh2 ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

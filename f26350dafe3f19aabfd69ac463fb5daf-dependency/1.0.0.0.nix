@@ -33,7 +33,9 @@ let
             hsPkgs.binary
             hsPkgs.deepseq
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
-          build-tools = [ hsPkgs.cpphs ];
+          build-tools = [
+            hsPkgs.buildPackages.cpphs
+          ];
         };
         tests = {
           dependency-test = {

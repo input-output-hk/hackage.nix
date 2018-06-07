@@ -29,7 +29,7 @@ let
             hsPkgs.th-abstraction
             hsPkgs.template-haskell
           ];
-          build-tools = pkgs.lib.optional _flags.template-haskell hsPkgs.cpphs;
+          build-tools = pkgs.lib.optional _flags.template-haskell hsPkgs.buildPackages.cpphs;
         };
         tests = {
           Expr = {

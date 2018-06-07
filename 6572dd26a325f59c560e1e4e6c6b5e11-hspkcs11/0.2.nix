@@ -29,7 +29,9 @@ let
             hsPkgs.RSA
             hsPkgs.crypto-api
           ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         exes = {
           pkcs11-tests = {

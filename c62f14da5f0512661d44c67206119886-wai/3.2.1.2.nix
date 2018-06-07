@@ -39,6 +39,9 @@ let
               hsPkgs.hspec
               hsPkgs.bytestring
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

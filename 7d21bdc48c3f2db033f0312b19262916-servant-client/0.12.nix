@@ -72,6 +72,9 @@ let
               hsPkgs.warp
               hsPkgs.generics-sop
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

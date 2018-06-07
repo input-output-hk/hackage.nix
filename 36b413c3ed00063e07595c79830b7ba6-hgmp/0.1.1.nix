@@ -26,7 +26,9 @@ let
             hsPkgs.integer-gmp
             hsPkgs.ghc-prim
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         tests = {
           Main = {

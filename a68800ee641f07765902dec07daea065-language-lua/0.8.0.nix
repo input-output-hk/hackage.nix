@@ -29,7 +29,9 @@ let
             hsPkgs.mtl
             hsPkgs.parsec
           ];
-          build-tools = [ hsPkgs.alex ];
+          build-tools = [
+            hsPkgs.buildPackages.alex
+          ];
         };
         tests = {
           tests = {

@@ -31,8 +31,8 @@ let
             hsPkgs.utf8-string
           ];
           build-tools = [
-            hsPkgs.happy
-            hsPkgs.happy
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.happy
           ];
         };
         tests = {

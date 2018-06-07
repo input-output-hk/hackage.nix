@@ -29,7 +29,9 @@ let
           pkgconfig = [
             pkgconfPkgs.rubberband
           ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         tests = {
           test-rubberband = {

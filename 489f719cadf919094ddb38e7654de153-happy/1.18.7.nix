@@ -34,7 +34,6 @@ let
                 hsPkgs.containers
               ]
               else [ hsPkgs.base ]);
-            build-tools = [ hsPkgs.perl ];
           };
         };
       };

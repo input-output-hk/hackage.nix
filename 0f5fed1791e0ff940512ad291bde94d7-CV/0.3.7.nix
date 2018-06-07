@@ -59,7 +59,9 @@ let
             pkgs.opencv_objdetect
             pkgs.opencv_video
           ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

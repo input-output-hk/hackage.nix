@@ -47,7 +47,9 @@ let
           ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
           libs = pkgs.lib.optional system.isWindows pkgs.R;
           pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs.libR;
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         tests = {
           tests = {

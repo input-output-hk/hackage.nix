@@ -33,7 +33,6 @@ let
             hsPkgs.text
             hsPkgs.web-plugins
           ];
-          build-tools = [ hsPkgs.hsx2hs ];
         };
       };
     }

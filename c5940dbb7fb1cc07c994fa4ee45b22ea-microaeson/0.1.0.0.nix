@@ -29,7 +29,9 @@ let
             hsPkgs.deepseq
             hsPkgs.text
           ];
-          build-tools = [ hsPkgs.alex ];
+          build-tools = [
+            hsPkgs.buildPackages.alex
+          ];
         };
         tests = {
           microaeson = {

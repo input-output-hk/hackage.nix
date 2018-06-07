@@ -61,7 +61,6 @@ let
             ] ++ [
               hsPkgs.base
             ]) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
-            build-tools = [ hsPkgs.cabal ];
           };
         };
       };

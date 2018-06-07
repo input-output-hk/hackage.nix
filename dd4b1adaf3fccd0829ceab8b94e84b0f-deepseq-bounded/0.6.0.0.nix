@@ -64,7 +64,9 @@ let
             hsPkgs.text
             hsPkgs.bytestring
           ]) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_par_seqable) hsPkgs.parallel) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.parallelism_experiment) hsPkgs.parallel) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_par_patnode) hsPkgs.parallel) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_pseq_patnode) hsPkgs.parallel;
-          build-tools = [ hsPkgs.cpphs ];
+          build-tools = [
+            hsPkgs.buildPackages.cpphs
+          ];
         };
         tests = {
           deepseq-bounded-tests = {
@@ -79,7 +81,9 @@ let
             ] ++ pkgs.lib.optional (!_flags.haskell98_fragment) hsPkgs.ghc-prim) ++ pkgs.lib.optional (!_flags.haskell98_fragment) hsPkgs.syb) ++ pkgs.lib.optionals _flags.use_ww_deepseq ([
               hsPkgs.deepseq
             ] ++ pkgs.lib.optional (!_flags.haskell98_fragment) hsPkgs.deepseq-generics)) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_sop) hsPkgs.generics-sop) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_par_seqable) hsPkgs.parallel) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.parallelism_experiment) hsPkgs.parallel) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_par_patnode) hsPkgs.parallel) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_pseq_patnode) hsPkgs.parallel;
-            build-tools = [ hsPkgs.cpphs ];
+            build-tools = [
+              hsPkgs.buildPackages.cpphs
+            ];
           };
         };
       };

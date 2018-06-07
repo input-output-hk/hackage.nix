@@ -36,8 +36,8 @@ let
             hsPkgs.composition-prelude
           ];
           build-tools = [
-            hsPkgs.happy
-            hsPkgs.alex
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
           ];
         };
         tests = {

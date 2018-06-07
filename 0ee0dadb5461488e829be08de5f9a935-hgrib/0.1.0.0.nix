@@ -25,7 +25,9 @@ let
         hgrib = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.grib_api ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         exes = {
           get = {

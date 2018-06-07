@@ -55,7 +55,9 @@ let
             hsPkgs.clientsession
             hsPkgs.pwstore-fast
           ];
-          build-tools = [ hsPkgs.cpphs ];
+          build-tools = [
+            hsPkgs.buildPackages.cpphs
+          ];
         };
       };
     }

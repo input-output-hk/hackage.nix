@@ -34,8 +34,8 @@ let
               hsPkgs.mtl
             ];
             build-tools = [
-              hsPkgs.alex
-              hsPkgs.happy
+              hsPkgs.buildPackages.alex
+              hsPkgs.buildPackages.happy
             ];
           };
         };

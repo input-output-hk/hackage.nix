@@ -35,7 +35,9 @@ let
             hsPkgs.zlib
             hsPkgs.containers
           ];
-          build-tools = [ hsPkgs.happy ];
+          build-tools = [
+            hsPkgs.buildPackages.happy
+          ];
         };
         exes = {
           PrintCSTypes = {

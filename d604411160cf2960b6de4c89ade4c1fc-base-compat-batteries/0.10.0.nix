@@ -42,6 +42,9 @@ let
               hsPkgs.hspec
               hsPkgs.QuickCheck
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

@@ -40,7 +40,9 @@ let
             hsPkgs.data-default-class
           ];
           libs = [ pkgs.pq ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         exes = {
           tests = {

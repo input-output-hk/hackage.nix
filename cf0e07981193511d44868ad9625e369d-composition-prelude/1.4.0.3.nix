@@ -24,7 +24,9 @@ let
       components = {
         composition-prelude = {
           depends  = [ hsPkgs.base ];
-          build-tools = [ hsPkgs.cpphs ];
+          build-tools = [
+            hsPkgs.buildPackages.cpphs
+          ];
         };
       };
     }

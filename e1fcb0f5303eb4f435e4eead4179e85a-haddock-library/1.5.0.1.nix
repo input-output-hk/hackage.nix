@@ -54,6 +54,9 @@ let
               hsPkgs.bytestring
               hsPkgs.deepseq
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
           fixtures = {
             depends  = [

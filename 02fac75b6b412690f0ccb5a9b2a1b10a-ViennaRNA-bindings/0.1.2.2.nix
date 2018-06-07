@@ -25,7 +25,9 @@ let
             hsPkgs.base
             hsPkgs.array
           ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

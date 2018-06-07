@@ -47,8 +47,8 @@ let
               hsPkgs.unix
             ] ++ pkgs.lib.optional _flags.terminfo hsPkgs.terminfo);
           build-tools = [
-            hsPkgs.alex
-            hsPkgs.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
           ];
         };
       };

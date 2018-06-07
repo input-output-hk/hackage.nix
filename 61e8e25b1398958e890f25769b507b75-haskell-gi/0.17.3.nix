@@ -43,7 +43,9 @@ let
             pkgconfPkgs."gobject-introspection-1.0"
             pkgconfPkgs."gobject-2.0"
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
         exes = {
           haskell-gi = {

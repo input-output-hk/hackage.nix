@@ -68,7 +68,6 @@ let
               hsPkgs.HUnit
               hsPkgs.zip-archive
             ];
-            build-tools = [ hsPkgs.zip ];
           };
         };
       };

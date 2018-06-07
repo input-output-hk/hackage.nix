@@ -54,7 +54,9 @@ let
               hsPkgs.utf8-string
               hsPkgs.ghc-prim
             ] ++ pkgs.lib.optional system.isWindows hsPkgs.base) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
-            build-tools = [ hsPkgs.cabal ];
+            build-tools = [
+              hsPkgs.buildPackages.cabal-install
+            ];
           };
           cabal-helper-main = {
             depends  = [
@@ -87,8 +89,7 @@ let
               hsPkgs.ghc-prim
             ] ++ pkgs.lib.optional system.isWindows hsPkgs.base) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
             build-tools = [
-              hsPkgs.cabal
-              hsPkgs.cabal
+              hsPkgs.buildPackages.cabal-install
             ];
           };
           ghc-session = {
@@ -112,7 +113,9 @@ let
               hsPkgs.utf8-string
               hsPkgs.ghc-prim
             ] ++ pkgs.lib.optional system.isWindows hsPkgs.base) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
-            build-tools = [ hsPkgs.cabal ];
+            build-tools = [
+              hsPkgs.buildPackages.cabal-install
+            ];
           };
         };
       };

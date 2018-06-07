@@ -77,7 +77,6 @@ let
             ]
             else [ hsPkgs.network ]);
           libs = [ pkgs.ssl ];
-          build-tools = [ hsPkgs.hsx2hs ];
         };
       };
     }

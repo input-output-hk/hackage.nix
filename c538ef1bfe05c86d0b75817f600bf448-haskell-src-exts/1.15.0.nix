@@ -28,7 +28,9 @@ let
             hsPkgs.base
             hsPkgs.ghc-prim
           ];
-          build-tools = [ hsPkgs.happy ];
+          build-tools = [
+            hsPkgs.buildPackages.happy
+          ];
         };
         tests = {
           test = {

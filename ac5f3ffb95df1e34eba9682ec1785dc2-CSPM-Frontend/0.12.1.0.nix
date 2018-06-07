@@ -33,7 +33,9 @@ let
             hsPkgs.dlist
             hsPkgs.syb
           ];
-          build-tools = [ hsPkgs.alex ];
+          build-tools = [
+            hsPkgs.buildPackages.alex
+          ];
         };
       };
     }

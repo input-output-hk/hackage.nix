@@ -28,7 +28,9 @@ let
             hsPkgs.transformers
           ];
           libs = [ pkgs.grib_api ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         exes = {
           get = {

@@ -27,7 +27,9 @@ let
             hsPkgs.mtl
           ];
           libs = pkgs.lib.optional (!system.isWindows) pkgs.OpenCL;
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

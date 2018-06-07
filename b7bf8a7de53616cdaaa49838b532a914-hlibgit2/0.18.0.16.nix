@@ -49,7 +49,6 @@ let
               hsPkgs.hlibgit2
               hsPkgs.process
             ];
-            build-tools = [ hsPkgs.git ];
           };
         };
       };

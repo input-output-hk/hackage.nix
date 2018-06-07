@@ -46,7 +46,9 @@ let
               hsPkgs.template-haskell
               hsPkgs.seqaid
             ] ++ pkgs.lib.optional _flags.use_cpphs hsPkgs.cpphs) ++ pkgs.lib.optional _flags.cowboy hsPkgs.cpphs) ++ pkgs.lib.optional _flags.omnitypic hsPkgs.ghc-prim;
-            build-tools = [ hsPkgs.cpphs ];
+            build-tools = [
+              hsPkgs.buildPackages.cpphs
+            ];
           };
         };
       };

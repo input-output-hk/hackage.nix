@@ -33,6 +33,9 @@ let
             hsPkgs.bytestring
             hsPkgs.bytestring
           ] ++ pkgs.lib.optional (_flags.posix && !system.isWindows) hsPkgs.unix;
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

@@ -35,8 +35,8 @@ let
             hsPkgs.bytestring
           ]) ++ pkgs.lib.optional _flags.enablequasiquotes hsPkgs.template-haskell;
           build-tools = [
-            hsPkgs.alex
-            hsPkgs.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
           ];
         };
         tests = {

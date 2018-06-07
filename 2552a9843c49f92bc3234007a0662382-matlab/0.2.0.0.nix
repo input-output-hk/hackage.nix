@@ -34,7 +34,6 @@ let
             pkgs.mx
             pkgs.mat
           ] ++ pkgs.lib.optional _flags.engine pkgs.eng;
-          build-tools = pkgs.lib.optional _flags.runtime hsPkgs.mcc;
         };
       };
     }

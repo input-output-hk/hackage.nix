@@ -28,7 +28,9 @@ let
             hsPkgs.integer
           ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.12") hsPkgs.integer-gmp;
           libs = [ pkgs.mpfr ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

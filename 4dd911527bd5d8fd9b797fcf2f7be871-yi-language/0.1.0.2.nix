@@ -38,7 +38,9 @@ let
             hsPkgs.unordered-containers
             hsPkgs.derive
           ];
-          build-tools = [ hsPkgs.alex ];
+          build-tools = [
+            hsPkgs.buildPackages.alex
+          ];
         };
       };
     }

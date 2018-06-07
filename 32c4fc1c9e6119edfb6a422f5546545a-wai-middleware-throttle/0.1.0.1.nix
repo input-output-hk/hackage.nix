@@ -57,7 +57,7 @@ let
               hsPkgs.regex-compat
             ];
             build-tools = [
-              hsPkgs.haddock
+              hsPkgs.buildPackages.haddock
             ];
           };
           hlint = {

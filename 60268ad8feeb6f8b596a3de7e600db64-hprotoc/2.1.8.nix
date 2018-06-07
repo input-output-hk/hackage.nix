@@ -36,7 +36,9 @@ let
             hsPkgs.parsec
             hsPkgs.utf8-string
           ];
-          build-tools = [ hsPkgs.alex ];
+          build-tools = [
+            hsPkgs.buildPackages.alex
+          ];
         };
         exes = {
           hprotoc = {
@@ -55,7 +57,9 @@ let
               hsPkgs.parsec
               hsPkgs.utf8-string
             ];
-            build-tools = [ hsPkgs.alex ];
+            build-tools = [
+              hsPkgs.buildPackages.alex
+            ];
           };
         };
       };

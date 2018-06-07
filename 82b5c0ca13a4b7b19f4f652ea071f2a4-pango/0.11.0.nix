@@ -37,10 +37,6 @@ let
           pkgconfig = [
             pkgconfPkgs.pango
           ];
-          build-tools = [
-            hsPkgs.gtk2hsC2hs
-            hsPkgs.gtk2hsTypeGen
-          ];
         };
       };
     }

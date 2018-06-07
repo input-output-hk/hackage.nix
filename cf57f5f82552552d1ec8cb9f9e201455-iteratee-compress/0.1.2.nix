@@ -30,7 +30,9 @@ let
             hsPkgs.monads-fd
           ];
           libs = [ pkgs.z ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

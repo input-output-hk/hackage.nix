@@ -31,6 +31,9 @@ let
               hsPkgs.hspec
               hsPkgs.HUnit
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

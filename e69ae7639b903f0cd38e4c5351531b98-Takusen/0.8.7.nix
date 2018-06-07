@@ -46,9 +46,6 @@ let
               pkgs.clntsh
             ])) ++ pkgs.lib.optional _flags.postgres pkgs.pq) ++ pkgs.lib.optional _flags.sqlite pkgs.sqlite3;
           pkgconfig = pkgs.lib.optional (_flags.sqlite && !system.isWindows) pkgconfPkgs.sqlite3;
-          build-tools = (pkgs.lib.optional _flags.oracle hsPkgs.sqlplus ++ pkgs.lib.optional _flags.postgres hsPkgs.pg_config) ++ [
-            hsPkgs.sqlite3
-          ];
         };
         exes = {
           takusen_tests = {

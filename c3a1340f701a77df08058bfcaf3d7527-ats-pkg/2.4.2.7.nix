@@ -54,7 +54,9 @@ let
             hsPkgs.dependency
             hsPkgs.ats-setup
           ];
-          build-tools = [ hsPkgs.cpphs ];
+          build-tools = [
+            hsPkgs.buildPackages.cpphs
+          ];
         };
         exes = {
           atspkg = {

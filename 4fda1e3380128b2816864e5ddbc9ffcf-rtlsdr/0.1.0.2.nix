@@ -23,7 +23,9 @@ let
         rtlsdr = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.rtlsdr ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

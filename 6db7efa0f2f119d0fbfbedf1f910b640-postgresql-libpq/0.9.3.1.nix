@@ -34,7 +34,9 @@ let
             pkgs.ssl
           ]);
           pkgconfig = pkgs.lib.optional _flags.use-pkg-config pkgconfPkgs.libpq;
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

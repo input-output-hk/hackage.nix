@@ -35,7 +35,9 @@ let
               pkgs."stdc++"
             ];
           pkgconfig = pkgs.lib.optional system.isLinux pkgconfPkgs.bullet;
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

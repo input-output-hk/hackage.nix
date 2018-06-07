@@ -30,7 +30,9 @@ let
             hsPkgs.vector
           ];
           libs = [ pkgs.samplerate ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

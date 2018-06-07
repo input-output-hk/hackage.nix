@@ -39,7 +39,7 @@ let
             pkgs.Advapi32
             pkgs.Kernel32
           ];
-          build-tools = pkgs.lib.optional system.isWindows hsPkgs.hsc2hs;
+          build-tools = pkgs.lib.optional system.isWindows hsPkgs.buildPackages.hsc2hs;
         };
         exes = {
           raaz = {

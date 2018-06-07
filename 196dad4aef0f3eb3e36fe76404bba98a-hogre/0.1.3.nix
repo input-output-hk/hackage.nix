@@ -28,11 +28,6 @@ let
           ];
           libs = [ pkgs.OgreMain ];
           pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs.OGRE;
-          build-tools = [
-            hsPkgs.cgen
-            hsPkgs.grgen
-            hsPkgs.cgen-hs
-          ];
         };
       };
     }

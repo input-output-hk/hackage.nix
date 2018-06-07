@@ -39,7 +39,9 @@ let
           pkgconfig = [
             pkgconfPkgs.ipopt
           ] ++ pkgs.lib.optional _flags.nlopt pkgconfPkgs.nlopt;
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         exes = {
           ipopt-hs_Tests = {

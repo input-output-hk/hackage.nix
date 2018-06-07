@@ -53,6 +53,9 @@ let
               hsPkgs.o-clock
               hsPkgs.markdown-unlit
             ];
+            build-tools = [
+              hsPkgs.buildPackages.markdown-unlit
+            ];
           };
         };
         benchmarks = {

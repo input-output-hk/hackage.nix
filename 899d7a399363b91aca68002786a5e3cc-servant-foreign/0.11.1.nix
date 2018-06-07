@@ -38,6 +38,9 @@ let
               hsPkgs.servant-foreign
               hsPkgs.hspec
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

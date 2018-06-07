@@ -34,7 +34,7 @@ let
               hsPkgs.Win32
             ]);
           libs = pkgs.lib.optional (system.isWindows && !_flags.win32-2-5) pkgs.ntdll;
-          build-tools = pkgs.lib.optional (system.isWindows && !_flags.win32-2-5) hsPkgs.hsc2hs;
+          build-tools = pkgs.lib.optional (system.isWindows && !_flags.win32-2-5) hsPkgs.buildPackages.hsc2hs;
         };
         exes = {
           password = {

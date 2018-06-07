@@ -53,6 +53,9 @@ let
               hsPkgs.text
               hsPkgs.unordered-containers
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

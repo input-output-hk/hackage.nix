@@ -56,12 +56,18 @@ let
               hsPkgs.filepath
               hsPkgs.haddock-test
             ];
+            build-tools = [
+              hsPkgs.buildPackages.haddock
+            ];
           };
           hypsrc-test = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.haddock-test
+            ];
+            build-tools = [
+              hsPkgs.buildPackages.haddock
             ];
           };
           latex-test = {
@@ -70,12 +76,18 @@ let
               hsPkgs.filepath
               hsPkgs.haddock-test
             ];
+            build-tools = [
+              hsPkgs.buildPackages.haddock
+            ];
           };
           hoogle-test = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.haddock-test
+            ];
+            build-tools = [
+              hsPkgs.buildPackages.haddock
             ];
           };
         };

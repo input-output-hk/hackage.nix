@@ -99,6 +99,9 @@ let
               hsPkgs.wai-extra
               hsPkgs.temporary
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
           doctests = {
             depends  = [

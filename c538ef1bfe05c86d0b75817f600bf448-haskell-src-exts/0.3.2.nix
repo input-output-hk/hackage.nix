@@ -32,7 +32,9 @@ let
               hsPkgs.pretty
             ]
             else [ hsPkgs.base ]);
-          build-tools = [ hsPkgs.happy ];
+          build-tools = [
+            hsPkgs.buildPackages.happy
+          ];
         };
       };
     }

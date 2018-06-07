@@ -35,6 +35,13 @@ let
             hsPkgs.transformers
             hsPkgs.vector
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.1" && !system.isWindows) hsPkgs.hpp;
+          build-tools = if compiler.isGhc && compiler.version.ge "7.10.1" && !system.isWindows
+            then [
+              hsPkgs.buildPackages.hpp
+            ]
+            else [
+              hsPkgs.buildPackages.cpphs
+            ];
         };
       };
     }

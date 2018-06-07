@@ -57,9 +57,9 @@ let
             hsPkgs.zlib
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.base-orphans;
           build-tools = [
-            hsPkgs.alex
-            hsPkgs.happy
-          ] ++ pkgs.lib.optional _flags.cpphs hsPkgs.cpphs;
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.happy
+          ] ++ pkgs.lib.optional _flags.cpphs hsPkgs.buildPackages.cpphs;
         };
         exes = {
           agda = {

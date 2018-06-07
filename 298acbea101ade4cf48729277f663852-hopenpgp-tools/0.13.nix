@@ -42,8 +42,8 @@ let
               hsPkgs.transformers
             ];
             build-tools = [
-              hsPkgs.alex
-              hsPkgs.happy
+              hsPkgs.buildPackages.alex
+              hsPkgs.buildPackages.happy
             ];
           };
           hokey = {
@@ -106,8 +106,8 @@ let
               hsPkgs.yaml
             ];
             build-tools = [
-              hsPkgs.alex
-              hsPkgs.happy
+              hsPkgs.buildPackages.alex
+              hsPkgs.buildPackages.happy
             ];
           };
         };

@@ -35,8 +35,8 @@ let
             hsPkgs.transformers
           ];
           build-tools = [
-            hsPkgs.happy
-            hsPkgs.alex
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
           ];
         };
         tests = {

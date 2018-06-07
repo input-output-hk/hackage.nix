@@ -40,11 +40,6 @@ let
             pkgconfPkgs."gdk-pixbuf-2.0"
             pkgconfPkgs.pango
           ];
-          build-tools = [
-            hsPkgs.gtk2hsC2hs
-            hsPkgs.gtk2hsHookGenerator
-            hsPkgs.gtk2hsTypeGen
-          ];
         };
       };
     }

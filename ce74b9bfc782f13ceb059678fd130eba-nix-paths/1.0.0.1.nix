@@ -27,12 +27,6 @@ let
             hsPkgs.base
             hsPkgs.process
           ];
-          build-tools = pkgs.lib.optionals (!_flags.allow-relative-paths) [
-            hsPkgs.nix-instantiate
-            hsPkgs.nix-build
-            hsPkgs.nix-env
-            hsPkgs.nix-store
-          ];
         };
       };
     }

@@ -36,7 +36,9 @@ let
             hsPkgs.containers
             hsPkgs.uglymemo
           ] ++ pkgs.lib.optional _flags.minisat hsPkgs.minisat;
-          build-tools = [ hsPkgs.alex ];
+          build-tools = [
+            hsPkgs.buildPackages.alex
+          ];
         };
         exes = {
           jukebox = {

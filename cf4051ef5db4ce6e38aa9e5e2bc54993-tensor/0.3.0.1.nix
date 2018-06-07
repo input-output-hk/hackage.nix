@@ -27,7 +27,6 @@ let
             hsPkgs.random
             hsPkgs.vector
           ];
-          build-tools = [ hsPkgs.ghc ];
         };
         tests = {
           test-ordinal = {

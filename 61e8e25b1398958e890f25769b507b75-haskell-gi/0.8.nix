@@ -45,8 +45,8 @@ let
               pkgconfPkgs."gobject-2.0"
             ];
             build-tools = [
-              hsPkgs.hsc2hs
-              hsPkgs.c2hs
+              hsPkgs.buildPackages.hsc2hs
+              hsPkgs.buildPackages.c2hs
             ];
           };
         };

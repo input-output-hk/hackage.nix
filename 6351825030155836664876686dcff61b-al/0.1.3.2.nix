@@ -29,7 +29,9 @@ let
           ];
           libs = pkgs.lib.optional system.isWindows pkgs.OpenAL32;
           pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs.openal;
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

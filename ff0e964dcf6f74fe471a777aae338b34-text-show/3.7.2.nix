@@ -97,6 +97,9 @@ let
               ])) ++ [
               hsPkgs.transformers
             ]) ++ pkgs.lib.optional (!_flags.developer) hsPkgs.text-show;
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
         benchmarks = {

@@ -34,11 +34,6 @@ let
             pkgconfPkgs."gnome-vfs-2.0"
             pkgconfPkgs."gnome-vfs-module-2.0"
           ];
-          build-tools = [
-            hsPkgs.gtk2hsC2hs
-            hsPkgs.gtk2hsHookGenerator
-            hsPkgs.gtk2hsTypeGen
-          ];
         };
       };
     }

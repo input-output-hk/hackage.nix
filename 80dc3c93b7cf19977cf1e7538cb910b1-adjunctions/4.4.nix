@@ -48,6 +48,9 @@ let
               hsPkgs.generic-deriving
               hsPkgs.hspec
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

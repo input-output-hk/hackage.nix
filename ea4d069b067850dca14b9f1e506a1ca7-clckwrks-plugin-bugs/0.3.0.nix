@@ -49,7 +49,6 @@ let
             hsPkgs.web-routes
             hsPkgs.web-routes-th
           ];
-          build-tools = [ hsPkgs.trhsx ];
         };
       };
     }

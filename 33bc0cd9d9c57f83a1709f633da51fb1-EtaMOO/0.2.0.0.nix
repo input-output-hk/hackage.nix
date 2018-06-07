@@ -56,7 +56,9 @@ let
             libs = [
               pkgs.pcre
             ] ++ pkgs.lib.optional (!system.isOsx) pkgs.crypt;
-            build-tools = [ hsPkgs.hsc2hs ];
+            build-tools = [
+              hsPkgs.buildPackages.hsc2hs
+            ];
           };
         };
       };

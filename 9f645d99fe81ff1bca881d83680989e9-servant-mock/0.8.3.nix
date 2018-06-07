@@ -60,6 +60,9 @@ let
               hsPkgs.aeson
               hsPkgs.wai
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

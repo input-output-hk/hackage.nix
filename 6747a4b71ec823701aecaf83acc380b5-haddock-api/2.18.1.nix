@@ -47,6 +47,9 @@ let
               hsPkgs.base
               hsPkgs.containers
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

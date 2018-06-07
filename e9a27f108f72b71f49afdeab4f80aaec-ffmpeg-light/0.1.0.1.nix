@@ -34,7 +34,9 @@ let
             pkgconfPkgs.libavcodec
             pkgconfPkgs.libswscale
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

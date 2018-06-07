@@ -35,9 +35,9 @@ let
             hsPkgs.transformers
           ];
           build-tools = [
-            hsPkgs.happy
-            hsPkgs.alex
-            hsPkgs.cpphs
+            hsPkgs.buildPackages.happy
+            hsPkgs.buildPackages.alex
+            hsPkgs.buildPackages.cpphs
           ];
         };
         tests = {

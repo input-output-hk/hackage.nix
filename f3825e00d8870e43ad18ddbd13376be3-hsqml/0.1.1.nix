@@ -37,7 +37,9 @@ let
             pkgs."stdc++"
           ];
           pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs.QtDeclarative;
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         tests = {
           hsqml-test1 = {

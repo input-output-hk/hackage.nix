@@ -22,7 +22,9 @@ let
       components = {
         foreign-storable-asymmetric = {
           depends  = [ hsPkgs.base ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

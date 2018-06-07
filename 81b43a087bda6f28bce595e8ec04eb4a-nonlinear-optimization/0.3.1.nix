@@ -27,7 +27,9 @@ let
             hsPkgs.primitive
           ];
           libs = [ pkgs.m ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

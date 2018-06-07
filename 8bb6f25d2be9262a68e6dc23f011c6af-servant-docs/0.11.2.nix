@@ -63,6 +63,9 @@ let
               hsPkgs.string-conversions
               hsPkgs.hspec
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

@@ -74,6 +74,9 @@ let
               hsPkgs.servant
               hsPkgs.servant-server
             ];
+            build-tools = [
+              hsPkgs.buildPackages.hspec-discover
+            ];
           };
         };
       };

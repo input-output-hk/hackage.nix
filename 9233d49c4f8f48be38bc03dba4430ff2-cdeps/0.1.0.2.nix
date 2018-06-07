@@ -32,7 +32,9 @@ let
             hsPkgs.directory
             hsPkgs.filepath
           ];
-          build-tools = [ hsPkgs.alex ];
+          build-tools = [
+            hsPkgs.buildPackages.alex
+          ];
         };
         exes = {
           cdeps = {

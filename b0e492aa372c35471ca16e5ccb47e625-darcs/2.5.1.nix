@@ -63,7 +63,6 @@ let
             hsPkgs.HTTP
           ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo);
           libs = pkgs.lib.optional (!(!_flags.library) && _flags.curl) pkgs.curl;
-          build-tools = pkgs.lib.optional (!(!_flags.library)) hsPkgs.ghc;
         };
         exes = {
           witnesses = {
@@ -98,7 +97,6 @@ let
               hsPkgs.network
               hsPkgs.HTTP
             ]);
-            build-tools = pkgs.lib.optional (!(!_flags.type-witnesses)) hsPkgs.ghc;
           };
           darcs = {
             depends  = (((([
@@ -130,7 +128,6 @@ let
               hsPkgs.HTTP
             ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
             libs = pkgs.lib.optional _flags.curl pkgs.curl;
-            build-tools = [ hsPkgs.ghc ];
           };
           unit = {
             depends  = pkgs.lib.optionals (!(!_flags.test)) ((((([
@@ -165,7 +162,6 @@ let
               hsPkgs.network
               hsPkgs.HTTP
             ]);
-            build-tools = pkgs.lib.optional (!(!_flags.test)) hsPkgs.ghc;
           };
         };
       };

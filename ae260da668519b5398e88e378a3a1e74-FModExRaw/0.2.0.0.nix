@@ -25,7 +25,9 @@ let
           libs = if system.isX86_64
             then [ pkgs.fmodex64 ]
             else [ pkgs.fmodex ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

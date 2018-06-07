@@ -69,7 +69,9 @@ let
             hsPkgs.void
             hsPkgs.zlib
           ];
-          build-tools = [ hsPkgs.cpphs ];
+          build-tools = [
+            hsPkgs.buildPackages.cpphs
+          ];
         };
         tests = {
           templates = {

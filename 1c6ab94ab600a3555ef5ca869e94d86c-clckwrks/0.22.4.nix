@@ -73,7 +73,6 @@ let
           libs = [
             pkgs.ssl
           ] ++ pkgs.lib.optional (!system.isOsx) pkgs.cryptopp;
-          build-tools = [ hsPkgs.hsx2hs ];
         };
       };
     }

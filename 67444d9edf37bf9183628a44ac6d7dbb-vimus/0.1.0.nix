@@ -39,7 +39,9 @@ let
             hsPkgs.template-haskell
           ];
           libs = [ pkgs.ncursesw ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
         exes = {
           vimus = {

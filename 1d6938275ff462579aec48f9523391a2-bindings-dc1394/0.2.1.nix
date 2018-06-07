@@ -26,7 +26,9 @@ let
             hsPkgs.base
           ];
           libs = [ pkgs.dc1394 ];
-          build-tools = [ hsPkgs.c2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.c2hs
+          ];
         };
       };
     }

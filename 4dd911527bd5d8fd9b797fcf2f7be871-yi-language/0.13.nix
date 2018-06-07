@@ -37,7 +37,9 @@ let
             hsPkgs.unordered-containers
             hsPkgs.microlens-platform
           ];
-          build-tools = [ hsPkgs.alex ];
+          build-tools = [
+            hsPkgs.buildPackages.alex
+          ];
         };
         tests = {
           tasty = {

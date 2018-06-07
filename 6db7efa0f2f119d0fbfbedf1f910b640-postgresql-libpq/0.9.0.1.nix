@@ -31,7 +31,9 @@ let
             pkgs.crypto
             pkgs.ssl
           ];
-          build-tools = [ hsPkgs.hsc2hs ];
+          build-tools = [
+            hsPkgs.buildPackages.hsc2hs
+          ];
         };
       };
     }

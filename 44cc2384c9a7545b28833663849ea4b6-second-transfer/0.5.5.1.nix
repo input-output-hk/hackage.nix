@@ -44,7 +44,9 @@ let
             hsPkgs.time
           ];
           libs = [ pkgs.ssl pkgs.crypto ];
-          build-tools = [ hsPkgs.cpphs ];
+          build-tools = [
+            hsPkgs.buildPackages.cpphs
+          ];
         };
         tests = {
           compiling-ok = {
@@ -76,7 +78,9 @@ let
               hsPkgs.attoparsec
               hsPkgs.time
             ];
-            build-tools = [ hsPkgs.cpphs ];
+            build-tools = [
+              hsPkgs.buildPackages.cpphs
+            ];
           };
         };
       };

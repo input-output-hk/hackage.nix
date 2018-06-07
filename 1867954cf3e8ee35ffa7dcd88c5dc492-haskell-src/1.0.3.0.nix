@@ -30,7 +30,9 @@ let
             hsPkgs.semigroups
             hsPkgs.fail
           ];
-          build-tools = [ hsPkgs.happy ];
+          build-tools = [
+            hsPkgs.buildPackages.happy
+          ];
         };
       };
     }
