@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          parsec. = {
+          "parsec." = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
