@@ -16,7 +16,7 @@ let
         homepage = "https://github.com/louispan/glazier-react#readme";
         url = "";
         synopsis = "Examples of using glazier-react";
-        description = "Examples of using glazier-react";
+        description = "\"Deprecated\" from hackage because it is not a library. Please go to github for the latest version.";
         buildType = "Simple";
       };
       components = {

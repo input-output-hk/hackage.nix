@@ -23,7 +23,7 @@ let
       };
       components = {
         http-client = {
-          depends  = (([
+          depends  = ((([
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.text
@@ -52,7 +52,7 @@ let
             ]
             else [
               hsPkgs.network
-            ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optionals system.isWindows [
+            ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.base) ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.Win32
             hsPkgs.safe
           ];

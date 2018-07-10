@@ -22,6 +22,7 @@ let
       components = {
         pretty-show = {
           depends  = [
+            hsPkgs.base
             hsPkgs.array
             hsPkgs.base
             hsPkgs.haskell-lexer

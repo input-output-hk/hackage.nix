@@ -34,6 +34,7 @@ let
       components = {
         lens = {
           depends  = [
+            hsPkgs.profunctors
             hsPkgs.array
             hsPkgs.base
             hsPkgs.base-orphans

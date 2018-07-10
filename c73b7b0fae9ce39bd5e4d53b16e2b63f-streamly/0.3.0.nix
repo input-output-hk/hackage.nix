@@ -1,0 +1,158 @@
+{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
+let
+    _flags = {
+      diag = false;
+      dev = false;
+      examples = false;
+      examples-sdl = false;
+    } // flags;
+    in {
+      flags = _flags;
+      package = {
+        specVersion = "1.10";
+        identifier = {
+          name = "streamly";
+          version = "0.3.0";
+        };
+        license = "BSD-3-Clause";
+        copyright = "2017 Harendra Kumar";
+        maintainer = "harendra.kumar@gmail.com";
+        author = "Harendra Kumar";
+        homepage = "https://github.com/composewell/streamly";
+        url = "";
+        synopsis = "Beautiful Streaming, Concurrent and Reactive Composition";
+        description = "Streamly, short for streaming concurrently, provides monadic streams, with a\nsimple API, almost identical to standard lists, and an in-built support for\nconcurrency.  By using stream-style combinators on stream composition,\nstreams can be generated, merged, chained, mapped, zipped, and consumed\nconcurrently – providing a generalized high level programming framework\nunifying streaming and concurrency. Controlled concurrency allows even\ninfinite streams to be evaluated concurrently.  Concurrency is auto scaled\nbased on feedback from the stream consumer.  The programmer does not have to\nbe aware of threads, locking or synchronization to write scalable concurrent\nprograms.\n\nThe basic streaming functionality of streamly is equivalent to that provided by\nstreaming libraries like\n<https://hackage.haskell.org/package/vector vector>,\n<https://hackage.haskell.org/package/streaming streaming>,\n<https://hackage.haskell.org/package/pipes pipes>, and\n<https://hackage.haskell.org/package/conduit conduit>.\nIn addition to providing streaming functionality, streamly subsumes the\nfunctionality of list transformer libraries like @pipes@ or\n<https://hackage.haskell.org/package/list-t list-t> and also the logic\nprogramming library <https://hackage.haskell.org/package/logict logict>. On\nthe concurrency side, it subsumes the functionality of the\n<https://hackage.haskell.org/package/async async> package. Because it\nsupports streaming with concurrency we can write FRP applications similar in\nconcept to <https://hackage.haskell.org/package/Yampa Yampa> or\n<https://hackage.haskell.org/package/reflex reflex>.\n\nFor file IO, currently the library provides only one API to stream the lines\nin the file as Strings.  Future versions will provide better streaming file\nIO options.  Streamly interworks with the popular streaming libraries, see\nthe interworking section in \"Streamly.Tutorial\".\n\nWhy use streamly?\n\n* /Simplicity/: Simple list like streaming API, if you know how to use lists\nthen you know how to use streamly. This library is built with simplicity\nand ease of use as a primary design goal.\n* /Concurrency/: Simple, powerful, and scalable concurrency.  Concurrency is\nbuilt-in, and not intrusive, concurrent programs are written exactly the\nsame way as non-concurrent ones.\n* /Generality/: Unifies functionality provided by several disparate packages\n(streaming, concurrency, list transformer, logic programming, reactive\nprogramming) in a concise API.\n* /Performance/: Streamly is designed for high performance. See\n<https://github.com/composewell/streaming-benchmarks streaming-benchmarks>\nfor a comparison of popular streaming libraries on micro-benchmarks.\n\nWhere to find more information:\n\n* @README@ shipped with the package for a quick overview\n* \"Streamly.Tutorial\" module in the haddock documentation for a detailed introduction\n* @examples@ directory in the package for some simple practical examples";
+        buildType = "Simple";
+      };
+      components = {
+        streamly = {
+          depends  = [
+            hsPkgs.base
+            hsPkgs.containers
+            hsPkgs.heaps
+            hsPkgs.atomic-primops
+            hsPkgs.lockfree-queue
+            hsPkgs.exceptions
+            hsPkgs.monad-control
+            hsPkgs.mtl
+            hsPkgs.transformers
+            hsPkgs.transformers-base
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
+        };
+        exes = {
+          chart-linear = {
+            depends  = pkgs.lib.optionals _flags.dev [
+              hsPkgs.base
+              hsPkgs.bench-graph
+              hsPkgs.split
+            ];
+          };
+          chart-nested = {
+            depends  = pkgs.lib.optionals _flags.dev [
+              hsPkgs.base
+              hsPkgs.bench-graph
+              hsPkgs.split
+            ];
+          };
+          SearchQuery = {
+            depends  = pkgs.lib.optionals (_flags.examples || _flags.examples-sdl) [
+              hsPkgs.streamly
+              hsPkgs.base
+              hsPkgs.http-conduit
+            ];
+          };
+          ListDir = {
+            depends  = pkgs.lib.optionals (_flags.examples || _flags.examples-sdl) ([
+              hsPkgs.streamly
+              hsPkgs.base
+              hsPkgs.path-io
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.transformers);
+          };
+          MergeSort = {
+            depends  = pkgs.lib.optionals (_flags.examples || _flags.examples-sdl) [
+              hsPkgs.streamly
+              hsPkgs.base
+              hsPkgs.random
+            ];
+          };
+          AcidRain = {
+            depends  = pkgs.lib.optionals (_flags.examples || _flags.examples-sdl) ([
+              hsPkgs.streamly
+              hsPkgs.base
+              hsPkgs.mtl
+            ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") [
+              hsPkgs.semigroups
+              hsPkgs.transformers
+            ]);
+          };
+          CirclingSquare = {
+            depends  = pkgs.lib.optionals _flags.examples-sdl [
+              hsPkgs.streamly
+              hsPkgs.base
+              hsPkgs.SDL
+            ];
+          };
+        };
+        tests = {
+          test = {
+            depends  = [
+              hsPkgs.streamly
+              hsPkgs.base
+              hsPkgs.hspec
+              hsPkgs.containers
+              hsPkgs.transformers
+              hsPkgs.mtl
+              hsPkgs.exceptions
+            ];
+          };
+          properties = {
+            depends  = [
+              hsPkgs.streamly
+              hsPkgs.base
+              hsPkgs.QuickCheck
+              hsPkgs.hspec
+            ];
+          };
+          loops = {
+            depends  = [
+              hsPkgs.streamly
+              hsPkgs.base
+            ];
+          };
+          nested-loops = {
+            depends  = [
+              hsPkgs.streamly
+              hsPkgs.base
+              hsPkgs.random
+            ];
+          };
+          parallel-loops = {
+            depends  = [
+              hsPkgs.streamly
+              hsPkgs.base
+              hsPkgs.random
+            ];
+          };
+        };
+        benchmarks = {
+          linear = {
+            depends  = [
+              hsPkgs.streamly
+              hsPkgs.base
+              hsPkgs.deepseq
+              hsPkgs.random
+              hsPkgs.gauge
+            ];
+          };
+          nested = {
+            depends  = [
+              hsPkgs.streamly
+              hsPkgs.base
+              hsPkgs.deepseq
+              hsPkgs.random
+              hsPkgs.gauge
+            ];
+          };
+        };
+      };
+    }

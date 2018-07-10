@@ -23,6 +23,7 @@ let
         diagrams-core = {
           depends  = [
             hsPkgs.base
+            hsPkgs.base
             hsPkgs.containers
             hsPkgs.unordered-containers
             hsPkgs.semigroups

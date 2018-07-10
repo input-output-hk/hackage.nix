@@ -13,7 +13,7 @@ let
         copyright = "";
         maintainer = "Simon Jakobi <simon.jakobi@gmail.com>";
         author = "Darius Jahandarie, Conor McBride, João Cristóvão, Simon Jakobi";
-        homepage = "http://github.com/sjakobi/bsb-http-chunked";
+        homepage = "http://github.com/sjakobi/newtype-generics";
         url = "";
         synopsis = "A typeclass and set of functions for working with newtypes";
         description = "Per Conor McBride, the Newtype typeclass represents the packing and unpacking of a newtype,\nand allows you to operate under that newtype with functions such as ala.\nGenerics support was added in version 0.4, making this package a full replacement\nfor the original newtype package, and a better alternative to newtype-th.";

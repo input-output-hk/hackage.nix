@@ -14,7 +14,7 @@ let
         };
         license = "BSD-3-Clause";
         copyright = "(c) 2009 Andy Gill";
-        maintainer = "Andy Gill";
+        maintainer = "Ganesh Sittampalam";
         author = "Andy Gill, Brandon Moore, Henning Thielemann, John Van Enk.";
         homepage = "";
         url = "";

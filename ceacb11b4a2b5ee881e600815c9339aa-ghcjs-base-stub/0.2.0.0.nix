@@ -16,7 +16,7 @@ let
         homepage = "https://github.com/louispan/javascript-stub#readme";
         url = "";
         synopsis = "Allow GHCJS projects to compile under GHC and develop using intero.";
-        description = "Allow GHCJS projects to compile under GHC and develop using intero.";
+        description = "Allow GHCJS projects to compile under GHC and develop using intero. Please refer to README.md.";
         buildType = "Simple";
       };
       components = {

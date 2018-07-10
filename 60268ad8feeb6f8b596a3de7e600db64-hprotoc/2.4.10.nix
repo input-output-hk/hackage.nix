@@ -11,7 +11,7 @@ let
         };
         license = "BSD-3-Clause";
         copyright = "(c) 2008-2015 Christopher Edward Kuklewicz";
-        maintainer = "Kostiantyn Rybnikov <k-bx@k-bx.com>";
+        maintainer = "Timo von Holtz <tvh@tvholtz.de>, Kostiantyn Rybnikov <k-bx@k-bx.com>";
         author = "Christopher Edward Kuklewicz";
         homepage = "https://github.com/k-bx/protocol-buffers";
         url = "http://hackage.haskell.org/package/hprotoc";

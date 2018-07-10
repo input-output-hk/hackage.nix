@@ -11,9 +11,9 @@ let
         };
         license = "BSD-3-Clause";
         copyright = "";
-        maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
+        maintainer = "haskell-servant-maintainers@googlegroups.com";
         author = "Oleg Grenrus <oleg.grenrus@iki.fi>";
-        homepage = "https://github.com/phadej/servant-swagger-ui";
+        homepage = "https://github.com/haskell-servant/servant-swagger-ui";
         url = "";
         synopsis = "Servant swagger ui";
         description = "Provide embedded swagger UI for servant and swagger (i.e. servant-swagger)";

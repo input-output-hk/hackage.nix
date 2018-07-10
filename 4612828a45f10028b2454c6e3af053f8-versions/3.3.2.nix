@@ -11,7 +11,7 @@ let
         };
         license = "BSD-3-Clause";
         copyright = "";
-        maintainer = "colingw@gmail.com";
+        maintainer = "colin@fosskers.ca";
         author = "Colin Woodbury";
         homepage = "";
         url = "";
