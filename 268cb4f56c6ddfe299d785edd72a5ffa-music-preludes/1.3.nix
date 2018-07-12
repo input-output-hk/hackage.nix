@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        music-preludes = {
+        "music-preludes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector-space
@@ -37,16 +37,16 @@ let
           ];
         };
         exes = {
-          complex = {};
-          duo = {};
-          erlkonig = {};
-          triplets = {};
-          music2ly = {};
-          music2midi = {};
-          music2musicxml = {};
+          "complex" = {};
+          "duo" = {};
+          "erlkonig" = {};
+          "triplets" = {};
+          "music2ly" = {};
+          "music2midi" = {};
+          "music2musicxml" = {};
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

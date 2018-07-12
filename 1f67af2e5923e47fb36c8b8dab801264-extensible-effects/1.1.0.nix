@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        extensible-effects = {
+        "extensible-effects" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          extensible-effects-tests = {
+          "extensible-effects-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ats-storable = {
+        "ats-storable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.composition-prelude

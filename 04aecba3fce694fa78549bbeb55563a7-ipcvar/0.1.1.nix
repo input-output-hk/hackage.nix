@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ipcvar = {
+        "ipcvar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ipcvar

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        SimpleTableGenerator = {
+        "SimpleTableGenerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split
           ];
         };
         tests = {
-          test-main = {
+          "test-main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

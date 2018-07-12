@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hsSqlite3 = {
+        "hsSqlite3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          hs_sqlite3_test = {
+          "hs_sqlite3_test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.utf8-string

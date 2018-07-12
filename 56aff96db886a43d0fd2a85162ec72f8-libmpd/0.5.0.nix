@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libmpd = {
+        "libmpd" = {
           depends  = [
             hsPkgs.network
             hsPkgs.mtl
@@ -36,7 +36,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

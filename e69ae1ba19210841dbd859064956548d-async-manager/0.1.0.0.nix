@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        async-manager = {
+        "async-manager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          thread-clean-up-test = {
+          "thread-clean-up-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

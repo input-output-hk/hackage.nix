@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          stackage = {
+          "stackage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

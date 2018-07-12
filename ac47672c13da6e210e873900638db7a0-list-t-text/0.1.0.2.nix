@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-t-text = {
+        "list-t-text" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.QuickCheck

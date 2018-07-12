@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rfc-servant = {
+        "rfc-servant" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.amazonka

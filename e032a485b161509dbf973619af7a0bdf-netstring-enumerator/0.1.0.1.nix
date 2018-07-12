@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netstring-enumerator = {
+        "netstring-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsdev = {
+        "hsdev" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          hsdev = {
+          "hsdev" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.hsdev
@@ -73,7 +73,7 @@ let
               hsPkgs.vector
             ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
           };
-          hsinspect = {
+          "hsinspect" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsdev
@@ -88,7 +88,7 @@ let
               hsPkgs.vector
             ];
           };
-          hsclearimports = {
+          "hsclearimports" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsdev
@@ -104,7 +104,7 @@ let
               hsPkgs.vector
             ];
           };
-          hscabal = {
+          "hscabal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsdev
@@ -118,7 +118,7 @@ let
               hsPkgs.vector
             ];
           };
-          hshayoo = {
+          "hshayoo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsdev
@@ -134,7 +134,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [ hsPkgs.base ];
           };
         };

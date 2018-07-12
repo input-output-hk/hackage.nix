@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bits-conduit = {
+        "bits-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          bits-conduit-test = {
+          "bits-conduit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

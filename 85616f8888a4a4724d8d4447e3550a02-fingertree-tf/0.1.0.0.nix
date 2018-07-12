@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fingertree-tf = {
+        "fingertree-tf" = {
           depends  = [ hsPkgs.base ];
         };
       };

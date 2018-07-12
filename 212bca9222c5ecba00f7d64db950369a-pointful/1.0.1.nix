@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pointful = {
+          "pointful" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger = {
+        "hledger" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.base-compat
@@ -71,7 +71,7 @@ let
             ])) ++ pkgs.lib.optional (!system.isWindows && _flags.terminfo) hsPkgs.terminfo;
         };
         exes = {
-          hledger = {
+          "hledger" = {
             depends  = ((([
               hsPkgs.base
               hsPkgs.base-compat
@@ -118,7 +118,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = ((([
               hsPkgs.base
               hsPkgs.base-compat
@@ -167,7 +167,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

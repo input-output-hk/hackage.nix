@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        supplemented = {
+        "supplemented" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.supplemented
               hsPkgs.tasty

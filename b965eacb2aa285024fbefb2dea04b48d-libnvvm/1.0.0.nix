@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libnvvm = {
+        "libnvvm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test-simple = {
+          "test-simple" = {
             depends  = [
               hsPkgs.libnvvm
               hsPkgs.base

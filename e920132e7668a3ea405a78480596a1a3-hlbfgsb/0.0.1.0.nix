@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hlbfgsb = {
+        "hlbfgsb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -28,7 +28,7 @@ let
           libs = [ pkgs.gfortran ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

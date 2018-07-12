@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        idringen = {
+        "idringen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          idrin = {
+          "idrin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.idringen

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fortran-src = {
+        "fortran-src" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          fortran-src = {
+          "fortran-src" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -62,7 +62,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.deepseq
               hsPkgs.base

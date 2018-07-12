@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uberlast = {
+        "uberlast" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

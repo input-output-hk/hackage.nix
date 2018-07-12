@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hslua = {
+        "hslua" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,7 +30,7 @@ let
           pkgconfig = pkgs.lib.optional _flags.system-lua pkgconfPkgs.lua;
         };
         tests = {
-          simple-test = {
+          "simple-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslua

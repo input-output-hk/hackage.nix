@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ifscs = {
+        "ifscs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.failure
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          ConstraintTests = {
+          "ConstraintTests" = {
             depends  = [
               hsPkgs.ifscs
               hsPkgs.base

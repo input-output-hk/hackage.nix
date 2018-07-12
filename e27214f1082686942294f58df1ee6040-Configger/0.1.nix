@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Configger = {
+        "Configger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Dangerous

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ruby-marshal = {
+        "ruby-marshal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.ruby-marshal
               hsPkgs.base

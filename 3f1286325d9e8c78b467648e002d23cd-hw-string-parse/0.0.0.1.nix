@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-string-parse = {
+        "hw-string-parse" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          hw-string-parse-test = {
+          "hw-string-parse-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

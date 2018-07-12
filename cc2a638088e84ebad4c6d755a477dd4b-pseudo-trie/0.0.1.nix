@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pseudo-trie = {
+        "pseudo-trie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

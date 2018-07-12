@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hopencc = {
+        "hopencc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test-opencc = {
+          "test-opencc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

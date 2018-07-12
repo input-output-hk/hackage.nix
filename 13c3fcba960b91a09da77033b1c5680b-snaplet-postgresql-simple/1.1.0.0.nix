@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-postgresql-simple = {
+        "snaplet-postgresql-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          Example = {
+          "Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

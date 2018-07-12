@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hydrogen-parsing = {
+        "hydrogen-parsing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

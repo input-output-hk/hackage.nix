@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadiccp = {
+        "monadiccp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

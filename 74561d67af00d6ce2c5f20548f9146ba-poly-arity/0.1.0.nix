@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        poly-arity = {
+        "poly-arity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints

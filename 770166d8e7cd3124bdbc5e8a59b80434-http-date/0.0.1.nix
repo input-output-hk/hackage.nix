@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-date = {
+        "http-date" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-xray = {
+        "amazonka-xray" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-xray-test = {
+          "amazonka-xray-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

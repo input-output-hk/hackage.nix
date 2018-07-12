@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proxy-mapping = {
+        "proxy-mapping" = {
           depends  = [ hsPkgs.base ];
         };
       };

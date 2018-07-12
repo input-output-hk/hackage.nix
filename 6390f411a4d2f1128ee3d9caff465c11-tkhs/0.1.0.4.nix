@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          tkhs = {
+          "tkhs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pointedlist
@@ -34,7 +34,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          test = {
+          "test" = {
             depends  = pkgs.lib.optionals (!(!_flags.test)) [
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        i18n = {
+        "i18n" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

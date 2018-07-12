@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        msgpack = {
+        "msgpack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        suitable = {
+        "suitable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

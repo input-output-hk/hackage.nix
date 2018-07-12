@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opaleye-trans = {
+        "opaleye-trans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

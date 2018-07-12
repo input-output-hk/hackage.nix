@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        browscap = {
+        "browscap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

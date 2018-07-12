@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lio-fs = {
+        "lio-fs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

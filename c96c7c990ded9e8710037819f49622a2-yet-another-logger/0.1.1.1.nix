@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yet-another-logger = {
+        "yet-another-logger" = {
           depends  = [
             hsPkgs.async
             hsPkgs.aeson

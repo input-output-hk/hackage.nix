@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ocaml-export = {
+        "ocaml-export" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

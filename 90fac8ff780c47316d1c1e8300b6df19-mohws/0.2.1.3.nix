@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mohws = {
+        "mohws" = {
           depends  = [
             hsPkgs.HTTP
             hsPkgs.network
@@ -44,8 +44,8 @@ let
           ];
         };
         exes = {
-          hws = {};
-          hws-dyn = {
+          "hws" = {};
+          "hws-dyn" = {
             depends  = pkgs.lib.optional _flags.dynamic hsPkgs.ghc;
           };
         };

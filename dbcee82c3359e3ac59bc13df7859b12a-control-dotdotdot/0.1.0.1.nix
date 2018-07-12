@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        control-dotdotdot = {
+        "control-dotdotdot" = {
           depends  = [ hsPkgs.base ];
         };
       };

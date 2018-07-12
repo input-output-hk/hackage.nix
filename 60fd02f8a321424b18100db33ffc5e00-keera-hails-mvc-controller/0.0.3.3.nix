@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-mvc-controller = {
+        "keera-hails-mvc-controller" = {
           depends  = [ hsPkgs.base ];
         };
       };

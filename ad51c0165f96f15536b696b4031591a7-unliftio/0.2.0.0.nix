@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unliftio = {
+        "unliftio" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base

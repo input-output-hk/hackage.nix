@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        church-pair = {
+        "church-pair" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

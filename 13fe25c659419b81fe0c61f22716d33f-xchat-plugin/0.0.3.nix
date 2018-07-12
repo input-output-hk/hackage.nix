@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xchat-plugin = {
+        "xchat-plugin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hsxchat = {
+          "hsxchat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

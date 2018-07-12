@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-property = {
+        "genvalidity-property" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          genvalidity-property-doctests = {
+          "genvalidity-property-doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

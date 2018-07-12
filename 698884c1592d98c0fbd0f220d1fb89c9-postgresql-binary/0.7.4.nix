@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-binary = {
+        "postgresql-binary" = {
           depends  = [
             hsPkgs.binary-parser
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.postgresql-binary
               hsPkgs.postgresql-libpq
@@ -68,7 +68,7 @@ let
           };
         };
         benchmarks = {
-          encoding = {
+          "encoding" = {
             depends  = [
               hsPkgs.postgresql-binary
               hsPkgs.criterion
@@ -81,7 +81,7 @@ let
               hsPkgs.base-prelude
             ];
           };
-          decoding = {
+          "decoding" = {
             depends  = [
               hsPkgs.postgresql-binary
               hsPkgs.criterion

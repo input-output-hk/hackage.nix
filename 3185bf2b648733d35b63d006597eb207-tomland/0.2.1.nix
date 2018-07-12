@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tomland = {
+        "tomland" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          play-tomland = {
+          "play-tomland" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tomland
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          tomland-test = {
+          "tomland-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tomland

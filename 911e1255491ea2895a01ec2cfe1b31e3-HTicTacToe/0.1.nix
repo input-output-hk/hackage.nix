@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          HTicTacToe = {
+          "HTicTacToe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

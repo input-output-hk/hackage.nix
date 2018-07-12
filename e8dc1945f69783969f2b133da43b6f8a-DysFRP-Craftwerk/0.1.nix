@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DysFRP-Craftwerk = {
+        "DysFRP-Craftwerk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo

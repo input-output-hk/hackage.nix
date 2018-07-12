@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ewe = {
+          "ewe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

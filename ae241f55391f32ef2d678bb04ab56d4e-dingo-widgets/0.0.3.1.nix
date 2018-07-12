@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dingo-widgets = {
+        "dingo-widgets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson-native

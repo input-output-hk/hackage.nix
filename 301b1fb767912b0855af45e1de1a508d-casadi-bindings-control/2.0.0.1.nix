@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        casadi-bindings-control = {
+        "casadi-bindings-control" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

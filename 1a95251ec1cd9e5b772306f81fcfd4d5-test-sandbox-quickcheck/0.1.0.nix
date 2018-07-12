@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-sandbox-quickcheck = {
+        "test-sandbox-quickcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

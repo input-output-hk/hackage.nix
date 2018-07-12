@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-fingertree-strict = {
+        "hw-fingertree-strict" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          hw-fingertree-strict-test = {
+          "hw-fingertree-strict-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedgehog

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        webkit-javascriptcore = {
+        "webkit-javascriptcore" = {
           depends  = [ hsPkgs.base ];
           pkgconfig = [
             pkgconfPkgs."webkit-1.0"

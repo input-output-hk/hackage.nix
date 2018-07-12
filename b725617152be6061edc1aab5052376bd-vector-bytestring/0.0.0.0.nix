@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-bytestring = {
+        "vector-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          prop-compiled = {
+          "prop-compiled" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive

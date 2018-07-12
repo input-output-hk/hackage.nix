@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        columbia = {
+        "columbia" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filelock

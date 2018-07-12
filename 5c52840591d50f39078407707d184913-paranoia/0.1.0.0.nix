@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        paranoia = {
+        "paranoia" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          paranoia = {
+          "paranoia" = {
             depends  = [
               hsPkgs.base
               hsPkgs.paranoia
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          paranoia-test = {
+          "paranoia-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.paranoia

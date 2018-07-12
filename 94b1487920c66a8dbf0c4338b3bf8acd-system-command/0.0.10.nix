@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        system-command = {
+        "system-command" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

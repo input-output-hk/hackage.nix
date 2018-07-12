@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        koellner-phonetic = {
+        "koellner-phonetic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
           ];
         };
         tests = {
-          test-koellner-phonetic = {
+          "test-koellner-phonetic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

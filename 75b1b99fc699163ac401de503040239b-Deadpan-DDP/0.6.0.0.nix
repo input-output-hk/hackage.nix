@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Deadpan-DDP = {
+        "Deadpan-DDP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.websockets
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          deadpan = {
+          "deadpan" = {
             depends  = [
               hsPkgs.base
               hsPkgs.websockets
@@ -70,13 +70,13 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

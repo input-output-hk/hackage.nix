@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexpress = {
+        "hexpress" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clipper = {
+        "clipper" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs."stdc++" ];
           build-tools = [

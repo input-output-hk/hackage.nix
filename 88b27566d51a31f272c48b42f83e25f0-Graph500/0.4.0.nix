@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Graph500 = {
+        "Graph500" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          graph500gen = {
+          "graph500gen" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

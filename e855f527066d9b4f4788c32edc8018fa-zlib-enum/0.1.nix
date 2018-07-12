@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zlib-enum = {
+        "zlib-enum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

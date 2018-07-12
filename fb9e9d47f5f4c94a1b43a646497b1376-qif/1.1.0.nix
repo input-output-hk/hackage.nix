@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        qif = {
+        "qif" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-qif-serialization = {
+          "test-qif-serialization" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

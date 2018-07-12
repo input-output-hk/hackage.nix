@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        papa-bifunctors = {
+        "papa-bifunctors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.papa-bifunctors-export

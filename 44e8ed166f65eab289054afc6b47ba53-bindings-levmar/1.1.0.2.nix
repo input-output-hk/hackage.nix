@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-levmar = {
+        "bindings-levmar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

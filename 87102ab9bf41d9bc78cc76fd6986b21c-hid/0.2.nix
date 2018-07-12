@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hid = {
+        "hid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

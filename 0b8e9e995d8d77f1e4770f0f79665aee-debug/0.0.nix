@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debug = {
+        "debug" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          debug-test = {
+          "debug-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.debug

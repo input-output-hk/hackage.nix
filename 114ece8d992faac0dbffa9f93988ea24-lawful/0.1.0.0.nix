@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lawful = {
+        "lawful" = {
           depends  = [ hsPkgs.base ];
         };
       };

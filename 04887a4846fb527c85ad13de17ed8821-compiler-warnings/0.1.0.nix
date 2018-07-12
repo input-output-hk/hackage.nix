@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compiler-warnings = {
+        "compiler-warnings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hS3 = {
+        "hS3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP
@@ -42,6 +42,6 @@ let
             hsPkgs.network
           ];
         };
-        exes = { hs3 = {}; };
+        exes = { "hs3" = {}; };
       };
     }

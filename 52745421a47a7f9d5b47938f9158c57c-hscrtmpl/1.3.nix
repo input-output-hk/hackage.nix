@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hscrtmpl = {
+          "hscrtmpl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

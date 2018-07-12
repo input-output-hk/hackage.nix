@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        relational-postgresql8 = {
+        "relational-postgresql8" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        htestu = {
+        "htestu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          runTestu = {
+          "runTestu" = {
             depends  = if _flags.testknownrngs
               then [
                 hsPkgs.base

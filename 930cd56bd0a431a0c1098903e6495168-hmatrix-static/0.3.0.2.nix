@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-static = {
+        "hmatrix-static" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix

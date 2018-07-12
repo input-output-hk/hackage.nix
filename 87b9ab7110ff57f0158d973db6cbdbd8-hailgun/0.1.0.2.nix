@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hailgun = {
+        "hailgun" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

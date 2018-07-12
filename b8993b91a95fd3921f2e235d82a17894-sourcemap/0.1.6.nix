@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sourcemap = {
+        "sourcemap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          nodejs = {
+          "nodejs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sourcemap
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          vlq = {
+          "vlq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

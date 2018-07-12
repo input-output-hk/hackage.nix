@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-source = {
+        "random-source" = {
           depends  = (([
             hsPkgs.flexible-defaults
             hsPkgs.mersenne-random-pure64

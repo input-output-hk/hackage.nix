@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        krapsh = {
+        "krapsh" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          krapsh-test = {
+          "krapsh-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -65,7 +65,7 @@ let
               hsPkgs.vector
             ];
           };
-          krapsh-test-integration = {
+          "krapsh-test-integration" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

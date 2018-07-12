@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        maxent = {
+        "maxent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.nonlinear-optimization

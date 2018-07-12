@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tidal-vis = {
+        "tidal-vis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tidal

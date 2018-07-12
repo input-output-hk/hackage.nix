@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsons-to-schema = {
+        "jsons-to-schema" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hjsonschema
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          jsons-to-schema-exe = {
+          "jsons-to-schema-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jsons-to-schema
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          jsons-to-schema-test = {
+          "jsons-to-schema-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jsons-to-schema

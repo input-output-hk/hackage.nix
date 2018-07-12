@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ec2-signature = {
+        "ec2-signature" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

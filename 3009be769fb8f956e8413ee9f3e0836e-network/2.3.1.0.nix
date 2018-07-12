@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        network = {
+        "network" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          simple = {
+          "simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          uri = {
+          "uri" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

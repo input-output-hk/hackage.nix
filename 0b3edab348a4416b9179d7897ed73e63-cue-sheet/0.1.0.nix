@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cue-sheet = {
+        "cue-sheet" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

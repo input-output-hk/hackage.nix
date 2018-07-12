@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clif = {
+        "clif" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.clif
               hsPkgs.base
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          bench-clifProduct = {
+          "bench-clifProduct" = {
             depends  = [
               hsPkgs.clif
               hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        regular = {
+        "regular" = {
           depends  = [ hsPkgs.base ] ++ [
             hsPkgs.template-haskell
           ];

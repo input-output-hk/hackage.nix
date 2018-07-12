@@ -21,26 +21,26 @@ let
       };
       components = {
         exes = {
-          tovcd = {
+          "tovcd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.vcd
             ];
           };
-          cansend = {
+          "cansend" = {
             depends  = [ hsPkgs.base ];
             libs = [ pkgs.canlib ];
           };
-          canview = {
+          "canview" = {
             depends  = [ hsPkgs.base ];
             libs = [ pkgs.canlib ];
           };
-          ccp = {
+          "ccp" = {
             depends  = [ hsPkgs.base ];
             libs = [ pkgs.canlib ];
           };
-          probe = {
+          "probe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.digest
@@ -48,17 +48,17 @@ let
             ];
             libs = [ pkgs.canlib ];
           };
-          toesb = {
+          "toesb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.digest
             ];
           };
-          commit = {
+          "commit" = {
             depends  = [ hsPkgs.base ];
           };
-          git2cc = {
+          "git2cc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

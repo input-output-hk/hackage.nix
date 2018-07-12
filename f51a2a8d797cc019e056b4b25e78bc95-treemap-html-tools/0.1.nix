@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        treemap-html-tools = {
+        "treemap-html-tools" = {
           depends  = [
             hsPkgs.ghc
             hsPkgs.base
@@ -36,6 +36,6 @@ let
             hsPkgs.Cabal
           ];
         };
-        exes = { dirmap = {}; };
+        exes = { "dirmap" = {}; };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cluss = {
+        "cluss" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

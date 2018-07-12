@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hTalos = {
+        "hTalos" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test_PhiPsi = {
+          "test_PhiPsi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

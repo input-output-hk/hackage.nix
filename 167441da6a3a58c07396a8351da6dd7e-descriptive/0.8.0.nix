@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        descriptive = {
+        "descriptive" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.descriptive

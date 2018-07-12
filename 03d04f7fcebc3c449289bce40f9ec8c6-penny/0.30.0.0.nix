@@ -29,7 +29,7 @@ let
         buildType = "Simple";
       };
       components = {
-        penny = {
+        "penny" = {
           depends  = [
             hsPkgs.base
             hsPkgs.action-permutations
@@ -52,13 +52,13 @@ let
           ];
         };
         exes = {
-          penny = {
+          "penny" = {
             depends  = [
               hsPkgs.penny
               hsPkgs.base
             ];
           };
-          penny-selloff = {
+          "penny-selloff" = {
             depends  = [
               hsPkgs.penny
               hsPkgs.base
@@ -71,7 +71,7 @@ let
               hsPkgs.transformers
             ];
           };
-          penny-diff = {
+          "penny-diff" = {
             depends  = [
               hsPkgs.penny
               hsPkgs.base
@@ -79,7 +79,7 @@ let
               hsPkgs.multiarg
             ];
           };
-          penny-reprint = {
+          "penny-reprint" = {
             depends  = [
               hsPkgs.penny
               hsPkgs.base
@@ -88,7 +88,7 @@ let
               hsPkgs.text
             ];
           };
-          penny-reconcile = {
+          "penny-reconcile" = {
             depends  = [
               hsPkgs.penny
               hsPkgs.base
@@ -96,7 +96,7 @@ let
               hsPkgs.multiarg
             ];
           };
-          penny-gibberish = {
+          "penny-gibberish" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.penny
               hsPkgs.QuickCheck
@@ -112,7 +112,7 @@ let
           };
         };
         tests = {
-          penny-test = {
+          "penny-test" = {
             depends  = [
               hsPkgs.penny
               hsPkgs.QuickCheck

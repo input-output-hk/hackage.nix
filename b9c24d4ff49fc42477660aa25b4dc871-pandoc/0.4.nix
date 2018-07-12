@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pandoc = {
+        "pandoc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          pandoc = {
+          "pandoc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

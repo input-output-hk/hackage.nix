@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bronyradiogermany-common = {
+        "bronyradiogermany-common" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

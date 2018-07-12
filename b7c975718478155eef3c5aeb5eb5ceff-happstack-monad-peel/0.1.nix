@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-monad-peel = {
+        "happstack-monad-peel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

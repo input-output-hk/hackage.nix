@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsmtpclient = {
+        "hsmtpclient" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

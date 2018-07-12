@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-rollbar = {
+        "wai-middleware-rollbar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

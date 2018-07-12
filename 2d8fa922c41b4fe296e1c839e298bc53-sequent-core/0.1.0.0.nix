@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        sequent-core = {
+        "sequent-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
           ];
         };
         exes = {
-          Example = {
+          "Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sequent-core

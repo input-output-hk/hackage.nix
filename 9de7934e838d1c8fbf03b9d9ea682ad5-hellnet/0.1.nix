@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hellnet = {
+        "hellnet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Crypto
@@ -45,22 +45,22 @@ let
           ];
         };
         exes = {
-          hell-insert = {
+          "hell-insert" = {
             depends  = [ hsPkgs.base ];
           };
-          hell-get = {
+          "hell-get" = {
             depends  = [
               hsPkgs.regex-posix
             ];
           };
-          hell-meta = {};
-          hell-nodes = {
+          "hell-meta" = {};
+          "hell-nodes" = {
             depends  = [ hsPkgs.base ];
           };
-          hell-fsck = {
+          "hell-fsck" = {
             depends  = [ hsPkgs.base ];
           };
-          hell-serve = {
+          "hell-serve" = {
             depends  = [
               hsPkgs.Lucu
               hsPkgs.network

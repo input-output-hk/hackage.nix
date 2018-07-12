@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        barcodes-code128 = {
+        "barcodes-code128" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

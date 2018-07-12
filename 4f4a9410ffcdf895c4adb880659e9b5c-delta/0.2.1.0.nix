@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        delta = {
+        "delta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,13 +33,13 @@ let
           ] ++ pkgs.lib.optional (system.isOsx && _flags.build_fs_events) hsPkgs.hfsevents;
         };
         exes = {
-          delta-cli = {
+          "delta-cli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.delta
             ];
           };
-          delta-run = {
+          "delta-run" = {
             depends  = [
               hsPkgs.base
               hsPkgs.delta

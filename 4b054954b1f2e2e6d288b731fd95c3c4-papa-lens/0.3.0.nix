@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-lens = {
+        "papa-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.papa-lens-export
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

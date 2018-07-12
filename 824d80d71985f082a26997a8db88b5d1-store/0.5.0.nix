@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        store = {
+        "store" = {
           depends  = [
             hsPkgs.array
             hsPkgs.async
@@ -70,7 +70,7 @@ let
           ];
         };
         tests = {
-          store-test = {
+          "store-test" = {
             depends  = [
               hsPkgs.array
               hsPkgs.async
@@ -117,7 +117,7 @@ let
               hsPkgs.void
             ];
           };
-          store-weigh = {
+          "store-weigh" = {
             depends  = [
               hsPkgs.array
               hsPkgs.async
@@ -171,7 +171,7 @@ let
           };
         };
         benchmarks = {
-          store-bench = {
+          "store-bench" = {
             depends  = [
               hsPkgs.array
               hsPkgs.async

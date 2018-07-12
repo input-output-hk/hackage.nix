@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fft = {
+        "fft" = {
           depends  = (if _flags.splitbase
             then [
               hsPkgs.base
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          test-fft = {
+          "test-fft" = {
             depends  = pkgs.lib.optional _flags.buildtests hsPkgs.QuickCheck;
             pkgconfig = [
               pkgconfPkgs.fftw3

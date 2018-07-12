@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validity-vector = {
+        "validity-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

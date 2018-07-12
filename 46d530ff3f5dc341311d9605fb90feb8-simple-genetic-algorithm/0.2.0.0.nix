@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-genetic-algorithm = {
+        "simple-genetic-algorithm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          ga-sin-example = {
+          "ga-sin-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          sorty = {
+          "sorty" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.base

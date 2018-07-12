@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          youtube-auth = {
+          "youtube-auth" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.process
@@ -29,7 +29,7 @@ let
               hsPkgs.base
             ];
           };
-          youtube-upload = {
+          "youtube-upload" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.process

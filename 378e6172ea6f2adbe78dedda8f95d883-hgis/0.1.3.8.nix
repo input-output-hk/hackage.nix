@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgis = {
+        "hgis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.optparse-applicative
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          hgis = {
+          "hgis" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hgis
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          hgis-test = {
+          "hgis-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hgis

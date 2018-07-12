@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uu-interleaved = {
+        "uu-interleaved" = {
           depends  = [ hsPkgs.base ];
         };
       };

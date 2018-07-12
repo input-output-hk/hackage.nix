@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ssh-tunnel = {
+        "ssh-tunnel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foldl

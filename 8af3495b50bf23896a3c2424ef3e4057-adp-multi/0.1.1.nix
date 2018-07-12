@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        adp-multi = {
+        "adp-multi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          adp-multi-benchmarks = {
+          "adp-multi-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -48,7 +48,7 @@ let
               hsPkgs.criterion
             ];
           };
-          adp-test = {
+          "adp-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -65,7 +65,7 @@ let
           };
         };
         tests = {
-          MainTestSuite = {
+          "MainTestSuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

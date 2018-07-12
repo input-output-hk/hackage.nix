@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          regex-tdfa-unittest = {
+          "regex-tdfa-unittest" = {
             depends  = [
               hsPkgs.regex-base
               hsPkgs.base

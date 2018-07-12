@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        neil = {
+        "neil" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          neil = {
+          "neil" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.cmdargs

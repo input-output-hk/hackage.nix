@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        voicebase = {
+        "voicebase" = {
           depends  = [
             hsPkgs.HsOpenSSL
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          voicebase = {
+          "voicebase" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          voicebase-test = {
+          "voicebase-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.voicebase

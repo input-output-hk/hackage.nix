@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        event-list = {
+        "event-list" = {
           depends  = [
             hsPkgs.non-negative
             hsPkgs.transformers
@@ -37,7 +37,7 @@ let
             ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.transformers

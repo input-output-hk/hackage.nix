@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-sdk = {
+        "aws-sdk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -60,7 +60,7 @@ let
             else [ hsPkgs.conduit ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aws-sdk

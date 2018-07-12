@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        plugins = {
+        "plugins" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

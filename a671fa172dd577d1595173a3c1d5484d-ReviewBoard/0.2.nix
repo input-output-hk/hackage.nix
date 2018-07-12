@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ReviewBoard = {
+        "ReviewBoard" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          mkrr = {
+          "mkrr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

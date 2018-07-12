@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feed-gipeda = {
+        "feed-gipeda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -54,7 +54,7 @@ let
           ];
         };
         exes = {
-          feed-gipeda = {
+          "feed-gipeda" = {
             depends  = [
               hsPkgs.base
               hsPkgs.feed-gipeda
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

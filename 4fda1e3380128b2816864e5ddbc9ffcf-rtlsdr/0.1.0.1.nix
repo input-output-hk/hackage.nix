@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rtlsdr = {
+        "rtlsdr" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.rtlsdr ];
           build-tools = [

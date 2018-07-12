@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-extras = {
+        "monad-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mmorph

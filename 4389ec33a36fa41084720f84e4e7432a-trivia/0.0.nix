@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        trivia = {
+        "trivia" = {
           depends  = [
             hsPkgs.base
             hsPkgs.distributive

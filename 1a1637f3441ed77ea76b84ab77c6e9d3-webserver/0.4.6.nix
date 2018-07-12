@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webserver = {
+        "webserver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

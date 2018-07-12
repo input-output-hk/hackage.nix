@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        open-typerep = {
+        "open-typerep" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-orphans
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.open-typerep
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          dynamic-bench = {
+          "dynamic-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

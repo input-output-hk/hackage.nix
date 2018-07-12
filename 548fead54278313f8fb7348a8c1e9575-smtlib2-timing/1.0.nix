@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smtlib2-timing = {
+        "smtlib2-timing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.smtlib2

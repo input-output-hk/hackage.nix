@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-tree = {
+        "generic-tree" = {
           depends  = [ hsPkgs.base ];
         };
       };

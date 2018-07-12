@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mudbath = {
+          "mudbath" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

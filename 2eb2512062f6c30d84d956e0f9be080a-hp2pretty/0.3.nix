@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hp2pretty = {
+          "hp2pretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

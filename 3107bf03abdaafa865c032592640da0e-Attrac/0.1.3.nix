@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Attrac = {
+          "Attrac" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL

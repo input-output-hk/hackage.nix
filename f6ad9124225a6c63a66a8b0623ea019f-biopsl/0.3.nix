@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        biopsl = {
+        "biopsl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.biocore
@@ -28,11 +28,11 @@ let
           ];
         };
         exes = {
-          psluniq = {};
-          pslfilter = {
+          "psluniq" = {};
+          "pslfilter" = {
             depends  = [ hsPkgs.cmdargs ];
           };
-          pslcov = {};
+          "pslcov" = {};
         };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphicsFormats = {
+        "graphicsFormats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

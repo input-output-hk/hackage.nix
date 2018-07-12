@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vacuum-cairo = {
+        "vacuum-cairo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vacuum

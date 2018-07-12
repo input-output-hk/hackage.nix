@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wait-handle = {
+        "wait-handle" = {
           depends  = [ hsPkgs.base ];
         };
       };

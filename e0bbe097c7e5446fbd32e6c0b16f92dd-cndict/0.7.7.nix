@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cndict = {
+        "cndict" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

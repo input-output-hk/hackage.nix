@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aivika-experiment = {
+        "aivika-experiment" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

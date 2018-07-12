@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rainbow = {
+        "rainbow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

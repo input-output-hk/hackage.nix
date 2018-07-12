@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-api-data = {
+        "http-api-data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional _flags.use-text-show hsPkgs.text-show;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.hspec
@@ -42,7 +42,7 @@ let
               hsPkgs.time
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

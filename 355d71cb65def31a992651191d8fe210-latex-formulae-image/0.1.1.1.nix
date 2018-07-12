@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        latex-formulae-image = {
+        "latex-formulae-image" = {
           depends  = [
             hsPkgs.JuicyPixels
             hsPkgs.errors

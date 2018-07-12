@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hayoo = {
+          "hayoo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc

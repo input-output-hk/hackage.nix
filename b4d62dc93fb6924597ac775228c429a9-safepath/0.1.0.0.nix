@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safepath = {
+        "safepath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          safepath-doctests = {
+          "safepath-doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

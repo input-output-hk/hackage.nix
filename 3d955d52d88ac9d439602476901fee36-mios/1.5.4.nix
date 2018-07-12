@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mios = {
+        "mios" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -34,62 +34,62 @@ let
           ];
         };
         exes = {
-          mios-1.5.4 = {
+          "mios-1.5.4" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mios
             ];
           };
-          cnf-stat = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.mios
-              hsPkgs.bytestring
-            ];
-          };
-          mios-mc = {
+          "cnf-stat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mios
               hsPkgs.bytestring
             ];
           };
-          mc-dump2csv = {
+          "mios-mc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mios
               hsPkgs.bytestring
             ];
           };
-          mc-averagecsv = {
+          "mc-dump2csv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mios
               hsPkgs.bytestring
             ];
           };
-          mc-summary = {
+          "mc-averagecsv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mios
               hsPkgs.bytestring
             ];
           };
-          mc-stat2csv = {
+          "mc-summary" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mios
               hsPkgs.bytestring
             ];
           };
-          mc-pickup = {
+          "mc-stat2csv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mios
               hsPkgs.bytestring
             ];
           };
-          mc-numbers = {
+          "mc-pickup" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.mios
+              hsPkgs.bytestring
+            ];
+          };
+          "mc-numbers" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mios

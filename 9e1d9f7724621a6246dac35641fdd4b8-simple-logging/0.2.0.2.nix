@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-logging = {
+        "simple-logging" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          logging-test = {
+          "logging-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.simple-logging

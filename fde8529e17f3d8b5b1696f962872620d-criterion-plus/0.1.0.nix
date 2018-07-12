@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        criterion-plus = {
+        "criterion-plus" = {
           depends  = [
             hsPkgs.optparse-applicative
             hsPkgs.criterion
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          internal-tests = {
+          "internal-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HUnit

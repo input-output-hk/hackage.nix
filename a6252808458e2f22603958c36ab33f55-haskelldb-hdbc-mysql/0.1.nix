@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelldb-hdbc-mysql = {
+        "haskelldb-hdbc-mysql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          DBDirect-hdbc-mysql = {};
+          "DBDirect-hdbc-mysql" = {};
         };
       };
     }

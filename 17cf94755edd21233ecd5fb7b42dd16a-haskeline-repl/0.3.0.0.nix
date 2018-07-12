@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskeline-repl = {
+        "haskeline-repl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskeline

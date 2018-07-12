@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clevercss = {
+        "clevercss" = {
           depends  = (if _flags.splitbase
             then [
               hsPkgs.base
@@ -36,7 +36,7 @@ let
             ]) ++ [ hsPkgs.parsec ];
         };
         exes = {
-          clevercss = {
+          "clevercss" = {
             depends  = [ hsPkgs.parsec ];
           };
         };

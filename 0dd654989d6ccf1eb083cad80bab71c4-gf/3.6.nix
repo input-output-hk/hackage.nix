@@ -25,7 +25,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gf = {
+        "gf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -44,7 +44,7 @@ let
           build-tools = pkgs.lib.optional _flags.c-runtime hsPkgs.buildPackages.hsc2hs;
         };
         exes = {
-          gf = {
+          "gf" = {
             depends  = (([
               hsPkgs.gf
               hsPkgs.base
@@ -82,7 +82,7 @@ let
               hsPkgs.buildPackages.alex
             ];
           };
-          pgf-shell = {
+          "pgf-shell" = {
             depends  = [
               hsPkgs.gf
               hsPkgs.base
@@ -93,7 +93,7 @@ let
           };
         };
         tests = {
-          rgl-tests = {
+          "rgl-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF
@@ -103,7 +103,7 @@ let
               hsPkgs.directory
             ];
           };
-          gf-tests = {
+          "gf-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

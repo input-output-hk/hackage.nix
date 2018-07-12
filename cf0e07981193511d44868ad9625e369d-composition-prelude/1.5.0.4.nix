@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        composition-prelude = {
+        "composition-prelude" = {
           depends  = [ hsPkgs.base ];
           build-tools = pkgs.lib.optional (!_flags.cross) hsPkgs.buildPackages.cpphs;
         };

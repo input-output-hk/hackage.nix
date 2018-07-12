@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdl2-ttf = {
+        "sdl2-ttf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sdl2

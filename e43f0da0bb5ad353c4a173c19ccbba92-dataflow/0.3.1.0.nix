@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dataflow = {
+        "dataflow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        microc = {
+        "microc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         exes = {
-          microc-exe = {
+          "microc-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.microc
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          microc-test = {
+          "microc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.microc

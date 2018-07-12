@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protobuf = {
+        "protobuf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-orphans
@@ -34,7 +34,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          protobuf-test = {
+          "protobuf-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

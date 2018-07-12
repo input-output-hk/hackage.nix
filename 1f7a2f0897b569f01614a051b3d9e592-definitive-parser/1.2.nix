@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        definitive-parser = {
+        "definitive-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.definitive-base

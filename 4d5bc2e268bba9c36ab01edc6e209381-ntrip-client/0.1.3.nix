@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ntrip-client = {
+        "ntrip-client" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          ntrip-client = {
+          "ntrip-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude

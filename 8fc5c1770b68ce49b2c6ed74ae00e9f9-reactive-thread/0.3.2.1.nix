@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-thread = {
+        "reactive-thread" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-parallel
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          example-sdl = {
+          "example-sdl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monad-parallel

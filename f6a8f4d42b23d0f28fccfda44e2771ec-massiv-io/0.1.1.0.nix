@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        massiv-io = {
+        "massiv-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

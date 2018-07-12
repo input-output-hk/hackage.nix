@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HDBC-postgresql-hstore = {
+        "HDBC-postgresql-hstore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC

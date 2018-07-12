@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-object = {
+        "data-object" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck

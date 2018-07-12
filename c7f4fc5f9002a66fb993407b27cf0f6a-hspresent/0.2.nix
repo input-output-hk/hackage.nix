@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspresent = {
+        "hspresent" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -28,6 +28,6 @@ let
             hsPkgs.vty
           ];
         };
-        exes = { hspresent = {}; };
+        exes = { "hspresent" = {}; };
       };
     }

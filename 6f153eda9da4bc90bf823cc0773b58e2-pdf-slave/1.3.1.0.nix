@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pdf-slave = {
+        "pdf-slave" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          pdf-slave = {
+          "pdf-slave" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

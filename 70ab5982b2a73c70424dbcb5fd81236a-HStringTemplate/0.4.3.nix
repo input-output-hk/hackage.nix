@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HStringTemplate = {
+        "HStringTemplate" = {
           depends  = pkgs.lib.optional _flags.syb-with-class hsPkgs.syb-with-class ++ (if _flags.small-base
             then [
               hsPkgs.base

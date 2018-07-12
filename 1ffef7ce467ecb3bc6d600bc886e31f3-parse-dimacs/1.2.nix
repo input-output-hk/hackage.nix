@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parse-dimacs = {
+        "parse-dimacs" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.base

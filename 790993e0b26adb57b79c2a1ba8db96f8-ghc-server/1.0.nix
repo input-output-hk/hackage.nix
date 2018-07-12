@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-server = {
+        "ghc-server" = {
           depends  = pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.4") [
             hsPkgs.ghc
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          ghc-server = {
+          "ghc-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-server

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        idempotent = {
+        "idempotent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

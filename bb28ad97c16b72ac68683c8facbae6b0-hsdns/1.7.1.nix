@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsdns = {
+        "hsdns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -34,21 +34,21 @@ let
           ];
         };
         exes = {
-          adns-reverse-lookup = {
+          "adns-reverse-lookup" = {
             depends  = pkgs.lib.optionals _flags.install-examples [
               hsPkgs.base
               hsPkgs.network
               hsPkgs.hsdns
             ];
           };
-          adns-srv-test = {
+          "adns-srv-test" = {
             depends  = pkgs.lib.optionals _flags.install-examples [
               hsPkgs.base
               hsPkgs.network
               hsPkgs.hsdns
             ];
           };
-          adns-test-and-traverse = {
+          "adns-test-and-traverse" = {
             depends  = pkgs.lib.optionals _flags.install-examples [
               hsPkgs.base
               hsPkgs.hsdns

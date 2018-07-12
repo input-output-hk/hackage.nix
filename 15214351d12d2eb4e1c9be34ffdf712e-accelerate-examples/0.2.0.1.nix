@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          accelerate-examples = {
+          "accelerate-examples" = {
             depends  = [
               hsPkgs.accelerate
               hsPkgs.array

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-vector = {
+        "persistent-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
           ];
         };
         tests = {
-          pvTests = {
+          "pvTests" = {
             depends  = [
               hsPkgs.persistent-vector
               hsPkgs.base
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          pvBench = {
+          "pvBench" = {
             depends  = [
               hsPkgs.persistent-vector
               hsPkgs.base

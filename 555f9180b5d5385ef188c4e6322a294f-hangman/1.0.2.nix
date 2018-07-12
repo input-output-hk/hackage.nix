@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hangman = {
+          "hangman" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-tracing = {
+        "servant-tracing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          servant-tracing-example = {
+          "servant-tracing-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-tracing
@@ -65,7 +65,7 @@ let
           };
         };
         tests = {
-          servant-tracing-test = {
+          "servant-tracing-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-tracing

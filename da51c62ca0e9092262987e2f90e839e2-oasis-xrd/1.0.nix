@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        oasis-xrd = {
+        "oasis-xrd" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          example-json = {
+          "example-json" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -49,7 +49,7 @@ let
               hsPkgs.xml-conduit-writer
             ];
           };
-          example-xml = {
+          "example-xml" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

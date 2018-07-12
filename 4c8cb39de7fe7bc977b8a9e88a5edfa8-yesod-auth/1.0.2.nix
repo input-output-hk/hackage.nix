@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth = {
+        "yesod-auth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.authenticate

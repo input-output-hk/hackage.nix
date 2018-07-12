@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskoon = {
+        "haskoon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

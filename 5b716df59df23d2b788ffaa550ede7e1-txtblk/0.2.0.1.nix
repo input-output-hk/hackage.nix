@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        txtblk = {
+        "txtblk" = {
           depends  = [ hsPkgs.base ];
         };
       };

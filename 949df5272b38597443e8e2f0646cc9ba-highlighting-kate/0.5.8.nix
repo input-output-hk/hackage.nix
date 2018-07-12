@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        highlighting-kate = {
+        "highlighting-kate" = {
           depends  = ([
             hsPkgs.parsec
             hsPkgs.mtl
@@ -44,7 +44,7 @@ let
             ]);
         };
         exes = {
-          Highlight = {
+          "Highlight" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

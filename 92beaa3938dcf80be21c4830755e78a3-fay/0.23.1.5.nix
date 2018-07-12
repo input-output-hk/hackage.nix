@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        fay = {
+        "fay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -56,7 +56,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
         };
         exes = {
-          fay = {
+          "fay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fay
@@ -65,7 +65,7 @@ let
               hsPkgs.split
             ];
           };
-          fay-tests = {
+          "fay-tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.aeson

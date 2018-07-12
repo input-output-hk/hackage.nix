@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atto-lisp = {
+        "atto-lisp" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.atto-lisp
               hsPkgs.attoparsec

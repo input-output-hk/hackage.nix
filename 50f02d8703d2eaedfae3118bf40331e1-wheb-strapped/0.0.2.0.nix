@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wheb-strapped = {
+        "wheb-strapped" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

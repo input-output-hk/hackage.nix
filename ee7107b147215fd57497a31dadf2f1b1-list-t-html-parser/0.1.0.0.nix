@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-t-html-parser = {
+        "list-t-html-parser" = {
           depends  = [
             hsPkgs.list-t
             hsPkgs.html-tokenizer

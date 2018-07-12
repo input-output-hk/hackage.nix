@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        treeseq = {
+        "treeseq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

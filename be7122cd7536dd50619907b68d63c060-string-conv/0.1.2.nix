@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        string-conv = {
+        "string-conv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

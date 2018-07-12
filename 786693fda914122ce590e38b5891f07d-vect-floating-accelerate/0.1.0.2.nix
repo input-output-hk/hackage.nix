@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vect-floating-accelerate = {
+        "vect-floating-accelerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scotty-params-parser = {
+        "scotty-params-parser" = {
           depends  = [
             hsPkgs.scotty
             hsPkgs.unordered-containers

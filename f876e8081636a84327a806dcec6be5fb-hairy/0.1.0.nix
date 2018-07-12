@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hairy = {
+        "hairy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          hairy = {
+          "hairy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hairy
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hairy
@@ -65,7 +65,7 @@ let
           };
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hairy

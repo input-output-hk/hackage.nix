@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        configifier = {
+        "configifier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          configifier-example = {
+          "configifier-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.configifier
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.configifier

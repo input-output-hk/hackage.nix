@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arithmoi = {
+        "arithmoi" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.array
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = ([
               hsPkgs.arithmoi
               hsPkgs.base
@@ -61,7 +61,7 @@ let
           };
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.arithmoi

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        tuple-sop = {
+        "tuple-sop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.generics-sop
           ];
         };
         tests = {
-          tuple-sop-test = {
+          "tuple-sop-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.generics-sop

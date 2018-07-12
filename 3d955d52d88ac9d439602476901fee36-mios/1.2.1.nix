@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mios = {
+        "mios" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          mios = {
+          "mios" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

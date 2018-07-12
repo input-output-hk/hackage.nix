@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        git = {
+        "git" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          test-unit = {
+          "test-unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
               hsPkgs.git
             ];
           };
-          test-repository = {
+          "test-repository" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabocha = {
+        "cabocha" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           libs = [ pkgs.cabocha ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cabocha

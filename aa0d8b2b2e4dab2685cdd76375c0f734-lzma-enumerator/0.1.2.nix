@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lzma-enumerator = {
+        "lzma-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL
@@ -31,7 +31,7 @@ let
           libs = [ pkgs.lzma ];
         };
         tests = {
-          lzma-test = {
+          "lzma-test" = {
             depends  = [
               hsPkgs.lzma-enumerator
               hsPkgs.base

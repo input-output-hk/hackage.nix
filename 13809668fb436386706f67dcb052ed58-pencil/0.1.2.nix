@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pencil = {
+        "pencil" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -43,13 +43,13 @@ let
           ];
         };
         exes = {
-          pencil-example-simple = {
+          "pencil-example-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pencil
             ];
           };
-          pencil-example-blog = {
+          "pencil-example-blog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pencil
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          pencil-test = {
+          "pencil-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pencil

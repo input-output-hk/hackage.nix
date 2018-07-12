@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rosso = {
+        "rosso" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

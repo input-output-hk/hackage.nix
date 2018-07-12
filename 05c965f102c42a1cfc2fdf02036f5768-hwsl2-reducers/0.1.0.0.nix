@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hwsl2-reducers = {
+        "hwsl2-reducers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

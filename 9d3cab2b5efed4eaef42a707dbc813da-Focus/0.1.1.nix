@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Focus = {
+        "Focus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MissingH

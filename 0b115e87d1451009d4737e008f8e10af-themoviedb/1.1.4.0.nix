@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        themoviedb = {
+        "themoviedb" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          tmdb = {
+          "tmdb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

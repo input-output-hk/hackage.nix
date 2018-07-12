@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bpann = {
+        "bpann" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

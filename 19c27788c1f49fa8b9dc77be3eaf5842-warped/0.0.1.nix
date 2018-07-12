@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warped = {
+        "warped" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          shake-wolf = {
+          "shake-wolf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shakers

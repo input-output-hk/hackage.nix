@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        KSP = {
+        "KSP" = {
           depends  = [ hsPkgs.base ];
         };
       };

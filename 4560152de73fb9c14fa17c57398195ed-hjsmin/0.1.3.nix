@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hjsmin = {
+        "hjsmin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-hjsmin = {
+          "test-hjsmin" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck

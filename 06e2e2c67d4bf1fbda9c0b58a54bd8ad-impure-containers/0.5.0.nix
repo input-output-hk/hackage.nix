@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        impure-containers = {
+        "impure-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional (!_flags.portable && _flags.unsafe-tricks && (compiler.isGhc && true)) hsPkgs.ghc-prim;
         };
         tests = {
-          impure-containers-test = {
+          "impure-containers-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.impure-containers
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          impure-containers-bench = {
+          "impure-containers-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.impure-containers

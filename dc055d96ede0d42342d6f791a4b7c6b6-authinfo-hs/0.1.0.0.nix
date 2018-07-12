@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        authinfo-hs = {
+        "authinfo-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

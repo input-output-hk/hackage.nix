@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-options = {
+        "ghc-options" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          ghcopts = {
+          "ghcopts" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

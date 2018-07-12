@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hjugement = {
+        "hjugement" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          hjugement-test = {
+          "hjugement-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

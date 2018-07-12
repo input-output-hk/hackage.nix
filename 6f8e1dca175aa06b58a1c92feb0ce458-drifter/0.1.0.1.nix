@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        drifter = {
+        "drifter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.postgresql-simple

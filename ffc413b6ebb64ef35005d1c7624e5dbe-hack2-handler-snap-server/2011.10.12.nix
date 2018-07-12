@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack2-handler-snap-server = {
+        "hack2-handler-snap-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

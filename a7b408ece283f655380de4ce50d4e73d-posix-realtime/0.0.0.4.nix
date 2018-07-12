@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        posix-realtime = {
+        "posix-realtime" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

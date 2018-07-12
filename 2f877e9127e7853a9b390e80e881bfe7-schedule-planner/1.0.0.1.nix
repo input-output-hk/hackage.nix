@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          schedule-planner = {
+          "schedule-planner" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -36,7 +36,7 @@ let
               hsPkgs.http-types
             ];
           };
-          schedule-planner-standalone = {
+          "schedule-planner-standalone" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

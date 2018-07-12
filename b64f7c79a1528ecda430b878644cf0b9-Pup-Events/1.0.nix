@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Pup-Events = {
+        "Pup-Events" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Pup-Events-Server
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          pupevents-all = {
+          "pupevents-all" = {
             depends  = [ hsPkgs.base ];
           };
         };

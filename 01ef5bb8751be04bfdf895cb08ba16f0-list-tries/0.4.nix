@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-tries = {
+        "list-tries" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

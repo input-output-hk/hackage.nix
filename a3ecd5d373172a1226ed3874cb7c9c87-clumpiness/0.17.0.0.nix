@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clumpiness = {
+        "clumpiness" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

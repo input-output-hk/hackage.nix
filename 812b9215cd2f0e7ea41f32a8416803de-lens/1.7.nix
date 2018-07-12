@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lens = {
+        "lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.ghc-prim;
         };
         exes = {
-          pong = {
+          "pong" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -48,19 +48,19 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          templates = {
+          "templates" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens
             ];
           };
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

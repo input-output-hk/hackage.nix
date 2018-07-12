@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          secrm = {
+          "secrm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

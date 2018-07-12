@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        errno = {
+        "errno" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

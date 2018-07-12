@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ipopt-hs = {
+        "ipopt-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -37,21 +37,21 @@ let
           ];
         };
         exes = {
-          ipopt-hs_Test1 = {
+          "ipopt-hs_Test1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
               hsPkgs.ipopt-hs
             ];
           };
-          ipopt-hs_Test2 = {
+          "ipopt-hs_Test2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
               hsPkgs.ipopt-hs
             ];
           };
-          ipopt-hs_Test3 = {
+          "ipopt-hs_Test3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

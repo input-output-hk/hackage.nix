@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-favicon = {
+        "hakyll-favicon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hakyll
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hakyll-favicon
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          hakyll-favicon-test = {
+          "hakyll-favicon-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hakyll-favicon

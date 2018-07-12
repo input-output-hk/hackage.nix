@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-binary = {
+        "postgresql-binary" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.uuid
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.postgresql-binary
               hsPkgs.HTF
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          decoding = {
+          "decoding" = {
             depends  = [
               hsPkgs.postgresql-binary
               hsPkgs.criterion
@@ -68,7 +68,7 @@ let
               hsPkgs.base
             ];
           };
-          encoding = {
+          "encoding" = {
             depends  = [
               hsPkgs.postgresql-binary
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lio = {
+        "lio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm = {
+        "llvm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

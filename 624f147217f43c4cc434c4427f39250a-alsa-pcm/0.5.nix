@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alsa-pcm = {
+        "alsa-pcm" = {
           depends  = [
             hsPkgs.alsa-core
             hsPkgs.sample-frame
@@ -33,28 +33,28 @@ let
           libs = [ pkgs.asound ];
         };
         exes = {
-          alsa-duplex = {
+          "alsa-duplex" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.sample-frame
               hsPkgs.base
             ];
           };
-          alsa-play = {
+          "alsa-play" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.sample-frame
               hsPkgs.base
             ];
           };
-          alsa-record = {
+          "alsa-record" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.sample-frame
               hsPkgs.base
             ];
           };
-          alsa-volume-meter = {
+          "alsa-volume-meter" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.sample-frame

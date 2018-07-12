@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        classy-miso = {
+        "classy-miso" = {
           depends  = [
             hsPkgs.base
             hsPkgs.miso
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          classy-miso-demo = {
+          "classy-miso-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-miso
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          ghcjs-test = {
+          "ghcjs-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-miso

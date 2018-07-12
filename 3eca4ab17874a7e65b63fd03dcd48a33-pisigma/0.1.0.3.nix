@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pisigma = {
+        "pisigma" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -34,6 +34,6 @@ let
             hsPkgs.utf8-string
           ];
         };
-        exes = { pisigma = {}; };
+        exes = { "pisigma" = {}; };
       };
     }

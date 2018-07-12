@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NestedFunctor = {
+        "NestedFunctor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

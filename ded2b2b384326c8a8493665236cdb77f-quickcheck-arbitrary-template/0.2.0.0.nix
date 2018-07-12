@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-arbitrary-template = {
+        "quickcheck-arbitrary-template" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

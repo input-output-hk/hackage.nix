@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-fu-multivariate = {
+        "random-fu-multivariate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random-fu
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          random-fu-multivariate-test = {
+          "random-fu-multivariate-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random-fu-multivariate

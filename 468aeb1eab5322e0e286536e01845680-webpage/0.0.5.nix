@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webpage = {
+        "webpage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lucid

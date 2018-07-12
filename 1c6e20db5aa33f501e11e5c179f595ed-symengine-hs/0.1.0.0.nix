@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        symengine-hs = {
+        "symengine-hs" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          symengine-hs-exe = {
+          "symengine-hs-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.symengine-hs
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          symengine-hs-test = {
+          "symengine-hs-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.symengine-hs

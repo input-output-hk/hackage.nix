@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-numbersystem = {
+        "acme-numbersystem" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

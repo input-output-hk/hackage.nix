@@ -20,6 +20,6 @@ let
         buildType = "Simple";
       };
       components = {
-        Vec-Transform = {};
+        "Vec-Transform" = {};
       };
     }

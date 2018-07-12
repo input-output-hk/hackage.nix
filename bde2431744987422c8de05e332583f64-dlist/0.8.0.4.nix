@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        dlist = {
+        "dlist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.dlist
               hsPkgs.base

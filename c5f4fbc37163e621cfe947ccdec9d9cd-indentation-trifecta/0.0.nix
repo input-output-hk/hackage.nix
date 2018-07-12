@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        indentation-trifecta = {
+        "indentation-trifecta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-indentation = {
+          "test-indentation" = {
             depends  = [
               hsPkgs.trifecta
               hsPkgs.base

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          flowsim = {
+          "flowsim" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -37,14 +37,14 @@ let
               hsPkgs.biosff
             ];
           };
-          hplc = {
+          "hplc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.bytestring
             ];
           };
-          clonesim = {
+          "clonesim" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -53,25 +53,25 @@ let
               hsPkgs.MonadRandom
             ];
           };
-          kitsim = {
+          "kitsim" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
             ];
           };
-          mutator = {
+          "mutator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
             ];
           };
-          duplicator = {
+          "duplicator" = {
             depends  = [ hsPkgs.base ];
           };
-          gelfilter = {
+          "gelfilter" = {
             depends  = [ hsPkgs.base ];
           };
-          filtersff = {
+          "filtersff" = {
             depends  = [ hsPkgs.base ];
           };
         };

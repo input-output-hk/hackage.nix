@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        math-functions = {
+        "math-functions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.math-functions
               hsPkgs.base

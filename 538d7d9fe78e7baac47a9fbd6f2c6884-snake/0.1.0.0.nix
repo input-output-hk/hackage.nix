@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          snake = {
+          "snake" = {
             depends  = [
               hsPkgs.base
               hsPkgs.terminal-size

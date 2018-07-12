@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ofx = {
+        "ofx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          renderOfx = {
+          "renderOfx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -37,7 +37,7 @@ let
               hsPkgs.time
             ];
           };
-          renderTransactions = {
+          "renderTransactions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

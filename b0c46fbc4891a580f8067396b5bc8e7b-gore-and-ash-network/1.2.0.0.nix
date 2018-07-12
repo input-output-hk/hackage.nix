@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gore-and-ash-network = {
+        "gore-and-ash-network" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

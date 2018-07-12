@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        tup-functor = {
+        "tup-functor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cpphs
           ];
         };
         exes = {
-          tuplepp = {
+          "tuplepp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec2

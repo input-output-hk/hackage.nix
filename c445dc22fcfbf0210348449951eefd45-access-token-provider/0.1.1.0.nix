@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        access-token-provider = {
+        "access-token-provider" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          access-token-provider-test = {
+          "access-token-provider-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.access-token-provider

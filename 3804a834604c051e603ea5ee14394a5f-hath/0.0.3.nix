@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hath = {
+          "hath" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

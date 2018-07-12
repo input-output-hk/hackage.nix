@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        helm = {
+        "helm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         tests = {
-          helm-tests = {
+          "helm-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

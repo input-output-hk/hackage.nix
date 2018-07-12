@@ -20,6 +20,6 @@ let
         buildType = "Simple";
       };
       components = {
-        nixos-types = {};
+        "nixos-types" = {};
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Rlang-QQ = {
+        "Rlang-QQ" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

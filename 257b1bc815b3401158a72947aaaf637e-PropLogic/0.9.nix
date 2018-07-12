@@ -20,12 +20,12 @@ let
         buildType = "Simple";
       };
       components = {
-        PropLogic = {
+        "PropLogic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
           ];
         };
-        exes = { program = {}; };
+        exes = { "program" = {}; };
       };
     }

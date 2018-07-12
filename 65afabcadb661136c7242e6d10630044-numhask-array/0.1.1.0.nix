@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numhask-array = {
+        "numhask-array" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.adjunctions
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

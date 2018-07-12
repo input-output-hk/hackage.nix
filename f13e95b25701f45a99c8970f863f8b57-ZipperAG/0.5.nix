@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ZipperAG = {
+        "ZipperAG" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syz

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MorseCode = {
+        "MorseCode" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.base

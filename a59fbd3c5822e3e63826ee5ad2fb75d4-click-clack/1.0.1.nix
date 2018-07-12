@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          click-clack = {
+          "click-clack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

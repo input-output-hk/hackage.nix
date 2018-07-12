@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regexdot = {
+        "regexdot" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.parsec

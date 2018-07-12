@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dustme = {
+        "dustme" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.ansi-wl-pprint
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          dustme = {
+          "dustme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dustme
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          dustme-test = {
+          "dustme-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

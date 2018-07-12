@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        level-monad = {
+        "level-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fmlist

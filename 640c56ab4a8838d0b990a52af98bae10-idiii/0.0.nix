@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        idiii = {
+        "idiii" = {
           depends  = [
             hsPkgs.base
             hsPkgs.polyparse

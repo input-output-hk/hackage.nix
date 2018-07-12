@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        desert = {
+        "desert" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          desert = {
+          "desert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.desert
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          desert-test = {
+          "desert-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.desert

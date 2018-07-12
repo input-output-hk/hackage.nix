@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vcatt = {
+        "vcatt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shelly
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          vcatt = {
+          "vcatt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vcatt

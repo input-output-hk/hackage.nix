@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventful-sqlite = {
+        "eventful-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.eventful-core
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eventful-core

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-html-truncate = {
+        "blaze-html-truncate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stream-monad = {
+        "stream-monad" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          astview = {
+          "astview" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

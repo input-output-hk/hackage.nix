@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dsinf = {
+          "dsinf" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base

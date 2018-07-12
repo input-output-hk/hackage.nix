@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        parseargs = {
+        "parseargs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          parseargs-example = {
+          "parseargs-example" = {
             depends  = [ hsPkgs.base ];
           };
         };

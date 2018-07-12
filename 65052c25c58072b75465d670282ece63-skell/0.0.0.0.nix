@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        skell = {
+        "skell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

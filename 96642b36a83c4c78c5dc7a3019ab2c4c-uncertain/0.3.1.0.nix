@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uncertain = {
+        "uncertain" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ad

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exact-real = {
+        "exact-real" = {
           depends  = [
             hsPkgs.base
             hsPkgs.integer-gmp
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.groups
@@ -43,7 +43,7 @@ let
               hsPkgs.exact-real
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

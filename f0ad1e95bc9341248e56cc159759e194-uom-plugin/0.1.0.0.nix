@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uom-plugin = {
+        "uom-plugin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-uom-plugin = {
+          "test-uom-plugin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uom-plugin

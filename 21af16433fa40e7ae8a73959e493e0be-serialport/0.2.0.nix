@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serialport = {
+        "serialport" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

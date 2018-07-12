@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          nymphaea = {
+          "nymphaea" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

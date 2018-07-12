@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dataflow = {
+        "dataflow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          dataflow = {
+          "dataflow" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dataflow
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

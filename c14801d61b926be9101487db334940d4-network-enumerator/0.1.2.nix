@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-enumerator = {
+        "network-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

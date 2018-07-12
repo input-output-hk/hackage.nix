@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OpenVG = {
+        "OpenVG" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL

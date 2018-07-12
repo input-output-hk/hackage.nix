@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-loader-static = {
+        "snap-loader-static" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

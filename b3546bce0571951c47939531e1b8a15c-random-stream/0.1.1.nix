@@ -24,16 +24,16 @@ let
         buildType = "Simple";
       };
       components = {
-        random-stream = {
+        "random-stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
             hsPkgs.bytestring
             hsPkgs.binary
           ];
-          libs = if !_flags.have_urandom && _flags.have_ssl
+          libs = pkgs.lib.optionals (!_flags.have_urandom) (if _flags.have_ssl
             then [ pkgs.ssl ]
-            else pkgs.lib.optional _flags.have_win32_crypt pkgs.advapi32;
+            else pkgs.lib.optional _flags.have_win32_crypt pkgs.advapi32);
         };
       };
     }

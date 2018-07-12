@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          h = {
+          "h" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hydrogen-cli-args

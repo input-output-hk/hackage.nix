@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twee-lib = {
+        "twee-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-router = {
+        "servant-router" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          servant-router-test = {
+          "servant-router-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-router

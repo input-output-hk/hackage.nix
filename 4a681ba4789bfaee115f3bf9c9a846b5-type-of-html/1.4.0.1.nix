@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-of-html = {
+        "type-of-html" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          value = {
+          "value" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-of-html
@@ -38,18 +38,18 @@ let
               hsPkgs.hspec
             ];
           };
-          type = {
+          "type" = {
             depends  = [ hsPkgs.base ];
           };
         };
         benchmarks = {
-          reduction = {
+          "reduction" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-of-html
             ];
           };
-          alloc = {
+          "alloc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-of-html
@@ -60,7 +60,7 @@ let
               hsPkgs.temporary
             ];
           };
-          perf = {
+          "perf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-of-html

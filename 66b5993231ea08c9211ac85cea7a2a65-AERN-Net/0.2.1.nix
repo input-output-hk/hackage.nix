@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AERN-Net = {
+        "AERN-Net" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

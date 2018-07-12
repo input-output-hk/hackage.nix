@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hi = {
+        "hi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          hi = {
+          "hi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint
@@ -75,7 +75,7 @@ let
               hsPkgs.process
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint

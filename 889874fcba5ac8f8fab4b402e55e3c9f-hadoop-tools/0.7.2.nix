@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hh = {
+          "hh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

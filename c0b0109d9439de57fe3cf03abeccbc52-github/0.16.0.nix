@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        github = {
+        "github" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -59,7 +59,7 @@ let
             else [ hsPkgs.aeson-extra ]);
         };
         tests = {
-          github-test = {
+          "github-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

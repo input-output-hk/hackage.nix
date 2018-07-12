@@ -20,12 +20,12 @@ let
         buildType = "Simple";
       };
       components = {
-        thih = {
+        "thih" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty
           ];
         };
-        exes = { thih = {}; };
+        exes = { "thih" = {}; };
       };
     }

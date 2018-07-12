@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        visual-graphrewrite = {
+        "visual-graphrewrite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          visual-graphrewrite = {
+          "visual-graphrewrite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

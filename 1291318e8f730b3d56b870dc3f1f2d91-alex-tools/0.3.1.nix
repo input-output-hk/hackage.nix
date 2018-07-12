@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alex-tools = {
+        "alex-tools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

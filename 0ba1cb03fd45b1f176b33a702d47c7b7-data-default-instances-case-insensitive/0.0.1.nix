@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-default-instances-case-insensitive = {
+        "data-default-instances-case-insensitive" = {
           depends  = [
             hsPkgs.case-insensitive
             hsPkgs.data-default-class

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsc3-sf-hsndfile = {
+        "hsc3-sf-hsndfile" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

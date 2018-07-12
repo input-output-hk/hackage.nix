@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        data-has = {
+        "data-has" = {
           depends  = [ hsPkgs.base ];
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-has

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-unordered-containers = {
+        "genvalidity-unordered-containers" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          genvalidity-unordered-containers-test = {
+          "genvalidity-unordered-containers-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.genvalidity

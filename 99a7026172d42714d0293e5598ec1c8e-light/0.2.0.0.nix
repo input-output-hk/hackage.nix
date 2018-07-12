@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        light = {
+        "light" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          light-test = {
+          "light-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.light

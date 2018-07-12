@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-logger-prefix = {
+        "monad-logger-prefix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-logger
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          monad-logger-prefix-benchmarks = {
+          "monad-logger-prefix-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monad-logger

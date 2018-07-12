@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabalg = {
+        "cabalg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          cabalg = {
+          "cabalg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cabalg

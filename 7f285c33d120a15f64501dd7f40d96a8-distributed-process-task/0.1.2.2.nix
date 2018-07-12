@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-task = {
+        "distributed-process-task" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-accessor
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          TaskQueueTests = {
+          "TaskQueueTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        riak-protobuf-lens = {
+        "riak-protobuf-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          generate = {
+          "generate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

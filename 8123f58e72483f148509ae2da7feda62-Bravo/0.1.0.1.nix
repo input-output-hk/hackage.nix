@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Bravo = {
+        "Bravo" = {
           depends  = ([
             hsPkgs.mtl
             hsPkgs.haskell-src-exts

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-flatten = {
+        "aeson-flatten" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          aeson-flatten-test = {
+          "aeson-flatten-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

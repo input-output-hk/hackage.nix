@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ConfigFile = {
+        "ConfigFile" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.parsec
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cqrs = {
+        "cqrs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          cqrs-tests = {
+          "cqrs-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

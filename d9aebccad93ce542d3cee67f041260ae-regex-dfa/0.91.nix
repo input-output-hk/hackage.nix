@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        regex-dfa = {
+        "regex-dfa" = {
           depends  = [
             hsPkgs.regex-base
             hsPkgs.base

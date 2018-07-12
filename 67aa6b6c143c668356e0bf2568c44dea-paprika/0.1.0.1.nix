@@ -20,20 +20,20 @@ let
         buildType = "Simple";
       };
       components = {
-        paprika = {
+        "paprika" = {
           depends  = [
             hsPkgs.base
             hsPkgs.huckleberry
           ];
         };
         exes = {
-          paprika-console-ctrl-exe = {
+          "paprika-console-ctrl-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.paprika
             ];
           };
-          paprika-wai-ctrl-exe = {
+          "paprika-wai-ctrl-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.paprika
@@ -55,7 +55,7 @@ let
               hsPkgs.aeson
             ];
           };
-          paprika-wai-cutter-exe = {
+          "paprika-wai-cutter-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.paprika

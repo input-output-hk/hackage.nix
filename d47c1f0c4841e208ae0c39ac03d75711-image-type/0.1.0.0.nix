@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        image-type = {
+        "image-type" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

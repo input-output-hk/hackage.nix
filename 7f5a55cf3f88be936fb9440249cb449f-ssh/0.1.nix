@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ssh = {
+        "ssh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

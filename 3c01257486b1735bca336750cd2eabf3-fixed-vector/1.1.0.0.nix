@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixed-vector = {
+        "fixed-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive

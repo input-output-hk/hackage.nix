@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        alex-meta = {
+        "alex-meta" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.haskell-src-meta

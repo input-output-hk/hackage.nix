@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gochan = {
+        "gochan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -40,7 +40,7 @@ let
               hsPkgs.random
             ];
           };
-          weight = {
+          "weight" = {
             depends  = [
               hsPkgs.base
               hsPkgs.weigh
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          fuzz = {
+          "fuzz" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

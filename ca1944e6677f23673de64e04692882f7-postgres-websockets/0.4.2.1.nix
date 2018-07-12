@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgres-websockets = {
+        "postgres-websockets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hasql-pool
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          postgres-websockets = {
+          "postgres-websockets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -74,7 +74,7 @@ let
           };
         };
         tests = {
-          postgres-websockets-test = {
+          "postgres-websockets-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

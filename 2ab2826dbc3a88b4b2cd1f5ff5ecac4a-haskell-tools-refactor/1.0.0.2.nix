@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-refactor = {
+        "haskell-tools-refactor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

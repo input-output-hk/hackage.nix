@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HFuse = {
+        "HFuse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -33,7 +33,7 @@ let
             else [ pkgs.fuse ];
         };
         exes = {
-          HelloFS = {
+          "HelloFS" = {
             depends  = pkgs.lib.optionals _flags.developer [
               hsPkgs.base
               hsPkgs.HFuse

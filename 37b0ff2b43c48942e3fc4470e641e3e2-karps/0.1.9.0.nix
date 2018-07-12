@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        karps = {
+        "karps" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -52,7 +52,7 @@ let
           ];
         };
         tests = {
-          karps-test = {
+          "karps-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -67,7 +67,7 @@ let
               hsPkgs.vector
             ];
           };
-          karps-test-integration = {
+          "karps-test-integration" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

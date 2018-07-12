@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        os-release = {
+        "os-release" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.os-release
@@ -44,14 +44,14 @@ let
               hsPkgs.temporary
             ];
           };
-          documentation = {
+          "documentation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.regex-compat
             ];
           };
-          style = {
+          "style" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

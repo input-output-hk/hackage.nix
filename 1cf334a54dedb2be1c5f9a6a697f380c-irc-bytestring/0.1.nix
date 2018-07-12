@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc-bytestring = {
+        "irc-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

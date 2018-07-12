@@ -20,30 +20,30 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-sipc = {
+        "bindings-sipc" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.sipc ];
         };
         exes = {
-          MQCreator = {
+          "MQCreator" = {
             depends  = [
               hsPkgs.bindings-sipc
               hsPkgs.base
             ];
           };
-          MQDestroyer = {
+          "MQDestroyer" = {
             depends  = [
               hsPkgs.bindings-sipc
               hsPkgs.base
             ];
           };
-          MQReader = {
+          "MQReader" = {
             depends  = [
               hsPkgs.bindings-sipc
               hsPkgs.base
             ];
           };
-          MQSender = {
+          "MQSender" = {
             depends  = [
               hsPkgs.bindings-sipc
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexstring = {
+        "hexstring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-suite = {
+          "test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

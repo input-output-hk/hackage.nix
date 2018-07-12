@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        darkplaces-demo = {
+        "darkplaces-demo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          demoinfo = {
+          "demoinfo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          bench-darkplaces-demo = {
+          "bench-darkplaces-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HUnit = {
+        "HUnit" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.deepseq

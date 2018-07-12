@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        bits-extra = {
+        "bits-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
           ];
         };
         tests = {
-          bits-extra-test = {
+          "bits-extra-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bits-extra
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bits-extra

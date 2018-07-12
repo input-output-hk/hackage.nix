@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-mongodb = {
+        "pipes-mongodb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mongoDB
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-pipes-mongodb = {
+          "test-pipes-mongodb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        encoding = {
+        "encoding" = {
           depends  = [
             hsPkgs.binary
             hsPkgs.extensible-exceptions

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tz = {
+        "tz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.tz
               hsPkgs.base
@@ -49,7 +49,7 @@ let
               hsPkgs.unix
             ];
           };
-          th-test = {
+          "th-test" = {
             depends  = [
               hsPkgs.tz
               hsPkgs.base
@@ -59,7 +59,7 @@ let
               hsPkgs.test-framework-th
             ];
           };
-          test-all = {
+          "test-all" = {
             depends  = [
               hsPkgs.tz
               hsPkgs.tzdata
@@ -72,7 +72,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.tz
               hsPkgs.base
@@ -84,7 +84,7 @@ let
               hsPkgs.unix
             ];
           };
-          bench_c = {
+          "bench_c" = {
             depends  = [
               hsPkgs.tz
               hsPkgs.base
@@ -93,7 +93,7 @@ let
               hsPkgs.unix
             ];
           };
-          bench_greg = {
+          "bench_greg" = {
             depends  = [
               hsPkgs.tz
               hsPkgs.base
@@ -103,7 +103,7 @@ let
               hsPkgs.time
             ];
           };
-          bench_conv = {
+          "bench_conv" = {
             depends  = [
               hsPkgs.tz
               hsPkgs.base

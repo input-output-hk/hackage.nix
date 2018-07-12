@@ -22,21 +22,21 @@ let
         buildType = "Simple";
       };
       components = {
-        unsafely = {
+        "unsafely" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagged
           ];
         };
         exes = {
-          semigroup = {
+          "semigroup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tagged
               hsPkgs.unsafely
             ];
           };
-          safe-unsafe = {
+          "safe-unsafe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tagged

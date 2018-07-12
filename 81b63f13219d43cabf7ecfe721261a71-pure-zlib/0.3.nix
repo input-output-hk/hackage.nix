@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pure-zlib = {
+        "pure-zlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-zlib = {
+          "test-zlib" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

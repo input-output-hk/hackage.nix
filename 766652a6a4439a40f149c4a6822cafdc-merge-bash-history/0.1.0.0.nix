@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        merge-bash-history = {
+        "merge-bash-history" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          merge-bash-history = {
+          "merge-bash-history" = {
             depends  = [
               hsPkgs.base
               hsPkgs.merge-bash-history
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          MergeBashHistory-test = {
+          "MergeBashHistory-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.merge-bash-history

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libGenI = {
+        "libGenI" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        respond = {
+        "respond" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers-base
@@ -53,7 +53,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.respond

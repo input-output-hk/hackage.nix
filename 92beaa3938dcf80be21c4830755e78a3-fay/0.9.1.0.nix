@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        fay = {
+        "fay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -56,7 +56,7 @@ let
           ];
         };
         exes = {
-          fay = {
+          "fay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -80,7 +80,7 @@ let
               hsPkgs.haskeline
             ];
           };
-          fay-tests = {
+          "fay-tests" = {
             depends  = pkgs.lib.optionals _flags.devel [
               hsPkgs.base
               hsPkgs.mtl
@@ -106,7 +106,7 @@ let
               hsPkgs.test-framework-th
             ];
           };
-          fay-docs = {
+          "fay-docs" = {
             depends  = pkgs.lib.optionals _flags.devel [
               hsPkgs.base
               hsPkgs.mtl

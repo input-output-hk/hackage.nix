@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parsergen = {
+        "parsergen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          parsergen-tests = {
+          "parsergen-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

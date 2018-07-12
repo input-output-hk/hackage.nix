@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xss-sanitize = {
+        "xss-sanitize" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.attoparsec

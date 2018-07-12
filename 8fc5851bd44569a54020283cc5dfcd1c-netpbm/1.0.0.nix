@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netpbm = {
+        "netpbm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.netpbm
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.netpbm

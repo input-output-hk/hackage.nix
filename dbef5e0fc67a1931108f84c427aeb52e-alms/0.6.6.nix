@@ -26,7 +26,7 @@ let
       };
       components = {
         exes = {
-          alms = {
+          "alms" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.HUnit

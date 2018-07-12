@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gotta-go-fast = {
+          "gotta-go-fast" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick

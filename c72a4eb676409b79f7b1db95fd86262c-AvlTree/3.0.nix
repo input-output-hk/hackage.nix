@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AvlTree = {
+        "AvlTree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

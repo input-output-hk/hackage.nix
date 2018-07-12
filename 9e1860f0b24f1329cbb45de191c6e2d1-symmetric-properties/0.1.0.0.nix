@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        symmetric-properties = {
+        "symmetric-properties" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          symmetric-properties-test = {
+          "symmetric-properties-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.symmetric-properties

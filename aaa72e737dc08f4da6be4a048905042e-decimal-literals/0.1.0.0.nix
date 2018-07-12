@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        decimal-literals = {
+        "decimal-literals" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

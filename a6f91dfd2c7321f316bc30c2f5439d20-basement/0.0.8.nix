@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        basement = {
+        "basement" = {
           depends  = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.lt "8.0")) ([
             hsPkgs.base
             hsPkgs.ghc-prim

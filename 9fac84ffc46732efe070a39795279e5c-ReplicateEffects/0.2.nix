@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ReplicateEffects = {
+        "ReplicateEffects" = {
           depends  = [ hsPkgs.base ];
         };
       };

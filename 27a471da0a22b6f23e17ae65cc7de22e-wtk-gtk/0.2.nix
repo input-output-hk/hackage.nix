@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wtk-gtk = {
+        "wtk-gtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        superrecord = {
+        "superrecord" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
         };
         tests = {
-          superrecord-test = {
+          "superrecord-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.superrecord
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          superrecord-bench = {
+          "superrecord-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.superrecord

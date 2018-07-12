@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rivet-adaptor-postgresql = {
+        "rivet-adaptor-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.postgresql-simple

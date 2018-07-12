@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptonite-openssl = {
+        "cryptonite-openssl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
             else [ pkgs.crypto ];
         };
         tests = {
-          test-cryptonite-openssl = {
+          "test-cryptonite-openssl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

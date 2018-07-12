@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        country-codes = {
+        "country-codes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          country-codes-generate = {
+          "country-codes-generate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          country-codes-tests = {
+          "country-codes-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

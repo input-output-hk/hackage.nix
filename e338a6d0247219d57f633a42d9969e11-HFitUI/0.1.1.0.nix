@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HFitUI = {
+        "HFitUI" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          HFitUI-exe = {
+          "HFitUI-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HFitUI
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          HFitUI-test = {
+          "HFitUI-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HFitUI

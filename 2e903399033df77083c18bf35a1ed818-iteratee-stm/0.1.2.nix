@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iteratee-stm = {
+        "iteratee-stm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.iteratee

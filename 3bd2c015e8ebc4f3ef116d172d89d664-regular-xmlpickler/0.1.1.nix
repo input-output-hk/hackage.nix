@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regular-xmlpickler = {
+        "regular-xmlpickler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt

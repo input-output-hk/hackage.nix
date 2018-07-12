@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Southpaw = {
+        "Southpaw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

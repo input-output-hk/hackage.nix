@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tokenize = {
+        "tokenize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split
@@ -28,7 +28,7 @@ let
           ];
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.tokenize
               hsPkgs.criterion

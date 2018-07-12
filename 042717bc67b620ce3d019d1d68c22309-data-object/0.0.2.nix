@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-object = {
+        "data-object" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring-class

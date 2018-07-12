@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ez3 = {
+        "ez3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cpsa = {
+          "cpsa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -29,43 +29,43 @@ let
               hsPkgs.array
             ];
           };
-          cpsagraph = {
+          "cpsagraph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          cpsashapes = {
+          "cpsashapes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          cpsaannotations = {
+          "cpsaannotations" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          cpsapp = {
+          "cpsapp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          cpsajson = {
+          "cpsajson" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          cpsadiff = {
+          "cpsadiff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          cpsasas = {
+          "cpsasas" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

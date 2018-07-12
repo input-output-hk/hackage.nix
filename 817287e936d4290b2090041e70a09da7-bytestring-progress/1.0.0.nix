@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-progress = {
+        "bytestring-progress" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        biohazard = {
+        "biohazard" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.array
@@ -53,7 +53,7 @@ let
           ];
         };
         exes = {
-          afroengineer = {
+          "afroengineer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -65,7 +65,7 @@ let
               hsPkgs.vector
             ];
           };
-          bam-fixpair = {
+          "bam-fixpair" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -75,7 +75,7 @@ let
               hsPkgs.transformers
             ];
           };
-          bam-meld = {
+          "bam-meld" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -83,7 +83,7 @@ let
               hsPkgs.containers
             ];
           };
-          bam-resample = {
+          "bam-resample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -91,7 +91,7 @@ let
               hsPkgs.random
             ];
           };
-          bam-rewrap = {
+          "bam-rewrap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -99,7 +99,7 @@ let
               hsPkgs.containers
             ];
           };
-          bam-rmdup = {
+          "bam-rmdup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -111,21 +111,21 @@ let
               hsPkgs.vector-algorithms
             ];
           };
-          bam-trim = {
+          "bam-trim" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
               hsPkgs.bytestring
             ];
           };
-          count-coverage = {
+          "count-coverage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
               hsPkgs.iteratee
             ];
           };
-          dmg-est = {
+          "dmg-est" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -134,7 +134,7 @@ let
               hsPkgs.vector
             ];
           };
-          fastq2bam = {
+          "fastq2bam" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -144,7 +144,7 @@ let
               hsPkgs.vector
             ];
           };
-          glf-consensus = {
+          "glf-consensus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -154,7 +154,7 @@ let
               hsPkgs.iteratee
             ];
           };
-          gt-call = {
+          "gt-call" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -165,7 +165,7 @@ let
               hsPkgs.vector
             ];
           };
-          jivebunny = {
+          "jivebunny" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -183,7 +183,7 @@ let
               hsPkgs.vector-th-unbox
             ];
           };
-          mt-anno = {
+          "mt-anno" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -191,7 +191,7 @@ let
               hsPkgs.containers
             ];
           };
-          mt-ccheck = {
+          "mt-ccheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -200,7 +200,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          wiggle-coverage = {
+          "wiggle-coverage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard

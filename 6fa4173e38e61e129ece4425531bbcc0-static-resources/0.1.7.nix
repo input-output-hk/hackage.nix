@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        static-resources = {
+        "static-resources" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test-static-resources = {
+          "test-static-resources" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        isobmff-builder = {
+        "isobmff-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

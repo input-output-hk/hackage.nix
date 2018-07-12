@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmltv = {
+        "xmltv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          tv = {
+          "tv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xml

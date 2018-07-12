@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        etc = {
+        "etc" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ]) ++ pkgs.lib.optional _flags.cli hsPkgs.optparse-applicative) ++ pkgs.lib.optional _flags.yaml hsPkgs.yaml;
         };
         tests = {
-          etc-testsuite = {
+          "etc-testsuite" = {
             depends  = (([
               hsPkgs.base
               hsPkgs.aeson

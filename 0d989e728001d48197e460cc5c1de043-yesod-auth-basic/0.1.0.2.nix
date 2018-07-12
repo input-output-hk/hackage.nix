@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-basic = {
+        "yesod-auth-basic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.iproute;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod
@@ -43,7 +43,7 @@ let
               hsPkgs.text
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

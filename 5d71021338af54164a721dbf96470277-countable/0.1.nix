@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        countable = {
+        "countable" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-default-generics = {
+        "data-default-generics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

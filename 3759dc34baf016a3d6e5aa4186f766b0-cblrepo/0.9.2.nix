@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cblrepo = {
+          "cblrepo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

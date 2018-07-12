@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptol = {
+        "cryptol" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -57,7 +57,7 @@ let
           ];
         };
         exes = {
-          cryptol = {
+          "cryptol" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base

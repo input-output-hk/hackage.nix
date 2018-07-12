@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        comonads-fd = {
+        "comonads-fd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rasa-ext-logger = {
+        "rasa-ext-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rasa

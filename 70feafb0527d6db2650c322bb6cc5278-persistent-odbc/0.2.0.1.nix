@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-odbc = {
+        "persistent-odbc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          TestODBC = {
+          "TestODBC" = {
             depends  = pkgs.lib.optionals _flags.tester [
               hsPkgs.base
               hsPkgs.persistent-odbc

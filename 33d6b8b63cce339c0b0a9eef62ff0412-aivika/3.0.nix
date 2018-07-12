@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aivika = {
+        "aivika" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

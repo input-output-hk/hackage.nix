@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          wxhnotepad = {
+          "wxhnotepad" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

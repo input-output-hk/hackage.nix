@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cautious = {
+        "cautious" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

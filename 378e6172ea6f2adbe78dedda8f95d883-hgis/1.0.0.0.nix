@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgis = {
+        "hgis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Chart
@@ -42,7 +42,7 @@ let
           ] ++ pkgs.lib.optional _flags.cairo hsPkgs.Chart-cairo;
         };
         tests = {
-          hgis-test = {
+          "hgis-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hgis

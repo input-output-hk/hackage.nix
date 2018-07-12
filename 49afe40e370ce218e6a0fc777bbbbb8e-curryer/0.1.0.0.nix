@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        curryer = {
+        "curryer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

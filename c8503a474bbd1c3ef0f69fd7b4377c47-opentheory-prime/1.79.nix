@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opentheory-prime = {
+        "opentheory-prime" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          opentheory-prime-test = {
+          "opentheory-prime-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

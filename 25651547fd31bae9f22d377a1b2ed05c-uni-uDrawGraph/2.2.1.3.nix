@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uni-uDrawGraph = {
+        "uni-uDrawGraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

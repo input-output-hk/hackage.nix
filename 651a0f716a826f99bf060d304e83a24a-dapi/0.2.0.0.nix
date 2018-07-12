@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dapi = {
+          "dapi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        terminal-progress-bar = {
+        "terminal-progress-bar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
           ];
         };
         tests = {
-          test-terminal-progress-bar = {
+          "test-terminal-progress-bar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-combinators = {
+        "type-combinators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

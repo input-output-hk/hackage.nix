@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        hack-handler-fastcgi = {
+        "hack-handler-fastcgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hack

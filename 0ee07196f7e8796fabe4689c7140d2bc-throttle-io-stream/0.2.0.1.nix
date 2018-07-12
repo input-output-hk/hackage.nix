@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        throttle-io-stream = {
+        "throttle-io-stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          throttle-io-stream-test = {
+          "throttle-io-stream-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm

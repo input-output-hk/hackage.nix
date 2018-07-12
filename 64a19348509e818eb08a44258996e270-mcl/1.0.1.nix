@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        mcl = {
+        "mcl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.mcl
               hsPkgs.QuickCheck
@@ -52,7 +52,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.mcl
               hsPkgs.base

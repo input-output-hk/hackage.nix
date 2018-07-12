@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          minesweeper = {
+          "minesweeper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.numeric-prelude

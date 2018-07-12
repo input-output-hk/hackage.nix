@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        composition-tree = {
+        "composition-tree" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test-comp-tree = {
+          "test-comp-tree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

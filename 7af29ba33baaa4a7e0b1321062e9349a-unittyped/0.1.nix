@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        unittyped = {
+        "unittyped" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test-si = {
+          "test-si" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unittyped

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        suffixtree = {
+        "suffixtree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

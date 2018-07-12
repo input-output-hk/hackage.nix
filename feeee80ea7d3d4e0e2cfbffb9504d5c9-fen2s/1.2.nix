@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fen2s = {
+        "fen2s" = {
           depends  = [
             hsPkgs.base
             hsPkgs.opentheory-unicode
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          fen2s = {
+          "fen2s" = {
             depends  = [
               hsPkgs.base
               hsPkgs.opentheory-unicode
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          fen2s-test = {
+          "fen2s-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.opentheory-unicode

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        turkish-deasciifier = {
+        "turkish-deasciifier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          turkish-deasciifier = {
+          "turkish-deasciifier" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.turkish-deasciifier

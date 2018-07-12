@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libmpd = {
+        "libmpd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

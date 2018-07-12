@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linear-maps = {
+        "linear-maps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,8 +31,8 @@ let
           ];
         };
         exes = {
-          linear-maps-introduction = {};
-          linear-maps-exercises = {};
+          "linear-maps-introduction" = {};
+          "linear-maps-exercises" = {};
         };
       };
     }

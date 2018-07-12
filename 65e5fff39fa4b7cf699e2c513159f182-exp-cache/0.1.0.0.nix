@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exp-cache = {
+        "exp-cache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          exp-cache-benchmarks = {
+          "exp-cache-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exp-cache
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          exp-cache-test = {
+          "exp-cache-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exp-cache

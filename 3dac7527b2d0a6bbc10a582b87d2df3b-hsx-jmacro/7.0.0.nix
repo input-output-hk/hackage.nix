@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsx-jmacro = {
+        "hsx-jmacro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsx

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        optparse-generic = {
+        "optparse-generic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.system-filepath

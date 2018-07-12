@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-inline-io-action = {
+        "th-inline-io-action" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

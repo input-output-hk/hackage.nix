@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        orgmode-parse = {
+        "orgmode-parse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

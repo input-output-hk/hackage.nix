@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exinst-bytes = {
+        "exinst-bytes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytes

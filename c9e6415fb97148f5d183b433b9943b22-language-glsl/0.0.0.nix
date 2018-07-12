@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-glsl = {
+        "language-glsl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          glsl-pprint = {
+          "glsl-pprint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

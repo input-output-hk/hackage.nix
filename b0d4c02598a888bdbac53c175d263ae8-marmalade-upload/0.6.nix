@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        marmalade-upload = {
+        "marmalade-upload" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -44,7 +44,7 @@ let
           build-tools = pkgs.lib.optional _flags.libmagic hsPkgs.buildPackages.hsc2hs;
         };
         exes = {
-          marmalade-upload = {
+          "marmalade-upload" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          magic = {
+          "magic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -63,7 +63,7 @@ let
               hsPkgs.marmalade-upload
             ];
           };
-          marmalade = {
+          "marmalade" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

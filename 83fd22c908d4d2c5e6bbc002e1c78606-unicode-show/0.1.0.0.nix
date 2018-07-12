@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        unicode-show = {
+        "unicode-show" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          unicode-show-test = {
+          "unicode-show-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

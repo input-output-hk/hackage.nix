@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        HasBigDecimal = {
+        "HasBigDecimal" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          HasBigDecimal-test = {
+          "HasBigDecimal-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HasBigDecimal

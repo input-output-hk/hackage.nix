@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        zeroth = {
+        "zeroth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          zeroth = {
+          "zeroth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

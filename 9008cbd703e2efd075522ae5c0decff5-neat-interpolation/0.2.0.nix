@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        neat-interpolation = {
+        "neat-interpolation" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.template-haskell
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          neat-interpolation-demo = {
+          "neat-interpolation-demo" = {
             depends  = [
               hsPkgs.parsec
               hsPkgs.template-haskell

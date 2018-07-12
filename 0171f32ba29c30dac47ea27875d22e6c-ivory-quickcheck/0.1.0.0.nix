@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ivory-quickcheck = {
+        "ivory-quickcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monadLib

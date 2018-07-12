@@ -21,31 +21,31 @@ let
       };
       components = {
         exes = {
-          test1 = {
+          "test1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alsa
             ];
           };
-          test2 = {
+          "test2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alsa
             ];
           };
-          test3 = {
+          "test3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alsa
             ];
           };
-          test4 = {
+          "test4" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alsa
             ];
           };
-          test5 = {
+          "test5" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alsa

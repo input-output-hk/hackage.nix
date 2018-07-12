@@ -27,14 +27,14 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-money = {
+        "safe-money" = {
           depends  = ((((([
             hsPkgs.base
             hsPkgs.constraints
           ] ++ pkgs.lib.optional _flags.aeson hsPkgs.aeson) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ pkgs.lib.optional _flags.cereal hsPkgs.cereal) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional _flags.store hsPkgs.store;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

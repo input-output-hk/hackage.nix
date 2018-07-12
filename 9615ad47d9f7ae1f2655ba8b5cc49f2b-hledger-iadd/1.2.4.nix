@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger-iadd = {
+        "hledger-iadd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hledger-lib
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          hledger-iadd = {
+          "hledger-iadd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hledger-iadd
@@ -69,7 +69,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hledger-iadd

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netlines = {
+        "netlines" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          netlines-test = {
+          "netlines-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF

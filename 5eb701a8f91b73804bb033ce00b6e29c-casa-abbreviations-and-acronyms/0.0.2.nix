@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        casa-abbreviations-and-acronyms = {
+        "casa-abbreviations-and-acronyms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          casa-abbreviations-and-acronyms = {
+          "casa-abbreviations-and-acronyms" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

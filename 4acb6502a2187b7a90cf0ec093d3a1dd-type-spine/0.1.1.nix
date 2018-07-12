@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-spine = {
+        "type-spine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

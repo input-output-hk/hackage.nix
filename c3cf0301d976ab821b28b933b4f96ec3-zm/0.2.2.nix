@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zm = {
+        "zm" = {
           depends  = [
             hsPkgs.ListLike
             hsPkgs.base
@@ -41,7 +41,7 @@ let
             ]);
         };
         tests = {
-          zm-test = {
+          "zm-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        words = {
+        "words" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

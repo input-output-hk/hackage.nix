@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ping-wrapper = {
+        "ping-wrapper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ping-parser-attoparsec
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          ping-wrapper = {
+          "ping-wrapper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ping-wrapper
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          ping-wrapper-test = {
+          "ping-wrapper-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ping-wrapper

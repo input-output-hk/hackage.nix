@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-apps-calendar = {
+        "gogol-apps-calendar" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

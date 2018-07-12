@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crf-chain1 = {
+        "crf-chain1" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

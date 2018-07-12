@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uniqueid = {
+        "uniqueid" = {
           depends  = [ hsPkgs.base ];
         };
       };

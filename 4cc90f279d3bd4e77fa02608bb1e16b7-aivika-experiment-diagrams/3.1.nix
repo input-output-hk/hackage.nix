@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aivika-experiment-diagrams = {
+        "aivika-experiment-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

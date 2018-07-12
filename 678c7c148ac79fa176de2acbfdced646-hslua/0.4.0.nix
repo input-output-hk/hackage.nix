@@ -24,44 +24,44 @@ let
         buildType = "Simple";
       };
       components = {
-        hslua = {
+        "hslua" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
-          libs = if _flags.system-lua && _flags.luajit
+          libs = pkgs.lib.optionals _flags.system-lua (if _flags.luajit
             then [ pkgs."luajit-5.1" ]
-            else [ pkgs.lua ];
+            else [ pkgs.lua ]);
         };
         tests = {
-          simple-test = {
+          "simple-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslua
             ];
           };
-          callbacks = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.hslua
-            ];
-          };
-          haskellfun = {
+          "callbacks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.hslua
             ];
           };
-          err_prop = {
+          "haskellfun" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.hslua
             ];
           };
-          test = {
+          "err_prop" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.bytestring
+              hsPkgs.hslua
+            ];
+          };
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

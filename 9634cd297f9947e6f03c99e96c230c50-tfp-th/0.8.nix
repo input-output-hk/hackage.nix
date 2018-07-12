@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tfp-th = {
+        "tfp-th" = {
           depends  = [
             hsPkgs.tfp
             hsPkgs.template-haskell

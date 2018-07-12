@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arbb-vm = {
+        "arbb-vm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prettyFunctionComposing = {
+        "prettyFunctionComposing" = {
           depends  = [ hsPkgs.base ];
         };
       };

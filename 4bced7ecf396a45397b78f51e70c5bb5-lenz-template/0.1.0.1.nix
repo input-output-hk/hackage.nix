@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lenz-template = {
+        "lenz-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

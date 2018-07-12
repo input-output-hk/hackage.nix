@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        aviation-cessna172-diagrams = {
+        "aviation-cessna172-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

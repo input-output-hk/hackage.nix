@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        ghost-buster = {
+        "ghost-buster" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jack = {
+        "jack" = {
           depends  = [
             hsPkgs.midi
             hsPkgs.bytestring
@@ -36,21 +36,19 @@ let
             hsPkgs.base
           ];
           libs = pkgs.lib.optional (!_flags.pkgconfig) pkgs.jack;
-          pkgconfig = [
-            pkgconfPkgs.jack
-          ];
+          pkgconfig = pkgs.lib.optional _flags.pkgconfig pkgconfPkgs.jack;
           build-tools = [
             hsPkgs.buildPackages.hsc2hs
           ];
         };
         exes = {
-          amplify = {
+          "amplify" = {
             depends  = [
               hsPkgs.jack
               hsPkgs.base
             ];
           };
-          impulse-train = {
+          "impulse-train" = {
             depends  = [
               hsPkgs.jack
               hsPkgs.transformers
@@ -58,7 +56,7 @@ let
               hsPkgs.base
             ];
           };
-          midimon = {
+          "midimon" = {
             depends  = [
               hsPkgs.jack
               hsPkgs.midi

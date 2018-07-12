@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zmcat = {
+        "zmcat" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          zmcat = {
+          "zmcat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zmcat

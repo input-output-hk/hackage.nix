@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timeseries = {
+        "timeseries" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

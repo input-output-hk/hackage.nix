@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        copilot-theorem = {
+        "copilot-theorem" = {
           depends  = [
             hsPkgs.base
             hsPkgs.copilot-core

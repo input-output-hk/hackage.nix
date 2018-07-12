@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mpg123-bindings = {
+        "mpg123-bindings" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.mpg123 ];
           build-tools = [

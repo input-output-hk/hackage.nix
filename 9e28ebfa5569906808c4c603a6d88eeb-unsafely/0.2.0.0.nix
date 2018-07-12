@@ -22,17 +22,17 @@ let
         buildType = "Simple";
       };
       components = {
-        unsafely = {
+        "unsafely" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          semigroup = {
+          "semigroup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unsafely
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
           };
-          safe-unsafe = {
+          "safe-unsafe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unsafely

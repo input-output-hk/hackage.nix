@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-histogram = {
+        "streaming-histogram" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          streaminghist-tests = {
+          "streaminghist-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.streaming-histogram
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          streaminghist-bench = {
+          "streaminghist-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.streaming-histogram

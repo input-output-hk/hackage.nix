@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GrammarProducts = {
+        "GrammarProducts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          AlignGlobal = {
+          "AlignGlobal" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion

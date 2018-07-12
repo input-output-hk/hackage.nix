@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgrest = {
+        "postgrest" = {
           depends  = [
             hsPkgs.HTTP
             hsPkgs.MissingH
@@ -69,7 +69,7 @@ let
           ];
         };
         exes = {
-          postgrest = {
+          "postgrest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.postgrest
@@ -119,7 +119,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

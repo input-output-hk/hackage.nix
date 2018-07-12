@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-request-spec = {
+        "wai-request-spec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

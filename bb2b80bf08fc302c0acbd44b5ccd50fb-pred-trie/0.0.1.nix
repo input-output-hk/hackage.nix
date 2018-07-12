@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        pred-trie = {
+        "pred-trie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        relational-record-examples = {
+        "relational-record-examples" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.relational-query

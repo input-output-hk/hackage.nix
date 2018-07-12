@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Homology = {
+        "Homology" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

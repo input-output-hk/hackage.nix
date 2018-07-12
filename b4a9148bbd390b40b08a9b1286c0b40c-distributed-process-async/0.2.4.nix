@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-async = {
+        "distributed-process-async" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-accessor
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          AsyncTests = {
+          "AsyncTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

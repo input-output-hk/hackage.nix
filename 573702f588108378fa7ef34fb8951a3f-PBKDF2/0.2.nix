@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PBKDF2 = {
+        "PBKDF2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

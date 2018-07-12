@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-expectations-pretty-diff = {
+        "hspec-expectations-pretty-diff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec-expectations-pretty-diff

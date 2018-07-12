@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-kinder = {
+        "http-kinder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          http-kinder-test = {
+          "http-kinder-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-kinder

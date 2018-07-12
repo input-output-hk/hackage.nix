@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        perfecthash = {
+        "perfecthash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          cmph-test = {
+          "cmph-test" = {
             depends  = [
               hsPkgs.cmph
               hsPkgs.base
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          bench-foo = {
+          "bench-foo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

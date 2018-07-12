@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uri-template = {
+        "uri-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          main = {
+          "main" = {
             depends  = [ hsPkgs.base ];
           };
         };

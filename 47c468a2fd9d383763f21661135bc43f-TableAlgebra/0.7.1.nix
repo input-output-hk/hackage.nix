@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TableAlgebra = {
+        "TableAlgebra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HaXml

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aern2-mp = {
+        "aern2-mp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.integer-logarithms
@@ -34,7 +34,7 @@ let
             hsPkgs.lens
             hsPkgs.template-haskell
             hsPkgs.mixed-types-num
-          ] ++ (if _flags.mpfr && (compiler.isGhc && compiler.version.ge "7.10")
+          ] ++ pkgs.lib.optionals _flags.mpfr (if compiler.isGhc && compiler.version.ge "7.10"
             then if _flags.mpfrrounded
               then [ hsPkgs.rounded ]
               else [
@@ -47,7 +47,7 @@ let
             ]);
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aern2-mp

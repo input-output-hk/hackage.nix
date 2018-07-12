@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extcore = {
+        "extcore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        forecast-io = {
+        "forecast-io" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

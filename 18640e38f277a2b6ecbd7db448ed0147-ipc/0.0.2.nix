@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ipc = {
+        "ipc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

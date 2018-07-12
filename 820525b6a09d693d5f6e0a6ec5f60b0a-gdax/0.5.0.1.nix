@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gdax = {
+        "gdax" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          sandbox = {
+          "sandbox" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gdax
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          test-gdax = {
+          "test-gdax" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gdax

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        goatee = {
+        "goatee" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-goatee = {
+          "test-goatee" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

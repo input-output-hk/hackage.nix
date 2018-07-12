@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-blas = {
+        "accelerate-blas" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.accelerate
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          test-llvm-native = {
+          "test-llvm-native" = {
             depends  = [
               hsPkgs.base
               hsPkgs.accelerate
@@ -56,7 +56,7 @@ let
               hsPkgs.tasty-hedgehog
             ];
           };
-          test-llvm-ptx = {
+          "test-llvm-ptx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.accelerate
@@ -69,7 +69,7 @@ let
           };
         };
         benchmarks = {
-          bench-hmatrix = {
+          "bench-hmatrix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -78,7 +78,7 @@ let
               hsPkgs.hmatrix
             ];
           };
-          bench-llvm-native = {
+          "bench-llvm-native" = {
             depends  = [
               hsPkgs.base
               hsPkgs.accelerate
@@ -89,7 +89,7 @@ let
               hsPkgs.mwc-random-accelerate
             ];
           };
-          bench-llvm-ptx = {
+          "bench-llvm-ptx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.accelerate

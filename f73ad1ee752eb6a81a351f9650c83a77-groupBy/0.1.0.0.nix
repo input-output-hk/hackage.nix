@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        groupBy = {
+        "groupBy" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          groupBy-test = {
+          "groupBy-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -34,7 +34,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.code-page

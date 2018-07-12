@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-map = {
+        "persistent-map" = {
           depends  = [
             hsPkgs.base
             hsPkgs.EdisonAPI

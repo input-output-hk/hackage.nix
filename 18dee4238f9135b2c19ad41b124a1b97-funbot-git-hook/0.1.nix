@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          funbot-client-post-receive = {
+          "funbot-client-post-receive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

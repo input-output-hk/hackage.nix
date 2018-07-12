@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ref-tf = {
+        "ref-tf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

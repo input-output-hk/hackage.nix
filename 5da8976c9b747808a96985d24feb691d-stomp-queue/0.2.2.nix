@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stomp-queue = {
+        "stomp-queue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

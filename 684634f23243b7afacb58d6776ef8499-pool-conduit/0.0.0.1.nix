@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pool-conduit = {
+        "pool-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.resource-pool

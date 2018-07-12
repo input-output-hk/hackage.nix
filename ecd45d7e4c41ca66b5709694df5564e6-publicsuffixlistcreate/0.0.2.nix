@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        publicsuffixlistcreate = {
+        "publicsuffixlistcreate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test-public-suffix-list-create = {
+          "test-public-suffix-list-create" = {
             depends  = [
               hsPkgs.base
               hsPkgs.publicsuffixlist

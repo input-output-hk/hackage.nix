@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-colonnade = {
+        "blaze-colonnade" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colonnade
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.colonnade

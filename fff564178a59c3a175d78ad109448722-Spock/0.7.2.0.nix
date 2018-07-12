@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock = {
+        "Spock" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -54,7 +54,7 @@ let
           ];
         };
         tests = {
-          spocktests = {
+          "spocktests" = {
             depends  = [
               hsPkgs.hspec2
               hsPkgs.hspec-wai

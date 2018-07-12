@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nthable = {
+        "nthable" = {
           depends  = [
             hsPkgs.type-level
             hsPkgs.base

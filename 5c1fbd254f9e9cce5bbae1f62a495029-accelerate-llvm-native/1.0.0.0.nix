@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-llvm-native = {
+        "accelerate-llvm-native" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate

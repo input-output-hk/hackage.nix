@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        utility-ht = {
+        "utility-ht" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = pkgs.lib.optional _flags.buildtests hsPkgs.QuickCheck;
           };
         };

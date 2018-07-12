@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fractal = {
+          "fractal" = {
             depends  = [ hsPkgs.base ];
           };
         };

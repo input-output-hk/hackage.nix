@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nerf = {
+        "nerf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          nerf = {
+          "nerf" = {
             depends  = [
               hsPkgs.filepath
               hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digestive-functors-blaze = {
+        "digestive-functors-blaze" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

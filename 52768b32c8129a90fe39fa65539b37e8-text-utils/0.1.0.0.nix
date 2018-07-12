@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        text-utils = {
+        "text-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

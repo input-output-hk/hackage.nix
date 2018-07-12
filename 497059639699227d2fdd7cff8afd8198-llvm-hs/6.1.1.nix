@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        llvm-hs = {
+        "llvm-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

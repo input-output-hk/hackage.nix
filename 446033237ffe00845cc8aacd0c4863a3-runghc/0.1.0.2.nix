@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          runghc = {
+          "runghc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

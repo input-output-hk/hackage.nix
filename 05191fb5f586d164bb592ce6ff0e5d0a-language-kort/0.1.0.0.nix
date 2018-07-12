@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-kort = {
+        "language-kort" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

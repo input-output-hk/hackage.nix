@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        melody = {
+        "melody" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          imelody = {
+          "imelody" = {
             depends  = [
               hsPkgs.base
               hsPkgs.melody
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          test-melody = {
+          "test-melody" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

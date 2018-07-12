@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MemoTrie = {
+        "MemoTrie" = {
           depends  = [ hsPkgs.base ];
         };
       };

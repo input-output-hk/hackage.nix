@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-t-attoparsec = {
+        "list-t-attoparsec" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.list-t-attoparsec

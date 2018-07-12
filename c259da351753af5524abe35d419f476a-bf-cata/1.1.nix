@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bf-cata = {
+        "bf-cata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

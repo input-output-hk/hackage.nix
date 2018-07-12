@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-anonymous-tor = {
+        "network-anonymous-tor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test-suite = {
+          "test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions

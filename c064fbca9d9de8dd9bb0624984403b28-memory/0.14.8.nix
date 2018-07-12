@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memory = {
+        "memory" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional _flags.support_bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.support_deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.support_foundation hsPkgs.foundation;
         };
         tests = {
-          test-memory = {
+          "test-memory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

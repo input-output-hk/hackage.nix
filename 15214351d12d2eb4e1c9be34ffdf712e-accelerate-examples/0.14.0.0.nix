@@ -36,7 +36,7 @@ let
       };
       components = {
         exes = {
-          accelerate-nofib = {
+          "accelerate-nofib" = {
             depends  = ((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.opencl hsPkgs.accelerate-opencl) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.nofib)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-io
@@ -54,7 +54,7 @@ let
             ];
             libs = [ pkgs."stdc++" ];
           };
-          accelerate-smvm = {
+          "accelerate-smvm" = {
             depends  = ((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.opencl hsPkgs.accelerate-opencl) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.smvm)) [
               hsPkgs.accelerate
               hsPkgs.base
@@ -69,7 +69,7 @@ let
               hsPkgs.vector-algorithms
             ];
           };
-          accelerate-crystal = {
+          "accelerate-crystal" = {
             depends  = ((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.opencl hsPkgs.accelerate-opencl) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.crystal)) [
               hsPkgs.accelerate
               hsPkgs.base
@@ -78,7 +78,7 @@ let
               hsPkgs.gloss-raster-accelerate
             ];
           };
-          accelerate-canny = {
+          "accelerate-canny" = {
             depends  = ((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.opencl hsPkgs.accelerate-opencl) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.canny)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-io
@@ -90,7 +90,7 @@ let
               hsPkgs.vector
             ];
           };
-          accelerate-mandelbrot = {
+          "accelerate-mandelbrot" = {
             depends  = ((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.opencl hsPkgs.accelerate-opencl) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.mandelbrot)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-fft
@@ -102,7 +102,7 @@ let
               hsPkgs.gloss-accelerate
             ];
           };
-          accelerate-fluid = {
+          "accelerate-fluid" = {
             depends  = (pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.fluid)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-io
@@ -113,7 +113,7 @@ let
               hsPkgs.gloss
             ];
           };
-          accelerate-nbody = {
+          "accelerate-nbody" = {
             depends  = (pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.nbody)) [
               hsPkgs.accelerate
               hsPkgs.base
@@ -123,7 +123,7 @@ let
               hsPkgs.mwc-random
             ];
           };
-          accelerate-smoothlife = {
+          "accelerate-smoothlife" = {
             depends  = (pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.smoothlife)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-fft
@@ -136,7 +136,7 @@ let
               hsPkgs.mwc-random
             ];
           };
-          accelerate-hashcat = {
+          "accelerate-hashcat" = {
             depends  = (pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.hashcat)) [
               hsPkgs.accelerate
               hsPkgs.base
@@ -148,7 +148,7 @@ let
               hsPkgs.mwc-random
             ];
           };
-          accelerate-fft = {
+          "accelerate-fft" = {
             depends  = pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optionals (!(!_flags.fft)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-io

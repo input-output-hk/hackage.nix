@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        regex-posix = {
+        "regex-posix" = {
           depends  = [
             hsPkgs.regex-base
             hsPkgs.base

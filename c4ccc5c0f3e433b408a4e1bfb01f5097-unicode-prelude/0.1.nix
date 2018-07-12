@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unicode-prelude = {
+        "unicode-prelude" = {
           depends  = [ hsPkgs.base ];
         };
       };

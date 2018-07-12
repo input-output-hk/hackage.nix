@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-xhr = {
+        "ghcjs-xhr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghcjs-base

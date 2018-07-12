@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-builder = {
+        "json-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

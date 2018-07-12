@@ -20,44 +20,44 @@ let
         buildType = "Simple";
       };
       components = {
-        leancheck = {
+        "leancheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell
             ];
           };
-          types = {
+          "types" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell
             ];
           };
-          tiers = {
+          "tiers" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell
             ];
           };
-          operators = {
+          "operators" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell
             ];
           };
-          derive = {
+          "derive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell
             ];
           };
-          error = {
+          "error" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

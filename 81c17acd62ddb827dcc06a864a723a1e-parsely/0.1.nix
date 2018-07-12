@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        parsely = {
+        "parsely" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

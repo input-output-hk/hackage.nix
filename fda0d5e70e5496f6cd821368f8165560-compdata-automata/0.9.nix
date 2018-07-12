@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compdata-automata = {
+        "compdata-automata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         benchmarks = {
-          macro = {
+          "macro" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

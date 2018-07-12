@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twitch = {
+        "twitch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

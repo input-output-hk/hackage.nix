@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        selda-sqlite = {
+        "selda-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

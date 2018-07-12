@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-pony-serve-wai = {
+        "http-pony-serve-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

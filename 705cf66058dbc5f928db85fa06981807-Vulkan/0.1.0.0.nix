@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Vulkan = {
+        "Vulkan" = {
           depends  = [ hsPkgs.base ];
         };
       };

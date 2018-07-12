@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        roundRobin = {
+        "roundRobin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.roundRobin
               hsPkgs.base

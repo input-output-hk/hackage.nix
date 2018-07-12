@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-civicinfo = {
+        "gogol-civicinfo" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

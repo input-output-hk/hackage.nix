@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chp-spec = {
+        "chp-spec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HackMail = {
+        "HackMail" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          hackmail = {
+          "hackmail" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

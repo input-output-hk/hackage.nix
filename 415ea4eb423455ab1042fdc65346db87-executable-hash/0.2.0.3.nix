@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        executable-hash = {
+        "executable-hash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          inject-executable-hash = {
+          "inject-executable-hash" = {
             depends  = [
               hsPkgs.base
               hsPkgs.executable-hash
@@ -40,19 +40,19 @@ let
           };
         };
         tests = {
-          test-compute = {
+          "test-compute" = {
             depends  = [
               hsPkgs.base
               hsPkgs.executable-hash
             ];
           };
-          test-inject = {
+          "test-inject" = {
             depends  = [
               hsPkgs.base
               hsPkgs.executable-hash
             ];
           };
-          test-no-inject = {
+          "test-no-inject" = {
             depends  = [
               hsPkgs.base
               hsPkgs.executable-hash

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stagen = {
+        "stagen" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          stagen = {
+          "stagen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stagen

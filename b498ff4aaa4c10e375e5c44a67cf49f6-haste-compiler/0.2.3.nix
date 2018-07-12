@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haste-boot = {
+          "haste-boot" = {
             depends  = [
               hsPkgs.ghc
               hsPkgs.base
@@ -39,7 +39,7 @@ let
               hsPkgs.HTTP
             ];
           };
-          hastec = {
+          "hastec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -58,7 +58,7 @@ let
               hsPkgs.system-fileio
             ];
           };
-          haste-inst = {
+          "haste-inst" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -66,7 +66,7 @@ let
               hsPkgs.directory
             ];
           };
-          haste-pkg = {
+          "haste-pkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -74,7 +74,7 @@ let
               hsPkgs.directory
             ];
           };
-          haste-install-his = {
+          "haste-install-his" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -82,7 +82,7 @@ let
               hsPkgs.process
             ];
           };
-          haste-copy-pkg = {
+          "haste-copy-pkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

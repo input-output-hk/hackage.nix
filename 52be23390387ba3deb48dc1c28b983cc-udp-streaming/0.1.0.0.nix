@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        udp-streaming = {
+        "udp-streaming" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xenstore = {
+        "xenstore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,6 +31,6 @@ let
             hsPkgs.mtl
           ];
         };
-        exes = { xenstore = {}; };
+        exes = { "xenstore" = {}; };
       };
     }

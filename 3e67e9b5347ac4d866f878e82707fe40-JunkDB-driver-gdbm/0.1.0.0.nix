@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JunkDB-driver-gdbm = {
+        "JunkDB-driver-gdbm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JunkDB

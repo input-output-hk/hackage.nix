@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serokell-util = {
+        "serokell-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -60,7 +60,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.2.2") hsPkgs.o-clock;
         };
         tests = {
-          serokell-test = {
+          "serokell-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

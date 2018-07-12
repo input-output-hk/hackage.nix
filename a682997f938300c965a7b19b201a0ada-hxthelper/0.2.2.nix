@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hxthelper = {
+        "hxthelper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt

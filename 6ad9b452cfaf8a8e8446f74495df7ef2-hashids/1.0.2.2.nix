@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashids = {
+        "hashids" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          consistency = {
+          "consistency" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

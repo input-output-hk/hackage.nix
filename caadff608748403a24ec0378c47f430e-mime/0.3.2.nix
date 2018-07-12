@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mime = {
+        "mime" = {
           depends  = [ hsPkgs.base ];
         };
       };

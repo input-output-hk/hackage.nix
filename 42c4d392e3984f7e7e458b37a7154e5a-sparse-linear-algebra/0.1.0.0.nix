@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sparse-linear-algebra = {
+        "sparse-linear-algebra" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          sparse-linear-algebra = {
+          "sparse-linear-algebra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

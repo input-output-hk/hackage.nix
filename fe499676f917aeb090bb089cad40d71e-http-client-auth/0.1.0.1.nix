@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client-auth = {
+        "http-client-auth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

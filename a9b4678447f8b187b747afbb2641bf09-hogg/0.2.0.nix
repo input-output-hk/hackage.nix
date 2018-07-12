@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hogg = {
+        "hogg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fps
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          hogg = {
+          "hogg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fps
@@ -37,7 +37,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          ListMergeTest = {
+          "ListMergeTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fps

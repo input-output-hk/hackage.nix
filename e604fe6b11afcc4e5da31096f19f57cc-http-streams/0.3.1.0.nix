@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        http-streams = {
+        "http-streams" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          check = {
+          "check" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.HsOpenSSL

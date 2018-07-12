@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsntp = {
+        "hsntp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -31,10 +31,10 @@ let
           ];
         };
         exes = {
-          sntpdate = {
+          "sntpdate" = {
             depends  = [ hsPkgs.unix ];
           };
-          sntpd = {};
+          "sntpd" = {};
         };
       };
     }

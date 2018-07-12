@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          resource-embed = {
+          "resource-embed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

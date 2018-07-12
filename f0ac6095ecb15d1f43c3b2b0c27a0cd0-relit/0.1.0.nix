@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        relit = {
+        "relit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-base

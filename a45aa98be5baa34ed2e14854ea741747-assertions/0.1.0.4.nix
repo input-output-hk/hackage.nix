@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        assertions = {
+        "assertions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          assert-tests = {
+          "assert-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.assertions

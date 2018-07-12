@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mysql-haskell = {
+        "mysql-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-loops
@@ -42,12 +42,12 @@ let
             hsPkgs.word24
             hsPkgs.tls
           ] ++ pkgs.lib.optional _flags.openssl hsPkgs.HsOpenSSL;
-          libs = if _flags.openssl && (system.isWindows || system.isWindows)
+          libs = pkgs.lib.optionals _flags.openssl (if system.isWindows || system.isWindows
             then [ pkgs.eay32 pkgs.ssl32 ]
-            else [ pkgs.crypto ];
+            else [ pkgs.crypto ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.mysql-haskell
               hsPkgs.base

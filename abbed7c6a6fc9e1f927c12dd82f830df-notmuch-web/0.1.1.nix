@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        notmuch-web = {
+        "notmuch-web" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -79,7 +79,7 @@ let
           ];
         };
         exes = {
-          notmuch-web = {
+          "notmuch-web" = {
             depends  = [
               hsPkgs.base
               hsPkgs.notmuch-web
@@ -90,7 +90,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.notmuch-web

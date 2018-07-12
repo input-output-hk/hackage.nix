@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iso3166-country-codes = {
+        "iso3166-country-codes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

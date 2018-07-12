@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shellish = {
+        "shellish" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.process

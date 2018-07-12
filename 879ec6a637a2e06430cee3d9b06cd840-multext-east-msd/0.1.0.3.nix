@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multext-east-msd = {
+        "multext-east-msd" = {
           depends  = [ hsPkgs.base ];
         };
       };

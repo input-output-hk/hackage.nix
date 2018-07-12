@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        raketka = {
+        "raketka" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          raketka = {
+          "raketka" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -62,7 +62,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

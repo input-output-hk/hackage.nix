@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bini = {
+        "bini" = {
           depends  = [ hsPkgs.base ];
         };
       };

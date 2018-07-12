@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        x-dsp = {
+        "x-dsp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

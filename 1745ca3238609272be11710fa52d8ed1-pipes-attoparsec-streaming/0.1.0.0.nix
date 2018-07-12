@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-attoparsec-streaming = {
+        "pipes-attoparsec-streaming" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes-core
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          MimeParser = {
+          "MimeParser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-core

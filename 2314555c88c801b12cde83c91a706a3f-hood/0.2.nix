@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hood = {
+        "hood" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

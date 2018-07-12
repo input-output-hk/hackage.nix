@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ciphersaber2 = {
+        "ciphersaber2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          cs2 = {
+          "cs2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

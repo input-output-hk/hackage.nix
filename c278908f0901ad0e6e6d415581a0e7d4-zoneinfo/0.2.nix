@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        zoneinfo = {
+        "zoneinfo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

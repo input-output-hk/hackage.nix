@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        net-concurrent = {
+        "net-concurrent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

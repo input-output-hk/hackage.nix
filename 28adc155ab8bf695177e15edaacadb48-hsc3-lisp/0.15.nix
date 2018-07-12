@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsc3-lisp = {
+          "hsc3-lisp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

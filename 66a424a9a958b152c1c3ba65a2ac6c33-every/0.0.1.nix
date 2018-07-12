@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        every = {
+        "every" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

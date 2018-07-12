@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsilop = {
+          "hsilop" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline

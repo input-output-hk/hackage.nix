@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        stack = {
+        "stack" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.aeson
@@ -117,7 +117,7 @@ let
           build-tools = pkgs.lib.optional (!system.isWindows) hsPkgs.buildPackages.hsc2hs;
         };
         exes = {
-          stack = {
+          "stack" = {
             depends  = ([
               hsPkgs.Cabal
               hsPkgs.aeson
@@ -213,7 +213,7 @@ let
           };
         };
         tests = {
-          stack-integration-test = {
+          "stack-integration-test" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.aeson
@@ -304,7 +304,7 @@ let
               ]);
             build-tools = pkgs.lib.optional (!system.isWindows) hsPkgs.buildPackages.hsc2hs;
           };
-          stack-test = {
+          "stack-test" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck

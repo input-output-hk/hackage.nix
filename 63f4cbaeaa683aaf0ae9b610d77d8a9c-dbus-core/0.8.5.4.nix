@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbus-core = {
+        "dbus-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          dbus-core-tests = {
+          "dbus-core-tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.test-framework

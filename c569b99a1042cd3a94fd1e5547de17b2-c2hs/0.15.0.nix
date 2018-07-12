@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        c2hs = {
+        "c2hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          c2hs = {
+          "c2hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

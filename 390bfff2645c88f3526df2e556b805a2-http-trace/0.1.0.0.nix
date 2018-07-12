@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-trace = {
+        "http-trace" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          http-trace = {
+          "http-trace" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-trace

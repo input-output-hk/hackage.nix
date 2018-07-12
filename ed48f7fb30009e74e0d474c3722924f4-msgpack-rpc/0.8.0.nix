@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        msgpack-rpc = {
+        "msgpack-rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          msgpack-rpc-test = {
+          "msgpack-rpc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

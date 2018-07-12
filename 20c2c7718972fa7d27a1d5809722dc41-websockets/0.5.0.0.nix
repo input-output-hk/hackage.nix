@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        websockets = {
+        "websockets" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.attoparsec-enumerator

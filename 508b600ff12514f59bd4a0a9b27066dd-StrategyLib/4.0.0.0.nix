@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        StrategyLib = {
+        "StrategyLib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

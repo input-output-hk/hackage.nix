@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        primes = {
+        "primes" = {
           depends  = [ hsPkgs.base ];
         };
       };

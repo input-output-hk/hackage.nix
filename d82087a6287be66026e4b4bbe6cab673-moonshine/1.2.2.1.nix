@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        moonshine = {
+        "moonshine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.canteven-config

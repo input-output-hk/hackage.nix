@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa-linear-algebra = {
+        "repa-linear-algebra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix

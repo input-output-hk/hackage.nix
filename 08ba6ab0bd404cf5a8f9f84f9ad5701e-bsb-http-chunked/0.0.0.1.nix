@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bsb-http-chunked = {
+        "bsb-http-chunked" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

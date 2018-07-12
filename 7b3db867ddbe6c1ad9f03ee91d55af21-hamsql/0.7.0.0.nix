@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hamsql = {
+        "hamsql" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          hamsql = {
+          "hamsql" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hamsql
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          hamsql-tests = {
+          "hamsql-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hamsql

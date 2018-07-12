@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-convert = {
+        "hakyll-convert" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          hakyll-convert = {
+          "hakyll-convert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        machinecell = {
+        "machinecell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

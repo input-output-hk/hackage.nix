@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-test-framework = {
+        "hspec-test-framework" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec

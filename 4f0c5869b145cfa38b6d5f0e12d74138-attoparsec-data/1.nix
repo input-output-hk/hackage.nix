@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec-data = {
+        "attoparsec-data" = {
           depends  = [
             hsPkgs.time
             hsPkgs.scientific

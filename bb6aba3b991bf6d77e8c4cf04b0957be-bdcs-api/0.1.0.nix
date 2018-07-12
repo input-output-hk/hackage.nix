@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bdcs-api = {
+        "bdcs-api" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.async
@@ -72,7 +72,7 @@ let
           ];
         };
         exes = {
-          bdcs-api-server = {
+          "bdcs-api-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bdcs-api
@@ -81,7 +81,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

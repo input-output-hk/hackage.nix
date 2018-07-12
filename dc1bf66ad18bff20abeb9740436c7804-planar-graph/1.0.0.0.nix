@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        planar-graph = {
+        "planar-graph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

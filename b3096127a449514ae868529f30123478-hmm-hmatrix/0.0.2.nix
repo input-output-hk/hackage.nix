@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmm-hmatrix = {
+        "hmm-hmatrix" = {
           depends  = [
             hsPkgs.hmatrix
             hsPkgs.explicit-exception

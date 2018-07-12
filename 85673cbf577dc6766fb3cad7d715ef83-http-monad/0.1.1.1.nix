@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-monad = {
+        "http-monad" = {
           depends  = [
             hsPkgs.HTTP
             hsPkgs.network
@@ -42,7 +42,7 @@ let
             ]);
         };
         exes = {
-          infinite-httpd = {
+          "infinite-httpd" = {
             depends  = pkgs.lib.optional _flags.buildtestserver hsPkgs.httpd-shed;
           };
         };

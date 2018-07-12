@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          unusablepkg = {
+          "unusablepkg" = {
             depends  = [ hsPkgs.base ];
           };
         };

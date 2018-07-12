@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        usb-id-database = {
+        "usb-id-database" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bimap
@@ -34,6 +34,6 @@ let
             hsPkgs.utf8-string
           ];
         };
-        exes = { example = {}; };
+        exes = { "example" = {}; };
       };
     }

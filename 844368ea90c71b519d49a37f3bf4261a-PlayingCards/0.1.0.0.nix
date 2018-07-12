@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PlayingCards = {
+        "PlayingCards" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit

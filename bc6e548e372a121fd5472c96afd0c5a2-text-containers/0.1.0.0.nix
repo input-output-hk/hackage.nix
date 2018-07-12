@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-containers = {
+        "text-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          text-containers = {
+          "text-containers" = {
             depends  = [
               hsPkgs.text-containers
               hsPkgs.base

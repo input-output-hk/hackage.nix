@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        path = {
+        "path" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -45,7 +45,7 @@ let
               hsPkgs.path
             ];
           };
-          validity-test = {
+          "validity-test" = {
             depends  = pkgs.lib.optionals _flags.validity [
               hsPkgs.QuickCheck
               hsPkgs.aeson

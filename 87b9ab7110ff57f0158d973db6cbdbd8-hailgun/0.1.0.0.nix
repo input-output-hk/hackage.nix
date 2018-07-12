@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hailgun = {
+        "hailgun" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          hailgun-send = {
+          "hailgun-send" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hailgun

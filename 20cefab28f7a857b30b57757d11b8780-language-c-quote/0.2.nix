@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        language-c-quote = {
+        "language-c-quote" = {
           depends  = ([
             hsPkgs.array
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "6.10" && compiler.version.lt "6.12")) hsPkgs.haskell-src-meta) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "6.12" && compiler.version.lt "6.13")) hsPkgs.haskell-src-meta;
         };
         exes = {
-          unit-test = {
+          "unit-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

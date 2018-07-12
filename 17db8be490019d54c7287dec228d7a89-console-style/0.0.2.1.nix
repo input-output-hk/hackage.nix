@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        console-style = {
+        "console-style" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        changelogged = {
+        "changelogged" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-terminal
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          changelogged = {
+          "changelogged" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.Glob
               hsPkgs.QuickCheck

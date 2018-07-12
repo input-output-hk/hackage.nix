@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monky = {
+        "monky" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.directory
@@ -50,10 +50,10 @@ let
           ]) ++ pkgs.lib.optionals _flags.ibus [
             hsPkgs.ibus-hs
             hsPkgs.dbus
-          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8" && _flags.pulse) hsPkgs.pulseaudio;
+          ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") (pkgs.lib.optional _flags.pulse hsPkgs.pulseaudio);
         };
         exes = {
-          monky = {
+          "monky" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

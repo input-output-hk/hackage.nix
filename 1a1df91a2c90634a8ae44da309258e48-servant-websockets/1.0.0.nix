@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-websockets = {
+        "servant-websockets" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.async
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          websocket-echo = {
+          "websocket-echo" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -49,7 +49,7 @@ let
               hsPkgs.warp
             ];
           };
-          websocket-stream = {
+          "websocket-stream" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

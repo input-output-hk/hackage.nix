@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        comonad-random = {
+        "comonad-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.category-extras

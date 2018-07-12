@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        sqlcipher = {
+        "sqlcipher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty
@@ -39,7 +39,7 @@ let
             ];
         };
         tests = {
-          sqlite-tests = {
+          "sqlite-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sqlcipher

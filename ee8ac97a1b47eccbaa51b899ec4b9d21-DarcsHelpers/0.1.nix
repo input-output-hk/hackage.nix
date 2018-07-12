@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DarcsHelpers = {
+        "DarcsHelpers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

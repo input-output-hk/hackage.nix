@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        electrum-mnemonic = {
+        "electrum-mnemonic" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

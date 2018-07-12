@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FModExRaw = {
+        "FModExRaw" = {
           depends  = [ hsPkgs.base ];
           libs = if system.isX86_64
             then [ pkgs.fmodex64 ]

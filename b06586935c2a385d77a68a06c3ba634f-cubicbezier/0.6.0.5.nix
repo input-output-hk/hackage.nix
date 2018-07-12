@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cubicbezier = {
+        "cubicbezier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

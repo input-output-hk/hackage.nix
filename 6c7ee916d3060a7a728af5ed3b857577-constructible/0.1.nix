@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        constructible = {
+        "constructible" = {
           depends  = [
             hsPkgs.arithmoi
             hsPkgs.base

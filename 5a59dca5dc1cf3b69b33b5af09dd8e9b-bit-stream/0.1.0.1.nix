@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bit-stream = {
+        "bit-stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers;
         };
         exes = {
-          find-foo = {
+          "find-foo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bit-stream
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bit-stream
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bit-stream

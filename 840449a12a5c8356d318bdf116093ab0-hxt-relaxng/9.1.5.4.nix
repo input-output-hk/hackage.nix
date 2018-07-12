@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-relaxng = {
+        "hxt-relaxng" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

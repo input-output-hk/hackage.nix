@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        STMonadTrans = {
+        "STMonadTrans" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base
@@ -33,7 +33,7 @@ let
             else [ hsPkgs.base ];
         };
         tests = {
-          foo = {
+          "foo" = {
             depends  = [
               hsPkgs.STMonadTrans
               hsPkgs.base

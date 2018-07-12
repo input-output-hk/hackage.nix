@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          reheat = {
+          "reheat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          test-reheat = {
+          "test-reheat" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

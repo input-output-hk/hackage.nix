@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rosmsg = {
+        "rosmsg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

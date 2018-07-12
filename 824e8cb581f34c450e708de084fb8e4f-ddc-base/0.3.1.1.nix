@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddc-base = {
+        "ddc-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

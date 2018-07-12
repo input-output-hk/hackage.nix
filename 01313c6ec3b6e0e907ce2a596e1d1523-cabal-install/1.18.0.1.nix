@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          cabal = {
+          "cabal" = {
             depends  = ([
               hsPkgs.array
               hsPkgs.base
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.array

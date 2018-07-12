@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wl-pprint-annotated = {
+        "wl-pprint-annotated" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          wl-pprint = {
+          "wl-pprint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

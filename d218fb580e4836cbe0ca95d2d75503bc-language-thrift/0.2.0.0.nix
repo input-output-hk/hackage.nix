@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-thrift = {
+        "language-thrift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bind-marshal = {
+        "bind-marshal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

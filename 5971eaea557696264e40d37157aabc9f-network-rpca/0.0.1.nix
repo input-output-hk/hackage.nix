@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        network-rpca = {
+        "network-rpca" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsprocess = {
+        "hsprocess" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hsp = {
+          "hsp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          reference = {
+          "reference" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

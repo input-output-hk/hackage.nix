@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cuboid = {
+          "cuboid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Yampa

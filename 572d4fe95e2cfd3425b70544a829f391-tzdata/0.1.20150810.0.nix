@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tzdata = {
+        "tzdata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-db = {
+          "test-db" = {
             depends  = [
               hsPkgs.tzdata
               hsPkgs.base
@@ -42,7 +42,7 @@ let
               hsPkgs.unix
             ];
           };
-          dummy-genZones = {
+          "dummy-genZones" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

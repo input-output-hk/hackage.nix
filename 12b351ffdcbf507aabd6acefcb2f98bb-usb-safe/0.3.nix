@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        usb-safe = {
+        "usb-safe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.usb

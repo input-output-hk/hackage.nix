@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shelly-extra = {
+        "shelly-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shelly
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

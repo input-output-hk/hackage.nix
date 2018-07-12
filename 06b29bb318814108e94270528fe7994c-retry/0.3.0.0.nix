@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        retry = {
+        "retry" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-control

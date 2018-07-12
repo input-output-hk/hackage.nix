@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        neat-interpolation = {
+        "neat-interpolation" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.template-haskell
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          api-tests = {
+          "api-tests" = {
             depends  = [
               hsPkgs.neat-interpolation
               hsPkgs.HTF

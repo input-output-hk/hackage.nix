@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compose-trans = {
+        "compose-trans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        noise = {
+        "noise" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          noise = {
+          "noise" = {
             depends  = [
               hsPkgs.base
               hsPkgs.noise
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.HTF
               hsPkgs.HUnit

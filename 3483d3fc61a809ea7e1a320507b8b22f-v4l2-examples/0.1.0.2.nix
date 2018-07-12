@@ -21,13 +21,13 @@ let
       };
       components = {
         exes = {
-          v4l2-capture = {
+          "v4l2-capture" = {
             depends  = [
               hsPkgs.base
               hsPkgs.v4l2
             ];
           };
-          v4l2-histogram = {
+          "v4l2-histogram" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedis = {
+        "hedis" = {
           depends  = [
             hsPkgs.BoundedChan
             hsPkgs.attoparsec
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          hedis-test = {
+          "hedis-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          hedis-benchmark = {
+          "hedis-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

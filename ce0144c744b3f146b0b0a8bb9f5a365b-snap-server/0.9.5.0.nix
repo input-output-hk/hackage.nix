@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-server = {
+        "snap-server" = {
           depends  = ([
             hsPkgs.attoparsec
             hsPkgs.attoparsec-enumerator

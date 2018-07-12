@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-prelude = {
+        "papa-prelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.papa-prelude-core
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        charade = {
+        "charade" = {
           depends  = [
             hsPkgs.base
             hsPkgs.heist
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          charade = {
+          "charade" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

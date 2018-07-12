@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          sc-keyboard = {
+          "sc-keyboard" = {
             depends  = [
               hsPkgs.supercollider-ht
               hsPkgs.hsc3
@@ -43,7 +43,7 @@ let
               ]
               else [ hsPkgs.base ]);
           };
-          sc-wind = {
+          "sc-wind" = {
             depends  = [
               hsPkgs.hsc3
               hsPkgs.hosc

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrent-buffer = {
+        "concurrent-buffer" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.bug
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.concurrent-buffer
               hsPkgs.tasty
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.concurrent-buffer
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        error-location = {
+        "error-location" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

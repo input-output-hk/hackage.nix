@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kafka-device-vrpn = {
+        "kafka-device-vrpn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.kafka-device
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          kafka-device-vrpn = {
+          "kafka-device-vrpn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.kafka-device

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixed-vector-hetero = {
+        "fixed-vector-hetero" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

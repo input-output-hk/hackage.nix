@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        foreign-storable-asymmetric = {
+        "foreign-storable-asymmetric" = {
           depends  = [ hsPkgs.base ];
           build-tools = [
             hsPkgs.buildPackages.hsc2hs

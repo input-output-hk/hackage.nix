@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Irc = {
+        "Irc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

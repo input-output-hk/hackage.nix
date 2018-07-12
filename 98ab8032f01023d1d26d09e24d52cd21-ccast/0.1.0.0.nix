@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ccast = {
+        "ccast" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

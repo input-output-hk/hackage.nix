@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          snus = {
+          "snus" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base
@@ -45,7 +45,7 @@ let
               hsPkgs.buildPackages.cpphs
             ];
           };
-          mumrik = {
+          "mumrik" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

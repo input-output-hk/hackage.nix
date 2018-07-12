@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serversession-frontend-yesod = {
+        "serversession-frontend-yesod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

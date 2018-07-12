@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        progress = {
+        "progress" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

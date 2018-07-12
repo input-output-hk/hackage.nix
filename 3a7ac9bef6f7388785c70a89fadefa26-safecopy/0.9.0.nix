@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safecopy = {
+        "safecopy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          instances = {
+          "instances" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cereal

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        lifted-base = {
+        "lifted-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-lifted-base = {
+          "test-lifted-base" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

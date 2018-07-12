@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          urxml = {
+          "urxml" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

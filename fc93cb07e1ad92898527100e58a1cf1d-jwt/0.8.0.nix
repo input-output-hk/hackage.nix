@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jwt = {
+        "jwt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cryptonite
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -69,7 +69,7 @@ let
               hsPkgs.HsOpenSSL
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jwt

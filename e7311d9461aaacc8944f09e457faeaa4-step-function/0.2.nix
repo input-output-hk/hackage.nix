@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        step-function = {
+        "step-function" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat-batteries
             hsPkgs.deepseq
             hsPkgs.containers
             hsPkgs.QuickCheck
-          ] ++ (if !(compiler.isGhc && compiler.version.ge "8.0") && (compiler.isGhc && compiler.version.ge "7.10")
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) (if compiler.isGhc && compiler.version.ge "7.10"
             then [ hsPkgs.transformers ]
             else [
               hsPkgs.transformers
@@ -35,7 +35,7 @@ let
             ]);
         };
         tests = {
-          merge = {
+          "merge" = {
             depends  = [
               hsPkgs.base
               hsPkgs.step-function

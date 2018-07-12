@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        substring-parser = {
+        "substring-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.NoTrace
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          add-env-config-test = {
+          "add-env-config-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.NoTrace

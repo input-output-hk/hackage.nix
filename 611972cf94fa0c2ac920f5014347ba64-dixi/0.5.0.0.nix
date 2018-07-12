@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dixi = {
+          "dixi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.composition-tree

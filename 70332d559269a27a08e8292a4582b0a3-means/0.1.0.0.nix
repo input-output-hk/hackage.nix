@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        means = {
+        "means" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

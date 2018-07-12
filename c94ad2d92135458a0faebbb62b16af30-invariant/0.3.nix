@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        invariant = {
+        "invariant" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

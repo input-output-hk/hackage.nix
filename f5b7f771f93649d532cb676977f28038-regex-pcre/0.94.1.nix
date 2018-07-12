@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        regex-pcre = {
+        "regex-pcre" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rocksdb-haskell = {
+        "rocksdb-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

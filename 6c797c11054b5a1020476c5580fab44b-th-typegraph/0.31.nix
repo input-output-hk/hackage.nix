@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-typegraph = {
+        "th-typegraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          th-typegraph-tests = {
+          "th-typegraph-tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

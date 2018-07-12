@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        constructive-algebra = {
+        "constructive-algebra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

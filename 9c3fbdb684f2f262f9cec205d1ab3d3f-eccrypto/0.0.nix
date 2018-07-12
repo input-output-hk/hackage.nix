@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eccrypto = {
+        "eccrypto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

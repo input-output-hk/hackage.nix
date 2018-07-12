@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        cl3 = {
+        "cl3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
           ];
         };
         tests = {
-          test-cl3 = {
+          "test-cl3" = {
             depends  = [
               hsPkgs.cl3
               hsPkgs.base
@@ -36,7 +36,7 @@ let
           };
         };
         benchmarks = {
-          bench-cl3-nbody = {
+          "bench-cl3-nbody" = {
             depends  = [
               hsPkgs.cl3
               hsPkgs.base

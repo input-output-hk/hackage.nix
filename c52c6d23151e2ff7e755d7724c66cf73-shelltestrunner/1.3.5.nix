@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          shelltest = {
+          "shelltest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Diff

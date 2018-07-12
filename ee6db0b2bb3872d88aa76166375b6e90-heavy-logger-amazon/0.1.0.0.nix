@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heavy-logger-amazon = {
+        "heavy-logger-amazon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

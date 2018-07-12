@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring = {
+        "bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-builder = {
+          "test-builder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          bench-builder-all = {
+          "bench-builder-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -52,7 +52,7 @@ let
               hsPkgs.criterion
             ];
           };
-          bench-builder-boundscheck = {
+          "bench-builder-boundscheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

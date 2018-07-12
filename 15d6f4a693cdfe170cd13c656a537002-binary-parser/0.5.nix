@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-parser = {
+        "binary-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.success

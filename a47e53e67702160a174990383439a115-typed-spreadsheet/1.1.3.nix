@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typed-spreadsheet = {
+        "typed-spreadsheet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -37,7 +37,7 @@ let
           frameworks = pkgs.lib.optional system.isOsx pkgs.Cocoa;
         };
         exes = {
-          typed-spreadsheet-example-text = {
+          "typed-spreadsheet-example-text" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -45,7 +45,7 @@ let
             ];
             frameworks = pkgs.lib.optional system.isOsx pkgs.Cocoa;
           };
-          typed-spreadsheet-example-cell = {
+          "typed-spreadsheet-example-cell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -53,7 +53,7 @@ let
             ];
             frameworks = pkgs.lib.optional system.isOsx pkgs.Cocoa;
           };
-          typed-spreadsheet-example-graphics = {
+          "typed-spreadsheet-example-graphics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.diagrams-lib

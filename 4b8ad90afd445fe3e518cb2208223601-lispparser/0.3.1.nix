@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lispparser = {
+        "lispparser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haltavista = {
+          "haltavista" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hint

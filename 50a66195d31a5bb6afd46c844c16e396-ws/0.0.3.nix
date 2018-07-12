@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ws = {
+        "ws" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          ws = {
+          "ws" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ws

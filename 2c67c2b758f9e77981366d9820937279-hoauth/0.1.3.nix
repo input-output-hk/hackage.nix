@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoauth = {
+        "hoauth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          test_hoauth = {
+          "test_hoauth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gitson = {
+        "gitson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -35,21 +35,21 @@ let
           ];
         };
         tests = {
-          documentation = {
+          "documentation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.regex-compat
             ];
           };
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob
               hsPkgs.doctest
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gitson
@@ -64,7 +64,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

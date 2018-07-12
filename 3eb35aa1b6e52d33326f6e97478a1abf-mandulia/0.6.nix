@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          mandulia = {
+          "mandulia" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

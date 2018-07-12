@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-elasticsearch = {
+        "amazonka-elasticsearch" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-elasticsearch-test = {
+          "amazonka-elasticsearch-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

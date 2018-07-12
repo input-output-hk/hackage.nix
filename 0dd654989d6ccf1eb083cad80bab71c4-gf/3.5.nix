@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gf = {
+        "gf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          gf = {
+          "gf" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.array

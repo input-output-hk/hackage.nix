@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eths-rlp = {
+        "eths-rlp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,13 +31,13 @@ let
           ] ++ pkgs.lib.optional _flags.documentation hsPkgs.hscolour;
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eths-rlp

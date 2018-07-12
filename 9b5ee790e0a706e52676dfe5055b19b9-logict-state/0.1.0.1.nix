@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logict-state = {
+        "logict-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

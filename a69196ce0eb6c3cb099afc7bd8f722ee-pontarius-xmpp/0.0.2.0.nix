@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pontarius-xmpp = {
+        "pontarius-xmpp" = {
           depends  = [
             hsPkgs.hlogger
             hsPkgs.base
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          pontarius-xmpp-test = {
+          "pontarius-xmpp-test" = {
             depends  = [
               hsPkgs.hlogger
               hsPkgs.base

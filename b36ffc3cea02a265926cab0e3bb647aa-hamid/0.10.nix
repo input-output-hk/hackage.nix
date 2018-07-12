@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hamid = {
+        "hamid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HCodecs

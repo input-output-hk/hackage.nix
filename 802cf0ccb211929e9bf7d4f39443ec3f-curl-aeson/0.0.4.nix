@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        curl-aeson = {
+        "curl-aeson" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

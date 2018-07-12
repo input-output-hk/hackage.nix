@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          keysafe = {
+          "keysafe" = {
             depends  = [
               hsPkgs.secret-sharing
               hsPkgs.argon2

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        colour-accelerate = {
+        "colour-accelerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate

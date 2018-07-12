@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ekg-core = {
+        "ekg-core" = {
           depends  = [
             hsPkgs.ghc-prim
             hsPkgs.base
@@ -30,13 +30,13 @@ let
           ];
         };
         benchmarks = {
-          counter = {
+          "counter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ekg-core
             ];
           };
-          distribution = {
+          "distribution" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ekg-core

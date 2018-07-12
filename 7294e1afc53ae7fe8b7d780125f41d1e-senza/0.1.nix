@@ -19,5 +19,5 @@ let
         description = "None";
         buildType = "Simple";
       };
-      components = { senza = {}; };
+      components = { "senza" = {}; };
     }

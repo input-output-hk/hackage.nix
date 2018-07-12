@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventsourced = {
+        "eventsourced" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          eventsourced = {
+          "eventsourced" = {
             depends  = [
               hsPkgs.base
               hsPkgs.warp
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          eventsourced-test = {
+          "eventsourced-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

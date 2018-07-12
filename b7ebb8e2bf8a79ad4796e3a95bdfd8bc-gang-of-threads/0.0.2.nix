@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gang-of-threads = {
+        "gang-of-threads" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

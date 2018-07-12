@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Thrift = {
+        "Thrift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

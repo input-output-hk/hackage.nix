@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        normalization-insensitive = {
+        "normalization-insensitive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-normalization-insensitive = {
+          "test-normalization-insensitive" = {
             depends  = [
               hsPkgs.normalization-insensitive
               hsPkgs.base
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          bench-normalization-insensitive = {
+          "bench-normalization-insensitive" = {
             depends  = [
               hsPkgs.normalization-insensitive
               hsPkgs.base

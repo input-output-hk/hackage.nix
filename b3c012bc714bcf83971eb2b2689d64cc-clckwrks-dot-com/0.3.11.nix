@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          clckwrks-dot-com-server = {
+          "clckwrks-dot-com-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clckwrks
@@ -39,7 +39,7 @@ let
               hsPkgs.web-plugins
             ];
           };
-          clckwrks-dot-com-backups = {
+          "clckwrks-dot-com-backups" = {
             depends  = pkgs.lib.optionals _flags.backups [
               hsPkgs.archive
               hsPkgs.base

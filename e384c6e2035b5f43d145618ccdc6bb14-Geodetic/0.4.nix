@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Geodetic = {
+        "Geodetic" = {
           depends  = [ hsPkgs.base ];
         };
       };

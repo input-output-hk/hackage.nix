@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        satchmo-funsat = {
+        "satchmo-funsat" = {
           depends  = [
             hsPkgs.satchmo
             hsPkgs.funsat

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rocksdb-haskell = {
+        "rocksdb-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -33,7 +33,7 @@ let
           libs = [ pkgs.rocksdb ];
         };
         tests = {
-          rocksdb-tests = {
+          "rocksdb-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rocksdb-haskell

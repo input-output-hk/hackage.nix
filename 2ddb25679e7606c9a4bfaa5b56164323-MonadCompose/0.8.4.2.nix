@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MonadCompose = {
+        "MonadCompose" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

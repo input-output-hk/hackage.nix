@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        control-monad-failure-mtl = {
+        "control-monad-failure-mtl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prometheus-metrics-ghc = {
+        "prometheus-metrics-ghc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.prometheus-client
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

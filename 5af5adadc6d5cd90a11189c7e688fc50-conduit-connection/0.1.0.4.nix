@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-connection = {
+        "conduit-connection" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        definitive-reactive = {
+        "definitive-reactive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.definitive-base

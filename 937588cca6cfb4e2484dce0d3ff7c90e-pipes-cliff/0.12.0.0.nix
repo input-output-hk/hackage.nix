@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-cliff = {
+        "pipes-cliff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          numsToLess = {
+          "numsToLess" = {
             depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.base
               hsPkgs.pipes
@@ -47,7 +47,7 @@ let
               hsPkgs.unix
             ];
           };
-          alphaNumbers = {
+          "alphaNumbers" = {
             depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.base
               hsPkgs.pipes
@@ -59,7 +59,7 @@ let
               hsPkgs.unix
             ];
           };
-          limitedAlphaNumbers = {
+          "limitedAlphaNumbers" = {
             depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.base
               hsPkgs.pipes
@@ -71,7 +71,7 @@ let
               hsPkgs.unix
             ];
           };
-          alphaNumbersByteString = {
+          "alphaNumbersByteString" = {
             depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.base
               hsPkgs.pipes
@@ -83,7 +83,7 @@ let
               hsPkgs.unix
             ];
           };
-          standardOutputAndError = {
+          "standardOutputAndError" = {
             depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.base
               hsPkgs.pipes

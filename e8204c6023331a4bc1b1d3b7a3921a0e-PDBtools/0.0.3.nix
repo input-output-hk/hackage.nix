@@ -22,13 +22,13 @@ let
         buildType = "Simple";
       };
       components = {
-        PDBtools = {
+        "PDBtools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.containers
           ];
         };
-        exes = { Test = {}; };
+        exes = { "Test" = {}; };
       };
     }

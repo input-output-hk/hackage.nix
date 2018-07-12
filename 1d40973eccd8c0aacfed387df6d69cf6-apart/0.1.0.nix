@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apart = {
+        "apart" = {
           depends  = [
             hsPkgs.base
             hsPkgs.free
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.free
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.free

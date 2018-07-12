@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          csv2html = {
+          "csv2html" = {
             depends  = [
               hsPkgs.base
               hsPkgs.html
@@ -29,38 +29,38 @@ let
               hsPkgs.csv
             ];
           };
-          csv2json = {
+          "csv2json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.txt-sushi
               hsPkgs.json
             ];
           };
-          csv-add-id = {
+          "csv-add-id" = {
             depends  = [
               hsPkgs.base
               hsPkgs.txt-sushi
             ];
           };
-          csv-reformat = {
+          "csv-reformat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.txt-sushi
             ];
           };
-          csv-tr = {
+          "csv-tr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.txt-sushi
             ];
           };
-          csv-transpose = {
+          "csv-transpose" = {
             depends  = [
               hsPkgs.base
               hsPkgs.txt-sushi
             ];
           };
-          csv-pad = {
+          "csv-pad" = {
             depends  = [
               hsPkgs.base
               hsPkgs.txt-sushi

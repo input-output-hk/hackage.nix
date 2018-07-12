@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-static-angular = {
+        "yesod-static-angular" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          example-production = {
+          "example-production" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default
@@ -53,7 +53,7 @@ let
               hsPkgs.yesod-static-angular
             ];
           };
-          example-dev = {
+          "example-dev" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default
@@ -65,7 +65,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

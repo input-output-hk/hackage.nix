@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        syntax-trees-fork-bairyn = {
+        "syntax-trees-fork-bairyn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

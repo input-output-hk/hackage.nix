@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cloudi = {
+        "cloudi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

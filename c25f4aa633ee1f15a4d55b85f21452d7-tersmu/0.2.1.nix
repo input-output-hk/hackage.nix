@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          tersmu = {
+          "tersmu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -34,7 +34,7 @@ let
               hsPkgs.syb
             ];
           };
-          tersmuBot = {
+          "tersmuBot" = {
             depends  = pkgs.lib.optionals _flags.ircbot [
               hsPkgs.base
               hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        udbus-model = {
+        "udbus-model" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          dbus-model-parse = {
+          "dbus-model-parse" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.groom

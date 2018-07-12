@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yajl-enumerator = {
+        "yajl-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

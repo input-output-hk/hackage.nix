@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        configurator = {
+        "configurator" = {
           depends  = [
             hsPkgs.attoparsec-text
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-blaze = {
+        "servant-blaze" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant

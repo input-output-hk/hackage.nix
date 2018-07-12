@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kafka-device-joystick = {
+        "kafka-device-joystick" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          kafka-device-joystick = {
+          "kafka-device-joystick" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

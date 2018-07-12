@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vampire = {
+        "vampire" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          vampire = {
+          "vampire" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts

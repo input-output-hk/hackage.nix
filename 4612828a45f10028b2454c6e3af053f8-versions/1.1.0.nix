@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        versions = {
+        "versions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          versions-test = {
+          "versions-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.either

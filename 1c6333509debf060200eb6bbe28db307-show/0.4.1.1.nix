@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        show = {
+        "show" = {
           depends  = [
             hsPkgs.random
             hsPkgs.QuickCheck

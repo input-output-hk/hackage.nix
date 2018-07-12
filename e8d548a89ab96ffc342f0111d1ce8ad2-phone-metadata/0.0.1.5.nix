@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        phone-metadata = {
+        "phone-metadata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-pcre
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.phone-metadata
               hsPkgs.base

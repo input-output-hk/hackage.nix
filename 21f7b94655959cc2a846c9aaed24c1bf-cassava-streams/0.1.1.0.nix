@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassava-streams = {
+        "cassava-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          tutorial = {
+          "tutorial" = {
             depends  = pkgs.lib.optionals (!(!_flags.tutorial)) [
               hsPkgs.base
               hsPkgs.cassava-streams
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

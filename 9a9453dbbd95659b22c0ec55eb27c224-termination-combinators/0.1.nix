@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        termination-combinators = {
+        "termination-combinators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

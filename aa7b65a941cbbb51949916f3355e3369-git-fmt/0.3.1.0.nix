@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        git-fmt = {
+        "git-fmt" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          git-fmt = {
+          "git-fmt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions

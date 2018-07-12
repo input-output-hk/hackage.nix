@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-dirstream = {
+        "hspec-dirstream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          hspec-dirstream-test = {
+          "hspec-dirstream-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec-dirstream

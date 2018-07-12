@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-midyim = {
+        "reactive-midyim" = {
           depends  = [
             hsPkgs.reactive-banana-bunch
             hsPkgs.midi

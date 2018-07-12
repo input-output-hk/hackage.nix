@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        querystring-pickle = {
+        "querystring-pickle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          querystring-pickle-tests = {
+          "querystring-pickle-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

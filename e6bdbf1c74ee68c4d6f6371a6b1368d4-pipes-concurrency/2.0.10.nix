@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-concurrency = {
+        "pipes-concurrency" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes

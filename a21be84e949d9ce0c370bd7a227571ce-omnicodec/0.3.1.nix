@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          odec = {
+          "odec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dataenc
@@ -30,7 +30,7 @@ let
               hsPkgs.haskell98
             ];
           };
-          oenc = {
+          "oenc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dataenc

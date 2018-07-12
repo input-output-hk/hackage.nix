@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Client = {
+          "Client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.messagepack
@@ -35,7 +35,7 @@ let
               hsPkgs.directory
             ];
           };
-          Server = {
+          "Server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.messagepack

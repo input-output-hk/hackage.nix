@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-igraph = {
+        "haskell-igraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-igraph

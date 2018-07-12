@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-structured-formatter = {
+        "hspec-structured-formatter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec

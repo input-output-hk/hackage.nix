@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gnomevfs = {
+        "gnomevfs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

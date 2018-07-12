@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        atomic-primops = {
+        "atomic-primops" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

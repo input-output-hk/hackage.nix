@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lfst = {
+        "lfst" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

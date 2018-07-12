@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        async-refresh = {
+        "async-refresh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          async-refresh-test = {
+          "async-refresh-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async-refresh

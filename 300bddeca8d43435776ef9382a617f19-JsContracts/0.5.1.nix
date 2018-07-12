@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        JsContracts = {
+        "JsContracts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          jscc = {
+          "jscc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

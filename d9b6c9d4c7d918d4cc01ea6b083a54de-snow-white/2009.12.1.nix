@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snow-white = {
+        "snow-white" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mps

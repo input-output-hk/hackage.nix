@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        utf8-env = {
+        "utf8-env" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

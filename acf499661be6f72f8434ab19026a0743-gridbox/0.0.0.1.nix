@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        gridbox = {
+        "gridbox" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gridbox

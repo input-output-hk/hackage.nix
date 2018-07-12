@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        profunctor-extras = {
+        "profunctor-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

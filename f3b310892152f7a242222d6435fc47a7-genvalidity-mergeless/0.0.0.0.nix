@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-mergeless = {
+        "genvalidity-mergeless" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          genvalidity-mergeless-test = {
+          "genvalidity-mergeless-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

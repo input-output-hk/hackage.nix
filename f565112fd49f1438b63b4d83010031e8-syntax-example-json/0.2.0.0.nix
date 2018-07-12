@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          syntax-example-json = {
+          "syntax-example-json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.semi-iso

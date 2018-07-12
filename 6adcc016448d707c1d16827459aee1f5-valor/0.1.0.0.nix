@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        valor = {
+        "valor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
           ];
         };
         tests = {
-          valor-test = {
+          "valor-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

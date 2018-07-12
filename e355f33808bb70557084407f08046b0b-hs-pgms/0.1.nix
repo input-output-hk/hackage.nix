@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-pgms = {};
+        "hs-pgms" = {};
         exes = {
-          mine = {
+          "mine" = {
             depends  = [
               hsPkgs.base
               hsPkgs.MonadPrompt

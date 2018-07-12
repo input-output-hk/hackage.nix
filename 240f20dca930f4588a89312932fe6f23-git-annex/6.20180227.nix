@@ -36,7 +36,7 @@ let
       };
       components = {
         exes = {
-          git-annex = {
+          "git-annex" = {
             depends  = ((((((((((((([
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -120,14 +120,14 @@ let
             ]) ++ pkgs.lib.optional _flags.webdav hsPkgs.DAV) ++ pkgs.lib.optionals (_flags.assistant && !system.isSolaris && !system.isHurd) [
               hsPkgs.dns
               hsPkgs.mountpoints
-            ]) ++ (if _flags.assistant && (system.isLinux || _flags.android)
+            ]) ++ pkgs.lib.optionals _flags.assistant (if system.isLinux || _flags.android
               then [ hsPkgs.hinotify ]
               else if system.isOsx
                 then [ hsPkgs.hfsevents ]
-                else pkgs.lib.optional system.isWindows hsPkgs.Win32-notify)) ++ pkgs.lib.optionals (_flags.dbus && system.isLinux) [
+                else pkgs.lib.optional system.isWindows hsPkgs.Win32-notify)) ++ pkgs.lib.optionals _flags.dbus (pkgs.lib.optionals system.isLinux [
               hsPkgs.dbus
               hsPkgs.fdo-notify
-            ]) ++ (if _flags.android
+            ])) ++ (if _flags.android
               then [ hsPkgs.data-endian ]
               else [
                 hsPkgs.disk-free-space
@@ -148,7 +148,7 @@ let
             ]) ++ pkgs.lib.optionals _flags.pairing [
               hsPkgs.network-multicast
               hsPkgs.network-info
-            ]) ++ pkgs.lib.optional _flags.torrentparser hsPkgs.torrent) ++ pkgs.lib.optional (_flags.magicmime && !system.isWindows) hsPkgs.magic) ++ pkgs.lib.optional _flags.concurrentoutput hsPkgs.concurrent-output) ++ pkgs.lib.optionals _flags.benchmark [
+            ]) ++ pkgs.lib.optional _flags.torrentparser hsPkgs.torrent) ++ pkgs.lib.optionals _flags.magicmime (pkgs.lib.optional (!system.isWindows) hsPkgs.magic)) ++ pkgs.lib.optional _flags.concurrentoutput hsPkgs.concurrent-output) ++ pkgs.lib.optionals _flags.benchmark [
               hsPkgs.criterion
               hsPkgs.deepseq
             ];

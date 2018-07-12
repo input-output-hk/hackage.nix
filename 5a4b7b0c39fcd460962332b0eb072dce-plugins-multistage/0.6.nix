@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plugins-multistage = {
+        "plugins-multistage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          regression = {
+          "regression" = {
             depends  = [
               hsPkgs.plugins-multistage
               hsPkgs.base

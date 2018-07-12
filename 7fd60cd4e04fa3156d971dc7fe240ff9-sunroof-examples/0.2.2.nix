@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sunroof-browser-info = {
+          "sunroof-browser-info" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sunroof-compiler
@@ -31,7 +31,7 @@ let
               hsPkgs.data-default
             ];
           };
-          sunroof-canvas = {
+          "sunroof-canvas" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sunroof-compiler
@@ -40,7 +40,7 @@ let
               hsPkgs.data-default
             ];
           };
-          sunroof-clock = {
+          "sunroof-clock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sunroof-compiler
@@ -49,7 +49,7 @@ let
               hsPkgs.filepath
             ];
           };
-          sunroof-fib = {
+          "sunroof-fib" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sunroof-compiler
@@ -59,7 +59,7 @@ let
               hsPkgs.data-default
             ];
           };
-          sunroof-unit = {
+          "sunroof-unit" = {
             depends  = [
               hsPkgs.sunroof-compiler
               hsPkgs.sunroof-server
@@ -74,7 +74,7 @@ let
               hsPkgs.random
             ];
           };
-          sunroof-inplace-shaker = {
+          "sunroof-inplace-shaker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

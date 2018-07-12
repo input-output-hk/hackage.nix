@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-indexed-cursor = {
+        "xml-indexed-cursor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,14 +31,14 @@ let
           ];
         };
         tests = {
-          xml-indexed-cursor-doctest = {
+          "xml-indexed-cursor-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.Glob
             ];
           };
-          xml-indexed-cursor-test = {
+          "xml-indexed-cursor-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

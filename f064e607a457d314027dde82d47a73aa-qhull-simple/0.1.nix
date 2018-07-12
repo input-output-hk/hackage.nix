@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        qhull-simple = {
+        "qhull-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

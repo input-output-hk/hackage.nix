@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-dataflow = {
+        "gogol-dataflow" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

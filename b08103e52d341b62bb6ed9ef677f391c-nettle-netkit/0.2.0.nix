@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nettle-netkit = {
+        "nettle-netkit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

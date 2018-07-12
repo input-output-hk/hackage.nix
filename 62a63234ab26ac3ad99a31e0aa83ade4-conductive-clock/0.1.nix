@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conductive-clock = {
+        "conductive-clock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conductive-base

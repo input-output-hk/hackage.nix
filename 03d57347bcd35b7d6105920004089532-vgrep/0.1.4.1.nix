@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vgrep = {
+        "vgrep" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          vgrep = {
+          "vgrep" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -62,7 +62,7 @@ let
           };
         };
         tests = {
-          vgrep-test = {
+          "vgrep-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -74,7 +74,7 @@ let
               hsPkgs.vgrep
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ngx-export = {
+        "ngx-export" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

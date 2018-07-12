@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuagd = {
+        "uuagd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          uuagd = {
+          "uuagd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

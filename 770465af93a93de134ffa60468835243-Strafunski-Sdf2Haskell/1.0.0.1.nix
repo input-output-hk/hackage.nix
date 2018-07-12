@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Sdf2Haskell = {
+          "Sdf2Haskell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ATermLib

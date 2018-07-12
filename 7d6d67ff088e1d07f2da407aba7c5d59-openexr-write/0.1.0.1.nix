@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openexr-write = {
+        "openexr-write" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

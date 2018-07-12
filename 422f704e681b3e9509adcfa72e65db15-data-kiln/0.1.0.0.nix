@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-kiln = {
+        "data-kiln" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

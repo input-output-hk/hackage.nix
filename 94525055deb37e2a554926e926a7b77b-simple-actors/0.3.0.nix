@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-actors = {
+        "simple-actors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chan-split

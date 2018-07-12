@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gravatar = {
+        "gravatar" = {
           depends  = [
             hsPkgs.nano-md5
           ] ++ (if _flags.small_base

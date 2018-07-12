@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcid = {
+        "ghcid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          ghcid = {
+          "ghcid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          ghcid_test = {
+          "ghcid_test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

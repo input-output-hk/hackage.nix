@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        units-defs = {
+        "units-defs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.units

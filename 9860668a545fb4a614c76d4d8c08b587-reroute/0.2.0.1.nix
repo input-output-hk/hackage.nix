@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reroute = {
+        "reroute" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          reroute-test = {
+          "reroute-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reroute
@@ -55,7 +55,7 @@ let
           };
         };
         benchmarks = {
-          reroute-benchmarks = {
+          "reroute-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Takusen = {
+        "Takusen" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.mtl
@@ -34,21 +34,21 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.8") hsPkgs.old-time) ++ [
             hsPkgs.base
           ];
-          libs = (((if _flags.odbc && system.isWindows
+          libs = ((pkgs.lib.optionals _flags.odbc (if system.isWindows
             then [ pkgs.odbc32 ]
             else if system.isOsx
               then [ pkgs.iodbc ]
               else [
                 pkgs.odbc
-              ]) ++ (if _flags.oracle && system.isWindows
+              ]) ++ pkgs.lib.optionals _flags.oracle (if system.isWindows
             then [ pkgs.oci ]
             else [
               pkgs.clntsh
             ])) ++ pkgs.lib.optional _flags.postgres pkgs.pq) ++ pkgs.lib.optional _flags.sqlite pkgs.sqlite3;
-          pkgconfig = pkgs.lib.optional (_flags.sqlite && !system.isWindows) pkgconfPkgs.sqlite3;
+          pkgconfig = pkgs.lib.optionals _flags.sqlite (pkgs.lib.optional (!system.isWindows) pkgconfPkgs.sqlite3);
         };
         exes = {
-          takusen_tests = {
+          "takusen_tests" = {
             depends  = (pkgs.lib.optionals (!(!_flags.buildtests)) [
               hsPkgs.Takusen
               hsPkgs.base
@@ -60,7 +60,7 @@ let
               hsPkgs.base
             ];
           };
-          miniunit_tests = {
+          "miniunit_tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

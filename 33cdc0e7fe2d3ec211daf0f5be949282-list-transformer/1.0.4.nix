@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        list-transformer = {
+        "list-transformer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

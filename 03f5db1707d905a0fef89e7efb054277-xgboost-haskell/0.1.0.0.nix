@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        xgboost-haskell = {
+        "xgboost-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foundation
           ];
         };
         exes = {
-          xgboost-app = {
+          "xgboost-app" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foundation
@@ -35,7 +35,7 @@ let
             ];
             libs = [ pkgs.xgboost ];
           };
-          xgb-agaricus = {
+          "xgb-agaricus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foundation

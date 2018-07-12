@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-riak = {
+        "snaplet-riak" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal2nix = {
+          "cabal2nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-posix
@@ -34,7 +34,7 @@ let
               hsPkgs.nixos-types
             ];
           };
-          hackage4nix = {
+          "hackage4nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-posix
@@ -47,7 +47,7 @@ let
               hsPkgs.nixos-types
             ];
           };
-          packagelist = {
+          "packagelist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-posix

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dot2graphml = {
+          "dot2graphml" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

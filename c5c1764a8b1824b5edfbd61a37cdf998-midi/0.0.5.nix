@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        midi = {
+        "midi" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

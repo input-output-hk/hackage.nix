@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Win32-notify = {
+        "Win32-notify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Win32
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          simple = {
+          "simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

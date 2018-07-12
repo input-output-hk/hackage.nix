@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          cnc = {
+          "cnc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

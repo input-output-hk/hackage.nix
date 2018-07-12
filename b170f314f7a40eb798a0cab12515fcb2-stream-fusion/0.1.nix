@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        stream-fusion = {
+        "stream-fusion" = {
           depends  = [ hsPkgs.base ];
         };
       };

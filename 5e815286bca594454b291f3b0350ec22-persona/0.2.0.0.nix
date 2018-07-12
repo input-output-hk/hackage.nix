@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persona = {
+        "persona" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

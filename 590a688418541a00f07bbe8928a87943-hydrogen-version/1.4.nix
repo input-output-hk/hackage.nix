@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hydrogen-version = {
+        "hydrogen-version" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;

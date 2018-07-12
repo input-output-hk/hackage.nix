@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linkedhashmap = {
+        "linkedhashmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          linkedhashmap-tests = {
+          "linkedhashmap-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

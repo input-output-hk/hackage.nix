@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-parser = {
+        "binary-parser" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.binary-parser
               hsPkgs.tasty

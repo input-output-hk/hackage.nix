@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        html-entities = {
+        "html-entities" = {
           depends  = [
             hsPkgs.unordered-containers
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.doctest
               hsPkgs.directory

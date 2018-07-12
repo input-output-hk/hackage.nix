@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        predictive = {
+        "predictive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

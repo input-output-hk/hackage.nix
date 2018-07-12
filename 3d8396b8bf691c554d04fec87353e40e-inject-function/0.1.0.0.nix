@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inject-function = {
+        "inject-function" = {
           depends  = [ hsPkgs.base ];
         };
       };

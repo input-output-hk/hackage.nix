@@ -23,42 +23,42 @@ let
       };
       components = {
         exes = {
-          fltkhs-fluid-radio = {
+          "fltkhs-fluid-radio" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-fluid-tabs = {
+          "fltkhs-fluid-tabs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-fluid-valuators = {
+          "fltkhs-fluid-valuators" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-fluid-inactive = {
+          "fltkhs-fluid-inactive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-fluid-fast-slow = {
+          "fltkhs-fluid-fast-slow" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-fluid-tree = {
+          "fltkhs-fluid-tree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

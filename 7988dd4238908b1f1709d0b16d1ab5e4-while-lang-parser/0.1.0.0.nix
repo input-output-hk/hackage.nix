@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        while-lang-parser = {
+        "while-lang-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

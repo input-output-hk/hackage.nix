@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cacophony = {
+        "cacophony" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          echo-server = {
+          "echo-server" = {
             depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.aeson
               hsPkgs.attoparsec
@@ -54,7 +54,7 @@ let
               hsPkgs.unix-time
             ];
           };
-          echo-client = {
+          "echo-client" = {
             depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -69,7 +69,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -81,7 +81,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.hlint)) [
               hsPkgs.base
               hsPkgs.hlint
@@ -89,7 +89,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

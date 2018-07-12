@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-unicode = {
+        "quickcheck-unicode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

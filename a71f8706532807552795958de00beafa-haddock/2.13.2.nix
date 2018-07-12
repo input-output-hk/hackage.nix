@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haddock = {
+        "haddock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          haddock = {
+          "haddock" = {
             depends  = [
               hsPkgs.base
             ] ++ (if _flags.in-ghc-tree
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          html-test = {
+          "html-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -68,7 +68,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

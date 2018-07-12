@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-handler-epoll = {
+        "hack-handler-epoll" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

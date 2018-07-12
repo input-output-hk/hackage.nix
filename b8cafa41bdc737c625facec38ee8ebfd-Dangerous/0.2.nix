@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Dangerous = {
+        "Dangerous" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

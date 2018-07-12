@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        onu-course = {
+        "onu-course" = {
           depends  = [
             hsPkgs.base
             hsPkgs.smallcheck

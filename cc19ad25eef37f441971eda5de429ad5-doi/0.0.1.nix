@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        doi = {
+        "doi" = {
           depends  = [
             hsPkgs.MissingH
             hsPkgs.async
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          doi = {
+          "doi" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.async

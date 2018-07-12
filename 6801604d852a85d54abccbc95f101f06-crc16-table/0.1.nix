@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crc16-table = {
+        "crc16-table" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proc = {
+        "proc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xformat

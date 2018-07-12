@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          kif-parser = {
+          "kif-parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

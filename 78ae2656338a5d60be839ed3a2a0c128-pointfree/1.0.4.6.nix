@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pointfree = {
+          "pointfree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        abcBridge = {
+        "abcBridge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          find-segfault = {
+          "find-segfault" = {
             depends  = pkgs.lib.optionals (!(!_flags.enable-extra-tests)) [
               hsPkgs.base
               hsPkgs.base-compat
@@ -57,7 +57,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          long-test = {
+          "long-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -66,7 +66,7 @@ let
           };
         };
         tests = {
-          abc-test = {
+          "abc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

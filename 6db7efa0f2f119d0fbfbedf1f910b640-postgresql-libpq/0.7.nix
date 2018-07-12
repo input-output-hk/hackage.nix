@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        postgresql-libpq = {
+        "postgresql-libpq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parsimony = {
+        "parsimony" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

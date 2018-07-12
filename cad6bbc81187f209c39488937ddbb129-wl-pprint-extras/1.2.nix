@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wl-pprint-extras = {
+        "wl-pprint-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

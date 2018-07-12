@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SoccerFunGL = {
+        "SoccerFunGL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -33,8 +33,8 @@ let
           ];
         };
         exes = {
-          sfPlayTape = {};
-          sfRunMatch = {};
+          "sfPlayTape" = {};
+          "sfRunMatch" = {};
         };
       };
     }

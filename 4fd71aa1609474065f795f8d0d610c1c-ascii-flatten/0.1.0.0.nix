@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        ascii-flatten = {
+        "ascii-flatten" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          ascii-flatten = {
+          "ascii-flatten" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ascii-flatten

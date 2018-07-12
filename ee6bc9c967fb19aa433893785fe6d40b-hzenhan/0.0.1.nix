@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hzenhan = {
+        "hzenhan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.hzenhan
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        usb-enumerator = {
+        "usb-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

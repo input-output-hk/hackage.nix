@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Monocle = {
+        "Monocle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

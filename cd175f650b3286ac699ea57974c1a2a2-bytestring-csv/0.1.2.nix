@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-csv = {
+        "bytestring-csv" = {
           depends  = [
             hsPkgs.dlist
           ] ++ (if _flags.small_base

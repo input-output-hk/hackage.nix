@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gd = {
+        "gd" = {
           depends  = [ hsPkgs.base ];
           libs = [
             pkgs.gd

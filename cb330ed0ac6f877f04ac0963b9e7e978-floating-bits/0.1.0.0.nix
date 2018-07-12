@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        floating-bits = {
+        "floating-bits" = {
           depends  = [ hsPkgs.base ];
         };
       };

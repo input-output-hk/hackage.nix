@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dockercook = {
+        "dockercook" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -56,7 +56,7 @@ let
           ];
         };
         exes = {
-          dockercook = {
+          "dockercook" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -69,7 +69,7 @@ let
           };
         };
         tests = {
-          dockercook-test = {
+          "dockercook-test" = {
             depends  = [
               hsPkgs.HTF
               hsPkgs.base

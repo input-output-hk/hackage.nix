@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-format-simple = {
+        "text-format-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MissingH

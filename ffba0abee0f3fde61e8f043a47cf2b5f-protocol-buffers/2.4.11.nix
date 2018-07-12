@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protocol-buffers = {
+        "protocol-buffers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmpfr = {
+        "hmpfr" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        satchmo = {
+        "satchmo" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.process
@@ -34,14 +34,14 @@ let
           ];
         };
         tests = {
-          Ramsey = {
+          "Ramsey" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.satchmo
             ];
           };
-          RamseyFM = {
+          "RamseyFM" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pureMD5 = {
+        "pureMD5" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          md5Test = {
+          "md5Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

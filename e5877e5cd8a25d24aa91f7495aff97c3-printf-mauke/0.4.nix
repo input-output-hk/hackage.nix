@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        printf-mauke = {
+        "printf-mauke" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semigroups = {
+        "semigroups" = {
           depends  = pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.5")) hsPkgs.ghc-prim ++ (if _flags.base2
             then [ hsPkgs.base ]
             else [

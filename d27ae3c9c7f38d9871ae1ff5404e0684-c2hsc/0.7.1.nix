@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        c2hsc = {
+        "c2hsc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          c2hsc = {
+          "c2hsc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.c2hsc
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.c2hsc

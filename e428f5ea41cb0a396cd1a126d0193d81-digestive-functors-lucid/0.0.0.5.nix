@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digestive-functors-lucid = {
+        "digestive-functors-lucid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lucid

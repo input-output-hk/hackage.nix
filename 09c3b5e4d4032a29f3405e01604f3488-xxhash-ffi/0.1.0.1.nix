@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        xxhash-ffi = {
+        "xxhash-ffi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          xxhash-ffi-test = {
+          "xxhash-ffi-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xxhash-ffi
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          xxhash-ffi-bench = {
+          "xxhash-ffi-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xxhash-ffi

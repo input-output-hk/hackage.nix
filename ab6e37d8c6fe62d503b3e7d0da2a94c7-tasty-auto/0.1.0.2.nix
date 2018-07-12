@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-auto = {
+        "tasty-auto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          tasty-auto = {
+          "tasty-auto" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

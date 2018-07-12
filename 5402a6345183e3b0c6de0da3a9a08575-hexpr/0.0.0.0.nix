@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexpr = {
+        "hexpr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-comments = {
+        "yesod-comments" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

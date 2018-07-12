@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        animalcase = {
+        "animalcase" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-srcspan-plugin = {
+        "ghc-srcspan-plugin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

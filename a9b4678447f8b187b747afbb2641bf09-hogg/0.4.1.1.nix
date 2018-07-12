@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hogg = {
+        "hogg" = {
           depends  = (if _flags.splitbase
             then [
               hsPkgs.base
@@ -44,8 +44,8 @@ let
             ]) ++ pkgs.lib.optional _flags.http hsPkgs.HTTP1;
         };
         exes = {
-          hogg = {};
-          ListMergeTest = {};
+          "hogg" = {};
+          "ListMergeTest" = {};
         };
       };
     }

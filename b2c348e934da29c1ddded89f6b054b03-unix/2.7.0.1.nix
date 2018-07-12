@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        unix = {
+        "unix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

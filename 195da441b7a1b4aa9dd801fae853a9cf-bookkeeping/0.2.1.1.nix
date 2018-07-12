@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bookkeeping = {
+        "bookkeeping" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dlist
@@ -30,13 +30,13 @@ let
           ];
         };
         tests = {
-          bookkeeping-test = {
+          "bookkeeping-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bookkeeping
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob

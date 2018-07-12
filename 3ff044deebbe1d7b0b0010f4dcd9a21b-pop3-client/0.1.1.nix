@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pop3-client = {
+        "pop3-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

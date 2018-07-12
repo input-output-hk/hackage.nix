@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accentuateus = {
+        "accentuateus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

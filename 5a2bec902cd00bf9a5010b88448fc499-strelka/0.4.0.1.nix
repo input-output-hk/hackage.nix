@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strelka = {
+        "strelka" = {
           depends  = [
             hsPkgs.base64-bytestring
             hsPkgs.attoparsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rtcm = {
+        "rtcm" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liboath-hs = {
+        "liboath-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.inline-c
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          oathtool-hs = {
+          "oathtool-hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.liboath-hs
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          liboath-hs-test = {
+          "liboath-hs-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.liboath-hs

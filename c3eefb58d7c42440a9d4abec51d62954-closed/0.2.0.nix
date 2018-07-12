@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        closed = {
+        "closed" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shakespeare = {
+        "shakespeare" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.shakespeare
               hsPkgs.base

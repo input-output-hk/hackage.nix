@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-google-trends = {
+        "haskell-google-trends" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-fake-user-agent

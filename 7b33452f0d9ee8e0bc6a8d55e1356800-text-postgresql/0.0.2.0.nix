@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-postgresql = {
+        "text-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          pp = {
+          "pp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

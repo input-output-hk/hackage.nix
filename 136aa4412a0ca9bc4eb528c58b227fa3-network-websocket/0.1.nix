@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-websocket = {
+        "network-websocket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        comonad = {
+        "comonad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.directory

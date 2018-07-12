@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgettext = {
+        "hgettext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -33,7 +33,7 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.libintl;
         };
         exes = {
-          hgettext = {
+          "hgettext" = {
             depends  = [
               hsPkgs.hgettext
               hsPkgs.base

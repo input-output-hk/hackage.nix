@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hmarkup = {
+        "hmarkup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

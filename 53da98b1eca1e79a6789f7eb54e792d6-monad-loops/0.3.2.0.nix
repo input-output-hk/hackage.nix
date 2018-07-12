@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-loops = {
+        "monad-loops" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional _flags.usestm hsPkgs.stm;

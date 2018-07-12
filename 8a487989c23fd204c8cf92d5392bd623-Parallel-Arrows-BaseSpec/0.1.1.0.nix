@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Parallel-Arrows-BaseSpec = {
+        "Parallel-Arrows-BaseSpec" = {
           depends  = [
             hsPkgs.Parallel-Arrows-Definition
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.Parallel-Arrows-BaseSpec
               hsPkgs.Parallel-Arrows-Definition

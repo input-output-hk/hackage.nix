@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsc3-auditor = {
+        "hsc3-auditor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

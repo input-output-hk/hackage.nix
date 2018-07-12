@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          _carettah_main_ = {
+          "_carettah_main_" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -38,7 +38,7 @@ let
               hsPkgs.gtk2hs-buildtools
             ];
           };
-          carettah = {
+          "carettah" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

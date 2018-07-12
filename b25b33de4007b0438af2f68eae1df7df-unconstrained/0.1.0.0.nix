@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unconstrained = {
+        "unconstrained" = {
           depends  = [ hsPkgs.base ];
         };
       };

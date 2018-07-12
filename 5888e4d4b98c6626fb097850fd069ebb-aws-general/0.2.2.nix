@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-general = {
+        "aws-general" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -50,7 +50,7 @@ let
             else [ hsPkgs.time ]);
         };
         tests = {
-          signature-v4 = {
+          "signature-v4" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aws

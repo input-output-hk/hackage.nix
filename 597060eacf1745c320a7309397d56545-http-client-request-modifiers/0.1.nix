@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client-request-modifiers = {
+        "http-client-request-modifiers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsc3-rec = {
+        "hsc3-rec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsc3

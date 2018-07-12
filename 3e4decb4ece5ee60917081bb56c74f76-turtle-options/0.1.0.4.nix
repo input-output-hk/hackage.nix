@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        turtle-options = {
+        "turtle-options" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.turtle
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          turtle-options-test = {
+          "turtle-options-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.turtle-options

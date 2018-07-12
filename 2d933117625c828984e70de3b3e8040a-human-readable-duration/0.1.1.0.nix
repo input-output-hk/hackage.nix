@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        human-readable-duration = {
+        "human-readable-duration" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

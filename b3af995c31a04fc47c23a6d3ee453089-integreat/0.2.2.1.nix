@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        integreat = {
+        "integreat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          integreat = {
+          "integreat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.integreat

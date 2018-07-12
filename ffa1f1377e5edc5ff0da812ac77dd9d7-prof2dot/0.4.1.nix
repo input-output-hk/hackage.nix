@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          prof2dot = {
+          "prof2dot" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.parsec

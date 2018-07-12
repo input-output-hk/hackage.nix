@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haxy = {
+        "haxy" = {
           depends  = [
             hsPkgs.http-server
             hsPkgs.HTTP

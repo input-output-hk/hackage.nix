@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hstyle = {
+          "hstyle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sws = {
+          "sws" = {
             depends  = [
               hsPkgs.asn1-types
               hsPkgs.asn1-encoding

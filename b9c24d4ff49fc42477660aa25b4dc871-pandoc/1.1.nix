@@ -25,7 +25,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pandoc = {
+        "pandoc" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.pretty
@@ -45,7 +45,7 @@ let
           ] ++ pkgs.lib.optional _flags.highlighting hsPkgs.highlighting-kate) ++ pkgs.lib.optional _flags.citeproc hsPkgs.citeproc-hs;
         };
         exes = {
-          pandoc = {
+          "pandoc" = {
             depends  = pkgs.lib.optional _flags.citeproc hsPkgs.citeproc-hs;
           };
         };

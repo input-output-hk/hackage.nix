@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shell-escape = {
+        "shell-escape" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

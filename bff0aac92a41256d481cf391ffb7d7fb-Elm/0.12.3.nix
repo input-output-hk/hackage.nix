@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Elm = {
+        "Elm" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          elm = {
+          "elm" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -77,7 +77,7 @@ let
               hsPkgs.yaml
             ];
           };
-          elm-doc = {
+          "elm-doc" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -102,7 +102,7 @@ let
           };
         };
         tests = {
-          compiler-tests = {
+          "compiler-tests" = {
             depends  = [
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit
@@ -137,7 +137,7 @@ let
               hsPkgs.yaml
             ];
           };
-          library-tests = {
+          "library-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

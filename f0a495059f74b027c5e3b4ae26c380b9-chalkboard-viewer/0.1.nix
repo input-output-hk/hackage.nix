@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chalkboard-viewer = {
+        "chalkboard-viewer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

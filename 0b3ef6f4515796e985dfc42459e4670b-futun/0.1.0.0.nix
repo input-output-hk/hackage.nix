@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          futun = {
+          "futun" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

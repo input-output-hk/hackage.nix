@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        linear = {
+        "linear" = {
           depends  = ([
             hsPkgs.adjunctions
             hsPkgs.base
@@ -49,7 +49,7 @@ let
           ] ++ pkgs.lib.optional (_flags.template-haskell && (compiler.isGhc && true)) hsPkgs.template-haskell) ++ pkgs.lib.optional _flags.herbie hsPkgs.HerbiePlugin;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -58,7 +58,7 @@ let
               hsPkgs.simple-reflect
             ];
           };
-          UnitTests = {
+          "UnitTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

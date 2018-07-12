@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hopencl = {
+        "hopencl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

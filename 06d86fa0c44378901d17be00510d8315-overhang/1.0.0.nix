@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        overhang = {
+        "overhang" = {
           depends  = [ hsPkgs.base ];
         };
       };

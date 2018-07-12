@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hpodder = {
+          "hpodder" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.network

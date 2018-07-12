@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        union-map = {
+        "union-map" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

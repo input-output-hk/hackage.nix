@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mighty-metropolis = {
+        "mighty-metropolis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -32,14 +32,14 @@ let
           ];
         };
         tests = {
-          rosenbrock = {
+          "rosenbrock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mighty-metropolis
               hsPkgs.mwc-probability
             ];
           };
-          bnn = {
+          "bnn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

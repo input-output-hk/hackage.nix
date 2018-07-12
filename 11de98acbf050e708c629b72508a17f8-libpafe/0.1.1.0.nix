@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libpafe = {
+        "libpafe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           libs = [ pkgs.pafe ];
         };
         tests = {
-          test-read = {
+          "test-read" = {
             depends  = [
               hsPkgs.base
               hsPkgs.libpafe
@@ -37,7 +37,7 @@ let
               hsPkgs.transformers
             ];
           };
-          test-read-fcf = {
+          "test-read-fcf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.libpafe

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        air-spec = {
+        "air-spec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

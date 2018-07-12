@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        UrlDisp = {
+        "UrlDisp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

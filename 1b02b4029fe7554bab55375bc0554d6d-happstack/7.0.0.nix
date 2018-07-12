@@ -23,14 +23,14 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack = {
+        "happstack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.happstack-server
           ];
         };
         exes = {
-          happstack-tests = {
+          "happstack-tests" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
         };

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml = {
+        "yaml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -34,7 +34,7 @@ let
           pkgconfig = pkgs.lib.optional _flags.system-libyaml pkgconfPkgs."yaml-0.1";
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit

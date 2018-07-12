@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        caldims = {
+        "caldims" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          caldims = {
+          "caldims" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

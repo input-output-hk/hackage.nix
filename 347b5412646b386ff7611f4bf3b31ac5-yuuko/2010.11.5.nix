@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yuuko = {
+        "yuuko" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          yuuko = {
+          "yuuko" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt

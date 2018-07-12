@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          flat-tex = {
+          "flat-tex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

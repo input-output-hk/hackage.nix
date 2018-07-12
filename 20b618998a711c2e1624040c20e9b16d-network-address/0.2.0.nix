@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        network-address = {
+        "network-address" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
           ];
         };
         exes = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          test-package = {
+          "test-package" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaRe = {
+        "HaRe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -51,7 +51,7 @@ let
           ];
         };
         exes = {
-          ghc-hare = {
+          "ghc-hare" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -89,7 +89,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Diff

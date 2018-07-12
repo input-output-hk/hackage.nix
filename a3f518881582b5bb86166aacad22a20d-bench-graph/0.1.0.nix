@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bench-graph = {
+        "bench-graph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bench-graph

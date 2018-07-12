@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vault-tool-server = {
+        "vault-tool-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vault-tool
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vault-tool

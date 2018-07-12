@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enummapmap = {
+        "enummapmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-enummapmap-lazy = {
+          "test-enummapmap-lazy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -42,7 +42,7 @@ let
               hsPkgs.enummapmap
             ];
           };
-          test-enummapmap-intmap-lazy = {
+          "test-enummapmap-intmap-lazy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -54,7 +54,7 @@ let
               hsPkgs.enummapmap
             ];
           };
-          test-enummapmap-strict = {
+          "test-enummapmap-strict" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -66,7 +66,7 @@ let
               hsPkgs.enummapmap
             ];
           };
-          test-enummapmap-intmap-strict = {
+          "test-enummapmap-intmap-strict" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -78,7 +78,7 @@ let
               hsPkgs.enummapmap
             ];
           };
-          test-enummapset = {
+          "test-enummapset" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -90,7 +90,7 @@ let
               hsPkgs.enummapmap
             ];
           };
-          test-enummapset-intset = {
+          "test-enummapset-intset" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -103,7 +103,7 @@ let
           };
         };
         benchmarks = {
-          enummapmap-vs-intmap-bench = {
+          "enummapmap-vs-intmap-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -20,6 +20,6 @@ let
         buildType = "Simple";
       };
       components = {
-        protocol-buffers = {};
+        "protocol-buffers" = {};
       };
     }

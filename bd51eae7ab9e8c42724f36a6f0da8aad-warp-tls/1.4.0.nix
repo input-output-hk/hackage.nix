@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warp-tls = {
+        "warp-tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

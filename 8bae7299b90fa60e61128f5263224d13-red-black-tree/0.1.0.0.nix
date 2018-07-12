@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        red-black-tree = {
+        "red-black-tree" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          red-black-tree-test = {
+          "red-black-tree-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.red-black-tree

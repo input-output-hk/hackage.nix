@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mp = {
+          "mp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vty-ui

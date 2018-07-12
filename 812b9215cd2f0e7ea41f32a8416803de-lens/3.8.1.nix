@@ -31,7 +31,7 @@ let
         buildType = "Custom";
       };
       components = {
-        lens = {
+        "lens" = {
           depends  = [
             hsPkgs.base-orphans
             hsPkgs.array
@@ -66,13 +66,13 @@ let
           ];
         };
         tests = {
-          templates = {
+          "templates" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens
             ];
           };
-          properties = {
+          "properties" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.lens
@@ -83,7 +83,7 @@ let
               hsPkgs.transformers
             ];
           };
-          hunit = {
+          "hunit" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hunit)) [
               hsPkgs.base
               hsPkgs.containers
@@ -95,7 +95,7 @@ let
               hsPkgs.test-framework-th
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.bytestring
@@ -117,7 +117,7 @@ let
           };
         };
         benchmarks = {
-          plated = {
+          "plated" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.comonad
@@ -131,7 +131,7 @@ let
                 hsPkgs.generic-deriving
               ])) ++ pkgs.lib.optional _flags.benchmark-uniplate hsPkgs.uniplate;
           };
-          alongside = {
+          "alongside" = {
             depends  = [
               hsPkgs.base
               hsPkgs.comonad
@@ -142,7 +142,7 @@ let
               hsPkgs.transformers
             ];
           };
-          unsafe = {
+          "unsafe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.comonad
@@ -154,7 +154,7 @@ let
               hsPkgs.transformers
             ];
           };
-          zipper = {
+          "zipper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.comonad

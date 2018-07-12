@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dollaridoos = {
+        "dollaridoos" = {
           depends  = [
             hsPkgs.base
             hsPkgs.profunctors

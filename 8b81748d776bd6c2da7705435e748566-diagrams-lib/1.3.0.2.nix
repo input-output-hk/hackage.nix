@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-lib = {
+        "diagrams-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

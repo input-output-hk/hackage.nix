@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filelock = {
+        "filelock" = {
           depends  = [
             hsPkgs.base
           ] ++ (if system.isWindows
@@ -28,7 +28,7 @@ let
             else [ hsPkgs.unix ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.filelock
               hsPkgs.process

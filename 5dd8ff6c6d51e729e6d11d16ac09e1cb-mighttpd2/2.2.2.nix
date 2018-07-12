@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mighty = {
+          "mighty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -42,7 +42,7 @@ let
               hsPkgs.hashmap
             ];
           };
-          mkindex = {
+          "mkindex" = {
             depends  = [ hsPkgs.base ];
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        laika = {
+        "laika" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.system-filepath
@@ -34,7 +34,7 @@ let
           ];
         };
         benchmarks = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.laika
               hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ib-api = {
+        "ib-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          ex = {
+          "ex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

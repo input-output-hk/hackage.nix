@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        workflow-windows = {
+        "workflow-windows" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          workflow-windows-example = {
+          "workflow-windows-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.workflow-windows
@@ -39,14 +39,14 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.workflow-windows
               hsPkgs.doctest
             ];
           };
-          unittest = {
+          "unittest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.workflow-windows

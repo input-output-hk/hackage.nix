@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsaddle-warp = {
+        "jsaddle-warp" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test-tool = {
+          "test-tool" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

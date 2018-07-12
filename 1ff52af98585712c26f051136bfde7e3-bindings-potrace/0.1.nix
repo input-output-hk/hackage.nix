@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-potrace = {
+        "bindings-potrace" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

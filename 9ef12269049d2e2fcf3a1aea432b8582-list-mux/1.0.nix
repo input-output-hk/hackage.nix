@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-mux = {
+        "list-mux" = {
           depends  = [ hsPkgs.base ];
         };
       };

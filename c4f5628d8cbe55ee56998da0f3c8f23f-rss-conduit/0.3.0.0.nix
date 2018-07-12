@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rss-conduit = {
+        "rss-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.rss-conduit
               hsPkgs.base

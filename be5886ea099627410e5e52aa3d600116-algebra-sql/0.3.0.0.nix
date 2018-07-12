@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        algebra-sql = {
+        "algebra-sql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          tadot = {
+          "tadot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -66,7 +66,7 @@ let
               hsPkgs.ansi-wl-pprint
             ];
           };
-          sqlgen = {
+          "sqlgen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

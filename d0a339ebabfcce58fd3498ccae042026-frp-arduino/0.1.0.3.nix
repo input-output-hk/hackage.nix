@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        frp-arduino = {
+        "frp-arduino" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

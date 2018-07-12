@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          maxsharing = {
+          "maxsharing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

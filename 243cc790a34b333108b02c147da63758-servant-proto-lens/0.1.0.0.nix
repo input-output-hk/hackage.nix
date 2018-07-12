@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-proto-lens = {
+        "servant-proto-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          servant-proto-lens-test = {
+          "servant-proto-lens-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

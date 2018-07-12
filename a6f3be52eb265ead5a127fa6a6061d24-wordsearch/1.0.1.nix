@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wordsearch = {
+        "wordsearch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          wordsearch = {
+          "wordsearch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

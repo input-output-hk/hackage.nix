@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        implicit = {
+        "implicit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -31,6 +31,6 @@ let
             hsPkgs.deepseq
           ];
         };
-        exes = { extopenscad = {}; };
+        exes = { "extopenscad" = {}; };
       };
     }

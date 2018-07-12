@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bento = {
+        "bento" = {
           depends  = [ hsPkgs.base ];
         };
       };

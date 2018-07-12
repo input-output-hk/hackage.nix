@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tokenize = {
+        "tokenize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

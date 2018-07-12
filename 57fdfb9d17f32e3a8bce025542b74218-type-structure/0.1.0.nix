@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-structure = {
+        "type-structure" = {
           depends  = [
             hsPkgs.time
             hsPkgs.vector
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          type-structure-htf-test-suite = {
+          "type-structure-htf-test-suite" = {
             depends  = [
               hsPkgs.quickcheck-instances
               hsPkgs.QuickCheck-GenT

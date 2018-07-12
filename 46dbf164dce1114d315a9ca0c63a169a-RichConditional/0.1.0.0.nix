@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RichConditional = {
+        "RichConditional" = {
           depends  = [ hsPkgs.base ];
         };
       };

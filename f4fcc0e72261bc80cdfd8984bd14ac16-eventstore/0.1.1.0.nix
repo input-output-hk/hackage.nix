@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventstore = {
+        "eventstore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

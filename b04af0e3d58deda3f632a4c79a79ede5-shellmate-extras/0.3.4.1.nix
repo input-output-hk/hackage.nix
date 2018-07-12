@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shellmate-extras = {
+        "shellmate-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

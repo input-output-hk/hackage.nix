@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dictionaries = {
+        "dictionaries" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -62,7 +62,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

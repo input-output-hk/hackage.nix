@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasktags = {
+        "hasktags" = {
           depends  = [
             hsPkgs.utf8-string
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hasktags = {
+          "hasktags" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.utf8-string
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-json-lens = {
+        "hw-json-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          hw-json-lens-test = {
+          "hw-json-lens-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -78,7 +78,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hCsound = {
+        "hCsound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -34,12 +34,12 @@ let
             else [ hsPkgs.base ]);
           libs = [
             pkgs.sndfile
-          ] ++ (if !(system.isOsx && _flags.useframework) && _flags.usedouble
+          ] ++ pkgs.lib.optionals (!(system.isOsx && _flags.useframework)) (if _flags.usedouble
             then [ pkgs.csound64 ]
             else [ pkgs.csound32 ]);
-          frameworks = if system.isOsx && _flags.useframework && _flags.usedouble
+          frameworks = pkgs.lib.optionals (system.isOsx && _flags.useframework) (if _flags.usedouble
             then [ pkgs.CsoundLib64 ]
-            else [ pkgs.CsoundLib ];
+            else [ pkgs.CsoundLib ]);
           build-tools = [
             hsPkgs.buildPackages.c2hs
           ];

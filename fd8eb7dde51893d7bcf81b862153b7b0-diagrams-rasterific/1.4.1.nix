@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-rasterific = {
+        "diagrams-rasterific" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams-core
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          test0 = {
+          "test0" = {
             depends  = [
               hsPkgs.base
               hsPkgs.diagrams-rasterific
@@ -48,7 +48,7 @@ let
               hsPkgs.diagrams-lib
             ];
           };
-          test1 = {
+          "test1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.diagrams-rasterific

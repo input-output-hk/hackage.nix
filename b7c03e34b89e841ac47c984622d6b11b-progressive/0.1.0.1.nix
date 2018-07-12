@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          progressive = {
+          "progressive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

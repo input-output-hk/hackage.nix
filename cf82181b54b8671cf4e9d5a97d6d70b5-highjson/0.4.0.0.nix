@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        highjson = {
+        "highjson" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          highjson-tests = {
+          "highjson-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          highjson-benchmarks = {
+          "highjson-benchmarks" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          exherbo-cabal = {
+          "exherbo-cabal" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base

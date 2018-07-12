@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tightrope = {
+        "tightrope" = {
           depends  = [
             hsPkgs.wai-extra
             hsPkgs.base

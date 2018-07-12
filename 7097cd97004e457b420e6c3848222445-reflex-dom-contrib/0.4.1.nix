@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex-dom-contrib = {
+        "reflex-dom-contrib" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

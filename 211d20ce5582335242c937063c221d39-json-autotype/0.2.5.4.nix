@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-autotype = {
+        "json-autotype" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GenericPretty
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          json-autotype = {
+          "json-autotype" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GenericPretty

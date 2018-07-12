@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ical = {
+        "ical" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          ical-org = {
+          "ical-org" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ical
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          ical-test = {
+          "ical-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ical

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-crowd = {
+        "wai-middleware-crowd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.resourcet
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          wai-crowd = {
+          "wai-crowd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clientsession

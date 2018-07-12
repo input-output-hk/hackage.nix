@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          shaker = {
+          "shaker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -41,7 +41,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          doc-review = {
+          "doc-review" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base64-bytestring
@@ -55,7 +55,7 @@ let
               hsPkgs.xml-basic
             ];
           };
-          doc-review-test = {
+          "doc-review-test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.MonadRandom
               hsPkgs.array

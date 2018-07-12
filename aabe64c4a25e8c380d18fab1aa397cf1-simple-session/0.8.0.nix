@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-session = {
+        "simple-session" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

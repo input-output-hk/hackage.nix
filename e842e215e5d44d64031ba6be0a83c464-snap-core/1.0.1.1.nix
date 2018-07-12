@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-core = {
+        "snap-core" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.attoparsec
@@ -55,7 +55,7 @@ let
             else [ hsPkgs.old-locale ]);
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.attoparsec

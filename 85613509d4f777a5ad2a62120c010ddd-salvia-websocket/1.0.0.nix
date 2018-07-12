@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        salvia-websocket = {
+        "salvia-websocket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

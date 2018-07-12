@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-dhall = {
+        "servant-dhall" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

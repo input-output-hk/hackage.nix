@@ -21,7 +21,7 @@ let
       };
       components = {
         sublibs = {
-          escoger-lib = {
+          "escoger-lib" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vty
@@ -34,7 +34,7 @@ let
           };
         };
         exes = {
-          escoger = {
+          "escoger" = {
             depends  = [
               hsPkgs.base
               hsPkgs.escoger-lib
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.escoger-lib
@@ -59,7 +59,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.escoger-lib

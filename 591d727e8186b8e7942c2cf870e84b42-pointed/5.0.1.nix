@@ -30,7 +30,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pointed = {
+        "pointed" = {
           depends  = (((((((((([
             hsPkgs.base
             hsPkgs.data-default-class

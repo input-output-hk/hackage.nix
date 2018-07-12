@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          spaceInvaders = {
+          "spaceInvaders" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

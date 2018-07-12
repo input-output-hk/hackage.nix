@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OpenGLCheck = {
+        "OpenGLCheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

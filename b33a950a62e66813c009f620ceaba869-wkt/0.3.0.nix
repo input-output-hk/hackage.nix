@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wkt = {
+        "wkt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml-rpc = {
+        "yaml-rpc" = {
           depends  = [
             hsPkgs.yaml
             hsPkgs.data-object-yaml

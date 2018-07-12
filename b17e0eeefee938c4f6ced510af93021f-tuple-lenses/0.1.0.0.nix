@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tuple-lenses = {
+        "tuple-lenses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

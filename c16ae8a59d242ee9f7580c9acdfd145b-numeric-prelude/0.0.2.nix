@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numeric-prelude = {
+        "numeric-prelude" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.HUnit
@@ -38,8 +38,8 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          test = {};
-          testsuite = {};
+          "test" = {};
+          "testsuite" = {};
         };
       };
     }

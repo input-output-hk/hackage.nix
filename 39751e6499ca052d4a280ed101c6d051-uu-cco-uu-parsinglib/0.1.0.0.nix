@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uu-cco-uu-parsinglib = {
+        "uu-cco-uu-parsinglib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uu-parsinglib

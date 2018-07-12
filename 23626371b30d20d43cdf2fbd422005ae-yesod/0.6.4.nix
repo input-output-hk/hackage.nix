@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod = {
+        "yesod" = {
           depends  = [
             hsPkgs.time
             hsPkgs.wai
@@ -54,12 +54,12 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          yesod = {
+          "yesod" = {
             depends  = [
               hsPkgs.parsec
             ] ++ [ hsPkgs.base ];
           };
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
             ] ++ pkgs.lib.optionals _flags.test [

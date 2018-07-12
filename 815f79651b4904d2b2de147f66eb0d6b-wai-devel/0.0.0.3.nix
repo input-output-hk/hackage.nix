@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-devel = {
+        "wai-devel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal-ide-backend
@@ -56,7 +56,7 @@ let
           ];
         };
         exes = {
-          wai-devel = {
+          "wai-devel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-devel
@@ -64,7 +64,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

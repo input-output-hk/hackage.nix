@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-icu-translit = {
+        "text-icu-translit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -35,7 +35,7 @@ let
             ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

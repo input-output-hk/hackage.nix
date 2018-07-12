@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HAppS-Server = {
+        "HAppS-Server" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.HaXml

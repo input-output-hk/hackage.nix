@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thrist = {
+        "thrist" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        testing-type-modifiers = {
+        "testing-type-modifiers" = {
           depends  = [ hsPkgs.base ];
         };
       };

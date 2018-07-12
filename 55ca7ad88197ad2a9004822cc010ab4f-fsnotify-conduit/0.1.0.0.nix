@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fsnotify-conduit = {
+        "fsnotify-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          fsnotify-conduit-test = {
+          "fsnotify-conduit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

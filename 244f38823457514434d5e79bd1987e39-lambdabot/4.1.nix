@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          BotPP = {
+          "BotPP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -48,7 +48,7 @@ let
               hsPkgs.pretty
             ];
           };
-          lambdabot = {
+          "lambdabot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -75,7 +75,7 @@ let
               hsPkgs.pretty
             ];
           };
-          hoogle = {
+          "hoogle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -102,7 +102,7 @@ let
               hsPkgs.pretty
             ];
           };
-          djinn = {
+          "djinn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -129,7 +129,7 @@ let
               hsPkgs.pretty
             ];
           };
-          ft = {
+          "ft" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -156,7 +156,7 @@ let
               hsPkgs.pretty
             ];
           };
-          runplugs = {
+          "runplugs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -183,7 +183,7 @@ let
               hsPkgs.pretty
             ];
           };
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -210,7 +210,7 @@ let
               hsPkgs.pretty
             ];
           };
-          smallcheck = {
+          "smallcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

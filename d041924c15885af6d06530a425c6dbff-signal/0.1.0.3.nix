@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        signal = {
+        "signal" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.signal

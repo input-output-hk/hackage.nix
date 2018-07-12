@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hsql-sqlite3 = {
+        "hsql-sqlite3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsql

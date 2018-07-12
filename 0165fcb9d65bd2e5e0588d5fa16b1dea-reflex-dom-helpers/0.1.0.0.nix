@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex-dom-helpers = {
+        "reflex-dom-helpers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.reflex
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          reflex-dom-helpers-test = {
+          "reflex-dom-helpers-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reflex-dom-helpers

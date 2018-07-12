@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          music-only = {
+          "music-only" = {
             depends  = [
               hsPkgs.base
               hsPkgs.call
@@ -32,7 +32,7 @@ let
               hsPkgs.split
             ];
           };
-          tutorial-passive = {
+          "tutorial-passive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.call
@@ -43,7 +43,7 @@ let
               hsPkgs.split
             ];
           };
-          tutorial-active = {
+          "tutorial-active" = {
             depends  = [
               hsPkgs.base
               hsPkgs.call
@@ -54,7 +54,7 @@ let
               hsPkgs.split
             ];
           };
-          tutorial-extended = {
+          "tutorial-extended" = {
             depends  = [
               hsPkgs.base
               hsPkgs.call

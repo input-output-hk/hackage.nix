@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nmis-parser = {
+        "nmis-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          nmis-test = {
+          "nmis-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Nmis

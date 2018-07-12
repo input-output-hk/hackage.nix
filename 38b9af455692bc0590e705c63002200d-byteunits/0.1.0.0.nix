@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        byteunits = {
+        "byteunits" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe
           ];
         };
         tests = {
-          testing-example = {
+          "testing-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

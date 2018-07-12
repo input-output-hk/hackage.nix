@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lol-apps = {
+        "lol-apps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test-apps = {
+          "test-apps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.constraints
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          bench-apps = {
+          "bench-apps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

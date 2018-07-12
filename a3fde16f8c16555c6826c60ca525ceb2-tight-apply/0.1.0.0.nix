@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tight-apply = {
+        "tight-apply" = {
           depends  = [ hsPkgs.base ];
         };
       };

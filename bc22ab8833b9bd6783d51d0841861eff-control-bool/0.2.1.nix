@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        control-bool = {
+        "control-bool" = {
           depends  = [ hsPkgs.base ];
         };
       };

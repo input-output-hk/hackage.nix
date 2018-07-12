@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          shadower = {
+          "shadower" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fsnotify
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fsnotify

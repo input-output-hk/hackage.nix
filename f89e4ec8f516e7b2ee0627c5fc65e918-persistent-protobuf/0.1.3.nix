@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-protobuf = {
+        "persistent-protobuf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

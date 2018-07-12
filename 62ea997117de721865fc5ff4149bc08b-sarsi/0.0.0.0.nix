@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sarsi = {
+        "sarsi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -42,13 +42,13 @@ let
           ];
         };
         exes = {
-          sarsi = {
+          "sarsi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sarsi
             ];
           };
-          sarsi-hs = {
+          "sarsi-hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sarsi
@@ -60,7 +60,7 @@ let
               hsPkgs.fsnotify
             ];
           };
-          sarsi-nvim = {
+          "sarsi-nvim" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sarsi
@@ -78,7 +78,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          sarsi-sbt = {
+          "sarsi-sbt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sarsi

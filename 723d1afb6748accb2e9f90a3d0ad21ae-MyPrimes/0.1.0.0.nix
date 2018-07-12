@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        MyPrimes = {
+        "MyPrimes" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.base
           ];
         };
         exes = {
-          PrimesList = {
+          "PrimesList" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.MyPrimes
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          bench-foo = {
+          "bench-foo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-textual-native = {
+        "blaze-textual-native" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.blaze-builder

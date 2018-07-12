@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Zora = {
+        "Zora" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test-zora = {
+          "test-zora" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Zora

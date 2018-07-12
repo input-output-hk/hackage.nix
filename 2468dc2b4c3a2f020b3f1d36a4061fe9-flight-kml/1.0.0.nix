@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flight-kml = {
+        "flight-kml" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -52,7 +52,7 @@ let
               hsPkgs.time
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -67,7 +67,7 @@ let
               hsPkgs.time
             ];
           };
-          parse = {
+          "parse" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

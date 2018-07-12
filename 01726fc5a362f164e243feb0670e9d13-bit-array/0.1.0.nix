@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bit-array = {
+        "bit-array" = {
           depends  = [
             hsPkgs.loch-th
             hsPkgs.placeholders
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.doctest
               hsPkgs.directory

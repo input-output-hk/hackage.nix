@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          neil = {
+          "neil" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

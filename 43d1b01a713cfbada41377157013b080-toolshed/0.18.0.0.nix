@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toolshed = {
+        "toolshed" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

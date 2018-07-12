@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rasa-ext-views = {
+        "rasa-ext-views" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rasa

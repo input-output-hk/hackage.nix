@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          styx = {
+          "styx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

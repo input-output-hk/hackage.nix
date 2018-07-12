@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock-api = {
+        "Spock-api" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

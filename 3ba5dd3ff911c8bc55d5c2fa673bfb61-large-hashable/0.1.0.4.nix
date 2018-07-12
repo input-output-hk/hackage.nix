@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        large-hashable = {
+        "large-hashable" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          large-hashable-test = {
+          "large-hashable-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.HTF
@@ -62,7 +62,7 @@ let
           };
         };
         benchmarks = {
-          large-hashable-benchmark = {
+          "large-hashable-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base16-bytestring

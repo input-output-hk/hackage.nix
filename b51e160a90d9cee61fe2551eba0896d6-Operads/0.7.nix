@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Operads = {
+        "Operads" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

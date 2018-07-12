@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        groundhog = {
+        "groundhog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

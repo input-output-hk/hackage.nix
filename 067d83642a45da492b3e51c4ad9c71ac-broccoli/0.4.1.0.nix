@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        broccoli = {
+        "broccoli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

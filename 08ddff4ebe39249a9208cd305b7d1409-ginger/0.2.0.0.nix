@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ginger = {
+        "ginger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          ginger = {
+          "ginger" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

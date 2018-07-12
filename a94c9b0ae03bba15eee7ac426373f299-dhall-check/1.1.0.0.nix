@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dhall-check = {
+          "dhall-check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

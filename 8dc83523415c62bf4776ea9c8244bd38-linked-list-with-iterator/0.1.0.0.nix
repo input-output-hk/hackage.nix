@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        linked-list-with-iterator = {
+        "linked-list-with-iterator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          linked-list-with-iterator-test = {
+          "linked-list-with-iterator-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.linked-list-with-iterator

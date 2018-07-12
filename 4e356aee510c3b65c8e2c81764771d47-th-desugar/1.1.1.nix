@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-desugar = {
+        "th-desugar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

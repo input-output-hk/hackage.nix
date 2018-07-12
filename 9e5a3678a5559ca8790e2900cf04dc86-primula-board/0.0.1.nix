@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          primula-board = {
+          "primula-board" = {
             depends  = [
               hsPkgs.base
               hsPkgs.happstack-helpers

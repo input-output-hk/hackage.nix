@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thyme = {
+        "thyme" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.attoparsec
@@ -46,7 +46,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6.1") hsPkgs.ghc-prim;
         };
         tests = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.attoparsec
@@ -60,7 +60,7 @@ let
               hsPkgs.vector-space
             ];
           };
-          rewrite = {
+          "rewrite" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base
@@ -73,7 +73,7 @@ let
               hsPkgs.thyme
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals _flags.hlint [
               hsPkgs.base
               hsPkgs.hlint
@@ -81,7 +81,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

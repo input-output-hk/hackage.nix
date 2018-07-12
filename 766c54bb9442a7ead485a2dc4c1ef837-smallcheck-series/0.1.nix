@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smallcheck-series = {
+        "smallcheck-series" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob

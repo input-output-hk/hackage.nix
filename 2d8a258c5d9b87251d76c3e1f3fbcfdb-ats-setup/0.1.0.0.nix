@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ats-setup = {
+        "ats-setup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

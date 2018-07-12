@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelldb-hsql-sqlite = {
+        "haskelldb-hsql-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          DBDirect-hsql-sqlite = {};
+          "DBDirect-hsql-sqlite" = {};
         };
       };
     }

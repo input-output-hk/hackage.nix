@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keter = {
+        "keter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -55,7 +55,7 @@ let
           ];
         };
         exes = {
-          keter = {
+          "keter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.keter

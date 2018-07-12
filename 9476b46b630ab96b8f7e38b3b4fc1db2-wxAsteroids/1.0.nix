@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          wxAsteroids = {
+          "wxAsteroids" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

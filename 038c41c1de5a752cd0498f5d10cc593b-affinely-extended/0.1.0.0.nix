@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        affinely-extended = {
+        "affinely-extended" = {
           depends  = [ hsPkgs.base ];
         };
       };

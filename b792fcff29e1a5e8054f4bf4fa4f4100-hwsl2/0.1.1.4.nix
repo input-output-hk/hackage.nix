@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hwsl2 = {
+        "hwsl2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

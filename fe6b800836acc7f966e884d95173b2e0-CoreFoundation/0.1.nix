@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CoreFoundation = {
+        "CoreFoundation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

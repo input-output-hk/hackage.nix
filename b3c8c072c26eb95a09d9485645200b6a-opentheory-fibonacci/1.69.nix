@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opentheory-fibonacci = {
+        "opentheory-fibonacci" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          opentheory-fibonacci-test = {
+          "opentheory-fibonacci-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

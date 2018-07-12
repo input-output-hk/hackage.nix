@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql = {
+        "hasql" = {
           depends  = [
             hsPkgs.stm
             hsPkgs.slave-thread
@@ -58,7 +58,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.hasql
               hsPkgs.tasty
@@ -72,7 +72,7 @@ let
               hsPkgs.rerebase
             ];
           };
-          profiling = {
+          "profiling" = {
             depends  = [
               hsPkgs.hasql
               hsPkgs.foldl
@@ -82,7 +82,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.hasql
               hsPkgs.criterion

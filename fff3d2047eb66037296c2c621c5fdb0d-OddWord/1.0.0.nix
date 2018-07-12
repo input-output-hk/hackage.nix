@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        OddWord = {
+        "OddWord" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          oddword-tests = {
+          "oddword-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

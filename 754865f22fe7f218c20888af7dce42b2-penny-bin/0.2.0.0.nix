@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          penny = {
+          "penny" = {
             depends  = [
               hsPkgs.base
               hsPkgs.penny-lib

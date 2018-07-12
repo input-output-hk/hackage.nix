@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        flow = {
+        "flow" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.flow
@@ -35,7 +35,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.flow

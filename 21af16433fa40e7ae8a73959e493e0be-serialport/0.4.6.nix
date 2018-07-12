@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serialport = {
+        "serialport" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
             else [ hsPkgs.Win32 ]);
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

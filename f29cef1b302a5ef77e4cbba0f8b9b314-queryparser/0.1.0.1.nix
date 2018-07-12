@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        queryparser = {
+        "queryparser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -42,7 +42,7 @@ let
           ];
         };
         benchmarks = {
-          queryparser-bench = {
+          "queryparser-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.queryparser

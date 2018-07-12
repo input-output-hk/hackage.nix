@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serialize-instances = {
+        "serialize-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quadratic-irrational = {
+        "quadratic-irrational" = {
           depends  = [
             hsPkgs.base
             hsPkgs.arithmoi
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-quadratic-irrational = {
+          "test-quadratic-irrational" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quadratic-irrational

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lendingclub = {
+        "lendingclub" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        process-extras = {
+        "process-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          process-extras-tests = {
+          "process-extras-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

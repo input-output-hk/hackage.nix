@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        influxdb = {
+        "influxdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          influx-random-points = {
+          "influx-random-points" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          test-suite = {
+          "test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-client

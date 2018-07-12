@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        implicit = {
+        "implicit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

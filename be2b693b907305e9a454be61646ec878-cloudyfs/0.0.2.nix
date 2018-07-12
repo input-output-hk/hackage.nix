@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cloudyfs = {
+          "cloudyfs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal-uninstall = {
+          "cabal-uninstall" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        moo = {
+        "moo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-mersenne-random
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          moo-tests = {
+          "moo-tests" = {
             depends  = [
               hsPkgs.moo
               hsPkgs.base

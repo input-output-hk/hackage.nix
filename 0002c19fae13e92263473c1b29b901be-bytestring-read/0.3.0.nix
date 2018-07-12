@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-read = {
+        "bytestring-read" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring-read
@@ -37,7 +37,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring-read

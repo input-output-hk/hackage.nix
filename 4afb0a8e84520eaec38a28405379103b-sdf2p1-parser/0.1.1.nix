@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdf2p1-parser = {
+        "sdf2p1-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          SDFParserTests = {
+          "SDFParserTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sdf2p1-parser
@@ -42,7 +42,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          SDFQueryTests = {
+          "SDFQueryTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sdf2p1-parser

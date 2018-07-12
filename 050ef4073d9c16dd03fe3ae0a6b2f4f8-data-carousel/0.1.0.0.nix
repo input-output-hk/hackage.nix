@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-carousel = {
+        "data-carousel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

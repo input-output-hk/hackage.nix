@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-patterns = {
+        "time-patterns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.intervals

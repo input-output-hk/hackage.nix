@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JunkDB = {
+        "JunkDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

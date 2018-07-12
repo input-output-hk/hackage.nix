@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        current-locale = {
+        "current-locale" = {
           depends  = [
             hsPkgs.old-locale
             hsPkgs.process

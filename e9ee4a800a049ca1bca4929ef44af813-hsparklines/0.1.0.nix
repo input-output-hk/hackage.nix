@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsparklines = {
+        "hsparklines" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          trackit = {
+          "trackit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick

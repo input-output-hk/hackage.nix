@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graph-utils = {
+        "graph-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fgl

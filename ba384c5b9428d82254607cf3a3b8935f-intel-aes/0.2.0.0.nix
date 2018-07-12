@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        intel-aes = {
+        "intel-aes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

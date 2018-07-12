@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alex-meta = {
+        "alex-meta" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.th-lift

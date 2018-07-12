@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-snap = {
+        "hspec-snap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test-hspec-snap = {
+          "test-hspec-snap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

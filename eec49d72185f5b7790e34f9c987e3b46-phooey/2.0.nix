@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        phooey = {
+        "phooey" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

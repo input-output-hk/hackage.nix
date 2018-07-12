@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        debian = {
+        "debian" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        parsec-permutation = {
+        "parsec-permutation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.parsec-permutation
               hsPkgs.base

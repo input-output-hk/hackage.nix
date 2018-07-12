@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal2arch = {
+          "cabal2arch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty

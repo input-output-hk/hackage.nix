@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        darkplaces-text = {
+        "darkplaces-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

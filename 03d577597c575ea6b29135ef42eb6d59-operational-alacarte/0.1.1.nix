@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        operational-alacarte = {
+        "operational-alacarte" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         tests = {
-          Examples = {
+          "Examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.operational-alacarte

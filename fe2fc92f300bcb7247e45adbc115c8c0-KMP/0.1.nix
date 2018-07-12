@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        KMP = {
+        "KMP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

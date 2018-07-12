@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HPlot = {
+        "HPlot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gtk
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          Example = {
+          "Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

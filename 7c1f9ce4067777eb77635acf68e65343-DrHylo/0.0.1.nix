@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DrHylo = {
+        "DrHylo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pointless-haskell
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          DrHylo = {
+          "DrHylo" = {
             depends  = [
               hsPkgs.containers
             ] ++ (if _flags.splitbase

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cubicspline = {
+        "cubicspline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

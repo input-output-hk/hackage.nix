@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        actor = {
+        "actor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

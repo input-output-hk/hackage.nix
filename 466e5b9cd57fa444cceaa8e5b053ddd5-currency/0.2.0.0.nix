@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        currency = {
+        "currency" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

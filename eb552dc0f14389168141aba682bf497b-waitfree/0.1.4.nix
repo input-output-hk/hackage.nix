@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        waitfree = {
+        "waitfree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

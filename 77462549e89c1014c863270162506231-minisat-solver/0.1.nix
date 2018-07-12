@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        minisat-solver = {
+        "minisat-solver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,14 +28,14 @@ let
           ];
         };
         benchmarks = {
-          Sudoku = {
+          "Sudoku" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.minisat-solver
             ];
           };
-          Woodblocks = {
+          "Woodblocks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.easyrender

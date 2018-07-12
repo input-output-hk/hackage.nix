@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-hstringtemplate = {
+        "happstack-hstringtemplate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphene = {
+        "graphene" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens-family

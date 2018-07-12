@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-better-errors = {
+        "aeson-better-errors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

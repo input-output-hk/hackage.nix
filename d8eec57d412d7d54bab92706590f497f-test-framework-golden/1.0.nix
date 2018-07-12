@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-framework-golden = {
+        "test-framework-golden" = {
           depends  = [
             hsPkgs.base
             hsPkgs.test-framework

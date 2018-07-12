@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cachix = {
+        "cachix" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -65,7 +65,7 @@ let
           ];
         };
         exes = {
-          cachix = {
+          "cachix" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -115,7 +115,7 @@ let
           };
         };
         tests = {
-          cachix-test = {
+          "cachix-test" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

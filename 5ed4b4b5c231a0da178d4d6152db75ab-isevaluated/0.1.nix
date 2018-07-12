@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        isevaluated = {
+        "isevaluated" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

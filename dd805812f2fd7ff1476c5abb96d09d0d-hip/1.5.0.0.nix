@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hip = {
+        "hip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          hip-tests = {
+          "hip-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          convolution-benchmarks = {
+          "convolution-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

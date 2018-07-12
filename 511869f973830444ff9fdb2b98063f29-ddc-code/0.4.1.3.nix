@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddc-code = {
+        "ddc-code" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

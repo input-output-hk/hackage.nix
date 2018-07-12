@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cap = {
+          "cap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

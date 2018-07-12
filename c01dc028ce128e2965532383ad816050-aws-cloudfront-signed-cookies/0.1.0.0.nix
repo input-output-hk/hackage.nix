@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-cloudfront-signed-cookies = {
+        "aws-cloudfront-signed-cookies" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.asn1-encoding
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          aws-cloudfront-signed-cookies = {
+          "aws-cloudfront-signed-cookies" = {
             depends  = [
               hsPkgs.aws-cloudfront-signed-cookies
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasty-hamiltonian = {
+        "hasty-hamiltonian" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mcmc-types
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          booth = {
+          "booth" = {
             depends  = [
               hsPkgs.ad
               hsPkgs.base

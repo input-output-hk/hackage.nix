@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-conduit = {
+        "streaming-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          conversions = {
+          "conversions" = {
             depends  = [
               hsPkgs.streaming-conduit
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-diverse = {
+        "data-diverse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          data-diverse-test = {
+          "data-diverse-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-diverse

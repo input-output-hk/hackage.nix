@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitarray = {
+        "bitarray" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

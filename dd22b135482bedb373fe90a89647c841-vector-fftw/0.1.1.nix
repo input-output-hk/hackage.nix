@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-fftw = {
+        "vector-fftw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

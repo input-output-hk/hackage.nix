@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsverilog = {
+        "hsverilog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsverilog

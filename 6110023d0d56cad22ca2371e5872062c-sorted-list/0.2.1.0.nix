@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        sorted-list = {
+        "sorted-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
           ];
         };
         benchmarks = {
-          sorted-list-map-bench = {
+          "sorted-list-map-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sorted-list

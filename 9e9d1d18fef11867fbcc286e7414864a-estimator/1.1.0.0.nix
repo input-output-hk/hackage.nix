@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        estimator = {
+        "estimator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ad

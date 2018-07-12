@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graph-visit = {
+        "graph-visit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-lens

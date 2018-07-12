@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netlib-ffi = {
+        "netlib-ffi" = {
           depends  = [
             hsPkgs.storable-complex
             hsPkgs.transformers

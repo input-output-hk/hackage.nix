@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-effects = {
+        "simple-effects" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -32,7 +32,7 @@ let
           ];
         };
         benchmarks = {
-          bench-effects = {
+          "bench-effects" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

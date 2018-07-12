@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-dejafu = {
+        "tasty-dejafu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dejafu

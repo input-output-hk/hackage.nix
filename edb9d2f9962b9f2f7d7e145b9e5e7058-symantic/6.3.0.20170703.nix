@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        symantic = {
+        "symantic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

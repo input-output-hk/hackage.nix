@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concrete-typerep = {
+        "concrete-typerep" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

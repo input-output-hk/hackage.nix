@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gencheck = {
+        "gencheck" = {
           depends  = [
             hsPkgs.combinat
             hsPkgs.base

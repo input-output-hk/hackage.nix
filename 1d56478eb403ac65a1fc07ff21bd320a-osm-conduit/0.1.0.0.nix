@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        osm-conduit = {
+        "osm-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          osm-conduit-test = {
+          "osm-conduit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.osm-conduit

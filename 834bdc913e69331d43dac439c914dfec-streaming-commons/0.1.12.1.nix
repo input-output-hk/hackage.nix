@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-commons = {
+        "streaming-commons" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.array
@@ -51,7 +51,7 @@ let
             else [ hsPkgs.bytestring ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.streaming-commons
@@ -76,7 +76,7 @@ let
           };
         };
         benchmarks = {
-          count-chars = {
+          "count-chars" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -84,14 +84,14 @@ let
               hsPkgs.text
             ];
           };
-          decode-memory-usage = {
+          "decode-memory-usage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.text
             ];
           };
-          builder-to-bytestring-io = {
+          "builder-to-bytestring-io" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        x86-64bit = {
+        "x86-64bit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monads-tf
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-x86-64bit = {
+          "test-x86-64bit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monads-tf

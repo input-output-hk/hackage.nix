@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aspell-pipe = {
+        "aspell-pipe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

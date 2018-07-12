@@ -20,16 +20,16 @@ let
         buildType = "Simple";
       };
       components = {
-        jalaali = {
+        "jalaali" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [ hsPkgs.base ];
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liblastfm = {
+        "liblastfm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          json-no-authentication = {
+          "json-no-authentication" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
               hsPkgs.liblastfm
             ];
           };
-          json-authentication = {
+          "json-authentication" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

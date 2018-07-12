@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iException = {
+        "iException" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cloudfront = {
+        "amazonka-cloudfront" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

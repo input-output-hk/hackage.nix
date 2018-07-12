@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AC-HalfInteger = {
+        "AC-HalfInteger" = {
           depends  = [ hsPkgs.base ];
         };
       };

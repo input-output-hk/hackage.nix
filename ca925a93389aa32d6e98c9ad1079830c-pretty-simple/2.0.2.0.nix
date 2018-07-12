@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty-simple = {
+        "pretty-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -34,13 +34,13 @@ let
           ];
         };
         exes = {
-          pretty-simple-example = {
+          "pretty-simple-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty-simple
             ];
           };
-          pretty-simple-json-example = {
+          "pretty-simple-json-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          pretty-simple-doctest = {
+          "pretty-simple-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -60,7 +60,7 @@ let
           };
         };
         benchmarks = {
-          pretty-simple-bench = {
+          "pretty-simple-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

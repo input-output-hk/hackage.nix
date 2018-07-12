@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dirstream = {
+        "dirstream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

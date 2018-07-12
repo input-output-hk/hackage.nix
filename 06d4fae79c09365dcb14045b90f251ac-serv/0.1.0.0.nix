@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serv = {
+        "serv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          test-server = {
+          "test-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.serv
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          serv-test = {
+          "serv-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.serv

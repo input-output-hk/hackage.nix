@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tinylog = {
+        "tinylog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

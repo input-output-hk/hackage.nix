@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          replay-convert = {
+          "replay-convert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust-crypto
@@ -43,7 +43,7 @@ let
               hsPkgs.pcap
             ];
           };
-          shaper-update = {
+          "shaper-update" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust

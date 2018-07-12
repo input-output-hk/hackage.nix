@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RNAwolf = {
+        "RNAwolf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,13 +39,13 @@ let
           ];
         };
         exes = {
-          RNAwolfTrain = {
+          "RNAwolfTrain" = {
             depends  = [
               hsPkgs.split
               hsPkgs.cmdargs
             ];
           };
-          RNAwolf = {
+          "RNAwolf" = {
             depends  = [ hsPkgs.cmdargs ];
           };
         };

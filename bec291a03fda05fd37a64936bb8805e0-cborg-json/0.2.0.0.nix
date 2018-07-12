@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cborg-json = {
+        "cborg-json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

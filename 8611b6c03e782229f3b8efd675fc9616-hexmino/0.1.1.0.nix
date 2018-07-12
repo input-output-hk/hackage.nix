@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hexmino = {
+          "hexmino" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss

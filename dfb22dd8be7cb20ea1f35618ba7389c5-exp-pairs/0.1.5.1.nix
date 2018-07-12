@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exp-pairs = {
+        "exp-pairs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

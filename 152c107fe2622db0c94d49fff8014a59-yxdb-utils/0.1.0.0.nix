@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yxdb-utils = {
+        "yxdb-utils" = {
           depends  = [
             hsPkgs.array
             hsPkgs.attoparsec
@@ -58,13 +58,13 @@ let
           ];
         };
         exes = {
-          csv2yxdb = {
+          "csv2yxdb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yxdb-utils
             ];
           };
-          yxdb2csv = {
+          "yxdb2csv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yxdb-utils
@@ -72,7 +72,7 @@ let
           };
         };
         tests = {
-          yxdb-tests = {
+          "yxdb-tests" = {
             depends  = [
               hsPkgs.Codec-Compression-LZF
               hsPkgs.Decimal

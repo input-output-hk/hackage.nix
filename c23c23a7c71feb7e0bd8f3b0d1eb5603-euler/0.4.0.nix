@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        euler = {
+        "euler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-posix
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.euler
@@ -36,20 +36,20 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          hpc = {
+          "hpc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.xml
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          haddock = {
+          "haddock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

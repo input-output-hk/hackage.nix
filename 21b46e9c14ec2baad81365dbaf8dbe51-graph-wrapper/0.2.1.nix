@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graph-wrapper = {
+        "graph-wrapper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

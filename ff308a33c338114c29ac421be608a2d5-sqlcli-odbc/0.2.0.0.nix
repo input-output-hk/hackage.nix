@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sqlcli-odbc = {
+        "sqlcli-odbc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.logging

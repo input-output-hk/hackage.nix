@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpc = {
+        "hpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

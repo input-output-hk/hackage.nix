@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtfs = {
+        "gtfs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

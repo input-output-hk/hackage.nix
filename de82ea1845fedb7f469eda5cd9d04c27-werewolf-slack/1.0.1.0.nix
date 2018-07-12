@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          werewolf-slack = {
+          "werewolf-slack" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

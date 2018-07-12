@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haxl-amazonka = {
+        "haxl-amazonka" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haxl

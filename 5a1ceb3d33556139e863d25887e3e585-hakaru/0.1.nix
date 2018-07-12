@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakaru = {
+        "hakaru" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

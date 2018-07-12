@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          BigPixel = {
+          "BigPixel" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

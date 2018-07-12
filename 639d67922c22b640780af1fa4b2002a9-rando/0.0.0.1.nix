@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rando = {
+        "rando" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tf-random

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-iproute = {
+        "aeson-iproute" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

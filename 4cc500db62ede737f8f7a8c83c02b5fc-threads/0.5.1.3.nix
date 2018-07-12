@@ -20,14 +20,14 @@ let
         buildType = "Custom";
       };
       components = {
-        threads = {
+        "threads" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
           ];
         };
         tests = {
-          test-threads = {
+          "test-threads" = {
             depends  = [
               hsPkgs.threads
               hsPkgs.base

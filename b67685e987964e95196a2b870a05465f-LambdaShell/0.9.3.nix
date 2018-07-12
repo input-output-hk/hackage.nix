@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lambdaShell = {
+          "lambdaShell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

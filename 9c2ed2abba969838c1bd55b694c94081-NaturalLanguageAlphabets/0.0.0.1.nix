@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NaturalLanguageAlphabets = {
+        "NaturalLanguageAlphabets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

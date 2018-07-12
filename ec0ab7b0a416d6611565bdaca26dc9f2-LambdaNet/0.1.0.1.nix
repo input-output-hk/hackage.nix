@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LambdaNet = {
+        "LambdaNet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix

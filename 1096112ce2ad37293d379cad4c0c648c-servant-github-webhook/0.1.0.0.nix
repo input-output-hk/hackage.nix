@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-github-webhook = {
+        "servant-github-webhook" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

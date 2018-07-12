@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atlassian-connect-core = {
+        "atlassian-connect-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.atlassian-connect-descriptor

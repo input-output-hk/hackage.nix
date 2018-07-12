@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PrimitiveArray = {
+        "PrimitiveArray" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.PrimitiveArray

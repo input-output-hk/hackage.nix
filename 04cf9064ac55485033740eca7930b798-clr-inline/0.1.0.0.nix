@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clr-inline = {
+        "clr-inline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clr-inline
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clr-inline

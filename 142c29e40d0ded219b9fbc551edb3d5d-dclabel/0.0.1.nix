@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dclabel = {
+        "dclabel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

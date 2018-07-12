@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zoom-cache-pcm = {
+        "zoom-cache-pcm" = {
           depends  = [
             hsPkgs.blaze-builder
             hsPkgs.bytestring

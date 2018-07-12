@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        biofastq = {
+        "biofastq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

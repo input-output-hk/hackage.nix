@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        online = {
+        "online" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BufferedSocket = {
+        "BufferedSocket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

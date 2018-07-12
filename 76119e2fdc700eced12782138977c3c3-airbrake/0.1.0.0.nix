@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        airbrake = {
+        "airbrake" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup

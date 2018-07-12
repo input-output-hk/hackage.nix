@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        niagra = {
+        "niagra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          masakazu-bot = {
+          "masakazu-bot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.twitter-conduit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-session-mysql = {
+        "wai-session-mysql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          mysql-session-test = {
+          "mysql-session-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

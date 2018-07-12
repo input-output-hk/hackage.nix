@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ghc-gc-tune = {
+          "ghc-gc-tune" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

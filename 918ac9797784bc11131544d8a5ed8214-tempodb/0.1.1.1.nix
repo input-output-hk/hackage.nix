@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tempodb = {
+        "tempodb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-streams

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        music-dynamics = {
+        "music-dynamics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.average

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          omaketex = {
+          "omaketex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shakespeare-text

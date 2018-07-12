@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shakespeare = {
+        "shakespeare" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          servius = {
+          "servius" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-app-static
@@ -62,7 +62,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shakespeare

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smallcheck-laws = {
+        "smallcheck-laws" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.smallcheck

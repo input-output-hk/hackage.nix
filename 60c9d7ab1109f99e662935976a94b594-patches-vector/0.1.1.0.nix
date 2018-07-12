@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        patches-vector = {
+        "patches-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.edit-distance-vector
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-patches-vector = {
+          "test-patches-vector" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

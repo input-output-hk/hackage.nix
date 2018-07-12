@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        redis-io = {
+        "redis-io" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.auto-update
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          redis-io-tests = {
+          "redis-io-tests" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -59,7 +59,7 @@ let
           };
         };
         benchmarks = {
-          redis-io-bench = {
+          "redis-io-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

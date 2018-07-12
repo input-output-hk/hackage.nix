@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        on-a-horse = {
+        "on-a-horse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe

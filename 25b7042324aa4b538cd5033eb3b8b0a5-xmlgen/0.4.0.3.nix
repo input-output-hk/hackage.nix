@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmlgen = {
+        "xmlgen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.HTF
               hsPkgs.MissingH
@@ -44,7 +44,7 @@ let
               hsPkgs.process
             ];
           };
-          benchmarks = {
+          "benchmarks" = {
             depends  = pkgs.lib.optional _flags.benchmarks hsPkgs.criterion;
           };
         };

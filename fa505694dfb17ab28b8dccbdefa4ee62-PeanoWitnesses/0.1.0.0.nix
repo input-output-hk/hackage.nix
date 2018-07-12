@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PeanoWitnesses = {
+        "PeanoWitnesses" = {
           depends  = [ hsPkgs.base ];
         };
       };

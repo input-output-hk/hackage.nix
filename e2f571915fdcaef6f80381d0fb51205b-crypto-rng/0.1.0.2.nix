@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-rng = {
+        "crypto-rng" = {
           depends  = [
             hsPkgs.base
             hsPkgs.DRBG

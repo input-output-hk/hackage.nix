@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pwstore-fast = {
+        "pwstore-fast" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

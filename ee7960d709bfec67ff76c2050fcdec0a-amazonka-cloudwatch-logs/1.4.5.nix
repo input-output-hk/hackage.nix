@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cloudwatch-logs = {
+        "amazonka-cloudwatch-logs" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-cloudwatch-logs-test = {
+          "amazonka-cloudwatch-logs-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

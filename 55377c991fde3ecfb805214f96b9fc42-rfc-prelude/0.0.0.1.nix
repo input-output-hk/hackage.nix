@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rfc-prelude = {
+        "rfc-prelude" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

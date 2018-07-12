@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fmt = {
+        "fmt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -34,7 +34,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
               hsPkgs.vector
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -58,7 +58,7 @@ let
           };
         };
         benchmarks = {
-          benches = {
+          "benches" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

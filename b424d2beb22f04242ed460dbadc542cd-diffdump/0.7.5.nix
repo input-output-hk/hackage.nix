@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          diffdump = {
+          "diffdump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filemanip
@@ -35,7 +35,7 @@ let
               hsPkgs.unix
             ];
           };
-          patchdump = {
+          "patchdump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

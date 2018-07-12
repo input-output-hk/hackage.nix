@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gcodehs = {
+        "gcodehs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          gcodehs = {
+          "gcodehs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

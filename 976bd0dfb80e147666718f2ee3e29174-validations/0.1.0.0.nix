@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validations = {
+        "validations" = {
           depends  = [
             hsPkgs.base
             hsPkgs.digestive-functors
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          digestive-functors-validations-tests = {
+          "digestive-functors-validations-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

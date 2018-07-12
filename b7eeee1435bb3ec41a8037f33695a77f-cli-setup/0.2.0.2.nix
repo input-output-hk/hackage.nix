@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cli-setup = {
+        "cli-setup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        manatee-browser = {
+        "manatee-browser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manatee-core
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          manatee-browser = {};
+          "manatee-browser" = {};
         };
       };
     }

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hashtable-benchmark = {
+          "hashtable-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

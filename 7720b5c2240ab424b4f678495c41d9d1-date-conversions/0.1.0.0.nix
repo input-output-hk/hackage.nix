@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        date-conversions = {
+        "date-conversions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          date-conversions-test = {
+          "date-conversions-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.date-conversions

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hscope = {
+          "hscope" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pure-cdb
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          Build = {
+          "Build" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-simple

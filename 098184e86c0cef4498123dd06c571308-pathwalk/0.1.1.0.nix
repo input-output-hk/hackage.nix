@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pathwalk = {
+        "pathwalk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        xmonad = {
+        "xmonad" = {
           depends  = [
             hsPkgs.X11
             hsPkgs.mtl
@@ -36,6 +36,6 @@ let
             ]
             else [ hsPkgs.base ]);
         };
-        exes = { xmonad = {}; };
+        exes = { "xmonad" = {}; };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lxd-client-config = {
+        "lxd-client-config" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          lxd-client-config-test = {
+          "lxd-client-config-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lxd-client-config

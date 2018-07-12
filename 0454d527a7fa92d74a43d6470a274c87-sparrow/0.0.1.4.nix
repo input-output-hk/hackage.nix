@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sparrow = {
+        "sparrow" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-attoparsec

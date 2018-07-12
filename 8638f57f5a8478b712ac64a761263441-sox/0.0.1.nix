@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sox = {
+        "sox" = {
           depends  = ([
             hsPkgs.explicit-exception
             hsPkgs.transformers

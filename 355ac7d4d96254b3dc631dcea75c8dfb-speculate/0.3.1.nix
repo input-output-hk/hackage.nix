@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        speculate = {
+        "speculate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.leancheck
@@ -29,63 +29,63 @@ let
           ];
         };
         tests = {
-          creason = {
+          "creason" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
               hsPkgs.speculate
             ];
           };
-          engine = {
+          "engine" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
               hsPkgs.speculate
             ];
           };
-          eval = {
+          "eval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
               hsPkgs.speculate
             ];
           };
-          expr = {
+          "expr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
               hsPkgs.speculate
             ];
           };
-          match = {
+          "match" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
               hsPkgs.speculate
             ];
           };
-          misc = {
+          "misc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
               hsPkgs.speculate
             ];
           };
-          order = {
+          "order" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
               hsPkgs.speculate
             ];
           };
-          reason = {
+          "reason" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
               hsPkgs.speculate
             ];
           };
-          utils = {
+          "utils" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -94,13 +94,13 @@ let
           };
         };
         benchmarks = {
-          plus-abs = {
+          "plus-abs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.speculate
             ];
           };
-          test-stats = {
+          "test-stats" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck

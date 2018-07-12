@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arrowp-qq = {
+        "arrowp-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -44,7 +44,7 @@ let
             else [ hsPkgs.NoHoed ]);
         };
         exes = {
-          arrowp-ext = {
+          "arrowp-ext" = {
             depends  = [
               hsPkgs.base
               hsPkgs.arrowp-qq
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.arrows

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        converge = {
+        "converge" = {
           depends  = [ hsPkgs.base ];
         };
       };

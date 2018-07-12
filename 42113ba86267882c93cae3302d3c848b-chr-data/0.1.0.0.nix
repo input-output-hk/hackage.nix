@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chr-data = {
+        "chr-data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

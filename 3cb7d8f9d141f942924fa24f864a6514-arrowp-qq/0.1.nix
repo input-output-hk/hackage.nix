@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arrowp-qq = {
+        "arrowp-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

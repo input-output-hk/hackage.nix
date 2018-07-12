@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rivet = {
+          "rivet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rivet-core

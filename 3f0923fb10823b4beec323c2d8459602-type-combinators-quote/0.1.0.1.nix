@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-combinators-quote = {
+        "type-combinators-quote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-combinators

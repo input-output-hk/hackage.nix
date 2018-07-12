@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          tkhs = {
+          "tkhs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          test-tkhs = {
+          "test-tkhs" = {
             depends  = [
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit

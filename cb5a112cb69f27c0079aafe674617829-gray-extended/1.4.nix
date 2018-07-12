@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        gray-extended = {
+        "gray-extended" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          gray-extended-tests = {
+          "gray-extended-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework-quickcheck2

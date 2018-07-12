@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        ssv = {
+        "ssv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          csvclean = {
+          "csvclean" = {
             depends  = [ hsPkgs.base ];
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rank2classes = {
+        "rank2classes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rank2classes

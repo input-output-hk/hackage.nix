@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        text-manipulate = {
+        "text-manipulate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text-manipulate
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

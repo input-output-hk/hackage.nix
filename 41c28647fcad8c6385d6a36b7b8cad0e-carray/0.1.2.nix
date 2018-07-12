@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        carray = {
+        "carray" = {
           depends  = (if _flags.bytestringinbase
             then [
               hsPkgs.base

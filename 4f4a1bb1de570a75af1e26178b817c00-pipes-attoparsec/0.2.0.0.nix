@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-attoparsec = {
+        "pipes-attoparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mmorph

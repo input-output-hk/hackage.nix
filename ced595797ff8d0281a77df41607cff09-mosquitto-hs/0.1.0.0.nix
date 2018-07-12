@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mosquitto-hs = {
+        "mosquitto-hs" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hsluv-haskell = {
+        "hsluv-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colour
           ];
         };
         tests = {
-          hsluv-haskell-test = {
+          "hsluv-haskell-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

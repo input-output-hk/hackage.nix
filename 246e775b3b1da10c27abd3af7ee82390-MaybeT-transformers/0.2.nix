@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MaybeT-transformers = {
+        "MaybeT-transformers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monads-fd

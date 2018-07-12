@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        table-tennis = {
+        "table-tennis" = {
           depends  = [ hsPkgs.base ];
         };
       };

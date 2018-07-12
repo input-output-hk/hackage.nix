@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-easy = {
+        "data-easy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-attoparsec = {
+        "http-attoparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

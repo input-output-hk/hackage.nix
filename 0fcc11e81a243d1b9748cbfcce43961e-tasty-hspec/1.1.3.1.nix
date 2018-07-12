@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-hspec = {
+        "tasty-hspec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec

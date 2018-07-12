@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transformers-either = {
+        "transformers-either" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

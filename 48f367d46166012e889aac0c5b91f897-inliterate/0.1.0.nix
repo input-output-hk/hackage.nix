@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inliterate = {
+        "inliterate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          inlitpp = {
+          "inlitpp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.inliterate
@@ -44,14 +44,14 @@ let
           };
         };
         tests = {
-          test-inliterate = {
+          "test-inliterate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.inliterate
               hsPkgs.text
             ];
           };
-          test-inliterate-pp = {
+          "test-inliterate-pp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.inliterate

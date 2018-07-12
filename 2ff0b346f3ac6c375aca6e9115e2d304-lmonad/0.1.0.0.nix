@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lmonad = {
+        "lmonad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-lmonad = {
+          "test-lmonad" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

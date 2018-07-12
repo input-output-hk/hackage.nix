@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-format = {
+        "th-format" = {
           depends  = [
             hsPkgs.Earley
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          th-format-test = {
+          "th-format-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

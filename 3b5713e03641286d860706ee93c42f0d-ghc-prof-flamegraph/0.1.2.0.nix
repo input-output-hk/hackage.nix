@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-prof-flamegraph = {
+        "ghc-prof-flamegraph" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          ghc-prof-flamegraph = {
+          "ghc-prof-flamegraph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prof-flamegraph

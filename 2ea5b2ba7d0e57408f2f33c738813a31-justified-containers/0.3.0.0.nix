@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        justified-containers = {
+        "justified-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          justified-containers-spec = {
+          "justified-containers-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

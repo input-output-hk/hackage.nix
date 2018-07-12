@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        deterministic-game-engine = {
+        "deterministic-game-engine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

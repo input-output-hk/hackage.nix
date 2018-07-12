@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-simple = {
+        "postgresql-simple" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -41,7 +41,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) hsPkgs.ghc-prim;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

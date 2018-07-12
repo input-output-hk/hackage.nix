@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kure-your-boilerplate = {
+        "kure-your-boilerplate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.kure

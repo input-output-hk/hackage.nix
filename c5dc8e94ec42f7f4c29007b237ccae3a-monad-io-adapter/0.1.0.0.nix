@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-io-adapter = {
+        "monad-io-adapter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          monad-io-adapter-test-suite = {
+          "monad-io-adapter-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

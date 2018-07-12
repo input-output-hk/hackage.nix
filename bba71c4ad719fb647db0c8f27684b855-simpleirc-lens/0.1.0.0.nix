@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simpleirc-lens = {
+        "simpleirc-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

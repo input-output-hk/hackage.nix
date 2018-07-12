@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          egison-tutorial = {
+          "egison-tutorial" = {
             depends  = [
               hsPkgs.egison
               hsPkgs.base

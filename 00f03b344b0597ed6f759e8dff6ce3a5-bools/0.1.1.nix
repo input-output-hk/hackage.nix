@@ -19,5 +19,5 @@ let
         description = "None";
         buildType = "Simple";
       };
-      components = { bools = {}; };
+      components = { "bools" = {}; };
     }

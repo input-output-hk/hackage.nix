@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opench-meteo = {
+        "opench-meteo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

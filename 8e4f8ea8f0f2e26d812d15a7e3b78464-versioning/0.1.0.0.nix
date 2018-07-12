@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        versioning = {
+        "versioning" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

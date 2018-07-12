@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jose = {
+        "jose" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.attoparsec
@@ -47,7 +47,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.bifunctors) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.attoparsec

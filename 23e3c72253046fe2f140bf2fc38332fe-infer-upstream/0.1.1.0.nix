@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          infer-upstream = {
+          "infer-upstream" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

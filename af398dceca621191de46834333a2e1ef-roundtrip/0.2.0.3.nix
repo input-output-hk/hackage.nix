@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        roundtrip = {
+        "roundtrip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AlgoRhythm = {
+        "AlgoRhythm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.midi
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          music-exe = {
+          "music-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AlgoRhythm
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          music-test = {
+          "music-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AlgoRhythm

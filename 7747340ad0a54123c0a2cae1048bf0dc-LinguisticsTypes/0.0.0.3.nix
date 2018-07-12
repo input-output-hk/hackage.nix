@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LinguisticsTypes = {
+        "LinguisticsTypes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -58,7 +58,7 @@ let
           };
         };
         benchmarks = {
-          BenchmarkBuilder = {
+          "BenchmarkBuilder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

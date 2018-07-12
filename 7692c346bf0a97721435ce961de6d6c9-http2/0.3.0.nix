@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http2 = {
+        "http2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.PSQueue
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          hpack-encode = {
+          "hpack-encode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.PSQueue
@@ -48,7 +48,7 @@ let
               hsPkgs.word8
             ];
           };
-          hpack-debug = {
+          "hpack-debug" = {
             depends  = [
               hsPkgs.base
               hsPkgs.PSQueue
@@ -63,7 +63,7 @@ let
               hsPkgs.word8
             ];
           };
-          hpack-stat = {
+          "hpack-stat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.PSQueue
@@ -83,13 +83,13 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.PSQueue
@@ -102,7 +102,7 @@ let
               hsPkgs.word8
             ];
           };
-          hpack = {
+          "hpack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.PSQueue

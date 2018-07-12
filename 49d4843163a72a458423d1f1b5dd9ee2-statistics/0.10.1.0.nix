@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        statistics = {
+        "statistics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -34,7 +34,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ieee754

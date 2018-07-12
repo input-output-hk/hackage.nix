@@ -22,13 +22,13 @@ let
         buildType = "Simple";
       };
       components = {
-        cpuid = {
+        "cpuid" = {
           depends  = pkgs.lib.optionals (system.isI386 || system.isX86_64) [
             hsPkgs.data-accessor
             hsPkgs.enumset
             hsPkgs.base
           ];
         };
-        exes = { cpuid-test = {}; };
+        exes = { "cpuid-test" = {}; };
       };
     }

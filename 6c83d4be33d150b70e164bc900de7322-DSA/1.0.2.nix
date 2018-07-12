@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DSA = {
+        "DSA" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test-dsa = {
+          "test-dsa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

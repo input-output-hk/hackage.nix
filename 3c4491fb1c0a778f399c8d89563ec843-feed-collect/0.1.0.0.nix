@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feed-collect = {
+        "feed-collect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

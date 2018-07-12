@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conjure = {
+        "conjure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -39,6 +39,6 @@ let
             hsPkgs.pretty
           ];
         };
-        exes = { conjure = {}; };
+        exes = { "conjure" = {}; };
       };
     }

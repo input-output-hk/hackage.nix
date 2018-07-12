@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hastodon = {
+        "Hastodon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

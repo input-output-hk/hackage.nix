@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sbv = {
+        "sbv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          SBVUnitTests = {
+          "SBVUnitTests" = {
             depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.1") [
               hsPkgs.base
               hsPkgs.HUnit
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          SBVBasicTests = {
+          "SBVBasicTests" = {
             depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.1") [
               hsPkgs.base
               hsPkgs.HUnit

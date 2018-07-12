@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-abort-fd = {
+        "monad-abort-fd" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.transformers-base

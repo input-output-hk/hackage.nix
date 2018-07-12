@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger-web = {
+        "hledger-web" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod
@@ -75,7 +75,7 @@ let
             else [ hsPkgs.blaze-html ]);
         };
         exes = {
-          hledger-web = {
+          "hledger-web" = {
             depends  = [
               hsPkgs.hledger-web
               hsPkgs.hledger
@@ -118,7 +118,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hledger-web

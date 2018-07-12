@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-solarized = {
+        "yi-solarized" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yi

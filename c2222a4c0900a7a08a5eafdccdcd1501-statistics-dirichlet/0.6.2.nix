@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        statistics-dirichlet = {
+        "statistics-dirichlet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

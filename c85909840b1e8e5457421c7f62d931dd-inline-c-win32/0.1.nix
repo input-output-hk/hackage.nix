@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inline-c-win32 = {
+        "inline-c-win32" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

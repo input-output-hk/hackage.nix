@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-handler-hyena = {
+        "hack-handler-hyena" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

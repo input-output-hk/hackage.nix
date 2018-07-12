@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        buffon = {
+        "buffon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mwc-random

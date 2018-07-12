@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        effective-aspects-mzv = {
+        "effective-aspects-mzv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashtables
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hashtables

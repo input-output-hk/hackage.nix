@@ -20,12 +20,12 @@ let
         buildType = "Simple";
       };
       components = {
-        HOpenCV = {
+        "HOpenCV" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.cv pkgs.highgui ];
         };
         exes = {
-          test-hopencv = {
+          "test-hopencv" = {
             depends  = [ hsPkgs.base ];
             libs = [ pkgs.cv pkgs.highgui ];
           };

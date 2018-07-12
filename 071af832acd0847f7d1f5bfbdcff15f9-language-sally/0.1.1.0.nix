@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-sally = {
+        "language-sally" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

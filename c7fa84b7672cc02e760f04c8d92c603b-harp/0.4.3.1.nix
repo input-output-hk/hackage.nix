@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        harp = {
+        "harp" = {
           depends  = [ hsPkgs.base ];
         };
       };

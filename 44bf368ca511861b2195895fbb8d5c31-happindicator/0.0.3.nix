@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        happindicator = {
+        "happindicator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

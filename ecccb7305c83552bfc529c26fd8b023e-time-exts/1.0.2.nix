@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-exts = {
+        "time-exts" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

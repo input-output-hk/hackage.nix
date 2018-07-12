@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yate = {
+        "yate" = {
           depends  = if _flags.noaeson
             then [
               hsPkgs.base
@@ -46,7 +46,7 @@ let
             ];
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

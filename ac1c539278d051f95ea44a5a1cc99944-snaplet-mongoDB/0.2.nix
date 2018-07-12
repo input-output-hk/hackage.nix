@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-mongoDB = {
+        "snaplet-mongoDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

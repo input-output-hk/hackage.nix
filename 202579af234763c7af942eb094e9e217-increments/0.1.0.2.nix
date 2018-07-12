@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        increments = {
+        "increments" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          increments-tests = {
+          "increments-tests" = {
             depends  = [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pointful = {
+        "pointful" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.haskell-src
@@ -32,7 +32,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          pointful = {
+          "pointful" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.haskell-src

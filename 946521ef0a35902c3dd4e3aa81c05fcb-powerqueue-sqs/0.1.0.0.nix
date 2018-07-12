@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        powerqueue-sqs = {
+        "powerqueue-sqs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.powerqueue

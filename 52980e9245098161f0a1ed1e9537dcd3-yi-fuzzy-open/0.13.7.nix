@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-fuzzy-open = {
+        "yi-fuzzy-open" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

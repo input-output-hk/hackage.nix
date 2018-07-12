@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        loop = {
+        "loop" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.loop
@@ -34,7 +34,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.loop
@@ -43,7 +43,7 @@ let
               hsPkgs.vector
             ];
           };
-          bench-traverse-w32 = {
+          "bench-traverse-w32" = {
             depends  = [
               hsPkgs.base
               hsPkgs.loop
@@ -51,7 +51,7 @@ let
               hsPkgs.vector
             ];
           };
-          bench-foldl-and-iorefs-are-slow = {
+          "bench-foldl-and-iorefs-are-slow" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        naver-translate = {
+        "naver-translate" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

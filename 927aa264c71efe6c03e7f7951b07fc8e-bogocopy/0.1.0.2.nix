@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bogocopy = {
+          "bogocopy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

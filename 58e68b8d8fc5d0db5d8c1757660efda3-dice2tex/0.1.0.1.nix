@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dice2tex = {
+          "dice2tex" = {
             depends  = [ hsPkgs.base ];
           };
         };

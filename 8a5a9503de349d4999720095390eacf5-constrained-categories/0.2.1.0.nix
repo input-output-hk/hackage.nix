@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        constrained-categories = {
+        "constrained-categories" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagged

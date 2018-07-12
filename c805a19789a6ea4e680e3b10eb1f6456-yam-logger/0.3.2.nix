@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yam-logger = {
+        "yam-logger" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-uuid = {
+        "system-uuid" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.binary
@@ -35,7 +35,7 @@ let
           libs = pkgs.lib.optional system.isLinux pkgs.uuid ++ pkgs.lib.optional system.isWindows pkgs.rpcrt4;
         };
         exes = {
-          hooty = {
+          "hooty" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.binary

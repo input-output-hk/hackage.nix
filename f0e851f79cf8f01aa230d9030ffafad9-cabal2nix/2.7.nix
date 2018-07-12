@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cabal2nix = {
+        "cabal2nix" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-wl-pprint
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          cabal2nix = {
+          "cabal2nix" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-wl-pprint
@@ -76,7 +76,7 @@ let
               hsPkgs.cabal2nix
             ];
           };
-          hackage2nix = {
+          "hackage2nix" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-wl-pprint
@@ -111,7 +111,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-wl-pprint

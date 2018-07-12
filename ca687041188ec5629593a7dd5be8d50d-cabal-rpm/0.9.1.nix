@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cblrpm = {
+          "cblrpm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

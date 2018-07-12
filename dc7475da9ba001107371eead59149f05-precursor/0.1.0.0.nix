@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        precursor = {
+        "precursor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          precursor-test = {
+          "precursor-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.precursor

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        colada = {
+        "colada" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          colada = {
+          "colada" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

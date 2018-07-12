@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keyring = {
+        "keyring" = {
           depends  = ([
             hsPkgs.base
           ] ++ pkgs.lib.optionals system.isOsx [
@@ -37,7 +37,7 @@ let
           build-tools = pkgs.lib.optional system.isOsx hsPkgs.buildPackages.hsc2hs;
         };
         exes = {
-          keyring-example = {
+          "keyring-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.keyring

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa-sndfile = {
+        "repa-sndfile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsndfile
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          rw = {
+          "rw" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsndfile
@@ -40,7 +40,7 @@ let
               hsPkgs.repa-sndfile
             ];
           };
-          gensine = {
+          "gensine" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsndfile
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

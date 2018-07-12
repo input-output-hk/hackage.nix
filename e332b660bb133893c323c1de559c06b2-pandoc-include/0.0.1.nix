@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pandoc-include = {
+        "pandoc-include" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          pandoc-include = {
+          "pandoc-include" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

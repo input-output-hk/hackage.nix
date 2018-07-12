@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-th = {
+        "tasty-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tasty-th-tests = {
+          "tasty-th-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty-hunit

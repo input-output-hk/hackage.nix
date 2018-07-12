@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hchesslib = {
+        "hchesslib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -42,7 +42,7 @@ let
               hsPkgs.hchesslib
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

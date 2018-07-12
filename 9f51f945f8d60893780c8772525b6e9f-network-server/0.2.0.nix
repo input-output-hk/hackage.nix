@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-server = {
+        "network-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

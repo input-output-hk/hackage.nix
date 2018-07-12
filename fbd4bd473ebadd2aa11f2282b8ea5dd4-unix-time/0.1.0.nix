@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        unix-time = {
+        "unix-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

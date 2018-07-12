@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cj-token = {
+        "cj-token" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          cj-token = {
+          "cj-token" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cj-token
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          cj-token-test-suite = {
+          "cj-token-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jwt

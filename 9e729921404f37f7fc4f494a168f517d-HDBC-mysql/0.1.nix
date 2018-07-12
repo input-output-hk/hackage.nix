@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HDBC-mysql = {
+        "HDBC-mysql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

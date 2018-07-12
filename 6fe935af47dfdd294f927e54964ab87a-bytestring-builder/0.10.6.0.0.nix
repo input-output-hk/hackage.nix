@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-builder = {
+        "bytestring-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

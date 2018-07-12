@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-prompt = {
+        "list-prompt" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          simple-demo = {
+          "simple-demo" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base

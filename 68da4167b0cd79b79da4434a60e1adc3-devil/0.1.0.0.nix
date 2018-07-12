@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          devil = {
+          "devil" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hinotify

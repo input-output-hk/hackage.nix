@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-src-exts-observe = {
+        "haskell-src-exts-observe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts

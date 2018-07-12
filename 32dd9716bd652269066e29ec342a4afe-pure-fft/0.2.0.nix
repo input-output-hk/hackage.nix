@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pure-fft = {
+        "pure-fft" = {
           depends  = [ hsPkgs.base ];
         };
       };

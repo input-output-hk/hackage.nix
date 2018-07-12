@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        copilot-sbv = {
+        "copilot-sbv" = {
           depends  = [
             hsPkgs.sbv
             hsPkgs.base

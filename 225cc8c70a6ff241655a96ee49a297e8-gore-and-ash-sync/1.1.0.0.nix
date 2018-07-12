@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gore-and-ash-sync = {
+        "gore-and-ash-sync" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

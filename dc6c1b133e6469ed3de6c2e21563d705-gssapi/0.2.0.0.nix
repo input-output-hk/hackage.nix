@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gssapi = {
+        "gssapi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

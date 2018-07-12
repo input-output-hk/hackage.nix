@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sai-shape-syb = {
+        "sai-shape-syb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional _flags.use_data_tree hsPkgs.containers;
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb

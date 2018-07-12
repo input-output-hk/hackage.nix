@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-quickcheck = {
+        "servant-quickcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -51,7 +51,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -75,7 +75,7 @@ let
               hsPkgs.buildPackages.hspec-discover
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

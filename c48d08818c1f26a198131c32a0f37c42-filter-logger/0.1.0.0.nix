@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filter-logger = {
+        "filter-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          filter-logger-basic-exe = {
+          "filter-logger-basic-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filter-logger
@@ -42,7 +42,7 @@ let
               hsPkgs.scotty
             ];
           };
-          filter-logger-password-exe = {
+          "filter-logger-password-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filter-logger
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          filter-logger-test = {
+          "filter-logger-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filter-logger

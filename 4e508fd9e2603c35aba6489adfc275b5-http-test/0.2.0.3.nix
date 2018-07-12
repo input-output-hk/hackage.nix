@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-test = {
+        "http-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          test-http-test-bayeshive = {
+          "test-http-test-bayeshive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-test

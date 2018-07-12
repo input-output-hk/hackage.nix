@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-py = {
+        "servant-py" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          servant-py-exe = {
+          "servant-py-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          servant-py-test = {
+          "servant-py-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-py

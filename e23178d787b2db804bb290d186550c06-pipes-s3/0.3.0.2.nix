@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-s3 = {
+        "pipes-s3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          pipes-s3-tests = {
+          "pipes-s3-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

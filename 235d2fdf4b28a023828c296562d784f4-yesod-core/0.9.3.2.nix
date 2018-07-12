@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-core = {
+        "yesod-core" = {
           depends  = [
             hsPkgs.time
             hsPkgs.wai
@@ -60,7 +60,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.wai-test

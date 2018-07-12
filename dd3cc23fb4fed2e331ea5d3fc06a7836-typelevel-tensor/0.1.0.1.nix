@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typelevel-tensor = {
+        "typelevel-tensor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.control-monad-failure
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.control-monad-failure

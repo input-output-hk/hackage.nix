@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RESTng = {
+        "RESTng" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

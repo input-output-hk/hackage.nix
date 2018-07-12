@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddc-core-salt = {
+        "ddc-core-salt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

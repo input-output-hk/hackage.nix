@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        armor = {
+        "armor" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.aeson

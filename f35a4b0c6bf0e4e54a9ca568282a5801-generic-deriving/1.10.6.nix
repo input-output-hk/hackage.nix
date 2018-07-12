@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-deriving = {
+        "generic-deriving" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.ghc-prim

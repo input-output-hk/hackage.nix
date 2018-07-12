@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        copilot-cbmc = {
+        "copilot-cbmc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

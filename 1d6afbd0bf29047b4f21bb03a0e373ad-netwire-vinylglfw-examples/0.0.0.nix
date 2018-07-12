@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          netwire-vinylglfw-example = {
+          "netwire-vinylglfw-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

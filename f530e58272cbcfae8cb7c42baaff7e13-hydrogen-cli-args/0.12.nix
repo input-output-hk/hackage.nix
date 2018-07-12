@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hydrogen-cli-args = {
+        "hydrogen-cli-args" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

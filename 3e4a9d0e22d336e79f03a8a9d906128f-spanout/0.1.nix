@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          spanout = {
+          "spanout" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

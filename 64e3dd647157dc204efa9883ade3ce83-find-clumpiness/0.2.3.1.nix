@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        find-clumpiness = {
+        "find-clumpiness" = {
           depends  = [
             hsPkgs.base
             hsPkgs.BiobaseNewick
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          find-clumpiness = {
+          "find-clumpiness" = {
             depends  = [
               hsPkgs.base
               hsPkgs.find-clumpiness

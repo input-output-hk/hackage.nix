@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shakespeare-babel = {
+        "shakespeare-babel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude

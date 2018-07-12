@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdf5-lite = {
+        "hdf5-lite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hdf5-lite

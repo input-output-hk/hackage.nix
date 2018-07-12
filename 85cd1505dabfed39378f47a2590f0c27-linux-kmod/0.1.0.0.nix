@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linux-kmod = {
+        "linux-kmod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

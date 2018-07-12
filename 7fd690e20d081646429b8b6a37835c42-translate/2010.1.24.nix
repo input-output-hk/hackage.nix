@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        translate = {
+        "translate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl

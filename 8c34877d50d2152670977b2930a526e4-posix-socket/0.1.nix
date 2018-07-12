@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        posix-socket = {
+        "posix-socket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

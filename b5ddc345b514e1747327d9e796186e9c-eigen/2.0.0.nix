@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eigen = {
+        "eigen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -29,7 +29,7 @@ let
           libs = [ pkgs."stdc++" ];
         };
         tests = {
-          test-solve = {
+          "test-solve" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive
@@ -37,7 +37,7 @@ let
               hsPkgs.eigen
             ];
           };
-          test-rank = {
+          "test-rank" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive
@@ -45,7 +45,7 @@ let
               hsPkgs.eigen
             ];
           };
-          test-regression = {
+          "test-regression" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive

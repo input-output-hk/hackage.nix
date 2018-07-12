@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sqlite-simple-errors = {
+        "sqlite-simple-errors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sqlite-simple
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          sqlite-simple-errors-test = {
+          "sqlite-simple-errors-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sqlite-simple-errors

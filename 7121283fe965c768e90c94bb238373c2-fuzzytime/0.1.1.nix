@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fuzzytime = {
+          "fuzzytime" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

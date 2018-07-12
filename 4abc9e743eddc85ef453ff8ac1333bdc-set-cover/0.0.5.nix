@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        set-cover = {
+        "set-cover" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.utility-ht
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          tetris-cube = {
+          "tetris-cube" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.haha
               hsPkgs.pooled-io
@@ -40,7 +40,7 @@ let
               hsPkgs.base
             ];
           };
-          soma-cube = {
+          "soma-cube" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers
@@ -48,16 +48,7 @@ let
               hsPkgs.base
             ];
           };
-          queen8 = {
-            depends  = pkgs.lib.optionals _flags.buildexamples [
-              hsPkgs.set-cover
-              hsPkgs.containers
-              hsPkgs.array
-              hsPkgs.utility-ht
-              hsPkgs.base
-            ];
-          };
-          sudoku-setcover = {
+          "queen8" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers
@@ -66,7 +57,16 @@ let
               hsPkgs.base
             ];
           };
-          lcube = {
+          "sudoku-setcover" = {
+            depends  = pkgs.lib.optionals _flags.buildexamples [
+              hsPkgs.set-cover
+              hsPkgs.containers
+              hsPkgs.array
+              hsPkgs.utility-ht
+              hsPkgs.base
+            ];
+          };
+          "lcube" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.pooled-io
@@ -75,7 +75,7 @@ let
               hsPkgs.base
             ];
           };
-          baumeister = {
+          "baumeister" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers
@@ -83,7 +83,7 @@ let
               hsPkgs.base
             ];
           };
-          lonpos-pyramid = {
+          "lonpos-pyramid" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers
@@ -91,7 +91,7 @@ let
               hsPkgs.base
             ];
           };
-          alphametics = {
+          "alphametics" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.transformers
@@ -100,7 +100,7 @@ let
               hsPkgs.base
             ];
           };
-          domino = {
+          "domino" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.unicode
@@ -109,7 +109,7 @@ let
               hsPkgs.base
             ];
           };
-          nonogram = {
+          "nonogram" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers
@@ -117,7 +117,7 @@ let
               hsPkgs.base
             ];
           };
-          mastermind = {
+          "mastermind" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.random
@@ -128,7 +128,7 @@ let
               hsPkgs.base
             ];
           };
-          pangram = {
+          "pangram" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          TypeClass = {
+          "TypeClass" = {
             depends  = [
               hsPkgs.SDL
               hsPkgs.SDL-ttf

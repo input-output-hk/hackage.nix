@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        write-buffer-core = {
+        "write-buffer-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

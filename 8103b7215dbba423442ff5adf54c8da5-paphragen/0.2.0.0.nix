@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          paphragen = {
+          "paphragen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

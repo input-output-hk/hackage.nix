@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        universe-base = {
+        "universe-base" = {
           depends  = [ hsPkgs.base ];
         };
       };

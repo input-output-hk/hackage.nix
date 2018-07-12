@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-conduit = {
+        "simple-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -47,7 +47,7 @@ let
           ];
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.simple-conduit
               hsPkgs.base

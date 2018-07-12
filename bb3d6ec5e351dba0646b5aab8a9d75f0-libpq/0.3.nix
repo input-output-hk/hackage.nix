@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        libpq = {
+        "libpq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

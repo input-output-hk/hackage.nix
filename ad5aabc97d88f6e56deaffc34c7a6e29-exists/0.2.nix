@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exists = {
+        "exists" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant

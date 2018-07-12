@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HTF = {
+        "HTF" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.QuickCheck
@@ -45,7 +45,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          htfpp = {
+          "htfpp" = {
             depends  = [
               hsPkgs.cpphs
               hsPkgs.haskell-src-exts
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          TestHTF = {
+          "TestHTF" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -75,7 +75,7 @@ let
               hsPkgs.HTF
             ];
           };
-          TestThreadPools = {
+          "TestThreadPools" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -83,7 +83,7 @@ let
               hsPkgs.HTF
             ];
           };
-          Tutorial = {
+          "Tutorial" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        utf8-string = {
+        "utf8-string" = {
           depends  = [ hsPkgs.base ];
         };
       };

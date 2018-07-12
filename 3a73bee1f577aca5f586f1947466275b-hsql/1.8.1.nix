@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsql = {
+        "hsql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

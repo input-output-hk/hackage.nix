@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-fonts = {
+        "gogol-fonts" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

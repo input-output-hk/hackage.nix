@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal-mon = {
+          "cabal-mon" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vty

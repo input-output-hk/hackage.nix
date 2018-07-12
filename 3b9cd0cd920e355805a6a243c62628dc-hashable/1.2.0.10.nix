@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashable = {
+        "hashable" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,10 +33,10 @@ let
             hsPkgs.ghc-prim
             hsPkgs.text
           ]) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.integer-gmp) hsPkgs.integer-gmp;
-          libs = pkgs.lib.optional (!_flags.fixed-salt && system.isWindows) pkgs.advapi32;
+          libs = pkgs.lib.optionals (!_flags.fixed-salt) (pkgs.lib.optional system.isWindows pkgs.advapi32);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.bytestring
@@ -65,7 +65,7 @@ let
               hsPkgs.ghc-prim
               hsPkgs.text
             ]) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.integer-gmp) hsPkgs.integer-gmp;
-            libs = pkgs.lib.optional (!_flags.fixed-salt && system.isWindows) pkgs.advapi32;
+            libs = pkgs.lib.optionals (!_flags.fixed-salt) (pkgs.lib.optional system.isWindows pkgs.advapi32);
           };
         };
       };

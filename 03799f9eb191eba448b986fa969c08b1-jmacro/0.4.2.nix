@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jmacro = {
+        "jmacro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          jmacro = {
+          "jmacro" = {
             depends  = [ hsPkgs.parseargs ];
           };
         };

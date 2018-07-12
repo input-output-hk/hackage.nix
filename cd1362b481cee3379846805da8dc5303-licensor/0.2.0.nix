@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        licensor = {
+        "licensor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          licensor = {
+          "licensor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          format-status = {
+          "format-status" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

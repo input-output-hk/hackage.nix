@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        anydbm = {
+        "anydbm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

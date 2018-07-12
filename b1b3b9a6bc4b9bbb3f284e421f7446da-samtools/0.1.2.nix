@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        samtools = {
+        "samtools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          samtest = {
+          "samtest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

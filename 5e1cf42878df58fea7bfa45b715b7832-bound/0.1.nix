@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bound = {
+        "bound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distribution-nixpkgs = {
+        "distribution-nixpkgs" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

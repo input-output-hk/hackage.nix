@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gray-code = {
+        "gray-code" = {
           depends  = [ hsPkgs.base ];
         };
       };

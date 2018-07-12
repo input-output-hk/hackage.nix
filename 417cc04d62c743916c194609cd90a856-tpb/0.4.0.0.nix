@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tpb = {
+          "tpb" = {
             depends  = [
               hsPkgs.pushbullet-types
               hsPkgs.servant-pushbullet-client
@@ -44,7 +44,7 @@ let
               hsPkgs.servant-client
             ];
           };
-          pb-notify = {
+          "pb-notify" = {
             depends  = [
               hsPkgs.pushbullet-types
               hsPkgs.servant-pushbullet-client

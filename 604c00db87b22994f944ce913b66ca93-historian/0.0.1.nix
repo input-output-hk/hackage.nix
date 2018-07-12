@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          historian = {
+          "historian" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

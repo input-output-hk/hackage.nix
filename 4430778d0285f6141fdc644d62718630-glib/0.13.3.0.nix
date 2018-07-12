@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        glib = {
+        "glib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string

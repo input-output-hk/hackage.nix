@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        hsyslog = {
+        "hsyslog" = {
           depends  = [ hsPkgs.base ];
           build-tools = [
             hsPkgs.buildPackages.hsc2hs
           ];
         };
         exes = {
-          hsyslog-example = {
+          "hsyslog-example" = {
             depends  = pkgs.lib.optionals _flags.install-examples [
               hsPkgs.base
               hsPkgs.hsyslog
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.hsyslog
               hsPkgs.base

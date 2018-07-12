@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scotty-fay = {
+        "scotty-fay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.scotty
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          scotty-fay-tests = {
+          "scotty-fay-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.scotty

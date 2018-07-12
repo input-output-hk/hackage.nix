@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sodium = {
+        "sodium" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

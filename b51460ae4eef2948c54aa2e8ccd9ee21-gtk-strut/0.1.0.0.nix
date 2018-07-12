@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk-strut = {
+        "gtk-strut" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gi-gdk

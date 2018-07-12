@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        app-lens = {
+        "app-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         benchmarks = {
-          compositions = {
+          "compositions" = {
             depends  = [
               hsPkgs.app-lens
               hsPkgs.base
@@ -42,7 +42,7 @@ let
               hsPkgs.criterion
             ];
           };
-          eval = {
+          "eval" = {
             depends  = [
               hsPkgs.app-lens
               hsPkgs.base

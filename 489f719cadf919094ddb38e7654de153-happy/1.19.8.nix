@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          happy = {
+          "happy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -33,7 +33,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

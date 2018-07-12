@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        edit-distance = {
+        "edit-distance" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base
@@ -35,7 +35,7 @@ let
             else [ hsPkgs.base ];
         };
         exes = {
-          edit-distance-tests = {
+          "edit-distance-tests" = {
             depends  = pkgs.lib.optionals (!(!_flags.tests)) ([
               hsPkgs.test-framework
               hsPkgs.QuickCheck
@@ -48,8 +48,8 @@ let
               ]
               else [ hsPkgs.base ]));
           };
-          edit-distance-benchmark = {
-            depends  = if !(!_flags.benchmark) && _flags.splitbase
+          "edit-distance-benchmark" = {
+            depends  = pkgs.lib.optionals (!(!_flags.benchmark)) (if _flags.splitbase
               then [
                 hsPkgs.base
                 hsPkgs.array
@@ -64,7 +64,7 @@ let
                 hsPkgs.base
                 hsPkgs.deepseq
                 hsPkgs.unix
-              ];
+              ]);
           };
         };
       };

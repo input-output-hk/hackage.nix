@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        criu-rpc = {
+        "criu-rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.criu-rpc-types

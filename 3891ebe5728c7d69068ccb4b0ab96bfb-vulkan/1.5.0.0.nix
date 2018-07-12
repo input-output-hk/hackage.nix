@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vulkan = {
+        "vulkan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector-sized

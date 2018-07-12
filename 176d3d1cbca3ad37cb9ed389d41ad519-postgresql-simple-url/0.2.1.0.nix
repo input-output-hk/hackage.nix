@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-simple-url = {
+        "postgresql-simple-url" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.postgresql-simple

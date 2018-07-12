@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-platform = {
+        "yesod-platform" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SHA

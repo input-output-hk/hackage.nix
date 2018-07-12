@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mapalgebra = {
+        "mapalgebra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          mapalgebra-test = {
+          "mapalgebra-test" = {
             depends  = [
               hsPkgs.HUnit-approx
               hsPkgs.QuickCheck
@@ -55,7 +55,7 @@ let
           };
         };
         benchmarks = {
-          mapalgebra-bench = {
+          "mapalgebra-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        neural-network-base = {
+        "neural-network-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints

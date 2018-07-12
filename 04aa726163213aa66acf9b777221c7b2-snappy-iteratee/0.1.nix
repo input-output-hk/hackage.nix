@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snappy-iteratee = {
+        "snappy-iteratee" = {
           depends  = [
             hsPkgs.base
             hsPkgs.iteratee

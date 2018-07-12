@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        maude = {
+        "maude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

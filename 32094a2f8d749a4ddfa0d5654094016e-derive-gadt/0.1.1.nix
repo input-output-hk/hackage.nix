@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        derive-gadt = {
+        "derive-gadt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,14 +31,14 @@ let
           ];
         };
         exes = {
-          derive-gadt = {
+          "derive-gadt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell
               hsPkgs.haskell-src-meta
             ];
           };
-          hstidy = {
+          "hstidy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-meta

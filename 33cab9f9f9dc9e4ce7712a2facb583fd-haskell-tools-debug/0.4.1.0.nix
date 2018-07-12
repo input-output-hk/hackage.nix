@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-debug = {
+        "haskell-tools-debug" = {
           depends  = [
             hsPkgs.base
             hsPkgs.references

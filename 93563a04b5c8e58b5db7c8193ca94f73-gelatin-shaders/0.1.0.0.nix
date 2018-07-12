@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gelatin-shaders = {
+        "gelatin-shaders" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gelatin

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-fancy = {
+        "network-fancy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

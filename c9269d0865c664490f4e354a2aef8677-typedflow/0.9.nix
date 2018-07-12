@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typedflow = {
+        "typedflow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-typelits-knownnat

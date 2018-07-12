@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stack = {
+        "stack" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.aeson
@@ -106,7 +106,7 @@ let
             else [ hsPkgs.unix ]);
         };
         exes = {
-          stack = {
+          "stack" = {
             depends  = ([
               hsPkgs.Cabal
               hsPkgs.base
@@ -134,7 +134,7 @@ let
           };
         };
         tests = {
-          stack-test = {
+          "stack-test" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -159,7 +159,7 @@ let
               hsPkgs.transformers
             ];
           };
-          stack-integration-test = {
+          "stack-integration-test" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

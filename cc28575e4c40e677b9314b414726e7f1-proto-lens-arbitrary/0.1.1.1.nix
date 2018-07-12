@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proto-lens-arbitrary = {
+        "proto-lens-arbitrary" = {
           depends  = [
             hsPkgs.proto-lens
             hsPkgs.base

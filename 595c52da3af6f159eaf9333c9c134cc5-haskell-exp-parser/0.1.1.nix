@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-exp-parser = {
+        "haskell-exp-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-exp-parser

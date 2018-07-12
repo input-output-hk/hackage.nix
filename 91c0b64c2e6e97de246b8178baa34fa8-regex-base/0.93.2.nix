@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-base = {
+        "regex-base" = {
           depends  = if _flags.newbase
             then [
               hsPkgs.base

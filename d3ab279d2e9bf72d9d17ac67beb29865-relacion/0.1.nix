@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        relacion = {
+        "relacion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

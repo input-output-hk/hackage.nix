@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fix-parser-simple = {
+        "fix-parser-simple" = {
           depends  = [
             hsPkgs.base
           ] ++ (if _flags.use_mtl

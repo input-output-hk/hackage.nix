@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ease = {
+        "ease" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

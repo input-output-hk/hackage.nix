@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        threepenny-gui = {
+        "threepenny-gui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -52,28 +52,28 @@ let
             else [ hsPkgs.network ]);
         };
         exes = {
-          threepenny-examples-bartab = {
+          "threepenny-examples-bartab" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.filepath
             ];
           };
-          threepenny-examples-buttons = {
+          "threepenny-examples-buttons" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.filepath
             ];
           };
-          threepenny-examples-canvas = {
+          "threepenny-examples-canvas" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.threepenny-gui
             ];
           };
-          threepenny-examples-chat = {
+          "threepenny-examples-chat" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
@@ -82,28 +82,28 @@ let
               hsPkgs.time
             ];
           };
-          threepenny-examples-crud = {
+          "threepenny-examples-crud" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.threepenny-gui
             ];
           };
-          threepenny-examples-currencyconverter = {
+          "threepenny-examples-currencyconverter" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.safe
             ];
           };
-          threepenny-examples-dragndropexample = {
+          "threepenny-examples-dragndropexample" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.filepath
             ];
           };
-          threepenny-examples-drummachine = {
+          "threepenny-examples-drummachine" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui

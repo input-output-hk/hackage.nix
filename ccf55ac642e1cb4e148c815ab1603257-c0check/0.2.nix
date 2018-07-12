@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          c0check = {
+          "c0check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.c0parser

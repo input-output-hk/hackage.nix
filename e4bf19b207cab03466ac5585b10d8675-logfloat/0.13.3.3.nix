@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logfloat = {
+        "logfloat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

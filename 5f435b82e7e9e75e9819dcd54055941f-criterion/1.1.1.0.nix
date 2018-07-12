@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        criterion = {
+        "criterion" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-wl-pprint
@@ -48,7 +48,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         exes = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -67,7 +67,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

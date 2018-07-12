@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fin = {
+        "fin" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.deepseq
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          inspection = {
+          "inspection" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fin

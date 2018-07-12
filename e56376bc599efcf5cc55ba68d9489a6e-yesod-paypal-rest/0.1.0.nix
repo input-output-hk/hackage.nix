@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-paypal-rest = {
+        "yesod-paypal-rest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-core

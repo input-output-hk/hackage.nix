@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uniform-io = {
+        "uniform-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.iproute

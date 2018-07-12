@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deka = {
+        "deka" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           libs = [ pkgs.decnumber ];
         };
         tests = {
-          tasty-test = {
+          "tasty-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.either

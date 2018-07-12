@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fix-imports = {
+          "fix-imports" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

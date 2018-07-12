@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        classy-prelude = {
+        "classy-prelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.system-filepath

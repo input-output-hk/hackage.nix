@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libconfig = {
+        "libconfig" = {
           depends  = if _flags.prisms && _flags.binary && _flags.cereal
             then [
               hsPkgs.base
@@ -114,7 +114,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = if _flags.prisms
               then [
                 hsPkgs.base

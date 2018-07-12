@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        indentation = {
+        "indentation" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.mtl
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test-indentation = {
+          "test-indentation" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.tasty

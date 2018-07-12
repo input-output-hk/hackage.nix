@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgres-embedded = {
+        "postgres-embedded" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          postgres-embedded-test = {
+          "postgres-embedded-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.postgres-embedded

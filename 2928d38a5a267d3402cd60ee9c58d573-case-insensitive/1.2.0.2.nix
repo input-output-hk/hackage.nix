@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        case-insensitive = {
+        "case-insensitive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-case-insensitive = {
+          "test-case-insensitive" = {
             depends  = [
               hsPkgs.case-insensitive
               hsPkgs.base
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          bench-case-insensitive = {
+          "bench-case-insensitive" = {
             depends  = [
               hsPkgs.case-insensitive
               hsPkgs.base

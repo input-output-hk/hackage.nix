@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-s3-streaming = {
+        "amazonka-s3-streaming" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.amazonka
@@ -46,7 +46,7 @@ let
           ]) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.foundation;
         };
         exes = {
-          s3upload = {
+          "s3upload" = {
             depends  = [
               hsPkgs.base
               hsPkgs.amazonka

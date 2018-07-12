@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        progress-reporting = {
+        "progress-reporting" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nix-derivation = {
+        "nix-derivation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -40,7 +40,7 @@ let
               hsPkgs.text
             ];
           };
-          property = {
+          "property" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

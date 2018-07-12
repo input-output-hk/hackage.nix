@@ -26,7 +26,7 @@ let
       };
       components = {
         exes = {
-          tamarin-prover = {
+          "tamarin-prover" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

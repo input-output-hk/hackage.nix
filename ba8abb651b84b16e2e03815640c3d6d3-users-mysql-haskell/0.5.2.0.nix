@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        users-mysql-haskell = {
+        "users-mysql-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.users
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.users

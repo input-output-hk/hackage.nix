@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-mvc-solutions-config = {
+        "keera-hails-mvc-solutions-config" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MissingK

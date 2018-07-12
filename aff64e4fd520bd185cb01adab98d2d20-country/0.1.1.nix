@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        country = {
+        "country" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.country

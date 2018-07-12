@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-eventsource = {
+        "apiary-eventsource" = {
           depends  = [
             hsPkgs.base
             hsPkgs.apiary

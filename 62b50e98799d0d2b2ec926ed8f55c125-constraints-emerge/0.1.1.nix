@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        constraints-emerge = {
+        "constraints-emerge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.constraints

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        rtcm = {
+        "rtcm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude

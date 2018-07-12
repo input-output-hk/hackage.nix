@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-conduit-tls = {
+        "network-conduit-tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.system-filepath
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.conduit-extra

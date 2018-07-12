@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yjftp-libs = {
+        "yjftp-libs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -30,6 +30,6 @@ let
             hsPkgs.mtl
           ];
         };
-        exes = { yjftp-ni = {}; };
+        exes = { "yjftp-ni" = {}; };
       };
     }

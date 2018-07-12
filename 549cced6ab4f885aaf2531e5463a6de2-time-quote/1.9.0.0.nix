@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-quote = {
+        "time-quote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

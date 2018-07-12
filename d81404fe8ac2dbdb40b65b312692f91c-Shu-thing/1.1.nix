@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          shu-thing = {
+          "shu-thing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT

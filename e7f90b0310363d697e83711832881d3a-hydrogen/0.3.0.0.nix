@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hydrogen = {
+        "hydrogen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

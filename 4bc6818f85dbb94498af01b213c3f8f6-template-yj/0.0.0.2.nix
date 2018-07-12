@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        template-yj = {
+        "template-yj" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

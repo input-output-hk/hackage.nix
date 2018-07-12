@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        googleplus = {
+        "googleplus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

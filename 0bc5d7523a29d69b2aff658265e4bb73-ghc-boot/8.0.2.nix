@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-boot = {
+        "ghc-boot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

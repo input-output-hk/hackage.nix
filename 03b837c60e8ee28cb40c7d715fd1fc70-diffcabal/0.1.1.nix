@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          diffcabal = {
+          "diffcabal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

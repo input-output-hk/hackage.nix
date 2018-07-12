@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uxadt = {
+        "uxadt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.json

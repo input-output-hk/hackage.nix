@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Pup-Events-PQueue = {
+        "Pup-Events-PQueue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

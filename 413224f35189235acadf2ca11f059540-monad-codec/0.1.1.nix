@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-codec = {
+        "monad-codec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

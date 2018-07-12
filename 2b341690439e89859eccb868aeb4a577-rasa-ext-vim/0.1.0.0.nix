@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rasa-ext-vim = {
+        "rasa-ext-vim" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rasa

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pecoff = {
+        "pecoff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

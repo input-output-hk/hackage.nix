@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        oeis = {
+        "oeis" = {
           depends  = [
             hsPkgs.HTTP
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

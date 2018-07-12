@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-fingertree-strict = {
+        "hw-fingertree-strict" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          hw-fingertree-strict-test = {
+          "hw-fingertree-strict-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedgehog

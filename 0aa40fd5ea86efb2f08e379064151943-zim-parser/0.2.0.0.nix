@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zim-parser = {
+        "zim-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

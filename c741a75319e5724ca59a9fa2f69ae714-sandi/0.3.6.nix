@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sandi = {
+        "sandi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          sandi-tests = {
+          "sandi-tests" = {
             depends  = [
               hsPkgs.sandi
               hsPkgs.base
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          sandi-bench = {
+          "sandi-bench" = {
             depends  = [
               hsPkgs.sandi
               hsPkgs.base

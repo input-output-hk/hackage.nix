@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-datapipeline = {
+        "amazonka-datapipeline" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-cargs = {
+        "cabal-cargs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmdargs
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          cabal-cargs = {
+          "cabal-cargs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cabal-cargs
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

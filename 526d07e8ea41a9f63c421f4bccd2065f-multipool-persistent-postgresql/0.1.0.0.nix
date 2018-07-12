@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multipool-persistent-postgresql = {
+        "multipool-persistent-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-logger
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          multipool-persistent-postgresql-test = {
+          "multipool-persistent-postgresql-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monad-logger

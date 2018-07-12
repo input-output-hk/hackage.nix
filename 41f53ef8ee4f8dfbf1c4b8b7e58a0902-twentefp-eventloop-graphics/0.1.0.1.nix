@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twentefp-eventloop-graphics = {
+        "twentefp-eventloop-graphics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.twentefp-websockets

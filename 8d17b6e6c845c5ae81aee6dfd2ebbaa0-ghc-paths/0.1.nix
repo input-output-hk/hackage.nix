@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ghc-paths = {
+        "ghc-paths" = {
           depends  = [ hsPkgs.base ];
         };
       };

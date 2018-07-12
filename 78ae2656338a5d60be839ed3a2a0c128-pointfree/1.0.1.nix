@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pointfree = {
+          "pointfree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

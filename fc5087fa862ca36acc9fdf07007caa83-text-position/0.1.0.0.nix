@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        text-position = {
+        "text-position" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-applicative
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

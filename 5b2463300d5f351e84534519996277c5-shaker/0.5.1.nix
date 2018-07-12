@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        shaker = {
+        "shaker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          shaker = {
+          "shaker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

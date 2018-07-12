@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        primitive-checked = {
+        "primitive-checked" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive

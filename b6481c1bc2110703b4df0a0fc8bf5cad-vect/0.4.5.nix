@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        vect = {
+        "vect" = {
           depends  = (if _flags.splitbase
             then [
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unexceptionalio-trans = {
+        "unexceptionalio-trans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

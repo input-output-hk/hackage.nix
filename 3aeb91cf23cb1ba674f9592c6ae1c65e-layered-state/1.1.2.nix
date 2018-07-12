@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        layered-state = {
+        "layered-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints
@@ -39,7 +39,7 @@ let
           ];
         };
         benchmarks = {
-          layered-state-benchmark = {
+          "layered-state-benchmark" = {
             depends  = [
               hsPkgs.criterion
               hsPkgs.deepseq

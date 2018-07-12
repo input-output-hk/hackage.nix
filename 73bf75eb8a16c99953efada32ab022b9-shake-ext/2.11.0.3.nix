@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake-ext = {
+        "shake-ext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

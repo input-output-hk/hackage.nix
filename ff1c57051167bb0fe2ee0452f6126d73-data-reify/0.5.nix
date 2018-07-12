@@ -20,32 +20,32 @@ let
         buildType = "Simple";
       };
       components = {
-        data-reify = {
+        "data-reify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          data-reify-test1 = {
+          "data-reify-test1" = {
             depends  = [ hsPkgs.base ];
           };
-          data-reify-test2 = {
+          "data-reify-test2" = {
             depends  = [ hsPkgs.base ];
           };
-          data-reify-test3 = {
+          "data-reify-test3" = {
             depends  = [ hsPkgs.base ];
           };
-          data-reify-test4 = {
+          "data-reify-test4" = {
             depends  = [ hsPkgs.base ];
           };
-          data-reify-test5 = {
+          "data-reify-test5" = {
             depends  = [ hsPkgs.base ];
           };
-          data-reify-test6 = {
+          "data-reify-test6" = {
             depends  = [ hsPkgs.base ];
           };
-          data-reify-test7 = {
+          "data-reify-test7" = {
             depends  = [ hsPkgs.base ];
           };
         };

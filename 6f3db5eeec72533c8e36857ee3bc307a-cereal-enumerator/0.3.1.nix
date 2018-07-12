@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal-enumerator = {
+        "cereal-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.enumerator

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          clanki = {
+          "clanki" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

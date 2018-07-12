@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dataurl = {
+        "dataurl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          dataurl-test = {
+          "dataurl-test" = {
             depends  = [
               hsPkgs.dataurl
               hsPkgs.HTF

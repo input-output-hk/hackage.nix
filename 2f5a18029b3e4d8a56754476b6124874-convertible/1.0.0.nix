@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        convertible = {
+        "convertible" = {
           depends  = [
             hsPkgs.mtl
           ] ++ (if _flags.splitbase
@@ -38,7 +38,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

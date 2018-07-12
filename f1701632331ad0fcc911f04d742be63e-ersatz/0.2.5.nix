@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ersatz = {
+        "ersatz" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          ersatz-regexp-grid = {
+          "ersatz-regexp-grid" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.containers
@@ -52,7 +52,7 @@ let
               hsPkgs.parsec
             ];
           };
-          ersatz-sudoku = {
+          "ersatz-sudoku" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.array
               hsPkgs.base
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -79,7 +79,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

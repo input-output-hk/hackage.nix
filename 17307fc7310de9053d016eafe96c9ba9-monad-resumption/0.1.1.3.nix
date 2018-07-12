@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-resumption = {
+        "monad-resumption" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

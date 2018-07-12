@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        anki-tools = {
+        "anki-tools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          anki-tools-test = {
+          "anki-tools-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.anki-tools

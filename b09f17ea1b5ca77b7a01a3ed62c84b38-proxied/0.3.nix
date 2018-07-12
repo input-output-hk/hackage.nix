@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proxied = {
+        "proxied" = {
           depends  = ([
             hsPkgs.base
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) hsPkgs.generic-deriving) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.tagged;

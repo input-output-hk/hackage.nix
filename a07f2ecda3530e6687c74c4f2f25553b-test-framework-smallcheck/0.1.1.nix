@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-framework-smallcheck = {
+        "test-framework-smallcheck" = {
           depends  = [
             hsPkgs.test-framework
             hsPkgs.smallcheck

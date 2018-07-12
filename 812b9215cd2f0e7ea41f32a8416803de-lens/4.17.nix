@@ -32,7 +32,7 @@ let
         buildType = "Custom";
       };
       components = {
-        lens = {
+        "lens" = {
           depends  = ([
             hsPkgs.array
             hsPkgs.base
@@ -68,13 +68,13 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.generic-deriving) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.9") hsPkgs.nats;
         };
         tests = {
-          templates = {
+          "templates" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-templates)) [
               hsPkgs.base
               hsPkgs.lens
             ];
           };
-          properties = {
+          "properties" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.lens
@@ -85,7 +85,7 @@ let
               hsPkgs.transformers
             ];
           };
-          hunit = {
+          "hunit" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hunit)) [
               hsPkgs.base
               hsPkgs.containers
@@ -97,7 +97,7 @@ let
               hsPkgs.test-framework-th
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.bytestring
@@ -120,7 +120,7 @@ let
           };
         };
         benchmarks = {
-          plated = {
+          "plated" = {
             depends  = [
               hsPkgs.base
               hsPkgs.comonad
@@ -131,7 +131,7 @@ let
               hsPkgs.transformers
             ] ++ pkgs.lib.optional _flags.benchmark-uniplate hsPkgs.uniplate;
           };
-          alongside = {
+          "alongside" = {
             depends  = [
               hsPkgs.base
               hsPkgs.comonad
@@ -141,7 +141,7 @@ let
               hsPkgs.transformers
             ];
           };
-          folds = {
+          "folds" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -152,7 +152,7 @@ let
               hsPkgs.lens
             ];
           };
-          traversals = {
+          "traversals" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -164,7 +164,7 @@ let
               hsPkgs.lens
             ];
           };
-          unsafe = {
+          "unsafe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.comonad

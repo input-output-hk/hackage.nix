@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ogmarkup = {
+        "ogmarkup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.megaparsec
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          ogmadown-test = {
+          "ogmadown-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          ogmarkup-bench = {
+          "ogmarkup-bench" = {
             depends  = pkgs.lib.optionals _flags.bench [
               hsPkgs.base
               hsPkgs.criterion

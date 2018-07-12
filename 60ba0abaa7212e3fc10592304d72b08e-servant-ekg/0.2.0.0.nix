@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-ekg = {
+        "servant-ekg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ekg-core
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

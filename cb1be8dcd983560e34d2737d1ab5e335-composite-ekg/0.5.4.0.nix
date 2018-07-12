@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        composite-ekg = {
+        "composite-ekg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.composite-base

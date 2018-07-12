@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          jsonsql = {
+          "jsonsql" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

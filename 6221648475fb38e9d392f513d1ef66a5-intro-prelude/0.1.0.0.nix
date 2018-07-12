@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        intro-prelude = {
+        "intro-prelude" = {
           depends  = [ hsPkgs.intro ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.intro
               hsPkgs.intro-prelude

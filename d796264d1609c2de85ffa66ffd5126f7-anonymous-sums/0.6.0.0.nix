@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        anonymous-sums = {
+        "anonymous-sums" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

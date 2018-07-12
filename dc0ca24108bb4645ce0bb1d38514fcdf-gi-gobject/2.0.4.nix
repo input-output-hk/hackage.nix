@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-gobject = {
+        "gi-gobject" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

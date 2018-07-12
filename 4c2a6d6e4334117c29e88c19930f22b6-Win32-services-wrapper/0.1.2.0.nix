@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Win32-services-wrapper = {
+        "Win32-services-wrapper" = {
           depends  = [
             hsPkgs.Win32-services
             hsPkgs.Win32

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          roc-cluster-demo = {
+          "roc-cluster-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

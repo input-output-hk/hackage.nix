@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          cabal-rpm = {
+          "cabal-rpm" = {
             depends  = if _flags.splitbase
               then [
                 hsPkgs.base

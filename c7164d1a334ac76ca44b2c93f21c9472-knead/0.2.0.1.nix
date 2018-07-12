@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        knead = {
+        "knead" = {
           depends  = [
             hsPkgs.llvm-extra
             hsPkgs.llvm-tf

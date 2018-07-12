@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reload = {
+        "reload" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          reload-exe = {
+          "reload-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reload
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          reload-test = {
+          "reload-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

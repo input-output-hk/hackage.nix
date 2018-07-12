@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Elm = {
+        "Elm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          elm = {
+          "elm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

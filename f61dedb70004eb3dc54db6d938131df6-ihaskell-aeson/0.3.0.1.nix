@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ihaskell-aeson = {
+        "ihaskell-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.here

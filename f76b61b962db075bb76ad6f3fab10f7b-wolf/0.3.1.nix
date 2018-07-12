@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wolf = {
+        "wolf" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.amazonka
@@ -66,7 +66,7 @@ let
           ];
         };
         exes = {
-          wolf-register = {
+          "wolf-register" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -78,7 +78,7 @@ let
               hsPkgs.yaml
             ];
           };
-          wolf-execute = {
+          "wolf-execute" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -90,7 +90,7 @@ let
               hsPkgs.yaml
             ];
           };
-          wolf-decide = {
+          "wolf-decide" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -102,7 +102,7 @@ let
               hsPkgs.yaml
             ];
           };
-          wolf-act = {
+          "wolf-act" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.amazonka-core
@@ -120,7 +120,7 @@ let
               hsPkgs.zlib
             ];
           };
-          wolf-act2 = {
+          "wolf-act2" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.amazonka-core
@@ -138,21 +138,21 @@ let
               hsPkgs.zlib
             ];
           };
-          wolf-actor = {
+          "wolf-actor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wolf
               hsPkgs.optparse-generic
             ];
           };
-          wolf-decider = {
+          "wolf-decider" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wolf
               hsPkgs.optparse-generic
             ];
           };
-          shake-wolf = {
+          "shake-wolf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude
@@ -162,7 +162,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude

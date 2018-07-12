@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bookkeeper-permissions = {
+        "bookkeeper-permissions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bookkeeper

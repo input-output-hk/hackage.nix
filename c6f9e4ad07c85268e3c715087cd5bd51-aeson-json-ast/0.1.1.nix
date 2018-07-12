@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-json-ast = {
+        "aeson-json-ast" = {
           depends  = [
             hsPkgs.json-ast
             hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zcache = {
+        "zcache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

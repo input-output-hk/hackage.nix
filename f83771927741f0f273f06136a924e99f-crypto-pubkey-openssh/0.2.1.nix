@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-pubkey-openssh = {
+        "crypto-pubkey-openssh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          crypto-pubkey-openssh-tests = {
+          "crypto-pubkey-openssh-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

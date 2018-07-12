@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Top = {
+        "Top" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          topsolver = {
+          "topsolver" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

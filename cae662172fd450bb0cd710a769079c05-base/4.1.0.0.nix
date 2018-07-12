@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        base = {
+        "base" = {
           depends  = pkgs.lib.optionals (compiler.isGhc && true) [
             hsPkgs.rts
             hsPkgs.ghc-prim

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        setgame = {
+        "setgame" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          set-game = {
+          "set-game" = {
             depends  = [
               hsPkgs.setgame
               hsPkgs.base

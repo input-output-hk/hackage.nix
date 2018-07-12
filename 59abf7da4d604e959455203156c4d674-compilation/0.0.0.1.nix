@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compilation = {
+        "compilation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MissingH

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ftp-client-conduit = {
+        "ftp-client-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ftp-client
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          ftp-conduit-test = {
+          "ftp-conduit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ftp-clientconduit

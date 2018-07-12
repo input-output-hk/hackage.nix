@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flickr = {
+        "flickr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP
@@ -35,12 +35,12 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          showPublic = {};
-          searchPics = {};
-          gallery = {
+          "showPublic" = {};
+          "searchPics" = {};
+          "gallery" = {
             depends  = [ hsPkgs.xhtml ];
           };
-          uploader = {};
+          "uploader" = {};
         };
       };
     }

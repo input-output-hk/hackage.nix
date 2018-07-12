@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          gameclock = {
+          "gameclock" = {
             depends  = [
               hsPkgs.cairo
               hsPkgs.gtk

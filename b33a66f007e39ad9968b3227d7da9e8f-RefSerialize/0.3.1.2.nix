@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RefSerialize = {
+        "RefSerialize" = {
           depends  = [
             hsPkgs.binary
             hsPkgs.bytestring

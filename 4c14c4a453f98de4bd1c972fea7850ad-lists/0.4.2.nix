@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lists = {
+        "lists" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

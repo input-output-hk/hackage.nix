@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-test = {
+        "http-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          test-http-test = {
+          "test-http-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

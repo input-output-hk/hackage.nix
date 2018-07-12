@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GrowlNotify = {
+        "GrowlNotify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          growlnotify = {
+          "growlnotify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

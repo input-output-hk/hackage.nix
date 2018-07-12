@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BlastHTTP = {
+        "BlastHTTP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

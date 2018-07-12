@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validate-input = {
+        "validate-input" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          validate-input-tests = {
+          "validate-input-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

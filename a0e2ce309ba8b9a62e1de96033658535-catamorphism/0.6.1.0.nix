@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        catamorphism = {
+        "catamorphism" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.catamorphism

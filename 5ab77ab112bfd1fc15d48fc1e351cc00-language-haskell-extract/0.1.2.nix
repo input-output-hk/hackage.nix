@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-haskell-extract = {
+        "language-haskell-extract" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

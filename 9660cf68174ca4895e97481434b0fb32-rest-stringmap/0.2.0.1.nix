@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rest-stringmap = {
+        "rest-stringmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protocol-buffers = {
+        "protocol-buffers" = {
           depends  = if _flags.small_base
             then [
               hsPkgs.base

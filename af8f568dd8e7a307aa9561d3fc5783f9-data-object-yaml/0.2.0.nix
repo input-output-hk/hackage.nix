@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-object-yaml = {
+        "data-object-yaml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-object
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck

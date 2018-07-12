@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-repa = {
+        "hmatrix-repa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-logger = {
+        "wai-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.auto-update
@@ -43,7 +43,7 @@ let
             ]);
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc-conduit = {
+        "irc-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

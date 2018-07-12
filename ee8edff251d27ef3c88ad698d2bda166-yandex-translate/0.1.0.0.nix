@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yandex-translate = {
+        "yandex-translate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          yandex-tests = {
+          "yandex-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

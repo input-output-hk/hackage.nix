@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hooks-dir = {
+        "hooks-dir" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

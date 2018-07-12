@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libconfig = {
+        "libconfig" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.config ];
           build-tools = [
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.libconfig

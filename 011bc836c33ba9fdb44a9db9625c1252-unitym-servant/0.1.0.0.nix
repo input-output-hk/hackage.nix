@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unitym-servant = {
+        "unitym-servant" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

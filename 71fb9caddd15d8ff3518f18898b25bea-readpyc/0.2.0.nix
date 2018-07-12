@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          readpyc = {
+          "readpyc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bliplib

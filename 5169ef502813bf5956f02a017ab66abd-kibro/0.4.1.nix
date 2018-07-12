@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kibro = {
+        "kibro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          kibro = {
+          "kibro" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

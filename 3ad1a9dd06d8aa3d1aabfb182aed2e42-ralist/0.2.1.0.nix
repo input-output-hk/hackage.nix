@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ralist = {
+        "ralist" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hspec)) [
               hsPkgs.base
               hsPkgs.ralist
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          benchmarking = {
+          "benchmarking" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ralist

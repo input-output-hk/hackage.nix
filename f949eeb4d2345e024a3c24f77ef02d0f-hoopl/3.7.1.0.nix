@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoopl = {
+        "hoopl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

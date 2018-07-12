@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        boring = {
+        "boring" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.adjunctions

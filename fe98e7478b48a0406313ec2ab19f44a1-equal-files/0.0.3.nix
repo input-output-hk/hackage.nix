@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          equal-files = {
+          "equal-files" = {
             depends  = [
               hsPkgs.FileManip
               hsPkgs.explicit-exception

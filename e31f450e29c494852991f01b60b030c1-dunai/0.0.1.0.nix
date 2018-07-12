@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dunai = {
+        "dunai" = {
           depends  = [ hsPkgs.base ];
         };
       };

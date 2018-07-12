@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          YACPong = {
+          "YACPong" = {
             depends  = [
               hsPkgs.SDL
               hsPkgs.SDL-image

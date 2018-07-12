@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hackagesparks = {
+          "hackagesparks" = {
             depends  = [
               hsPkgs.hsparklines
               hsPkgs.tagsoup

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          photoname = {
+          "photoname" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          photoname-tests = {
+          "photoname-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

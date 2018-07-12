@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-booleans = {
+        "type-booleans" = {
           depends  = [ hsPkgs.base ];
         };
       };

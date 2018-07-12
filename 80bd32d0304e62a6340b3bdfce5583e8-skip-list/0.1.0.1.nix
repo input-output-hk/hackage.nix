@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        skip-list = {
+        "skip-list" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          skip-list-test = {
+          "skip-list-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.skip-list
@@ -34,7 +34,7 @@ let
           };
         };
         benchmarks = {
-          bench-foo = {
+          "bench-foo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

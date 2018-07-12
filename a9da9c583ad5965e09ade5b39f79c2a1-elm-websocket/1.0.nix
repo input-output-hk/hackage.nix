@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elm-websocket = {
+        "elm-websocket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          elm-websocket-example = {
+          "elm-websocket-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -55,7 +55,7 @@ let
               hsPkgs.warp
             ];
           };
-          elm-websocket-code-generator = {
+          "elm-websocket-code-generator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -71,7 +71,7 @@ let
           };
         };
         tests = {
-          elm-websocket-test = {
+          "elm-websocket-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

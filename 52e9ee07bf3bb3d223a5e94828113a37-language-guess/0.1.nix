@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-guess = {
+        "language-guess" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal

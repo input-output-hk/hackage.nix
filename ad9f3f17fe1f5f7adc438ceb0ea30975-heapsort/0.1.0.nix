@@ -22,15 +22,15 @@ let
         buildType = "Custom";
       };
       components = {
-        heapsort = {};
+        "heapsort" = {};
         exes = {
-          heapsort-example = {
+          "heapsort-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
             ];
           };
-          heapsort-tests = {
+          "heapsort-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

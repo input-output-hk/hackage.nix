@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grid = {
+        "grid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          grid-test = {
+          "grid-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.grid

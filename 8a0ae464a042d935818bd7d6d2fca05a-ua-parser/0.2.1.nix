@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ua-parser = {
+        "ua-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

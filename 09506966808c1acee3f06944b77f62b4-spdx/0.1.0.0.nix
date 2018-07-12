@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        spdx = {
+        "spdx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
           ];
         };
         exes = {
-          spdx-data = {
+          "spdx-data" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xml
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

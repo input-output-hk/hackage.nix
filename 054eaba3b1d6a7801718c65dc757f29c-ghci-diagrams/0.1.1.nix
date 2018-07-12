@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghci-diagrams = {
+        "ghci-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams

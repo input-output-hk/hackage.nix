@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bittrex = {
+        "bittrex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.bittrex
               hsPkgs.base

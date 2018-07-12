@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vocabulary-kadma = {
+        "vocabulary-kadma" = {
           depends  = [
             hsPkgs.base
             hsPkgs.smaoin

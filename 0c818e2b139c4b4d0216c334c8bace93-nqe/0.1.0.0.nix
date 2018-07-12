@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nqe = {
+        "nqe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          nqe-test = {
+          "nqe-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nqe

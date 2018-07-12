@@ -23,9 +23,9 @@ let
         buildType = "Simple";
       };
       components = {
-        tkyprof = {};
+        "tkyprof" = {};
         exes = {
-          tkyprof = {
+          "tkyprof" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -56,7 +56,7 @@ let
               hsPkgs.yesod-static
             ];
           };
-          prof2json = {
+          "prof2json" = {
             depends  = [
               hsPkgs.filepath
               hsPkgs.mtl

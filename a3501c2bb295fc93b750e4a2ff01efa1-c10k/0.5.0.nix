@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        c10k = {
+        "c10k" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

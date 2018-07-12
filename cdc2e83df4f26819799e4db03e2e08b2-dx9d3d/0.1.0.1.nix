@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dx9d3d = {
+        "dx9d3d" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Win32

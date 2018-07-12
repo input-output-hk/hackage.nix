@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          jsonextfilter = {
+          "jsonextfilter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dfinity-radix-tree = {
+        "dfinity-radix-tree" = {
           depends  = [
             hsPkgs.BoundedChan
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          dfinity-radix-tree-unit-tests = {
+          "dfinity-radix-tree-unit-tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -56,7 +56,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          dfinity-radix-tree-benchmarks = {
+          "dfinity-radix-tree-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

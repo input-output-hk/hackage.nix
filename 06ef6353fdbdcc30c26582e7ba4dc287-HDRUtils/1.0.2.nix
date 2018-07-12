@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HDRUtils = {
+        "HDRUtils" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

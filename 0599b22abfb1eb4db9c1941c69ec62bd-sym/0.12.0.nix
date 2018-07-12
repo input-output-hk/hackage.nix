@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sym = {
+        "sym" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          Props = {
+          "Props" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sym

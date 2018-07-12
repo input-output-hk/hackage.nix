@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindynamic = {
+        "bindynamic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rio-orphans = {
+        "rio-orphans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          rio-orphans-test = {
+          "rio-orphans-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions

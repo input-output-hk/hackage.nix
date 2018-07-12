@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-eskit = {
+        "bindings-eskit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

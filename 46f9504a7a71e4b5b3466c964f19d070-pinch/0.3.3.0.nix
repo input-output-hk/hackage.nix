@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pinch = {
+        "pinch" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          pinch-spec = {
+          "pinch-spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

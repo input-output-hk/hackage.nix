@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        taffybar = {
+        "taffybar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          taffybar = {
+          "taffybar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dyre

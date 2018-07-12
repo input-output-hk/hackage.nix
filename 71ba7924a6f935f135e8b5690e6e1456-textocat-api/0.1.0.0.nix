@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        textocat-api = {
+        "textocat-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          simple-io-test = {
+          "simple-io-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.textocat-api

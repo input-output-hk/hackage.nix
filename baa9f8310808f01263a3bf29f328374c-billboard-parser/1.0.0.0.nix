@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        billboard-parser = {
+        "billboard-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          billboard-parser = {
+          "billboard-parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parseargs

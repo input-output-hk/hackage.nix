@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        secdh = {
+        "secdh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          secdh = {
+          "secdh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

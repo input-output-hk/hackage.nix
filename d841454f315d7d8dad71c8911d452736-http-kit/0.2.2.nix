@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-kit = {
+        "http-kit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-kit

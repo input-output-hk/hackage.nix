@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdbi-postgresql = {
+        "hdbi-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.base;
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Decimal
@@ -66,7 +66,7 @@ let
               hsPkgs.uuid
             ];
           };
-          puretests = {
+          "puretests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Decimal

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-matrix-param = {
+        "servant-matrix-param" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.servant
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -61,7 +61,7 @@ let
               hsPkgs.aeson
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          flower = {
+          "flower" = {
             depends  = [
               hsPkgs.bio
               hsPkgs.base
@@ -34,27 +34,27 @@ let
               hsPkgs.mtl
             ];
           };
-          flowselect = {
+          "flowselect" = {
             depends  = [
               hsPkgs.bio
               hsPkgs.random
               hsPkgs.base
             ];
           };
-          frecover = {
+          "frecover" = {
             depends  = [
               hsPkgs.bio
               hsPkgs.base
             ];
           };
-          frename = {
+          "frename" = {
             depends  = [
               hsPkgs.bio
               hsPkgs.base
               hsPkgs.bytestring
             ];
           };
-          flowt = {
+          "flowt" = {
             depends  = [
               hsPkgs.bio
               hsPkgs.base

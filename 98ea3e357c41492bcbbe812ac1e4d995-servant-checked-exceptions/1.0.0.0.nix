@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-checked-exceptions = {
+        "servant-checked-exceptions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          servant-checked-exceptions-example-client = {
+          "servant-checked-exceptions-example-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -55,7 +55,7 @@ let
               hsPkgs.text
             ];
           };
-          servant-checked-exceptions-example-docs = {
+          "servant-checked-exceptions-example-docs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -67,7 +67,7 @@ let
               hsPkgs.text
             ];
           };
-          servant-checked-exceptions-example-server = {
+          "servant-checked-exceptions-example-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -84,14 +84,14 @@ let
           };
         };
         tests = {
-          servant-checked-exceptions-doctest = {
+          "servant-checked-exceptions-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.Glob
             ];
           };
-          servant-checked-exceptions-test = {
+          "servant-checked-exceptions-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

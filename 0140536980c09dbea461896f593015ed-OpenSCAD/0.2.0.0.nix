@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OpenSCAD = {
+        "OpenSCAD" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colour
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          Units = {
+          "Units" = {
             depends  = [
               hsPkgs.base
               hsPkgs.colour

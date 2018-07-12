@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-fixture = {
+        "test-fixture" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

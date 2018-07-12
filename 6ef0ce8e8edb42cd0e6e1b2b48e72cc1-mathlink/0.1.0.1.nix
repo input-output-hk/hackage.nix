@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mathlink = {
+        "mathlink" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

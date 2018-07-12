@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grid = {
+        "grid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          grid-tests = {
+          "grid-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exact-combinatorics

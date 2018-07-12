@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ersatz = {
+        "ersatz" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.ersatz
               hsPkgs.base
@@ -55,7 +55,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

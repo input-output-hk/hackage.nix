@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prelude-safeenum = {
+        "prelude-safeenum" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-ffi = {
+        "llvm-ffi" = {
           depends  = [
             hsPkgs.enumset
             hsPkgs.base
@@ -35,14 +35,14 @@ let
             else [ pkgconfPkgs.llvm ];
         };
         exes = {
-          llvm-ffi-example = {
+          "llvm-ffi-example" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-ffi
               hsPkgs.utility-ht
               hsPkgs.base
             ];
           };
-          llvm-diff-ffi = {
+          "llvm-diff-ffi" = {
             depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.utility-ht
               hsPkgs.regex-posix
@@ -50,7 +50,7 @@ let
               hsPkgs.base
             ];
           };
-          llvm-function-mangler = {
+          "llvm-function-mangler" = {
             depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.utility-ht
               hsPkgs.regex-posix
@@ -58,7 +58,7 @@ let
               hsPkgs.base
             ];
           };
-          llvm-intrinsic-mangler = {
+          "llvm-intrinsic-mangler" = {
             depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.bytestring
               hsPkgs.regex-posix

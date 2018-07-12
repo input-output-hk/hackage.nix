@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        context-free-grammar = {
+        "context-free-grammar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

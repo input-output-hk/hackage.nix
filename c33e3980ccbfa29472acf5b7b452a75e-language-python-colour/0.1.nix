@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pycol = {
+          "pycol" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

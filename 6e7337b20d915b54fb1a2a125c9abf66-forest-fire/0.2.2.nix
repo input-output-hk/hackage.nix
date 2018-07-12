@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        forest-fire = {
+        "forest-fire" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          forest-fire = {
+          "forest-fire" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cli
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          forest-fire-test = {
+          "forest-fire-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

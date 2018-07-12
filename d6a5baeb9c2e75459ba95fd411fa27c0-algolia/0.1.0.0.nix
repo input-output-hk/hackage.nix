@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        algolia = {
+        "algolia" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-iproute
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          algolia-test = {
+          "algolia-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.algolia

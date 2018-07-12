@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphite = {
+        "graphite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          graphite-test = {
+          "graphite-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.graphite
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          graphite-benchmark = {
+          "graphite-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.graphite

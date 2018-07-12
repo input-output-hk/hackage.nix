@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        propellor = {
+        "propellor" = {
           depends  = [
             hsPkgs.MissingH
             hsPkgs.directory
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          propellor = {
+          "propellor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -71,7 +71,7 @@ let
               hsPkgs.text
             ];
           };
-          propellor-config = {
+          "propellor-config" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.directory

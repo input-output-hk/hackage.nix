@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aligned-foreignptr = {
+        "aligned-foreignptr" = {
           depends  = [ hsPkgs.base ];
         };
       };

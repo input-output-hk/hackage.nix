@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        fast-arithmetic = {
+        "fast-arithmetic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.composition-prelude
@@ -31,7 +31,7 @@ let
           libs = [ pkgs.numbertheory ];
         };
         tests = {
-          fast-arithmetic-test = {
+          "fast-arithmetic-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fast-arithmetic
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          fast-arithmetic-bench = {
+          "fast-arithmetic-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fast-arithmetic

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        guarded-rewriting = {
+        "guarded-rewriting" = {
           depends  = [
             hsPkgs.base
             hsPkgs.instant-generics

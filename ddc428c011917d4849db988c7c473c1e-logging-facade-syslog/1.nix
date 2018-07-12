@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logging-facade-syslog = {
+        "logging-facade-syslog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.logging-facade

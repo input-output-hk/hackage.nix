@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graph-generators = {
+        "graph-generators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          TestGen = {
+          "TestGen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          test-graph-generators = {
+          "test-graph-generators" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

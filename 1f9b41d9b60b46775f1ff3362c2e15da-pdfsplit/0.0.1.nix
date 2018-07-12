@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pdfsplit = {
+          "pdfsplit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

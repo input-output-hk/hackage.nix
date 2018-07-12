@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixed-storable-array = {
+        "fixed-storable-array" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

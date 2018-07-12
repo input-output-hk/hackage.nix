@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-tests = {
+        "hmatrix-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional _flags.gsl hsPkgs.hmatrix-gsl;
         };
         tests = {
-          hmatrix-base-testsuite = {
+          "hmatrix-base-testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hmatrix-tests
@@ -42,7 +42,7 @@ let
               hsPkgs.random
             ];
           };
-          hmatrix-gsl-testsuite = {
+          "hmatrix-gsl-testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hmatrix-tests
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          hmatrix-base-benchmark = {
+          "hmatrix-base-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hmatrix-tests

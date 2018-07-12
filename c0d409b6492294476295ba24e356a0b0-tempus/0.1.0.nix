@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          tempus = {
+          "tempus" = {
             depends  = [
               hsPkgs.mtl
               hsPkgs.uniplate

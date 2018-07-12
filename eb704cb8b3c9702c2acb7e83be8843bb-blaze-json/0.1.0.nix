@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-json = {
+        "blaze-json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -45,7 +45,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

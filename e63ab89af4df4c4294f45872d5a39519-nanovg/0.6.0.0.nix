@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nanovg = {
+        "nanovg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          example00 = {
+          "example00" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.containers
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          nanovg-test = {
+          "nanovg-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

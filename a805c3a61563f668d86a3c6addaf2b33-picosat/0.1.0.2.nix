@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        picosat = {
+        "picosat" = {
           depends  = [ hsPkgs.base ];
         };
       };

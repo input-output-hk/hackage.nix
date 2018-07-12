@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plex = {
+        "plex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          try-plex = {
+          "try-plex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          plex-test = {
+          "plex-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

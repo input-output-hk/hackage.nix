@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        varying = {
+        "varying" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         exes = {
-          varying-example = {
+          "varying-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

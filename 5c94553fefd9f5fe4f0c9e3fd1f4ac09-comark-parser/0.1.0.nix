@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        comark-parser = {
+        "comark-parser" = {
           depends  = [
             hsPkgs.text
             hsPkgs.comark-syntax
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.text
               hsPkgs.comark-syntax
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.text
               hsPkgs.comark-syntax

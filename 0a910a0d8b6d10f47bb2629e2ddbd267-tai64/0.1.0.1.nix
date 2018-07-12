@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tai64 = {
+        "tai64" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

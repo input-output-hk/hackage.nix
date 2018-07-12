@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-slack-middleware = {
+        "wai-slack-middleware" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          wai-slack-middleware-exe = {
+          "wai-slack-middleware-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-slack-middleware
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          wai-slack-middleware-test = {
+          "wai-slack-middleware-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-slack-middleware

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fficxx = {
+        "fficxx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

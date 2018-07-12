@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fb = {
+        "fb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base
@@ -59,7 +59,7 @@ let
             ]);
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lifted-base

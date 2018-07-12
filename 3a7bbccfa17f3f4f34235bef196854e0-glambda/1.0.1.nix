@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glambda = {
+        "glambda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          glam = {
+          "glam" = {
             depends  = [
               hsPkgs.base
               hsPkgs.glambda
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.glambda

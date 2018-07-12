@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ixset = {
+        "ixset" = {
           depends  = (([
             hsPkgs.containers
             hsPkgs.safecopy
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-ixset = {
+          "test-ixset" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bifunctors = {
+        "bifunctors" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged) ++ pkgs.lib.optional _flags.semigroups hsPkgs.semigroups;
         };
         tests = {
-          bifunctors-spec = {
+          "bifunctors-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors

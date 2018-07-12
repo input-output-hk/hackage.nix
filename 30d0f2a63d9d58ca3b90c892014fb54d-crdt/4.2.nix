@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crdt = {
+        "crdt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

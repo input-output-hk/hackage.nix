@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pinboard = {
+        "pinboard" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

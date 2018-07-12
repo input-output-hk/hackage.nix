@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          giak = {
+          "giak" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jacobi-roots = {
+        "jacobi-roots" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

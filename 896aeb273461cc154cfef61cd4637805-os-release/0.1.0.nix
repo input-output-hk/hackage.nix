@@ -20,25 +20,25 @@ let
         buildType = "Simple";
       };
       components = {
-        os-release = {
+        "os-release" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.os-release
               hsPkgs.hspec
             ];
           };
-          documentation = {
+          "documentation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.regex-compat
             ];
           };
-          style = {
+          "style" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

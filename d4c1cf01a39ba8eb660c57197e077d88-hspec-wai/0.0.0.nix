@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-wai = {
+        "hspec-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
               hsPkgs.hspec-meta
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec2

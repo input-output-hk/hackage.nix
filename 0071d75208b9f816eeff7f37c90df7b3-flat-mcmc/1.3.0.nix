@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flat-mcmc = {
+        "flat-mcmc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.formatting
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          bnn-example = {
+          "bnn-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.flat-mcmc
@@ -45,14 +45,14 @@ let
           };
         };
         tests = {
-          rosenbrock = {
+          "rosenbrock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.flat-mcmc
               hsPkgs.vector
             ];
           };
-          bnn = {
+          "bnn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.flat-mcmc

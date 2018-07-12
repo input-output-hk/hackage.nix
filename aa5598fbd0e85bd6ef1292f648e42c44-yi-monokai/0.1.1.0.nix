@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-monokai = {
+        "yi-monokai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yi

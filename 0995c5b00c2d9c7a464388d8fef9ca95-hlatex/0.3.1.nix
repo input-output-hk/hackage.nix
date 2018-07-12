@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hlatex = {
+        "hlatex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          generate_hlatex_user_guide = {
+          "generate_hlatex_user_guide" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        from-sum = {
+        "from-sum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         tests = {
-          from-sum-doctest = {
+          "from-sum-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

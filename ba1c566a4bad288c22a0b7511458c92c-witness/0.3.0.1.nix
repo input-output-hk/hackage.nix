@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        witness = {
+        "witness" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

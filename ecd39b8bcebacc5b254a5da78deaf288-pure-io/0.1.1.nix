@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pure-io = {
+        "pure-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        syb = {
+        "syb" = {
           depends  = [ hsPkgs.base ];
         };
       };

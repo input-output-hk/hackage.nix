@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hpaste = {
+          "hpaste" = {
             depends  = [
               hsPkgs.Diff
               hsPkgs.blaze-html

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-middleware-gzip = {
+        "hack-middleware-gzip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

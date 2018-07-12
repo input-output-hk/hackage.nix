@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        animate = {
+        "animate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          animate-test-suite = {
+          "animate-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-adexchange-buyer = {
+        "gogol-adexchange-buyer" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

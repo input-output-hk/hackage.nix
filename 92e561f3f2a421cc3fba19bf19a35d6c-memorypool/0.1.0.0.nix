@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memorypool = {
+        "memorypool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

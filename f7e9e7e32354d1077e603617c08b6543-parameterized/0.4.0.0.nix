@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parameterized = {
+        "parameterized" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-diverse
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          parameterized-test = {
+          "parameterized-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parameterized

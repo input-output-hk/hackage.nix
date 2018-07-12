@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cgi = {
+        "cgi" = {
           depends  = ([
             hsPkgs.network
             hsPkgs.parsec

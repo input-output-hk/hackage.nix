@@ -29,7 +29,7 @@ let
         buildType = "Custom";
       };
       components = {
-        oberon0 = {
+        "oberon0" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -47,7 +47,7 @@ let
           ] ++ pkgs.lib.optional _flags.t5 hsPkgs.language-c;
         };
         exes = {
-          l1t1 = {
+          "l1t1" = {
             depends  = [
               hsPkgs.oberon0
               hsPkgs.base
@@ -59,20 +59,7 @@ let
               hsPkgs.HList
             ];
           };
-          l1t2 = {
-            depends  = [
-              hsPkgs.oberon0
-              hsPkgs.base
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.AspectAG
-              hsPkgs.murder
-              hsPkgs.uulib
-              hsPkgs.uu-parsinglib
-              hsPkgs.HList
-            ];
-          };
-          l1t3 = {
+          "l1t2" = {
             depends  = [
               hsPkgs.oberon0
               hsPkgs.base
@@ -85,33 +72,7 @@ let
               hsPkgs.HList
             ];
           };
-          l1t5 = {
-            depends  = [
-              hsPkgs.oberon0
-              hsPkgs.base
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.AspectAG
-              hsPkgs.murder
-              hsPkgs.uulib
-              hsPkgs.uu-parsinglib
-              hsPkgs.HList
-              hsPkgs.language-c
-            ];
-          };
-          l2t1 = {
-            depends  = [
-              hsPkgs.oberon0
-              hsPkgs.base
-              hsPkgs.base
-              hsPkgs.AspectAG
-              hsPkgs.murder
-              hsPkgs.uulib
-              hsPkgs.uu-parsinglib
-              hsPkgs.HList
-            ];
-          };
-          l2t2 = {
+          "l1t3" = {
             depends  = [
               hsPkgs.oberon0
               hsPkgs.base
@@ -124,20 +85,7 @@ let
               hsPkgs.HList
             ];
           };
-          l2t3 = {
-            depends  = [
-              hsPkgs.oberon0
-              hsPkgs.base
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.AspectAG
-              hsPkgs.murder
-              hsPkgs.uulib
-              hsPkgs.uu-parsinglib
-              hsPkgs.HList
-            ];
-          };
-          l2t5 = {
+          "l1t5" = {
             depends  = [
               hsPkgs.oberon0
               hsPkgs.base
@@ -151,7 +99,7 @@ let
               hsPkgs.language-c
             ];
           };
-          l3t1 = {
+          "l2t1" = {
             depends  = [
               hsPkgs.oberon0
               hsPkgs.base
@@ -163,20 +111,7 @@ let
               hsPkgs.HList
             ];
           };
-          l3t2 = {
-            depends  = [
-              hsPkgs.oberon0
-              hsPkgs.base
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.AspectAG
-              hsPkgs.murder
-              hsPkgs.uulib
-              hsPkgs.uu-parsinglib
-              hsPkgs.HList
-            ];
-          };
-          l3t3 = {
+          "l2t2" = {
             depends  = [
               hsPkgs.oberon0
               hsPkgs.base
@@ -189,7 +124,20 @@ let
               hsPkgs.HList
             ];
           };
-          l3t5 = {
+          "l2t3" = {
+            depends  = [
+              hsPkgs.oberon0
+              hsPkgs.base
+              hsPkgs.base
+              hsPkgs.containers
+              hsPkgs.AspectAG
+              hsPkgs.murder
+              hsPkgs.uulib
+              hsPkgs.uu-parsinglib
+              hsPkgs.HList
+            ];
+          };
+          "l2t5" = {
             depends  = [
               hsPkgs.oberon0
               hsPkgs.base
@@ -203,7 +151,7 @@ let
               hsPkgs.language-c
             ];
           };
-          l4t1 = {
+          "l3t1" = {
             depends  = [
               hsPkgs.oberon0
               hsPkgs.base
@@ -215,20 +163,7 @@ let
               hsPkgs.HList
             ];
           };
-          l4t2 = {
-            depends  = [
-              hsPkgs.oberon0
-              hsPkgs.base
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.AspectAG
-              hsPkgs.murder
-              hsPkgs.uulib
-              hsPkgs.uu-parsinglib
-              hsPkgs.HList
-            ];
-          };
-          l4t3 = {
+          "l3t2" = {
             depends  = [
               hsPkgs.oberon0
               hsPkgs.base
@@ -241,7 +176,72 @@ let
               hsPkgs.HList
             ];
           };
-          l4t5 = {
+          "l3t3" = {
+            depends  = [
+              hsPkgs.oberon0
+              hsPkgs.base
+              hsPkgs.base
+              hsPkgs.containers
+              hsPkgs.AspectAG
+              hsPkgs.murder
+              hsPkgs.uulib
+              hsPkgs.uu-parsinglib
+              hsPkgs.HList
+            ];
+          };
+          "l3t5" = {
+            depends  = [
+              hsPkgs.oberon0
+              hsPkgs.base
+              hsPkgs.base
+              hsPkgs.containers
+              hsPkgs.AspectAG
+              hsPkgs.murder
+              hsPkgs.uulib
+              hsPkgs.uu-parsinglib
+              hsPkgs.HList
+              hsPkgs.language-c
+            ];
+          };
+          "l4t1" = {
+            depends  = [
+              hsPkgs.oberon0
+              hsPkgs.base
+              hsPkgs.base
+              hsPkgs.AspectAG
+              hsPkgs.murder
+              hsPkgs.uulib
+              hsPkgs.uu-parsinglib
+              hsPkgs.HList
+            ];
+          };
+          "l4t2" = {
+            depends  = [
+              hsPkgs.oberon0
+              hsPkgs.base
+              hsPkgs.base
+              hsPkgs.containers
+              hsPkgs.AspectAG
+              hsPkgs.murder
+              hsPkgs.uulib
+              hsPkgs.uu-parsinglib
+              hsPkgs.HList
+            ];
+          };
+          "l4t3" = {
+            depends  = [
+              hsPkgs.oberon0
+              hsPkgs.base
+              hsPkgs.base
+              hsPkgs.containers
+              hsPkgs.AspectAG
+              hsPkgs.murder
+              hsPkgs.uulib
+              hsPkgs.uu-parsinglib
+              hsPkgs.HList
+            ];
+          };
+          "l4t5" = {
             depends  = [
               hsPkgs.oberon0
               hsPkgs.base

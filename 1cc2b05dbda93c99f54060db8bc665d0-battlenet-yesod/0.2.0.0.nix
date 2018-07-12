@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        battlenet-yesod = {
+        "battlenet-yesod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rest-example = {
+        "rest-example" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          rest-example-happstack = {
+          "rest-example-happstack" = {
             depends  = pkgs.lib.optionals _flags.happstack [
               hsPkgs.base
               hsPkgs.happstack-server
@@ -59,7 +59,7 @@ let
               hsPkgs.rest-happstack
             ];
           };
-          rest-example-wai = {
+          "rest-example-wai" = {
             depends  = pkgs.lib.optionals _flags.wai [
               hsPkgs.base
               hsPkgs.mtl
@@ -70,7 +70,7 @@ let
               hsPkgs.warp
             ];
           };
-          rest-example-snap = {
+          "rest-example-snap" = {
             depends  = pkgs.lib.optionals _flags.snap [
               hsPkgs.base
               hsPkgs.mtl
@@ -81,7 +81,7 @@ let
               hsPkgs.snap-server
             ];
           };
-          rest-example-gen = {
+          "rest-example-gen" = {
             depends  = pkgs.lib.optionals _flags.gen [
               hsPkgs.base
               hsPkgs.mtl

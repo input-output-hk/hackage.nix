@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hach = {
+        "Hach" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,15 +29,15 @@ let
           ];
         };
         exes = {
-          hach-client = {};
-          hach-nclient = {
+          "hach-client" = {};
+          "hach-nclient" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.vty-ui
               hsPkgs.text
             ];
           };
-          hach-server = {
+          "hach-server" = {
             depends  = [ hsPkgs.time ];
           };
         };

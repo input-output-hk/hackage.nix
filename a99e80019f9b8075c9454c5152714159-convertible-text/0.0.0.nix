@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        convertible-text = {
+        "convertible-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

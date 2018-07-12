@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keter = {
+        "keter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -67,7 +67,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         exes = {
-          keter = {
+          "keter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.keter
@@ -77,7 +77,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

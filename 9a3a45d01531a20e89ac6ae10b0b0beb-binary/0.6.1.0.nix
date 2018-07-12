@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary = {
+        "binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

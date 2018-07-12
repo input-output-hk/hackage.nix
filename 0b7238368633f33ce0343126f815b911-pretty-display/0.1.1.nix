@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty-display = {
+        "pretty-display" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          pretty-display-example = {
+          "pretty-display-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty-display
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          pretty-display-test = {
+          "pretty-display-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty-display

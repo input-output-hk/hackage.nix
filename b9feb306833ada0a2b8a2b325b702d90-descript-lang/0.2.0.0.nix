@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        descript-lang = {
+        "descript-lang" = {
           depends  = [
             hsPkgs.array
             hsPkgs.autoexporter
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          descript-cli = {
+          "descript-cli" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.array
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          descript-lang-test = {
+          "descript-lang-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hackernews = {
+        "hackernews" = {
           depends  = if _flags.ghcjs
             then [
               hsPkgs.ghcjs-base
@@ -49,7 +49,7 @@ let
             ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hackernews

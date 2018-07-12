@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deepseq-magic = {
+        "deepseq-magic" = {
           depends  = [ hsPkgs.base ];
         };
       };

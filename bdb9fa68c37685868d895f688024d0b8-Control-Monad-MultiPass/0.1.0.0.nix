@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Control-Monad-MultiPass = {
+        "Control-Monad-MultiPass" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

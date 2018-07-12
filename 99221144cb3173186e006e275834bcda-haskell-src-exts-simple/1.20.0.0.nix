@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-src-exts-simple = {
+        "haskell-src-exts-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts

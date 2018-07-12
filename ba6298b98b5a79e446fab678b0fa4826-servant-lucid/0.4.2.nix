@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-lucid = {
+        "servant-lucid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-media

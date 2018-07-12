@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bound = {
+        "bound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          Simple = {
+          "Simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.prelude-extras

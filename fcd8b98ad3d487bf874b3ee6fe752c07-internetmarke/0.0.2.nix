@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          internetmarke = {
+          "internetmarke" = {
             depends  = [
               hsPkgs.explicit-exception
               hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-core = {
+        "amazonka-core" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -55,7 +55,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.base

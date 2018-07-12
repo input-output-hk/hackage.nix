@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rivers = {
+        "rivers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lazysmallcheck

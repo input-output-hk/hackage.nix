@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hardware-edsl = {
+        "hardware-edsl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        higher-leveldb = {
+        "higher-leveldb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.higher-leveldb

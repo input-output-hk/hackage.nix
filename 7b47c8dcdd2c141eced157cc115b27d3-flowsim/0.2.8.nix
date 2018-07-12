@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          flowsim = {
+          "flowsim" = {
             depends  = [
               hsPkgs.bio
               hsPkgs.base
@@ -34,7 +34,7 @@ let
               hsPkgs.directory
             ];
           };
-          hplc = {
+          "hplc" = {
             depends  = [
               hsPkgs.bio
               hsPkgs.base
@@ -42,7 +42,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          clonesim = {
+          "clonesim" = {
             depends  = [
               hsPkgs.bio
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        labsat = {
+        "labsat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          labsat = {
+          "labsat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.labsat
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsseccomp = {
+        "hsseccomp" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.seccomp ];
           build-tools = [
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          seccomp-test = {
+          "seccomp-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-zero = {
+        "acme-zero" = {
           depends  = [ hsPkgs.acme-zero ];
         };
       };

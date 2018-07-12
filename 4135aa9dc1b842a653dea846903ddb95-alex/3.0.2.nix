@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          alex = {
+          "alex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

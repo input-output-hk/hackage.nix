@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imagesize-conduit = {
+        "imagesize-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.imagesize-conduit

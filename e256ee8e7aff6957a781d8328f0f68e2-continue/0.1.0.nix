@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        continue = {
+        "continue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        libxls = {
+        "libxls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

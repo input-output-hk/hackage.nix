@@ -20,17 +20,17 @@ let
         buildType = "Custom";
       };
       components = {
-        shell-pipe = {
+        "shell-pipe" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          Example1 = {
+          "Example1" = {
             depends  = [ hsPkgs.base ];
           };
-          Example2 = {
+          "Example2" = {
             depends  = [ hsPkgs.base ];
           };
-          Bug1 = {
+          "Bug1" = {
             depends  = [ hsPkgs.base ];
           };
         };

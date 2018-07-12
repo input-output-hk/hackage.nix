@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microformats2-parser = {
+        "microformats2-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          microformats2-parser = {
+          "microformats2-parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.options
@@ -69,7 +69,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

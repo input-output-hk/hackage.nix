@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ixshader = {
+        "ixshader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

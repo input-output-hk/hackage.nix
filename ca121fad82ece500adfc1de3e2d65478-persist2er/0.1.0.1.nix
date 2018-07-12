@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          persist2er = {
+          "persist2er" = {
             depends  = [
               hsPkgs.base
               hsPkgs.persistent

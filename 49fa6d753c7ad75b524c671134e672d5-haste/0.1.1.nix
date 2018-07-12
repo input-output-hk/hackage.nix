@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haste = {
+          "haste" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

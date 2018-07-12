@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hjson-query = {
+        "hjson-query" = {
           depends  = [
             hsPkgs.hjson
             hsPkgs.base

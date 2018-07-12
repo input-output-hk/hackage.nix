@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        histogram-fill-cereal = {
+        "histogram-fill-cereal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal

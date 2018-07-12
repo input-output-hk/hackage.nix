@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cef3-raw = {
+        "cef3-raw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        buster-gtk = {
+        "buster-gtk" = {
           depends  = [
             hsPkgs.buster
             hsPkgs.gtk

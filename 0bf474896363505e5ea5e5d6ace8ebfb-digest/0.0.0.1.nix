@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digest = {
+        "digest" = {
           depends  = [
             hsPkgs.base
           ] ++ (if _flags.bytestring-in-base

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          scat = {
+          "scat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.scrypt

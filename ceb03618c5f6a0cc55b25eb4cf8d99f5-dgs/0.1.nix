@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dgs = {
+        "dgs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

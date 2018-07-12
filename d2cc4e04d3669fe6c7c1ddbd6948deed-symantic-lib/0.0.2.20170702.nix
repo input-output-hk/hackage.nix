@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        symantic-lib = {
+        "symantic-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          symantic-test = {
+          "symantic-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -50,7 +50,7 @@ let
               hsPkgs.transformers
             ];
           };
-          ebnf = {
+          "ebnf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

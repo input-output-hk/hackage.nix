@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enumerate-function = {
+        "enumerate-function" = {
           depends  = [
             hsPkgs.base
             hsPkgs.enumerate
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          example-enumerate-function = {
+          "example-enumerate-function" = {
             depends  = [
               hsPkgs.base
               hsPkgs.enumerate-function
@@ -40,14 +40,14 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.enumerate-function
               hsPkgs.doctest
             ];
           };
-          unittest = {
+          "unittest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.enumerate-function
@@ -57,7 +57,7 @@ let
           };
         };
         benchmarks = {
-          command = {
+          "command" = {
             depends  = [
               hsPkgs.base
               hsPkgs.enumerate-function

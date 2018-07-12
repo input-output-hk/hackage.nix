@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zenc = {
+        "zenc" = {
           depends  = [ hsPkgs.base ];
         };
       };

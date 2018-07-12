@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hlint = {
+        "hlint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          hlint = {
+          "hlint" = {
             depends  = [ hsPkgs.base ];
           };
         };

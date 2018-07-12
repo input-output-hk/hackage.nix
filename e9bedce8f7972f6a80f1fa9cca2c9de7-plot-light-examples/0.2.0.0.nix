@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        plot-light-examples = {
+        "plot-light-examples" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
           ];
         };
         exes = {
-          scatter = {
+          "scatter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light
@@ -39,7 +39,7 @@ let
               hsPkgs.scientific
             ];
           };
-          timeseries = {
+          "timeseries" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light
@@ -53,7 +53,7 @@ let
               hsPkgs.scientific
             ];
           };
-          heatmap = {
+          "heatmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light

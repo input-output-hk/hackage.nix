@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-schoenfinkel = {
+        "acme-schoenfinkel" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.acme-schoenfinkel

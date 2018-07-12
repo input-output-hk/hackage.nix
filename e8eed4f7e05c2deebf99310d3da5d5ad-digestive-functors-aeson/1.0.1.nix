@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digestive-functors-aeson = {
+        "digestive-functors-aeson" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-lens

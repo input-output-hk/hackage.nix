@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logging-effect = {
+        "logging-effect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -40,7 +40,7 @@ let
           ];
         };
         benchmarks = {
-          benchmark-logging-effect = {
+          "benchmark-logging-effect" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-effect

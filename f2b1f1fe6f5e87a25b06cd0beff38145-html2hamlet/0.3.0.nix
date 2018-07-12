@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          html2hamlet = {
+          "html2hamlet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

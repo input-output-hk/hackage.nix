@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rmonad = {
+        "rmonad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-auth-cookie = {
+        "servant-auth-cookie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-session-postgresql = {
+        "wai-session-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          postgresql-session-test = {
+          "postgresql-session-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.postgresql-session

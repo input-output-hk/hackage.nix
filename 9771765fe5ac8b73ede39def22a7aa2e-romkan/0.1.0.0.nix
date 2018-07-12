@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        romkan = {
+        "romkan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-romkan = {
+          "test-romkan" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

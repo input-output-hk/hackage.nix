@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        number-length = {
+        "number-length" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

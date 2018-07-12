@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        module-management = {
+        "module-management" = {
           depends  = [
             hsPkgs.applicative-extras
             hsPkgs.base
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          hmm = {
+          "hmm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -66,7 +66,7 @@ let
               hsPkgs.temporary
             ];
           };
-          tests = {
+          "tests" = {
             depends  = pkgs.lib.optionals _flags.build-tests [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-java = {
+        "hs-java" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

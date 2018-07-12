@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ldif = {
+        "ldif" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -33,11 +33,11 @@ let
           ];
         };
         exes = {
-          diffLDIF = {};
-          ldif2html = {};
-          ldifmodify = {};
-          ldifparse = {};
-          test = {
+          "diffLDIF" = {};
+          "ldif2html" = {};
+          "ldifmodify" = {};
+          "ldifparse" = {};
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

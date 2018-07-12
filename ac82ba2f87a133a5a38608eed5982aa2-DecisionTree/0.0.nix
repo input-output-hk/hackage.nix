@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DecisionTree = {
+        "DecisionTree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

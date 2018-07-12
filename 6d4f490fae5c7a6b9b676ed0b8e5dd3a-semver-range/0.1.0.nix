@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semver-range = {
+        "semver-range" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude

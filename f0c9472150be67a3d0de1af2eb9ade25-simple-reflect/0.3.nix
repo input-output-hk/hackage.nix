@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-reflect = {
+        "simple-reflect" = {
           depends  = [ hsPkgs.base ];
         };
       };

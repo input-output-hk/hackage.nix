@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eternity-timestamped = {
+        "eternity-timestamped" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-cufft = {
+        "accelerate-cufft" = {
           depends  = [
             hsPkgs.cufft
             hsPkgs.cuda
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          accelerate-cufft-demo = {
+          "accelerate-cufft-demo" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.accelerate-cufft
               hsPkgs.accelerate-llvm-ptx
@@ -42,7 +42,7 @@ let
               hsPkgs.base
             ];
           };
-          accelerate-cufft-demo-merged = {
+          "accelerate-cufft-demo-merged" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.accelerate-llvm-ptx
               hsPkgs.accelerate
@@ -51,7 +51,7 @@ let
               hsPkgs.base
             ];
           };
-          accelerate-cufft-demo-separate = {
+          "accelerate-cufft-demo-separate" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.accelerate-llvm-ptx
               hsPkgs.accelerate
@@ -60,7 +60,7 @@ let
               hsPkgs.base
             ];
           };
-          cufft-demo = {
+          "cufft-demo" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.cufft
               hsPkgs.cuda

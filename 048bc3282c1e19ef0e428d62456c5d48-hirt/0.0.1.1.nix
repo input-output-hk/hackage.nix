@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hirt = {
+          "hirt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

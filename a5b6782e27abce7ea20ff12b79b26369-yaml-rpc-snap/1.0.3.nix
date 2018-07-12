@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml-rpc-snap = {
+        "yaml-rpc-snap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

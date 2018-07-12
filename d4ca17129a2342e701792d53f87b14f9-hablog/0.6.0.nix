@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hablog = {
+        "hablog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.scotty
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          hablog = {
+          "hablog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

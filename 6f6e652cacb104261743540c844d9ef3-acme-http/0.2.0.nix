@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-http = {
+        "acme-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -32,8 +32,8 @@ let
           ];
         };
         exes = {
-          pong = {};
-          http-echo = {};
+          "pong" = {};
+          "http-echo" = {};
         };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmonad = {
+        "cmonad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        casadi-bindings = {
+        "casadi-bindings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear
@@ -39,14 +39,14 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
             libs = [ pkgs."stdc++" ];
           };
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HUnit

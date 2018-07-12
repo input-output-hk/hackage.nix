@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inflections = {
+        "inflections" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.inflections
               hsPkgs.base

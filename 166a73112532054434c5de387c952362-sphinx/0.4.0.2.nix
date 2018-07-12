@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sphinx = {
+        "sphinx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

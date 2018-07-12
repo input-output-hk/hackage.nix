@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unification-fd = {
+        "unification-fd" = {
           depends  = ([
             hsPkgs.logict
             hsPkgs.base

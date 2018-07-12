@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-settheory = {
+        "type-settheory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

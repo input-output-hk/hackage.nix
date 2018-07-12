@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CC-delcont-ref-tf = {
+        "CC-delcont-ref-tf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hcoap = {
+        "hcoap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          hcoap-example-server = {
+          "hcoap-example-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -46,7 +46,7 @@ let
               hsPkgs.hcoap
             ];
           };
-          hcoap-example-client = {
+          "hcoap-example-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          hcoap-test = {
+          "hcoap-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hcoap

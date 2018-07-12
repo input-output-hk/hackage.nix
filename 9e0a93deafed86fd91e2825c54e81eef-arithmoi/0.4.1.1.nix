@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arithmoi = {
+        "arithmoi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-gi = {
+        "haskell-gi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          haskell-gi = {
+          "haskell-gi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

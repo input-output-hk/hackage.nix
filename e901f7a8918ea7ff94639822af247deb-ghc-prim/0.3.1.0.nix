@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ghc-prim = {
+        "ghc-prim" = {
           depends  = [ hsPkgs.rts ];
         };
       };

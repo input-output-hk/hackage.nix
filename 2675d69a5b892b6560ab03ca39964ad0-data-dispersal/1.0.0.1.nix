@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-dispersal = {
+        "data-dispersal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

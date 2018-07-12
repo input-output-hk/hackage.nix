@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Ketchup = {
+        "Ketchup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

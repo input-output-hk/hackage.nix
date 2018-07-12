@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-lips = {
+        "text-lips" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

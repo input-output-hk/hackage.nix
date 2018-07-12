@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quenya-verb = {
+        "quenya-verb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          quenya-verb-server = {
+          "quenya-verb-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quenya-verb

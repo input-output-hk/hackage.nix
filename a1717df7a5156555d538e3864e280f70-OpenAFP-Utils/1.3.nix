@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          afp2line2pdf = {
+          "afp2line2pdf" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98
@@ -29,7 +29,7 @@ let
               hsPkgs.line2pdf
             ];
           };
-          afp-olndump = {
+          "afp-olndump" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98
@@ -39,7 +39,7 @@ let
               hsPkgs.binary
             ];
           };
-          afp-dump = {
+          "afp-dump" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98
@@ -50,21 +50,21 @@ let
               hsPkgs.xhtml
             ];
           };
-          afp-page = {
+          "afp-page" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98
               hsPkgs.base
             ];
           };
-          afp-replace = {
+          "afp-replace" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98
               hsPkgs.base
             ];
           };
-          afp-scanudc = {
+          "afp-scanudc" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98
@@ -72,21 +72,21 @@ let
               hsPkgs.directory
             ];
           };
-          afp-split = {
+          "afp-split" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98
               hsPkgs.base
             ];
           };
-          afp-split-scb = {
+          "afp-split-scb" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98
               hsPkgs.base
             ];
           };
-          afp-split-tcb = {
+          "afp-split-tcb" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98
@@ -94,14 +94,14 @@ let
               hsPkgs.filepath
             ];
           };
-          afp-type = {
+          "afp-type" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98
               hsPkgs.base
             ];
           };
-          afp-udcfix = {
+          "afp-udcfix" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98
@@ -110,14 +110,14 @@ let
               hsPkgs.regex-posix
             ];
           };
-          afp-validate = {
+          "afp-validate" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98
               hsPkgs.base
             ];
           };
-          afp2line = {
+          "afp2line" = {
             depends  = [
               hsPkgs.OpenAFP
               hsPkgs.haskell98

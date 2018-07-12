@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassava = {
+        "cassava" = {
           depends  = [
             hsPkgs.array
             hsPkgs.attoparsec
@@ -34,7 +34,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1") hsPkgs.ghc-prim;
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -52,7 +52,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HFrequencyQueue = {
+        "HFrequencyQueue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.c-storable-deriving

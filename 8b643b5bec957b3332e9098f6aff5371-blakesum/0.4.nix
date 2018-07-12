@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blakesum = {
+        "blakesum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          blakesum = {
+          "blakesum" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blakesum

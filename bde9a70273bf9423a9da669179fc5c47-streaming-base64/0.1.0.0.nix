@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-base64 = {
+        "streaming-base64" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe-exceptions
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.streaming-base64

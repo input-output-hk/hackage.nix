@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        witherable = {
+        "witherable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

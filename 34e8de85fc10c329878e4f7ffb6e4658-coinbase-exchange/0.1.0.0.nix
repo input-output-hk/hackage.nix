@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        coinbase-exchange = {
+        "coinbase-exchange" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -51,7 +51,7 @@ let
           ];
         };
         exes = {
-          sandbox = {
+          "sandbox" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-client
@@ -76,7 +76,7 @@ let
           };
         };
         tests = {
-          test-coinbase = {
+          "test-coinbase" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

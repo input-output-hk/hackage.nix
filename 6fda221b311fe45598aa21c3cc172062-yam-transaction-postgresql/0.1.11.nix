@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yam-transaction-postgresql = {
+        "yam-transaction-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yam-app

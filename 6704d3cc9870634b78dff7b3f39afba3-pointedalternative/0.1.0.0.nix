@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pointedalternative = {
+        "pointedalternative" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.semigroups

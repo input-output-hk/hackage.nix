@@ -37,7 +37,7 @@ let
         buildType = "Custom";
       };
       components = {
-        darcs = {
+        "darcs" = {
           depends  = (((((((([
             hsPkgs.base
             hsPkgs.binary
@@ -97,11 +97,11 @@ let
             else [
               hsPkgs.network
             ]))) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optional _flags.hashed-storage-diff hsPkgs.lcs) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
-          libs = pkgs.lib.optional (_flags.curl && !_flags.pkgconfig) pkgs.curl;
-          pkgconfig = pkgs.lib.optional (_flags.curl && _flags.pkgconfig) pkgconfPkgs.libcurl;
+          libs = pkgs.lib.optionals _flags.curl (pkgs.lib.optional (!_flags.pkgconfig) pkgs.curl);
+          pkgconfig = pkgs.lib.optionals _flags.curl (pkgs.lib.optional _flags.pkgconfig pkgconfPkgs.libcurl);
         };
         exes = {
-          darcs = {
+          "darcs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.darcs
@@ -111,7 +111,7 @@ let
           };
         };
         tests = {
-          darcs-test = {
+          "darcs-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.darcs
@@ -135,7 +135,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ] ++ [ hsPkgs.text ];
           };
-          hashed-storage-test = {
+          "hashed-storage-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shoap = {
+        "shoap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl

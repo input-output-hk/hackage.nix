@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Wheb = {
+        "Wheb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

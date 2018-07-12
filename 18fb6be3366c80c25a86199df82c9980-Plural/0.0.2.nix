@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Plural = {
+        "Plural" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.regex-tdfa

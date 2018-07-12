@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Concurrential = {
+        "Concurrential" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

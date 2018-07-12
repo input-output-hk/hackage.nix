@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ruff = {
+        "ruff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

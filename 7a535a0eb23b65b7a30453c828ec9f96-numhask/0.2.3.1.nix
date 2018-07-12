@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numhask = {
+        "numhask" = {
           depends  = [ hsPkgs.base ];
         };
       };

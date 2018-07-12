@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        roman-numerals = {
+        "roman-numerals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

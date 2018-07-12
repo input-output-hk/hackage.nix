@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hblas = {
+        "hblas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.storable-complex
@@ -37,7 +37,7 @@ let
           frameworks = pkgs.lib.optional system.isOsx pkgs.Accelerate;
         };
         tests = {
-          simple-test = {
+          "simple-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

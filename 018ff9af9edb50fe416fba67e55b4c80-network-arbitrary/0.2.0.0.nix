@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-arbitrary = {
+        "network-arbitrary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          network-arbitrary-tests = {
+          "network-arbitrary-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

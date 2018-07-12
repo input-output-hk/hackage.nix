@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        expiring-mvar = {
+        "expiring-mvar" = {
           depends  = [ hsPkgs.base ];
         };
       };

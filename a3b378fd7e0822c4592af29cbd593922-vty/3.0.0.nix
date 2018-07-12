@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        vty = {
+        "vty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

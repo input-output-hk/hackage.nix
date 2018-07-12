@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cusparse = {
+        "cusparse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cuda

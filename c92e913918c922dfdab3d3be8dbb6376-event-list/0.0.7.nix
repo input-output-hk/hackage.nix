@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        event-list = {
+        "event-list" = {
           depends  = [
             hsPkgs.non-negative
             hsPkgs.mtl
@@ -35,6 +35,6 @@ let
             ]
             else [ hsPkgs.base ]);
         };
-        exes = { test = {}; };
+        exes = { "test" = {}; };
       };
     }

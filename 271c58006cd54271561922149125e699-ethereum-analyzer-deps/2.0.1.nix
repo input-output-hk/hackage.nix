@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ethereum-analyzer-deps = {
+        "ethereum-analyzer-deps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

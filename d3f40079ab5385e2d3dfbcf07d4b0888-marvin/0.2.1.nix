@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        marvin = {
+        "marvin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq
@@ -62,7 +62,7 @@ let
           ];
         };
         exes = {
-          marvin-pp = {
+          "marvin-pp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mustache
@@ -76,7 +76,7 @@ let
               hsPkgs.aeson
             ];
           };
-          marvin-init = {
+          "marvin-init" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mustache
@@ -88,14 +88,14 @@ let
           };
         };
         tests = {
-          marvin-unit-tests = {
+          "marvin-unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.marvin
               hsPkgs.hspec
             ];
           };
-          marvin-integration-tests = {
+          "marvin-integration-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.marvin

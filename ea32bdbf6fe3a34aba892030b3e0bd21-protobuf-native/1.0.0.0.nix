@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        protobuf-native = {
+        "protobuf-native" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          protobuf-native-test = {
+          "protobuf-native-test" = {
             depends  = [
               hsPkgs.protobuf-native
               hsPkgs.base
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.protobuf-native
               hsPkgs.base
@@ -51,7 +51,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.protobuf-native
               hsPkgs.base

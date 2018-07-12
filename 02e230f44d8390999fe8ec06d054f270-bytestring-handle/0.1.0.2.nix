@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-handle = {
+        "bytestring-handle" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.base
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.test-framework-quickcheck2

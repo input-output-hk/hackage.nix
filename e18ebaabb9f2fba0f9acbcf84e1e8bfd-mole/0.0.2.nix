@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mole = {
+          "mole" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

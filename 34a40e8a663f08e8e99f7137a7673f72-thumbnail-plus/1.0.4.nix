@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thumbnail-plus = {
+        "thumbnail-plus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default

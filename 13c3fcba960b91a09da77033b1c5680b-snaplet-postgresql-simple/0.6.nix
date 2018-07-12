@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-postgresql-simple = {
+        "snaplet-postgresql-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

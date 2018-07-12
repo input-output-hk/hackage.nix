@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haxl = {
+        "haxl" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.aeson

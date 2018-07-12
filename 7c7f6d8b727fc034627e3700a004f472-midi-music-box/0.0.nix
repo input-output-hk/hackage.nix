@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          midi-music-box = {
+          "midi-music-box" = {
             depends  = [
               hsPkgs.diagrams-postscript
               hsPkgs.diagrams-lib

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitcoin-rpc = {
+        "bitcoin-rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim

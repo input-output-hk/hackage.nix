@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snappy-conduit = {
+        "snappy-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snappy

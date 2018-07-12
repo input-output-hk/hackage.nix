@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mmark-ext = {
+        "mmark-ext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

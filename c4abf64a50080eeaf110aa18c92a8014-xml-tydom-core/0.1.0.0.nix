@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-tydom-core = {
+        "xml-tydom-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gloss-devil = {
+        "gloss-devil" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gloss

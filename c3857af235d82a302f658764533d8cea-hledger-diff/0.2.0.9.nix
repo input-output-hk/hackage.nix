@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hledger-diff = {
+          "hledger-diff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hledger-lib

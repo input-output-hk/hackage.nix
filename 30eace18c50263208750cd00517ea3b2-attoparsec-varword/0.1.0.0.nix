@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec-varword = {
+        "attoparsec-varword" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
           ];
         };
         tests = {
-          attoparsec-varword-test = {
+          "attoparsec-varword-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec-varword

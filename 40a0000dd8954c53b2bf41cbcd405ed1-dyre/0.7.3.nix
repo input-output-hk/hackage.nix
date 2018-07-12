@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dyre = {
+        "dyre" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

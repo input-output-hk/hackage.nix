@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        roundtrip-xml = {
+        "roundtrip-xml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.base
               hsPkgs.HTF

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        indentation-core = {
+        "indentation-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake-language-c = {
+        "shake-language-c" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -40,7 +40,7 @@ let
               hsPkgs.shake-language-c
             ];
           };
-          spectests = {
+          "spectests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

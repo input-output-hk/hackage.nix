@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opentheory-stream = {
+        "opentheory-stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

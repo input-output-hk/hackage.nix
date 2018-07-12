@@ -24,20 +24,20 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-reactivevalues = {
+        "keera-hails-reactivevalues" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant
           ];
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          haddock-coverage = {
+          "haddock-coverage" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doc-coverage)) [
               hsPkgs.base
               hsPkgs.directory
@@ -46,7 +46,7 @@ let
               hsPkgs.regex-posix
             ];
           };
-          unit-tests = {
+          "unit-tests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-unit-tests)) [
               hsPkgs.base
               hsPkgs.mtl

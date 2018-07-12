@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        honk = {
+        "honk" = {
           depends  = [ hsPkgs.base ];
         };
       };

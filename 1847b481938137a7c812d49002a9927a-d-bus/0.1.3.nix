@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        d-bus = {
+        "d-bus" = {
           depends  = [
             hsPkgs.async
             hsPkgs.attoparsec
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          unittests = {
+          "unittests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

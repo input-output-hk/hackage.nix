@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashing = {
+        "hashing" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hashing-exe = {
+          "hashing-exe" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.array
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          hashing-test = {
+          "hashing-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.array

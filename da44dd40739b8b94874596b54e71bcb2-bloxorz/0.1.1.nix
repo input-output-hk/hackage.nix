@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bloxorz = {
+          "bloxorz" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL

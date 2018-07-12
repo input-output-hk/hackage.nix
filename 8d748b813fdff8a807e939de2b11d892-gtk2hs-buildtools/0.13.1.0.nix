@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk2hs-buildtools = {
+        "gtk2hs-buildtools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -32,13 +32,13 @@ let
           ];
         };
         exes = {
-          gtk2hsTypeGen = {
+          "gtk2hsTypeGen" = {
             depends  = [ hsPkgs.base ];
           };
-          gtk2hsHookGenerator = {
+          "gtk2hsHookGenerator" = {
             depends  = [ hsPkgs.base ];
           };
-          gtk2hsC2hs = {
+          "gtk2hsC2hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

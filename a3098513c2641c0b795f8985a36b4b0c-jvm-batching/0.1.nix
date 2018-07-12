@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        jvm-batching = {
+        "jvm-batching" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          micro-benchmarks = {
+          "micro-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

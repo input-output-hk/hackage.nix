@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        histogram-fill = {
+        "histogram-fill" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.histogram-fill

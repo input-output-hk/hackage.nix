@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Workflow = {
+        "Workflow" = {
           depends  = [
             hsPkgs.MonadCatchIO-mtl
             hsPkgs.RefSerialize

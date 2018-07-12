@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hlogger = {
+        "hlogger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale

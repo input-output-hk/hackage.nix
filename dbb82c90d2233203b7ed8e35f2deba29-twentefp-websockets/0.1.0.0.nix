@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twentefp-websockets = {
+        "twentefp-websockets" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

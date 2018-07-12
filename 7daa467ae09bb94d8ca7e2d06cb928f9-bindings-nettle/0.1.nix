@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-nettle = {
+        "bindings-nettle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

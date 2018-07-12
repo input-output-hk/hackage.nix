@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          qtrial = {
+          "qtrial" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -33,7 +33,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          fptest = {
+          "fptest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          qtrial-quickcheck = {
+          "qtrial-quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -59,7 +59,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          fptest-quickcheck = {
+          "fptest-quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -71,21 +71,21 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.Glob
             ];
           };
-          haddock = {
+          "haddock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.regex-compat
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

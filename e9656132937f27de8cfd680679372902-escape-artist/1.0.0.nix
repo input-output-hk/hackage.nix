@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        escape-artist = {
+        "escape-artist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          escape-artist-test = {
+          "escape-artist-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

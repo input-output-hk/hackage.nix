@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        refty = {
+        "refty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          refty-test = {
+          "refty-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.refty

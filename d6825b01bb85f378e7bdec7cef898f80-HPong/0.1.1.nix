@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hpong = {
+          "hpong" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-accessor

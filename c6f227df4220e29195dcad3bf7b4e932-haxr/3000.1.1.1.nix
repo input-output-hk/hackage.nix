@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haxr = {
+        "haxr" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.network

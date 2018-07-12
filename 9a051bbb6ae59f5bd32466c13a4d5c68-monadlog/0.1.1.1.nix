@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadlog = {
+        "monadlog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fast-logger

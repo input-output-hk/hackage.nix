@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cacophony = {
+        "cacophony" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -48,13 +48,13 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.doctest)) [
               hsPkgs.base
               hsPkgs.filepath
@@ -64,7 +64,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

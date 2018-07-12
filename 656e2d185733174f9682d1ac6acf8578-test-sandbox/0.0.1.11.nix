@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-sandbox = {
+        "test-sandbox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-sandbox

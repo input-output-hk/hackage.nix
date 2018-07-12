@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          plot-lab = {
+          "plot-lab" = {
             depends  = [
               hsPkgs.base
               hsPkgs.colour

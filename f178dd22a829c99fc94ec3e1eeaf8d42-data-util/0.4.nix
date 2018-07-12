@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-util = {
+        "data-util" = {
           depends  = [ hsPkgs.base ];
         };
       };

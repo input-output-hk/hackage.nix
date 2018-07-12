@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        interpolatedstring-qq = {
+        "interpolatedstring-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

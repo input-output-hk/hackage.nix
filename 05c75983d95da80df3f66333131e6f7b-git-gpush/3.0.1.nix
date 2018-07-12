@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          git-gpush = {
+          "git-gpush" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gitlib

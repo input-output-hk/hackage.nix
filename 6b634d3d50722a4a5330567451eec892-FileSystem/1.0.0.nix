@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FileSystem = {
+        "FileSystem" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

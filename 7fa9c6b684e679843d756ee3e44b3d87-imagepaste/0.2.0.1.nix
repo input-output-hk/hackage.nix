@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          imagepaste = {
+          "imagepaste" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

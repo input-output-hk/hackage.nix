@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sunlight = {
+        "sunlight" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

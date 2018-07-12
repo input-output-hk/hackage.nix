@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        table-layout = {
+        "table-layout" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          table-layout-test-styles = {
+          "table-layout-test-styles" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default-class
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          table-layout-tests = {
+          "table-layout-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

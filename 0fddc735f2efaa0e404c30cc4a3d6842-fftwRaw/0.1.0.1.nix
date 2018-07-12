@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fftwRaw = {
+        "fftwRaw" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.fftw3 ];
           build-tools = [

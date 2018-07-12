@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nsis = {
+        "nsis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          nsis-test = {
+          "nsis-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

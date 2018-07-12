@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        dictparser = {
+        "dictparser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         exes = {
-          dictparser = {
+          "dictparser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dictparser
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dictparser

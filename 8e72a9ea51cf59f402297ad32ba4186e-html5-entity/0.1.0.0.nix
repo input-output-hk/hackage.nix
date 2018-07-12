@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        html5-entity = {
+        "html5-entity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

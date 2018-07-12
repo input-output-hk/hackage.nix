@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec = {
+        "attoparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.4") hsPkgs.bytestring;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

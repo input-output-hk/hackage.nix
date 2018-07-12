@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        remote = {
+        "remote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

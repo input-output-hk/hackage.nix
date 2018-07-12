@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        radian = {
+        "radian" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

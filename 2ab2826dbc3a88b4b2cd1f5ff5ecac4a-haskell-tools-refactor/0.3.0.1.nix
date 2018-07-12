@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-refactor = {
+        "haskell-tools-refactor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          haskell-tools-test = {
+          "haskell-tools-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

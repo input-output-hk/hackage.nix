@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-directconnect = {
+        "amazonka-directconnect" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

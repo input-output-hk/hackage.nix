@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stack-prism = {
+        "stack-prism" = {
           depends  = [
             hsPkgs.base
             hsPkgs.profunctors

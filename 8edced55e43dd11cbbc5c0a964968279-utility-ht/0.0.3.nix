@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        utility-ht = {
+        "utility-ht" = {
           depends  = [ hsPkgs.base ];
         };
       };

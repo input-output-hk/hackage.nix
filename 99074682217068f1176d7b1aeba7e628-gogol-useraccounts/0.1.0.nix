@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-useraccounts = {
+        "gogol-useraccounts" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

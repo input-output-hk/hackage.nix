@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mdp = {
+        "mdp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,28 +28,28 @@ let
           ];
         };
         exes = {
-          ex-3-1 = {
+          "ex-3-1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.vector
             ];
           };
-          ex-3-1-relative = {
+          "ex-3-1-relative" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.vector
             ];
           };
-          ex-3-2 = {
+          "ex-3-2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.vector
             ];
           };
-          mm1 = {
+          "mm1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          TestMain = {
+          "TestMain" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF

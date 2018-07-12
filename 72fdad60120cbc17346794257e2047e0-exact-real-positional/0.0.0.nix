@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exact-real-positional = {
+        "exact-real-positional" = {
           depends  = [ hsPkgs.base ];
         };
       };

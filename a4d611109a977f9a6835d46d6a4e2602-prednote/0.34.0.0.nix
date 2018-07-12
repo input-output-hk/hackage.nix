@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prednote = {
+        "prednote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rainbow
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          prednote-tests = {
+          "prednote-tests" = {
             depends  = [
               hsPkgs.tasty
               hsPkgs.tasty-quickcheck
@@ -51,7 +51,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          prednote-visual-tests = {
+          "prednote-visual-tests" = {
             depends  = [
               hsPkgs.tasty
               hsPkgs.tasty-quickcheck

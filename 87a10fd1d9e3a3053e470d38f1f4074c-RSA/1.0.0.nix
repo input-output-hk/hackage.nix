@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RSA = {
+        "RSA" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional _flags.usebinary hsPkgs.binary) ++ pkgs.lib.optional (_flags.includemd5 && _flags.usebinary) hsPkgs.pureMD5;
         };
         exes = {
-          test_rsa = {
+          "test_rsa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

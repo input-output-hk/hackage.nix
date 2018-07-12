@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-gdkx11 = {
+        "gi-gdkx11" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

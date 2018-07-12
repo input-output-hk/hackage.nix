@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prim-uniq = {
+        "prim-uniq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dependent-sum

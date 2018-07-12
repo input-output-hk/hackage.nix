@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xilinx-lava = {
+        "xilinx-lava" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -32,14 +32,14 @@ let
           ];
         };
         exes = {
-          report_par = {
+          "report_par" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.haskell98
             ];
           };
-          implement = {
+          "implement" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

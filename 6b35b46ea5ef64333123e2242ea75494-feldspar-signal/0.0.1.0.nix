@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feldspar-signal = {
+        "feldspar-signal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mainland-pretty

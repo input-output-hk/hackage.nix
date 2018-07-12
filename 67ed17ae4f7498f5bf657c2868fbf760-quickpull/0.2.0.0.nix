@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickpull = {
+        "quickpull" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          quickpull = {
+          "quickpull" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -39,7 +39,7 @@ let
               hsPkgs.filepath
             ];
           };
-          quickpull-test-gen = {
+          "quickpull-test-gen" = {
             depends  = pkgs.lib.optionals _flags.build-test-gen [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          quickpull-tests = {
+          "quickpull-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

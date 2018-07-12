@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        paths = {
+        "paths" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring

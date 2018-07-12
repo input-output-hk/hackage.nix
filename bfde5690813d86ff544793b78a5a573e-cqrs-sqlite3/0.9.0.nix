@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cqrs-sqlite3 = {
+        "cqrs-sqlite3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          cqrs-sqlite3-tests = {
+          "cqrs-sqlite3-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

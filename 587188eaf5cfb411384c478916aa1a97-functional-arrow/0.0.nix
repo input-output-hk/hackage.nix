@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        functional-arrow = {
+        "functional-arrow" = {
           depends  = [
             hsPkgs.HList
             hsPkgs.base

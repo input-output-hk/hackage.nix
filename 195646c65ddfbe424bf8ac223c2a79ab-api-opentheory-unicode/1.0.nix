@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        api-opentheory-unicode = {
+        "api-opentheory-unicode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          api-opentheory-unicode-test = {
+          "api-opentheory-unicode-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

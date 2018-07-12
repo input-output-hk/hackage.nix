@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        configurator-export = {
+        "configurator-export" = {
           depends  = [
             hsPkgs.base
             hsPkgs.configurator
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          configurator-export-test = {
+          "configurator-export-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.configurator-export

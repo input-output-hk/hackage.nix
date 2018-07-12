@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dynobud = {
+        "dynobud" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -58,7 +58,7 @@ let
           ];
         };
         exes = {
-          multiple_shooting = {
+          "multiple_shooting" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
@@ -71,7 +71,7 @@ let
               hsPkgs.data-default-class
             ];
           };
-          plotSofa = {
+          "plotSofa" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
@@ -85,7 +85,7 @@ let
               hsPkgs.vector
             ];
           };
-          sofaTime = {
+          "sofaTime" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.vector
@@ -97,31 +97,21 @@ let
               hsPkgs.base
             ];
           };
-          homotopy = {
+          "homotopy" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.vector
               hsPkgs.base
             ];
           };
-          vec = {
+          "vec" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.vector
               hsPkgs.base
             ];
           };
-          ocpMonad = {
-            depends  = [
-              hsPkgs.dynobud
-              hsPkgs.vector
-              hsPkgs.base
-              hsPkgs.zeromq4-haskell
-              hsPkgs.cereal
-              hsPkgs.bytestring
-            ];
-          };
-          rocket = {
+          "ocpMonad" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.vector
@@ -131,35 +121,45 @@ let
               hsPkgs.bytestring
             ];
           };
-          staticExample = {
+          "rocket" = {
+            depends  = [
+              hsPkgs.dynobud
+              hsPkgs.vector
+              hsPkgs.base
+              hsPkgs.zeromq4-haskell
+              hsPkgs.cereal
+              hsPkgs.bytestring
+            ];
+          };
+          "staticExample" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.vector
               hsPkgs.base
             ];
           };
-          basic = {
+          "basic" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.vector
               hsPkgs.base
             ];
           };
-          basicJ = {
+          "basicJ" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.vector
               hsPkgs.base
             ];
           };
-          daeColl = {
+          "daeColl" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
               hsPkgs.vector
             ];
           };
-          glider = {
+          "glider" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
@@ -171,7 +171,7 @@ let
               hsPkgs.zeromq4-haskell
             ];
           };
-          sailboat = {
+          "sailboat" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
@@ -184,7 +184,7 @@ let
               hsPkgs.zeromq4-haskell
             ];
           };
-          dynoplot = {
+          "dynoplot" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
@@ -198,7 +198,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.QuickCheck

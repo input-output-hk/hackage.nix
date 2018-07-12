@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DnaProteinAlignment = {
+        "DnaProteinAlignment" = {
           depends  = [
             hsPkgs.ansi-wl-pprint
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          DnaProteinAlignment = {
+          "DnaProteinAlignment" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base

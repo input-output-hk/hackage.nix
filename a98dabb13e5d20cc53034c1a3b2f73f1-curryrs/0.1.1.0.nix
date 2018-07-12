@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        curryrs = {
+        "curryrs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         tests = {
-          curryrs-test = {
+          "curryrs-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curryrs
@@ -37,7 +37,7 @@ let
           };
         };
         benchmarks = {
-          curryrs-bench = {
+          "curryrs-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curryrs

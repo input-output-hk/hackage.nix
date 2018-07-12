@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yeller = {
+        "yeller" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-yeller = {
+          "test-yeller" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          bench-yeller = {
+          "bench-yeller" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

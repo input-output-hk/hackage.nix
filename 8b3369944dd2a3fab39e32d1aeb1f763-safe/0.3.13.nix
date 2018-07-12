@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        safe = {
+        "safe" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          safe-test = {
+          "safe-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

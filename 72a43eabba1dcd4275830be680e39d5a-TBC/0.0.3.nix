@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TBC = {
+        "TBC" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          tbc = {
+          "tbc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

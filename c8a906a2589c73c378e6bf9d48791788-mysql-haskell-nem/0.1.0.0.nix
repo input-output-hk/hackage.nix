@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mysql-haskell-nem = {
+        "mysql-haskell-nem" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mysql-haskell

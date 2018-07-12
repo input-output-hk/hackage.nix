@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tellbot = {
+          "tellbot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors

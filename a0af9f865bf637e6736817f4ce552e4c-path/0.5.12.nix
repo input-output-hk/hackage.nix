@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        path = {
+        "path" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -47,7 +47,7 @@ let
               hsPkgs.path
             ];
           };
-          validity-test = {
+          "validity-test" = {
             depends  = pkgs.lib.optionals _flags.validity [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

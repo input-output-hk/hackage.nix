@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoodle-parser = {
+        "hoodle-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

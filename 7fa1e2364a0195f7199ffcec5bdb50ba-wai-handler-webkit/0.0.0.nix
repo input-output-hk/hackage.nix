@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-handler-webkit = {
+        "wai-handler-webkit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

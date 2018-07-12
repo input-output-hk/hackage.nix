@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        implicit = {
+        "implicit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          extopenscad = {
+          "extopenscad" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -61,7 +61,7 @@ let
               hsPkgs.implicit
             ];
           };
-          implicitsnap = {
+          "implicitsnap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector-space
@@ -87,7 +87,7 @@ let
               hsPkgs.implicit
             ];
           };
-          Benchmark = {
+          "Benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -112,7 +112,7 @@ let
           };
         };
         tests = {
-          test-implicit = {
+          "test-implicit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -124,7 +124,7 @@ let
           };
         };
         benchmarks = {
-          parser-bench = {
+          "parser-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

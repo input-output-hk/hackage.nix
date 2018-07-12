@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prednote = {
+        "prednote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          prednote-test = {
+          "prednote-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.contravariant

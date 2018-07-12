@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semirings = {
+        "semirings" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.integer-gmp

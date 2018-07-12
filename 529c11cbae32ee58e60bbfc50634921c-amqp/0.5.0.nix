@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amqp = {
+        "amqp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          amqp-builder = {
+          "amqp-builder" = {
             depends  = [ hsPkgs.xml ];
           };
         };

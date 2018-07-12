@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pocket = {
+        "pocket" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

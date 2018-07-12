@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-handler-launch = {
+        "wai-handler-launch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai
@@ -32,7 +32,7 @@ let
             hsPkgs.enumerator
             hsPkgs.blaze-builder-enumerator
             hsPkgs.zlib-enum
-          ] ++ pkgs.lib.optional (!system.isWindows && !system.isOsx) hsPkgs.process;
+          ] ++ pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (!system.isOsx) hsPkgs.process);
           libs = pkgs.lib.optional system.isWindows pkgs.Shell32;
         };
       };

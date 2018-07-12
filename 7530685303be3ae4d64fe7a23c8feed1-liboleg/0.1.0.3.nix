@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liboleg = {
+        "liboleg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

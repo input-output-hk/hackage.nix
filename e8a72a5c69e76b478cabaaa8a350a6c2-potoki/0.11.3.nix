@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        potoki = {
+        "potoki" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.potoki

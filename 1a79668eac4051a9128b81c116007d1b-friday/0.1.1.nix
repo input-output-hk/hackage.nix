@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        friday = {
+        "friday" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,31 +38,31 @@ let
           ];
         };
         exes = {
-          delayed = {
+          "delayed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.friday
             ];
           };
-          canny = {
+          "canny" = {
             depends  = [
               hsPkgs.base
               hsPkgs.friday
             ];
           };
-          gaussian_blur = {
+          "gaussian_blur" = {
             depends  = [
               hsPkgs.base
               hsPkgs.friday
             ];
           };
-          histogram = {
+          "histogram" = {
             depends  = [
               hsPkgs.base
               hsPkgs.friday
             ];
           };
-          resize_image = {
+          "resize_image" = {
             depends  = [
               hsPkgs.base
               hsPkgs.friday
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -82,7 +82,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

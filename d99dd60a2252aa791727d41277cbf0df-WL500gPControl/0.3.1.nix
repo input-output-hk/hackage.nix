@@ -21,13 +21,13 @@ let
       };
       components = {
         exes = {
-          WL500gPStatus = {
+          "WL500gPStatus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.WL500gPLibrary
             ];
           };
-          WL500gPControl = {
+          "WL500gPControl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.WL500gPLibrary

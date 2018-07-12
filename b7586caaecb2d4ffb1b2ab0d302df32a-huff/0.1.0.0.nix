@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        huff = {
+        "huff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.alex-tools
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          blocksWorld = {
+          "blocksWorld" = {
             depends  = [
               hsPkgs.base
               hsPkgs.huff

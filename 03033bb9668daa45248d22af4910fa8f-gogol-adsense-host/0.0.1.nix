@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-adsense-host = {
+        "gogol-adsense-host" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

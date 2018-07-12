@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-helics = {
+        "apiary-helics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.apiary

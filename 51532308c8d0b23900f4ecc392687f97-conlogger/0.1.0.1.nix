@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        conlogger = {
+        "conlogger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conlogger

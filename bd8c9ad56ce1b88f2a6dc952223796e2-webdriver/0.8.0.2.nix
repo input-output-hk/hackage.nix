@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webdriver = {
+        "webdriver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -54,7 +54,7 @@ let
           ];
         };
         tests = {
-          search-baidu = {
+          "search-baidu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.webdriver

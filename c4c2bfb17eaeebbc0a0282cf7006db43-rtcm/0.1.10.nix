@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rtcm = {
+        "rtcm" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.array
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          rtcm32json = {
+          "rtcm32json" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude

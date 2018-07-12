@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        KiCS-prophecy = {
+        "KiCS-prophecy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          prophecy = {
+          "prophecy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.KiCS

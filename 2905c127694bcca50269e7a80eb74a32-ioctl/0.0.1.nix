@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ioctl = {
+        "ioctl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        foma = {
+        "foma" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.foma ];
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-conduit-writer = {
+        "xml-conduit-writer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml-conduit
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xml-conduit-writer

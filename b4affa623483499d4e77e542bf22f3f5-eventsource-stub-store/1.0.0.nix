@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventsource-stub-store = {
+        "eventsource-stub-store" = {
           depends  = [
             hsPkgs.base
             hsPkgs.eventsource-api
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          eventsource-stub-store-test-suite = {
+          "eventsource-stub-store-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eventsource-store-specs

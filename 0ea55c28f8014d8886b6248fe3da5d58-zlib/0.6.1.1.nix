@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zlib = {
+        "zlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           libs = pkgs.lib.optional (!system.isWindows) pkgs.z;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nats-client = {
+        "nats-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          nats-client = {
+          "nats-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          nats-client-test = {
+          "nats-client-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -64,7 +64,7 @@ let
           };
         };
         benchmarks = {
-          bench-nats-client = {
+          "bench-nats-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

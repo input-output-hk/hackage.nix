@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ivory-eval = {
+        "ivory-eval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

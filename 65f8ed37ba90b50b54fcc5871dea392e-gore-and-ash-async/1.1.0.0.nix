@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gore-and-ash-async = {
+        "gore-and-ash-async" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          gore-and-ash-async-test = {
+          "gore-and-ash-async-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gore-and-ash

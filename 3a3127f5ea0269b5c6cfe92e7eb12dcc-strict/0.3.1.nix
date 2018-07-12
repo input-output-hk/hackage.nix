@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strict = {
+        "strict" = {
           depends  = if _flags.split-base
             then [
               hsPkgs.base

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal-audit = {
+          "cabal-audit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

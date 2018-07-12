@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          symon-ansi = {
+          "symon-ansi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

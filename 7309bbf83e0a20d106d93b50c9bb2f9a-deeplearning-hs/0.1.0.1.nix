@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deeplearning-hs = {
+        "deeplearning-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          deeplearning_demonstration = {
+          "deeplearning_demonstration" = {
             depends  = [
               hsPkgs.deeplearning-hs
               hsPkgs.base
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          deeplearning_test = {
+          "deeplearning_test" = {
             depends  = [
               hsPkgs.deeplearning-hs
               hsPkgs.base

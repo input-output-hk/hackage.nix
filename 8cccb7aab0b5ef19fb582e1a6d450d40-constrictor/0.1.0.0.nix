@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        constrictor = {
+        "constrictor" = {
           depends  = [ hsPkgs.base ];
         };
       };

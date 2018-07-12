@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-succinct = {
+        "hw-succinct" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          hw-succinct-example = {
+          "hw-succinct-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          hw-succinct-test = {
+          "hw-succinct-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -75,7 +75,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

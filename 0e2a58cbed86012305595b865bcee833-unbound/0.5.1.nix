@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unbound = {
+        "unbound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.RepLib
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          lambda-calculus = {
+          "lambda-calculus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.RepLib

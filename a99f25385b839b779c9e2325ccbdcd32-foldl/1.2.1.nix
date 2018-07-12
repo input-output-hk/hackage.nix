@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        foldl = {
+        "foldl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NoHoed = {
+        "NoHoed" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake-persist = {
+        "shake-persist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          ex.shake-persist = {
+          "ex.shake-persist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shake-persist

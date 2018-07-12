@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        llvm-general = {
+        "llvm-general" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string
@@ -40,7 +40,7 @@ let
           libs = [ pkgs."stdc++" ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

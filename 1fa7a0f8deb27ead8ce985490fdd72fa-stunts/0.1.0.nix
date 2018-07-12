@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          stunts = {
+          "stunts" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

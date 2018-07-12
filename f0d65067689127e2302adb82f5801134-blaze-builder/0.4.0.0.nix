@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-builder = {
+        "blaze-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.bytestring-builder;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

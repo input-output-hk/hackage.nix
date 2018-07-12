@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exact-pi = {
+        "exact-pi" = {
           depends  = [ hsPkgs.base ];
         };
       };

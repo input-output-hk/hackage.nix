@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cally-dump = {
+          "cally-dump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL
@@ -30,7 +30,7 @@ let
               hsPkgs.cal3d-opengl
             ];
           };
-          cally-gl = {
+          "cally-gl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL

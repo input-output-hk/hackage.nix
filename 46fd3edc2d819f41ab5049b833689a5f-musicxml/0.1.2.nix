@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        musicxml = {
+        "musicxml" = {
           depends  = [
             hsPkgs.pretty
             hsPkgs.HaXml

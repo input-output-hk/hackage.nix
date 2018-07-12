@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        peyotls-codec = {
+        "peyotls-codec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.word24

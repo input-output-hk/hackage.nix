@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws = {
+        "aws" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -62,7 +62,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) hsPkgs.ghc-prim;
         };
         exes = {
-          GetObject = {
+          "GetObject" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
@@ -71,7 +71,7 @@ let
               hsPkgs.conduit-extra
             ];
           };
-          GetObjectGoogle = {
+          "GetObjectGoogle" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
@@ -80,7 +80,7 @@ let
               hsPkgs.conduit-extra
             ];
           };
-          MultipartUpload = {
+          "MultipartUpload" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
@@ -91,7 +91,7 @@ let
               hsPkgs.resourcet
             ];
           };
-          MultipartTransfer = {
+          "MultipartTransfer" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
@@ -101,18 +101,7 @@ let
               hsPkgs.text
             ];
           };
-          NukeBucket = {
-            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
-              hsPkgs.base
-              hsPkgs.aws
-              hsPkgs.http-conduit
-              hsPkgs.conduit
-              hsPkgs.conduit-extra
-              hsPkgs.text
-              hsPkgs.transformers
-            ];
-          };
-          PutBucketNearLine = {
+          "NukeBucket" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
@@ -123,14 +112,25 @@ let
               hsPkgs.transformers
             ];
           };
-          SimpleDb = {
+          "PutBucketNearLine" = {
+            depends  = pkgs.lib.optionals (!(!_flags.examples)) [
+              hsPkgs.base
+              hsPkgs.aws
+              hsPkgs.http-conduit
+              hsPkgs.conduit
+              hsPkgs.conduit-extra
+              hsPkgs.text
+              hsPkgs.transformers
+            ];
+          };
+          "SimpleDb" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.text
             ];
           };
-          DynamoDb = {
+          "DynamoDb" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.aws
               hsPkgs.base
@@ -141,7 +141,7 @@ let
               hsPkgs.conduit
             ];
           };
-          Sqs = {
+          "Sqs" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
@@ -152,7 +152,7 @@ let
           };
         };
         tests = {
-          sqs-tests = {
+          "sqs-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson
@@ -175,7 +175,7 @@ let
               hsPkgs.transformers-base
             ];
           };
-          dynamodb-tests = {
+          "dynamodb-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson
@@ -198,7 +198,7 @@ let
               hsPkgs.transformers-base
             ];
           };
-          s3-tests = {
+          "s3-tests" = {
             depends  = [
               hsPkgs.aws
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-mixal = {
+        "language-mixal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          mixal-pretty = {
+          "mixal-pretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty

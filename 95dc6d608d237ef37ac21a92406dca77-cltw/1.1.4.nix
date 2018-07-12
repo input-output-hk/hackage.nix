@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cltw = {
+          "cltw" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curl

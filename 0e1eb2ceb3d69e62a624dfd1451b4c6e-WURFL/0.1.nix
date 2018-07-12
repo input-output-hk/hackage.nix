@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        WURFL = {
+        "WURFL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

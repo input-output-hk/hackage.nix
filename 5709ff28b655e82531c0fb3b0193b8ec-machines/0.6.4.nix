@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        machines = {
+        "machines" = {
           depends  = [
             hsPkgs.adjunctions
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.fail;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        arpa = {
+        "arpa" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          arpa = {
+          "arpa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.arpa

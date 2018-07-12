@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http2-client = {
+        "http2-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          http2-client-exe = {
+          "http2-client-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -48,7 +48,7 @@ let
               hsPkgs.tls
             ];
           };
-          http2-client-example-simple-get = {
+          "http2-client-example-simple-get" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          http2-client-test = {
+          "http2-client-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http2-client

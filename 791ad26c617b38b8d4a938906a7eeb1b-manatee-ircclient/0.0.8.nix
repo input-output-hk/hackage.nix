@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        manatee-ircclient = {
+        "manatee-ircclient" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manatee-core
@@ -52,8 +52,8 @@ let
           ];
         };
         exes = {
-          manatee-irc-daemon = {};
-          manatee-ircclient = {};
+          "manatee-irc-daemon" = {};
+          "manatee-ircclient" = {};
         };
       };
     }

@@ -25,7 +25,7 @@ let
       };
       components = {
         exes = {
-          etamoo = {
+          "etamoo" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-courier = {
+        "pipes-courier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.courier

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shellwords = {
+        "shellwords" = {
           depends  = [
             hsPkgs.base
             hsPkgs.megaparsec
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

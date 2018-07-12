@@ -20,6 +20,6 @@ let
         buildType = "Make";
       };
       components = {
-        exes = { lvmrun = {}; };
+        exes = { "lvmrun" = {}; };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        proplang = {
+        "proplang" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gtk

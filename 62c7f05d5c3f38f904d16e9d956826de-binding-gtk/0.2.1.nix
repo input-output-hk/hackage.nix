@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binding-gtk = {
+        "binding-gtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gtk
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          simple = {
+          "simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk
@@ -37,7 +37,7 @@ let
               hsPkgs.binding-gtk
             ];
           };
-          lists = {
+          "lists" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

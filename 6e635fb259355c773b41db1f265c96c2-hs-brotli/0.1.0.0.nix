@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-brotli = {
+        "hs-brotli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          brotli-test = {
+          "brotli-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brotli

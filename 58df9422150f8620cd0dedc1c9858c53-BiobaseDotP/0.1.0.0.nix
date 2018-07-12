@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseDotP = {
+        "BiobaseDotP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

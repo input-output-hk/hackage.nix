@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wybor = {
+        "wybor" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base

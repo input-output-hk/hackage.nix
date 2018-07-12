@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vty-ui = {
+        "vty-ui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vty
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          vty-ui-tests = {
+          "vty-ui-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -51,7 +51,7 @@ let
               hsPkgs.vty-ui
             ];
           };
-          vty-ui-collection-demo = {
+          "vty-ui-collection-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -60,7 +60,7 @@ let
               hsPkgs.vty-ui
             ];
           };
-          vty-ui-list-demo = {
+          "vty-ui-list-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -69,7 +69,7 @@ let
               hsPkgs.vty-ui
             ];
           };
-          vty-ui-progressbar-demo = {
+          "vty-ui-progressbar-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -78,7 +78,7 @@ let
               hsPkgs.vty-ui
             ];
           };
-          vty-ui-complex-demo = {
+          "vty-ui-complex-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -90,7 +90,7 @@ let
               hsPkgs.vty-ui
             ];
           };
-          vty-ui-dirbrowser-demo = {
+          "vty-ui-dirbrowser-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -98,16 +98,7 @@ let
               hsPkgs.vty-ui
             ];
           };
-          vty-ui-phoneinput-demo = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.mtl
-              hsPkgs.vty
-              hsPkgs.text
-              hsPkgs.vty-ui
-            ];
-          };
-          vty-ui-dialog-demo = {
+          "vty-ui-phoneinput-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -116,7 +107,16 @@ let
               hsPkgs.vty-ui
             ];
           };
-          vty-ui-edit-demo = {
+          "vty-ui-dialog-demo" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.mtl
+              hsPkgs.vty
+              hsPkgs.text
+              hsPkgs.vty-ui
+            ];
+          };
+          "vty-ui-edit-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

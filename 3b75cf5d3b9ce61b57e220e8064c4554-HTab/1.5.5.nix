@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          htab = {
+          "htab" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

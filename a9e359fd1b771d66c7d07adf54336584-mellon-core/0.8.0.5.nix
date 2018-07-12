@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mellon-core = {
+        "mellon-core" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -46,14 +46,14 @@ let
               hsPkgs.quickcheck-instances
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
               hsPkgs.protolude
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

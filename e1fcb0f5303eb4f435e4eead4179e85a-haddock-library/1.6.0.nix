@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haddock-library = {
+        "haddock-library" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         sublibs = {
-          attoparsec = {
+          "attoparsec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base-compat
               hsPkgs.containers
@@ -58,7 +58,7 @@ let
               hsPkgs.buildPackages.hspec-discover
             ];
           };
-          fixtures = {
+          "fixtures" = {
             depends  = [
               hsPkgs.base-compat
               hsPkgs.directory

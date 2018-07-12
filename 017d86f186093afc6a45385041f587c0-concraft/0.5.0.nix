@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concraft = {
+        "concraft" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

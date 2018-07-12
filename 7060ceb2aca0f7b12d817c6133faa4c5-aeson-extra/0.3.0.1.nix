@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-extra = {
+        "aeson-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          aeson-extra-test = {
+          "aeson-extra-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

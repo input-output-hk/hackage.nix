@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        workflow-types = {
+        "workflow-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.spiros
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          example-workflow-types = {
+          "example-workflow-types" = {
             depends  = [
               hsPkgs.base
               hsPkgs.workflow-types

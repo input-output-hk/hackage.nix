@@ -31,7 +31,7 @@ let
         buildType = "Simple";
       };
       components = {
-        seqaid = {
+        "seqaid" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.ghc
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          seqaid = {
+          "seqaid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.temporary
@@ -58,7 +58,7 @@ let
               hsPkgs.process
             ];
           };
-          seqaidpp = {
+          "seqaidpp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        register-machine-typelevel = {
+        "register-machine-typelevel" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wizards = {
+        "wizards" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskeline

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flat-mcmc = {
+        "flat-mcmc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mcmc-types
@@ -34,14 +34,14 @@ let
           ];
         };
         tests = {
-          rosenbrock = {
+          "rosenbrock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.flat-mcmc
               hsPkgs.vector
             ];
           };
-          bnn = {
+          "bnn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.flat-mcmc

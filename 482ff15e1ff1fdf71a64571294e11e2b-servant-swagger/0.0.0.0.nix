@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-swagger = {
+        "servant-swagger" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

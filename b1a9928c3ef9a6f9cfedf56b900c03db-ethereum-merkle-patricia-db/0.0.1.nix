@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ethereum-merkle-patricia-db = {
+        "ethereum-merkle-patricia-db" = {
           depends  = [
             hsPkgs.base
             hsPkgs.resourcet
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-merkel-patricia-db = {
+          "test-merkel-patricia-db" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default

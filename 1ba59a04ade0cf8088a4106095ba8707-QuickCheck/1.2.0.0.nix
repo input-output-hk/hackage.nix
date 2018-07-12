@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        QuickCheck = {
+        "QuickCheck" = {
           depends  = if _flags.split-base
             then [
               hsPkgs.base

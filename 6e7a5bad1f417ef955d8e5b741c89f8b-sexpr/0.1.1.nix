@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sexpr = {
+        "sexpr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-string

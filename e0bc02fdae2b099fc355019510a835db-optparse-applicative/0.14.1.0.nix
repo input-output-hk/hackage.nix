@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        optparse-applicative = {
+        "optparse-applicative" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          optparse-applicative-tests = {
+          "optparse-applicative-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

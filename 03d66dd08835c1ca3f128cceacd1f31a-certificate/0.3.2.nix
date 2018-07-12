@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        certificate = {
+        "certificate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          certificate = {
+          "certificate" = {
             depends  = pkgs.lib.optional _flags.executable hsPkgs.haskell98;
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-media-simple = {
+        "yesod-media-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

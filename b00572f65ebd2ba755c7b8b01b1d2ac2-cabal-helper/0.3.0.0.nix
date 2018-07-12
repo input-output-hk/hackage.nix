@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cabal-helper = {
+        "cabal-helper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          cabal-helper-wrapper = {
+          "cabal-helper-wrapper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

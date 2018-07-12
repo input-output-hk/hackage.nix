@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        htsn-common = {
+        "htsn-common" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuid-le = {
+        "uuid-le" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

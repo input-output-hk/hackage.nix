@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        to-string-instances = {
+        "to-string-instances" = {
           depends  = (([
             hsPkgs.to-string-class
           ] ++ pkgs.lib.optional _flags.bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.doc hsPkgs.pretty) ++ pkgs.lib.optional _flags.text hsPkgs.text;

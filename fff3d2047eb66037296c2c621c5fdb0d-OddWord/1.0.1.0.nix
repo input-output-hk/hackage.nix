@@ -22,18 +22,18 @@ let
         buildType = "Simple";
       };
       components = {
-        OddWord = {
+        "OddWord" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          oddword-tests = {
+          "oddword-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
               hsPkgs.OddWord
             ];
           };
-          oddword-tests-typelits = {
+          "oddword-tests-typelits" = {
             depends  = pkgs.lib.optionals (_flags.typelitssupport && (compiler.isGhc && compiler.version.ge "7.8")) [
               hsPkgs.base
               hsPkgs.OddWord

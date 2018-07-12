@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        second-transfer = {
+        "second-transfer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           libs = [ pkgs.ssl pkgs.crypto ];
         };
         tests = {
-          compiling-ok = {
+          "compiling-ok" = {
             depends  = [
               hsPkgs.base
               hsPkgs.second-transfer

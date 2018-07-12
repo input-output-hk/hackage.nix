@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        array-primops = {
+        "array-primops" = {
           depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") ([
             hsPkgs.base
             hsPkgs.ghc-prim
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10") hsPkgs.ghc-prim);
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim

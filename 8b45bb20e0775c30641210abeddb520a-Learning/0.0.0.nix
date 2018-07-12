@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Learning = {
+        "Learning" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          Learning-exe = {
+          "Learning-exe" = {
             depends  = [
               hsPkgs.Learning
               hsPkgs.base
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          Learning-test = {
+          "Learning-test" = {
             depends  = [
               hsPkgs.Learning
               hsPkgs.base

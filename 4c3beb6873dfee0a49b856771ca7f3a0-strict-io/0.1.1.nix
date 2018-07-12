@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strict-io = {
+        "strict-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

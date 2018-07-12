@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rfc-redis = {
+        "rfc-redis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hedis

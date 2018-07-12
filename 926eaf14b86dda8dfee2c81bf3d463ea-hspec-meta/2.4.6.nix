@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-meta = {
+        "hspec-meta" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.QuickCheck
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          hspec-meta-discover = {
+          "hspec-meta-discover" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

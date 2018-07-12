@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          vision = {
+          "vision" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xmms2-client

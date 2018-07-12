@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        l-bfgs-b = {
+        "l-bfgs-b" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-file-th = {
+        "cabal-file-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cabal-file-th

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        websockets = {
+        "websockets" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          websockets-example = {
+          "websockets-example" = {
             depends  = [
               hsPkgs.websockets
               hsPkgs.attoparsec
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          websockets-tests = {
+          "websockets-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

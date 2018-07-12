@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Cartesian = {
+        "Cartesian" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

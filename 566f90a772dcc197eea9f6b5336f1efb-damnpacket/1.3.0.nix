@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        damnpacket = {
+        "damnpacket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          parse = {
+          "parse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        katt = {
+        "katt" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          katt = {
+          "katt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          test-katt-sourcehandler = {
+          "test-katt-sourcehandler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-fix-cse = {
+        "data-fix-cse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

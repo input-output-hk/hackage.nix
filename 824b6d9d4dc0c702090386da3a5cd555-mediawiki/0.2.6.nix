@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mediawiki = {
+        "mediawiki" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.mediawiki
               hsPkgs.base
@@ -42,7 +42,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          listCat = {
+          "listCat" = {
             depends  = [
               hsPkgs.mediawiki
               hsPkgs.base
@@ -54,7 +54,7 @@ let
               hsPkgs.pretty
             ];
           };
-          linksTo = {
+          "linksTo" = {
             depends  = [
               hsPkgs.mediawiki
               hsPkgs.base

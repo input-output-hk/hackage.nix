@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson = {
+        "aeson" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

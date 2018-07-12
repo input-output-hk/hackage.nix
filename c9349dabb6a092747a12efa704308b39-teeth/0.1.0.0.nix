@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        teeth = {
+        "teeth" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdph = {
+        "hdph" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          hello = {
+          "hello" = {
             depends  = [
               hsPkgs.template-haskell
               hsPkgs.base
@@ -59,7 +59,7 @@ let
               hsPkgs.hdph-closure
             ];
           };
-          fib = {
+          "fib" = {
             depends  = [
               hsPkgs.template-haskell
               hsPkgs.base
@@ -78,7 +78,7 @@ let
               hsPkgs.hdph-closure
             ];
           };
-          sumeuler = {
+          "sumeuler" = {
             depends  = [
               hsPkgs.template-haskell
               hsPkgs.base
@@ -97,7 +97,7 @@ let
               hsPkgs.hdph-closure
             ];
           };
-          nbody = {
+          "nbody" = {
             depends  = [
               hsPkgs.template-haskell
               hsPkgs.base

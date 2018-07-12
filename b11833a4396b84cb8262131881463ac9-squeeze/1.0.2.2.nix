@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          squeeze = {
+          "squeeze" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

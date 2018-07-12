@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        egison = {
+        "egison" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          egison = {
+          "egison" = {
             depends  = [
               hsPkgs.egison
               hsPkgs.base
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.egison
               hsPkgs.base
@@ -81,7 +81,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.egison
               hsPkgs.base

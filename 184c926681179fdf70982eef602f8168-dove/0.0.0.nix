@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dove = {
+        "dove" = {
           depends  = [
             hsPkgs.base
             hsPkgs.acl2

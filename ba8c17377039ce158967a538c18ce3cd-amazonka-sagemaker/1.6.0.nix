@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-sagemaker = {
+        "amazonka-sagemaker" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-sagemaker-test = {
+          "amazonka-sagemaker-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

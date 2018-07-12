@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-query = {
+        "postgresql-query" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -52,7 +52,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.attoparsec

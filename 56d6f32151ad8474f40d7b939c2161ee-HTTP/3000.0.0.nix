@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HTTP = {
+        "HTTP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

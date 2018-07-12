@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        b-tree = {
+        "b-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          btree-quickcheck = {
+          "btree-quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          btree-benchmark = {
+          "btree-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

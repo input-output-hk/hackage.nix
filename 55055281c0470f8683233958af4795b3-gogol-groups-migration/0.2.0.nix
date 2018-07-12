@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-groups-migration = {
+        "gogol-groups-migration" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DeepDarkFantasy = {
+        "DeepDarkFantasy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          TestPoly = {
+          "TestPoly" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -43,7 +43,7 @@ let
               hsPkgs.DeepDarkFantasy
             ];
           };
-          TestXor = {
+          "TestXor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -52,7 +52,7 @@ let
               hsPkgs.DeepDarkFantasy
             ];
           };
-          TestPE = {
+          "TestPE" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

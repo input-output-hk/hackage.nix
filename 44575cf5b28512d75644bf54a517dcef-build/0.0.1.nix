@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        build = {
+        "build" = {
           depends  = [
             hsPkgs.algebraic-graphs
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.build
               hsPkgs.base

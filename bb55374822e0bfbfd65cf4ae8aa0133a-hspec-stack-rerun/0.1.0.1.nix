@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-stack-rerun = {
+        "hspec-stack-rerun" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec

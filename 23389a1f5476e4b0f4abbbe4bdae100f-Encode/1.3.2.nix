@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Encode = {
+        "Encode" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.base
@@ -28,14 +28,14 @@ let
           ];
         };
         exes = {
-          encode = {
+          "encode" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base
               hsPkgs.mtl
             ];
           };
-          decode = {
+          "decode" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base

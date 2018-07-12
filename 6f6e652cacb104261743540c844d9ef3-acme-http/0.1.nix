@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-http = {
+        "acme-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,6 +30,6 @@ let
             hsPkgs.pretty
           ];
         };
-        exes = { pong = {}; };
+        exes = { "pong" = {}; };
       };
     }

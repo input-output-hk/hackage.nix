@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        units-parser = {
+        "units-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

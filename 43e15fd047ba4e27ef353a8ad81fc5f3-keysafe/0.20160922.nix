@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          keysafe = {
+          "keysafe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

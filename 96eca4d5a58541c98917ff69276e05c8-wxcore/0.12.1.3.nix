@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        wxcore = {
+        "wxcore" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.filepath

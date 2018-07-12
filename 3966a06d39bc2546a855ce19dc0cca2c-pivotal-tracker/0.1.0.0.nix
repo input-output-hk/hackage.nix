@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pivotal-tracker = {
+        "pivotal-tracker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          tracker = {
+          "tracker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tracker

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        capped-list = {
+        "capped-list" = {
           depends  = [ hsPkgs.base ];
         };
       };

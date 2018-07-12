@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        archive = {
+        "archive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-compat
@@ -45,6 +45,6 @@ let
             hsPkgs.Extra
           ];
         };
-        exes = { archive = {}; };
+        exes = { "archive" = {}; };
       };
     }

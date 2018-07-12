@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        loop-while = {
+        "loop-while" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

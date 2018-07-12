@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-hssqlppp = {
+        "persistent-hssqlppp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

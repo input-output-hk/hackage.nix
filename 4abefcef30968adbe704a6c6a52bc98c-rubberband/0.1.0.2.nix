@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rubberband = {
+        "rubberband" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test-rubberband = {
+          "test-rubberband" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rubberband

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixed-precision = {
+        "fixed-precision" = {
           depends  = [
             hsPkgs.base
             hsPkgs.reflection

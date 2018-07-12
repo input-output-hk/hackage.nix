@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          PDB2Fasta = {
+          "PDB2Fasta" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -40,7 +40,7 @@ let
               hsPkgs.iterable
             ];
           };
-          ShiftToCenter = {
+          "ShiftToCenter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -59,7 +59,7 @@ let
               hsPkgs.iterable
             ];
           };
-          CleanPDB = {
+          "CleanPDB" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -78,7 +78,7 @@ let
               hsPkgs.iterable
             ];
           };
-          SplitModels = {
+          "SplitModels" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -97,7 +97,7 @@ let
               hsPkgs.iterable
             ];
           };
-          CanonicalAxes = {
+          "CanonicalAxes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -116,7 +116,7 @@ let
               hsPkgs.iterable
             ];
           };
-          PrintEvents = {
+          "PrintEvents" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -135,7 +135,7 @@ let
               hsPkgs.iterable
             ];
           };
-          PrintStructureObject = {
+          "PrintStructureObject" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -154,7 +154,7 @@ let
               hsPkgs.iterable
             ];
           };
-          Rg = {
+          "Rg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -173,7 +173,7 @@ let
               hsPkgs.iterable
             ];
           };
-          StericClashCheck = {
+          "StericClashCheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -194,7 +194,7 @@ let
               hsPkgs.iterable
             ];
           };
-          Viewer = {
+          "Viewer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -217,7 +217,7 @@ let
           };
         };
         tests = {
-          ParserPerformance = {
+          "ParserPerformance" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

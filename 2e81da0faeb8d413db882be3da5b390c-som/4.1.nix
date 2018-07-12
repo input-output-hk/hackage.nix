@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        som = {
+        "som" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          som-tests = {
+          "som-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework-quickcheck2

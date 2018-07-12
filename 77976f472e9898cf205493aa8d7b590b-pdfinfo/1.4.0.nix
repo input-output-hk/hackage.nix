@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pdfinfo = {
+        "pdfinfo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale

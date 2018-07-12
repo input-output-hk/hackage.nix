@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Decimal = {
+        "Decimal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

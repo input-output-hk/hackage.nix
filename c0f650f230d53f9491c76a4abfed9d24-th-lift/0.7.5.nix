@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-lift = {
+        "th-lift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -34,7 +34,7 @@ let
             ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim

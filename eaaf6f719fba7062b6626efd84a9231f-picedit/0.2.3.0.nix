@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        picedit = {
+        "picedit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JuicyPixels
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          picedit = {
+          "picedit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.picedit

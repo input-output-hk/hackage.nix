@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-platform = {
+        "distributed-process-platform" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-accessor
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          leaks = {
+          "leaks" = {
             depends  = pkgs.lib.optionals _flags.perf [
               hsPkgs.base
               hsPkgs.containers
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          TimerTests = {
+          "TimerTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -84,7 +84,7 @@ let
               hsPkgs.transformers
             ];
           };
-          PrimitivesTests = {
+          "PrimitivesTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -105,7 +105,7 @@ let
               hsPkgs.transformers
             ];
           };
-          AsyncTests = {
+          "AsyncTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -125,30 +125,7 @@ let
               hsPkgs.transformers
             ];
           };
-          ManagedProcessTests = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.ansi-terminal
-              hsPkgs.containers
-              hsPkgs.distributed-process
-              hsPkgs.distributed-process-platform
-              hsPkgs.network-transport
-              hsPkgs.mtl
-              hsPkgs.fingertree
-              hsPkgs.network-transport-tcp
-              hsPkgs.binary
-              hsPkgs.deepseq
-              hsPkgs.network
-              hsPkgs.HUnit
-              hsPkgs.stm
-              hsPkgs.test-framework
-              hsPkgs.test-framework-hunit
-              hsPkgs.transformers
-              hsPkgs.rematch
-              hsPkgs.ghc-prim
-            ];
-          };
-          PrioritisedProcessTests = {
+          "ManagedProcessTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -171,7 +148,30 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          SupervisorTests = {
+          "PrioritisedProcessTests" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.ansi-terminal
+              hsPkgs.containers
+              hsPkgs.distributed-process
+              hsPkgs.distributed-process-platform
+              hsPkgs.network-transport
+              hsPkgs.mtl
+              hsPkgs.fingertree
+              hsPkgs.network-transport-tcp
+              hsPkgs.binary
+              hsPkgs.deepseq
+              hsPkgs.network
+              hsPkgs.HUnit
+              hsPkgs.stm
+              hsPkgs.test-framework
+              hsPkgs.test-framework-hunit
+              hsPkgs.transformers
+              hsPkgs.rematch
+              hsPkgs.ghc-prim
+            ];
+          };
+          "SupervisorTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -200,7 +200,7 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          RegistryTests = {
+          "RegistryTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -229,67 +229,7 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          TaskQueueTests = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.ansi-terminal
-              hsPkgs.containers
-              hsPkgs.hashable
-              hsPkgs.unordered-containers
-              hsPkgs.distributed-process
-              hsPkgs.distributed-process-platform
-              hsPkgs.distributed-static
-              hsPkgs.bytestring
-              hsPkgs.data-accessor
-              hsPkgs.fingertree
-              hsPkgs.network-transport
-              hsPkgs.deepseq
-              hsPkgs.mtl
-              hsPkgs.network-transport-tcp
-              hsPkgs.binary
-              hsPkgs.network
-              hsPkgs.HUnit
-              hsPkgs.stm
-              hsPkgs.time
-              hsPkgs.test-framework
-              hsPkgs.test-framework-hunit
-              hsPkgs.QuickCheck
-              hsPkgs.test-framework-quickcheck2
-              hsPkgs.transformers
-              hsPkgs.rematch
-              hsPkgs.ghc-prim
-            ];
-          };
-          LoggerTests = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.ansi-terminal
-              hsPkgs.containers
-              hsPkgs.hashable
-              hsPkgs.unordered-containers
-              hsPkgs.distributed-process
-              hsPkgs.distributed-process-platform
-              hsPkgs.distributed-static
-              hsPkgs.bytestring
-              hsPkgs.data-accessor
-              hsPkgs.fingertree
-              hsPkgs.network-transport
-              hsPkgs.deepseq
-              hsPkgs.mtl
-              hsPkgs.network-transport-tcp
-              hsPkgs.binary
-              hsPkgs.network
-              hsPkgs.HUnit
-              hsPkgs.stm
-              hsPkgs.time
-              hsPkgs.test-framework
-              hsPkgs.test-framework-hunit
-              hsPkgs.transformers
-              hsPkgs.rematch
-              hsPkgs.ghc-prim
-            ];
-          };
-          ExchangeTests = {
+          "TaskQueueTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -320,7 +260,36 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          MailboxTests = {
+          "LoggerTests" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.ansi-terminal
+              hsPkgs.containers
+              hsPkgs.hashable
+              hsPkgs.unordered-containers
+              hsPkgs.distributed-process
+              hsPkgs.distributed-process-platform
+              hsPkgs.distributed-static
+              hsPkgs.bytestring
+              hsPkgs.data-accessor
+              hsPkgs.fingertree
+              hsPkgs.network-transport
+              hsPkgs.deepseq
+              hsPkgs.mtl
+              hsPkgs.network-transport-tcp
+              hsPkgs.binary
+              hsPkgs.network
+              hsPkgs.HUnit
+              hsPkgs.stm
+              hsPkgs.time
+              hsPkgs.test-framework
+              hsPkgs.test-framework-hunit
+              hsPkgs.transformers
+              hsPkgs.rematch
+              hsPkgs.ghc-prim
+            ];
+          };
+          "ExchangeTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -351,7 +320,38 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          InternalQueueTests = {
+          "MailboxTests" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.ansi-terminal
+              hsPkgs.containers
+              hsPkgs.hashable
+              hsPkgs.unordered-containers
+              hsPkgs.distributed-process
+              hsPkgs.distributed-process-platform
+              hsPkgs.distributed-static
+              hsPkgs.bytestring
+              hsPkgs.data-accessor
+              hsPkgs.fingertree
+              hsPkgs.network-transport
+              hsPkgs.deepseq
+              hsPkgs.mtl
+              hsPkgs.network-transport-tcp
+              hsPkgs.binary
+              hsPkgs.network
+              hsPkgs.HUnit
+              hsPkgs.stm
+              hsPkgs.time
+              hsPkgs.test-framework
+              hsPkgs.test-framework-hunit
+              hsPkgs.QuickCheck
+              hsPkgs.test-framework-quickcheck2
+              hsPkgs.transformers
+              hsPkgs.rematch
+              hsPkgs.ghc-prim
+            ];
+          };
+          "InternalQueueTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

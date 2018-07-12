@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wavy = {
+        "wavy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.riff
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          wave-identity = {
+          "wave-identity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.split
@@ -40,14 +40,14 @@ let
               hsPkgs.wavy
             ];
           };
-          wave-info = {
+          "wave-info" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.wavy
             ];
           };
-          wave-split = {
+          "wave-split" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wavy
@@ -56,7 +56,7 @@ let
               hsPkgs.filepath
             ];
           };
-          wave-generate-sine = {
+          "wave-generate-sine" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wavy

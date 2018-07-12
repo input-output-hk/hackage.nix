@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sockaddr = {
+        "sockaddr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.byteorder

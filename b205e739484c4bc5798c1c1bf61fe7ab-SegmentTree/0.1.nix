@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SegmentTree = {
+        "SegmentTree" = {
           depends  = [ hsPkgs.base ];
         };
       };

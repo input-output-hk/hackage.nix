@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scope = {
+        "scope" = {
           depends  = [
             hsPkgs.cairo
             hsPkgs.gtk
@@ -33,7 +33,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          scope = {
+          "scope" = {
             depends  = [
               hsPkgs.cairo
               hsPkgs.containers

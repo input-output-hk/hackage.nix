@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-instance-reification = {
+        "th-instance-reification" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.loch-th
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          th-instance-reification-htf-test-suite = {
+          "th-instance-reification-htf-test-suite" = {
             depends  = [
               hsPkgs.quickcheck-instances
               hsPkgs.QuickCheck-GenT

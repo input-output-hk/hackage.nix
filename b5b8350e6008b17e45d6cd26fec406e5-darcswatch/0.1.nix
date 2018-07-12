@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          darcswatch = {
+          "darcswatch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

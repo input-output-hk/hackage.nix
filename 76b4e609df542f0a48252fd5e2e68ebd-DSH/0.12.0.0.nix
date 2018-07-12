@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DSH = {
+        "DSH" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -53,7 +53,7 @@ let
           ];
         };
         exes = {
-          vldot = {
+          "vldot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

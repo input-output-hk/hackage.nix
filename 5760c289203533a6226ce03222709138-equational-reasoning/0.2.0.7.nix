@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        equational-reasoning = {
+        "equational-reasoning" = {
           depends  = [
             hsPkgs.base
             hsPkgs.void

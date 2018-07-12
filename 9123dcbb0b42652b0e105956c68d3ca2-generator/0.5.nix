@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generator = {
+        "generator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

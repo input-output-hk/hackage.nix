@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        options-time = {
+        "options-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.options
@@ -34,7 +34,7 @@ let
             else [ hsPkgs.time ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chell

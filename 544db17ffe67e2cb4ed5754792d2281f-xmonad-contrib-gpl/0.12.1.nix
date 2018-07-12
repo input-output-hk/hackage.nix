@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad-contrib-gpl = {
+        "xmonad-contrib-gpl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xmonad

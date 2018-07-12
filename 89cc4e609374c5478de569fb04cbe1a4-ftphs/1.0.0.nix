@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ftphs = {
+        "ftphs" = {
           depends  = [
             hsPkgs.network
             hsPkgs.parsec
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.network
               hsPkgs.parsec

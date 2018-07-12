@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        slack-api = {
+        "slack-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.slack-api
               hsPkgs.base

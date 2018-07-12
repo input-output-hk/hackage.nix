@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        om-elm = {
+        "om-elm" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.base

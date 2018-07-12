@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LambdaDesigner = {
+        "LambdaDesigner" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

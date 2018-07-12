@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex-animation = {
+        "reflex-animation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.reflex

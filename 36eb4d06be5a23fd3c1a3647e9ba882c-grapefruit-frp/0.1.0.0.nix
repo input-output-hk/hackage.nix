@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grapefruit-frp = {
+        "grapefruit-frp" = {
           depends  = [
             hsPkgs.arrows
             hsPkgs.base

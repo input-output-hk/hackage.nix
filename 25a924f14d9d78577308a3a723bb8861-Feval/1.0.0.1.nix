@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          Feval = {
+          "Feval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -31,7 +31,7 @@ let
               hsPkgs.mtl
             ];
           };
-          examples = {
+          "examples" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.parsec

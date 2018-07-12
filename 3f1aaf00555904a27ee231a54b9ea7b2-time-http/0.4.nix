@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-http = {
+        "time-http" = {
           depends  = [
             hsPkgs.ascii
             hsPkgs.attempt
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test-time-http = {
+          "test-time-http" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.ascii

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          smallpt-hs = {
+          "smallpt-hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

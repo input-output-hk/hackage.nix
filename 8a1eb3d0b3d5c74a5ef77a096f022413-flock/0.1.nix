@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        flock = {
+        "flock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        merkle-tree = {
+        "merkle-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          merkle-test = {
+          "merkle-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

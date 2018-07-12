@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          DBlimited = {
+          "DBlimited" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.base

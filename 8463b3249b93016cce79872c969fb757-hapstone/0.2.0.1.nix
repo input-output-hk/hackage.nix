@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hapstone = {
+        "hapstone" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.capstone ];
           build-tools = [
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          hapstone-test = {
+          "hapstone-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hapstone

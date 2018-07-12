@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-arbitrary-adt = {
+        "quickcheck-arbitrary-adt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

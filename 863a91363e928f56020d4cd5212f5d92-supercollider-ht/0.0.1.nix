@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        supercollider-ht = {
+        "supercollider-ht" = {
           depends  = [
             hsPkgs.hosc
             hsPkgs.hsc3

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        funnyprint = {
+        "funnyprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hscolour
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          funnyprint-test-suite = {
+          "funnyprint-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hscolour
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          funnyprint-benchmarks = {
+          "funnyprint-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hscolour

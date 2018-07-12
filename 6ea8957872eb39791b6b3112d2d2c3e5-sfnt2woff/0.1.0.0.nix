@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sfnt2woff = {
+        "sfnt2woff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          sfnt2woff = {
+          "sfnt2woff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          sfnt2woff-test = {
+          "sfnt2woff-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sfnt2woff

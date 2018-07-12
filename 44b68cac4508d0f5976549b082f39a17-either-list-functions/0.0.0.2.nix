@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        either-list-functions = {
+        "either-list-functions" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ParsecTools = {
+        "ParsecTools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

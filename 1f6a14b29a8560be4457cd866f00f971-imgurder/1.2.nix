@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imgurder = {
+        "imgurder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt-xpath
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          imgurder = {
+          "imgurder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt-xpath

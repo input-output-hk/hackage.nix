@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-http = {
+        "hxt-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

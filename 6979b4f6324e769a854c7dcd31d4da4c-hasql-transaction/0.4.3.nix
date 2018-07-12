@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-transaction = {
+        "hasql-transaction" = {
           depends  = [
             hsPkgs.hasql
             hsPkgs.postgresql-error-codes

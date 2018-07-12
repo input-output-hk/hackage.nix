@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zigbee-znet25 = {
+        "zigbee-znet25" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

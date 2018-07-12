@@ -24,7 +24,7 @@ let
         buildType = "Configure";
       };
       components = {
-        base = {
+        "base" = {
           depends  = (([
             hsPkgs.rts
             hsPkgs.ghc-prim

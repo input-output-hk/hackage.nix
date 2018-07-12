@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Dust-tools = {
+        "Dust-tools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Dust-crypto
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          shaper-server = {
+          "shaper-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -60,7 +60,7 @@ let
               hsPkgs.split
             ];
           };
-          shaper-client = {
+          "shaper-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -79,7 +79,7 @@ let
               hsPkgs.split
             ];
           };
-          replay-server = {
+          "replay-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -98,7 +98,7 @@ let
               hsPkgs.split
             ];
           };
-          replay-client = {
+          "replay-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -117,7 +117,7 @@ let
               hsPkgs.split
             ];
           };
-          shaper-export = {
+          "shaper-export" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -137,7 +137,7 @@ let
               hsPkgs.csv
             ];
           };
-          shaper-show = {
+          "shaper-show" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust

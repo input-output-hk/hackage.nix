@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk-toggle-button-list = {
+        "gtk-toggle-button-list" = {
           depends  = [
             hsPkgs.gtk
             hsPkgs.base

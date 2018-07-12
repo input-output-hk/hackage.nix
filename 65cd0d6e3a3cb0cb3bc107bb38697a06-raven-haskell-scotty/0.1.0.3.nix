@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        raven-haskell-scotty = {
+        "raven-haskell-scotty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.raven-haskell

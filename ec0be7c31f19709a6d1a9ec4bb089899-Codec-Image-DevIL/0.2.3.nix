@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Codec-Image-DevIL = {
+        "Codec-Image-DevIL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

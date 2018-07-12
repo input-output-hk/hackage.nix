@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unix-handle = {
+        "unix-handle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

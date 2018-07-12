@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-pretty = {
+        "aeson-pretty" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         exes = {
-          aeson-pretty = {
+          "aeson-pretty" = {
             depends  = pkgs.lib.optionals (!_flags.lib-only) [
               hsPkgs.aeson
               hsPkgs.aeson-pretty

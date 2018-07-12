@@ -22,9 +22,9 @@ let
         buildType = "Simple";
       };
       components = {
-        wxdirect = {};
+        "wxdirect" = {};
         exes = {
-          wxdirect = {
+          "wxdirect" = {
             depends  = [
               hsPkgs.directory
               hsPkgs.parsec

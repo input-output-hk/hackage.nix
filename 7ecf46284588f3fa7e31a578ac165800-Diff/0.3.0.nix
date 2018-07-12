@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Diff = {
+        "Diff" = {
           depends  = [
             hsPkgs.pretty
           ] ++ (if _flags.small-base

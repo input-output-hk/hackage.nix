@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          postgrest = {
+          "postgrest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hasql
@@ -65,7 +65,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

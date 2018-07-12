@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lucid-colonnade = {
+        "lucid-colonnade" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colonnade

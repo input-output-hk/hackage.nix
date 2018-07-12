@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        loops = {
+        "loops" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.loops
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          benchs = {
+          "benchs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

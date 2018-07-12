@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hylogen = {
+        "hylogen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector-space
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hylogen = {
+          "hylogen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

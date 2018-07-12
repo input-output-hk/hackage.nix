@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serversession-frontend-wai = {
+        "serversession-frontend-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

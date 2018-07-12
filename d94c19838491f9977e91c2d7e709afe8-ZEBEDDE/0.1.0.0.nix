@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ZEBEDDE = {
+        "ZEBEDDE" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vect

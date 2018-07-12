@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sfmt = {
+        "sfmt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plotserver-api = {
+        "plotserver-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl

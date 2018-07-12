@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        path = {
+        "path" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

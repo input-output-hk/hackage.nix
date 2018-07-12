@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bayes-stack-lda = {
+          "bayes-stack-lda" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -43,7 +43,7 @@ let
               hsPkgs.directory
             ];
           };
-          bayes-stack-st = {
+          "bayes-stack-st" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -65,7 +65,7 @@ let
               hsPkgs.directory
             ];
           };
-          bayes-stack-ci = {
+          "bayes-stack-ci" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -87,7 +87,7 @@ let
               hsPkgs.directory
             ];
           };
-          bayes-stack-dump-lda = {
+          "bayes-stack-dump-lda" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -108,7 +108,7 @@ let
               hsPkgs.directory
             ];
           };
-          bayes-stack-dump-st = {
+          "bayes-stack-dump-st" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -129,7 +129,7 @@ let
               hsPkgs.directory
             ];
           };
-          bayes-stack-dump-ci = {
+          "bayes-stack-dump-ci" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

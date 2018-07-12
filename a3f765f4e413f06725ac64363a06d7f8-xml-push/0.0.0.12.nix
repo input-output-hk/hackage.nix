@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-push = {
+        "xml-push" = {
           depends  = [
             hsPkgs.base
             hsPkgs.peyotls

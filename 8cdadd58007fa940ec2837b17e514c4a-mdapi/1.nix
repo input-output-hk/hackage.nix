@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mdapi = {
+        "mdapi" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

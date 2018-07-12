@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        otp-authenticator = {
+        "otp-authenticator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          otp-auth = {
+          "otp-auth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -64,7 +64,7 @@ let
           };
         };
         tests = {
-          otp-authenticator-test = {
+          "otp-authenticator-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.otp-authenticator

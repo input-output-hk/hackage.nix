@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        oauth10a = {
+        "oauth10a" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          oauth10a-test = {
+          "oauth10a-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.oauth10a

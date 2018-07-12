@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exomizer = {
+        "exomizer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

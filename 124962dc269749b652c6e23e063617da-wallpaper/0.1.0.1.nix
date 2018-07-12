@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wallpaper = {
+        "wallpaper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JuicyPixels
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          wallpaper = {
+          "wallpaper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wallpaper
@@ -39,7 +39,7 @@ let
               hsPkgs.yaml
             ];
           };
-          rosette = {
+          "rosette" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wallpaper
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          wallpaper-test = {
+          "wallpaper-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wallpaper

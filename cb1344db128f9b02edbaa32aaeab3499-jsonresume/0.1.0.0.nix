@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsonresume = {
+        "jsonresume" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

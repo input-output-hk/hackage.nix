@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        decimal-arithmetic = {
+        "decimal-arithmetic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -39,7 +39,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.decimal-arithmetic

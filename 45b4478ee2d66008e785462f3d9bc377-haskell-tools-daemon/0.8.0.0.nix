@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-daemon = {
+        "haskell-tools-daemon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          ht-daemon = {
+          "ht-daemon" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-tools-daemon
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          haskell-tools-daemon-tests = {
+          "haskell-tools-daemon-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-logger-prefork = {
+        "wai-logger-prefork" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

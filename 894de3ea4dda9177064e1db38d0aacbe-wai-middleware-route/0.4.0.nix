@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-route = {
+        "wai-middleware-route" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-schema = {
+        "postgresql-schema" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          schema-add = {
+          "schema-add" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude
@@ -42,7 +42,7 @@ let
               hsPkgs.time-locale-compat
             ];
           };
-          schema-apply = {
+          "schema-apply" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude
@@ -52,7 +52,7 @@ let
               hsPkgs.text
             ];
           };
-          schema-clear = {
+          "schema-clear" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        java-reflect = {
+        "java-reflect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.java-bridge

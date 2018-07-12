@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-hs-pretty = {
+        "llvm-hs-pretty" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

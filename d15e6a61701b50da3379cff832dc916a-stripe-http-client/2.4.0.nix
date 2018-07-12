@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stripe-http-client = {
+        "stripe-http-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.free

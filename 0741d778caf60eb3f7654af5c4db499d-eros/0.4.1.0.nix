@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eros = {
+        "eros" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

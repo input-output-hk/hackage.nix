@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yarn-lock = {
+        "yarn-lock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          yarn-lock-tests = {
+          "yarn-lock-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

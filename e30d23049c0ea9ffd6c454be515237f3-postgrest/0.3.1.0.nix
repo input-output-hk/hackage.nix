@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgrest = {
+        "postgrest" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -58,7 +58,7 @@ let
           ];
         };
         exes = {
-          postgrest = {
+          "postgrest" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -97,7 +97,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.async

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quiver-http = {
+        "quiver-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.quiver

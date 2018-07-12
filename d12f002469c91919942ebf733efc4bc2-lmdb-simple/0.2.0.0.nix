@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lmdb-simple = {
+        "lmdb-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -29,13 +29,13 @@ let
           ];
         };
         tests = {
-          sample = {
+          "sample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lmdb-simple
             ];
           };
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

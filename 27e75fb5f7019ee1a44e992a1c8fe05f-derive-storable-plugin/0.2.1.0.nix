@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        derive-storable-plugin = {
+        "derive-storable-plugin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          ids-concrete = {
+          "ids-concrete" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc
@@ -41,7 +41,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          ids-handwritten = {
+          "ids-handwritten" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc
@@ -53,7 +53,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          ids-newtype = {
+          "ids-newtype" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc
@@ -65,7 +65,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          ids-parametrised-spec = {
+          "ids-parametrised-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc
@@ -77,7 +77,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          ids-typesynonym = {
+          "ids-typesynonym" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc
@@ -91,7 +91,7 @@ let
           };
         };
         benchmarks = {
-          plugin-benchmark = {
+          "plugin-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

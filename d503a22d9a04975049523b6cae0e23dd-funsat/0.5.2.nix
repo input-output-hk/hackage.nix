@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        funsat = {
+        "funsat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          funsat = {
+          "funsat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

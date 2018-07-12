@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          nanq = {
+          "nanq" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty

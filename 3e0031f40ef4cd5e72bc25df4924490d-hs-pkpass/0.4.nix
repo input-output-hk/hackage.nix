@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-pkpass = {
+        "hs-pkpass" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

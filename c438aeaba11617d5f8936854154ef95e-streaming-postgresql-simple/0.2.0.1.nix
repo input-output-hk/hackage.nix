@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-postgresql-simple = {
+        "streaming-postgresql-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

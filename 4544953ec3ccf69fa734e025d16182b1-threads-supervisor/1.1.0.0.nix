@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        threads-supervisor = {
+        "threads-supervisor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          threads-supervisor-example = {
+          "threads-supervisor-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.threads-supervisor
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          threads-supervisor-tests = {
+          "threads-supervisor-tests" = {
             depends  = [
               hsPkgs.threads-supervisor
               hsPkgs.base

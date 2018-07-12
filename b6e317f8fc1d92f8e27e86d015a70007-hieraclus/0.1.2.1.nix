@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hieraclus = {
+        "hieraclus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

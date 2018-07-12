@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          takky = {
+          "takky" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tak
@@ -30,7 +30,7 @@ let
           };
         };
         tests = {
-          takky-tests = {
+          "takky-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tak

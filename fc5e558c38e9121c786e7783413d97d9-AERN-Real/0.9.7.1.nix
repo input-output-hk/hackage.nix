@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AERN-Real = {
+        "AERN-Real" = {
           depends  = if _flags.containers-in-base
             then if _flags.use-hmpfr
               then [

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fizz-buzz = {
+        "fizz-buzz" = {
           depends  = [ hsPkgs.base ];
         };
       };

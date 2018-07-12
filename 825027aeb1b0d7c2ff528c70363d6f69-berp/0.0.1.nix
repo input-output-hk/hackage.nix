@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        berp = {
+        "berp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monads-tf
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          berp = {
+          "berp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monads-tf

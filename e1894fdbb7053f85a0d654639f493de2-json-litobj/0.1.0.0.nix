@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        json-litobj = {
+        "json-litobj" = {
           depends  = [
             hsPkgs.base
             hsPkgs.json
           ];
         };
         tests = {
-          test-json-litobj = {
+          "test-json-litobj" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

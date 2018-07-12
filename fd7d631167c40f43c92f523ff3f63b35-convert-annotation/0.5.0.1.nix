@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        convert-annotation = {
+        "convert-annotation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          convert-annotation = {
+          "convert-annotation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.convert-annotation

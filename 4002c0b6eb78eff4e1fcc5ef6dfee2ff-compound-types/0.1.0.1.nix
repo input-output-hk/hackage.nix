@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        compound-types = {
+        "compound-types" = {
           depends  = [
             hsPkgs.base-prelude
             hsPkgs.base
           ];
         };
         benchmarks = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.compound-types
               hsPkgs.rebase

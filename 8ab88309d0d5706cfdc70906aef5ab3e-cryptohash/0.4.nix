@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptohash = {
+        "cryptohash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

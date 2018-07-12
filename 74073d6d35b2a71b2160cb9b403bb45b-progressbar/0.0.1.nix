@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        progressbar = {
+        "progressbar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.io-reactive
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [ hsPkgs.base ];
           };
         };

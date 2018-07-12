@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          yesod-raml-bin = {
+          "yesod-raml-bin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-raml

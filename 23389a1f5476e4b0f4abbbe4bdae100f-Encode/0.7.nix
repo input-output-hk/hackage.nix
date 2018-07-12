@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Encode = {
+        "Encode" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.base

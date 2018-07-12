@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HXMPP = {
+        "HXMPP" = {
           depends  = [
             hsPkgs.HLogger
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          hxmpp-0.0.1.0-test = {
+          "hxmpp-0.0.1.0-test" = {
             depends  = [
               hsPkgs.HLogger
               hsPkgs.base

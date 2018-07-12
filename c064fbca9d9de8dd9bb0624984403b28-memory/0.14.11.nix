@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memory = {
+        "memory" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test-memory = {
+          "test-memory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

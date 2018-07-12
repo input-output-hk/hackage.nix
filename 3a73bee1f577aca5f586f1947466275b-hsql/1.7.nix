@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hsql = {
+        "hsql" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          repa-laplace = {
+          "repa-laplace" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -29,7 +29,7 @@ let
               hsPkgs.repa
             ];
           };
-          repa-mmult = {
+          "repa-mmult" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -37,7 +37,7 @@ let
               hsPkgs.repa
             ];
           };
-          repa-fft = {
+          "repa-fft" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        intervals = {
+        "intervals" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.ghc-prim;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.directory

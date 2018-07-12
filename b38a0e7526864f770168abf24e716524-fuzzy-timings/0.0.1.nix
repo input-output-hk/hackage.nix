@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fuzzy-timings = {
+        "fuzzy-timings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

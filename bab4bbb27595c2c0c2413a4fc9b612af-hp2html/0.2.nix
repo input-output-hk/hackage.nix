@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hp2html = {
+          "hp2html" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          strictify = {
+          "strictify" = {
             depends  = if _flags.small-base
               then [
                 hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        relational-record = {
+        "relational-record" = {
           depends  = [
             hsPkgs.relational-query-HDBC
           ];

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mxnet-nnvm = {
+        "mxnet-nnvm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.c2hs-extra

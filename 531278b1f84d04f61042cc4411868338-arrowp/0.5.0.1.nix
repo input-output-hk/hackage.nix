@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          arrowp = {
+          "arrowp" = {
             depends  = [
               hsPkgs.haskell-src
             ] ++ (if _flags.small_base

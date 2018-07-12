@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rlglue = {
+        "rlglue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network-simple
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          skeleton-experiment = {
+          "skeleton-experiment" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-simple
@@ -46,7 +46,7 @@ let
               hsPkgs.network
             ];
           };
-          skeleton-environment = {
+          "skeleton-environment" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-simple
@@ -58,7 +58,7 @@ let
               hsPkgs.network
             ];
           };
-          skeleton-agent = {
+          "skeleton-agent" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-simple

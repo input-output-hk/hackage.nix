@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoodle-render = {
+        "hoodle-render" = {
           depends  = if _flags.poppler
             then [
               hsPkgs.base

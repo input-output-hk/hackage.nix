@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          midisurface = {
+          "midisurface" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alsa-seq

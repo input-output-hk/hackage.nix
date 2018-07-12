@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        JuPyTer-notebook = {
+        "JuPyTer-notebook" = {
           depends  = [
             hsPkgs.base
             hsPkgs.json-autotype
           ];
         };
         exes = {
-          jupyter-extract = {
+          "jupyter-extract" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

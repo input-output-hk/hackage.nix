@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rob = {
+        "rob" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fortytwo
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          rob = {
+          "rob" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          rob-test = {
+          "rob-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

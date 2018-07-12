@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        svg-tree = {
+        "svg-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JuicyPixels

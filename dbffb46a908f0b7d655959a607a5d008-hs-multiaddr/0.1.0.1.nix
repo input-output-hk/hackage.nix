@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-multiaddr = {
+        "hs-multiaddr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          haskell-multiaddr-test = {
+          "haskell-multiaddr-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs-multiaddr

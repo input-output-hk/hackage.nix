@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        csa = {
+        "csa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
           ];
         };
         tests = {
-          csa-test-suite = {
+          "csa-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.csa

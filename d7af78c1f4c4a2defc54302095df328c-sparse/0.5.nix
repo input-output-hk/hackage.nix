@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sparse = {
+        "sparse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.nats

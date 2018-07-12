@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        html-email-validate = {
+        "html-email-validate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text-show
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.html-email-validate

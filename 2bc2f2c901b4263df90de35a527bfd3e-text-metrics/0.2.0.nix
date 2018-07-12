@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        text-metrics = {
+        "text-metrics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

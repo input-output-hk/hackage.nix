@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        sparkle = {
+        "sparkle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          sparkle = {
+          "sparkle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

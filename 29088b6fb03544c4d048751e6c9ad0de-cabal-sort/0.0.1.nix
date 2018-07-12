@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal-sort = {
+          "cabal-sort" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.fgl

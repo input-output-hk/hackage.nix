@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zeromq4-clone-pattern = {
+        "zeromq4-clone-pattern" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          zeromq4-clone-pattern-exe = {
+          "zeromq4-clone-pattern-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zeromq4-clone-pattern
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          zeromq4-clone-pattern-test = {
+          "zeromq4-clone-pattern-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zeromq4-clone-pattern

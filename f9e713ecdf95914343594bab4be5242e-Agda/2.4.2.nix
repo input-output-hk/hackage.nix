@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Agda = {
+        "Agda" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.transformers
@@ -67,13 +67,13 @@ let
           ];
         };
         exes = {
-          agda = {
+          "agda" = {
             depends  = [
               hsPkgs.Agda
               hsPkgs.base
             ];
           };
-          agda-mode = {
+          "agda-mode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

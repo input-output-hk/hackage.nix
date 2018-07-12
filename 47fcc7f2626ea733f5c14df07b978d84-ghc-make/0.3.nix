@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ghc-make = {
+          "ghc-make" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shake

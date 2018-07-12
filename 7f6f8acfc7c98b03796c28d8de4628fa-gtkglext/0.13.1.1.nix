@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gtkglext = {
+        "gtkglext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.glib

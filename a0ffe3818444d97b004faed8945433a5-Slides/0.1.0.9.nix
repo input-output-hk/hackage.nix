@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Slides = {
+        "Slides" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams-svg
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          sample = {
+          "sample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.file-embed

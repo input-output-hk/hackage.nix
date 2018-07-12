@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HLogger = {
+        "HLogger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          logger-0.0.1.0-test = {
+          "logger-0.0.1.0-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.old-locale

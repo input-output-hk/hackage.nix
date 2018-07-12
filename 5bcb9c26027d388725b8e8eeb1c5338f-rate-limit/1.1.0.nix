@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rate-limit = {
+        "rate-limit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time-units

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-io-hooks = {
+        "stm-io-hooks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

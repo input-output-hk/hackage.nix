@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-jmacro = {
+        "happstack-jmacro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

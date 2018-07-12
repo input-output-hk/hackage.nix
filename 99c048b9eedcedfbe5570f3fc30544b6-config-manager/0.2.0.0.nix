@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        config-manager = {
+        "config-manager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-config-manager = {
+          "test-config-manager" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

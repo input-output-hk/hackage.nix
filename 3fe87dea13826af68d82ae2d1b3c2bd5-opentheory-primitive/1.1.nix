@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opentheory-primitive = {
+        "opentheory-primitive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          opentheory-primitive-test = {
+          "opentheory-primitive-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

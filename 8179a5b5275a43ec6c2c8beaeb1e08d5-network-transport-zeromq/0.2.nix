@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-transport-zeromq = {
+        "network-transport-zeromq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          bench-dp-latency = {
+          "bench-dp-latency" = {
             depends  = pkgs.lib.optionals _flags.install-benchmarks [
               hsPkgs.base
               hsPkgs.network-transport-zeromq
@@ -52,7 +52,7 @@ let
               hsPkgs.distributed-process
             ];
           };
-          bench-dp-throughput = {
+          "bench-dp-throughput" = {
             depends  = pkgs.lib.optionals _flags.install-benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
@@ -61,7 +61,7 @@ let
               hsPkgs.binary
             ];
           };
-          bench-dp-channels = {
+          "bench-dp-channels" = {
             depends  = pkgs.lib.optionals _flags.install-benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
@@ -72,7 +72,7 @@ let
           };
         };
         tests = {
-          test-zeromq = {
+          "test-zeromq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-transport
@@ -81,7 +81,7 @@ let
               hsPkgs.network-transport-tests
             ];
           };
-          test-api = {
+          "test-api" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-transport
@@ -91,7 +91,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          test-ch-core = {
+          "test-ch-core" = {
             depends  = pkgs.lib.optionals _flags.distributed-process-tests [
               hsPkgs.base
               hsPkgs.network-transport-zeromq
@@ -105,7 +105,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          test-ch-closure = {
+          "test-ch-closure" = {
             depends  = pkgs.lib.optionals _flags.distributed-process-tests [
               hsPkgs.base
               hsPkgs.network-transport-zeromq
@@ -119,7 +119,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          test-ch-stat = {
+          "test-ch-stat" = {
             depends  = pkgs.lib.optionals _flags.distributed-process-tests [
               hsPkgs.base
               hsPkgs.network-transport-zeromq
@@ -135,7 +135,7 @@ let
           };
         };
         benchmarks = {
-          bench-channels-local = {
+          "bench-channels-local" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-transport-zeromq
@@ -145,7 +145,7 @@ let
               hsPkgs.criterion
             ];
           };
-          bench-latency-local = {
+          "bench-latency-local" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-transport-zeromq
@@ -155,7 +155,7 @@ let
               hsPkgs.criterion
             ];
           };
-          bench-throughput-local = {
+          "bench-throughput-local" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-transport-zeromq

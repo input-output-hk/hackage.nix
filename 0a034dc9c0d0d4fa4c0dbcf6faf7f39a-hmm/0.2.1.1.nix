@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmm = {
+        "hmm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.logfloat

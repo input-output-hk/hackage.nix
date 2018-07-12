@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        io-reactive = {
+        "io-reactive" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          io-reactive-test = {
+          "io-reactive-test" = {
             depends  = [ hsPkgs.base ];
           };
         };

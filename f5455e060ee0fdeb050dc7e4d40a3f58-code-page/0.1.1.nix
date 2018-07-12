@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        code-page = {
+        "code-page" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.code-page

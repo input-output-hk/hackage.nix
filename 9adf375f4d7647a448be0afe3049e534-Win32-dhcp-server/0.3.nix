@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Win32-dhcp-server = {
+        "Win32-dhcp-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

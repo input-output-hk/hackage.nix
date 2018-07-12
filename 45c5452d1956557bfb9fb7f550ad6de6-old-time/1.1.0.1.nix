@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        old-time = {
+        "old-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale

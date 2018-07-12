@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        czipwith = {
+        "czipwith" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.czipwith
               hsPkgs.base

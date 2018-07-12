@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hvega = {
+        "hvega" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

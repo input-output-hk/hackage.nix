@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wacom-daemon = {
+        "wacom-daemon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          hswchd = {
+          "hswchd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -61,7 +61,7 @@ let
               hsPkgs.libnotify
             ];
           };
-          hswcmcli = {
+          "hswcmcli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

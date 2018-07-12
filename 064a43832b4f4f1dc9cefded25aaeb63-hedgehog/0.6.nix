@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedgehog = {
+        "hedgehog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -50,7 +50,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.hedgehog
               hsPkgs.base

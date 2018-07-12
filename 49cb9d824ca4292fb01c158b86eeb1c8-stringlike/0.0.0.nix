@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        stringlike = {
+        "stringlike" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          stringlike-tests = {
+          "stringlike-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

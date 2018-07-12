@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lifted-base = {
+        "lifted-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers-base
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-lifted-base = {
+          "test-lifted-base" = {
             depends  = [
               hsPkgs.lifted-base
               hsPkgs.base
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          bench-lifted-base = {
+          "bench-lifted-base" = {
             depends  = [
               hsPkgs.lifted-base
               hsPkgs.base

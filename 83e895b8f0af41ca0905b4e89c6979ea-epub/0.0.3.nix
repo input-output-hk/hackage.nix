@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        epub = {
+        "epub" = {
           depends  = [
             hsPkgs.ghc
             hsPkgs.base
@@ -34,6 +34,6 @@ let
             hsPkgs.Cabal
           ];
         };
-        exes = { xhtml2epub = {}; };
+        exes = { "xhtml2epub" = {}; };
       };
     }

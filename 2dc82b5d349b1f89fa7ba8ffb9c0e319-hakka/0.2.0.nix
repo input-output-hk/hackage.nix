@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hakka = {
+        "hakka" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
           ];
         };
         exes = {
-          hakka-example = {
+          "hakka-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hakka

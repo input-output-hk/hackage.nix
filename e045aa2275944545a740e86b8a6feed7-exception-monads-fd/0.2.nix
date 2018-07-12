@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exception-monads-fd = {
+        "exception-monads-fd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exception-transformers

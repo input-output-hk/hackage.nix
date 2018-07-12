@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iproute = {
+        "iproute" = {
           depends  = [
             hsPkgs.base
             hsPkgs.appar
@@ -30,13 +30,13 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

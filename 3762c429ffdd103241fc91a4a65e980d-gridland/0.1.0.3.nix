@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gridland = {
+        "gridland" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SDL
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          demo = {
+          "demo" = {
             depends  = pkgs.lib.optionals _flags.demo [
               hsPkgs.base
               hsPkgs.gridland

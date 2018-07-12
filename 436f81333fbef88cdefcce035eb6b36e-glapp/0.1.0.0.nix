@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glapp = {
+        "glapp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL

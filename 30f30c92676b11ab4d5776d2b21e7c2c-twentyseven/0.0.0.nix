@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twentyseven = {
+        "twentyseven" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          twentyseven = {
+          "twentyseven" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          test-twentyseven = {
+          "test-twentyseven" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

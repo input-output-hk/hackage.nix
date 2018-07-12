@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-arbitrary = {
+        "generic-arbitrary" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base

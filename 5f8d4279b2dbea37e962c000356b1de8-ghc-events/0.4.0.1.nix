@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-events = {
+        "ghc-events" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          ghc-events = {
+          "ghc-events" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          test-versions = {
+          "test-versions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

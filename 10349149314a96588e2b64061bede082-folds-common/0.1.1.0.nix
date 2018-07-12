@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        folds-common = {
+        "folds-common" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.folds-common
               hsPkgs.tasty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        status-notifier-item = {
+        "status-notifier-item" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          sni-cl-tool = {
+          "sni-cl-tool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dbus
@@ -45,14 +45,14 @@ let
               hsPkgs.status-notifier-item
             ];
           };
-          status-notifier-item-static = {
+          "status-notifier-item-static" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
               hsPkgs.status-notifier-item
             ];
           };
-          status-notifier-watcher = {
+          "status-notifier-watcher" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dbus

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gbu = {
+        "gbu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fgl

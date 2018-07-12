@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nero = {
+        "nero" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,14 +31,14 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob
               hsPkgs.doctest
             ];
           };
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

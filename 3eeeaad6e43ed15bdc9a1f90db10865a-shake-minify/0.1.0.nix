@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake-minify = {
+        "shake-minify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

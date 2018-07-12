@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dzen-utils = {
+        "dzen-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colour

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CSPM-Frontend = {
+        "CSPM-Frontend" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

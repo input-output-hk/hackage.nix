@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        replicant = {
+        "replicant" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          replicant = {
+          "replicant" = {
             depends  = [
               hsPkgs.base
               hsPkgs.replicant
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          replicant-test = {
+          "replicant-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.replicant

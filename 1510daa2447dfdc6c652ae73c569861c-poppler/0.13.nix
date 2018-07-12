@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        poppler = {
+        "poppler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hist-pl-lexicon = {
+        "hist-pl-lexicon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

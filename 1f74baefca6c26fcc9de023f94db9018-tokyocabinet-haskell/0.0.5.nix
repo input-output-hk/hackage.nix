@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tokyocabinet-haskell = {
+        "tokyocabinet-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

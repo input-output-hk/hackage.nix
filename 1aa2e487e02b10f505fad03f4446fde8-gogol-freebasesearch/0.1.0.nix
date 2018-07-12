@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-freebasesearch = {
+        "gogol-freebasesearch" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

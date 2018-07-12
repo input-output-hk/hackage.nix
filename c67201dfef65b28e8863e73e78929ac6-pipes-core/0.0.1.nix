@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-core = {
+        "pipes-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

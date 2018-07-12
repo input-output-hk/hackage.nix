@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty = {
+        "pretty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-pretty = {
+          "test-pretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

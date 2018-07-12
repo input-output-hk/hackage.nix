@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        potoki-core = {
+        "potoki-core" = {
           depends  = [
             hsPkgs.stm
             hsPkgs.profunctors
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.potoki-core
               hsPkgs.tasty

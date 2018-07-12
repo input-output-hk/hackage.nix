@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-gettext = {
+        "haskell-gettext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          hgettext = {
+          "hgettext" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts

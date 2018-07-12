@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hjsonpointer = {
+        "hjsonpointer" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

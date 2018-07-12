@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        listenbrainz-client = {
+        "listenbrainz-client" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polydata = {
+        "polydata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.indextype
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.indextype

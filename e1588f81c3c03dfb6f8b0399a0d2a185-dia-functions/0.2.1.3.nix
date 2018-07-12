@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dia-functions = {
+        "dia-functions" = {
           depends  = [
             hsPkgs.data-pprint
             hsPkgs.dia-base

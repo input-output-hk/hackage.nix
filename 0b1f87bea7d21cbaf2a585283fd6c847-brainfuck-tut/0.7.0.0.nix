@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        brainfuck-tut = {
+        "brainfuck-tut" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
           ];
         };
         exes = {
-          bfh = {
+          "bfh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

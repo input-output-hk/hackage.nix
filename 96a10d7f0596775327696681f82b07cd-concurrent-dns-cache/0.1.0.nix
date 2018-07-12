@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrent-dns-cache = {
+        "concurrent-dns-cache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

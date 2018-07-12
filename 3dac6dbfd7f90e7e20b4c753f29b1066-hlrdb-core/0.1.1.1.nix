@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hlrdb-core = {
+        "hlrdb-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

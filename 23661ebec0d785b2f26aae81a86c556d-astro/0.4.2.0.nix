@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        astro = {
+        "astro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          astro-test = {
+          "astro-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.astro

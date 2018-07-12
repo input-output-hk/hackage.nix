@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gloss-juicy = {
+        "gloss-juicy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          gloss-juicy-viewer = {
+          "gloss-juicy-viewer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

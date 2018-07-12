@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        dvda = {
+        "dvda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

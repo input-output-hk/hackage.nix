@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          clac = {
+          "clac" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

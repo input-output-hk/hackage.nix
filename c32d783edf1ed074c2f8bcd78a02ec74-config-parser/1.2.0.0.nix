@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        config-parser = {
+        "config-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          parsing = {
+          "parsing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.extra

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imj-prelude = {
+        "imj-prelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

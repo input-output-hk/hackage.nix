@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smtps-gmail = {
+        "smtps-gmail" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring

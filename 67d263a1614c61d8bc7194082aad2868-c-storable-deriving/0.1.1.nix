@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        c-storable-deriving = {
+        "c-storable-deriving" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

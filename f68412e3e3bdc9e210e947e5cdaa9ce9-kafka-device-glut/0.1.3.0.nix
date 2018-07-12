@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kafka-device-glut = {
+        "kafka-device-glut" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GLUT
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          kafka-device-glut = {
+          "kafka-device-glut" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT

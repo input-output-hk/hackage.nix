@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        frame = {
+        "frame" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          frame-shell = {
+          "frame-shell" = {
             depends  = [ hsPkgs.pretty ];
           };
         };

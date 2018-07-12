@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transformations = {
+        "transformations" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          Benchmark = {
+          "Benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

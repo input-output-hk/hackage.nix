@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hosc = {
+        "hosc" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

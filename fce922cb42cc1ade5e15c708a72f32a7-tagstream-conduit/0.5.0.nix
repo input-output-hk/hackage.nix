@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagstream-conduit = {
+        "tagstream-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

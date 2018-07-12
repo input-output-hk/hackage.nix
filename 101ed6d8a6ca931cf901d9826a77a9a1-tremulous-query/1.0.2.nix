@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tremulous-query = {
+        "tremulous-query" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

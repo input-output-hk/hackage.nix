@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bimap = {
+        "bimap" = {
           depends  = if _flags.small-base
             then [
               hsPkgs.base

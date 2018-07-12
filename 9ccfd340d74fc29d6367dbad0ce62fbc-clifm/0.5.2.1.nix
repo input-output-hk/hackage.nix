@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          clifm = {
+          "clifm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

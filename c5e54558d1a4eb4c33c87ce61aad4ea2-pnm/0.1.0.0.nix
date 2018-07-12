@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pnm = {
+        "pnm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

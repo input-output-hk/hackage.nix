@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        folds = {
+        "folds" = {
           depends  = ([
             hsPkgs.adjunctions
             hsPkgs.base
@@ -46,13 +46,13 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.11") hsPkgs.semigroups;
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
               hsPkgs.base
               hsPkgs.bytestring

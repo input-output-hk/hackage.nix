@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quick-schema = {
+        "quick-schema" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quick-schema

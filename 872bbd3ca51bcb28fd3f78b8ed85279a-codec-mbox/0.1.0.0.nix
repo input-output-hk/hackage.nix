@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        codec-mbox = {
+        "codec-mbox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

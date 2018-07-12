@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        Hungarian-Munkres = {
+        "Hungarian-Munkres" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

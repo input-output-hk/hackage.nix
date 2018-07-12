@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        massiv = {
+        "massiv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        every-bit-counts = {
+        "every-bit-counts" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

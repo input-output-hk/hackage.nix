@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Unixutils = {
+        "Unixutils" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           libs = pkgs.lib.optional (!system.isOsx) pkgs.crypt;
         };
         exes = {
-          unixtutils-test = {};
+          "unixtutils-test" = {};
         };
       };
     }

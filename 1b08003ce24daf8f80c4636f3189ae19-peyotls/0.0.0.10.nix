@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        peyotls = {
+        "peyotls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.word24
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          stm-test = {
+          "stm-test" = {
             depends  = [
               hsPkgs.peyotls
               hsPkgs.handle-like

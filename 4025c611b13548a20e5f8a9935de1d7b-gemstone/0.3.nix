@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gemstone = {
+        "gemstone" = {
           depends  = [
             hsPkgs.base
             hsPkgs.FTGL

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clang-pure = {
+        "clang-pure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant

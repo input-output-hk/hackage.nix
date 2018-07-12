@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod = {
+        "yesod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-core
@@ -47,7 +47,7 @@ let
             else [ hsPkgs.blaze-html ]);
         };
         exes = {
-          yesod = {
+          "yesod" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

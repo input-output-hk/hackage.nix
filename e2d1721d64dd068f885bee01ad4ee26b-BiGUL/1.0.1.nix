@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiGUL = {
+        "BiGUL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

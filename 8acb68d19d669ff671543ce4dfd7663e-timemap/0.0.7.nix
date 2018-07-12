@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timemap = {
+        "timemap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          timemap-test = {
+          "timemap-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          timemap-bench1 = {
+          "timemap-bench1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -69,7 +69,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          timemap-bench2 = {
+          "timemap-bench2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-vhdl = {
+        "language-vhdl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unitym-yesod = {
+        "unitym-yesod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unitym

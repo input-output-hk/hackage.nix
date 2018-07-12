@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          yogurt = {
+          "yogurt" = {
             depends  = [
               hsPkgs.mtl
               hsPkgs.regex-posix

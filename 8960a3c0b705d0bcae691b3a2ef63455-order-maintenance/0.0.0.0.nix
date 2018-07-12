@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        order-maintenance = {
+        "order-maintenance" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

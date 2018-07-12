@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        IndexedList = {
+        "IndexedList" = {
           depends  = [
             hsPkgs.base
             hsPkgs.PeanoWitnesses

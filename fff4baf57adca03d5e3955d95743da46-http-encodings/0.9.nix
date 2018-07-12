@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-encodings = {
+        "http-encodings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

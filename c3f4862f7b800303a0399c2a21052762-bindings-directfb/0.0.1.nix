@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-directfb = {
+        "bindings-directfb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-common

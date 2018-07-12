@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          example_01 = {
+          "example_01" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -29,7 +29,7 @@ let
             ];
             libs = [ pkgs.OgreMain ];
           };
-          example_02 = {
+          "example_02" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

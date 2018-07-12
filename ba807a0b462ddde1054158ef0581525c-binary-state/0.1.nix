@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-state = {
+        "binary-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

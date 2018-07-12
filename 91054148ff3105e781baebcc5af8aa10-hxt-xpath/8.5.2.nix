@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-xpath = {
+        "hxt-xpath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

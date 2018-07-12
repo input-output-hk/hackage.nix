@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphs = {
+        "graphs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

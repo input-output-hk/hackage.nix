@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        process = {
+        "process" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

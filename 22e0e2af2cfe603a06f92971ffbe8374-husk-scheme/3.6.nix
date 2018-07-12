@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        husk-scheme = {
+        "husk-scheme" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          huski = {
+          "huski" = {
             depends  = [
               hsPkgs.husk-scheme
               hsPkgs.base
@@ -55,7 +55,7 @@ let
               hsPkgs.ghc-paths
             ];
           };
-          huskc = {
+          "huskc" = {
             depends  = [
               hsPkgs.husk-scheme
               hsPkgs.base

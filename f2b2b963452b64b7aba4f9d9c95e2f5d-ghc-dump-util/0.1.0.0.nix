@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-dump-util = {
+        "ghc-dump-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-dump-core
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          ghc-dump = {
+          "ghc-dump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-dump-core

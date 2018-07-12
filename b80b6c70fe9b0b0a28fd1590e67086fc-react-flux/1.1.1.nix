@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        react-flux = {
+        "react-flux" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
         };
         exes = {
-          todo = {
+          "todo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.react-flux
@@ -45,7 +45,7 @@ let
               hsPkgs.text
             ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
-          todo-node = {
+          "todo-node" = {
             depends  = [
               hsPkgs.base
               hsPkgs.react-flux
@@ -53,14 +53,14 @@ let
               hsPkgs.text
             ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
-          purecss-side-menu = {
+          "purecss-side-menu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.react-flux
               hsPkgs.deepseq
             ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
-          test-client = {
+          "test-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.react-flux
@@ -70,7 +70,7 @@ let
               hsPkgs.aeson
             ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
-          route-example = {
+          "route-example" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.react-flux

@@ -20,12 +20,12 @@ let
         buildType = "Simple";
       };
       components = {
-        botpp = {
+        "botpp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
-        exes = { BotPP = {}; };
+        exes = { "BotPP" = {}; };
       };
     }

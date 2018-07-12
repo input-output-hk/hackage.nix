@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numerals = {
+        "numerals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

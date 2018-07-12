@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validity-scientific = {
+        "validity-scientific" = {
           depends  = [
             hsPkgs.base
             hsPkgs.scientific

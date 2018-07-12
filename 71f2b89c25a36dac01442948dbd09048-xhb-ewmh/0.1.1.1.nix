@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xhb-ewmh = {
+        "xhb-ewmh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

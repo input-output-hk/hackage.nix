@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NameGenerator = {
+        "NameGenerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

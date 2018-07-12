@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        validity = {
+        "validity" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          validity-test = {
+          "validity-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

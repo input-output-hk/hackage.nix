@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proc-net = {
+        "proc-net" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

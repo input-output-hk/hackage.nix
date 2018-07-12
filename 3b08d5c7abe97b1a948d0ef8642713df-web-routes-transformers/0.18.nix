@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-routes-transformers = {
+        "web-routes-transformers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

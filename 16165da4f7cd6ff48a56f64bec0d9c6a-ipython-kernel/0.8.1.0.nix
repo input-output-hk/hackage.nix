@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ipython-kernel = {
+        "ipython-kernel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          simple-calc-example = {
+          "simple-calc-example" = {
             depends  = [
               hsPkgs.ipython-kernel
               hsPkgs.base
@@ -53,7 +53,7 @@ let
               hsPkgs.transformers
             ];
           };
-          fun-calc-example = {
+          "fun-calc-example" = {
             depends  = [
               hsPkgs.ipython-kernel
               hsPkgs.base

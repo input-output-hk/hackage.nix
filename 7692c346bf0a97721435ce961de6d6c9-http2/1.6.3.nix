@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http2 = {
+        "http2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          hpack-encode = {
+          "hpack-encode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -52,7 +52,7 @@ let
               hsPkgs.word8
             ];
           };
-          hpack-debug = {
+          "hpack-debug" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -68,7 +68,7 @@ let
               hsPkgs.word8
             ];
           };
-          hpack-stat = {
+          "hpack-stat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -86,7 +86,7 @@ let
               hsPkgs.word8
             ];
           };
-          frame-encode = {
+          "frame-encode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -100,13 +100,13 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -121,7 +121,7 @@ let
               hsPkgs.word8
             ];
           };
-          hpack = {
+          "hpack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -141,7 +141,7 @@ let
               hsPkgs.word8
             ];
           };
-          frame = {
+          "frame" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob
@@ -159,7 +159,7 @@ let
           };
         };
         benchmarks = {
-          priority = {
+          "priority" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -173,7 +173,7 @@ let
               hsPkgs.stm
             ];
           };
-          header-compression = {
+          "header-compression" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

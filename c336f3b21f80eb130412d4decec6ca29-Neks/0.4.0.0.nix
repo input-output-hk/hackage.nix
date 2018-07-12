@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Neks = {
+        "Neks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.messagepack
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          NeksClient = {
+          "NeksClient" = {
             depends  = [
               hsPkgs.base
               hsPkgs.messagepack
@@ -49,7 +49,7 @@ let
               hsPkgs.directory
             ];
           };
-          NeksServer = {
+          "NeksServer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.messagepack

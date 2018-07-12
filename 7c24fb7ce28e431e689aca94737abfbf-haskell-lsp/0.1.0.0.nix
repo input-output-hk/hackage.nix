@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-lsp = {
+        "haskell-lsp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          lsp-hello = {
+          "lsp-hello" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          haskell-lsp-test = {
+          "haskell-lsp-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

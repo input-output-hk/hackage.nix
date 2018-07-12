@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inspector-wrecker = {
+        "inspector-wrecker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wrecker
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          inspector-wrecker-exe = {
+          "inspector-wrecker-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.inspector-wrecker
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          inspector-wrecker-test = {
+          "inspector-wrecker-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.inspector-wrecker

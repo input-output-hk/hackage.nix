@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        miniutter = {
+        "miniutter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          test-miniutter = {
+          "test-miniutter" = {
             depends  = [
               hsPkgs.miniutter
               hsPkgs.base

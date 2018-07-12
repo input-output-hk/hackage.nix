@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-conduit = {
+        "network-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cased = {
+        "cased" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-data = {
+        "generic-data" = {
           depends  = [
             hsPkgs.contravariant
             hsPkgs.show-combinators
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          unit-test = {
+          "unit-test" = {
             depends  = [
               hsPkgs.tasty
               hsPkgs.tasty-hunit
@@ -36,7 +36,7 @@ let
               hsPkgs.base
             ];
           };
-          record-test = {
+          "record-test" = {
             depends  = [
               hsPkgs.generic-data
               hsPkgs.base

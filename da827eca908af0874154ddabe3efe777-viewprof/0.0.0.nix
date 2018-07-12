@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          viewprof = {
+          "viewprof" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick

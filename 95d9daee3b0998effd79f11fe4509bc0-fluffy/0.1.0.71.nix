@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fluffy = {
+          "fluffy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-core

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wavesurfer = {
+        "wavesurfer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

@@ -22,21 +22,21 @@ let
         buildType = "Custom";
       };
       components = {
-        GLFW = {
+        "GLFW" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL
           ];
           libs = if _flags.dynamic
             then [ pkgs.glfw ]
-            else if !system.isOsx && system.isWindows
+            else pkgs.lib.optionals (!system.isOsx) (if system.isWindows
               then [ pkgs.opengl32 ]
-              else [ pkgs.X11 pkgs.GL ];
-          frameworks = pkgs.lib.optionals (!_flags.dynamic && system.isOsx) [
+              else [ pkgs.X11 pkgs.GL ]);
+          frameworks = pkgs.lib.optionals (!_flags.dynamic) (pkgs.lib.optionals system.isOsx [
             pkgs.Cocoa
             pkgs.OpenGL
             pkgs.IOKit
-          ];
+          ]);
         };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-accessor-template = {
+        "data-accessor-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-accessor

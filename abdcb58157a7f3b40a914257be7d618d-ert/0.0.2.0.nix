@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ert = {
+        "ert" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional _flags.regex hsPkgs.regex-compat;
         };
         exes = {
-          ert = {
+          "ert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ert

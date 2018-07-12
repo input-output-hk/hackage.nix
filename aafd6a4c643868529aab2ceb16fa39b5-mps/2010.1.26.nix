@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mps = {
+        "mps" = {
           depends  = [
             hsPkgs.base64-string
             hsPkgs.base

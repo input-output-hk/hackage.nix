@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MailchimpSimple = {
+        "MailchimpSimple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

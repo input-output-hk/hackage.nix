@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chp-transformers = {
+        "chp-transformers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chp

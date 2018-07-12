@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HsParrot = {
+        "HsParrot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

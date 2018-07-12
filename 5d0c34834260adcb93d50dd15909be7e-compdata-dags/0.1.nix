@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compdata-dags = {
+        "compdata-dags" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-elastictranscoder = {
+        "amazonka-elastictranscoder" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

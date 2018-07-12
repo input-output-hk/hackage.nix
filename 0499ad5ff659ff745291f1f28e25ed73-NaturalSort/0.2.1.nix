@@ -26,20 +26,20 @@ let
         buildType = "Simple";
       };
       components = {
-        NaturalSort = {
+        "NaturalSort" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.strict
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          nsort = {
+          "nsort" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.strict
             ] ++ [ hsPkgs.base ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.QuickCheck

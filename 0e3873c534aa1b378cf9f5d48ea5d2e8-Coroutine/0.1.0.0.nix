@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Coroutine = {
+        "Coroutine" = {
           depends  = [ hsPkgs.base ];
         };
       };

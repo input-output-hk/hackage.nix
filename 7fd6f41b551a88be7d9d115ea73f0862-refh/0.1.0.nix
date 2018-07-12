@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          refh = {
+          "refh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskheap

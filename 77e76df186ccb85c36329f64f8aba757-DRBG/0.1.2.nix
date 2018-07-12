@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DRBG = {
+        "DRBG" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          drbg_test = {
+          "drbg_test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.QuickCheck

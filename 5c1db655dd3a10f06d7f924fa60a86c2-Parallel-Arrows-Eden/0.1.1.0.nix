@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Parallel-Arrows-Eden = {
+        "Parallel-Arrows-Eden" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-gstaudio = {
+        "gi-gstaudio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

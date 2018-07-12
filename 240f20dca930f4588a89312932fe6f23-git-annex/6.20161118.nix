@@ -39,7 +39,7 @@ let
       };
       components = {
         exes = {
-          git-annex = {
+          "git-annex" = {
             depends  = (((((((((((((((([
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -120,16 +120,16 @@ let
             ]) ++ pkgs.lib.optional _flags.webdav hsPkgs.DAV) ++ pkgs.lib.optionals (_flags.assistant && !system.isSolaris) [
               hsPkgs.dns
               hsPkgs.mountpoints
-            ]) ++ (if _flags.assistant && system.isLinux
+            ]) ++ pkgs.lib.optionals _flags.assistant (if system.isLinux
               then [ hsPkgs.hinotify ]
               else if system.isOsx
                 then [ hsPkgs.hfsevents ]
                 else if system.isWindows
                   then [ hsPkgs.Win32-notify ]
-                  else pkgs.lib.optional (!system.isSolaris && !system.isLinux && _flags.android) hsPkgs.hinotify)) ++ pkgs.lib.optionals (_flags.dbus && system.isLinux) [
+                  else pkgs.lib.optionals (!system.isSolaris && !system.isLinux) (pkgs.lib.optional _flags.android hsPkgs.hinotify))) ++ pkgs.lib.optionals _flags.dbus (pkgs.lib.optionals system.isLinux [
               hsPkgs.dbus
               hsPkgs.fdo-notify
-            ]) ++ (if _flags.android
+            ])) ++ (if _flags.android
               then [ hsPkgs.data-endian ]
               else [
                 hsPkgs.disk-free-space
@@ -154,11 +154,11 @@ let
             ]) ++ pkgs.lib.optionals _flags.pairing [
               hsPkgs.network-multicast
               hsPkgs.network-info
-            ]) ++ pkgs.lib.optionals (_flags.xmpp && !system.isWindows) [
+            ]) ++ pkgs.lib.optionals _flags.xmpp (pkgs.lib.optionals (!system.isWindows) [
               hsPkgs.network-protocol-xmpp
               hsPkgs.gnutls
               hsPkgs.xml-types
-            ]) ++ pkgs.lib.optional _flags.torrentparser hsPkgs.torrent) ++ pkgs.lib.optional (_flags.magicmime && !system.isWindows) hsPkgs.magic) ++ pkgs.lib.optional _flags.concurrentoutput hsPkgs.concurrent-output) ++ pkgs.lib.optionals _flags.benchmark [
+            ])) ++ pkgs.lib.optional _flags.torrentparser hsPkgs.torrent) ++ pkgs.lib.optionals _flags.magicmime (pkgs.lib.optional (!system.isWindows) hsPkgs.magic)) ++ pkgs.lib.optional _flags.concurrentoutput hsPkgs.concurrent-output) ++ pkgs.lib.optionals _flags.benchmark [
               hsPkgs.criterion
               hsPkgs.deepseq
             ];

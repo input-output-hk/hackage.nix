@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hprotoc-fork = {
+        "hprotoc-fork" = {
           depends  = [
             hsPkgs.protocol-buffers-fork
             hsPkgs.protocol-buffers-descriptor-fork
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          hprotoc = {
+          "hprotoc" = {
             depends  = [
               hsPkgs.protocol-buffers-fork
               hsPkgs.protocol-buffers-descriptor-fork

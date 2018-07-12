@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-oauth = {
+        "snaplet-oauth" = {
           depends  = [
             hsPkgs.MonadCatchIO-mtl
             hsPkgs.aeson
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          oauth-unit-tests = {
+          "oauth-unit-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.aeson

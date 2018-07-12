@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-mesos = {
+        "hs-mesos" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          test-executor = {
+          "test-executor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs-mesos
@@ -44,7 +44,7 @@ let
               pkgs."stdc++"
             ];
           };
-          test-framework = {
+          "test-framework" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs-mesos
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs-mesos

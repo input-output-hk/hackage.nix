@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          HasloGUI = {
+          "HasloGUI" = {
             depends  = [
               hsPkgs.base
               hsPkgs.old-time

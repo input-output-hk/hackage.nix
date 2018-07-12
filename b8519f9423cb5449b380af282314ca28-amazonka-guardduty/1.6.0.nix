@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-guardduty = {
+        "amazonka-guardduty" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-guardduty-test = {
+          "amazonka-guardduty-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

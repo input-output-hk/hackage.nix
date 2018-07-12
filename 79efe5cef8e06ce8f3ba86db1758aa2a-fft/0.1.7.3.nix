@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fft = {
+        "fft" = {
           depends  = ([
             hsPkgs.carray
             hsPkgs.storable-complex
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          test-fft = {
+          "test-fft" = {
             depends  = [
               hsPkgs.fft
               hsPkgs.carray

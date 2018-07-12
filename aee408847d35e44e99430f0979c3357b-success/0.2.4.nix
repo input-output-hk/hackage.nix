@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        success = {
+        "success" = {
           depends  = [
             hsPkgs.transformers-base
             hsPkgs.monad-control

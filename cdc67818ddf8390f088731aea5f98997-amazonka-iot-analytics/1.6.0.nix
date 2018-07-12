@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-iot-analytics = {
+        "amazonka-iot-analytics" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-iot-analytics-test = {
+          "amazonka-iot-analytics-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-mechanicalturk = {
+        "amazonka-mechanicalturk" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-mechanicalturk-test = {
+          "amazonka-mechanicalturk-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

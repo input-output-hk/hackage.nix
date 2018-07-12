@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        list-fusion-probe = {
+        "list-fusion-probe" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

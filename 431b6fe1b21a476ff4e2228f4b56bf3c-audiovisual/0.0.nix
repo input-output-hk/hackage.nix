@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        audiovisual = {
+        "audiovisual" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

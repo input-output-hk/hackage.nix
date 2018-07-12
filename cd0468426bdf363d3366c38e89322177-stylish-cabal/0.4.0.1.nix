@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stylish-cabal = {
+        "stylish-cabal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -39,7 +39,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         sublibs = {
-          test-utils = {
+          "test-utils" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -58,7 +58,7 @@ let
           };
         };
         exes = {
-          stylish-cabal = {
+          "stylish-cabal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -69,7 +69,7 @@ let
           };
         };
         tests = {
-          strictness = {
+          "strictness" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -84,7 +84,7 @@ let
               hsPkgs.stylish-cabal
             ];
           };
-          roundtrip = {
+          "roundtrip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -93,7 +93,7 @@ let
               hsPkgs.test-utils
             ];
           };
-          roundtrip-hackage = {
+          "roundtrip-hackage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

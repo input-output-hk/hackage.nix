@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventful-test-helpers = {
+        "eventful-test-helpers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.eventful-core

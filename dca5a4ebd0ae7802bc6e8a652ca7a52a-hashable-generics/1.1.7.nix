@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashable-generics = {
+        "hashable-generics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hashable
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          compare-to-handrolled = {
+          "compare-to-handrolled" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hashable

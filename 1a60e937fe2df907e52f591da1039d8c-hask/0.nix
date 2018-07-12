@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hask = {
+        "hask" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints

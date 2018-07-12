@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        forsyde-shallow = {
+        "forsyde-shallow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.forsyde-shallow

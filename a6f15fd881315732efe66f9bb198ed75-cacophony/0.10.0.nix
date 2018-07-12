@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cacophony = {
+        "cacophony" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          noise-repl = {
+          "noise-repl" = {
             depends  = pkgs.lib.optionals _flags.build-tools [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -53,13 +53,13 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          vectors = {
+          "vectors" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.attoparsec
@@ -73,7 +73,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

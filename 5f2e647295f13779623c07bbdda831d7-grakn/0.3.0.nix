@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grakn = {
+        "grakn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.grakn
@@ -58,7 +58,7 @@ let
               hsPkgs.MissingH
             ];
           };
-          accept = {
+          "accept" = {
             depends  = [
               hsPkgs.base
               hsPkgs.grakn

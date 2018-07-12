@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        preprocess-haskell = {
+        "preprocess-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foldl

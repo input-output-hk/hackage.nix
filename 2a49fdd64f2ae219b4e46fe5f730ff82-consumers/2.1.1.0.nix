@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        consumers = {
+        "consumers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          consumers-example = {
+          "consumers-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.consumers
@@ -51,7 +51,7 @@ let
               hsPkgs.transformers
             ];
           };
-          consumers-test = {
+          "consumers-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.consumers

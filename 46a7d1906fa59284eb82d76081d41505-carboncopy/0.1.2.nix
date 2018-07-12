@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          carboncopy = {
+          "carboncopy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.IfElse

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        error-analyze = {
+        "error-analyze" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         tests = {
-          test-error-analyze = {
+          "test-error-analyze" = {
             depends  = [
               hsPkgs.base
               hsPkgs.error-analyze

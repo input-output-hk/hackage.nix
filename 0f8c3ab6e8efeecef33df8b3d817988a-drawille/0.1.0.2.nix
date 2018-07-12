@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        drawille = {
+        "drawille" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          senoid = {
+          "senoid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

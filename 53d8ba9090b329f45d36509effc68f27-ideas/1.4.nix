@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ideas = {
+        "ideas" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.mtl

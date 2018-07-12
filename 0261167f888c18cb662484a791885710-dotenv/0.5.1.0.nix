@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dotenv = {
+        "dotenv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -34,7 +34,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.void;
         };
         exes = {
-          dotenv = {
+          "dotenv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          dotenv-test = {
+          "dotenv-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

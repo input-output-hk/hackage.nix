@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PropLogic = {
+        "PropLogic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          program = {
+          "program" = {
             depends  = [
               hsPkgs.base
               hsPkgs.old-time

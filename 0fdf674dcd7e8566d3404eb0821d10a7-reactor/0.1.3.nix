@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactor = {
+        "reactor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

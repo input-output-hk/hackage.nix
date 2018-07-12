@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pinchot = {
+        "pinchot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          newman = {
+          "newman" = {
             depends  = pkgs.lib.optionals (!(!_flags.executables)) [
               hsPkgs.base
               hsPkgs.containers
@@ -47,7 +47,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          newmanPretty = {
+          "newmanPretty" = {
             depends  = pkgs.lib.optionals (!(!_flags.executables)) [
               hsPkgs.base
               hsPkgs.containers

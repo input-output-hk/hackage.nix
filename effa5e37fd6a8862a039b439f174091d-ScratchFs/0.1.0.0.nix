@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ScratchFs = {
+          "ScratchFs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HFuse

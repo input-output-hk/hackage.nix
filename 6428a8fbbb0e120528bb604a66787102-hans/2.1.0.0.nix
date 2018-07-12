@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hans = {
+        "hans" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.cereal
@@ -44,7 +44,7 @@ let
             ])) ++ pkgs.lib.optional _flags.bounded-channels hsPkgs.BoundedChan;
         };
         exes = {
-          test = {
+          "test" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.cereal

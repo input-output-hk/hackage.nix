@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tyro = {
+        "tyro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tyro-test = {
+          "tyro-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tyro

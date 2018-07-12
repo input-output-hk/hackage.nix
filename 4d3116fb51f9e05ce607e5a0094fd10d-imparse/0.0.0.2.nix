@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imparse = {
+        "imparse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MissingH
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          imparse = {
+          "imparse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.MissingH

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jpeg = {
+        "jpeg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

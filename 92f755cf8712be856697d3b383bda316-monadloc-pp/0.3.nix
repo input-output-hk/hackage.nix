@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          MonadLoc = {
+          "MonadLoc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty

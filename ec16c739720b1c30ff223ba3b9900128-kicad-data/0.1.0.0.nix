@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kicad-data = {
+        "kicad-data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          kicad-data-quickcheck = {
+          "kicad-data-quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        praglude = {
+        "praglude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

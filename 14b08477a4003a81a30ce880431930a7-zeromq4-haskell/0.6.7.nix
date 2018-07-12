@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zeromq4-haskell = {
+        "zeromq4-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -36,7 +36,7 @@ let
           pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs.libzmq;
         };
         tests = {
-          zeromq-haskell-tests = {
+          "zeromq-haskell-tests" = {
             depends  = [
               hsPkgs.zeromq4-haskell
               hsPkgs.async

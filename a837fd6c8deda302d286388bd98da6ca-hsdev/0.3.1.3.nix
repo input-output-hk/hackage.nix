@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsdev = {
+        "hsdev" = {
           depends  = (((([
             hsPkgs.base
             hsPkgs.aeson
@@ -90,7 +90,7 @@ let
           ] ++ pkgs.lib.optional _flags.docs hsPkgs.haddock-api)) ++ pkgs.lib.optional _flags.docs hsPkgs.hdocs;
         };
         exes = {
-          hsdev = {
+          "hsdev" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsdev
@@ -114,7 +114,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsdev

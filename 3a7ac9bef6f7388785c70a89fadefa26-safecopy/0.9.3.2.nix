@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safecopy = {
+        "safecopy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.gt "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          instances = {
+          "instances" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cereal

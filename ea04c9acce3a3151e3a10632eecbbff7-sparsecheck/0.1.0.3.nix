@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sparsecheck = {
+        "sparsecheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wrecker = {
+        "wrecker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -51,7 +51,7 @@ let
           ];
         };
         exes = {
-          example-server = {
+          "example-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wrecker
@@ -67,7 +67,7 @@ let
               hsPkgs.network
             ];
           };
-          example-client = {
+          "example-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wrecker
@@ -79,7 +79,7 @@ let
               hsPkgs.http-client
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wrecker
@@ -101,7 +101,7 @@ let
           };
         };
         tests = {
-          wrecker-test = {
+          "wrecker-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wrecker

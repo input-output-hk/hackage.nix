@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dawdle = {
+        "dawdle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          dawdle = {
+          "dawdle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

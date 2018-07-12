@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graph-rewriting-ski = {
+        "graph-rewriting-ski" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          ski-inet = {
+          "ski-inet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols
@@ -45,7 +45,7 @@ let
               hsPkgs.OpenGL
             ];
           };
-          ski-direct = {
+          "ski-direct" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

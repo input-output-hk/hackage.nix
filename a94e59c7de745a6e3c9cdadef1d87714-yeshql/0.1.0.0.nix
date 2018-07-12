@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yeshql = {
+        "yeshql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yeshql

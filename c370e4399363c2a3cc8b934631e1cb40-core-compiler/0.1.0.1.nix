@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        core-compiler = {
+        "core-compiler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          core-compiler-exe = {
+          "core-compiler-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.core-compiler

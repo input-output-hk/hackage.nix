@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        docvim = {
+        "docvim" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          docvim = {
+          "docvim" = {
             depends  = [
               hsPkgs.base
               hsPkgs.docvim
@@ -44,13 +44,13 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

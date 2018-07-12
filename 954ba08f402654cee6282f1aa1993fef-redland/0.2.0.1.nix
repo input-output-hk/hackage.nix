@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        redland = {
+        "redland" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

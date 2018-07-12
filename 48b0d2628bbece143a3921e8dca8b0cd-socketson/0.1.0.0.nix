@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        socketson = {
+        "socketson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          socketson-sample = {
+          "socketson-sample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -54,7 +54,7 @@ let
               hsPkgs.either
             ];
           };
-          socketson-sample-client = {
+          "socketson-sample-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.socketson

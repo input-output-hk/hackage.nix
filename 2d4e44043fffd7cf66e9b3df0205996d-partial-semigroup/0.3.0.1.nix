@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        partial-semigroup = {
+        "partial-semigroup" = {
           depends  = ([
             hsPkgs.base
           ] ++ pkgs.lib.optional _flags.identity-in-base hsPkgs.base) ++ (if _flags.semigroup-in-base
@@ -33,12 +33,12 @@ let
             else [ hsPkgs.semigroups ]);
         };
         tests = {
-          docs = {
+          "docs" = {
             depends  = [
               hsPkgs.base
             ] ++ pkgs.lib.optional _flags.enable-doctest hsPkgs.doctest;
           };
-          examples = {
+          "examples" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.partial-semigroup
@@ -46,7 +46,7 @@ let
               then [ hsPkgs.base ]
               else [ hsPkgs.semigroups ]);
           };
-          properties = {
+          "properties" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.partial-semigroup
@@ -54,7 +54,7 @@ let
               then [ hsPkgs.base ]
               else [ hsPkgs.semigroups ]);
           };
-          generics = {
+          "generics" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.partial-semigroup

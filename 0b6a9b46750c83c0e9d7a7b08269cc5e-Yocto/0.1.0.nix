@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Yocto = {
+        "Yocto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        storablevector = {
+        "storablevector" = {
           depends  = [
             hsPkgs.non-negative
             hsPkgs.utility-ht
@@ -36,7 +36,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.QuickCheck
@@ -47,10 +47,10 @@ let
               ]
               else [ hsPkgs.base ]);
           };
-          speedtest = {
+          "speedtest" = {
             depends  = [ hsPkgs.base ];
           };
-          speedpointer = {
+          "speedpointer" = {
             depends  = [ hsPkgs.base ];
           };
         };

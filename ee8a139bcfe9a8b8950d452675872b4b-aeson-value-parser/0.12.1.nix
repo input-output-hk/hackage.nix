@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-value-parser = {
+        "aeson-value-parser" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.json-pointer

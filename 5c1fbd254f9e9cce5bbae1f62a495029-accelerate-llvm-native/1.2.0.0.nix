@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-llvm-native = {
+        "accelerate-llvm-native" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.accelerate
@@ -57,7 +57,7 @@ let
           build-tools = pkgs.lib.optional system.isOsx hsPkgs.buildPackages.c2hs ++ pkgs.lib.optional system.isLinux hsPkgs.buildPackages.c2hs;
         };
         tests = {
-          nofib-llvm-native = {
+          "nofib-llvm-native" = {
             depends  = [
               hsPkgs.base
               hsPkgs.accelerate

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-accept = {
+        "snap-accept" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

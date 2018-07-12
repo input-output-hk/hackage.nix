@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DPutils = {
+        "DPutils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -58,7 +58,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

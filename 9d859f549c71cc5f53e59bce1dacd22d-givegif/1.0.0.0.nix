@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        givegif = {
+        "givegif" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          givegif = {
+          "givegif" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

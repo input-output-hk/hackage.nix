@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          nc-indicators = {
+          "nc-indicators" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

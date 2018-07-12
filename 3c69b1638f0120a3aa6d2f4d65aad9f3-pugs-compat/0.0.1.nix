@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pugs-compat = {
+        "pugs-compat" = {
           depends  = [
             hsPkgs.base
           ] ++ (if system.isWindows

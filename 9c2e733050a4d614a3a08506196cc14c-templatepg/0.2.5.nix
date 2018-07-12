@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        templatepg = {
+        "templatepg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

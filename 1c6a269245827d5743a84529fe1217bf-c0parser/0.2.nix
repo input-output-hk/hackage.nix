@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        c0parser = {
+        "c0parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-contrib-press = {
+        "hack-contrib-press" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

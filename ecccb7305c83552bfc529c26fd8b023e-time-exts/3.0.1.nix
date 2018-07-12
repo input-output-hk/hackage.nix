@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-exts = {
+        "time-exts" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          time-exts-unit-tests = {
+          "time-exts-unit-tests" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

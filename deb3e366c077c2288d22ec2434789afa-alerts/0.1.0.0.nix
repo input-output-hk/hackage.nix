@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alerts = {
+        "alerts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fay-dom = {
+        "fay-dom" = {
           depends  = [ hsPkgs.fay-base ];
         };
       };

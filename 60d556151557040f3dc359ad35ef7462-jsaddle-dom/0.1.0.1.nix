@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsaddle-dom = {
+        "jsaddle-dom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat

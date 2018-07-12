@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GroteTrap = {
+        "GroteTrap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.GroteTrap
               hsPkgs.base

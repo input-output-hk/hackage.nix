@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        config-schema = {
+        "config-schema" = {
           depends  = [
             hsPkgs.base
             hsPkgs.config-value
@@ -41,7 +41,7 @@ let
             else [ hsPkgs.base ]);
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.config-value

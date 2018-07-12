@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        insert-ordered-containers = {
+        "insert-ordered-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          ins-ord-containers-tests = {
+          "ins-ord-containers-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

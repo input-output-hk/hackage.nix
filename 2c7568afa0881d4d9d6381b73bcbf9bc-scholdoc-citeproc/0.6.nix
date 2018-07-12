@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        scholdoc-citeproc = {
+        "scholdoc-citeproc" = {
           depends  = ((([
             hsPkgs.containers
             hsPkgs.directory
@@ -61,7 +61,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          scholdoc-citeproc = {
+          "scholdoc-citeproc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.scholdoc-citeproc
@@ -76,7 +76,7 @@ let
               hsPkgs.filepath
             ];
           };
-          test-citeproc = {
+          "test-citeproc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -96,7 +96,7 @@ let
           };
         };
         tests = {
-          test-scholdoc-citeproc = {
+          "test-scholdoc-citeproc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

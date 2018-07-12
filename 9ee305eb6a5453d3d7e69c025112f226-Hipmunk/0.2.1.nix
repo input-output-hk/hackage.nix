@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hipmunk = {
+        "Hipmunk" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals _flags.small_base [

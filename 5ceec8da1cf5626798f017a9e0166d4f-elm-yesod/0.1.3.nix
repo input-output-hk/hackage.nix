@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elm-yesod = {
+        "elm-yesod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup

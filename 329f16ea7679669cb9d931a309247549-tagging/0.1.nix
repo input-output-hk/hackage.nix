@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagging = {
+        "tagging" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

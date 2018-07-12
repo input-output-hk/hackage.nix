@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-info = {
+        "cabal-info" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          cabal-info = {
+          "cabal-info" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cabal-info

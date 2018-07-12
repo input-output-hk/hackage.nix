@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prompt = {
+        "prompt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        midair = {
+        "midair" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

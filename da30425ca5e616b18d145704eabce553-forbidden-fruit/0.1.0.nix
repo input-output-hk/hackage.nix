@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        forbidden-fruit = {
+        "forbidden-fruit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

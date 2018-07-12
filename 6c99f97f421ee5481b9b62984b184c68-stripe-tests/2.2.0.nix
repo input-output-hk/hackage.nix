@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stripe-tests = {
+        "stripe-tests" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

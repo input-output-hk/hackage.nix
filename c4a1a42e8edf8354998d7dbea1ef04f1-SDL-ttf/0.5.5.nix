@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        SDL-ttf = {
+        "SDL-ttf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SDL

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-fetch = {
+        "ghcjs-fetch" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -34,7 +34,7 @@ let
             ]);
         };
         tests = {
-          ghcjs-fetch-test = {
+          "ghcjs-fetch-test" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true))) [
               hsPkgs.aeson
               hsPkgs.base

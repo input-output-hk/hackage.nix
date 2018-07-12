@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dlist-instances = {
+        "dlist-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

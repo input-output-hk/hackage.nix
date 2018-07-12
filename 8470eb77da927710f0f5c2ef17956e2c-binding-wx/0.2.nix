@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binding-wx = {
+        "binding-wx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wxcore

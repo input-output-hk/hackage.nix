@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bioinformatics-toolkit = {
+        "bioinformatics-toolkit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -54,7 +54,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -74,7 +74,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bioinformatics-toolkit

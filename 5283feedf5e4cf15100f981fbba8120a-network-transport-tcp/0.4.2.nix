@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-transport-tcp = {
+        "network-transport-tcp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network-transport
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          TestTCP = {
+          "TestTCP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-transport-tests
@@ -42,7 +42,7 @@ let
               hsPkgs.network-transport-tcp
             ];
           };
-          TestQC = {
+          "TestQC" = {
             depends  = pkgs.lib.optionals _flags.use-mock-network [
               hsPkgs.base
               hsPkgs.test-framework

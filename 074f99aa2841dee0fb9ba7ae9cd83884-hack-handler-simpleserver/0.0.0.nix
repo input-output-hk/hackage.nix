@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-handler-simpleserver = {
+        "hack-handler-simpleserver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassava = {
+        "cassava" = {
           depends  = [
             hsPkgs.array
             hsPkgs.attoparsec
@@ -32,10 +32,10 @@ let
             hsPkgs.text
             hsPkgs.unordered-containers
             hsPkgs.vector
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2.1") (pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim);
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.array
               hsPkgs.attoparsec
@@ -68,7 +68,7 @@ let
               hsPkgs.text
               hsPkgs.unordered-containers
               hsPkgs.vector
-            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2.1") (pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim);
           };
         };
       };

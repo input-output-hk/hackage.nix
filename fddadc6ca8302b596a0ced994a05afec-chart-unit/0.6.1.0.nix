@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chart-unit = {
+        "chart-unit" = {
           depends  = [
             hsPkgs.SVGFonts
             hsPkgs.base
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          chart-unit-gallery = {
+          "chart-unit-gallery" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chart-unit
@@ -63,7 +63,7 @@ let
               hsPkgs.time
             ];
           };
-          chart-unit-main-example = {
+          "chart-unit-main-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chart-unit
@@ -73,7 +73,7 @@ let
               hsPkgs.numhask-range
             ];
           };
-          chart-unit-source-examples = {
+          "chart-unit-source-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chart-unit
@@ -88,7 +88,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chart-unit

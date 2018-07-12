@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rbr = {
+          "rbr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
               hsPkgs.bio
             ];
           };
-          mct = {
+          "mct" = {
             depends  = [
               hsPkgs.bytestring
             ];

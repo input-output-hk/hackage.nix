@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gsl-random = {
+        "gsl-random" = {
           depends  = [ hsPkgs.base ];
           libs = (((pkgs.lib.optionals _flags.atlas [
             pkgs.gsl
@@ -37,7 +37,7 @@ let
             pkgs.gsl
             pkgs.gslcblas
             pkgs.m
-          ]) ++ (if _flags.mkl && system.isX86_64
+          ]) ++ pkgs.lib.optionals _flags.mkl (if system.isX86_64
             then [
               pkgs.gsl
               pkgs.mkl_lapack

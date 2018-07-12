@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-client = {
+        "servant-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

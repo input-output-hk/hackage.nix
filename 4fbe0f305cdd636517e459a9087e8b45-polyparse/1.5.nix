@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polyparse = {
+        "polyparse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

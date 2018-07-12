@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          gloss-bitmap = {
+          "gloss-bitmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -31,90 +31,90 @@ let
               hsPkgs.gloss
             ];
           };
-          gloss-boids = {
+          "gloss-boids" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          gloss-clock = {
+          "gloss-clock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          gloss-color = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.gloss
-              hsPkgs.vector
-            ];
-          };
-          gloss-conway = {
+          "gloss-color" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
               hsPkgs.vector
             ];
           };
-          gloss-draw = {
+          "gloss-conway" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.gloss
+              hsPkgs.vector
+            ];
+          };
+          "gloss-draw" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          gloss-easy = {
+          "gloss-easy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          gloss-eden = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.gloss
-              hsPkgs.random
-            ];
-          };
-          gloss-flake = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.gloss
-            ];
-          };
-          gloss-gameevent = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.gloss
-            ];
-          };
-          gloss-hello = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.gloss
-            ];
-          };
-          gloss-lifespan = {
+          "gloss-eden" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
               hsPkgs.random
             ];
           };
-          gloss-machina = {
+          "gloss-flake" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          gloss-occlusion = {
+          "gloss-gameevent" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.gloss
+            ];
+          };
+          "gloss-hello" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.gloss
+            ];
+          };
+          "gloss-lifespan" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.gloss
+              hsPkgs.random
+            ];
+          };
+          "gloss-machina" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.gloss
+            ];
+          };
+          "gloss-occlusion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
               hsPkgs.gloss-algorithms
             ];
           };
-          gloss-styrene = {
+          "gloss-styrene" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -122,33 +122,33 @@ let
               hsPkgs.gloss
             ];
           };
-          gloss-tree = {
+          "gloss-tree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          gloss-visibility = {
+          "gloss-visibility" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
               hsPkgs.vector
             ];
           };
-          gloss-zen = {
+          "gloss-zen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          gloss-crystal = {
+          "gloss-crystal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
               hsPkgs.gloss-raster
             ];
           };
-          gloss-ray = {
+          "gloss-ray" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
@@ -157,14 +157,14 @@ let
               hsPkgs.gloss-raster
             ];
           };
-          gloss-pulse = {
+          "gloss-pulse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
               hsPkgs.gloss-raster
             ];
           };
-          gloss-wave = {
+          "gloss-wave" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -173,7 +173,7 @@ let
               hsPkgs.vector
             ];
           };
-          gloss-snow = {
+          "gloss-snow" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
@@ -181,21 +181,21 @@ let
               hsPkgs.repa-algorithms
             ];
           };
-          gloss-mandel = {
+          "gloss-mandel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
               hsPkgs.repa
             ];
           };
-          gloss-graph = {
+          "gloss-graph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.gloss
             ];
           };
-          gloss-gravity = {
+          "gloss-gravity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

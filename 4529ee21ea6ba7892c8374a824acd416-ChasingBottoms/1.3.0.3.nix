@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ChasingBottoms = {
+        "ChasingBottoms" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.mtl
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          ChasingBottomsTestSuite = {
+          "ChasingBottomsTestSuite" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.mtl

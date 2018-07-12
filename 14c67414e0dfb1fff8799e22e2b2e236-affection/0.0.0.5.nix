@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        affection = {
+        "affection" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sdl2
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          example00 = {
+          "example00" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.affection
@@ -48,7 +48,7 @@ let
               hsPkgs.mtl
             ];
           };
-          example01 = {
+          "example01" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.affection
@@ -59,7 +59,7 @@ let
               hsPkgs.mtl
             ];
           };
-          example02 = {
+          "example02" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.affection
@@ -70,7 +70,7 @@ let
               hsPkgs.mtl
             ];
           };
-          example03 = {
+          "example03" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.affection

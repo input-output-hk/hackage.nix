@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        visibility = {
+        "visibility" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

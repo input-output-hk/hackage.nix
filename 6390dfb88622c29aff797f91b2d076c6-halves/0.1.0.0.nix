@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        halves = {
+        "halves" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
           ];
         };
         tests = {
-          props = {
+          "props" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

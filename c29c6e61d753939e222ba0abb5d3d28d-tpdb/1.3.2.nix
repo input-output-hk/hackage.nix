@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tpdb = {
+        "tpdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt
@@ -37,34 +37,34 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers;
         };
         tests = {
-          XML = {
+          "XML" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
             ];
           };
-          TRS = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.tpdb
-              hsPkgs.bytestring
-            ];
-          };
-          TRS_02 = {
+          "TRS" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
               hsPkgs.bytestring
             ];
           };
-          SRS = {
+          "TRS_02" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
               hsPkgs.bytestring
             ];
           };
-          Speed = {
+          "SRS" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.tpdb
+              hsPkgs.bytestring
+            ];
+          };
+          "Speed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
@@ -73,7 +73,7 @@ let
               hsPkgs.pretty
             ];
           };
-          Attributes = {
+          "Attributes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty-simple = {
+        "pretty-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          pretty-simple-doctest = {
+          "pretty-simple-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

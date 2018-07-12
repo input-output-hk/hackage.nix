@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haquery = {
+        "haquery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

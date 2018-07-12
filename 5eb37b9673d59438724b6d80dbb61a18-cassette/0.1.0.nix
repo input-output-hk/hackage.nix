@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassette = {
+        "cassette" = {
           depends  = [ hsPkgs.base ];
         };
       };

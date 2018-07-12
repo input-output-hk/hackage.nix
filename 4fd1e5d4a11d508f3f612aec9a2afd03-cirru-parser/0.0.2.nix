@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cirru-parser = {
+        "cirru-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

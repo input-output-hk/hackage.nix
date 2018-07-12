@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          moesocks = {
+          "moesocks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HsOpenSSL

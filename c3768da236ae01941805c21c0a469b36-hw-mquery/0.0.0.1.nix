@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-mquery = {
+        "hw-mquery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          hw-mquery-test = {
+          "hw-mquery-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

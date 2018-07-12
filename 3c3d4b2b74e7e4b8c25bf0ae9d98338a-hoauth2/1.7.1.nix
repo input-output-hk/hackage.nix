@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoauth2 = {
+        "hoauth2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          demo-server = {
+          "demo-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

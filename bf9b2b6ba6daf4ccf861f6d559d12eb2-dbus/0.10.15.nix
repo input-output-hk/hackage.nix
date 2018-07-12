@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbus = {
+        "dbus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          dbus_tests = {
+          "dbus_tests" = {
             depends  = [
               hsPkgs.dbus
               hsPkgs.base
@@ -68,7 +68,7 @@ let
           };
         };
         benchmarks = {
-          dbus_benchmarks = {
+          "dbus_benchmarks" = {
             depends  = [
               hsPkgs.dbus
               hsPkgs.base

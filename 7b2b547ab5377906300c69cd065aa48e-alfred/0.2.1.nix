@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alfred = {
+        "alfred" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

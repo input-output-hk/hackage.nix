@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genericserialize = {
+        "genericserialize" = {
           depends  = [ hsPkgs.base ];
         };
       };

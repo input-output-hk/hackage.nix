@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blockchain = {
+        "blockchain" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

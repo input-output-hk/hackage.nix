@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opengles = {
+        "opengles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -40,11 +40,11 @@ let
             hsPkgs.future-resource
             hsPkgs.packer
           ];
-          libs = (if system.isLinux && _flags.useegl
+          libs = pkgs.lib.optionals system.isLinux (if _flags.useegl
             then [ pkgs.EGL pkgs.GLESv2 ]
             else [
               pkgs.GL
-            ]) ++ (if system.isWindows && _flags.useegl
+            ]) ++ pkgs.lib.optionals system.isWindows (if _flags.useegl
             then [
               pkgs.libEGL
               pkgs.libGLESv2
@@ -56,7 +56,7 @@ let
           ] ++ pkgs.lib.optional system.isOsx pkgs.OpenGL;
         };
         exes = {
-          windmill = {
+          "windmill" = {
             depends  = [
               hsPkgs.base
               hsPkgs.opengles
@@ -67,7 +67,7 @@ let
               hsPkgs.future-resource
             ];
           };
-          glsl-sandbox-player = {
+          "glsl-sandbox-player" = {
             depends  = [
               hsPkgs.base
               hsPkgs.opengles
@@ -79,7 +79,7 @@ let
           };
         };
         tests = {
-          opengles-test = {
+          "opengles-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.opengles

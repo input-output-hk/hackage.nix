@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          HelloWorld = {
+          "HelloWorld" = {
             depends  = [
               hsPkgs.base
               hsPkgs.luminance
@@ -31,7 +31,7 @@ let
               hsPkgs.transformers
             ];
           };
-          HelloWorldUniform = {
+          "HelloWorldUniform" = {
             depends  = [
               hsPkgs.base
               hsPkgs.luminance
@@ -41,18 +41,7 @@ let
               hsPkgs.transformers
             ];
           };
-          DepthTest = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.contravariant
-              hsPkgs.luminance
-              hsPkgs.GLFW-b
-              hsPkgs.mtl
-              hsPkgs.resourcet
-              hsPkgs.transformers
-            ];
-          };
-          Blending = {
+          "DepthTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.contravariant
@@ -63,7 +52,18 @@ let
               hsPkgs.transformers
             ];
           };
-          Texture = {
+          "Blending" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.contravariant
+              hsPkgs.luminance
+              hsPkgs.GLFW-b
+              hsPkgs.mtl
+              hsPkgs.resourcet
+              hsPkgs.transformers
+            ];
+          };
+          "Texture" = {
             depends  = [
               hsPkgs.base
               hsPkgs.contravariant
@@ -75,7 +75,7 @@ let
               hsPkgs.transformers
             ];
           };
-          Blit = {
+          "Blit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.contravariant

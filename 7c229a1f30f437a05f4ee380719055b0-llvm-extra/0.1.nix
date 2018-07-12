@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-extra = {
+        "llvm-extra" = {
           depends  = [
             hsPkgs.llvm-ht
             hsPkgs.type-level
@@ -32,6 +32,6 @@ let
             hsPkgs.base
           ] ++ pkgs.lib.optional system.isI386 hsPkgs.cpuid;
         };
-        exes = { tone-llvm = {}; };
+        exes = { "tone-llvm" = {}; };
       };
     }

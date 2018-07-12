@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-store = {
+        "binary-store" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary-list
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          binary-store-tests = {
+          "binary-store-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

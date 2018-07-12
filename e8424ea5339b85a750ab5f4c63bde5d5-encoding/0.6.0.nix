@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        encoding = {
+        "encoding" = {
           depends  = if _flags.splitbase
             then if _flags.newghc
               then [

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        marxup = {
+        "marxup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          marxup = {
+          "marxup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty

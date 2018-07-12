@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quiver-instances = {
+        "quiver-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

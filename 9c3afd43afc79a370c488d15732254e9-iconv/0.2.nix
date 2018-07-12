@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        iconv = {
+        "iconv" = {
           depends  = [ hsPkgs.base ];
         };
       };

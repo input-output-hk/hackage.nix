@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        luis-client = {
+        "luis-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq

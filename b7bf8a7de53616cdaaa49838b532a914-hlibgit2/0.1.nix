@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hlibgit2 = {
+        "hlibgit2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL
           ];
         };
         tests = {
-          smoke = {
+          "smoke" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlibgit2

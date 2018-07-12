@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad-screenshot = {
+        "xmonad-screenshot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xmonad

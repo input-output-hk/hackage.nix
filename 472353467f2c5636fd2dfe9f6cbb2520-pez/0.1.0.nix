@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pez = {
+        "pez" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fclabels
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          zipper-tests = {
+          "zipper-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

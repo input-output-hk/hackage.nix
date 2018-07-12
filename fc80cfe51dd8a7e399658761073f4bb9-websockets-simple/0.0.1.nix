@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        websockets-simple = {
+        "websockets-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          websockets-simple-test = {
+          "websockets-simple-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.websockets-simple

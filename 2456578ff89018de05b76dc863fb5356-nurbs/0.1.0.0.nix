@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nurbs = {
+        "nurbs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

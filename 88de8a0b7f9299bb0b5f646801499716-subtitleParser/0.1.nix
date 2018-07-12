@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        subtitleParser = {
+        "subtitleParser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

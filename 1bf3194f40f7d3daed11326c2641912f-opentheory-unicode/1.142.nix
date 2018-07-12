@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opentheory-unicode = {
+        "opentheory-unicode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          opentheory-unicode-test = {
+          "opentheory-unicode-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -36,7 +36,7 @@ let
         buildType = "Custom";
       };
       components = {
-        darcs = {
+        "darcs" = {
           depends  = pkgs.lib.optionals (!(!_flags.library)) ((((((([
             hsPkgs.extensible-exceptions
             hsPkgs.regex-compat
@@ -71,10 +71,10 @@ let
             hsPkgs.network
             hsPkgs.HTTP
           ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo);
-          libs = pkgs.lib.optional (!(!_flags.library) && _flags.curl) pkgs.curl;
+          libs = pkgs.lib.optionals (!(!_flags.library)) (pkgs.lib.optional _flags.curl pkgs.curl);
         };
         exes = {
-          darcs = {
+          "darcs" = {
             depends  = (((((([
               hsPkgs.extensible-exceptions
               hsPkgs.regex-compat
@@ -111,7 +111,7 @@ let
             ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
             libs = pkgs.lib.optional _flags.curl pkgs.curl;
           };
-          darcs-test = {
+          "darcs-test" = {
             depends  = pkgs.lib.optionals (!(!_flags.test)) ((((((([
               hsPkgs.extensible-exceptions
               hsPkgs.regex-compat
@@ -154,7 +154,7 @@ let
               hsPkgs.network
               hsPkgs.HTTP
             ]);
-            libs = pkgs.lib.optional (!(!_flags.test) && _flags.curl) pkgs.curl;
+            libs = pkgs.lib.optionals (!(!_flags.test)) (pkgs.lib.optional _flags.curl pkgs.curl);
           };
         };
       };

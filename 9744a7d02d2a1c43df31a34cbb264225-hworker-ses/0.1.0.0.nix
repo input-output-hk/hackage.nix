@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hworker-ses = {
+        "hworker-ses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hworker

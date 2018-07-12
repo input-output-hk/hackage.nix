@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chart-histogram = {
+        "chart-histogram" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Chart

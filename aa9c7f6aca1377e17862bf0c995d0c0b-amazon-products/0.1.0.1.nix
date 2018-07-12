@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazon-products = {
+        "amazon-products" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          repl = {
+          "repl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

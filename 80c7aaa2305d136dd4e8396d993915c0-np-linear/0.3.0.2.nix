@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        np-linear = {
+        "np-linear" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

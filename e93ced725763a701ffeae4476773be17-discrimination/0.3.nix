@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        discrimination = {
+        "discrimination" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         benchmarks = {
-          wordmap = {
+          "wordmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

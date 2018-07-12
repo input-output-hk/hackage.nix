@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dib = {
+        "dib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          dib = {
+          "dib" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

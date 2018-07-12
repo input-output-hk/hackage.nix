@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sandlib = {
+        "sandlib" = {
           depends  = [ hsPkgs.base ];
         };
       };

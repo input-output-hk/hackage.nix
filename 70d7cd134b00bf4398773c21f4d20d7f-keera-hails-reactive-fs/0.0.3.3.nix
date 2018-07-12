@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-reactive-fs = {
+        "keera-hails-reactive-fs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

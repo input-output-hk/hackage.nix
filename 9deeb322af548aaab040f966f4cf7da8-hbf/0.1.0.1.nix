@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hbf = {
+        "hbf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          hbf = {
+          "hbf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -55,7 +55,7 @@ let
               hsPkgs.vector
             ];
           };
-          hbfc = {
+          "hbfc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -73,7 +73,7 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -90,7 +90,7 @@ let
               hsPkgs.vector
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -118,7 +118,7 @@ let
           };
         };
         benchmarks = {
-          evalbench = {
+          "evalbench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

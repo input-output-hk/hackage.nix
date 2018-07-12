@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ekg-cloudwatch = {
+        "ekg-cloudwatch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ekg-core
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          ekg-cloudwatch-test = {
+          "ekg-cloudwatch-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ekg-core

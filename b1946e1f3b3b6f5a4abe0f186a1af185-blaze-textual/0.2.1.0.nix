@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-textual = {
+        "blaze-textual" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -39,7 +39,7 @@ let
             else [ hsPkgs.integer-gmp ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

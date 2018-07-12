@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-bignum = {
+        "accelerate-bignum" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          accelerate-bignum-test = {
+          "accelerate-bignum-test" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.accelerate
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          accelerate-bignum-bench = {
+          "accelerate-bignum-bench" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.accelerate

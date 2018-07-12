@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tag-bits = {
+        "tag-bits" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

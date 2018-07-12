@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dropbox-sdk = {
+        "dropbox-sdk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eng-stemmer = {
+        "eng-stemmer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          eng-stemmer-example = {
+          "eng-stemmer-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eng-stemmer
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          eng-stemmer-test = {
+          "eng-stemmer-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eng-stemmer

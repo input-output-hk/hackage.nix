@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-hmac = {
+        "wai-middleware-hmac" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -47,21 +47,21 @@ let
               hsPkgs.HUnit
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.Glob
             ];
           };
-          haddock = {
+          "haddock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.regex-compat
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

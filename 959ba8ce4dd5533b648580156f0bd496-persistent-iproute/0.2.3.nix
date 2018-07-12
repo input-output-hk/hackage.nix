@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-iproute = {
+        "persistent-iproute" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

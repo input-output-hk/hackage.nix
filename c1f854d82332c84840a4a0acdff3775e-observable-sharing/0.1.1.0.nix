@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        observable-sharing = {
+        "observable-sharing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers

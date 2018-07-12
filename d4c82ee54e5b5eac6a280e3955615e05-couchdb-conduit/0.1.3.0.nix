@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        couchdb-conduit = {
+        "couchdb-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-metrics = {
+        "monad-metrics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clock
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          monad-metrics-test = {
+          "monad-metrics-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monad-metrics

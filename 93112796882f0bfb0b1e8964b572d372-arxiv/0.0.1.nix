@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arxiv = {
+        "arxiv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

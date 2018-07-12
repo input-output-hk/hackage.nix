@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        soap = {
+        "soap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

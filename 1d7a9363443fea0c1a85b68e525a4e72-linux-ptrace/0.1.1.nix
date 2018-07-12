@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linux-ptrace = {
+        "linux-ptrace" = {
           depends  = [
             hsPkgs.base
             hsPkgs.posix-waitpid

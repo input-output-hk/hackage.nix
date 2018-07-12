@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pastis = {
+        "pastis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

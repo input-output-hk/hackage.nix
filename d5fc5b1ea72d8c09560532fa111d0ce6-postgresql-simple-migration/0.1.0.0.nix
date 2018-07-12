@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-simple-migration = {
+        "postgresql-simple-migration" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          migrate = {
+          "migrate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base64-bytestring
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

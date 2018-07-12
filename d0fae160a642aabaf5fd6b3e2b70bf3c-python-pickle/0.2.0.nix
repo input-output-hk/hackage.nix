@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        python-pickle = {
+        "python-pickle" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          pickle = {
+          "pickle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

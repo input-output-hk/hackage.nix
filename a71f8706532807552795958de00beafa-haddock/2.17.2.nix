@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          haddock = {
+          "haddock" = {
             depends  = [
               hsPkgs.base
             ] ++ (if _flags.in-ghc-tree
@@ -44,34 +44,34 @@ let
           };
         };
         tests = {
-          driver-test = {
+          "driver-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
             ];
           };
-          html-test = {
+          "html-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.haddock-test
             ];
           };
-          hypsrc-test = {
+          "hypsrc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.haddock-test
             ];
           };
-          latex-test = {
+          "latex-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.haddock-test
             ];
           };
-          hoogle-test = {
+          "hoogle-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

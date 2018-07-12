@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-auth-cookie = {
+        "servant-auth-cookie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -54,7 +54,7 @@ let
             ]);
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -83,7 +83,7 @@ let
                 hsPkgs.bytestring-conversion
               ]);
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -100,7 +100,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

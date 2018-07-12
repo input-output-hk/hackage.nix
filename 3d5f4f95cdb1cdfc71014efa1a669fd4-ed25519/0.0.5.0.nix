@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ed25519 = {
+        "ed25519" = {
           depends  = [
             hsPkgs.ghc-prim
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,13 +41,13 @@ let
               hsPkgs.ed25519
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.filepath
@@ -57,7 +57,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

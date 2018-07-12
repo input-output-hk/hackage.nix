@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-oauth2 = {
+        "yesod-auth-oauth2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
             else [ hsPkgs.network ]);
         };
         exes = {
-          yesod-auth-oauth2-example = {
+          "yesod-auth-oauth2-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-auth-oauth2

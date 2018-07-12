@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warc = {
+        "warc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes

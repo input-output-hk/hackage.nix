@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chitauri = {
+        "chitauri" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          chitauri = {
+          "chitauri" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chitauri
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          chitauri-test = {
+          "chitauri-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chitauri

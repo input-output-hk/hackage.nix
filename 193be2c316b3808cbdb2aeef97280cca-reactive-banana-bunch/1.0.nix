@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-banana-bunch = {
+        "reactive-banana-bunch" = {
           depends  = [
             hsPkgs.reactive-banana
             hsPkgs.non-empty

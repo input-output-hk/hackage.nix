@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stack = {
+        "stack" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.aeson
@@ -83,7 +83,7 @@ let
           ];
         };
         exes = {
-          stack = {
+          "stack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -113,7 +113,7 @@ let
           };
         };
         tests = {
-          stack-test = {
+          "stack-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

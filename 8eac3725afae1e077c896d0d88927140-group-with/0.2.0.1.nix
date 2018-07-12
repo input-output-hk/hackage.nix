@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        group-with = {
+        "group-with" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          test-groupby = {
+          "test-groupby" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

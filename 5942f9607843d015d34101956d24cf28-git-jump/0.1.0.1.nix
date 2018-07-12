@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          git-jump = {
+          "git-jump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

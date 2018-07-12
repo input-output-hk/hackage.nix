@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassy = {
+        "cassy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Thrift
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cassy

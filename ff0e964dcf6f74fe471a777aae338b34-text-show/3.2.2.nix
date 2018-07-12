@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-show = {
+        "text-show" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -46,7 +46,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.ghc-boot;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = ([
               hsPkgs.array
               hsPkgs.base
@@ -75,7 +75,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

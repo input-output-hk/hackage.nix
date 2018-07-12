@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          zeroth = {
+          "zeroth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts

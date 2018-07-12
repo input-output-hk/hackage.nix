@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ivory-stdlib = {
+        "ivory-stdlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

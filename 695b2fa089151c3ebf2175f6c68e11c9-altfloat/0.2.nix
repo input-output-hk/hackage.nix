@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        altfloat = {
+        "altfloat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

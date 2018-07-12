@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ghcjs-codemirror = {
+        "ghcjs-codemirror" = {
           depends  = [ hsPkgs.base ];
         };
       };

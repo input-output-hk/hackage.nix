@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-pool = {
+        "servant-pool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant

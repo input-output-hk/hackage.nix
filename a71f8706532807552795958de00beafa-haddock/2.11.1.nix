@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haddock = {
+        "haddock" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.filepath
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          haddock = {
+          "haddock" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.filepath
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          html-tests = {
+          "html-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ironforge = {
+          "ironforge" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chatty

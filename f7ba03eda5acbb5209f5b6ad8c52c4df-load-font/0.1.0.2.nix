@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        load-font = {
+        "load-font" = {
           depends  = [ hsPkgs.base ];
           build-tools = [
             hsPkgs.buildPackages.c2hs
           ];
         };
         exes = {
-          load-font-exe = {
+          "load-font-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs

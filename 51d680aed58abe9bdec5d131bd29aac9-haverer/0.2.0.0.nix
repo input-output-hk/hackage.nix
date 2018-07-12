@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haverer = {
+        "haverer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          haverer = {
+          "haverer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haverer
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

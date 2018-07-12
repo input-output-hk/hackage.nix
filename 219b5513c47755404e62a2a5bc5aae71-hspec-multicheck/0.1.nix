@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-multicheck = {
+        "hspec-multicheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

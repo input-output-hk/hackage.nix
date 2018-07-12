@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proteaaudio = {
+        "proteaaudio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          proteaaudio-play = {
+          "proteaaudio-play" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

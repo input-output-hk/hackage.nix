@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        flight-igc = {
+        "flight-igc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         exes = {
-          flight-igc = {
+          "flight-igc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

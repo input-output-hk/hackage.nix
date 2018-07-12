@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lzma-conduit = {
+        "lzma-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          lzma-test = {
+          "lzma-test" = {
             depends  = [
               hsPkgs.lzma-conduit
               hsPkgs.base

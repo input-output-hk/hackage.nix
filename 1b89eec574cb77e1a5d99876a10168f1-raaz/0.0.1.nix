@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        raaz = {
+        "raaz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          checksum = {
+          "checksum" = {
             depends  = [
               hsPkgs.base
               hsPkgs.raaz
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          blaze-vs-write = {
+          "blaze-vs-write" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

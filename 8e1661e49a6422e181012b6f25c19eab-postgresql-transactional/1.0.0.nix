@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-transactional = {
+        "postgresql-transactional" = {
           depends  = [
             hsPkgs.base
             hsPkgs.postgresql-simple

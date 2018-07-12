@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hpyrg = {
+          "hpyrg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

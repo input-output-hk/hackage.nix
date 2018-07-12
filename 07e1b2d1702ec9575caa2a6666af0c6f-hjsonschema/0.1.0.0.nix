@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hjsonschema = {
+        "hjsonschema" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          official = {
+          "official" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

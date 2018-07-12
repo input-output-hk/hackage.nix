@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-sqladmin = {
+        "gogol-sqladmin" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

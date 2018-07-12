@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sampling = {
+        "sampling" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foldl
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          sampling-test = {
+          "sampling-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sampling
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          bench-sampling = {
+          "bench-sampling" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heist = {
+        "heist" = {
           depends  = [
             hsPkgs.MonadCatchIO-transformers
             hsPkgs.aeson

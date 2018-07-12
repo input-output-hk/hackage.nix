@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        automotive-cse = {
+        "automotive-cse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

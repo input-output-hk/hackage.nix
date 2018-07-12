@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-json-errors = {
+        "wai-middleware-json-errors" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.binary
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          wai-middleware-json-errors-test = {
+          "wai-middleware-json-errors-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.binary

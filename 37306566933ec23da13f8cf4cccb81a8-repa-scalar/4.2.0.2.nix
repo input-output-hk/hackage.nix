@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa-scalar = {
+        "repa-scalar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive

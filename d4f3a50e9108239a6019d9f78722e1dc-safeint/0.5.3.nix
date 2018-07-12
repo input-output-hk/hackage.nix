@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        safeint = {
+        "safeint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
           ];
         };
         tests = {
-          TestSafeInt = {
+          "TestSafeInt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

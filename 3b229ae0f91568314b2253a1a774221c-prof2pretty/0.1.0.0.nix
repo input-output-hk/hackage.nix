@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          prof2pretty = {
+          "prof2pretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -30,7 +30,7 @@ let
               hsPkgs.zenc
             ];
           };
-          sccpragmabomb = {
+          "sccpragmabomb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts

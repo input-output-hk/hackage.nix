@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MemoTrie = {
+        "MemoTrie" = {
           depends  = if compiler.isGhc && compiler.version.ge "7.10.0"
             then [
               hsPkgs.base
@@ -35,7 +35,7 @@ let
             ];
         };
         exes = {
-          generic = {
+          "generic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.MemoTrie

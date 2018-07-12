@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-show-instances = {
+        "text-show-instances" = {
           depends  = ((([
             hsPkgs.base-compat-batteries
             hsPkgs.bifunctors
@@ -70,7 +70,7 @@ let
             ]);
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = ((([
               hsPkgs.base-compat-batteries
               hsPkgs.bifunctors

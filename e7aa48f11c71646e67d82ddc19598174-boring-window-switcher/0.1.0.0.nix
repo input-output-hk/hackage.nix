@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        boring-window-switcher = {
+        "boring-window-switcher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.X11
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          boring-window-switcher = {
+          "boring-window-switcher" = {
             depends  = [
               hsPkgs.base
               hsPkgs.boring-window-switcher
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          author-spec = {
+          "author-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.boring-window-switcher

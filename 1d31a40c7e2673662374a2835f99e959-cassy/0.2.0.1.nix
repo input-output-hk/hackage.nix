@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassy = {
+        "cassy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-meta = {
+        "cabal-meta" = {
           depends  = [
             hsPkgs.shelly
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          cabal-meta = {
+          "cabal-meta" = {
             depends  = [
               hsPkgs.shelly
               hsPkgs.text
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.shelly
               hsPkgs.hspec

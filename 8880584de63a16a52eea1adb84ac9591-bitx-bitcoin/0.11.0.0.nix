@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitx-bitcoin = {
+        "bitx-bitcoin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bitx-bitcoin
@@ -55,13 +55,13 @@ let
               hsPkgs.safe
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.microlens

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptohash = {
+        "cryptohash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          Bench = {
+          "Bench" = {
             depends  = pkgs.lib.optionals _flags.benchmark [
               hsPkgs.base
               hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          test-kat = {
+          "test-kat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

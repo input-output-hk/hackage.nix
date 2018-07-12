@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smartcheck = {
+        "smartcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          sc-regression = {
+          "sc-regression" = {
             depends  = [
               hsPkgs.base
               hsPkgs.smartcheck

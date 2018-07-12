@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HSGEP = {
+        "HSGEP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,13 +31,13 @@ let
           ];
         };
         exes = {
-          HSGEP_Regression = {
+          "HSGEP_Regression" = {
             depends  = [
               hsPkgs.network
               hsPkgs.csv
             ];
           };
-          HSGEP_CADensity = {};
+          "HSGEP_CADensity" = {};
         };
       };
     }

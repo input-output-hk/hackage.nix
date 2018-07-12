@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fast-nats = {
+        "fast-nats" = {
           depends  = [ hsPkgs.base ];
         };
       };

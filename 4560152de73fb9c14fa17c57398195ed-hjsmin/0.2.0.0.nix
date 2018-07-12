@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hjsmin = {
+        "hjsmin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          hjsmin = {
+          "hjsmin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

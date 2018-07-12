@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        brick-skylighting = {
+        "brick-skylighting" = {
           depends  = [
             hsPkgs.base
             hsPkgs.brick
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          brick-skylighting-demo = {
+          "brick-skylighting-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick

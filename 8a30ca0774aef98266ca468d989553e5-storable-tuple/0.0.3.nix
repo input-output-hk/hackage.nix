@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        storable-tuple = {
+        "storable-tuple" = {
           depends  = [
             hsPkgs.storable-record
             hsPkgs.utility-ht

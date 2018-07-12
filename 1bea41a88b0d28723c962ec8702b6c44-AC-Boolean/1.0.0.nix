@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AC-Boolean = {
+        "AC-Boolean" = {
           depends  = [ hsPkgs.base ];
         };
       };

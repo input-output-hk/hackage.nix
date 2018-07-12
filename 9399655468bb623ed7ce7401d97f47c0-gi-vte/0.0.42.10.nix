@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gi-vte = {
+        "gi-vte" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

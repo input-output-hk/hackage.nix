@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashflare = {
+        "hashflare" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Data-Rope = {
+        "Data-Rope" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

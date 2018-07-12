@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        unpacked-maybe = {
+        "unpacked-maybe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
           ];
         };
         tests = {
-          unpacked-maybe-test = {
+          "unpacked-maybe-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unpacked-maybe

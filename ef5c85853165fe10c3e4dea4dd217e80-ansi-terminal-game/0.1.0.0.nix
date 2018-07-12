@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ansi-terminal-game = {
+        "ansi-terminal-game" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          alone-in-a-room = {
+          "alone-in-a-room" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.ansi-terminal-game
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

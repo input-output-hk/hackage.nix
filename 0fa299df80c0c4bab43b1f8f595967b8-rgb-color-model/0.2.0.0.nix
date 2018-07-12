@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rgb-color-model = {
+        "rgb-color-model" = {
           depends  = [ hsPkgs.base ];
         };
       };

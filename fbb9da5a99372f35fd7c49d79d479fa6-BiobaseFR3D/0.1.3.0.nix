@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseFR3D = {
+        "BiobaseFR3D" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

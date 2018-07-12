@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tiger = {
+          "tiger" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

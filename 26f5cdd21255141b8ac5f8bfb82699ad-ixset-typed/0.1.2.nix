@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ixset-typed = {
+        "ixset-typed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb

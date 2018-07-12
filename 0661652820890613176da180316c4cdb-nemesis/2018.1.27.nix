@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nemesis = {
+        "nemesis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Glob

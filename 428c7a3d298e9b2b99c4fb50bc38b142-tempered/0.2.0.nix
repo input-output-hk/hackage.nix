@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tempered = {
+        "tempered" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          tempered = {
+          "tempered" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          tempered-test = {
+          "tempered-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tempered

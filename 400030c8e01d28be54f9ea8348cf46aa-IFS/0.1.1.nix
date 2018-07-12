@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        IFS = {
+        "IFS" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base
@@ -33,6 +33,6 @@ let
             ]
             else [ hsPkgs.base ];
         };
-        exes = { IFS = {}; };
+        exes = { "IFS" = {}; };
       };
     }

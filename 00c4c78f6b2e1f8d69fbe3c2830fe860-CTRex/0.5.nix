@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CTRex = {
+        "CTRex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers

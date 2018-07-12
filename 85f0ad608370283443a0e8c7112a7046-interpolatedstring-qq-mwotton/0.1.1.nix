@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        interpolatedstring-qq-mwotton = {
+        "interpolatedstring-qq-mwotton" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

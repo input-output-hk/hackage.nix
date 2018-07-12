@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbus-th = {
+        "dbus-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

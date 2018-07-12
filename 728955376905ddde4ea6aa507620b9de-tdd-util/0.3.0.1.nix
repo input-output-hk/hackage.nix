@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tdd-util = {
+        "tdd-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -42,7 +42,7 @@ let
           ] ++ [ hsPkgs.QuickCheck ];
         };
         tests = {
-          tdd-util-tests = {
+          "tdd-util-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tao-example = {
+        "tao-example" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tao

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        file-embed = {
+        "file-embed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.file-embed

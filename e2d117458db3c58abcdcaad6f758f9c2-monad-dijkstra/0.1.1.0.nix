@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-dijkstra = {
+        "monad-dijkstra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-monad-dijkstra = {
+          "test-monad-dijkstra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -38,7 +38,7 @@ let
               hsPkgs.monad-dijkstra
             ];
           };
-          style-monad-dijkstra = {
+          "style-monad-dijkstra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-execution = {
+        "distributed-process-execution" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          ExchangeTests = {
+          "ExchangeTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -80,7 +80,7 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          MailboxTests = {
+          "MailboxTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

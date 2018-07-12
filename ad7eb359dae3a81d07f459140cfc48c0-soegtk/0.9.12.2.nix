@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        soegtk = {
+        "soegtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gtk

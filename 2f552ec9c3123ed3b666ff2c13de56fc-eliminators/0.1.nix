@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        eliminators = {
+        "eliminators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.singletons
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eliminators

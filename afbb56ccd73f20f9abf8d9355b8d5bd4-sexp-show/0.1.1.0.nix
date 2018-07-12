@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sexp-show = {
+          "sexp-show" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty-show

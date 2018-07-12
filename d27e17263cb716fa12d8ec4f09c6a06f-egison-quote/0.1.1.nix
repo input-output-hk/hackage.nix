@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        egison-quote = {
+        "egison-quote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

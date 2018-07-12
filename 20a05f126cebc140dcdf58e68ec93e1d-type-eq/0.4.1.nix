@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-eq = {
+        "type-eq" = {
           depends  = [ hsPkgs.base ];
           build-tools = [
             hsPkgs.buildPackages.cpphs

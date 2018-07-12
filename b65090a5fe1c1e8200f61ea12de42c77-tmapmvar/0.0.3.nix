@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tmapmvar = {
+        "tmapmvar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tmapmvar-test = {
+          "tmapmvar-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tmapmvar

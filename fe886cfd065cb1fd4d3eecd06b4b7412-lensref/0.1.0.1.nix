@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lensref = {
+        "lensref" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

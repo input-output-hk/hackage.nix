@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uri-encode = {
+        "uri-encode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          uri-encode = {
+          "uri-encode" = {
             depends  = pkgs.lib.optionals _flags.tools [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          uri-decode = {
+          "uri-decode" = {
             depends  = pkgs.lib.optionals _flags.tools [
               hsPkgs.base
               hsPkgs.bytestring

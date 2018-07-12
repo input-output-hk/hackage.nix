@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stackage = {
+        "stackage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stackage-cli

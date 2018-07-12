@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        runtime-arbitrary = {
+        "runtime-arbitrary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

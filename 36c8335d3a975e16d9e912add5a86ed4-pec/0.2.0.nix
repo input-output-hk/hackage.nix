@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pec = {
+        "pec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          pecgen = {
+          "pecgen" = {
             depends  = [
               hsPkgs.pec
               hsPkgs.base
@@ -56,7 +56,7 @@ let
               hsPkgs.shake
             ];
           };
-          pec = {
+          "pec" = {
             depends  = [
               hsPkgs.pec
               hsPkgs.base
@@ -75,7 +75,7 @@ let
               hsPkgs.shake
             ];
           };
-          pecgencnt = {
+          "pecgencnt" = {
             depends  = [
               hsPkgs.pec
               hsPkgs.base

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer-alsa = {
+        "synthesizer-alsa" = {
           depends  = [
             hsPkgs.synthesizer
             hsPkgs.sox
@@ -42,6 +42,8 @@ let
             ]
             else [ hsPkgs.base ]);
         };
-        exes = { realtimesynth = {}; };
+        exes = {
+          "realtimesynth" = {};
+        };
       };
     }

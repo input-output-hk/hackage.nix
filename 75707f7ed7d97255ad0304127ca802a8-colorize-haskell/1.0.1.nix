@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        colorize-haskell = {
+        "colorize-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-lexer
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hscolor = {
+          "hscolor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-lexer

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          harmtrace = {
+          "harmtrace" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

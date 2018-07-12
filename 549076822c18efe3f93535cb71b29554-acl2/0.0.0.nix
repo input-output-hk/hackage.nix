@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acl2 = {
+        "acl2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

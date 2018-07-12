@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-memcached = {
+        "apiary-memcached" = {
           depends  = [
             hsPkgs.base
             hsPkgs.apiary

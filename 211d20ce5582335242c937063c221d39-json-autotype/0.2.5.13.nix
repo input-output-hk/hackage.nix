@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-autotype = {
+        "json-autotype" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GenericPretty
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          json-autotype = {
+          "json-autotype" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GenericPretty
@@ -64,7 +64,7 @@ let
               hsPkgs.vector
             ];
           };
-          json-autotype-random-test = {
+          "json-autotype-random-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GenericPretty
@@ -87,7 +87,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          json-autotype-qc-test = {
+          "json-autotype-qc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GenericPretty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dns = {
+        "dns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

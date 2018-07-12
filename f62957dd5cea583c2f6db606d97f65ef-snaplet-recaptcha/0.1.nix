@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-recaptcha = {
+        "snaplet-recaptcha" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-lens
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          recaptcha-test = {
+          "recaptcha-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-lens

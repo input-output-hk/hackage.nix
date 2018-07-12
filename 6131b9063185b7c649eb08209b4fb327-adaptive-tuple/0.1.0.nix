@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        adaptive-tuple = {
+        "adaptive-tuple" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.type-level

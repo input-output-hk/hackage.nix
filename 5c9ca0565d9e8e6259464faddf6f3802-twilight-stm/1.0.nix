@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twilight-stm = {
+        "twilight-stm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

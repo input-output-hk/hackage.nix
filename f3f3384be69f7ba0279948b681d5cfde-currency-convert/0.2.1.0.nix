@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        currency-convert = {
+        "currency-convert" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

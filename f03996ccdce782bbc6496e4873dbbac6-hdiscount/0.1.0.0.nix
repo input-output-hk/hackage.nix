@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdiscount = {
+        "hdiscount" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

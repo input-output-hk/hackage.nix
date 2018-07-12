@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          coin = {
+          "coin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.glib

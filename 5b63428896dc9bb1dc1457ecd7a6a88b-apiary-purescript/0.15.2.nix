@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-purescript = {
+        "apiary-purescript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

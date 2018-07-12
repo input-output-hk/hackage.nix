@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LDAP = {
+        "LDAP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           libs = [ pkgs.ldap ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [ hsPkgs.base ];
             libs = [ pkgs.ldap ];
           };

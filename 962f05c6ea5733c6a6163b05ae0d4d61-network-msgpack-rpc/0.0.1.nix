@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-msgpack-rpc = {
+        "network-msgpack-rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

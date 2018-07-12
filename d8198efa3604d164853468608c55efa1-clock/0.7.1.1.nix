@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clock = {
+        "clock" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.6") [
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

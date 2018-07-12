@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        playlists = {
+        "playlists" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          playlist = {
+          "playlist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

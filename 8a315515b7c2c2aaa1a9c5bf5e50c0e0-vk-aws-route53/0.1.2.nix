@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vk-aws-route53 = {
+        "vk-aws-route53" = {
           depends  = [
             hsPkgs.aws
             hsPkgs.base

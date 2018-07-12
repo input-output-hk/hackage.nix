@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mattermost-api-qc = {
+        "mattermost-api-qc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

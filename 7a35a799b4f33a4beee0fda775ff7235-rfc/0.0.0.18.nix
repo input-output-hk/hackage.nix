@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rfc = {
+        "rfc" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.base

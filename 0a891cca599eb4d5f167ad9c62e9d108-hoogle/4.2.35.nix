@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoogle = {
+        "hoogle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -50,7 +50,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          hoogle = {
+          "hoogle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -89,7 +89,7 @@ let
           };
         };
         tests = {
-          hoogle-test = {
+          "hoogle-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

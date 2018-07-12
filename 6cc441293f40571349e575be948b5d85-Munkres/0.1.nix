@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Munkres = {
+        "Munkres" = {
           depends  = (if _flags.splitbase
             then [
               hsPkgs.base

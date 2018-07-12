@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdl2-mixer = {
+        "sdl2-mixer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          sdl2-mixer-basic = {
+          "sdl2-mixer-basic" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.data-default-class
@@ -49,22 +49,14 @@ let
               hsPkgs.sdl2-mixer
             ];
           };
-          sdl2-mixer-raw = {
+          "sdl2-mixer-raw" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.sdl2
               hsPkgs.sdl2-mixer
             ];
           };
-          sdl2-mixer-jumbled = {
-            depends  = pkgs.lib.optionals _flags.example [
-              hsPkgs.base
-              hsPkgs.data-default-class
-              hsPkgs.sdl2
-              hsPkgs.sdl2-mixer
-            ];
-          };
-          sdl2-mixer-music = {
+          "sdl2-mixer-jumbled" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.data-default-class
@@ -72,7 +64,15 @@ let
               hsPkgs.sdl2-mixer
             ];
           };
-          sdl2-mixer-effect = {
+          "sdl2-mixer-music" = {
+            depends  = pkgs.lib.optionals _flags.example [
+              hsPkgs.base
+              hsPkgs.data-default-class
+              hsPkgs.sdl2
+              hsPkgs.sdl2-mixer
+            ];
+          };
+          "sdl2-mixer-effect" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.data-default-class

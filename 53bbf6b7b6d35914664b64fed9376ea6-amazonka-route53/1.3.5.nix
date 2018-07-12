@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-route53 = {
+        "amazonka-route53" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-route53-test = {
+          "amazonka-route53-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

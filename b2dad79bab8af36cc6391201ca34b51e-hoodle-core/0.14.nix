@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hoodle-core = {
+        "hoodle-core" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty

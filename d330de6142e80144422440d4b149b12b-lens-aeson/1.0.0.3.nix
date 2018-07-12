@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        lens-aeson = {
+        "lens-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.directory

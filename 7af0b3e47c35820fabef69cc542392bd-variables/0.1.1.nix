@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        variables = {
+        "variables" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

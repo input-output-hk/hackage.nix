@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JuicyPixels-repa = {
+        "JuicyPixels-repa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.repa

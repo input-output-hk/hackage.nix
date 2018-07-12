@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-elastic-transcoder = {
+        "aws-elastic-transcoder" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          SubmitETS = {
+          "SubmitETS" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          ets-json = {
+          "ets-json" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck

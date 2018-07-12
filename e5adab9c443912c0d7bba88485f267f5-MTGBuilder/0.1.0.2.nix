@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mtg-builder = {
+          "mtg-builder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DysFRP-Cairo = {
+        "DysFRP-Cairo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo

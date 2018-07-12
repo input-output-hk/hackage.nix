@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsaddle = {
+        "jsaddle" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.base
@@ -49,7 +49,7 @@ let
               ]));
         };
         tests = {
-          test-tool = {
+          "test-tool" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

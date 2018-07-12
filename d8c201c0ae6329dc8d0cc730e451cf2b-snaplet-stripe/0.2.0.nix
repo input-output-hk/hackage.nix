@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-stripe = {
+        "snaplet-stripe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

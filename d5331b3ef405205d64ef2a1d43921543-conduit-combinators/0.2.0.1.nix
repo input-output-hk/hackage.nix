@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-combinators = {
+        "conduit-combinators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chunked-data
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit-combinators
               hsPkgs.base

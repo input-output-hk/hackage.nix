@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bff = {
+        "bff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,14 +38,14 @@ let
           ];
         };
         exes = {
-          bff-shell = {
+          "bff-shell" = {
             depends  = pkgs.lib.optionals _flags.binaries [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.hint
             ];
           };
-          bff-cgi = {
+          "bff-cgi" = {
             depends  = pkgs.lib.optionals _flags.binaries [
               hsPkgs.base
               hsPkgs.directory
@@ -55,11 +55,11 @@ let
               hsPkgs.utf8-string
             ];
           };
-          bff-stats = {
+          "bff-stats" = {
             depends  = pkgs.lib.optional _flags.stats hsPkgs.benchpress;
           };
-          bff-stats-print = {};
-          bff-stats-render = {
+          "bff-stats-print" = {};
+          "bff-stats-render" = {
             depends  = pkgs.lib.optional _flags.render hsPkgs.Chart;
           };
         };

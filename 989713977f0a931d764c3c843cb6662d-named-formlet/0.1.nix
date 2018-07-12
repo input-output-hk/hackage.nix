@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        named-formlet = {
+        "named-formlet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

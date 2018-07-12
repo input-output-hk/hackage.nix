@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-youtube = {
+        "gogol-youtube" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

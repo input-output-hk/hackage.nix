@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ADPfusion = {
+        "ADPfusion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          GAPcriterion = {
+          "GAPcriterion" = {
             depends  = pkgs.lib.optionals _flags.devel [
               hsPkgs.criterion
               hsPkgs.QuickCheck

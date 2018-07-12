@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdr-histogram = {
+        "hdr-histogram" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          hdr-histogram-test = {
+          "hdr-histogram-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hdr-histogram
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          hdr-histogram-bench = {
+          "hdr-histogram-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hdr-histogram

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ls-usb = {
+          "ls-usb" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base

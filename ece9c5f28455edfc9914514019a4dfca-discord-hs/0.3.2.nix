@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        discord-hs = {
+        "discord-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -51,7 +51,7 @@ let
           ];
         };
         exes = {
-          docs = {
+          "docs" = {
             depends  = pkgs.lib.optionals (!_flags.disable-docs) [
               hsPkgs.base
               hsPkgs.hakyll

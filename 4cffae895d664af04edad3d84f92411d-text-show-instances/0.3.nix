@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-show-instances = {
+        "text-show-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -54,7 +54,7 @@ let
             ]);
         };
         tests = {
-          text-show-instances-properties = {
+          "text-show-instances-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

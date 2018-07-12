@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webfinger-client = {
+        "webfinger-client" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

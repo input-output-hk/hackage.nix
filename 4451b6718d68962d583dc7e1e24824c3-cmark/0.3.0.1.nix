@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmark = {
+        "cmark" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         benchmarks = {
-          bench-cmark = {
+          "bench-cmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        partial-handler = {
+        "partial-handler" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        euphoria = {
+        "euphoria" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

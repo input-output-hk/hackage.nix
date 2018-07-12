@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hurriyet = {
+        "hurriyet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hurriyet

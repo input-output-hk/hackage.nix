@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bloomfilter = {
+        "bloomfilter" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

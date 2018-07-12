@@ -23,37 +23,37 @@ let
       };
       components = {
         exes = {
-          cpsa = {
+          "cpsa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ] ++ pkgs.lib.optional _flags.par hsPkgs.parallel;
           };
-          cpsagraph = {
+          "cpsagraph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          cpsashapes = {
+          "cpsashapes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          cpsaannotations = {
+          "cpsaannotations" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          cpsaparameters = {
+          "cpsaparameters" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          cpsapp = {
+          "cpsapp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

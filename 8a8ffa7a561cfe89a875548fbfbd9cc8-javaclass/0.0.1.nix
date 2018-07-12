@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        javaclass = {
+        "javaclass" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        svgcairo = {
+        "svgcairo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

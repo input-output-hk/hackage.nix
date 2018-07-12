@@ -22,15 +22,15 @@ let
         buildType = "Simple";
       };
       components = {
-        network-info = {
+        "network-info" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
           ];
-          libs = pkgs.lib.optional (!system.isLinux && system.isWindows) pkgs.iphlpapi;
+          libs = pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optional system.isWindows pkgs.iphlpapi);
         };
         exes = {
-          test-network-info = {
+          "test-network-info" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.network-info

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-response = {
+        "servant-response" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

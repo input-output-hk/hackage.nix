@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flowdock-rest = {
+        "flowdock-rest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          flowdock-rest-test = {
+          "flowdock-rest-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

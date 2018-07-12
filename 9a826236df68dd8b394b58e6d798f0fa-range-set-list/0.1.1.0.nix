@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        range-set-list = {
+        "range-set-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.semigroups

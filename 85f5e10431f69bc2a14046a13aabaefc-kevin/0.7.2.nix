@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          kevin = {
+          "kevin" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

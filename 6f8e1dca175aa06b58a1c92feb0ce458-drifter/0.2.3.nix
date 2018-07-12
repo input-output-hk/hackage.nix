@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        drifter = {
+        "drifter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fgl
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.drifter

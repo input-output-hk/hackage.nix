@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        setenv = {
+        "setenv" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-pcre = {
+        "regex-pcre" = {
           depends  = if _flags.newbase
             then [
               hsPkgs.base

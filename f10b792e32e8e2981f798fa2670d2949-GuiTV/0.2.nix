@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        GuiTV = {
+        "GuiTV" = {
           depends  = [
             hsPkgs.base
             hsPkgs.DeepArrow

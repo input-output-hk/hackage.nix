@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bibtex = {
+        "bibtex" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.containers
@@ -36,8 +36,8 @@ let
             ]);
         };
         exes = {
-          publication-overview = {};
-          hackage-bibtex = {
+          "publication-overview" = {};
+          "hackage-bibtex" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.old-time
               hsPkgs.Cabal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dom-parser = {
+        "dom-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default

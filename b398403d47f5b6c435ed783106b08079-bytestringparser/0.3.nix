@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bytestringparser = {
+        "bytestringparser" = {
           depends  = (if _flags.split-base
             then [ hsPkgs.base ]
             else [

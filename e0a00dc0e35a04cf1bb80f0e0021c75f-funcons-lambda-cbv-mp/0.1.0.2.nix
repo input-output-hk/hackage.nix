@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lambda-cbv = {
+          "lambda-cbv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gll

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-captcha = {
+        "hs-captcha" = {
           depends  = [
             hsPkgs.gd
             hsPkgs.bytestring

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec = {
+        "attoparsec" = {
           depends  = (if _flags.split-base
             then [ hsPkgs.base ]
             else [

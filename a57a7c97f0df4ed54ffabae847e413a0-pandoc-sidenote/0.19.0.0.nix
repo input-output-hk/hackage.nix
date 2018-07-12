@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pandoc-sidenote = {
+        "pandoc-sidenote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-gen
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          pandoc-sidenote = {
+          "pandoc-sidenote" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-sidenote

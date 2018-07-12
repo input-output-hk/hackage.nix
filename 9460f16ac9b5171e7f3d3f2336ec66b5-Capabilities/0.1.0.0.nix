@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Capabilities = {
+        "Capabilities" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

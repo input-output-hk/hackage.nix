@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Nomyx-Core = {
+        "Nomyx-Core" = {
           depends  = [
             hsPkgs.Nomyx-Language
             hsPkgs.DebugTraceHelpers

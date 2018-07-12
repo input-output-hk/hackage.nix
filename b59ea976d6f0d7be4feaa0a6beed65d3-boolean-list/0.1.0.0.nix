@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        boolean-list = {
+        "boolean-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit

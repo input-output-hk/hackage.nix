@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hps-cairo = {
+        "hps-cairo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          hps-cairo-animation = {
+          "hps-cairo-animation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cairo
@@ -39,7 +39,7 @@ let
               hsPkgs.random
             ];
           };
-          hps-cairo-screen = {
+          "hps-cairo-screen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cairo

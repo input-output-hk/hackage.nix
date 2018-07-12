@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nixfromnpm = {
+        "nixfromnpm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          nixfromnpm = {
+          "nixfromnpm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-prelude
@@ -68,7 +68,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-prelude

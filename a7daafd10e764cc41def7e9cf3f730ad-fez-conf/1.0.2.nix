@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fez-conf = {
+        "fez-conf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaop = {
+        "yaop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

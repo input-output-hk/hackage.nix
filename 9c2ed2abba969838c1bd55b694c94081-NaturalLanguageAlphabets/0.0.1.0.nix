@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NaturalLanguageAlphabets = {
+        "NaturalLanguageAlphabets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -43,7 +43,7 @@ let
           ];
         };
         benchmarks = {
-          BenchmarkNLA = {
+          "BenchmarkNLA" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

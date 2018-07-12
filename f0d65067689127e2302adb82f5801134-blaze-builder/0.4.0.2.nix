@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-builder = {
+        "blaze-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -33,7 +33,7 @@ let
             else [ hsPkgs.bytestring ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pinpon = {
+        "pinpon" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -61,7 +61,7 @@ let
           ];
         };
         exes = {
-          pinpon = {
+          "pinpon" = {
             depends  = pkgs.lib.optionals (!(!_flags.pinpon-executable)) [
               hsPkgs.amazonka
               hsPkgs.amazonka-sns
@@ -80,7 +80,7 @@ let
               hsPkgs.warp
             ];
           };
-          pinpon-gpio = {
+          "pinpon-gpio" = {
             depends  = pkgs.lib.optionals (!(!_flags.pinpon-gpio-executable)) [
               hsPkgs.base
               hsPkgs.bytestring
@@ -103,7 +103,7 @@ let
               hsPkgs.warp
             ];
           };
-          pinpon-ring = {
+          "pinpon-ring" = {
             depends  = pkgs.lib.optionals (!(!_flags.pinpon-ring-executable)) [
               hsPkgs.base
               hsPkgs.bytestring
@@ -125,21 +125,21 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.protolude
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
               hsPkgs.protolude
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

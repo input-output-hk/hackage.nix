@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rclient = {
+        "rclient" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

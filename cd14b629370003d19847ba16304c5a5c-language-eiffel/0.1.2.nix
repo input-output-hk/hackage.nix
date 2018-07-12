@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-eiffel = {
+        "language-eiffel" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

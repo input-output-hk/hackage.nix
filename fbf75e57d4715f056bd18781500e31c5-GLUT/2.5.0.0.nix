@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLUT = {
+        "GLUT" = {
           depends  = [
             hsPkgs.OpenGL
             hsPkgs.OpenGLRaw
@@ -37,7 +37,7 @@ let
           libs = if system.isWindows && _flags.usenativewindowslibraries
             then [ pkgs.glut32 ]
             else pkgs.lib.optional (!system.isOsx) pkgs.glut;
-          frameworks = pkgs.lib.optional (!(system.isWindows && _flags.usenativewindowslibraries) && system.isOsx) pkgs.GLUT;
+          frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (pkgs.lib.optional system.isOsx pkgs.GLUT);
         };
       };
     }

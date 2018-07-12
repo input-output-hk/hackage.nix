@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        comark = {
+        "comark" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          comark-hs = {
+          "comark-hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

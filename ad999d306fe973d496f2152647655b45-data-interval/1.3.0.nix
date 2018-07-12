@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-interval = {
+        "data-interval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          test-interval = {
+          "test-interval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ChasingBottoms

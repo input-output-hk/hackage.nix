@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libmpd = {
+        "libmpd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          specs = {
+          "specs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

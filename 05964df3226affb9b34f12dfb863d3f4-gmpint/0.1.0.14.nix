@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gmpint = {
+        "gmpint" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.gmp ];
         };

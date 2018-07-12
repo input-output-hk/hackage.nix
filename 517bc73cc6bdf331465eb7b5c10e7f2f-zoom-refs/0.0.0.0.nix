@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zoom-refs = {
+        "zoom-refs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

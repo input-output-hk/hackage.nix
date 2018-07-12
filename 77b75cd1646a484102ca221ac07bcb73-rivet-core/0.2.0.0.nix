@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        rivet-core = {
+        "rivet-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         tests = {
-          rivet-core-test = {
+          "rivet-core-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rivet-core

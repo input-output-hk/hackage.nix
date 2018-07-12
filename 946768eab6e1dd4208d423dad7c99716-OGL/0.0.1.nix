@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        OGL = {
+        "OGL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

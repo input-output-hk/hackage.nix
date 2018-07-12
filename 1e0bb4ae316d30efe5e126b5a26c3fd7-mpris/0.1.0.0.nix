@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mpris = {
+        "mpris" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dbus

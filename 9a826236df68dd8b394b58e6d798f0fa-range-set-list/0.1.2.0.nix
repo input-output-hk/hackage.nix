@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        range-set-list = {
+        "range-set-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

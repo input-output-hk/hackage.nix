@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        command-qq = {
+        "command-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -29,13 +29,13 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

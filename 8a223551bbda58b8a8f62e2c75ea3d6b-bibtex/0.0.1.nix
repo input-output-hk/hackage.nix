@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bibtex = {
+        "bibtex" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.utility-ht
@@ -35,7 +35,7 @@ let
             ]);
         };
         exes = {
-          publication-overview = {};
+          "publication-overview" = {};
         };
       };
     }

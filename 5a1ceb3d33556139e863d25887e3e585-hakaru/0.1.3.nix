@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakaru = {
+        "hakaru" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          hakaru-test = {
+          "hakaru-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -73,7 +73,7 @@ let
           };
         };
         benchmarks = {
-          bench-all = {
+          "bench-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

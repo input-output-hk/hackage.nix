@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hebrew-time = {
+        "hebrew-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

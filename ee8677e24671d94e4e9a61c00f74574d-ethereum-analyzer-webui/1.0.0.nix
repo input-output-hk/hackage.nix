@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ethereum-analyzer-webui = {
+        "ethereum-analyzer-webui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -65,7 +65,7 @@ let
           ];
         };
         exes = {
-          ethereum-analyzer-webui = {
+          "ethereum-analyzer-webui" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ethereum-analyzer

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitset-word8 = {
+        "bitset-word8" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          bitset-word8-test = {
+          "bitset-word8-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          bitset-word8-bench = {
+          "bitset-word8-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

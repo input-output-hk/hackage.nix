@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal-upload = {
+          "cabal-upload" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

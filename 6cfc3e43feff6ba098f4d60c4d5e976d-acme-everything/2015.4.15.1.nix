@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-everything = {
+        "acme-everything" = {
           depends  = [
             hsPkgs."3d-graphics-examples"
             hsPkgs."3dmodels"

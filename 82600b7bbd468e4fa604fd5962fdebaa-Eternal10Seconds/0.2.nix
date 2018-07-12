@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Eternal10Seconds = {
+          "Eternal10Seconds" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

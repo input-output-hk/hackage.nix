@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chatty-text = {
+        "chatty-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chatty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fix-symbols-gitit = {
+        "fix-symbols-gitit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gitit

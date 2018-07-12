@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskus-utils = {
+        "haskus-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskus-utils

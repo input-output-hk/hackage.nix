@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digestive-bootstrap = {
+        "digestive-bootstrap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.digestive-functors

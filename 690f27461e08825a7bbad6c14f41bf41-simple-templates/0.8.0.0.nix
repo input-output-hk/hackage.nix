@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-templates = {
+        "simple-templates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test-simple-templates = {
+          "test-simple-templates" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

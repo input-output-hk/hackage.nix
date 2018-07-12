@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smtlib2 = {
+        "smtlib2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints

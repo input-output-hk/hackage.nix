@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          heyefi = {
+          "heyefi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm

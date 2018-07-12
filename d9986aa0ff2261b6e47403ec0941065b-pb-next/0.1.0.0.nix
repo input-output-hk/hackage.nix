@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pb-next = {
+        "pb-next" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          pbhelp = {
+          "pbhelp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pb-next
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          pb-next-test = {
+          "pb-next-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pb-next

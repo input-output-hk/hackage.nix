@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-parsers = {
+        "binary-parsers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -58,7 +58,7 @@ let
           };
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

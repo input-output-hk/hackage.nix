@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rascal = {
+          "rascal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curl-aeson
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curl-aeson

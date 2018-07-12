@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-eliasfano = {
+        "hw-eliasfano" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hw-bits
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          hw-eliasfano-test = {
+          "hw-eliasfano-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

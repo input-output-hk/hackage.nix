@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        push-notify-apn = {
+        "push-notify-apn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          sendapn = {
+          "sendapn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.push-notify-apn
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          apn-test = {
+          "apn-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.push-notify-apn

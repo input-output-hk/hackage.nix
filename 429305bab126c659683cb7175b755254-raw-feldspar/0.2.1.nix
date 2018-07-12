@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        raw-feldspar = {
+        "raw-feldspar" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          NumSimpl = {
+          "NumSimpl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -48,14 +48,14 @@ let
               hsPkgs.tasty-th
             ];
           };
-          Compilation = {
+          "Compilation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.raw-feldspar
             ];
           };
-          Semantics = {
+          "Semantics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -65,7 +65,7 @@ let
               hsPkgs.tasty-th
             ];
           };
-          Examples = {
+          "Examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

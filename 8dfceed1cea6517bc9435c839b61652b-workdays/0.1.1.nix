@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        workdays = {
+        "workdays" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          specs = {
+          "specs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.workdays
@@ -36,7 +36,7 @@ let
               hsPkgs.hspec
             ];
           };
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

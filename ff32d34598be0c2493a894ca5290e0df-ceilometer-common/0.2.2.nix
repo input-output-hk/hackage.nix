@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ceilometer-common = {
+        "ceilometer-common" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bimap
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

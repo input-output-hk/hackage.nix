@@ -22,9 +22,9 @@ let
         buildType = "Simple";
       };
       components = {
-        haddock-leksah = {};
+        "haddock-leksah" = {};
         exes = {
-          haddock = {
+          "haddock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

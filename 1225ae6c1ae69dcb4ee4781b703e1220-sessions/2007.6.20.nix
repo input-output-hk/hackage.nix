@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        sessions = {
+        "sessions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eve = {
+        "eve" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          eve-test = {
+          "eve-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eve

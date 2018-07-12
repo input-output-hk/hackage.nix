@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaTeX = {
+        "HaTeX" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          hatex-test = {
+          "hatex-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaTeX
@@ -43,7 +43,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          parser-tests = {
+          "parser-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaTeX

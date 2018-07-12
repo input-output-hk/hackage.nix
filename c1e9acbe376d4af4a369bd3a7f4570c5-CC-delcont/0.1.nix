@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        CC-delcont = {
+        "CC-delcont" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-csv = {
+        "hmatrix-csv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cassava

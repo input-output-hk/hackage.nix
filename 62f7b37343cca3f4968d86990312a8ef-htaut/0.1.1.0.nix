@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        htaut = {
+        "htaut" = {
           depends  = [ hsPkgs.base ];
         };
       };

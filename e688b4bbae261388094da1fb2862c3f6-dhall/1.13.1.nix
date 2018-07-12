@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dhall = {
+        "dhall" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -50,7 +50,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         exes = {
-          dhall = {
+          "dhall" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base
@@ -62,7 +62,7 @@ let
               hsPkgs.text
             ];
           };
-          dhall-repl = {
+          "dhall-repl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -75,7 +75,7 @@ let
               hsPkgs.text
             ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.transformers;
           };
-          dhall-format = {
+          "dhall-format" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -87,7 +87,7 @@ let
               hsPkgs.text
             ];
           };
-          dhall-hash = {
+          "dhall-hash" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dhall
@@ -98,7 +98,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

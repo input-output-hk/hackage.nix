@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        selfrestart = {
+        "selfrestart" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

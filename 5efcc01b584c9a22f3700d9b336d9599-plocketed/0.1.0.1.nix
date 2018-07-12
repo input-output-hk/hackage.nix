@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          plocketed = {
+          "plocketed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.socketed

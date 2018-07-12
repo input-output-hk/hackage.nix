@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hist-pl-fusion = {
+        "hist-pl-fusion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

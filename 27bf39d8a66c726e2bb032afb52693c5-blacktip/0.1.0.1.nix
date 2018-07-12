@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blacktip = {
+        "blacktip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bitwise
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blacktip
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          benches = {
+          "benches" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blacktip

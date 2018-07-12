@@ -29,9 +29,9 @@ let
         buildType = "Simple";
       };
       components = {
-        yi = {};
+        "yi" = {};
         exes = {
-          yi = {
+          "yi" = {
             depends  = (((((((([
               hsPkgs.Cabal
               hsPkgs.Diff

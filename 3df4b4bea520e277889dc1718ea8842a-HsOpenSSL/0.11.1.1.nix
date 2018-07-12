@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        HsOpenSSL = {
+        "HsOpenSSL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.network
             hsPkgs.old-locale
             hsPkgs.time
-          ] ++ (if _flags.fast-bignum && (compiler.isGhc && compiler.version.ge "6.11")
+          ] ++ pkgs.lib.optionals _flags.fast-bignum (if compiler.isGhc && compiler.version.ge "6.11"
             then [ hsPkgs.integer-gmp ]
             else [
               hsPkgs.ghc-prim
@@ -40,7 +40,7 @@ let
             else [ pkgs.crypto pkgs.ssl ];
         };
         tests = {
-          test-cipher = {
+          "test-cipher" = {
             depends  = [
               hsPkgs.HsOpenSSL
               hsPkgs.HUnit
@@ -50,7 +50,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          test-dsa = {
+          "test-dsa" = {
             depends  = [
               hsPkgs.HsOpenSSL
               hsPkgs.HUnit
@@ -60,7 +60,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          test-evp-base64 = {
+          "test-evp-base64" = {
             depends  = [
               hsPkgs.HsOpenSSL
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vivid-osc = {
+        "vivid-osc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          vivid-osc-tests = {
+          "vivid-osc-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vivid-osc

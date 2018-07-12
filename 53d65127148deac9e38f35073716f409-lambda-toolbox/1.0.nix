@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          simplex = {
+          "simplex" = {
             depends  = [ hsPkgs.base ];
           };
         };

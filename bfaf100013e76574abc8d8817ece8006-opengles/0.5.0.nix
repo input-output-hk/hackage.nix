@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opengles = {
+        "opengles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

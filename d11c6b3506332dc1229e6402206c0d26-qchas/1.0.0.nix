@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        qchas = {
+        "qchas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
           ];
         };
         tests = {
-          qchas-test = {
+          "qchas-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

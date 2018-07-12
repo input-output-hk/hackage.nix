@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        row-types = {
+        "row-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         benchmarks = {
-          perf = {
+          "perf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.row-types

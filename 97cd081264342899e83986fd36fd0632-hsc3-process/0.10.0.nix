@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsc3-process = {
+        "hsc3-process" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          hsc3-sine = {
+          "hsc3-sine" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default
@@ -48,7 +48,7 @@ let
               hsPkgs.hsc3-process
             ];
           };
-          hsc3-nrt = {
+          "hsc3-nrt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default

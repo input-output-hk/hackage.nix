@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        swish = {
+        "swish" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -43,52 +43,52 @@ let
           ];
         };
         exes = {
-          BuiltInMapTest = {
+          "BuiltInMapTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          GraphPartitionTest = {
+          "GraphPartitionTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          GraphTest = {
+          "GraphTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          NTTest = {
+          "NTTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          N3ParserTest = {
+          "N3ParserTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          N3FormatterTest = {
+          "N3FormatterTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          RDFDatatypeXsdIntegerTest = {
+          "RDFDatatypeXsdIntegerTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          RDFGraphTest = {
+          "RDFGraphTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          RDFProofContextTest = {
+          "RDFProofContextTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          RDFProofTest = {
+          "RDFProofTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          RDFQueryTest = {
+          "RDFQueryTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          RDFRulesetTest = {
+          "RDFRulesetTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          VarBindingTest = {
+          "VarBindingTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          LookupMapTest = {
+          "LookupMapTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          QNameTest = {
+          "QNameTest" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
-          Swish = {};
+          "Swish" = {};
         };
       };
     }

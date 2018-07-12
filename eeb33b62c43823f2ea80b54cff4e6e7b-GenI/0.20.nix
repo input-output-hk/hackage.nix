@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        GenI = {
+        "GenI" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.base
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          geni = {
+          "geni" = {
             depends  = [
               hsPkgs.directory
               hsPkgs.filepath

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xosd = {
+        "xosd" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.xosd ];
         };

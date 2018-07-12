@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        moan = {
+        "moan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zlib

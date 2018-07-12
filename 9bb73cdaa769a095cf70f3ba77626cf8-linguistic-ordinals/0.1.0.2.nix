@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linguistic-ordinals = {
+        "linguistic-ordinals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

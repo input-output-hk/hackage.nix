@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        xsd = {
+        "xsd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

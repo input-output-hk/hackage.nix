@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        open-symbology = {
+        "open-symbology" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

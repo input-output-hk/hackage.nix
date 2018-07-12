@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa-stream = {
+        "repa-stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

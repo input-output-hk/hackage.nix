@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger-lib = {
+        "hledger-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.hledger-lib
               hsPkgs.base

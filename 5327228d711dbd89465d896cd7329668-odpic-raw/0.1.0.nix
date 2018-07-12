@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        odpic-raw = {
+        "odpic-raw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

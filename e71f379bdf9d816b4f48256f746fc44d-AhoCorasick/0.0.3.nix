@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AhoCorasick = {
+        "AhoCorasick" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers

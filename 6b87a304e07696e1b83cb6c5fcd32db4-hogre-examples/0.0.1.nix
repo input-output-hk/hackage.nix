@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          example_01 = {
+          "example_01" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -33,7 +33,7 @@ let
               pkgs.CEGUIBase
             ];
           };
-          example_02 = {
+          "example_02" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -46,7 +46,7 @@ let
               pkgs.CEGUIBase
             ];
           };
-          example_03 = {
+          "example_03" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        console-prompt = {
+        "console-prompt" = {
           depends  = [ hsPkgs.base ];
         };
       };

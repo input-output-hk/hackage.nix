@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hackage-whatsnew = {
+          "hackage-whatsnew" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

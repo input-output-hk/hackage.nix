@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crdt = {
+        "crdt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

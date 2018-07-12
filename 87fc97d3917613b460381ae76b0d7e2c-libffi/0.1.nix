@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libffi = {
+        "libffi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

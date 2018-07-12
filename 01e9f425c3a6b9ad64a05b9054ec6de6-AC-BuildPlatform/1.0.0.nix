@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        AC-BuildPlatform = {
+        "AC-BuildPlatform" = {
           depends  = [ hsPkgs.base ];
         };
       };

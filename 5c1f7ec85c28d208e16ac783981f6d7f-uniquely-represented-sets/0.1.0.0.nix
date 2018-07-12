@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uniquely-represented-sets = {
+        "uniquely-represented-sets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          uniquely-represented-sets-test = {
+          "uniquely-represented-sets-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

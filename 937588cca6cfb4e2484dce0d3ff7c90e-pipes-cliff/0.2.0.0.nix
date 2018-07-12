@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-cliff = {
+        "pipes-cliff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          numsToLess = {
+          "numsToLess" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes
@@ -45,7 +45,7 @@ let
               hsPkgs.pipes-concurrency
             ];
           };
-          alphaNumbers = {
+          "alphaNumbers" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes
@@ -56,7 +56,7 @@ let
               hsPkgs.pipes-concurrency
             ];
           };
-          limitedAlphaNumbers = {
+          "limitedAlphaNumbers" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes
@@ -67,7 +67,7 @@ let
               hsPkgs.pipes-concurrency
             ];
           };
-          alphaNumbersByteString = {
+          "alphaNumbersByteString" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes

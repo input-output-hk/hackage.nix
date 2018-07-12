@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cl3-linear-interface = {
+        "cl3-linear-interface" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cl3

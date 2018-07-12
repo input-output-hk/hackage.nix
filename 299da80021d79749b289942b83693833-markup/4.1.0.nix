@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        markup = {
+        "markup" = {
           depends  = [
             hsPkgs.attoparsec-uri
             hsPkgs.base

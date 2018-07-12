@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bounded-tchan = {
+        "bounded-tchan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

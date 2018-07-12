@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haskellscript = {
+          "haskellscript" = {
             depends  = [
               hsPkgs.base
               hsPkgs.either

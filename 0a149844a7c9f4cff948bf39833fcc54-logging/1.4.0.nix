@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logging = {
+        "logging" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging

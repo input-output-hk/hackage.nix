@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        QuickCheck = {
+        "QuickCheck" = {
           depends  = (((((((([
             hsPkgs.containers
           ] ++ [
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-quickcheck = {
+          "test-quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

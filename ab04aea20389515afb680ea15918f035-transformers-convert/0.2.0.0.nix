@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transformers-convert = {
+        "transformers-convert" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

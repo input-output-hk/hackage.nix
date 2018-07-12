@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-expected-failure = {
+        "tasty-expected-failure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagged

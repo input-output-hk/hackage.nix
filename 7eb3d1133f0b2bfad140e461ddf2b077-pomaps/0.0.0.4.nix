@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pomaps = {
+        "pomaps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (!_flags.no-lattices) hsPkgs.lattices;
         };
         tests = {
-          unittests = {
+          "unittests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -42,7 +42,7 @@ let
               hsPkgs.ChasingBottoms
             ] ++ pkgs.lib.optional (!_flags.no-lattices) hsPkgs.lattices;
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          pomaps-benchmarks = {
+          "pomaps-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pomaps

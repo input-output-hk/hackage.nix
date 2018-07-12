@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          typalyze = {
+          "typalyze" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

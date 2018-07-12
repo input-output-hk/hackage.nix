@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-tableview = {
+        "yesod-tableview" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hamlet

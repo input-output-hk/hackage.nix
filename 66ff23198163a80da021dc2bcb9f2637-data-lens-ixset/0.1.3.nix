@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-lens-ixset = {
+        "data-lens-ixset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-lens
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-data-lens-ixset = {
+          "test-data-lens-ixset" = {
             depends  = [
               hsPkgs.QuickCheck
             ];

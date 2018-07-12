@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-banana-sdl2 = {
+        "reactive-banana-sdl2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.reactive-banana
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          reactive-banana-sdl2-test = {
+          "reactive-banana-sdl2-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reactive-banana-sdl2

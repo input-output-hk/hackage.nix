@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-gstpbutils = {
+        "gi-gstpbutils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

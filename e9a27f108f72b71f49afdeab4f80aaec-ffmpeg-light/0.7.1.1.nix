@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ffmpeg-light = {
+        "ffmpeg-light" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -51,7 +51,7 @@ let
               hsPkgs.JuicyPixels
             ] ++ pkgs.lib.optional _flags.builddemo hsPkgs.ffmpeg-light;
           };
-          raster = {
+          "raster" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

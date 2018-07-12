@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        friendly-time = {
+        "friendly-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.test-framework

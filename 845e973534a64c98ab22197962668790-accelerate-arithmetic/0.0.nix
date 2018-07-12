@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-arithmetic = {
+        "accelerate-arithmetic" = {
           depends  = [
             hsPkgs.accelerate-utility
             hsPkgs.accelerate
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.accelerate-arithmetic
               hsPkgs.accelerate
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          newton-inverse = {
+          "newton-inverse" = {
             depends  = [
               hsPkgs.accelerate-arithmetic
               hsPkgs.accelerate-utility

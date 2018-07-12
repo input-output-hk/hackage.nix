@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-http = {
+        "time-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

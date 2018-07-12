@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        fee-estimate = {
+        "fee-estimate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
           ];
         };
         exes = {
-          fee-estimate-exe = {
+          "fee-estimate-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          fee-estimate-test = {
+          "fee-estimate-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

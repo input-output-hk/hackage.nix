@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        log = {
+        "log" = {
           depends  = [
             hsPkgs.base
             hsPkgs.log-base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          log-test = {
+          "log-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -45,7 +45,7 @@ let
               hsPkgs.text
             ];
           };
-          log-test-integration = {
+          "log-test-integration" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -66,7 +66,7 @@ let
           };
         };
         benchmarks = {
-          log-bench = {
+          "log-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ekg

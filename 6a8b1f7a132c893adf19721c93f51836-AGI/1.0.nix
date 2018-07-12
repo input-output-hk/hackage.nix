@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        AGI = {
+        "AGI" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

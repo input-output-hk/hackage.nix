@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hOpenPGP = {
+        "hOpenPGP" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.ansi-wl-pprint
@@ -60,7 +60,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.hOpenPGP
               hsPkgs.ansi-wl-pprint

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warp = {
+        "warp" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -49,7 +49,7 @@ let
             ])) ++ pkgs.lib.optional (system.isLinux || system.isFreebsd || system.isOsx) hsPkgs.hashable) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

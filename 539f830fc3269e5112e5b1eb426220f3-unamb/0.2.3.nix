@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        unamb = {
+        "unamb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tag-bits
           ];
         };
         exes = {
-          test-unamb = {
+          "test-unamb" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.checkers

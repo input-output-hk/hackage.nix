@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        terrahs = {
+        "terrahs" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.terrahsc ];
         };

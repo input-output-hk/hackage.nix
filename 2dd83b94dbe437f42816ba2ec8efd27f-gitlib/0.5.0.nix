@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gitlib = {
+        "gitlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hlibgit2
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          smoke = {
+          "smoke" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gitlib
@@ -53,7 +53,7 @@ let
               hsPkgs.time
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -61,7 +61,7 @@ let
               hsPkgs.filepath
             ];
           };
-          unittests = {
+          "unittests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF

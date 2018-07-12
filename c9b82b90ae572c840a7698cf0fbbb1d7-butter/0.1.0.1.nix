@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        butter = {
+        "butter" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          Lang-test = {
+          "Lang-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.aeson
@@ -54,7 +54,7 @@ let
               hsPkgs.transformers
             ];
           };
-          Protocol-test = {
+          "Protocol-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.aeson

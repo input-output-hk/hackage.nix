@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        broker-haskell = {
+        "broker-haskell" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.broker ];
           build-tools = [
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.broker-haskell

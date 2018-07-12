@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Cabal = {
+        "Cabal" = {
           depends  = ((([
             hsPkgs.array
             hsPkgs.base
@@ -54,7 +54,7 @@ let
             else [ hsPkgs.unix ]);
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -73,7 +73,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          parser-tests = {
+          "parser-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -87,7 +87,7 @@ let
               hsPkgs.Cabal
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") hsPkgs.tree-diff;
           };
-          check-tests = {
+          "check-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -98,7 +98,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          custom-setup-tests = {
+          "custom-setup-tests" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base
@@ -107,7 +107,7 @@ let
               hsPkgs.process
             ];
           };
-          hackage-tests = {
+          "hackage-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

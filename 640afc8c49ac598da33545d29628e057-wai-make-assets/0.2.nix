@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-make-assets = {
+        "wai-make-assets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai-app-static
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          wai-make-assets = {
+          "wai-make-assets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-app-static
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-app-static

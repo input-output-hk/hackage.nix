@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kazura-queue = {
+        "kazura-queue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          kazura-queue-doctest = {
+          "kazura-queue-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.kazura-queue
@@ -38,7 +38,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          kazura-queue-test = {
+          "kazura-queue-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.kazura-queue
@@ -57,7 +57,7 @@ let
           };
         };
         benchmarks = {
-          kazura-queue-bench = {
+          "kazura-queue-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.kazura-queue

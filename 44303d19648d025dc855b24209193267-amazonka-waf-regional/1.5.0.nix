@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-waf-regional = {
+        "amazonka-waf-regional" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-waf-regional-test = {
+          "amazonka-waf-regional-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

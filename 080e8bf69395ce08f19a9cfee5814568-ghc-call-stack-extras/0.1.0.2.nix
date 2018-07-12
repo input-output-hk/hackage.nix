@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-call-stack-extras = {
+        "ghc-call-stack-extras" = {
           depends  = [ hsPkgs.base ];
         };
       };

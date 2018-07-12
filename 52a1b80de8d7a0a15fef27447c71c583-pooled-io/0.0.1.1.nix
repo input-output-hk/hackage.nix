@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pooled-io = {
+        "pooled-io" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.deepseq
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          pooled-io-demo = {
+          "pooled-io-demo" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.pooled-io
               hsPkgs.base

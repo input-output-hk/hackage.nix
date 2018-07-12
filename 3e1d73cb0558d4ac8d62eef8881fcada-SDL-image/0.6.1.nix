@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        SDL-image = {
+        "SDL-image" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SDL

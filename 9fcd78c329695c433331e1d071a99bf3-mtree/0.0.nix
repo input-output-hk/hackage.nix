@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mtree = {
+        "mtree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors

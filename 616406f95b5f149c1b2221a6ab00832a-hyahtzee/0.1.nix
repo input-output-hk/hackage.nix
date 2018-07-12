@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hyahtzee = {
+          "hyahtzee" = {
             depends  = [
               hsPkgs.random
               hsPkgs.base

@@ -19,5 +19,7 @@ let
         description = "None";
         buildType = "Simple";
       };
-      components = { eithers = {}; };
+      components = {
+        "eithers" = {};
+      };
     }

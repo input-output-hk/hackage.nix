@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        antigate = {
+        "antigate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

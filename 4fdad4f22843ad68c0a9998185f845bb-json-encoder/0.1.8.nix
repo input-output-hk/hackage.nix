@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-encoder = {
+        "json-encoder" = {
           depends  = [
             hsPkgs.text
             hsPkgs.bytestring

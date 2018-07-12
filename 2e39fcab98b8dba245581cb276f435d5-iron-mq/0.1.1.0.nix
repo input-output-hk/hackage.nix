@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iron-mq = {
+        "iron-mq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq

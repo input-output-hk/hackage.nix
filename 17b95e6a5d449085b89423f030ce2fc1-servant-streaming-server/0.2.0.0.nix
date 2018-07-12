@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-streaming-server = {
+        "servant-streaming-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alsa-seq = {
+        "alsa-seq" = {
           depends  = [
             hsPkgs.alsa-core
             hsPkgs.array
@@ -32,35 +32,35 @@ let
           libs = [ pkgs.asound ];
         };
         exes = {
-          test1 = {
+          "test1" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.array
               hsPkgs.base
             ];
           };
-          test2 = {
+          "test2" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.array
               hsPkgs.base
             ];
           };
-          test3 = {
+          "test3" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.array
               hsPkgs.base
             ];
           };
-          test4 = {
+          "test4" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.array
               hsPkgs.base
             ];
           };
-          test5 = {
+          "test5" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.array

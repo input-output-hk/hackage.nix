@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mqtt-hs = {
+        "mqtt-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

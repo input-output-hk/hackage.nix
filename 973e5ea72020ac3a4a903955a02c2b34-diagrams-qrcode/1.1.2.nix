@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-qrcode = {
+        "diagrams-qrcode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tls = {
+        "tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -40,13 +40,13 @@ let
           ];
         };
         exes = {
-          stunnel = {
+          "stunnel" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.network
               hsPkgs.haskell98
             ];
           };
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit

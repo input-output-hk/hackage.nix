@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-process = {
+        "streaming-process" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          simple-processes = {
+          "simple-processes" = {
             depends  = [
               hsPkgs.streaming-process
               hsPkgs.base

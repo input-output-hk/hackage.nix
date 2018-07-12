@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glicko = {
+        "glicko" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          glicko-test = {
+          "glicko-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-kafka-avro = {
+        "hw-kafka-avro" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.avro
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          kafka-avro-example = {
+          "kafka-avro-example" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.avro
@@ -71,7 +71,7 @@ let
           };
         };
         tests = {
-          kafka-avro-test = {
+          "kafka-avro-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

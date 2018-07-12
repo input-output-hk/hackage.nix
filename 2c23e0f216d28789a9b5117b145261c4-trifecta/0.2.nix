@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        trifecta = {
+        "trifecta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

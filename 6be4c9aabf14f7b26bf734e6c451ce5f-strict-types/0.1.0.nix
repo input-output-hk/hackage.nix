@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strict-types = {
+        "strict-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.strict-types

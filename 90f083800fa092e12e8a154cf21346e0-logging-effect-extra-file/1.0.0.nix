@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logging-effect-extra-file = {
+        "logging-effect-extra-file" = {
           depends  = [
             hsPkgs.base
             hsPkgs.logging-effect
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          log-file = {
+          "log-file" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-effect
@@ -37,7 +37,7 @@ let
               hsPkgs.logging-effect-extra-file
             ];
           };
-          log-file-and-severity = {
+          "log-file-and-severity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-effect

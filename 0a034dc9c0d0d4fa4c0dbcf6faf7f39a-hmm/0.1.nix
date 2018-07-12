@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmm = {
+        "hmm" = {
           depends  = if _flags.small_base
             then [
               hsPkgs.base

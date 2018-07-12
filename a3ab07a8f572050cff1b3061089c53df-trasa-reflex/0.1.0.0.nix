@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        trasa-reflex = {
+        "trasa-reflex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

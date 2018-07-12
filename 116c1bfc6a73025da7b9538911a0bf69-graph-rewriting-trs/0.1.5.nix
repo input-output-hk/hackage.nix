@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          trs = {
+          "trs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

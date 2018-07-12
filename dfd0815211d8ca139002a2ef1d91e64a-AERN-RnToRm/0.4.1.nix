@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AERN-RnToRm = {
+        "AERN-RnToRm" = {
           depends  = if _flags.containers-in-base
             then [
               hsPkgs.base

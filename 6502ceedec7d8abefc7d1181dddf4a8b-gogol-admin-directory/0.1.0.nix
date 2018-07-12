@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-admin-directory = {
+        "gogol-admin-directory" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mdcat = {
+        "mdcat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pandoc
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          mdcat = {
+          "mdcat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stream = {
+        "stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          stream-test = {
+          "stream-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          stream-bench = {
+          "stream-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

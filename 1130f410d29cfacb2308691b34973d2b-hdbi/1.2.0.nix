@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdbi = {
+        "hdbi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Decimal
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.base;
         };
         tests = {
-          sqlvalues = {
+          "sqlvalues" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Decimal
@@ -62,7 +62,7 @@ let
               hsPkgs.uuid
             ];
           };
-          dummydriver = {
+          "dummydriver" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Decimal

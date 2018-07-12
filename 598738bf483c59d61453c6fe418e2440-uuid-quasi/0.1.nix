@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuid-quasi = {
+        "uuid-quasi" = {
           depends  = [
             hsPkgs.uuid
             hsPkgs.template-haskell

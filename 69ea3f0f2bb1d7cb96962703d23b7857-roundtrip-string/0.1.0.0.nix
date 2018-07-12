@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        roundtrip-string = {
+        "roundtrip-string" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lss = {
+        "lss" = {
           depends  = [
             hsPkgs.base
             hsPkgs.language-css
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test-lss = {
+          "test-lss" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-css

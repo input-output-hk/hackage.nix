@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-dataproc = {
+        "gogol-dataproc" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

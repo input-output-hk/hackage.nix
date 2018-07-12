@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        samtools-enumerator = {
+        "samtools-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

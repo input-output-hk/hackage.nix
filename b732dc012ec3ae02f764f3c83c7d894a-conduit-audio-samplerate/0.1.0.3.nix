@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-audio-samplerate = {
+        "conduit-audio-samplerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit

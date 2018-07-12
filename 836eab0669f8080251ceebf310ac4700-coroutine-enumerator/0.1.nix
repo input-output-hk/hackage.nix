@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        coroutine-enumerator = {
+        "coroutine-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-coroutine

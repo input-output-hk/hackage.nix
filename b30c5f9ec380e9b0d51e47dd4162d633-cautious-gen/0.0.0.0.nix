@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cautious-gen = {
+        "cautious-gen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cautious
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          cautious-test = {
+          "cautious-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

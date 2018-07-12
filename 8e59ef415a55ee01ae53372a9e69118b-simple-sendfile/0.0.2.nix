@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-sendfile = {
+        "simple-sendfile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

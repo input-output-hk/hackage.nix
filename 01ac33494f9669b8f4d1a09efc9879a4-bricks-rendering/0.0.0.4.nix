@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bricks-rendering = {
+        "bricks-rendering" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bricks-internal
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          cases = {
+          "cases" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bricks-internal
@@ -43,7 +43,7 @@ let
               hsPkgs.text
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bricks-internal

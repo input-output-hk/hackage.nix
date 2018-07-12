@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          delay = {
+          "delay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

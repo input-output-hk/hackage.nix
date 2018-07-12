@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          b18n-combined = {
+          "b18n-combined" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -31,7 +31,7 @@ let
               hsPkgs.parsec
             ];
           };
-          b18n-combined-cgi = {
+          "b18n-combined-cgi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-zipper-monad = {
+        "text-zipper-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          text-zipper-monad-test = {
+          "text-zipper-monad-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

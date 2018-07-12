@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-caching = {
+        "wai-middleware-caching" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          wai-middleware-caching-test = {
+          "wai-middleware-caching-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-middleware-caching

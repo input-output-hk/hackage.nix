@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        suffixarray = {
+        "suffixarray" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

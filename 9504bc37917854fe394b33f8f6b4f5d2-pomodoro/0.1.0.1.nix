@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pomodoro = {
+          "pomodoro" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

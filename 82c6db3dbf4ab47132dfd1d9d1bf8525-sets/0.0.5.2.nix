@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sets = {
+        "sets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sets
@@ -57,7 +57,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sets

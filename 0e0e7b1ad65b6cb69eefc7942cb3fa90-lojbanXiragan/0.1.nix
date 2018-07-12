@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        lojbanXiragan = {
+        "lojbanXiragan" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          xiragan = {
+          "xiragan" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lojbanXiragan

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glue-ekg = {
+        "glue-ekg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.glue-common
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          glue-ekg-tests = {
+          "glue-ekg-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.glue-common

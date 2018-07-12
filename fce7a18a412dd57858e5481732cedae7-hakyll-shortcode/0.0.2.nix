@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-shortcode = {
+        "hakyll-shortcode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-posix
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          hakyll-shortcode-test-suite = {
+          "hakyll-shortcode-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

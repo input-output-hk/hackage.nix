@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-disque = {
+        "haskell-disque" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hedis
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          haskell-disque-test = {
+          "haskell-disque-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-disque

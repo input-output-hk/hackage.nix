@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdo = {
+        "hdo" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          docean = {
+          "docean" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hdo

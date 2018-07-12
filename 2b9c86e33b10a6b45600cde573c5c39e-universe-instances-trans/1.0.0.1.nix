@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        universe-instances-trans = {
+        "universe-instances-trans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

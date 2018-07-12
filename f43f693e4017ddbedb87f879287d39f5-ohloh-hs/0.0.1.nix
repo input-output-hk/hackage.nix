@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ohloh-hs = {
+        "ohloh-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-lens
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          cmdoh = {
+          "cmdoh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-lens
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-lens

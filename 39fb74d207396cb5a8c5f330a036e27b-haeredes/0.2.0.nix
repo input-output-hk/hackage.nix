@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haeredes = {
+          "haeredes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -55,7 +55,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

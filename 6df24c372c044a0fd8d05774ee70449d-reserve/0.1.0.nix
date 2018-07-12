@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          reserve = {
+          "reserve" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

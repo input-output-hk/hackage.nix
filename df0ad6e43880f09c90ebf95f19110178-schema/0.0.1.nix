@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        schema = {
+        "schema" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

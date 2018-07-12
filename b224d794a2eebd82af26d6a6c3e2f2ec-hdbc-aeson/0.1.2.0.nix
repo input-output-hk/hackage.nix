@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdbc-aeson = {
+        "hdbc-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC

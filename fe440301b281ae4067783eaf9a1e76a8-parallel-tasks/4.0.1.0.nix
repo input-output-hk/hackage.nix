@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parallel-tasks = {
+        "parallel-tasks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

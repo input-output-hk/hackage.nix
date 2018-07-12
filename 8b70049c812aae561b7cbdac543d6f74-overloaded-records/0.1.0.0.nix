@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        overloaded-records = {
+        "overloaded-records" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class

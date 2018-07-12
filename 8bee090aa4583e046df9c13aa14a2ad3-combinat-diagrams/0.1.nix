@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        combinat-diagrams = {
+        "combinat-diagrams" = {
           depends  = [
             hsPkgs.array
             hsPkgs.containers

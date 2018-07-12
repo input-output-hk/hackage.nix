@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          SpacePrivateers = {
+          "SpacePrivateers" = {
             depends  = [
               hsPkgs.base
               hsPkgs.LambdaHack

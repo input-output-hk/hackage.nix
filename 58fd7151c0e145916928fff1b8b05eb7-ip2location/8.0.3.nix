@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ip2location = {
+        "ip2location" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

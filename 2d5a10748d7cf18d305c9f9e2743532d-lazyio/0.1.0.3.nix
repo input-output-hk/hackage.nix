@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazyio = {
+        "lazyio" = {
           depends  = [
             hsPkgs.unsafe
             hsPkgs.transformers
@@ -34,6 +34,6 @@ let
               hsPkgs.base
             ]);
         };
-        exes = { test = {}; };
+        exes = { "test" = {}; };
       };
     }

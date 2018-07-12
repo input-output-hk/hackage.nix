@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genprog = {
+        "genprog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb

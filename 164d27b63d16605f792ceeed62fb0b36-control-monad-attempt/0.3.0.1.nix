@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        control-monad-attempt = {
+        "control-monad-attempt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attempt

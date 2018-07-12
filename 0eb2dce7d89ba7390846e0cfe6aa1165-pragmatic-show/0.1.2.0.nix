@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        pragmatic-show = {
+        "pragmatic-show" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

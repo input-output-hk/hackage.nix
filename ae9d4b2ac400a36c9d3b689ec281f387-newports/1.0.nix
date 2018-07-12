@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          newports = {
+          "newports" = {
             depends  = [ hsPkgs.base ];
           };
         };

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          idris = {
+          "idris" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

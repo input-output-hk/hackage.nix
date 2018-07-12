@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cqrs-example = {
+          "cqrs-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          cqrs-example-tests = {
+          "cqrs-example-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

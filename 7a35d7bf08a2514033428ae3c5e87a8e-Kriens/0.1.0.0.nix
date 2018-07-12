@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Kriens = {
+        "Kriens" = {
           depends  = [ hsPkgs.base ];
         };
       };

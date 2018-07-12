@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflection-without-remorse = {
+        "reflection-without-remorse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-aligned

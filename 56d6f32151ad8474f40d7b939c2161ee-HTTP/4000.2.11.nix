@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HTTP = {
+        "HTTP" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.network
@@ -42,7 +42,7 @@ let
           ]) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.HTTP
               hsPkgs.HUnit

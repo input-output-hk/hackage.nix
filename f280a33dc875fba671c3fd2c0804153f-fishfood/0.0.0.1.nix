@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          fishfood = {
+          "fishfood" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

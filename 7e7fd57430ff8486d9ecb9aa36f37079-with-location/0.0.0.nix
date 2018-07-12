@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        with-location = {
+        "with-location" = {
           depends  = [ hsPkgs.base ];
         };
       };

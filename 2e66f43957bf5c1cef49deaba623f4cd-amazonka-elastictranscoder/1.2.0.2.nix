@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-elastictranscoder = {
+        "amazonka-elastictranscoder" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-elastictranscoder-test = {
+          "amazonka-elastictranscoder-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

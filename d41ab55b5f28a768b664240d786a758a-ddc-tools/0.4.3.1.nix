@@ -21,13 +21,13 @@ let
       };
       components = {
         exes = {
-          ddc-check = {
+          "ddc-check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ddc-core
             ];
           };
-          ddc = {
+          "ddc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -47,7 +47,7 @@ let
               hsPkgs.ddc-driver
             ];
           };
-          ddci-core = {
+          "ddci-core" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -67,7 +67,7 @@ let
               hsPkgs.ddc-driver
             ];
           };
-          ddci-tetra = {
+          "ddci-tetra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

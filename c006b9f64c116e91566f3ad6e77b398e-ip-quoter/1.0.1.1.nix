@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ip-quoter = {
+        "ip-quoter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

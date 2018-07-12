@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-lazy-io = {
+        "safe-lazy-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parallel

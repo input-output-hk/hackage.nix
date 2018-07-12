@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hps-cairo = {
+        "hps-cairo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo

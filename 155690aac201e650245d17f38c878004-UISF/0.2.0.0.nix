@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        UISF = {
+        "UISF" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

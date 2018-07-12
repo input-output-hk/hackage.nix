@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OpenCLRaw = {
+        "OpenCLRaw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

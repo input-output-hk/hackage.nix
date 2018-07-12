@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        phonetic-code = {
+        "phonetic-code" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

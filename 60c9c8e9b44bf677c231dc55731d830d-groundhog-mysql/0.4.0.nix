@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        groundhog-mysql = {
+        "groundhog-mysql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mysql-simple

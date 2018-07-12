@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptohash-conduit = {
+        "cryptohash-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

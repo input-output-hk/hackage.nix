@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parsers = {
+        "parsers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-orphans
@@ -39,7 +39,7 @@ let
           ] ++ pkgs.lib.optional _flags.binary hsPkgs.binary;
         };
         tests = {
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        forger = {
+        "forger" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          forger = {
+          "forger" = {
             depends  = [
               hsPkgs.base
               hsPkgs.forger

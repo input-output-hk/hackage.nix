@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsonrpc-conduit = {
+        "jsonrpc-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          jsonrpc-conduit-demo = {
+          "jsonrpc-conduit-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        QuadTree = {
+        "QuadTree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

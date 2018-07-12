@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dwarfadt = {
+        "dwarfadt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.elf
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          dumpdwarf = {
+          "dumpdwarf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dwarfadt
@@ -43,7 +43,7 @@ let
               hsPkgs.containers
             ];
           };
-          dumpadt = {
+          "dumpadt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dwarfadt

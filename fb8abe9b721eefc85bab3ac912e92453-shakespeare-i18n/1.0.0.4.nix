@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shakespeare-i18n = {
+        "shakespeare-i18n" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shakespeare
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shakespeare-i18n

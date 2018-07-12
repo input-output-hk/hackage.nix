@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        perfect-hash-generator = {
+        "perfect-hash-generator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          hash-perfectly-ints-demo = {
+          "hash-perfectly-ints-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -51,7 +51,7 @@ let
               hsPkgs.vector
             ];
           };
-          hash-perfectly-strings-demo = {
+          "hash-perfectly-strings-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          regression-tests = {
+          "regression-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

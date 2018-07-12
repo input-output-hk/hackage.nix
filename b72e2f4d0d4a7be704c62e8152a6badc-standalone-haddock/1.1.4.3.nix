@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          standalone-haddock = {
+          "standalone-haddock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

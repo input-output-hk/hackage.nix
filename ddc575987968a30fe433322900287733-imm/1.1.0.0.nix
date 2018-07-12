@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imm = {
+        "imm" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.atom-conduit
@@ -69,7 +69,7 @@ let
           ];
         };
         exes = {
-          imm = {
+          "imm" = {
             depends  = [
               hsPkgs.imm
               hsPkgs.base

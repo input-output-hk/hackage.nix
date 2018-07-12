@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cabalmdvrpm = {
+        "cabalmdvrpm" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          cabalmdvspec = {
+          "cabalmdvspec" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

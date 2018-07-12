@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-carbon = {
+        "hs-carbon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          PiExample = {
+          "PiExample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -42,7 +42,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          IntegralExample = {
+          "IntegralExample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -52,7 +52,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          TransportExample = {
+          "TransportExample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

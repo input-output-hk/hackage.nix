@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-braille = {
+        "diagrams-braille" = {
           depends  = [
             hsPkgs.JuicyPixels
             hsPkgs.Rasterific
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          brlclock = {
+          "brlclock" = {
             depends  = [
               hsPkgs.JuicyPixels
               hsPkgs.Rasterific
@@ -56,7 +56,7 @@ let
               hsPkgs.time
             ];
           };
-          brldia = {
+          "brldia" = {
             depends  = [
               hsPkgs.JuicyPixels
               hsPkgs.Rasterific

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hxournal = {
+        "hxournal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          hxournal = {
+          "hxournal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

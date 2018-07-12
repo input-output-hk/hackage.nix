@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Vec-Boolean = {
+        "Vec-Boolean" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Vec

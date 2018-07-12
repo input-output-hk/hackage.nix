@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vinyl-gl = {
+        "vinyl-gl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

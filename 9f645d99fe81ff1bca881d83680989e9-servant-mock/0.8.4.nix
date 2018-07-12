@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-mock = {
+        "servant-mock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          mock-app = {
+          "mock-app" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.bytestring-conversion
               hsPkgs.base

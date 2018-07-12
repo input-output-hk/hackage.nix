@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspkcs11 = {
+        "hspkcs11" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          pkcs11-tests = {
+          "pkcs11-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.testpack

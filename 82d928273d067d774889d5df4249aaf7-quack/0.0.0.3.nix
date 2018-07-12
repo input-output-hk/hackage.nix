@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quack = {
+        "quack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

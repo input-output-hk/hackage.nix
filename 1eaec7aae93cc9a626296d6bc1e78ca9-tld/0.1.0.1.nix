@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tld = {
+        "tld" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

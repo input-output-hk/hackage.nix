@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        commodities = {
+        "commodities" = {
           depends  = [
             hsPkgs.base
             hsPkgs.PSQueue
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -49,7 +49,7 @@ let
               hsPkgs.filepath
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.commodities

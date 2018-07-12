@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mwc-random-accelerate = {
+        "mwc-random-accelerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate

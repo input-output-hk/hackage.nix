@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streamly = {
+        "streamly" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.atomic-primops
@@ -45,20 +45,20 @@ let
           ]) ++ pkgs.lib.optional _flags.examples-sdl hsPkgs.SDL;
         };
         exes = {
-          loops = {
+          "loops" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.streamly
               hsPkgs.base
             ];
           };
-          nested-loops = {
+          "nested-loops" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.streamly
               hsPkgs.base
               hsPkgs.random
             ];
           };
-          parallel-loops = {
+          "parallel-loops" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.streamly
               hsPkgs.base
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.streamly
               hsPkgs.base
@@ -77,7 +77,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = ([
               hsPkgs.streamly
               hsPkgs.atomic-primops

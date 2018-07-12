@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lightning-haskell = {
+        "lightning-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lightning-haskell
@@ -51,7 +51,7 @@ let
               hsPkgs.transformers
             ];
           };
-          test-integration = {
+          "test-integration" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lightning-haskell

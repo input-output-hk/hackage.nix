@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-files-gen = {
+        "data-files-gen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          data-files-gen = {
+          "data-files-gen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-files-gen
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          data-files-gen-test = {
+          "data-files-gen-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-files-gen

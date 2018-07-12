@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbf = {
+        "dbf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

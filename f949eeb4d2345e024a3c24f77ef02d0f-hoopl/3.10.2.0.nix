@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hoopl = {
+        "hoopl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          hoopl-test = {
+          "hoopl-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

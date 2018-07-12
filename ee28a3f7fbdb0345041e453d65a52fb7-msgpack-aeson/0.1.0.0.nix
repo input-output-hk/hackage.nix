@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        msgpack-aeson = {
+        "msgpack-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          msgpack-aeson-test = {
+          "msgpack-aeson-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.msgpack

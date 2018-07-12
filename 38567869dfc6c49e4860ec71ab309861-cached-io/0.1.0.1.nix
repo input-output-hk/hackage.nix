@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cached-io = {
+        "cached-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          test-cachedIO = {
+          "test-cachedIO" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm

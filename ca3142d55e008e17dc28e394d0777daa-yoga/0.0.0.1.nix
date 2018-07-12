@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yoga = {
+        "yoga" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ieee754
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          yoga-example = {
+          "yoga-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yoga

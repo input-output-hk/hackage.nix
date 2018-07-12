@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uhc-util = {
+        "uhc-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ixmonad = {
+        "ixmonad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

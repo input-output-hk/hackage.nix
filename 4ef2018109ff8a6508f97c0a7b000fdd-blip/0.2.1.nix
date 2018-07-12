@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          blip = {
+          "blip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bliplib

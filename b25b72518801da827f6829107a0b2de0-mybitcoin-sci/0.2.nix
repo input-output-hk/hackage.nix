@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mybitcoin-sci = {
+        "mybitcoin-sci" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl

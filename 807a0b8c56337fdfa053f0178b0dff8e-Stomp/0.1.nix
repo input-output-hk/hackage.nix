@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Stomp = {
+        "Stomp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

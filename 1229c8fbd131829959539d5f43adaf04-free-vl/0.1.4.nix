@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        free-vl = {
+        "free-vl" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.free-vl
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          free-vl-test = {
+          "free-vl-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.free-vl

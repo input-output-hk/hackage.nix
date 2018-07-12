@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-macosx = {
+        "cabal-macosx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

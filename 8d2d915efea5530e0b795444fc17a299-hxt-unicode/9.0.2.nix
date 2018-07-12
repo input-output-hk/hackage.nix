@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-unicode = {
+        "hxt-unicode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt-charproperties

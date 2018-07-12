@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fuzzyset = {
+        "fuzzyset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          fuzzyset-exe = {
+          "fuzzyset-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fuzzyset
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          fuzzyset-test = {
+          "fuzzyset-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        manatee-reader = {
+        "manatee-reader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manatee-core
@@ -37,6 +37,8 @@ let
             hsPkgs.filepath
           ];
         };
-        exes = { manatee-reader = {}; };
+        exes = {
+          "manatee-reader" = {};
+        };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repo-based-blog = {
+        "repo-based-blog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          rbb = {
+          "rbb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repo-based-blog
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repo-based-blog

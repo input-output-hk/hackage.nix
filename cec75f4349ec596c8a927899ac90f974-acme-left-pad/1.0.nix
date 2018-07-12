@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-left-pad = {
+        "acme-left-pad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitmap = {
+        "bitmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

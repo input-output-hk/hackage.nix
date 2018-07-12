@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        applicative-splice = {
+        "applicative-splice" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

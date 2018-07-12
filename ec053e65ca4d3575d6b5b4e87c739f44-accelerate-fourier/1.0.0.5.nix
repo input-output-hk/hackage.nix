@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-fourier = {
+        "accelerate-fourier" = {
           depends  = [
             hsPkgs.accelerate-arithmetic
             hsPkgs.accelerate-utility
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.accelerate-fourier
               hsPkgs.accelerate-arithmetic
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.criterion
               hsPkgs.accelerate-fourier

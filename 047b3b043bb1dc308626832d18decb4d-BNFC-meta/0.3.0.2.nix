@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BNFC-meta = {
+        "BNFC-meta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

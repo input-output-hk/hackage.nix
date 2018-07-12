@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        choose-exe = {
+        "choose-exe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.choose
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          choose = {
+          "choose" = {
             depends  = [
               hsPkgs.base
               hsPkgs.choose

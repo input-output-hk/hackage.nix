@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        https-everywhere-rules = {
+        "https-everywhere-rules" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

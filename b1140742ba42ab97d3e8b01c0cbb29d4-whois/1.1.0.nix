@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        whois = {
+        "whois" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

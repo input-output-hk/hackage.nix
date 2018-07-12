@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexml-lens = {
+        "hexml-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

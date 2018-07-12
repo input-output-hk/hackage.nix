@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hackage2twitter = {
+          "hackage2twitter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.feed

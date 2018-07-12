@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        gitit = {};
+        "gitit" = {};
         exes = {
-          gitit = {
+          "gitit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

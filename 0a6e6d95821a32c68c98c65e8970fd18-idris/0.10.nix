@@ -28,7 +28,7 @@ let
         buildType = "Custom";
       };
       components = {
-        idris = {
+        "idris" = {
           depends  = ((((((([
             hsPkgs.base
             hsPkgs.annotated-wl-pprint
@@ -71,7 +71,7 @@ let
           libs = pkgs.lib.optional _flags.gmp pkgs.gmp;
         };
         exes = {
-          idris = {
+          "idris" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base
@@ -81,7 +81,7 @@ let
               hsPkgs.transformers
             ];
           };
-          idris-codegen-c = {
+          "idris-codegen-c" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base
@@ -90,7 +90,7 @@ let
               hsPkgs.transformers
             ];
           };
-          idris-codegen-javascript = {
+          "idris-codegen-javascript" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base
@@ -99,7 +99,7 @@ let
               hsPkgs.transformers
             ];
           };
-          idris-codegen-node = {
+          "idris-codegen-node" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-workmail = {
+        "amazonka-workmail" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-workmail-test = {
+          "amazonka-workmail-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

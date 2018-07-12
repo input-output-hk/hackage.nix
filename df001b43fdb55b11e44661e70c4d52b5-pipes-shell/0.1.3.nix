@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-shell = {
+        "pipes-shell" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

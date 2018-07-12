@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opengl-dlp-stereo = {
+        "opengl-dlp-stereo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          opengl-dlp-test = {
+          "opengl-dlp-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT

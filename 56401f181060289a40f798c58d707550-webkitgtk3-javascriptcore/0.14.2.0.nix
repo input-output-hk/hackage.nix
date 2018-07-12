@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        webkitgtk3-javascriptcore = {
+        "webkitgtk3-javascriptcore" = {
           depends  = [ hsPkgs.base ];
           pkgconfig = [
             pkgconfPkgs."webkitgtk-3.0"

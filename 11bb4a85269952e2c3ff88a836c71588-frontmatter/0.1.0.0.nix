@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        frontmatter = {
+        "frontmatter" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.attoparsec

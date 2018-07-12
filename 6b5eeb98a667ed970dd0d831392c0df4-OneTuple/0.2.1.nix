@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OneTuple = {
+        "OneTuple" = {
           depends  = [ hsPkgs.base ];
         };
       };

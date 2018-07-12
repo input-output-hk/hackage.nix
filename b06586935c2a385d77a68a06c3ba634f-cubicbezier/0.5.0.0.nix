@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cubicbezier = {
+        "cubicbezier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

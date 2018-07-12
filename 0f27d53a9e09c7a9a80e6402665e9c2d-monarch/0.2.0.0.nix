@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monarch = {
+        "monarch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          unit-test = {
+          "unit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

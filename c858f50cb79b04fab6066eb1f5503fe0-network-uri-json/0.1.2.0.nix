@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-uri-json = {
+        "network-uri-json" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          network-uri-json-tests = {
+          "network-uri-json-tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

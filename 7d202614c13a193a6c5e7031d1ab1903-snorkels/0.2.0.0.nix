@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snorkels = {
+        "snorkels" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-loops
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          snorkels = {
+          "snorkels" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monad-loops

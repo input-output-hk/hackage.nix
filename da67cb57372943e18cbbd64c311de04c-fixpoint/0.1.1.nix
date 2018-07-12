@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixpoint = {
+        "fixpoint" = {
           depends  = [ hsPkgs.base ];
         };
       };

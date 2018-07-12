@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hails = {
+        "hails" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -53,7 +53,7 @@ let
           ];
         };
         exes = {
-          hails = {
+          "hails" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -93,7 +93,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.hails
               hsPkgs.base

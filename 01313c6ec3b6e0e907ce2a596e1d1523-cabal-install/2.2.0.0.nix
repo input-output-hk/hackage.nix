@@ -27,7 +27,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cabal-install = {
+        "cabal-install" = {
           depends  = ((([
             hsPkgs.async
             hsPkgs.array
@@ -56,7 +56,7 @@ let
             hsPkgs.time
             hsPkgs.zlib
             hsPkgs.hackage-security
-          ] ++ (if _flags.native-dns && system.isWindows
+          ] ++ pkgs.lib.optionals _flags.native-dns (if system.isWindows
             then [ hsPkgs.windns ]
             else [
               hsPkgs.resolv
@@ -67,7 +67,7 @@ let
             ])) ++ pkgs.lib.optional _flags.debug-conflict-sets hsPkgs.base) ++ pkgs.lib.optional _flags.debug-tracetree hsPkgs.tracetree;
         };
         exes = {
-          cabal = {
+          "cabal" = {
             depends  = (if _flags.lib
               then [
                 hsPkgs.cabal-install
@@ -104,7 +104,7 @@ let
                 hsPkgs.time
                 hsPkgs.zlib
                 hsPkgs.hackage-security
-              ] ++ (if _flags.native-dns && system.isWindows
+              ] ++ pkgs.lib.optionals _flags.native-dns (if system.isWindows
                 then [ hsPkgs.windns ]
                 else [
                   hsPkgs.resolv
@@ -141,7 +141,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -167,7 +167,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          memory-usage-tests = {
+          "memory-usage-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -180,7 +180,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          solver-quickcheck = {
+          "solver-quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -197,7 +197,7 @@ let
               hsPkgs.pretty-show
             ];
           };
-          integration-tests2 = {
+          "integration-tests2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

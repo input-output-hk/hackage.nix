@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        uuagc = {
+        "uuagc" = {
           depends  = [
             hsPkgs.uuagc-cabal
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          uuagc = {
+          "uuagc" = {
             depends  = [
               hsPkgs.uuagc-cabal
               hsPkgs.base

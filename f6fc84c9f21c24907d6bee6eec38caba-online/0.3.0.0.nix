@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        online = {
+        "online" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foldl
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

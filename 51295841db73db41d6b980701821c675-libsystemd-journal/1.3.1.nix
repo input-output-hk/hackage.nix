@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        libsystemd-journal = {
+        "libsystemd-journal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

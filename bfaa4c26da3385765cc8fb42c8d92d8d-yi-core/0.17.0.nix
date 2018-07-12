@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-core = {
+        "yi-core" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.array
@@ -59,7 +59,7 @@ let
             else [ hsPkgs.unix ]);
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yi-rope
@@ -75,7 +75,7 @@ let
           };
         };
         benchmarks = {
-          all = {
+          "all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yi-core

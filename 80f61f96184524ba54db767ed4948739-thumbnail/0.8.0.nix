@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thumbnail = {
+        "thumbnail" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gd

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-haxl-client = {
+        "servant-haxl-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hinvaders = {
+          "hinvaders" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

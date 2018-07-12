@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        docstrings = {
+        "docstrings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

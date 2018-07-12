@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        DrIFT = {
+        "DrIFT" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          DrIFT = {
+          "DrIFT" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -32,7 +32,7 @@ let
               hsPkgs.DrIFT
             ];
           };
-          drift-ghc = {
+          "drift-ghc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        OpenAL = {
+        "OpenAL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL

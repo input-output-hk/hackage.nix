@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-class = {
+        "random-class" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive

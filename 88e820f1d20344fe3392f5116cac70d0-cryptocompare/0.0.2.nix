@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptocompare = {
+        "cryptocompare" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          cryptocompare-exe = {
+          "cryptocompare-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cryptocompare
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          cryptocompare-test = {
+          "cryptocompare-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cryptocompare

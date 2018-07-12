@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fpco-api = {
+        "fpco-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -60,7 +60,7 @@ let
           ];
         };
         exes = {
-          fpco-api = {
+          "fpco-api" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fpco-api

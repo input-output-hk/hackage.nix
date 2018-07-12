@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-kitchen-sink = {
+        "acme-kitchen-sink" = {
           depends  = [ hsPkgs.base ];
         };
       };

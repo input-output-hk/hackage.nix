@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Chart-diagrams = {
+        "Chart-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale

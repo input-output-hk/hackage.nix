@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsndfile = {
+        "hsndfile" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.sndfile ];
           build-tools = [

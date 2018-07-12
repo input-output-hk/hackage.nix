@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        patience = {
+        "patience" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

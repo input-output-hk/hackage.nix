@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-date = {
+        "http-date" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

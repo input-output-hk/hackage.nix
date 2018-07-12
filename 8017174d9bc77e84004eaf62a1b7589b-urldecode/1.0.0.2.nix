@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          urldecode = {
+          "urldecode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

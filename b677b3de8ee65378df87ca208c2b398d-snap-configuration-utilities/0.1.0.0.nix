@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-configuration-utilities = {
+        "snap-configuration-utilities" = {
           depends  = [
             hsPkgs.base
             hsPkgs.configurator

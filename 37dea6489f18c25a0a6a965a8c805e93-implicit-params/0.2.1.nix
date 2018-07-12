@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        implicit-params = {
+        "implicit-params" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class

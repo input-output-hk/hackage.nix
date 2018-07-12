@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sax = {
+        "sax" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          xeno-test = {
+          "xeno-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sax

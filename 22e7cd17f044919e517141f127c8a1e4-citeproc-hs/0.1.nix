@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        citeproc-hs = {
+        "citeproc-hs" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.hxt

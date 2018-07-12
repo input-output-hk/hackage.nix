@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        verdict-json = {
+        "verdict-json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          Example = {
+          "Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.verdict
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

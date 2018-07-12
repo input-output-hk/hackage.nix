@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pareto = {
+        "pareto" = {
           depends  = [ hsPkgs.base ];
         };
       };

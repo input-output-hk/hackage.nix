@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hfile = {
+          "hfile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -32,7 +32,7 @@ let
             ];
             libs = [ pkgs.ssl ];
           };
-          hpool = {
+          "hpool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

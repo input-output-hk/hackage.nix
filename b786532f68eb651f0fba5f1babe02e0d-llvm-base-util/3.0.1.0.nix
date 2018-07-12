@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-base-util = {
+        "llvm-base-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.llvm-base

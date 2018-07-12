@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-server = {
+        "generic-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

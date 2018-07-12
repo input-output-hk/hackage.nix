@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        push-notify-ccs = {
+        "push-notify-ccs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

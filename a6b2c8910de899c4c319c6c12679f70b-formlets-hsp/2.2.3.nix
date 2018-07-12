@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        formlets-hsp = {
+        "formlets-hsp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        unboxed-containers = {
+        "unboxed-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          unboxed-set-benchmark = {
+          "unboxed-set-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prometheus-effect = {
+        "prometheus-effect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

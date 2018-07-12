@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-client-server = {
+        "distributed-process-client-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-accessor
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          ManagedProcessTests = {
+          "ManagedProcessTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -71,7 +71,7 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          PrioritisedProcessTests = {
+          "PrioritisedProcessTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

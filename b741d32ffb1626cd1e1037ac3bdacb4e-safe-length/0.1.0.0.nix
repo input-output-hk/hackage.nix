@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-length = {
+        "safe-length" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-multicast = {
+        "network-multicast" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

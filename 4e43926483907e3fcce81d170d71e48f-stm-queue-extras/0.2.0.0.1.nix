@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-queue-extras = {
+        "stm-queue-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

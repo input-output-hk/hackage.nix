@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-framework-testing-feat = {
+        "test-framework-testing-feat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.test-framework
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

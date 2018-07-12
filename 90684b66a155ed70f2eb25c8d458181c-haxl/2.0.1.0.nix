@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haxl = {
+        "haxl" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -44,7 +44,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         exes = {
-          monadbench = {
+          "monadbench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haxl
@@ -52,7 +52,7 @@ let
               hsPkgs.time
             ];
           };
-          cachebench = {
+          "cachebench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haxl
@@ -62,7 +62,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.HUnit

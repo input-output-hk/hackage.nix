@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-diagnostics = {
+        "hw-diagnostics" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          hw-diagnostics-example = {
+          "hw-diagnostics-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hw-diagnostics
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          hw-diagnostics-test = {
+          "hw-diagnostics-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

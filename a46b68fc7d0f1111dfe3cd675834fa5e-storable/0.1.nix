@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        storable = {
+        "storable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Monatron-IO = {
+        "Monatron-IO" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Monatron

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hoed = {
+        "Hoed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -43,22 +43,14 @@ let
           ];
         };
         tests = {
-          test-queens = {
+          "test-queens" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
               hsPkgs.Hoed
             ];
           };
-          test-1 = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.QuickCheck
-              hsPkgs.Hoed
-              hsPkgs.process
-            ];
-          };
-          test-2 = {
+          "test-1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -66,7 +58,7 @@ let
               hsPkgs.process
             ];
           };
-          test-3 = {
+          "test-2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -74,7 +66,7 @@ let
               hsPkgs.process
             ];
           };
-          test-4 = {
+          "test-3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -82,7 +74,7 @@ let
               hsPkgs.process
             ];
           };
-          test-5 = {
+          "test-4" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -90,7 +82,7 @@ let
               hsPkgs.process
             ];
           };
-          test-6 = {
+          "test-5" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -98,7 +90,15 @@ let
               hsPkgs.process
             ];
           };
-          test-7 = {
+          "test-6" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.QuickCheck
+              hsPkgs.Hoed
+              hsPkgs.process
+            ];
+          };
+          "test-7" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

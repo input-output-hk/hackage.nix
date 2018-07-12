@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tomato-rubato-openal = {
+        "tomato-rubato-openal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

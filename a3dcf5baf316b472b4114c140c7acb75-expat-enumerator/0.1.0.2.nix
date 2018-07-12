@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        expat-enumerator = {
+        "expat-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

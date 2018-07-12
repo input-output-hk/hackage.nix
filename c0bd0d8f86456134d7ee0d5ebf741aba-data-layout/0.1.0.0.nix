@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-layout = {
+        "data-layout" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

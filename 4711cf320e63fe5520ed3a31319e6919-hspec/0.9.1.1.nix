@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hspec = {
+        "hspec" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.QuickCheck

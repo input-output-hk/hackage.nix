@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kalman = {
+        "kalman" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          kalman-test = {
+          "kalman-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.kalman

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haste-markup = {
+        "haste-markup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

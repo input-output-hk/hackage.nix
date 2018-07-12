@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hgen = {
+          "hgen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

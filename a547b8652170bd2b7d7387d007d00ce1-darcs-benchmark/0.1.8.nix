@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          darcs-benchmark = {
+          "darcs-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

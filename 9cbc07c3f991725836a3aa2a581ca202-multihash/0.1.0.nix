@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multihash = {
+        "multihash" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          multihash = {
+          "multihash" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base64-bytestring

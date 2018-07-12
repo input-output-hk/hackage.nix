@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        algebra-dag = {
+        "algebra-dag" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

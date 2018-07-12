@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rainbow = {
+        "rainbow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          rainbow-instances = {
+          "rainbow-instances" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -42,7 +42,7 @@ let
               hsPkgs.lens-simple
             ];
           };
-          test8color = {
+          "test8color" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -51,7 +51,7 @@ let
               hsPkgs.lens-simple
             ];
           };
-          test256color = {
+          "test256color" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -60,7 +60,7 @@ let
               hsPkgs.lens-simple
             ];
           };
-          colorTest = {
+          "colorTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

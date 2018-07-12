@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-level-natural-number-induction = {
+        "type-level-natural-number-induction" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

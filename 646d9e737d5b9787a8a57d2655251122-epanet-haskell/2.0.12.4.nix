@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        epanet-haskell = {
+        "epanet-haskell" = {
           depends  = [ hsPkgs.base ];
         };
       };

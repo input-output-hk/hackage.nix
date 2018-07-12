@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        orgmode = {
+        "orgmode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

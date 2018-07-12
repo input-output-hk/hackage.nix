@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HsOpenSSL-x509-system = {
+        "HsOpenSSL-x509-system" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HsOpenSSL

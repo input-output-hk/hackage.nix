@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-isogen = {
+        "xml-isogen" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base

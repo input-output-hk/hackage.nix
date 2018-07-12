@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        marvin = {
+        "marvin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          marvin-pp = {
+          "marvin-pp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mustache
@@ -63,7 +63,7 @@ let
               hsPkgs.aeson
             ];
           };
-          marvin-init = {
+          "marvin-init" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mustache

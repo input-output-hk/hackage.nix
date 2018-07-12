@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          katt = {
+          "katt" = {
             depends  = ([
               hsPkgs.blaze-builder
               hsPkgs.ConfigFile

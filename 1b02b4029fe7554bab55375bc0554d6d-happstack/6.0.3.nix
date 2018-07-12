@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack = {
+        "happstack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.happstack-data
@@ -40,13 +40,13 @@ let
             ]);
         };
         exes = {
-          happstack = {
+          "happstack" = {
             depends  = [
               hsPkgs.directory
               hsPkgs.filepath
             ];
           };
-          happstack-tests = {
+          "happstack-tests" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quoridor-hs = {
+        "quoridor-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          quoridor-exec = {
+          "quoridor-exec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quoridor-hs
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          quoridor-tests = {
+          "quoridor-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

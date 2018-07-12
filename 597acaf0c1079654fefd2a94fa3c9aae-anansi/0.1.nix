@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        anansi = {
+        "anansi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -33,6 +33,6 @@ let
             hsPkgs.directory
           ];
         };
-        exes = { anansi = {}; };
+        exes = { "anansi" = {}; };
       };
     }

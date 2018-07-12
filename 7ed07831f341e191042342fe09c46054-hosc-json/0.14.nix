@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hosc-json = {
+        "hosc-json" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        NewBinary = {
+        "NewBinary" = {
           depends  = [ hsPkgs.base ];
         };
       };

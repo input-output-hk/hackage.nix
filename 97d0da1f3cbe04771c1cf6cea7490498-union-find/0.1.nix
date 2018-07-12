@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        union-find = {
+        "union-find" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-vector = {
+        "hw-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          hw-vector-test = {
+          "hw-vector-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

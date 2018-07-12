@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PCLT-DB = {
+        "PCLT-DB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

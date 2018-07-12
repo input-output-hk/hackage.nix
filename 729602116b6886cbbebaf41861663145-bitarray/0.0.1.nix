@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitarray = {
+        "bitarray" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

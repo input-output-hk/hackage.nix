@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hvect = {
+        "hvect" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          hvect-test = {
+          "hvect-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hvect

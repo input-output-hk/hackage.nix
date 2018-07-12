@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        core = {
+        "core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

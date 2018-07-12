@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-accessor-monadLib = {
+        "data-accessor-monadLib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-accessor

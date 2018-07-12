@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          roguestar-gl = {
+          "roguestar-gl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rsagl
@@ -39,7 +39,7 @@ let
               hsPkgs.priority-sync
             ];
           };
-          roguestar = {
+          "roguestar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rsagl

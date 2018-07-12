@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linux-inotify = {
+        "linux-inotify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

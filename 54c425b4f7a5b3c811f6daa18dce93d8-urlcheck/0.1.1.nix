@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          urlcheck = {
+          "urlcheck" = {
             depends  = [
               hsPkgs.network
               hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transf = {
+        "transf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -34,6 +34,6 @@ let
             hsPkgs.music-preludes
           ];
         };
-        exes = { transf = {}; };
+        exes = { "transf" = {}; };
       };
     }

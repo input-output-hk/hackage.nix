@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smallcaps = {
+        "smallcaps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          lesscase = {
+          "lesscase" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          texparser = {
+          "texparser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -51,7 +51,7 @@ let
               hsPkgs.smallcaps
             ];
           };
-          texlatexparser = {
+          "texlatexparser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -59,7 +59,7 @@ let
               hsPkgs.smallcaps
             ];
           };
-          inputfiles = {
+          "inputfiles" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -67,7 +67,7 @@ let
               hsPkgs.smallcaps
             ];
           };
-          configparser = {
+          "configparser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -75,7 +75,7 @@ let
               hsPkgs.smallcaps
             ];
           };
-          printableparser = {
+          "printableparser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -83,7 +83,7 @@ let
               hsPkgs.smallcaps
             ];
           };
-          documentparser = {
+          "documentparser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

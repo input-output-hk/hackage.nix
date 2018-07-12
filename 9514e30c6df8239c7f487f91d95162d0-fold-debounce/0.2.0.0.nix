@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fold-debounce = {
+        "fold-debounce" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fold-debounce
@@ -39,7 +39,7 @@ let
               hsPkgs.time
             ];
           };
-          spec-threaded = {
+          "spec-threaded" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fold-debounce

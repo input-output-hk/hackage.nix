@@ -30,7 +30,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad-extras = {
+        "xmonad-extras" = {
           depends  = ((((([
             hsPkgs.mtl
             hsPkgs.unix
@@ -52,7 +52,7 @@ let
             ])) ++ pkgs.lib.optionals (_flags.with_parsec && _flags.with_split) [
             hsPkgs.parsec
             hsPkgs.split
-          ]) ++ [
+          ]) ++ pkgs.lib.optionals _flags.with_hint [
             hsPkgs.hint
             hsPkgs.network
           ]) ++ pkgs.lib.optional _flags.with_mpd hsPkgs.libmpd) ++ pkgs.lib.optional _flags.with_regex_posix hsPkgs.regex-posix) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.12.1" && _flags.with_template_haskell && _flags.with_hlist) [

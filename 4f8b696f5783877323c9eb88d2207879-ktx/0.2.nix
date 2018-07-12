@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ktx = {
+        "ktx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL

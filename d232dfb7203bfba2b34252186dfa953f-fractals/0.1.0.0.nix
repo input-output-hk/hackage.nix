@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        fractals = {
+        "fractals" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          property-tests = {
+          "property-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

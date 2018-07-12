@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fb = {
+        "fb" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -53,7 +53,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

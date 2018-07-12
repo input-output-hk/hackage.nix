@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-logger-buffered = {
+        "wai-logger-buffered" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          wai-logger-buffered = {
+          "wai-logger-buffered" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

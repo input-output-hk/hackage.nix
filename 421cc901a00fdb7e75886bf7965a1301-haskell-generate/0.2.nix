@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskell-generate = {
+        "haskell-generate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

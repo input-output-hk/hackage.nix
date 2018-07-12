@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-msgpack = {
+        "data-msgpack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

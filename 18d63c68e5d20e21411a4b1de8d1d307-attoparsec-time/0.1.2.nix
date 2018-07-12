@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        attoparsec-time = {
+        "attoparsec-time" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.time
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.doctest
               hsPkgs.directory

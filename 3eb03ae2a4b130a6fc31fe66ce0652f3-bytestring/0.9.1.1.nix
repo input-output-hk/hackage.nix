@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring = {
+        "bytestring" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.gt "6.8.2") hsPkgs.ghc-prim;

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws = {
+        "aws" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -58,7 +58,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) hsPkgs.ghc-prim;
         };
         exes = {
-          GetObject = {
+          "GetObject" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
@@ -67,14 +67,14 @@ let
               hsPkgs.conduit-extra
             ];
           };
-          SimpleDb = {
+          "SimpleDb" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
               hsPkgs.text
             ];
           };
-          Sqs = {
+          "Sqs" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadiccp-gecode = {
+        "monadiccp-gecode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           frameworks = [ pkgs.gecode ];
         };
         tests = {
-          Queens = {
+          "Queens" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monadiccp-gecode

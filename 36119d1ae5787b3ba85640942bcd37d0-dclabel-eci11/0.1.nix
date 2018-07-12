@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dclabel-eci11 = {
+        "dclabel-eci11" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

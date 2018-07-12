@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        manifolds-core = {
+        "manifolds-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector-space

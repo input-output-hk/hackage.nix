@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-fancy = {
+        "network-fancy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
             else pkgs.lib.optional system.isSolaris pkgs.socket;
         };
         exes = {
-          network-fancy-test = {
+          "network-fancy-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

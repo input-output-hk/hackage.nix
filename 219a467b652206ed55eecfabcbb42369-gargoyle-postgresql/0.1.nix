@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gargoyle-postgresql = {
+        "gargoyle-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          gargoyle-psql = {
+          "gargoyle-psql" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
               hsPkgs.unix
             ];
           };
-          gargoyle-postgres-monitor = {
+          "gargoyle-postgres-monitor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          gargoyle-psql-test = {
+          "gargoyle-psql-test" = {
             depends  = pkgs.lib.optionals (!(!_flags.enable-psql-test)) [
               hsPkgs.base
               hsPkgs.bytestring

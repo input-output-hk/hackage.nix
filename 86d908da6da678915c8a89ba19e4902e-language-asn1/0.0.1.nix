@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-asn1 = {
+        "language-asn1" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

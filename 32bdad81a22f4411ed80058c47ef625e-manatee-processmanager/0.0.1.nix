@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        manatee-processmanager = {
+        "manatee-processmanager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manatee-core
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          manatee-processmanager = {};
+          "manatee-processmanager" = {};
         };
       };
     }

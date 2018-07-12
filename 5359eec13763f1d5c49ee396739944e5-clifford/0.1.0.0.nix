@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clifford = {
+        "clifford" = {
           depends  = [
             hsPkgs.base
             hsPkgs.numeric-prelude

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          runmany = {
+          "runmany" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

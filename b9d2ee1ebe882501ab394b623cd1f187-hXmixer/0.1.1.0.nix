@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hxmixer = {
+          "hxmixer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk3

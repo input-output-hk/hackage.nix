@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hbro = {
+        "hbro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          hbro = {
+          "hbro" = {
             depends  = [
               hsPkgs.hbro
               hsPkgs.base

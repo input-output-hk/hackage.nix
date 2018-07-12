@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dictionaries = {
+        "dictionaries" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

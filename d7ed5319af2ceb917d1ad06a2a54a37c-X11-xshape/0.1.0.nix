@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        X11-xshape = {
+        "X11-xshape" = {
           depends  = [
             hsPkgs.base
             hsPkgs.X11

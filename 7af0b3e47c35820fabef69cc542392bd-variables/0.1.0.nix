@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        variables = {
+        "variables" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

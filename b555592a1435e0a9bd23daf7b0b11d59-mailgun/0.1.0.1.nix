@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mailgun = {
+        "mailgun" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -37,14 +37,14 @@ let
           ];
         };
         exes = {
-          send = {
+          "send" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.mailgun
             ];
           };
-          sendmany = {
+          "sendmany" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-find = {
+        "conduit-find" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          find-hs = {
+          "find-hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit-find
@@ -72,7 +72,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit-find
@@ -96,7 +96,7 @@ let
               hsPkgs.hspec
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

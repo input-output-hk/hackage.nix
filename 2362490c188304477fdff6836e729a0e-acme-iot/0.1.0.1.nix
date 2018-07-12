@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-iot = {
+        "acme-iot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

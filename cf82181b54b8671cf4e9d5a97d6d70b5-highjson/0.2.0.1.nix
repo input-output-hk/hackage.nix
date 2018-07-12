@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        highjson = {
+        "highjson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          highjson-tests = {
+          "highjson-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          highjson-benchmarks = {
+          "highjson-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

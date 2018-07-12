@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Plot-ho-matic = {
+        "Plot-ho-matic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protocol-buffers

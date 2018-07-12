@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        huffman = {
+        "huffman" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

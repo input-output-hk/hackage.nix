@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hell = {
+        "hell" = {
           depends  = [
             hsPkgs.split
             hsPkgs.template-haskell
@@ -49,7 +49,7 @@ let
             else [ hsPkgs.old-time ]);
         };
         exes = {
-          hell = {
+          "hell" = {
             depends  = [
               hsPkgs.utf8-string
               hsPkgs.transformers

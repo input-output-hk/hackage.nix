@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        antisplice = {
+        "antisplice" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chatty

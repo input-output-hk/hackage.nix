@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hOff-display = {
+        "hOff-display" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hOff-parser
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hOff-display-gl = {
+          "hOff-display-gl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hOff-parser

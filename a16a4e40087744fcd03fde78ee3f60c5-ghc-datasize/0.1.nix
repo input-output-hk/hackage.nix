@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ghc-datasize = {
+        "ghc-datasize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-heap-view

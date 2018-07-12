@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Twofish = {
+        "Twofish" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          Standard-Tests = {
+          "Standard-Tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safer-file-handles-bytestring = {
+        "safer-file-handles-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

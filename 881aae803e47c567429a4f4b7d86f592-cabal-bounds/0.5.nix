@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-bounds = {
+        "cabal-bounds" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmdargs
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          cabal-bounds = {
+          "cabal-bounds" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cabal-bounds
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          cabal-bounds-tests = {
+          "cabal-bounds-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

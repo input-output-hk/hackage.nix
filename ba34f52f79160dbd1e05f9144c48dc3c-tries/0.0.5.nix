@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tries = {
+        "tries" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          tries-test = {
+          "tries-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -63,7 +63,7 @@ let
           };
         };
         benchmarks = {
-          tries-bench-lookup = {
+          "tries-bench-lookup" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

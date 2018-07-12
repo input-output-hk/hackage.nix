@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-wx = {
+        "diagrams-wx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          diagrams-wx-demo = {
+          "diagrams-wx-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.diagrams-wx

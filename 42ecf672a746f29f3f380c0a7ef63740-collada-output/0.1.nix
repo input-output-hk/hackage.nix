@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        collada-output = {
+        "collada-output" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base
@@ -31,6 +31,6 @@ let
             hsPkgs.SVGPath
           ];
         };
-        exes = { Examples = {}; };
+        exes = { "Examples" = {}; };
       };
     }

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        threepenny-editors = {
+        "threepenny-editors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          crud = {
+          "crud" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors
@@ -50,7 +50,7 @@ let
               hsPkgs.containers
             ];
           };
-          crud2 = {
+          "crud2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors
@@ -65,7 +65,7 @@ let
               hsPkgs.containers
             ];
           };
-          parser = {
+          "parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors
@@ -80,7 +80,7 @@ let
               hsPkgs.haskell-src-exts
             ];
           };
-          person = {
+          "person" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors
@@ -92,7 +92,7 @@ let
               hsPkgs.text
             ] ++ pkgs.lib.optional _flags.buildexamples hsPkgs.threepenny-editors;
           };
-          person2 = {
+          "person2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors

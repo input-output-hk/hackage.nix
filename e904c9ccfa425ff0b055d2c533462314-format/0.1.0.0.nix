@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        format = {
+        "format" = {
           depends  = [
             hsPkgs.haskell2010
             hsPkgs.parsec
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.haskell2010
               hsPkgs.parsec

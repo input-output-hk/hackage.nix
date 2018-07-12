@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        language-dot = {
+        "language-dot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,6 +30,6 @@ let
             hsPkgs.pretty
           ];
         };
-        exes = { ppdot = {}; };
+        exes = { "ppdot" = {}; };
       };
     }

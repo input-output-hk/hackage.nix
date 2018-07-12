@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logfloat = {
+        "logfloat" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xorshift = {
+        "xorshift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

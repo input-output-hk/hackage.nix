@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        powerqueue-distributed = {
+        "powerqueue-distributed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.powerqueue
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          powerqueue-distributed-test = {
+          "powerqueue-distributed-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.powerqueue

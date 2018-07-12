@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hierarchical-exceptions = {
+        "hierarchical-exceptions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

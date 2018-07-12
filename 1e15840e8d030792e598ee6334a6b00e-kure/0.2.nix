@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kure = {
+        "kure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

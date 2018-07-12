@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        squeeze = {
+        "squeeze" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          squeeze = {
+          "squeeze" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.factory

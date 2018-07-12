@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-spelling = {
+        "language-spelling" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

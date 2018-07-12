@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasbolt = {
+        "hasbolt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          hasbolt-test = {
+          "hasbolt-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hasbolt

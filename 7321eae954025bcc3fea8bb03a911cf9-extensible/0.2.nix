@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extensible = {
+        "extensible" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

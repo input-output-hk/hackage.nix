@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          zmqat = {
+          "zmqat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zeromq-haskell

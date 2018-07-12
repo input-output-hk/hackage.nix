@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        applicative-extras = {
+        "applicative-extras" = {
           depends  = [ hsPkgs.base ];
         };
       };

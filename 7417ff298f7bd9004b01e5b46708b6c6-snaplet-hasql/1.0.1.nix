@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-hasql = {
+        "snaplet-hasql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

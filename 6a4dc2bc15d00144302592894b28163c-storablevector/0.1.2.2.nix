@@ -23,13 +23,13 @@ let
         buildType = "Simple";
       };
       components = {
-        storablevector = {
+        "storablevector" = {
           depends  = [ hsPkgs.mtl ] ++ [
             hsPkgs.base
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.QuickCheck
@@ -40,7 +40,7 @@ let
               ]
               else [ hsPkgs.base ]);
           };
-          speedtest = {
+          "speedtest" = {
             depends  = [ hsPkgs.base ];
           };
         };

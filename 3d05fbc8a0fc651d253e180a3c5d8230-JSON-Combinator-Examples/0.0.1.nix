@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JSON-Combinator-Examples = {
+        "JSON-Combinator-Examples" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

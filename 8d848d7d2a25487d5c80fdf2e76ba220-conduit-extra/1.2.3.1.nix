@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-extra = {
+        "conduit-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -45,7 +45,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") hsPkgs.typed-process;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.conduit-extra
@@ -70,7 +70,7 @@ let
           };
         };
         benchmarks = {
-          blaze = {
+          "blaze" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

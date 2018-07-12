@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-mmap = {
+        "vector-mmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mmap
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector-mmap

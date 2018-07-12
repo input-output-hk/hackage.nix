@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dhall = {
+        "dhall" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -61,7 +61,7 @@ let
           ];
         };
         exes = {
-          dhall = {
+          "dhall" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dhall
@@ -69,7 +69,7 @@ let
           };
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -82,7 +82,7 @@ let
               hsPkgs.vector
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Diff
@@ -91,7 +91,7 @@ let
           };
         };
         benchmarks = {
-          dhall-parser = {
+          "dhall-parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -101,7 +101,7 @@ let
               hsPkgs.text
             ];
           };
-          deep-nested-large-record = {
+          "deep-nested-large-record" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

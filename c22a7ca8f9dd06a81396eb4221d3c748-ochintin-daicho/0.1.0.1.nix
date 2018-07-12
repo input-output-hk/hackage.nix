@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ochintin-daicho = {
+        "ochintin-daicho" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bookkeeping
@@ -28,13 +28,13 @@ let
           ];
         };
         tests = {
-          ochintin-daicho-test = {
+          "ochintin-daicho-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ochintin-daicho
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob

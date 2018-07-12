@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hist-pl-lmf = {
+        "hist-pl-lmf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

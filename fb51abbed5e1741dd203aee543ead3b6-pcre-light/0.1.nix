@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        pcre-light = {
+        "pcre-light" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

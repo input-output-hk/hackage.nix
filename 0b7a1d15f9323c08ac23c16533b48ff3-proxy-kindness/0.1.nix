@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proxy-kindness = {
+        "proxy-kindness" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagged

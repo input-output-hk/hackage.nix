@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-secure-cookies = {
+        "wai-secure-cookies" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          waicookie-genkey = {
+          "waicookie-genkey" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cryptonite

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        messagepack = {
+        "messagepack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          messagepack-tests = {
+          "messagepack-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

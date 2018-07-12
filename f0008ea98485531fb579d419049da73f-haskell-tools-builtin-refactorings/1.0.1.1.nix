@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-builtin-refactorings = {
+        "haskell-tools-builtin-refactorings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          haskell-tools-builtin-refactorings-test = {
+          "haskell-tools-builtin-refactorings-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -74,7 +74,7 @@ let
               hsPkgs.haskell-tools-builtin-refactorings
             ];
           };
-          ht-extension-organizer-test = {
+          "ht-extension-organizer-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

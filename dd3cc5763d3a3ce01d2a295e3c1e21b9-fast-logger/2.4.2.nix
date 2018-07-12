@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fast-logger = {
+        "fast-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

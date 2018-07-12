@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        motor = {
+        "motor" = {
           depends  = [
             hsPkgs.CTRex
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.indexed

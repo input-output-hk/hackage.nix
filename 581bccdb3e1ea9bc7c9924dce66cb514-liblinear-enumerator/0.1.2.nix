@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liblinear-enumerator = {
+        "liblinear-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

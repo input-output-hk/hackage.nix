@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cipher-aes128 = {
+        "cipher-aes128" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          aes128_test = {
+          "aes128_test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.crypto-api-tests
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

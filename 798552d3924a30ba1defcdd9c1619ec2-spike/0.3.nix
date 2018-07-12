@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          spike = {
+          "spike" = {
             depends  = [
               hsPkgs.webkit
               hsPkgs.containers

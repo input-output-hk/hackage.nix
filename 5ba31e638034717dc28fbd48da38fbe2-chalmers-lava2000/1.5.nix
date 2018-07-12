@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chalmers-lava2000 = {
+        "chalmers-lava2000" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

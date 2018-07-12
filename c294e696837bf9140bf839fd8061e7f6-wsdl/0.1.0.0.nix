@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wsdl = {
+        "wsdl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

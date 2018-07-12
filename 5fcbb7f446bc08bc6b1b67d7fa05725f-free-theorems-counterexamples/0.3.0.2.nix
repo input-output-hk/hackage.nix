@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        free-theorems-counterexamples = {
+        "free-theorems-counterexamples" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.haskell-src
@@ -33,7 +33,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          counterexamples.cgi = {
+          "counterexamples.cgi" = {
             depends  = [
               hsPkgs.xhtml
               hsPkgs.cgi

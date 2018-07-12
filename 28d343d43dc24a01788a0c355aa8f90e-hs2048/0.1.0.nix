@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hs2048 = {
+        "hs2048" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
           ] ++ pkgs.lib.optional _flags.documentation hsPkgs.hscolour;
         };
         exes = {
-          hs2048 = {
+          "hs2048" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs2048
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs2048
@@ -48,28 +48,28 @@ let
               hsPkgs.random
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob
               hsPkgs.doctest
             ];
           };
-          hpc = {
+          "hpc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.regex-compat
             ];
           };
-          haddock = {
+          "haddock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.regex-compat
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
@@ -77,7 +77,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs2048

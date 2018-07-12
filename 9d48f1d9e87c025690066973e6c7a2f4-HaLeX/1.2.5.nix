@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaLeX = {
+        "HaLeX" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,6 +28,6 @@ let
             hsPkgs.QuickCheck
           ];
         };
-        exes = { halex = {}; };
+        exes = { "halex" = {}; };
       };
     }

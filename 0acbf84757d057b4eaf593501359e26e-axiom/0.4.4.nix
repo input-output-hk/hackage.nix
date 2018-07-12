@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        axiom = {
+        "axiom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

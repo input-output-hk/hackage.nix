@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        these-skinny = {
+        "these-skinny" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dph-smoke-bool = {
+          "dph-smoke-bool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -34,7 +34,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-smoke-concat = {
+          "dph-smoke-concat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -47,7 +47,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-smoke-sumsq = {
+          "dph-smoke-sumsq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -60,7 +60,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-smoke-evens = {
+          "dph-smoke-evens" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -73,7 +73,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-smoke-indices = {
+          "dph-smoke-indices" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -86,7 +86,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-smoke-rank = {
+          "dph-smoke-rank" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -99,7 +99,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-smoke-reverse = {
+          "dph-smoke-reverse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -112,7 +112,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-imaginary-words = {
+          "dph-imaginary-words" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -125,7 +125,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-spectral-dotp = {
+          "dph-spectral-dotp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -138,7 +138,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-spectral-smvm = {
+          "dph-spectral-smvm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -151,7 +151,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-spectral-quickhull = {
+          "dph-spectral-quickhull" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -164,7 +164,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-spectral-quickhull-vector = {
+          "dph-spectral-quickhull-vector" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -177,7 +177,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-spectral-quicksort = {
+          "dph-spectral-quicksort" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -190,7 +190,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          dph-real-nbody-gloss = {
+          "dph-real-nbody-gloss" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -204,7 +204,7 @@ let
               hsPkgs.gloss
             ];
           };
-          dph-real-nbody = {
+          "dph-real-nbody" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

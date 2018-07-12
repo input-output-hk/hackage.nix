@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        csv-conduit = {
+        "csv-conduit" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.attoparsec-conduit
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

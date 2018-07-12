@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          skeleton = {
+          "skeleton" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

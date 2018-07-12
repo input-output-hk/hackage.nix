@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fb-persistent = {
+        "fb-persistent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fb

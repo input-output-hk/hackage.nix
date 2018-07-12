@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tls = {
+        "tls" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.mtl
@@ -43,7 +43,7 @@ let
           ] ++ pkgs.lib.optional _flags.network hsPkgs.network) ++ pkgs.lib.optional _flags.hans hsPkgs.hans;
         };
         tests = {
-          test-tls = {
+          "test-tls" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -62,7 +62,7 @@ let
           };
         };
         benchmarks = {
-          bench-tls = {
+          "bench-tls" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tls

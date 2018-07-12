@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        android = {
+        "android" = {
           depends  = [ hsPkgs.base ];
         };
       };

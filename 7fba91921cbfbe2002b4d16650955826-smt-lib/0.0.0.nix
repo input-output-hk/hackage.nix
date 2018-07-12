@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smt-lib = {
+        "smt-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.polyparse

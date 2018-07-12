@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        directed-cubical = {
+        "directed-cubical" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

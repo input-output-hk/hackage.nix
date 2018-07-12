@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blakesum = {
+        "blakesum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

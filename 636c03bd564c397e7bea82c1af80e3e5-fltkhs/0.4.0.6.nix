@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        fltkhs = {
+        "fltkhs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          fltkhs-fluidtohs = {
+          "fltkhs-fluidtohs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -40,7 +40,7 @@ let
               hsPkgs.mtl
             ];
           };
-          fltkhs-buttons = {
+          "fltkhs-buttons" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs

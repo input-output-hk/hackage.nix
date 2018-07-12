@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ghc-prof-aeson-flamegraph = {
+          "ghc-prof-aeson-flamegraph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsemail = {
+        "hsemail" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctest-hsemail = {
+          "doctest-hsemail" = {
             depends  = [
               hsPkgs.base
               hsPkgs.old-time
@@ -38,7 +38,7 @@ let
               hsPkgs.doctest
             ];
           };
-          test-hsemail = {
+          "test-hsemail" = {
             depends  = [
               hsPkgs.base
               hsPkgs.old-time

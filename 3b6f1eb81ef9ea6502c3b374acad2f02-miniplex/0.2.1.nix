@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        miniplex = {
+        "miniplex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          plox-read = {
+          "plox-read" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -39,7 +39,7 @@ let
               hsPkgs.mtl
             ];
           };
-          plox-write = {
+          "plox-write" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

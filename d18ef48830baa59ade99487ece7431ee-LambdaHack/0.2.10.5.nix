@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LambdaHack = {
+        "LambdaHack" = {
           depends  = [
             hsPkgs.ConfigFile
             hsPkgs.array
@@ -59,7 +59,7 @@ let
                 else [ hsPkgs.gtk ]);
         };
         exes = {
-          LambdaHack = {
+          "LambdaHack" = {
             depends  = [
               hsPkgs.LambdaHack
               hsPkgs.template-haskell

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sproxy-web = {
+          "sproxy-web" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

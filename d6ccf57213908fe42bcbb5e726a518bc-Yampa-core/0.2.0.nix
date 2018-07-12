@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Yampa-core = {
+        "Yampa-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -33,13 +33,13 @@ let
           ];
         };
         exes = {
-          YampaElevator = {
+          "YampaElevator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Yampa-core
             ];
           };
-          YampaTailgatingDetector = {
+          "YampaTailgatingDetector" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Yampa-core
@@ -47,13 +47,13 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          testAFRP = {
+          "testAFRP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Yampa-core

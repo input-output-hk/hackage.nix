@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-gpio = {
+        "system-gpio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

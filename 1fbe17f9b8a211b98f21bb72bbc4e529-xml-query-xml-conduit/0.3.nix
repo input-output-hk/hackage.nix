@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-query-xml-conduit = {
+        "xml-query-xml-conduit" = {
           depends  = [
             hsPkgs.xml-query
             hsPkgs.xml-query-xml-types

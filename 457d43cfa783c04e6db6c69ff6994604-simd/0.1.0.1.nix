@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simd = {
+        "simd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

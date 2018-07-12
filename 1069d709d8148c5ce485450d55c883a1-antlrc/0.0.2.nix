@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        antlrc = {
+        "antlrc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          antlrcmkenums = {
+          "antlrcmkenums" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

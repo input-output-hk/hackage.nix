@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        biostockholm = {
+        "biostockholm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

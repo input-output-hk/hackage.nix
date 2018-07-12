@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        KdTree = {
+        "KdTree" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          KdTreeTest = {
+          "KdTreeTest" = {
             depends  = [
               hsPkgs.QuickCheck
             ];

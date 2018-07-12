@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        csound-sampler = {
+        "csound-sampler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

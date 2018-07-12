@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        interlude = {
+        "interlude" = {
           depends  = [ hsPkgs.base ];
         };
       };

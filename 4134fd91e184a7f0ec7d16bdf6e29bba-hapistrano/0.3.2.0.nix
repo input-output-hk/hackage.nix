@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hapistrano = {
+        "hapistrano" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          hap = {
+          "hap" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.async
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

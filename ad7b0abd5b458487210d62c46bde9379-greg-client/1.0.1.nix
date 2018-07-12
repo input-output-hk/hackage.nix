@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        greg-client = {
+        "greg-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

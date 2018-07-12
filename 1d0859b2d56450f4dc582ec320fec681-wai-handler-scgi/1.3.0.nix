@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-handler-scgi = {
+        "wai-handler-scgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

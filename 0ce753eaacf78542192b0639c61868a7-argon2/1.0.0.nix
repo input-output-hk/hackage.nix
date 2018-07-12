@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        argon2 = {
+        "argon2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

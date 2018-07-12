@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger-web = {
+        "hledger-web" = {
           depends  = ([
             hsPkgs.hledger-lib
             hsPkgs.hledger
@@ -71,7 +71,7 @@ let
             ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         exes = {
-          hledger-web = {
+          "hledger-web" = {
             depends  = ([
               hsPkgs.hledger-lib
               hsPkgs.hledger
@@ -118,7 +118,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = ([
               hsPkgs.hledger-lib
               hsPkgs.hledger

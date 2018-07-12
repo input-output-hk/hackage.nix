@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lens-toml-parser = {
+        "lens-toml-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -41,7 +41,7 @@ let
               hsPkgs.lens-toml-parser
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

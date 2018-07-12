@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gauge = {
+        "gauge" = {
           depends  = [
             hsPkgs.ansi-wl-pprint
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -47,7 +47,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -58,7 +58,7 @@ let
               hsPkgs.vector
             ];
           };
-          cleanup = {
+          "cleanup" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

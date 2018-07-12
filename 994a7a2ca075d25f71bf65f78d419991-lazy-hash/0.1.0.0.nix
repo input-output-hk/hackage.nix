@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazy-hash = {
+        "lazy-hash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constrained-categories

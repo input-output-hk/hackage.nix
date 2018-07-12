@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-equivalence = {
+        "persistent-equivalence" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

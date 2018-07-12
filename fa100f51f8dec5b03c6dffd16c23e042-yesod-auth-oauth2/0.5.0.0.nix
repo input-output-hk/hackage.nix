@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-oauth2 = {
+        "yesod-auth-oauth2" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          yesod-auth-oauth2-example = {
+          "yesod-auth-oauth2-example" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

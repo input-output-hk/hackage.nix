@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hlint = {
+        "hlint" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.process
@@ -49,7 +49,7 @@ let
           ] ++ pkgs.lib.optional _flags.gpl hsPkgs.hscolour) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         exes = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

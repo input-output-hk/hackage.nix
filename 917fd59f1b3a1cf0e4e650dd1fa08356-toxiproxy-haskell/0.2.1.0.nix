@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toxiproxy-haskell = {
+        "toxiproxy-haskell" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          toxiproxy-haskell-test = {
+          "toxiproxy-haskell-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clash-prelude = {
+        "clash-prelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.doctests)) [
               hsPkgs.base
               hsPkgs.doctest

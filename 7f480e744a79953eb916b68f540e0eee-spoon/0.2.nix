@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spoon = {
+        "spoon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

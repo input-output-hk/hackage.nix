@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        css-syntax = {
+        "css-syntax" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

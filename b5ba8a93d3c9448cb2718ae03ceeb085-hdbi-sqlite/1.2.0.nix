@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdbi-sqlite = {
+        "hdbi-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hdbi
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

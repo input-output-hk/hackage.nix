@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          archnews = {
+          "archnews" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tagsoup

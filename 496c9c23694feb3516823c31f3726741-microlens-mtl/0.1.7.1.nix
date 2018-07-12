@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microlens-mtl = {
+        "microlens-mtl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.microlens

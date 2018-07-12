@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        KiCS = {
+        "KiCS" = {
           depends  = [ hsPkgs.syb ];
         };
         exes = {
-          kics = {
+          "kics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

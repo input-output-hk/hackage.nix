@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        plotfont = {
+        "plotfont" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

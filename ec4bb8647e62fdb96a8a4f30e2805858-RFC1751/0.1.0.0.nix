@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        RFC1751 = {
+        "RFC1751" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
           ];
         };
         tests = {
-          test-haskoin-crypto = {
+          "test-haskoin-crypto" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

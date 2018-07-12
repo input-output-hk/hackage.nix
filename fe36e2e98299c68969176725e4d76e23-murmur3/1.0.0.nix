@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        murmur3 = {
+        "murmur3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-murmur3 = {
+          "test-murmur3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base16-bytestring

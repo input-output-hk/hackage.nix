@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        leksah = {
+        "leksah" = {
           depends  = ((([
             hsPkgs.Cabal
             hsPkgs.base
@@ -66,7 +66,7 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
         };
         exes = {
-          leksah = {
+          "leksah" = {
             depends  = ((((if system.isWindows
               then [ hsPkgs.Win32 ]
               else [
@@ -114,7 +114,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        primes-type = {
+        "primes-type" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primes
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          primes-type-test = {
+          "primes-type-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primes
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          primes-type-bench = {
+          "primes-type-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primes

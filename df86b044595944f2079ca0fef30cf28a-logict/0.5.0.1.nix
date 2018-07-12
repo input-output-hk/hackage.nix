@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logict = {
+        "logict" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

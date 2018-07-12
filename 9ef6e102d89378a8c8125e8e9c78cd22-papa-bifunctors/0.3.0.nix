@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-bifunctors = {
+        "papa-bifunctors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.papa-bifunctors-export
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

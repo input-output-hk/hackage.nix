@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        optional-args = {
+        "optional-args" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;

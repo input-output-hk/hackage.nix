@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hot = {
+          "hot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint
@@ -45,7 +45,7 @@ let
               hsPkgs.buildPackages.happy
             ];
           };
-          hokey = {
+          "hokey" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -73,7 +73,7 @@ let
               hsPkgs.yaml
             ];
           };
-          hkt = {
+          "hkt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

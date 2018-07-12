@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clippings = {
+        "clippings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          clippings2tsv = {
+          "clippings2tsv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          clippings-tests = {
+          "clippings-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clippings

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rss-conduit = {
+        "rss-conduit" = {
           depends  = [
             hsPkgs.atom-conduit
             hsPkgs.base
@@ -44,7 +44,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.rss-conduit
               hsPkgs.atom-conduit
@@ -73,7 +73,7 @@ let
               hsPkgs.xml-types
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

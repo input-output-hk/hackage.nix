@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cake3 = {
+        "cake3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-meta
@@ -43,13 +43,13 @@ let
           ];
         };
         exes = {
-          cake3 = {
+          "cake3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
             ];
           };
-          urembed = {
+          "urembed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

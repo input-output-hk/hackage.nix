@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        msgpack-idl = {
+        "msgpack-idl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          mpidl = {
+          "mpidl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

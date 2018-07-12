@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prim-ref = {
+        "prim-ref" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive

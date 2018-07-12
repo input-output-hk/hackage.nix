@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        IPv6Addr = {
+        "IPv6Addr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

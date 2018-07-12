@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          yolobot = {
+          "yolobot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

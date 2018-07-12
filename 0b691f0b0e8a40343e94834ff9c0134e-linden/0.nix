@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linden = {
+        "linden" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          linden-example = {
+          "linden-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.linden

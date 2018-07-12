@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        luautils = {
+        "luautils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hslua

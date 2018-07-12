@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        matrix-market-pure = {
+        "matrix-market-pure" = {
           depends  = [ hsPkgs.base ];
         };
       };

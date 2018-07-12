@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        StateVar-transformer = {
+        "StateVar-transformer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

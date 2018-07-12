@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-frontend-pango = {
+        "yi-frontend-pango" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

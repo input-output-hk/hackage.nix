@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        incremental = {
+        "incremental" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          incremental-test = {
+          "incremental-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.incremental

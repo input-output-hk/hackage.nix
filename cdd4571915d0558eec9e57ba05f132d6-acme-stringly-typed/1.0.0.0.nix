@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-stringly-typed = {
+        "acme-stringly-typed" = {
           depends  = [ hsPkgs.base ];
         };
       };

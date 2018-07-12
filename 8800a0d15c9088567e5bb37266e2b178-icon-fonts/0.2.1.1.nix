@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        icon-fonts = {
+        "icon-fonts" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        splines = {
+        "splines" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          splines-test = {
+          "splines-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          splines-bench = {
+          "splines-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        formatting = {
+        "formatting" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          formatting-test = {
+          "formatting-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.formatting

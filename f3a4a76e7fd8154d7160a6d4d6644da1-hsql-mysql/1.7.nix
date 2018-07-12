@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hsql-mysql = {
+        "hsql-mysql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsql

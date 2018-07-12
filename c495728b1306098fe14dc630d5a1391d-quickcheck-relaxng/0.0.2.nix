@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-relaxng = {
+        "quickcheck-relaxng" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

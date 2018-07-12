@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-base-stub = {
+        "ghcjs-base-stub" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [

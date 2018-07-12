@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        IntervalMap = {
+        "IntervalMap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          TestInterval = {
+          "TestInterval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -37,7 +37,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          TestGenericInterval = {
+          "TestGenericInterval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -46,7 +46,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          TestIntervalMap = {
+          "TestIntervalMap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -57,7 +57,7 @@ let
           };
         };
         benchmarks = {
-          bench-all = {
+          "bench-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -66,7 +66,7 @@ let
               hsPkgs.criterion
             ];
           };
-          bench-generic-lazy-strict = {
+          "bench-generic-lazy-strict" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

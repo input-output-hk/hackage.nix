@@ -24,14 +24,14 @@ let
         buildType = "Custom";
       };
       components = {
-        emgm = {
+        "emgm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

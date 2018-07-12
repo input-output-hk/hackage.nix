@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hslogger-template = {
+        "hslogger-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        first-class-patterns = {
+        "first-class-patterns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

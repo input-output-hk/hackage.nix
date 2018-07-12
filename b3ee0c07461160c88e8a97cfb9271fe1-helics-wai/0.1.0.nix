@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        helics-wai = {
+        "helics-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          helics-wai-example = {
+          "helics-wai-example" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.wai

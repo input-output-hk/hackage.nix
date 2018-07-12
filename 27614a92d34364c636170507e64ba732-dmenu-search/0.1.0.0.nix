@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dmenu-search = {
+          "dmenu-search" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dual-tree = {
+        "dual-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

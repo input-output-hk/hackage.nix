@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsnoise = {
+        "hsnoise" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

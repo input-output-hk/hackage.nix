@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blosum = {
+        "blosum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          blosum = {
+          "blosum" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blosum

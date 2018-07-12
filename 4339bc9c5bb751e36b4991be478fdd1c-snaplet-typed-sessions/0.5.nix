@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-typed-sessions = {
+        "snaplet-typed-sessions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

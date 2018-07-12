@@ -22,13 +22,13 @@ let
         buildType = "Simple";
       };
       components = {
-        token-bucket = {
+        "token-bucket" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (!_flags.use-cbits) hsPkgs.time;
         };
         tests = {
-          test-tb = {
+          "test-tb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

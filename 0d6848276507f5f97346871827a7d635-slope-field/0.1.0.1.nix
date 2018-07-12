@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        slope-field = {
+        "slope-field" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mathexpr
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          slope-field = {
+          "slope-field" = {
             depends  = [
               hsPkgs.base
               hsPkgs.slope-field

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        affine-invariant-ensemble-mcmc = {
+        "affine-invariant-ensemble-mcmc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

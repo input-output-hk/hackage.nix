@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simtreelo = {
+        "simtreelo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

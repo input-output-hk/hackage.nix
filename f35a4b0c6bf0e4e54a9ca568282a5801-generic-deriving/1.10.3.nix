@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-deriving = {
+        "generic-deriving" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

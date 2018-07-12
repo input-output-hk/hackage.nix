@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        universe-reverse-instances = {
+        "universe-reverse-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

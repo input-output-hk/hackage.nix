@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bamboo-theme-mini-html5 = {
+        "bamboo-theme-mini-html5" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

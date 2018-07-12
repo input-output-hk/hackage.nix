@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Etherbunny = {
+        "Etherbunny" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          etherbunny = {
+          "etherbunny" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-formatter = {
+        "haskell-formatter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          haskell-formatter = {
+          "haskell-formatter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

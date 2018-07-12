@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        bordacount = {
+        "bordacount" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          bordacount-test = {
+          "bordacount-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bordacount

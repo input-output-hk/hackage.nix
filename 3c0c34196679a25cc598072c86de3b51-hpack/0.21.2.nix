@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpack = {
+        "hpack" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.Glob
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          hpack = {
+          "hpack" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.Glob
@@ -66,7 +66,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.Glob

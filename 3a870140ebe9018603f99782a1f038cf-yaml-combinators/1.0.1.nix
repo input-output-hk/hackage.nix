@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml-combinators = {
+        "yaml-combinators" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -45,7 +45,7 @@ let
               hsPkgs.yaml-combinators
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

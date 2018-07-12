@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        supercollider-midi = {
+        "supercollider-midi" = {
           depends  = [
             hsPkgs.supercollider-ht
             hsPkgs.hsc3
@@ -44,8 +44,8 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          sc-keyboard = {};
-          sc-wind = {};
+          "sc-keyboard" = {};
+          "sc-wind" = {};
         };
       };
     }

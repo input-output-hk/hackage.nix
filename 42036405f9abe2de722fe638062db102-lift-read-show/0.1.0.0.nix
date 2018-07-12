@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lift-read-show = {
+        "lift-read-show" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuid = {
+        "uuid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

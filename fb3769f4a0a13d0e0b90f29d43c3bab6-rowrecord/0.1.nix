@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rowrecord = {
+        "rowrecord" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

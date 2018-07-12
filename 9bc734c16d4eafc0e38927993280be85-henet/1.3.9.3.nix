@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        henet = {
+        "henet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bitset

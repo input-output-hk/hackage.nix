@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zip-stream = {
+        "zip-stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          unzip-stream = {
+          "unzip-stream" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
               hsPkgs.zip-stream
             ];
           };
-          zip-stream = {
+          "zip-stream" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

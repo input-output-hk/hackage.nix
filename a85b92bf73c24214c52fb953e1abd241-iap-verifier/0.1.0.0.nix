@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iap-verifier = {
+        "iap-verifier" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digestive-functors-happstack = {
+        "digestive-functors-happstack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.digestive-functors

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        collada-output = {
+        "collada-output" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml
@@ -31,6 +31,6 @@ let
             hsPkgs.vector
           ];
         };
-        exes = { Examples = {}; };
+        exes = { "Examples" = {}; };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        posix-paths = {
+        "posix-paths" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          bench.hs = {
+          "bench.hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.posix-paths

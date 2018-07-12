@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        no-role-annots = {
+        "no-role-annots" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          sanity-check = {
+          "sanity-check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

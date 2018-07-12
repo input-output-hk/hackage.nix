@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GTALib = {
+        "GTALib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          unit-test = {
+          "unit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enclosed-exceptions = {
+        "enclosed-exceptions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lifted-base

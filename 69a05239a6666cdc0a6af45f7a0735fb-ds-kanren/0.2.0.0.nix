@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ds-kanren = {
+        "ds-kanren" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-unify: = {
+          "test-unify:" = {
             depends  = [
               hsPkgs.ds-kanren
               hsPkgs.tasty
@@ -37,7 +37,7 @@ let
               hsPkgs.base
             ];
           };
-          test-list-ops: = {
+          "test-list-ops:" = {
             depends  = [
               hsPkgs.ds-kanren
               hsPkgs.tasty

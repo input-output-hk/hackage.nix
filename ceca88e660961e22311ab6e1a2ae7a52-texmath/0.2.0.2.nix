@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        texmath = {
+        "texmath" = {
           depends  = [
             hsPkgs.xml
             hsPkgs.parsec
@@ -31,8 +31,8 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          testTeXMathML = {};
-          texmath-cgi = {
+          "testTeXMathML" = {};
+          "texmath-cgi" = {
             depends  = [
               hsPkgs.cgi
               hsPkgs.json

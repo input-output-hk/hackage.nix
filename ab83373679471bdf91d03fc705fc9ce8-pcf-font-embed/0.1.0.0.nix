@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pcf-font-embed = {
+        "pcf-font-embed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

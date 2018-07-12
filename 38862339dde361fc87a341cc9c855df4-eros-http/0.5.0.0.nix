@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          eros-http = {
+          "eros-http" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

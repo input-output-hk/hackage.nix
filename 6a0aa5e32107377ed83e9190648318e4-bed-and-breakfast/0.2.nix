@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bed-and-breakfast = {
+        "bed-and-breakfast" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

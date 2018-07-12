@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multi-trie = {
+        "multi-trie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          Spec = {
+          "Spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web3 = {
+        "web3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          web3-test = {
+          "web3-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.memory

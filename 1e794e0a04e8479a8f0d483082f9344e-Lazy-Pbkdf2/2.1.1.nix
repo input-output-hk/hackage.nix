@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Lazy-Pbkdf2 = {
+        "Lazy-Pbkdf2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          Known-answer = {
+          "Known-answer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cryptonite

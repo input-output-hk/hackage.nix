@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        semigroupoids-syntax = {
+        "semigroupoids-syntax" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.semigroups
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.contravariant hsPkgs.contravariant) ++ pkgs.lib.optional _flags.distributive hsPkgs.distributive) ++ pkgs.lib.optional _flags.comonad hsPkgs.comonad;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          kics = {
+          "kics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -33,7 +33,7 @@ let
               hsPkgs.curry-base
             ];
           };
-          kicsi = {
+          "kicsi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

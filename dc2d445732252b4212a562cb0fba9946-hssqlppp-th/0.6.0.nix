@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hssqlppp-th = {
+        "hssqlppp-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          TestsTh = {
+          "TestsTh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb

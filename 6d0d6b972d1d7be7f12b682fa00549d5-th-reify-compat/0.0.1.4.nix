@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-reify-compat = {
+        "th-reify-compat" = {
           depends  = [ hsPkgs.base ] ++ [
             hsPkgs.template-haskell
           ];

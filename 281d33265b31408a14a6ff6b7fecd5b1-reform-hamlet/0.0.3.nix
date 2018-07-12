@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reform-hamlet = {
+        "reform-hamlet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup

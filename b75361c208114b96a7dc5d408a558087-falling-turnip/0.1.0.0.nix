@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          falling-turnip = {
+          "falling-turnip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa

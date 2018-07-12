@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        records-sop = {
+        "records-sop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

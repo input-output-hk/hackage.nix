@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dsp = {
+        "dsp" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.array

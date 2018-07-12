@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-carbon = {
+        "hs-carbon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

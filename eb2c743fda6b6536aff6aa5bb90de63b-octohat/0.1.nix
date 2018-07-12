@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        octohat = {
+        "octohat" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

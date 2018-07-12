@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        selenium-server = {
+        "selenium-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

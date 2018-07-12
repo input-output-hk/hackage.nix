@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-hsqml = {
+        "diagrams-hsqml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colour

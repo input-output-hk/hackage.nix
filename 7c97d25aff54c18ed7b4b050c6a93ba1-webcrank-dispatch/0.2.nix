@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webcrank-dispatch = {
+        "webcrank-dispatch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

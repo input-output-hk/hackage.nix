@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shared-buffer = {
+        "shared-buffer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          shared-buffer-tests = {
+          "shared-buffer-tests" = {
             depends  = [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

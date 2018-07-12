@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          uuagc-bootstrap = {
+          "uuagc-bootstrap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unordered-containers = {
+        "unordered-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          hashmap-lazy-properties = {
+          "hashmap-lazy-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -41,7 +41,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          hashmap-strict-properties = {
+          "hashmap-strict-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -52,7 +52,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          hashset-properties = {
+          "hashset-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -63,7 +63,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          regressions = {
+          "regressions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hashable
@@ -75,7 +75,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

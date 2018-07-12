@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        product-isomorphic = {
+        "product-isomorphic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

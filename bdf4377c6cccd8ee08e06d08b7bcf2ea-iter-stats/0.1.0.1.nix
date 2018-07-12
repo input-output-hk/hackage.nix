@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iter-stats = {
+        "iter-stats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.heap
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          iter-stats-tests = {
+          "iter-stats-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.statistics

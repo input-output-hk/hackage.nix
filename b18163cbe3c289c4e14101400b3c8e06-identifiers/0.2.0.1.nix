@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        identifiers = {
+        "identifiers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.identifiers
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          bench-builder-all = {
+          "bench-builder-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

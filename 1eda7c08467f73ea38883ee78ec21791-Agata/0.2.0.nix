@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Agata = {
+        "Agata" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.base

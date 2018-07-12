@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        functorm = {
+        "functorm" = {
           depends  = [ hsPkgs.base ];
         };
       };

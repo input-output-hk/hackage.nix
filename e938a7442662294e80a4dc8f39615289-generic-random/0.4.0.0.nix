@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-random = {
+        "generic-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test-tree = {
+          "test-tree" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          bench-binarytree = {
+          "bench-binarytree" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.criterion

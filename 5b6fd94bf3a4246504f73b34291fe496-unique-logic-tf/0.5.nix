@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unique-logic-tf = {
+        "unique-logic-tf" = {
           depends  = [
             hsPkgs.data-ref
             hsPkgs.transformers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-unique-logic = {
+          "test-unique-logic" = {
             depends  = [
               hsPkgs.unique-logic-tf
               hsPkgs.QuickCheck

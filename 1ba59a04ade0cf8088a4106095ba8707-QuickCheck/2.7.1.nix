@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        QuickCheck = {
+        "QuickCheck" = {
           depends  = ((((((if _flags.base4
             then [
               hsPkgs.base
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          test-quickcheck = {
+          "test-quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

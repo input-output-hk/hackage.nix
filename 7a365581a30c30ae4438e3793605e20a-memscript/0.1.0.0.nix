@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          memscript = {
+          "memscript" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline

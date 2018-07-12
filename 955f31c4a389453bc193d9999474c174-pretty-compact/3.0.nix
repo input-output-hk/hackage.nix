@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty-compact = {
+        "pretty-compact" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         benchmarks = {
-          pretty-comparison = {
+          "pretty-comparison" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

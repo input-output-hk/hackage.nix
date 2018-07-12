@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sneathlane-haste = {
+        "sneathlane-haste" = {
           depends  = if _flags.haste-inst
             then [
               hsPkgs.base

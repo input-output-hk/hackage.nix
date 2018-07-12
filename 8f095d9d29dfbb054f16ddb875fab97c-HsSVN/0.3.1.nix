@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        HsSVN = {
+        "HsSVN" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

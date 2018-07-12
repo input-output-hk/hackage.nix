@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-csv = {
+        "pipes-csv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cassava

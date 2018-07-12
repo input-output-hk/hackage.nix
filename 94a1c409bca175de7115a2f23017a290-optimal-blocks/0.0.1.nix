@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        optimal-blocks = {
+        "optimal-blocks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          chunk = {
+          "chunk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          test-all = {
+          "test-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-all = {
+          "benchmark-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

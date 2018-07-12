@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-derive = {
+        "binary-derive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

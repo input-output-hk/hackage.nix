@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geom2d = {
+        "geom2d" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -28,42 +28,42 @@ let
           ];
         };
         tests = {
-          point = {
+          "point" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ieee754
               hsPkgs.QuickCheck
             ];
           };
-          line = {
+          "line" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ieee754
               hsPkgs.QuickCheck
             ];
           };
-          intersect = {
+          "intersect" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ieee754
               hsPkgs.QuickCheck
             ];
           };
-          distance = {
+          "distance" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ieee754
               hsPkgs.QuickCheck
             ];
           };
-          translate = {
+          "translate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ieee754
               hsPkgs.QuickCheck
             ];
           };
-          shape = {
+          "shape" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ieee754

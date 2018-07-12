@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsignal = {
+        "hsignal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

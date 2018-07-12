@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gargoyle = {
+        "gargoyle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

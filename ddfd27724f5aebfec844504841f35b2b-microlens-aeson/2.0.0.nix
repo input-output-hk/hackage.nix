@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        microlens-aeson = {
+        "microlens-aeson" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.directory

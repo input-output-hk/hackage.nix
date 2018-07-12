@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        lazy-csv = {
+        "lazy-csv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         exes = {
-          csvSelect = {
+          "csvSelect" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

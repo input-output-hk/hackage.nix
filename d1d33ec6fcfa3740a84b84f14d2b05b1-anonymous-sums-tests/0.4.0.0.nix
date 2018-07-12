@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        anonymous-sums-tests = {
+        "anonymous-sums-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.anonymous-sums

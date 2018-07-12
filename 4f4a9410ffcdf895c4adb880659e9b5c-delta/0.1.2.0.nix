@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        delta = {
+        "delta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          delta-cli = {
+          "delta-cli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.delta

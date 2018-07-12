@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-language = {
+        "yi-language" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

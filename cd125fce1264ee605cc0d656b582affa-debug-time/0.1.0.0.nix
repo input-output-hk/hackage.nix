@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debug-time = {
+        "debug-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.debug-time

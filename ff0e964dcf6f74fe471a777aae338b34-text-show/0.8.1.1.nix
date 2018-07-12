@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-show = {
+        "text-show" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          text-show-spec = {
+          "text-show-spec" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

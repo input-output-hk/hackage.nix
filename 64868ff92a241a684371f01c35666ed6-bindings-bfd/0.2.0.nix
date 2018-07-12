@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-bfd = {
+        "bindings-bfd" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

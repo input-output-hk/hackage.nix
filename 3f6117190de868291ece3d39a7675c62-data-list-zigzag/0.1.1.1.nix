@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-list-zigzag = {
+        "data-list-zigzag" = {
           depends  = [ hsPkgs.base ];
         };
       };

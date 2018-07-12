@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ArrayRef = {
+        "ArrayRef" = {
           depends  = [ hsPkgs.base ];
         };
       };

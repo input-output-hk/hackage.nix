@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-query = {
+        "cabal-query" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

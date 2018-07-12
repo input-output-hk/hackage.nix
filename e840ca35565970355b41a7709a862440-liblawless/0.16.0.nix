@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liblawless = {
+        "liblawless" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -61,14 +61,14 @@ let
           ];
         };
         exes = {
-          ZFS = {
+          "ZFS" = {
             depends  = [
               hsPkgs.liblawless
             ];
           };
         };
         tests = {
-          test-liblawless = {
+          "test-liblawless" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

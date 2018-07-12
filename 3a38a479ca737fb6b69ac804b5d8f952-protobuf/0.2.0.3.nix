@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protobuf = {
+        "protobuf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          protobuf-test = {
+          "protobuf-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

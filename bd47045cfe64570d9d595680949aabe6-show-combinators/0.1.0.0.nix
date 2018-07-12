@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        show-combinators = {
+        "show-combinators" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.show-combinators
               hsPkgs.base

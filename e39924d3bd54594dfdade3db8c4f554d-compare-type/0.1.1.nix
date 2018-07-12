@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compare-type = {
+        "compare-type" = {
           depends  = [ hsPkgs.base ];
         };
       };

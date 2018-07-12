@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        managed = {
+        "managed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

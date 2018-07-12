@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmdtheline = {
+        "cmdtheline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

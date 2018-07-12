@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ihaskell-blaze = {
+        "ihaskell-blaze" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

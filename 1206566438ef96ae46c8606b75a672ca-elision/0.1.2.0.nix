@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        elision = {
+        "elision" = {
           depends  = [
             hsPkgs.base
             hsPkgs.profunctors
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elision

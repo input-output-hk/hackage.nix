@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fordo = {
+          "fordo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

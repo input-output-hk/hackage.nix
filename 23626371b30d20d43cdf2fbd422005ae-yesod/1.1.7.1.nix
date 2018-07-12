@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod = {
+        "yesod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-core
@@ -43,25 +43,25 @@ let
           ];
         };
         exes = {
-          yesod-ghc-wrapper = {
+          "yesod-ghc-wrapper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
             ];
           };
-          yesod-ld-wrapper = {
+          "yesod-ld-wrapper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
             ];
           };
-          yesod-ar-wrapper = {
+          "yesod-ar-wrapper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
             ];
           };
-          yesod = {
+          "yesod" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

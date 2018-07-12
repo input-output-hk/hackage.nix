@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdl2-image = {
+        "sdl2-image" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          sdl2-image-example = {
+          "sdl2-image-example" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.sdl2

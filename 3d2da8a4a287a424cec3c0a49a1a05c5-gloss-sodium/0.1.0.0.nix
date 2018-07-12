@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gloss-sodium = {
+        "gloss-sodium" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gloss

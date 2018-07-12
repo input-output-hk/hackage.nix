@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        billeksah-forms = {
+        "billeksah-forms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

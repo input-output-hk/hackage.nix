@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        git-embed = {
+        "git-embed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

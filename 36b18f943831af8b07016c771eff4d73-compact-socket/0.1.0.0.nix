@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compact-socket = {
+        "compact-socket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

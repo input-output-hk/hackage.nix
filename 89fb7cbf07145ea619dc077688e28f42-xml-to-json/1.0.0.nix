@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-to-json = {
+        "xml-to-json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt
@@ -41,13 +41,13 @@ let
           ];
         };
         exes = {
-          xml-to-json = {
+          "xml-to-json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xml-to-json
             ];
           };
-          xml-to-json-fast = {
+          "xml-to-json-fast" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tagsoup

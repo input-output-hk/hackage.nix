@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NumLazyByteString = {
+        "NumLazyByteString" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

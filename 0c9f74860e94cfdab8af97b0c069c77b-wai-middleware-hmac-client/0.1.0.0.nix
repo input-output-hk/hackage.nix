@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-hmac-client = {
+        "wai-middleware-hmac-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dockercook = {
+        "dockercook" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.aeson
@@ -61,7 +61,7 @@ let
           ];
         };
         exes = {
-          dockercook = {
+          "dockercook" = {
             depends  = [
               hsPkgs.aeson-pretty
               hsPkgs.base
@@ -78,7 +78,7 @@ let
           };
         };
         tests = {
-          dockercook-test = {
+          "dockercook-test" = {
             depends  = [
               hsPkgs.HTF
               hsPkgs.base

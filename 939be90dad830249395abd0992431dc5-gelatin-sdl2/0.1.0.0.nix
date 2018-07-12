@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gelatin-sdl2 = {
+        "gelatin-sdl2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sdl2
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          gelatin-sdl2-example = {
+          "gelatin-sdl2-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gelatin-sdl2

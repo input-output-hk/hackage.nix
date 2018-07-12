@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-journal = {
+        "monad-journal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          c2hs = {
+          "c2hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-c

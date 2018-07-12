@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-contrib = {
+        "hspec-contrib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec-core
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec-core

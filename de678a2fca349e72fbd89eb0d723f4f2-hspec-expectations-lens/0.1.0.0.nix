@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-expectations-lens = {
+        "hspec-expectations-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec-expectations
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

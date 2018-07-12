@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          nicify = {
+          "nicify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nicify-lib

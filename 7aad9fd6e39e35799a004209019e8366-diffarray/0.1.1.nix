@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diffarray = {
+        "diffarray" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

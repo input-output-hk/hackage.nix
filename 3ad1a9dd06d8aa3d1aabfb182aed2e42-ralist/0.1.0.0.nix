@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ralist = {
+        "ralist" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exhaustive = {
+        "exhaustive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.generics-sop

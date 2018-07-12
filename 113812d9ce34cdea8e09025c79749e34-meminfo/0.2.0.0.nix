@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        meminfo = {
+        "meminfo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

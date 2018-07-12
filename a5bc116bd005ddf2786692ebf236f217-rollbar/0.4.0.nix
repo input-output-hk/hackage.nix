@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rollbar = {
+        "rollbar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

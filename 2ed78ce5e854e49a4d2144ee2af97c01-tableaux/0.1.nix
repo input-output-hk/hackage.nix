@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tableaux.cgi = {
+          "tableaux.cgi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

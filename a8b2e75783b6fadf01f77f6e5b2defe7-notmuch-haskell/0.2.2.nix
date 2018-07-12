@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        notmuch-haskell = {
+        "notmuch-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          notmuch-test = {
+          "notmuch-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

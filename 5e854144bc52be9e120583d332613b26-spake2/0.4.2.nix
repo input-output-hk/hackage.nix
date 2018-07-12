@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spake2 = {
+        "spake2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          haskell-spake2-interop-entrypoint = {
+          "haskell-spake2-interop-entrypoint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cryptonite
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sub-state = {
+        "sub-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sets
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

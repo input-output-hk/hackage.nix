@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lentil = {
+          "lentil" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

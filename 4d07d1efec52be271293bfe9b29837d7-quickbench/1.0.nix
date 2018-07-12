@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickbench = {
+        "quickbench" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          quickbench = {
+          "quickbench" = {
             depends  = [
               hsPkgs.quickbench
               hsPkgs.base
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          quickbench-test = {
+          "quickbench-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quickbench

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elm-bridge = {
+        "elm-bridge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          end-to-end-tests = {
+          "end-to-end-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elm-bridge
@@ -38,7 +38,7 @@ let
               hsPkgs.text
             ];
           };
-          derive-elm-tests = {
+          "derive-elm-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

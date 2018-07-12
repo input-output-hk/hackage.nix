@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hinstaller = {
+        "hinstaller" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-auth-token-acid = {
+        "servant-auth-token-acid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.acid-state

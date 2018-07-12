@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        n-ary-functor = {
+        "n-ary-functor" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

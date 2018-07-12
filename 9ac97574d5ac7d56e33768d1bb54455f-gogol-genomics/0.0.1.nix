@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-genomics = {
+        "gogol-genomics" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

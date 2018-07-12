@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-pretty-bc-parser = {
+        "llvm-pretty-bc-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          llvm-disasm = {
+          "llvm-disasm" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.base
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          disasm-test = {
+          "disasm-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

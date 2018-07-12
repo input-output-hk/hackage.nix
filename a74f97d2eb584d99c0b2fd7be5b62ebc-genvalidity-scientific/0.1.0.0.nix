@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-scientific = {
+        "genvalidity-scientific" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          genvalidity-scientific-test = {
+          "genvalidity-scientific-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

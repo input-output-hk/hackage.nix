@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-auth-token-rocksdb = {
+        "servant-auth-token-rocksdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson-injector

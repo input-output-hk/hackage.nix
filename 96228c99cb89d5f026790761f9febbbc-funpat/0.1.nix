@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        funpat = {
+        "funpat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

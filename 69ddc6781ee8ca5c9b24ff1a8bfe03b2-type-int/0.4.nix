@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        type-int = {
+        "type-int" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.base

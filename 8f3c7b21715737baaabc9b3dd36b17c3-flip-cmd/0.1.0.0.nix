@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          flip = {
+          "flip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

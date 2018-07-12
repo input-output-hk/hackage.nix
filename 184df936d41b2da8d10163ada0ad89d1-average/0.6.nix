@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        average = {
+        "average" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector-space

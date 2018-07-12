@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-persist = {
+        "monad-persist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-control
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          monad-persist-test-suite = {
+          "monad-persist-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

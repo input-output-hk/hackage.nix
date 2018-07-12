@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fswatch = {
+        "fswatch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskeline
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          hfswatch = {
+          "hfswatch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline

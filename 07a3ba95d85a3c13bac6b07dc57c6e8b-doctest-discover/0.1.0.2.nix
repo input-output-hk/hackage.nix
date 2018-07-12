@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        doctest-discover = {
+        "doctest-discover" = {
           depends  = [
             hsPkgs.base
             hsPkgs.doctest
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          doctest-discover = {
+          "doctest-discover" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

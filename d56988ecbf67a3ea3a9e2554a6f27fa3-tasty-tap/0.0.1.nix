@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-tap = {
+        "tasty-tap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tasty
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

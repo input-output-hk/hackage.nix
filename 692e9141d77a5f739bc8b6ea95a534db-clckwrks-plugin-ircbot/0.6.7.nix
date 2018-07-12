@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        clckwrks-plugin-ircbot = {
+        "clckwrks-plugin-ircbot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.acid-state

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inject = {
+        "inject" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          inject = {
+          "inject" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

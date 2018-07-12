@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fugue = {
+        "fugue" = {
           depends  = [ hsPkgs.base ];
         };
       };

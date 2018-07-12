@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dataflow = {
+        "dataflow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          dataflow = {
+          "dataflow" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        her-lexer = {
+        "her-lexer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

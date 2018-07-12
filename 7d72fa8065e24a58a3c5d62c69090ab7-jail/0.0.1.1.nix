@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jail = {
+        "jail" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-p2p = {
+        "pipes-p2p" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

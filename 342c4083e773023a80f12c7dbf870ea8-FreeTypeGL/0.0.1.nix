@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FreeTypeGL = {
+        "FreeTypeGL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.freetype2
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          hellobye = {
+          "hellobye" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.FreeTypeGL

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RSA = {
+        "RSA" = {
           depends  = [
             hsPkgs.binary
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          rsa_test = {
+          "rsa_test" = {
             depends  = [
               hsPkgs.binary
               hsPkgs.bytestring
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          test-RSA = {
+          "test-RSA" = {
             depends  = [
               hsPkgs.binary
               hsPkgs.bytestring

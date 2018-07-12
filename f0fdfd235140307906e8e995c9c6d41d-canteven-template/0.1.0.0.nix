@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        canteven-template = {
+        "canteven-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

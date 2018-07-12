@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Chart-cairo = {
+        "Chart-cairo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale

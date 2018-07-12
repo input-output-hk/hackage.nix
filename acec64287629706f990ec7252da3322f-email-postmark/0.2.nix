@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        email-postmark = {
+        "email-postmark" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

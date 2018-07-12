@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Yogurt = {
+        "Yogurt" = {
           depends  = ([
             hsPkgs.mtl
             hsPkgs.regex-posix

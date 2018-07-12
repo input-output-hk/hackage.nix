@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cgrep = {
+          "cgrep" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

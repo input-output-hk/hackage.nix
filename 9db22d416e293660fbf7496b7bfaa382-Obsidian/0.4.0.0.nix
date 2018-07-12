@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Obsidian = {
+        "Obsidian" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

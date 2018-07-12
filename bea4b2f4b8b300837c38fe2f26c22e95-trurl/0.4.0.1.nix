@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        trurl = {
+        "trurl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          trurl = {
+          "trurl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.trurl
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hastache

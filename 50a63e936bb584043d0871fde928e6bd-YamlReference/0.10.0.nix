@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        YamlReference = {
+        "YamlReference" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          yaml2yeast = {
+          "yaml2yeast" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          yaml2yeast-test = {
+          "yaml2yeast-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

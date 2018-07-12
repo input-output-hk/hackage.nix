@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wraxml = {
+        "wraxml" = {
           depends  = [
             hsPkgs.polyparse
             hsPkgs.tagsoup
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          escape-tidy-html = {};
+          "escape-tidy-html" = {};
         };
       };
     }

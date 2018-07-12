@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bv = {
+        "bv" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals (compiler.isGhc && true && _flags.gmp) [
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          bv-tester = {
+          "bv-tester" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.QuickCheck

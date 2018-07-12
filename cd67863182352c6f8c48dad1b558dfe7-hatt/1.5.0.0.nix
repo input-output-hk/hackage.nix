@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hatt = {
+        "hatt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hatt = {
+          "hatt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hatt
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          test-hatt = {
+          "test-hatt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hatt

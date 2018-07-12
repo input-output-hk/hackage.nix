@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hactors = {
+        "hactors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

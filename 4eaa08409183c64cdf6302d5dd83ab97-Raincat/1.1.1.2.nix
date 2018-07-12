@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          raincat = {
+          "raincat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

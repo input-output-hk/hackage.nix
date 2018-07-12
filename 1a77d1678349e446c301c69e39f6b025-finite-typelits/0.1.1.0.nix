@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        finite-typelits = {
+        "finite-typelits" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

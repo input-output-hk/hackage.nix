@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-cp437 = {
+        "text-cp437" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          text-cp437-test = {
+          "text-cp437-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text-cp437

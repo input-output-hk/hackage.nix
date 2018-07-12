@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        monadLib = {
+        "monadLib" = {
           depends  = [ hsPkgs.base ];
         };
       };

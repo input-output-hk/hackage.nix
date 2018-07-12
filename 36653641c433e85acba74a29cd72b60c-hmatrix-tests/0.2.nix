@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-tests = {
+        "hmatrix-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          basic = {
+          "basic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hmatrix-tests

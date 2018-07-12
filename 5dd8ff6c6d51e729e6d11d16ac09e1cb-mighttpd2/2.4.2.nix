@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mighty = {
+          "mighty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -45,7 +45,7 @@ let
               hsPkgs.http-enumerator
             ];
           };
-          mkindex = {
+          "mkindex" = {
             depends  = [ hsPkgs.base ];
           };
         };

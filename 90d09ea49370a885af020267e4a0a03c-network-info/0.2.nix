@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        network-info = {
+        "network-info" = {
           depends  = [ hsPkgs.base ];
-          libs = pkgs.lib.optional (!(system.isLinux || system.isOsx) && system.isWindows) pkgs.iphlpapi;
+          libs = pkgs.lib.optionals (!(system.isLinux || system.isOsx)) (pkgs.lib.optional system.isWindows pkgs.iphlpapi);
         };
       };
     }

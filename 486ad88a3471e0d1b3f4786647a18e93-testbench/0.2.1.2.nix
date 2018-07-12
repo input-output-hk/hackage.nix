@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        testbench = {
+        "testbench" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.testbench
               hsPkgs.base

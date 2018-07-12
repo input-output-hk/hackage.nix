@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vinyl-vectors = {
+        "vinyl-vectors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vinyl
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          sorting = {
+          "sorting" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.vinyl-vectors
               hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rainbox = {
+        "rainbox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rainbow
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          rainbox-mosaic = {
+          "rainbox-mosaic" = {
             depends  = pkgs.lib.optionals _flags.mosaic [
               hsPkgs.base
               hsPkgs.rainbow
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          rainbox-test = {
+          "rainbox-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rainbow
@@ -59,7 +59,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          rainbox-visual = {
+          "rainbox-visual" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rainbow

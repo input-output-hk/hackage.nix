@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lol-cpp = {
+        "lol-cpp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test-lol-cpp = {
+          "test-lol-cpp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lol-cpp
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench-lol-cpp = {
+          "bench-lol-cpp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.DRBG

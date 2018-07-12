@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pontarius-xmpp = {
+        "pontarius-xmpp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

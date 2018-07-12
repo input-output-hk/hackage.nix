@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PriorityChansConverger = {
+        "PriorityChansConverger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

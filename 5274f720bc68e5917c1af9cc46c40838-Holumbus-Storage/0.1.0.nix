@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Holumbus-Storage = {
+        "Holumbus-Storage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -38,8 +38,8 @@ let
           ];
         };
         exes = {
-          StorageControllerDaemon = {};
-          StorageNodeDaemon = {};
+          "StorageControllerDaemon" = {};
+          "StorageNodeDaemon" = {};
         };
       };
     }

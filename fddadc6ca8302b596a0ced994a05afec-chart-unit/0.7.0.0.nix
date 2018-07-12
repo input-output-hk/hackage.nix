@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chart-unit = {
+        "chart-unit" = {
           depends  = [
             hsPkgs.SVGFonts
             hsPkgs.base
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chart-unit

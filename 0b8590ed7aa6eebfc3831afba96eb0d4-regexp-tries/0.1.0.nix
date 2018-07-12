@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regexp-tries = {
+        "regexp-tries" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

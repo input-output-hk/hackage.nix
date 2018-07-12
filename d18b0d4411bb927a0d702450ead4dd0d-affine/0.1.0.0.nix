@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        affine = {
+        "affine" = {
           depends  = [
             hsPkgs.alg
             hsPkgs.base

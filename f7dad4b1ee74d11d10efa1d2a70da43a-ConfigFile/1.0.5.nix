@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ConfigFile = {
+        "ConfigFile" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.HUnit
               hsPkgs.testpack

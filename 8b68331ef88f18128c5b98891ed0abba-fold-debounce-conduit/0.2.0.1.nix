@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fold-debounce-conduit = {
+        "fold-debounce-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fold-debounce-conduit

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HSoM = {
+        "HSoM" = {
           depends  = [
             hsPkgs.base
             hsPkgs.arrows

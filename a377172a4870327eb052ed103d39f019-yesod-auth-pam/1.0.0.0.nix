@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-pam = {
+        "yesod-auth-pam" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hamlet

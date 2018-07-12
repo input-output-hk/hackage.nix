@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        dequeue = {
+        "dequeue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe

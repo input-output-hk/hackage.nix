@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Octree = {
+        "Octree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.AC-Vector
@@ -28,14 +28,14 @@ let
           ];
         };
         tests = {
-          test_Octree = {
+          "test_Octree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AC-Vector
               hsPkgs.QuickCheck
             ];
           };
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AC-Vector

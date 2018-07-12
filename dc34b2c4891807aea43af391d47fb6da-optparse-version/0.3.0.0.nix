@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        optparse-version = {
+        "optparse-version" = {
           depends  = [
             hsPkgs.base
             hsPkgs.optparse-applicative

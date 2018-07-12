@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpapi = {
+        "hpapi" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.papi ];
         };

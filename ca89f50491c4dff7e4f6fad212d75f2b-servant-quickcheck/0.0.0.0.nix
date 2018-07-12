@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-quickcheck = {
+        "servant-quickcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -48,7 +48,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.bifunctors;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

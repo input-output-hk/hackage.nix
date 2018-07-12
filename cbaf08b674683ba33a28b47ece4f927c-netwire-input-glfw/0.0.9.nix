@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netwire-input-glfw = {
+        "netwire-input-glfw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.netwire-input
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          glfw-input-example = {
+          "glfw-input-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.netwire

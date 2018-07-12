@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        sindre = {
+        "sindre" = {
           depends  = [
             hsPkgs.X11
             hsPkgs.X11-xshape
@@ -44,7 +44,7 @@ let
           pkgconfig = [ pkgconfPkgs.xft ];
         };
         exes = {
-          sindre = {
+          "sindre" = {
             depends  = [
               hsPkgs.X11
               hsPkgs.X11-xshape

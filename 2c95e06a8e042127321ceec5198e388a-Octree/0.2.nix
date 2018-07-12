@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Octree = {
+        "Octree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.AC-Vector

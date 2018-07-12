@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timing-convenience = {
+        "timing-convenience" = {
           depends  = [
             hsPkgs.time
             hsPkgs.base

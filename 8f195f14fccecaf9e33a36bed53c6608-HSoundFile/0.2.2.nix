@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HSoundFile = {
+        "HSoundFile" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.binary

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        htirage = {
+        "htirage" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          htirage-test = {
+          "htirage-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

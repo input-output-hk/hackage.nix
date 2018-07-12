@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hpqtypes = {
+        "hpqtypes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          hpqtypes-tests = {
+          "hpqtypes-tests" = {
             depends  = [
               hsPkgs.hpqtypes
               hsPkgs.base

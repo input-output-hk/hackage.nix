@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-accessors = {
+        "generic-accessors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.generic-accessors
               hsPkgs.QuickCheck

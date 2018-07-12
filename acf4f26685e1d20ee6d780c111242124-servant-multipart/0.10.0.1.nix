@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-multipart = {
+        "servant-multipart" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          upload = {
+          "upload" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-client

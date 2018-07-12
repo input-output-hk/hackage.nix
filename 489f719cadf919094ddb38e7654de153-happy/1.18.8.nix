@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          happy = {
+          "happy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

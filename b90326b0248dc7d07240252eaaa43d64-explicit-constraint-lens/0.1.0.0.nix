@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        explicit-constraint-lens = {
+        "explicit-constraint-lens" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          glazier-react-todo = {
+          "glazier-react-todo" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.containers

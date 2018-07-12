@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gssapi-wai = {
+        "gssapi-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gssapi

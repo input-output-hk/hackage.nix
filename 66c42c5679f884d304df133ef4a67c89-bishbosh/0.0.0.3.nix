@@ -27,7 +27,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bishbosh = {
+        "bishbosh" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -49,7 +49,7 @@ let
             else [ hsPkgs.parsec ]);
         };
         exes = {
-          bishbosh = {
+          "bishbosh" = {
             depends  = (([
               hsPkgs.array
               hsPkgs.base
@@ -76,7 +76,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

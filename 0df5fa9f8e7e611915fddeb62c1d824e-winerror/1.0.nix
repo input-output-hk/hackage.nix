@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        winerror = {
+        "winerror" = {
           depends  = pkgs.lib.optional system.isWindows hsPkgs.base;
         };
       };

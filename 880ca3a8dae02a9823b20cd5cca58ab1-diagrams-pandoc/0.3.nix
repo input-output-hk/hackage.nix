@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-pandoc = {
+        "diagrams-pandoc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pandoc-types
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          diagrams-pandoc = {
+          "diagrams-pandoc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-types

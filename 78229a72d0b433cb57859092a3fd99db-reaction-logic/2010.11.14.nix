@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reaction-logic = {
+        "reaction-logic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          reaction-logic-test = {
+          "reaction-logic-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

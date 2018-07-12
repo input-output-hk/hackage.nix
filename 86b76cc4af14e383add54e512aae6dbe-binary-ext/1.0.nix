@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-ext = {
+        "binary-ext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
         };
         tests = {
-          qc = {
+          "qc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -43,7 +43,7 @@ let
               hsPkgs.containers
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
-          read-write-file = {
+          "read-write-file" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

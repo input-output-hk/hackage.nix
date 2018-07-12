@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lacroix = {
+        "lacroix" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atom-conduit = {
+        "atom-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.atom-conduit
               hsPkgs.base

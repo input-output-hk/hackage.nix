@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ed25519-donna = {
+        "ed25519-donna" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        embeddock = {
+        "embeddock" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          embeddock = {
+          "embeddock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

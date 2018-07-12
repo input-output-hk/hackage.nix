@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-communicator = {
+        "binary-communicator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

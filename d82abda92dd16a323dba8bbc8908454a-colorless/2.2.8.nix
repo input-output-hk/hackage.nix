@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        colorless = {
+        "colorless" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          colorless-suite = {
+          "colorless-suite" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

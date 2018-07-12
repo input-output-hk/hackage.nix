@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        react-flux-servant = {
+        "react-flux-servant" = {
           depends  = [
             hsPkgs.base
             hsPkgs.react-flux

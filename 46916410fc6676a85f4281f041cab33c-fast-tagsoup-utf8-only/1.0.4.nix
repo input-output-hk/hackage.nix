@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fast-tagsoup-utf8-only = {
+        "fast-tagsoup-utf8-only" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-mvc-environment-gtk = {
+        "keera-hails-mvc-environment-gtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.keera-hails-mvc-model-protectedmodel

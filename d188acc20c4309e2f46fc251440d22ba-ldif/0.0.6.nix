@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ldif = {
+        "ldif" = {
           depends  = [
             hsPkgs.ghc
             hsPkgs.base
@@ -35,10 +35,10 @@ let
           ];
         };
         exes = {
-          diffLDIF = {};
-          ldif2html = {};
-          ldifmodify = {};
-          test = {
+          "diffLDIF" = {};
+          "ldif2html" = {};
+          "ldifmodify" = {};
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

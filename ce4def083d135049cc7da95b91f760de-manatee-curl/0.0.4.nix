@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        manatee-curl = {
+        "manatee-curl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manatee-core
@@ -47,6 +47,6 @@ let
             hsPkgs.regex-tdfa
           ];
         };
-        exes = { manatee-curl = {}; };
+        exes = { "manatee-curl" = {}; };
       };
     }

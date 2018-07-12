@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gitlib-sample = {
+        "gitlib-sample" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gitlib

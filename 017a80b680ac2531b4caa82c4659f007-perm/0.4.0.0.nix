@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        perm = {
+        "perm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          reddit-tests = {
+          "reddit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

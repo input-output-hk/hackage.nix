@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-pkg-lib = {
+        "ghc-pkg-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-paths

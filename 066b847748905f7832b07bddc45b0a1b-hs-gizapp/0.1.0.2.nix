@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-gizapp = {
+        "hs-gizapp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          steambrowser = {
+          "steambrowser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

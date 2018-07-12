@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-builder = {
+        "diagrams-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams-lib
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          diagrams-builder-cairo = {
+          "diagrams-builder-cairo" = {
             depends  = pkgs.lib.optionals _flags.cairo [
               hsPkgs.base
               hsPkgs.filepath

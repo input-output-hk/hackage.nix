@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twiml = {
+        "twiml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          Golden = {
+          "Golden" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -45,7 +45,7 @@ let
               hsPkgs.twiml
             ];
           };
-          ShouldNotTypecheck = {
+          "ShouldNotTypecheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

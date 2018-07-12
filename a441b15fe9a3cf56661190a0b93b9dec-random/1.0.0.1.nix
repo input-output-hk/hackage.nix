@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random = {
+        "random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

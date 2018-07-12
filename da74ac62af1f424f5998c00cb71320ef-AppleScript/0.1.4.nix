@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AppleScript = {
+        "AppleScript" = {
           depends  = pkgs.lib.optional system.isOsx hsPkgs.base;
           frameworks = pkgs.lib.optional system.isOsx pkgs.Carbon;
         };

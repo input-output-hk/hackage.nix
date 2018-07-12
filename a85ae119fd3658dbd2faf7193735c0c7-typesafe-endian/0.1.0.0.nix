@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typesafe-endian = {
+        "typesafe-endian" = {
           depends  = [ hsPkgs.base ];
         };
       };

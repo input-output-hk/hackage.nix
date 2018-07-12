@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apioiaf-client = {
+        "apioiaf-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          apioiaf-client-test = {
+          "apioiaf-client-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.apioiaf-client

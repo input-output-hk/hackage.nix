@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-default-instances-old-locale = {
+        "data-default-instances-old-locale" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class

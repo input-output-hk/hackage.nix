@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-api-support = {
+        "network-api-support" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

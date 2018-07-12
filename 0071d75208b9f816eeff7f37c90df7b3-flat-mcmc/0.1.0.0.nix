@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flat-mcmc = {
+        "flat-mcmc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

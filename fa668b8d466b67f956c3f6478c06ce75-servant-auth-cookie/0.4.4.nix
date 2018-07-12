@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-auth-cookie = {
+        "servant-auth-cookie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -55,7 +55,7 @@ let
             ]);
         };
         exes = {
-          example = {
+          "example" = {
             depends  = pkgs.lib.optionals _flags.build-examples ([
               hsPkgs.base
               hsPkgs.base-compat
@@ -88,7 +88,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -103,7 +103,7 @@ let
               hsPkgs.time
             ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.tagged;
           };
-          example-tests = {
+          "example-tests" = {
             depends  = pkgs.lib.optionals _flags.build-examples (([
               hsPkgs.base
               hsPkgs.base-compat
@@ -140,7 +140,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

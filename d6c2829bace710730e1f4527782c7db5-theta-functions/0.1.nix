@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        theta-functions = {
+        "theta-functions" = {
           depends  = [ hsPkgs.base ];
         };
       };

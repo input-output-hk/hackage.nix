@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        csv = {
+        "csv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

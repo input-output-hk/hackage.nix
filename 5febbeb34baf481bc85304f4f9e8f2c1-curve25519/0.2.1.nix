@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        curve25519 = {
+        "curve25519" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-curve25519 = {
+          "test-curve25519" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

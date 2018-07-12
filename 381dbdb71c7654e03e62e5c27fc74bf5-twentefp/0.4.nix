@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twentefp = {
+        "twentefp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gloss

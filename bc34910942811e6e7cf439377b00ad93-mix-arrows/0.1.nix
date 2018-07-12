@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mix-arrows = {
+        "mix-arrows" = {
           depends  = [ hsPkgs.base ];
         };
       };

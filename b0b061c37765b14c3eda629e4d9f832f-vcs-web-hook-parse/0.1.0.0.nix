@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vcs-web-hook-parse = {
+        "vcs-web-hook-parse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

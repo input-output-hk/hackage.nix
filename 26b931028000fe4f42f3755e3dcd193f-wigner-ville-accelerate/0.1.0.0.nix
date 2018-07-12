@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wigner-ville-accelerate = {
+        "wigner-ville-accelerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          wigner-test = {
+          "wigner-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wigner

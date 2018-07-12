@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-ses-html = {
+        "snaplet-ses-html" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

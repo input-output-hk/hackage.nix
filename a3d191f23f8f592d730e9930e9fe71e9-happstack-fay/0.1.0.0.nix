@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-fay = {
+        "happstack-fay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fay

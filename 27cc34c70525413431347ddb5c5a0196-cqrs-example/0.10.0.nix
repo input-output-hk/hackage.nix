@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cqrs-example = {
+          "cqrs-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

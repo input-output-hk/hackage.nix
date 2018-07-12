@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        motor-diagrams = {
+        "motor-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

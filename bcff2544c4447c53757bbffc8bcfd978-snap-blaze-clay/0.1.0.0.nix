@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-blaze-clay = {
+        "snap-blaze-clay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

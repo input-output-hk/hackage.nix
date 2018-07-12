@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-kinesis-video-archived-media = {
+        "amazonka-kinesis-video-archived-media" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-kinesis-video-archived-media-test = {
+          "amazonka-kinesis-video-archived-media-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

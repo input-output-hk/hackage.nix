@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wumpus-tree = {
+        "wumpus-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

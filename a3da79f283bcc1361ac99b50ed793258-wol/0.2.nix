@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wol = {
+        "wol" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          wol = {
+          "wol" = {
             depends  = [ hsPkgs.base ];
           };
         };

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OpenAL = {
+        "OpenAL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -34,10 +34,10 @@ let
           libs = if system.isWindows && _flags.usenativewindowslibraries
             then [ pkgs.OpenAL32 ]
             else pkgs.lib.optional (!(system.isOsx || system.isIos)) pkgs.openal;
-          frameworks = pkgs.lib.optional (!(system.isWindows && _flags.usenativewindowslibraries) && (system.isOsx || system.isIos)) pkgs.OpenAL;
+          frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (pkgs.lib.optional (system.isOsx || system.isIos) pkgs.OpenAL);
         };
         exes = {
-          TestDevice = {
+          "TestDevice" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenAL

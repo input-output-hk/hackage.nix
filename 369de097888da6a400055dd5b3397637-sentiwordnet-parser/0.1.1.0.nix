@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sentiwordnet-parser = {
+        "sentiwordnet-parser" = {
           depends  = [
             hsPkgs.Decimal
             hsPkgs.base

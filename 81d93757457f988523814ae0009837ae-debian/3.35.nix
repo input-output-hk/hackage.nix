@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debian = {
+        "debian" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          fakechanges = {
+          "fakechanges" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb
@@ -71,7 +71,7 @@ let
               hsPkgs.zlib
             ];
           };
-          debian-report = {
+          "debian-report" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb
@@ -96,7 +96,7 @@ let
               hsPkgs.zlib
             ];
           };
-          cabal-debian = {
+          "cabal-debian" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb
@@ -122,7 +122,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          apt-get-build-depends = {
+          "apt-get-build-depends" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb

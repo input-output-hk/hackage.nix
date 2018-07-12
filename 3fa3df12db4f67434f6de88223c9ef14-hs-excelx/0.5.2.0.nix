@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-excelx = {
+        "hs-excelx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

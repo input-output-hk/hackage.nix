@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        slack-notify-haskell = {
+        "slack-notify-haskell" = {
           depends  = [
             hsPkgs.HTTP
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.slack-notify-haskell

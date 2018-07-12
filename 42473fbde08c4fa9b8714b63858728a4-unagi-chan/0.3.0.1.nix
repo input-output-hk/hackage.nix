@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unagi-chan = {
+        "unagi-chan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.atomic-primops
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          dev-example = {
+          "dev-example" = {
             depends  = pkgs.lib.optionals (!(!_flags.dev)) [
               hsPkgs.base
               hsPkgs.stm
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive
@@ -52,14 +52,14 @@ let
           };
         };
         benchmarks = {
-          single = {
+          "single" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unagi-chan
               hsPkgs.criterion
             ] ++ pkgs.lib.optional _flags.compare-benchmarks hsPkgs.stm;
           };
-          multi = {
+          "multi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unagi-chan

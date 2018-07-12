@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaMinitel = {
+        "HaMinitel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scion = {
+        "scion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -41,7 +41,7 @@ let
           ] ++ pkgs.lib.optional _flags.testing hsPkgs.QuickCheck;
         };
         exes = {
-          scion-server = {
+          "scion-server" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.Cabal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nimber = {
+        "nimber" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-memocombinators

@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-gtkosxapplication = {
+        "gi-gtkosxapplication" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

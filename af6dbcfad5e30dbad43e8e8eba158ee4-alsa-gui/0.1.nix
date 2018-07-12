@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          alsa-midi-mode = {
+          "alsa-midi-mode" = {
             depends  = [
               hsPkgs.wx
               hsPkgs.wxcore
@@ -32,7 +32,7 @@ let
               hsPkgs.base
             ];
           };
-          alsa-midi-program = {
+          "alsa-midi-program" = {
             depends  = [
               hsPkgs.wx
               hsPkgs.wxcore
@@ -41,7 +41,7 @@ let
               hsPkgs.base
             ];
           };
-          alsa-midi-controller = {
+          "alsa-midi-controller" = {
             depends  = [
               hsPkgs.wx
               hsPkgs.wxcore

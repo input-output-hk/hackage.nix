@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        courier = {
+        "courier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -35,14 +35,14 @@ let
           ];
         };
         exes = {
-          echo-server = {
+          "echo-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cereal
               hsPkgs.courier
             ];
           };
-          echo-client = {
+          "echo-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cereal
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          test-courier = {
+          "test-courier" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Win32-junction-point = {
+        "Win32-junction-point" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

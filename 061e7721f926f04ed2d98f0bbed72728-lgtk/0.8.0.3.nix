@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lgtk = {
+        "lgtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.groups
@@ -48,7 +48,7 @@ let
           ] ++ pkgs.lib.optional _flags.gtk hsPkgs.gtk;
         };
         exes = {
-          lgtkdemo = {
+          "lgtkdemo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

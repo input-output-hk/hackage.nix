@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dtd-types = {
+        "dtd-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

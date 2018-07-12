@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-attoparsec = {
+        "network-attoparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test-suite = {
+          "test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cube = {
+        "cube" = {
           depends  = [
             hsPkgs.base
             hsPkgs.STL
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cube

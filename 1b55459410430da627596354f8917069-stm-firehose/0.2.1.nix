@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-firehose = {
+        "stm-firehose" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-stm = {
+          "test-stm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm-firehose

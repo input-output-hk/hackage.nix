@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        currencies = {
+        "currencies" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         tests = {
-          currencies-test = {
+          "currencies-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.currencies

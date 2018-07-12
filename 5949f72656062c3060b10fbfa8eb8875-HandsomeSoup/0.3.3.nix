@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HandsomeSoup = {
+        "HandsomeSoup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          handsomesoup = {
+          "handsomesoup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HandsomeSoup
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

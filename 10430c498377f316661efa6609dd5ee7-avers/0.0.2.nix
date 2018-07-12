@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        avers = {
+        "avers" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec

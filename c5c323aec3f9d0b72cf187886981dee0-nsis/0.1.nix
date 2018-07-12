@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nsis = {
+        "nsis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          nsis = {
+          "nsis" = {
             depends  = [ hsPkgs.process ];
           };
         };

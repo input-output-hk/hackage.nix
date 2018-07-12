@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        snowflake-core = {
+        "snowflake-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time-exts
           ];
         };
         tests = {
-          snowflake-test = {
+          "snowflake-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.snowflake-core

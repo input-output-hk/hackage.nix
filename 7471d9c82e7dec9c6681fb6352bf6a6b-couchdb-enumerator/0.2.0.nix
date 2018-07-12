@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        couchdb-enumerator = {
+        "couchdb-enumerator" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          test-couch = {
+          "test-couch" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.aeson
               hsPkgs.attoparsec

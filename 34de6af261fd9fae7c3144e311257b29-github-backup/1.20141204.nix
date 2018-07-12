@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          github-backup = {
+          "github-backup" = {
             depends  = ([
               hsPkgs.MissingH
               hsPkgs.hslogger

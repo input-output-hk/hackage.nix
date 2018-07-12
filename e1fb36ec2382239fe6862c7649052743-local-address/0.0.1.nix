@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        local-address = {
+        "local-address" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

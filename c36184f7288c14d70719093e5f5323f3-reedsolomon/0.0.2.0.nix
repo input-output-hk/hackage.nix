@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        reedsolomon = {
+        "reedsolomon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -38,7 +38,7 @@ let
           libs = pkgs.lib.optional _flags.simd pkgs.reedsolomon;
         };
         exes = {
-          reedsolomon-simple-encoder = {
+          "reedsolomon-simple-encoder" = {
             depends  = pkgs.lib.optionals (!system.isWindows) [
               hsPkgs.base
               hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
               hsPkgs.reedsolomon
             ];
           };
-          reedsolomon-simple-decoder = {
+          "reedsolomon-simple-decoder" = {
             depends  = pkgs.lib.optionals (!system.isWindows) [
               hsPkgs.base
               hsPkgs.bytestring
@@ -60,7 +60,7 @@ let
               hsPkgs.reedsolomon
             ];
           };
-          reedsolomon-simple-bench = {
+          "reedsolomon-simple-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -70,7 +70,7 @@ let
               hsPkgs.reedsolomon
             ];
           };
-          reedsolomon-profiling = {
+          "reedsolomon-profiling" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -83,7 +83,7 @@ let
           };
         };
         tests = {
-          reedsolomon-test = {
+          "reedsolomon-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -104,7 +104,7 @@ let
           };
         };
         benchmarks = {
-          reedsolomon-bench = {
+          "reedsolomon-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

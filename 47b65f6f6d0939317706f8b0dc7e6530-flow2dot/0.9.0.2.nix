@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flow2dot = {
+        "flow2dot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,6 +30,6 @@ let
             hsPkgs.utf8-string
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.2.1") hsPkgs.haskell98;
         };
-        exes = { flow2dot = {}; };
+        exes = { "flow2dot" = {}; };
       };
     }

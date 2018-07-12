@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cases = {
+        "cases" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.text
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          api-tests = {
+          "api-tests" = {
             depends  = [
               hsPkgs.cases
               hsPkgs.QuickCheck
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.cases
               hsPkgs.mwc-random

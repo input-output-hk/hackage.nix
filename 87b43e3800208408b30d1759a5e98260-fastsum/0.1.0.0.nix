@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fastsum = {
+        "fastsum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fastsum

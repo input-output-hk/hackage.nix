@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timeout = {
+        "timeout" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          timeout-tests = {
+          "timeout-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

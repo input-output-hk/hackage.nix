@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MFlow = {
+        "MFlow" = {
           depends  = [
             hsPkgs.Workflow
             hsPkgs.transformers
@@ -57,7 +57,7 @@ let
           ];
         };
         exes = {
-          demos-blaze = {
+          "demos-blaze" = {
             depends  = [
               hsPkgs.MFlow
               hsPkgs.RefSerialize

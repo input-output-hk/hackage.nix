@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        top = {
+        "top" = {
           depends  = ([
             hsPkgs.async
             hsPkgs.base
@@ -51,7 +51,7 @@ let
             ]);
         };
         tests = {
-          top-test-repo = {
+          "top-test-repo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.top
@@ -61,7 +61,7 @@ let
               hsPkgs.directory
             ];
           };
-          top-doctest = {
+          "top-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

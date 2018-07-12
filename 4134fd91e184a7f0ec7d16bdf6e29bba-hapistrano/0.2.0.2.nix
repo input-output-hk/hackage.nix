@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hapistrano = {
+        "hapistrano" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time-locale-compat
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          hap = {
+          "hap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time-locale-compat
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          hapistrano-test = {
+          "hapistrano-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time-locale-compat

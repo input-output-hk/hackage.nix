@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        generic-maybe = {
+        "generic-maybe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.bytestring
@@ -52,13 +52,13 @@ let
               hsPkgs.vector
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

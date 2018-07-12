@@ -22,12 +22,12 @@ let
         buildType = "Simple";
       };
       components = {
-        bits-extras = {
+        "bits-extras" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.gcc_s ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.QuickCheck

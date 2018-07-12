@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hcom = {
+        "hcom" = {
           depends  = pkgs.lib.optionals system.isWindows [
             hsPkgs.old-time
             hsPkgs.base

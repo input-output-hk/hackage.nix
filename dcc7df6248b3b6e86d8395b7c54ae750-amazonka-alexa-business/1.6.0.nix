@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-alexa-business = {
+        "amazonka-alexa-business" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-alexa-business-test = {
+          "amazonka-alexa-business-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

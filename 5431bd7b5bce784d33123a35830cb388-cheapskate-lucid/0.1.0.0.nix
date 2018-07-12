@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cheapskate-lucid = {
+        "cheapskate-lucid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

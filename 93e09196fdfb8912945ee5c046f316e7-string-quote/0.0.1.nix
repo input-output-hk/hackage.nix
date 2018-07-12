@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        string-quote = {
+        "string-quote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

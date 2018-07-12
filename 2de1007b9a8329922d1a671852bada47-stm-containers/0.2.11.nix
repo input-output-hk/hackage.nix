@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-containers = {
+        "stm-containers" = {
           depends  = [
             hsPkgs.hashable
             hsPkgs.list-t
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          word-array-tests = {
+          "word-array-tests" = {
             depends  = [
               hsPkgs.free
               hsPkgs.mtl
@@ -50,7 +50,7 @@ let
               hsPkgs.base
             ];
           };
-          api-tests = {
+          "api-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HTF
@@ -69,7 +69,7 @@ let
           };
         };
         benchmarks = {
-          insertion-bench = {
+          "insertion-bench" = {
             depends  = [
               hsPkgs.mwc-random
               hsPkgs.mwc-random-monad
@@ -88,7 +88,7 @@ let
               hsPkgs.base
             ];
           };
-          concurrent-insertion-bench = {
+          "concurrent-insertion-bench" = {
             depends  = [
               hsPkgs.criterion
               hsPkgs.mwc-random
@@ -107,7 +107,7 @@ let
               hsPkgs.base
             ];
           };
-          concurrent-transactions-bench = {
+          "concurrent-transactions-bench" = {
             depends  = [
               hsPkgs.criterion
               hsPkgs.mwc-random

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        animate-preview = {
+        "animate-preview" = {
           depends  = [
             hsPkgs.StateVar
             hsPkgs.aeson
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          animate-preview = {
+          "animate-preview" = {
             depends  = [
               hsPkgs.animate-preview
               hsPkgs.base

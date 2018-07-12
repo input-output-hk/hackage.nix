@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-tdfa-pipes = {
+        "regex-tdfa-pipes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-tdfa

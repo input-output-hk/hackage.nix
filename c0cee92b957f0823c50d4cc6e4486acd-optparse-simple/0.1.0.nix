@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        optparse-simple = {
+        "optparse-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gitrev
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

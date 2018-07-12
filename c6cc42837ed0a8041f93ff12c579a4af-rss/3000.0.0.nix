@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        rss = {
+        "rss" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

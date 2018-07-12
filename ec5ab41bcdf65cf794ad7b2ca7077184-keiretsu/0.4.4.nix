@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          keiretsu = {
+          "keiretsu" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.async

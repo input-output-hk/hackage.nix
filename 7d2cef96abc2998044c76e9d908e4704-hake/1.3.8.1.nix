@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hake = {
+        "hake" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          hake = {
+          "hake" = {
             depends  = [
               hsPkgs.directory
               hsPkgs.process

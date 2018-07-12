@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-implement = {
+        "papa-implement" = {
           depends  = [
             hsPkgs.base
             hsPkgs.papa-base-implement
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

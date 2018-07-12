@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        needle = {
+        "needle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

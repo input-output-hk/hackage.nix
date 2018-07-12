@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          fltkhs-hello-world = {
+          "fltkhs-hello-world" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs

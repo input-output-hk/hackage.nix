@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unbound = {
+        "unbound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.RepLib

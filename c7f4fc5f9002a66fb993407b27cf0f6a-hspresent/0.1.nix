@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        hspresent = {
+        "hspresent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.vty
           ];
         };
-        exes = { hspresent = {}; };
+        exes = { "hspresent" = {}; };
       };
     }

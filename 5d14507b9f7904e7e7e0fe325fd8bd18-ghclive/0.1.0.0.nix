@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghclive = {
+        "ghclive" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          ghclive = {
+          "ghclive" = {
             depends  = [
               hsPkgs.ghclive
               hsPkgs.yesod-static

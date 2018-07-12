@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-flagset = {
+        "data-flagset" = {
           depends  = [ hsPkgs.base ];
         };
       };

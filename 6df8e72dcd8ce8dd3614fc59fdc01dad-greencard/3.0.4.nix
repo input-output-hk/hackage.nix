@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        greencard = {
+        "greencard" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          greencard = {
+          "greencard" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty

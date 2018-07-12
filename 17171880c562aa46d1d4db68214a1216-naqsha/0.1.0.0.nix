@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        naqsha = {
+        "naqsha" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

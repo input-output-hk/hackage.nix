@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        librandomorg = {
+        "librandomorg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl

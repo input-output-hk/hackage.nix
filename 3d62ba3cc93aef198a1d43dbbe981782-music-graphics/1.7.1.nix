@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        music-graphics = {
+        "music-graphics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

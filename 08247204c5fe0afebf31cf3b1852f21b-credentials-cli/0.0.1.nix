@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          credentials = {
+          "credentials" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty

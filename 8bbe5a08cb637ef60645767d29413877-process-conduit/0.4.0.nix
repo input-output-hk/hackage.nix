@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        process-conduit = {
+        "process-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -36,14 +36,14 @@ let
           ];
         };
         exes = {
-          process-conduit = {
+          "process-conduit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit
               hsPkgs.process-conduit
             ];
           };
-          process-qq = {
+          "process-qq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process-conduit

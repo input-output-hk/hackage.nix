@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        directory-tree = {
+        "directory-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

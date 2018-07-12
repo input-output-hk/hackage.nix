@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        shuffle = {
+        "shuffle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -43,7 +43,7 @@ let
             else [ hsPkgs.network ]);
         };
         exes = {
-          shuffle = {
+          "shuffle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shuffle

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        resin = {
+        "resin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

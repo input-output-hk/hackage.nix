@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        merkle-patricia-db = {
+        "merkle-patricia-db" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base16-bytestring
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          test-merkle-patricia-db = {
+          "test-merkle-patricia-db" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default

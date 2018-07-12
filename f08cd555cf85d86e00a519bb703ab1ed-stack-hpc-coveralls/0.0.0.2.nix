@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stack-hpc-coveralls = {
+        "stack-hpc-coveralls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hpc
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          stack-hpc-coveralls = {
+          "stack-hpc-coveralls" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -53,14 +53,14 @@ let
           };
         };
         tests = {
-          stack-hpc-coveralls-test = {
+          "stack-hpc-coveralls-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stack-hpc-coveralls
               hsPkgs.hspec
             ];
           };
-          style = {
+          "style" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

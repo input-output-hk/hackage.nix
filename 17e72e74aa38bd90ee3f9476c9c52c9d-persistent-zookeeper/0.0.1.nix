@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-zookeeper = {
+        "persistent-zookeeper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          basic = {
+          "basic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.persistent

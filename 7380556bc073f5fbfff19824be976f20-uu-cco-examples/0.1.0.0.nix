@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          uu-cco-pp-aterm = {
+          "uu-cco-pp-aterm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

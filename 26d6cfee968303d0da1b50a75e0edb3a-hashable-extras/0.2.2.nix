@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hashable-extras = {
+        "hashable-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.directory

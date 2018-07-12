@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exinst = {
+        "exinst" = {
           depends  = (((([
             hsPkgs.base
             hsPkgs.constraints
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional _flags.aeson hsPkgs.aeson) ++ pkgs.lib.optional _flags.bytes hsPkgs.bytes) ++ pkgs.lib.optional _flags.deepseq hsPkgs.deepseq) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional _flags.quickcheck hsPkgs.QuickCheck;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        disassembler = {
+        "disassembler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

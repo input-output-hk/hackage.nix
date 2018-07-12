@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        packer-messagepack = {
+        "packer-messagepack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.packer
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          packer-msgpack-test-suite = {
+          "packer-msgpack-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.packer

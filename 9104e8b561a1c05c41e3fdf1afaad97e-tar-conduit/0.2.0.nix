@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tar-conduit = {
+        "tar-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
             ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
               hsPkgs.conduit-combinators
             ];
           };
-          space = {
+          "space" = {
             depends  = [
               hsPkgs.base
               hsPkgs.weigh
@@ -66,7 +66,7 @@ let
           };
         };
         benchmarks = {
-          time = {
+          "time" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

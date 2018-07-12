@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        zabt = {
+        "zabt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          zabt-test = {
+          "zabt-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

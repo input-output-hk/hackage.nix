@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          brians-brain = {
+          "brians-brain" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parallel

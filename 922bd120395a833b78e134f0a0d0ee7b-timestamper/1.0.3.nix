@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          timestamper = {
+          "timestamper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.old-locale

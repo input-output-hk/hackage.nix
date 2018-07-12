@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Control-Monad-ST2 = {
+        "Control-Monad-ST2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

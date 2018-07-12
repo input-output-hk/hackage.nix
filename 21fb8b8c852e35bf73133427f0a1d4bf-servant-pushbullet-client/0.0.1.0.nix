@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-pushbullet-client = {
+        "servant-pushbullet-client" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

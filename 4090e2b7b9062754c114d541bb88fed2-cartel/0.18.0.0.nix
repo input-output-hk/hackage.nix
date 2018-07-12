@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cartel = {
+        "cartel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          cartel-visual-test = {
+          "cartel-visual-test" = {
             depends  = pkgs.lib.optionals _flags.visual [
               hsPkgs.multiarg
               hsPkgs.QuickCheck
@@ -55,7 +55,7 @@ let
               hsPkgs.split
             ];
           };
-          cartel-init = {
+          "cartel-init" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          cartel-properties = {
+          "cartel-properties" = {
             depends  = [
               hsPkgs.multiarg
               hsPkgs.QuickCheck

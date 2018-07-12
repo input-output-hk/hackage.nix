@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        incremental-computing = {
+        "incremental-computing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          sequence-tests = {
+          "sequence-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

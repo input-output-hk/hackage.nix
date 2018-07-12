@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        giphy-api = {
+        "giphy-api" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          giphy-search = {
+          "giphy-search" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-uri
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

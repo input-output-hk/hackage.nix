@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        algo-s = {
+        "algo-s" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foldl
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          sample = {
+          "sample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.algo-s
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          algo-s-specs = {
+          "algo-s-specs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.algo-s
@@ -56,7 +56,7 @@ let
           };
         };
         benchmarks = {
-          algo-s-bench = {
+          "algo-s-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.algo-s

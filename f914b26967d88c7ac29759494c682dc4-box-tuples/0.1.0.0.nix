@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        box-tuples = {
+        "box-tuples" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

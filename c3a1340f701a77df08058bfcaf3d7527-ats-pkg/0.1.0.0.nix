@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ats-pkg = {
+        "ats-pkg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          atspkg = {
+          "atspkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ats-pkg
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          ats-pkg-test = {
+          "ats-pkg-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ats-pkg
@@ -59,7 +59,7 @@ let
           };
         };
         benchmarks = {
-          ats-pkg-bench = {
+          "ats-pkg-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ats-pkg

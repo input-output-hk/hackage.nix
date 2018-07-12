@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bluetile = {
+          "bluetile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -40,7 +40,7 @@ let
               hsPkgs.xmonad-contrib
             ];
           };
-          gnome-bluetile-session = {
+          "gnome-bluetile-session" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -48,7 +48,7 @@ let
               hsPkgs.unix
             ];
           };
-          bluetiledock = {
+          "bluetiledock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -61,14 +61,14 @@ let
               pkgconfPkgs."gtk+-2.0"
             ];
           };
-          bluetilemockwin = {
+          "bluetilemockwin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
               hsPkgs.gtk
             ];
           };
-          bluetilegreet = {
+          "bluetilegreet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

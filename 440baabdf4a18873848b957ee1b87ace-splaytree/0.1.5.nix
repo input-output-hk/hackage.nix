@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        splaytree = {
+        "splaytree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
           ];
         };
         tests = {
-          testSplay = {
+          "testSplay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.splaytree

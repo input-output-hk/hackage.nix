@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pdf2line = {
+          "pdf2line" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
               hsPkgs.process
             ];
           };
-          pdfdump = {
+          "pdfdump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

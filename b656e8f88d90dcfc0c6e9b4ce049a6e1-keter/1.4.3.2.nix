@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keter = {
+        "keter" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.directory
@@ -74,7 +74,7 @@ let
             else [ hsPkgs.fsnotify ]);
         };
         exes = {
-          keter = {
+          "keter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.keter
@@ -84,7 +84,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

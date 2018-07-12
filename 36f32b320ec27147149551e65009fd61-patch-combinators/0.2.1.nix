@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        patch-combinators = {
+        "patch-combinators" = {
           depends  = [ hsPkgs.base ];
         };
       };

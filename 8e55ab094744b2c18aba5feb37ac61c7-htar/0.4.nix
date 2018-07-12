@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          htar = {
+          "htar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.old-time

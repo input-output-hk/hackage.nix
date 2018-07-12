@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgeometry = {
+        "hgeometry" = {
           depends  = [ hsPkgs.base ];
         };
       };

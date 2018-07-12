@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cublas = {
+        "cublas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cuda

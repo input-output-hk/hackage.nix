@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-sass = {
+        "hakyll-sass" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hakyll

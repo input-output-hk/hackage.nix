@@ -19,5 +19,5 @@ let
         description = "Currently being prepared for release, reserving the namespace here.";
         buildType = "Simple";
       };
-      components = { freq = {}; };
+      components = { "freq" = {}; };
     }

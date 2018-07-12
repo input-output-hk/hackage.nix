@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hskeleton = {
+        "hskeleton" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

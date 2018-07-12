@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wide-word = {
+        "wide-word" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskelldb-hsql-mysql = {
+        "haskelldb-hsql-mysql" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

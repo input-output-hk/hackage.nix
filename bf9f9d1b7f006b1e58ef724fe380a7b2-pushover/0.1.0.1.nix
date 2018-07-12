@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pushover = {
+        "pushover" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          pushover-test = {
+          "pushover-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

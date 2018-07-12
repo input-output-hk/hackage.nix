@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        glirc = {
+        "glirc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -60,7 +60,7 @@ let
           ];
         };
         exes = {
-          glirc2 = {
+          "glirc2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.glirc
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.glirc

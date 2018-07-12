@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thespian = {
+        "thespian" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

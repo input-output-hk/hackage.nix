@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        set-extra = {
+        "set-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

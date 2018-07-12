@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heist-async = {
+        "heist-async" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xmlhtml

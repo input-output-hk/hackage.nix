@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        approximate-equality = {
+        "approximate-equality" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-level-natural-number

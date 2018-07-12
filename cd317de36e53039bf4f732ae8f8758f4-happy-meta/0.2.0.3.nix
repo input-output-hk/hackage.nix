@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happy-meta = {
+        "happy-meta" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.haskell-src-meta

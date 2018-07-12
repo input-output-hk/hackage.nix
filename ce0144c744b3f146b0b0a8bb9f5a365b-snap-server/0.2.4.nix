@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-server = {
+        "snap-server" = {
           depends  = ([
             hsPkgs.array
             hsPkgs.attoparsec

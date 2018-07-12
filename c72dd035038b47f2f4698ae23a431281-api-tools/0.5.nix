@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        api-tools = {
+        "api-tools" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.QuickCheck
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          migration-tool = {
+          "migration-tool" = {
             depends  = [
               hsPkgs.api-tools
               hsPkgs.QuickCheck
@@ -77,7 +77,7 @@ let
           };
         };
         tests = {
-          test-api-tools = {
+          "test-api-tools" = {
             depends  = [
               hsPkgs.api-tools
               hsPkgs.Cabal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spool = {
+        "spool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

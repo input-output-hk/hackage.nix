@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-quadprogpp = {
+        "hmatrix-quadprogpp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

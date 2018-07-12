@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xcffib = {
+        "xcffib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xcb-types
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          xcffibgen = {
+          "xcffibgen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xcffib
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          PyHelpersTests = {
+          "PyHelpersTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xcffib
@@ -67,7 +67,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          GeneratorTests.hs = {
+          "GeneratorTests.hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xcffib

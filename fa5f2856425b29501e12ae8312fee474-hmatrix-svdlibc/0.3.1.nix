@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-svdlibc = {
+        "hmatrix-svdlibc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
           ];
         };
         exes = {
-          svdlibc-test = {
+          "svdlibc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hmatrix

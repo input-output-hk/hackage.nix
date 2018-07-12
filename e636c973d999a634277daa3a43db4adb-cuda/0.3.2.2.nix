@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cuda = {
+        "cuda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AGI = {
+        "AGI" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.mtl

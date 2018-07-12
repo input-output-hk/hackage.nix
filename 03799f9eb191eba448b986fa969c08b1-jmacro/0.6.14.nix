@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jmacro = {
+        "jmacro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          jmacro = {
+          "jmacro" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -66,7 +66,7 @@ let
               hsPkgs.parseargs
             ];
           };
-          jmacro-bench = {
+          "jmacro-bench" = {
             depends  = pkgs.lib.optional _flags.benchmarks hsPkgs.criterion;
           };
         };

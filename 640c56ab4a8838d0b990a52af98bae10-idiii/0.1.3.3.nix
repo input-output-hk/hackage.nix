@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        idiii = {
+        "idiii" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          read-idiii = {
+          "read-idiii" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

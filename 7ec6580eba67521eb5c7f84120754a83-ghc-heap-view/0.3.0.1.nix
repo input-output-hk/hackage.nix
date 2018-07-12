@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-heap-view = {
+        "ghc-heap-view" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

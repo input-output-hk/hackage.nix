@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reprinter = {
+        "reprinter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

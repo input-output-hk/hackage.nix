@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          smtp2mta = {
+          "smtp2mta" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

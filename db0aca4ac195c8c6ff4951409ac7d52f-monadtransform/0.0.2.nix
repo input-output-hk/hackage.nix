@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadtransform = {
+        "monadtransform" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

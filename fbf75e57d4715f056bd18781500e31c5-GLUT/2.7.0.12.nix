@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLUT = {
+        "GLUT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -34,92 +34,92 @@ let
           ];
         };
         exes = {
-          BOGLGP01-OnYourOwn1 = {
+          "BOGLGP01-OnYourOwn1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          BOGLGP01-Simple = {
+          "BOGLGP01-Simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          BOGLGP02-OnYourOwn1.hs = {
+          "BOGLGP02-OnYourOwn1.hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          BOGLGP02-OpenGLApplication.hs = {
+          "BOGLGP02-OpenGLApplication.hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          BOGLGP03-Lines = {
+          "BOGLGP03-Lines" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          BOGLGP03-OnYourOwn1 = {
+          "BOGLGP03-OnYourOwn1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          BOGLGP03-Points = {
+          "BOGLGP03-Points" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          BOGLGP03-Polygons = {
+          "BOGLGP03-Polygons" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          BOGLGP03-TrianglesQuads = {
+          "BOGLGP03-TrianglesQuads" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          Misc-ARBOcclude = {
+          "Misc-ARBOcclude" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          Misc-ColorTriangle = {
+          "Misc-ColorTriangle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.GLUT
             ];
           };
-          Misc-ExtractContours = {
+          "Misc-ExtractContours" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          Misc-Gears = {
+          "Misc-Gears" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          Misc-Pitfall14 = {
+          "Misc-Pitfall14" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          Misc-SmoothOpenGL3 = {
+          "Misc-SmoothOpenGL3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -127,449 +127,449 @@ let
               hsPkgs.GLUT
             ];
           };
-          Misc-Triangulate = {
+          "Misc-Triangulate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
               hsPkgs.GLUT
             ];
           };
-          OrangeBook-Brick = {
+          "OrangeBook-Brick" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.GLUT
             ];
           };
-          RedBook4-AAIndex = {
+          "RedBook4-AAIndex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-AARGB = {
+          "RedBook4-AARGB" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-AccAnti = {
+          "RedBook4-AccAnti" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-AccPersp = {
+          "RedBook4-AccPersp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Alpha = {
+          "RedBook4-Alpha" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Alpha3D = {
+          "RedBook4-Alpha3D" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-BezCurve = {
+          "RedBook4-BezCurve" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-BezMesh = {
+          "RedBook4-BezMesh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-BezSurf = {
+          "RedBook4-BezSurf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-BlendEqn = {
+          "RedBook4-BlendEqn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Checker = {
+          "RedBook4-Checker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Clip = {
+          "RedBook4-Clip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-ColorMat = {
+          "RedBook4-ColorMat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-ColorMatrix = {
+          "RedBook4-ColorMatrix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-ColorTable = {
+          "RedBook4-ColorTable" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Combiner = {
+          "RedBook4-Combiner" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Convolution = {
+          "RedBook4-Convolution" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Cube = {
+          "RedBook4-Cube" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-CubeMap = {
+          "RedBook4-CubeMap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-DList = {
+          "RedBook4-DList" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-DOF = {
+          "RedBook4-DOF" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Double = {
+          "RedBook4-Double" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-DrawF = {
+          "RedBook4-DrawF" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Feedback = {
+          "RedBook4-Feedback" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Fog = {
+          "RedBook4-Fog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-FogCoord = {
+          "RedBook4-FogCoord" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-FogIndex = {
+          "RedBook4-FogIndex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Font = {
+          "RedBook4-Font" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Hello = {
+          "RedBook4-Hello" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Histogram = {
+          "RedBook4-Histogram" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Image = {
+          "RedBook4-Image" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Light = {
+          "RedBook4-Light" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Lines = {
+          "RedBook4-Lines" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-MVArray = {
+          "RedBook4-MVArray" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Material = {
+          "RedBook4-Material" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Minmax = {
+          "RedBook4-Minmax" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Mipmap = {
+          "RedBook4-Mipmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Model = {
+          "RedBook4-Model" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-MoveLight = {
+          "RedBook4-MoveLight" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-MultiTex = {
+          "RedBook4-MultiTex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Multisamp = {
+          "RedBook4-Multisamp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-PickDepth = {
+          "RedBook4-PickDepth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-PickSquare = {
+          "RedBook4-PickSquare" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Planet = {
+          "RedBook4-Planet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-PointP = {
+          "RedBook4-PointP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
               hsPkgs.GLUT
             ];
           };
-          RedBook4-PolyOff = {
+          "RedBook4-PolyOff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Polys = {
+          "RedBook4-Polys" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Quadric = {
+          "RedBook4-Quadric" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Robot = {
+          "RedBook4-Robot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Scene = {
+          "RedBook4-Scene" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Select = {
+          "RedBook4-Select" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-ShadowMap = {
+          "RedBook4-ShadowMap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Smooth = {
+          "RedBook4-Smooth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Stencil = {
+          "RedBook4-Stencil" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Stroke = {
+          "RedBook4-Stroke" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-SurfPoints = {
+          "RedBook4-SurfPoints" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Surface = {
+          "RedBook4-Surface" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Teapots = {
+          "RedBook4-Teapots" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Tess = {
+          "RedBook4-Tess" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-TessWind = {
+          "RedBook4-TessWind" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-TexBind = {
+          "RedBook4-TexBind" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-TexGen = {
+          "RedBook4-TexGen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-TexProx = {
+          "RedBook4-TexProx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-TexSub = {
+          "RedBook4-TexSub" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Texture3D = {
+          "RedBook4-Texture3D" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-TextureSurf = {
+          "RedBook4-TextureSurf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Torus = {
+          "RedBook4-Torus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Trim = {
+          "RedBook4-Trim" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-UnProject = {
+          "RedBook4-UnProject" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-VArray = {
+          "RedBook4-VArray" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook4-Wrap = {
+          "RedBook4-Wrap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
             ];
           };
-          RedBook8-Triangles = {
+          "RedBook8-Triangles" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          wordpass = {
+          "wordpass" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

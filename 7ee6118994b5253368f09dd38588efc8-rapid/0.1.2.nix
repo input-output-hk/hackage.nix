@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rapid = {
+        "rapid" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base

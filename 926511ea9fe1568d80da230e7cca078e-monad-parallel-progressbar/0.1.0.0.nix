@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-parallel-progressbar = {
+        "monad-parallel-progressbar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-parallel

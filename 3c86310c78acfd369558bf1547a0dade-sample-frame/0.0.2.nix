@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sample-frame = {
+        "sample-frame" = {
           depends  = [
             hsPkgs.storable-record
             hsPkgs.QuickCheck
@@ -35,7 +35,7 @@ let
             ]);
         };
         exes = {
-          speedtest = {
+          "speedtest" = {
             depends  = pkgs.lib.optionals _flags.buildbenchmarks [
               hsPkgs.storablevector
               hsPkgs.storable-record

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mono-traversable-wrapper = {
+        "mono-traversable-wrapper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mono-traversable

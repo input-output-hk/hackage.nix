@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-vec3 = {
+        "simple-vec3" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -28,14 +28,14 @@ let
           ];
         };
         tests = {
-          simple-vec3-doctests = {
+          "simple-vec3-doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.doctest-discover
             ];
           };
-          simple-vec3-test = {
+          "simple-vec3-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.simple-vec3
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          simple-vec3-benchmark = {
+          "simple-vec3-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

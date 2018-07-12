@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          csv-to-qif = {
+          "csv-to-qif" = {
             depends  = [
               hsPkgs.base
               hsPkgs.split
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          tester = {
+          "tester" = {
             depends  = [
               hsPkgs.base
               hsPkgs.split

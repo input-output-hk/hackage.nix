@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lol-apps = {
+        "lol-apps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          homomprf = {
+          "homomprf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -55,7 +55,7 @@ let
               hsPkgs.time
             ];
           };
-          khprf = {
+          "khprf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -67,7 +67,7 @@ let
               hsPkgs.numeric-prelude
             ];
           };
-          symmshe = {
+          "symmshe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lol
@@ -79,7 +79,7 @@ let
           };
         };
         tests = {
-          test-apps = {
+          "test-apps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lol
@@ -94,7 +94,7 @@ let
           };
         };
         benchmarks = {
-          bench-apps = {
+          "bench-apps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.DRBG

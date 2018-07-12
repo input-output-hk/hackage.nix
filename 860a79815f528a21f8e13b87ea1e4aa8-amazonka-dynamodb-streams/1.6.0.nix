@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-dynamodb-streams = {
+        "amazonka-dynamodb-streams" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-dynamodb-streams-test = {
+          "amazonka-dynamodb-streams-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lp-diagrams-svg = {
+        "lp-diagrams-svg" = {
           depends  = [
             hsPkgs.lp-diagrams
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          lp-diagrams-svg-example = {
+          "lp-diagrams-svg-example" = {
             depends  = [
               hsPkgs.lp-diagrams-svg
               hsPkgs.lp-diagrams

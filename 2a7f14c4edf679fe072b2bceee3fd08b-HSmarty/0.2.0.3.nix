@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HSmarty = {
+        "HSmarty" = {
           depends  = [
             hsPkgs.HTTP
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          TestHSmarty = {
+          "TestHSmarty" = {
             depends  = [
               hsPkgs.HSmarty
               hsPkgs.HTF

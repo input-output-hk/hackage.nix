@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wild-bind-indicator = {
+        "wild-bind-indicator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wild-bind

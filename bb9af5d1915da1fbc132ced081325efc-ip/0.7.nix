@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ip = {
+        "ip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ip
@@ -44,7 +44,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ip
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ip

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shelly = {
+        "shelly" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -53,7 +53,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          sleep = {
+          "sleep" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

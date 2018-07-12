@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-lens-labels = {
+        "generic-lens-labels" = {
           depends  = [
             hsPkgs.base
             hsPkgs.generic-lens

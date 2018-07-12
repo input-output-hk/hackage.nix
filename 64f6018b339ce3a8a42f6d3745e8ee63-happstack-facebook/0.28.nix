@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        happstack-facebook = {
+        "happstack-facebook" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.hsp
@@ -61,6 +61,6 @@ let
             hsPkgs.formlets-hsp
           ];
         };
-        exes = { demo = {}; };
+        exes = { "demo" = {}; };
       };
     }

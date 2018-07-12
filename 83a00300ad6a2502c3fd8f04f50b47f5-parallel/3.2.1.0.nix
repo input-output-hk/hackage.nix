@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parallel = {
+        "parallel" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

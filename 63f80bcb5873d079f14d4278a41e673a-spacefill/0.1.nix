@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        spacefill = {
+        "spacefill" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doc-tests = {
+          "doc-tests" = {
             depends  = [ hsPkgs.base ];
           };
         };

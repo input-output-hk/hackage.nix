@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        unidecode = {
+        "unidecode" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          unidecode-test = {
+          "unidecode-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unidecode

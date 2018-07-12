@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ethereum-rlp = {
+        "ethereum-rlp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-rlp = {
+          "test-rlp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

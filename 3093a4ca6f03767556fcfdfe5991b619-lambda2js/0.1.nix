@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lambda2js = {
+          "lambda2js" = {
             depends  = [
               hsPkgs.haskell2010
               hsPkgs.parsec

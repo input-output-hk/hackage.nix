@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-series = {
+        "time-series" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          time-series = {
+          "time-series" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time-series

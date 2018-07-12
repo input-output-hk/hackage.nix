@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enumerate = {
+        "enumerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.spiros
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional _flags.dump-core hsPkgs.dump-core;
         };
         exes = {
-          example-enumerate = {
+          "example-enumerate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.enumerate

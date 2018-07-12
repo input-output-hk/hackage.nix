@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        IPv6DB = {
+        "IPv6DB" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          ipv6db = {
+          "ipv6db" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.hspec

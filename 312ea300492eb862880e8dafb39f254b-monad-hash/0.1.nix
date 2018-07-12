@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-hash = {
+        "monad-hash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cryptonite
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

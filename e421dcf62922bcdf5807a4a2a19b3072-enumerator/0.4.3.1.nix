@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enumerator = {
+        "enumerator" = {
           depends  = ([
             hsPkgs.transformers
             hsPkgs.bytestring

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-prim-bits = {
+        "hw-prim-bits" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          hw-prim-bits-exe = {
+          "hw-prim-bits-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hw-prim-bits
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          hw-prim-bits-test = {
+          "hw-prim-bits-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedgehog
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        invertible-hlist = {
+        "invertible-hlist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.invertible

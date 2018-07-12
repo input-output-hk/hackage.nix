@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clash-verilog = {
+        "clash-verilog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clash-lib

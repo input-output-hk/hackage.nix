@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        storable-record = {
+        "storable-record" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.utility-ht
@@ -35,7 +35,7 @@ let
             ]);
         };
         exes = {
-          storable-record-speed = {
+          "storable-record-speed" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.storablevector
               hsPkgs.timeit

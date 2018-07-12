@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Win32 = {
+        "Win32" = {
           depends  = [ hsPkgs.base ];
           libs = [
             pkgs.user32

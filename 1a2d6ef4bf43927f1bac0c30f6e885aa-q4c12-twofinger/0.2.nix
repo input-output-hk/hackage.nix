@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        q4c12-twofinger = {
+        "q4c12-twofinger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2") hsPkgs.bifunctors;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -37,7 +37,7 @@ let
               hsPkgs.q4c12-twofinger
             ];
           };
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

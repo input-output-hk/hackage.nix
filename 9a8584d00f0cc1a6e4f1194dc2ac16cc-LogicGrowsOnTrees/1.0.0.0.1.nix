@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LogicGrowsOnTrees = {
+        "LogicGrowsOnTrees" = {
           depends  = [
             hsPkgs.AbortT-transformers
             hsPkgs.AbortT-mtl
@@ -58,14 +58,14 @@ let
           ];
         };
         exes = {
-          readme-simple = {
+          "readme-simple" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          readme-full = {
+          "readme-full" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
@@ -73,22 +73,14 @@ let
               hsPkgs.containers
             ];
           };
-          count-all-nqueens-solutions = {
+          "count-all-nqueens-solutions" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
               hsPkgs.cmdtheline
             ];
           };
-          print-all-nqueens-solutions = {
-            depends  = [
-              hsPkgs.LogicGrowsOnTrees
-              hsPkgs.base
-              hsPkgs.cmdtheline
-              hsPkgs.containers
-            ];
-          };
-          print-an-nqueens-solution = {
+          "print-all-nqueens-solutions" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
@@ -96,7 +88,7 @@ let
               hsPkgs.containers
             ];
           };
-          print-some-nqueens-solutions-using-pull = {
+          "print-an-nqueens-solution" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
@@ -104,7 +96,7 @@ let
               hsPkgs.containers
             ];
           };
-          print-some-nqueens-solutions-using-push = {
+          "print-some-nqueens-solutions-using-pull" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
@@ -112,7 +104,15 @@ let
               hsPkgs.containers
             ];
           };
-          count-all-trivial-tree-leaves = {
+          "print-some-nqueens-solutions-using-push" = {
+            depends  = [
+              hsPkgs.LogicGrowsOnTrees
+              hsPkgs.base
+              hsPkgs.cmdtheline
+              hsPkgs.containers
+            ];
+          };
+          "count-all-trivial-tree-leaves" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
@@ -120,83 +120,83 @@ let
               hsPkgs.cmdtheline
             ];
           };
-          tutorial-1 = {
+          "tutorial-1" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
             ];
           };
-          tutorial-2 = {
+          "tutorial-2" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          tutorial-3 = {
+          "tutorial-3" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
             ];
           };
-          tutorial-4 = {
+          "tutorial-4" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
             ];
           };
-          tutorial-5 = {
+          "tutorial-5" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
             ];
           };
-          tutorial-6 = {
+          "tutorial-6" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
             ];
           };
-          tutorial-7 = {
-            depends  = [
-              hsPkgs.LogicGrowsOnTrees
-              hsPkgs.base
-              hsPkgs.transformers
-            ];
-          };
-          tutorial-8 = {
+          "tutorial-7" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
               hsPkgs.transformers
             ];
           };
-          tutorial-9 = {
+          "tutorial-8" = {
+            depends  = [
+              hsPkgs.LogicGrowsOnTrees
+              hsPkgs.base
+              hsPkgs.transformers
+            ];
+          };
+          "tutorial-9" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
             ];
           };
-          tutorial-10 = {
+          "tutorial-10" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
             ];
           };
-          tutorial-11 = {
+          "tutorial-11" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
             ];
           };
-          tutorial-12 = {
+          "tutorial-12" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
               hsPkgs.cmdtheline
             ];
           };
-          tutorial-13 = {
+          "tutorial-13" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
@@ -205,7 +205,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
@@ -234,7 +234,7 @@ let
               hsPkgs.void
             ];
           };
-          test-nqueens = {
+          "test-nqueens" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
@@ -249,14 +249,14 @@ let
           };
         };
         benchmarks = {
-          tree-versus-list-trivial-tree = {
+          "tree-versus-list-trivial-tree" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base
               hsPkgs.criterion
             ];
           };
-          tree-versus-list-nqueens = {
+          "tree-versus-list-nqueens" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees
               hsPkgs.base

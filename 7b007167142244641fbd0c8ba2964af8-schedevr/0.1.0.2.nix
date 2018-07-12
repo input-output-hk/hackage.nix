@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          marge-schedule = {
+          "marge-schedule" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xturtle
@@ -30,7 +30,7 @@ let
               hsPkgs.old-locale
             ];
           };
-          show-progress = {
+          "show-progress" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xturtle

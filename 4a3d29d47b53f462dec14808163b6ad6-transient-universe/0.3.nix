@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transient-universe = {
+        "transient-universe" = {
           depends  = if compiler.isGhcjs && compiler.version.ge "0.1"
             then [
               hsPkgs.base

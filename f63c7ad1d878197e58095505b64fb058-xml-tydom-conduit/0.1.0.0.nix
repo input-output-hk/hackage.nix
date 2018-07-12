@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-tydom-conduit = {
+        "xml-tydom-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          xml-tydom-conduit-test = {
+          "xml-tydom-conduit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

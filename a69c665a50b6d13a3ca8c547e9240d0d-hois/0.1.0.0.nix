@@ -20,12 +20,12 @@ let
         buildType = "Simple";
       };
       components = {
-        hois = {
+        "hois" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.OIS ];
         };
         exes = {
-          OISConsole = {
+          "OISConsole" = {
             depends  = [
               hsPkgs.hois
               hsPkgs.base

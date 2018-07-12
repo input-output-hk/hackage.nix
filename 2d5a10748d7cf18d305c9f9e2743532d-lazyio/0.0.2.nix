@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazyio = {
+        "lazyio" = {
           depends  = [
             hsPkgs.transformers
           ] ++ (if _flags.splitbase
@@ -33,6 +33,6 @@ let
               hsPkgs.special-functors
             ]);
         };
-        exes = { test = {}; };
+        exes = { "test" = {}; };
       };
     }

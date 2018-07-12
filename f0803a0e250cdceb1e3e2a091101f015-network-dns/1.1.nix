@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-dns = {
+        "network-dns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-hint
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          hs-network-dns-examples-resolver = {
+          "hs-network-dns-examples-resolver" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-textual

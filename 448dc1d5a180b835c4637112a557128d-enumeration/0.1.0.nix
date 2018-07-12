@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enumeration = {
+        "enumeration" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          UnitTest = {
+          "UnitTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

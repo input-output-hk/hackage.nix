@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timezone-series = {
+        "timezone-series" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-tabular = {
+        "simple-tabular" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-tests = {
+        "distributed-process-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -42,7 +42,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.4.2") hsPkgs.ghc-prim;
         };
         tests = {
-          TestCHInMemory = {
+          "TestCHInMemory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process-tests
@@ -52,7 +52,7 @@ let
               hsPkgs.test-framework
             ];
           };
-          TestCHInTCP = {
+          "TestCHInTCP" = {
             depends  = pkgs.lib.optionals _flags.tcp [
               hsPkgs.base
               hsPkgs.distributed-process-tests
@@ -62,7 +62,7 @@ let
               hsPkgs.test-framework
             ];
           };
-          TestClosure = {
+          "TestClosure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process-tests
@@ -72,7 +72,7 @@ let
               hsPkgs.test-framework
             ];
           };
-          TestStats = {
+          "TestStats" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process-tests
@@ -82,7 +82,7 @@ let
               hsPkgs.test-framework
             ];
           };
-          TestMx = {
+          "TestMx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process-tests
@@ -92,7 +92,7 @@ let
               hsPkgs.test-framework
             ];
           };
-          TestTracing = {
+          "TestTracing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process-tests

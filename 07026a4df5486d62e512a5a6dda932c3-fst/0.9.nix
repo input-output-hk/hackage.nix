@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        fst = {
+        "fst" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
             hsPkgs.array
           ];
         };
-        exes = { fst = {}; };
+        exes = { "fst" = {}; };
       };
     }

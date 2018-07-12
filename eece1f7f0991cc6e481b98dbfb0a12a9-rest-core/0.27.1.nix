@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rest-core = {
+        "rest-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          rest-tests = {
+          "rest-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

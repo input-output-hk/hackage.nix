@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        halfs = {
+        "halfs" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.array
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          halfs-tests = {
+          "halfs-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.array
@@ -57,7 +57,7 @@ let
               hsPkgs.time
             ];
           };
-          halfs = {
+          "halfs" = {
             depends  = [
               hsPkgs.HFuse
               hsPkgs.array

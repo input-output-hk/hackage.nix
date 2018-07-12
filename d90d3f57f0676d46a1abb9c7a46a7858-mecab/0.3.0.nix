@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mecab = {
+        "mecab" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

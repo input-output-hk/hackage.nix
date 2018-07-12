@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-rematch = {
+        "bytestring-rematch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

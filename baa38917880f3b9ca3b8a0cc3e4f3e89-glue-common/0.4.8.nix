@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glue-common = {
+        "glue-common" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          glue-common-tests = {
+          "glue-common-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.glue-common

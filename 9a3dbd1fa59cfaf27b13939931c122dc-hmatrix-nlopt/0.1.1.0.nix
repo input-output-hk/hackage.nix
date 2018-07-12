@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-nlopt = {
+        "hmatrix-nlopt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

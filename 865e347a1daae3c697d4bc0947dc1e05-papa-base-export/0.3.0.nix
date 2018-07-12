@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-base-export = {
+        "papa-base-export" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

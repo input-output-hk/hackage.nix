@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuid-crypto = {
+        "uuid-crypto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

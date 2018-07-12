@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spelling-suggest = {
+        "spelling-suggest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.edit-distance
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          thimk = {
+          "thimk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parseargs
@@ -40,7 +40,7 @@ let
               hsPkgs.sqlite
             ];
           };
-          thimk-makedb = {
+          "thimk-makedb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parseargs

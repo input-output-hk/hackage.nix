@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Operads = {
+        "Operads" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -32,14 +32,14 @@ let
           ];
         };
         exes = {
-          preLieBad = {};
-          altDual = {};
-          OperadTest = {
+          "preLieBad" = {};
+          "altDual" = {};
+          "OperadTest" = {
             depends  = [
               hsPkgs.QuickCheck
             ];
           };
-          example = {};
+          "example" = {};
         };
       };
     }

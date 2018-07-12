@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fit = {
+        "fit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test-fit = {
+          "test-fit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fit

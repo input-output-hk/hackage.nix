@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xlsx-tabular = {
+        "xlsx-tabular" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          xlsx-tabular-test = {
+          "xlsx-tabular-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xlsx-tabular

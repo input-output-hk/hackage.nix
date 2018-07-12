@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        domain-auth = {
+        "domain-auth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

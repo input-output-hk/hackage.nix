@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        parsec-numeric = {
+        "parsec-numeric" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         tests = {
-          parsec-numeric-test = {
+          "parsec-numeric-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

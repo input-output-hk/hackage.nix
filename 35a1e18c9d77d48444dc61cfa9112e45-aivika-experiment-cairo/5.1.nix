@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aivika-experiment-cairo = {
+        "aivika-experiment-cairo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colour

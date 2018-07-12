@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        auto = {
+        "auto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MonadRandom

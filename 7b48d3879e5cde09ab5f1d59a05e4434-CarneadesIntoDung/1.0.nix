@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CarneadesIntoDung = {
+        "CarneadesIntoDung" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,6 +30,6 @@ let
             hsPkgs.Dung
           ];
         };
-        exes = { caell = {}; };
+        exes = { "caell" = {}; };
       };
     }

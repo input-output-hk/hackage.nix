@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        functor-friends = {
+        "functor-friends" = {
           depends  = [
             hsPkgs.base
             hsPkgs.recursion-schemes

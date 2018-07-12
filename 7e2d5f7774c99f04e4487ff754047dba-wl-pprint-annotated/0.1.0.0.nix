@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wl-pprint-annotated = {
+        "wl-pprint-annotated" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          wl-pprint = {
+          "wl-pprint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

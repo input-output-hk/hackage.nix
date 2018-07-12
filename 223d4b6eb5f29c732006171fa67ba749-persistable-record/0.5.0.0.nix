@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistable-record = {
+        "persistable-record" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional _flags.ghc74-generic hsPkgs.ghc-prim;
         };
         tests = {
-          nested = {
+          "nested" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quickcheck-simple

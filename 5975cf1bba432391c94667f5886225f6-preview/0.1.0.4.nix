@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        preview = {
+        "preview" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

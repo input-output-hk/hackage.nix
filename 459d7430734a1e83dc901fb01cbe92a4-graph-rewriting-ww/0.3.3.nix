@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ww = {
+          "ww" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

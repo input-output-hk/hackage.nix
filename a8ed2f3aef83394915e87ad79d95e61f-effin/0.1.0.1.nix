@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        effin = {
+        "effin" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional _flags.mtl hsPkgs.mtl;

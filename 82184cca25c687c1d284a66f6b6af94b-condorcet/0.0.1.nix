@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        condorcet = {
+        "condorcet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

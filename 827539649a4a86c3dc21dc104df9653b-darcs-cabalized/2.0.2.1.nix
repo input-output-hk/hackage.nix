@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          darcs = {
+          "darcs" = {
             depends  = [
               hsPkgs.regex-compat
               hsPkgs.mtl

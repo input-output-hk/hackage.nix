@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mono-traversable-instances = {
+        "mono-traversable-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mono-traversable

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serverless-haskell = {
+        "serverless-haskell" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-casing
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-casing

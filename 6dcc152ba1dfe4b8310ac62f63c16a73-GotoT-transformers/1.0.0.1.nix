@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GotoT-transformers = {
+        "GotoT-transformers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

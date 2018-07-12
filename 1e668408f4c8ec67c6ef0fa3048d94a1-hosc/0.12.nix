@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hosc = {
+        "hosc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

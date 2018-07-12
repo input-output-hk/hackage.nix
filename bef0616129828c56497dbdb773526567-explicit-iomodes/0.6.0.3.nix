@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        explicit-iomodes = {
+        "explicit-iomodes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

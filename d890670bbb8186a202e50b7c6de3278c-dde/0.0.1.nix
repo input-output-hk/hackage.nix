@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        dde = {
+        "dde" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
           ];
         };
         exes = {
-          mackey-glass = {
+          "mackey-glass" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dde
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          dde-test = {
+          "dde-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dde

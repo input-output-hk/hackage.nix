@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        handa-opengl = {
+        "handa-opengl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

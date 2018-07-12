@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hslua-aeson = {
+        "hslua-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          hslua-aeson-test = {
+          "hslua-aeson-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

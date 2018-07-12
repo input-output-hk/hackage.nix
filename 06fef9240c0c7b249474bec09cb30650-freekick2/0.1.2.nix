@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          freekick2 = {
+          "freekick2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -41,7 +41,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          swos2gen = {
+          "swos2gen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -53,7 +53,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          createteam = {
+          "createteam" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

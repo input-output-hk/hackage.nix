@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        modbus-tcp = {
+        "modbus-tcp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

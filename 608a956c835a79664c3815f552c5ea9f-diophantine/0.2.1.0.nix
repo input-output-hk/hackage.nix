@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diophantine = {
+        "diophantine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

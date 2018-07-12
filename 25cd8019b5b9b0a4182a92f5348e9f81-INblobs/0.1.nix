@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          INblobs = {
+          "INblobs" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.wx

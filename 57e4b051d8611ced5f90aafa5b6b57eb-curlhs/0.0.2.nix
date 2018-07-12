@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        curlhs = {
+        "curlhs" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.base

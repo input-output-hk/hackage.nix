@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crawlchain = {
+        "crawlchain" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          html-tests = {
+          "html-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.crawlchain

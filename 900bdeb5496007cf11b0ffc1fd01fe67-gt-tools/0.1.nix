@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          gtc = {
+          "gtc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -33,7 +33,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          gtg = {
+          "gtg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

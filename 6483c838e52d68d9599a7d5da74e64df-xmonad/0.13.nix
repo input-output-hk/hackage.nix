@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad = {
+        "xmonad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          xmonad = {
+          "xmonad" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -50,7 +50,7 @@ let
               hsPkgs.xmonad
             ];
           };
-          generatemanpage = {
+          "generatemanpage" = {
             depends  = pkgs.lib.optionals _flags.generatemanpage [
               hsPkgs.base
               hsPkgs.Cabal
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

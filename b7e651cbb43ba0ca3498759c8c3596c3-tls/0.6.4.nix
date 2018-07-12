@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tls = {
+        "tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit

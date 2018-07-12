@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-transloadit = {
+        "yesod-transloadit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-transloadit

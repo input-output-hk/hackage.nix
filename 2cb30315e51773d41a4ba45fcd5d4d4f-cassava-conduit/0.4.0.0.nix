@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassava-conduit = {
+        "cassava-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cassava-conduit

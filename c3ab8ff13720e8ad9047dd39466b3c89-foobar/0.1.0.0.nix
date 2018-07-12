@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        foobar = {
+        "foobar" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          foobar-exe = {
+          "foobar-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foobar
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          foobar-test = {
+          "foobar-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foobar

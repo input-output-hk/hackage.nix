@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        defargs = {
+        "defargs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cluss

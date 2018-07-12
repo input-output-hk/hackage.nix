@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tmapmvar = {
+        "tmapmvar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

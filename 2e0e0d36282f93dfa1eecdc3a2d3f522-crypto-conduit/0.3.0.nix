@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-conduit = {
+        "crypto-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ] ++ [ hsPkgs.crypto-api ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

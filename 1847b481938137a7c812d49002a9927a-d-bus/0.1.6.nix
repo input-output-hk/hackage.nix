@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        d-bus = {
+        "d-bus" = {
           depends  = [
             hsPkgs.async
             hsPkgs.attoparsec
@@ -49,14 +49,14 @@ let
           ];
         };
         exes = {
-          dbus-introspect = {
+          "dbus-introspect" = {
             depends  = [
               hsPkgs.base
               hsPkgs.d-bus
               hsPkgs.text
             ];
           };
-          liferea-example = {
+          "liferea-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.d-bus
@@ -65,7 +65,7 @@ let
           };
         };
         tests = {
-          unittests = {
+          "unittests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

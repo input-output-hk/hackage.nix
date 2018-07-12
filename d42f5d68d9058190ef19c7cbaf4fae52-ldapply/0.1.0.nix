@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ldapply = {
+          "ldapply" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

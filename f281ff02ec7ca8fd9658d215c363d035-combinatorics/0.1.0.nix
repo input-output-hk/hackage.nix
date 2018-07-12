@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        combinatorics = {
+        "combinatorics" = {
           depends  = [ hsPkgs.base ];
         };
       };

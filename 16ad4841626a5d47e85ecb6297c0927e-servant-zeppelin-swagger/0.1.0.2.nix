@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-zeppelin-swagger = {
+        "servant-zeppelin-swagger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          servant-zeppelin-swagger-test = {
+          "servant-zeppelin-swagger-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

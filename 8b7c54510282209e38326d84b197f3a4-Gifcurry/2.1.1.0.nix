@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Gifcurry = {
+        "Gifcurry" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          gifcurry_gui = {
+          "gifcurry_gui" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk3
@@ -42,7 +42,7 @@ let
               hsPkgs.filepath
             ];
           };
-          gifcurry_cli = {
+          "gifcurry_cli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hgl-example = {
+          "hgl-example" = {
             depends  = [
               hsPkgs.HTam
               hsPkgs.HGL

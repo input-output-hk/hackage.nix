@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgrib = {
+        "hgrib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          get = {
+          "get" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hgrib
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

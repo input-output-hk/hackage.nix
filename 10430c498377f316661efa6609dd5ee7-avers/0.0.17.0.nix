@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        avers = {
+        "avers" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.MonadRandom
               hsPkgs.aeson
@@ -75,7 +75,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.avers

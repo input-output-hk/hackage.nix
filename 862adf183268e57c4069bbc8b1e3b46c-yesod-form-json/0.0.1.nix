@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-form-json = {
+        "yesod-form-json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-form

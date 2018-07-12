@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-docker = {
+        "language-docker" = {
           depends  = [
             hsPkgs.Glob
             hsPkgs.aeson
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.Glob
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        taglib = {
+        "taglib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

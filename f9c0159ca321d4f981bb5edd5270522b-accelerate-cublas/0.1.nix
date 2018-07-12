@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-cublas = {
+        "accelerate-cublas" = {
           depends  = [
             hsPkgs.accelerate-arithmetic
             hsPkgs.accelerate-utility
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          accelerate-cublas-demo = {
+          "accelerate-cublas-demo" = {
             depends  = [
               hsPkgs.accelerate-cublas
               hsPkgs.accelerate-cuda
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          newton-inverse = {
+          "newton-inverse" = {
             depends  = [
               hsPkgs.accelerate-cublas
               hsPkgs.accelerate-arithmetic

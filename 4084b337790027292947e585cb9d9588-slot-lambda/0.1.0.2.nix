@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        slot-lambda = {
+        "slot-lambda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        constraint-reflection = {
+        "constraint-reflection" = {
           depends  = [
             hsPkgs.base
             hsPkgs.category

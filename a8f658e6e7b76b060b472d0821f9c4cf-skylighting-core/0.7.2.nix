@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        skylighting-core = {
+        "skylighting-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -51,7 +51,7 @@ let
             ]);
         };
         exes = {
-          skylighting-extract = {
+          "skylighting-extract" = {
             depends  = [
               hsPkgs.base
               hsPkgs.skylighting-core
@@ -77,7 +77,7 @@ let
           };
         };
         tests = {
-          test-skylighting = {
+          "test-skylighting" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -100,7 +100,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-skylighting = {
+          "benchmark-skylighting" = {
             depends  = [
               hsPkgs.skylighting-core
               hsPkgs.base

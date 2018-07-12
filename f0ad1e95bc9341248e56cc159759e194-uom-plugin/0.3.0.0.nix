@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uom-plugin = {
+        "uom-plugin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,13 +32,13 @@ let
           ];
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          units = {
+          "units" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-aviary = {
+        "data-aviary" = {
           depends  = [ hsPkgs.base ];
         };
       };

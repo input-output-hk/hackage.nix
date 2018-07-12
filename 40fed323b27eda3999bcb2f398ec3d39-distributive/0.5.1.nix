@@ -23,16 +23,16 @@ let
         buildType = "Custom";
       };
       components = {
-        distributive = {
+        "distributive" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.base-orphans
             hsPkgs.transformers
             hsPkgs.transformers-compat
-          ] ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6")) hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0" && _flags.semigroups) hsPkgs.semigroups;
+          ] ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6")) hsPkgs.ghc-prim) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") (pkgs.lib.optional _flags.semigroups hsPkgs.semigroups);
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

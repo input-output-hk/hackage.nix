@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cless = {
+          "cless" = {
             depends  = [
               hsPkgs.base
               hsPkgs.highlighting-kate

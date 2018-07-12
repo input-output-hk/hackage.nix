@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        themoviedb = {
+        "themoviedb" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          tmdb = {
+          "tmdb" = {
             depends  = [
               hsPkgs.themoviedb
               hsPkgs.base
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.tasty
               hsPkgs.tasty-hunit

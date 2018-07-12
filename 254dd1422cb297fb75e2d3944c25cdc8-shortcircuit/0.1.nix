@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shortcircuit = {
+        "shortcircuit" = {
           depends  = [ hsPkgs.base ];
         };
       };

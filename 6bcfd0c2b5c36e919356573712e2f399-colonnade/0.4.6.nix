@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        colonnade = {
+        "colonnade" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant

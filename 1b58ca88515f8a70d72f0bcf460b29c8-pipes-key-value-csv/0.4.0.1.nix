@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-key-value-csv = {
+        "pipes-key-value-csv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -44,7 +44,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          test-kvc = {
+          "test-kvc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.contravariant

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        boombox = {
+        "boombox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

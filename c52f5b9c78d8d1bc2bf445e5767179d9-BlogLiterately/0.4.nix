@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          BlogLiterately = {
+          "BlogLiterately" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

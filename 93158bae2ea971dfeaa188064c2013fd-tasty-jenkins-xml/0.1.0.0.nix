@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-jenkins-xml = {
+        "tasty-jenkins-xml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tasty
@@ -30,14 +30,14 @@ let
           ];
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
               hsPkgs.hlint
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

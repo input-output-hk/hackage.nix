@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        board-games = {
+        "board-games" = {
           depends  = [
             hsPkgs.html
             hsPkgs.cgi
@@ -39,7 +39,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          board-games = {
+          "board-games" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.httpd-shed
               hsPkgs.network
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.utility-ht

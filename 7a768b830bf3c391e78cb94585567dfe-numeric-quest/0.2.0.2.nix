@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numeric-quest = {
+        "numeric-quest" = {
           depends  = [
             hsPkgs.prelude-compat
           ] ++ (if _flags.splitbase

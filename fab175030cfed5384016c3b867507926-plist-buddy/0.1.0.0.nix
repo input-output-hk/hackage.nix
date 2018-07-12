@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plist-buddy = {
+        "plist-buddy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base16-bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test-plist-buddy = {
+          "test-plist-buddy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

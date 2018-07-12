@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        github = {
+        "github" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          github-test = {
+          "github-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

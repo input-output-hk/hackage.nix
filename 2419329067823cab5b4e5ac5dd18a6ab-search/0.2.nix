@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        search = {
+        "search" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

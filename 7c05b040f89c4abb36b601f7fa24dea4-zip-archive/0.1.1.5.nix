@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zip-archive = {
+        "zip-archive" = {
           depends  = ([
             hsPkgs.binary
             hsPkgs.zlib
@@ -45,6 +45,6 @@ let
               hsPkgs.base
             ])) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
-        exes = { Zip = {}; };
+        exes = { "Zip" = {}; };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgmp = {
+        "hgmp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.integer-gmp
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hgmp

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dns = {
+        "dns" = {
           depends  = if compiler.isGhc && compiler.version.ge "7"
             then [
               hsPkgs.base
@@ -55,7 +55,7 @@ let
             ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

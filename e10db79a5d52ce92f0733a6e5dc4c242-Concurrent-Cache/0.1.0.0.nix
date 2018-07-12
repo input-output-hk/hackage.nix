@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Concurrent-Cache = {
+        "Concurrent-Cache" = {
           depends  = [ hsPkgs.base ];
         };
       };

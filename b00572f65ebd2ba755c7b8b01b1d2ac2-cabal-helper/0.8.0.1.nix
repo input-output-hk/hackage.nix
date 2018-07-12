@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cabal-helper = {
+        "cabal-helper" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.Cabal
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.base) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          cabal-helper-wrapper = {
+          "cabal-helper-wrapper" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.Cabal
@@ -58,7 +58,7 @@ let
               hsPkgs.buildPackages.cabal-install
             ];
           };
-          cabal-helper-main = {
+          "cabal-helper-main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -71,7 +71,7 @@ let
           };
         };
         tests = {
-          compile-test = {
+          "compile-test" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.Cabal
@@ -92,7 +92,7 @@ let
               hsPkgs.buildPackages.cabal-install
             ];
           };
-          ghc-session = {
+          "ghc-session" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.ghc

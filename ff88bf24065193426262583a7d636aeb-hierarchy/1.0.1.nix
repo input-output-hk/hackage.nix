@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hierarchy = {
+        "hierarchy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -34,7 +34,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2.0") hsPkgs.semigroups;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

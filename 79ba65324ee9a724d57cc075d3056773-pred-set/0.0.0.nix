@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pred-set = {
+        "pred-set" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashtables

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zstd = {
+        "zstd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           libs = pkgs.lib.optional (!_flags.standalone) pkgs.zstd;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

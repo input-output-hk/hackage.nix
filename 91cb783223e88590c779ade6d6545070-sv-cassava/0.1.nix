@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sv-cassava = {
+        "sv-cassava" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          hunit = {
+          "hunit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

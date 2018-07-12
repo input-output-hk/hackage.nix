@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        effect-monad = {
+        "effect-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-level-sets

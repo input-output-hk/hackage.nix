@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parsec-pratt = {
+        "parsec-pratt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          parsec-pratt-example = {
+          "parsec-pratt-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

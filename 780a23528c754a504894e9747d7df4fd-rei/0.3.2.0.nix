@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rei = {
+          "rei" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

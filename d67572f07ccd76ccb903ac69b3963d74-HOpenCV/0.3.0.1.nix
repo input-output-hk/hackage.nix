@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HOpenCV = {
+        "HOpenCV" = {
           depends  = [
             hsPkgs.base
             hsPkgs.allocated-processor
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          cannyVideo = {
+          "cannyVideo" = {
             depends  = [ hsPkgs.base ];
             pkgconfig = [
               pkgconfPkgs.opencv

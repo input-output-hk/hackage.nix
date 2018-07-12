@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-session-alt = {
+        "wai-session-alt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

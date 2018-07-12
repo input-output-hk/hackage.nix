@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        pong-server = {
+        "pong-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
           ];
         };
         tests = {
-          pong-server-test = {
+          "pong-server-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pong-server

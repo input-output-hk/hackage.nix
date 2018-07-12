@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          xmobar = {
+          "xmobar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11
@@ -30,7 +30,7 @@ let
               hsPkgs.parsec
             ];
           };
-          xmb-cpu = {
+          "xmb-cpu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11
@@ -39,7 +39,7 @@ let
               hsPkgs.parsec
             ];
           };
-          xmb-mem = {
+          "xmb-mem" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11
@@ -48,7 +48,7 @@ let
               hsPkgs.parsec
             ];
           };
-          xmb-swap = {
+          "xmb-swap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11
@@ -57,7 +57,7 @@ let
               hsPkgs.parsec
             ];
           };
-          xmb-net = {
+          "xmb-net" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11
@@ -66,7 +66,7 @@ let
               hsPkgs.parsec
             ];
           };
-          xmb-weather = {
+          "xmb-weather" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11
@@ -75,7 +75,7 @@ let
               hsPkgs.parsec
             ];
           };
-          xmb-batt = {
+          "xmb-batt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11

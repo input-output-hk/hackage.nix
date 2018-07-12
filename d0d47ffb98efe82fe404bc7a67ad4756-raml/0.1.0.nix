@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        raml = {
+        "raml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

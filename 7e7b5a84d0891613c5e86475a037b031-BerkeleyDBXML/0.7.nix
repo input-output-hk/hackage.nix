@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BerkeleyDBXML = {
+        "BerkeleyDBXML" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

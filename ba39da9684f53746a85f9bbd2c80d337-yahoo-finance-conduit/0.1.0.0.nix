@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yahoo-finance-conduit = {
+        "yahoo-finance-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit

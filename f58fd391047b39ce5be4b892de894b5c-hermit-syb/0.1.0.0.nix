@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hermit-syb = {
+        "hermit-syb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

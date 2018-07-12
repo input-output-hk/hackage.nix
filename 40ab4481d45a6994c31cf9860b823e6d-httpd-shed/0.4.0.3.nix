@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        httpd-shed = {
+        "httpd-shed" = {
           depends  = [
             hsPkgs.network
             hsPkgs.network-uri
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          httpd-shed-test = {};
+          "httpd-shed-test" = {};
         };
       };
     }

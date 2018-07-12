@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ivory-fibtutorial = {
+          "ivory-fibtutorial" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty
@@ -37,7 +37,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          ivory-c-clang-test = {
+          "ivory-c-clang-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty

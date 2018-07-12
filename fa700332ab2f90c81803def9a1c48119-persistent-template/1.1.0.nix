@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-template = {
+        "persistent-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.persistent-template

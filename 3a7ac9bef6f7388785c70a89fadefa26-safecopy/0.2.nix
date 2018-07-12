@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        safecopy = {
+        "safecopy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

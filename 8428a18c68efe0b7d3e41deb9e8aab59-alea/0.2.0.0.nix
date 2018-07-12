@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          alea = {
+          "alea" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

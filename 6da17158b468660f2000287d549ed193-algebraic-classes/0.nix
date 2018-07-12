@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        algebraic-classes = {
+        "algebraic-classes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb

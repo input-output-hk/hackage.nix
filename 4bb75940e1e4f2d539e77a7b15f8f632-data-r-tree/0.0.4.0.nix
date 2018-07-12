@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-r-tree = {
+        "data-r-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.data-r-tree
               hsPkgs.base
@@ -43,7 +43,7 @@ let
               hsPkgs.containers
             ];
           };
-          strict = {
+          "strict" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-strict)) [
               hsPkgs.data-r-tree
               hsPkgs.base

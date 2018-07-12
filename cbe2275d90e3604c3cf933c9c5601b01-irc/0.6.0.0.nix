@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc = {
+        "irc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

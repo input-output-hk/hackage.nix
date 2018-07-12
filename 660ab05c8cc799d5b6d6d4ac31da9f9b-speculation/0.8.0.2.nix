@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        speculation = {
+        "speculation" = {
           depends  = pkgs.lib.optionals (!(!_flags.lib)) [
             hsPkgs.base
             hsPkgs.parallel
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          test-speculation = {
+          "test-speculation" = {
             depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.stm
@@ -46,7 +46,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          benchmark-speculation = {
+          "benchmark-speculation" = {
             depends  = pkgs.lib.optionals (!(!_flags.benchmarks)) [
               hsPkgs.base
               hsPkgs.stm

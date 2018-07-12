@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        utf8-validator = {
+        "utf8-validator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          utf8-validator-test = {
+          "utf8-validator-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          utf8-validator-bench = {
+          "utf8-validator-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

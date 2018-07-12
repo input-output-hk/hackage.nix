@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        midi-util = {
+        "midi-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.midi

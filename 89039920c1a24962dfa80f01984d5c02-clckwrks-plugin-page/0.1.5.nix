@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        clckwrks-plugin-page = {
+        "clckwrks-plugin-page" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        concurrent-extra = {
+        "concurrent-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-concurrent-extra = {
+          "test-concurrent-extra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          truelevel = {
+          "truelevel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.WAVE

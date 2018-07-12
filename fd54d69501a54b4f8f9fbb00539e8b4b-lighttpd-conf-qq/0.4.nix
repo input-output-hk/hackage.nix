@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lighttpd-conf-qq = {
+        "lighttpd-conf-qq" = {
           depends  = [
             hsPkgs.lighttpd-conf
             hsPkgs.haskell-src-exts

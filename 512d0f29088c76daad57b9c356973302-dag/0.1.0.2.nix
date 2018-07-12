@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dag = {
+        "dag" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

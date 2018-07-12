@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        effects-parser = {
+        "effects-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.effects

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-marketplace-analytics = {
+        "amazonka-marketplace-analytics" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-marketplace-analytics-test = {
+          "amazonka-marketplace-analytics-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        superconstraints = {
+        "superconstraints" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints

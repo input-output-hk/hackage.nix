@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        forth-hll = {
+        "forth-hll" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array-forth

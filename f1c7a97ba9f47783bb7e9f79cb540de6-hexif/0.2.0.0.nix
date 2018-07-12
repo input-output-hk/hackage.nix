@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexif = {
+        "hexif" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RMP = {
+        "RMP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.allocated-processor
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          rmp-test = {
+          "rmp-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.allocated-processor
@@ -43,7 +43,7 @@ let
               pkgs."stdc++"
             ];
           };
-          rmp-test-facedetect = {
+          "rmp-test-facedetect" = {
             depends  = [
               hsPkgs.base
               hsPkgs.allocated-processor

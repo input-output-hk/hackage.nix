@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bower-json = {
+        "bower-json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bower-json

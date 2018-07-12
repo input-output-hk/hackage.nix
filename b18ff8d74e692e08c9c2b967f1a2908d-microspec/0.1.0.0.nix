@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microspec = {
+        "microspec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

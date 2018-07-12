@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hpc-tracer = {
+          "hpc-tracer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hpc

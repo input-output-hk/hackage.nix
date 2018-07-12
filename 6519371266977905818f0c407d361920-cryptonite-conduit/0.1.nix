@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptonite-conduit = {
+        "cryptonite-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

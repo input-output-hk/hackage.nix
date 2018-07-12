@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        powerqueue = {
+        "powerqueue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          powerqueue-test = {
+          "powerqueue-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.powerqueue

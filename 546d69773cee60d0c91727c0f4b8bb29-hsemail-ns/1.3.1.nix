@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsemail-ns = {
+        "hsemail-ns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

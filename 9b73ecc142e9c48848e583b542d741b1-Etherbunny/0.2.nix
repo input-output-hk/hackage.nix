@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Etherbunny = {
+        "Etherbunny" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          etherbunny = {
+          "etherbunny" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elocrypt = {
+        "elocrypt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MonadRandom
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          elocrypt = {
+          "elocrypt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elocrypt
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elocrypt
@@ -50,7 +50,7 @@ let
               hsPkgs.tasty-th
             ];
           };
-          ui-test = {
+          "ui-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elocrypt
@@ -63,7 +63,7 @@ let
               hsPkgs.tasty-th
             ];
           };
-          elocrypt-lint = {
+          "elocrypt-lint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

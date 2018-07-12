@@ -19,5 +19,7 @@ let
         description = "This package used to export DPH array primitives, but they're in dph-primpar now.";
         buildType = "Simple";
       };
-      components = { dph-par = {}; };
+      components = {
+        "dph-par" = {};
+      };
     }

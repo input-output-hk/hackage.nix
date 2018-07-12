@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          shadower = {
+          "shadower" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fsnotify

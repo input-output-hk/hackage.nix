@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process = {
+        "distributed-process" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -44,7 +44,7 @@ let
           ] ++ pkgs.lib.optional _flags.th hsPkgs.template-haskell;
         };
         exes = {
-          distributed-process-throughput = {
+          "distributed-process-throughput" = {
             depends  = pkgs.lib.optionals _flags.benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
@@ -53,7 +53,7 @@ let
               hsPkgs.binary
             ];
           };
-          distributed-process-latency = {
+          "distributed-process-latency" = {
             depends  = pkgs.lib.optionals _flags.benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
@@ -62,7 +62,7 @@ let
               hsPkgs.binary
             ];
           };
-          distributed-process-channels = {
+          "distributed-process-channels" = {
             depends  = pkgs.lib.optionals _flags.benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
@@ -71,7 +71,7 @@ let
               hsPkgs.binary
             ];
           };
-          distributed-process-spawns = {
+          "distributed-process-spawns" = {
             depends  = pkgs.lib.optionals _flags.benchmarks [
               hsPkgs.base
               hsPkgs.distributed-process
@@ -82,7 +82,7 @@ let
           };
         };
         tests = {
-          TestCH = {
+          "TestCH" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -97,7 +97,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          TestClosure = {
+          "TestClosure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

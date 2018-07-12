@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ansigraph = {
+        "ansigraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal

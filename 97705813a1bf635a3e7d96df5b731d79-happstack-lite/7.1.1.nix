@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-lite = {
+        "happstack-lite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

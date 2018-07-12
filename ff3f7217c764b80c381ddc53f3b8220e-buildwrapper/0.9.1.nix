@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        buildwrapper = {
+        "buildwrapper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -55,7 +55,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") hsPkgs.time;
         };
         exes = {
-          buildwrapper = {
+          "buildwrapper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.buildwrapper
@@ -87,7 +87,7 @@ let
           };
         };
         tests = {
-          buildwrapper-test = {
+          "buildwrapper-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.buildwrapper

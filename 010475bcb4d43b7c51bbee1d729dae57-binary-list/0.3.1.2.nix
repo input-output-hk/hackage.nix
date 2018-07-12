@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-list = {
+        "binary-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         benchmarks = {
-          binary-list-bench = {
+          "binary-list-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary-list

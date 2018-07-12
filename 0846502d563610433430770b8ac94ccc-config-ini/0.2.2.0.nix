@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        config-ini = {
+        "config-ini" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test-ini-compat = {
+          "test-ini-compat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ini
@@ -44,7 +44,7 @@ let
               hsPkgs.text
             ];
           };
-          test-prewritten = {
+          "test-prewritten" = {
             depends  = [
               hsPkgs.base
               hsPkgs.config-ini
@@ -54,7 +54,7 @@ let
               hsPkgs.directory
             ];
           };
-          test-doctest = {
+          "test-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

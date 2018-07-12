@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pez = {
+        "pez" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fclabels

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        handwriting = {
+        "handwriting" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          handwriting = {
+          "handwriting" = {
             depends  = [
               hsPkgs.base
               hsPkgs.handwriting
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          handwriting-test = {
+          "handwriting-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.handwriting

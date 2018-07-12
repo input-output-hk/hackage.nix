@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb

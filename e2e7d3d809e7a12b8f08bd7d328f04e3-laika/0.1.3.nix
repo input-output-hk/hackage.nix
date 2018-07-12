@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        laika = {
+        "laika" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.system-filepath
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          demo = {
+          "demo" = {
             depends  = pkgs.lib.optionals (!(!_flags.demo)) [
               hsPkgs.laika
               hsPkgs.text

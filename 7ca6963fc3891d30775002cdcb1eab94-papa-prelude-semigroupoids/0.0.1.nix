@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-prelude-semigroupoids = {
+        "papa-prelude-semigroupoids" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroupoids
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

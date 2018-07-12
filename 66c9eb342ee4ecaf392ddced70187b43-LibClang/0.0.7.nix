@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        LibClang = {
+        "LibClang" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ffi

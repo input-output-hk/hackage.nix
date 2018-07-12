@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        lens-action = {
+        "lens-action" = {
           depends  = [
             hsPkgs.lens
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.doctest

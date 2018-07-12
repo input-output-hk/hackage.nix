@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          risc386 = {
+          "risc386" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

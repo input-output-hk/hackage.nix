@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-string-random = {
+        "quickcheck-string-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          quickcheck-string-random-test = {
+          "quickcheck-string-random-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

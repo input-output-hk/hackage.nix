@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        carray = {
+        "carray" = {
           depends  = [
             hsPkgs.array
             hsPkgs.ix-shapable
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.ix-shapable
@@ -43,32 +43,32 @@ let
           };
         };
         benchmarks = {
-          meteor-contest-c = {
+          "meteor-contest-c" = {
             depends  = [
               hsPkgs.carray
               hsPkgs.base
             ];
           };
-          meteor-contest-u = {
+          "meteor-contest-u" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
             ];
           };
-          nsieve-bits-c = {
+          "nsieve-bits-c" = {
             depends  = [
               hsPkgs.carray
               hsPkgs.array
               hsPkgs.base
             ];
           };
-          nsieve-bits-s = {
+          "nsieve-bits-s" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
             ];
           };
-          nsieve-bits-u = {
+          "nsieve-bits-u" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-time = {
+        "bytestring-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

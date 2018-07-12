@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-rankselect = {
+        "hw-rankselect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hw-bits
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          hw-rankselect-example = {
+          "hw-rankselect-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hw-rankselect
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          hw-rankselect-test = {
+          "hw-rankselect-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

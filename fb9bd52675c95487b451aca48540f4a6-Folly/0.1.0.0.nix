@@ -20,21 +20,21 @@ let
         buildType = "Simple";
       };
       components = {
-        Folly = {
+        "Folly" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          Folly = {
+          "Folly" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.parsec
             ];
           };
-          Folly-tests = {
+          "Folly-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

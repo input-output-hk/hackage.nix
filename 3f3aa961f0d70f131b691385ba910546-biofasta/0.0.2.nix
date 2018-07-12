@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        biofasta = {
+        "biofasta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.biocore

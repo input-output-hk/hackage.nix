@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-hspec-hedgehog = {
+        "hw-hspec-hedgehog" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          hw-hspec-hedgehog-test = {
+          "hw-hspec-hedgehog-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedgehog

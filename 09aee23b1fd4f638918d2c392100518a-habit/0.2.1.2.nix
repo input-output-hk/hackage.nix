@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        habit = {
+        "habit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.persistent-postgresql
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          hello-bot = {
+          "hello-bot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.habit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        STM32-Zombie = {
+        "STM32-Zombie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

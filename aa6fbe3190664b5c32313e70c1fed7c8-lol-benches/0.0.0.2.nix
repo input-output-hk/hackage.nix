@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lol-benches = {
+        "lol-benches" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base

@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger-web = {
+        "hledger-web" = {
           depends  = [
             hsPkgs.hledger
             hsPkgs.hledger-lib
@@ -70,7 +70,7 @@ let
             else [ hsPkgs.time ]);
         };
         exes = {
-          hledger-web = {
+          "hledger-web" = {
             depends  = [
               hsPkgs.hledger-lib
               hsPkgs.hledger
@@ -117,7 +117,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.hledger-web
               hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        record-syntax = {
+        "record-syntax" = {
           depends  = [
             hsPkgs.record
             hsPkgs.haskell-src-exts
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.doctest
               hsPkgs.directory
@@ -46,7 +46,7 @@ let
               hsPkgs.base
             ];
           };
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.record
               hsPkgs.record-syntax
@@ -57,7 +57,7 @@ let
           };
         };
         benchmarks = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.record
               hsPkgs.record-syntax

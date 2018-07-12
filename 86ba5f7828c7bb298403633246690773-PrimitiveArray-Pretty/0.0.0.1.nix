@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PrimitiveArray-Pretty = {
+        "PrimitiveArray-Pretty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.PrimitiveArray-Pretty

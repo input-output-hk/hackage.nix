@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        music-suite = {
+        "music-suite" = {
           depends  = [
             hsPkgs.music-dynamics-literal
             hsPkgs.music-pitch-literal

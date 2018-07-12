@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happindicator3 = {
+        "happindicator3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.glib
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

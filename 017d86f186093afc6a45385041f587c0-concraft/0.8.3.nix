@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concraft = {
+        "concraft" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          concraft-analyse-model = {
+          "concraft-analyse-model" = {
             depends  = pkgs.lib.optionals _flags.buildanatool [
               hsPkgs.cmdargs
               hsPkgs.logfloat

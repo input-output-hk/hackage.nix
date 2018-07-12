@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hydrogen-syntax = {
+        "hydrogen-syntax" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

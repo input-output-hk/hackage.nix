@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-lua2 = {
+        "language-lua2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          parse = {
+          "parse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Earley
@@ -49,7 +49,7 @@ let
               hsPkgs.wl-pprint
             ];
           };
-          lex = {
+          "lex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lexer-applicative
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          language-lua2-test = {
+          "language-lua2-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        blas = {
+        "blas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ieee
@@ -36,7 +36,7 @@ let
           libs = (((pkgs.lib.optionals _flags.atlas [
             pkgs.cblas
             pkgs.atlas
-          ] ++ pkgs.lib.optional _flags.gsl pkgs.gslcblas) ++ (if _flags.mkl && system.isX86_64
+          ] ++ pkgs.lib.optional _flags.gsl pkgs.gslcblas) ++ pkgs.lib.optionals _flags.mkl (if system.isX86_64
             then [
               pkgs.mkl_lapack
               pkgs.mkl_intel_lp64

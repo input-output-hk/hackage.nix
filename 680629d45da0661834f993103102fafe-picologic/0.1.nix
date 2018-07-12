@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        picologic = {
+        "picologic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.picosat
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          picologic = {
+          "picologic" = {
             depends  = pkgs.lib.optionals _flags.shell [
               hsPkgs.base
               hsPkgs.picosat

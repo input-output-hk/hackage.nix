@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabalrpmdeps = {
+        "cabalrpmdeps" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          cabalrpmprov = {
+          "cabalrpmprov" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base
@@ -37,7 +37,7 @@ let
               hsPkgs.filepath
             ];
           };
-          cabalrpmreq = {
+          "cabalrpmreq" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base
@@ -45,7 +45,7 @@ let
               hsPkgs.filepath
             ];
           };
-          cabalrpmbr = {
+          "cabalrpmbr" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

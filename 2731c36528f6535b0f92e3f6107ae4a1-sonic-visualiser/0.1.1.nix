@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sonic-visualiser = {
+        "sonic-visualiser" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          svdump = {
+          "svdump" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

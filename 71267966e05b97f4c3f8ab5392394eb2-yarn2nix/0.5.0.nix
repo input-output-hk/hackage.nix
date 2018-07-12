@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yarn2nix = {
+        "yarn2nix" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-wl-pprint
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          setup-node-package-paths = {
+          "setup-node-package-paths" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-wl-pprint
@@ -72,7 +72,7 @@ let
               hsPkgs.yarn2nix
             ];
           };
-          yarn2nix = {
+          "yarn2nix" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-wl-pprint
@@ -99,7 +99,7 @@ let
           };
         };
         tests = {
-          yarn2nix-tests = {
+          "yarn2nix-tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-wl-pprint

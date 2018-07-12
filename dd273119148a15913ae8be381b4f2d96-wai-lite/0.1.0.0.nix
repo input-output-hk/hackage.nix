@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-lite = {
+        "wai-lite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        trifecta = {
+        "trifecta" = {
           depends  = [
             hsPkgs.ansi-wl-pprint
             hsPkgs.ansi-terminal
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -57,7 +57,7 @@ let
               hsPkgs.filepath
             ];
           };
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsers

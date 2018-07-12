@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spreadsheet = {
+        "spreadsheet" = {
           depends  = [
             hsPkgs.utility-ht
             hsPkgs.transformers
@@ -31,7 +31,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          csvreplace = {
+          "csvreplace" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.spreadsheet
               hsPkgs.optparse-applicative
@@ -40,7 +40,7 @@ let
               hsPkgs.base
             ];
           };
-          csvextract = {
+          "csvextract" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.spreadsheet
               hsPkgs.optparse-applicative

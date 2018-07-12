@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        dmenu = {
+        "dmenu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

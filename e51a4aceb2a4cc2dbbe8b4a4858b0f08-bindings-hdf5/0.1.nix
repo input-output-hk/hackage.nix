@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        bindings-hdf5 = {
+        "bindings-hdf5" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

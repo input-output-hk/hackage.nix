@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-dom-jsaddle = {
+        "ghcjs-dom-jsaddle" = {
           depends  = [
             hsPkgs.jsaddle-dom
           ];

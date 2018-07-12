@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          make-hard-links = {
+          "make-hard-links" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

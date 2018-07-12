@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        raz = {
+        "raz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          raz-test = {
+          "raz-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.MonadRandom
@@ -37,7 +37,7 @@ let
           };
         };
         benchmarks = {
-          raz-bench = {
+          "raz-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -47,7 +47,7 @@ let
               hsPkgs.raz
             ];
           };
-          sequence-bench = {
+          "sequence-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

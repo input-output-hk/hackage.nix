@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          leksah = {
+          "leksah" = {
             depends  = [
               hsPkgs.regex-posix
               hsPkgs.utf8-string

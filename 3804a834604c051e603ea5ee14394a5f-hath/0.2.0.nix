@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hath = {
+          "hath" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -53,7 +53,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          shelltests = {
+          "shelltests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -69,7 +69,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          shelltests-net = {
+          "shelltests-net" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

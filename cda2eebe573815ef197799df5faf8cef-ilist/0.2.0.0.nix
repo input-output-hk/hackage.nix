@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        ilist = {
+        "ilist" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -34,7 +34,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

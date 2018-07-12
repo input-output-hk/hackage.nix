@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        translate-cli = {
+        "translate-cli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          translate = {
+          "translate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.translate-cli
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          translate-cli-test = {
+          "translate-cli-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.translate-cli

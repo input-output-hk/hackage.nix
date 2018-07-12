@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-gi-base = {
+        "haskell-gi-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

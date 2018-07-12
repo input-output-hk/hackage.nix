@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prometheus = {
+        "prometheus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.atomic-primops

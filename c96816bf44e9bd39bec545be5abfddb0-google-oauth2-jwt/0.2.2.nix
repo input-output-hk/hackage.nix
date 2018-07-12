@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-oauth2-jwt = {
+        "google-oauth2-jwt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring

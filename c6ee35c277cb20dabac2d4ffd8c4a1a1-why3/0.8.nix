@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        why3 = {
+        "why3" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

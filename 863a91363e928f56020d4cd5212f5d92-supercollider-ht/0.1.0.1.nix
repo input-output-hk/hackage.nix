@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        supercollider-ht = {
+        "supercollider-ht" = {
           depends  = [
             hsPkgs.hosc
             hsPkgs.hsc3
@@ -38,6 +38,8 @@ let
             ]
             else [ hsPkgs.base ]);
         };
-        exes = { timing-example = {}; };
+        exes = {
+          "timing-example" = {};
+        };
       };
     }

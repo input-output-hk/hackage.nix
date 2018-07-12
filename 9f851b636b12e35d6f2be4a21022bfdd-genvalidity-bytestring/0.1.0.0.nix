@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-bytestring = {
+        "genvalidity-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.validity
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          genvalidity-bytestring-test = {
+          "genvalidity-bytestring-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

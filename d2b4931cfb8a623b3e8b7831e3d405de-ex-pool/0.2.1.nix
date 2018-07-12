@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ex-pool = {
+        "ex-pool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

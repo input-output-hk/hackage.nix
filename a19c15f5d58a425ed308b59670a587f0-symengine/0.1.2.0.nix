@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        symengine = {
+        "symengine" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          symengine-test = {
+          "symengine-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.symengine

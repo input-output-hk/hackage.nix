@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        swf = {
+        "swf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

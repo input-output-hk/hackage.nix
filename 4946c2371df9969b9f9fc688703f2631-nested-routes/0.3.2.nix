@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nested-routes = {
+        "nested-routes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

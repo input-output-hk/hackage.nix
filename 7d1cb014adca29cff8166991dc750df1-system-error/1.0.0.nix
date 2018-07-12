@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-error = {
+        "system-error" = {
           depends  = [ hsPkgs.base ];
         };
       };

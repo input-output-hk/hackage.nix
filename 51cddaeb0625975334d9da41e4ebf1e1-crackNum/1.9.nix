@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crackNum = {
+        "crackNum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ieee754
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          crackNum = {
+          "crackNum" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ieee754

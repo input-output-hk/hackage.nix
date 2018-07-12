@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-pascal = {
+        "simple-pascal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,6 +30,6 @@ let
             hsPkgs.simple-stacked-vm
           ];
         };
-        exes = { spc = {}; };
+        exes = { "spc" = {}; };
       };
     }

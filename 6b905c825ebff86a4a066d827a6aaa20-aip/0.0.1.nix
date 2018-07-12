@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        aip = {
+        "aip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          aip = {
+          "aip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

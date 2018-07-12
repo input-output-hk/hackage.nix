@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nanq = {
+        "nanq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          nanq = {
+          "nanq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

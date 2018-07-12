@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-merge = {
+        "conduit-merge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-rasterific = {
+        "diagrams-rasterific" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams-core

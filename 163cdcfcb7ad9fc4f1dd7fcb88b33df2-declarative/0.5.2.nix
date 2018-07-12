@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        declarative = {
+        "declarative" = {
           depends  = [
             hsPkgs.base
             hsPkgs.kan-extensions
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          rosenbrock = {
+          "rosenbrock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-probability

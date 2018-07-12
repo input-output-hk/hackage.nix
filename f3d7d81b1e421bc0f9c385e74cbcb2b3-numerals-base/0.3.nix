@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numerals-base = {
+        "numerals-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-numerals = {
+          "test-numerals" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-link-header = {
+        "http-link-header" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

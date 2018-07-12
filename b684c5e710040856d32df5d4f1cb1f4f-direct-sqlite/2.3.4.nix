@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        direct-sqlite = {
+        "direct-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
             else pkgs.lib.optional (!system.isWindows) pkgs.pthread;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base16-bytestring

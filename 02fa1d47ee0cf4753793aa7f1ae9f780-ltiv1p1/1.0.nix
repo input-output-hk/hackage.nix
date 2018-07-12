@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ltiv1p1 = {
+        "ltiv1p1" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

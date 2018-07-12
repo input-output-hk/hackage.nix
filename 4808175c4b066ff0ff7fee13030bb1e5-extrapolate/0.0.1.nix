@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extrapolate = {
+        "extrapolate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.leancheck
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck

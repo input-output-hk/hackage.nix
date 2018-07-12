@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dependent-state = {
+        "dependent-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        react-flux = {
+        "react-flux" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -33,20 +33,20 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
         };
         exes = {
-          todo = {
+          "todo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.react-flux
               hsPkgs.deepseq
             ];
           };
-          test-client = {
+          "test-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.react-flux
             ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base;
           };
-          route-example = {
+          "route-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.react-flux

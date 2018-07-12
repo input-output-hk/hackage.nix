@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Printf-TH = {
+        "Printf-TH" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

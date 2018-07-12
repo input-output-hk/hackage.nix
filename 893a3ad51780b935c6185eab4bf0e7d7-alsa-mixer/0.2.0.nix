@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alsa-mixer = {
+        "alsa-mixer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.alsa-core

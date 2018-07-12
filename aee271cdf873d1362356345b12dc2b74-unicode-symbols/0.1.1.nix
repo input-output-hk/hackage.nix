@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unicode-symbols = {
+        "unicode-symbols" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals _flags.containers [

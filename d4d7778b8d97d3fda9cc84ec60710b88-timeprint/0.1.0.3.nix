@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timeprint = {
+        "timeprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.datetime

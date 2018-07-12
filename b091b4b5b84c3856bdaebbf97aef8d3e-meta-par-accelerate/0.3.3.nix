@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        meta-par-accelerate = {
+        "meta-par-accelerate" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.abstract-par

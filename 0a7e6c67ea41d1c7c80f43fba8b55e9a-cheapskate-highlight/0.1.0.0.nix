@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cheapskate-highlight = {
+        "cheapskate-highlight" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

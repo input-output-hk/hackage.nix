@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mlist = {
+        "mlist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

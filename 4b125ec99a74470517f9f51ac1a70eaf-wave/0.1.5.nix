@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wave = {
+        "wave" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

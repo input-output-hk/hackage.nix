@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        period = {
+        "period" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          period = {
+          "period" = {
             depends  = [
               hsPkgs.period
               hsPkgs.base
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.period

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lzma-conduit = {
+        "lzma-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

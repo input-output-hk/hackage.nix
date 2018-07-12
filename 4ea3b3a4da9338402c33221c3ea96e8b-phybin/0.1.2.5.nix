@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          phybin = {
+          "phybin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

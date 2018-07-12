@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        partial-semigroup-test = {
+        "partial-semigroup-test" = {
           depends  = pkgs.lib.optional _flags.enable-hedgehog hsPkgs.partial-semigroup-hedgehog;
         };
       };

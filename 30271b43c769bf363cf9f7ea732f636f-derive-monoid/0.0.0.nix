@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        derive-monoid = {
+        "derive-monoid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.derive-monoid
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.derive-monoid

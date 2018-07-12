@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        restful-snap = {
+        "restful-snap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

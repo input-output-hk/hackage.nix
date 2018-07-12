@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heavy-logger = {
+        "heavy-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

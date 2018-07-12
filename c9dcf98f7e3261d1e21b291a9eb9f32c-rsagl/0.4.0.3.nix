@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rsagl = {
+        "rsagl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          _rsagl_process_colors = {};
+          "_rsagl_process_colors" = {};
         };
       };
     }

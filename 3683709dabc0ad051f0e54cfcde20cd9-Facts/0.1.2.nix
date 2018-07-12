@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Facts = {
+        "Facts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.AC-Angle

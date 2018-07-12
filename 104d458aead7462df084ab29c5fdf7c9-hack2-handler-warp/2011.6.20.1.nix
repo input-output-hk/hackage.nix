@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack2-handler-warp = {
+        "hack2-handler-warp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

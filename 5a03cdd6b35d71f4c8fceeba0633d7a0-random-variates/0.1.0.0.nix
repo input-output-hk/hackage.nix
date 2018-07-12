@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-variates = {
+        "random-variates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.reinterpret-cast

@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        sql-words = {
+        "sql-words" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
         };
         tests = {
-          monoids = {
+          "monoids" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quickcheck-simple

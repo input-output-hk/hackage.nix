@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        log-elasticsearch = {
+        "log-elasticsearch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.log-base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        line = {
+        "line" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          line-test = {
+          "line-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.line

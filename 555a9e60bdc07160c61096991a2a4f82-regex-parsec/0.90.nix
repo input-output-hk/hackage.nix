@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        regex-parsec = {
+        "regex-parsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-base

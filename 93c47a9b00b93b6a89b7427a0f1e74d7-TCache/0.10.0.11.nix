@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TCache = {
+        "TCache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

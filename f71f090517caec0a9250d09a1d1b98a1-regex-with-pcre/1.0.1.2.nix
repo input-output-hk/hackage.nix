@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-with-pcre = {
+        "regex-with-pcre" = {
           depends  = [
             hsPkgs.regex
             hsPkgs.base

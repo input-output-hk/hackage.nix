@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MuCheck-HUnit = {
+        "MuCheck-HUnit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          mucheck-hunit = {
+          "mucheck-hunit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

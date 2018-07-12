@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        gjk = {
+        "gjk" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gjk

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process = {
+        "distributed-process" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.binary
@@ -44,12 +44,10 @@ let
           ] ++ [
             hsPkgs.containers
             hsPkgs.deepseq
-          ]) ++ [
-            hsPkgs.template-haskell
-          ];
+          ]) ++ pkgs.lib.optional _flags.th hsPkgs.template-haskell;
         };
         benchmarks = {
-          distributed-process-throughput = {
+          "distributed-process-throughput" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process
@@ -58,7 +56,7 @@ let
               hsPkgs.binary
             ];
           };
-          distributed-process-latency = {
+          "distributed-process-latency" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process
@@ -67,7 +65,7 @@ let
               hsPkgs.binary
             ];
           };
-          distributed-process-channels = {
+          "distributed-process-channels" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process
@@ -76,7 +74,7 @@ let
               hsPkgs.binary
             ];
           };
-          distributed-process-spawns = {
+          "distributed-process-spawns" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process
@@ -85,7 +83,7 @@ let
               hsPkgs.binary
             ];
           };
-          distributed-process-ring = {
+          "distributed-process-ring" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process

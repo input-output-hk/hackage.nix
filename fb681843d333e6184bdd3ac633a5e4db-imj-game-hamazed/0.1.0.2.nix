@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imj-game-hamazed = {
+        "imj-game-hamazed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          imj-game-hamazed-exe = {
+          "imj-game-hamazed-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.imj-game-hamazed
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          imj-game-hamazed-test = {
+          "imj-game-hamazed-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.imj-base

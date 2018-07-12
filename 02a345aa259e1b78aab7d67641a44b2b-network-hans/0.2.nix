@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-hans = {
+        "network-hans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

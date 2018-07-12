@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuagc-bootstrap = {
+        "uuagc-bootstrap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          uuagc-bootstrap = {
+          "uuagc-bootstrap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

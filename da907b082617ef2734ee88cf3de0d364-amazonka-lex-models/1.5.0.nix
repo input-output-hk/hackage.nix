@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-lex-models = {
+        "amazonka-lex-models" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-lex-models-test = {
+          "amazonka-lex-models-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

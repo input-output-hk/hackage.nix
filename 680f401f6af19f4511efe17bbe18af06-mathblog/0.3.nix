@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mb = {
+          "mb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -38,7 +38,7 @@ let
               hsPkgs.ConfigFile
             ];
           };
-          mb-tests = {
+          "mb-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

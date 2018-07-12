@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cheatsheet = {
+          "cheatsheet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

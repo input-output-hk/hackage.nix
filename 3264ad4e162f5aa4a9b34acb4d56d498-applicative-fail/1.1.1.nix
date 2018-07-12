@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        applicative-fail = {
+        "applicative-fail" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

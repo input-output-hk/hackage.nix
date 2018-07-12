@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imperative-edsl-vhdl = {
+        "imperative-edsl-vhdl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

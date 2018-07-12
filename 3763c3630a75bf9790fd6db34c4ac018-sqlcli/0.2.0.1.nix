@@ -22,16 +22,16 @@ let
         buildType = "Simple";
       };
       components = {
-        sqlcli = {
+        "sqlcli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
             hsPkgs.logging
             hsPkgs.text
           ];
-          libs = if _flags.odbc && system.isWindows
+          libs = pkgs.lib.optionals _flags.odbc (if system.isWindows
             then [ pkgs.odbc32 ]
-            else [ pkgs.odbc ];
+            else [ pkgs.odbc ]);
         };
       };
     }

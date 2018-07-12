@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hplaylist = {
+          "hplaylist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

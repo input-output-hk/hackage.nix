@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        huzzy = {
+        "huzzy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.easyplot

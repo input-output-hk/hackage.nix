@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          stackage-sandbox = {
+          "stackage-sandbox" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

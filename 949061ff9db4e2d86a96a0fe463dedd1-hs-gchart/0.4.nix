@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-gchart = {
+        "hs-gchart" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

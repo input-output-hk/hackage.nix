@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedis-namespace = {
+        "hedis-namespace" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          hedis-namespace-exe = {
+          "hedis-namespace-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedis-namespace
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          hedis-namespace-test = {
+          "hedis-namespace-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedis-namespace

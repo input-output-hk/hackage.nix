@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptohash = {
+        "cryptohash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-kat = {
+          "test-kat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          bench-hashes = {
+          "bench-hashes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
               hsPkgs.cryptohash
             ];
           };
-          bench-api = {
+          "bench-api" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

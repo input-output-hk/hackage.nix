@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadloc = {
+        "monadloc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,12 +20,12 @@ let
         buildType = "Custom";
       };
       components = {
-        translatable-intset = {
+        "translatable-intset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fingertree
           ];
         };
-        exes = { test = {}; };
+        exes = { "test" = {}; };
       };
     }

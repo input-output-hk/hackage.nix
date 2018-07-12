@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-typelits-natnormalise = {
+        "ghc-typelits-natnormalise" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
           ];
         };
         tests = {
-          test-ghc-tynat-normalise = {
+          "test-ghc-tynat-normalise" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-typelits-natnormalise

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        money = {
+        "money" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

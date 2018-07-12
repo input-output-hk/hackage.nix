@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        damnpacket = {
+        "damnpacket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          render = {
+          "render" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          parse = {
+          "parse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

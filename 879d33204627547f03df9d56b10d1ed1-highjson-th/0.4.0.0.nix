@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        highjson-th = {
+        "highjson-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.highjson
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          highjson-th-tests = {
+          "highjson-th-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

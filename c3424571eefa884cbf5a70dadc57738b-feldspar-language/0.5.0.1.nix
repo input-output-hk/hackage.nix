@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feldspar-language = {
+        "feldspar-language" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdl2-sprite = {
+        "sdl2-sprite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sdl2
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          sdl2-sprite = {
+          "sdl2-sprite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sdl2-sprite

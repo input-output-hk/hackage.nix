@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        script-monad = {
+        "script-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          script-monad-exe = {
+          "script-monad-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.script-monad
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          script-monad-test = {
+          "script-monad-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.script-monad

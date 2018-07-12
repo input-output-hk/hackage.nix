@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-emoticons = {
+        "data-emoticons" = {
           depends  = [ hsPkgs.base ];
         };
       };

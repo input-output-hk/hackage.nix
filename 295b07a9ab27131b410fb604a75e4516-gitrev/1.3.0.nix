@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gitrev = {
+        "gitrev" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat

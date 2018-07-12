@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ats-format = {
+        "ats-format" = {
           depends  = [
             hsPkgs.base
             hsPkgs.language-ats
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          atsfmt = {
+          "atsfmt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ats-format

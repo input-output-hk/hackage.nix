@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        engine-io-snap = {
+        "engine-io-snap" = {
           depends  = [
             hsPkgs.attoparsec-enumerator
             hsPkgs.base

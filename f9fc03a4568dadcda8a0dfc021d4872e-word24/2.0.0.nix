@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        word24 = {
+        "word24" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          bench24 = {
+          "bench24" = {
             depends  = [
               hsPkgs.base
               hsPkgs.word24

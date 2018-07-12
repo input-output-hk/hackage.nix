@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        drinkery = {
+        "drinkery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -29,7 +29,7 @@ let
           ];
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.ListT
               hsPkgs.base

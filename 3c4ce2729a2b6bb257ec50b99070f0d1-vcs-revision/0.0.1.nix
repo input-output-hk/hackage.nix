@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vcs-revision = {
+        "vcs-revision" = {
           depends  = [
             hsPkgs.process
           ] ++ [ hsPkgs.base ];

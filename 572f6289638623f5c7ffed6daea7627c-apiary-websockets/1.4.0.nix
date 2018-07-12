@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-websockets = {
+        "apiary-websockets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.apiary

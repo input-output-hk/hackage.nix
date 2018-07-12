@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        embeddock-example = {
+        "embeddock-example" = {
           depends  = [
             hsPkgs.base
             hsPkgs.embeddock

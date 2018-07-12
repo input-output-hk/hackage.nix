@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        naturalcomp = {
+        "naturalcomp" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.text

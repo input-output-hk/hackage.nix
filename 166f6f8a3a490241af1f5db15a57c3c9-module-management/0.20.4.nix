@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        module-management = {
+        "module-management" = {
           depends  = [
             hsPkgs.applicative-extras
             hsPkgs.base
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          hmm = {
+          "hmm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -68,7 +68,7 @@ let
           };
         };
         tests = {
-          module-management-tests = {
+          "module-management-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

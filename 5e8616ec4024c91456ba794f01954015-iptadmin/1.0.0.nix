@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          iptadmin = {
+          "iptadmin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

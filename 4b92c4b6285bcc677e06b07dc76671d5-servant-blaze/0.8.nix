@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-blaze = {
+        "servant-blaze" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html

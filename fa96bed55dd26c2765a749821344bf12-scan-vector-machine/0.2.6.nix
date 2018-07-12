@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scan-vector-machine = {
+        "scan-vector-machine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

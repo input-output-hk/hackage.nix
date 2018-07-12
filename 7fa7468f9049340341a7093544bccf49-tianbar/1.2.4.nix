@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tianbar = {
+        "tianbar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dbus
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          tianbar = {
+          "tianbar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

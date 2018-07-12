@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        authenticate-ldap = {
+        "authenticate-ldap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

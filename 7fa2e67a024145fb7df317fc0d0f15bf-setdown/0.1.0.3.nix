@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          setdown = {
+          "setdown" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

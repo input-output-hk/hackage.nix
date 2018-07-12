@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          yaml2owl = {
+          "yaml2owl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

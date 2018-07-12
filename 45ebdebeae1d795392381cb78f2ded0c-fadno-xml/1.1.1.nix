@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fadno-xml = {
+        "fadno-xml" = {
           depends  = [
             hsPkgs.Decimal
             hsPkgs.base

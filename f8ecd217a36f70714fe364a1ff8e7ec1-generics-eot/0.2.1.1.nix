@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        generics-eot = {
+        "generics-eot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.markdown-unlit
           ];
         };
         tests = {
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.markdown-unlit
@@ -40,7 +40,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.markdown-unlit

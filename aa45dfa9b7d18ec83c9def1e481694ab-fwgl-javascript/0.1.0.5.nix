@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fwgl-javascript = {
+        "fwgl-javascript" = {
           depends  = [
             hsPkgs.fwgl
             hsPkgs.Yampa

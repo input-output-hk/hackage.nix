@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        record-gl = {
+        "record-gl" = {
           depends  = [
             hsPkgs.GLUtil
             hsPkgs.OpenGL
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

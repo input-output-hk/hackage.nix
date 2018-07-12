@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        creatur = {
+        "creatur" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          creatur-tests = {
+          "creatur-tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

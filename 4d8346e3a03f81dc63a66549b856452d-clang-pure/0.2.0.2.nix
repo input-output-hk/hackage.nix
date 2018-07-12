@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        clang-pure = {
+        "clang-pure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          find-classes = {
+          "find-classes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clang-pure
@@ -50,7 +50,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          list-fun-types = {
+          "list-fun-types" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clang-pure
@@ -58,7 +58,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          list-structs = {
+          "list-structs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clang-pure

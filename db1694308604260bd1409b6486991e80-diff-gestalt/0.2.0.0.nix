@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diff-gestalt = {
+        "diff-gestalt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Diff
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          diff-gestalt-test = {
+          "diff-gestalt-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Diff

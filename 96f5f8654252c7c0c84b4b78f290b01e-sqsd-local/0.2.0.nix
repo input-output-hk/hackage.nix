@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sqsd-local = {
+          "sqsd-local" = {
             depends  = [
               hsPkgs.amazonka
               hsPkgs.amazonka-sqs
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          sqsd-local-test = {
+          "sqsd-local-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sqsd-local

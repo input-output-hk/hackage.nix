@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        observable = {
+        "observable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

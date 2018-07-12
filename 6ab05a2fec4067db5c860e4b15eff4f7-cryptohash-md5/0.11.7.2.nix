@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptohash-md5 = {
+        "cryptohash-md5" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          test-md5 = {
+          "test-md5" = {
             depends  = [
               hsPkgs.cryptohash-md5
               hsPkgs.base
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          bench-md5 = {
+          "bench-md5" = {
             depends  = [
               hsPkgs.cryptohash-md5
               hsPkgs.base

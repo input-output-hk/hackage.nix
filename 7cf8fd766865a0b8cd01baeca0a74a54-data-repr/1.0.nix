@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-repr = {
+        "data-repr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.generic-deriving

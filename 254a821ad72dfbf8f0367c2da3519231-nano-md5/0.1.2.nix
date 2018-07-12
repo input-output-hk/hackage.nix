@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nano-md5 = {
+        "nano-md5" = {
           depends  = if _flags.split-base
             then [
               hsPkgs.base

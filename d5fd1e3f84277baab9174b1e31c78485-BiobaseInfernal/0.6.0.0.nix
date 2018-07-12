@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseInfernal = {
+        "BiobaseInfernal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.biocore

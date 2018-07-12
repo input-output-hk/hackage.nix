@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prednote = {
+        "prednote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rainbow
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          prednote-test = {
+          "prednote-test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        splitmix = {
+        "splitmix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -29,13 +29,13 @@ let
           ];
         };
         tests = {
-          montecarlo-pi = {
+          "montecarlo-pi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.splitmix
             ];
           };
-          splitmix-dieharder = {
+          "splitmix-dieharder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.splitmix
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          comparison = {
+          "comparison" = {
             depends  = [
               hsPkgs.base
               hsPkgs.splitmix

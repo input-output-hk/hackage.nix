@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exp-extended = {
+        "exp-extended" = {
           depends  = [
             hsPkgs.base
             hsPkgs.compensated

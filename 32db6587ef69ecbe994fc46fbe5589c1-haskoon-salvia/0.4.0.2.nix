@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskoon-salvia = {
+        "haskoon-salvia" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

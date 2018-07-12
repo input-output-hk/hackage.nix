@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ihaskell-charts = {
+        "ihaskell-charts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude

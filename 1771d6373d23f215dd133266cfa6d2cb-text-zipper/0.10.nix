@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-zipper = {
+        "text-zipper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          text-zipper-tests = {
+          "text-zipper-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

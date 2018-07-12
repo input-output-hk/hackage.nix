@@ -22,16 +22,16 @@ let
         buildType = "Simple";
       };
       components = {
-        sendfile = {
+        "sendfile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
           ] ++ (if system.isWindows && !_flags.portable
             then [ hsPkgs.Win32 ]
-            else pkgs.lib.optionals (!(system.isLinux && !_flags.portable) && !(system.isFreebsd && !_flags.portable)) [
+            else pkgs.lib.optionals (!(system.isLinux && !_flags.portable)) (pkgs.lib.optionals (!(system.isFreebsd && !_flags.portable)) [
               hsPkgs.bytestring
               hsPkgs.network-bytestring
-            ]);
+            ]));
           libs = pkgs.lib.optional (system.isWindows && !_flags.portable) pkgs.mswsock;
         };
       };

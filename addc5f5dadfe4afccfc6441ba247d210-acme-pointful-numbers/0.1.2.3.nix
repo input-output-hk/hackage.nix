@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-pointful-numbers = {
+        "acme-pointful-numbers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

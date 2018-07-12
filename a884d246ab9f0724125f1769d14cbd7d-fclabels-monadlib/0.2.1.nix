@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fclabels-monadlib = {
+        "fclabels-monadlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monadLib

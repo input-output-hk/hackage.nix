@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sbp = {
+        "sbp" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.array
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          sbp2json = {
+          "sbp2json" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -52,7 +52,7 @@ let
               hsPkgs.sbp
             ];
           };
-          json2sbp = {
+          "json2sbp" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -68,7 +68,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -85,7 +85,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-posix-redirect = {
+        "system-posix-redirect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

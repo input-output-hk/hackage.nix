@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-purescript = {
+        "servant-purescript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          servant-purescript-test = {
+          "servant-purescript-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

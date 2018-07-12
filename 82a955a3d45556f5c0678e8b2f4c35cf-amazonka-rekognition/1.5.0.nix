@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-rekognition = {
+        "amazonka-rekognition" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-rekognition-test = {
+          "amazonka-rekognition-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

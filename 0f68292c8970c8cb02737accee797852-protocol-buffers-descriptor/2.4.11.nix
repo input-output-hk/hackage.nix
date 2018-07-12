@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protocol-buffers-descriptor = {
+        "protocol-buffers-descriptor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protocol-buffers

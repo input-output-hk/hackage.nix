@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stopwatch = {
+        "stopwatch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stopwatch

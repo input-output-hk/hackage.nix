@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Get = {
+        "Get" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          Get-test = {
+          "Get-test" = {
             depends  = [
               hsPkgs.Get
               hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dhall-lex = {
+        "dhall-lex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          dhall-lex-test = {
+          "dhall-lex-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dhall-lex
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          dhall-lex-bench = {
+          "dhall-lex-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dhall-lex

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        instant-aeson = {
+        "instant-aeson" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

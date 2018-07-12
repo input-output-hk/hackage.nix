@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uri-bytestring = {
+        "uri-bytestring" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.uri-bytestring
               hsPkgs.HUnit
@@ -60,7 +60,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uri-bytestring

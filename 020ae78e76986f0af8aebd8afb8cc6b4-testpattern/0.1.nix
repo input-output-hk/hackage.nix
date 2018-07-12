@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          testpattern = {
+          "testpattern" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        manifolds = {
+        "manifolds" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

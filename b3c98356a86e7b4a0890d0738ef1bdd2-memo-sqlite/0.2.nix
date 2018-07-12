@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memo-sqlite = {
+        "memo-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.direct-sqlite

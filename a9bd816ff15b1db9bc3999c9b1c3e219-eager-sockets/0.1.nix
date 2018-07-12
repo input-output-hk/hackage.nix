@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eager-sockets = {
+        "eager-sockets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

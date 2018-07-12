@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        empty-monad = {
+        "empty-monad" = {
           depends  = [ hsPkgs.base ];
         };
       };

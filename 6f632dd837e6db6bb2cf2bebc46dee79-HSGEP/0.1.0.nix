@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HSGEP = {
+        "HSGEP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          HSGEP_Regression = {};
+          "HSGEP_Regression" = {};
         };
       };
     }

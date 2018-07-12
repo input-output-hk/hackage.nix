@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrent-state = {
+        "concurrent-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

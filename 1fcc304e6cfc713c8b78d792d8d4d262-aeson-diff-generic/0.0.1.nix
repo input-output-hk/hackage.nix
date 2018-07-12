@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-diff-generic = {
+        "aeson-diff-generic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

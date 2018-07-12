@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polyparse = {
+        "polyparse" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals (compiler.isGhc && true) [

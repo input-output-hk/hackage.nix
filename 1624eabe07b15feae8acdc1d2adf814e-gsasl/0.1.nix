@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gsasl = {
+        "gsasl" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.gsasl ];
           pkgconfig = [

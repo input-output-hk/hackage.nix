@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        base-feature-macros = {
+        "base-feature-macros" = {
           depends  = [ hsPkgs.base ];
         };
       };

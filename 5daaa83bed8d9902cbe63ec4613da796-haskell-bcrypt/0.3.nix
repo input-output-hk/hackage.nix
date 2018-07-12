@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-bcrypt = {
+        "haskell-bcrypt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

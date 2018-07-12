@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iCalendar = {
+        "iCalendar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

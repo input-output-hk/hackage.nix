@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yabi-muno = {
+        "yabi-muno" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          yabi = {
+          "yabi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

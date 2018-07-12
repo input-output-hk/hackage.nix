@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reverse-arguments = {
+        "reverse-arguments" = {
           depends  = [ hsPkgs.base ];
         };
       };

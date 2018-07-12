@@ -23,14 +23,14 @@ let
       };
       components = {
         exes = {
-          repa-canny = {
+          "repa-canny" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
               hsPkgs.repa-algorithms
             ];
           };
-          repa-mmult = {
+          "repa-mmult" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -39,7 +39,7 @@ let
               hsPkgs.repa-io
             ];
           };
-          repa-laplace = {
+          "repa-laplace" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
@@ -47,7 +47,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          repa-fft2d = {
+          "repa-fft2d" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
@@ -55,7 +55,7 @@ let
               hsPkgs.repa-io
             ];
           };
-          repa-fft2d-highpass = {
+          "repa-fft2d-highpass" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
@@ -63,14 +63,14 @@ let
               hsPkgs.repa-io
             ];
           };
-          repa-fft3d-highpass = {
+          "repa-fft3d-highpass" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
               hsPkgs.repa-algorithms
             ];
           };
-          repa-blur = {
+          "repa-blur" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
@@ -78,21 +78,21 @@ let
               hsPkgs.vector
             ];
           };
-          repa-sobel = {
+          "repa-sobel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
               hsPkgs.repa-algorithms
             ];
           };
-          repa-volume = {
+          "repa-volume" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
               hsPkgs.repa-io
             ];
           };
-          repa-unit-test = {
+          "repa-unit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa

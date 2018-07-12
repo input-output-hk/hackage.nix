@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGE2D = {
+        "HGE2D" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL
@@ -30,25 +30,25 @@ let
           ];
         };
         exes = {
-          example1 = {
+          "example1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HGE2D
             ];
           };
-          example2 = {
+          "example2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HGE2D
             ];
           };
-          example3 = {
+          "example3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HGE2D
             ];
           };
-          example4 = {
+          "example4" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HGE2D
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          test1 = {
+          "test1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HGE2D

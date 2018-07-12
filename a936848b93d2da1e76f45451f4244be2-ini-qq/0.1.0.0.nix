@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ini-qq = {
+        "ini-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ini
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          ini-qq-test = {
+          "ini-qq-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

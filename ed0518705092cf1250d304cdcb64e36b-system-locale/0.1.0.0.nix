@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-locale = {
+        "system-locale" = {
           depends  = [
             hsPkgs.base
             hsPkgs.megaparsec
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          system-locale-test = {
+          "system-locale-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

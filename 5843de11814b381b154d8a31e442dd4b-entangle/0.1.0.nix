@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        entangle = {
+        "entangle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.quipper-core
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          entangle = {
+          "entangle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.entangle

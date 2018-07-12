@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        producer = {
+        "producer" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          producer-test = {
+          "producer-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.producer

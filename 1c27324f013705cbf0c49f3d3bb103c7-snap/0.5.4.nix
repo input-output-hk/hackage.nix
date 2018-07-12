@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap = {
+        "snap" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -39,7 +39,7 @@ let
           ] ++ pkgs.lib.optional _flags.hint hsPkgs.hint) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          snap = {
+          "snap" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

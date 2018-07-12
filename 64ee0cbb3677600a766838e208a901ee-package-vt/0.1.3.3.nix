@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          package-vt = {
+          "package-vt" = {
             depends  = [
               hsPkgs.Diff
               hsPkgs.haskell-src-exts

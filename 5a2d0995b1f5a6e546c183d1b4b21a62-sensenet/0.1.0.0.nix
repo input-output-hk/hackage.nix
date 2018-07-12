@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sensenet = {
+          "sensenet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

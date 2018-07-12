@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pier = {
+        "pier" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.aeson
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          pier = {
+          "pier" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base

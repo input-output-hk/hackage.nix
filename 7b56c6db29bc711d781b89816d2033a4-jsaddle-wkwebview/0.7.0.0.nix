@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsaddle-wkwebview = {
+        "jsaddle-wkwebview" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

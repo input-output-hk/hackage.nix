@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amqp = {
+        "amqp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -43,7 +43,7 @@ let
             else [ hsPkgs.network ]);
         };
         exes = {
-          amqp-builder = {
+          "amqp-builder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xml
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

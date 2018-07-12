@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tsv2csv = {
+        "tsv2csv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          tsv2csv = {
+          "tsv2csv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tsv2csv

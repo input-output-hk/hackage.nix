@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vault = {
+        "vault" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

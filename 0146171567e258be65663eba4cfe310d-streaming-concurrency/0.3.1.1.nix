@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-concurrency = {
+        "streaming-concurrency" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          merging = {
+          "merging" = {
             depends  = [
               hsPkgs.streaming-concurrency
               hsPkgs.base
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          mapping = {
+          "mapping" = {
             depends  = [
               hsPkgs.streaming-concurrency
               hsPkgs.base

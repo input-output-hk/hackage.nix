@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-libffi = {
+        "bindings-libffi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

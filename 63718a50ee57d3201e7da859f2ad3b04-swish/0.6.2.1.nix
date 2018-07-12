@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        swish = {
+        "swish" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          Swish = {
+          "Swish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          test-builtinmap = {
+          "test-builtinmap" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -76,7 +76,7 @@ let
               hsPkgs.time
             ];
           };
-          test-graphpartition = {
+          "test-graphpartition" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -84,7 +84,7 @@ let
               hsPkgs.mtl
             ];
           };
-          test-graph = {
+          "test-graph" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -92,22 +92,7 @@ let
               hsPkgs.mtl
             ];
           };
-          test-nt = {
-            depends  = [
-              hsPkgs.HUnit
-              hsPkgs.base
-              hsPkgs.hashable
-              hsPkgs.mtl
-              hsPkgs.text
-              hsPkgs.network
-              hsPkgs.intern
-              hsPkgs.directory
-              hsPkgs.old-locale
-              hsPkgs.time
-              hsPkgs.polyparse
-            ];
-          };
-          test-n3parser = {
+          "test-nt" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -122,7 +107,7 @@ let
               hsPkgs.polyparse
             ];
           };
-          test-n3formatter = {
+          "test-n3parser" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -137,7 +122,7 @@ let
               hsPkgs.polyparse
             ];
           };
-          test-rdfdatatypexsdinteger = {
+          "test-n3formatter" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -152,7 +137,22 @@ let
               hsPkgs.polyparse
             ];
           };
-          test-rdfgraph = {
+          "test-rdfdatatypexsdinteger" = {
+            depends  = [
+              hsPkgs.HUnit
+              hsPkgs.base
+              hsPkgs.hashable
+              hsPkgs.mtl
+              hsPkgs.text
+              hsPkgs.network
+              hsPkgs.intern
+              hsPkgs.directory
+              hsPkgs.old-locale
+              hsPkgs.time
+              hsPkgs.polyparse
+            ];
+          };
+          "test-rdfgraph" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -166,7 +166,7 @@ let
               hsPkgs.directory
             ];
           };
-          test-rdfproofcontext = {
+          "test-rdfproofcontext" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -181,7 +181,7 @@ let
               hsPkgs.polyparse
             ];
           };
-          test-rdfproof = {
+          "test-rdfproof" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -196,7 +196,7 @@ let
               hsPkgs.polyparse
             ];
           };
-          test-rdfquery = {
+          "test-rdfquery" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -211,7 +211,7 @@ let
               hsPkgs.polyparse
             ];
           };
-          test-rdfruleset = {
+          "test-rdfruleset" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -226,7 +226,7 @@ let
               hsPkgs.polyparse
             ];
           };
-          test-varbinding = {
+          "test-varbinding" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -237,13 +237,13 @@ let
               hsPkgs.directory
             ];
           };
-          test-lookupmap = {
+          "test-lookupmap" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
             ];
           };
-          test-qname = {
+          "test-qname" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

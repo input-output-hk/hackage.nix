@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        halberd = {
+        "halberd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          halberd = {
+          "halberd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          halberd-tests = {
+          "halberd-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

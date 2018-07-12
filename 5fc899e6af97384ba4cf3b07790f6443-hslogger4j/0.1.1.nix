@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hslogger4j = {
+        "hslogger4j" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

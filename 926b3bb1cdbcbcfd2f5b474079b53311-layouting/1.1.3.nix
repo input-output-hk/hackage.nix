@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        layouting = {
+        "layouting" = {
           depends  = [
             hsPkgs.base
             hsPkgs.container

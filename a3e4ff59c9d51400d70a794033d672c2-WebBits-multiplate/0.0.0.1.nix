@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WebBits-multiplate = {
+        "WebBits-multiplate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

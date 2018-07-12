@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compressed = {
+        "compressed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

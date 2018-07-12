@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FindBin = {
+        "FindBin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

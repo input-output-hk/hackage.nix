@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-ratelimit = {
+        "persistent-ratelimit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

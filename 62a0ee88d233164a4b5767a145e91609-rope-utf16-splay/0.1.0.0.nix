@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        rope-utf16-splay = {
+        "rope-utf16-splay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

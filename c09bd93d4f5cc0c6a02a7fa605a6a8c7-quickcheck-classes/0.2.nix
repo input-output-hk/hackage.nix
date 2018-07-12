@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-classes = {
+        "quickcheck-classes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quickcheck-classes

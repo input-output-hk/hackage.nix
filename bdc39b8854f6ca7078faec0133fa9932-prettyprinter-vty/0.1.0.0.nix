@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prettyprinter-vty = {
+        "prettyprinter-vty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.prettyprinter

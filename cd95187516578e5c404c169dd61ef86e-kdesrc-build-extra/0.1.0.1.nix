@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          kdesrc-build-extra = {
+          "kdesrc-build-extra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

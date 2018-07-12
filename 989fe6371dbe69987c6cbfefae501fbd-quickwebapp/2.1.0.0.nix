@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickwebapp = {
+        "quickwebapp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

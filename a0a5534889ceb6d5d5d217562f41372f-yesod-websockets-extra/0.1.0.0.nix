@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-websockets-extra = {
+        "yesod-websockets-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-websockets

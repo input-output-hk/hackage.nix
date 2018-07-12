@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        coltrane = {
+        "coltrane" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

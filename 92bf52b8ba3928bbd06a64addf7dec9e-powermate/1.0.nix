@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        powermate = {
+        "powermate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -31,13 +31,13 @@ let
           ];
         };
         exes = {
-          powermate-print = {
+          "powermate-print" = {
             depends  = [
               hsPkgs.base
               hsPkgs.powermate
             ];
           };
-          powermate-pulse = {
+          "powermate-pulse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.powermate

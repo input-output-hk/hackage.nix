@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tic-tac-toe = {
+          "tic-tac-toe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

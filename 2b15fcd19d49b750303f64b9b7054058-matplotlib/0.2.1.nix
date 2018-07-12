@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        matplotlib = {
+        "matplotlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          matplotlib-test = {
+          "matplotlib-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.matplotlib

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-qux = {
+        "language-qux" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

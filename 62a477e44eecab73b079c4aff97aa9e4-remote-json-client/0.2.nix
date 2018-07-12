@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        remote-json-client = {
+        "remote-json-client" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

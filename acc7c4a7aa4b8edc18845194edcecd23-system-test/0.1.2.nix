@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-test = {
+        "system-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          system-test = {
+          "system-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.system-test
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bloodhound = {
+        "bloodhound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bloodhound
@@ -61,7 +61,7 @@ let
               hsPkgs.quickcheck-properties
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") [
               hsPkgs.base
               hsPkgs.directory

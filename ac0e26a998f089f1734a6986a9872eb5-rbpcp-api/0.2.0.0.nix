@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rbpcp-api = {
+        "rbpcp-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskoin-core

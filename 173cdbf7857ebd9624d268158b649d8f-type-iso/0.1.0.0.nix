@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-iso = {
+        "type-iso" = {
           depends  = [
             hsPkgs.base
             hsPkgs.nats

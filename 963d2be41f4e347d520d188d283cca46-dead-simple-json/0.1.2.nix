@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dead-simple-json = {
+        "dead-simple-json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

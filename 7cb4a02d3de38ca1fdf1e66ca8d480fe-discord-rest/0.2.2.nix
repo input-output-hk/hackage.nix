@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        discord-rest = {
+        "discord-rest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.discord-types

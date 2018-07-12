@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MC-Fold-DP = {
+        "MC-Fold-DP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          MCFoldDP = {
+          "MCFoldDP" = {
             depends  = [
               hsPkgs.cmdargs
               hsPkgs.split

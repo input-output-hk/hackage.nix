@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmpfr = {
+        "hmpfr" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.mpfr ];
           build-tools = [

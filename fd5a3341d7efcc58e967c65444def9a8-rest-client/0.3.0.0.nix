@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rest-client = {
+        "rest-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

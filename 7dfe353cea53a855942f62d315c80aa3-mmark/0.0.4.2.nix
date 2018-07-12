@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mmark = {
+        "mmark" = {
           depends  = (([
             hsPkgs.aeson
             hsPkgs.base
@@ -49,7 +49,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.void) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson
@@ -66,7 +66,7 @@ let
           };
         };
         benchmarks = {
-          bench-speed = {
+          "bench-speed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -74,7 +74,7 @@ let
               hsPkgs.text
             ];
           };
-          bench-memory = {
+          "bench-memory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mmark

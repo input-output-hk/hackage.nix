@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sandman = {
+          "sandman" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

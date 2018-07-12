@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          loopy = {
+          "loopy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hmatrix

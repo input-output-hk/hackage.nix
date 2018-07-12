@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rawr = {
+        "rawr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          datasize = {
+          "datasize" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -39,7 +39,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          perf = {
+          "perf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

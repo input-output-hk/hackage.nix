@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-icu = {
+        "text-icu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

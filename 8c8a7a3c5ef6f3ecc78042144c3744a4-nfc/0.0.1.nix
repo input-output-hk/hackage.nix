@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nfc = {
+        "nfc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          print-mifare-uid-forever = {
+          "print-mifare-uid-forever" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base16-bytestring

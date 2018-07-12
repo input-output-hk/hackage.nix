@@ -29,7 +29,7 @@ let
         buildType = "Simple";
       };
       components = {
-        invertible = {
+        "invertible" = {
           depends  = ((((((([
             hsPkgs.base
             hsPkgs.transformers
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional _flags.arrows hsPkgs.arrows) ++ pkgs.lib.optional _flags.hlist hsPkgs.HList) ++ pkgs.lib.optional _flags.invariant hsPkgs.invariant) ++ pkgs.lib.optional _flags.lens hsPkgs.lens) ++ pkgs.lib.optional _flags.partial-isomorphisms hsPkgs.partial-isomorphisms) ++ pkgs.lib.optional _flags.piso hsPkgs.Piso) ++ pkgs.lib.optional _flags.semigroupoids hsPkgs.semigroupoids) ++ pkgs.lib.optional _flags.typecompose hsPkgs.TypeCompose;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdabot-core = {
+        "lambdabot-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

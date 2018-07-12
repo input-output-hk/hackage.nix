@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rating-systems = {
+        "rating-systems" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hpaco = {
+          "hpaco" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

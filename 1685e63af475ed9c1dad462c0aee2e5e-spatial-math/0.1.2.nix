@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spatial-math = {
+        "spatial-math" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix

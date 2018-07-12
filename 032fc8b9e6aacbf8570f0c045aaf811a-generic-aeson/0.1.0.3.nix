@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-aeson = {
+        "generic-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          generic-aeson-tests = {
+          "generic-aeson-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

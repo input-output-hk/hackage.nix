@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-rpc-server = {
+        "json-rpc-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          demo = {
+          "demo" = {
             depends  = pkgs.lib.optionals _flags.demo [
               hsPkgs.base
               hsPkgs.json-rpc-server
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.json-rpc-server

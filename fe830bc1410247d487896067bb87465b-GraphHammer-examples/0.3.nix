@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        GraphHammer-examples = {};
+        "GraphHammer-examples" = {};
         exes = {
-          TriangleCountTest = {
+          "TriangleCountTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -32,7 +32,7 @@ let
               hsPkgs.GraphHammer
             ];
           };
-          ClusteringCoefficientTest = {
+          "ClusteringCoefficientTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

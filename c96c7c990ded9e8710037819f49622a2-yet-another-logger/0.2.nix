@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yet-another-logger = {
+        "yet-another-logger" = {
           depends  = [
             hsPkgs.async
             hsPkgs.aeson
@@ -50,7 +50,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.nats;
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

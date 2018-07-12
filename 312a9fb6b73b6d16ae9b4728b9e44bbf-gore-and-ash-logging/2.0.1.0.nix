@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gore-and-ash-logging = {
+        "gore-and-ash-logging" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

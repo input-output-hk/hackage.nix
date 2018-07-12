@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ZipFold = {
+        "ZipFold" = {
           depends  = [
             hsPkgs.base
             hsPkgs.TypeCompose

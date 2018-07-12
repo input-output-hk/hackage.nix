@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        uuagc = {
+        "uuagc" = {
           depends  = [
             hsPkgs.uuagc-cabal
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ] ++ pkgs.lib.optional _flags.with-loag hsPkgs.minisat;
         };
         exes = {
-          uuagc = {
+          "uuagc" = {
             depends  = [
               hsPkgs.uuagc-cabal
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elm-build-lib = {
+        "elm-build-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.elm-core-sources

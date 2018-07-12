@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        java-poker = {
+        "java-poker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random-shuffle
           ];
         };
         exes = {
-          java-poker-simple = {
+          "java-poker-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.java-poker

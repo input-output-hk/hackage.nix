@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prelude-generalize = {
+        "prelude-generalize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

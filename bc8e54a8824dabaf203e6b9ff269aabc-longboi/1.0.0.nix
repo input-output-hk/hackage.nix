@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        longboi = {
+        "longboi" = {
           depends  = [ hsPkgs.base ];
         };
       };

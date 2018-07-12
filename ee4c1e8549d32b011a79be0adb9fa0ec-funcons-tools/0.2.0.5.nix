@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        funcons-tools = {
+        "funcons-tools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          runfct = {
+          "runfct" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

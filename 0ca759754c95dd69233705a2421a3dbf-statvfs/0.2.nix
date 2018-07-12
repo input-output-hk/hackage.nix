@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        statvfs = {
+        "statvfs" = {
           depends  = [ hsPkgs.base ];
         };
       };

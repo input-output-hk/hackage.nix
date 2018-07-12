@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        criterion = {
+        "criterion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        syntactic = {
+        "syntactic" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          NanoFeldsparEval = {
+          "NanoFeldsparEval" = {
             depends  = [
               hsPkgs.syntactic
               hsPkgs.base
@@ -47,7 +47,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          NanoFeldsparEval2 = {
+          "NanoFeldsparEval2" = {
             depends  = [
               hsPkgs.syntactic
               hsPkgs.base
@@ -58,7 +58,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          NanoFeldsparTree = {
+          "NanoFeldsparTree" = {
             depends  = [
               hsPkgs.syntactic
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        structural-induction = {
+        "structural-induction" = {
           depends  = [
             hsPkgs.base
             hsPkgs.genifunctors
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          walk = {
+          "walk" = {
             depends  = [
               hsPkgs.structural-induction
               hsPkgs.base

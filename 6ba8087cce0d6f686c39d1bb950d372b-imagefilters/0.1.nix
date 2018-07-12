@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imagefilters = {
+        "imagefilters" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gd

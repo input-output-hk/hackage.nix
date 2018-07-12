@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-t = {
+        "list-t" = {
           depends  = [
             hsPkgs.mmorph
             hsPkgs.monad-control
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.list-t
               hsPkgs.mmorph

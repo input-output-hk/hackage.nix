@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        readline = {
+        "readline" = {
           depends  = if _flags.split-base
             then [
               hsPkgs.base

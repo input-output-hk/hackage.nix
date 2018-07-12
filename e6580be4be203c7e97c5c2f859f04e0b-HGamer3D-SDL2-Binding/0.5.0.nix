@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-SDL2-Binding = {
+        "HGamer3D-SDL2-Binding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string

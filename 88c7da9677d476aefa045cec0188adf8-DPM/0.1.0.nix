@@ -22,9 +22,9 @@ let
         buildType = "Simple";
       };
       components = {
-        DPM = {};
+        "DPM" = {};
         exes = {
-          dpm-tests = {
+          "dpm-tests" = {
             depends  = [
               hsPkgs.darcs
               hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
               hsPkgs.HSH
             ];
           };
-          dpm = {
+          "dpm" = {
             depends  = [
               hsPkgs.darcs
               hsPkgs.bytestring

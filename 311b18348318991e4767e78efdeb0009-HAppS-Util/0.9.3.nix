@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HAppS-Util = {
+        "HAppS-Util" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.hslogger

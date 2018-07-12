@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fibonacci = {
+        "fibonacci" = {
           depends  = [ hsPkgs.base ];
         };
       };

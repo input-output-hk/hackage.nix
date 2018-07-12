@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tar = {
+        "tar" = {
           depends  = ([
             hsPkgs.binary
             hsPkgs.unix-compat

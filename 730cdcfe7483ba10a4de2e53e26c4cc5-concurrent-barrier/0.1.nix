@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrent-barrier = {
+        "concurrent-barrier" = {
           depends  = [ hsPkgs.base ];
         };
       };

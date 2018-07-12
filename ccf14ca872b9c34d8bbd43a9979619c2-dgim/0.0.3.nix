@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        dgim = {
+        "dgim" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          dgim-test = {
+          "dgim-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

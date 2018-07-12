@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        skype4hs = {
+        "skype4hs" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

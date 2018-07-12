@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        readcsv = {
+        "readcsv" = {
           depends  = [ hsPkgs.base ];
         };
       };

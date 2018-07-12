@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-indexed-tree = {
+        "binary-indexed-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

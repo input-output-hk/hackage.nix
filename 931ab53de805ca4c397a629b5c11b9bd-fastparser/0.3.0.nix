@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fastparser = {
+        "fastparser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

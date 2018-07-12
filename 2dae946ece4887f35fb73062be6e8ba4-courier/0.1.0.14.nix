@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        courier = {
+        "courier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test-courier = {
+          "test-courier" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

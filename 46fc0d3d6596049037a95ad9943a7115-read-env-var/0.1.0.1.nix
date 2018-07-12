@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        read-env-var = {
+        "read-env-var" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          read-env-var-doctest = {
+          "read-env-var-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

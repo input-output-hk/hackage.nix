@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tokenify = {
+        "tokenify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

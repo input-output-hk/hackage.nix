@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          packunused = {
+          "packunused" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

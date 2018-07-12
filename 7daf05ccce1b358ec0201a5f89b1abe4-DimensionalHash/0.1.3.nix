@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DimensionalHash = {
+        "DimensionalHash" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plan-b = {
+        "plan-b" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

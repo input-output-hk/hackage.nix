@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        intervals = {
+        "intervals" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

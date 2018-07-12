@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        montage = {
+        "montage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

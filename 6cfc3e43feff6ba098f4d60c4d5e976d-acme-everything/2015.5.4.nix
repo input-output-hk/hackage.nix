@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-everything = {
+        "acme-everything" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ApproxFun-hs

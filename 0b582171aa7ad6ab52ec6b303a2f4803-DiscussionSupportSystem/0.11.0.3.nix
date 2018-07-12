@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DiscussionSupportSystem = {
+        "DiscussionSupportSystem" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.DiscussionSupportSystem

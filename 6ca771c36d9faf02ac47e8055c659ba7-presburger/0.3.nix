@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        presburger = {
+        "presburger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

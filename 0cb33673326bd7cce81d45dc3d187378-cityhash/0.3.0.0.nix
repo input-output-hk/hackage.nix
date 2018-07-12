@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cityhash = {
+        "cityhash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           libs = [ pkgs."stdc++" ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

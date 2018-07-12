@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-expectations-match = {
+        "hspec-expectations-match" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec-expectations
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          hspec-expectations-th-test-suite = {
+          "hspec-expectations-th-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          marmalade-upload = {
+          "marmalade-upload" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

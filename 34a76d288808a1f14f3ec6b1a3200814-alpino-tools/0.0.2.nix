@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alpino-tools = {
+        "alpino-tools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,11 +34,11 @@ let
           ];
         };
         exes = {
-          at_model_rescore_data = {};
-          at_model_filter_data = {};
-          at_model_oracle = {};
-          at_model_random_sample = {};
-          at_model_statistics_data = {};
+          "at_model_rescore_data" = {};
+          "at_model_filter_data" = {};
+          "at_model_oracle" = {};
+          "at_model_random_sample" = {};
+          "at_model_statistics_data" = {};
         };
       };
     }

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bamse = {
+        "bamse" = {
           depends  = [
             hsPkgs.com
             hsPkgs.haskell98
@@ -30,6 +30,6 @@ let
             hsPkgs.pretty
           ] ++ [ hsPkgs.base ];
         };
-        exes = { bamse = {}; };
+        exes = { "bamse" = {}; };
       };
     }

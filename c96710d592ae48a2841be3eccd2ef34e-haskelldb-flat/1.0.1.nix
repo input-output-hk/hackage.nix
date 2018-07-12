@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelldb-flat = {
+        "haskelldb-flat" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.haskelldb
@@ -35,6 +35,8 @@ let
             ]
             else [ hsPkgs.base ]);
         };
-        exes = { DBDirect-flat = {}; };
+        exes = {
+          "DBDirect-flat" = {};
+        };
       };
     }

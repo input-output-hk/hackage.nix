@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lol = {
+        "lol" = {
           depends  = [
             hsPkgs.arithmoi
             hsPkgs.base

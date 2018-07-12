@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        recursion-schemes = {
+        "recursion-schemes" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bifunctors
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          Expr = {
+          "Expr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

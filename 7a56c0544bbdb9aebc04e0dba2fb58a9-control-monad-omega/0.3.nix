@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        control-monad-omega = {
+        "control-monad-omega" = {
           depends  = [ hsPkgs.base ];
         };
       };

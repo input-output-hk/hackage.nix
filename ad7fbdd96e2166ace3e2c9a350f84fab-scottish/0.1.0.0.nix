@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scottish = {
+        "scottish" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

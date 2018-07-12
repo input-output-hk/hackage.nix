@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagged = {
+        "tagged" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-auth-server = {
+        "servant-auth-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-auth
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

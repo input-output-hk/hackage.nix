@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feature-flags = {
+        "feature-flags" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

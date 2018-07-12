@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-tagged = {
+        "binary-tagged" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.aeson
@@ -41,7 +41,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         tests = {
-          binary-tagged-test = {
+          "binary-tagged-test" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.aeson
@@ -69,7 +69,7 @@ let
           };
         };
         benchmarks = {
-          binary-tagged-bench = {
+          "binary-tagged-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

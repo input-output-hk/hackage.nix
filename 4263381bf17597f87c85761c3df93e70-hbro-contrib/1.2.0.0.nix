@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hbro-contrib = {
+        "hbro-contrib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude

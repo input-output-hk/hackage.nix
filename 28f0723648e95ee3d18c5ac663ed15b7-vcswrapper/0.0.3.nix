@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vcswrapper = {
+        "vcswrapper" = {
           depends  = [
             hsPkgs.MissingH
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          vcswrapper = {
+          "vcswrapper" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attosplit = {
+        "attosplit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

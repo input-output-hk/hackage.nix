@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AC-Vector = {
+        "AC-Vector" = {
           depends  = [ hsPkgs.base ];
         };
       };

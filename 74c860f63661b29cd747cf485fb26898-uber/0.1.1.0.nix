@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uber = {
+        "uber" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          uber-test = {
+          "uber-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

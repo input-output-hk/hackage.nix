@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monoid-statistics = {
+        "monoid-statistics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.monoid-statistics
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        preprocessor-tools = {
+        "preprocessor-tools" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

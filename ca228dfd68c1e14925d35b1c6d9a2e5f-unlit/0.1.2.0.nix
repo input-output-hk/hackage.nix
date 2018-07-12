@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        unlit = {
+        "unlit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         exes = {
-          unlit = {
+          "unlit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

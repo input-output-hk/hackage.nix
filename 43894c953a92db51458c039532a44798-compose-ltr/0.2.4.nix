@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        compose-ltr = {
+        "compose-ltr" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

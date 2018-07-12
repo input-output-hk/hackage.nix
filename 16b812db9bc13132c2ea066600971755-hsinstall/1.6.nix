@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsinstall = {
+        "hsinstall" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          an-app = {
+          "an-app" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

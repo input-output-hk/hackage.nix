@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fraxl = {
+        "fraxl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fraxl
@@ -43,7 +43,7 @@ let
               hsPkgs.mtl
             ];
           };
-          monadbench = {
+          "monadbench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fraxl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        throwable-exceptions = {
+        "throwable-exceptions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe-exceptions
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

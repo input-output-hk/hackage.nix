@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lgtk = {
+        "lgtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          lgtkdemo = {
+          "lgtkdemo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lgtk

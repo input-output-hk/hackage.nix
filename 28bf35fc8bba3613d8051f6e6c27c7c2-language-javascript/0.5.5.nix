@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-javascript = {
+        "language-javascript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test-language-javascript = {
+          "test-language-javascript" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

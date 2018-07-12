@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-native = {
+        "aeson-native" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

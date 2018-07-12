@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        endo = {
+        "endo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

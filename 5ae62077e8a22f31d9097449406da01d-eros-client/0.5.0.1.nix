@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          erosc = {
+          "erosc" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty

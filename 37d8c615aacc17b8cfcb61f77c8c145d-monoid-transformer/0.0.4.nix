@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monoid-transformer = {
+        "monoid-transformer" = {
           depends  = [
             hsPkgs.semigroups
             hsPkgs.base

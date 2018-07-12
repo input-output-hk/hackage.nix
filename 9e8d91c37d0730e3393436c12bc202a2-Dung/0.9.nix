@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Dung = {
+        "Dung" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

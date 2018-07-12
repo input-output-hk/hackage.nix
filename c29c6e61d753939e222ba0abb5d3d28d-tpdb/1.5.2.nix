@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tpdb = {
+        "tpdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt
@@ -40,7 +40,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers;
         };
         exes = {
-          plain2xtc = {
+          "plain2xtc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
@@ -49,34 +49,34 @@ let
           };
         };
         tests = {
-          XML = {
+          "XML" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
             ];
           };
-          TRS = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.tpdb
-              hsPkgs.bytestring
-            ];
-          };
-          TRS_02 = {
+          "TRS" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
               hsPkgs.bytestring
             ];
           };
-          SRS = {
+          "TRS_02" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
               hsPkgs.bytestring
             ];
           };
-          Speed = {
+          "SRS" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.tpdb
+              hsPkgs.bytestring
+            ];
+          };
+          "Speed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
@@ -85,7 +85,7 @@ let
               hsPkgs.pretty
             ];
           };
-          Attributes = {
+          "Attributes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
@@ -94,31 +94,31 @@ let
               hsPkgs.pretty
             ];
           };
-          XML-Theory = {
+          "XML-Theory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
             ];
           };
-          CPF-AC = {
+          "CPF-AC" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
             ];
           };
-          Parse-AC = {
+          "Parse-AC" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
             ];
           };
-          read-cpf = {
+          "read-cpf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb
             ];
           };
-          read-complex = {
+          "read-complex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tpdb

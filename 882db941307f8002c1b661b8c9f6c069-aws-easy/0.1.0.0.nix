@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-easy = {
+        "aws-easy" = {
           depends  = [
             hsPkgs.amazonka
             hsPkgs.amazonka-core
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          aws-easy-app = {
+          "aws-easy-app" = {
             depends  = [
               hsPkgs.aws-easy
               hsPkgs.base

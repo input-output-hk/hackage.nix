@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          binembed-example = {
+          "binembed-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binembed

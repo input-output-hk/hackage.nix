@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-hmac-auth = {
+        "wai-hmac-auth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai

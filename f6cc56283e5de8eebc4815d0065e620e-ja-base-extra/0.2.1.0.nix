@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ja-base-extra = {
+        "ja-base-extra" = {
           depends  = [ hsPkgs.base ];
         };
       };

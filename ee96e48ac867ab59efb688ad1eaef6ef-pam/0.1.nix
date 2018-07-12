@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pam = {
+        "pam" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.pam ];
           build-tools = [

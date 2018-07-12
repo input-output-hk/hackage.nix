@@ -22,11 +22,11 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-prelude = {
+        "papa-prelude" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

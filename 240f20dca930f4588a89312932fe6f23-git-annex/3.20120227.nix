@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          git-annex = {
+          "git-annex" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.hslogger
@@ -51,8 +51,8 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          git-annex-shell = {};
-          git-union-merge = {};
+          "git-annex-shell" = {};
+          "git-union-merge" = {};
         };
       };
     }

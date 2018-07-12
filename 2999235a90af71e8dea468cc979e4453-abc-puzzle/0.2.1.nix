@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          abc-puzzle = {
+          "abc-puzzle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

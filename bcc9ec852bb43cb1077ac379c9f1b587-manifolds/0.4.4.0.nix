@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        manifolds = {
+        "manifolds" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manifolds-core
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

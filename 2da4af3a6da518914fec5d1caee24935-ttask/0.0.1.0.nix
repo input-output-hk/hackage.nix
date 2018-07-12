@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ttask = {
+        "ttask" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          ttask = {
+          "ttask" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          ttask-test = {
+          "ttask-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ttask

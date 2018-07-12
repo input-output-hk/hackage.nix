@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        base-orphans = {
+        "base-orphans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

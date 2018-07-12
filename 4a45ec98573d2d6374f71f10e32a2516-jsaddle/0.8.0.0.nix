@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsaddle = {
+        "jsaddle" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

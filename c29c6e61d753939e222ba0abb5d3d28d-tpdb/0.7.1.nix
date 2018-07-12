@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tpdb = {
+        "tpdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          XML = {
+          "XML" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt
@@ -46,7 +46,7 @@ let
               hsPkgs.hashable
             ];
           };
-          TRS = {
+          "TRS" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt
@@ -58,7 +58,7 @@ let
               hsPkgs.hashable
             ];
           };
-          SRS = {
+          "SRS" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt
@@ -70,7 +70,7 @@ let
               hsPkgs.hashable
             ];
           };
-          Speed = {
+          "Speed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt

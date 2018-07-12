@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hyper-extra = {
+        "hyper-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

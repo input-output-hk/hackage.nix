@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ffeed = {
+        "ffeed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP
@@ -32,10 +32,10 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          main = {
+          "main" = {
             depends  = [ hsPkgs.base ];
           };
-          showPublic = {
+          "showPublic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty

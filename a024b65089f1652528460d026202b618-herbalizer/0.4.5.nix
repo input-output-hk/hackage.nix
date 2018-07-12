@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          herbalizer = {
+          "herbalizer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim

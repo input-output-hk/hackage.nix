@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Aurochs = {
+          "Aurochs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

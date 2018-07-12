@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        non-negative = {
+        "non-negative" = {
           depends  = [
             hsPkgs.utility-ht
             hsPkgs.QuickCheck
           ] ++ [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.utility-ht

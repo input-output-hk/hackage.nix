@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal2nix = {
+        "cabal2nix" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.aeson
@@ -48,13 +48,13 @@ let
           ];
         };
         exes = {
-          cabal2nix = {
+          "cabal2nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cabal2nix
             ];
           };
-          hackage2nix = {
+          "hackage2nix" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.aeson
@@ -77,7 +77,7 @@ let
           };
         };
         tests = {
-          regression-test = {
+          "regression-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        string-combinators = {
+        "string-combinators" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals _flags.stringable [

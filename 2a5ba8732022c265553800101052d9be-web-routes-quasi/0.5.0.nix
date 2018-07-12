@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-routes-quasi = {
+        "web-routes-quasi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.web-routes
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.QuickCheck
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numtype-dk = {
+        "numtype-dk" = {
           depends  = [ hsPkgs.base ];
         };
       };

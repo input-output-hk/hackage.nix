@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tls-extra = {
+        "tls-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tls
@@ -39,25 +39,25 @@ let
           ];
         };
         exes = {
-          stunnel = {
+          "stunnel" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.network
               hsPkgs.cmdargs
             ];
           };
-          checkciphers = {
+          "checkciphers" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.network
               hsPkgs.cmdargs
             ];
           };
-          retrievecertificate = {
+          "retrievecertificate" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.network
               hsPkgs.cmdargs
             ];
           };
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit

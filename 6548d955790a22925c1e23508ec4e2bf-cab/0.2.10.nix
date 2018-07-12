@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cab = {
+        "cab" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          cab = {
+          "cab" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cab

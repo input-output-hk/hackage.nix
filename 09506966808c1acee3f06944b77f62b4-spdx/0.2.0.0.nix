@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        spdx = {
+        "spdx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
           ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.5")) hsPkgs.ghc-prim;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

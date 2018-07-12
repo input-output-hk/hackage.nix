@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        informative = {
+        "informative" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          informative-test = {
+          "informative-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod

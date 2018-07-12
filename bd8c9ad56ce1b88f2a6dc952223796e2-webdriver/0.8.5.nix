@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webdriver = {
+        "webdriver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

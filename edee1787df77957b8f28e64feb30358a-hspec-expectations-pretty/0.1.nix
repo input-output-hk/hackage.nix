@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-expectations-pretty = {
+        "hspec-expectations-pretty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec-expectations

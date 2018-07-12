@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gsc-weighting = {
+        "gsc-weighting" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hierarchical-clustering

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iteratee = {
+        "iteratee" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ListLike

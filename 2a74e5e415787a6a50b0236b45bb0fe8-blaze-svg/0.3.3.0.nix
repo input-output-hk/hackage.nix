@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-svg = {
+        "blaze-svg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

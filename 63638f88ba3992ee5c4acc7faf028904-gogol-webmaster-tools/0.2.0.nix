@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-webmaster-tools = {
+        "gogol-webmaster-tools" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

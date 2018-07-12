@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cli-builder = {
+        "cli-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.either
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec-test = {
+          "spec-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cli-builder
@@ -40,7 +40,7 @@ let
               hsPkgs.hspec
             ];
           };
-          doc-test = {
+          "doc-test" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctest)) [
               hsPkgs.base
               hsPkgs.doctest

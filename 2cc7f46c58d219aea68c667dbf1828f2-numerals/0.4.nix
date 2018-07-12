@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numerals = {
+        "numerals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1") hsPkgs.integer-gmp;
         };
         tests = {
-          test-numerals = {
+          "test-numerals" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

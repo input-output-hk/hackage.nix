@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        project-m36 = {
+        "project-m36" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.ghc
@@ -84,7 +84,7 @@ let
             ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8") hsPkgs.ghc-boot;
         };
         exes = {
-          tutd = {
+          "tutd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc
@@ -127,7 +127,7 @@ let
               hsPkgs.list-t
             ];
           };
-          project-m36-server = {
+          "project-m36-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc
@@ -161,7 +161,7 @@ let
               hsPkgs.base64-bytestring
             ];
           };
-          bigrel = {
+          "bigrel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -204,7 +204,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          Example-SimpleClient = {
+          "Example-SimpleClient" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -245,7 +245,7 @@ let
               hsPkgs.MonadRandom
             ];
           };
-          Example-OutOfTheTarpit = {
+          "Example-OutOfTheTarpit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -290,7 +290,7 @@ let
               hsPkgs.project-m36
             ];
           };
-          Example-Hair = {
+          "Example-Hair" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -335,7 +335,7 @@ let
               hsPkgs.project-m36
             ];
           };
-          project-m36-websocket-server = {
+          "project-m36-websocket-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -368,7 +368,7 @@ let
           };
         };
         tests = {
-          test-tutoriald = {
+          "test-tutoriald" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -407,7 +407,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          test-tutoriald-atomfunctionscript = {
+          "test-tutoriald-atomfunctionscript" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -426,7 +426,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          test-tutoriald-databasecontextfunctionscript = {
+          "test-tutoriald-databasecontextfunctionscript" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -445,7 +445,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          test-relation = {
+          "test-relation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -481,7 +481,7 @@ let
               hsPkgs.transformers
             ];
           };
-          test-static-optimizer = {
+          "test-static-optimizer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -517,7 +517,7 @@ let
               hsPkgs.transformers
             ];
           };
-          test-transactiongraph-persist = {
+          "test-transactiongraph-persist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -555,7 +555,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          test-relation-import-csv = {
+          "test-relation-import-csv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -590,7 +590,7 @@ let
               hsPkgs.project-m36
             ];
           };
-          test-tutoriald-import-tutoriald = {
+          "test-tutoriald-import-tutoriald" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -628,7 +628,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          test-relation-export-csv = {
+          "test-relation-export-csv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -663,7 +663,7 @@ let
               hsPkgs.project-m36
             ];
           };
-          test-transactiongraph-merge = {
+          "test-transactiongraph-merge" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -706,7 +706,7 @@ let
               hsPkgs.project-m36
             ];
           };
-          test-server = {
+          "test-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -746,7 +746,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          test-scripts = {
+          "test-scripts" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -787,7 +787,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          test-websocket-server = {
+          "test-websocket-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -833,7 +833,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          test-isomorphic-schemas = {
+          "test-isomorphic-schemas" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -875,7 +875,7 @@ let
               hsPkgs.project-m36
             ];
           };
-          test-atomable = {
+          "test-atomable" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -920,7 +920,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          test-multiprocess-access = {
+          "test-multiprocess-access" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -966,7 +966,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

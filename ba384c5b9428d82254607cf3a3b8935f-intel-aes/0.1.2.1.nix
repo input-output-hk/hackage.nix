@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        intel-aes = {
+        "intel-aes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -37,7 +37,7 @@ let
           libs = [ pkgs.intel_aes ];
         };
         exes = {
-          benchmark-intel-aes-rng = {
+          "benchmark-intel-aes-rng" = {
             depends  = [
               hsPkgs.base
               hsPkgs.split

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          minesweeper = {
+          "minesweeper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

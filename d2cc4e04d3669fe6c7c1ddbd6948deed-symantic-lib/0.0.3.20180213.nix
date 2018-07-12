@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        symantic-lib = {
+        "symantic-lib" = {
           depends  = [
             hsPkgs.symantic
             hsPkgs.symantic-grammar
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          symantic-test = {
+          "symantic-test" = {
             depends  = [
               hsPkgs.symantic
               hsPkgs.symantic-grammar

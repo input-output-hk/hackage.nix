@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nullary = {
+        "nullary" = {
           depends  = [ hsPkgs.base ];
         };
       };

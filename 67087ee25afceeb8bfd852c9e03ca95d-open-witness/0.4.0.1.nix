@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        open-witness = {
+        "open-witness" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

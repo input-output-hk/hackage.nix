@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-rope = {
+        "yi-rope" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.charsetdetect-ae;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

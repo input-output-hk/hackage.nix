@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WordAlignment = {
+        "WordAlignment" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -61,7 +61,7 @@ let
           ];
         };
         exes = {
-          WordAlign = {
+          "WordAlign" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -89,7 +89,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        datalog = {
+        "datalog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          datalog-repl = {
+          "datalog-repl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.datalog
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          NQueensTest = {
+          "NQueensTest" = {
             depends  = [
               hsPkgs.datalog
               hsPkgs.base
@@ -63,7 +63,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          AncestorTest = {
+          "AncestorTest" = {
             depends  = [
               hsPkgs.datalog
               hsPkgs.base
@@ -74,7 +74,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          WorksForTest = {
+          "WorksForTest" = {
             depends  = [
               hsPkgs.datalog
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exceptions = {
+        "exceptions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          exceptions-tests = {
+          "exceptions-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm

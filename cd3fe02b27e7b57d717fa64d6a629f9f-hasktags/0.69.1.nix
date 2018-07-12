@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasktags = {
+        "hasktags" = {
           depends  = [
             hsPkgs.utf8-string
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          hasktags = {
+          "hasktags" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tdigest-Chart = {
+        "tdigest-Chart" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tdigest-chart-examples = {
+          "tdigest-chart-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

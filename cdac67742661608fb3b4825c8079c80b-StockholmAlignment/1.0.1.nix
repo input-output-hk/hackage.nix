@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        StockholmAlignment = {
+        "StockholmAlignment" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad-bluetilebranch = {
+        "xmonad-bluetilebranch" = {
           depends  = [
             hsPkgs.X11
             hsPkgs.mtl
@@ -40,7 +40,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          xmonad = {
+          "xmonad" = {
             depends  = pkgs.lib.optional _flags.testing hsPkgs.QuickCheck ++ pkgs.lib.optional (_flags.testing && _flags.small_base) hsPkgs.random;
           };
         };

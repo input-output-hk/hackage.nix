@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        abeson = {
+        "abeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class

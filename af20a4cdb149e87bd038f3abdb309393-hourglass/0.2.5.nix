@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hourglass = {
+        "hourglass" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
         };
         tests = {
-          test-hourglass = {
+          "test-hourglass" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          bench-hourglass = {
+          "bench-hourglass" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

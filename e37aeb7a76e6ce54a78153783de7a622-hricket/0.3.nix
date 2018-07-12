@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hricket = {
+          "hricket" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

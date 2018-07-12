@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alsa = {
+        "alsa" = {
           depends  = [
             hsPkgs.sample-frame
             hsPkgs.array

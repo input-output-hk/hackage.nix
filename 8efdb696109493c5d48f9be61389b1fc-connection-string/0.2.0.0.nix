@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        connection-string = {
+        "connection-string" = {
           depends  = [
             hsPkgs.base
             hsPkgs.case-insensitive
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

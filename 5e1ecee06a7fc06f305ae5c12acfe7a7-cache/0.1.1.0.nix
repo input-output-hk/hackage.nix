@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cache = {
+        "cache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clock
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          cache-test = {
+          "cache-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cache

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wordexp = {
+        "wordexp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

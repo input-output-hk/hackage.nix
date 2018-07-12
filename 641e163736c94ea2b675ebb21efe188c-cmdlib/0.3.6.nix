@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmdlib = {
+        "cmdlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb
@@ -36,8 +36,8 @@ let
             else [ hsPkgs.mtl ]);
         };
         exes = {
-          cmdlib-test = {};
-          cmdlib-rectest = {};
+          "cmdlib-test" = {};
+          "cmdlib-rectest" = {};
         };
       };
     }

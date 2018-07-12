@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        greencard-lib = {
+        "greencard-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

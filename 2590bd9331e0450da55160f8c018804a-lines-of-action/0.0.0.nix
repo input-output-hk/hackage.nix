@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lines-of-action = {
+        "lines-of-action" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

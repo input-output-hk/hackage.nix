@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-static-maps = {
+        "google-static-maps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring

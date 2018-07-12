@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NonEmptyList = {
+        "NonEmptyList" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

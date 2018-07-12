@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        codeworld-api = {
+        "codeworld-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semigroups = {
+        "semigroups" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        biophd = {
+        "biophd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.biocore

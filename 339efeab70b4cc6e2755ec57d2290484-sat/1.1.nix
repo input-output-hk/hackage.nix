@@ -21,10 +21,10 @@ let
       };
       components = {
         exes = {
-          SATSolve = {
+          "SATSolve" = {
             depends  = [ hsPkgs.base ];
           };
-          CNFGenerate = {
+          "CNFGenerate" = {
             depends  = [ hsPkgs.base ];
           };
         };

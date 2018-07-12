@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-tcplugins-extra = {
+        "ghc-tcplugins-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

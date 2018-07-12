@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hfsevents = {
+        "hfsevents" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

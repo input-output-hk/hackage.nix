@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        record = {
+        "record" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.text
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          demo = {
+          "demo" = {
             depends  = pkgs.lib.optionals (!(!_flags.demo)) [
               hsPkgs.record
               hsPkgs.base-prelude
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = pkgs.lib.optionals (!(!_flags.doctest)) [
               hsPkgs.doctest
               hsPkgs.directory

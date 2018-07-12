@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          check-pvp = {
+          "check-pvp" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.haskell-src-exts

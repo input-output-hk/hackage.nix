@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AERN-RnToRm-Plot = {
+        "AERN-RnToRm-Plot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

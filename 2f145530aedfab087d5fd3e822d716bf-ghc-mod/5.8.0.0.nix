@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ghc-mod = {
+        "ghc-mod" = {
           depends  = ([
             hsPkgs.binary
             hsPkgs.bytestring
@@ -60,7 +60,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.ghc-boot) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.convertible;
         };
         exes = {
-          ghc-mod = {
+          "ghc-mod" = {
             depends  = [
               hsPkgs.directory
               hsPkgs.filepath
@@ -76,7 +76,7 @@ let
               hsPkgs.ghc-mod
             ];
           };
-          ghc-modi = {
+          "ghc-modi" = {
             depends  = [
               hsPkgs.binary
               hsPkgs.deepseq
@@ -91,13 +91,13 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = ([
               hsPkgs.containers
               hsPkgs.directory
@@ -116,7 +116,7 @@ let
               hsPkgs.ghc-mod
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.convertible) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.ghc-boot;
           };
-          shelltest = {
+          "shelltest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -124,7 +124,7 @@ let
           };
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.directory
               hsPkgs.filepath

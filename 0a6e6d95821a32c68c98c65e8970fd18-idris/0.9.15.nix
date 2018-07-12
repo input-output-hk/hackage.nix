@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        idris = {
+        "idris" = {
           depends  = (((((([
             hsPkgs.base
             hsPkgs.annotated-wl-pprint
@@ -65,7 +65,7 @@ let
           ] ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optional system.isFreebsd hsPkgs.unix) ++ pkgs.lib.optional system.isOsx hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32) ++ pkgs.lib.optional _flags.ffi hsPkgs.libffi) ++ pkgs.lib.optional _flags.gmp hsPkgs.libffi) ++ pkgs.lib.optional _flags.curses hsPkgs.hscurses;
         };
         exes = {
-          idris = {
+          "idris" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base
@@ -74,7 +74,7 @@ let
               hsPkgs.transformers
             ];
           };
-          idris-javascript = {
+          "idris-javascript" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base
@@ -83,7 +83,7 @@ let
               hsPkgs.transformers
             ];
           };
-          idris-node = {
+          "idris-node" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base

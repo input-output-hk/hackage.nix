@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-colonnade = {
+        "yesod-colonnade" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colonnade

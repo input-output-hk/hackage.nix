@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        not-gloss = {
+        "not-gloss" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GLUT
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          not-gloss-example = {
+          "not-gloss-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT

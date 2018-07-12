@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-pipe = {
+        "simple-pipe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-control

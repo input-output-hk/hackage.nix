@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        open-pandoc = {
+        "open-pandoc" = {
           depends  = (([
             hsPkgs.pretty
             hsPkgs.containers
@@ -49,11 +49,11 @@ let
             ])) ++ pkgs.lib.optional _flags.highlighting hsPkgs.highlighting-kate) ++ pkgs.lib.optional _flags.citeproc hsPkgs.citeproc-hs;
         };
         exes = {
-          pandoc = {
+          "pandoc" = {
             depends  = pkgs.lib.optional _flags.citeproc hsPkgs.citeproc-hs;
           };
-          hsmarkdown = {};
-          markdown2pdf = {};
+          "hsmarkdown" = {};
+          "markdown2pdf" = {};
         };
       };
     }

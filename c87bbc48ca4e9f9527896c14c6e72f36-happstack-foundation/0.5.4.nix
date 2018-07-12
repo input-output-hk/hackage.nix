@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-foundation = {
+        "happstack-foundation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.acid-state

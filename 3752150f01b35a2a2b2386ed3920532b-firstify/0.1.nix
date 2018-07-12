@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        firstify = {
+        "firstify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yhccore
@@ -32,6 +32,6 @@ let
             hsPkgs.containers
           ];
         };
-        exes = { firstify = {}; };
+        exes = { "firstify" = {}; };
       };
     }

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sshtun = {
+          "sshtun" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

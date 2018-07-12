@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multipool-persistent = {
+        "multipool-persistent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          multipool-persistent-test = {
+          "multipool-persistent-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

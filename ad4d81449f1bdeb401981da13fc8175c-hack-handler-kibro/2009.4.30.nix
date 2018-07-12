@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-handler-kibro = {
+        "hack-handler-kibro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

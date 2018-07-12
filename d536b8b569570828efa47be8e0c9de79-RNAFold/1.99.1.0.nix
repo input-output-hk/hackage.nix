@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RNAFold = {
+        "RNAFold" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          RNAFold = {
+          "RNAFold" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        throttled-io-loop = {
+        "throttled-io-loop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          loop-test = {
+          "loop-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.throttled-io-loop

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        canteven-listen-http = {
+        "canteven-listen-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

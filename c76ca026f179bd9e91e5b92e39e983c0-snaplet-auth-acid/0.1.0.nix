@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-auth-acid = {
+        "snaplet-auth-acid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.acid-state

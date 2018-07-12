@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transf = {
+        "transf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -35,6 +35,6 @@ let
             hsPkgs.hint
           ];
         };
-        exes = { transf = {}; };
+        exes = { "transf" = {}; };
       };
     }

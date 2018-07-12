@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geek = {
+        "geek" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Glob
@@ -56,7 +56,7 @@ let
           ];
         };
         exes = {
-          geek = {
+          "geek" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob

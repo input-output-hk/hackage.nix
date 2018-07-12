@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-typed-lifted = {
+        "postgresql-typed-lifted" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

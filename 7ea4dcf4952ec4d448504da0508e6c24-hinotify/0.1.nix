@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hinotify = {
+        "hinotify" = {
           depends  = [ hsPkgs.base ];
         };
       };

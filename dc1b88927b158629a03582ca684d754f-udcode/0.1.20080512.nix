@@ -19,5 +19,5 @@ let
         description = "A Haskell-based write-up of Mark Jason Dominus' perl UDCode package.";
         buildType = "Simple";
       };
-      components = { udcode = {}; };
+      components = { "udcode" = {}; };
     }

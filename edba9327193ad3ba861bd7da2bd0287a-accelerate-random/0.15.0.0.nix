@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-random = {
+        "accelerate-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate

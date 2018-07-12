@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-ecmascript = {
+        "language-ecmascript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

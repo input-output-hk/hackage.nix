@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dbm = {
+          "dbm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.direct-sqlite

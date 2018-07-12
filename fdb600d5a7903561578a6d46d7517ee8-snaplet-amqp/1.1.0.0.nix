@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-amqp = {
+        "snaplet-amqp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snap

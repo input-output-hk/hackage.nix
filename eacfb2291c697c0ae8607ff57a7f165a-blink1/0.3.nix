@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blink1 = {
+        "blink1" = {
           depends  = ([
             hsPkgs.base
           ] ++ pkgs.lib.optional system.isLinux hsPkgs.unix) ++ pkgs.lib.optionals _flags.usb [

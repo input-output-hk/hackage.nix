@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        minilens = {
+        "minilens" = {
           depends  = [
             hsPkgs.array
             hsPkgs.bytestring

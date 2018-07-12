@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsmodetweaks = {
+          "hsmodetweaks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

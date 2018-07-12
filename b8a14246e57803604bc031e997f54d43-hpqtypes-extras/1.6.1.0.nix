@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpqtypes-extras = {
+        "hpqtypes-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hpqtypes
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          hpqtypes-extras-tests = {
+          "hpqtypes-extras-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions

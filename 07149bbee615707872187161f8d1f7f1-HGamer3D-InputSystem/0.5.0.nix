@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-InputSystem = {
+        "HGamer3D-InputSystem" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HGamer3D-Data

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kansas-comet = {
+        "kansas-comet" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

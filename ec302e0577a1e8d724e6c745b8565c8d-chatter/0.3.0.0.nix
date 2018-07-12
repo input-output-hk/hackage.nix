@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chatter = {
+        "chatter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          tag = {
+          "tag" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.filepath
@@ -60,7 +60,7 @@ let
               hsPkgs.cereal
             ];
           };
-          train = {
+          "train" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.filepath
@@ -71,7 +71,7 @@ let
               hsPkgs.containers
             ];
           };
-          eval = {
+          "eval" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.filepath
@@ -84,7 +84,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.base
@@ -105,7 +105,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.criterion

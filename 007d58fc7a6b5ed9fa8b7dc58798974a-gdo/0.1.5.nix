@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gdo = {
+          "gdo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

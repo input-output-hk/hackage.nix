@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Cabal = {
+        "Cabal" = {
           depends  = ([
             hsPkgs.filepath
           ] ++ (if _flags.small_base

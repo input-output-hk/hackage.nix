@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdacube-gl = {
+        "lambdacube-gl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          lambdacube-gl-hello = {
+          "lambdacube-gl-hello" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -50,7 +50,7 @@ let
               hsPkgs.lambdacube-ir
             ];
           };
-          lambdacube-gl-hello-obj = {
+          "lambdacube-gl-hello-obj" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -66,7 +66,7 @@ let
               hsPkgs.lambdacube-ir
             ];
           };
-          lambdacube-gl-test-client = {
+          "lambdacube-gl-test-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

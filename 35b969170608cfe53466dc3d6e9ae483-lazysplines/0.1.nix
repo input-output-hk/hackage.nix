@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazysplines = {
+        "lazysplines" = {
           depends  = [ hsPkgs.base ];
         };
       };

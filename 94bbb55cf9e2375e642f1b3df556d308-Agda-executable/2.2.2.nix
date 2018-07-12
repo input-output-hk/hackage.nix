@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          agda = {
+          "agda" = {
             depends  = [
               hsPkgs.Agda
               hsPkgs.base

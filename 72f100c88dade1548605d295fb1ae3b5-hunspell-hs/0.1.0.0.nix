@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hunspell-hs = {
+        "hunspell-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -28,7 +28,7 @@ let
           libs = pkgs.lib.optional system.isLinux pkgs.hunspell ++ pkgs.lib.optional system.isOsx pkgs."hunspell-1.6";
         };
         tests = {
-          hunspell-hs-test = {
+          "hunspell-hs-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          hunspell-hs-bench = {
+          "hunspell-hs-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hackport = {
+          "hackport" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -50,7 +50,7 @@ let
               ]
               else [ hsPkgs.base ]);
           };
-          hackport-guess-ghc-version = {
+          "hackport-guess-ghc-version" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

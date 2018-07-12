@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-sqlite-simple = {
+        "snaplet-sqlite-simple" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.HUnit

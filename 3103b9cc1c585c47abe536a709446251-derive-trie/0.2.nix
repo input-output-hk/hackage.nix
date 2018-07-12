@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        derive-trie = {
+        "derive-trie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

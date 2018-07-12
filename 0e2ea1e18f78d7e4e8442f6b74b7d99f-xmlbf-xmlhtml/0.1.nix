@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmlbf-xmlhtml = {
+        "xmlbf-xmlhtml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

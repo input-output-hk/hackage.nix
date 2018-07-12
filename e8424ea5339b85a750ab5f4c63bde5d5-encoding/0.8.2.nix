@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        encoding = {
+        "encoding" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          encoding-test = {
+          "encoding-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

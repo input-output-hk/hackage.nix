@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cipher-blowfish = {
+        "cipher-blowfish" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-cipher-blowfish = {
+          "test-cipher-blowfish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cipher-blowfish
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench-cipher-blowfish = {
+          "bench-cipher-blowfish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

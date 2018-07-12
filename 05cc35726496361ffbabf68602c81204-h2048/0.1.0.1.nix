@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        h2048 = {
+        "h2048" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          h2048-simple = {
+          "h2048-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -40,7 +40,7 @@ let
               hsPkgs.MonadRandom
             ];
           };
-          h2048-vty = {
+          "h2048-vty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.MonadRandom

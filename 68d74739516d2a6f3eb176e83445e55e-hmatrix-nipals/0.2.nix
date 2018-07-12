@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-nipals = {
+        "hmatrix-nipals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.base

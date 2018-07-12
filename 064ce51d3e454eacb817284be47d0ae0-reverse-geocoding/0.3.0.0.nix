@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reverse-geocoding = {
+        "reverse-geocoding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

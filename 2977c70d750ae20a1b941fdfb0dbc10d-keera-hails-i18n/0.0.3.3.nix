@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-i18n = {
+        "keera-hails-i18n" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

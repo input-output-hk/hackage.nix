@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        link-relations = {
+        "link-relations" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

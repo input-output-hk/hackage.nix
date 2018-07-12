@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        codepad = {
+        "codepad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagsoup

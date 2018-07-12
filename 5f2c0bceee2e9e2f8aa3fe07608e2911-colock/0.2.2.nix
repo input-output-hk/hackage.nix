@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        colock = {
+        "colock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smallstring = {
+        "smallstring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string

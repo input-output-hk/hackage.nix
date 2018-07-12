@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clash-prelude = {
+        "clash-prelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

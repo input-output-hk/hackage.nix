@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cpio-conduit = {
+        "cpio-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          cpio-test = {
+          "cpio-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

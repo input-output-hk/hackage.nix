@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadiccp = {
+        "monadiccp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          olympic = {
+          "olympic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monadiccp

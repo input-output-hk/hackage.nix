@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-isogen = {
+        "xml-isogen" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

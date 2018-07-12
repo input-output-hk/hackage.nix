@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad-wallpaper = {
+        "xmonad-wallpaper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        archlinux = {
+        "archlinux" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

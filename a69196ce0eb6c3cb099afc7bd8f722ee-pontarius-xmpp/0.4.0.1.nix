@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pontarius-xmpp = {
+        "pontarius-xmpp" = {
           depends  = ([
             hsPkgs.attoparsec
             hsPkgs.base
@@ -61,7 +61,7 @@ let
           ]) ++ pkgs.lib.optional (_flags.with-th && (compiler.isGhc && compiler.version.ge "7.6.1")) hsPkgs.template-haskell;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -94,7 +94,7 @@ let
               hsPkgs.xml-types
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -107,7 +107,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

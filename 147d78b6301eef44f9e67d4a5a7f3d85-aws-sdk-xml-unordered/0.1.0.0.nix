@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-sdk-xml-unordered = {
+        "aws-sdk-xml-unordered" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

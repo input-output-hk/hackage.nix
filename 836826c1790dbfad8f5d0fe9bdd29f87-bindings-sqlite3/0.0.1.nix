@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-sqlite3 = {
+        "bindings-sqlite3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-common

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deepzoom = {
+        "deepzoom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsmagick

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        posix-filelock = {
+        "posix-filelock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

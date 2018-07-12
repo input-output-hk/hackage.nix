@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        QuickCheck = {
+        "QuickCheck" = {
           depends  = [
             hsPkgs.mtl
           ] ++ (if _flags.extensibleexceptions

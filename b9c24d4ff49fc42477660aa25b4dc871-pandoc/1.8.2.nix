@@ -28,7 +28,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pandoc = {
+        "pandoc" = {
           depends  = ([
             hsPkgs.containers
             hsPkgs.parsec
@@ -60,7 +60,7 @@ let
             ])) ++ pkgs.lib.optional _flags.highlighting hsPkgs.highlighting-kate;
         };
         exes = {
-          pandoc = {
+          "pandoc" = {
             depends  = ([
               hsPkgs.containers
               hsPkgs.parsec
@@ -91,8 +91,8 @@ let
                 hsPkgs.base
               ])) ++ pkgs.lib.optional _flags.highlighting hsPkgs.highlighting-kate;
           };
-          markdown2pdf = {};
-          test-pandoc = {
+          "markdown2pdf" = {};
+          "test-pandoc" = {
             depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.Diff

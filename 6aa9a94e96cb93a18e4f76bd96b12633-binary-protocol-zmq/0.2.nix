@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-protocol-zmq = {
+        "binary-protocol-zmq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          test-binary-protocol-zmq = {
+          "test-binary-protocol-zmq" = {
             depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.test-framework

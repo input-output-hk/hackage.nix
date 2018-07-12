@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-pg-transact = {
+        "hspec-pg-transact" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec

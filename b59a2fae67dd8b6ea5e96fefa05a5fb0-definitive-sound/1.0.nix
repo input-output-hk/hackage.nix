@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        definitive-sound = {
+        "definitive-sound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.definitive-base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec-parsec = {
+        "attoparsec-parsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec-parsec
@@ -38,7 +38,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          readme-parsec = {
+          "readme-parsec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec-parsec
@@ -46,7 +46,7 @@ let
               hsPkgs.markdown-unlit
             ];
           };
-          readme-attoparsec = {
+          "readme-attoparsec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

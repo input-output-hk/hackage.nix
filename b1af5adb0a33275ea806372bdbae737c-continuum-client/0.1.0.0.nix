@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        continuum-client = {
+        "continuum-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-fin = {
+        "data-fin" = {
           depends  = [
             hsPkgs.tagged
             hsPkgs.reflection

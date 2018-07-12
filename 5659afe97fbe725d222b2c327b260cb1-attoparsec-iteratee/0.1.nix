@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec-iteratee = {
+        "attoparsec-iteratee" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

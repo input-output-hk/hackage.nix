@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          yamlkeysdiff = {
+          "yamlkeysdiff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

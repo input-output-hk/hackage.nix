@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        color-counter = {
+        "color-counter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ] ++ pkgs.lib.optional (!_flags.nocapture && system.isLinux) hsPkgs.v4l2;
         };
         exes = {
-          color-counter = {
+          "color-counter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        record = {
+        "record" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         benchmarks = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.record
               hsPkgs.base-prelude

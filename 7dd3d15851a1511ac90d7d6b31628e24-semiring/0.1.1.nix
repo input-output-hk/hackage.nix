@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semiring = {
+        "semiring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          hstestsemi = {
+          "hstestsemi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

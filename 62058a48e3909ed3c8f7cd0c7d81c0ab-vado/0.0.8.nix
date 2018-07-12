@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vado = {
+        "vado" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          vado = {
+          "vado" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -41,7 +41,7 @@ let
               hsPkgs.text
             ];
           };
-          vamount = {
+          "vamount" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          test-vado = {
+          "test-vado" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

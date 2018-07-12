@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-bytes-instances = {
+        "vector-bytes-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector-bytes-instances

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsc3-lang = {
+        "hsc3-lang" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hstorchat = {
+        "hstorchat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          hstorchat = {
+          "hstorchat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          hstorchat-tests = {
+          "hstorchat-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hstorchat

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        benchmark-function = {
+        "benchmark-function" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

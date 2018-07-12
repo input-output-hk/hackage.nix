@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        posix-escape = {
+        "posix-escape" = {
           depends  = [ hsPkgs.base ];
         };
       };

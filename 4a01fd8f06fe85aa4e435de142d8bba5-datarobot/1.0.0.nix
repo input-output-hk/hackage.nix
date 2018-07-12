@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        datarobot = {
+        "datarobot" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

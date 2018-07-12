@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xhaskell-library = {
+        "xhaskell-library" = {
           depends  = [
             hsPkgs.regex-base
             hsPkgs.parsec

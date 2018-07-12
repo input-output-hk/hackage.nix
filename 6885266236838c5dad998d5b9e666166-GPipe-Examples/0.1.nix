@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          01_green_triangle = {
+          "01_green_triangle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -32,7 +32,7 @@ let
               hsPkgs.GLUT
             ];
           };
-          02_triangle_texture = {
+          "02_triangle_texture" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -43,7 +43,7 @@ let
               hsPkgs.GLUT
             ];
           };
-          03_green_sphere = {
+          "03_green_sphere" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -54,7 +54,7 @@ let
               hsPkgs.GLUT
             ];
           };
-          04_brass_sphere = {
+          "04_brass_sphere" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

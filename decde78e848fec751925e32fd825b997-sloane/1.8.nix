@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sloane = {
+          "sloane" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

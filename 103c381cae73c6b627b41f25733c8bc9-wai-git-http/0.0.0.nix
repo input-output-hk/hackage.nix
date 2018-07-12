@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-git-http = {
+        "wai-git-http" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hssqlppp = {
+        "hssqlppp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          HsSqlSystem = {
+          "HsSqlSystem" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -45,7 +45,7 @@ let
               hsPkgs.directory
             ];
           };
-          HsSqlPppTests = {
+          "HsSqlPppTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

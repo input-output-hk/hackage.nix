@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        miso = {
+        "miso" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -50,7 +50,7 @@ let
             ]);
         };
         exes = {
-          todo-mvc = {
+          "todo-mvc" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -58,7 +58,7 @@ let
               hsPkgs.miso
             ];
           };
-          threejs = {
+          "threejs" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -67,7 +67,7 @@ let
               hsPkgs.miso
             ];
           };
-          file-reader = {
+          "file-reader" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -76,7 +76,7 @@ let
               hsPkgs.miso
             ];
           };
-          xhr = {
+          "xhr" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -85,7 +85,7 @@ let
               hsPkgs.miso
             ];
           };
-          canvas2d = {
+          "canvas2d" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -93,7 +93,7 @@ let
               hsPkgs.miso
             ];
           };
-          router = {
+          "router" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -102,7 +102,7 @@ let
               hsPkgs.servant
             ];
           };
-          websocket = {
+          "websocket" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -110,14 +110,14 @@ let
               hsPkgs.miso
             ];
           };
-          mario = {
+          "mario" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.miso
             ];
           };
-          svg = {
+          "svg" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.base
               hsPkgs.containers
@@ -125,13 +125,13 @@ let
               hsPkgs.miso
             ];
           };
-          compose-update = {
+          "compose-update" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.base
               hsPkgs.miso
             ];
           };
-          simple = {
+          "simple" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -139,7 +139,7 @@ let
               hsPkgs.miso
             ];
           };
-          tests = {
+          "tests" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true))) [
               hsPkgs.aeson
               hsPkgs.base

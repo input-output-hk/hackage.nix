@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flexible-time = {
+        "flexible-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

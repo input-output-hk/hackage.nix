@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-haxl = {
+        "snaplet-haxl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haxl

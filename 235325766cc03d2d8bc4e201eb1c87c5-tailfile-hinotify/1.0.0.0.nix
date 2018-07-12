@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tailfile-hinotify = {
+        "tailfile-hinotify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hinotify
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hinotify

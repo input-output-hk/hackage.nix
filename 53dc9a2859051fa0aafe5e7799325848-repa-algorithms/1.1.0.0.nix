@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa-algorithms = {
+        "repa-algorithms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dph-base

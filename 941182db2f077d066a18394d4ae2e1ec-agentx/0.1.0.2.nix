@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        agentx = {
+        "agentx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snmp

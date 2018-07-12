@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JuicyPixels-stbir = {
+        "JuicyPixels-stbir" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JuicyPixels

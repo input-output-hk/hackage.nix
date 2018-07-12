@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parco-attoparsec = {
+        "parco-attoparsec" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.base

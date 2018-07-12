@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SciFlow = {
+        "SciFlow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

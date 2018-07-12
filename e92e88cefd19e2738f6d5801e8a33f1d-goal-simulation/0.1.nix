@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        goal-simulation = {
+        "goal-simulation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.goal-core
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          rk4 = {
+          "rk4" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
@@ -44,18 +44,7 @@ let
               hsPkgs.vector
             ];
           };
-          markov-chain = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.goal-core
-              hsPkgs.goal-geometry
-              hsPkgs.goal-probability
-              hsPkgs.vector
-              hsPkgs.goal-simulation
-              hsPkgs.hmatrix
-            ];
-          };
-          ito-process = {
+          "markov-chain" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
@@ -66,7 +55,18 @@ let
               hsPkgs.hmatrix
             ];
           };
-          pendulum-vector-field = {
+          "ito-process" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.goal-core
+              hsPkgs.goal-geometry
+              hsPkgs.goal-probability
+              hsPkgs.vector
+              hsPkgs.goal-simulation
+              hsPkgs.hmatrix
+            ];
+          };
+          "pendulum-vector-field" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
@@ -76,7 +76,7 @@ let
               hsPkgs.vector
             ];
           };
-          pendulum-simulation = {
+          "pendulum-simulation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
@@ -86,29 +86,7 @@ let
               hsPkgs.vector
             ];
           };
-          pendulum-filter-histogram = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.goal-core
-              hsPkgs.goal-geometry
-              hsPkgs.goal-probability
-              hsPkgs.goal-simulation
-              hsPkgs.vector
-              hsPkgs.directory
-            ];
-          };
-          pendulum-filter-simulation = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.goal-core
-              hsPkgs.goal-geometry
-              hsPkgs.goal-probability
-              hsPkgs.goal-simulation
-              hsPkgs.vector
-              hsPkgs.directory
-            ];
-          };
-          pendulum-filter-train = {
+          "pendulum-filter-histogram" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
@@ -119,7 +97,29 @@ let
               hsPkgs.directory
             ];
           };
-          pendulum-filter-code = {
+          "pendulum-filter-simulation" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.goal-core
+              hsPkgs.goal-geometry
+              hsPkgs.goal-probability
+              hsPkgs.goal-simulation
+              hsPkgs.vector
+              hsPkgs.directory
+            ];
+          };
+          "pendulum-filter-train" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.goal-core
+              hsPkgs.goal-geometry
+              hsPkgs.goal-probability
+              hsPkgs.goal-simulation
+              hsPkgs.vector
+              hsPkgs.directory
+            ];
+          };
+          "pendulum-filter-code" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core

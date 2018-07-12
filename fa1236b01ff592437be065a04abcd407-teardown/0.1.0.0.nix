@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        teardown = {
+        "teardown" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          teardown-doctest = {
+          "teardown-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -42,7 +42,7 @@ let
               hsPkgs.teardown
             ];
           };
-          teardown-test = {
+          "teardown-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -58,7 +58,7 @@ let
           };
         };
         benchmarks = {
-          teardown-benchmark = {
+          "teardown-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        funsat = {
+        "funsat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          funsat = {
+          "funsat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

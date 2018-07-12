@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unpack-funcs = {
+        "unpack-funcs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          monitor = {
+          "monitor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hinotify

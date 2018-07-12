@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        writer-cps-transformers = {
+        "writer-cps-transformers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

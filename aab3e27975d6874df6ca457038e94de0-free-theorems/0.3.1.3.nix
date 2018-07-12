@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        free-theorems = {
+        "free-theorems" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.haskell-src

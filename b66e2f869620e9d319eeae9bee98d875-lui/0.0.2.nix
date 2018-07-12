@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lui = {
+        "lui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

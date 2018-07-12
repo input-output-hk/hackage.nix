@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        action-permutations = {
+        "action-permutations" = {
           depends  = if _flags.applicativeinbase
             then [ hsPkgs.base ]
             else [

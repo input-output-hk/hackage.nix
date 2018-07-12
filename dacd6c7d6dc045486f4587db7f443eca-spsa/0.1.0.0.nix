@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spsa = {
+        "spsa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.spsa
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.spsa

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-html5 = {
+        "diagrams-html5" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

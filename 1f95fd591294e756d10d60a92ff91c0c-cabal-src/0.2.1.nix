@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal-src-install = {
+          "cabal-src-install" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

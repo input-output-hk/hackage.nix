@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kansas-lava-shake = {
+        "kansas-lava-shake" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

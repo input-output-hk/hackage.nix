@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-machine = {
+        "time-machine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

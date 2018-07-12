@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptsy-api = {
+        "cryptsy-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

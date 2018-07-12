@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        darkplaces-rcon-util = {
+        "darkplaces-rcon-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -47,7 +47,7 @@ let
             else [ hsPkgs.time ]);
         };
         exes = {
-          drcon = {
+          "drcon" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          rcon-util-tests = {
+          "rcon-util-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

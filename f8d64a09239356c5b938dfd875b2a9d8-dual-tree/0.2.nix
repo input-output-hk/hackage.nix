@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dual-tree = {
+        "dual-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

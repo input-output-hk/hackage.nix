@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hamlet = {
+        "hamlet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.HUnit
@@ -46,7 +46,7 @@ let
               hsPkgs.test-framework
             ];
           };
-          hamlet6to7 = {
+          "hamlet6to7" = {
             depends  = [
               hsPkgs.QuickCheck
             ];

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linearscan-hoopl = {
+        "linearscan-hoopl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hoopl
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.linearscan

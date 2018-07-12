@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ridley-extras = {
+        "ridley-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          ridley-extras-test = {
+          "ridley-extras-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ridley-extras

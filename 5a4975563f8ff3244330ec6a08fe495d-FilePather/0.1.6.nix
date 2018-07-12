@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FilePather = {
+        "FilePather" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

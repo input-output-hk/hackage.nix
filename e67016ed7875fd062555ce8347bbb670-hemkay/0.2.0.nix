@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hemkay = {
+          "hemkay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

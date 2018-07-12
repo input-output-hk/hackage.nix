@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk-helpers = {
+        "gtk-helpers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

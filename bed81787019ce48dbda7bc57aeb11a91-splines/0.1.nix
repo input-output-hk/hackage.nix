@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        splines = {
+        "splines" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

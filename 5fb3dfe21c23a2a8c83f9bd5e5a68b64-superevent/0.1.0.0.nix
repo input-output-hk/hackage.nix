@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        superevent = {
+        "superevent" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.async
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          superevent-test = {
+          "superevent-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hinduce-examples = {
+        "hinduce-examples" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fallingblocks = {
+          "fallingblocks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SDL

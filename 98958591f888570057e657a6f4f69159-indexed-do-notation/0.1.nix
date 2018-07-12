@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        indexed-do-notation = {
+        "indexed-do-notation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.indexed

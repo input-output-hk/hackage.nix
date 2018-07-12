@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hlibev = {
+        "hlibev" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

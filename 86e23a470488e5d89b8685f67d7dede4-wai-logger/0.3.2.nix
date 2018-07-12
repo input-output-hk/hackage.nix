@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-logger = {
+        "wai-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,6 +20,6 @@ let
         buildType = "Simple";
       };
       components = {
-        integer-pure = {};
+        "integer-pure" = {};
       };
     }

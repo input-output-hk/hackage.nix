@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaTeX = {
+        "HaTeX" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         tests = {
-          hatex-test = {
+          "hatex-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaTeX
@@ -45,7 +45,7 @@ let
               hsPkgs.parsec
             ];
           };
-          parser-tests = {
+          "parser-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaTeX

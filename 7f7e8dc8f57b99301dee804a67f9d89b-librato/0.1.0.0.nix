@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        librato = {
+        "librato" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

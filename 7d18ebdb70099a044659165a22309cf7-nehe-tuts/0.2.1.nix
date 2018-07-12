@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lesson01 = {
+          "lesson01" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGLRaw
@@ -29,7 +29,7 @@ let
               hsPkgs.GLFW-b
             ];
           };
-          lesson02 = {
+          "lesson02" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGLRaw
@@ -37,7 +37,7 @@ let
               hsPkgs.GLFW-b
             ];
           };
-          lesson03 = {
+          "lesson03" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGLRaw
@@ -45,7 +45,7 @@ let
               hsPkgs.GLFW-b
             ];
           };
-          lesson04 = {
+          "lesson04" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGLRaw
@@ -53,7 +53,7 @@ let
               hsPkgs.GLFW-b
             ];
           };
-          lesson05 = {
+          "lesson05" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGLRaw
@@ -61,18 +61,7 @@ let
               hsPkgs.GLFW-b
             ];
           };
-          lesson06 = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.OpenGLRaw
-              hsPkgs.GLURaw
-              hsPkgs.GLFW-b
-              hsPkgs.bytestring
-              hsPkgs.cereal
-              hsPkgs.directory
-            ];
-          };
-          lesson07 = {
+          "lesson06" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGLRaw
@@ -83,7 +72,7 @@ let
               hsPkgs.directory
             ];
           };
-          lesson08 = {
+          "lesson07" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGLRaw
@@ -94,7 +83,18 @@ let
               hsPkgs.directory
             ];
           };
-          lesson09 = {
+          "lesson08" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.OpenGLRaw
+              hsPkgs.GLURaw
+              hsPkgs.GLFW-b
+              hsPkgs.bytestring
+              hsPkgs.cereal
+              hsPkgs.directory
+            ];
+          };
+          "lesson09" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGLRaw
@@ -106,7 +106,7 @@ let
               hsPkgs.directory
             ];
           };
-          lesson10 = {
+          "lesson10" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGLRaw
@@ -117,7 +117,7 @@ let
               hsPkgs.directory
             ];
           };
-          lesson11 = {
+          "lesson11" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGLRaw
@@ -129,7 +129,7 @@ let
               hsPkgs.directory
             ];
           };
-          lesson12 = {
+          "lesson12" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGLRaw

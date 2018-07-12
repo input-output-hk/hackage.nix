@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-path = {
+        "genvalidity-path" = {
           depends  = [
             hsPkgs.base
             hsPkgs.validity-path
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          genvalidity-path-test = {
+          "genvalidity-path-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.genvalidity-path

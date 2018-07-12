@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        urlencoded = {
+        "urlencoded" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

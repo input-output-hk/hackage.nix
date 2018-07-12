@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        command = {
+        "command" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

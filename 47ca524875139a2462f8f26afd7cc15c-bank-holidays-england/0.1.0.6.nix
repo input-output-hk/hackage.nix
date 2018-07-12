@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bank-holidays-england = {
+        "bank-holidays-england" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bank-holidays-england

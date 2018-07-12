@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memexml = {
+        "memexml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt

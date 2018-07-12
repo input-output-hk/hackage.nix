@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        base-compat-batteries = {
+        "base-compat-batteries" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.base-compat
@@ -35,7 +35,7 @@ let
           ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.2")) hsPkgs.bifunctors;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat-batteries

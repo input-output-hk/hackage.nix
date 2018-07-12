@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        force-layout = {
+        "force-layout" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector-space

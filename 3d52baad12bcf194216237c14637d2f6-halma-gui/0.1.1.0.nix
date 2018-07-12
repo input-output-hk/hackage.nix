@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          halma-gui = {
+          "halma-gui" = {
             depends  = [
               hsPkgs.halma
               hsPkgs.base

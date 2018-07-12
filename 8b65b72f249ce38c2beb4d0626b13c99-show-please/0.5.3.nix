@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        show-please = {
+        "show-please" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

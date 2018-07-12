@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alloy-proxy-fd = {
+        "alloy-proxy-fd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.alloy

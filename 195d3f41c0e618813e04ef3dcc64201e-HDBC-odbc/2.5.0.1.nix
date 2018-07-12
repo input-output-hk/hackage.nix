@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HDBC-odbc = {
+        "HDBC-odbc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.concurrent-extra
@@ -38,7 +38,7 @@ let
             else [ pkgs.odbc pkgs.pthread ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.base
               hsPkgs.HUnit
@@ -53,7 +53,7 @@ let
               hsPkgs.convertible
             ];
           };
-          stresstest = {
+          "stresstest" = {
             depends  = pkgs.lib.optionals _flags.buildstresstest [
               hsPkgs.base
               hsPkgs.HDBC

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        autoexporter = {
+        "autoexporter" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          autoexporter = {
+          "autoexporter" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.autoexporter

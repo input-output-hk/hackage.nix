@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linode-v4 = {
+        "linode-v4" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

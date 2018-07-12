@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-sign4 = {
+        "aws-sign4" = {
           depends  = [
             hsPkgs.aws
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          ets-sign4 = {
+          "ets-sign4" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.aws

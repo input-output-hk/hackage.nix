@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Gene-CluEDO = {
+        "Gene-CluEDO" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          GeneCluEDO = {
+          "GeneCluEDO" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

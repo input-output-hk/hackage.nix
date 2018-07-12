@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          macosx-make-standalone = {
+          "macosx-make-standalone" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-lens

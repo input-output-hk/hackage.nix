@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        papa-semigroupoids = {
+        "papa-semigroupoids" = {
           depends  = [
             hsPkgs.base
             hsPkgs.papa-semigroupoids-export

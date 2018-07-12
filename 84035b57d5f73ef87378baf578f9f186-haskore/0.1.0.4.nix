@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskore = {
+        "haskore" = {
           depends  = [
             hsPkgs.midi
             hsPkgs.event-list
@@ -49,13 +49,13 @@ let
             ]);
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HUnit
             ];
           };
-          autotrack = {};
+          "autotrack" = {};
         };
       };
     }

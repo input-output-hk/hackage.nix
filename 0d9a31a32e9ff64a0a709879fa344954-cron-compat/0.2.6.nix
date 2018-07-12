@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cron-compat = {
+        "cron-compat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cron

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elision = {
+        "elision" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elision

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http2 = {
+        "http2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -30,13 +30,13 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -46,7 +46,7 @@ let
               hsPkgs.hspec
             ];
           };
-          hpack = {
+          "hpack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

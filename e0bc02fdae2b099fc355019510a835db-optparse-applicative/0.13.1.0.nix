@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        optparse-applicative = {
+        "optparse-applicative" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -30,7 +30,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8")) hsPkgs.semigroups;
         };
         tests = {
-          optparse-applicative-tests = {
+          "optparse-applicative-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

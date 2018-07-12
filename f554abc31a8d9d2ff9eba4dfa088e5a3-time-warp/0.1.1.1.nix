@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-warp = {
+        "time-warp" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base
@@ -55,7 +55,7 @@ let
           ];
         };
         exes = {
-          token-ring = {
+          "token-ring" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -81,7 +81,7 @@ let
           };
         };
         tests = {
-          time-warp-test = {
+          "time-warp-test" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

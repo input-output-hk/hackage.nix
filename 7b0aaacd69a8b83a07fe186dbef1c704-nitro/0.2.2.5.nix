@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        nitro = {
+        "nitro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clifford = {
+        "clifford" = {
           depends  = [
             hsPkgs.base
             hsPkgs.numeric-prelude
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          pendulum = {
+          "pendulum" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clifford
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clifford
@@ -73,7 +73,7 @@ let
           };
         };
         benchmarks = {
-          basic-ops = {
+          "basic-ops" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clifford

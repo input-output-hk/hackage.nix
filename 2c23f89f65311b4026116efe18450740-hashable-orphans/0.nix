@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashable-orphans = {
+        "hashable-orphans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

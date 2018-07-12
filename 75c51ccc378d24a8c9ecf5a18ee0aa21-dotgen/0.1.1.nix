@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dotgen = {
+        "dotgen" = {
           depends  = [ hsPkgs.base ];
         };
       };

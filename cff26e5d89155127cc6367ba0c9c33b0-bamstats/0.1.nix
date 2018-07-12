@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        bamstats = {};
+        "bamstats" = {};
         exes = {
-          bam = {
+          "bam" = {
             depends  = [
               hsPkgs.base
               hsPkgs.samtools

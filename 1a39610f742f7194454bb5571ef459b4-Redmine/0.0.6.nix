@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Redmine = {
+        "Redmine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          test-Redmine = {
+          "test-Redmine" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

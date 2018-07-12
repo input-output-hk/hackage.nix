@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-neural-networks = {
+        "simple-neural-networks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          nn-xor-logistic-example = {
+          "nn-xor-logistic-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -41,7 +41,7 @@ let
               hsPkgs.parallel
             ];
           };
-          nn-xor-tanh-example = {
+          "nn-xor-tanh-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashable = {
+        "hashable" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ]) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.integer-gmp) hsPkgs.integer-gmp;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hashable

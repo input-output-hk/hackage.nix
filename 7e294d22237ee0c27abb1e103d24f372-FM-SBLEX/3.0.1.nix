@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          saldo = {
+          "saldo" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base
@@ -29,7 +29,7 @@ let
               hsPkgs.array
             ];
           };
-          dalin = {
+          "dalin" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base
@@ -37,7 +37,7 @@ let
               hsPkgs.array
             ];
           };
-          fsv = {
+          "fsv" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

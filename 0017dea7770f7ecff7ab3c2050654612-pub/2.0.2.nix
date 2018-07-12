@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pub = {
+          "pub" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -42,7 +42,7 @@ let
               hsPkgs.transformers
             ];
           };
-          sub = {
+          "sub" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

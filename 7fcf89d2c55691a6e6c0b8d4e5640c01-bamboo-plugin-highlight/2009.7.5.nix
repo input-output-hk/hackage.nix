@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bamboo-plugin-highlight = {
+        "bamboo-plugin-highlight" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bamboo

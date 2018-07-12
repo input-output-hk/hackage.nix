@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tsession-happstack = {
+        "tsession-happstack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

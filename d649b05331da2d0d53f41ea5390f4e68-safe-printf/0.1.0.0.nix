@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-printf = {
+        "safe-printf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-meta
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -39,7 +39,7 @@ let
               hsPkgs.th-lift
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

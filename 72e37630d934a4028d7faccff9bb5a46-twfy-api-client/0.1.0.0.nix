@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twfy-api-client = {
+        "twfy-api-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          twfy-api-client = {
+          "twfy-api-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.twfy-api-client
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          twfy-api-client-test = {
+          "twfy-api-client-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.twfy-api-client

@@ -28,7 +28,7 @@ let
         buildType = "Simple";
       };
       components = {
-        raaz = {
+        "raaz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           build-tools = pkgs.lib.optional system.isWindows hsPkgs.buildPackages.hsc2hs;
         };
         exes = {
-          raaz = {
+          "raaz" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -64,7 +64,7 @@ let
               hsPkgs.vector
             ];
           };
-          liquidspec = {
+          "liquidspec" = {
             depends  = [
               hsPkgs.base
             ] ++ pkgs.lib.optionals _flags.liquidhaskell [
@@ -75,7 +75,7 @@ let
           };
         };
         benchmarks = {
-          blaze-vs-write = {
+          "blaze-vs-write" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder
@@ -84,7 +84,7 @@ let
               hsPkgs.raaz
             ];
           };
-          bench-ciphers = {
+          "bench-ciphers" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder
@@ -93,7 +93,7 @@ let
               hsPkgs.raaz
             ];
           };
-          primitives = {
+          "primitives" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          roguestar = {
+          "roguestar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

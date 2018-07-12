@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        travis-pogodi = {
+        "travis-pogodi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.optparse-applicative
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          travis-pogodi = {
+          "travis-pogodi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.travis-pogodi

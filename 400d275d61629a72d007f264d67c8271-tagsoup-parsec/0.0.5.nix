@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagsoup-parsec = {
+        "tagsoup-parsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagsoup

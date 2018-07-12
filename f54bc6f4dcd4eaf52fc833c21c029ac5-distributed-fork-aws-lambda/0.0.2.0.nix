@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-fork-aws-lambda = {
+        "distributed-fork-aws-lambda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.distributed-fork
@@ -51,7 +51,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-fork

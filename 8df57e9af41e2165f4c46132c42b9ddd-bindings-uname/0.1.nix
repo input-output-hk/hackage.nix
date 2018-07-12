@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-uname = {
+        "bindings-uname" = {
           depends  = [ hsPkgs.base ];
         };
       };

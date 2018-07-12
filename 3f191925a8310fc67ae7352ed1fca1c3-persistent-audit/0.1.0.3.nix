@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-audit = {
+        "persistent-audit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          persistent-audit = {
+          "persistent-audit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

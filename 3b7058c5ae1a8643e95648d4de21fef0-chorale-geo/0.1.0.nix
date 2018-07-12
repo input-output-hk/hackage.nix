@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chorale-geo = {
+        "chorale-geo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

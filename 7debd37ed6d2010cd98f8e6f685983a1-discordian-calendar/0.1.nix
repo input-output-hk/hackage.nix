@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        discordian-calendar = {
+        "discordian-calendar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

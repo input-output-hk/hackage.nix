@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        curlhs = {
+        "curlhs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rtld

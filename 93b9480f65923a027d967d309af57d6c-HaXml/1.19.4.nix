@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaXml = {
+        "HaXml" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.haskell98
@@ -45,13 +45,13 @@ let
             ]);
         };
         exes = {
-          Canonicalise = {};
-          CanonicaliseLazy = {};
-          Xtract = {};
-          XtractLazy = {};
-          Validate = {};
-          MkOneOf = {};
-          DtdToHaskell = {};
+          "Canonicalise" = {};
+          "CanonicaliseLazy" = {};
+          "Xtract" = {};
+          "XtractLazy" = {};
+          "Validate" = {};
+          "MkOneOf" = {};
+          "DtdToHaskell" = {};
         };
       };
     }

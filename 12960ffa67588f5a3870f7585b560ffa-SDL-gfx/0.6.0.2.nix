@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        SDL-gfx = {
+        "SDL-gfx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SDL

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptocipher = {
+        "cryptocipher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chuchu = {
+        "chuchu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          environment = {
+          "environment" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -41,7 +41,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          calculator = {
+          "calculator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -49,7 +49,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          prefix = {
+          "prefix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -57,7 +57,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          multiple_scenarios = {
+          "multiple_scenarios" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -65,7 +65,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          background_and_multiple_scenarios = {
+          "background_and_multiple_scenarios" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

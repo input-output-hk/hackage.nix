@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          nix-diff = {
+          "nix-diff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

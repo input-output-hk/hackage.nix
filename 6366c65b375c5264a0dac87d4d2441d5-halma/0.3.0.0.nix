@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        halma = {
+        "halma" = {
           depends  = [
             hsPkgs.base
             hsPkgs.grid
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.halma
               hsPkgs.grid

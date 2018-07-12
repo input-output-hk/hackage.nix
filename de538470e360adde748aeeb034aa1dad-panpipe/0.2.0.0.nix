@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        panpipe = {
+        "panpipe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          panpipe = {
+          "panpipe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.panpipe
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.panpipe

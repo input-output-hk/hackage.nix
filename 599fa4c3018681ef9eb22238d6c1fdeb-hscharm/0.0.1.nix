@@ -20,21 +20,21 @@ let
         buildType = "Simple";
       };
       components = {
-        hscharm = {
+        "hscharm" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          hellocharm = {
+          "hellocharm" = {
             depends  = [ hsPkgs.base ];
           };
-          rl = {
+          "rl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
               hsPkgs.random-shuffle
             ];
           };
-          ddr = {
+          "ddr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

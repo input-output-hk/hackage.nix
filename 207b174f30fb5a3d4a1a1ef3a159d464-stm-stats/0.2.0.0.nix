@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-stats = {
+        "stm-stats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BitStringRandomMonad = {
+        "BitStringRandomMonad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          random-monad-tests = {
+          "random-monad-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

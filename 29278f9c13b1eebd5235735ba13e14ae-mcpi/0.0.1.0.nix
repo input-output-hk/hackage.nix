@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mcpi = {
+        "mcpi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -32,47 +32,47 @@ let
           ];
         };
         exes = {
-          flatten = {
+          "flatten" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mcpi
               hsPkgs.transformers
             ];
           };
-          freefall = {
+          "freefall" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mcpi
               hsPkgs.transformers
             ];
           };
-          isongold = {
+          "isongold" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mcpi
             ];
           };
-          xjump = {
+          "xjump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mcpi
             ];
           };
-          shapes = {
+          "shapes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mcpi
               hsPkgs.transformers
             ];
           };
-          hmcpi = {
+          "hmcpi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
               hsPkgs.pipes
             ];
           };
-          debugmcpi = {
+          "debugmcpi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mcpi

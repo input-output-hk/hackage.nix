@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lxd-client = {
+        "lxd-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -55,7 +55,7 @@ let
           ];
         };
         exes = {
-          lxd-client-example = {
+          "lxd-client-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lxd-client
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          lxd-client-integration = {
+          "lxd-client-integration" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lxd-client

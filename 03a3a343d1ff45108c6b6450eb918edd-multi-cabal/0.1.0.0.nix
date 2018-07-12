@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multi-cabal = {
+        "multi-cabal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          multi-cabal = {
+          "multi-cabal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          multi-cabal-tests = {
+          "multi-cabal-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

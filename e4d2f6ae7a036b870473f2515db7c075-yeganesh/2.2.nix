@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          yeganesh = {
+          "yeganesh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

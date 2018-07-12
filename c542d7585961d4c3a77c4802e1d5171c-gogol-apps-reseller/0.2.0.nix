@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-apps-reseller = {
+        "gogol-apps-reseller" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

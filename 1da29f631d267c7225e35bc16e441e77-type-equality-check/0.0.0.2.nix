@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-equality-check = {
+        "type-equality-check" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-level

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-strategies = {
+        "vector-strategies" = {
           depends  = [
             hsPkgs.deepseq
             hsPkgs.parallel

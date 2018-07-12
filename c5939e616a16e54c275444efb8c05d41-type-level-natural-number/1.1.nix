@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-level-natural-number = {
+        "type-level-natural-number" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proto-lens-protoc = {
+        "proto-lens-protoc" = {
           depends  = pkgs.lib.optionals (!_flags.only-executable) [
             hsPkgs.Cabal
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          proto-lens-protoc = {
+          "proto-lens-protoc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

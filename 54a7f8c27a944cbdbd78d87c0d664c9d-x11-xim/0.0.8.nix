@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        x11-xim = {
+        "x11-xim" = {
           depends  = [
             hsPkgs.base
             hsPkgs.X11

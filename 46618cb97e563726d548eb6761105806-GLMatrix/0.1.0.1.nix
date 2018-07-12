@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLMatrix = {
+        "GLMatrix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGLRaw

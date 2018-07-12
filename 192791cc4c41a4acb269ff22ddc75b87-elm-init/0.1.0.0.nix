@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          elm-init = {
+          "elm-init" = {
             depends  = [
               hsPkgs.base
               hsPkgs.system-fileio

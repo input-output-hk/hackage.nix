@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repl-toolkit = {
+        "repl-toolkit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

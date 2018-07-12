@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pseudo-boolean = {
+        "pseudo-boolean" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          TestPBFile = {
+          "TestPBFile" = {
             depends  = [
               hsPkgs.pseudo-boolean
               hsPkgs.base

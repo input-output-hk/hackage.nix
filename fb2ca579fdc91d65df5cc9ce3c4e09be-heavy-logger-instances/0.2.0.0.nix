@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heavy-logger-instances = {
+        "heavy-logger-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          binary-test = {
+          "binary-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

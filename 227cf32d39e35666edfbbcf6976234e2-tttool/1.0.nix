@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          tttool = {
+          "tttool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

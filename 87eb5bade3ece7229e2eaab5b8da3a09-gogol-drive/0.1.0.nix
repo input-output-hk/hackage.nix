@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-drive = {
+        "gogol-drive" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

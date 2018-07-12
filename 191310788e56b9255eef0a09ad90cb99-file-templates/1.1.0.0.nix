@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          new = {
+          "new" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foundation

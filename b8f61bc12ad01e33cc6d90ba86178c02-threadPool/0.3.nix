@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          threadpool = {
+          "threadpool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

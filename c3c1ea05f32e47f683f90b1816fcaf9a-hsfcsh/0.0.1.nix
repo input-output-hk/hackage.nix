@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsfcsh = {
+          "hsfcsh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslogger
@@ -30,7 +30,7 @@ let
               hsPkgs.network
             ];
           };
-          hsfcsh_do = {
+          "hsfcsh_do" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslogger

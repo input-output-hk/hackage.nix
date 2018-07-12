@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-spacegoo = {
+        "haskell-spacegoo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

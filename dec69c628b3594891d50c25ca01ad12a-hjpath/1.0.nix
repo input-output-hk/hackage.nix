@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hjpath = {
+        "hjpath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.RJson

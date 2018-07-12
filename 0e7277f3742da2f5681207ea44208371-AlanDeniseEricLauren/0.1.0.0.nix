@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AlanDeniseEricLauren = {
+        "AlanDeniseEricLauren" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.AlanDeniseEricLauren
               hsPkgs.base
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.AlanDeniseEricLauren
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ety = {
+        "ety" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          ety = {
+          "ety" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curl

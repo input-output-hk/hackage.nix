@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gdiff = {
+        "gdiff" = {
           depends  = [ hsPkgs.base ];
         };
       };

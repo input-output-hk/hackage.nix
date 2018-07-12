@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-push = {
+        "web-push" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

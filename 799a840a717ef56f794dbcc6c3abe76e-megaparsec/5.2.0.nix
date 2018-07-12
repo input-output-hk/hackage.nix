@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        megaparsec = {
+        "megaparsec" = {
           depends  = ([
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.tagged;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = ([
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -58,7 +58,7 @@ let
           };
         };
         benchmarks = {
-          bench-speed = {
+          "bench-speed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -66,7 +66,7 @@ let
               hsPkgs.megaparsec
             ];
           };
-          bench-memory = {
+          "bench-memory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

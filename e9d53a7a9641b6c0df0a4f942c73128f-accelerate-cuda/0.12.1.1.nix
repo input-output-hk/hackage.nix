@@ -25,7 +25,7 @@ let
         buildType = "Configure";
       };
       components = {
-        accelerate-cuda = {
+        "accelerate-cuda" = {
           depends  = [
             hsPkgs.accelerate
             hsPkgs.array

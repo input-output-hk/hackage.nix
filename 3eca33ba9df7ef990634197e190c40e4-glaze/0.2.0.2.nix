@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glaze = {
+        "glaze" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

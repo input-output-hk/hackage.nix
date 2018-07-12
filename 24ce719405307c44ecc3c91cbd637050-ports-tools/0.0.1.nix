@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ports-tools = {
+        "ports-tools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

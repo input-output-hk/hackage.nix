@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Cabal = {
+        "Cabal" = {
           depends  = ((([
             hsPkgs.array
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -51,7 +51,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          package-tests = {
+          "package-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        nix-paths = {
+        "nix-paths" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gruff = {
+          "gruff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ad

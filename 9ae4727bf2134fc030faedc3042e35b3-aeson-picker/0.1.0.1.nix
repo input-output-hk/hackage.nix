@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-picker = {
+        "aeson-picker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          aeson-picker-test = {
+          "aeson-picker-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson-picker

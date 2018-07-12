@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sexpr = {
+        "sexpr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-string
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          sexpr-test = {
+          "sexpr-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.random

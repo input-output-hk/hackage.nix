@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        camfort = {
+        "camfort" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -54,7 +54,7 @@ let
           ];
         };
         exes = {
-          camfort = {
+          "camfort" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -84,7 +84,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          analyse = {
+          "analyse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -96,7 +96,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

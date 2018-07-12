@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quiver-groups = {
+        "quiver-groups" = {
           depends  = [
             hsPkgs.base
             hsPkgs.quiver
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.quiver-groups
               hsPkgs.base

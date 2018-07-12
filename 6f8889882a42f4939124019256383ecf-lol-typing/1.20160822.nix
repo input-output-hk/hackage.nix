@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        lol-typing = {
+        "lol-typing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          lol-typing-test = {
+          "lol-typing-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

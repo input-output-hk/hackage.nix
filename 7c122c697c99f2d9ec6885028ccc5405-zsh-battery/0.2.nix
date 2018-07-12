@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          zsh-battery = {
+          "zsh-battery" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

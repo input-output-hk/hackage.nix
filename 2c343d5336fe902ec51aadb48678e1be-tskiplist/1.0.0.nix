@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tskiplist = {
+        "tskiplist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

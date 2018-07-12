@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NumInstances = {
+        "NumInstances" = {
           depends  = [ hsPkgs.base ];
         };
       };

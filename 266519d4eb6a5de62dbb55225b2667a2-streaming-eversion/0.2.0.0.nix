@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-eversion = {
+        "streaming-eversion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -47,7 +47,7 @@ let
               hsPkgs.errors
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

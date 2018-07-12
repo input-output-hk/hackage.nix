@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lha = {
+        "lha" = {
           depends  = [
             hsPkgs.haskell2010
           ];

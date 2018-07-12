@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-kinds-fork = {
+        "th-kinds-fork" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.th-orphans

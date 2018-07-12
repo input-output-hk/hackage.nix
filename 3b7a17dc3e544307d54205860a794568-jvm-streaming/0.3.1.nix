@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        jvm-streaming = {
+        "jvm-streaming" = {
           depends  = [
             hsPkgs.base
             hsPkgs.distributed-closure
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          micro-benchmarks = {
+          "micro-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

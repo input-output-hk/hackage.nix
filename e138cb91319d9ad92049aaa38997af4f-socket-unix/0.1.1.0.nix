@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        socket-unix = {
+        "socket-unix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.socket
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          default = {
+          "default" = {
             depends  = [
               hsPkgs.base
               hsPkgs.socket
@@ -40,7 +40,7 @@ let
               hsPkgs.async
             ];
           };
-          threaded = {
+          "threaded" = {
             depends  = [
               hsPkgs.base
               hsPkgs.socket

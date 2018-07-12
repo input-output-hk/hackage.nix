@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit = {
+        "conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.resourcet
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.base
@@ -51,7 +51,7 @@ let
               hsPkgs.void
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

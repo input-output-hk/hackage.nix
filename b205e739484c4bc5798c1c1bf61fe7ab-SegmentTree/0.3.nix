@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        SegmentTree = {
+        "SegmentTree" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          SegmentTreeTests = {
+          "SegmentTreeTests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fsnotify = {
+        "fsnotify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

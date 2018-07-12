@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        t3-game = {
+        "t3-game" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          t3-game-test = {
+          "t3-game-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.t3-game

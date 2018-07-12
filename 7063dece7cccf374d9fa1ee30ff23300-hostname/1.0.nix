@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hostname = {
+        "hostname" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;

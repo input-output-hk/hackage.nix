@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bktrees = {
+        "bktrees" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

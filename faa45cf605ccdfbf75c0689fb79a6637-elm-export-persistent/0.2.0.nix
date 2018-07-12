@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elm-export-persistent = {
+        "elm-export-persistent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.elm-export

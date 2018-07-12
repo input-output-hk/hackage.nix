@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-parport = {
+        "bindings-parport" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

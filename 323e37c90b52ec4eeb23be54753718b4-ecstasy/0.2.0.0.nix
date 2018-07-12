@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ecstasy = {
+        "ecstasy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

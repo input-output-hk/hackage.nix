@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        MissingH = {
+        "MissingH" = {
           depends  = [
             hsPkgs.network
             hsPkgs.parsec
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.network
               hsPkgs.parsec

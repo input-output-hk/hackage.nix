@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        karakuri = {
+        "karakuri" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

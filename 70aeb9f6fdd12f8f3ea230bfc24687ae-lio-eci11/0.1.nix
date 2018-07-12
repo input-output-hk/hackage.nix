@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lio-eci11 = {
+        "lio-eci11" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

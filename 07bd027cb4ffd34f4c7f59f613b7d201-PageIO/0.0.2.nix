@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PageIO = {
+        "PageIO" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

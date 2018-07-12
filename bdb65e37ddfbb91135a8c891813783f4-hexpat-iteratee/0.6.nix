@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexpat-iteratee = {
+        "hexpat-iteratee" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

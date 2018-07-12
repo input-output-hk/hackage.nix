@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xournal-render = {
+        "xournal-render" = {
           depends  = if _flags.poppler
             then [
               hsPkgs.base

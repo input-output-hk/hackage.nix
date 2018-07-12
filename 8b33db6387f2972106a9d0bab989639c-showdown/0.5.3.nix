@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          showdown = {
+          "showdown" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

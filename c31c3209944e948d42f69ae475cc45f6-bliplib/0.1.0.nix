@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bliplib = {
+        "bliplib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

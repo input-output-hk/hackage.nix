@@ -35,7 +35,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toysolver = {
+        "toysolver" = {
           depends  = ([
             hsPkgs.array
             hsPkgs.base
@@ -84,7 +84,7 @@ let
           ] ++ pkgs.lib.optional _flags.opencl hsPkgs.OpenCL) ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.ghc-prim;
         };
         exes = {
-          toysolver = {
+          "toysolver" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -97,7 +97,7 @@ let
               hsPkgs.toysolver
             ];
           };
-          toysat = {
+          "toysat" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -120,7 +120,7 @@ let
               hsPkgs.vector
             ];
           };
-          toysmt = {
+          "toysmt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -134,7 +134,7 @@ let
               hsPkgs.transformers-compat
             ] ++ pkgs.lib.optional _flags.usehaskeline hsPkgs.haskeline;
           };
-          toyqbf = {
+          "toyqbf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -142,7 +142,7 @@ let
               hsPkgs.toysolver
             ];
           };
-          toyfmf = {
+          "toyfmf" = {
             depends  = pkgs.lib.optionals _flags.buildtoyfmf ([
               hsPkgs.base
               hsPkgs.containers
@@ -150,13 +150,13 @@ let
               hsPkgs.logic-TPTP
               hsPkgs.text
               hsPkgs.toysolver
-            ] ++ (if compiler.isGhc && compiler.version.lt "7.9" && _flags.logictptp045
+            ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.9") (if _flags.logictptp045
               then [ hsPkgs.logic-TPTP ]
               else [
                 hsPkgs.transformers-compat
               ]));
           };
-          toyconvert = {
+          "toyconvert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -169,14 +169,14 @@ let
               hsPkgs.toysolver
             ];
           };
-          sudoku = {
+          "sudoku" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
               hsPkgs.toysolver
             ];
           };
-          nonogram = {
+          "nonogram" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -184,14 +184,14 @@ let
               hsPkgs.toysolver
             ];
           };
-          nqueens = {
+          "nqueens" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
               hsPkgs.toysolver
             ];
           };
-          numberlink = {
+          "numberlink" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -203,13 +203,13 @@ let
               hsPkgs.toysolver
             ];
           };
-          knapsack = {
+          "knapsack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.toysolver
             ];
           };
-          assign = {
+          "assign" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -219,7 +219,7 @@ let
               hsPkgs.vector
             ];
           };
-          shortest-path = {
+          "shortest-path" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -228,14 +228,14 @@ let
               hsPkgs.toysolver
             ];
           };
-          htc = {
+          "htc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.toysolver
             ];
           };
-          svm2lp = {
+          "svm2lp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -246,14 +246,14 @@ let
               hsPkgs.toysolver
             ];
           };
-          survey-propagation = {
+          "survey-propagation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default-class
               hsPkgs.toysolver
             ] ++ pkgs.lib.optional _flags.opencl hsPkgs.OpenCL;
           };
-          pigeonhole = {
+          "pigeonhole" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -261,14 +261,14 @@ let
               hsPkgs.toysolver
             ];
           };
-          maxsatverify = {
+          "maxsatverify" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
               hsPkgs.toysolver
             ];
           };
-          pbverify = {
+          "pbverify" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -278,7 +278,7 @@ let
           };
         };
         tests = {
-          TestPolynomial = {
+          "TestPolynomial" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -292,7 +292,7 @@ let
               hsPkgs.toysolver
             ];
           };
-          TestSuite = {
+          "TestSuite" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -327,7 +327,7 @@ let
           };
         };
         benchmarks = {
-          BenchmarkSATLIB = {
+          "BenchmarkSATLIB" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -336,14 +336,14 @@ let
               hsPkgs.toysolver
             ];
           };
-          BenchmarkKnapsack = {
+          "BenchmarkKnapsack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.toysolver
             ];
           };
-          BenchmarkSubsetSum = {
+          "BenchmarkSubsetSum" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

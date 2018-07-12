@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ui-command = {
+        "ui-command" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -30,6 +30,6 @@ let
             hsPkgs.data-default
           ];
         };
-        exes = { ui-cmd-hello = {}; };
+        exes = { "ui-cmd-hello" = {}; };
       };
     }

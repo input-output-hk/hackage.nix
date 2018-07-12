@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal-graphdeps = {
+          "cabal-graphdeps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

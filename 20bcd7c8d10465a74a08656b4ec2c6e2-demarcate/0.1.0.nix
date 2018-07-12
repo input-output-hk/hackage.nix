@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        demarcate = {
+        "demarcate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.free
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

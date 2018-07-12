@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ganymede = {
+          "ganymede" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Win32-errors = {
+        "Win32-errors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

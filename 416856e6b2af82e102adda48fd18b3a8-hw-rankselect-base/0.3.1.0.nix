@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-rankselect-base = {
+        "hw-rankselect-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bits-extra
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          hw-rankselect-base-test = {
+          "hw-rankselect-base-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -52,7 +52,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bits-extra

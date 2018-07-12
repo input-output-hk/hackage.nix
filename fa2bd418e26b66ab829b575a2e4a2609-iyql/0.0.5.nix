@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          iyql = {
+          "iyql" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

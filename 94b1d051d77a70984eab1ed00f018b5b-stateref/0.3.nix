@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stateref = {
+        "stateref" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

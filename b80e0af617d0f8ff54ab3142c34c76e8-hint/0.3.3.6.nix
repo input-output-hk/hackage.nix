@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hint = {
+        "hint" = {
           depends  = ([
             hsPkgs.haskell-src
             hsPkgs.ghc

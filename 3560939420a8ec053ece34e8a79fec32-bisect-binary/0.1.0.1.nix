@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bisect-binary = {
+          "bisect-binary" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

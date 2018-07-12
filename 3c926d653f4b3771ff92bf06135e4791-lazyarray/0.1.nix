@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazyarray = {
+        "lazyarray" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

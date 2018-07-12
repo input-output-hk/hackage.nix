@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-servicemanagement = {
+        "gogol-servicemanagement" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

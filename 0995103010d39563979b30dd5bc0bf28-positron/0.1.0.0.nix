@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        positron = {
+        "positron" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          positron-test = {
+          "positron-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.positron

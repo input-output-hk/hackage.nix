@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gremlin-haskell = {
+        "gremlin-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          gremlin-haskell-examples = {
+          "gremlin-haskell-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gremlin-haskell
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          gremlin-haskell-test = {
+          "gremlin-haskell-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gremlin-haskell

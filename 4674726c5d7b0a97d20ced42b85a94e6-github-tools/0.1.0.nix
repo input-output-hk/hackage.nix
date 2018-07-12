@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pull-status = {
+          "pull-status" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
               hsPkgs.vector
             ];
           };
-          changelog = {
+          "changelog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

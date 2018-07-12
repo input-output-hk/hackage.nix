@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Gtk2hsGenerics = {
+        "Gtk2hsGenerics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

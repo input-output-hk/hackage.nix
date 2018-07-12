@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        execs = {
+        "execs" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          execs = {
+          "execs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.execs

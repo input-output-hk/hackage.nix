@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hashed-storage = {
+        "hashed-storage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -40,7 +40,7 @@ let
           ] ++ pkgs.lib.optional _flags.diff hsPkgs.lcs;
         };
         exes = {
-          hashed-storage-test = {
+          "hashed-storage-test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit

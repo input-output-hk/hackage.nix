@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twitter-enumerator = {
+        "twitter-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

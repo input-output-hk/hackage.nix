@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        natural-induction = {
+        "natural-induction" = {
           depends  = [
             hsPkgs.base
             hsPkgs.peano

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alsa-pcm = {
+        "alsa-pcm" = {
           depends  = [
             hsPkgs.alsa-core
             hsPkgs.storable-record
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          alsa-minisynth = {
+          "alsa-minisynth" = {
             depends  = pkgs.lib.optionals _flags.buildsynthesizer [
               hsPkgs.alsa-pcm
               hsPkgs.alsa-seq
@@ -49,32 +49,32 @@ let
               hsPkgs.base
             ];
           };
-          alsa-sine = {
+          "alsa-sine" = {
             depends  = pkgs.lib.optionals _flags.buildsynthesizer [
               hsPkgs.alsa-pcm
               hsPkgs.storablevector
               hsPkgs.base
             ];
           };
-          alsa-duplex = {
+          "alsa-duplex" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.alsa-pcm
               hsPkgs.base
             ];
           };
-          alsa-play = {
+          "alsa-play" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.alsa-pcm
               hsPkgs.base
             ];
           };
-          alsa-record = {
+          "alsa-record" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.alsa-pcm
               hsPkgs.base
             ];
           };
-          alsa-volume-meter = {
+          "alsa-volume-meter" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.alsa-pcm
               hsPkgs.base

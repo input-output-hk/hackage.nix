@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk-traymanager = {
+        "gtk-traymanager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.glib

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-pubkey = {
+        "crypto-pubkey" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test-crypto-pubkey = {
+          "test-crypto-pubkey" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          bench-crypto-pubkey = {
+          "bench-crypto-pubkey" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

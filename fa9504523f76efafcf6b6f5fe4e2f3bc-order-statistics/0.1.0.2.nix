@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        order-statistics = {
+        "order-statistics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.statistics

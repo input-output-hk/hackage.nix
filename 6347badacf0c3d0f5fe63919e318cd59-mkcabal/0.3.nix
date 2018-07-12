@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          mkcabal = {
+          "mkcabal" = {
             depends  = [
               hsPkgs.mtl
               hsPkgs.regex-base

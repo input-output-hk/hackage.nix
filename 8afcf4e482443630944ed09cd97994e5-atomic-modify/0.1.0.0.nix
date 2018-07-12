@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atomic-modify = {
+        "atomic-modify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

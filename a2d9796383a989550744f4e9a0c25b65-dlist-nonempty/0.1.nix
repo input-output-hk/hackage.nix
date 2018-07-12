@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dlist-nonempty = {
+        "dlist-nonempty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -30,7 +30,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.dlist-nonempty
               hsPkgs.base
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

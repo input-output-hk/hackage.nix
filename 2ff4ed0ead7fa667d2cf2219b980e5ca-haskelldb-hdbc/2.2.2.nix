@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelldb-hdbc = {
+        "haskelldb-hdbc" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.haskelldb

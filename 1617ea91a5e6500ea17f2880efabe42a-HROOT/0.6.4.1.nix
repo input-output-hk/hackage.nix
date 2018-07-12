@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HROOT = {
+        "HROOT" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs."stdc++" ];
         };

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        stable-heap = {
+        "stable-heap" = {
           depends  = [ hsPkgs.base ];
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        difftodo = {
+        "difftodo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          all-todos = {
+          "all-todos" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          fixme-tests = {
+          "fixme-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

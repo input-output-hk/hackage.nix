@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        discord-gateway = {
+        "discord-gateway" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

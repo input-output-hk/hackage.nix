@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad-contrib-bluetilebranch = {
+        "xmonad-contrib-bluetilebranch" = {
           depends  = ([
             hsPkgs.mtl
             hsPkgs.unix

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snmp = {
+        "snmp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.asn1-encoding

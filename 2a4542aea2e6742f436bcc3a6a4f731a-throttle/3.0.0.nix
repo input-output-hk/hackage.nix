@@ -19,5 +19,7 @@ let
         description = "None";
         buildType = "Simple";
       };
-      components = { throttle = {}; };
+      components = {
+        "throttle" = {};
+      };
     }

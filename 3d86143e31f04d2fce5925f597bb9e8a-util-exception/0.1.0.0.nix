@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        util-exception = {
+        "util-exception" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base

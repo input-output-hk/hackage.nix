@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wobsurv = {
+        "wobsurv" = {
           depends  = [
             hsPkgs.system-filepath
             hsPkgs.system-fileio
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          wobsurv = {
+          "wobsurv" = {
             depends  = [
               hsPkgs.wobsurv
               hsPkgs.system-filepath
@@ -65,7 +65,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.wobsurv
               hsPkgs.HTF

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        matrix-market = {
+        "matrix-market" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

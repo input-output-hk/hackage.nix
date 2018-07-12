@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pngload-fixed = {
+        "pngload-fixed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zlib

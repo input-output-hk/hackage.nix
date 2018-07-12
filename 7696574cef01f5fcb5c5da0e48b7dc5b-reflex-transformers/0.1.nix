@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex-transformers = {
+        "reflex-transformers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

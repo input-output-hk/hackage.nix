@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arithmoi = {
+        "arithmoi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.arithmoi
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.arithmoi

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mono-foldable = {
+        "mono-foldable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

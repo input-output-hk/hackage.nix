@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-rope = {
+        "yi-rope" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

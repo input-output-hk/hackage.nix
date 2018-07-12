@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        project-template = {
+        "project-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.project-template

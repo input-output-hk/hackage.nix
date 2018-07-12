@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        funflow = {
+        "funflow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -69,7 +69,7 @@ let
             else pkgs.lib.optional (system.isOsx || system.isFreebsd) hsPkgs.kqueue);
         };
         exes = {
-          ffexecutord = {
+          "ffexecutord" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -85,7 +85,7 @@ let
           };
         };
         tests = {
-          test-funflow = {
+          "test-funflow" = {
             depends  = [
               hsPkgs.base
               hsPkgs.funflow
@@ -98,7 +98,7 @@ let
               hsPkgs.unix
             ];
           };
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

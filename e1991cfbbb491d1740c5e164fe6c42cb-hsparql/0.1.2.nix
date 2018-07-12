@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsparql = {
+        "hsparql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

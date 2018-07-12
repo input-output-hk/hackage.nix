@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sunroof-compiler = {
+        "sunroof-compiler" = {
           depends  = [
             hsPkgs.data-reify
             hsPkgs.base

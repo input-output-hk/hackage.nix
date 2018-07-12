@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-routes-wai = {
+        "web-routes-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

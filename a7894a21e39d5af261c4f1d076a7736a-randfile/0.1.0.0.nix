@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          randfile = {
+          "randfile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

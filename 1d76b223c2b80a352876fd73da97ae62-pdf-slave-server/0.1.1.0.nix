@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pdf-slave-server = {
+        "pdf-slave-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.acid-state
@@ -61,7 +61,7 @@ let
           ];
         };
         exes = {
-          pdf-slave-server = {
+          "pdf-slave-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libssh2 = {
+        "libssh2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

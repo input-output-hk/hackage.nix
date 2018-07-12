@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        echo = {
+        "echo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -34,7 +34,7 @@ let
           build-tools = pkgs.lib.optional system.isWindows hsPkgs.buildPackages.hsc2hs;
         };
         exes = {
-          password = {
+          "password" = {
             depends  = [
               hsPkgs.base
               hsPkgs.echo

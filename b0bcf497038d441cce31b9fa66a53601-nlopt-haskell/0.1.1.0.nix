@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nlopt-haskell = {
+        "nlopt-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -32,7 +32,7 @@ let
             else [ pkgs.nlopt ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nlopt-haskell

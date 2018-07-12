@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagsoup-megaparsec = {
+        "tagsoup-megaparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.megaparsec
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tagsoup-megaparsec-test = {
+          "tagsoup-megaparsec-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

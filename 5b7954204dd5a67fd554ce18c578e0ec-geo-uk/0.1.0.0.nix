@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geo-uk = {
+        "geo-uk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.file-embed

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        optimization = {
+        "optimization" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

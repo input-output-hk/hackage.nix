@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zipkin = {
+        "zipkin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

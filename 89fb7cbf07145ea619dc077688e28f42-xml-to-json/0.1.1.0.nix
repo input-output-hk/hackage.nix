@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          xml-to-json = {
+          "xml-to-json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt

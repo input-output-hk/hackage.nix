@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-logger = {
+        "apiary-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.apiary

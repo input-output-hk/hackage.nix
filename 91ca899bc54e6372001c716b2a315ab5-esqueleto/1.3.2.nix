@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        esqueleto = {
+        "esqueleto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.persistent

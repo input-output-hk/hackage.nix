@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        next-ref = {
+        "next-ref" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
           ];
         };
         tests = {
-          next-ref-test = {
+          "next-ref-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.next-ref

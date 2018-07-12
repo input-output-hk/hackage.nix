@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        statistics = {
+        "statistics" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

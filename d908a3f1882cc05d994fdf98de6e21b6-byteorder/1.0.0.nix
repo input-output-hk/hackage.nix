@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        byteorder = {
+        "byteorder" = {
           depends  = [ hsPkgs.base ];
         };
       };

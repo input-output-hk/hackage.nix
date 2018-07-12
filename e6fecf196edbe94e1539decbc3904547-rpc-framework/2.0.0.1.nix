@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rpc-framework = {
+        "rpc-framework" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          rpc-test = {
+          "rpc-test" = {
             depends  = [
               hsPkgs.rpc-framework
               hsPkgs.base

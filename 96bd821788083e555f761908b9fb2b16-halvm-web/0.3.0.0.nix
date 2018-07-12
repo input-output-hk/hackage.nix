@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          halvm-web = {
+          "halvm-web" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

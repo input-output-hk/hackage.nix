@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        daemons = {
+        "daemons" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          memo = {
+          "memo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          addone = {
+          "addone" = {
             depends  = [
               hsPkgs.base
               hsPkgs.daemons
@@ -55,7 +55,7 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          queue = {
+          "queue" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -69,7 +69,7 @@ let
               hsPkgs.transformers
             ];
           };
-          name = {
+          "name" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -82,7 +82,7 @@ let
           };
         };
         tests = {
-          daemon = {
+          "daemon" = {
             depends  = [
               hsPkgs.base
               hsPkgs.daemons

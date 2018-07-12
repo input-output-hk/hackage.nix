@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HCard = {
+        "HCard" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random-shuffle

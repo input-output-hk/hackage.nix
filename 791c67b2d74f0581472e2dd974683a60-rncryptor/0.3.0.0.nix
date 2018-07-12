@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rncryptor = {
+        "rncryptor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional _flags.fastpbkdf2 hsPkgs.fastpbkdf2;
         };
         exes = {
-          rncryptor-decrypt = {
+          "rncryptor-decrypt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
               hsPkgs.rncryptor
             ];
           };
-          rncryptor-encrypt = {
+          "rncryptor-encrypt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          rncryptor-tests = {
+          "rncryptor-tests" = {
             depends  = [
               hsPkgs.rncryptor
               hsPkgs.base
@@ -73,7 +73,7 @@ let
           };
         };
         benchmarks = {
-          store-bench = {
+          "store-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

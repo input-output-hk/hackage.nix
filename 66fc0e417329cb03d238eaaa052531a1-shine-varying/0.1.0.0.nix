@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shine-varying = {
+        "shine-varying" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghcjs-dom
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-shine-varying-misc = {
+          "test-shine-varying-misc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-dom
@@ -40,7 +40,7 @@ let
               hsPkgs.keycode
             ];
           };
-          test-shine-varying-resize = {
+          "test-shine-varying-resize" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-dom

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        epoll = {
+        "epoll" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

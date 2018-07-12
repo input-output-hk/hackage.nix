@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-lens-light = {
+        "data-lens-light" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

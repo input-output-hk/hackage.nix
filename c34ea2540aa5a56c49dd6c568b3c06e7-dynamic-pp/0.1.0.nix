@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dynamic-pp = {
+        "dynamic-pp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          UnitTest = {
+          "UnitTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

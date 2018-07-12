@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eliminators = {
+        "eliminators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.extra
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eliminators

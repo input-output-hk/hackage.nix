@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bbdb = {
+        "bbdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

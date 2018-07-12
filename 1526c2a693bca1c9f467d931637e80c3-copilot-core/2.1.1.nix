@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        copilot-core = {
+        "copilot-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

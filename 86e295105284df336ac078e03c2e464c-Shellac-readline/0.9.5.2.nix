@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Shellac-readline = {
+        "Shellac-readline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.readline

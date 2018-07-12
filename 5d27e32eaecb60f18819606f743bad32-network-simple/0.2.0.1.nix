@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        network-simple = {
+        "network-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
           ];
         };
         exes = {
-          network-simple-example-echo-tcp = {
+          "network-simple-example-echo-tcp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
               hsPkgs.network
             ];
           };
-          network-simple-example-chat-tcp = {
+          "network-simple-example-chat-tcp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

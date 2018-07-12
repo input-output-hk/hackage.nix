@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haddock-api = {
+        "haddock-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.ghc
               hsPkgs.hspec

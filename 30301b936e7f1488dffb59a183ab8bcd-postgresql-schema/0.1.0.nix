@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-schema = {
+        "postgresql-schema" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-prelude
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          schema-apply = {
+          "schema-apply" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-prelude

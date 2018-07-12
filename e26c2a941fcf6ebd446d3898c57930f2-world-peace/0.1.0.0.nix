@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        world-peace = {
+        "world-peace" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          world-peace-doctest = {
+          "world-peace-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

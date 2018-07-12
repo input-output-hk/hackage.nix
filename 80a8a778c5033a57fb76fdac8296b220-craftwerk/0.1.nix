@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        craftwerk = {
+        "craftwerk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -32,25 +32,25 @@ let
           ];
         };
         exes = {
-          example1 = {
+          "example1" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.craftwerk
             ];
           };
-          example2 = {
+          "example2" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.craftwerk
             ];
           };
-          example3 = {
+          "example3" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.craftwerk
             ];
           };
-          test-craftwerk = {
+          "test-craftwerk" = {
             depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.craftwerk

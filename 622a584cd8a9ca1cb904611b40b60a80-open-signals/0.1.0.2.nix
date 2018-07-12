@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        open-signals = {
+        "open-signals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          open-signals-test = {
+          "open-signals-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.open-signals

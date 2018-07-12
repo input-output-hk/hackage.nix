@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-apps-licensing = {
+        "gogol-apps-licensing" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

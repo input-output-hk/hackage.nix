@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        SafeSemaphore = {
+        "SafeSemaphore" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          TestSafeSemaphore = {
+          "TestSafeSemaphore" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SafeSemaphore

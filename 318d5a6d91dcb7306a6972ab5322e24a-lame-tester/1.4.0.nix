@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lame-tester = {
+        "lame-tester" = {
           depends  = [
             hsPkgs.base-noprelude
             hsPkgs.bizzlelude
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.bizzlelude
               hsPkgs.containers

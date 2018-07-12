@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yampa-glut = {
+        "yampa-glut" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL
@@ -35,7 +35,7 @@ let
             else [ hsPkgs.Yampa ]);
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.newtype

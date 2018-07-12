@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hail = {
+          "hail" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

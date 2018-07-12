@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openflow = {
+        "openflow" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

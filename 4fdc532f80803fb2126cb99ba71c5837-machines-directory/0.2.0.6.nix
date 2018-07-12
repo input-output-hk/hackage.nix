@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        machines-directory = {
+        "machines-directory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

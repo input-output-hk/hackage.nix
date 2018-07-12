@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gtkimageview = {
+        "gtkimageview" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

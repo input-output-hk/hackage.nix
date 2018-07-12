@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc-ctcp = {
+        "irc-ctcp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

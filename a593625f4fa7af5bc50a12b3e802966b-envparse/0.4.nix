@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        envparse = {
+        "envparse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multiarg = {
+        "multiarg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

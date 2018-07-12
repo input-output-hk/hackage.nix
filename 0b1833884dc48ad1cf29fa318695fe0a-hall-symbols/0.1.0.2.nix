@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hall-symbols = {
+        "hall-symbols" = {
           depends  = [
             hsPkgs.base
             hsPkgs.doctest
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          hall-symbols-test = {
+          "hall-symbols-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lattices = {
+        "lattices" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

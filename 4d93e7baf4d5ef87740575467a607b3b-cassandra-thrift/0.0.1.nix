@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassandra-thrift = {
+        "cassandra-thrift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

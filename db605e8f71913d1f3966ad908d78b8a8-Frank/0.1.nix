@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          frank = {
+          "frank" = {
             depends  = [
               hsPkgs.base
               hsPkgs.void

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hailgun-send = {
+          "hailgun-send" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hailgun

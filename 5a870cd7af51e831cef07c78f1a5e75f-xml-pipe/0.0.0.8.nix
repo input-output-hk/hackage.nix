@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-pipe = {
+        "xml-pipe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

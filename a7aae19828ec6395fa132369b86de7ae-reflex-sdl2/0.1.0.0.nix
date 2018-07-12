@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex-sdl2 = {
+        "reflex-sdl2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dependent-sum
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          reflex-sdl2-exe = {
+          "reflex-sdl2-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reflex-sdl2

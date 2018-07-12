@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wordchoice = {
+        "wordchoice" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pandoc
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          wordchoice = {
+          "wordchoice" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wordchoice
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          wordchoice-test = {
+          "wordchoice-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wordchoice

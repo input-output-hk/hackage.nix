@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          nix-deploy = {
+          "nix-deploy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-generic

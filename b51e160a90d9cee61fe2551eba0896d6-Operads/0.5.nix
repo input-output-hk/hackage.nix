@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Operads = {
+        "Operads" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          OperadTest = {
+          "OperadTest" = {
             depends  = [
               hsPkgs.QuickCheck
             ];

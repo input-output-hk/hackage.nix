@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        copr = {
+        "copr" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

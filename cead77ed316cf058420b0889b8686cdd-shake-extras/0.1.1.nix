@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake-extras = {
+        "shake-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

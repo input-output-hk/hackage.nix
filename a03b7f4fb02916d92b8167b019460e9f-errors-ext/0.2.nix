@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        errors-ext = {
+        "errors-ext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.errors
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          errors-ext-test = {
+          "errors-ext-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

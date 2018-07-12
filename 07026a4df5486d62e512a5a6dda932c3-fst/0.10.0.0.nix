@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fst = {
+        "fst" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          fststudio = {
+          "fststudio" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          test-fst = {
+          "test-fst" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fst

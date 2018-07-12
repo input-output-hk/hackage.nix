@@ -31,10 +31,10 @@ let
         buildType = "Simple";
       };
       components = {
-        semigroups = {
+        "semigroups" = {
           depends  = [
             hsPkgs.base
-          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.11.20151002") ((((((((((pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.5")) hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ (if _flags.bytestring && _flags.bytestring-builder
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.11.20151002") ((((((((((pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.5")) hsPkgs.ghc-prim) ++ pkgs.lib.optional _flags.binary hsPkgs.binary) ++ pkgs.lib.optionals _flags.bytestring (if _flags.bytestring-builder
             then [
               hsPkgs.bytestring
               hsPkgs.bytestring-builder

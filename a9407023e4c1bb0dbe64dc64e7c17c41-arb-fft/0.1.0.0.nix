@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arb-fft = {
+        "arb-fft" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          profile-256 = {
+          "profile-256" = {
             depends  = [
               hsPkgs.arb-fft
               hsPkgs.base
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          basic-test = {
+          "basic-test" = {
             depends  = [
               hsPkgs.arb-fft
               hsPkgs.base

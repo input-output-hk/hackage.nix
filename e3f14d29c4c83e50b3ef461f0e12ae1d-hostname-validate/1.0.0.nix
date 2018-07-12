@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hostname-validate = {
+        "hostname-validate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

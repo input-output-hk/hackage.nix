@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        wai-handler-fastcgi = {
+        "wai-handler-fastcgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

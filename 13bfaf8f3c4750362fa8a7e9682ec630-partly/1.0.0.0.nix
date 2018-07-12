@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        partly = {
+        "partly" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          partly = {
+          "partly" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -39,12 +39,12 @@ let
           };
         };
         tests = {
-          test-partly-lib = {
+          "test-partly-lib" = {
             depends  = [
               hsPkgs.QuickCheck
             ];
           };
-          test-partly-json = {
+          "test-partly-json" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.QuickCheck

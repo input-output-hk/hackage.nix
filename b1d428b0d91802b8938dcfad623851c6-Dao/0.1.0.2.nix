@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Dao = {
+        "Dao" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          dao = {
+          "dao" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

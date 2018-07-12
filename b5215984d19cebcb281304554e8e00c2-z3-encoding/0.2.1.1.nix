@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        z3-encoding = {
+        "z3-encoding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          z3-encoding-test = {
+          "z3-encoding-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.z3

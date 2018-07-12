@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hahp = {
+        "hahp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hahp-example = {
+          "hahp-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hahp

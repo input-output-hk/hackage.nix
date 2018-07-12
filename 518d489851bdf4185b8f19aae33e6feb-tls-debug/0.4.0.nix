@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tls-stunnel = {
+          "tls-stunnel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -32,7 +32,7 @@ let
               hsPkgs.tls
             ];
           };
-          tls-retrievecertificate = {
+          "tls-retrievecertificate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -46,7 +46,7 @@ let
               hsPkgs.tls
             ];
           };
-          tls-simpleclient = {
+          "tls-simpleclient" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

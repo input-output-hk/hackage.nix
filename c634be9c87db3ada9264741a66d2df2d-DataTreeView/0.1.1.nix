@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DataTreeView = {
+        "DataTreeView" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.mtl

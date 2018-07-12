@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mersenne-random-pure64 = {
+        "mersenne-random-pure64" = {
           depends  = if _flags.small_base
             then [ hsPkgs.base ]
             else [

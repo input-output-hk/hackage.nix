@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        brainfuck-monad = {
+        "brainfuck-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

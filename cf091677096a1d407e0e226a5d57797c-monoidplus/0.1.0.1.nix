@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monoidplus = {
+        "monoidplus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant

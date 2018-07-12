@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        betris = {
+        "betris" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          betris-exe = {
+          "betris-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.betris

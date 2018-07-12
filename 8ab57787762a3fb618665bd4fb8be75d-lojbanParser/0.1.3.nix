@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        lojbanParser = {};
+        "lojbanParser" = {};
         exes = {
-          testParser = {
+          "testParser" = {
             depends  = [ hsPkgs.base ];
           };
         };

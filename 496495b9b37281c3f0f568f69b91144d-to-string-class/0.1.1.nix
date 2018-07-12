@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        to-string-class = {
+        "to-string-class" = {
           depends  = [ hsPkgs.base ];
         };
       };

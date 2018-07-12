@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DCFL = {
+        "DCFL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

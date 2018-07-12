@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-middleware-clientsession = {
+        "hack-middleware-clientsession" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hack

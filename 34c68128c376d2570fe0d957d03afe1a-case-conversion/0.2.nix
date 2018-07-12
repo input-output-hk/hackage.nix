@@ -20,16 +20,16 @@ let
         buildType = "Simple";
       };
       components = {
-        case-conversion = {
+        "case-conversion" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          case-converter = {
+          "case-converter" = {
             depends  = [ hsPkgs.base ];
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

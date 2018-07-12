@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extensible-data = {
+        "extensible-data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-lens

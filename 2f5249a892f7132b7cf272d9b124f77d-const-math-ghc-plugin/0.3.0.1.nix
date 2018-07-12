@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        const-math-ghc-plugin = {
+        "const-math-ghc-plugin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

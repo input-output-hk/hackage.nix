@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        qtah-cpp-qt5 = {
+        "qtah-cpp-qt5" = {
           depends  = [
             hsPkgs.base
             hsPkgs.qtah-generator

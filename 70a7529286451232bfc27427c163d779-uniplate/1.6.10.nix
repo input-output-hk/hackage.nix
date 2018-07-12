@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uniplate = {
+        "uniplate" = {
           depends  = if _flags.typeable_fingerprint
             then [
               hsPkgs.base

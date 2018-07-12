@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        show = {
+        "show" = {
           depends  = if _flags.base4
             then [ hsPkgs.base hsPkgs.syb ]
             else [ hsPkgs.base ];

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haeredes = {
+          "haeredes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

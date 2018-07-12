@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plotlyhs = {
+        "plotlyhs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          test-plotly = {
+          "test-plotly" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plotlyhs

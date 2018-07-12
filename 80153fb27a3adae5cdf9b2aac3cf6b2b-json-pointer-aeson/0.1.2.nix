@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-pointer-aeson = {
+        "json-pointer-aeson" = {
           depends  = [
             hsPkgs.json-pointer
             hsPkgs.aeson

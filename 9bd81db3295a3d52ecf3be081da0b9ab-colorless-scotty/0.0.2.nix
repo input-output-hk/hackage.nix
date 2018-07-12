@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        colorless-scotty = {
+        "colorless-scotty" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

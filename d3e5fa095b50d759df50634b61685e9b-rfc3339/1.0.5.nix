@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rfc3339 = {
+        "rfc3339" = {
           depends  = [
             hsPkgs.base
             hsPkgs.timerep

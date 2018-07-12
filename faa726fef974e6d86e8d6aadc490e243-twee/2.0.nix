@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twee = {
+        "twee" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          twee = {
+          "twee" = {
             depends  = [
               hsPkgs.base
               hsPkgs.twee

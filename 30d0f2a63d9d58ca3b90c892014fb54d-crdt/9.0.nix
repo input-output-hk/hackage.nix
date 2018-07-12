@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crdt = {
+        "crdt" = {
           depends  = [
             hsPkgs.Diff
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.QuickCheck-GenT

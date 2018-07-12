@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        difference-monoid = {
+        "difference-monoid" = {
           depends  = [
             hsPkgs.adjunctions
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          difference-monoid-doctests = {
+          "difference-monoid-doctests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.adjunctions
@@ -46,7 +46,7 @@ let
               hsPkgs.semigroupoids
             ];
           };
-          difference-monoid-test = {
+          "difference-monoid-test" = {
             depends  = [
               hsPkgs.adjunctions
               hsPkgs.base

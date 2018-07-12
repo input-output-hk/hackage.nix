@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flow2dot = {
+        "flow2dot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -32,6 +32,6 @@ let
             hsPkgs.dotgen
           ];
         };
-        exes = { flow2dot = {}; };
+        exes = { "flow2dot" = {}; };
       };
     }

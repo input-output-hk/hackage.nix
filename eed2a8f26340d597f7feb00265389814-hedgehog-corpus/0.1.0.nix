@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedgehog-corpus = {
+        "hedgehog-corpus" = {
           depends  = [ hsPkgs.base ];
         };
       };

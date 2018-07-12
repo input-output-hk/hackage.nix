@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clckwrks-plugin-mailinglist = {
+        "clckwrks-plugin-mailinglist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.acid-state

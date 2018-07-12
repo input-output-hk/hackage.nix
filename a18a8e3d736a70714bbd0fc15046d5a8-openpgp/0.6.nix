@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openpgp = {
+        "openpgp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

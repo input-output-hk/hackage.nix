@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libgit = {
+        "libgit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

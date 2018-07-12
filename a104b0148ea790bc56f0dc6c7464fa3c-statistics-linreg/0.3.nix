@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        statistics-linreg = {
+        "statistics-linreg" = {
           depends  = [
             hsPkgs.statistics
             hsPkgs.vector

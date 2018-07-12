@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        knots = {
+        "knots" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          Rolfsen-Kh = {
+          "Rolfsen-Kh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

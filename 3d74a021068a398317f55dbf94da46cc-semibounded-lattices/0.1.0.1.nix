@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semibounded-lattices = {
+        "semibounded-lattices" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lattices
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          semibounded-lattices-test = {
+          "semibounded-lattices-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.semibounded-lattices

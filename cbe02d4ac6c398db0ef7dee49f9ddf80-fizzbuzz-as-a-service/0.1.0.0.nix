@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fizzbuzz-server = {
+          "fizzbuzz-server" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

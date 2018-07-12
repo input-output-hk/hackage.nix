@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-split = {
+        "stm-split" = {
           depends  = [
             hsPkgs.stm
             hsPkgs.base

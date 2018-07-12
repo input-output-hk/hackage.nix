@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-trace-events = {
+        "ghc-trace-events" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         benchmarks = {
-          bench-trace-enabled = {
+          "bench-trace-enabled" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
               hsPkgs.ghc-trace-events
             ];
           };
-          bench-trace-disabled = {
+          "bench-trace-disabled" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

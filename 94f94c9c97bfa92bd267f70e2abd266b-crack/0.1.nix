@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        crack = {
+        "crack" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.crack ];
         };

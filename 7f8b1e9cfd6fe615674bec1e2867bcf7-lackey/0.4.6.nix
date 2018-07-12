@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lackey = {
+        "lackey" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant

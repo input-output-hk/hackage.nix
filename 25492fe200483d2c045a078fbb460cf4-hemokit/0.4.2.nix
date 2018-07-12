@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hemokit = {
+        "hemokit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hemokit-mouse = {
+          "hemokit-mouse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hemokit
@@ -42,7 +42,7 @@ let
               hsPkgs.xhb
             ];
           };
-          hemokit-dump = {
+          "hemokit-dump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hemokit
@@ -56,7 +56,7 @@ let
               hsPkgs.websockets
             ];
           };
-          hemokit-fft = {
+          "hemokit-fft" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hemokit
@@ -67,7 +67,7 @@ let
               hsPkgs.vector-fftw
             ];
           };
-          hemokit-headmap = {
+          "hemokit-headmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hemokit
@@ -81,7 +81,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hemokit
@@ -92,7 +92,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hemokit

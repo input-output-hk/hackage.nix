@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-ast-quickcheck = {
+        "json-ast-quickcheck" = {
           depends  = [
             hsPkgs.json-ast
             hsPkgs.quickcheck-instances

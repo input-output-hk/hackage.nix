@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nm = {
+        "nm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          nm-demo = {
+          "nm-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nm

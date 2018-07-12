@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opaleye-trans = {
+        "opaleye-trans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          opaleye-rosetree = {
+          "opaleye-rosetree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.opaleye
@@ -41,7 +41,7 @@ let
               hsPkgs.product-profunctors
             ];
           };
-          opaleye-rosetree2 = {
+          "opaleye-rosetree2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.opaleye

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hashed-storage = {
+        "hashed-storage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          hashed-storage-test = {
+          "hashed-storage-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.process

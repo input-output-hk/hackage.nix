@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-cli = {
+        "haskell-tools-cli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          ht-refact = {
+          "ht-refact" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-tools-cli
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          haskell-tools-cli-tests = {
+          "haskell-tools-cli-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -59,7 +59,7 @@ let
           };
         };
         benchmarks = {
-          cli-benchmark = {
+          "cli-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-tools-cli

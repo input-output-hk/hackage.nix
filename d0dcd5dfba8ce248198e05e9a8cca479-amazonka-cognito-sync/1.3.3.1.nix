@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cognito-sync = {
+        "amazonka-cognito-sync" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-cognito-sync-test = {
+          "amazonka-cognito-sync-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

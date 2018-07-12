@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        helm = {
+        "helm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         exes = {
-          helm-example-flappy = {
+          "helm-example-flappy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.linear
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          helm-spec = {
+          "helm-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

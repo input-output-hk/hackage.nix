@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashable = {
+        "hashable" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring

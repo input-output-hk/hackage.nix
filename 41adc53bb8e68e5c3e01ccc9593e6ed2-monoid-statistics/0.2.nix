@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monoid-statistics = {
+        "monoid-statistics" = {
           depends  = [ hsPkgs.base ];
         };
       };

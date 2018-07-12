@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ddci-core = {
+          "ddci-core" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

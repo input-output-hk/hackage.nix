@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mellon-gpio = {
+        "mellon-gpio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hpio
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint

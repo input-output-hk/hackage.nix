@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hslogger-reader = {
+        "hslogger-reader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -36,7 +36,7 @@ let
             else [ hsPkgs.time ]);
         };
         exes = {
-          profiling = {
+          "profiling" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslogger-reader
@@ -44,7 +44,7 @@ let
               hsPkgs.attoparsec
             ];
           };
-          filter-logs = {
+          "filter-logs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslogger-reader

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glazier-react = {
+        "glazier-react" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.containers

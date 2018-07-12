@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        missing-py2 = {
+        "missing-py2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MissingH
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          originalunittests = {
+          "originalunittests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

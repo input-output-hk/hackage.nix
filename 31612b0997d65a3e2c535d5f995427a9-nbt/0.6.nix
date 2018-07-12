@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nbt = {
+        "nbt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          round-trip = {
+          "round-trip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

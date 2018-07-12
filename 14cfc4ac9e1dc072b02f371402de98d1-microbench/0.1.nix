@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microbench = {
+        "microbench" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

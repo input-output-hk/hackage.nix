@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmark-sections = {
+        "cmark-sections" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-prelude
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

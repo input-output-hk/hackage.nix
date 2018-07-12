@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Treiber = {
+        "Treiber" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

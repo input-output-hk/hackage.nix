@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        model = {
+        "model" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          model-test = {
+          "model-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -43,7 +43,7 @@ let
               hsPkgs.model
             ];
           };
-          model-doctest = {
+          "model-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

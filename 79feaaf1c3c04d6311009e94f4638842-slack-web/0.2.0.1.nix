@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        slack-web = {
+        "slack-web" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

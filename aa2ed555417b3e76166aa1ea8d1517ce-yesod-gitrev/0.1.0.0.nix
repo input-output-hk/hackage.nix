@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-gitrev = {
+        "yesod-gitrev" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

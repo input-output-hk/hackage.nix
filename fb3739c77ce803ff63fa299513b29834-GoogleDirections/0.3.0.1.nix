@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GoogleDirections = {
+        "GoogleDirections" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.bytestring

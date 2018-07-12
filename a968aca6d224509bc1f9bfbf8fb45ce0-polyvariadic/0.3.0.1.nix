@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polyvariadic = {
+        "polyvariadic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        composite-swagger = {
+        "composite-swagger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.composite-base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          composite-swagger-test = {
+          "composite-swagger-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

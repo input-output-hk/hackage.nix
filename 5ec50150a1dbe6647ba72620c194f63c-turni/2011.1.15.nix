@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          settimana = {
+          "settimana" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

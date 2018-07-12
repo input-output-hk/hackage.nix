@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nullpipe = {
+        "nullpipe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          nullpipe-test = {
+          "nullpipe-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nullpipe

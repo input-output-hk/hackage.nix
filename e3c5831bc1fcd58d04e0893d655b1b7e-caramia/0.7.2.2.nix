@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        caramia = {
+        "caramia" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           frameworks = pkgs.lib.optional system.isOsx pkgs.OpenGL;
         };
         exes = {
-          smoke-test = {
+          "smoke-test" = {
             depends  = pkgs.lib.optionals _flags.build-toys [
               hsPkgs.base
               hsPkgs.caramia
@@ -50,14 +50,14 @@ let
               hsPkgs.text
             ];
           };
-          memory-info = {
+          "memory-info" = {
             depends  = pkgs.lib.optionals _flags.build-toys [
               hsPkgs.base
               hsPkgs.caramia
               hsPkgs.sdl2
             ];
           };
-          gl-info = {
+          "gl-info" = {
             depends  = pkgs.lib.optionals _flags.build-toys [
               hsPkgs.base
               hsPkgs.caramia
@@ -65,7 +65,7 @@ let
               hsPkgs.OpenGLRaw
             ];
           };
-          query-objects = {
+          "query-objects" = {
             depends  = pkgs.lib.optionals _flags.build-toys [
               hsPkgs.base
               hsPkgs.caramia
@@ -75,7 +75,7 @@ let
               hsPkgs.vector
             ];
           };
-          textures = {
+          "textures" = {
             depends  = pkgs.lib.optionals _flags.build-toys [
               hsPkgs.base
               hsPkgs.caramia
@@ -84,7 +84,7 @@ let
           };
         };
         tests = {
-          buffer = {
+          "buffer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.caramia
@@ -96,7 +96,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          shader = {
+          "shader" = {
             depends  = [
               hsPkgs.base
               hsPkgs.caramia
@@ -107,7 +107,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          texture = {
+          "texture" = {
             depends  = [
               hsPkgs.base
               hsPkgs.caramia
@@ -120,7 +120,7 @@ let
               hsPkgs.transformers
             ];
           };
-          color = {
+          "color" = {
             depends  = [
               hsPkgs.base
               hsPkgs.caramia

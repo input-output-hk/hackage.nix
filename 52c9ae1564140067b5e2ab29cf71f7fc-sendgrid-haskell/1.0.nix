@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sendgrid-haskell = {
+        "sendgrid-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

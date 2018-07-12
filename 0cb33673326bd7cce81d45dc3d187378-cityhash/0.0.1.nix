@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cityhash = {
+        "cityhash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

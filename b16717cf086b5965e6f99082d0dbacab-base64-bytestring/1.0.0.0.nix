@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        base64-bytestring = {
+        "base64-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        couch-hs = {
+        "couch-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -33,6 +33,6 @@ let
             hsPkgs.hint
           ];
         };
-        exes = { couch-hs = {}; };
+        exes = { "couch-hs" = {}; };
       };
     }

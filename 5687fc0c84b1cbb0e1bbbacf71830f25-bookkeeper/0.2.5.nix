@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bookkeeper = {
+        "bookkeeper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bookkeeper
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.Glob
               hsPkgs.base
@@ -49,7 +49,7 @@ let
               hsPkgs.yaml
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -61,7 +61,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bookkeeper

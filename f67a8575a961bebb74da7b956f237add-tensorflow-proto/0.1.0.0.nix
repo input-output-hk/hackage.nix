@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        tensorflow-proto = {
+        "tensorflow-proto" = {
           depends  = [
             hsPkgs.proto-lens
             hsPkgs.proto-lens-protoc

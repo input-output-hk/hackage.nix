@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rselect = {
+          "rselect" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -30,7 +30,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          reps = {};
+          "reps" = {};
         };
       };
     }

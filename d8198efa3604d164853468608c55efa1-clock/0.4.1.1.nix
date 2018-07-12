@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clock = {
+        "clock" = {
           depends  = [ hsPkgs.base ];
         };
       };

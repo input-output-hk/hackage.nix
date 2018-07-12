@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clang-compilation-database = {
+        "clang-compilation-database" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

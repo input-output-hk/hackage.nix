@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        temporary = {
+        "temporary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -30,7 +30,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

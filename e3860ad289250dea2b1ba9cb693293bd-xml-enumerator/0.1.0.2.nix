@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-enumerator = {
+        "xml-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.enumerator

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TigerHash = {
+        "TigerHash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

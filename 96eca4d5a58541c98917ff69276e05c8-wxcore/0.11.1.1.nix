@@ -22,7 +22,7 @@ let
         buildType = "Make";
       };
       components = {
-        wxcore = {
+        "wxcore" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

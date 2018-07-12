@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blockhash = {
+        "blockhash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          blockhash = {
+          "blockhash" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blockhash
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          blockhash-test = {
+          "blockhash-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blockhash

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        formatting = {
+        "formatting" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text-format

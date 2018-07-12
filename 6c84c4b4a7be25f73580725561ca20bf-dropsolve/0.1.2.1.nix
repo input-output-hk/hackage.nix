@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dropsolve = {
+          "dropsolve" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-posix

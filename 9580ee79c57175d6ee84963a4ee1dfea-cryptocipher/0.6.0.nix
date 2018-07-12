@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptocipher = {
+        "cryptocipher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.crypto-cipher-types

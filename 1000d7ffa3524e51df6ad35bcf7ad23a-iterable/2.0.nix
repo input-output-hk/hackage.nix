@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iterable = {
+        "iterable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

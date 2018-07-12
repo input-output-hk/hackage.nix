@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timers = {
+        "timers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base

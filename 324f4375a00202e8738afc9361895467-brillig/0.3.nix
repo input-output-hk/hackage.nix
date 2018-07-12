@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        brillig = {
+        "brillig" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          brillig = {
+          "brillig" = {
             depends  = [
               hsPkgs.brillig
               hsPkgs.base

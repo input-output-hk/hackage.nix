@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yjtools = {
+        "yjtools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

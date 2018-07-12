@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bogre-banana = {
+        "bogre-banana" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           libs = [ pkgs."stdc++" ];
         };
         exes = {
-          bogre-banana-snake = {
+          "bogre-banana-snake" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

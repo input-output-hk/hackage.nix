@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Thingie = {
+        "Thingie" = {
           depends  = [
             hsPkgs.cairo
             hsPkgs.base

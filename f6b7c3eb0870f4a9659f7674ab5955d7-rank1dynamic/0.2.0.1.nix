@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rank1dynamic = {
+        "rank1dynamic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          TestRank1Dynamic = {
+          "TestRank1Dynamic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

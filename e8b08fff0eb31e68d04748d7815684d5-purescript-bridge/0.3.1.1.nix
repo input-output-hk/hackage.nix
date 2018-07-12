@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        purescript-bridge = {
+        "purescript-bridge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

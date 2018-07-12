@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-locale-encoding = {
+        "text-locale-encoding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring-handle

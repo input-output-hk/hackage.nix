@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        workflow-extra = {
+        "workflow-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.workflow-types
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          example-workflow-extra = {
+          "example-workflow-extra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.workflow-extra
@@ -41,14 +41,14 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.workflow-extra
               hsPkgs.doctest
             ];
           };
-          unittest = {
+          "unittest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.workflow-extra
@@ -58,7 +58,7 @@ let
           };
         };
         benchmarks = {
-          command = {
+          "command" = {
             depends  = [
               hsPkgs.base
               hsPkgs.workflow-extra

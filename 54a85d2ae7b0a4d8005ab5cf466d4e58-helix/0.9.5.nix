@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        helix = {
+        "helix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai

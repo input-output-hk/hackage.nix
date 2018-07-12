@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-generic = {
+        "binary-generic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DeepDarkFantasy = {
+        "DeepDarkFantasy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

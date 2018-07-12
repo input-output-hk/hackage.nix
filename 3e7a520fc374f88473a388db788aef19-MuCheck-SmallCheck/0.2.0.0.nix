@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MuCheck-SmallCheck = {
+        "MuCheck-SmallCheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.smallcheck
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          mucheck-smallcheck = {
+          "mucheck-smallcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.smallcheck

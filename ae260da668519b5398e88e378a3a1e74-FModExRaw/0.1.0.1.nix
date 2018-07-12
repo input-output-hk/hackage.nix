@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FModExRaw = {
+        "FModExRaw" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.fmodex ];
           build-tools = [

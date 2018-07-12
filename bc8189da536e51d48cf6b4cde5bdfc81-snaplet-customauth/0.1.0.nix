@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-customauth = {
+        "snaplet-customauth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

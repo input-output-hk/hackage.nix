@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fraction = {
+        "fraction" = {
           depends  = [
             hsPkgs.algebra
             hsPkgs.base

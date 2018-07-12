@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mfsolve = {
+        "mfsolve" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

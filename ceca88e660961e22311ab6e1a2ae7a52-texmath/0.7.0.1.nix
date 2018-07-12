@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        texmath = {
+        "texmath" = {
           depends  = [
             hsPkgs.xml
             hsPkgs.parsec
@@ -34,7 +34,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          texmath = {
+          "texmath" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.texmath
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          test-texmath = {
+          "test-texmath" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

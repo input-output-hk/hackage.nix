@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haxl-facebook = {
+        "haxl-facebook" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

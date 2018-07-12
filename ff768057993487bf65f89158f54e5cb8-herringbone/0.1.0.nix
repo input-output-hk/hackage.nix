@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        herringbone = {
+        "herringbone" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

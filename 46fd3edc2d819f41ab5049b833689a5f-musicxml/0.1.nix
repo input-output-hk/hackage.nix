@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        musicxml = {
+        "musicxml" = {
           depends  = [
             hsPkgs.pretty
             hsPkgs.HaXml
@@ -35,6 +35,8 @@ let
             ]
             else [ hsPkgs.base ]);
         };
-        exes = { test-musicxml = {}; };
+        exes = {
+          "test-musicxml" = {};
+        };
       };
     }

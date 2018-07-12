@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        layout-rules = {
+        "layout-rules" = {
           depends  = [
             hsPkgs.base
             hsPkgs.alex-tools

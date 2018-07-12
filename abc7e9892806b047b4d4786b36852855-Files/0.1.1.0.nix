@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        Files = {
+        "Files" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          Files = {
+          "Files" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Files
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Files

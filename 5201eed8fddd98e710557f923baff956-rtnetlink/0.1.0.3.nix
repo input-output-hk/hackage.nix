@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rtnetlink = {
+        "rtnetlink" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -40,14 +40,14 @@ let
           ];
         };
         exes = {
-          rtnl-link = {
+          "rtnl-link" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.rtnetlink
             ];
           };
-          rtnl-address = {
+          "rtnl-address" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.socket
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          rtnetlink-tests = {
+          "rtnetlink-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

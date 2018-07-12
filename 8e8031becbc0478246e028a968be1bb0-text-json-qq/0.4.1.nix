@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-json-qq = {
+        "text-json-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.json-qq

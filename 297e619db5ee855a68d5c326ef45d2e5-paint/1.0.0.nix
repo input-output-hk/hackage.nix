@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        paint = {
+        "paint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

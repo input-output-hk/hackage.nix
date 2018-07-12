@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ptr = {
+        "ptr" = {
           depends  = [
             hsPkgs.text
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.ptr
               hsPkgs.tasty

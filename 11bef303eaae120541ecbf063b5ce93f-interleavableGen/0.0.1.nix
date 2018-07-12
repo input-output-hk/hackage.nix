@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          interleavableGen = {
+          "interleavableGen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

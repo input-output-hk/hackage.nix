@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        beam-migrate = {
+        "beam-migrate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.beam-core

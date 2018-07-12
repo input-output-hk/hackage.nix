@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-simple-sockaddr = {
+        "network-simple-sockaddr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

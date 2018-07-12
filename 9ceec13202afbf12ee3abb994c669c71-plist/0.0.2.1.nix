@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plist = {
+        "plist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dataenc

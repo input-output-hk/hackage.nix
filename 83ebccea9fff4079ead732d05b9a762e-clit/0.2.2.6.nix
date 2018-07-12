@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clit = {
+        "clit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

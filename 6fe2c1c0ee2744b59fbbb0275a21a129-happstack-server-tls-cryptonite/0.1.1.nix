@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-server-tls-cryptonite = {
+        "happstack-server-tls-cryptonite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

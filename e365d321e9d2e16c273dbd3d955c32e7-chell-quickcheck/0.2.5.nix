@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chell-quickcheck = {
+        "chell-quickcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chell

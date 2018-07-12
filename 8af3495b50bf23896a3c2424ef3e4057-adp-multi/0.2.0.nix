@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        adp-multi = {
+        "adp-multi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          adp-multi-benchmarks = {
+          "adp-multi-benchmarks" = {
             depends  = pkgs.lib.optionals (!(!_flags.buildbenchmark)) [
               hsPkgs.base
               hsPkgs.array
@@ -51,7 +51,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          adp-test = {
+          "adp-test" = {
             depends  = pkgs.lib.optionals (!(!_flags.buildtests)) [
               hsPkgs.base
               hsPkgs.array
@@ -68,7 +68,7 @@ let
           };
         };
         tests = {
-          MainTestSuite = {
+          "MainTestSuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        network-dbus = {
+        "network-dbus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

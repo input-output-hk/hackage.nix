@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hxournal = {
+        "hxournal" = {
           depends  = if _flags.poppler
             then [
               hsPkgs.base
@@ -79,7 +79,7 @@ let
             ];
         };
         exes = {
-          hxournal = {
+          "hxournal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

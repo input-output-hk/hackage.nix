@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stable-tree = {
+        "stable-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          test-all = {
+          "test-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

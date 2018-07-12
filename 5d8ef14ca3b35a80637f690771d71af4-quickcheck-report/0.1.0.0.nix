@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-report = {
+        "quickcheck-report" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-stringmap = {
+        "data-stringmap" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.deepseq
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional _flags.test-strict hsPkgs.bytestring) ++ pkgs.lib.optional _flags.with-sizeable hsPkgs.data-size;
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-properties)) ([
               hsPkgs.data-stringmap
               hsPkgs.base
@@ -47,7 +47,7 @@ let
               hsPkgs.test-framework-hunit
             ] ++ pkgs.lib.optional _flags.with-sizeable hsPkgs.data-size);
           };
-          strict = {
+          "strict" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-strict)) ([
               hsPkgs.data-stringmap
               hsPkgs.base

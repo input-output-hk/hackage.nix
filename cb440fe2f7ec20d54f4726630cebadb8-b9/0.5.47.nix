@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        b9 = {
+        "b9" = {
           depends  = [
             hsPkgs.ConfigFile
             hsPkgs.QuickCheck
@@ -57,7 +57,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         exes = {
-          b9c = {
+          "b9c" = {
             depends  = [
               hsPkgs.b9
               hsPkgs.base
@@ -69,7 +69,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.b9

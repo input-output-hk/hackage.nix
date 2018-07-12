@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rfc-env = {
+        "rfc-env" = {
           depends  = [
             hsPkgs.base
             hsPkgs.envy

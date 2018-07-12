@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Dflow = {
+        "Dflow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          ArbTest = {
+          "ArbTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

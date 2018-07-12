@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jammittools = {
+        "jammittools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.property-list
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          jammittools = {
+          "jammittools" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

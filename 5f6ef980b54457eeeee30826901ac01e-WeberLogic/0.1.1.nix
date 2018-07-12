@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        WeberLogic = {
+        "WeberLogic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         exes = {
-          WeberLogic = {
+          "WeberLogic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

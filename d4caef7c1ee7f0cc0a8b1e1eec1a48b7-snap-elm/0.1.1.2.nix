@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-elm = {
+        "snap-elm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

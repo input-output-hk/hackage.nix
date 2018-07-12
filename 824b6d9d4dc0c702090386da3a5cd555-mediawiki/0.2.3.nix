@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mediawiki = {
+        "mediawiki" = {
           depends  = [
             hsPkgs.xml
             hsPkgs.HTTP
@@ -32,10 +32,10 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          main = {
+          "main" = {
             depends  = [ hsPkgs.base ];
           };
-          listCat = {
+          "listCat" = {
             depends  = [
               hsPkgs.pretty
             ] ++ [ hsPkgs.base ];

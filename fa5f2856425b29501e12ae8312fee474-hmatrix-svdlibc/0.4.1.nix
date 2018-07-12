@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-svdlibc = {
+        "hmatrix-svdlibc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          svdlibc-test = {
+          "svdlibc-test" = {
             depends  = [
               hsPkgs.hmatrix-svdlibc
               hsPkgs.base
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          svdlibc-benchmarks = {
+          "svdlibc-benchmarks" = {
             depends  = [
               hsPkgs.hmatrix-svdlibc
               hsPkgs.base

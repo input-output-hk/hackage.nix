@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        azure-service-api = {
+        "azure-service-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

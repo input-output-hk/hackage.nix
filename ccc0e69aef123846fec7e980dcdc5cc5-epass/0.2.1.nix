@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        epass = {
+        "epass" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semigroups-actions = {
+        "semigroups-actions" = {
           depends  = if _flags.base2
             then [
               hsPkgs.base

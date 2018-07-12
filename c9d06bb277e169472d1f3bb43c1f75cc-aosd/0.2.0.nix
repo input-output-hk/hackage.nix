@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aosd = {
+        "aosd" = {
           depends  = [
             hsPkgs.monad-control
             hsPkgs.colour
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          test-aosd = {
+          "test-aosd" = {
             depends  = [
               hsPkgs.colour
               hsPkgs.base

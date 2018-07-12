@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgeometry = {
+        "hgeometry" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -51,7 +51,7 @@ let
           ];
         };
         exes = {
-          hgeometry-examples = {
+          "hgeometry-examples" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.hgeometry
@@ -71,13 +71,13 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -94,7 +94,7 @@ let
               hsPkgs.random
             ];
           };
-          bapc_examples = {
+          "bapc_examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

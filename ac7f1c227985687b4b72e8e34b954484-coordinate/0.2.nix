@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        coordinate = {
+        "coordinate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          hunit = {
+          "hunit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.coordinate

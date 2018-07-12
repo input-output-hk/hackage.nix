@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        formura = {
+        "formura" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          formura-parser = {
+          "formura-parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint
@@ -46,7 +46,7 @@ let
               hsPkgs.trifecta
             ];
           };
-          formura-eval = {
+          "formura-eval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint
@@ -55,7 +55,7 @@ let
               hsPkgs.trifecta
             ];
           };
-          formura-gen = {
+          "formura-gen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unfoldable-restricted = {
+        "unfoldable-restricted" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-routes-hsp = {
+        "web-routes-hsp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsx

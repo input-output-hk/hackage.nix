@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-hplay = {
+        "ghcjs-hplay" = {
           depends  = if compiler.isGhcjs && compiler.version.ge "0.1"
             then [
               hsPkgs.base

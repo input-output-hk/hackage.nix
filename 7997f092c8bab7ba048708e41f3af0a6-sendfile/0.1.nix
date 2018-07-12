@@ -22,16 +22,16 @@ let
         buildType = "Simple";
       };
       components = {
-        sendfile = {
+        "sendfile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.network
           ];
-          libs = pkgs.lib.optionals (!_flags.portable && system.isWindows) [
+          libs = pkgs.lib.optionals (!_flags.portable) (pkgs.lib.optionals system.isWindows [
             pkgs.kernel32
             pkgs.mswsock
-          ];
+          ]);
         };
       };
     }

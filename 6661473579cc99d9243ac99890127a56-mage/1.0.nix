@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mage = {
+          "mage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.FiniteMap

@@ -29,7 +29,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-GLFW = {
+        "bindings-GLFW" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL
@@ -48,21 +48,21 @@ let
             pkgs.opengl32
             pkgs.Gdi32
           ]);
-          frameworks = pkgs.lib.optionals (!_flags.system-glfw && system.isOsx) [
+          frameworks = pkgs.lib.optionals (!_flags.system-glfw) (pkgs.lib.optionals system.isOsx [
             pkgs.AGL
             pkgs.Cocoa
             pkgs.OpenGL
             pkgs.IOKit
             pkgs.CoreFoundation
             pkgs.CoreVideo
-          ];
+          ]);
           pkgconfig = pkgs.lib.optional _flags.system-glfw pkgconfPkgs.glfw3;
           build-tools = [
             hsPkgs.buildPackages.hsc2hs
           ];
         };
         tests = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.bindings-GLFW
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        superbubbles = {
+        "superbubbles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          superbubbles-test = {
+          "superbubbles-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.superbubbles

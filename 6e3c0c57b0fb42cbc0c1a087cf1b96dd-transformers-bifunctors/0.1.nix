@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transformers-bifunctors = {
+        "transformers-bifunctors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mmorph

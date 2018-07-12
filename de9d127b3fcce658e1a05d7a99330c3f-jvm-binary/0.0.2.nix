@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jvm-binary = {
+        "jvm-binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          jvm-binary-test-suite = {
+          "jvm-binary-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jvm-binary
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          jvm-binary-benchmarks = {
+          "jvm-binary-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jvm-binary

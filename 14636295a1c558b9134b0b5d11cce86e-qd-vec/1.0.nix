@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        qd-vec = {
+        "qd-vec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.qd

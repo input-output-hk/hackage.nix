@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        VKHS = {
+        "VKHS" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -53,7 +53,7 @@ let
           ];
         };
         exes = {
-          vkq = {
+          "vkq" = {
             libs = [ pkgs.curl ];
             build-tools = [
               hsPkgs.buildPackages.hsc2hs

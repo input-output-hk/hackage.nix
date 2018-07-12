@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-store = {
+        "data-store" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          data-store-tests = {
+          "data-store-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          data-store-benchmark-01 = {
+          "data-store-benchmark-01" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

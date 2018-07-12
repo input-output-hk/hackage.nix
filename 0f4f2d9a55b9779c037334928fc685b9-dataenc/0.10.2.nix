@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        dataenc = {
+        "dataenc" = {
           depends  = if _flags.large_base
             then [ hsPkgs.base ]
             else [

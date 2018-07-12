@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-foreign = {
+        "servant-foreign" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

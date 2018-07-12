@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        music-score = {
+        "music-score" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

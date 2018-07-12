@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        containers-deepseq = {
+        "containers-deepseq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

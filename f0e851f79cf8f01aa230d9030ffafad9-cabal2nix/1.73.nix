@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal2nix = {
+          "cabal2nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-posix
@@ -35,7 +35,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          hackage4nix = {
+          "hackage4nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-posix
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          doctest-cabal2nix = {
+          "doctest-cabal2nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

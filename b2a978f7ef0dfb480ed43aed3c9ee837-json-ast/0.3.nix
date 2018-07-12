@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-ast = {
+        "json-ast" = {
           depends  = [
             hsPkgs.vector
             hsPkgs.text

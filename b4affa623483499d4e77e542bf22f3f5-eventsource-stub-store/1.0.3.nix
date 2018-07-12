@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventsource-stub-store = {
+        "eventsource-stub-store" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          eventsource-stub-store-test-suite = {
+          "eventsource-stub-store-test-suite" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

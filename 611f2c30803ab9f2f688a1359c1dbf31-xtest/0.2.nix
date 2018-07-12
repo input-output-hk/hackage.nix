@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xtest = {
+        "xtest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.X11

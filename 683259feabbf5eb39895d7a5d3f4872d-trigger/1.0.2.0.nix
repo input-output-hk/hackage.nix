@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        trigger = {
+        "trigger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          trigger = {
+          "trigger" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          trigger-test = {
+          "trigger-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

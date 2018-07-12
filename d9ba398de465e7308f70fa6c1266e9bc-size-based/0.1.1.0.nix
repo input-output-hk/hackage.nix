@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        size-based = {
+        "size-based" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dictionary-sharing

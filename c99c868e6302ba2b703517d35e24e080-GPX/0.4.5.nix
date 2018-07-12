@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GPX = {
+        "GPX" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt

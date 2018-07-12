@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-nix = {
+        "language-nix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          parse-nix = {
+          "parse-nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-nix
@@ -42,7 +42,7 @@ let
               hsPkgs.mtl
             ];
           };
-          run-nix = {
+          "run-nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-nix
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          self-test = {
+          "self-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-nix

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xinput-conduit = {
+        "xinput-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

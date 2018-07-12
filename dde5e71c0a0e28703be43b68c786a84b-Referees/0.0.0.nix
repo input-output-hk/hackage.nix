@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Referees = {
+        "Referees" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional _flags.documentation hsPkgs.hscolour;
         };
         exes = {
-          referees = {
+          "referees" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cond

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        happybara-webkit-server = {
+        "happybara-webkit-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

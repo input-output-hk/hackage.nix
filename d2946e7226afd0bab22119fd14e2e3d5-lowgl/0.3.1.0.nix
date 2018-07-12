@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lowgl = {
+        "lowgl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

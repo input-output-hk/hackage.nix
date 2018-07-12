@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        email-header = {
+        "email-header" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

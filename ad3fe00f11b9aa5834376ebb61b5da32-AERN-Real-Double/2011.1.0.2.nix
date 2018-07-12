@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AERN-Real-Double = {
+        "AERN-Real-Double" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          testAERN-Real-Double = {
+          "testAERN-Real-Double" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ieee-utils
@@ -45,7 +45,7 @@ let
               hsPkgs.AERN-Real
             ];
           };
-          benchAERN-Real-Double = {
+          "benchAERN-Real-Double" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -58,7 +58,7 @@ let
               hsPkgs.AERN-Real
             ];
           };
-          demoAERN-Real-Double-Quadratic = {
+          "demoAERN-Real-Double-Quadratic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -68,7 +68,7 @@ let
               hsPkgs.AERN-Real
             ];
           };
-          demoAERN-Real-Double-Riemann = {
+          "demoAERN-Real-Double-Riemann" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -78,7 +78,7 @@ let
               hsPkgs.AERN-Real
             ];
           };
-          demoAERN-Real-Double-Zero = {
+          "demoAERN-Real-Double-Zero" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

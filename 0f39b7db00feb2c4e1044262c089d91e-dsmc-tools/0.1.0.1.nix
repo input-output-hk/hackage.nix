@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dsmc-caster = {
+          "dsmc-caster" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -31,7 +31,7 @@ let
               hsPkgs.strict
             ];
           };
-          dsmc-runner = {
+          "dsmc-runner" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

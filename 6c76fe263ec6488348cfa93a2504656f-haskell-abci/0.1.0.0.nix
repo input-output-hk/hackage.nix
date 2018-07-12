@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskell-abci = {
+        "haskell-abci" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foundation
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          haskell-abci-counter = {
+          "haskell-abci-counter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foundation

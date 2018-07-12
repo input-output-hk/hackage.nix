@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-search = {
+        "google-search" = {
           depends  = [
             hsPkgs.base
             hsPkgs.free

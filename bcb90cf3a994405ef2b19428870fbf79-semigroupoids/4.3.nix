@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semigroupoids = {
+        "semigroupoids" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.contravariant hsPkgs.contravariant) ++ pkgs.lib.optional _flags.distributive hsPkgs.distributive) ++ pkgs.lib.optional _flags.comonad hsPkgs.comonad;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.doctests)) [
               hsPkgs.base
               hsPkgs.doctest

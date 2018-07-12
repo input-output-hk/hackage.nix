@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          left4deadrl = {
+          "left4deadrl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventful-dynamodb = {
+        "eventful-dynamodb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.eventful-core
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eventful-core

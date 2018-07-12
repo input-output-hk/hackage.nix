@@ -20,17 +20,17 @@ let
         buildType = "Simple";
       };
       components = {
-        HARM = {
+        "HARM" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
           ];
         };
         exes = {
-          runarm = {
+          "runarm" = {
             depends  = [ hsPkgs.base ];
           };
-          dbgarm = {
+          "dbgarm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

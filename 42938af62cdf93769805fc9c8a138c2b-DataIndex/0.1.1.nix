@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        DataIndex = {
+        "DataIndex" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          DataIndex = {
+          "DataIndex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.DataIndex
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          DataIndex-test-suite = {
+          "DataIndex-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.DataIndex
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          DataIndex-benchmarks = {
+          "DataIndex-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.DataIndex

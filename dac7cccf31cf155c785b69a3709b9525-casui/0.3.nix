@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          casui = {
+          "casui" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

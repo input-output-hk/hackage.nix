@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stackage-install = {
+        "stackage-install" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          stackage-install = {
+          "stackage-install" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stackage-install

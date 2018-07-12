@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        superdoc = {
+        "superdoc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          superdoc-armor = {
+          "superdoc-armor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

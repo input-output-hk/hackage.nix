@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-postgres-options = {
+        "hasql-postgres-options" = {
           depends  = [
             hsPkgs.hasql-postgres
             hsPkgs.optparse-applicative

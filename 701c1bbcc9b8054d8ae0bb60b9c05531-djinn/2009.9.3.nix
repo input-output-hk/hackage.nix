@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          djinn = {
+          "djinn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

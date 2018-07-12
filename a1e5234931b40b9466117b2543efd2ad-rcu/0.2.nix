@@ -25,7 +25,7 @@ let
         buildType = "Custom";
       };
       components = {
-        rcu = {
+        "rcu" = {
           depends  = [
             hsPkgs.atomic-primops
             hsPkgs.base
@@ -36,21 +36,21 @@ let
           ] ++ pkgs.lib.optional _flags.unstable hsPkgs.stm;
         };
         exes = {
-          MoveStringSTM = {
+          "MoveStringSTM" = {
             depends  = pkgs.lib.optionals (!(!_flags.unstable)) [
               hsPkgs.base
               hsPkgs.rcu
               hsPkgs.transformers
             ];
           };
-          MoveStringQSBR = {
+          "MoveStringQSBR" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rcu
               hsPkgs.transformers
             ];
           };
-          MoveStringGC = {
+          "MoveStringGC" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rcu
@@ -59,14 +59,14 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.parallel
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
@@ -74,7 +74,7 @@ let
           };
         };
         benchmarks = {
-          IncCounterExperiment = {
+          "IncCounterExperiment" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -84,7 +84,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimeSynchronizeQSBR = {
+          "TimeSynchronizeQSBR" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -97,7 +97,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimeSynchronizeGC = {
+          "TimeSynchronizeGC" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -110,7 +110,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimeSynchronizeQSBRUnbound = {
+          "TimeSynchronizeQSBRUnbound" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -123,7 +123,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimeSynchronizeGCUnbound = {
+          "TimeSynchronizeGCUnbound" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -136,7 +136,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimeSynchronizeQSBRSingleThread = {
+          "TimeSynchronizeQSBRSingleThread" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -149,7 +149,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimeSynchronizeGCSingleThread = {
+          "TimeSynchronizeGCSingleThread" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -162,7 +162,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimeSynchronizeQSBRPinned = {
+          "TimeSynchronizeQSBRPinned" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -175,7 +175,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimeSynchronizeGCPinned = {
+          "TimeSynchronizeGCPinned" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -188,7 +188,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimeSynchronizeQSBRnoGC = {
+          "TimeSynchronizeQSBRnoGC" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -201,7 +201,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimeSynchronizeGCnoGC = {
+          "TimeSynchronizeGCnoGC" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -214,7 +214,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimeSynchronizeQSBRnoGCPinned = {
+          "TimeSynchronizeQSBRnoGCPinned" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -227,7 +227,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimeSynchronizeGCnoGCPinned = {
+          "TimeSynchronizeGCnoGCPinned" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        ansi-wl-pprint = {
+        "ansi-wl-pprint" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         exes = {
-          ansi-wl-pprint-example = {
+          "ansi-wl-pprint-example" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base

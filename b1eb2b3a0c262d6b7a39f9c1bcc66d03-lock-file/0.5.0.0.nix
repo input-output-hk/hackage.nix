@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lock-file = {
+        "lock-file" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          lock-file-unit-tests = {
+          "lock-file-unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

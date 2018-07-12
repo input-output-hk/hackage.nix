@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmep = {
+        "hmep" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          hmep-demo = {
+          "hmep-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          hmep-test = {
+          "hmep-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

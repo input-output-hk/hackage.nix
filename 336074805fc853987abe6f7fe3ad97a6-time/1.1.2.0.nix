@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        time = {
+        "time" = {
           depends  = ([
             hsPkgs.base
           ] ++ (if _flags.split-base

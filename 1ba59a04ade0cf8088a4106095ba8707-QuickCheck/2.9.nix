@@ -22,18 +22,18 @@ let
         buildType = "Simple";
       };
       components = {
-        QuickCheck = {
+        "QuickCheck" = {
           depends  = (((((([
             hsPkgs.base
             hsPkgs.random
             hsPkgs.containers
-          ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.transformers) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.templatehaskell) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.tf-random) ++ pkgs.lib.optional (compiler.isGhc && true && (compiler.isGhc && compiler.version.lt "7.10")) hsPkgs.nats) ++ pkgs.lib.optional (compiler.isGhc && true && (compiler.isGhc && compiler.version.lt "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optionals (compiler.isUhc && true) [
+          ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.transformers) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.templatehaskell) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.tf-random) ++ pkgs.lib.optionals (compiler.isGhc && true) (pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats)) ++ pkgs.lib.optionals (compiler.isGhc && true) (pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups)) ++ pkgs.lib.optionals (compiler.isUhc && true) [
             hsPkgs.old-time
             hsPkgs.old-locale
           ];
         };
         tests = {
-          test-quickcheck = {
+          "test-quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -42,19 +42,19 @@ let
               hsPkgs.test-framework
             ];
           };
-          test-quickcheck-gcoarbitrary = {
+          "test-quickcheck-gcoarbitrary" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
           };
-          test-quickcheck-generators = {
+          "test-quickcheck-generators" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
             ];
           };
-          test-quickcheck-gshrink = {
+          "test-quickcheck-gshrink" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

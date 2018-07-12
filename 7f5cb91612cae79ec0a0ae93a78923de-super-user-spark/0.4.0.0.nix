@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        super-user-spark = {
+        "super-user-spark" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          super-user-spark = {
+          "super-user-spark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.super-user-spark
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          spark-tests = {
+          "spark-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.super-user-spark

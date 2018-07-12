@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          wedding-announcement = {
+          "wedding-announcement" = {
             depends  = [ hsPkgs.base ];
           };
         };

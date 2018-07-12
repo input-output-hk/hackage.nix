@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-swagger-ui = {
+        "servant-swagger-ui" = {
           depends  = [
             hsPkgs.servant-swagger-ui-core
             hsPkgs.base

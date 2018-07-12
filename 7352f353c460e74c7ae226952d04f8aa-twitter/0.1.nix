@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          twitter = {
+          "twitter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

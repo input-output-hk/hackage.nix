@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DigitalOcean = {
+        "DigitalOcean" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.DigitalOcean

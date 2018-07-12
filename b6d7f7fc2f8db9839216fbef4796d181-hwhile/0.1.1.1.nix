@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hwhile = {
+        "hwhile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          hwhile = {
+          "hwhile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          hwhile-testsuite = {
+          "hwhile-testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

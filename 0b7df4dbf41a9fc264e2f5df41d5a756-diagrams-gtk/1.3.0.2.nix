@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-gtk = {
+        "diagrams-gtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams-lib

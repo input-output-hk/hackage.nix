@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        download-curl = {
+        "download-curl" = {
           depends  = [
             hsPkgs.curl
             hsPkgs.tagsoup

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoggl = {
+        "hoggl" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          hoggl = {
+          "hoggl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.either

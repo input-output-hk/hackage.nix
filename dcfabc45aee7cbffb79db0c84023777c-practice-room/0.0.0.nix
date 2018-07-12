@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          practice-room = {
+          "practice-room" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mps

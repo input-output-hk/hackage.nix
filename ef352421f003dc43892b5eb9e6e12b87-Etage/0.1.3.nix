@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Etage = {
+        "Etage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

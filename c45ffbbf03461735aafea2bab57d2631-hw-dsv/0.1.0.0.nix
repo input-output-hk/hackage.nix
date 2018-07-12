@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-dsv = {
+        "hw-dsv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bits-extra
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          hw-dsv = {
+          "hw-dsv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bits-extra
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          hw-dsv-space = {
+          "hw-dsv-space" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bits-extra
@@ -73,7 +73,7 @@ let
               hsPkgs.buildPackages.hspec-discover
             ];
           };
-          hw-dsv-test = {
+          "hw-dsv-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bits-extra
@@ -96,7 +96,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bits-extra

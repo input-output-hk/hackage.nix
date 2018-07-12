@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-missiles = {
+        "acme-missiles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

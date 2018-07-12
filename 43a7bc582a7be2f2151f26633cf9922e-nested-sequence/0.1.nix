@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        nested-sequence = {
+        "nested-sequence" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          nested-sequence-tests = {
+          "nested-sequence-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nested-sequence

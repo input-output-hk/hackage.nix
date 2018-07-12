@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ats-format = {
+        "ats-format" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          atsfmt = {
+          "atsfmt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ats-format
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          ats-format-test = {
+          "ats-format-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ats-format
@@ -64,7 +64,7 @@ let
           };
         };
         benchmarks = {
-          ats-format-bench = {
+          "ats-format-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ats-format

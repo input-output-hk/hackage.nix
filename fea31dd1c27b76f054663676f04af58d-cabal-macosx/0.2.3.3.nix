@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-macosx = {
+        "cabal-macosx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          macosx-app = {
+          "macosx-app" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

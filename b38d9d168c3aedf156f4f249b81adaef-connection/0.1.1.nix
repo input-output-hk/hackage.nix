@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        connection = {
+        "connection" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

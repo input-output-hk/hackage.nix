@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws = {
+        "aws" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring

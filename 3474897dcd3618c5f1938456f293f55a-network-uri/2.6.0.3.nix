@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-uri = {
+        "network-uri" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          uri = {
+          "uri" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

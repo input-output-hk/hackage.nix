@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dynamic-loader = {
+        "dynamic-loader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hnormalise = {
+        "hnormalise" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          hnormalise = {
+          "hnormalise" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hnormalise
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          hnormalise-test = {
+          "hnormalise-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -82,7 +82,7 @@ let
           };
         };
         benchmarks = {
-          hnormalise-bench = {
+          "hnormalise-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

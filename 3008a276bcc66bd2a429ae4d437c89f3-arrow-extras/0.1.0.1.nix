@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arrow-extras = {
+        "arrow-extras" = {
           depends  = [ hsPkgs.base ];
         };
       };

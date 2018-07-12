@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        control-event = {
+        "control-event" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

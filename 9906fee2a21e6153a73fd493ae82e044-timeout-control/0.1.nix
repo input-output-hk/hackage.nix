@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timeout-control = {
+        "timeout-control" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

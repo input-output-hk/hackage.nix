@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nonfree = {
+        "nonfree" = {
           depends  = [ hsPkgs.base ];
         };
       };

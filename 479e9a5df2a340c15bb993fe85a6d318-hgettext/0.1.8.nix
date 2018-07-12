@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgettext = {
+        "hgettext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          hgettext = {
+          "hgettext" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uniplate

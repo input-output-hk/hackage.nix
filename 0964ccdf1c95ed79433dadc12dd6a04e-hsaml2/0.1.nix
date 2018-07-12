@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsaml2 = {
+        "hsaml2" = {
           depends  = [
             hsPkgs.asn1-encoding
             hsPkgs.asn1-types
@@ -51,7 +51,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

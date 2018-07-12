@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-variant = {
+        "data-variant" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe

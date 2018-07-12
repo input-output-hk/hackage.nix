@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          runmany = {
+          "runmany" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

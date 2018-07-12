@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake-language-c = {
+        "shake-language-c" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fclabels

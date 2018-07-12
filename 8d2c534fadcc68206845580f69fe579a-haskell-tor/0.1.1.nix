@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tor = {
+        "haskell-tor" = {
           depends  = ([
             hsPkgs.array
             hsPkgs.asn1-encoding
@@ -50,7 +50,7 @@ let
           ] ++ pkgs.lib.optional (_flags.network && !system.isHalvm) hsPkgs.network) ++ pkgs.lib.optional _flags.hans hsPkgs.hans;
         };
         exes = {
-          haskell-tor = {
+          "haskell-tor" = {
             depends  = (([
               hsPkgs.asn1-encoding
               hsPkgs.asn1-types
@@ -71,7 +71,7 @@ let
           };
         };
         tests = {
-          test-tor = {
+          "test-tor" = {
             depends  = [
               hsPkgs.asn1-types
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        esotericbot = {
+        "esotericbot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          esotericbot = {
+          "esotericbot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hexchat = {
+        "hexchat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         foreignlibs = {
-          hexchat-haskell = {
+          "hexchat-haskell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

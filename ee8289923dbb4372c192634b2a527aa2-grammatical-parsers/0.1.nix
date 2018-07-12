@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grammatical-parsers = {
+        "grammatical-parsers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rank2classes
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          arithmetic = {
+          "arithmetic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          quicktests = {
+          "quicktests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monoid-subclasses
@@ -56,7 +56,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rank2classes
@@ -65,7 +65,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rank2classes

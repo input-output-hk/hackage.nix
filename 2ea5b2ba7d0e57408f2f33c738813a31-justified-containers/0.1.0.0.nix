@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        justified-containers = {
+        "justified-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

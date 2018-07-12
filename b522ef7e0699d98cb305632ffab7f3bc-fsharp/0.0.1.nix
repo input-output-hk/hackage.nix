@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fsharp = {
+        "fsharp" = {
           depends  = [ hsPkgs.base ];
         };
       };

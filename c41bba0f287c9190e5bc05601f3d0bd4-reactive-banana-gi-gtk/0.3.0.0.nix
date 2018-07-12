@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-banana-gi-gtk = {
+        "reactive-banana-gi-gtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.reactive-banana
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          reactive-banana-gi-gtk-test = {
+          "reactive-banana-gi-gtk-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reactive-banana-gi-gtk

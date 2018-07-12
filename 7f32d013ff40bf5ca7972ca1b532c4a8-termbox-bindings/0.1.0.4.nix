@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        termbox-bindings = {
+        "termbox-bindings" = {
           depends  = [ hsPkgs.base ];
           build-tools = [
             hsPkgs.buildPackages.c2hs
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.termbox-bindings

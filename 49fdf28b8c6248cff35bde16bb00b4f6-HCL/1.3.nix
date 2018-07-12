@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HCL = {
+        "HCL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hangman = {
+          "hangman" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

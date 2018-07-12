@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-do = {
+        "regex-do" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        digits = {
+        "digits" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
           ];
         };
         tests = {
-          digits-test = {
+          "digits-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.digits

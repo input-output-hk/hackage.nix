@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-acid-state = {
+        "snaplet-acid-state" = {
           depends  = [
             hsPkgs.acid-state
             hsPkgs.base

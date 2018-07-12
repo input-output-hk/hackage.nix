@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          breakout = {
+          "breakout" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskgame

@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        xattr = {
+        "xattr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           libs = [ pkgs.attr ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.xattr

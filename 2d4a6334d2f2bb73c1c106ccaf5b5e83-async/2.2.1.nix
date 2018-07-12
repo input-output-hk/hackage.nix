@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        async = {
+        "async" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -30,21 +30,21 @@ let
           ];
         };
         exes = {
-          concasync = {
+          "concasync" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
               hsPkgs.stm
             ];
           };
-          conccancel = {
+          "conccancel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
               hsPkgs.stm
             ];
           };
-          race = {
+          "race" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          test-async = {
+          "test-async" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

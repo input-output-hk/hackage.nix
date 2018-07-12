@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lighttpd-conf = {
+        "lighttpd-conf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

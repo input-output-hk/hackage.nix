@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          yu = {
+          "yu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yu-utils

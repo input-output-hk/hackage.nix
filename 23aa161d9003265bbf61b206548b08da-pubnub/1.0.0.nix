@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pubnub = {
+        "pubnub" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          hello_world = {
+          "hello_world" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -55,7 +55,7 @@ let
               hsPkgs.text
             ];
           };
-          chat = {
+          "chat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -66,7 +66,7 @@ let
               hsPkgs.text
             ];
           };
-          test-pubnub-haskell = {
+          "test-pubnub-haskell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -82,7 +82,7 @@ let
           };
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

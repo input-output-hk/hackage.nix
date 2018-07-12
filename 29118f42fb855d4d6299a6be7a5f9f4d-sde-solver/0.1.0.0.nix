@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sde-solver = {
+        "sde-solver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal

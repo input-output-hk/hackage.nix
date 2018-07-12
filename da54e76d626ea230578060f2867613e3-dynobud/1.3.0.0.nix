@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dynobud = {
+        "dynobud" = {
           depends  = [
             hsPkgs.base
             hsPkgs.casadi-bindings-core
@@ -44,14 +44,14 @@ let
           ];
         };
         exes = {
-          nlp-solver = {
+          "nlp-solver" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
               hsPkgs.casadi-bindings
             ];
           };
-          multiple_shooting = {
+          "multiple_shooting" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
@@ -65,7 +65,7 @@ let
               hsPkgs.data-default-class
             ];
           };
-          sofa-viz-2000 = {
+          "sofa-viz-2000" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
@@ -79,7 +79,7 @@ let
               hsPkgs.vector
             ];
           };
-          sofa-expand-o-matic = {
+          "sofa-expand-o-matic" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.vector
@@ -91,7 +91,7 @@ let
               hsPkgs.base
             ];
           };
-          homotopy = {
+          "homotopy" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.vector
@@ -99,29 +99,14 @@ let
               hsPkgs.base
             ];
           };
-          vec = {
+          "vec" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.vector
               hsPkgs.base
             ];
           };
-          ocpDslSpring = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.dynobud
-              hsPkgs.casadi-bindings
-              hsPkgs.vector
-              hsPkgs.containers
-              hsPkgs.unordered-containers
-              hsPkgs.lens
-              hsPkgs.bytestring
-              hsPkgs.zeromq4-haskell
-              hsPkgs.binary
-              hsPkgs.mtl
-            ];
-          };
-          ocpDslRocket = {
+          "ocpDslSpring" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dynobud
@@ -136,7 +121,22 @@ let
               hsPkgs.mtl
             ];
           };
-          nlpDsl = {
+          "ocpDslRocket" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.dynobud
+              hsPkgs.casadi-bindings
+              hsPkgs.vector
+              hsPkgs.containers
+              hsPkgs.unordered-containers
+              hsPkgs.lens
+              hsPkgs.bytestring
+              hsPkgs.zeromq4-haskell
+              hsPkgs.binary
+              hsPkgs.mtl
+            ];
+          };
+          "nlpDsl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dynobud
@@ -149,14 +149,14 @@ let
               hsPkgs.mtl
             ];
           };
-          easy-nlp = {
+          "easy-nlp" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.vector
               hsPkgs.base
             ];
           };
-          basic-nlp = {
+          "basic-nlp" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.vector
@@ -164,7 +164,7 @@ let
               hsPkgs.base
             ];
           };
-          daeColl = {
+          "daeColl" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
@@ -172,7 +172,7 @@ let
               hsPkgs.vector
             ];
           };
-          glider = {
+          "glider" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
@@ -185,7 +185,7 @@ let
               hsPkgs.zeromq4-haskell
             ];
           };
-          sailboat = {
+          "sailboat" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
@@ -199,7 +199,7 @@ let
               hsPkgs.zeromq4-haskell
             ];
           };
-          dynoplot = {
+          "dynoplot" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.base
@@ -214,7 +214,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.dynobud
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Dist = {
+        "Dist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MonadRandom
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.MonadRandom

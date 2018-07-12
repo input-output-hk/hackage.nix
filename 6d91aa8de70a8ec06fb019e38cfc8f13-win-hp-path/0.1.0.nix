@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        win-hp-path = {
+        "win-hp-path" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split
           ];
         };
         exes = {
-          use-hppath = {
+          "use-hppath" = {
             depends  = [
               hsPkgs.base
               hsPkgs.win-hp-path

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streamly = {
+        "streamly" = {
           depends  = [
             hsPkgs.base
             hsPkgs.atomic-primops
@@ -40,42 +40,42 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         exes = {
-          chart-linear = {
+          "chart-linear" = {
             depends  = pkgs.lib.optionals _flags.dev [
               hsPkgs.base
               hsPkgs.bench-graph
               hsPkgs.split
             ];
           };
-          chart-nested = {
+          "chart-nested" = {
             depends  = pkgs.lib.optionals _flags.dev [
               hsPkgs.base
               hsPkgs.bench-graph
               hsPkgs.split
             ];
           };
-          SearchQuery = {
+          "SearchQuery" = {
             depends  = pkgs.lib.optionals (_flags.examples || _flags.examples-sdl) [
               hsPkgs.streamly
               hsPkgs.base
               hsPkgs.http-conduit
             ];
           };
-          ListDir = {
+          "ListDir" = {
             depends  = pkgs.lib.optionals (_flags.examples || _flags.examples-sdl) ([
               hsPkgs.streamly
               hsPkgs.base
               hsPkgs.path-io
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.transformers);
           };
-          MergeSort = {
+          "MergeSort" = {
             depends  = pkgs.lib.optionals (_flags.examples || _flags.examples-sdl) [
               hsPkgs.streamly
               hsPkgs.base
               hsPkgs.random
             ];
           };
-          AcidRain = {
+          "AcidRain" = {
             depends  = pkgs.lib.optionals (_flags.examples || _flags.examples-sdl) ([
               hsPkgs.streamly
               hsPkgs.base
@@ -85,7 +85,7 @@ let
               hsPkgs.transformers
             ]);
           };
-          CirclingSquare = {
+          "CirclingSquare" = {
             depends  = pkgs.lib.optionals _flags.examples-sdl [
               hsPkgs.streamly
               hsPkgs.base
@@ -94,7 +94,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.streamly
               hsPkgs.base
@@ -105,7 +105,7 @@ let
               hsPkgs.exceptions
             ];
           };
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.streamly
               hsPkgs.base
@@ -113,20 +113,20 @@ let
               hsPkgs.hspec
             ];
           };
-          loops = {
+          "loops" = {
             depends  = [
               hsPkgs.streamly
               hsPkgs.base
             ];
           };
-          nested-loops = {
+          "nested-loops" = {
             depends  = [
               hsPkgs.streamly
               hsPkgs.base
               hsPkgs.random
             ];
           };
-          parallel-loops = {
+          "parallel-loops" = {
             depends  = [
               hsPkgs.streamly
               hsPkgs.base
@@ -135,7 +135,7 @@ let
           };
         };
         benchmarks = {
-          linear = {
+          "linear" = {
             depends  = [
               hsPkgs.streamly
               hsPkgs.base
@@ -144,7 +144,7 @@ let
               hsPkgs.gauge
             ];
           };
-          nested = {
+          "nested" = {
             depends  = [
               hsPkgs.streamly
               hsPkgs.base

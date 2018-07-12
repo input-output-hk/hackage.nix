@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        foundation = {
+        "foundation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basement
@@ -34,22 +34,22 @@ let
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
         };
         tests = {
-          check-foundation = {
+          "check-foundation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basement
               hsPkgs.foundation
             ];
           };
-          doctest = {
-            depends  = pkgs.lib.optionals (!_flags.minimal-deps && _flags.doctest) [
+          "doctest" = {
+            depends  = pkgs.lib.optionals (!_flags.minimal-deps) (pkgs.lib.optionals _flags.doctest [
               hsPkgs.base
               hsPkgs.doctest
-            ];
+            ]);
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = pkgs.lib.optionals (!(_flags.minimal-deps || compiler.isGhc && compiler.version.lt "7.10")) ([
               hsPkgs.base
               hsPkgs.gauge

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hish = {
+        "Hish" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MissingH
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hish = {
+          "hish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.MissingH

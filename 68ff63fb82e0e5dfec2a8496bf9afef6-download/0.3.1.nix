@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        download = {
+        "download" = {
           depends  = [
             hsPkgs.tagsoup
             hsPkgs.feed

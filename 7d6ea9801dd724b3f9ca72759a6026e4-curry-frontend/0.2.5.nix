@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        curry-frontend = {};
+        "curry-frontend" = {};
         exes = {
-          cymake = {
+          "cymake" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curry-base

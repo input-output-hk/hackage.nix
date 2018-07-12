@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-hamlet = {
+        "xml-hamlet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml-enumerator
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.HUnit

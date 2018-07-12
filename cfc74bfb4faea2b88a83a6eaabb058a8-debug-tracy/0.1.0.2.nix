@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debug-tracy = {
+        "debug-tracy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.debug-tracy

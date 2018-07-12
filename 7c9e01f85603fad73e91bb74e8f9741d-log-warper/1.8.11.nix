@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        log-warper = {
+        "log-warper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -48,7 +48,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          play-log = {
+          "play-log" = {
             depends  = [
               hsPkgs.log-warper
               hsPkgs.universum
@@ -57,7 +57,7 @@ let
               hsPkgs.yaml
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.2.2") hsPkgs.o-clock;
           };
-          how-to = {
+          "how-to" = {
             depends  = [
               hsPkgs.base
               hsPkgs.log-warper
@@ -68,7 +68,7 @@ let
               hsPkgs.buildPackages.markdown-unlit
             ];
           };
-          pure-how-to = {
+          "pure-how-to" = {
             depends  = [
               hsPkgs.base
               hsPkgs.log-warper
@@ -82,7 +82,7 @@ let
           };
         };
         tests = {
-          log-test = {
+          "log-test" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

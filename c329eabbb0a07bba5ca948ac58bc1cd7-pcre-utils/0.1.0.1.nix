@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pcre-utils = {
+        "pcre-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-pcre-builtin
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-split = {
+          "test-split" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pcre-utils
@@ -40,7 +40,7 @@ let
               hsPkgs.regex-pcre-builtin
             ];
           };
-          test-subs = {
+          "test-subs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pcre-utils

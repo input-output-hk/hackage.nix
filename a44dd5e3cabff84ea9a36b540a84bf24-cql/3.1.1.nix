@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cql = {
+        "cql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          cql-tests = {
+          "cql-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

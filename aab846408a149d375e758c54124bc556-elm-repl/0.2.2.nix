@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          elm-repl = {
+          "elm-repl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit

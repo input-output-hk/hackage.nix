@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-dynamodb-dax = {
+        "amazonka-dynamodb-dax" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-dynamodb-dax-test = {
+          "amazonka-dynamodb-dax-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

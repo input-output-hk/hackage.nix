@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AERN-Real-Interval = {
+        "AERN-Real-Interval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

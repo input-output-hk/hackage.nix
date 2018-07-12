@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        awesomium = {
+        "awesomium" = {
           depends  = [
             hsPkgs.awesomium-raw
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prelude-edsl = {
+        "prelude-edsl" = {
           depends  = [ hsPkgs.base ];
         };
       };

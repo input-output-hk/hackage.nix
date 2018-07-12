@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-shakespeare = {
+        "hakyll-shakespeare" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hakyll

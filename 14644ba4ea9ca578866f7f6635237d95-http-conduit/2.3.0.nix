@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-conduit = {
+        "http-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.void;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

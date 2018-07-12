@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-omitted = {
+        "acme-omitted" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          specs = {
+          "specs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        combinatorial-problems = {
+        "combinatorial-problems" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

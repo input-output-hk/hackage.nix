@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arena = {
+        "arena" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.arena
@@ -46,7 +46,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.arena
@@ -59,7 +59,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.arena

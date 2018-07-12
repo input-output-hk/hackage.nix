@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nist-beacon = {
+        "nist-beacon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml

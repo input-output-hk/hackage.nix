@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rope = {
+        "rope" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yes-precure5-command = {
+        "yes-precure5-command" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          yes = {
+          "yes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

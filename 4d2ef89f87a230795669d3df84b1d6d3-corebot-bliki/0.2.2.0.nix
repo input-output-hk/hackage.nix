@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        corebot-bliki = {
+        "corebot-bliki" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          corebot-bliki = {
+          "corebot-bliki" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        general-games = {
+        "general-games" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          general-games-test = {
+          "general-games-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.general-games

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HSHHelpers = {
+        "HSHHelpers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HSH

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        EuroIT = {
+        "EuroIT" = {
           depends  = [ hsPkgs.base ];
         };
       };

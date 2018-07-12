@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        canteven-log = {
+        "canteven-log" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

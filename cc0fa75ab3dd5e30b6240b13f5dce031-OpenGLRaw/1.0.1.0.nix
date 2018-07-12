@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OpenGLRaw = {
+        "OpenGLRaw" = {
           depends  = [ hsPkgs.base ];
           libs = if system.isWindows && _flags.usenativewindowslibraries
             then [ pkgs.opengl32 ]

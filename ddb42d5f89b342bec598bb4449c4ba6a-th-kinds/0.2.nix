@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-kinds = {
+        "th-kinds" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.th-orphans

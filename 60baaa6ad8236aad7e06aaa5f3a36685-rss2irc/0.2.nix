@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          rss2irc = {
+          "rss2irc" = {
             depends  = [
               hsPkgs.feed
               hsPkgs.tagsoup

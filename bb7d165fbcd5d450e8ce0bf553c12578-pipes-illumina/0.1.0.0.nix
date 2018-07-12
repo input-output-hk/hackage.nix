@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-illumina = {
+        "pipes-illumina" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

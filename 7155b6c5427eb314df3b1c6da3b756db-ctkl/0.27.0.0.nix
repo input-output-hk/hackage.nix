@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ctkl = {
+        "ctkl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

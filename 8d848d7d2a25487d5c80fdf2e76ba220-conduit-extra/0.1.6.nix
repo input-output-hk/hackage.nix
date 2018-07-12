@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-extra = {
+        "conduit-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.conduit-extra

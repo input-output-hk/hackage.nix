@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        closed = {
+        "closed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

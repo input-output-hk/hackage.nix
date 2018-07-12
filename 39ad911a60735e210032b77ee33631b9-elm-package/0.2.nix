@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elm-package = {
+        "elm-package" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          elm-package = {
+          "elm-package" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -76,7 +76,7 @@ let
           };
         };
         tests = {
-          unit-test = {
+          "unit-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty

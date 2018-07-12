@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twentefp-rosetree = {
+        "twentefp-rosetree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.twentefp-number

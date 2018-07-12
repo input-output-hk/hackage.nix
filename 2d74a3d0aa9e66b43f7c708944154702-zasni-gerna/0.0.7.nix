@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zasni-gerna = {
+        "zasni-gerna" = {
           depends  = [
             hsPkgs.base
             hsPkgs.papillon

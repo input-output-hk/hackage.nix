@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tsparse = {
+        "tsparse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Decimal
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          parse-tsp-pdf = {
+          "parse-tsp-pdf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Decimal
@@ -45,7 +45,7 @@ let
               hsPkgs.pretty
             ];
           };
-          parse-tsp-text = {
+          "parse-tsp-text" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Decimal
@@ -56,7 +56,7 @@ let
               hsPkgs.pretty
             ];
           };
-          test-tsp = {
+          "test-tsp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Decimal
@@ -67,7 +67,7 @@ let
               hsPkgs.pretty
             ] ++ pkgs.lib.optional (!(!_flags.test)) hsPkgs.QuickCheck;
           };
-          gen-tsp = {
+          "gen-tsp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Decimal

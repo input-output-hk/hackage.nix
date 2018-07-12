@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OpenCLWrappers = {
+        "OpenCLWrappers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

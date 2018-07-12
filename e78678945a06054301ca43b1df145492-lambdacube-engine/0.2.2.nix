@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdacube-engine = {
+        "lambdacube-engine" = {
           depends  = [
             hsPkgs.OpenGLRaw
             hsPkgs.vect

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fastly = {
+        "fastly" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          fastly-test = {
+          "fastly-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fastly

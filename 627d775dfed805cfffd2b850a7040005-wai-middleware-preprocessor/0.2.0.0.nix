@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-preprocessor = {
+        "wai-middleware-preprocessor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          wai-middleware-preprocessor-tests = {
+          "wai-middleware-preprocessor-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

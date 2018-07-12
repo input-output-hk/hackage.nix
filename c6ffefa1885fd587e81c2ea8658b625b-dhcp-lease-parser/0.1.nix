@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dhcp-lease-parser = {
+        "dhcp-lease-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          dhcp-lease-parser-test = {
+          "dhcp-lease-parser-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

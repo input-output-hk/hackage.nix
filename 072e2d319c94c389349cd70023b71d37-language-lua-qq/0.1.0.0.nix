@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-lua-qq = {
+        "language-lua-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-meta
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          language-lua-qq-test = {
+          "language-lua-qq-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-lua-qq

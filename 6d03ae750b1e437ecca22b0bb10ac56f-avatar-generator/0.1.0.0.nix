@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          avatar-generator = {
+          "avatar-generator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

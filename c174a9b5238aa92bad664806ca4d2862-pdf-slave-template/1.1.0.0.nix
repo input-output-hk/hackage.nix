@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pdf-slave-template = {
+        "pdf-slave-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

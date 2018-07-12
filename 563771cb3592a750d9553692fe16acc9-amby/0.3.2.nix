@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amby = {
+        "amby" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -51,7 +51,7 @@ let
           ];
         };
         tests = {
-          amby-test = {
+          "amby-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.amby
@@ -63,7 +63,7 @@ let
           };
         };
         benchmarks = {
-          amby-bench = {
+          "amby-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.amby

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec-uri = {
+        "attoparsec-uri" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

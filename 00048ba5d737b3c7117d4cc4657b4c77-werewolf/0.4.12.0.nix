@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        werewolf = {
+        "werewolf" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          werewolf = {
+          "werewolf" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          werewolf-test = {
+          "werewolf-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

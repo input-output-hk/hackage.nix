@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-static-cache = {
+        "wai-static-cache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cityhash

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xlsior = {
+        "xlsior" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zip-archive
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zip-archive

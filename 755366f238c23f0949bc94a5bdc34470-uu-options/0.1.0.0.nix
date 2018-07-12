@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uu-options = {
+        "uu-options" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uu-parsinglib
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          demo-options = {
+          "demo-options" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uu-parsinglib

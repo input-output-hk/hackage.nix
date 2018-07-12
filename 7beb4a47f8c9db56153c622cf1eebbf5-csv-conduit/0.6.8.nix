@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        csv-conduit = {
+        "csv-conduit" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -46,7 +46,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1") hsPkgs.ghc-prim;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

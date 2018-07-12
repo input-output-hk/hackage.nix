@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pcre-heavy = {
+        "pcre-heavy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pcre-light
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob

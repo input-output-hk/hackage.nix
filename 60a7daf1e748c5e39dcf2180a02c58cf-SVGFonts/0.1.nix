@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Fonts = {
+          "Fonts" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

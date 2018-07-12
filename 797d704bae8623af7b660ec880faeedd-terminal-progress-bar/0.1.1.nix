@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        terminal-progress-bar = {
+        "terminal-progress-bar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.terminal-progress-bar
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          test-terminal-progress-bar = {
+          "test-terminal-progress-bar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

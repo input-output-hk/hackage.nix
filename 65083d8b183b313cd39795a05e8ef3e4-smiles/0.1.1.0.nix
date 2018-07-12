@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smiles = {
+        "smiles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.megaparsec
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          smiles-test = {
+          "smiles-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.smiles

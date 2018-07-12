@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-fltk = {
+        "hs-fltk" = {
           depends  = [ hsPkgs.base ];
           libs = [
             pkgs.fltk

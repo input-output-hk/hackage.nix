@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        SDL = {
+        "SDL" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.SDL ];
           frameworks = [ pkgs.AppKit ];

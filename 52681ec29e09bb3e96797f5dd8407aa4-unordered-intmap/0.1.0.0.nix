@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unordered-intmap = {
+        "unordered-intmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          props = {
+          "props" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

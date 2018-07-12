@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rasterific-svg = {
+        "rasterific-svg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          svgrender = {
+          "svgrender" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

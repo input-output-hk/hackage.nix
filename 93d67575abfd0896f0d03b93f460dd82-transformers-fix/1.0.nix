@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transformers-fix = {
+        "transformers-fix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

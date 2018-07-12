@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-mock = {
+        "monad-mock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          monad-stub-test-suite = {
+          "monad-stub-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monad-mock

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bno055-haskell = {
+        "bno055-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

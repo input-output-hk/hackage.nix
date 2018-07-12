@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        Win32 = {
+        "Win32" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

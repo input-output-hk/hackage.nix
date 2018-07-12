@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PPrinter = {
+        "PPrinter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

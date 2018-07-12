@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gitit = {
+        "gitit" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.filepath
@@ -86,7 +86,7 @@ let
           ];
         };
         exes = {
-          gitit = {
+          "gitit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gitit
@@ -102,7 +102,7 @@ let
               ]
               else [ hsPkgs.network ]);
           };
-          expireGititCache = {
+          "expireGititCache" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.HTTP

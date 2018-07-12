@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        music-preludes = {
+        "music-preludes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector-space
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          complex = {
+          "complex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -48,7 +48,7 @@ let
               hsPkgs.music-preludes
             ];
           };
-          duo = {
+          "duo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -59,7 +59,7 @@ let
               hsPkgs.music-preludes
             ];
           };
-          triplets = {
+          "triplets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

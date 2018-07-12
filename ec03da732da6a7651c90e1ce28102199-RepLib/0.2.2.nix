@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RepLib = {
+        "RepLib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

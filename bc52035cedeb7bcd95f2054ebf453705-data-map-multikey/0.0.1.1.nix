@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-map-multikey = {
+        "data-map-multikey" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

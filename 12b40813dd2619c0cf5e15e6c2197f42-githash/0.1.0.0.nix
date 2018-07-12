@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        githash = {
+        "githash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          githash-spec = {
+          "githash-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mtgoxapi = {
+        "mtgoxapi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal2nix = {
+        "cabal2nix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-posix
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          cabal2nix = {
+          "cabal2nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-posix
@@ -41,7 +41,7 @@ let
               hsPkgs.HTTP
             ];
           };
-          hackage4nix = {
+          "hackage4nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-posix

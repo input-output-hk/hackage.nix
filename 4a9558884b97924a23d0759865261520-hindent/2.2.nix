@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hindent = {
+        "hindent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hindent = {
+          "hindent" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hindent

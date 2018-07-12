@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twitch = {
+        "twitch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

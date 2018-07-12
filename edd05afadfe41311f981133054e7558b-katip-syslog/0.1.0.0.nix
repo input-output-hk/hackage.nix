@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        katip-syslog = {
+        "katip-syslog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.katip
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          katip-syslog-test = {
+          "katip-syslog-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.katip-syslog

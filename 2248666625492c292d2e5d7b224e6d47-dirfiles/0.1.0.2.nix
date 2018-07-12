@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dirfiles = {
+        "dirfiles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

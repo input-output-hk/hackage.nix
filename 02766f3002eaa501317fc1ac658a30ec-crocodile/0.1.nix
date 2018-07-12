@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          crocodile = {
+          "crocodile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

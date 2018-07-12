@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphbuilder = {
+        "graphbuilder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.graphbuilder

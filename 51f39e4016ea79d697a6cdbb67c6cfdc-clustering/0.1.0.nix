@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clustering = {
+        "clustering" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

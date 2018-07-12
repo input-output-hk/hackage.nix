@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-shield = {
+        "amazonka-shield" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-shield-test = {
+          "amazonka-shield-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

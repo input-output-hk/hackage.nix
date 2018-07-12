@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mathgenealogy = {
+          "mathgenealogy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

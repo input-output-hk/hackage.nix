@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        splice = {
+        "splice" = {
           depends  = if system.isLinux && !_flags.portable
             then [
               hsPkgs.base

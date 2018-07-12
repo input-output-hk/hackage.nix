@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        servant-server = {
+        "servant-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -55,7 +55,7 @@ let
           ];
         };
         exes = {
-          greet = {
+          "greet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant
@@ -68,7 +68,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -102,7 +102,7 @@ let
               hsPkgs.buildPackages.hspec-discover
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant

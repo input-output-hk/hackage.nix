@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        poly-cont = {
+        "poly-cont" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lang = {
+        "lang" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Mapping

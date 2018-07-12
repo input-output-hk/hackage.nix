@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unliftio-pool = {
+        "unliftio-pool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.resource-pool

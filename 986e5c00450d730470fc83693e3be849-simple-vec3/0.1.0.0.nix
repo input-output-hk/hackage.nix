@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-vec3 = {
+        "simple-vec3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
           ];
         };
         exes = {
-          simple-vec3-benchmark = {
+          "simple-vec3-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

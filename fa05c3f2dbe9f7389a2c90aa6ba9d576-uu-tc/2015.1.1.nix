@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uu-tc = {
+        "uu-tc" = {
           depends  = [ hsPkgs.base ];
         };
       };

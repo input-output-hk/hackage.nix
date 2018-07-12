@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          yackage = {
+          "yackage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod

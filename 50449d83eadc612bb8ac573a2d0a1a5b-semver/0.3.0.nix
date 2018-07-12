@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semver = {
+        "semver" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          semver-test = {
+          "semver-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.semver
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          semver-bench = {
+          "semver-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-prim = {
+        "hw-prim" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          hw-prim-example = {
+          "hw-prim-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hw-prim
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          hw-prim-test = {
+          "hw-prim-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

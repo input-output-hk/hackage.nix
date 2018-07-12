@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          HipmunkPlayground = {
+          "HipmunkPlayground" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Hipmunk

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        syntax-trees = {
+        "syntax-trees" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

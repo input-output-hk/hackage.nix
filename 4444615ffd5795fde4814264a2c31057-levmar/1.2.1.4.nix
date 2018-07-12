@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        levmar = {
+        "levmar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

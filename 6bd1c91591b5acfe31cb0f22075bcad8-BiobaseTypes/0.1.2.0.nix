@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseTypes = {
+        "BiobaseTypes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.BiobaseTypes

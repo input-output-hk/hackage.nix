@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        upskirt = {
+        "upskirt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

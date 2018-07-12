@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        csg = {
+        "csg" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.attoparsec
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          csg-raycaster = {
+          "csg-raycaster" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          csg-doctests = {
+          "csg-doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -58,7 +58,7 @@ let
               hsPkgs.simple-vec3
             ];
           };
-          csg-tests = {
+          "csg-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -71,7 +71,7 @@ let
           };
         };
         benchmarks = {
-          csg-benchmark = {
+          "csg-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

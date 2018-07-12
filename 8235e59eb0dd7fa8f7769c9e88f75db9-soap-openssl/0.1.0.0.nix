@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        soap-openssl = {
+        "soap-openssl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.soap

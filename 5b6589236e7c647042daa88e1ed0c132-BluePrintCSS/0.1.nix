@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BluePrintCSS = {
+        "BluePrintCSS" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.mtl

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ADPfusion = {
+        "ADPfusion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bits
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          NeedlemanWunsch = {
+          "NeedlemanWunsch" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -52,7 +52,7 @@ let
               hsPkgs.vector
             ];
           };
-          Nussinov = {
+          "Nussinov" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -61,7 +61,7 @@ let
               hsPkgs.vector
             ];
           };
-          PartNussinov = {
+          "PartNussinov" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -71,7 +71,7 @@ let
               hsPkgs.vector
             ];
           };
-          Durbin = {
+          "Durbin" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -82,7 +82,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ADPfusion

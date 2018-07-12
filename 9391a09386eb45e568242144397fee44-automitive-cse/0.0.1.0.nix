@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        automitive-cse = {
+        "automitive-cse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          exTrue = {
+          "exTrue" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quickcheck-simple

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Allure = {
+          "Allure" = {
             depends  = [
               hsPkgs.LambdaHack
               hsPkgs.template-haskell
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.LambdaHack
               hsPkgs.template-haskell

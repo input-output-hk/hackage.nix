@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        som = {
+        "som" = {
           depends  = [
             hsPkgs."assert"
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          som-test = {
+          "som-test" = {
             depends  = [
               hsPkgs."assert"
               hsPkgs.base

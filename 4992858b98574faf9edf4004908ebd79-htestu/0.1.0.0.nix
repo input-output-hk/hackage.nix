@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        htestu = {
+        "htestu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

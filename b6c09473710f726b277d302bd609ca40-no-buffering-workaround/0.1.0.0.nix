@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        no-buffering-workaround = {
+        "no-buffering-workaround" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        monad-param = {
+        "monad-param" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        al = {
+        "al" = {
           depends  = [ hsPkgs.base ];
           libs = if system.isWindows
             then [ pkgs.OpenAL32 ]

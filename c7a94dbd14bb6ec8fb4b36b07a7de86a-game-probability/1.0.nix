@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        game-probability = {
+        "game-probability" = {
           depends  = [
             hsPkgs.base
             hsPkgs.probability

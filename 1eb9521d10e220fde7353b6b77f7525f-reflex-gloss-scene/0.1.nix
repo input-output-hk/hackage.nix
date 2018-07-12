@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex-gloss-scene = {
+        "reflex-gloss-scene" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gloss
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          animations = {
+          "animations" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
@@ -58,7 +58,7 @@ let
               hsPkgs.containers
             ];
           };
-          collections = {
+          "collections" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
@@ -73,7 +73,7 @@ let
               hsPkgs.containers
             ];
           };
-          frpzoo = {
+          "frpzoo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss

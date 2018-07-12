@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-middleware-jsonp = {
+        "hack-middleware-jsonp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

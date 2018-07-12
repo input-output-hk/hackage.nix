@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-typelits-presburger = {
+        "ghc-typelits-presburger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          simple-arith = {
+          "simple-arith" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-typelits-presburger

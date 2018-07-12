@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dataenc = {
+        "dataenc" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit

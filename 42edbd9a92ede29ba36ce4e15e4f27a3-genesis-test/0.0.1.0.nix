@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genesis-test = {
+        "genesis-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.genesis
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          genesis-test-test-suite = {
+          "genesis-test-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.envparse

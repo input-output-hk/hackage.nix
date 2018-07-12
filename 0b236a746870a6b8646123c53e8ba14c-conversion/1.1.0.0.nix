@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conversion = {
+        "conversion" = {
           depends  = [
             hsPkgs.base-prelude
           ];

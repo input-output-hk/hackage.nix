@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        content-store = {
+        "content-store" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

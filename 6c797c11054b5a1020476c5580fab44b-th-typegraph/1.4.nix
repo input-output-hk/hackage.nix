@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-typegraph = {
+        "th-typegraph" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -59,7 +59,7 @@ let
           ];
         };
         tests = {
-          th-typegraph-tests = {
+          "th-typegraph-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.th-lift

@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        ALUT = {
+        "ALUT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.StateVar

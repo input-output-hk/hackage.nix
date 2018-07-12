@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        midi = {
+        "midi" = {
           depends  = [
             hsPkgs.event-list
             hsPkgs.non-negative
@@ -39,6 +39,6 @@ let
             ]
             else [ hsPkgs.base ]);
         };
-        exes = { test = {}; };
+        exes = { "test" = {}; };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        primitive-containers = {
+        "primitive-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          gauge = {
+          "gauge" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddc-driver = {
+        "ddc-driver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

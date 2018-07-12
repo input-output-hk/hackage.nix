@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        complexity = {
+        "complexity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cartel = {
+        "cartel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

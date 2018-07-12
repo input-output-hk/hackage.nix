@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uvector-algorithms = {
+        "uvector-algorithms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uvector

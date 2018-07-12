@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rpf = {
+          "rpf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

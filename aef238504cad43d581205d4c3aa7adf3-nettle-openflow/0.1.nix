@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nettle-openflow = {
+        "nettle-openflow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

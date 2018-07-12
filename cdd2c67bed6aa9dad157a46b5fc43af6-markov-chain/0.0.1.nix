@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        markov-chain = {
+        "markov-chain" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

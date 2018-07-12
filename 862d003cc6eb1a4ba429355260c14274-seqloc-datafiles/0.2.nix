@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        seqloc-datafiles = {
+        "seqloc-datafiles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          gtf-to-bed = {
+          "gtf-to-bed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
               hsPkgs.monads-tf
             ];
           };
-          test-gtf = {
+          "test-gtf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -66,7 +66,7 @@ let
               hsPkgs.random
             ];
           };
-          test-bed = {
+          "test-bed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -81,7 +81,7 @@ let
               hsPkgs.random
             ];
           };
-          gtf-introns = {
+          "gtf-introns" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

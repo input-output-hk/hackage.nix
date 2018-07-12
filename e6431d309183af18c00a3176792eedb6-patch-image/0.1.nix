@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          patch-image = {
+          "patch-image" = {
             depends  = [
               hsPkgs.accelerate-arithmetic
               hsPkgs.accelerate-utility
@@ -41,7 +41,7 @@ let
               hsPkgs.base
             ];
           };
-          patch-image-draft = {
+          "patch-image-draft" = {
             depends  = pkgs.lib.optionals _flags.builddraft [
               hsPkgs.JuicyPixels
               hsPkgs.GeomAlgLib

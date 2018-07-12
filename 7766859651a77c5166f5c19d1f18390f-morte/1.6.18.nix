@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        morte = {
+        "morte" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          morte = {
+          "morte" = {
             depends  = [
               hsPkgs.base
               hsPkgs.code-page
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -72,7 +72,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

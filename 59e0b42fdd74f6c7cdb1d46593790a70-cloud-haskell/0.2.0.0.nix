@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cloud-haskell = {
+        "cloud-haskell" = {
           depends  = (([
             hsPkgs.rank1dynamic
             hsPkgs.distributed-static

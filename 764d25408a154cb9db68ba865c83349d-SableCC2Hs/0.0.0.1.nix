@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SableCC2Hs = {
+        "SableCC2Hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          sableToHs = {
+          "sableToHs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

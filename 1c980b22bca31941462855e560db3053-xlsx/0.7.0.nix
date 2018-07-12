@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xlsx = {
+        "xlsx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          data-test = {
+          "data-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -73,7 +73,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

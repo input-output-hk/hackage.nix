@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tibetan-utils = {
+        "tibetan-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.megaparsec
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tibetan-utils-test = {
+          "tibetan-utils-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tibetan-utils

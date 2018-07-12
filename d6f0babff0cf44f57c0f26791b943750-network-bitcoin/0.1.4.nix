@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-bitcoin = {
+        "network-bitcoin" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -32,6 +32,6 @@ let
             hsPkgs.base
           ];
         };
-        tests = { test-main = {}; };
+        tests = { "test-main" = {}; };
       };
     }

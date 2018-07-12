@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bdcs = {
+        "bdcs" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -73,7 +73,7 @@ let
           ];
         };
         exes = {
-          bdcs = {
+          "bdcs" = {
             depends  = [
               hsPkgs.bdcs
               hsPkgs.base
@@ -85,7 +85,7 @@ let
               hsPkgs.text
             ];
           };
-          bdcs-import = {
+          "bdcs-import" = {
             depends  = [
               hsPkgs.bdcs
               hsPkgs.base
@@ -97,7 +97,7 @@ let
               hsPkgs.text
             ];
           };
-          bdcs-inspect = {
+          "bdcs-inspect" = {
             depends  = [
               hsPkgs.bdcs
               hsPkgs.base
@@ -109,7 +109,7 @@ let
               hsPkgs.text
             ];
           };
-          inspect-groups = {
+          "inspect-groups" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -125,7 +125,7 @@ let
               hsPkgs.text
             ];
           };
-          inspect-ls = {
+          "inspect-ls" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -141,7 +141,7 @@ let
               hsPkgs.time
             ];
           };
-          inspect-nevras = {
+          "inspect-nevras" = {
             depends  = [
               hsPkgs.bdcs
               hsPkgs.base
@@ -153,7 +153,7 @@ let
               hsPkgs.text
             ];
           };
-          bdcs-export = {
+          "bdcs-export" = {
             depends  = [
               hsPkgs.bdcs
               hsPkgs.base
@@ -165,14 +165,14 @@ let
               hsPkgs.text
             ];
           };
-          bdcs-tmpfiles = {
+          "bdcs-tmpfiles" = {
             depends  = [
               hsPkgs.bdcs
               hsPkgs.base
               hsPkgs.directory
             ];
           };
-          bdcs-depsolve = {
+          "bdcs-depsolve" = {
             depends  = [
               hsPkgs.bdcs
               hsPkgs.base
@@ -182,7 +182,7 @@ let
           };
         };
         tests = {
-          test-bdcs = {
+          "test-bdcs" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.HUnit

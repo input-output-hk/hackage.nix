@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-gstvideo = {
+        "gi-gstvideo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

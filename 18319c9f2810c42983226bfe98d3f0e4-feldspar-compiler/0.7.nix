@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feldspar-compiler = {
+        "feldspar-compiler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -43,7 +43,7 @@ let
           libs = pkgs.lib.optional system.isLinux pkgs.gcc_s;
         };
         tests = {
-          regression = {
+          "regression" = {
             depends  = [
               hsPkgs.feldspar-language
               hsPkgs.feldspar-compiler
@@ -58,7 +58,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          callconv = {
+          "callconv" = {
             depends  = [
               hsPkgs.feldspar-language
               hsPkgs.feldspar-compiler
@@ -70,7 +70,7 @@ let
           };
         };
         benchmarks = {
-          crc = {
+          "crc" = {
             depends  = [
               hsPkgs.feldspar-language
               hsPkgs.feldspar-compiler

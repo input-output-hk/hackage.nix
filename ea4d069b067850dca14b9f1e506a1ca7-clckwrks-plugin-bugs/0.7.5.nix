@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        clckwrks-plugin-bugs = {
+        "clckwrks-plugin-bugs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.acid-state

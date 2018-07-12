@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        watchit = {
+        "watchit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fsnotify
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          watchit = {
+          "watchit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fsnotify
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.watchit
               hsPkgs.base

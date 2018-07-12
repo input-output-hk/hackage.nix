@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diff-parse = {
+        "diff-parse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.diff-parse

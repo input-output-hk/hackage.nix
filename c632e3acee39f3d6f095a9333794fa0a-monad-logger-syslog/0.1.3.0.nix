@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-logger-syslog = {
+        "monad-logger-syslog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

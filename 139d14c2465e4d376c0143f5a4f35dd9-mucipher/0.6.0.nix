@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mucipher = {
+        "mucipher" = {
           depends  = [ hsPkgs.base ];
         };
       };

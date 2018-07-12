@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          morfette = {
+          "morfette" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

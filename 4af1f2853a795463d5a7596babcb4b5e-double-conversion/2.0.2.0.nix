@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        double-conversion = {
+        "double-conversion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
               else [ pkgs."stdc++" ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

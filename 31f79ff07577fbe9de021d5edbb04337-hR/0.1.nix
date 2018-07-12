@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hR = {
+        "hR" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        salvia-demo = {
+        "salvia-demo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -39,12 +39,12 @@ let
           ];
         };
         exes = {
-          salvia-demo = {};
-          salvia-serve = {};
-          salvia.cgi = {};
-          salvia-helloworld = {};
-          salvia-query = {};
-          salvia-directories = {};
+          "salvia-demo" = {};
+          "salvia-serve" = {};
+          "salvia.cgi" = {};
+          "salvia-helloworld" = {};
+          "salvia-query" = {};
+          "salvia-directories" = {};
         };
       };
     }

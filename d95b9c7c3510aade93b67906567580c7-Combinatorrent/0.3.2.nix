@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          Combinatorrent = {
+          "Combinatorrent" = {
             depends  = [
               hsPkgs.array
               hsPkgs.attoparsec

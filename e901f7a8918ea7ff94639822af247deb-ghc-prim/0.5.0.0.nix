@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-prim = {
+        "ghc-prim" = {
           depends  = [ hsPkgs.rts ];
           libs = pkgs.lib.optionals system.isWindows [
             pkgs.user32

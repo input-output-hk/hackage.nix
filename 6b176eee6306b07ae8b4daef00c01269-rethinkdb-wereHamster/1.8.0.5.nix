@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rethinkdb-wereHamster = {
+        "rethinkdb-wereHamster" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protocol-buffers

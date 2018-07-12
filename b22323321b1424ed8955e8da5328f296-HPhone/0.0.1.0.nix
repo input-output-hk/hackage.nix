@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HPhone = {
+        "HPhone" = {
           depends  = [
             hsPkgs.base
             hsPkgs.phone-metadata
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HPhone
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        txt-sushi = {
+        "txt-sushi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          tssql = {
+          "tssql" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -39,7 +39,7 @@ let
               hsPkgs.regex-posix
             ];
           };
-          csvtotab = {
+          "csvtotab" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -47,7 +47,7 @@ let
               hsPkgs.containers
             ];
           };
-          tabtocsv = {
+          "tabtocsv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -55,7 +55,7 @@ let
               hsPkgs.containers
             ];
           };
-          csvtopretty = {
+          "csvtopretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -63,7 +63,7 @@ let
               hsPkgs.containers
             ];
           };
-          tabtopretty = {
+          "tabtopretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -71,7 +71,7 @@ let
               hsPkgs.containers
             ];
           };
-          namecolumns = {
+          "namecolumns" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

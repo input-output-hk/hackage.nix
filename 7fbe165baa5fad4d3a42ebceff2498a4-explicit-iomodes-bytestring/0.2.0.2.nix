@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        explicit-iomodes-bytestring = {
+        "explicit-iomodes-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

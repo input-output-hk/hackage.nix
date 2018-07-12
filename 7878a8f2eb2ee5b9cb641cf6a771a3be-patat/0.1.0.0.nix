@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          patat = {
+          "patat" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.ansi-wl-pprint

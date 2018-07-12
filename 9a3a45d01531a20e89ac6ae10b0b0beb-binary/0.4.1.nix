@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary = {
+        "binary" = {
           depends  = (if _flags.bytestring-in-base
             then [ hsPkgs.base ]
             else [

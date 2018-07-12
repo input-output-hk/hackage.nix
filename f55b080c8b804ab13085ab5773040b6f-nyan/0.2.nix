@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          nyan = {
+          "nyan" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ncurses

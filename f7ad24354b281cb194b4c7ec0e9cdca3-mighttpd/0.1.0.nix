@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mighttpd = {
+          "mighttpd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -38,7 +38,7 @@ let
               hsPkgs.network
             ];
           };
-          mkindex = {
+          "mkindex" = {
             depends  = [ hsPkgs.base ];
           };
         };

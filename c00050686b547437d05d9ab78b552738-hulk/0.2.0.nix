@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hulk = {
+        "hulk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          hulk = {
+          "hulk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -71,7 +71,7 @@ let
               hsPkgs.monad-extras
             ];
           };
-          hulk-generate-pass = {
+          "hulk-generate-pass" = {
             depends  = [ hsPkgs.base ];
           };
         };

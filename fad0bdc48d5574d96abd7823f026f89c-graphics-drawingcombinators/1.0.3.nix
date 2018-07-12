@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphics-drawingcombinators = {
+        "graphics-drawingcombinators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

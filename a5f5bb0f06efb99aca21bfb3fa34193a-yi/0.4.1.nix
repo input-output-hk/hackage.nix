@@ -27,11 +27,11 @@ let
         buildType = "Simple";
       };
       components = {
-        yi = {
+        "yi" = {
           depends  = pkgs.lib.optional _flags.vty hsPkgs.vty;
         };
         exes = {
-          yi = {
+          "yi" = {
             depends  = (((((([
               hsPkgs.Cabal
               hsPkgs.array

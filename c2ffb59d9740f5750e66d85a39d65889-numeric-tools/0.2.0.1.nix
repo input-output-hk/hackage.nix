@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numeric-tools = {
+        "numeric-tools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ieee754
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.numeric-tools

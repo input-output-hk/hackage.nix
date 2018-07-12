@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-ixset = {
+        "happstack-ixset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -37,7 +37,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          happstack-ixset-tests = {
+          "happstack-ixset-tests" = {
             depends  = [ hsPkgs.HUnit ];
           };
         };

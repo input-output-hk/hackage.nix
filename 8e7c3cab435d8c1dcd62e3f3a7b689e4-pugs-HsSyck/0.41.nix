@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pugs-HsSyck = {
+        "pugs-HsSyck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

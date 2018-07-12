@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hero-club-five-tenets = {
+        "hero-club-five-tenets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          fivetenets = {
+          "fivetenets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        should-not-typecheck = {
+        "should-not-typecheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.should-not-typecheck

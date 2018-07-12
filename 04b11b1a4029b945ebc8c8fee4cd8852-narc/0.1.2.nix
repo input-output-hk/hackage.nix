@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        narc = {
+        "narc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit

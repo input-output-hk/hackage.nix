@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-odbc = {
+        "persistent-odbc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

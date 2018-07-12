@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        modern-uri = {
+        "modern-uri" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -55,7 +55,7 @@ let
           };
         };
         benchmarks = {
-          bench-speed = {
+          "bench-speed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -65,7 +65,7 @@ let
               hsPkgs.text
             ];
           };
-          bench-memory = {
+          "bench-memory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

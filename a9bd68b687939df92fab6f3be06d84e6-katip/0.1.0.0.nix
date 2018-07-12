@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        katip = {
+        "katip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -51,7 +51,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.katip
@@ -70,7 +70,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

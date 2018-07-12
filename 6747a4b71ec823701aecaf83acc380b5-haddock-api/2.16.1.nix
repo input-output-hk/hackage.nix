@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haddock-api = {
+        "haddock-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

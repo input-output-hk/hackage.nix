@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        truthful = {
+        "truthful" = {
           depends  = [ hsPkgs.base ];
         };
       };

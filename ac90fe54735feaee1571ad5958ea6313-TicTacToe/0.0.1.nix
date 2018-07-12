@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TicTacToe = {
+        "TicTacToe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

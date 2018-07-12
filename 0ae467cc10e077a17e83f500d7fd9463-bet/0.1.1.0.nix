@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bet = {
+        "bet" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          login-test = {
+          "login-test" = {
             depends  = pkgs.lib.optionals _flags.toys [
               hsPkgs.base
               hsPkgs.bet
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bet

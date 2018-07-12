@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-scoped-session = {
+        "snaplet-scoped-session" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snap

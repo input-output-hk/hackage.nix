@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rematch-text = {
+        "rematch-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rematch
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

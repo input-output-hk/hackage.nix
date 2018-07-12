@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        computational-algebra = {
+        "computational-algebra" = {
           depends  = [
             hsPkgs.ListLike
             hsPkgs.MonadRandom
@@ -71,14 +71,14 @@ let
           ];
         };
         exes = {
-          groebner-prof = {
+          "groebner-prof" = {
             depends  = [
               hsPkgs.base
               hsPkgs.computational-algebra
               hsPkgs.deepseq
             ];
           };
-          solve = {
+          "solve" = {
             depends  = [
               hsPkgs.MonadRandom
               hsPkgs.algebra
@@ -96,14 +96,14 @@ let
               hsPkgs.vector
             ];
           };
-          algebraic = {
+          "algebraic" = {
             depends  = [
               hsPkgs.algebraic-prelude
               hsPkgs.base
               hsPkgs.computational-algebra
             ];
           };
-          ipsolve = {
+          "ipsolve" = {
             depends  = [
               hsPkgs.MonadRandom
               hsPkgs.algebra
@@ -125,7 +125,7 @@ let
               hsPkgs.vector
             ];
           };
-          hensel-prof = {
+          "hensel-prof" = {
             depends  = [
               hsPkgs.MonadRandom
               hsPkgs.algebra
@@ -145,7 +145,7 @@ let
               hsPkgs.vector
             ];
           };
-          sandpit-poly = {
+          "sandpit-poly" = {
             depends  = [
               hsPkgs.algebra
               hsPkgs.base
@@ -156,7 +156,7 @@ let
               hsPkgs.type-natural
             ];
           };
-          quotient = {
+          "quotient" = {
             depends  = [
               hsPkgs.algebra
               hsPkgs.base
@@ -170,7 +170,7 @@ let
           };
         };
         tests = {
-          test-multi-table = {
+          "test-multi-table" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -195,7 +195,7 @@ let
               hsPkgs.vector
             ];
           };
-          singular-test = {
+          "singular-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.MonadRandom
@@ -224,7 +224,7 @@ let
               hsPkgs.vector
             ];
           };
-          monomial-order-test = {
+          "monomial-order-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.MonadRandom
@@ -244,34 +244,7 @@ let
               hsPkgs.vector
             ];
           };
-          linear-test = {
-            depends  = [
-              hsPkgs.HUnit
-              hsPkgs.MonadRandom
-              hsPkgs.QuickCheck
-              hsPkgs.algebra
-              hsPkgs.base
-              hsPkgs.computational-algebra
-              hsPkgs.constraints
-              hsPkgs.containers
-              hsPkgs.deepseq
-              hsPkgs.equational-reasoning
-              hsPkgs.hspec
-              hsPkgs.lens
-              hsPkgs.matrix
-              hsPkgs.monomorphic
-              hsPkgs.quickcheck-instances
-              hsPkgs.reflection
-              hsPkgs.sized
-              hsPkgs.smallcheck
-              hsPkgs.tagged
-              hsPkgs.test-framework
-              hsPkgs.test-framework-hunit
-              hsPkgs.type-natural
-              hsPkgs.vector
-            ];
-          };
-          matrix-test = {
+          "linear-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.MonadRandom
@@ -298,7 +271,34 @@ let
               hsPkgs.vector
             ];
           };
-          specs = {
+          "matrix-test" = {
+            depends  = [
+              hsPkgs.HUnit
+              hsPkgs.MonadRandom
+              hsPkgs.QuickCheck
+              hsPkgs.algebra
+              hsPkgs.base
+              hsPkgs.computational-algebra
+              hsPkgs.constraints
+              hsPkgs.containers
+              hsPkgs.deepseq
+              hsPkgs.equational-reasoning
+              hsPkgs.hspec
+              hsPkgs.lens
+              hsPkgs.matrix
+              hsPkgs.monomorphic
+              hsPkgs.quickcheck-instances
+              hsPkgs.reflection
+              hsPkgs.sized
+              hsPkgs.smallcheck
+              hsPkgs.tagged
+              hsPkgs.test-framework
+              hsPkgs.test-framework-hunit
+              hsPkgs.type-natural
+              hsPkgs.vector
+            ];
+          };
+          "specs" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.MonadRandom
@@ -329,7 +329,7 @@ let
               hsPkgs.vector
             ];
           };
-          new-div-test = {
+          "new-div-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.MonadRandom
@@ -357,7 +357,7 @@ let
           };
         };
         benchmarks = {
-          unipol-bench = {
+          "unipol-bench" = {
             depends  = [
               hsPkgs.algebra
               hsPkgs.base
@@ -375,7 +375,7 @@ let
               hsPkgs.vector
             ];
           };
-          normal-bench = {
+          "normal-bench" = {
             depends  = [
               hsPkgs.algebra
               hsPkgs.base
@@ -393,7 +393,7 @@ let
               hsPkgs.vector
             ];
           };
-          elimination-bench = {
+          "elimination-bench" = {
             depends  = [
               hsPkgs.algebra
               hsPkgs.base
@@ -411,7 +411,7 @@ let
               hsPkgs.vector
             ];
           };
-          quotient-bench-randomized = {
+          "quotient-bench-randomized" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.algebra
@@ -438,7 +438,7 @@ let
               hsPkgs.constraints
             ];
           };
-          monomial-order-bench = {
+          "monomial-order-bench" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.algebra
@@ -465,7 +465,7 @@ let
               hsPkgs.vector
             ];
           };
-          linear-bench = {
+          "linear-bench" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.MonadRandom
@@ -495,7 +495,7 @@ let
               hsPkgs.vector
             ];
           };
-          division-bench = {
+          "division-bench" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.MonadRandom
@@ -525,7 +525,7 @@ let
               hsPkgs.vector
             ];
           };
-          sugar-paper-bench = {
+          "sugar-paper-bench" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.MonadRandom
@@ -556,38 +556,7 @@ let
               hsPkgs.vector
             ];
           };
-          solve-bench = {
-            depends  = [
-              hsPkgs.HUnit
-              hsPkgs.MonadRandom
-              hsPkgs.QuickCheck
-              hsPkgs.algebra
-              hsPkgs.base
-              hsPkgs.computational-algebra
-              hsPkgs.constraints
-              hsPkgs.containers
-              hsPkgs.criterion
-              hsPkgs.deepseq
-              hsPkgs.equational-reasoning
-              hsPkgs.hspec
-              hsPkgs.lens
-              hsPkgs.matrix
-              hsPkgs.monomorphic
-              hsPkgs.parallel
-              hsPkgs.process
-              hsPkgs.quickcheck-instances
-              hsPkgs.random
-              hsPkgs.reflection
-              hsPkgs.sized
-              hsPkgs.smallcheck
-              hsPkgs.tagged
-              hsPkgs.test-framework
-              hsPkgs.test-framework-hunit
-              hsPkgs.type-natural
-              hsPkgs.vector
-            ];
-          };
-          coercion-bench = {
+          "solve-bench" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.MonadRandom
@@ -618,7 +587,38 @@ let
               hsPkgs.vector
             ];
           };
-          unipol-mult-bench = {
+          "coercion-bench" = {
+            depends  = [
+              hsPkgs.HUnit
+              hsPkgs.MonadRandom
+              hsPkgs.QuickCheck
+              hsPkgs.algebra
+              hsPkgs.base
+              hsPkgs.computational-algebra
+              hsPkgs.constraints
+              hsPkgs.containers
+              hsPkgs.criterion
+              hsPkgs.deepseq
+              hsPkgs.equational-reasoning
+              hsPkgs.hspec
+              hsPkgs.lens
+              hsPkgs.matrix
+              hsPkgs.monomorphic
+              hsPkgs.parallel
+              hsPkgs.process
+              hsPkgs.quickcheck-instances
+              hsPkgs.random
+              hsPkgs.reflection
+              hsPkgs.sized
+              hsPkgs.smallcheck
+              hsPkgs.tagged
+              hsPkgs.test-framework
+              hsPkgs.test-framework-hunit
+              hsPkgs.type-natural
+              hsPkgs.vector
+            ];
+          };
+          "unipol-mult-bench" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -648,7 +648,7 @@ let
               hsPkgs.vector
             ];
           };
-          unipol-div-bench = {
+          "unipol-div-bench" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

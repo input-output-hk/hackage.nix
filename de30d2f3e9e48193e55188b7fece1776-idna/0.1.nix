@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        idna = {
+        "idna" = {
           depends  = [
             hsPkgs.base
             hsPkgs.encoding

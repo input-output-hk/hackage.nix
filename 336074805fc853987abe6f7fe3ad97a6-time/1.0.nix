@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        time = {
+        "time" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hslogstash = {
+        "hslogstash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -52,7 +52,7 @@ let
           ];
         };
         tests = {
-          conduits = {
+          "conduits" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslogstash

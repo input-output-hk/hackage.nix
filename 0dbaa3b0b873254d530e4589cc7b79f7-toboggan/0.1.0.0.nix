@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toboggan = {
+        "toboggan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.madlang
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          toboggan = {
+          "toboggan" = {
             depends  = [
               hsPkgs.base
               hsPkgs.toboggan

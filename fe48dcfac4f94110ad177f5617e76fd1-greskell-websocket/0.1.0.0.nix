@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        greskell-websocket = {
+        "greskell-websocket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.greskell-core
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.greskell-websocket
@@ -54,7 +54,7 @@ let
               hsPkgs.hspec
             ];
           };
-          server-test = {
+          "server-test" = {
             depends  = pkgs.lib.optionals _flags.server-test [
               hsPkgs.base
               hsPkgs.greskell-websocket

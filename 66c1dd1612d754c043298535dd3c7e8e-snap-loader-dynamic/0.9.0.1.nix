@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-loader-dynamic = {
+        "snap-loader-dynamic" = {
           depends  = [
             hsPkgs.hint
             hsPkgs.old-time

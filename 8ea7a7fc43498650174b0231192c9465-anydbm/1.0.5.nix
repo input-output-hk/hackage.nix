@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        anydbm = {
+        "anydbm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        diff3 = {
+        "diff3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Diff
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.diff3

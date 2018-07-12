@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lookup-tables = {
+        "lookup-tables" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          lookup-tables-test = {
+          "lookup-tables-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lookup-tables

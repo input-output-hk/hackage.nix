@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          black-jewel = {
+          "black-jewel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          dummy = {
+          "dummy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

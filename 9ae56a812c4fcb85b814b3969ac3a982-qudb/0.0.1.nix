@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          qudb = {
+          "qudb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

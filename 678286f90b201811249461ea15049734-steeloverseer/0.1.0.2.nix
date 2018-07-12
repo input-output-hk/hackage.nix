@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sos = {
+          "sos" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fsnotify

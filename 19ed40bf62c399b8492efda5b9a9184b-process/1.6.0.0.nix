@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        process = {
+        "process" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -32,7 +32,7 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

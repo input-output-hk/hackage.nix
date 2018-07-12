@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        cpu = {
+        "cpu" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          cpuid = {
+          "cpuid" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.cpu

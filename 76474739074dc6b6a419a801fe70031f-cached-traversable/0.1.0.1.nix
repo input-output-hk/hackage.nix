@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cached-traversable = {
+        "cached-traversable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dictionary-sharing = {
+        "dictionary-sharing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

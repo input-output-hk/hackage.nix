@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          feed-translator = {
+          "feed-translator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html

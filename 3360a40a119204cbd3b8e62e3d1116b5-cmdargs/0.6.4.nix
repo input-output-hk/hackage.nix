@@ -22,12 +22,12 @@ let
         buildType = "Simple";
       };
       components = {
-        cmdargs = {
+        "cmdargs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
           ];
         };
-        exes = { cmdargs = {}; };
+        exes = { "cmdargs" = {}; };
       };
     }

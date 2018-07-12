@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gpx-conduit = {
+        "gpx-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml-conduit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-base-types = {
+        "llvm-base-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

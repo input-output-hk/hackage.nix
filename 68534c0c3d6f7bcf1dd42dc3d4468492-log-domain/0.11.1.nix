@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        log-domain = {
+        "log-domain" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -40,7 +40,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.doctest

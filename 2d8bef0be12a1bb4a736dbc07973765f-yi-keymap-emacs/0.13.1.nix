@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-keymap-emacs = {
+        "yi-keymap-emacs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jspath = {
+        "jspath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JSONb

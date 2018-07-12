@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hascat-lib = {
+        "hascat-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

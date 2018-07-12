@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          spark = {
+          "spark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          spark-tests = {
+          "spark-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF

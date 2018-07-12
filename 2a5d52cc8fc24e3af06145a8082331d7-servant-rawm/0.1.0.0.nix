@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-rawm = {
+        "servant-rawm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          servant-rawm-example-client = {
+          "servant-rawm-example-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -53,7 +53,7 @@ let
               hsPkgs.text
             ];
           };
-          servant-rawm-example-server = {
+          "servant-rawm-example-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant

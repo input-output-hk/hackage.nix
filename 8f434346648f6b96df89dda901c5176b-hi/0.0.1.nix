@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hi = {
+        "hi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Glob
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          hi = {
+          "hi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

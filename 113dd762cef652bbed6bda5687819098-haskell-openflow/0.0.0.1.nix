@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-openflow = {
+        "haskell-openflow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-main = {
+          "test-main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-openflow

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          beautifHOL = {
+          "beautifHOL" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskelldb-hdbc = {
+        "haskelldb-hdbc" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

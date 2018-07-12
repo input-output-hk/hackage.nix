@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ofx = {
+        "ofx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.explicit-exception

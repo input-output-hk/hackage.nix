@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Craft3e = {
+        "Craft3e" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -31,9 +31,9 @@ let
           ];
         };
         exes = {
-          performanceI = {};
-          performanceIA = {};
-          performanceIS = {};
+          "performanceI" = {};
+          "performanceIA" = {};
+          "performanceIS" = {};
         };
       };
     }

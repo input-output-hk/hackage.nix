@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        encoding = {
+        "encoding" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.bytestring

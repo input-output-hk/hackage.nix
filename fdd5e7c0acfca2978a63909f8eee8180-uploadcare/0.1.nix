@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uploadcare = {
+        "uploadcare" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

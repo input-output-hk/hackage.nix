@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hunt-searchengine = {
+        "hunt-searchengine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          Hunt-Tests = {
+          "Hunt-Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -73,7 +73,7 @@ let
               hsPkgs.monad-parallel
             ];
           };
-          Hunt-Strictness = {
+          "Hunt-Strictness" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-strict)) [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atto-lisp = {
+        "atto-lisp" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

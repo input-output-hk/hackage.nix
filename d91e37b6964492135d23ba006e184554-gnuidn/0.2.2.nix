@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gnuidn = {
+        "gnuidn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          gnuidn_tests = {
+          "gnuidn_tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

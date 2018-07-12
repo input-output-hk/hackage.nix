@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        invertible-syntax = {
+        "invertible-syntax" = {
           depends  = [
             hsPkgs.base
             hsPkgs.partial-isomorphisms

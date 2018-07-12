@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaskRel = {
+        "HaskRel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HList

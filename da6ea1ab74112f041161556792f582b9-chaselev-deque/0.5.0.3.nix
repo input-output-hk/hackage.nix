@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chaselev-deque = {
+        "chaselev-deque" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-chaselev-deque = {
+          "test-chaselev-deque" = {
             depends  = [
               hsPkgs.base
               hsPkgs.abstract-deque

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ftphs = {
+        "ftphs" = {
           depends  = [
             hsPkgs.network
             hsPkgs.parsec
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optional _flags.buildtests hsPkgs.HUnit;
           };
         };

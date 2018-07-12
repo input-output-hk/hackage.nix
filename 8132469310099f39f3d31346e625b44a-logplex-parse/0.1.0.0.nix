@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logplex-parse = {
+        "logplex-parse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logplex-parse

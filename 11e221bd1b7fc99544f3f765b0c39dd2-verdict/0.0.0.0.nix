@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        verdict = {
+        "verdict" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          tutorial = {
+          "tutorial" = {
             depends  = [
               hsPkgs.base
               hsPkgs.verdict
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.verdict

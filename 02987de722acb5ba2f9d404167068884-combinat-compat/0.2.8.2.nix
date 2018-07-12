@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        combinat-compat = {
+        "combinat-compat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          combinat-tests = {
+          "combinat-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

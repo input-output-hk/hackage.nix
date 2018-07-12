@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ivory-opts = {
+        "ivory-opts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ivory

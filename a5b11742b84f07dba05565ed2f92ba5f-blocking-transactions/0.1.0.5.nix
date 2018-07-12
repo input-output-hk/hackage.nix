@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blocking-transactions = {
+        "blocking-transactions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

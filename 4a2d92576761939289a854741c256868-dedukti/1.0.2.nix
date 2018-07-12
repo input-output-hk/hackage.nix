@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        dedukti = {
+        "dedukti" = {
           depends  = [ hsPkgs.time ];
         };
         exes = {
-          dedukti = {
+          "dedukti" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

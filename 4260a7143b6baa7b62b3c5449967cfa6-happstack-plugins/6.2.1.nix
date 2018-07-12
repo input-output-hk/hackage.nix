@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-plugins = {
+        "happstack-plugins" = {
           depends  = [
             hsPkgs.base
             hsPkgs.plugins-auto

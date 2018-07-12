@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-incremental-decoder = {
+        "json-incremental-decoder" = {
           depends  = [
             hsPkgs.monad-par
             hsPkgs.attoparsec
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          parsing-test = {
+          "parsing-test" = {
             depends  = [
               hsPkgs.json-incremental-decoder
               hsPkgs.tasty

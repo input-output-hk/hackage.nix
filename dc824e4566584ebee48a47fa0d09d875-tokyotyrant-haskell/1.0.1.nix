@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tokyotyrant-haskell = {
+        "tokyotyrant-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

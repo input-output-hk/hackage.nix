@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        markdown-pap = {
+        "markdown-pap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.papillon

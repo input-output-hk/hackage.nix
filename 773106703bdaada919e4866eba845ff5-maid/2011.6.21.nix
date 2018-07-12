@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          maid = {
+          "maid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.air

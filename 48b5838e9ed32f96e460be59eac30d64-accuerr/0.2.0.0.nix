@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accuerr = {
+        "accuerr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

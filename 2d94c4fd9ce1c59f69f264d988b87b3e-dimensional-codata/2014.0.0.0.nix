@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dimensional-codata = {
+        "dimensional-codata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dimensional

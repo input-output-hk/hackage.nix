@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-bifunctors-implement = {
+        "papa-bifunctors-implement" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

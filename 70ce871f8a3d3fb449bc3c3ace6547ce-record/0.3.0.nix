@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        record = {
+        "record" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.text
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.doctest
               hsPkgs.directory
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.record
               hsPkgs.base-prelude

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-dictionary = {
+        "google-dictionary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

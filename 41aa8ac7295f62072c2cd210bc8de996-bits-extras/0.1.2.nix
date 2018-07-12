@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bits-extras = {
+        "bits-extras" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.gcc_s ];
         };

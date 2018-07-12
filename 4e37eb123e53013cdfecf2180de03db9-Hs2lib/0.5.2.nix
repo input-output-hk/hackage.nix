@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Hs2lib = {
+        "Hs2lib" = {
           depends  = [
             hsPkgs.haskell-src-exts
             hsPkgs.ghc
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          Hs2lib = {
+          "Hs2lib" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.directory
@@ -59,7 +59,7 @@ let
               hsPkgs.cereal
             ];
           };
-          Hs2lib-debug = {
+          "Hs2lib-debug" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.directory
@@ -82,7 +82,7 @@ let
           };
         };
         tests = {
-          test-regression = {
+          "test-regression" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -90,7 +90,7 @@ let
               hsPkgs.haskell98
             ];
           };
-          test-regression-debug = {
+          "test-regression-debug" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

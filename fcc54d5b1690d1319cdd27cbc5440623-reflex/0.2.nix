@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex = {
+        "reflex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dependent-sum
@@ -35,7 +35,7 @@ let
           ];
         };
         benchmarks = {
-          spider-bench = {
+          "spider-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dependent-sum

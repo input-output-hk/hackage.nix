@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptocipher = {
+        "cryptocipher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          Benchmarks = {
+          "Benchmarks" = {
             depends  = pkgs.lib.optionals _flags.benchmark [
               hsPkgs.base
               hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          test-cryptocipher = {
+          "test-cryptocipher" = {
             depends  = [
               hsPkgs.base
               hsPkgs.crypto-api

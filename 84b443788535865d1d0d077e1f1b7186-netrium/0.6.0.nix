@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netrium = {
+        "netrium" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          normalise = {
+          "normalise" = {
             depends  = [
               hsPkgs.netrium
               hsPkgs.base
@@ -40,7 +40,7 @@ let
               hsPkgs.HaXml
             ];
           };
-          simulate = {
+          "simulate" = {
             depends  = [
               hsPkgs.netrium
               hsPkgs.base
@@ -51,7 +51,7 @@ let
               hsPkgs.filepath
             ];
           };
-          visualise = {
+          "visualise" = {
             depends  = [
               hsPkgs.netrium
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ircbot = {
+        "ircbot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

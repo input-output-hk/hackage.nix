@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json2-types = {
+        "json2-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

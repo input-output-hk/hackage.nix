@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pure-priority-queue = {
+        "pure-priority-queue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

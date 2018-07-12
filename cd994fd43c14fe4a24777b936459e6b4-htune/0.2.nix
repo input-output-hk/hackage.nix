@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          htune = {
+          "htune" = {
             depends  = [
               hsPkgs.base
               hsPkgs.carray

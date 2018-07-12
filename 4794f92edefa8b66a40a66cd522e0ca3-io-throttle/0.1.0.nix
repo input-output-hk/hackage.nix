@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        io-throttle = {
+        "io-throttle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.threads
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-io-threads = {
+          "test-io-threads" = {
             depends  = [
               hsPkgs.base
               hsPkgs.io-throttle

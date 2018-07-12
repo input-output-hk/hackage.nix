@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer = {
+        "synthesizer" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.event-list
@@ -51,18 +51,18 @@ let
             ]);
         };
         exes = {
-          demonstration = {};
-          traumzauberbaum = {};
-          test = {};
-          fusiontest = {};
-          speedtest = {};
-          speedtest-exp = {
+          "demonstration" = {};
+          "traumzauberbaum" = {};
+          "test" = {};
+          "fusiontest" = {};
+          "speedtest" = {};
+          "speedtest-exp" = {
             depends  = pkgs.lib.optionals _flags.splitbase [
               hsPkgs.old-time
               hsPkgs.directory
             ];
           };
-          speedtest-simple = {};
+          "speedtest-simple" = {};
         };
       };
     }

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-basic = {
+        "xml-basic" = {
           depends  = [
             hsPkgs.explicit-exception
             hsPkgs.data-accessor

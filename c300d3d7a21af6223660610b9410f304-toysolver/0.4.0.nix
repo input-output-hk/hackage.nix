@@ -30,7 +30,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toysolver = {
+        "toysolver" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.template-haskell
@@ -77,7 +77,7 @@ let
           ]) ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.ghc-prim;
         };
         exes = {
-          toysolver = {
+          "toysolver" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -90,7 +90,7 @@ let
               hsPkgs.toysolver
             ];
           };
-          toysat = {
+          "toysat" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.data-default-class
@@ -114,7 +114,7 @@ let
                 hsPkgs.old-locale
               ])) ++ pkgs.lib.optional (_flags.forcechar8 && (compiler.isGhc && true)) hsPkgs.base;
           };
-          toysmt = {
+          "toysmt" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.containers
@@ -126,7 +126,7 @@ let
               hsPkgs.toysolver
             ] ++ pkgs.lib.optional _flags.usehaskeline hsPkgs.haskeline) ++ pkgs.lib.optional (_flags.forcechar8 && (compiler.isGhc && true)) hsPkgs.base;
           };
-          toyfmf = {
+          "toyfmf" = {
             depends  = pkgs.lib.optionals _flags.buildtoyfmf ([
               hsPkgs.base
               hsPkgs.containers
@@ -134,7 +134,7 @@ let
               hsPkgs.logic-TPTP
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.9" && _flags.transformers051) hsPkgs.logic-TPTP);
           };
-          lpconvert = {
+          "lpconvert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -144,7 +144,7 @@ let
               hsPkgs.toysolver
             ];
           };
-          pbconvert = {
+          "pbconvert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -154,14 +154,14 @@ let
               hsPkgs.toysolver
             ];
           };
-          sudoku = {
+          "sudoku" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.toysolver
             ];
           };
-          nonogram = {
+          "nonogram" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -169,27 +169,27 @@ let
               hsPkgs.toysolver
             ];
           };
-          nqueens = {
+          "nqueens" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.toysolver
             ];
           };
-          knapsack = {
+          "knapsack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.toysolver
             ];
           };
-          htc = {
+          "htc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.toysolver
             ];
           };
-          svm2lp = {
+          "svm2lp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -198,7 +198,7 @@ let
               hsPkgs.toysolver
             ];
           };
-          pigeonhole = {
+          "pigeonhole" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -206,14 +206,14 @@ let
               hsPkgs.toysolver
             ];
           };
-          maxsatverify = {
+          "maxsatverify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.toysolver
             ];
           };
-          pbverify = {
+          "pbverify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -223,7 +223,7 @@ let
           };
         };
         tests = {
-          TestPolynomial = {
+          "TestPolynomial" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -237,7 +237,7 @@ let
               hsPkgs.prettyclass
             ];
           };
-          TestSuite = {
+          "TestSuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -263,7 +263,7 @@ let
           };
         };
         benchmarks = {
-          BenchmarkSATLIB = {
+          "BenchmarkSATLIB" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -273,14 +273,14 @@ let
               hsPkgs.criterion
             ];
           };
-          BenchmarkKnapsack = {
+          "BenchmarkKnapsack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.toysolver
               hsPkgs.criterion
             ];
           };
-          BenchmarkSubsetSum = {
+          "BenchmarkSubsetSum" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

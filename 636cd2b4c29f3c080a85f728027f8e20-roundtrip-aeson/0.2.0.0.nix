@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        roundtrip-aeson = {
+        "roundtrip-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

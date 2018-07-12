@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memoize = {
+        "memoize" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

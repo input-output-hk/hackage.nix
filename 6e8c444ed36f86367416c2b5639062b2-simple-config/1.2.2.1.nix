@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-config = {
+        "simple-config" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -35,7 +35,7 @@ let
             else [ hsPkgs.network ]);
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

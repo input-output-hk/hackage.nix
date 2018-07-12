@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linklater = {
+        "linklater" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          linklater-tests = {
+          "linklater-tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

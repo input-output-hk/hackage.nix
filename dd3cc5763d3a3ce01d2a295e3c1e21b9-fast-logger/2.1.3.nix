@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fast-logger = {
+        "fast-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -37,7 +37,7 @@ let
             ]);
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

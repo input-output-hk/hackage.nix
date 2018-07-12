@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-constraint-compat = {
+        "th-constraint-compat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

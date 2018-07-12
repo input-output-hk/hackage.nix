@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spatial-rotations = {
+        "spatial-rotations" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manifolds-core
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

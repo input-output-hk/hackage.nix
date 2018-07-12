@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-checked-exceptions-core = {
+        "servant-checked-exceptions-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          servant-checked-exceptions-example-docs = {
+          "servant-checked-exceptions-example-docs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          servant-checked-exceptions-doctest = {
+          "servant-checked-exceptions-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

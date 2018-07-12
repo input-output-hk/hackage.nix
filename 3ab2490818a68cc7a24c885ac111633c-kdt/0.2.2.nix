@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kdt = {
+        "kdt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          StaticTest = {
+          "StaticTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.kdt
@@ -38,7 +38,7 @@ let
               hsPkgs.deepseq-generics
             ];
           };
-          DynamicTest = {
+          "DynamicTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.kdt
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          KDTBenchmark = {
+          "KDTBenchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.kdt

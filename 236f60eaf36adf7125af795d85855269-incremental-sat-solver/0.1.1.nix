@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        incremental-sat-solver = {
+        "incremental-sat-solver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

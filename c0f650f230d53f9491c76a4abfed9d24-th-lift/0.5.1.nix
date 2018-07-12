@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-lift = {
+        "th-lift" = {
           depends  = [
             hsPkgs.base
           ] ++ (if compiler.isGhc && compiler.version.lt "6.12"

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ad = {
+        "ad" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          blackscholes = {
+          "blackscholes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ad

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glasso = {
+        "glasso" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

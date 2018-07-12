@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        VKHS = {
+        "VKHS" = {
           depends  = [
             hsPkgs.base
             hsPkgs.json
@@ -42,6 +42,6 @@ let
             hsPkgs.optparse-applicative
           ];
         };
-        exes = { vkq = {}; };
+        exes = { "vkq" = {}; };
       };
     }

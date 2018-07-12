@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasim = {
+        "hasim" = {
           depends  = [
             hsPkgs.mtl
           ] ++ (if _flags.splitbase

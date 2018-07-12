@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-mysql = {
+        "persistent-mysql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

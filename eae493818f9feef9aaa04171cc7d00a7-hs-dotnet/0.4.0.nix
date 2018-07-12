@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hs-dotnet = {
+        "hs-dotnet" = {
           depends  = [
             hsPkgs.ghc-prim
           ] ++ [ hsPkgs.base ];

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-text-format = {
+        "simple-text-format" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          simple-text-format-test = {
+          "simple-text-format-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.simple-text-format

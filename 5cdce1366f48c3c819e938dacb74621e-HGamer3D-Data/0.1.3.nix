@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-Data = {
+        "HGamer3D-Data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

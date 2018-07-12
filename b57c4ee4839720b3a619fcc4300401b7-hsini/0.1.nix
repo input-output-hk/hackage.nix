@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hsini = {
+        "hsini" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.HUnit
               hsPkgs.test-framework

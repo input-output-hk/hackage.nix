@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-banana = {
+        "reactive-banana" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

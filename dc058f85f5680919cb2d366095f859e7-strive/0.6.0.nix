@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strive = {
+        "strive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ] ++ [ hsPkgs.text ];
         };
         tests = {
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.strive
@@ -48,7 +48,7 @@ let
               hsPkgs.time
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

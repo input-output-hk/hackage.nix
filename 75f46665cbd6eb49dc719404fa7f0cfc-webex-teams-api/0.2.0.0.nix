@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webex-teams-api = {
+        "webex-teams-api" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          webex-teams-api-exe = {
+          "webex-teams-api-exe" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          webex-teams-api-test = {
+          "webex-teams-api-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.async

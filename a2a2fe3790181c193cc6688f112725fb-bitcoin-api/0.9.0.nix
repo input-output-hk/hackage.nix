@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitcoin-api = {
+        "bitcoin-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          test-suite = {
+          "test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.groom

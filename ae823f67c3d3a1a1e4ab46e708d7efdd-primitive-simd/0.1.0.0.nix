@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        primitive-simd = {
+        "primitive-simd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -33,7 +33,7 @@ let
           ];
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive-simd

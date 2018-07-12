@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Lattices = {
+        "Lattices" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HaskellForMaths
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-all = {
+          "test-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaskellForMaths

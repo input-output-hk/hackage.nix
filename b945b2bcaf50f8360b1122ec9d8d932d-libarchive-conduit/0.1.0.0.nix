@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libarchive-conduit = {
+        "libarchive-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

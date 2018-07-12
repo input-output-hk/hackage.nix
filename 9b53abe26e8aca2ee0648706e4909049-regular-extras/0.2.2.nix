@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        regular-extras = {
+        "regular-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regular

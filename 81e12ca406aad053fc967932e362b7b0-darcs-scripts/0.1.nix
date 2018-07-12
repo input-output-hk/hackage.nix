@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        darcs-scripts = {
+        "darcs-scripts" = {
           depends  = [ hsPkgs.base ];
         };
       };

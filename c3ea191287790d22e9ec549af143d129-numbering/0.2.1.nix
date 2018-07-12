@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numbering = {
+        "numbering" = {
           depends  = [
             hsPkgs.vector
             hsPkgs.containers

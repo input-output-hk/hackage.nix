@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SFML-control = {
+        "SFML-control" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

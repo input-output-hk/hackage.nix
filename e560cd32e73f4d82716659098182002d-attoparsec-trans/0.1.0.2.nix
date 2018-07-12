@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec-trans = {
+        "attoparsec-trans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        one-liner-instances = {
+        "one-liner-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.one-liner

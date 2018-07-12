@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        control-iso = {
+        "control-iso" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

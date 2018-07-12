@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alerta = {
+        "alerta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

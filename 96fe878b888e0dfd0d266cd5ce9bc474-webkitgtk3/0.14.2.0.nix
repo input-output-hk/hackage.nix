@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        webkitgtk3 = {
+        "webkitgtk3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        corenlp-parser = {
+        "corenlp-parser" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.async

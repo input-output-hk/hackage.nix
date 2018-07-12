@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-generic = {
+        "hasql-generic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

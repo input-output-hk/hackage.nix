@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ersatz-toysat = {
+        "ersatz-toysat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          ersatz-toysat-regexp-grid = {
+          "ersatz-toysat-regexp-grid" = {
             depends  = pkgs.lib.optionals _flags.examples ([
               hsPkgs.base
               hsPkgs.containers
@@ -44,7 +44,7 @@ let
               hsPkgs.parsec
             ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) hsPkgs.ghc-prim);
           };
-          ersatz-toysat-sudoku = {
+          "ersatz-toysat-sudoku" = {
             depends  = pkgs.lib.optionals _flags.examples ([
               hsPkgs.array
               hsPkgs.base

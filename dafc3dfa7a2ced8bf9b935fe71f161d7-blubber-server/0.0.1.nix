@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        blubber-server = {
+        "blubber-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          blubber-server = {
+          "blubber-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blubber-server

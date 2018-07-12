@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-c-inline = {
+        "language-c-inline" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          concept = {
+          "concept" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-c-quote

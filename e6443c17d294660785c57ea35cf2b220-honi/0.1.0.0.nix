@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        honi = {
+        "honi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.honi

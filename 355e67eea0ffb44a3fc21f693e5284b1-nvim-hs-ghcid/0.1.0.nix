@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nvim-hs-ghcid = {
+        "nvim-hs-ghcid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.nvim-hs

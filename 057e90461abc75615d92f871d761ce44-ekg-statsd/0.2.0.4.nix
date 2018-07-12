@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ekg-statsd = {
+        "ekg-statsd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

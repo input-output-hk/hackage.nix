@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hzk = {
+        "hzk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           libs = [ pkgs.zookeeper_mt ];
         };
         tests = {
-          test-zookeeper = {
+          "test-zookeeper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

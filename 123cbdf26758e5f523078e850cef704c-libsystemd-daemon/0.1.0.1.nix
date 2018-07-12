@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libsystemd-daemon = {
+        "libsystemd-daemon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           pkgconfig = pkgs.lib.optional _flags.usepkgconfig pkgconfPkgs.libsystemd-daemon;
         };
         tests = {
-          run-tests = {
+          "run-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.libsystemd-daemon

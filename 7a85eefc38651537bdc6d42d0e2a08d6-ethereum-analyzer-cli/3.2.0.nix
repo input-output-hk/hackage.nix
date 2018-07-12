@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ethereum-analyzer-cli = {
+        "ethereum-analyzer-cli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -48,14 +48,14 @@ let
           ];
         };
         exes = {
-          ea-analyze = {
+          "ea-analyze" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ethereum-analyzer-cli
               hsPkgs.protolude
             ];
           };
-          ea-bytecode-vis = {
+          "ea-bytecode-vis" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ethereum-analyzer-cli
@@ -64,7 +64,7 @@ let
               hsPkgs.protolude
             ];
           };
-          ea-dump-contract = {
+          "ea-dump-contract" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ethereum-analyzer-cli

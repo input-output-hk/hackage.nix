@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-pretty = {
+        "aeson-pretty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          aeson-pretty = {
+          "aeson-pretty" = {
             depends  = pkgs.lib.optionals (!_flags.lib-only) [
               hsPkgs.aeson
               hsPkgs.aeson-pretty

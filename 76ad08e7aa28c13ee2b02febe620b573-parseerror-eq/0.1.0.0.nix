@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        parseerror-eq = {
+        "parseerror-eq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         tests = {
-          parseerror-eq-test = {
+          "parseerror-eq-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

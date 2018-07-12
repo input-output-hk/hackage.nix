@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-zipper = {
+        "text-zipper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

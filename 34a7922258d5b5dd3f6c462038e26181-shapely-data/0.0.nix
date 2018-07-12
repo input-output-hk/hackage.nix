@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shapely-data = {
+        "shapely-data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

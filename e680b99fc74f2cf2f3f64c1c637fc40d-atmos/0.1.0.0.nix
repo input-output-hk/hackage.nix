@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atmos = {
+        "atmos" = {
           depends  = [ hsPkgs.base ];
         };
       };

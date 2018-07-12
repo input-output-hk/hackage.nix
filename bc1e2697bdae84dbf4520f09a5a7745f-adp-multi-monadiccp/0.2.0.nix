@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        adp-multi-monadiccp = {
+        "adp-multi-monadiccp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-mvc-solutions-gtk = {
+        "keera-hails-mvc-solutions-gtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

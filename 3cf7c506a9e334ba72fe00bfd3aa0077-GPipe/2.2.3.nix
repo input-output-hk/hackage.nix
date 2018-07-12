@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GPipe = {
+        "GPipe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

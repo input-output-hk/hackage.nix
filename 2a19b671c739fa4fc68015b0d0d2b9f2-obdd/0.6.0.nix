@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        obdd = {
+        "obdd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -31,42 +31,42 @@ let
           ];
         };
         tests = {
-          obdd-placement = {
+          "obdd-placement" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.obdd
             ];
           };
-          obdd-queens = {
+          "obdd-queens" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.obdd
             ];
           };
-          obdd-queens2 = {
+          "obdd-queens2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.obdd
             ];
           };
-          obdd-weight = {
+          "obdd-weight" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.obdd
             ];
           };
-          obdd-sort = {
+          "obdd-sort" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.obdd
             ];
           };
-          obdd-mm0916 = {
+          "obdd-mm0916" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

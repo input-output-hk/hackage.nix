@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sequential-index = {
+        "sequential-index" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

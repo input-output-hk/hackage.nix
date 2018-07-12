@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        category-extras = {
+        "category-extras" = {
           depends  = [
             hsPkgs.adjunctions
             hsPkgs.bifunctors

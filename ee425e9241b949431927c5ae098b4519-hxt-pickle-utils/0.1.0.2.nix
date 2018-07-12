@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-pickle-utils = {
+        "hxt-pickle-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt

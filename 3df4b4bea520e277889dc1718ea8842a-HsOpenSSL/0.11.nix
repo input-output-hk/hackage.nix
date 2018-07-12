@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HsOpenSSL = {
+        "HsOpenSSL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
             hsPkgs.network
             hsPkgs.old-locale
             hsPkgs.time
-          ] ++ (if _flags.fast-bignum && (compiler.isGhc && compiler.version.ge "6.11")
+          ] ++ pkgs.lib.optionals _flags.fast-bignum (if compiler.isGhc && compiler.version.ge "6.11"
             then [ hsPkgs.integer-gmp ]
             else [ hsPkgs.integer ]);
           libs = if system.isWindows

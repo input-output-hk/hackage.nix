@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          websnap = {
+          "websnap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.webkit

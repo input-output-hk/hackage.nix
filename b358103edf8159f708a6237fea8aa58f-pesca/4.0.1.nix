@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pesca = {
+          "pesca" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

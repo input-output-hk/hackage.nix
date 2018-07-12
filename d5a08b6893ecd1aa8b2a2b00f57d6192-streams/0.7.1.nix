@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streams = {
+        "streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

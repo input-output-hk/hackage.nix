@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RNAdraw = {
+        "RNAdraw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          RNAdotplot = {
+          "RNAdotplot" = {
             depends  = [ hsPkgs.cmdargs ];
           };
         };

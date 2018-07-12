@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hen = {
+        "hen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           libs = [ pkgs.xenctrl ];
         };
         tests = {
-          hen-tests = {
+          "hen-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

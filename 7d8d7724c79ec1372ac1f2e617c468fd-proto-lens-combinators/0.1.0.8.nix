@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        proto-lens-combinators = {
+        "proto-lens-combinators" = {
           depends  = [
             hsPkgs.proto-lens
             hsPkgs.proto-lens-protoc
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          combinators_test = {
+          "combinators_test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

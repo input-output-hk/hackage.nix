@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-dom-jsffi = {
+        "ghcjs-dom-jsffi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

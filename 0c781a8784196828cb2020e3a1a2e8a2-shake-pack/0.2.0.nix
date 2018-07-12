@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake-pack = {
+        "shake-pack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

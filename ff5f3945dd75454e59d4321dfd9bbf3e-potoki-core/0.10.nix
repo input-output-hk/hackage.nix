@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        potoki-core = {
+        "potoki-core" = {
           depends  = [
             hsPkgs.acquire
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.potoki-core
               hsPkgs.tasty

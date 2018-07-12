@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bronyradiogermany-streaming = {
+        "bronyradiogermany-streaming" = {
           depends  = [
             hsPkgs.base
             hsPkgs.streaming

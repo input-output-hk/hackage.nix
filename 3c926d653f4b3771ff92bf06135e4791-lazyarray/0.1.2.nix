@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazyarray = {
+        "lazyarray" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

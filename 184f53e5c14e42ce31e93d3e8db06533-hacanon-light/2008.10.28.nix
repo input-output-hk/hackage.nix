@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hacanon-light = {
+        "hacanon-light" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

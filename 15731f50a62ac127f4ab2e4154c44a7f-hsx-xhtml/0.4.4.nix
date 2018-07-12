@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsx-xhtml = {
+        "hsx-xhtml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

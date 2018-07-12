@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rewrite = {
+          "rewrite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.multiarg

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bioace = {
+        "bioace" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

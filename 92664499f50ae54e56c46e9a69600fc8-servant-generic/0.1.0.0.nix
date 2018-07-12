@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-generic = {
+        "servant-generic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          example-basic = {
+          "example-basic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant

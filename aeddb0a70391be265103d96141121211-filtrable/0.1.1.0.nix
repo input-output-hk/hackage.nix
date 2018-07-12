@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filtrable = {
+        "filtrable" = {
           depends  = [ hsPkgs.base ];
         };
       };

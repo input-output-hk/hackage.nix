@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mkbndl = {
+          "mkbndl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

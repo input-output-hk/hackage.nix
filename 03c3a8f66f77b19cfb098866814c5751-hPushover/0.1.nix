@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hPushover = {
+        "hPushover" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

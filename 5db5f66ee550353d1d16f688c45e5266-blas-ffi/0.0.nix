@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blas-ffi = {
+        "blas-ffi" = {
           depends  = [
             hsPkgs.netlib-ffi
             hsPkgs.base

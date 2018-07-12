@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kd-tree = {
+        "kd-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear

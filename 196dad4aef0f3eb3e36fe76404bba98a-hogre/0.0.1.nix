@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hogre = {
+        "hogre" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

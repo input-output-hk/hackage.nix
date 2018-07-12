@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aur = {
+        "aur" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

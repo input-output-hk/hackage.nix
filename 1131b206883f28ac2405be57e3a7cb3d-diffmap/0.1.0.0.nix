@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diffmap = {
+        "diffmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linearmap-category = {
+        "linearmap-category" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector-space

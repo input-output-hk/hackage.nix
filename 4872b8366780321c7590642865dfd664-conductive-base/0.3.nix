@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conductive-base = {
+        "conductive-base" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

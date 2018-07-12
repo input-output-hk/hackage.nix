@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numhask-prelude = {
+        "numhask-prelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.numhask
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.doctest
               hsPkgs.numhask-prelude

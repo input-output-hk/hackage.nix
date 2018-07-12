@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client = {
+        "http-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-client

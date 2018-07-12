@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ngrams-loader = {
+        "ngrams-loader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          ngrams-loader = {
+          "ngrams-loader" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ngrams-loader

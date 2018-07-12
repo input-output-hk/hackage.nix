@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thyme = {
+        "thyme" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

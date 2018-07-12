@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        swish = {
+        "swish" = {
           depends  = (((([
             hsPkgs.base
             hsPkgs.containers
@@ -44,13 +44,13 @@ let
             ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.4.0") hsPkgs.intern) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4.0") hsPkgs.intern) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6.0") hsPkgs.directory) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6.0") hsPkgs.directory;
         };
         exes = {
-          Swish = {
+          "Swish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.swish
             ];
           };
-          runw3ctests = {
+          "runw3ctests" = {
             depends  = pkgs.lib.optionals _flags.w3ctests ([
               hsPkgs.base
               hsPkgs.containers
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          test-builtinmap = {
+          "test-builtinmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -77,7 +77,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          test-graphpartition = {
+          "test-graphpartition" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -88,7 +88,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          test-graph = {
+          "test-graph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -99,7 +99,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          test-nt = {
+          "test-nt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -110,7 +110,7 @@ let
               hsPkgs.text
             ];
           };
-          test-turtle = {
+          "test-turtle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -126,7 +126,7 @@ let
                 hsPkgs.network
               ]);
           };
-          test-n3parser = {
+          "test-n3parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -142,7 +142,7 @@ let
                 hsPkgs.network
               ]);
           };
-          test-n3formatter = {
+          "test-n3formatter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -158,7 +158,7 @@ let
                 hsPkgs.network
               ]);
           };
-          test-rdfdatatypexsdinteger = {
+          "test-rdfdatatypexsdinteger" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -174,7 +174,7 @@ let
                 hsPkgs.network
               ]);
           };
-          test-rdfgraph = {
+          "test-rdfgraph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -192,7 +192,7 @@ let
                 hsPkgs.network
               ]);
           };
-          test-rdfproofcontext = {
+          "test-rdfproofcontext" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -208,7 +208,7 @@ let
                 hsPkgs.network
               ]);
           };
-          test-rdfproof = {
+          "test-rdfproof" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -224,7 +224,7 @@ let
                 hsPkgs.network
               ]);
           };
-          test-rdfquery = {
+          "test-rdfquery" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -240,7 +240,7 @@ let
                 hsPkgs.network
               ]);
           };
-          test-rdfruleset = {
+          "test-rdfruleset" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -256,7 +256,7 @@ let
                 hsPkgs.network
               ]);
           };
-          test-varbinding = {
+          "test-varbinding" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -266,7 +266,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          test-qname = {
+          "test-qname" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

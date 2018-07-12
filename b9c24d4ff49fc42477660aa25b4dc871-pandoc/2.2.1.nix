@@ -25,7 +25,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pandoc = {
+        "pandoc" = {
           depends  = (((([
             hsPkgs.base
             hsPkgs.syb
@@ -85,13 +85,13 @@ let
             ])) ++ pkgs.lib.optional _flags.embed_data_files hsPkgs.file-embed;
         };
         exes = {
-          pandoc = {
+          "pandoc" = {
             depends  = ([
               hsPkgs.pandoc
               hsPkgs.base
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") hsPkgs.base-compat;
           };
-          trypandoc = {
+          "trypandoc" = {
             depends  = (pkgs.lib.optionals _flags.trypandoc [
               hsPkgs.base
               hsPkgs.aeson
@@ -104,7 +104,7 @@ let
           };
         };
         tests = {
-          test-pandoc = {
+          "test-pandoc" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.pandoc
@@ -133,7 +133,7 @@ let
           };
         };
         benchmarks = {
-          weigh-pandoc = {
+          "weigh-pandoc" = {
             depends  = ([
               hsPkgs.pandoc
               hsPkgs.base
@@ -142,7 +142,7 @@ let
               hsPkgs.mtl
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") hsPkgs.base-compat;
           };
-          benchmark-pandoc = {
+          "benchmark-pandoc" = {
             depends  = ([
               hsPkgs.pandoc
               hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml-light = {
+        "yaml-light" = {
           depends  = [
             hsPkgs.HsSyck
             hsPkgs.base

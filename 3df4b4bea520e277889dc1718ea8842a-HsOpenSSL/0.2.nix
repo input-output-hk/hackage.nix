@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HsOpenSSL = {
+        "HsOpenSSL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

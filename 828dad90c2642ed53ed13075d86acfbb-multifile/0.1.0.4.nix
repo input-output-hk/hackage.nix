@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          multifile = {
+          "multifile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaXml

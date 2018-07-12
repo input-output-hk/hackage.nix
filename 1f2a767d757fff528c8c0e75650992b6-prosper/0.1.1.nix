@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prosper = {
+        "prosper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

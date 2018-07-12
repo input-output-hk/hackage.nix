@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ac-machine-conduit = {
+        "ac-machine-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ac-machine

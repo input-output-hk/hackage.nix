@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        judy = {
+        "judy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

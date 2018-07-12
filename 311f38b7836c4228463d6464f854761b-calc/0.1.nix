@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          calc = {
+          "calc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.harpy

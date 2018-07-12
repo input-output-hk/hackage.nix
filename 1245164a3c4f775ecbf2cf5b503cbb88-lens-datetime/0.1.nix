@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lens-datetime = {
+        "lens-datetime" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

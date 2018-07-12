@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sslocal = {
+          "sslocal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -35,7 +35,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          ssserver = {
+          "ssserver" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

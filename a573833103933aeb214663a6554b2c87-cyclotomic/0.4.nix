@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cyclotomic = {
+        "cyclotomic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal-src-install = {
+          "cabal-src-install" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
               hsPkgs.filepath
             ];
           };
-          mega-sdist = {
+          "mega-sdist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shelly
@@ -51,7 +51,7 @@ let
               hsPkgs.resourcet
             ];
           };
-          hackage-docs = {
+          "hackage-docs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-client

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-mandrill = {
+        "snaplet-mandrill" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snap

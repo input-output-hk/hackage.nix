@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        raven-haskell = {
+        "raven-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

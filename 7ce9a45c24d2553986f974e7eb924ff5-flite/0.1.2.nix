@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flite = {
+        "flite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          flite-pure = {
+          "flite-pure" = {
             depends  = pkgs.lib.optionals _flags.pure [
               hsPkgs.base
               hsPkgs.haskell98
@@ -40,7 +40,7 @@ let
               hsPkgs.containers
             ];
           };
-          flite = {
+          "flite" = {
             depends  = pkgs.lib.optionals (!_flags.pure) [
               hsPkgs.base
               hsPkgs.haskell98

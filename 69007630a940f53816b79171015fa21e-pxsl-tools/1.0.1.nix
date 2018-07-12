@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pxslcc = {
+          "pxslcc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

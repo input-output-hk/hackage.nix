@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validated-literals = {
+        "validated-literals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

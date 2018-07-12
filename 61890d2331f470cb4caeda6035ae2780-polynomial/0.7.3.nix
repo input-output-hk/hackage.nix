@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polynomial = {
+        "polynomial" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -35,7 +35,7 @@ let
             else [ hsPkgs.pretty ]);
         };
         tests = {
-          polynomial-test = {
+          "polynomial-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

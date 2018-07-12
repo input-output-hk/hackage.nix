@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          markup-preview = {
+          "markup-preview" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk2hs-buildtools

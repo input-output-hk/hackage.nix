@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bricks-internal-test = {
+        "bricks-internal-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bricks-internal

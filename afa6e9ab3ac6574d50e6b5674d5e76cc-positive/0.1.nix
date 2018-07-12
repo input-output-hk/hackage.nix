@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        positive = {
+        "positive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.nats

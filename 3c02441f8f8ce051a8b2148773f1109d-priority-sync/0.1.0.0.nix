@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        priority-sync = {
+        "priority-sync" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          _Control_Concurrent_Priority_Tests = {
+          "_Control_Concurrent_Priority_Tests" = {
             depends  = [ hsPkgs.base ];
           };
         };

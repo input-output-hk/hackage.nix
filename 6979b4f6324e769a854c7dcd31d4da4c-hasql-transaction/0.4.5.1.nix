@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-transaction = {
+        "hasql-transaction" = {
           depends  = [
             hsPkgs.hasql
             hsPkgs.bytestring-tree-builder
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          conflicts-test = {
+          "conflicts-test" = {
             depends  = [
               hsPkgs.hasql-transaction
               hsPkgs.hasql

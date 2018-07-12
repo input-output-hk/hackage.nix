@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        native = {
+        "native" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          native = {
+          "native" = {
             depends  = [
               hsPkgs.base
               hsPkgs.native
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          native-test = {
+          "native-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.native

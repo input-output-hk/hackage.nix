@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        req-url-extra = {
+        "req-url-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.modern-uri
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          sample = {
+          "sample" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          req-url-extra-test = {
+          "req-url-extra-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

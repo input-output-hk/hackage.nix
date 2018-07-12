@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        email-validate = {
+        "email-validate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.email-validate
               hsPkgs.base
@@ -38,7 +38,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

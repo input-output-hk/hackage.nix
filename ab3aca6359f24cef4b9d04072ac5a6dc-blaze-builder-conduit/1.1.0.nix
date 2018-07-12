@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-builder-conduit = {
+        "blaze-builder-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit

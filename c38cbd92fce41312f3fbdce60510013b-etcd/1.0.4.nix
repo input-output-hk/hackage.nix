@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        etcd = {
+        "etcd" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.async
               hsPkgs.MonadRandom

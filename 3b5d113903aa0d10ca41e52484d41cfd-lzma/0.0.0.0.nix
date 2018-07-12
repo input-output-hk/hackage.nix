@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lzma = {
+        "lzma" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           libs = [ pkgs.lzma ];
         };
         tests = {
-          lzma-tests = {
+          "lzma-tests" = {
             depends  = [
               hsPkgs.lzma
               hsPkgs.base

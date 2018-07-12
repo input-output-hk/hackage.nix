@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        abstract-par = {
+        "abstract-par" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

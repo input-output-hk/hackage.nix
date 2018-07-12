@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaskellForMaths = {
+        "HaskellForMaths" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

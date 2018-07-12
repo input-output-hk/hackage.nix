@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-simple-tls = {
+        "network-simple-tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          network-simple-tls-example-https-client = {
+          "network-simple-tls-example-https-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
               hsPkgs.certificate
             ];
           };
-          network-simple-tls-example-echo = {
+          "network-simple-tls-example-echo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

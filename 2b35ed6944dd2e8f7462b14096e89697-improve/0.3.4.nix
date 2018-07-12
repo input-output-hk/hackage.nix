@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        improve = {
+        "improve" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

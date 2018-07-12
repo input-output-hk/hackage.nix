@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bencode = {
+        "bencode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

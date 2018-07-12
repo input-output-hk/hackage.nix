@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-mmap = {
+        "hmatrix-mmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mmap

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        html-minimalist = {
+        "html-minimalist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml

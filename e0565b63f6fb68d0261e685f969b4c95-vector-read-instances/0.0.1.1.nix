@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-read-instances = {
+        "vector-read-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

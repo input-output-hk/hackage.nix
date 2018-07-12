@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-quick = {
+        "aeson-quick" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.5") hsPkgs.ghc-prim;
         };
         tests = {
-          aeson-quick-test = {
+          "aeson-quick-test" = {
             depends  = [
               hsPkgs.aeson-quick
               hsPkgs.base
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.aeson-quick
               hsPkgs.base

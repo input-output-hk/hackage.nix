@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        macho = {
+        "macho" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

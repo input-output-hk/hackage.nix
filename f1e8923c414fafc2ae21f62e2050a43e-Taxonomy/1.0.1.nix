@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Taxonomy = {
+        "Taxonomy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

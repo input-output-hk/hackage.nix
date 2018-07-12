@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cpphs = {
+        "cpphs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          cpphs = {
+          "cpphs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.old-locale

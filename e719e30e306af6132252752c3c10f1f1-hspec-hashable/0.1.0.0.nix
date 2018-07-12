@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-hashable = {
+        "hspec-hashable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hashable

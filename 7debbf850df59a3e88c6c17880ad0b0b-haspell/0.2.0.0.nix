@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haspell = {
+        "haspell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

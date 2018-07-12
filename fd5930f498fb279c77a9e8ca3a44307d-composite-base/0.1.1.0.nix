@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        composite-base = {
+        "composite-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Frames

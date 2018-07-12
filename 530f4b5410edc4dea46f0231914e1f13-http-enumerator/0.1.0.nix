@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-enumerator = {
+        "http-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
             ]);
         };
         exes = {
-          http-enumerator = {};
+          "http-enumerator" = {};
         };
       };
     }

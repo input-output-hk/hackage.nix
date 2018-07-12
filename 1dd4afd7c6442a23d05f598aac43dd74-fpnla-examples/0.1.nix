@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fpnla-examples = {
+        "fpnla-examples" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-fpnla-blas = {
+          "test-fpnla-blas" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -61,7 +61,7 @@ let
               hsPkgs.monad-par
             ];
           };
-          test-fpnla-lapack = {
+          "test-fpnla-lapack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

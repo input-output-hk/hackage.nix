@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-static = {
+        "wai-middleware-static" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          hpc-coveralls-stub = {
+          "hpc-coveralls-stub" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hpc-coveralls

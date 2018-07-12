@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaPy = {
+        "HaPy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.th-lift

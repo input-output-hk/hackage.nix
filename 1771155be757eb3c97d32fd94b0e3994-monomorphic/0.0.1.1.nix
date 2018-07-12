@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monomorphic = {
+        "monomorphic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

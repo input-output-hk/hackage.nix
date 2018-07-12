@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrent-machines = {
+        "concurrent-machines" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-control
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.concurrent-machines

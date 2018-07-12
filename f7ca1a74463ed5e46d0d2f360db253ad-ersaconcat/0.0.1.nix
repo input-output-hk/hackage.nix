@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ersaconcat = {
+        "ersaconcat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network-uri
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          ersaconcat = {
+          "ersaconcat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-uri
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

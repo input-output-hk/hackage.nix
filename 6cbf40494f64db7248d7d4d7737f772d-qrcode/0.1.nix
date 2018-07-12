@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        qrcode = {
+        "qrcode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

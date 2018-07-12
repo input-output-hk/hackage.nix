@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal2nix = {
+          "cabal2nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -32,7 +32,7 @@ let
               hsPkgs.directory
             ];
           };
-          hackage4nix = {
+          "hackage4nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

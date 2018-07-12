@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openssl-streams = {
+        "openssl-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

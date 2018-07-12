@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        surjective = {
+        "surjective" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

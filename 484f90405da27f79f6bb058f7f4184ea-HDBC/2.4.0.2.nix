@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HDBC = {
+        "HDBC" = {
           depends  = ([
             hsPkgs.mtl
             hsPkgs.convertible
@@ -47,7 +47,7 @@ let
             ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.base;
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests (([
               hsPkgs.HUnit
               hsPkgs.QuickCheck

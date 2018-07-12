@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nix-delegate = {
+        "nix-delegate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.neat-interpolation
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          nix-delegate = {
+          "nix-delegate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nix-delegate

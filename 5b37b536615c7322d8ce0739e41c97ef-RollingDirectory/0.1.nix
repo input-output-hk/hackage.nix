@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          RollingDirectory = {
+          "RollingDirectory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hinotify
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          MainTest = {
+          "MainTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

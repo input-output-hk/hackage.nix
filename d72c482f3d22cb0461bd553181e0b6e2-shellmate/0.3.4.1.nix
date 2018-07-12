@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shellmate = {
+        "shellmate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

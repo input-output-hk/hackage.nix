@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hlibsass = {
+        "hlibsass" = {
           depends  = [ hsPkgs.base ];
           libs = if _flags.externallibsass
             then [ pkgs.sass ]
@@ -33,7 +33,7 @@ let
             ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

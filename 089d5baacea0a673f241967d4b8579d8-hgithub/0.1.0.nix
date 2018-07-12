@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgithub = {
+        "hgithub" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hgithub = {
+          "hgithub" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

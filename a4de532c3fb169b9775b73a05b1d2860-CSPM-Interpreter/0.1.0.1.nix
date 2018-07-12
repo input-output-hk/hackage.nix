@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CSPM-Interpreter = {
+        "CSPM-Interpreter" = {
           depends  = [
             hsPkgs.CSPM-Frontend
             hsPkgs.CSPM-CoreLanguage
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          cspmEval = {
+          "cspmEval" = {
             depends  = [
               hsPkgs.CSPM-Frontend
               hsPkgs.CSPM-CoreLanguage

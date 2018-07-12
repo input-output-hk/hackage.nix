@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        QuickCheck = {
+        "QuickCheck" = {
           depends  = (([
             hsPkgs.mtl
           ] ++ (if _flags.extensibleexceptions
@@ -39,7 +39,7 @@ let
               ]
               else [
                 hsPkgs.base
-              ])) ++ (if compiler.isGhc && compiler.version.ge "6.7" && _flags.ghciinterruptedexception
+              ])) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.7") (if _flags.ghciinterruptedexception
             then [ hsPkgs.base hsPkgs.ghc ]
             else [
               hsPkgs.base

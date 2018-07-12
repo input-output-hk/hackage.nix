@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          darcs-graph = {
+          "darcs-graph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fps

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        themoviedb = {
+        "themoviedb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          tmdb = {
+          "tmdb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

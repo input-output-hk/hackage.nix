@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitwise = {
+        "bitwise" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          bitwise-testsuite = {
+          "bitwise-testsuite" = {
             depends  = [
               hsPkgs.bitwise
               hsPkgs.base
@@ -37,7 +37,7 @@ let
           };
         };
         benchmarks = {
-          bitwise-benchmark = {
+          "bitwise-benchmark" = {
             depends  = [
               hsPkgs.bitwise
               hsPkgs.base

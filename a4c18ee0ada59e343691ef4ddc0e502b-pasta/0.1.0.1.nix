@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pasta = {
+        "pasta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.microlens
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          pasta-test = {
+          "pasta-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pasta

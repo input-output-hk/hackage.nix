@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-posix = {
+        "bindings-posix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-common

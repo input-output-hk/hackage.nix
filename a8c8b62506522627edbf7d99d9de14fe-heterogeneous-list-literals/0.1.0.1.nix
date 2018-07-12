@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        heterogeneous-list-literals = {
+        "heterogeneous-list-literals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OneTuple
           ];
         };
         tests = {
-          HeterogenousListLiterals-test = {
+          "HeterogenousListLiterals-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.heterogeneous-list-literals

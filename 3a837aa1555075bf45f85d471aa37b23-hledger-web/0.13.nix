@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hledger-web = {
+          "hledger-web" = {
             depends  = [
               hsPkgs.hledger
               hsPkgs.hledger-lib

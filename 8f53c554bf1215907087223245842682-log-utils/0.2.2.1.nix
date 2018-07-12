@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          log-server = {
+          "log-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -44,7 +44,7 @@ let
               hsPkgs.warp
             ];
           };
-          log-fetcher = {
+          "log-fetcher" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        priority-queue = {
+        "priority-queue" = {
           depends  = [
             hsPkgs.reord
             hsPkgs.stateref

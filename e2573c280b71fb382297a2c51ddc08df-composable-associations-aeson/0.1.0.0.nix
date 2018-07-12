@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        composable-associations-aeson = {
+        "composable-associations-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.composable-associations
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -41,7 +41,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.composable-associations-aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HJVM = {
+        "HJVM" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           libs = [ pkgs.jvm ];
         };
         tests = {
-          hjvm-test = {
+          "hjvm-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

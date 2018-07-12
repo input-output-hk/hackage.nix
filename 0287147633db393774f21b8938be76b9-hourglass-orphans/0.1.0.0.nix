@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hourglass-orphans = {
+        "hourglass-orphans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hourglass
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          hourglass-orphans-test = {
+          "hourglass-orphans-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hourglass-orphans

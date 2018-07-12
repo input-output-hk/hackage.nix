@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-devicefarm = {
+        "amazonka-devicefarm" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-devicefarm-test = {
+          "amazonka-devicefarm-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

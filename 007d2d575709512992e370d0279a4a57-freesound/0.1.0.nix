@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        freesound = {
+        "freesound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,6 +32,6 @@ let
             hsPkgs.xml
           ];
         };
-        exes = { freesound = {}; };
+        exes = { "freesound" = {}; };
       };
     }

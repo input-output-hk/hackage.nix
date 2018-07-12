@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        foscam-directory = {
+        "foscam-directory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

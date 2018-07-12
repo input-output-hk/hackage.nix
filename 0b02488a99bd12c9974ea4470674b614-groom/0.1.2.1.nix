@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        groom = {
+        "groom" = {
           depends  = [
             hsPkgs.haskell-src-exts
             hsPkgs.base
           ];
         };
         exes = {
-          groom = {
+          "groom" = {
             depends  = [
               hsPkgs.groom
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        infinite-search = {
+        "infinite-search" = {
           depends  = [ hsPkgs.base ];
         };
       };

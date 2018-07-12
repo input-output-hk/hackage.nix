@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        azurify = {
+        "azurify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          azurify = {
+          "azurify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

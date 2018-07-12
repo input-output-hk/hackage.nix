@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        salvia-extras = {
+        "salvia-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fclabels

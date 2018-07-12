@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        decimal-arithmetic = {
+        "decimal-arithmetic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.decimal-arithmetic

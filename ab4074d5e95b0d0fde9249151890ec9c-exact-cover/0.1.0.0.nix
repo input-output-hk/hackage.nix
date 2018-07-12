@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        exact-cover = {
+        "exact-cover" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          sudoku = {
+          "sudoku" = {
             depends  = [
               hsPkgs.exact-cover
               hsPkgs.base
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.exact-cover
               hsPkgs.base

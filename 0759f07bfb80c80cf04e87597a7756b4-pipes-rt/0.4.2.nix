@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-rt = {
+        "pipes-rt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          PipesRealTimeExample = {
+          "PipesRealTimeExample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes

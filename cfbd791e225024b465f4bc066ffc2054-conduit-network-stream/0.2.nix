@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-network-stream = {
+        "conduit-network-stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

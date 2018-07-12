@@ -20,18 +20,18 @@ let
         buildType = "Simple";
       };
       components = {
-        simpleprelude = {
+        "simpleprelude" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          simple-ghc = {
+          "simple-ghc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.ghc-paths
             ];
           };
-          simple-ghci = {
+          "simple-ghci" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

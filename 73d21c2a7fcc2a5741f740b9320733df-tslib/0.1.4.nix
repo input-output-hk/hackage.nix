@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tslib = {
+        "tslib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          basicTest = {
+          "basicTest" = {
             depends  = [
               hsPkgs.tslib
               hsPkgs.base
@@ -43,7 +43,7 @@ let
               hsPkgs.vector
             ];
           };
-          basicUTimeTest = {
+          "basicUTimeTest" = {
             depends  = [
               hsPkgs.tslib
               hsPkgs.base
@@ -54,7 +54,7 @@ let
               hsPkgs.vector
             ];
           };
-          periodicTest = {
+          "periodicTest" = {
             depends  = [
               hsPkgs.tslib
               hsPkgs.base
@@ -64,7 +64,7 @@ let
               hsPkgs.time
             ];
           };
-          utimeTest = {
+          "utimeTest" = {
             depends  = [
               hsPkgs.tslib
               hsPkgs.base

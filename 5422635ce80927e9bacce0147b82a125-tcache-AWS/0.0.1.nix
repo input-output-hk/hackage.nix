@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tcache-AWS = {
+        "tcache-AWS" = {
           depends  = [
             hsPkgs.TCache
             hsPkgs.aws

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numeric-prelude = {
+        "numeric-prelude" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.QuickCheck
@@ -41,11 +41,11 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          test = {};
-          testsuite = {
+          "test" = {};
+          "testsuite" = {
             depends  = pkgs.lib.optional _flags.buildtests hsPkgs.HUnit;
           };
-          test-gaussian = {
+          "test-gaussian" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.gnuplot
               hsPkgs.HTam

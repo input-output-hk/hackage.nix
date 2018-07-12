@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickspec = {
+        "quickspec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

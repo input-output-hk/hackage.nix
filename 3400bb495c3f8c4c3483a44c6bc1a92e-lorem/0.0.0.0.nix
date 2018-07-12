@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        lorem = {
+        "lorem" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          lorem = {
+          "lorem" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lorem

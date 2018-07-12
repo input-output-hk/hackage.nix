@@ -23,18 +23,18 @@ let
         buildType = "Simple";
       };
       components = {
-        interprocess = {
+        "interprocess" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          interprocess-concurrent-malloc = {
+          "interprocess-concurrent-malloc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.typed-process
               hsPkgs.interprocess
             ];
           };
-          interprocess-wait-qsem = {
+          "interprocess-wait-qsem" = {
             depends  = [
               hsPkgs.base
               hsPkgs.typed-process

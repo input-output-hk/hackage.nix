@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        not-in-base = {
+        "not-in-base" = {
           depends  = [ hsPkgs.base ];
         };
       };

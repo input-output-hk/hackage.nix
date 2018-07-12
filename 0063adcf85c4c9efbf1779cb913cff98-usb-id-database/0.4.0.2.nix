@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        usb-id-database = {
+        "usb-id-database" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -33,6 +33,6 @@ let
             hsPkgs.parsimony
           ];
         };
-        exes = { example = {}; };
+        exes = { "example" = {}; };
       };
     }

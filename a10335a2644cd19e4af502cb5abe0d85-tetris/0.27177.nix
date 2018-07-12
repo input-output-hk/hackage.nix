@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tetris = {
+          "tetris" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT

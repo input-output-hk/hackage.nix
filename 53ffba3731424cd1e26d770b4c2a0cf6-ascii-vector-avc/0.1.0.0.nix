@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ascii-vector-avc = {
+        "ascii-vector-avc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zlib
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          SelectSigs = {
+          "SelectSigs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zlib

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lambda2js = {
+          "lambda2js" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

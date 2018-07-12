@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        neural-network-hmatrix = {
+        "neural-network-hmatrix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix

@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        anonymous-sums = {
+        "anonymous-sums" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          generate-sums = {
+          "generate-sums" = {
             depends  = [ hsPkgs.base ];
           };
         };

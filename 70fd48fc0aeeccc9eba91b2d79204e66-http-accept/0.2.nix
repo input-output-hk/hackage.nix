@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-accept = {
+        "http-accept" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

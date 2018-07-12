@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rfc1413-types = {
+        "rfc1413-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

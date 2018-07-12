@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        path-text-utf8 = {
+        "path-text-utf8" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

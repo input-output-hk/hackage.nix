@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix = {
+        "hmatrix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -36,7 +36,7 @@ let
             hsPkgs.semigroups
             hsPkgs.vector
           ];
-          libs = (((if system.isOsx && _flags.openblas
+          libs = ((pkgs.lib.optionals system.isOsx (if _flags.openblas
             then [ pkgs.openblas ]
             else [
               pkgs.blas
@@ -48,7 +48,7 @@ let
             else [
               pkgs.blas
               pkgs.lapack
-            ]))) ++ (if system.isWindows && _flags.openblas
+            ]))) ++ pkgs.lib.optionals system.isWindows (if _flags.openblas
             then [
               pkgs.libopenblas
               pkgs.libgcc_s_seh-1
@@ -58,7 +58,7 @@ let
             else [
               pkgs.blas
               pkgs.lapack
-            ])) ++ (if system.isLinux && _flags.openblas
+            ])) ++ pkgs.lib.optionals system.isLinux (if _flags.openblas
             then [ pkgs.openblas ]
             else [ pkgs.blas pkgs.lapack ]);
           frameworks = pkgs.lib.optional system.isOsx pkgs.Accelerate;

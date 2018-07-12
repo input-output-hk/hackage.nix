@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        posix-pty = {
+        "posix-pty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           libs = pkgs.lib.optional (system.isLinux || system.isFreebsd) pkgs.util;
         };
         tests = {
-          stty = {
+          "stty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        BNFC = {
+        "BNFC" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
           ];
         };
         exes = {
-          bnfc = {
+          "bnfc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -63,7 +63,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          bnfc-doctests = {
+          "bnfc-doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

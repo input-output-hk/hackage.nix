@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monarch = {
+        "monarch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          specs = {
+          "specs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monarch
@@ -49,7 +49,7 @@ let
               hsPkgs.hspec
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -57,7 +57,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monarch

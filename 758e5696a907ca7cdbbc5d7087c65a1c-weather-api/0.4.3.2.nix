@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        weather-api = {
+        "weather-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

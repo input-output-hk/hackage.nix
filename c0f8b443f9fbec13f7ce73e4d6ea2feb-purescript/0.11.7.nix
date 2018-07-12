@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        purescript = {
+        "purescript" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-better-errors
@@ -82,7 +82,7 @@ let
           ];
         };
         exes = {
-          purs = {
+          "purs" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-better-errors
@@ -152,7 +152,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-better-errors

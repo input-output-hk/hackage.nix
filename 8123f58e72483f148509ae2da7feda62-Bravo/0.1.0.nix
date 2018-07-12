@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Bravo = {
+        "Bravo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

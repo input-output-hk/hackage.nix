@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          robin = {
+          "robin" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base

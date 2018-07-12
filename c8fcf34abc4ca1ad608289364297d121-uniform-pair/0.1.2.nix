@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uniform-pair = {
+        "uniform-pair" = {
           depends  = [ hsPkgs.base ];
         };
       };

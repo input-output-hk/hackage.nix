@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        median-stream = {
+        "median-stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.heap
           ];
         };
         tests = {
-          median-stream-test = {
+          "median-stream-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.median-stream
@@ -36,7 +36,7 @@ let
           };
         };
         benchmarks = {
-          median-stream-bench-optimized = {
+          "median-stream-bench-optimized" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
@@ -44,7 +44,7 @@ let
               hsPkgs.random
             ];
           };
-          median-stream-bench-non-optimized = {
+          "median-stream-bench-non-optimized" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

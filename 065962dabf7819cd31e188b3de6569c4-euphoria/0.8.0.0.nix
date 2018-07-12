@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        euphoria = {
+        "euphoria" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

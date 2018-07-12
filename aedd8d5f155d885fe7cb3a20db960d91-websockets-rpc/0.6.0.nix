@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        websockets-rpc = {
+        "websockets-rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.websockets-rpc
@@ -60,7 +60,7 @@ let
               hsPkgs.websockets-simple
             ];
           };
-          example-client = {
+          "example-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.websockets-rpc
@@ -76,7 +76,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.websockets-rpc

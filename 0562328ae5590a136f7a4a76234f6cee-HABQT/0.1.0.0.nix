@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HABQT = {
+        "HABQT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
@@ -35,7 +35,7 @@ let
           ];
         };
         foreignlibs = {
-          HABQT = {
+          "HABQT" = {
             depends  = [
               hsPkgs.HABQT
               hsPkgs.base
@@ -48,7 +48,7 @@ let
           };
         };
         exes = {
-          HABQT-simulation = {
+          "HABQT-simulation" = {
             depends  = [
               hsPkgs.HABQT
               hsPkgs.base
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          HABQT-test = {
+          "HABQT-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HABQT

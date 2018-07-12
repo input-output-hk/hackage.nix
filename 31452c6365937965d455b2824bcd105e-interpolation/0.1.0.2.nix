@@ -23,14 +23,14 @@ let
         buildType = "Simple";
       };
       components = {
-        interpolation = {
+        "interpolation" = {
           depends  = [
             hsPkgs.utility-ht
             hsPkgs.base
           ];
         };
         exes = {
-          interpolation-plot = {
+          "interpolation-plot" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.interpolation
               hsPkgs.gnuplot
@@ -38,7 +38,7 @@ let
               hsPkgs.base
             ];
           };
-          interpolation-fit = {
+          "interpolation-fit" = {
             depends  = pkgs.lib.optionals (_flags.buildexamples && _flags.hmatrix) [
               hsPkgs.interpolation
               hsPkgs.hmatrix-banded
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          interpolation-test = {
+          "interpolation-test" = {
             depends  = [
               hsPkgs.interpolation
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        abstract-deque = {
+        "abstract-deque" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

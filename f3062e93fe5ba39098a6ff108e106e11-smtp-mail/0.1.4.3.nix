@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smtp-mail = {
+        "smtp-mail" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

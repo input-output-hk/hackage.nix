@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-mvc-model-protectedmodel = {
+        "keera-hails-mvc-model-protectedmodel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

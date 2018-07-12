@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-named = {
+        "servant-named" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant
           ];
         };
         tests = {
-          servant-named-test = {
+          "servant-named-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-named

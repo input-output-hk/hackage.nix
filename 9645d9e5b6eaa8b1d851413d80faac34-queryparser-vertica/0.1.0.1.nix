@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        queryparser-vertica = {
+        "queryparser-vertica" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        abstract-deque = {
+        "abstract-deque" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -34,7 +34,7 @@ let
           ] ++ pkgs.lib.optional (_flags.usecas && (compiler.isGhc && compiler.version.ge "7.4") && !system.isWindows) hsPkgs.IORefCAS;
         };
         tests = {
-          test-abstract-deque = {
+          "test-abstract-deque" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

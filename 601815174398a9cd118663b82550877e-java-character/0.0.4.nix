@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        java-character = {
+        "java-character" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diet

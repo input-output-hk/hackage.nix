@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-pony-transformer-startline = {
+        "http-pony-transformer-startline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

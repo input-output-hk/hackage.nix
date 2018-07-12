@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-extractors = {
+        "xml-extractors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml

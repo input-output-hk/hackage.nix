@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-builder = {
+        "vector-builder" = {
           depends  = [
             hsPkgs.primitive
             hsPkgs.vector
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.tasty
               hsPkgs.tasty-quickcheck

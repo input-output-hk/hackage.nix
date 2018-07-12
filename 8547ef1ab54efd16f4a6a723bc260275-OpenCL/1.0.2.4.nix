@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OpenCL = {
+        "OpenCL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

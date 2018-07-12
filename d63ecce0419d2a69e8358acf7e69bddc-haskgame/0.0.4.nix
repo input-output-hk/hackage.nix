@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskgame = {
+        "haskgame" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

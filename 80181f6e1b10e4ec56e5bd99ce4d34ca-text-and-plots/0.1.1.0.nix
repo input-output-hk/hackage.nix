@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-and-plots = {
+        "text-and-plots" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

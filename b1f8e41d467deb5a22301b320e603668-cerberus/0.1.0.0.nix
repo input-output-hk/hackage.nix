@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cerberus = {
+        "cerberus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          cerberus = {
+          "cerberus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ekg
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          cerberus-test = {
+          "cerberus-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cerberus

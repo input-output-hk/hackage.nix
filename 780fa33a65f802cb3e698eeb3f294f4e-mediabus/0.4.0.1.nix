@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mediabus = {
+        "mediabus" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.array
@@ -56,7 +56,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.array

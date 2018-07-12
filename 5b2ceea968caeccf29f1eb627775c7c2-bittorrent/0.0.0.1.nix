@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bittorrent = {
+        "bittorrent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bits-extras
@@ -67,7 +67,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

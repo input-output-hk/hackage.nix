@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          git-checklist = {
+          "git-checklist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

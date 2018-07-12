@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        boundingboxes = {
+        "boundingboxes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.linear

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HsHyperEstraier = {
+        "HsHyperEstraier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

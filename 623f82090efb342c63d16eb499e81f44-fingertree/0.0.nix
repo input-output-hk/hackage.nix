@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        fingertree = {
+        "fingertree" = {
           depends  = [ hsPkgs.base ];
         };
       };

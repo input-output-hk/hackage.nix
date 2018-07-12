@@ -25,7 +25,7 @@ let
         buildType = "Custom";
       };
       components = {
-        twitter-conduit = {
+        "twitter-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -54,7 +54,7 @@ let
             else [ hsPkgs.lens ]);
         };
         exes = {
-          simple = {
+          "simple" = {
             depends  = pkgs.lib.optionals (!(!_flags.build-samples)) [
               hsPkgs.base
               hsPkgs.transformers-base
@@ -73,7 +73,7 @@ let
               hsPkgs.twitter-conduit
             ];
           };
-          userstream = {
+          "userstream" = {
             depends  = pkgs.lib.optionals (!(!_flags.build-samples)) [
               hsPkgs.base
               hsPkgs.containers
@@ -101,7 +101,7 @@ let
               then [ hsPkgs.network-uri ]
               else [ hsPkgs.network ]);
           };
-          oauth_callback = {
+          "oauth_callback" = {
             depends  = pkgs.lib.optionals (!(!_flags.build-samples)) [
               hsPkgs.base
               hsPkgs.containers
@@ -119,7 +119,7 @@ let
               hsPkgs.scotty
             ];
           };
-          oauth_pin = {
+          "oauth_pin" = {
             depends  = pkgs.lib.optionals (!(!_flags.build-samples)) [
               hsPkgs.base
               hsPkgs.containers
@@ -138,19 +138,19 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec_main = {
+          "spec_main" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.template-haskell

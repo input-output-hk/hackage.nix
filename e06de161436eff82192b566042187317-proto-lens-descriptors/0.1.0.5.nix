@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proto-lens-descriptors = {
+        "proto-lens-descriptors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

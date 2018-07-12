@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-resourceviews = {
+        "gogol-resourceviews" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

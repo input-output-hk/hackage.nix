@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Grafos = {
+        "Grafos" = {
           depends  = [ hsPkgs.base ];
         };
       };

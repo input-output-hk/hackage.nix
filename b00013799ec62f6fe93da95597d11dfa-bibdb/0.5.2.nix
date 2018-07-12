@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bibdb = {
+          "bibdb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

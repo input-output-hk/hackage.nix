@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        testloop = {
+        "testloop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

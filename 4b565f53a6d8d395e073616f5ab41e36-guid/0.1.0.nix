@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        guid = {
+        "guid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.guid

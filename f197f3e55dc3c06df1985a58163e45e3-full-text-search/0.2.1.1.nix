@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        full-text-search = {
+        "full-text-search" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          search-demo = {
+          "search-demo" = {
             depends  = pkgs.lib.optionals (!(!_flags.build-search-demo)) [
               hsPkgs.full-text-search
               hsPkgs.base
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          qc-props = {
+          "qc-props" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

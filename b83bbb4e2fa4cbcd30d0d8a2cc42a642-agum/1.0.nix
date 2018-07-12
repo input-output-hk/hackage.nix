@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        agum = {
+        "agum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          agum = {
+          "agum" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

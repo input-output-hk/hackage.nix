@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hackertyper = {
+          "hackertyper" = {
             depends  = [ hsPkgs.base ];
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        category-printf = {
+        "category-printf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

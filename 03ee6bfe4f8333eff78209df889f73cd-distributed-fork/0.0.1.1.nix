@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-fork = {
+        "distributed-fork" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-fork

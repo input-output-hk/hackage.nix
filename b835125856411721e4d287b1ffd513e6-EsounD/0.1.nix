@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        EsounD = {
+        "EsounD" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          hs-esd-player-example = {};
+          "hs-esd-player-example" = {};
         };
       };
     }

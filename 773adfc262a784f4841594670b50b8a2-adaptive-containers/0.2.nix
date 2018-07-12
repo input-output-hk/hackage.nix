@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        adaptive-containers = {
+        "adaptive-containers" = {
           depends  = [ hsPkgs.base ];
         };
       };

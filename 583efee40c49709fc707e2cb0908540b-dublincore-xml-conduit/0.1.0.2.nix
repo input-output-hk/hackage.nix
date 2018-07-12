@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dublincore-xml-conduit = {
+        "dublincore-xml-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.dublincore-xml-conduit
               hsPkgs.base
@@ -59,7 +59,7 @@ let
               hsPkgs.xml-types
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

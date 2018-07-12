@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        check-email = {
+        "check-email" = {
           depends  = [
             hsPkgs.base
             hsPkgs.email-validate

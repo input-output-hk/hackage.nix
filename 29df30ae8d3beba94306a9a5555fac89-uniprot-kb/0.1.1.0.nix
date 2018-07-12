@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uniprot-kb = {
+        "uniprot-kb" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          uniprot-kb-test = {
+          "uniprot-kb-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.attoparsec

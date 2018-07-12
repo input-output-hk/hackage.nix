@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dvda = {
+        "dvda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

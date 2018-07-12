@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enumerate = {
+        "enumerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          enumerate-example = {
+          "enumerate-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.enumerate
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.enumerate

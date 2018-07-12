@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ComonadSheet = {
+        "ComonadSheet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

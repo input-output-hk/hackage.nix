@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Timestamp = {
+          "Timestamp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

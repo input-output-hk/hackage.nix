@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ChannelT = {
+        "ChannelT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hcheat = {
+        "hcheat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mps

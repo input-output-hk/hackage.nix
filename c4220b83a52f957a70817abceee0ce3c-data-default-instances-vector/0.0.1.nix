@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-default-instances-vector = {
+        "data-default-instances-vector" = {
           depends  = [
             hsPkgs.vector
             hsPkgs.data-default-class

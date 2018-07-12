@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Decimal = {
+        "Decimal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

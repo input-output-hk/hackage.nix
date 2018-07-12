@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        stackage-setup = {
+        "stackage-setup" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          stackage-setup = {
+          "stackage-setup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

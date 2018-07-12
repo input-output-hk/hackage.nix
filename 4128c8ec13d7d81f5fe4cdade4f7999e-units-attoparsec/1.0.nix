@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        units-attoparsec = {
+        "units-attoparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.units

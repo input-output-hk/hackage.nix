@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libvirt-hs = {
+        "libvirt-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb

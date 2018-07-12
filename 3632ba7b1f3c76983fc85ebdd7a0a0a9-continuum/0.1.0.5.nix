@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        continuum = {
+        "continuum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          continuum-server = {
+          "continuum-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foldl

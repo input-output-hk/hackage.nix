@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regexchar = {
+        "regexchar" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          grecce = {
+          "grecce" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

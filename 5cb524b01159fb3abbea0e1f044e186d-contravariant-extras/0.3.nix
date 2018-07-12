@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        contravariant-extras = {
+        "contravariant-extras" = {
           depends  = [
             hsPkgs.tuple-th
             hsPkgs.template-haskell

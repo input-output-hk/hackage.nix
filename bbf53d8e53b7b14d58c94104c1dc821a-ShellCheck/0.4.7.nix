@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ShellCheck = {
+        "ShellCheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          shellcheck = {
+          "shellcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          test-shellcheck = {
+          "test-shellcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

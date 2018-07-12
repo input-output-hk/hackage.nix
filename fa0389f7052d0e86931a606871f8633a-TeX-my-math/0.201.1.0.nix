@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TeX-my-math = {
+        "TeX-my-math" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HaTeX
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          makeSnippets = {
+          "makeSnippets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

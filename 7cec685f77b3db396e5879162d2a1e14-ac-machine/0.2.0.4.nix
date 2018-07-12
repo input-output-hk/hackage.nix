@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ac-machine = {
+        "ac-machine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

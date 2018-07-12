@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        monad-control = {
+        "monad-control" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-threads = {
+          "test-threads" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

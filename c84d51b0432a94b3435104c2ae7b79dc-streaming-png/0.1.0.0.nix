@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-png = {
+        "streaming-png" = {
           depends  = [
             hsPkgs.JuicyPixels
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          streaming-png-demo = {
+          "streaming-png-demo" = {
             depends  = pkgs.lib.optionals _flags.build-demo [
               hsPkgs.JuicyPixels
               hsPkgs.base

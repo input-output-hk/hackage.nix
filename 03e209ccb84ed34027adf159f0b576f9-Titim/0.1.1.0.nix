@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          titim = {
+          "titim" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

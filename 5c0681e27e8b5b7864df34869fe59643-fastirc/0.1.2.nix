@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fastirc = {
+        "fastirc" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

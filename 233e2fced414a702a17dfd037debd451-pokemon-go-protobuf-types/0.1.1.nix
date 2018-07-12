@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pokemon-go-protobuf-types = {
+        "pokemon-go-protobuf-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.proto-lens

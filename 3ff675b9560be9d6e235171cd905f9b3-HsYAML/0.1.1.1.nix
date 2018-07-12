@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HsYAML = {
+        "HsYAML" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.fail) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         exes = {
-          yaml-test = {
+          "yaml-test" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.HsYAML
               hsPkgs.bytestring

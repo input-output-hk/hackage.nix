@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          create-lapack-ffi-single = {
+          "create-lapack-ffi-single" = {
             depends  = [
               hsPkgs.parsec
               hsPkgs.explicit-exception
@@ -31,7 +31,7 @@ let
               hsPkgs.base
             ];
           };
-          create-lapack-ffi = {
+          "create-lapack-ffi" = {
             depends  = [
               hsPkgs.cassava
               hsPkgs.optparse-applicative
@@ -48,7 +48,7 @@ let
               hsPkgs.base
             ];
           };
-          create-lapack-csv = {
+          "create-lapack-csv" = {
             depends  = [
               hsPkgs.filepath
               hsPkgs.containers

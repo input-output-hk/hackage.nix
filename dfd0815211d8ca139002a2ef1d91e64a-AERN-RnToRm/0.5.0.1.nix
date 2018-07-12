@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AERN-RnToRm = {
+        "AERN-RnToRm" = {
           depends  = [
             hsPkgs.AERN-Real
             hsPkgs.AERN-Real

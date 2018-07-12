@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MonadCatchIO-mtl = {
+        "MonadCatchIO-mtl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.extensible-exceptions

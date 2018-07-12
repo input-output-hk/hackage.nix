@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geoip2 = {
+        "geoip2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring-mmap

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-headers = {
+        "wai-middleware-headers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

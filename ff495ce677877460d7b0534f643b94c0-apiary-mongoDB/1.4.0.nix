@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-mongoDB = {
+        "apiary-mongoDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.apiary

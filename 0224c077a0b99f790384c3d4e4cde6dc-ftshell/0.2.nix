@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ftshell = {
+          "ftshell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

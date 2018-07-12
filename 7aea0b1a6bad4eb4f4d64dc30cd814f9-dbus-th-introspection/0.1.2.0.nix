@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbus-th-introspection = {
+        "dbus-th-introspection" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dbus-th
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          dbus-introspect-hs = {
+          "dbus-introspect-hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dbus-th

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-conf = {
+        "language-conf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          conffmt = {
+          "conffmt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -50,7 +50,7 @@ let
               hsPkgs.pretty
             ];
           };
-          fromconf = {
+          "fromconf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-conf
@@ -62,7 +62,7 @@ let
               hsPkgs.yaml
             ];
           };
-          toconf = {
+          "toconf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-conf
@@ -76,7 +76,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

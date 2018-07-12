@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-level-numbers = {
+        "type-level-numbers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

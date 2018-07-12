@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        c0check = {
+        "c0check" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         exes = {
-          c0check = {
+          "c0check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.c0check

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          alex = {
+          "alex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [ hsPkgs.process ];
           };
         };

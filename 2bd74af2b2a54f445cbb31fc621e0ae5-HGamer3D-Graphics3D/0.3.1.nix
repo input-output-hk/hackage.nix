@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-Graphics3D = {
+        "HGamer3D-Graphics3D" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

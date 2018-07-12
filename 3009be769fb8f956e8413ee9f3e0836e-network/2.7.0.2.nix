@@ -20,14 +20,14 @@ let
         buildType = "Configure";
       };
       components = {
-        network = {
+        "network" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
               hsPkgs.hspec
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

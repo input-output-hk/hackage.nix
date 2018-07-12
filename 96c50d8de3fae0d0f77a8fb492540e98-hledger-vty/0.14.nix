@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hledger-vty = {
+          "hledger-vty" = {
             depends  = [
               hsPkgs.hledger
               hsPkgs.hledger-lib

@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pandoc = {
+        "pandoc" = {
           depends  = ([
             hsPkgs.containers
             hsPkgs.parsec
@@ -63,7 +63,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          pandoc = {
+          "pandoc" = {
             depends  = ([
               hsPkgs.containers
               hsPkgs.parsec
@@ -101,7 +101,7 @@ let
               then [ hsPkgs.base hsPkgs.syb ]
               else [ hsPkgs.base ]);
           };
-          make-pandoc-man-pages = {
+          "make-pandoc-man-pages" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc

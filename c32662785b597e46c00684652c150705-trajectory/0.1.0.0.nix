@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        trajectory = {
+        "trajectory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          inittj = {
+          "inittj" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regexpr
@@ -45,7 +45,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          lsstory = {
+          "lsstory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uri

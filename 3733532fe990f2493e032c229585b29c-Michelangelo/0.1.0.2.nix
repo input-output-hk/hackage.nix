@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Michelangelo = {
+        "Michelangelo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

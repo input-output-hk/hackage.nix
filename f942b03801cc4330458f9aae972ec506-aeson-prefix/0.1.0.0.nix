@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-prefix = {
+        "aeson-prefix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          aeson-prefix-test = {
+          "aeson-prefix-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

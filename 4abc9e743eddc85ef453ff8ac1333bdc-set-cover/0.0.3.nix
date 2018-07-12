@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        set-cover = {
+        "set-cover" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.utility-ht
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          tetris-cube = {
+          "tetris-cube" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers
@@ -38,7 +38,7 @@ let
               hsPkgs.base
             ];
           };
-          soma-cube = {
+          "soma-cube" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers
@@ -46,16 +46,7 @@ let
               hsPkgs.base
             ];
           };
-          queen8 = {
-            depends  = pkgs.lib.optionals _flags.buildexamples [
-              hsPkgs.set-cover
-              hsPkgs.containers
-              hsPkgs.array
-              hsPkgs.utility-ht
-              hsPkgs.base
-            ];
-          };
-          sudoku-setcover = {
+          "queen8" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers
@@ -64,7 +55,16 @@ let
               hsPkgs.base
             ];
           };
-          lcube = {
+          "sudoku-setcover" = {
+            depends  = pkgs.lib.optionals _flags.buildexamples [
+              hsPkgs.set-cover
+              hsPkgs.containers
+              hsPkgs.array
+              hsPkgs.utility-ht
+              hsPkgs.base
+            ];
+          };
+          "lcube" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers
@@ -72,7 +72,7 @@ let
               hsPkgs.base
             ];
           };
-          baumeister = {
+          "baumeister" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers

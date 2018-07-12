@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        swagger2 = {
+        "swagger2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -65,7 +65,7 @@ let
               hsPkgs.lens
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

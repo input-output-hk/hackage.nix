@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-th = {
+        "hasql-th" = {
           depends  = [
             hsPkgs.hasql
             hsPkgs.hasql-transaction

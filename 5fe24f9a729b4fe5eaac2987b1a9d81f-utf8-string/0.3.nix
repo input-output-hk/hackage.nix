@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        utf8-string = {
+        "utf8-string" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

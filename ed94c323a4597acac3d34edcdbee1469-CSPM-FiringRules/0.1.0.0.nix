@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CSPM-FiringRules = {
+        "CSPM-FiringRules" = {
           depends  = [
             hsPkgs.CSPM-CoreLanguage
             hsPkgs.base

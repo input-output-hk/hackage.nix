@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pisigma = {
+          "pisigma" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

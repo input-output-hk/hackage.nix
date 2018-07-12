@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        integer-simple = {
+        "integer-simple" = {
           depends  = [ hsPkgs.ghc-prim ];
         };
       };

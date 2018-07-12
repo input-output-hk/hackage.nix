@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fitsio = {
+        "fitsio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

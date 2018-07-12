@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-builder-varword = {
+        "bytestring-builder-varword" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          bytestring-builder-varword-test = {
+          "bytestring-builder-varword-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring-builder-varword

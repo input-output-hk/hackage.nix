@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        staversion = {
+        "staversion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          staversion = {
+          "staversion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.staversion
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.staversion
@@ -68,7 +68,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          network-test = {
+          "network-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.staversion

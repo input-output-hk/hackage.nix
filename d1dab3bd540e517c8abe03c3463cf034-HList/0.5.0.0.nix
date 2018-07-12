@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HList = {
+        "HList" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-orphans
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional _flags.new_type_eq hsPkgs.base;
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -55,14 +55,14 @@ let
               hsPkgs.template-haskell
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.9" && (compiler.isGhc && compiler.version.le "7.11")) [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.process
             ];
           };
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

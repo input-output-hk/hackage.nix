@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OnRmt = {
+        "OnRmt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vty
@@ -51,7 +51,7 @@ let
           ];
         };
         exes = {
-          onrmtssh = {
+          "onrmtssh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OnRmt
@@ -78,7 +78,7 @@ let
               hsPkgs.ssh-known-hosts
             ];
           };
-          onrmtsample = {
+          "onrmtsample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OnRmt
@@ -104,7 +104,7 @@ let
               hsPkgs.data-default
             ];
           };
-          onrmtsamplecli = {
+          "onrmtsamplecli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OnRmt
@@ -132,7 +132,7 @@ let
           };
         };
         tests = {
-          test_ops = {
+          "test_ops" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

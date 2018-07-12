@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-conduit = {
+        "network-conduit" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.transformers
@@ -40,7 +40,7 @@ let
             ])) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.directory;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.base

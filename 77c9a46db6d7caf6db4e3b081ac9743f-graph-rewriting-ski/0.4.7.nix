@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ski = {
+          "ski" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

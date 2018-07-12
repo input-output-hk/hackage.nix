@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fhbuild = {
+          "fhbuild" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -30,13 +30,13 @@ let
               hsPkgs.unix
             ];
           };
-          fhbz = {
+          "fhbz" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
             ];
           };
-          fhpkg = {
+          "fhpkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

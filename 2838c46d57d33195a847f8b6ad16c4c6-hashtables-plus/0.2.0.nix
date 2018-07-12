@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashtables-plus = {
+        "hashtables-plus" = {
           depends  = [
             hsPkgs.hashtables
             hsPkgs.hashable
@@ -30,7 +30,7 @@ let
           ];
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.hashtables-plus
               hsPkgs.criterion-plus

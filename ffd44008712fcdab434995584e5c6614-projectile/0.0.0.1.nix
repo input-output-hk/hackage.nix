@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        projectile = {
+        "projectile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          projectile-test = {
+          "projectile-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

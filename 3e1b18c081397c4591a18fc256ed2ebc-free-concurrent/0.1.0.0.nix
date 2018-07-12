@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        free-concurrent = {
+        "free-concurrent" = {
           depends  = [ hsPkgs.base ];
         };
       };

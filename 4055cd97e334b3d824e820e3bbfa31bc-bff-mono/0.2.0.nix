@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bff-mono = {
+        "bff-mono" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

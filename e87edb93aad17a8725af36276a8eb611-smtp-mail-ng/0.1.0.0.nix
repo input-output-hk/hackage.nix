@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smtp-mail-ng = {
+        "smtp-mail-ng" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

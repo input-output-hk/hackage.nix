@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memcache-conduit = {
+        "memcache-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          memcache-sample-hemcached = {
+          "memcache-sample-hemcached" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -54,7 +54,7 @@ let
               hsPkgs.memcache-conduit
             ];
           };
-          memcache-sample-proxy = {
+          "memcache-sample-proxy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

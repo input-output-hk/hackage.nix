@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hackage-db = {
+        "hackage-db" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

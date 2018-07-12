@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaRe = {
+        "HaRe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Strafunski-StrategyLib
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          ghc-hare = {
+          "ghc-hare" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-mod
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Diff

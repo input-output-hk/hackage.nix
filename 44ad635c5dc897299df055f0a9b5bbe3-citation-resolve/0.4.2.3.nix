@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        citation-resolve = {
+        "citation-resolve" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -51,7 +51,7 @@ let
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

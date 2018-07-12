@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod = {
+        "yesod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-core
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          yesod = {
+          "yesod" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

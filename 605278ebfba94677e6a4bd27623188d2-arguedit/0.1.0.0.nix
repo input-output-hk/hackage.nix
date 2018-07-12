@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ArguEdit.bin = {
+          "ArguEdit.bin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

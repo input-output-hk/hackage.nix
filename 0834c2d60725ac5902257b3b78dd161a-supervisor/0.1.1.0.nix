@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        supervisor = {
+        "supervisor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

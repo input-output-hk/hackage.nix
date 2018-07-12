@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        interval = {
+        "interval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          interval-test = {
+          "interval-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.interval

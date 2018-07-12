@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        string-isos = {
+        "string-isos" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

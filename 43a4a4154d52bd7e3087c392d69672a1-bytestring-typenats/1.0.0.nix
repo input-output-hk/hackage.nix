@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-typenats = {
+        "bytestring-typenats" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test-all = {
+          "test-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-all = {
+          "benchmark-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

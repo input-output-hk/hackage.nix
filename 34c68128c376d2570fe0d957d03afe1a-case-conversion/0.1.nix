@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        case-conversion = {
+        "case-conversion" = {
           depends  = [ hsPkgs.base ];
         };
       };

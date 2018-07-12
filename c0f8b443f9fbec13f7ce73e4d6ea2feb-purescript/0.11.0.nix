@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        purescript = {
+        "purescript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -80,7 +80,7 @@ let
           ];
         };
         exes = {
-          purs = {
+          "purs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -121,7 +121,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript

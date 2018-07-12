@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        csound-expression = {
+        "csound-expression" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

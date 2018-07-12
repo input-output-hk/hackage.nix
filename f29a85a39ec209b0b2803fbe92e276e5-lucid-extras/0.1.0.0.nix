@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lucid-extras = {
+        "lucid-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lucid
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          site-gen = {
+          "site-gen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

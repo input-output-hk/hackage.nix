@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        file-embed-lzma = {
+        "file-embed-lzma" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.file-embed-lzma

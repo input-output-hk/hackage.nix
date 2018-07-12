@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mangopay = {
+        "mangopay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
           ];
         };
         exes = {
-          mangopay-passphrase = {
+          "mangopay-passphrase" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mangopay
@@ -81,7 +81,7 @@ let
           };
         };
         tests = {
-          mangopay-tests = {
+          "mangopay-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF

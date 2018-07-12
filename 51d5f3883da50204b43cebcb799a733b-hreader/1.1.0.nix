@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hreader = {
+        "hreader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hreader

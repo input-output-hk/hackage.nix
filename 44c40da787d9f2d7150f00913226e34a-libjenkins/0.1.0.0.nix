@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libjenkins = {
+        "libjenkins" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

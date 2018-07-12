@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgalib = {
+        "hgalib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

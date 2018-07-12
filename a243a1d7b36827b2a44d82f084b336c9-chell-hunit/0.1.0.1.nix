@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chell-hunit = {
+        "chell-hunit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chell

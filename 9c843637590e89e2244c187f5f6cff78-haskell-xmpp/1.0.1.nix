@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-xmpp = {
+        "haskell-xmpp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          haskell-xmpp-test = {
+          "haskell-xmpp-test" = {
             depends  = pkgs.lib.optional _flags.examples hsPkgs.base;
           };
         };

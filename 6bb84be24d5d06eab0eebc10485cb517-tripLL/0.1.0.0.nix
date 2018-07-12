@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tripLL = {
+        "tripLL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

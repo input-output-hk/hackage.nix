@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          _carettah_main_ = {
+          "_carettah_main_" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -37,7 +37,7 @@ let
               hsPkgs.highlighting-kate
             ];
           };
-          carettah = {
+          "carettah" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

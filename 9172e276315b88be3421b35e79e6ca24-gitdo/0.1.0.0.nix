@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gitdo = {
+          "gitdo" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-lens

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rc = {
+        "rc" = {
           depends  = [
             hsPkgs.Learning
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          ntc = {
+          "ntc" = {
             depends  = [
               hsPkgs.Learning
               hsPkgs.base
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          rc-test = {
+          "rc-test" = {
             depends  = [
               hsPkgs.Learning
               hsPkgs.base

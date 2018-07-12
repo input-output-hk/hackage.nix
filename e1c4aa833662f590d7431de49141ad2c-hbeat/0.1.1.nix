@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hbeat = {
+          "hbeat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

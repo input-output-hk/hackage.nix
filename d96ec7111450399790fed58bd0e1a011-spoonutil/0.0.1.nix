@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spoonutil = {
+        "spoonutil" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -29,6 +29,6 @@ let
             hsPkgs.extensible-exceptions
           ];
         };
-        exes = { test = {}; };
+        exes = { "test" = {}; };
       };
     }

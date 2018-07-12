@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ADPfusionForest = {
+        "ADPfusionForest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          AlignNewickTrees = {
+          "AlignNewickTrees" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -60,7 +60,7 @@ let
               hsPkgs.PrimitiveArray-Pretty
             ];
           };
-          AffineAlignNewickTreesSmall = {
+          "AffineAlignNewickTreesSmall" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -80,7 +80,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -92,7 +92,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

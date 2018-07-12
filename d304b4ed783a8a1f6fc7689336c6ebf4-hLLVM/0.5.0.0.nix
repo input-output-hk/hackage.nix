@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hLLVM = {
+        "hLLVM" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          llvm-test = {
+          "llvm-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

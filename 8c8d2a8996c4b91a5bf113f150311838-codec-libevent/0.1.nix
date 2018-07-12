@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        codec-libevent = {
+        "codec-libevent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          codec-libevent-generate = {
+          "codec-libevent-generate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

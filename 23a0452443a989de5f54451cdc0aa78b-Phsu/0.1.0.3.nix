@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Phsu = {
+          "Phsu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.happstack-server

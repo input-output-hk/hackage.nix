@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MetaObject = {
+        "MetaObject" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

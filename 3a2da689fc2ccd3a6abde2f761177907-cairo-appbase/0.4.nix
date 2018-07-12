@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          cairo-appbase = {
+          "cairo-appbase" = {
             depends  = [
               hsPkgs.glib
               hsPkgs.gtk

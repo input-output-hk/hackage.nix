@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        failure = {
+        "failure" = {
           depends  = if _flags.base43
             then [ hsPkgs.base ]
             else [

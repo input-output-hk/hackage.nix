@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monte-carlo = {
+        "monte-carlo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gsl-random

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DirectSound = {
+        "DirectSound" = {
           depends  = [ hsPkgs.Win32 ] ++ [
             hsPkgs.base
           ];

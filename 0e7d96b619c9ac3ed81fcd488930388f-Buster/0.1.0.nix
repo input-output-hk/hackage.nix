@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          buster = {
+          "buster" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

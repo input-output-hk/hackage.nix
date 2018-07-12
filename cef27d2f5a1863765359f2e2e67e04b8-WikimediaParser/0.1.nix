@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WikimediaParser = {
+        "WikimediaParser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

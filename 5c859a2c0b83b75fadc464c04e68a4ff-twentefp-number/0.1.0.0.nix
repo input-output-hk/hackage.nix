@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twentefp-number = {
+        "twentefp-number" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

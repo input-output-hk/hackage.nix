@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        syntax-printer = {
+        "syntax-printer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semi-iso

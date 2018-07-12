@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        markov-processes = {
+        "markov-processes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          markov-tests = {
+          "markov-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors

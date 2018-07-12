@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ajhc = {
+          "ajhc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HsSyck

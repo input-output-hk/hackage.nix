@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-standards = {
+        "data-standards" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

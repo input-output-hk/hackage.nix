@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-foldable = {
+        "safe-foldable" = {
           depends  = [ hsPkgs.base ];
         };
       };

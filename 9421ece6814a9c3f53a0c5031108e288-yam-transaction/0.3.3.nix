@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yam-transaction = {
+        "yam-transaction" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

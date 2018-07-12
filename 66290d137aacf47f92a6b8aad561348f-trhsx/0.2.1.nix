@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          trhsx = {
+          "trhsx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts

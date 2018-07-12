@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        punkt = {
+        "punkt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          punkt-tests = {
+          "punkt-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

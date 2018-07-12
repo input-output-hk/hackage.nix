@@ -20,12 +20,12 @@ let
         buildType = "Simple";
       };
       components = {
-        htaglib = {
+        "htaglib" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.tag_c ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

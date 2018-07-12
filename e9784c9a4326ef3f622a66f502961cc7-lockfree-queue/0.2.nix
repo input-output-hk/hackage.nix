@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lockfree-queue = {
+        "lockfree-queue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-lockfree-queue = {
+          "test-lockfree-queue" = {
             depends  = [
               hsPkgs.base
               hsPkgs.IORefCAS

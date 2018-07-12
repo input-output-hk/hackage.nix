@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        split = {
+        "split" = {
           depends  = [ hsPkgs.base ];
         };
       };

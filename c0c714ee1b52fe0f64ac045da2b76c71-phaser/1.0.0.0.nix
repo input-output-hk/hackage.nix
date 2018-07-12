@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        phaser = {
+        "phaser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

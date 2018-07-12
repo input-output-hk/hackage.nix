@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        intro = {
+        "intro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -41,7 +41,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors

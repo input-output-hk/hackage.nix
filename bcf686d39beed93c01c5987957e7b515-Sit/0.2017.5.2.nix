@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Sit.bin = {
+          "Sit.bin" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

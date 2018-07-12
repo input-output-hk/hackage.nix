@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          routeGenerator = {
+          "routeGenerator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

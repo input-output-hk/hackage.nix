@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sbv = {
+        "sbv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          SBVUnitTests = {
+          "SBVUnitTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          SBVBasicTests = {
+          "SBVBasicTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

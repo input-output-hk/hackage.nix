@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        active = {
+        "active" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          active-tests = {
+          "active-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          vigilance-server = {
+          "vigilance-server" = {
             depends  = pkgs.lib.optionals (!_flags.no-server) [
               hsPkgs.base
               hsPkgs.async
@@ -68,7 +68,7 @@ let
               hsPkgs.yesod-platform
             ];
           };
-          vigilance = {
+          "vigilance" = {
             depends  = pkgs.lib.optionals (!_flags.no-client) [
               hsPkgs.base
               hsPkgs.async
@@ -111,7 +111,7 @@ let
           };
         };
         tests = {
-          test-vigilance = {
+          "test-vigilance" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libstackexchange = {
+        "libstackexchange" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

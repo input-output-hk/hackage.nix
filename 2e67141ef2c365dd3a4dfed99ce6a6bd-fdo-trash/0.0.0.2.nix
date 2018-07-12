@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fdo-trash = {
+        "fdo-trash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          fdo-trash = {
+          "fdo-trash" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fdo-trash

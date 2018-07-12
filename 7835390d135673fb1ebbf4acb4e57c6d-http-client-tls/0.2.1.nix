@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client-tls = {
+        "http-client-tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parsec-numbers = {
+        "parsec-numbers" = {
           depends  = [
             hsPkgs.base
           ] ++ (if _flags.parsec1

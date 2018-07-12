@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opendatatable = {
+        "opendatatable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

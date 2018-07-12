@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-peel = {
+        "monad-peel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.extensible-exceptions
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

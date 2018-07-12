@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        maybench = {
+        "maybench" = {
           depends  = [
             hsPkgs.benchpress
           ] ++ (if _flags.splitbase
@@ -38,7 +38,7 @@ let
             ]);
         };
         exes = {
-          maybench = {
+          "maybench" = {
             depends  = [
               hsPkgs.benchpress
             ] ++ (if _flags.splitbase
@@ -52,7 +52,7 @@ let
                 hsPkgs.mtl
               ]);
           };
-          darcs-benchmark = {
+          "darcs-benchmark" = {
             depends  = [
               hsPkgs.benchpress
               hsPkgs.Cabal

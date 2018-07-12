@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ligature = {
+        "ligature" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

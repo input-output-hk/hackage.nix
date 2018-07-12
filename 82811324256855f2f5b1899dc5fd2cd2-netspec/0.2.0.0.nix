@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netspec = {
+        "netspec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

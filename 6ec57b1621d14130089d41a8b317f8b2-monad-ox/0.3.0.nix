@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-ox = {
+        "monad-ox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

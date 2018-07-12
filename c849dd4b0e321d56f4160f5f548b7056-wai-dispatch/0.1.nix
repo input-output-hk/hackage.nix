@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-dispatch = {
+        "wai-dispatch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

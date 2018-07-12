@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kawaii = {
+        "kawaii" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          wai-static-extra-spec = {
+          "wai-static-extra-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.safe

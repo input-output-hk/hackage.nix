@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        authoring = {
+        "authoring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint

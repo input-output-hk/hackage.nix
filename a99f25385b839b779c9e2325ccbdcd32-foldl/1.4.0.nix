@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        foldl = {
+        "foldl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
           ];
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

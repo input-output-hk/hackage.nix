@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digit = {
+        "digit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

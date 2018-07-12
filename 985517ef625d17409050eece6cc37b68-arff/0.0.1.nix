@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arff = {
+        "arff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

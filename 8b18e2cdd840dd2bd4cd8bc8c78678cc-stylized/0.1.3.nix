@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stylized = {
+        "stylized" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal

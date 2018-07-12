@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer-llvm = {
+        "synthesizer-llvm" = {
           depends  = [
             hsPkgs.llvm-extra
             hsPkgs.llvm-tf
@@ -51,7 +51,7 @@ let
           ];
         };
         exes = {
-          synthi-llvm-example = {
+          "synthi-llvm-example" = {
             depends  = pkgs.lib.optionals (_flags.buildexamples && _flags.alsa) [
               hsPkgs.synthesizer-llvm
               hsPkgs.llvm-extra
@@ -78,7 +78,7 @@ let
               hsPkgs.base
             ];
           };
-          synthi-llvm-alsa = {
+          "synthi-llvm-alsa" = {
             depends  = pkgs.lib.optionals (_flags.buildexamples && _flags.alsa) [
               hsPkgs.synthesizer-llvm
               hsPkgs.llvm-extra
@@ -104,7 +104,7 @@ let
               hsPkgs.base
             ];
           };
-          synthi-llvm-jack = {
+          "synthi-llvm-jack" = {
             depends  = pkgs.lib.optionals (_flags.buildexamples && _flags.jack) [
               hsPkgs.synthesizer-llvm
               hsPkgs.jack
@@ -129,7 +129,7 @@ let
               hsPkgs.base
             ];
           };
-          synthi-llvm-render = {
+          "synthi-llvm-render" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.synthesizer-llvm
               hsPkgs.llvm-extra
@@ -153,7 +153,7 @@ let
               hsPkgs.base
             ];
           };
-          synthi-llvm-sample = {
+          "synthi-llvm-sample" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.gnuplot
               hsPkgs.synthesizer-llvm
@@ -164,7 +164,7 @@ let
               hsPkgs.base
             ];
           };
-          synthi-llvm-speech = {
+          "synthi-llvm-speech" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.gnuplot
               hsPkgs.filepath
@@ -179,7 +179,7 @@ let
           };
         };
         tests = {
-          synthi-llvm-test = {
+          "synthi-llvm-test" = {
             depends  = [
               hsPkgs.synthesizer-llvm
               hsPkgs.llvm-extra

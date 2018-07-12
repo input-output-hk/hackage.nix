@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        threads-extras = {
+        "threads-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.threads
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          threads-extras-test = {
+          "threads-extras-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.threads-extras

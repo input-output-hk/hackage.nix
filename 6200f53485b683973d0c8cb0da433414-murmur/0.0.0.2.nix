@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        murmur = {
+        "murmur" = {
           depends  = [
             hsPkgs.base
             hsPkgs.twitter-conduit
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          mur = {
+          "mur" = {
             depends  = [
               hsPkgs.base
               hsPkgs.murmur
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          murmur-test = {
+          "murmur-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.murmur

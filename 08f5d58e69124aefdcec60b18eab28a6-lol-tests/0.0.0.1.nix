@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lol-tests = {
+        "lol-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lol
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-lol = {
+          "test-lol" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lol

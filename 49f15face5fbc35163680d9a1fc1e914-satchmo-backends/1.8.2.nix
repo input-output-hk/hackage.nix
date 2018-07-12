@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        satchmo-backends = {
+        "satchmo-backends" = {
           depends  = [
             hsPkgs.satchmo
             hsPkgs.process

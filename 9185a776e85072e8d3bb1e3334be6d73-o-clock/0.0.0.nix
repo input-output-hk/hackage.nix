@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        o-clock = {
+        "o-clock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          play-o-clock = {
+          "play-o-clock" = {
             depends  = [
               hsPkgs.o-clock
               hsPkgs.base
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          o-clock-test = {
+          "o-clock-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.o-clock
@@ -47,7 +47,7 @@ let
               hsPkgs.type-spec
             ];
           };
-          readme-test = {
+          "readme-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.o-clock
@@ -59,7 +59,7 @@ let
           };
         };
         benchmarks = {
-          o-clock-benchmark = {
+          "o-clock-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.o-clock

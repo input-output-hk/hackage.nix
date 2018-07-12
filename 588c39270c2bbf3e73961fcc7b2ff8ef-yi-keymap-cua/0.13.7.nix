@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-keymap-cua = {
+        "yi-keymap-cua" = {
           depends  = [
             hsPkgs.base
             hsPkgs.microlens-platform

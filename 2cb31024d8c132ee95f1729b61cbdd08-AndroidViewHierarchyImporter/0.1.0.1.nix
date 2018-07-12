@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          AndroidViewHierarchyImporter = {
+          "AndroidViewHierarchyImporter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

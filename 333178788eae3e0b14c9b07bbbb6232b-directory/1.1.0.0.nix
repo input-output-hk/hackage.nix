@@ -20,12 +20,12 @@ let
         buildType = "Configure";
       };
       components = {
-        directory = {
+        "directory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time
             hsPkgs.filepath
-          ] ++ (if !(compiler.isNhc98 && true) && system.isWindows
+          ] ++ pkgs.lib.optionals (!(compiler.isNhc98 && true)) (if system.isWindows
             then [ hsPkgs.Win32 ]
             else [ hsPkgs.unix ]);
         };

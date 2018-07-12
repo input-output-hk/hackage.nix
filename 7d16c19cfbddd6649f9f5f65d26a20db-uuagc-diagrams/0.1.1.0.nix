@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuagc-diagrams = {
+        "uuagc-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams-lib

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linode = {
+        "linode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          linode-test = {
+          "linode-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.linode

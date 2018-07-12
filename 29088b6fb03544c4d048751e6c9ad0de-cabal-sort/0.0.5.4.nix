@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal-sort = {
+          "cabal-sort" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.fgl
@@ -33,7 +33,7 @@ let
               hsPkgs.base
             ];
           };
-          ghc-pkg-dep = {
+          "ghc-pkg-dep" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.process

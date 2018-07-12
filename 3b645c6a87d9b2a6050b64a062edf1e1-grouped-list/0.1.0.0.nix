@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grouped-list = {
+        "grouped-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         benchmarks = {
-          grouped-list-bench = {
+          "grouped-list-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.grouped-list

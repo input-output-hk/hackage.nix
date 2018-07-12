@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scotty-binding-play = {
+        "scotty-binding-play" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

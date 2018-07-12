@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mainland-pretty = {
+        "mainland-pretty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

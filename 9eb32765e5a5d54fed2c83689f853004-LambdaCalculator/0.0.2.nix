@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          LambdaCalculator = {
+          "LambdaCalculator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

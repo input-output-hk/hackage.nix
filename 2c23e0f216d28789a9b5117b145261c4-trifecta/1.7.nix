@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        trifecta = {
+        "trifecta" = {
           depends  = [
             hsPkgs.ansi-wl-pprint
             hsPkgs.ansi-terminal
@@ -49,13 +49,13 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.fail;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsers

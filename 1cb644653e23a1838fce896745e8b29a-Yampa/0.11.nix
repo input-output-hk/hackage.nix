@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Yampa = {
+        "Yampa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          yampa-examples-sdl-bouncingbox = {
+          "yampa-examples-sdl-bouncingbox" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.random
@@ -42,7 +42,7 @@ let
               hsPkgs.Yampa
             ];
           };
-          yampa-examples-sdl-circlingmouse = {
+          "yampa-examples-sdl-circlingmouse" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.random
@@ -51,7 +51,7 @@ let
               hsPkgs.Yampa
             ];
           };
-          yampa-examples-sdl-wiimote = {
+          "yampa-examples-sdl-wiimote" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.random
@@ -63,13 +63,13 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          haddock-coverage = {
+          "haddock-coverage" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doc-coverage)) [
               hsPkgs.base
               hsPkgs.directory
@@ -78,7 +78,7 @@ let
               hsPkgs.regex-posix
             ];
           };
-          regression = {
+          "regression" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-regression)) [
               hsPkgs.base
               hsPkgs.Yampa

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stocks = {
+        "stocks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test-hspec = {
+          "test-hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stocks

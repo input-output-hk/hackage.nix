@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        buffer-builder = {
+        "buffer-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.buffer-builder
@@ -48,7 +48,7 @@ let
               hsPkgs.aeson
             ];
           };
-          tinyjson = {
+          "tinyjson" = {
             depends  = [
               hsPkgs.base
               hsPkgs.buffer-builder
@@ -59,7 +59,7 @@ let
               hsPkgs.criterion
             ];
           };
-          tinyjson2 = {
+          "tinyjson2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.buffer-builder
@@ -72,7 +72,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -80,7 +80,7 @@ let
               hsPkgs.criterion
             ];
           };
-          json-bench = {
+          "json-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.buffer-builder

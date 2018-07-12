@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-stm32 = {
+        "data-stm32" = {
           depends  = [
             hsPkgs.ansi-wl-pprint
             hsPkgs.attoparsec
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          mxmcu = {
+          "mxmcu" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.attoparsec
@@ -48,7 +48,7 @@ let
               hsPkgs.time
             ];
           };
-          stm32-reference-pdf = {
+          "stm32-reference-pdf" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.attoparsec
@@ -62,7 +62,7 @@ let
               hsPkgs.time
             ];
           };
-          svdparse = {
+          "svdparse" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.attoparsec
@@ -78,7 +78,7 @@ let
           };
         };
         tests = {
-          data-cubemx-test = {
+          "data-cubemx-test" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.attoparsec

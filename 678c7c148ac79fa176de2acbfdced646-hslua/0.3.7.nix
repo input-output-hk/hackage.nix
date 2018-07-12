@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hslua = {
+        "hslua" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

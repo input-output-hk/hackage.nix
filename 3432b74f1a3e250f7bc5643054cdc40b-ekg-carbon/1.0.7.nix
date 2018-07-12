@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ekg-carbon = {
+        "ekg-carbon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ekg-core

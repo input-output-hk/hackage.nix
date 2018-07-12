@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          docidx = {
+          "docidx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-hastache = {
+        "wai-hastache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hastache

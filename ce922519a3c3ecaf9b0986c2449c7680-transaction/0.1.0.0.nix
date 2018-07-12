@@ -20,19 +20,19 @@ let
         buildType = "Simple";
       };
       components = {
-        transaction = {
+        "transaction" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          transaction-test = {
+          "transaction-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transaction
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob

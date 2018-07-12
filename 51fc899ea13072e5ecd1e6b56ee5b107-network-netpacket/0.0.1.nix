@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-netpacket = {
+        "network-netpacket" = {
           depends  = [
             hsPkgs.network
             hsPkgs.ioctl

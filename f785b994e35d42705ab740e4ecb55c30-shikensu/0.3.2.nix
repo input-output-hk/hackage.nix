@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shikensu = {
+        "shikensu" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hat = {
+        "hat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -31,14 +31,14 @@ let
           ];
         };
         exes = {
-          hat-trans = {
+          "hat-trans" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.directory
             ];
           };
-          hat-trail = {
+          "hat-trail" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -46,85 +46,85 @@ let
               hsPkgs.process
             ];
           };
-          hat-observe = {
+          "hat-observe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.haskeline
             ];
           };
-          hat-stack = {
+          "hat-stack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
             ];
           };
-          hat-explore = {
+          "hat-explore" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
             ];
           };
-          hat-detect = {
+          "hat-detect" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.containers
             ];
           };
-          hat-check = {
+          "hat-check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
             ];
           };
-          hat-view = {
+          "hat-view" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.directory
             ];
           };
-          hat-cover = {
+          "hat-cover" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
             ];
           };
-          black-hat = {
+          "black-hat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
             ];
           };
-          hat-nonterm = {
+          "hat-nonterm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
             ];
           };
-          hat-anim = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.process
-              hsPkgs.containers
-            ];
-          };
-          pretty-hat = {
+          "hat-anim" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.containers
             ];
           };
-          hat-delta = {
+          "pretty-hat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.containers
             ];
           };
-          hat-make = {
+          "hat-delta" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.process
+              hsPkgs.containers
+            ];
+          };
+          "hat-make" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nestedmap = {
+        "nestedmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

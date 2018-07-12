@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sbv = {
+        "sbv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          SBVTest = {
+          "SBVTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-binary-ieee754
@@ -61,14 +61,14 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          SBVDocTest = {
+          "SBVDocTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.Glob
             ];
           };
-          SBVHLint = {
+          "SBVHLint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

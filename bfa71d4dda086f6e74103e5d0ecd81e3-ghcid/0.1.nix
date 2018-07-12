@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ghcid = {
+          "ghcid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        XSaiga = {
+        "XSaiga" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty
           ];
         };
         exes = {
-          Solarman = {
+          "Solarman" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

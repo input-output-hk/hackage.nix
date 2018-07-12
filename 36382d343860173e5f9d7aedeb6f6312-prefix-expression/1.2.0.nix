@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        prefix-expression = {
+        "prefix-expression" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-pcre-builtin
           ];
         };
         tests = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

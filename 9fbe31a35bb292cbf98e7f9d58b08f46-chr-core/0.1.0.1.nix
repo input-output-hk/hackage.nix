@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chr-core = {
+        "chr-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

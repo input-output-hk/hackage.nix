@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        caffegraph = {
+        "caffegraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ascii-progress = {
+        "ascii-progress" = {
           depends  = [
             hsPkgs.MissingH
             hsPkgs.ansi-terminal
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.ansi-terminal
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.ansi-terminal

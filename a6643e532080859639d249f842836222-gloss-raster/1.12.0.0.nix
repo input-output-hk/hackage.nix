@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gloss-raster = {
+        "gloss-raster" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

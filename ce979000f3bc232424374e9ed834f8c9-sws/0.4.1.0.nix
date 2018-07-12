@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sws = {
+          "sws" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-test-sandbox = {
+        "hspec-test-sandbox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.test-sandbox
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-sandbox

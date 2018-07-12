@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hubris = {
+        "hubris" = {
           depends  = [
             hsPkgs.ghc
             hsPkgs.Cabal
@@ -37,7 +37,7 @@ let
           libs = [ pkgs.ruby ];
         };
         exes = {
-          Hubrify = {
+          "Hubrify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

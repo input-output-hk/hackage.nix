@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          parser-helper = {
+          "parser-helper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

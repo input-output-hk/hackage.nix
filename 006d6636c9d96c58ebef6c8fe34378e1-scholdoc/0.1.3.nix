@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        scholdoc = {
+        "scholdoc" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.syb
@@ -79,7 +79,7 @@ let
           ];
         };
         exes = {
-          scholdoc = {
+          "scholdoc" = {
             depends  = [
               hsPkgs.scholdoc
               hsPkgs.scholdoc-types
@@ -97,7 +97,7 @@ let
               then [ hsPkgs.network-uri ]
               else [ hsPkgs.network ]);
           };
-          tryscholdoc = {
+          "tryscholdoc" = {
             depends  = pkgs.lib.optionals _flags.tryscholdoc [
               hsPkgs.base
               hsPkgs.aeson
@@ -111,7 +111,7 @@ let
           };
         };
         tests = {
-          test-scholdoc = {
+          "test-scholdoc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb
@@ -133,7 +133,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-scholdoc = {
+          "benchmark-scholdoc" = {
             depends  = [
               hsPkgs.scholdoc
               hsPkgs.base

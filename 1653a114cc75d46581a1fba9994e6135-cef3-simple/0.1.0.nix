@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cef3-simple = {
+        "cef3-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cef3-raw

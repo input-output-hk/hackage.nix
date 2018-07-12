@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-configuration-tools = {
+        "aws-configuration-tools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

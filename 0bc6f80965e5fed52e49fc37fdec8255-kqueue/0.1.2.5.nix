@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kqueue = {
+        "kqueue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

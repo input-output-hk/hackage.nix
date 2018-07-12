@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lol = {
+        "lol" = {
           depends  = [
             hsPkgs.arithmoi
             hsPkgs.base
@@ -54,7 +54,7 @@ let
           ];
         };
         tests = {
-          test-lol = {
+          "test-lol" = {
             depends  = [
               hsPkgs.arithmoi
               hsPkgs.base
@@ -75,7 +75,7 @@ let
           };
         };
         benchmarks = {
-          bench-lol = {
+          "bench-lol" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.arithmoi

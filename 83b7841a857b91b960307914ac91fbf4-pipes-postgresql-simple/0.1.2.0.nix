@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-postgresql-simple = {
+        "pipes-postgresql-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

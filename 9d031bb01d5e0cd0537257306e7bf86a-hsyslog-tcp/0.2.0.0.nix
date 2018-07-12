@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsyslog-tcp = {
+        "hsyslog-tcp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

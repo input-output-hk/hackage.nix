@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          patat = {
+          "patat" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-terminal
@@ -46,7 +46,7 @@ let
               hsPkgs.network
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
           };
-          patat-make-man = {
+          "patat-make-man" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-ordlist = {
+        "data-ordlist" = {
           depends  = [ hsPkgs.base ];
         };
       };

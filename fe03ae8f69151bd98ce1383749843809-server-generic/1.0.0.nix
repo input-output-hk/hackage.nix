@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        server-generic = {
+        "server-generic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

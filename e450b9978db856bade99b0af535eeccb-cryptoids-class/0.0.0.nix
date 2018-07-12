@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptoids-class = {
+        "cryptoids-class" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cryptoids-types

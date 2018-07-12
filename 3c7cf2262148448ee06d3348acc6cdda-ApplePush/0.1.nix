@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ApplePush = {
+        "ApplePush" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          applepushtest = {
+          "applepushtest" = {
             depends  = [ hsPkgs.base ];
           };
         };

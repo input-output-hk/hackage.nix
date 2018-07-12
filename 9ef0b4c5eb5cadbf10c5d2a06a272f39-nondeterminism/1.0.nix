@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nondeterminism = {
+        "nondeterminism" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

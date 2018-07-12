@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MonadPrompt = {
+        "MonadPrompt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

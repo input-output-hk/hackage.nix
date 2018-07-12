@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CurryDB = {
+        "CurryDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -55,14 +55,14 @@ let
           ];
         };
         exes = {
-          curry-memcached = {
+          "curry-memcached" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-conduit
               hsPkgs.CurryDB
             ];
           };
-          curry-redis = {
+          "curry-redis" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-conduit
@@ -73,7 +73,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -81,7 +81,7 @@ let
               hsPkgs.doctest
             ];
           };
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -94,7 +94,7 @@ let
           };
         };
         benchmarks = {
-          curry-bench = {
+          "curry-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

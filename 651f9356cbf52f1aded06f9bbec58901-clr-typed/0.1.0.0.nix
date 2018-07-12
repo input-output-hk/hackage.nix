@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clr-typed = {
+        "clr-typed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tuple
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          clr-typed-test = {
+          "clr-typed-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clr-typed

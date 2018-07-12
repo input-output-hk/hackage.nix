@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-par-extras = {
+        "monad-par-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.abstract-par

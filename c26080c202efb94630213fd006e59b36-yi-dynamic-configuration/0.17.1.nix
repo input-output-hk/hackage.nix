@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-dynamic-configuration = {
+        "yi-dynamic-configuration" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

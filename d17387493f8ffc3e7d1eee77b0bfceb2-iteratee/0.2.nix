@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iteratee = {
+        "iteratee" = {
           depends  = ([
             hsPkgs.haskell98
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
             ])) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.test-framework

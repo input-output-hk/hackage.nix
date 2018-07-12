@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hist-pl-transliter = {
+        "hist-pl-transliter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ndjson-conduit = {
+        "ndjson-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

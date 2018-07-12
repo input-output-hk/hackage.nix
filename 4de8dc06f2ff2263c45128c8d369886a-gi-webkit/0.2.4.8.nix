@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gi-webkit = {
+        "gi-webkit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

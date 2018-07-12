@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microformats2-types = {
+        "microformats2-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

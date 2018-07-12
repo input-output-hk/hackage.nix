@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lojban = {
+        "lojban" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          jbovlastegendb = {
+          "jbovlastegendb" = {
             depends  = [ hsPkgs.haskell98 ];
           };
         };

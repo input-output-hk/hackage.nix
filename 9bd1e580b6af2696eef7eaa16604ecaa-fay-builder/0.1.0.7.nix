@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fay-builder = {
+        "fay-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          randometer = {
+          "randometer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random-fu

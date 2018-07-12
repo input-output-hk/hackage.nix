@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hutton = {
+          "hutton" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

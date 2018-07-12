@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventloop = {
+        "eventloop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

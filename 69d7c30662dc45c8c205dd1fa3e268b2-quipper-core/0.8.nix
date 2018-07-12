@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quipper-core = {
+        "quipper-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

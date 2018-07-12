@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Tournament = {
+        "Tournament" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-tournament = {
+          "test-tournament" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

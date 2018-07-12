@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xlsx = {
+        "xlsx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary-search
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          data-test = {
+          "data-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

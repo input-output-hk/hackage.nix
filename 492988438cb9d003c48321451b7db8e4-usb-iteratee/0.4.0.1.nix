@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        usb-iteratee = {
+        "usb-iteratee" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

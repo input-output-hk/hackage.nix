@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaskellNN = {
+        "HaskellNN" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix

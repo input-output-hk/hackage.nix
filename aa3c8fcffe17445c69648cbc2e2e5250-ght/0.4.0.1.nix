@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ght = {
+        "ght" = {
           depends  = [
             hsPkgs.data-default
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          ght = {
+          "ght" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.data-default

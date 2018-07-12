@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        raw-strings-qq = {
+        "raw-strings-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.raw-strings-qq

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmdtheline = {
+        "cmdtheline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

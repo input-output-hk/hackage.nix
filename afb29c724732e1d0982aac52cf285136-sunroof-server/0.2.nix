@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sunroof-server = {
+        "sunroof-server" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec

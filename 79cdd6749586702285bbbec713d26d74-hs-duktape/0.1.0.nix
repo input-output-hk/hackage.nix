@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-duktape = {
+        "hs-duktape" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

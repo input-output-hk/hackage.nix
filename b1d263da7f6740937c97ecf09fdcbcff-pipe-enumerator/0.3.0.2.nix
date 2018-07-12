@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipe-enumerator = {
+        "pipe-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.enumerator

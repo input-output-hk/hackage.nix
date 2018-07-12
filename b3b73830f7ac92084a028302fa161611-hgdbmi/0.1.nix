@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgdbmi = {
+        "hgdbmi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

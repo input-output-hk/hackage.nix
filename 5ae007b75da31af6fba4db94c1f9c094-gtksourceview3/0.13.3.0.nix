@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gtksourceview3 = {
+        "gtksourceview3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

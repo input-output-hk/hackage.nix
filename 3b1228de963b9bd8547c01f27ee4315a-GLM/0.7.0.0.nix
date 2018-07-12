@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLM = {
+        "GLM" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          glm2props = {
+          "glm2props" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -53,7 +53,7 @@ let
               hsPkgs.GLM
             ];
           };
-          glm2dot = {
+          "glm2dot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -68,7 +68,7 @@ let
               hsPkgs.GLM
             ];
           };
-          glm2json = {
+          "glm2json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -86,7 +86,7 @@ let
           };
         };
         tests = {
-          test-glm = {
+          "test-glm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

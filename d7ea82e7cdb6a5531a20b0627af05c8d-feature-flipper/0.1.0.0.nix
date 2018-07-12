@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feature-flipper = {
+        "feature-flipper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          environment-config = {
+          "environment-config" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          feature-flipper-test = {
+          "feature-flipper-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

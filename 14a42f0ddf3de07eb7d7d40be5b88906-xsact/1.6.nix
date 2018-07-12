@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xsact = {
+        "xsact" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -32,15 +32,15 @@ let
           ];
         };
         exes = {
-          xsact = {
+          "xsact" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          xcerpt = {};
-          xplit = {};
-          xtract = {};
+          "xcerpt" = {};
+          "xplit" = {};
+          "xtract" = {};
         };
       };
     }

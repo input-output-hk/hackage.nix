@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wumpus-basic = {
+        "wumpus-basic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector-space

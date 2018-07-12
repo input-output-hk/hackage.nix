@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        int-cast = {
+        "int-cast" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          int-cast-test = {
+          "int-cast-test" = {
             depends  = [
               hsPkgs.int-cast
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cqrs-types = {
+        "cqrs-types" = {
           depends  = [ hsPkgs.base ];
         };
       };

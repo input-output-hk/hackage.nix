@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-debian = {
+        "cabal-debian" = {
           depends  = [
             hsPkgs.ansi-wl-pprint
             hsPkgs.base
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          cabal-debian = {
+          "cabal-debian" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -56,7 +56,7 @@ let
               hsPkgs.data-lens
             ];
           };
-          cabal-debian-tests = {
+          "cabal-debian-tests" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-boogie = {
+        "language-boogie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          boogaloo = {
+          "boogaloo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-boogie
@@ -56,7 +56,7 @@ let
               hsPkgs.lens
             ];
           };
-          boogaloo-tests = {
+          "boogaloo-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-boogie

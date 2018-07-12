@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GlomeVec = {
+        "GlomeVec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Villefort = {
+        "Villefort" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          Villefort = {
+          "Villefort" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Villefort
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          Villefort-test = {
+          "Villefort-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Villefort

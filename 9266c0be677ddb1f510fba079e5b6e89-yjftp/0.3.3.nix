@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yjftp = {
+        "yjftp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          yjftp = {
+          "yjftp" = {
             depends  = [
               hsPkgs.hsConfigure
             ];

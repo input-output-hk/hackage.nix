@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        portaudio = {
+        "portaudio" = {
           depends  = [
             hsPkgs.containers
           ];

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nakadi-client = {
+        "nakadi-client" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-casing
@@ -62,7 +62,7 @@ let
           ];
         };
         tests = {
-          nakadi-client-test-suite = {
+          "nakadi-client-test-suite" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-casing

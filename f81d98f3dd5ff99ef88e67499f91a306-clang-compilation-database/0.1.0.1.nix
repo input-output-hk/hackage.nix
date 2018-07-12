@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clang-compilation-database = {
+        "clang-compilation-database" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          smoke-test = {
+          "smoke-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

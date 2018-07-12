@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        distributive = {
+        "distributive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

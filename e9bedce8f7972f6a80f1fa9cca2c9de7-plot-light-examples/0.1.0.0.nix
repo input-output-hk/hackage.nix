@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          scatter = {
+          "scatter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light
@@ -32,7 +32,7 @@ let
               hsPkgs.scientific
             ];
           };
-          timeseries = {
+          "timeseries" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light
@@ -45,7 +45,7 @@ let
               hsPkgs.scientific
             ];
           };
-          heatmap = {
+          "heatmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light

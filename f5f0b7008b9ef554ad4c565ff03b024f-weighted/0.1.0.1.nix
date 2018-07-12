@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        weighted = {
+        "weighted" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semiring-num

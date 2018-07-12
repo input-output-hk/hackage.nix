@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        threadmanager = {
+        "threadmanager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

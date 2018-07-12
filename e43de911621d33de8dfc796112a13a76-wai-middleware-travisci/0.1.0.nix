@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-travisci = {
+        "wai-middleware-travisci" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

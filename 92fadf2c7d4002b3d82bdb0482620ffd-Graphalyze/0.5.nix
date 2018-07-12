@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Graphalyze = {
+        "Graphalyze" = {
           depends  = [
             hsPkgs.bktrees
             hsPkgs.fgl

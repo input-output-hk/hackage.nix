@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        subhask = {
+        "subhask" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -49,26 +49,26 @@ let
           ];
         };
         tests = {
-          TestSuite-Unoptimized = {
+          "TestSuite-Unoptimized" = {
             depends  = [
               hsPkgs.subhask
               hsPkgs.test-framework-quickcheck2
               hsPkgs.test-framework
             ];
           };
-          Example0001 = {
+          "Example0001" = {
             depends  = [
               hsPkgs.subhask
               hsPkgs.base
             ];
           };
-          Example0002 = {
+          "Example0002" = {
             depends  = [
               hsPkgs.subhask
               hsPkgs.base
             ];
           };
-          Example0003 = {
+          "Example0003" = {
             depends  = [
               hsPkgs.subhask
               hsPkgs.base
@@ -76,7 +76,7 @@ let
           };
         };
         benchmarks = {
-          Vector = {
+          "Vector" = {
             depends  = [
               hsPkgs.base
               hsPkgs.subhask

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FunGEn = {
+        "FunGEn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL

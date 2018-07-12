@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        logic-classes = {
+        "logic-classes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = [ hsPkgs.HUnit ];
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        html-conduit = {
+        "html-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

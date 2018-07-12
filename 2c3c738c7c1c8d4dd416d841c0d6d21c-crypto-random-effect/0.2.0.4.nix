@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-random-effect = {
+        "crypto-random-effect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

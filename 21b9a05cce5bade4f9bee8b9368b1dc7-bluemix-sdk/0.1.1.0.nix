@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bluemix-sdk = {
+        "bluemix-sdk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

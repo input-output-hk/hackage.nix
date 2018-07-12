@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        main-tester = {
+        "main-tester" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,13 +28,13 @@ let
           ];
         };
         tests = {
-          main-tester-doctest = {
+          "main-tester-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          main-tester-test = {
+          "main-tester-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.main-tester

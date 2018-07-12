@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        newtype-deriving = {
+        "newtype-deriving" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.monad-control

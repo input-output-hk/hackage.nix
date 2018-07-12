@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-sns = {
+        "aws-sns" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          SNS-tests = {
+          "SNS-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

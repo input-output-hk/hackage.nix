@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        rts-loader = {
+        "rts-loader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zenc
@@ -31,8 +31,8 @@ let
           ];
         };
         exes = {
-          rts-loader = {};
-          rts-loader-example = {
+          "rts-loader" = {};
+          "rts-loader-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

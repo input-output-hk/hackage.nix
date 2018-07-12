@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text = {
+        "text" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.array
@@ -44,7 +44,7 @@ let
             else [ hsPkgs.integer-gmp ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = ([
               hsPkgs.HUnit
               hsPkgs.QuickCheck

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        alarmclock = {
+        "alarmclock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alarmclock

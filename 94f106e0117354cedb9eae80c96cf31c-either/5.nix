@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        either = {
+        "either" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.either

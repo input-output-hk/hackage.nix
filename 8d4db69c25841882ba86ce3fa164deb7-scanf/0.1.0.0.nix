@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        scanf = {
+        "scanf" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.base
           ];
         };
         tests = {
-          example-test = {
+          "example-test" = {
             depends  = [
               hsPkgs.scanf
               hsPkgs.base

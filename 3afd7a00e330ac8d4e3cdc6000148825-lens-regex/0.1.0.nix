@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lens-regex = {
+        "lens-regex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          sample = {
+          "sample" = {
             depends  = pkgs.lib.optionals (!(!_flags.build-samples)) [
               hsPkgs.base
               hsPkgs.lens
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

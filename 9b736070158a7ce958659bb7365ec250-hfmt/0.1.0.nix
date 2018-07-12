@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hfmt = {
+        "hfmt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          hfmt = {
+          "hfmt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hfmt
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          self-formatting-test = {
+          "self-formatting-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hfmt
@@ -64,7 +64,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          pure-test = {
+          "pure-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hfmt

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        IFS = {
+        "IFS" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          IFS = {
+          "IFS" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mondo = {
+        "mondo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

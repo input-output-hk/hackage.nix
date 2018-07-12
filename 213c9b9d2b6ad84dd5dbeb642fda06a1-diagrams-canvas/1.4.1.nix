@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-canvas = {
+        "diagrams-canvas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

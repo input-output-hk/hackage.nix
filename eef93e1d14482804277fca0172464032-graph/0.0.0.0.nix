@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        graph = {
+        "graph" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.smallcheck

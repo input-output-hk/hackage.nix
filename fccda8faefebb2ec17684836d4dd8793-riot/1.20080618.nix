@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          riot = {
+          "riot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

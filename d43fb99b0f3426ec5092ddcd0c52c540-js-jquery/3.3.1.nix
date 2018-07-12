@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        js-jquery = {
+        "js-jquery" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          js-jquery-test = {
+          "js-jquery-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.js-jquery

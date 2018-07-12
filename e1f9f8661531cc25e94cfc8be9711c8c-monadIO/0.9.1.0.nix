@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadIO = {
+        "monadIO" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

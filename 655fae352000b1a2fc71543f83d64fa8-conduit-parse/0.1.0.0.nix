@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-parse = {
+        "conduit-parse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

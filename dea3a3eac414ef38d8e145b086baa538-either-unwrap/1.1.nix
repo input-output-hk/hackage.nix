@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        either-unwrap = {
+        "either-unwrap" = {
           depends  = [ hsPkgs.base ];
         };
       };

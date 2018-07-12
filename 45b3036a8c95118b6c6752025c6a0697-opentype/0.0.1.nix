@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opentype = {
+        "opentype" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -32,6 +32,6 @@ let
             hsPkgs.pretty-hex
           ];
         };
-        tests = { test = {}; };
+        tests = { "test" = {}; };
       };
     }

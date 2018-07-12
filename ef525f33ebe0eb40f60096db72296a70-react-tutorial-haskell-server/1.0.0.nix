@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          server = {
+          "server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

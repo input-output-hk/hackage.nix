@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filestore = {
+        "filestore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          test-filestore = {
+          "test-filestore" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

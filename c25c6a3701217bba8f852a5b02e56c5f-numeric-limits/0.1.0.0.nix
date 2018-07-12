@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numeric-limits = {
+        "numeric-limits" = {
           depends  = [ hsPkgs.base ];
         };
       };

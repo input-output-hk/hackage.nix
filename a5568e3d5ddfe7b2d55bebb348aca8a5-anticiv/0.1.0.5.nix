@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        anticiv = {
+        "anticiv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chatty
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          anticiv = {
+          "anticiv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chatty

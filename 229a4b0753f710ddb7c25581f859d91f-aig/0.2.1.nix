@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aig = {
+        "aig" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -21,22 +21,14 @@ let
       };
       components = {
         exes = {
-          json-concat = {
+          "json-concat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.bytestring
             ];
           };
-          json-deep-select-key = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.aeson
-              hsPkgs.bytestring
-              hsPkgs.containers
-            ];
-          };
-          json-select = {
+          "json-deep-select-key" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -44,7 +36,15 @@ let
               hsPkgs.containers
             ];
           };
-          json-iter = {
+          "json-select" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.aeson
+              hsPkgs.bytestring
+              hsPkgs.containers
+            ];
+          };
+          "json-iter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -52,27 +52,27 @@ let
               hsPkgs.process
             ];
           };
-          json-lines = {
+          "json-lines" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.bytestring
             ];
           };
-          json-strings = {
+          "json-strings" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.bytestring
             ];
           };
-          json-unlines = {
+          "json-unlines" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
             ];
           };
-          json-wrap = {
+          "json-wrap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -80,14 +80,14 @@ let
               hsPkgs.vector
             ];
           };
-          json-xargs = {
+          "json-xargs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.bytestring
             ];
           };
-          tar2json = {
+          "tar2json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -97,14 +97,14 @@ let
               hsPkgs.tar
             ];
           };
-          json-quote = {
+          "json-quote" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
               hsPkgs.text
             ];
           };
-          hjq = {
+          "hjq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

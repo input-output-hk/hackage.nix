@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        manatee-filemanager = {
+        "manatee-filemanager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manatee-core
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          manatee-filemanager = {};
+          "manatee-filemanager" = {};
         };
       };
     }

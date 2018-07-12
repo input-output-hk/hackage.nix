@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mac = {
+        "mac" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

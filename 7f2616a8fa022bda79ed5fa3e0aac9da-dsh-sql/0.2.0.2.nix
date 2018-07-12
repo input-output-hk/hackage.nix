@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dsh-sql = {
+        "dsh-sql" = {
           depends  = [
             hsPkgs.DSH
             hsPkgs.random
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          sqltests = {
+          "sqltests" = {
             depends  = [
               hsPkgs.DSH
               hsPkgs.HDBC

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddc-source-tetra = {
+        "ddc-source-tetra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

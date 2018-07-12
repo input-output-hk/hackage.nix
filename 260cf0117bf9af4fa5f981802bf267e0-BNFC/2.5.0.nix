@@ -25,14 +25,14 @@ let
         buildType = "Simple";
       };
       components = {
-        BNFC = {
+        "BNFC" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
           ];
         };
         exes = {
-          bnfc = {
+          "bnfc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          system-tests-haskell = {
+          "system-tests-haskell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -57,7 +57,7 @@ let
               hsPkgs.text
             ];
           };
-          system-tests-java = {
+          "system-tests-java" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -68,7 +68,7 @@ let
               hsPkgs.text
             ];
           };
-          system-tests-c = {
+          "system-tests-c" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -79,7 +79,7 @@ let
               hsPkgs.text
             ];
           };
-          system-tests-cpp = {
+          "system-tests-cpp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -90,7 +90,7 @@ let
               hsPkgs.text
             ];
           };
-          system-tests-cpp-no-stl = {
+          "system-tests-cpp-no-stl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -101,7 +101,7 @@ let
               hsPkgs.text
             ];
           };
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

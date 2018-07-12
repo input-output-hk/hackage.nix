@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        autom = {
+        "autom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

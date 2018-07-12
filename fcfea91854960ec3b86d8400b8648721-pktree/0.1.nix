@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pktree = {
+        "pktree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        show-prettyprint = {
+        "show-prettyprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.trifecta
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

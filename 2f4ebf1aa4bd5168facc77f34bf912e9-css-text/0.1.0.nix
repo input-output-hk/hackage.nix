@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        css-text = {
+        "css-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

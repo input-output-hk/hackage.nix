@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        set-cover = {
+        "set-cover" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.utility-ht
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          tetris-cube = {
+          "tetris-cube" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers
@@ -38,7 +38,7 @@ let
               hsPkgs.base
             ];
           };
-          soma-cube = {
+          "soma-cube" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers
@@ -46,7 +46,7 @@ let
               hsPkgs.base
             ];
           };
-          queen8 = {
+          "queen8" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers
@@ -55,7 +55,7 @@ let
               hsPkgs.base
             ];
           };
-          sudoku-setcover = {
+          "sudoku-setcover" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.set-cover
               hsPkgs.containers

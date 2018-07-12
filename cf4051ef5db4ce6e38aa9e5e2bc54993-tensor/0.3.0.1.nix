@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tensor = {
+        "tensor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -29,14 +29,14 @@ let
           ];
         };
         tests = {
-          test-ordinal = {
+          "test-ordinal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
               hsPkgs.tensor
             ];
           };
-          test-multiindex = {
+          "test-multiindex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -44,7 +44,7 @@ let
               hsPkgs.tensor
             ];
           };
-          test-tensor = {
+          "test-tensor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

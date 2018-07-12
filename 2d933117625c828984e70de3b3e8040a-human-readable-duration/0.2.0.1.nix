@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        human-readable-duration = {
+        "human-readable-duration" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          human-readable-duration-test = {
+          "human-readable-duration-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.human-readable-duration
@@ -34,7 +34,7 @@ let
           };
         };
         benchmarks = {
-          hrd-bench = {
+          "hrd-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-dir-list = {
+        "hakyll-dir-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hakyll

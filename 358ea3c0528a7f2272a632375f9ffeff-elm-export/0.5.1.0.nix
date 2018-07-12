@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elm-export = {
+        "elm-export" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          elm-export-test = {
+          "elm-export-test" = {
             depends  = [
               hsPkgs.Diff
               hsPkgs.HUnit

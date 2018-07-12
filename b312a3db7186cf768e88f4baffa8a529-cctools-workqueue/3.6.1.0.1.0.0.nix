@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cctools-workqueue = {
+        "cctools-workqueue" = {
           depends  = ([
             hsPkgs.bindings-cctools
             hsPkgs.lens

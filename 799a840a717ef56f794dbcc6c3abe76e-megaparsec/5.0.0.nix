@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        megaparsec = {
+        "megaparsec" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.tagged;
         };
         tests = {
-          old-tests = {
+          "old-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -47,7 +47,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          tests = {
+          "tests" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.HUnit
@@ -67,7 +67,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

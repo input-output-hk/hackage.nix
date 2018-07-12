@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        colorless-http-client = {
+        "colorless-http-client" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

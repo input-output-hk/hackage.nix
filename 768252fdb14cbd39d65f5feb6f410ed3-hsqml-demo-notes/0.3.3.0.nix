@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsqml-notes = {
+          "hsqml-notes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -31,7 +31,7 @@ let
               hsPkgs.hsqml
             ];
           };
-          hsqml-notes-slow = {
+          "hsqml-notes-slow" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

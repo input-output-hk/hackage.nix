@@ -28,7 +28,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-ffi = {
+        "llvm-ffi" = {
           depends  = [
             hsPkgs.enumset
             hsPkgs.base
@@ -54,7 +54,7 @@ let
                     else [ pkgconfPkgs.llvm ];
         };
         exes = {
-          llvm-ffi-example = {
+          "llvm-ffi-example" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-ffi
               hsPkgs.utility-ht

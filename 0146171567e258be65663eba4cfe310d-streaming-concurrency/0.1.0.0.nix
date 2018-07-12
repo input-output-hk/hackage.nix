@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-concurrency = {
+        "streaming-concurrency" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          merging = {
+          "merging" = {
             depends  = [
               hsPkgs.streaming-concurrency
               hsPkgs.base

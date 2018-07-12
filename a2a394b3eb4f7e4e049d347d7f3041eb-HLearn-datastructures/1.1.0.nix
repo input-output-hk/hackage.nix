@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HLearn-datastructures = {
+        "HLearn-datastructures" = {
           depends  = [
             hsPkgs.HLearn-algebra
             hsPkgs.ConstraintKinds

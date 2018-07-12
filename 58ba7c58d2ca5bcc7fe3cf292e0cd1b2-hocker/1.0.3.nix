@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hocker = {
+        "hocker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -67,7 +67,7 @@ let
           ];
         };
         exes = {
-          hocker-image = {
+          "hocker-image" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -83,7 +83,7 @@ let
               hsPkgs.text
             ];
           };
-          hocker-layer = {
+          "hocker-layer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -100,7 +100,7 @@ let
               hsPkgs.text
             ];
           };
-          hocker-config = {
+          "hocker-config" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -116,7 +116,7 @@ let
               hsPkgs.text
             ];
           };
-          hocker-manifest = {
+          "hocker-manifest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -132,7 +132,7 @@ let
               hsPkgs.hocker
             ];
           };
-          docker2nix = {
+          "docker2nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -152,7 +152,7 @@ let
           };
         };
         tests = {
-          hocker-tests = {
+          "hocker-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

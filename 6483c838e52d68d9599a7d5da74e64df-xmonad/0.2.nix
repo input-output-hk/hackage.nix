@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          xmonad = {
+          "xmonad" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11

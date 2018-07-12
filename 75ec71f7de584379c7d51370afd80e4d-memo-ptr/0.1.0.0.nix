@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memo-ptr = {
+        "memo-ptr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

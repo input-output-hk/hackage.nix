@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extended-reals = {
+        "extended-reals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          TestExtendedReal = {
+          "TestExtendedReal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

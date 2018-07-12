@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        helm = {
+        "helm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          helm-tests = {
+          "helm-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

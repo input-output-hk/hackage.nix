@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        github-post-receive = {
+        "github-post-receive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

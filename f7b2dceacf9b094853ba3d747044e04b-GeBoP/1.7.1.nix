@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gebop = {
+          "gebop" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wxcore

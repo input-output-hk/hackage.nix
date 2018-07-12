@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conductive-hsc3 = {
+        "conductive-hsc3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conductive-base

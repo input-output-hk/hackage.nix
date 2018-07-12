@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cci = {
+        "cci" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,14 +30,14 @@ let
           libs = [ pkgs.cci ];
         };
         exes = {
-          cci-example-client = {
+          "cci-example-client" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.cci
             ];
           };
-          cci-example-pingpong = {
+          "cci-example-pingpong" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.bytestring
@@ -45,14 +45,14 @@ let
               hsPkgs.time
             ];
           };
-          cci-example-server = {
+          "cci-example-server" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.cci
             ];
           };
-          cci-example-registration-benchmark = {
+          "cci-example-registration-benchmark" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.bytestring
@@ -62,7 +62,7 @@ let
           };
         };
         tests = {
-          test-cci = {
+          "test-cci" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -77,7 +77,7 @@ let
               hsPkgs.pretty
             ];
           };
-          test-worker = {
+          "test-worker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

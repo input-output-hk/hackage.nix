@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        avro = {
+        "avro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.avro

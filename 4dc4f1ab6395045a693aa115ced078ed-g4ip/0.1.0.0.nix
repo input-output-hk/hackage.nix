@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        g4ip = {
+        "g4ip" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test-g4ip = {
+          "test-g4ip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.g4ip

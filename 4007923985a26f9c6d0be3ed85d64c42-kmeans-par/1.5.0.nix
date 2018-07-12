@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kmeans-par = {
+        "kmeans-par" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -30,7 +30,7 @@ let
           ];
         };
         benchmarks = {
-          kmeans-benchmark = {
+          "kmeans-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

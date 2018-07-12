@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        incremental-maps = {
+        "incremental-maps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          map-tests = {
+          "map-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

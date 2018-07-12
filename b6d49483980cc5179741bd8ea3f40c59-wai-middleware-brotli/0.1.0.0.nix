@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-brotli = {
+        "wai-middleware-brotli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          wai-middleware-brotli-server = {
+          "wai-middleware-brotli-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          wai-middleware-brotli-test = {
+          "wai-middleware-brotli-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs-brotli

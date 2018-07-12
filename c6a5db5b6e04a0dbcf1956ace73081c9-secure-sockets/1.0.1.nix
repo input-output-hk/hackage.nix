@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        secure-sockets = {
+        "secure-sockets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

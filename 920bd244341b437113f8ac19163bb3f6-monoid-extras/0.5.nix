@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monoid-extras = {
+        "monoid-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.groups
@@ -29,7 +29,7 @@ let
           ];
         };
         benchmarks = {
-          semi-direct-product = {
+          "semi-direct-product" = {
             depends  = [
               hsPkgs.base
               hsPkgs.semigroups

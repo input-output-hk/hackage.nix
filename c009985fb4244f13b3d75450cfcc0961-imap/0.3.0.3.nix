@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imap = {
+        "imap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          imap-test = {
+          "imap-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

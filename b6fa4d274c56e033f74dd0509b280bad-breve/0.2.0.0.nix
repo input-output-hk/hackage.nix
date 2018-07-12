@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          breve = {
+          "breve" = {
             depends  = [
               hsPkgs.base
               hsPkgs.simple

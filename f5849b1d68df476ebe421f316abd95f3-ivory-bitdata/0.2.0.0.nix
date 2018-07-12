@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ivory-bitdata = {
+        "ivory-bitdata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ivory
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          ivory-bitdata-example = {
+          "ivory-bitdata-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ivory-bitdata

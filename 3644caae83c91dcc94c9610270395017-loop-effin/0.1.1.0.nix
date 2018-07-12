@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        loop-effin = {
+        "loop-effin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.effin

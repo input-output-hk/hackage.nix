@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pathfinding = {
+        "pathfinding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

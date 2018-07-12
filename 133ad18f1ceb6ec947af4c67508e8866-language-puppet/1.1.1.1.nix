@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-puppet = {
+        "language-puppet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -65,7 +65,7 @@ let
           ];
         };
         exes = {
-          puppetresources = {
+          "puppetresources" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -92,7 +92,7 @@ let
               hsPkgs.servant-client
             ];
           };
-          pdbquery = {
+          "pdbquery" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -110,7 +110,7 @@ let
           };
         };
         tests = {
-          test-evals = {
+          "test-evals" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -119,7 +119,7 @@ let
               hsPkgs.parsers
             ];
           };
-          test-lexer = {
+          "test-lexer" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -131,7 +131,7 @@ let
               hsPkgs.unix
             ];
           };
-          test-expr = {
+          "test-expr" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -142,7 +142,7 @@ let
               hsPkgs.strict-base-types
             ];
           };
-          test-hiera = {
+          "test-hiera" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -156,7 +156,7 @@ let
               hsPkgs.text
             ];
           };
-          test-puppetdb = {
+          "test-puppetdb" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -167,7 +167,7 @@ let
               hsPkgs.either
             ];
           };
-          erbparser = {
+          "erbparser" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base

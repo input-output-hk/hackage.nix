@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        knead-arithmetic = {
+        "knead-arithmetic" = {
           depends  = [
             hsPkgs.knead
             hsPkgs.llvm-extra

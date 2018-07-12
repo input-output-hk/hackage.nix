@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cipher-rc5 = {
+        "cipher-rc5" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

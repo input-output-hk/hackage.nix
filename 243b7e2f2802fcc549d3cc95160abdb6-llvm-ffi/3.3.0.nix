@@ -24,14 +24,14 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-ffi = {
+        "llvm-ffi" = {
           depends  = [ hsPkgs.base ];
           pkgconfig = if _flags.specificpkgconfig
             then [ pkgconfPkgs."llvm-3.3" ]
             else [ pkgconfPkgs.llvm ];
         };
         exes = {
-          llvm-diff-ffi = {
+          "llvm-diff-ffi" = {
             depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.utility-ht
               hsPkgs.regex-posix
@@ -39,7 +39,7 @@ let
               hsPkgs.base
             ];
           };
-          llvm-function-mangler = {
+          "llvm-function-mangler" = {
             depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.utility-ht
               hsPkgs.regex-posix
@@ -47,7 +47,7 @@ let
               hsPkgs.base
             ];
           };
-          llvm-intrinsic-mangler = {
+          "llvm-intrinsic-mangler" = {
             depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.bytestring
               hsPkgs.base

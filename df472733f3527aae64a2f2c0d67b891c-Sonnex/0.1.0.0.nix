@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Sonnex = {
+        "Sonnex" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compdata = {
+        "compdata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.compdata
               hsPkgs.base
@@ -55,7 +55,7 @@ let
           };
         };
         benchmarks = {
-          algebra = {
+          "algebra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell
@@ -71,7 +71,7 @@ let
               hsPkgs.transformers
             ];
           };
-          macro = {
+          "macro" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

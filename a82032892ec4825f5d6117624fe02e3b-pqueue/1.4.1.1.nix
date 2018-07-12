@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        pqueue = {
+        "pqueue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

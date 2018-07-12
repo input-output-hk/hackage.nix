@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa-fftw = {
+        "repa-fftw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.carray
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

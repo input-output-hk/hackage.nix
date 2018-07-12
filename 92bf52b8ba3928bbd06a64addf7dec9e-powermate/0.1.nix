@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        powermate = {
+        "powermate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

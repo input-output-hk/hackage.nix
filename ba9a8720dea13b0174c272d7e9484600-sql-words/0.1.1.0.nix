@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sql-words = {
+        "sql-words" = {
           depends  = [ hsPkgs.base ];
         };
       };

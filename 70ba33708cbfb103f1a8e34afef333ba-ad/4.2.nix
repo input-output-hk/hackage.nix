@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ad = {
+        "ad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -52,7 +52,7 @@ let
           };
         };
         benchmarks = {
-          blackscholes = {
+          "blackscholes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ad

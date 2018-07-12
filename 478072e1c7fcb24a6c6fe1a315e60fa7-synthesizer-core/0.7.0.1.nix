@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer-core = {
+        "synthesizer-core" = {
           depends  = [
             hsPkgs.sample-frame-np
             hsPkgs.sox
@@ -54,7 +54,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.synthesizer-core
               hsPkgs.storablevector
@@ -70,7 +70,7 @@ let
               hsPkgs.base
             ];
           };
-          fouriertest = {
+          "fouriertest" = {
             depends  = pkgs.lib.optionals _flags.buildprofilers [
               hsPkgs.synthesizer-core
               hsPkgs.numeric-prelude
@@ -81,7 +81,7 @@ let
               hsPkgs.base
             ];
           };
-          speedtest = {
+          "speedtest" = {
             depends  = pkgs.lib.optionals _flags.buildprofilers [
               hsPkgs.synthesizer-core
               hsPkgs.numeric-prelude
@@ -93,7 +93,7 @@ let
               hsPkgs.base
             ];
           };
-          speedtest-exp = {
+          "speedtest-exp" = {
             depends  = pkgs.lib.optionals _flags.buildprofilers ([
               hsPkgs.synthesizer-core
               hsPkgs.storablevector
@@ -106,7 +106,7 @@ let
               hsPkgs.directory
             ]);
           };
-          speedtest-simple = {
+          "speedtest-simple" = {
             depends  = pkgs.lib.optionals _flags.buildprofilers [
               hsPkgs.synthesizer-core
               hsPkgs.binary

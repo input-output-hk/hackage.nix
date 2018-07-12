@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sajson = {
+        "sajson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           libs = [ pkgs."stdc++" ];
         };
         exes = {
-          sajson-bench = {
+          "sajson-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sajson
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          sajson-test = {
+          "sajson-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sajson

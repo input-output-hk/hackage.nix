@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Weather = {
+        "Weather" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

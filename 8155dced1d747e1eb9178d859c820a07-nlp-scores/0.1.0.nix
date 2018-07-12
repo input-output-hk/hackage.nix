@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nlp-scores = {
+        "nlp-scores" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

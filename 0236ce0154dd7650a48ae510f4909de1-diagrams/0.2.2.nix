@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams = {
+        "diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

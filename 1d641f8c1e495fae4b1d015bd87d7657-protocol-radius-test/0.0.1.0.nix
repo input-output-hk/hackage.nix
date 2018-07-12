@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protocol-radius-test = {
+        "protocol-radius-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.quickcheck-simple
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          isomorphism = {
+          "isomorphism" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protocol-radius-test

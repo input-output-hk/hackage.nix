@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uri-bytestring-aeson = {
+        "uri-bytestring-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uri-bytestring

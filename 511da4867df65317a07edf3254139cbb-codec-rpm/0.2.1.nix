@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        codec-rpm = {
+        "codec-rpm" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.attoparsec-binary
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.hspec

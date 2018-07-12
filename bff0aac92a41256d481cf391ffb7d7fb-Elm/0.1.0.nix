@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          elm = {
+          "elm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -31,7 +31,7 @@ let
               hsPkgs.blaze-html
             ];
           };
-          elm-server = {
+          "elm-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

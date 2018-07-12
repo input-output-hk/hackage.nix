@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iso639 = {
+        "iso639" = {
           depends  = [ hsPkgs.base ];
         };
       };

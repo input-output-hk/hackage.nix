@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cuda = {
+        "cuda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          deviceQuery = {
+          "deviceQuery" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cuda

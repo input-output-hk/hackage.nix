@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-WinEvent = {
+        "HGamer3D-WinEvent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

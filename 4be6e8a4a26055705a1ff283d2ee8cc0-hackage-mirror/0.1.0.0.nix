@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hackage-mirror = {
+        "hackage-mirror" = {
           depends  = [
             hsPkgs.aws
             hsPkgs.base
@@ -55,7 +55,7 @@ let
           ];
         };
         exes = {
-          hackage-mirror = {
+          "hackage-mirror" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hackage-mirror

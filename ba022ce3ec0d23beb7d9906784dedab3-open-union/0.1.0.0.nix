@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        open-union = {
+        "open-union" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.open-union

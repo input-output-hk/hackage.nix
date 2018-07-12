@@ -33,7 +33,7 @@ let
         buildType = "Custom";
       };
       components = {
-        darcs-beta = {
+        "darcs-beta" = {
           depends  = pkgs.lib.optionals (!(!_flags.library)) ((((([
             hsPkgs.base
             hsPkgs.extensible-exceptions
@@ -59,10 +59,10 @@ let
             hsPkgs.network
             hsPkgs.HTTP
           ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo);
-          libs = pkgs.lib.optional (!(!_flags.library) && _flags.curl) pkgs.curl;
+          libs = pkgs.lib.optionals (!(!_flags.library)) (pkgs.lib.optional _flags.curl pkgs.curl);
         };
         exes = {
-          witnesses = {
+          "witnesses" = {
             depends  = pkgs.lib.optionals (!(!_flags.type-witnesses)) ((([
               hsPkgs.base
               hsPkgs.extensible-exceptions
@@ -92,7 +92,7 @@ let
               hsPkgs.HTTP
             ]);
           };
-          darcs = {
+          "darcs" = {
             depends  = (((([
               hsPkgs.base
               hsPkgs.extensible-exceptions
@@ -120,7 +120,7 @@ let
             ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
             libs = pkgs.lib.optional _flags.curl pkgs.curl;
           };
-          unit = {
+          "unit" = {
             depends  = pkgs.lib.optionals (!(!_flags.test)) ((((([
               hsPkgs.base
               hsPkgs.extensible-exceptions

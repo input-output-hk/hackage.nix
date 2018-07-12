@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enummapset-th = {
+        "enummapset-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

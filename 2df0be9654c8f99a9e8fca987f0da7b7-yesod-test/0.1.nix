@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-test = {
+        "yesod-test" = {
           depends  = [
             hsPkgs.hxt
             hsPkgs.parsec

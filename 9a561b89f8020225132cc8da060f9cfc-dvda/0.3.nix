@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        dvda = {
+        "dvda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.file-location
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dvda

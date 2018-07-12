@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-lens = {
+        "text-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          text-lens-test = {
+          "text-lens-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text-lens

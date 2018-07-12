@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hbro = {
+        "hbro" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -64,7 +64,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.integer-simple;
         };
         exes = {
-          hbro = {
+          "hbro" = {
             depends  = [
               hsPkgs.hbro
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rabocsv2qif = {
+        "rabocsv2qif" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          rabocsv2qif = {
+          "rabocsv2qif" = {
             depends  = [ hsPkgs.base ];
           };
         };

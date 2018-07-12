@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-rope = {
+        "data-rope" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring-mmap

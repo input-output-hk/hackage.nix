@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client-lens = {
+        "http-client-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

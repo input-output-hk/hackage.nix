@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        quickcheck-property-monad = {
+        "quickcheck-property-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.either
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

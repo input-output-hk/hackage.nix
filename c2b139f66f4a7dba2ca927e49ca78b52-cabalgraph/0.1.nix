@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          cabalgraph = {
+          "cabalgraph" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.filepath

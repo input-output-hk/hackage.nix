@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        antiquoter = {
+        "antiquoter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

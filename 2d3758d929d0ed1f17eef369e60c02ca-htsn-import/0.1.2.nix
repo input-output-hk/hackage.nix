@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          htsn-import = {
+          "htsn-import" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -71,13 +71,13 @@ let
               hsPkgs.tuple
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          shelltests = {
+          "shelltests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

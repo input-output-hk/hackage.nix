@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sharedio = {
+        "sharedio" = {
           depends  = [ hsPkgs.base ];
         };
       };

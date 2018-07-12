@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unitym = {
+        "unitym" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

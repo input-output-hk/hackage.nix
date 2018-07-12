@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-heist = {
+        "happstack-heist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

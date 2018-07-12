@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        discord-types = {
+        "discord-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

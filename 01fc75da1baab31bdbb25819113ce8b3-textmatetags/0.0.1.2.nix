@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          textmatetags = {
+          "textmatetags" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

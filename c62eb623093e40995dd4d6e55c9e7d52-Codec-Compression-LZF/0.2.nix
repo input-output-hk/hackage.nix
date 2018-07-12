@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Codec-Compression-LZF = {
+        "Codec-Compression-LZF" = {
           depends  = [ hsPkgs.base ];
         };
       };

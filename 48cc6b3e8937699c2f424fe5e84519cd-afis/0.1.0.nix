@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        afis = {
+        "afis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test-afis = {
+          "test-afis" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

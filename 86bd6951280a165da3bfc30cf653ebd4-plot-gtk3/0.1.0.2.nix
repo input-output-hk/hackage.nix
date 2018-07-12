@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plot-gtk3 = {
+        "plot-gtk3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

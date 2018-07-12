@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reasonable-lens = {
+        "reasonable-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

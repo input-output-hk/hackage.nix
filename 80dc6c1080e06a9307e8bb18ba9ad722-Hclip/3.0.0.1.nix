@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hclip = {
+        "Hclip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
         };
         tests = {
-          Tasty = {
+          "Tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

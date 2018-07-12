@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Command = {
+        "Command" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

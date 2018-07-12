@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acid-state = {
+        "acid-state" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

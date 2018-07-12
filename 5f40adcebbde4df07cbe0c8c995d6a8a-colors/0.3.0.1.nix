@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        colors = {
+        "colors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.profunctors

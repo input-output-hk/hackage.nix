@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          wrecker-ui = {
+          "wrecker-ui" = {
             depends  = [
               hsPkgs.base
               hsPkgs.scotty

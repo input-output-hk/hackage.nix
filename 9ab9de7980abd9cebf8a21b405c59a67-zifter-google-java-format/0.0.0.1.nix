@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zifter-google-java-format = {
+        "zifter-google-java-format" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zifter

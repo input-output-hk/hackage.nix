@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fgl-visualize = {
+        "fgl-visualize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fgl

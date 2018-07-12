@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mxnet-nn = {
+        "mxnet-nn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mxnet
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          mnist = {
+          "mnist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mxnet
@@ -52,7 +52,7 @@ let
               hsPkgs.mxnet-nn
             ];
           };
-          lenet = {
+          "lenet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mxnet

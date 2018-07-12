@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HoleyMonoid = {
+        "HoleyMonoid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

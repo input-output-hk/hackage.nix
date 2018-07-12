@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-elm = {
+        "servant-elm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.elm-export
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          books-example = {
+          "books-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elm-export
@@ -43,7 +43,7 @@ let
               hsPkgs.servant-elm
             ];
           };
-          e2e-tests-example = {
+          "e2e-tests-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elm-export
@@ -51,7 +51,7 @@ let
               hsPkgs.servant-elm
             ];
           };
-          giphy-example = {
+          "giphy-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elm-export
@@ -60,7 +60,7 @@ let
               hsPkgs.text
             ];
           };
-          readme-example = {
+          "readme-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elm-export
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          servant-elm-test = {
+          "servant-elm-test" = {
             depends  = [
               hsPkgs.Diff
               hsPkgs.HUnit
@@ -83,7 +83,7 @@ let
               hsPkgs.text
             ];
           };
-          servant-elm-test-integration = {
+          "servant-elm-test-integration" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

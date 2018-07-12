@@ -23,12 +23,12 @@ let
       };
       components = {
         exes = {
-          javav = {
+          "javav" = {
             depends  = [ hsPkgs.base ];
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

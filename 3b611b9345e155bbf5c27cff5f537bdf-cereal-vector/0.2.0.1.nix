@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal-vector = {
+        "cereal-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

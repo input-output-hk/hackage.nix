@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          scan = {
+          "scan" = {
             depends  = [
               hsPkgs.base
             ] ++ (if _flags.parsec1

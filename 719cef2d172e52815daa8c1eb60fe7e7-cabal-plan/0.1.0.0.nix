@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-plan = {
+        "cabal-plan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          cabal-plan = {
+          "cabal-plan" = {
             depends  = [
               hsPkgs.cabal-plan
               hsPkgs.base

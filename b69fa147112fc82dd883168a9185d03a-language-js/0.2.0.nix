@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        language-js = {
+        "language-js" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         tests = {
-          language-js-test = {
+          "language-js-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

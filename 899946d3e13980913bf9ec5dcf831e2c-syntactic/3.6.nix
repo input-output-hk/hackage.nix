@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        syntactic = {
+        "syntactic" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.constraints
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.base-orphans) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged) ++ pkgs.lib.optional _flags.th hsPkgs.template-haskell;
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.syntactic
               hsPkgs.base
@@ -52,7 +52,7 @@ let
           };
         };
         benchmarks = {
-          syntactic-bench = {
+          "syntactic-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

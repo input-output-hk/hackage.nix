@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        statistics = {
+        "statistics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.erf

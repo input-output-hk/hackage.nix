@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smallcheck-laws = {
+        "smallcheck-laws" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.smallcheck
@@ -30,7 +30,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.smallcheck

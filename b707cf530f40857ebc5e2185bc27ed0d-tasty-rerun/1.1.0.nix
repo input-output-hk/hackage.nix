@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-rerun = {
+        "tasty-rerun" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

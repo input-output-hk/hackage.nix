@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clr-bindings = {
+        "clr-bindings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clr-typed
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          clr-bindings-test = {
+          "clr-bindings-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clr-bindings

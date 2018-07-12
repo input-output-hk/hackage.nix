@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haste-compiler = {
+        "haste-compiler" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.monads-tf
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          haste-boot = {
+          "haste-boot" = {
             depends  = [
               hsPkgs.ghc
               hsPkgs.base
@@ -65,7 +65,7 @@ let
               hsPkgs.directory
             ];
           };
-          hastec = {
+          "hastec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -86,7 +86,7 @@ let
               hsPkgs.directory
             ];
           };
-          haste-inst = {
+          "haste-inst" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shellmate
@@ -95,7 +95,7 @@ let
               hsPkgs.directory
             ];
           };
-          haste-pkg = {
+          "haste-pkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shellmate
@@ -105,7 +105,7 @@ let
               hsPkgs.directory
             ];
           };
-          haste-install-his = {
+          "haste-install-his" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shellmate
@@ -114,7 +114,7 @@ let
               hsPkgs.directory
             ];
           };
-          haste-copy-pkg = {
+          "haste-copy-pkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shellmate
@@ -123,7 +123,7 @@ let
               hsPkgs.directory
             ];
           };
-          haste-cat = {
+          "haste-cat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shellmate

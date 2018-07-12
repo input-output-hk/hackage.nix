@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        purescript = {
+        "purescript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -69,7 +69,7 @@ let
           ];
         };
         exes = {
-          psc = {
+          "psc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript
@@ -90,7 +90,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          psci = {
+          "psci" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript
@@ -110,7 +110,7 @@ let
               hsPkgs.transformers-compat
             ];
           };
-          psc-docs = {
+          "psc-docs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript
@@ -126,7 +126,7 @@ let
               hsPkgs.transformers-compat
             ];
           };
-          psc-publish = {
+          "psc-publish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript
@@ -135,7 +135,7 @@ let
               hsPkgs.optparse-applicative
             ];
           };
-          psc-hierarchy = {
+          "psc-hierarchy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript
@@ -148,7 +148,7 @@ let
               hsPkgs.process
             ];
           };
-          psc-bundle = {
+          "psc-bundle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript
@@ -161,7 +161,7 @@ let
               hsPkgs.transformers-compat
             ];
           };
-          psc-ide-server = {
+          "psc-ide-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript
@@ -178,7 +178,7 @@ let
               hsPkgs.transformers-compat
             ];
           };
-          psc-ide-client = {
+          "psc-ide-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -190,7 +190,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript

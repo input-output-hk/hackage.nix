@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Limit = {
+        "Limit" = {
           depends  = [ hsPkgs.base ];
         };
       };

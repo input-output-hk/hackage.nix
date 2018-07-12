@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-read-editor = {
+        "haskell-read-editor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

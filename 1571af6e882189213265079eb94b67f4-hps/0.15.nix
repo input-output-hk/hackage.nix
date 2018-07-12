@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hps = {
+        "hps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hcg-minus
           ];
         };
         exes = {
-          hps-fractals = {
+          "hps-fractals" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

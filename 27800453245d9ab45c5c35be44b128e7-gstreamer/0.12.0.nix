@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gstreamer = {
+        "gstreamer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

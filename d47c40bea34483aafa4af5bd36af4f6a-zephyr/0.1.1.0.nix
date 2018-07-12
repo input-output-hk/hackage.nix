@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zephyr = {
+        "zephyr" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-terminal
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          zephyr = {
+          "zephyr" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-terminal
@@ -72,7 +72,7 @@ let
           };
         };
         tests = {
-          zephyr-test = {
+          "zephyr-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-terminal

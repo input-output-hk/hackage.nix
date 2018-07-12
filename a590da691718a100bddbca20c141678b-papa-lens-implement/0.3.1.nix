@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        papa-lens-implement = {
+        "papa-lens-implement" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

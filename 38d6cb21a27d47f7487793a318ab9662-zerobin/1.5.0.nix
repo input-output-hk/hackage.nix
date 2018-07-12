@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zerobin = {
+        "zerobin" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          zerobin = {
+          "zerobin" = {
             depends  = pkgs.lib.optionals _flags.cli [
               hsPkgs.base
               hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
               hsPkgs.raw-strings-qq
             ];
           };
-          zerobin-nodejs = {
+          "zerobin-nodejs" = {
             depends  = pkgs.lib.optionals _flags.nodejs [
               hsPkgs.aeson
               hsPkgs.base

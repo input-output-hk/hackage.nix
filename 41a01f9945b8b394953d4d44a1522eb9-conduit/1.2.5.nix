@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit = {
+        "conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.resourcet
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.void;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.base
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          optimize-201408 = {
+          "optimize-201408" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit
@@ -64,7 +64,7 @@ let
               hsPkgs.kan-extensions
             ];
           };
-          unfused = {
+          "unfused" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

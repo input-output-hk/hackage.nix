@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AAI = {
+        "AAI" = {
           depends  = [ hsPkgs.base ];
         };
       };

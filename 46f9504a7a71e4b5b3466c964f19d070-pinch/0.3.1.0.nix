@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pinch = {
+        "pinch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          pinch-spec = {
+          "pinch-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

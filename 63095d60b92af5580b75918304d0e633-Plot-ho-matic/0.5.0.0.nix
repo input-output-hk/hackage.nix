@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Plot-ho-matic = {
+        "Plot-ho-matic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Plot-ho-matic

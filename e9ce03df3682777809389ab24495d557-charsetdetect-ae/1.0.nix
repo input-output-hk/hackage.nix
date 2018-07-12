@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        charsetdetect-ae = {
+        "charsetdetect-ae" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

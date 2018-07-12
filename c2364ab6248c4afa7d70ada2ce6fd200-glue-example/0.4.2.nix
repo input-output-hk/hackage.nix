@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          glue-example = {
+          "glue-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.glue-common

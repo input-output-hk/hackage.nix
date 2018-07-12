@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          wavconvert = {
+          "wavconvert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

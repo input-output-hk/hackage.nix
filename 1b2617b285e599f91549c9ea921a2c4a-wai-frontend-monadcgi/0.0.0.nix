@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-frontend-monadcgi = {
+        "wai-frontend-monadcgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

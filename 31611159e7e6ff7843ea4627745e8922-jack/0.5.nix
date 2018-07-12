@@ -20,12 +20,12 @@ let
         buildType = "Custom";
       };
       components = {
-        jack = {
+        "jack" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.jack ];
         };
         exes = {
-          amplify = {
+          "amplify" = {
             depends  = [ hsPkgs.base ];
             libs = [ pkgs.jack ];
           };

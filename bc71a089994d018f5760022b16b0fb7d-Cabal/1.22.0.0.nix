@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Cabal = {
+        "Cabal" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.binary
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework
@@ -47,7 +47,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          package-tests = {
+          "package-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

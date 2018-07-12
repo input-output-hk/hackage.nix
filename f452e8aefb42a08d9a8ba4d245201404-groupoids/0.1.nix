@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        groupoids = {
+        "groupoids" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroupoids

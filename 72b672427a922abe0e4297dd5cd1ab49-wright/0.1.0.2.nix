@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wright = {
+        "wright" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bed-and-breakfast
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          wright-tests = {
+          "wright-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bed-and-breakfast

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        emailparse = {
+        "emailparse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          emailparse-test = {
+          "emailparse-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

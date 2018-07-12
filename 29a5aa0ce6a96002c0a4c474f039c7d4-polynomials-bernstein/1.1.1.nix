@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polynomials-bernstein = {
+        "polynomials-bernstein" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

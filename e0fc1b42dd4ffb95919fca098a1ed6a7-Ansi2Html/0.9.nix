@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ansi2html = {
+          "ansi2html" = {
             depends  = [
               hsPkgs.parsec
               hsPkgs.mtl

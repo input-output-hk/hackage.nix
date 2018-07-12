@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libsystemd-journal = {
+        "libsystemd-journal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

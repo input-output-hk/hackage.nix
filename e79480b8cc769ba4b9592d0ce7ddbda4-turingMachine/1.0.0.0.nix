@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        turingMachine = {
+        "turingMachine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          state = {
+          "state" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -39,7 +39,7 @@ let
               hsPkgs.turingMachine
             ];
           };
-          sigma = {
+          "sigma" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -51,7 +51,7 @@ let
               hsPkgs.turingMachine
             ];
           };
-          finite = {
+          "finite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

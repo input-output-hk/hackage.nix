@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pg-harness = {
+          "pg-harness" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

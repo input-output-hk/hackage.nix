@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Clipboard = {
+        "Clipboard" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Win32

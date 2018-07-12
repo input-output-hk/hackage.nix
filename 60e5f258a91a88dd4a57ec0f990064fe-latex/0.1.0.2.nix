@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        latex = {
+        "latex" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.utility-ht

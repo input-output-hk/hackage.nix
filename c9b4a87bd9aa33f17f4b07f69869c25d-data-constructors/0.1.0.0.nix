@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        data-constructors = {
+        "data-constructors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          data-constructors-test = {
+          "data-constructors-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-constructors
@@ -36,7 +36,7 @@ let
           };
         };
         benchmarks = {
-          bench-EqC = {
+          "bench-EqC" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-constructors

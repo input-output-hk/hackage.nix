@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HTF = {
+        "HTF" = {
           depends  = [
             hsPkgs.Diff
             hsPkgs.HUnit
@@ -49,7 +49,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          htfpp = {
+          "htfpp" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.array
@@ -64,7 +64,7 @@ let
           };
         };
         tests = {
-          MiscTests = {
+          "MiscTests" = {
             depends  = [
               hsPkgs.HTF
               hsPkgs.HUnit
@@ -73,7 +73,7 @@ let
               hsPkgs.random
             ];
           };
-          TestHTF = {
+          "TestHTF" = {
             depends  = [
               hsPkgs.HTF
               hsPkgs.aeson
@@ -91,7 +91,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          TestThreadPools = {
+          "TestThreadPools" = {
             depends  = [
               hsPkgs.HTF
               hsPkgs.base

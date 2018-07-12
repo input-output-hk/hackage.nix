@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        control-monad-queue = {
+        "control-monad-queue" = {
           depends  = [ hsPkgs.base ];
         };
       };

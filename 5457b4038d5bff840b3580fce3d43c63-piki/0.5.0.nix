@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          piki = {
+          "piki" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec3

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mathista = {
+        "mathista" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          mathista = {
+          "mathista" = {
             depends  = [
               hsPkgs.base
               hsPkgs.split
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mathista

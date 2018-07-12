@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-src-exts-util = {
+        "haskell-src-exts-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

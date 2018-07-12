@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        backward-state = {
+        "backward-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

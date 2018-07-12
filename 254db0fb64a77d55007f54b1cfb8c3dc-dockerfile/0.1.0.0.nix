@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        dockerfile = {
+        "dockerfile" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dockerfile

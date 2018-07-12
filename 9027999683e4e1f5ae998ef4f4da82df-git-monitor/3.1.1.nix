@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          git-monitor = {
+          "git-monitor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gitlib

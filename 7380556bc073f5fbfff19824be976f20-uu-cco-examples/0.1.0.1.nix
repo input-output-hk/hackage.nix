@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          uu-cco-parse-arith = {
+          "uu-cco-parse-arith" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uu-cco
@@ -29,7 +29,7 @@ let
               hsPkgs.uuagc-cabal
             ];
           };
-          uu-cco-parse-arithbool = {
+          "uu-cco-parse-arithbool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uu-cco
@@ -37,7 +37,7 @@ let
               hsPkgs.uuagc-cabal
             ];
           };
-          uu-cco-pp-arith = {
+          "uu-cco-pp-arith" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uu-cco
@@ -45,7 +45,7 @@ let
               hsPkgs.uuagc-cabal
             ];
           };
-          uu-cco-pp-arithbool = {
+          "uu-cco-pp-arithbool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uu-cco
@@ -53,7 +53,7 @@ let
               hsPkgs.uuagc-cabal
             ];
           };
-          uu-cco-eval-arith = {
+          "uu-cco-eval-arith" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uu-cco
@@ -61,7 +61,7 @@ let
               hsPkgs.uuagc-cabal
             ];
           };
-          uu-cco-eval-arithbool = {
+          "uu-cco-eval-arithbool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uu-cco
@@ -69,7 +69,7 @@ let
               hsPkgs.uuagc-cabal
             ];
           };
-          uu-cco-interp-arith = {
+          "uu-cco-interp-arith" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uu-cco
@@ -77,7 +77,7 @@ let
               hsPkgs.uuagc-cabal
             ];
           };
-          uu-cco-interp-arithbool = {
+          "uu-cco-interp-arithbool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uu-cco
@@ -85,7 +85,7 @@ let
               hsPkgs.uuagc-cabal
             ];
           };
-          uu-cco-tc-arithbool = {
+          "uu-cco-tc-arithbool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uu-cco
@@ -93,7 +93,7 @@ let
               hsPkgs.uuagc-cabal
             ];
           };
-          uu-cco-pp-aterm = {
+          "uu-cco-pp-aterm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uu-cco

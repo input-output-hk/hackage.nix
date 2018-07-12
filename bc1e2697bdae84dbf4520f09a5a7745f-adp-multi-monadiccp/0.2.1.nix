@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        adp-multi-monadiccp = {
+        "adp-multi-monadiccp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          adp-multi-monadiccp-benchmarks = {
+          "adp-multi-monadiccp-benchmarks" = {
             depends  = pkgs.lib.optionals (!(!_flags.buildbenchmark)) [
               hsPkgs.base
               hsPkgs.containers
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

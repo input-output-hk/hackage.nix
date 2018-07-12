@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        storablevector-streamfusion = {
+        "storablevector-streamfusion" = {
           depends  = [
             hsPkgs.storablevector
             hsPkgs.stream-fusion
@@ -31,7 +31,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          speedtest = {
+          "speedtest" = {
             depends  = [
               hsPkgs.stream-fusion
               hsPkgs.old-time

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Verba = {
+          "Verba" = {
             depends  = [
               hsPkgs.base
               hsPkgs.matrix

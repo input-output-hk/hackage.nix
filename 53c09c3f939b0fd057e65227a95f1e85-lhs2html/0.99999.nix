@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lhs2html = {
+          "lhs2html" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nicify

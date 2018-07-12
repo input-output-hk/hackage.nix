@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          optimusprime = {
+          "optimusprime" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

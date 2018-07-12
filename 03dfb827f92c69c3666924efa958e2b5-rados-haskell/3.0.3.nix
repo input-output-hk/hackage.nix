@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rados-haskell = {
+        "rados-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           libs = [ pkgs.rados ];
         };
         tests = {
-          check = {
+          "check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          async = {
+          "async" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -59,7 +59,7 @@ let
               hsPkgs.rados-haskell
             ];
           };
-          concurrency = {
+          "concurrency" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

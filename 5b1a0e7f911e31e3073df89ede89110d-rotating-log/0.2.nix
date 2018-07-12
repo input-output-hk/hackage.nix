@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rotating-log = {
+        "rotating-log" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-rotate = {
+          "test-rotate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

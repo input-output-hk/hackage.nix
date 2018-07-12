@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        operational = {
+        "operational" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         exes = {
-          TicTacToe = {
+          "TicTacToe" = {
             depends  = [ hsPkgs.random ];
           };
         };

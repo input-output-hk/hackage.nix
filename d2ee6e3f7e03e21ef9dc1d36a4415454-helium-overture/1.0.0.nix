@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        helium-overture = {
+        "helium-overture" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

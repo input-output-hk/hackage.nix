@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MutationOrder = {
+        "MutationOrder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -64,7 +64,7 @@ let
           ];
         };
         exes = {
-          MutationOrder = {
+          "MutationOrder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -78,7 +78,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

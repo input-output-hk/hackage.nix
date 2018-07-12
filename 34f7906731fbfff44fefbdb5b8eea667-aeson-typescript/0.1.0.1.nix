@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-typescript = {
+        "aeson-typescript" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          aeson-typescript-test = {
+          "aeson-typescript-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-typescript

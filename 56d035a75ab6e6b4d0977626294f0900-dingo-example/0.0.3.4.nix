@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dingo-example = {
+          "dingo-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

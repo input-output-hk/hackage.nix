@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          arion = {
+          "arion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fsnotify
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

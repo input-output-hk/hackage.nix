@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HNM = {
+        "HNM" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gtk
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          HNM = {
+          "HNM" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

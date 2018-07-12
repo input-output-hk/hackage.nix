@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tabl = {
+        "tabl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          tabl-example-users = {
+          "tabl-example-users" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -36,14 +36,14 @@ let
               hsPkgs.text
             ];
           };
-          tabl-example-multiply = {
+          "tabl-example-multiply" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tabl
               hsPkgs.text
             ];
           };
-          tabl-example-tictactoe = {
+          "tabl-example-tictactoe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -53,7 +53,7 @@ let
               hsPkgs.text
             ];
           };
-          tabl-example-constants = {
+          "tabl-example-constants" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tabl

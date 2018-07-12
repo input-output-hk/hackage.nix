@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libhbb = {
+        "libhbb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          hbb-simple-cli = {
+          "hbb-simple-cli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.libhbb
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

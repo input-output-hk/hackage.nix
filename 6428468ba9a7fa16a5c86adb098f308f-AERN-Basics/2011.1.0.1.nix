@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AERN-Basics = {
+        "AERN-Basics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          toolAERN-bench-csv-to-gnuplot = {
+          "toolAERN-bench-csv-to-gnuplot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

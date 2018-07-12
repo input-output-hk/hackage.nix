@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Euterpea = {
+        "Euterpea" = {
           depends  = [
             hsPkgs.base
             hsPkgs.arrows

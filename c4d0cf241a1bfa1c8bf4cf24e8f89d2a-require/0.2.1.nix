@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        require = {
+        "require" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          requirepp = {
+          "requirepp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          require-test-suite = {
+          "require-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -56,7 +56,7 @@ let
           };
         };
         benchmarks = {
-          require-benchmarks = {
+          "require-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

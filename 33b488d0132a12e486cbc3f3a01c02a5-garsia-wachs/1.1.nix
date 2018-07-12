@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        garsia-wachs = {
+        "garsia-wachs" = {
           depends  = if _flags.old-base
             then [ hsPkgs.base ]
             else [

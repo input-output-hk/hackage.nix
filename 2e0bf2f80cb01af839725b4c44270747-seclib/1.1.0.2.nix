@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        seclib = {
+        "seclib" = {
           depends  = [ hsPkgs.base ];
         };
       };

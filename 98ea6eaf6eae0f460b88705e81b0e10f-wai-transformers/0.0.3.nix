@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-transformers = {
+        "wai-transformers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

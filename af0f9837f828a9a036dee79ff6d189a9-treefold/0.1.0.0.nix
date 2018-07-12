@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        treefold = {
+        "treefold" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parallel
           ];
         };
         tests = {
-          treefold-test = {
+          "treefold-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.treefold
@@ -37,7 +37,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.treefold

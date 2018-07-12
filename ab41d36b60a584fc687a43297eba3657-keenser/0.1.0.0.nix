@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keenser = {
+        "keenser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          keenser-exe = {
+          "keenser-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.keenser
@@ -62,7 +62,7 @@ let
           };
         };
         tests = {
-          keenser-test = {
+          "keenser-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.keenser

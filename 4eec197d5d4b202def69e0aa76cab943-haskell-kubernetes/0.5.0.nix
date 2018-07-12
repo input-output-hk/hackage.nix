@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-kubernetes = {
+        "haskell-kubernetes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

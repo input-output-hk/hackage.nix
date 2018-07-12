@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LambdaHack = {
+        "LambdaHack" = {
           depends  = [
             hsPkgs.ConfigFile
             hsPkgs.array
@@ -58,7 +58,7 @@ let
                 else pkgs.lib.optional (!_flags.std) hsPkgs.gtk);
         };
         exes = {
-          LambdaHack = {
+          "LambdaHack" = {
             depends  = [
               hsPkgs.LambdaHack
               hsPkgs.template-haskell
@@ -86,7 +86,7 @@ let
               hsPkgs.zlib
             ];
           };
-          DumbBot = {
+          "DumbBot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

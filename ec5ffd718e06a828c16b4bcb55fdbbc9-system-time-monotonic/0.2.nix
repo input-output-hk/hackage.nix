@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-time-monotonic = {
+        "system-time-monotonic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

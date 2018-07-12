@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SHA = {
+        "SHA" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ] ++ [ hsPkgs.binary ];
         };
         exes = {
-          test_sha = {
+          "test_sha" = {
             depends  = pkgs.lib.optionals _flags.test ([
               hsPkgs.array
               hsPkgs.base
@@ -42,7 +42,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ] ++ [ hsPkgs.binary ]);
           };
-          sha1 = {
+          "sha1" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
               hsPkgs.SHA
             ];
           };
-          sha384 = {
+          "sha384" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring

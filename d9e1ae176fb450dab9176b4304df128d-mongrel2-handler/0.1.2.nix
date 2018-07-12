@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mongrel2-handler = {
+        "mongrel2-handler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

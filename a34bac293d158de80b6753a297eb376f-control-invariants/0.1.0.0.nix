@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        control-invariants = {
+        "control-invariants" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

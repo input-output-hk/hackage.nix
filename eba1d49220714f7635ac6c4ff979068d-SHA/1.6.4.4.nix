@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SHA = {
+        "SHA" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          sha1 = {
+          "sha1" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
               hsPkgs.SHA
             ];
           };
-          sha224 = {
+          "sha224" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
               hsPkgs.SHA
             ];
           };
-          sha256 = {
+          "sha256" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
@@ -55,7 +55,7 @@ let
               hsPkgs.SHA
             ];
           };
-          sha384 = {
+          "sha384" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
@@ -63,7 +63,7 @@ let
               hsPkgs.SHA
             ];
           };
-          sha512 = {
+          "sha512" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.bytestring
@@ -73,7 +73,7 @@ let
           };
         };
         tests = {
-          test-sha = {
+          "test-sha" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

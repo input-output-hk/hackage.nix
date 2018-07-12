@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        niagra = {
+        "niagra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.niagra
@@ -37,7 +37,7 @@ let
               hsPkgs.transformers
             ];
           };
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.niagra

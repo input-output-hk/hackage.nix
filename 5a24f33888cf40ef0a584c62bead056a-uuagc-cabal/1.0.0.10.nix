@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuagc-cabal = {
+        "uuagc-cabal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

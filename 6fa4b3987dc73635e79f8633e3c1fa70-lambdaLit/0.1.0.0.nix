@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lambdaList = {
+          "lambdaList" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lambdaBase

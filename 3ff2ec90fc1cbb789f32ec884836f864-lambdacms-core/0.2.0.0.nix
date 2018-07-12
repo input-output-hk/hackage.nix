@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdacms-core = {
+        "lambdacms-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-webkit = {
+        "gi-webkit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

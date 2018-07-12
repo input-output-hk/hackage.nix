@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fft = {
+        "fft" = {
           depends  = (if _flags.splitbase
             then [
               hsPkgs.base

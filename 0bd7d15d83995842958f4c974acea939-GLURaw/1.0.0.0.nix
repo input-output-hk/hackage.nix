@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLURaw = {
+        "GLURaw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGLRaw

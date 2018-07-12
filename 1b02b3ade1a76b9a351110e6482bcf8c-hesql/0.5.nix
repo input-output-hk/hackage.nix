@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hesql = {
+          "hesql" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HDBC

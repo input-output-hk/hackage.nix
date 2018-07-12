@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        combinator-interactive = {
+        "combinator-interactive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          lazyi = {
+          "lazyi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

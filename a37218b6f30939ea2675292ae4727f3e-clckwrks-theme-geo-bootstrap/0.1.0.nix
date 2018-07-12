@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clckwrks-theme-geo-bootstrap = {
+        "clckwrks-theme-geo-bootstrap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clckwrks

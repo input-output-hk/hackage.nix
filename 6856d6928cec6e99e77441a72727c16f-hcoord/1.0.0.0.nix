@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hcoord = {
+        "hcoord" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hcoord-exe = {
+          "hcoord-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hcoord
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          hcoord-test = {
+          "hcoord-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

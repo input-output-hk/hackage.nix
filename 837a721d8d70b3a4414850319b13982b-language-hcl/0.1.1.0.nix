@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-hcl = {
+        "language-hcl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          hcl-benchmark = {
+          "hcl-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

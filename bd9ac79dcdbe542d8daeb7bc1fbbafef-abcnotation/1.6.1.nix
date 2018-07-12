@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        abcnotation = {
+        "abcnotation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

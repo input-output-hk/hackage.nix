@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmark = {
+        "cmark" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           pkgconfig = pkgs.lib.optional _flags.pkgconfig pkgconfPkgs.libcmark;
         };
         tests = {
-          test-cmark = {
+          "test-cmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmark
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          bench-cmark = {
+          "bench-cmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

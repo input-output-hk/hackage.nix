@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tz = {
+        "tz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.tz
               hsPkgs.base
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.tz
               hsPkgs.base
@@ -59,7 +59,7 @@ let
               hsPkgs.unix
             ];
           };
-          bench_c = {
+          "bench_c" = {
             depends  = [
               hsPkgs.tz
               hsPkgs.base
@@ -68,7 +68,7 @@ let
               hsPkgs.unix
             ];
           };
-          bench_greg = {
+          "bench_greg" = {
             depends  = [
               hsPkgs.tz
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        unix-time = {
+        "unix-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,13 +28,13 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

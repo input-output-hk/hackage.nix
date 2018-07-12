@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        number-length = {
+        "number-length" = {
           depends  = if _flags.old-base
             then [
               hsPkgs.base
@@ -32,7 +32,7 @@ let
             else [ hsPkgs.base ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.criterion
               hsPkgs.number-length

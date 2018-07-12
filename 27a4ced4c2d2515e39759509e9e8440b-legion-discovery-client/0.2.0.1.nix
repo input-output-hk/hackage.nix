@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        legion-discovery-client = {
+        "legion-discovery-client" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          legion-discovery-client-test = {
+          "legion-discovery-client-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.legion-discovery-client

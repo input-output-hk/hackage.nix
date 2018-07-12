@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-bytestring = {
+        "network-bytestring" = {
           depends  = [
             hsPkgs.network
           ] ++ (if _flags.split-base

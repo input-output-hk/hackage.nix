@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        clevercss = {
+        "clevercss" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          clevercss = {
+          "clevercss" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

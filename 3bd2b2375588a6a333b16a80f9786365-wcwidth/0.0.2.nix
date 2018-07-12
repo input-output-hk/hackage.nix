@@ -23,13 +23,13 @@ let
         buildType = "Simple";
       };
       components = {
-        wcwidth = {
+        "wcwidth" = {
           depends  = [
             hsPkgs.containers
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          wcwidth-tools = {
+          "wcwidth-tools" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.bytestring

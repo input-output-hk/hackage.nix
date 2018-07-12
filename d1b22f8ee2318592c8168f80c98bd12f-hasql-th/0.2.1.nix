@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-th = {
+        "hasql-th" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-property-comb = {
+        "quickcheck-property-comb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

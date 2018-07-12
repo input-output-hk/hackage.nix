@@ -20,6 +20,6 @@ let
         buildType = "Simple";
       };
       components = {
-        exes = { fcg = {}; };
+        exes = { "fcg" = {}; };
       };
     }

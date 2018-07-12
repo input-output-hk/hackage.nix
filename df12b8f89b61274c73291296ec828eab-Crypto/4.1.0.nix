@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Crypto = {
+        "Crypto" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.HUnit
@@ -36,11 +36,11 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          SymmetricTest = {};
-          SHA1Test = {};
-          RSATest = {};
-          QuickTest = {};
-          HMACTest = {};
+          "SymmetricTest" = {};
+          "SHA1Test" = {};
+          "RSATest" = {};
+          "QuickTest" = {};
+          "HMACTest" = {};
         };
       };
     }

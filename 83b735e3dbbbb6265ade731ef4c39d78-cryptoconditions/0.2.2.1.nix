@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptoconditions = {
+        "cryptoconditions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          cryptoconditions-test = {
+          "cryptoconditions-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cryptoconditions

@@ -23,9 +23,9 @@ let
         buildType = "Custom";
       };
       components = {
-        bindings-levmar = {
+        "bindings-levmar" = {
           depends  = [ hsPkgs.base ];
-          libs = if _flags.mkl && system.isX86_64
+          libs = pkgs.lib.optionals _flags.mkl (if system.isX86_64
             then [
               pkgs.mkl_lapack
               pkgs.mkl_intel_lp64
@@ -37,7 +37,7 @@ let
               pkgs.mkl_intel
               pkgs.mkl_sequential
               pkgs.mkl_core
-            ];
+            ]);
           frameworks = pkgs.lib.optional _flags.accelerate pkgs.Accelerate;
         };
       };

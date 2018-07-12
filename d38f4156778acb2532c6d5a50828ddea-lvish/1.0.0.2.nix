@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lvish = {
+        "lvish" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -55,7 +55,7 @@ let
           ] ++ pkgs.lib.optional _flags.abstract-par hsPkgs.abstract-par;
         };
         tests = {
-          test-lvish = {
+          "test-lvish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

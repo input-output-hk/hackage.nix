@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xhtml = {
+        "xhtml" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;

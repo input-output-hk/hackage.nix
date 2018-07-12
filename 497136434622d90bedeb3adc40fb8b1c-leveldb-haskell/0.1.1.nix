@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        leveldb-haskell = {
+        "leveldb-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

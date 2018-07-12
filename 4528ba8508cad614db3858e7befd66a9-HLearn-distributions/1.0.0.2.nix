@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HLearn-distributions = {
+        "HLearn-distributions" = {
           depends  = [
             hsPkgs.HLearn-algebra
             hsPkgs.ConstraintKinds

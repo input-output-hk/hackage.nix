@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        svm = {
+        "svm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

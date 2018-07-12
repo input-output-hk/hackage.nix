@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        KiCS = {
+        "KiCS" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          kics = {
+          "kics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -49,7 +49,7 @@ let
               hsPkgs.curry-frontend
             ];
           };
-          kicsi = {
+          "kicsi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

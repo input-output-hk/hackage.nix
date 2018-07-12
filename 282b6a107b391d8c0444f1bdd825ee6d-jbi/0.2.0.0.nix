@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jbi = {
+        "jbi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          jbi = {
+          "jbi" = {
             depends  = [
               hsPkgs.jbi
               hsPkgs.base

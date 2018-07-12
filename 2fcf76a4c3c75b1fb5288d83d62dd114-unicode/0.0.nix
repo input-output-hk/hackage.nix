@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        unicode = {
+        "unicode" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.base
           ];
         };
         exes = {
-          visualize-unicode = {
+          "visualize-unicode" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.unicode
               hsPkgs.containers
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.unicode
               hsPkgs.containers

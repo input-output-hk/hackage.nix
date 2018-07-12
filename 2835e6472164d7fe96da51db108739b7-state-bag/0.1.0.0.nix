@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        state-bag = {
+        "state-bag" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.state-bag

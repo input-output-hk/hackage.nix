@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexpat = {
+        "hexpat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scp-streams = {
+        "scp-streams" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          scp-streams = {
+          "scp-streams" = {
             depends  = [
               hsPkgs.cmdargs
               hsPkgs.base
@@ -42,7 +42,7 @@ let
               hsPkgs.unix
             ];
           };
-          scp-broken-upload = {
+          "scp-broken-upload" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          run-tests = {
+          "run-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

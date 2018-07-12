@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-dynamodb-conduit = {
+        "aws-dynamodb-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-pretty = {
+        "generic-pretty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          generic-pretty-test = {
+          "generic-pretty-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

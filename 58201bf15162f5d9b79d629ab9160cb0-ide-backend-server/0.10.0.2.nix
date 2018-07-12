@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          ide-backend-server = {
+          "ide-backend-server" = {
             depends  = (((([
               hsPkgs.base
               hsPkgs.ghc

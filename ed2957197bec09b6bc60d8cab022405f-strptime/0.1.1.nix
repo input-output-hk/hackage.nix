@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strptime = {
+        "strptime" = {
           depends  = [
             hsPkgs.time
             hsPkgs.bytestring

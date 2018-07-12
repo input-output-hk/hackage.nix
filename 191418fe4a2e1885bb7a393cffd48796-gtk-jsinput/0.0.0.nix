@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk-jsinput = {
+        "gtk-jsinput" = {
           depends  = [
             hsPkgs.gtk
             hsPkgs.base

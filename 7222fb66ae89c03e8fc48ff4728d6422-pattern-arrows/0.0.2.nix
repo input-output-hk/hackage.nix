@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pattern-arrows = {
+        "pattern-arrows" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

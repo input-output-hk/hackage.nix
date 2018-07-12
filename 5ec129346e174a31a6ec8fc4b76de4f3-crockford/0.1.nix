@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        crockford = {
+        "crockford" = {
           depends  = [
             hsPkgs.base
             hsPkgs.digits

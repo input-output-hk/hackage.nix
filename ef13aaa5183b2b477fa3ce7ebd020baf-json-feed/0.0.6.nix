@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-feed = {
+        "json-feed" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

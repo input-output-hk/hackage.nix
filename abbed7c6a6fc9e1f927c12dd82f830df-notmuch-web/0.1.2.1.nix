@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        notmuch-web = {
+        "notmuch-web" = {
           depends  = if _flags.no-icu
             then [
               hsPkgs.base
@@ -121,7 +121,7 @@ let
             ];
         };
         exes = {
-          notmuch-web = {
+          "notmuch-web" = {
             depends  = [
               hsPkgs.base
               hsPkgs.notmuch-web
@@ -132,7 +132,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.notmuch-web

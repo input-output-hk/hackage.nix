@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        ListWriter = {
+        "ListWriter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         tests = {
-          ListWriter-test = {
+          "ListWriter-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ListWriter

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-t = {
+        "list-t" = {
           depends  = [
             hsPkgs.mmorph
             hsPkgs.monad-control
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.list-t
               hsPkgs.mmorph

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedis-pile = {
+        "hedis-pile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

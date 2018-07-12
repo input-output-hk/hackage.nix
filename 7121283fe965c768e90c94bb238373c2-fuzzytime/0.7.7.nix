@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        fuzzytime = {
+        "fuzzytime" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          fuzzytime = {
+          "fuzzytime" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

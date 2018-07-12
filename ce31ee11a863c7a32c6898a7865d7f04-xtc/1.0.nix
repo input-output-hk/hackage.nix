@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xtc = {
+        "xtc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wx

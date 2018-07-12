@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        IfElse = {
+        "IfElse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

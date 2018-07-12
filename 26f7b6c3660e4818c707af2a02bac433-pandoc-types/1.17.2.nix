@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pandoc-types = {
+        "pandoc-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
             else [ hsPkgs.deepseq ]);
         };
         tests = {
-          test-pandoc-types = {
+          "test-pandoc-types" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-types
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-pandoc-types = {
+          "benchmark-pandoc-types" = {
             depends  = [
               hsPkgs.pandoc-types
               hsPkgs.base

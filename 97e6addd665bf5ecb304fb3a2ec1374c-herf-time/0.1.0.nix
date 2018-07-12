@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        herf-time = {
+        "herf-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

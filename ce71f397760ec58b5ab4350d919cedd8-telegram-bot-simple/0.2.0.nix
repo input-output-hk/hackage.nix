@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        telegram-bot-simple = {
+        "telegram-bot-simple" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          example-echo-bot = {
+          "example-echo-bot" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -74,7 +74,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          example-todo-bot = {
+          "example-todo-bot" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty

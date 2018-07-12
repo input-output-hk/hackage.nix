@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cookies = {
+        "cookies" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

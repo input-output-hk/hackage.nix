@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-rev = {
+        "data-rev" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

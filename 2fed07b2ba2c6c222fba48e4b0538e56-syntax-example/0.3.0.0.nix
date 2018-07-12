@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          syntax-example = {
+          "syntax-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

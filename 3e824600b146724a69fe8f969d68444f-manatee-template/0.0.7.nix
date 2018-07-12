@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        manatee-template = {
+        "manatee-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manatee-core
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          manatee-template = {};
+          "manatee-template" = {};
         };
       };
     }

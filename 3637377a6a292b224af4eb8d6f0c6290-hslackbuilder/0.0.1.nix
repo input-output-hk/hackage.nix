@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          cabal2slackBuild = {
+          "cabal2slackBuild" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.unix

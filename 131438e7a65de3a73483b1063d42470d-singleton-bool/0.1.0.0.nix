@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        singleton-bool = {
+        "singleton-bool" = {
           depends  = [ hsPkgs.base ];
         };
       };

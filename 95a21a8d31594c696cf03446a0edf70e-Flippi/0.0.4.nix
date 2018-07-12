@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          flippi = {
+          "flippi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          car-pool = {
+          "car-pool" = {
             depends  = [
               hsPkgs.spreadsheet
               hsPkgs.transformers

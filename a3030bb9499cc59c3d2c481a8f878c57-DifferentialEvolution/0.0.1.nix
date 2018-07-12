@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DifferentialEvolution = {
+        "DifferentialEvolution" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mwc-random

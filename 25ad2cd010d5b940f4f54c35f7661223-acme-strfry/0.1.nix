@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-strfry = {
+        "acme-strfry" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        disk-free-space = {
+        "disk-free-space" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reqcatcher = {
+        "reqcatcher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-types
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          reqcatcher-test = {
+          "reqcatcher-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-client

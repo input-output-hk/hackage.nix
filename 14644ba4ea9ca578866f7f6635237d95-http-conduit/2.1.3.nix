@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-conduit = {
+        "http-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

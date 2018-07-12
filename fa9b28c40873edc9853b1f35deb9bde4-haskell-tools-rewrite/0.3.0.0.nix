@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-rewrite = {
+        "haskell-tools-rewrite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

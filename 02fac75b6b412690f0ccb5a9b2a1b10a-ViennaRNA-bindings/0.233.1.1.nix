@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ViennaRNA-bindings = {
+        "ViennaRNA-bindings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

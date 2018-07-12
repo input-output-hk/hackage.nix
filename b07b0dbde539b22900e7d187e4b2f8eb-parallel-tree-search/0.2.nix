@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parallel-tree-search = {
+        "parallel-tree-search" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tree-monad

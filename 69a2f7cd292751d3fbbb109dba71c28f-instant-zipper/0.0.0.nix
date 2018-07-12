@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        instant-zipper = {
+        "instant-zipper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

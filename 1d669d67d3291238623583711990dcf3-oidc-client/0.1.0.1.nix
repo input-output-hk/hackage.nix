@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        oidc-client = {
+        "oidc-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          scotty-example = {
+          "scotty-example" = {
             depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.base
               hsPkgs.oidc-client
@@ -66,7 +66,7 @@ let
           };
         };
         tests = {
-          oidc-client-spec = {
+          "oidc-client-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

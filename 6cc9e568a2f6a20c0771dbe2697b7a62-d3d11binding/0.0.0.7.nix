@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        d3d11binding = {
+        "d3d11binding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Win32
@@ -37,23 +37,14 @@ let
           ];
         };
         exes = {
-          D3D11Binding-Triangle = {
+          "D3D11Binding-Triangle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Win32
               hsPkgs.d3d11binding
             ];
           };
-          D3D11Binding-Cube = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.Win32
-              hsPkgs.d3d11binding
-              hsPkgs.c-storable-deriving
-              hsPkgs.vect
-            ];
-          };
-          D3D11Binding-RevolveCube = {
+          "D3D11Binding-Cube" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Win32
@@ -62,7 +53,7 @@ let
               hsPkgs.vect
             ];
           };
-          D3D11Binding-Lighting = {
+          "D3D11Binding-RevolveCube" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Win32
@@ -71,7 +62,16 @@ let
               hsPkgs.vect
             ];
           };
-          D3D11Binding-Texture = {
+          "D3D11Binding-Lighting" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.Win32
+              hsPkgs.d3d11binding
+              hsPkgs.c-storable-deriving
+              hsPkgs.vect
+            ];
+          };
+          "D3D11Binding-Texture" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Win32

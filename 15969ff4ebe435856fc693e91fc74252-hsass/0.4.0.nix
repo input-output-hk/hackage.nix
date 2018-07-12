@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsass = {
+        "hsass" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hlibsass
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

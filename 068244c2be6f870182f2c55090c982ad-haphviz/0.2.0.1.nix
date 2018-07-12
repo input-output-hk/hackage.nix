@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haphviz = {
+        "haphviz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          haphviz-test = {
+          "haphviz-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haphviz

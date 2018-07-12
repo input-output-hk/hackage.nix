@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-rpc-client = {
+        "json-rpc-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.json-rpc-server
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          demo-server = {
+          "demo-server" = {
             depends  = pkgs.lib.optionals _flags.demo [
               hsPkgs.base
               hsPkgs.json-rpc-client
@@ -46,7 +46,7 @@ let
               hsPkgs.text
             ];
           };
-          demo-client = {
+          "demo-client" = {
             depends  = pkgs.lib.optionals _flags.demo [
               hsPkgs.base
               hsPkgs.json-rpc-client
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.json-rpc-client

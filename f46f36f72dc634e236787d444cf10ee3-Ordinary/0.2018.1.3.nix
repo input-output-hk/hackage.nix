@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Ordinary = {
+        "Ordinary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          Ordinary-exe = {
+          "Ordinary-exe" = {
             depends  = [
               hsPkgs.Ordinary
               hsPkgs.base
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          Ordinary-test = {
+          "Ordinary-test" = {
             depends  = [
               hsPkgs.Ordinary
               hsPkgs.base

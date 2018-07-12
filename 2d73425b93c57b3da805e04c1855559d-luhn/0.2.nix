@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        luhn = {
+        "luhn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

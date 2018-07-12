@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Finance-Quote-Yahoo = {
+        "Finance-Quote-Yahoo" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

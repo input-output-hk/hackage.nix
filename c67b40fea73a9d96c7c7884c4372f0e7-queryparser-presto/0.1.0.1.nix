@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        queryparser-presto = {
+        "queryparser-presto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

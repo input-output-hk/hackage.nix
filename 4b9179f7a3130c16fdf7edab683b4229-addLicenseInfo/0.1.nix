@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          addLicenseInfo = {
+          "addLicenseInfo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

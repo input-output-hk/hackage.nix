@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        minst-idx = {
+        "minst-idx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

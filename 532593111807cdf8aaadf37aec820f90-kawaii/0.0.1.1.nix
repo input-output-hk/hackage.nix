@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kawaii = {
+        "kawaii" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe
@@ -45,7 +45,7 @@ let
           ] ++ pkgs.lib.optional _flags.hakyll hsPkgs.hakyll;
         };
         tests = {
-          wai-static-extra-spec = {
+          "wai-static-extra-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.safe

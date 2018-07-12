@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        cgen = {};
+        "cgen" = {};
         exes = {
-          cgen = {
+          "cgen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -35,7 +35,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          cgen-hs = {
+          "cgen-hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -48,7 +48,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          grgen = {
+          "grgen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

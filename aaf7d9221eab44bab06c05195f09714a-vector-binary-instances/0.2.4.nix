@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-binary-instances = {
+        "vector-binary-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector-binary-instances
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector-binary-instances

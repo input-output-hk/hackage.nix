@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          elm-repl = {
+          "elm-repl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

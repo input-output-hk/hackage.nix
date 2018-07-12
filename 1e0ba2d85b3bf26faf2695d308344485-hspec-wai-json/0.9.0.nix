@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-wai-json = {
+        "hspec-wai-json" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-qq
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

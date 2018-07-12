@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        psc-ide = {
+        "psc-ide" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          psc-ide = {
+          "psc-ide" = {
             depends  = [
               hsPkgs.base
               hsPkgs.psc-ide
@@ -47,7 +47,7 @@ let
               hsPkgs.network
             ];
           };
-          psc-ide-server = {
+          "psc-ide-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.psc-ide

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        standalone-derive-topdown = {
+        "standalone-derive-topdown" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

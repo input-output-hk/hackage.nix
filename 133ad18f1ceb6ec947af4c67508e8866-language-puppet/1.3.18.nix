@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-puppet = {
+        "language-puppet" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-wl-pprint
@@ -70,7 +70,7 @@ let
           ];
         };
         exes = {
-          puppetresources = {
+          "puppetresources" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob
@@ -93,7 +93,7 @@ let
               hsPkgs.vector
             ];
           };
-          yera = {
+          "yera" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-puppet
@@ -104,7 +104,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          pdbquery = {
+          "pdbquery" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -124,7 +124,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob

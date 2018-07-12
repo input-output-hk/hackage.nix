@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ses-html = {
+        "ses-html" = {
           depends  = [
             hsPkgs.HsOpenSSL
             hsPkgs.base

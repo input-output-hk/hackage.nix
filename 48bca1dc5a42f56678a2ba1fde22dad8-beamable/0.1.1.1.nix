@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        beamable = {
+        "beamable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          beamable-tests = {
+          "beamable-tests" = {
             depends  = [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          beamable-bench = {
+          "beamable-bench" = {
             depends  = [
               hsPkgs.criterion
               hsPkgs.deepseq

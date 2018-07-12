@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        colour = {
+        "colour" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test-colour = {
+          "test-colour" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

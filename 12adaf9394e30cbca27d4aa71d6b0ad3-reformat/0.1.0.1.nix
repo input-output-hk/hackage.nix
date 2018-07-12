@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reformat = {
+        "reformat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

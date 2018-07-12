@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        puzzle-draw = {
+        "puzzle-draw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams-lib
@@ -44,7 +44,7 @@ let
             else [ hsPkgs.diagrams-svg ]);
         };
         exes = {
-          drawpuzzle = {
+          "drawpuzzle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.puzzle-draw
@@ -57,7 +57,7 @@ let
               then [ hsPkgs.diagrams-cairo ]
               else [ hsPkgs.diagrams-svg ]);
           };
-          checkpuzzle = {
+          "checkpuzzle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.puzzle-draw
@@ -67,7 +67,7 @@ let
               hsPkgs.filepath
             ];
           };
-          test-compare = {
+          "test-compare" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -78,7 +78,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

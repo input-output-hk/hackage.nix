@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feed = {
+        "feed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale

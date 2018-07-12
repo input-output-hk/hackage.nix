@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-algorithms = {
+        "vector-algorithms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JuicyPixels-canvas = {
+        "JuicyPixels-canvas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

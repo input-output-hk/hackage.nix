@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jwt = {
+        "jwt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cryptohash
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

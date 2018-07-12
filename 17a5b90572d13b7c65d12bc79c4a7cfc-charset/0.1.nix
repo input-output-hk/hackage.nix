@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        charset = {
+        "charset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

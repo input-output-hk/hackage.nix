@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-config = {
+        "postgresql-config" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

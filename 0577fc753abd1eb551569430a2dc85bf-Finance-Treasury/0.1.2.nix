@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Finance-Treasury = {
+        "Finance-Treasury" = {
           depends  = [
             hsPkgs.network
             hsPkgs.HTTP

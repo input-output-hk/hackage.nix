@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        markup = {
+        "markup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

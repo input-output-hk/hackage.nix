@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netwire-input-javascript = {
+        "netwire-input-javascript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghcjs-base

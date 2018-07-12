@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        perhaps = {
+        "perhaps" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.generic-deriving) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.void) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.perhaps

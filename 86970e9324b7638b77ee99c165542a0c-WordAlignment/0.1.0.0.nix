@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WordAlignment = {
+        "WordAlignment" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ADPfusion
@@ -54,7 +54,7 @@ let
           ];
         };
         exes = {
-          WordAlign = {
+          "WordAlign" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ascii-progress
@@ -75,7 +75,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

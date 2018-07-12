@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          weeder = {
+          "weeder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

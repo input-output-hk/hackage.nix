@@ -21,13 +21,13 @@ let
       };
       components = {
         exes = {
-          pandoc-oso2tex = {
+          "pandoc-oso2tex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-types
             ];
           };
-          oso2pdf = {
+          "oso2pdf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

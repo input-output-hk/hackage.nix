@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concrete-haskell-autogen = {
+        "concrete-haskell-autogen" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fdo-notify = {
+        "fdo-notify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

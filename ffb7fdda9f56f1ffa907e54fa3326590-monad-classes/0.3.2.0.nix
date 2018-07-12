@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-classes = {
+        "monad-classes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.peano
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

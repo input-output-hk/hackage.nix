@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plot = {
+        "plot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

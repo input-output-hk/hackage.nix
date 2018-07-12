@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        networked-game = {
+        "networked-game" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

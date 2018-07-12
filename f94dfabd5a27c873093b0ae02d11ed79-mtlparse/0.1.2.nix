@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mtlparse = {
+        "mtlparse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

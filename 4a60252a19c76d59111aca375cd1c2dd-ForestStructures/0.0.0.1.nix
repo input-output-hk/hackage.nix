@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ForestStructures = {
+        "ForestStructures" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ForestStructures
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

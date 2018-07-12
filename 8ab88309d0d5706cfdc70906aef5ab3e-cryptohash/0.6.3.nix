@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptohash = {
+        "cryptohash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoauth2 = {
+        "hoauth2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

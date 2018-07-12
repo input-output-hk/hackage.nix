@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-lucid-scaffold = {
+        "generic-lucid-scaffold" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lucid

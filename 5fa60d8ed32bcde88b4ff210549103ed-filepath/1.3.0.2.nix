@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        filepath = {
+        "filepath" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          filepath-tests = {
+          "filepath-tests" = {
             depends  = [
               hsPkgs.filepath
               hsPkgs.base

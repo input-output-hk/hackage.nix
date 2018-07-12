@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iteratee = {
+        "iteratee" = {
           depends  = ([
             hsPkgs.ListLike
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          testIteratee = {
+          "testIteratee" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.QuickCheck
               hsPkgs.test-framework

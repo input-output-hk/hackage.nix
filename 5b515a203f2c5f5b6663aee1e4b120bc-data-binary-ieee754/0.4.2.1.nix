@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        data-binary-ieee754 = {
+        "data-binary-ieee754" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
           ];
         };
         exes = {
-          data-binary-ieee754_tests = {
+          "data-binary-ieee754_tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.test-framework

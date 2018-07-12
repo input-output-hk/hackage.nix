@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logic-classes = {
+        "logic-classes" = {
           depends  = [
             hsPkgs.applicative-extras
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = [ hsPkgs.HUnit ];
           };
         };

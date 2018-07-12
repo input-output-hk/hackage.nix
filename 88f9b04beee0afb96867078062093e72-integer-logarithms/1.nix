@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        integer-logarithms = {
+        "integer-logarithms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.integer-logarithms

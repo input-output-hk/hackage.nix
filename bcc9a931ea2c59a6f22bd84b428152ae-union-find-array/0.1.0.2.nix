@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        union-find-array = {
+        "union-find-array" = {
           depends  = [
             hsPkgs.array
             hsPkgs.mtl

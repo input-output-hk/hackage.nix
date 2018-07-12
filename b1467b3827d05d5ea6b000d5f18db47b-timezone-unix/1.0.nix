@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timezone-unix = {
+        "timezone-unix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        selda-postgresql = {
+        "selda-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

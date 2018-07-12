@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clevercss = {
+        "clevercss" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ] ++ [ hsPkgs.parsec ];
         };
         exes = {
-          clevercss = {
+          "clevercss" = {
             depends  = [ hsPkgs.parsec ];
           };
         };

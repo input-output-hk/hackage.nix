@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fs-events = {
+        "fs-events" = {
           depends  = [ hsPkgs.base ];
           frameworks = [
             pkgs.CoreServices

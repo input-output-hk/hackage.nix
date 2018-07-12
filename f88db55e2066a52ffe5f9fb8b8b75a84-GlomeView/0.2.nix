@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Glome = {
+          "Glome" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

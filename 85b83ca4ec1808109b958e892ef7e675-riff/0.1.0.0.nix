@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        riff = {
+        "riff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -30,19 +30,19 @@ let
           ];
         };
         exes = {
-          riff-structure = {
+          "riff-structure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.riff
             ];
           };
-          riff-identity = {
+          "riff-identity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.riff
             ];
           };
-          riff-convert = {
+          "riff-convert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

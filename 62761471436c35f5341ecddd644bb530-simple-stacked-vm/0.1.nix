@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-stacked-vm = {
+        "simple-stacked-vm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,6 +31,6 @@ let
             hsPkgs.array
           ];
         };
-        exes = { ssvm = {}; };
+        exes = { "ssvm" = {}; };
       };
     }

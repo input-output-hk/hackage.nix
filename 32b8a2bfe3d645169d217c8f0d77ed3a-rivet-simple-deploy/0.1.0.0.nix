@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rivet-simple-deploy = {
+        "rivet-simple-deploy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rivet-core

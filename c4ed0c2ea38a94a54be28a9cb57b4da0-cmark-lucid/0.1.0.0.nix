@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmark-lucid = {
+        "cmark-lucid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmark

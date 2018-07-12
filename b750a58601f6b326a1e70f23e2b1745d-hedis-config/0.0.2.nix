@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedis-config = {
+        "hedis-config" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

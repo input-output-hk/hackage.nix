@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        udev = {
+        "udev" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,14 +37,14 @@ let
           ];
         };
         exes = {
-          hidraw = {
+          "hidraw" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.udev
             ];
           };
-          monitor = {
+          "monitor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

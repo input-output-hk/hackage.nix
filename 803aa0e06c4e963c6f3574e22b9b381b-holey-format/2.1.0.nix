@@ -20,6 +20,6 @@ let
         buildType = "Simple";
       };
       components = {
-        holey-format = {};
+        "holey-format" = {};
       };
     }

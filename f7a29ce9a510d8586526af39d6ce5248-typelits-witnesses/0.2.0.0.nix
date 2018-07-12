@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typelits-witnesses = {
+        "typelits-witnesses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.reflection

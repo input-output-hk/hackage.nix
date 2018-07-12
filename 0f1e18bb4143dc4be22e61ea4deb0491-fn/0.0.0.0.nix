@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fn = {
+        "fn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          fn-test = {
+          "fn-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fn

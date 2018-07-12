@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fbmessenger-api = {
+        "fbmessenger-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          fbmessenger-api-test = {
+          "fbmessenger-api-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        htiled = {
+        "htiled" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zlib

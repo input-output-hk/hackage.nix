@@ -25,9 +25,9 @@ let
         buildType = "Custom";
       };
       components = {
-        hledger = {};
+        "hledger" = {};
         exes = {
-          hledger = {
+          "hledger" = {
             depends  = ((([
               hsPkgs.hledger-lib
               hsPkgs.HUnit

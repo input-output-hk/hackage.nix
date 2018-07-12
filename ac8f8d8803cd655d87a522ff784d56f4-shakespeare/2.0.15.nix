@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shakespeare = {
+        "shakespeare" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -47,7 +47,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shakespeare

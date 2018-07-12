@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        halive = {
+        "halive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foreign-store
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          halive = {
+          "halive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

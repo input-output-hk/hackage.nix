@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-delta = {
+        "bytestring-delta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

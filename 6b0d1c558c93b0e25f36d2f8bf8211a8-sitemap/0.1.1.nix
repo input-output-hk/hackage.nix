@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sitemap = {
+        "sitemap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

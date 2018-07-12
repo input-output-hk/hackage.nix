@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        syntactic = {
+        "syntactic" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cloudformation = {
+        "amazonka-cloudformation" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-cloudformation-test = {
+          "amazonka-cloudformation-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

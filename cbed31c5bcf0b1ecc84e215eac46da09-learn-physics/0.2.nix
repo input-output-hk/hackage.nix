@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        learn-physics = {
+        "learn-physics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector-space

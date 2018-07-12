@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod = {
+        "yesod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -57,10 +57,10 @@ let
           ];
         };
         exes = {
-          yesod = {
+          "yesod" = {
             depends  = [ hsPkgs.parsec ];
           };
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

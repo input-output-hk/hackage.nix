@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-cipher-tests = {
+        "crypto-cipher-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-crypto-cipher-dummy = {
+          "test-crypto-cipher-dummy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack2-interface-wai = {
+        "hack2-interface-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

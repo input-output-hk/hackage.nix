@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ascii85-conduit = {
+        "ascii85-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

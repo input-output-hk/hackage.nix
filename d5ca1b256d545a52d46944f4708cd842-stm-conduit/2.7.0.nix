@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-conduit = {
+        "stm-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -43,13 +43,13 @@ let
           ];
         };
         tests = {
-          stm-conduit-doctests = {
+          "stm-conduit-doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          stm-conduit-tests = {
+          "stm-conduit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

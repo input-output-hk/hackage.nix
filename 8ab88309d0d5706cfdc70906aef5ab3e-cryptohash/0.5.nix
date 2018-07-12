@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptohash = {
+        "cryptohash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         exes = {
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit

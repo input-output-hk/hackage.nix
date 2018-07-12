@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        MissingM = {
+        "MissingM" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

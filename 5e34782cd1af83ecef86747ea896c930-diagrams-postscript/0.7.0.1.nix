@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-postscript = {
+        "diagrams-postscript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

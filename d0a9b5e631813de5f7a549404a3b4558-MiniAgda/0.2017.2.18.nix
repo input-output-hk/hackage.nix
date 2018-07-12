@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          miniagda = {
+          "miniagda" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

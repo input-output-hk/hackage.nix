@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-sparse = {
+        "hmatrix-sparse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix

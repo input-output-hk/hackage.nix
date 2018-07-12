@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keyword-args = {
+        "keyword-args" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          keyword-args = {
+          "keyword-args" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          keyword-args-test = {
+          "keyword-args-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

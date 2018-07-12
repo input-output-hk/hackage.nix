@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-csharp = {
+        "servant-csharp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

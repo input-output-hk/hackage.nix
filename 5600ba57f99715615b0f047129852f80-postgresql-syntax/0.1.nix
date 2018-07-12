@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        postgresql-syntax = {
+        "postgresql-syntax" = {
           depends  = [
             hsPkgs.text
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           libs = [ pkgs.pg_query ];
         };
         tests = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.postgresql-syntax
               hsPkgs.rerebase

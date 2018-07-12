@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rethinkdb-model = {
+        "rethinkdb-model" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rethinkdb

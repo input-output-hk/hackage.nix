@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SHA = {
+        "SHA" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          test_sha = {
+          "test_sha" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.array
               hsPkgs.base
@@ -44,7 +44,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          sha1 = {
+          "sha1" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -53,7 +53,7 @@ let
               hsPkgs.directory
             ];
           };
-          sha384 = {
+          "sha384" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

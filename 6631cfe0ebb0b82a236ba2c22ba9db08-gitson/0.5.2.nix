@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gitson = {
+        "gitson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -40,14 +40,14 @@ let
           ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob
               hsPkgs.doctest
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gitson
@@ -60,7 +60,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

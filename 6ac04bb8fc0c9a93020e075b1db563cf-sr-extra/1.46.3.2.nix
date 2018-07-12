@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sr-extra = {
+        "sr-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

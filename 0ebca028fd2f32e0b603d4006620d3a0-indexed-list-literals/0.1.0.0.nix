@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        indexed-list-literals = {
+        "indexed-list-literals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OneTuple
           ];
         };
         tests = {
-          IndexedListLiterals-test = {
+          "IndexedListLiterals-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.indexed-list-literals

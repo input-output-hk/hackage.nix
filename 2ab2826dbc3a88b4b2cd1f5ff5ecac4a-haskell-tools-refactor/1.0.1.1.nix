@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-refactor = {
+        "haskell-tools-refactor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          haskell-tools-builtin-refactorings-test = {
+          "haskell-tools-builtin-refactorings-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

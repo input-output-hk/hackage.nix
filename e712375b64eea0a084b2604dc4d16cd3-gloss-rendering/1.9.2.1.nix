@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gloss-rendering = {
+        "gloss-rendering" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

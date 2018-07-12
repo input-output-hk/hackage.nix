@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flexiwrap = {
+        "flexiwrap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-type

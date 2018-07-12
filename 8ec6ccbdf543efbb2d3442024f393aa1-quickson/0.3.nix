@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickson = {
+        "quickson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

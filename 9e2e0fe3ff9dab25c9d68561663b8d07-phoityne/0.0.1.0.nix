@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          phoityne = {
+          "phoityne" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

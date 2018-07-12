@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-lexing = {
+        "bytestring-lexing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

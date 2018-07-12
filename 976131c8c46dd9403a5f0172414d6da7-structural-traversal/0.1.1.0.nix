@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        structural-traversal = {
+        "structural-traversal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          smart-traversal-test = {
+          "smart-traversal-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cprng-aes-effect = {
+        "cprng-aes-effect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cprng-aes

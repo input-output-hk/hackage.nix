@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        maccatcher = {
+        "maccatcher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -31,6 +31,6 @@ let
             hsPkgs.parsec
           ];
         };
-        exes = { maccatcher = {}; };
+        exes = { "maccatcher" = {}; };
       };
     }

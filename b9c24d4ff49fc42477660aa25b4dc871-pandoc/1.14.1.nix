@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pandoc = {
+        "pandoc" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.syb
@@ -90,7 +90,7 @@ let
           ];
         };
         exes = {
-          pandoc = {
+          "pandoc" = {
             depends  = [
               hsPkgs.pandoc
               hsPkgs.pandoc-types
@@ -112,7 +112,7 @@ let
               ]
               else [ hsPkgs.network ]);
           };
-          trypandoc = {
+          "trypandoc" = {
             depends  = pkgs.lib.optionals _flags.trypandoc [
               hsPkgs.base
               hsPkgs.aeson
@@ -126,7 +126,7 @@ let
           };
         };
         tests = {
-          test-pandoc = {
+          "test-pandoc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb
@@ -152,7 +152,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-pandoc = {
+          "benchmark-pandoc" = {
             depends  = [
               hsPkgs.pandoc
               hsPkgs.base

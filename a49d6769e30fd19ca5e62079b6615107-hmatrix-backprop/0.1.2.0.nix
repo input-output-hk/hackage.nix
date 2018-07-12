@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-backprop = {
+        "hmatrix-backprop" = {
           depends  = [
             hsPkgs.ANum
             hsPkgs.backprop
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          hmatrix-backprop-test = {
+          "hmatrix-backprop-test" = {
             depends  = [
               hsPkgs.backprop
               hsPkgs.base

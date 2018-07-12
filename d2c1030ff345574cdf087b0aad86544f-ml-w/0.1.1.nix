@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ml-w = {
+        "ml-w" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.pretty;
         };
         exes = {
-          ML = {
+          "ML" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

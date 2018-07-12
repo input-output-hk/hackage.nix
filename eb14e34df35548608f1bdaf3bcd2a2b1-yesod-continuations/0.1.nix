@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-continuations = {
+        "yesod-continuations" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          yesodContinuationsTest = {};
+          "yesodContinuationsTest" = {};
         };
       };
     }

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad-eval = {
+        "xmonad-eval" = {
           depends  = [
             hsPkgs.hint
             hsPkgs.mtl

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lp-diagrams = {
+        "lp-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ad

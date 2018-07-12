@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-zipper = {
+        "simple-zipper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
           ];
         };
         tests = {
-          simple-zipper-test = {
+          "simple-zipper-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.simple-zipper

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geolite-csv = {
+        "geolite-csv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colonnade
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          geolite-csv-test = {
+          "geolite-csv-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.geolite-csv

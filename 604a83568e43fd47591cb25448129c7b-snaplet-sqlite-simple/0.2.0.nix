@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-sqlite-simple = {
+        "snaplet-sqlite-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

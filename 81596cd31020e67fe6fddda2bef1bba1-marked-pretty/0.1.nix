@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        marked-pretty = {
+        "marked-pretty" = {
           depends  = [ hsPkgs.base ];
         };
-        exes = { test = {}; };
+        exes = { "test" = {}; };
       };
     }

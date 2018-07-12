@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hquery = {
+        "hquery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          TransformTests = {
+          "TransformTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hquery
@@ -42,7 +42,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          ParserTests = {
+          "ParserTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hquery
@@ -52,7 +52,7 @@ let
               hsPkgs.parsec
             ];
           };
-          UtilsTests = {
+          "UtilsTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hquery

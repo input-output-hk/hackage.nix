@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLHUI = {
+        "GLHUI" = {
           depends  = [ hsPkgs.base ];
           libs = [
             pkgs.X11

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rosa = {
+          "rosa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

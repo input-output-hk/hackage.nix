@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bricks = {
+        "bricks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -40,7 +40,7 @@ let
               hsPkgs.doctest
             ];
           };
-          parsing = {
+          "parsing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -52,7 +52,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          rendering = {
+          "rendering" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

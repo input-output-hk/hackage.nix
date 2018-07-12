@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clash = {
+        "clash" = {
           depends  = [
             hsPkgs.ghc
             hsPkgs.pretty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixed-vector-cborg = {
+        "fixed-vector-cborg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fixed-vector
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fixed-vector

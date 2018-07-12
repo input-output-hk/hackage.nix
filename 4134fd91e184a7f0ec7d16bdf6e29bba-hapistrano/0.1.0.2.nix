@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hapistrano = {
+        "hapistrano" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          hap = {
+          "hap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

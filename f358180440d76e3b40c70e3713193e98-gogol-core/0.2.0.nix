@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-core = {
+        "gogol-core" = {
           depends  = ([
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -52,7 +52,7 @@ let
             else [ hsPkgs.time ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.gogol-core
               hsPkgs.base

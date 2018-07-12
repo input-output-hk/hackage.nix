@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-builder = {
+        "vector-builder" = {
           depends  = [
             hsPkgs.vector
             hsPkgs.semigroups
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.tasty
               hsPkgs.tasty-quickcheck
@@ -39,7 +39,7 @@ let
               hsPkgs.rebase
             ];
           };
-          foldl-profiling = {
+          "foldl-profiling" = {
             depends  = [
               hsPkgs.vector-builder
               hsPkgs.foldl
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          foldl-benchmark = {
+          "foldl-benchmark" = {
             depends  = [
               hsPkgs.vector-builder
               hsPkgs.foldl

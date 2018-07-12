@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mackerel-client = {
+        "mackerel-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mackerel-client

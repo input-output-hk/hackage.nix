@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imm = {
+        "imm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
           ];
         };
         exes = {
-          imm = {
+          "imm" = {
             depends  = [
               hsPkgs.imm
               hsPkgs.base

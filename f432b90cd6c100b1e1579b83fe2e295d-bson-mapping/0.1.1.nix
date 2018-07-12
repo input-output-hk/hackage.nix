@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bson-mapping = {
+        "bson-mapping" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

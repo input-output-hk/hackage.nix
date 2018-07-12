@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hscuid = {
+        "hscuid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.formatting
@@ -35,7 +35,7 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
         };
         tests = {
-          hscuid-test = {
+          "hscuid-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

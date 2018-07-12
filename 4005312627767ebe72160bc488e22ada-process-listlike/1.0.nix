@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        process-listlike = {
+        "process-listlike" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ListLike

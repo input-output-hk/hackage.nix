@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-fortran = {
+        "language-fortran" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb

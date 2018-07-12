@@ -20,6 +20,6 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-gi-overloading = {};
+        "haskell-gi-overloading" = {};
       };
     }

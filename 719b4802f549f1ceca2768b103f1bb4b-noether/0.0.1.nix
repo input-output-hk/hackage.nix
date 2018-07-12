@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        noether = {
+        "noether" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          noether = {
+          "noether" = {
             depends  = [
               hsPkgs.base
               hsPkgs.noether
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          noether-test-suite = {
+          "noether-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.noether
@@ -58,7 +58,7 @@ let
           };
         };
         benchmarks = {
-          noether-benchmarks = {
+          "noether-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.noether

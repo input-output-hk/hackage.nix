@@ -24,11 +24,11 @@ let
         buildType = "Custom";
       };
       components = {
-        emgm = {
+        "emgm" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.HUnit

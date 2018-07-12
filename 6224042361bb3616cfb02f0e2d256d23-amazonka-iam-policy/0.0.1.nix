@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-iam-policy = {
+        "amazonka-iam-policy" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.aeson-pretty
               hsPkgs.amazonka-iam-policy
@@ -41,7 +41,7 @@ let
               hsPkgs.base
             ];
           };
-          golden = {
+          "golden" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.amazonka-iam-policy

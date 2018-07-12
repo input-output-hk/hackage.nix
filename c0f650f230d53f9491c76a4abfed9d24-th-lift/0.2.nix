@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        th-lift = {
+        "th-lift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

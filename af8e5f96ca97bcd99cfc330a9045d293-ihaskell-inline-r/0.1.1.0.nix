@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ihaskell-inline-r = {
+        "ihaskell-inline-r" = {
           depends  = [
             hsPkgs.base
             hsPkgs.inline-r

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regions = {
+        "regions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unicode-symbols

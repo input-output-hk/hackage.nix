@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple = {
+        "simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          smpl = {
+          "smpl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          test-simple = {
+          "test-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

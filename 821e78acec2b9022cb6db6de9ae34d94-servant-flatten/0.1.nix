@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-flatten = {
+        "servant-flatten" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant

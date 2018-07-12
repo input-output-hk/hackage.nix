@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HsHaruPDF = {
+        "HsHaruPDF" = {
           depends  = [ hsPkgs.base ];
         };
       };

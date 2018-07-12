@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-quotientref = {
+        "data-quotientref" = {
           depends  = [ hsPkgs.base ];
         };
       };

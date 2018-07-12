@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nagios-perfdata = {
+        "nagios-perfdata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          perfdata-test = {
+          "perfdata-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

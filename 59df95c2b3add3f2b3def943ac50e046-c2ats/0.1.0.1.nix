@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        c2ats = {
+        "c2ats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.language-c
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          c2ats = {
+          "c2ats" = {
             depends  = [
               hsPkgs.base
               hsPkgs.c2ats
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          c2ats-test = {
+          "c2ats-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

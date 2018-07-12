@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        syb-with-class = {
+        "syb-with-class" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

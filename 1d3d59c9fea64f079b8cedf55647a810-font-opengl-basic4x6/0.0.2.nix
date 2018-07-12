@@ -20,14 +20,14 @@ let
         buildType = "Custom";
       };
       components = {
-        font-opengl-basic4x6 = {
+        "font-opengl-basic4x6" = {
           depends  = [
             hsPkgs.OpenGL
             hsPkgs.base
           ];
         };
         exes = {
-          show-font-basic4x6 = {
+          "show-font-basic4x6" = {
             depends  = [
               hsPkgs.GLFW-b
               hsPkgs.OpenGL

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        countable-inflections = {
+        "countable-inflections" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.countable-inflections
               hsPkgs.QuickCheck

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hops = {
+          "hops" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-terminal
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          Props = {
+          "Props" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.attoparsec
@@ -61,7 +61,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          CLI-Props = {
+          "CLI-Props" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

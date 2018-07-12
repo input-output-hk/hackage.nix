@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        servant-swagger = {
+        "servant-swagger" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -45,7 +45,7 @@ let
               hsPkgs.filepath
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

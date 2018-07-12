@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bkr = {
+        "bkr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          bkr = {
+          "bkr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ihaskell-gnuplot = {
+        "ihaskell-gnuplot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

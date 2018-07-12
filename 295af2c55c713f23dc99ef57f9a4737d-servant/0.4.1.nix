@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant = {
+        "servant" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -52,7 +52,7 @@ let
               hsPkgs.url
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant

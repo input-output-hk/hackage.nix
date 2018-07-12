@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        radian = {
+        "radian" = {
           depends  = [
             hsPkgs.base
             hsPkgs.profunctors
           ];
         };
         tests = {
-          hunit = {
+          "hunit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

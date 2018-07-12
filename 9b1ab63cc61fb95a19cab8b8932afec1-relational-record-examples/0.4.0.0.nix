@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        relational-record-examples = {
+        "relational-record-examples" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc-prim;
         };
         exes = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.product-isomorphic

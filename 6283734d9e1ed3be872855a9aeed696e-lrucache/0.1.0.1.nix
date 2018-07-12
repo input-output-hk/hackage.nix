@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        lrucache = {
+        "lrucache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.explicit-exception

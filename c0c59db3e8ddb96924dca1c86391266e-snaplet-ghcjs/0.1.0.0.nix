@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-ghcjs = {
+        "snaplet-ghcjs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

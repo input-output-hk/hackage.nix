@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-functors = {
+        "hs-functors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

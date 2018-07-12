@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hfiar = {
+          "hfiar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

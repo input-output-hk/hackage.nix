@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        algebraic-prelude = {
+        "algebraic-prelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.algebra
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          sandpit = {
+          "sandpit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.algebraic-prelude

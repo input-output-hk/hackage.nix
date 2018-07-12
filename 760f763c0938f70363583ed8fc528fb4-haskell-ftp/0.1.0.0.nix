@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-ftp = {
+        "haskell-ftp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          simple-ftp-server = {
+          "simple-ftp-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude

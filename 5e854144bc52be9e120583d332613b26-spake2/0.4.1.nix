@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spake2 = {
+        "spake2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          haskell-spake2-interop-entrypoint = {
+          "haskell-spake2-interop-entrypoint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

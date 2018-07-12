@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        factual-api = {
+        "factual-api" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec

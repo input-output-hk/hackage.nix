@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        coroutine-iteratee = {
+        "coroutine-iteratee" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-coroutine

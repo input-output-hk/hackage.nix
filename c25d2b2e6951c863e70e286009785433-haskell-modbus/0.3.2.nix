@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-modbus = {
+        "haskell-modbus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

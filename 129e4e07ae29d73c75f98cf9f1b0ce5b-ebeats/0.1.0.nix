@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ebeats = {
+        "ebeats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

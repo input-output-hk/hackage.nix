@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netclock = {
+        "netclock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

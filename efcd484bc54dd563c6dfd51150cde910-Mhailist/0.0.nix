@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          mhailist = {
+          "mhailist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -38,7 +38,7 @@ let
               hsPkgs.binary
             ];
           };
-          Test = {
+          "Test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.process

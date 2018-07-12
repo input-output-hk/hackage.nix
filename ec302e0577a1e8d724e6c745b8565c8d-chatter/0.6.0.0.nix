@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chatter = {
+        "chatter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          tagPOS = {
+          "tagPOS" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.filepath
@@ -59,18 +59,7 @@ let
               hsPkgs.cereal
             ];
           };
-          trainPOS = {
-            depends  = [
-              hsPkgs.chatter
-              hsPkgs.filepath
-              hsPkgs.text
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.cereal
-              hsPkgs.containers
-            ];
-          };
-          trainChunker = {
+          "trainPOS" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.filepath
@@ -81,7 +70,7 @@ let
               hsPkgs.containers
             ];
           };
-          trainNER = {
+          "trainChunker" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.filepath
@@ -92,7 +81,18 @@ let
               hsPkgs.containers
             ];
           };
-          eval = {
+          "trainNER" = {
+            depends  = [
+              hsPkgs.chatter
+              hsPkgs.filepath
+              hsPkgs.text
+              hsPkgs.base
+              hsPkgs.bytestring
+              hsPkgs.cereal
+              hsPkgs.containers
+            ];
+          };
+          "eval" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.filepath
@@ -105,7 +105,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.base

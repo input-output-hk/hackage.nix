@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gpah = {
+          "gpah" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

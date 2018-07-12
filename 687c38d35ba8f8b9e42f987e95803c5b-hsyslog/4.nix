@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hsyslog = {
+        "hsyslog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

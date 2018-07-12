@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rehoo = {
+          "rehoo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

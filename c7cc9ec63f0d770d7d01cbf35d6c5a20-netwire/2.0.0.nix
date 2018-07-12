@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netwire = {
+        "netwire" = {
           depends  = [
             hsPkgs.arrows
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        socket-activation = {
+        "socket-activation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

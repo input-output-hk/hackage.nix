@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary = {
+        "apiary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

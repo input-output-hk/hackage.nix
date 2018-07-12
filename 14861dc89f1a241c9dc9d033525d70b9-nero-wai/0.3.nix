@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nero-wai = {
+        "nero-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

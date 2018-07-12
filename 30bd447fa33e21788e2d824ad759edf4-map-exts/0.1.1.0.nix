@@ -20,20 +20,20 @@ let
         buildType = "Simple";
       };
       components = {
-        map-exts = {
+        "map-exts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          titanic-example = {
+          "titanic-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

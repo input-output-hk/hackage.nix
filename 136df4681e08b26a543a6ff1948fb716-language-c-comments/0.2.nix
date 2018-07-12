@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-c-comments = {
+        "language-c-comments" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

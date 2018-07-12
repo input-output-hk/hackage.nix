@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql = {
+        "hasql" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.postgresql-binary
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.hasql
               hsPkgs.tasty
@@ -60,13 +60,13 @@ let
               hsPkgs.rerebase
             ];
           };
-          threads-test = {
+          "threads-test" = {
             depends  = [
               hsPkgs.hasql
               hsPkgs.rebase
             ];
           };
-          profiling = {
+          "profiling" = {
             depends  = [
               hsPkgs.hasql
               hsPkgs.bug
@@ -75,7 +75,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.hasql
               hsPkgs.criterion

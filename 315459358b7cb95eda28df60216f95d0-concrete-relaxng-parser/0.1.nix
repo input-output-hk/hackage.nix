@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          parse-concrete = {
+          "parse-concrete" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

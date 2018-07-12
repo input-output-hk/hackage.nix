@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Agda = {
+        "Agda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transformers = {
+        "transformers" = {
           depends  = if _flags.applicativeinbase
             then [ hsPkgs.base ]
             else [

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yeshql-core = {
+        "yeshql-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yeshql-core

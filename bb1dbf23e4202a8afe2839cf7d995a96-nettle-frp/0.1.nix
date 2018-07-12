@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nettle-frp = {
+        "nettle-frp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.nettle-openflow

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rank-product = {
+        "rank-product" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random-fu

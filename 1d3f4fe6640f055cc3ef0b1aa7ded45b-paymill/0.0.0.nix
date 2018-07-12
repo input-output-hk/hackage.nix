@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        paymill = {
+        "paymill" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

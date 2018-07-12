@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-linkedlist = {
+        "stm-linkedlist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

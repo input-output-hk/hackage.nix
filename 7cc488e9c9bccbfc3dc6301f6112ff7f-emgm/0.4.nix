@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        emgm = {
+        "emgm" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

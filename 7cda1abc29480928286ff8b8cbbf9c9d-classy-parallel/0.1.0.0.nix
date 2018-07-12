@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        classy-parallel = {
+        "classy-parallel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

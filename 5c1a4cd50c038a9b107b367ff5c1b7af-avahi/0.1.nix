@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        avahi = {
+        "avahi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dbus-core

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        subzero = {
+        "subzero" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          subzero-test = {
+          "subzero-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.subzero

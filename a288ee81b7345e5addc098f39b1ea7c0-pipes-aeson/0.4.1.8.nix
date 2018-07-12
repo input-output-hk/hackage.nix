@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-aeson = {
+        "pipes-aeson" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec

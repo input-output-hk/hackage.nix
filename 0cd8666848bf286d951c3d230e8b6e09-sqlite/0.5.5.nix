@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        sqlite = {
+        "sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty
@@ -34,7 +34,7 @@ let
           libs = pkgs.lib.optional (!_flags.builtin-sqlite3) pkgs.sqlite3;
         };
         tests = {
-          sqlite-tests = {
+          "sqlite-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sqlite

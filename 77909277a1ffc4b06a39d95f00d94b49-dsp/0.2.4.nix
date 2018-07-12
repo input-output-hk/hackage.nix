@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dsp = {
+        "dsp" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.array
@@ -31,42 +31,42 @@ let
           ];
         };
         exes = {
-          dsp-demo-article = {
+          "dsp-demo-article" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.dsp
               hsPkgs.array
               hsPkgs.base
             ];
           };
-          dsp-demo-fft-bench = {
+          "dsp-demo-fft-bench" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.dsp
               hsPkgs.array
               hsPkgs.base
             ];
           };
-          dsp-demo-fft-test = {
+          "dsp-demo-fft-test" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.dsp
               hsPkgs.array
               hsPkgs.base
             ];
           };
-          dsp-demo-freq = {
+          "dsp-demo-freq" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.dsp
               hsPkgs.array
               hsPkgs.base
             ];
           };
-          dsp-demo-iir = {
+          "dsp-demo-iir" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.dsp
               hsPkgs.array
               hsPkgs.base
             ];
           };
-          dsp-demo-noise = {
+          "dsp-demo-noise" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.dsp
               hsPkgs.array
@@ -75,7 +75,7 @@ let
           };
         };
         tests = {
-          dsp-test = {
+          "dsp-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.dsp

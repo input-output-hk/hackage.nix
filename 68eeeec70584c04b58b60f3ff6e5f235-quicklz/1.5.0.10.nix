@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        quicklz = {
+        "quicklz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

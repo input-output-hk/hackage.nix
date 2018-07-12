@@ -21,21 +21,21 @@ let
       };
       components = {
         exes = {
-          learn-physics-PlaneWave = {
+          "learn-physics-PlaneWave" = {
             depends  = [
               hsPkgs.not-gloss
               hsPkgs.base
               hsPkgs.learn-physics
             ];
           };
-          learn-physics-eFieldLine3D = {
+          "learn-physics-eFieldLine3D" = {
             depends  = [
               hsPkgs.not-gloss
               hsPkgs.base
               hsPkgs.learn-physics
             ];
           };
-          learn-physics-LorentzForceSimulation = {
+          "learn-physics-LorentzForceSimulation" = {
             depends  = [
               hsPkgs.not-gloss
               hsPkgs.spatial-math
@@ -43,28 +43,28 @@ let
               hsPkgs.learn-physics
             ];
           };
-          learn-physics-BCircularLoop = {
+          "learn-physics-BCircularLoop" = {
             depends  = [
               hsPkgs.not-gloss
               hsPkgs.base
               hsPkgs.learn-physics
             ];
           };
-          learn-physics-sunEarth = {
+          "learn-physics-sunEarth" = {
             depends  = [
               hsPkgs.gloss
               hsPkgs.base
               hsPkgs.learn-physics
             ];
           };
-          learn-physics-eFieldLine2D = {
+          "learn-physics-eFieldLine2D" = {
             depends  = [
               hsPkgs.gloss
               hsPkgs.base
               hsPkgs.learn-physics
             ];
           };
-          learn-physics-Projectile = {
+          "learn-physics-Projectile" = {
             depends  = [
               hsPkgs.gnuplot
               hsPkgs.base

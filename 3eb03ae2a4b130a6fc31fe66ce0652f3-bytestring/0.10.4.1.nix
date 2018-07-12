@@ -22,15 +22,15 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring = {
+        "bytestring" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.ghc-prim
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.11" && !_flags.integer-simple) hsPkgs.integer-gmp) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9" && (compiler.isGhc && compiler.version.lt "6.11")) hsPkgs.integer;
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.11") (pkgs.lib.optional (!_flags.integer-simple) hsPkgs.integer-gmp)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9" && (compiler.isGhc && compiler.version.lt "6.11")) hsPkgs.integer;
         };
         tests = {
-          prop-compiled = {
+          "prop-compiled" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -42,7 +42,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          regressions = {
+          "regressions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -54,7 +54,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          test-builder = {
+          "test-builder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ASN1 = {
+        "ASN1" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          BERTest = {
+          "BERTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -39,7 +39,7 @@ let
               hsPkgs.NewBinary
             ];
           };
-          BERTest2 = {
+          "BERTest2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -48,7 +48,7 @@ let
               hsPkgs.NewBinary
             ];
           };
-          X509Example = {
+          "X509Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -57,7 +57,7 @@ let
               hsPkgs.NewBinary
             ];
           };
-          PKCS8Example = {
+          "PKCS8Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -66,7 +66,7 @@ let
               hsPkgs.NewBinary
             ];
           };
-          AttributeCertificate = {
+          "AttributeCertificate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

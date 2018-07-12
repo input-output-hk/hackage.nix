@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scrobble = {
+        "scrobble" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          scrobble-server = {
+          "scrobble-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

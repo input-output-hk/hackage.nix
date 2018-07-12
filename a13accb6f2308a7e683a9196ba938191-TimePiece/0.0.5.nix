@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        TimePiece = {
+        "TimePiece" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SDL
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          TimePiece = {
+          "TimePiece" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SDL

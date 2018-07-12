@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        tickle = {
+        "tickle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

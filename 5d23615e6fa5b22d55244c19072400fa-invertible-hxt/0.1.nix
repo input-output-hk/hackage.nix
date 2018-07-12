@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        invertible-hxt = {
+        "invertible-hxt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

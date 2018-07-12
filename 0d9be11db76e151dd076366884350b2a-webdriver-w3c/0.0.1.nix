@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webdriver-w3c = {
+        "webdriver-w3c" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -53,14 +53,14 @@ let
           ];
         };
         exes = {
-          webdriver-w3c-intro = {
+          "webdriver-w3c-intro" = {
             depends  = [
               hsPkgs.webdriver-w3c
               hsPkgs.base
               hsPkgs.tasty
             ];
           };
-          wd-tasty-demo = {
+          "wd-tasty-demo" = {
             depends  = [
               hsPkgs.webdriver-w3c
               hsPkgs.base
@@ -68,7 +68,7 @@ let
               hsPkgs.tasty-expected-failure
             ];
           };
-          wd-parallel-stress-test = {
+          "wd-parallel-stress-test" = {
             depends  = [
               hsPkgs.webdriver-w3c
               hsPkgs.base
@@ -77,7 +77,7 @@ let
           };
         };
         tests = {
-          webdriver-w3c-test = {
+          "webdriver-w3c-test" = {
             depends  = [
               hsPkgs.webdriver-w3c
               hsPkgs.base

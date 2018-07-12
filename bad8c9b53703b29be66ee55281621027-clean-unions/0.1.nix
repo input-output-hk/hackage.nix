@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clean-unions = {
+        "clean-unions" = {
           depends  = [ hsPkgs.base ];
         };
       };

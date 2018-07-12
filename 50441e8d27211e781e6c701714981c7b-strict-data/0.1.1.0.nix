@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strict-data = {
+        "strict-data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zoom = {
+        "zoom" = {
           depends  = [
             hsPkgs.ghc
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          zoom = {
+          "zoom" = {
             depends  = [
               hsPkgs.ghc
               hsPkgs.base

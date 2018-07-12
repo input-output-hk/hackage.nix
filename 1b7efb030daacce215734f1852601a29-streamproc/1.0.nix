@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        streamproc = {
+        "streamproc" = {
           depends  = [ hsPkgs.base ];
         };
       };

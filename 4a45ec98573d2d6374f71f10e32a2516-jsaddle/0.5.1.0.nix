@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsaddle = {
+        "jsaddle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -50,7 +50,7 @@ let
             ]);
         };
         tests = {
-          test-tool = {
+          "test-tool" = {
             depends  = [
               hsPkgs.base
             ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [

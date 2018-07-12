@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        numeric-quest = {
+        "numeric-quest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

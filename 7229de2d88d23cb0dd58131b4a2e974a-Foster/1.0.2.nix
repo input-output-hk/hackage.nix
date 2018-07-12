@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          foster = {
+          "foster" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -33,7 +33,7 @@ let
           };
         };
         benchmarks = {
-          foster-benchmark = {
+          "foster-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

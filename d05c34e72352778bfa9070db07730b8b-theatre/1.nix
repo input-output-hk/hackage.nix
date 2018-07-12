@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        theatre = {
+        "theatre" = {
           depends  = [
             hsPkgs.unagi-chan
             hsPkgs.slave-thread

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shelduck = {
+        "shelduck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Spock
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          shelduck = {
+          "shelduck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shelduck
@@ -66,7 +66,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

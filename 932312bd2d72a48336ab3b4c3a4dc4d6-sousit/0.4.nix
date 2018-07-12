@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sousit = {
+        "sousit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          sousit-test = {
+          "sousit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

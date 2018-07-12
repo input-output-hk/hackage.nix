@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        split-channel = {
+        "split-channel" = {
           depends  = [ hsPkgs.base ];
         };
       };

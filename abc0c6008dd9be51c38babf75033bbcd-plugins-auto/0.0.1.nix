@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plugins-auto = {
+        "plugins-auto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

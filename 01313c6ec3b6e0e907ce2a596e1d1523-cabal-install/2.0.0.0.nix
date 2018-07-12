@@ -30,7 +30,7 @@ let
       };
       components = {
         exes = {
-          cabal = {
+          "cabal" = {
             depends  = ((((((([
               hsPkgs.async
               hsPkgs.array
@@ -110,7 +110,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = ((((([
               hsPkgs.base
               hsPkgs.async
@@ -147,7 +147,7 @@ let
                 hsPkgs.unix
               ])) ++ pkgs.lib.optional _flags.debug-conflict-sets hsPkgs.base) ++ pkgs.lib.optional _flags.debug-tracetree hsPkgs.tracetree;
           };
-          memory-usage-tests = {
+          "memory-usage-tests" = {
             depends  = ((((([
               hsPkgs.base
               hsPkgs.async
@@ -182,7 +182,7 @@ let
                 hsPkgs.unix
               ])) ++ pkgs.lib.optional _flags.debug-conflict-sets hsPkgs.base) ++ pkgs.lib.optional _flags.debug-tracetree hsPkgs.tracetree;
           };
-          solver-quickcheck = {
+          "solver-quickcheck" = {
             depends  = ((((([
               hsPkgs.base
               hsPkgs.async
@@ -218,7 +218,7 @@ let
                 hsPkgs.unix
               ])) ++ pkgs.lib.optional _flags.debug-conflict-sets hsPkgs.base) ++ pkgs.lib.optional _flags.debug-tracetree hsPkgs.tracetree;
           };
-          integration-tests2 = {
+          "integration-tests2" = {
             depends  = ((([
               hsPkgs.async
               hsPkgs.array

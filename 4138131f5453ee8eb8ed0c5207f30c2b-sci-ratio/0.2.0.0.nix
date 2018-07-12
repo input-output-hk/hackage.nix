@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        sci-ratio = {
+        "sci-ratio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
           ];
         };
         tests = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sci-ratio

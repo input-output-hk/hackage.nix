@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        self-extract = {
+        "self-extract" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

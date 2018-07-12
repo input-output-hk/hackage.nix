@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex-orphans = {
+        "reflex-orphans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.reflex
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

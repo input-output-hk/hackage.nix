@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mercury-api = {
+        "mercury-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          tmr-params = {
+          "tmr-params" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -45,7 +45,7 @@ let
               hsPkgs.text
             ];
           };
-          tmr-firmware = {
+          "tmr-firmware" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -54,17 +54,7 @@ let
               hsPkgs.text
             ];
           };
-          tmr-read = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.ansi-terminal
-              hsPkgs.bytestring
-              hsPkgs.mercury-api
-              hsPkgs.optparse-applicative
-              hsPkgs.text
-            ];
-          };
-          tmr-write = {
+          "tmr-read" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -74,7 +64,17 @@ let
               hsPkgs.text
             ];
           };
-          tmr-lock = {
+          "tmr-write" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.ansi-terminal
+              hsPkgs.bytestring
+              hsPkgs.mercury-api
+              hsPkgs.optparse-applicative
+              hsPkgs.text
+            ];
+          };
+          "tmr-lock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -83,7 +83,7 @@ let
               hsPkgs.text
             ];
           };
-          tmr-gpio = {
+          "tmr-gpio" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -94,7 +94,7 @@ let
           };
         };
         tests = {
-          replay = {
+          "replay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -104,7 +104,7 @@ let
               hsPkgs.text
             ];
           };
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -113,7 +113,7 @@ let
               hsPkgs.text
             ];
           };
-          param-test = {
+          "param-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

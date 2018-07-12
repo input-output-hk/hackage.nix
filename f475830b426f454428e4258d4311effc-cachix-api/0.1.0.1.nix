@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cachix-api = {
+        "cachix-api" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.amazonka
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          cachix-gen-swagger = {
+          "cachix-gen-swagger" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.amazonka
@@ -80,7 +80,7 @@ let
           };
         };
         tests = {
-          cachix-api-test = {
+          "cachix-api-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.amazonka

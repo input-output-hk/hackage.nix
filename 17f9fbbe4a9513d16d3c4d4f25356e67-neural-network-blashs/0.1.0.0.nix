@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        neural-network-blashs = {
+        "neural-network-blashs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blas-hs
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          s1 = {
+          "s1" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.QuickCheck

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          colada = {
+          "colada" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lda

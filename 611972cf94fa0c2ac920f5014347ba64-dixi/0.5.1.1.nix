@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          dixi = {
+          "dixi" = {
             depends  = [
               hsPkgs.composition-tree
               hsPkgs.patches-vector

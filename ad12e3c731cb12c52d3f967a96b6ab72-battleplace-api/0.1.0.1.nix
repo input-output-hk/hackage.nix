@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        battleplace-api = {
+        "battleplace-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.battleplace

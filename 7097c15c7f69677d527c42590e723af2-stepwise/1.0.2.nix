@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stepwise = {
+        "stepwise" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

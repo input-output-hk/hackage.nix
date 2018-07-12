@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-t-libcurl = {
+        "list-t-libcurl" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.resource-pool

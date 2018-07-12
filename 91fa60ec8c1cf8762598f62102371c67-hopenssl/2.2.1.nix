@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hopenssl = {
+        "hopenssl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,21 +31,21 @@ let
           ];
         };
         tests = {
-          check-low-level-digest-api = {
+          "check-low-level-digest-api" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hopenssl
               hsPkgs.HUnit
             ];
           };
-          check-high-level-digest-api = {
+          "check-high-level-digest-api" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hopenssl
               hsPkgs.HUnit
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hopenssl

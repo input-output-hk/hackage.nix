@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsharc = {
+        "hsharc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassava-megaparsec = {
+        "cassava-megaparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

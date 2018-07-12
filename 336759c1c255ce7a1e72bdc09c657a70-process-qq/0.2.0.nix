@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        process-qq = {
+        "process-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-rules = {
+        "haskell-rules" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb

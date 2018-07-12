@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        affection = {
+        "affection" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sdl2
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          example00 = {
+          "example00" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.affection

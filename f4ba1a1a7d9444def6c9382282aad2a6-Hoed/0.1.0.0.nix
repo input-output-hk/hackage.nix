@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hoed = {
+        "Hoed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -30,19 +30,19 @@ let
           ];
         };
         exes = {
-          hoed-examples-SternBrocot = {
+          "hoed-examples-SternBrocot" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
             ];
           };
-          hoed-examples-GDM-hello = {
+          "hoed-examples-GDM-hello" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed
             ];
           };
-          hoed-examples-TH-hello = {
+          "hoed-examples-TH-hello" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.Hoed

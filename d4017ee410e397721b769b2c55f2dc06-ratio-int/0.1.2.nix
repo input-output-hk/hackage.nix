@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ratio-int = {
+        "ratio-int" = {
           depends  = [ hsPkgs.base ];
         };
       };

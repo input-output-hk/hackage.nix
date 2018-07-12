@@ -28,7 +28,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-test = {
+        "persistent-test" = {
           depends  = (((([
             hsPkgs.base
             hsPkgs.persistent
@@ -99,7 +99,7 @@ let
           ];
         };
         exes = {
-          persistent-test = {
+          "persistent-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.persistent-test

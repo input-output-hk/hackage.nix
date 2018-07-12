@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          fibon-run = {
+          "fibon-run" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -42,7 +42,7 @@ let
               hsPkgs.syb
             ];
           };
-          fibon-init = {
+          "fibon-init" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -50,7 +50,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          fibon-analyse = {
+          "fibon-analyse" = {
             depends  = pkgs.lib.optionals _flags.analyse [
               hsPkgs.base
               hsPkgs.containers

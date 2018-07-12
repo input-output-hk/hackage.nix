@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        padKONTROL = {
+        "padKONTROL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmidi

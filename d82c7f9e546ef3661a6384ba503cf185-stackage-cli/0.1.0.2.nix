@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        stackage-cli = {
+        "stackage-cli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -39,14 +39,14 @@ let
           ];
         };
         exes = {
-          stackage = {
+          "stackage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.stackage-cli
             ];
           };
-          stk = {
+          "stk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

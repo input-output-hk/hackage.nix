@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Fractaler = {
+          "Fractaler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

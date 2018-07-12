@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          flower = {
+          "flower" = {
             depends  = [
               hsPkgs.bio
               hsPkgs.base

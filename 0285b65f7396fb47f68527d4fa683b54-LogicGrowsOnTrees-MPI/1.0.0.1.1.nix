@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LogicGrowsOnTrees-MPI = {
+        "LogicGrowsOnTrees-MPI" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           libs = [ pkgs.mpi ];
         };
         exes = {
-          count-all-trivial-tree-leavesl = {
+          "count-all-trivial-tree-leavesl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdtheline
@@ -53,7 +53,7 @@ let
             ];
             libs = [ pkgs.mpi ];
           };
-          test-trivial = {
+          "test-trivial" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslogger
@@ -62,7 +62,7 @@ let
             ];
             libs = [ pkgs.mpi ];
           };
-          test-nqueens = {
+          "test-nqueens" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cereal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        properties = {
+        "properties" = {
           depends  = [ hsPkgs.base ];
         };
       };

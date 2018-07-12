@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enum-subset-generate = {
+        "enum-subset-generate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.microlens
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          enum-subset-generate-test = {
+          "enum-subset-generate-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

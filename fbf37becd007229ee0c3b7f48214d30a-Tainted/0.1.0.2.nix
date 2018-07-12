@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Tainted = {
+        "Tainted" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

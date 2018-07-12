@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdacube-compiler = {
+        "lambdacube-compiler" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          lambdacube-compiler-unit-tests = {
+          "lambdacube-compiler-unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -54,7 +54,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          lambdacube-compiler-test-suite = {
+          "lambdacube-compiler-test-suite" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.async
@@ -77,7 +77,7 @@ let
               hsPkgs.vector
             ];
           };
-          lc = {
+          "lc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lambdacube-compiler
@@ -87,7 +87,7 @@ let
               hsPkgs.filepath
             ];
           };
-          lambdacube-compiler-coverage-test-suite = {
+          "lambdacube-compiler-coverage-test-suite" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.async

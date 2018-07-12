@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-form-bootstrap4 = {
+        "yesod-form-bootstrap4" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shakespeare

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        immortal = {
+        "immortal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

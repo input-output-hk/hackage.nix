@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-diff = {
+        "aeson-diff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          json-diff = {
+          "json-diff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -45,7 +45,7 @@ let
               hsPkgs.text
             ];
           };
-          json-patch = {
+          "json-patch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -69,7 +69,7 @@ let
               hsPkgs.vector
             ];
           };
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob
@@ -85,7 +85,7 @@ let
               hsPkgs.vector
             ];
           };
-          hlint-check = {
+          "hlint-check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

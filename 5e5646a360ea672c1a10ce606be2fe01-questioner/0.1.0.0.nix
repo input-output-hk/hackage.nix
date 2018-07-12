@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        questioner = {
+        "questioner" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -31,25 +31,25 @@ let
           ];
         };
         exes = {
-          questioner-list-prompt = {
+          "questioner-list-prompt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.questioner
             ];
           };
-          questioner-checkbox-prompt = {
+          "questioner-checkbox-prompt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.questioner
             ];
           };
-          questioner-spinner = {
+          "questioner-spinner" = {
             depends  = [
               hsPkgs.base
               hsPkgs.questioner
             ];
           };
-          questioner-progressbar = {
+          "questioner-progressbar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.questioner

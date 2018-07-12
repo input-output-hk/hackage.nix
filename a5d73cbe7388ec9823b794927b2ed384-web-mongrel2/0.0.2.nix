@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-mongrel2 = {
+        "web-mongrel2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

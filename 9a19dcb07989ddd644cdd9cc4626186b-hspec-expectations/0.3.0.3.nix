@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-expectations = {
+        "hspec-expectations" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -35,7 +35,7 @@ let
               hsPkgs.hspec
             ];
           };
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

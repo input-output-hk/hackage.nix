@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        penny-lib = {
+        "penny-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

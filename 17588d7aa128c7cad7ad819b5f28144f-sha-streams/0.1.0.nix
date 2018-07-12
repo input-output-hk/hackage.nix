@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sha-streams = {
+        "sha-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          sha-streams = {
+          "sha-streams" = {
             depends  = [
               hsPkgs.base
               hsPkgs.io-streams

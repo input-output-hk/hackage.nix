@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-static = {
+        "yesod-static" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-core
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

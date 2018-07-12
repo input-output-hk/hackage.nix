@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clevercss = {
+        "clevercss" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base
@@ -38,6 +38,6 @@ let
               hsPkgs.haskell98
             ];
         };
-        exes = { clevercss = {}; };
+        exes = { "clevercss" = {}; };
       };
     }

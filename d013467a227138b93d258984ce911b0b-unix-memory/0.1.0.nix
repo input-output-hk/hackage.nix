@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        unix-memory = {
+        "unix-memory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
           ];
         };
         tests = {
-          test-memorymap = {
+          "test-memorymap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

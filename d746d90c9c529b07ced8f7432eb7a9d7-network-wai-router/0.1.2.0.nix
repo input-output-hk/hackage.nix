@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-wai-router = {
+        "network-wai-router" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

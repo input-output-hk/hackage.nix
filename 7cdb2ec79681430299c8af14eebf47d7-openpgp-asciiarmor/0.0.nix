@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openpgp-asciiarmor = {
+        "openpgp-asciiarmor" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

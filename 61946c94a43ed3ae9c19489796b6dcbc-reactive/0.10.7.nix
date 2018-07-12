@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive = {
+        "reactive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

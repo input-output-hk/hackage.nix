@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        url-decoders = {
+        "url-decoders" = {
           depends  = [
             hsPkgs.unordered-containers
             hsPkgs.binary-parser
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.url-decoders
               hsPkgs.http-types
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          primary-benchmark = {
+          "primary-benchmark" = {
             depends  = [
               hsPkgs.url-decoders
               hsPkgs.http-types
@@ -53,7 +53,7 @@ let
               hsPkgs.rerebase
             ];
           };
-          comparison-benchmark = {
+          "comparison-benchmark" = {
             depends  = [
               hsPkgs.url-decoders
               hsPkgs.http-types

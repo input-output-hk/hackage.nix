@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alto = {
+        "alto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          alto = {
+          "alto" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alto

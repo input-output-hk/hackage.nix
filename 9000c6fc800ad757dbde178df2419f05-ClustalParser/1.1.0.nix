@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ClustalParser = {
+        "ClustalParser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          ClustalParserTest = {
+          "ClustalParserTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

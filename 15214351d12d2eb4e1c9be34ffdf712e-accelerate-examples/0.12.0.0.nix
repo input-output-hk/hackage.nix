@@ -25,7 +25,7 @@ let
       };
       components = {
         exes = {
-          accelerate-quickcheck = {
+          "accelerate-quickcheck" = {
             depends  = ([
               hsPkgs.accelerate
               hsPkgs.QuickCheck
@@ -37,7 +37,7 @@ let
               hsPkgs.cuda
             ]) ++ pkgs.lib.optional _flags.opencl hsPkgs.accelerate-opencl;
           };
-          accelerate-examples = {
+          "accelerate-examples" = {
             depends  = (([
               hsPkgs.accelerate
               hsPkgs.array
@@ -60,7 +60,7 @@ let
             ] ++ pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda) ++ pkgs.lib.optional _flags.opencl hsPkgs.accelerate-opencl) ++ pkgs.lib.optional _flags.io hsPkgs.accelerate-io;
             libs = [ pkgs."stdc++" ];
           };
-          accelerate-crystal = {
+          "accelerate-crystal" = {
             depends  = ([
               hsPkgs.accelerate
               hsPkgs.base
@@ -69,7 +69,7 @@ let
               hsPkgs.gloss
             ] ++ pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda) ++ pkgs.lib.optional _flags.opencl hsPkgs.accelerate-opencl;
           };
-          accelerate-fluid = {
+          "accelerate-fluid" = {
             depends  = [
               hsPkgs.accelerate
               hsPkgs.accelerate-io

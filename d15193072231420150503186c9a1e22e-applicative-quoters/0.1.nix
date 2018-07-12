@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        applicative-quoters = {
+        "applicative-quoters" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-meta

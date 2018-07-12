@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vivid = {
+        "vivid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

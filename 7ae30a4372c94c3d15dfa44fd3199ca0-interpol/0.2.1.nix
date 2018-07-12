@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        interpol = {
+        "interpol" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          interpol = {
+          "interpol" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb

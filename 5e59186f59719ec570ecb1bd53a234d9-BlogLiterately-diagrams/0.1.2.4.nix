@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BlogLiterately-diagrams = {
+        "BlogLiterately-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          BlogLiteratelyD = {
+          "BlogLiteratelyD" = {
             depends  = [
               hsPkgs.base
               hsPkgs.BlogLiterately

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bimap = {
+        "bimap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

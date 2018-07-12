@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Tape = {
+        "Tape" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

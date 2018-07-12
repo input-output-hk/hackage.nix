@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        GenI = {
+        "GenI" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.QuickCheck
@@ -40,7 +40,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          geni = {
+          "geni" = {
             depends  = ([
               hsPkgs.filepath
               hsPkgs.parsec

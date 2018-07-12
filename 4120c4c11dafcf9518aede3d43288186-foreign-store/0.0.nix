@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        foreign-store = {
+        "foreign-store" = {
           depends  = [ hsPkgs.base ];
         };
       };

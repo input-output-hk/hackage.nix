@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          cabal = {
+          "cabal" = {
             depends  = (([
               hsPkgs.array
               hsPkgs.base
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = (([
               hsPkgs.base
               hsPkgs.array
@@ -89,7 +89,7 @@ let
               then [ hsPkgs.Win32 ]
               else [ hsPkgs.unix ]);
           };
-          package-tests = {
+          "package-tests" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.HUnit

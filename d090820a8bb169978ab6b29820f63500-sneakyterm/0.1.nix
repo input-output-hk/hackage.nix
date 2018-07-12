@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sneakyterm = {
+        "sneakyterm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear

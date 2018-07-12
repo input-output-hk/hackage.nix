@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-algorithms = {
+        "conduit-algorithms" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -44,7 +44,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.lzma-conduit;
         };
         tests = {
-          conduit-algorithms-test = {
+          "conduit-algorithms-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.async

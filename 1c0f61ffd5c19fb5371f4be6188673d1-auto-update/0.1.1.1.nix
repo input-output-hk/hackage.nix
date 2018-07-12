@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        auto-update = {
+        "auto-update" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.auto-update

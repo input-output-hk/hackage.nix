@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          calculator = {
+          "calculator" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -33,7 +33,7 @@ let
           };
         };
         tests = {
-          model-test-arithmetic = {
+          "model-test-arithmetic" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

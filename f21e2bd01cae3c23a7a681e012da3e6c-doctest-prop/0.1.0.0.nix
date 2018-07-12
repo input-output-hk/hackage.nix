@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        doctest-prop = {
+        "doctest-prop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

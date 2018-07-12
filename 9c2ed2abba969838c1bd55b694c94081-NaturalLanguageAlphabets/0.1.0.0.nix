@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NaturalLanguageAlphabets = {
+        "NaturalLanguageAlphabets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -66,7 +66,7 @@ let
           };
         };
         benchmarks = {
-          BenchmarkNLA = {
+          "BenchmarkNLA" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

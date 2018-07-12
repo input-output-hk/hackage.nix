@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bizzlelude = {
+        "bizzlelude" = {
           depends  = [
             hsPkgs.base-noprelude
             hsPkgs.containers

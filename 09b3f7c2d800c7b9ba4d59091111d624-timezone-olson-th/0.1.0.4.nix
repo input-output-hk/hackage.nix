@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timezone-olson-th = {
+        "timezone-olson-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.timezone-olson

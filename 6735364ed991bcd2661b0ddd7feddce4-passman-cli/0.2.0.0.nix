@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          passman-cli = {
+          "passman-cli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

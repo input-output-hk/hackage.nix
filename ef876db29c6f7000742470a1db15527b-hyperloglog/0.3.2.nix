@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hyperloglog = {
+        "hyperloglog" = {
           depends  = [
             hsPkgs.approximate
             hsPkgs.base
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.directory

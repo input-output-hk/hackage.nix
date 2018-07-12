@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extensible = {
+        "extensible" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          effects = {
+          "effects" = {
             depends  = [
               hsPkgs.base
               hsPkgs.extensible
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          records = {
+          "records" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens
@@ -54,7 +54,7 @@ let
               hsPkgs.extensible
             ];
           };
-          eff-comparison = {
+          "eff-comparison" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

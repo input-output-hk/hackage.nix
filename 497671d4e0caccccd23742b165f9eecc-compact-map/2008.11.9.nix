@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compact-map = {
+        "compact-map" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

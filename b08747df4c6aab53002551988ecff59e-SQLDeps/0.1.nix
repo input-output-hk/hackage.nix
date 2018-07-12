@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SQLDeps = {
+        "SQLDeps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

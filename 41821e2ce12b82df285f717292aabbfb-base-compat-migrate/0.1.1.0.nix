@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        base-compat-migrate = {
+        "base-compat-migrate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
           ];
         };
         exes = {
-          base-compat-migrate-generate = {
+          "base-compat-migrate-generate" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.directory

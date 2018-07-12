@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-promise = {
+        "stm-promise" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          trees = {
+          "trees" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm-promise

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          calendar-recycling = {
+          "calendar-recycling" = {
             depends  = [
               hsPkgs.html
               hsPkgs.old-time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskoin-node = {
+        "haskoin-node" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.async
@@ -53,7 +53,7 @@ let
           ];
         };
         tests = {
-          test-haskoin-node = {
+          "test-haskoin-node" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskoin-node

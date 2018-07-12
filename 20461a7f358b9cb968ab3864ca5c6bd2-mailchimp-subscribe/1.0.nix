@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mailchimp-subscribe = {
+          "mailchimp-subscribe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

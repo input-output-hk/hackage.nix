@@ -20,26 +20,26 @@ let
         buildType = "Simple";
       };
       components = {
-        random = {
+        "random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         tests = {
-          T7936 = {
+          "T7936" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
             ];
           };
-          TestRandomRs = {
+          "TestRandomRs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
             ];
           };
-          TestRandomIOs = {
+          "TestRandomIOs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

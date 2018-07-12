@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sakuraio-platform = {
+        "sakuraio-platform" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          sakuraio-platform-demo-http-client-exe = {
+          "sakuraio-platform-demo-http-client-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
@@ -45,7 +45,7 @@ let
               hsPkgs.http-client-tls
             ];
           };
-          sakuraio-platform-demo-wai-exe = {
+          "sakuraio-platform-demo-wai-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
@@ -58,7 +58,7 @@ let
               hsPkgs.warp
             ];
           };
-          sakuraio-platform-demo-websockets-exe = {
+          "sakuraio-platform-demo-websockets-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
@@ -75,7 +75,7 @@ let
           };
         };
         tests = {
-          sakuraio-platform-test = {
+          "sakuraio-platform-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

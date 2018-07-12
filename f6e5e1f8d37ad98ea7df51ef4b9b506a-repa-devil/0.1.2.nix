@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa-devil = {
+        "repa-devil" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

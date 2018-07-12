@@ -32,7 +32,7 @@ let
         buildType = "Custom";
       };
       components = {
-        darcs-beta = {
+        "darcs-beta" = {
           depends  = (((((([
             hsPkgs.base
             hsPkgs.regex-compat
@@ -54,13 +54,13 @@ let
             hsPkgs.HTTP
           ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional _flags.bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.zlib hsPkgs.zlib) ++ pkgs.lib.optional _flags.utf8-string hsPkgs.utf8-string) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
           libs = pkgs.lib.optional _flags.curl pkgs.curl ++ pkgs.lib.optional (!_flags.zlib) pkgs.z;
-          pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
+          pkgconfig = pkgs.lib.optionals _flags.curl (pkgs.lib.optionals _flags.curl-pipelining (pkgs.lib.optional (!system.isWindows) pkgconfPkgs.libcurl));
         };
         exes = {
-          witnesses = {
+          "witnesses" = {
             libs = pkgs.lib.optional (!_flags.zlib) pkgs.z;
           };
-          darcs = {
+          "darcs" = {
             depends  = (((((([
               hsPkgs.base
               hsPkgs.regex-compat
@@ -82,9 +82,9 @@ let
               hsPkgs.HTTP
             ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional _flags.bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.zlib hsPkgs.zlib) ++ pkgs.lib.optional _flags.utf8-string hsPkgs.utf8-string) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
             libs = (pkgs.lib.optional (!_flags.zlib) pkgs.z ++ pkgs.lib.optional _flags.curl pkgs.curl) ++ pkgs.lib.optional (!_flags.zlib) pkgs.z;
-            pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
+            pkgconfig = pkgs.lib.optionals _flags.curl (pkgs.lib.optionals _flags.curl-pipelining (pkgs.lib.optional (!system.isWindows) pkgconfPkgs.libcurl));
           };
-          unit = {
+          "unit" = {
             depends  = ((((([
               hsPkgs.base
               hsPkgs.old-time

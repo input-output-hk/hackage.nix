@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bacteria = {
+          "bacteria" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gd

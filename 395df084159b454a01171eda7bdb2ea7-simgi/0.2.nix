@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          simgi = {
+          "simgi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

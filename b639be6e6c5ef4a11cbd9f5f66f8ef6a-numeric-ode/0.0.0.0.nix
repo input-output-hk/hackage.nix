@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numeric-ode = {
+        "numeric-ode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          Kepler = {
+          "Kepler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.numeric-ode

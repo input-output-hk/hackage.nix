@@ -21,34 +21,34 @@ let
       };
       components = {
         exes = {
-          filter = {
+          "filter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.simpleargs
             ];
           };
-          clusc = {
+          "clusc" = {
             depends  = [
               hsPkgs.bytestring
             ];
           };
-          add_single = {};
-          ace2contigs = {
+          "add_single" = {};
+          "ace2contigs" = {
             depends  = [ hsPkgs.bio ];
           };
-          ace2fasta = {
+          "ace2fasta" = {
             depends  = [ hsPkgs.bio ];
           };
-          ace2clusters = {
+          "ace2clusters" = {
             depends  = [ hsPkgs.bio ];
           };
-          clusterlibs = {
+          "clusterlibs" = {
             depends  = [
               hsPkgs.regex-compat
             ];
           };
-          xcerpt = {
+          "xcerpt" = {
             depends  = [ hsPkgs.haskell98 ];
           };
         };

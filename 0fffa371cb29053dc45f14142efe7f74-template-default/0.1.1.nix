@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        template-default = {
+        "template-default" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

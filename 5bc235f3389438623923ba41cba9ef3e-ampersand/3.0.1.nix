@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ampersand = {
+        "ampersand" = {
           depends  = [
             hsPkgs.graphviz
             hsPkgs.base
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          ampersand = {
+          "ampersand" = {
             depends  = [
               hsPkgs.ampersand
               hsPkgs.graphviz

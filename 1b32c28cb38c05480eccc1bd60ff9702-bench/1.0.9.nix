@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

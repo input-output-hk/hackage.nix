@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Pathfinder = {
+        "Pathfinder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

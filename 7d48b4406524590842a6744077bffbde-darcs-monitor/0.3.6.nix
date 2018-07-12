@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          darcs-monitor = {
+          "darcs-monitor" = {
             depends  = [
               hsPkgs.mtl
               hsPkgs.HaXml

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        polymap = {
+        "polymap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          example-basic = {
+          "example-basic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.polymap

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digest-pure = {
+        "digest-pure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          TestSuiteDigestPure = {
+          "TestSuiteDigestPure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

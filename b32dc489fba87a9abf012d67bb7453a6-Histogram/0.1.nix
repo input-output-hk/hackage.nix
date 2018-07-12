@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Histogram = {
+        "Histogram" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gnuplot

@@ -27,7 +27,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-typed = {
+        "postgresql-typed" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.array
@@ -54,7 +54,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

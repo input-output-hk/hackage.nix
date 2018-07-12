@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        almost-fix = {
+        "almost-fix" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickterm = {
+        "quickterm" = {
           depends  = [
             hsPkgs.edit-distance
             hsPkgs.hashmap

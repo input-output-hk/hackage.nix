@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        utf8-light = {
+        "utf8-light" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

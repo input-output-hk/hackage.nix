@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        text-replace = {
+        "text-replace" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          text-replace = {
+          "text-replace" = {
             depends  = [
               hsPkgs.text-replace
               hsPkgs.base
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.text-replace
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        optparse-applicative = {
+        "optparse-applicative" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

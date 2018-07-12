@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        panic = {
+        "panic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gitrev

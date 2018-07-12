@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BlogLiterately = {
+        "BlogLiterately" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          BlogLiterately = {
+          "BlogLiterately" = {
             depends  = [
               hsPkgs.base
               hsPkgs.BlogLiterately

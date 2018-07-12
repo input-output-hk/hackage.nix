@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hnop = {
+          "hnop" = {
             depends  = [ hsPkgs.base ];
           };
         };

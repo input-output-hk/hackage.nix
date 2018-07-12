@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec = {
+        "hspec" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.QuickCheck
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

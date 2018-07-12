@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        req = {
+        "req" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.authenticate-oauth
@@ -46,7 +46,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          pure-tests = {
+          "pure-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson
@@ -68,7 +68,7 @@ let
               hsPkgs.buildPackages.hspec-discover
             ];
           };
-          httpbin-tests = {
+          "httpbin-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

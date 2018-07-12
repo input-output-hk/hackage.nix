@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yarn-lock = {
+        "yarn-lock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

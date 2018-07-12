@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hydrogen-util = {
+        "hydrogen-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

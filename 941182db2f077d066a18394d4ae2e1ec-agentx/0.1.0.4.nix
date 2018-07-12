@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        agentx = {
+        "agentx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snmp
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          agentx_example = {
+          "agentx_example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.snmp

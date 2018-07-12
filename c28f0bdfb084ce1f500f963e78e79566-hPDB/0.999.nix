@@ -27,7 +27,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hPDB = {
+        "hPDB" = {
           depends  = (((([
             hsPkgs.base
             hsPkgs.base

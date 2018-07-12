@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hosc-json-cat = {
+          "hosc-json-cat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          hosc-json-cgi = {
+          "hosc-json-cgi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
               hsPkgs.www-minus
             ];
           };
-          hosc-json-console = {
+          "hosc-json-console" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -60,7 +60,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          hosc-json-nrt = {
+          "hosc-json-nrt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -73,7 +73,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          hosc-json-ws = {
+          "hosc-json-ws" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

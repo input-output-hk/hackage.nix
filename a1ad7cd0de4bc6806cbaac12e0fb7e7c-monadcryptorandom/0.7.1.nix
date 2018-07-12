@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadcryptorandom = {
+        "monadcryptorandom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hzaif = {
+        "hzaif" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hzaif-exe = {
+          "hzaif-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hzaif
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          hzaif-test = {
+          "hzaif-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hzaif

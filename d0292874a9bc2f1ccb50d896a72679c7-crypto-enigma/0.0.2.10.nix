@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-enigma = {
+        "crypto-enigma" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,14 +30,14 @@ let
           ];
         };
         tests = {
-          crypto-enigma-check = {
+          "crypto-enigma-check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
               hsPkgs.crypto-enigma
             ];
           };
-          crypto-enigma-test = {
+          "crypto-enigma-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

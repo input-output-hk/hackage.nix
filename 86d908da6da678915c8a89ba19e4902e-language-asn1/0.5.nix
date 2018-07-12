@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-asn1 = {
+        "language-asn1" = {
           depends  = (if _flags.splitbase
             then [
               hsPkgs.base
@@ -35,7 +35,7 @@ let
             ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
         };
         exes = {
-          LanguageASN1Testsuite = {
+          "LanguageASN1Testsuite" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit
@@ -45,7 +45,7 @@ let
               hsPkgs.syb
             ];
           };
-          TestASN1Parser = {
+          "TestASN1Parser" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.parsec

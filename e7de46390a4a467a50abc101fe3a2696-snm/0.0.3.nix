@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snm = {
+        "snm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          snm = {
+          "snm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

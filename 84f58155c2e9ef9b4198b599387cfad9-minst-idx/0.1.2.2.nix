@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        minst-idx = {
+        "minst-idx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-foldapp = {
+        "data-foldapp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

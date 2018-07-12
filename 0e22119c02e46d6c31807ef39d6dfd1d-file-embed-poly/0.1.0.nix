@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        file-embed-poly = {
+        "file-embed-poly" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

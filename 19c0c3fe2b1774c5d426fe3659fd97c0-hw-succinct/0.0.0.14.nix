@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-succinct = {
+        "hw-succinct" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

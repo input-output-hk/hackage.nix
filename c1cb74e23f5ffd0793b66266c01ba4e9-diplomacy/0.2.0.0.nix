@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diplomacy = {
+        "diplomacy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

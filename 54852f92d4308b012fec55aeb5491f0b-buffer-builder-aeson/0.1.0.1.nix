@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        buffer-builder-aeson = {
+        "buffer-builder-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.buffer-builder-aeson
@@ -57,7 +57,7 @@ let
           };
         };
         benchmarks = {
-          json-bench = {
+          "json-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.buffer-builder

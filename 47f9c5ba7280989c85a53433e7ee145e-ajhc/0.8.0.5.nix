@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ajhc = {
+        "ajhc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HsSyck
@@ -47,7 +47,7 @@ let
             else [ hsPkgs.unix ]);
         };
         exes = {
-          ajhc = {
+          "ajhc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HsSyck
@@ -74,7 +74,7 @@ let
               then [ hsPkgs.Win32 ]
               else [ hsPkgs.unix ]);
           };
-          jahm = {
+          "jahm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP

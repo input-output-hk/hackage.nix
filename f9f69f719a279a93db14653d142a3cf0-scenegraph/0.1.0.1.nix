@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scenegraph = {
+        "scenegraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

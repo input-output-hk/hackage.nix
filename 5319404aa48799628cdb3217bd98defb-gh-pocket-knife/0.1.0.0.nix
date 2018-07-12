@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gh-pocket-knife = {
+        "gh-pocket-knife" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          gh-pocket-knife = {
+          "gh-pocket-knife" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gh-pocket-knife
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          gh-pocket-knife-test = {
+          "gh-pocket-knife-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gh-pocket-knife

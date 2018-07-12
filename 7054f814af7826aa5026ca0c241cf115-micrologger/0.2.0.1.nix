@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        micrologger = {
+        "micrologger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

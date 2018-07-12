@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk2hs-rpn = {
+        "gtk2hs-rpn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gtk
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

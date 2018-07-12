@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gladexml-accessor = {
+        "gladexml-accessor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-browser-in-haskell = {
+        "web-browser-in-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gtk

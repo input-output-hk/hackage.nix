@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sproxy2 = {
+          "sproxy2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

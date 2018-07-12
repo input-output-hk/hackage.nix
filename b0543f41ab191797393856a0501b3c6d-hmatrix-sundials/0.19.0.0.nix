@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-sundials = {
+        "hmatrix-sundials" = {
           depends  = [
             hsPkgs.base
             hsPkgs.inline-c
@@ -32,7 +32,7 @@ let
           libs = [ pkgs.sundials_arkode ];
         };
         tests = {
-          hmatrix-sundials-testsuite = {
+          "hmatrix-sundials-testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.inline-c

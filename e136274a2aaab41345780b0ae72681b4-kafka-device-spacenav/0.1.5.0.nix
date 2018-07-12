@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kafka-device-spacenav = {
+        "kafka-device-spacenav" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          kafka-device-spacenav = {
+          "kafka-device-spacenav" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ekg-bosun = {
+        "ekg-bosun" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

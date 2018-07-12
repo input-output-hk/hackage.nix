@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xing-api = {
+        "xing-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          xing-api-cli-demo = {
+          "xing-api-cli-demo" = {
             depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.text
@@ -51,7 +51,7 @@ let
               hsPkgs.xing-api
             ];
           };
-          xing-api-yesod-demo = {
+          "xing-api-yesod-demo" = {
             depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.text
@@ -66,7 +66,7 @@ let
               hsPkgs.xing-api
             ];
           };
-          xing-api-minimal-demo = {
+          "xing-api-minimal-demo" = {
             depends  = pkgs.lib.optionals _flags.minimal-demo [
               hsPkgs.base
               hsPkgs.bytestring
@@ -75,7 +75,7 @@ let
           };
         };
         tests = {
-          TestMain = {
+          "TestMain" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

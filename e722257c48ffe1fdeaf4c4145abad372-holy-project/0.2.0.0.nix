@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        holy-project = {
+        "holy-project" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          holy-project = {
+          "holy-project" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -63,7 +63,7 @@ let
               hsPkgs.text
             ];
           };
-          test-holy-project = {
+          "test-holy-project" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -80,7 +80,7 @@ let
           };
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

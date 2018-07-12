@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deepseq-generics = {
+        "deepseq-generics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          deepseq-generics-tests = {
+          "deepseq-generics-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

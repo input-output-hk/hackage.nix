@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-frontend-monadcgi = {
+        "hack-frontend-monadcgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

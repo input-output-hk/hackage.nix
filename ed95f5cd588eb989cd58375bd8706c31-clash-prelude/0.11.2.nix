@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clash-prelude = {
+        "clash-prelude" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -47,7 +47,7 @@ let
           ] ++ pkgs.lib.optional _flags.doclinks hsPkgs.transformers;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.doctests)) [
               hsPkgs.base
               hsPkgs.doctest
@@ -55,7 +55,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-clash-prelude = {
+          "benchmark-clash-prelude" = {
             depends  = pkgs.lib.optionals (!(!_flags.benchmarks)) [
               hsPkgs.base
               hsPkgs.clash-prelude

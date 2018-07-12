@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk2hs-cast-glade = {
+        "gtk2hs-cast-glade" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hint

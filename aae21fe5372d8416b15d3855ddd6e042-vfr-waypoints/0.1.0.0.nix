@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vfr-waypoints = {
+        "vfr-waypoints" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          vfr-waypoints = {
+          "vfr-waypoints" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

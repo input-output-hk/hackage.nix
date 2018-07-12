@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        timeless-tutorials = {
+        "timeless-tutorials" = {
           depends  = [
             hsPkgs.base
             hsPkgs.timeless
           ];
         };
         exes = {
-          Tutorial1 = {
+          "Tutorial1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.timeless-tutorials

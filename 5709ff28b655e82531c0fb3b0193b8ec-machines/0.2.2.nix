@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        machines = {
+        "machines" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

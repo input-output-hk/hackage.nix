@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-worker = {
+        "yesod-worker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          yesod-worker-test = {
+          "yesod-worker-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-worker

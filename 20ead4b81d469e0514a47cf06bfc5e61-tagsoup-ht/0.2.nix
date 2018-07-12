@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagsoup-ht = {
+        "tagsoup-ht" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          tagsouptest = {
+          "tagsouptest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -37,7 +37,7 @@ let
               hsPkgs.data-accessor
             ];
           };
-          validate-tagsoup = {
+          "validate-tagsoup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

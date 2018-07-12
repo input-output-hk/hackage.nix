@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        recaptcha = {
+        "recaptcha" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

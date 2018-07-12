@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-clock = {
+        "vector-clock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
           ];
         };
         tests = {
-          props = {
+          "props" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

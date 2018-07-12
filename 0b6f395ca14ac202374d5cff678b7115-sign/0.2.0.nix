@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sign = {
+        "sign" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          TestSign = {
+          "TestSign" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

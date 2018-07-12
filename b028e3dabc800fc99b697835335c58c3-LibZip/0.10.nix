@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LibZip = {
+        "LibZip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-libzip

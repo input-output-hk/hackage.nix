@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-kerberos = {
+        "yesod-auth-kerberos" = {
           depends  = [
             hsPkgs.authenticate-kerberos
             hsPkgs.yesod-core

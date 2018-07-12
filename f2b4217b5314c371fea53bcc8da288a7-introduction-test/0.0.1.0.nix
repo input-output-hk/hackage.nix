@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        introduction-test = {
+        "introduction-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.introduction

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tpdb = {
+        "tpdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          Compressor = {
+          "Compressor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          XML = {
+          "XML" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt
@@ -56,7 +56,7 @@ let
               hsPkgs.HaXml
             ];
           };
-          TRS = {
+          "TRS" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt
@@ -67,7 +67,7 @@ let
               hsPkgs.HaXml
             ];
           };
-          SRS = {
+          "SRS" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt

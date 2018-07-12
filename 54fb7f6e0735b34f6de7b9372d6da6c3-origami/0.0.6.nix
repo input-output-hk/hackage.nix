@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        origami = {
+        "origami" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.origami

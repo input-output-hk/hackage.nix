@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chorale = {
+        "chorale" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

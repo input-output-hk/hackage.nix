@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        criterion = {
+        "criterion" = {
           depends  = [
             hsPkgs.Chart
             hsPkgs.base

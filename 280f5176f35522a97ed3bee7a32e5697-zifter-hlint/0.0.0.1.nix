@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zifter-hlint = {
+        "zifter-hlint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

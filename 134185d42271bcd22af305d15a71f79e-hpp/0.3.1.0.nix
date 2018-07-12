@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpp = {
+        "hpp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hpp = {
+          "hpp" = {
             depends  = [
               hsPkgs.hpp
               hsPkgs.base

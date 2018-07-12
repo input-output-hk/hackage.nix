@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keyvaluehash = {
+        "keyvaluehash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

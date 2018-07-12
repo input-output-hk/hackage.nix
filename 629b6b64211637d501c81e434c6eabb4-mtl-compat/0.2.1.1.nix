@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mtl-compat = {
+        "mtl-compat" = {
           depends  = [
             hsPkgs.base
           ] ++ (if _flags.two-point-one

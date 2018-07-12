@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dotnet-timespan = {
+        "dotnet-timespan" = {
           depends  = [ hsPkgs.base ];
         };
       };

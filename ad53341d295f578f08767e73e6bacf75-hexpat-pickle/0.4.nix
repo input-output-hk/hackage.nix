@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexpat-pickle = {
+        "hexpat-pickle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hexpat

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        external-sort = {
+        "external-sort" = {
           depends  = [
             hsPkgs.base
             hsPkgs.EdisonCore

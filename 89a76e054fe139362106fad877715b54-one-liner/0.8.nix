@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        one-liner = {
+        "one-liner" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

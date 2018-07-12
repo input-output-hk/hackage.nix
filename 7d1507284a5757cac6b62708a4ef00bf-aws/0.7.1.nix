@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws = {
+        "aws" = {
           depends  = [
             hsPkgs.attempt
             hsPkgs.base
@@ -53,7 +53,7 @@ let
           ];
         };
         exes = {
-          GetObject = {
+          "GetObject" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws
@@ -61,7 +61,7 @@ let
               hsPkgs.conduit
             ];
           };
-          SimpleDb = {
+          "SimpleDb" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.aws

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          htsn = {
+          "htsn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -59,7 +59,7 @@ let
               hsPkgs.unix
             ];
           };
-          shelltests = {
+          "shelltests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

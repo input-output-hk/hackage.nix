@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-clist = {
+        "data-clist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        omnifmt = {
+        "omnifmt" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          omnifmt = {
+          "omnifmt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions

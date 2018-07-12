@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent = {
+        "persistent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.haskell98
               hsPkgs.HUnit

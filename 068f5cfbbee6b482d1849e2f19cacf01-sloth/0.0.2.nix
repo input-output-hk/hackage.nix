@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sloth = {
+        "sloth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wires = {
+        "wires" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -33,13 +33,13 @@ let
           ];
         };
         exes = {
-          wires-feedback = {
+          "wires-feedback" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.wires
             ];
           };
-          wires-ping-pong = {
+          "wires-ping-pong" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.clock

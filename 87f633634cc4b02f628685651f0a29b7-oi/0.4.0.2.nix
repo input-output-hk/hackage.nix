@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        oi = {
+        "oi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parallel
@@ -30,37 +30,37 @@ let
           ];
         };
         exes = {
-          oi-cats = {
+          "oi-cats" = {
             depends  = [
               hsPkgs.base
               hsPkgs.oi
             ];
           };
-          oi-cats2 = {
+          "oi-cats2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.oi
             ];
           };
-          oi-echoc = {
+          "oi-echoc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.oi
             ];
           };
-          oi-echo = {
+          "oi-echo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.oi
             ];
           };
-          oi-morec = {
+          "oi-morec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.oi
             ];
           };
-          oi-recdircs = {
+          "oi-recdircs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -68,7 +68,7 @@ let
               hsPkgs.oi
             ];
           };
-          oi-talk = {
+          "oi-talk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parallel

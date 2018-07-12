@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          LambdaHack = {
+          "LambdaHack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

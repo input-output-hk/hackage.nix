@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-state-machine = {
+        "quickcheck-state-machine" = {
           depends  = [
             hsPkgs.ansi-wl-pprint
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          quickcheck-state-machine-test = {
+          "quickcheck-state-machine-test" = {
             depends  = [ hsPkgs.base ];
           };
         };

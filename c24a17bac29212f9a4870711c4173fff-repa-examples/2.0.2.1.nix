@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          repa-mmult = {
+          "repa-mmult" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
@@ -30,14 +30,14 @@ let
               hsPkgs.random
             ];
           };
-          repa-laplace = {
+          "repa-laplace" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
               hsPkgs.repa-io
             ];
           };
-          repa-fft2d = {
+          "repa-fft2d" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
@@ -45,7 +45,7 @@ let
               hsPkgs.repa-io
             ];
           };
-          repa-fft2d-highpass = {
+          "repa-fft2d-highpass" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
@@ -53,14 +53,14 @@ let
               hsPkgs.repa-io
             ];
           };
-          repa-fft3d-highpass = {
+          "repa-fft3d-highpass" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
               hsPkgs.repa-algorithms
             ];
           };
-          repa-blur = {
+          "repa-blur" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
@@ -68,7 +68,7 @@ let
               hsPkgs.vector
             ];
           };
-          repa-sobel = {
+          "repa-sobel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
@@ -76,7 +76,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          repa-canny = {
+          "repa-canny" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa

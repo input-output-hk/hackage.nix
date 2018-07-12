@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mcmc-synthesis = {
+        "mcmc-synthesis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MonadRandom

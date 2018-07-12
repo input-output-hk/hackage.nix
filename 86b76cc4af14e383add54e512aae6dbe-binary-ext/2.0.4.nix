@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-ext = {
+        "binary-ext" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          binary-ext-test = {
+          "binary-ext-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.attoparsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-filter = {
+        "data-filter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

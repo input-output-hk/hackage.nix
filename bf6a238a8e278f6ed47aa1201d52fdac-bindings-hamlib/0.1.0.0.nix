@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-hamlib = {
+        "bindings-hamlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL
@@ -28,7 +28,7 @@ let
           libs = [ pkgs.hamlib ];
         };
         exes = {
-          hamlib-hs-demo = {
+          "hamlib-hs-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bindings-hamlib

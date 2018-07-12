@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transient-universe-tls = {
+        "transient-universe-tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tls

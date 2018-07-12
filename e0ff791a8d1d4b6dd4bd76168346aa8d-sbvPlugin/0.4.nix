@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sbvPlugin = {
+        "sbvPlugin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          sbvPluginTests = {
+          "sbvPluginTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sbvPlugin

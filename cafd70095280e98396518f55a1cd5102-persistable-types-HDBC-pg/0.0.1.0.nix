@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistable-types-HDBC-pg = {
+        "persistable-types-HDBC-pg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

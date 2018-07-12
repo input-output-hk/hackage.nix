@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        ANum = {
+        "ANum" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          ANum-test = {
+          "ANum-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ANum

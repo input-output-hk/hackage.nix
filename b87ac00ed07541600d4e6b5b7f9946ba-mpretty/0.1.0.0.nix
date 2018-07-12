@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mpretty = {
+        "mpretty" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base

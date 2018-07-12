@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        azure-acs = {
+        "azure-acs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        servant = {
+        "servant" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -42,7 +42,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -62,7 +62,7 @@ let
               hsPkgs.buildPackages.hspec-discover
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fay-uri = {
+        "fay-uri" = {
           depends  = [ hsPkgs.fay-base ];
         };
       };

@@ -21,25 +21,25 @@ let
       };
       components = {
         exes = {
-          duplex = {
+          "duplex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alsa
             ];
           };
-          play = {
+          "play" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alsa
             ];
           };
-          record = {
+          "record" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alsa
             ];
           };
-          volume_meter = {
+          "volume_meter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alsa

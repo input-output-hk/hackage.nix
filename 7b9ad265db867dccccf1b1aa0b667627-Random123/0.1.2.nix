@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Random123 = {
+        "Random123" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          test_perf = {
+          "test_perf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

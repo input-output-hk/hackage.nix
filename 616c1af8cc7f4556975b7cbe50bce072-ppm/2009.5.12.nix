@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ppm = {
+        "ppm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

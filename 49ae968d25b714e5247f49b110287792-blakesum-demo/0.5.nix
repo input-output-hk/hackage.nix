@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          blakesum = {
+          "blakesum" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blakesum

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concrete-typerep = {
+        "concrete-typerep" = {
           depends  = [
             hsPkgs.binary
             hsPkgs.hashable
@@ -31,7 +31,7 @@ let
             else [ hsPkgs.base ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

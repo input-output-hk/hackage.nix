@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wilton-ffi = {
+        "wilton-ffi" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

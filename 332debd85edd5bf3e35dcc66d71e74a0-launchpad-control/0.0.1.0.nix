@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        launchpad-control = {
+        "launchpad-control" = {
           depends  = [
             hsPkgs.array
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          launchpad-control-examples = {
+          "launchpad-control-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.launchpad-control

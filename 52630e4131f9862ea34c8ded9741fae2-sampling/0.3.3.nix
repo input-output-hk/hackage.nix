@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sampling = {
+        "sampling" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          resample = {
+          "resample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sampling
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          bench-sampling = {
+          "bench-sampling" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

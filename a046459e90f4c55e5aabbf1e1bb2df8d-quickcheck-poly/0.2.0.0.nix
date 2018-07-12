@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-poly = {
+        "quickcheck-poly" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

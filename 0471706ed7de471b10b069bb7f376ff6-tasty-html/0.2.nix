@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-html = {
+        "tasty-html" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

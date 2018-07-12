@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tuple-morph = {
+        "tuple-morph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HList

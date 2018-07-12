@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hmk = {
+        "hmk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          hmk = {
+          "hmk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

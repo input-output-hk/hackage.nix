@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        turtle = {
+        "turtle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -44,7 +44,7 @@ let
             else [ hsPkgs.unix ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -52,7 +52,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

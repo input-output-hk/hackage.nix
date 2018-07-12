@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TernaryTrees = {
+        "TernaryTrees" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          tdict = {
+          "tdict" = {
             depends  = [ hsPkgs.base ];
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rounding = {
+        "rounding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

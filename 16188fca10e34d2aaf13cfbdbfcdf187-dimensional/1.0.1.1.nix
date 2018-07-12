@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dimensional = {
+        "dimensional" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.dimensional
               hsPkgs.HUnit
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          simple = {
+          "simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -27,7 +27,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate = {
+        "accelerate" = {
           depends  = (([
             hsPkgs.array
             hsPkgs.base

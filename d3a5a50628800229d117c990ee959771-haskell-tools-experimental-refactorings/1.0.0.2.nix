@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-experimental-refactorings = {
+        "haskell-tools-experimental-refactorings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          haskell-tools-experimental-refactorings-test = {
+          "haskell-tools-experimental-refactorings-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

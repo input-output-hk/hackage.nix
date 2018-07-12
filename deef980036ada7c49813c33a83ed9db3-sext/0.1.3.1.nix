@@ -24,14 +24,14 @@ let
         buildType = "Simple";
       };
       components = {
-        sext = {
+        "sext" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.template-haskell
           ] ++ pkgs.lib.optional _flags.bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.text hsPkgs.text) ++ pkgs.lib.optional _flags.vector hsPkgs.vector;
         };
         tests = {
-          sext-example = {
+          "sext-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

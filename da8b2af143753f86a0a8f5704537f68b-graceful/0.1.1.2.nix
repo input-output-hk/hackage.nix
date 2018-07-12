@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graceful = {
+        "graceful" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          graceful-spec = {
+          "graceful-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.graceful

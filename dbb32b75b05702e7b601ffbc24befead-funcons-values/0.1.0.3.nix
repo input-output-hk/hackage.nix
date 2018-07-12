@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        funcons-values = {
+        "funcons-values" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

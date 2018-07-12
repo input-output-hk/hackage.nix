@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        posix-error-codes = {
+        "posix-error-codes" = {
           depends  = [ hsPkgs.base ];
         };
       };

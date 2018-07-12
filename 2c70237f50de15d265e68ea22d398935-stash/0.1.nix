@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stash = {
+        "stash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

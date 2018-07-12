@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flay = {
+        "flay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.flay

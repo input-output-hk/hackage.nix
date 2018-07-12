@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stdata = {
+        "stdata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb

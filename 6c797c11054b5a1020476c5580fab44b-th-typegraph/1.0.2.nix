@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-typegraph = {
+        "th-typegraph" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

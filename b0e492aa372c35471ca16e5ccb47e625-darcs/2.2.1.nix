@@ -33,7 +33,7 @@ let
         buildType = "Custom";
       };
       components = {
-        darcs = {
+        "darcs" = {
           depends  = (((((([
             hsPkgs.base
             hsPkgs.regex-compat
@@ -53,15 +53,15 @@ let
             ]
             else [
               hsPkgs.base
-            ])) ++ pkgs.lib.optionals (!_flags.curl && (!_flags.libwww && _flags.http)) [
+            ])) ++ pkgs.lib.optionals (!_flags.curl) (pkgs.lib.optionals (!_flags.libwww) (pkgs.lib.optionals _flags.http [
             hsPkgs.network
             hsPkgs.HTTP
-          ]) ++ pkgs.lib.optional _flags.external-bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.external-zlib hsPkgs.zlib) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optional _flags.haskeline hsPkgs.haskeline;
+          ]))) ++ pkgs.lib.optional _flags.external-bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.external-zlib hsPkgs.zlib) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optional _flags.haskeline hsPkgs.haskeline;
           libs = (pkgs.lib.optional _flags.curl pkgs.curl ++ pkgs.lib.optional (!_flags.external-zlib) pkgs.z) ++ pkgs.lib.optional _flags.curses pkgs.curses;
-          pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
+          pkgconfig = pkgs.lib.optionals _flags.curl (pkgs.lib.optionals _flags.curl-pipelining (pkgs.lib.optional (!system.isWindows) pkgconfPkgs.libcurl));
         };
         exes = {
-          darcs = {
+          "darcs" = {
             depends  = (((((([
               hsPkgs.base
               hsPkgs.regex-compat
@@ -81,12 +81,12 @@ let
               ]
               else [
                 hsPkgs.base
-              ])) ++ pkgs.lib.optionals (!_flags.curl && (!_flags.libwww && _flags.http)) [
+              ])) ++ pkgs.lib.optionals (!_flags.curl) (pkgs.lib.optionals (!_flags.libwww) (pkgs.lib.optionals _flags.http [
               hsPkgs.network
               hsPkgs.HTTP
-            ]) ++ pkgs.lib.optional _flags.external-bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.external-zlib hsPkgs.zlib) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optional (_flags.haskeline && !system.isWindows) hsPkgs.haskeline;
+            ]))) ++ pkgs.lib.optional _flags.external-bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.external-zlib hsPkgs.zlib) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo) ++ pkgs.lib.optional (_flags.haskeline && !system.isWindows) hsPkgs.haskeline;
             libs = ((pkgs.lib.optional (!_flags.external-zlib) pkgs.z ++ pkgs.lib.optional _flags.curl pkgs.curl) ++ pkgs.lib.optional (!_flags.external-zlib) pkgs.z) ++ pkgs.lib.optional _flags.curses pkgs.curses;
-            pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
+            pkgconfig = pkgs.lib.optionals _flags.curl (pkgs.lib.optionals _flags.curl-pipelining (pkgs.lib.optional (!system.isWindows) pkgconfPkgs.libcurl));
           };
         };
       };

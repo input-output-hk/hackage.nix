@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pandoc-lens = {
+        "pandoc-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

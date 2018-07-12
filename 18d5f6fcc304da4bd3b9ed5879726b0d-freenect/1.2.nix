@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        freenect = {
+        "freenect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postmark-streams = {
+        "postmark-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

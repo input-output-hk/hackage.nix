@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-pgms = {
+        "hs-pgms" = {
           depends  = [
             hsPkgs.MonadPrompt
             hsPkgs.mtl
@@ -35,7 +35,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          hs-pgms = {
+          "hs-pgms" = {
             depends  = [
               hsPkgs.MonadPrompt
               hsPkgs.glib

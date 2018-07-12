@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc-colors = {
+        "irc-colors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

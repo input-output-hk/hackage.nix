@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        noodle = {
+        "noodle" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          noodle = {
+          "noodle" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base
@@ -38,7 +38,7 @@ let
               hsPkgs.noodle
             ];
           };
-          noodle-repl = {
+          "noodle-repl" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base
@@ -47,7 +47,7 @@ let
               hsPkgs.noodle
             ];
           };
-          noodle-eval = {
+          "noodle-eval" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

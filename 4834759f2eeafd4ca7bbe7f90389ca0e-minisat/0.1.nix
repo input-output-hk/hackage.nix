@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        minisat = {
+        "minisat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

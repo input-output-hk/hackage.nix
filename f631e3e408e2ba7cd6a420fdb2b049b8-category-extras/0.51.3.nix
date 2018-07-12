@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        category-extras = {
+        "category-extras" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.base

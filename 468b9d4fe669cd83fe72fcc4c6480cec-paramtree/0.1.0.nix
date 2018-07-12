@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        paramtree = {
+        "paramtree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.paramtree

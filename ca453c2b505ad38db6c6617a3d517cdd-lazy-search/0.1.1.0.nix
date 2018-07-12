@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazy-search = {
+        "lazy-search" = {
           depends  = [
             hsPkgs.base
             hsPkgs.size-based

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        align = {
+        "align" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

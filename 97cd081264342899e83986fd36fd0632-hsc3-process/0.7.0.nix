@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsc3-process = {
+        "hsc3-process" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

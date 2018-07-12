@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tart = {
+        "tart" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          tart = {
+          "tart" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick

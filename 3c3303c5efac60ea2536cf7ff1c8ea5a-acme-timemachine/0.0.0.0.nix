@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-timemachine = {
+        "acme-timemachine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

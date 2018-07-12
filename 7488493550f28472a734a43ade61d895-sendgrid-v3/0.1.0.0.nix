@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sendgrid-v3 = {
+        "sendgrid-v3" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.semigroups

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concrete-haskell = {
+        "concrete-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          ingest_communications = {
+          "ingest_communications" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -78,7 +78,7 @@ let
               hsPkgs.concrete-haskell
             ];
           };
-          inspect_communications = {
+          "inspect_communications" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -109,7 +109,7 @@ let
           };
         };
         tests = {
-          unit_tests = {
+          "unit_tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yql = {
+        "yql" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          yql = {
+          "yql" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yql

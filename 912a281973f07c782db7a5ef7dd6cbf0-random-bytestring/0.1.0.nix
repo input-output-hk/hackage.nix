@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-bytestring = {
+        "random-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats;
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.random-bytestring
               hsPkgs.async
@@ -37,7 +37,7 @@ let
               hsPkgs.criterion
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats;
           };
-          benchmark-compare = {
+          "benchmark-compare" = {
             depends  = [
               hsPkgs.random-bytestring
               hsPkgs.async
@@ -51,7 +51,7 @@ let
               hsPkgs.random
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.nats;
           };
-          eventlog-compare = {
+          "eventlog-compare" = {
             depends  = [
               hsPkgs.random-bytestring
               hsPkgs.async

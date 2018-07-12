@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        mxnet = {
+        "mxnet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.c2hs-extra
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          mxnet-test = {
+          "mxnet-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mxnet

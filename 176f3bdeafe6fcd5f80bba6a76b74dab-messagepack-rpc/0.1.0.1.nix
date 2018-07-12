@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        messagepack-rpc = {
+        "messagepack-rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

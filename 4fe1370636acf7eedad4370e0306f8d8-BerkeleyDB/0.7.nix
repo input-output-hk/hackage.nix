@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BerkeleyDB = {
+        "BerkeleyDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.extensible-exceptions

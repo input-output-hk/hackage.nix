@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hydrogen-multimap = {
+        "hydrogen-multimap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Blogdown = {
+        "Blogdown" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          Blogdown = {
+          "Blogdown" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -52,7 +52,7 @@ let
           };
         };
         benchmarks = {
-          Benchmark = {
+          "Benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

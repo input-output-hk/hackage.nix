@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        error-list = {
+        "error-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

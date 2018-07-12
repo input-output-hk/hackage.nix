@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          SourceGraph = {
+          "SourceGraph" = {
             depends  = [
               hsPkgs.fgl
               hsPkgs.Graphalyze

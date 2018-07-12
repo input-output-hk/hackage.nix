@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        safer-file-handles-text = {
+        "safer-file-handles-text" = {
           depends  = [
             hsPkgs.text
             hsPkgs.regions

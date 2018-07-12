@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        database-migrate = {
+        "database-migrate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          migrate = {
+          "migrate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.database-migrate

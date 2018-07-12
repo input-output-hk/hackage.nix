@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hats = {
+        "hats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          hats-examples = {
+          "hats-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hats
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          hats-test = {
+          "hats-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -67,7 +67,7 @@ let
           };
         };
         benchmarks = {
-          hats-bench = {
+          "hats-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wss-client = {
+        "wss-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          wss-client-sample = {
+          "wss-client-sample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wss-client
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          wss-client-test = {
+          "wss-client-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wss-client

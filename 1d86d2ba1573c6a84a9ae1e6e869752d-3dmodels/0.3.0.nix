@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        3dmodels = {
+        "3dmodels" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

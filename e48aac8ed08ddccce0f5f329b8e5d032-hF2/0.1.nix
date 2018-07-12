@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hF2 = {
+        "hF2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bitvec

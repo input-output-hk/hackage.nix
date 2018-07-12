@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        req-conduit = {
+        "req-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          httpbin-tests = {
+          "httpbin-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          weigh-bench = {
+          "weigh-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

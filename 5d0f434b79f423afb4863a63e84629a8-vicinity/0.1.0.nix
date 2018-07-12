@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        vicinity = {
+        "vicinity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vicinity
@@ -38,7 +38,7 @@ let
               hsPkgs.containers
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vicinity

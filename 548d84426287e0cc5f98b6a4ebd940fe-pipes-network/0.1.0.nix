@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-network = {
+        "pipes-network" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          simple = {
+          "simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

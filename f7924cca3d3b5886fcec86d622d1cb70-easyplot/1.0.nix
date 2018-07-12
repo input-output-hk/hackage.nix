@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        easyplot = {
+        "easyplot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

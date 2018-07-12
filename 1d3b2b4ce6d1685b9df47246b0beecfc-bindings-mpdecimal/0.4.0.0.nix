@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-mpdecimal = {
+        "bindings-mpdecimal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

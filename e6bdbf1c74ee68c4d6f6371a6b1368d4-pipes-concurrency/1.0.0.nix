@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-concurrency = {
+        "pipes-concurrency" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes

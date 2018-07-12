@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskey-btree = {
+        "haskey-btree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          haskey-btree-properties = {
+          "haskey-btree-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -53,7 +53,7 @@ let
               hsPkgs.haskey-btree
             ];
           };
-          haskey-btree-integration = {
+          "haskey-btree-integration" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

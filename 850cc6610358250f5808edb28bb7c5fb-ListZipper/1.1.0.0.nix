@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ListZipper = {
+        "ListZipper" = {
           depends  = [ hsPkgs.base ];
         };
       };

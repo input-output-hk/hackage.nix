@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          lscabal = {
+          "lscabal" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.filepath

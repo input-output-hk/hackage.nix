@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repline = {
+        "repline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          Simple = {
+          "Simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repline
@@ -37,7 +37,7 @@ let
               hsPkgs.mtl
             ];
           };
-          Example = {
+          "Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repline

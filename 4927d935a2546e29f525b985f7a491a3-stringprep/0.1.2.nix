@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stringprep = {
+        "stringprep" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

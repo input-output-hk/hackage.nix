@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        riemann = {
+        "riemann" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -46,7 +46,7 @@ let
               hsPkgs.filepath
             ];
           };
-          property = {
+          "property" = {
             depends  = [
               hsPkgs.base
               hsPkgs.either
@@ -56,7 +56,7 @@ let
               hsPkgs.riemann
             ];
           };
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

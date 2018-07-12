@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Win32-security = {
+        "Win32-security" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,21 +31,21 @@ let
           ];
         };
         exes = {
-          win32-security-sid-lookup = {
+          "win32-security-sid-lookup" = {
             depends  = pkgs.lib.optionals _flags.build-tests [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.Win32-security
             ];
           };
-          win32-security-file-security = {
+          "win32-security-file-security" = {
             depends  = pkgs.lib.optionals _flags.build-tests [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.Win32-security
             ];
           };
-          win32-security-get-process-sid = {
+          "win32-security-get-process-sid" = {
             depends  = pkgs.lib.optionals _flags.build-tests [
               hsPkgs.base
               hsPkgs.Win32-security

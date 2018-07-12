@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          ghci-haskeline = {
+          "ghci-haskeline" = {
             depends  = if !_flags.ghc-612
               then ([
                 hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddc-core-tetra = {
+        "ddc-core-tetra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

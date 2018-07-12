@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reenact = {
+        "reenact" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

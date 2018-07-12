@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rad = {
+        "rad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-reify

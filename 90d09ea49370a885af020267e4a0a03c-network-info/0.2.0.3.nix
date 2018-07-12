@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-info = {
+        "network-info" = {
           depends  = [ hsPkgs.base ];
           libs = pkgs.lib.optional system.isWindows pkgs.iphlpapi;
         };

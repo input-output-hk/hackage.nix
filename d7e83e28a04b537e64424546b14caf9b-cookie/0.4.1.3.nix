@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cookie = {
+        "cookie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

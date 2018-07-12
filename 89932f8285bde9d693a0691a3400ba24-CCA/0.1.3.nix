@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CCA = {
+        "CCA" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          ccap = {
+          "ccap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

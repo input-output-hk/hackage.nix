@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        xkbcommon = {
+        "xkbcommon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -36,44 +36,44 @@ let
           libs = [ pkgs.xkbcommon ];
         };
         tests = {
-          context = {
+          "context" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xkbcommon
             ];
           };
-          filecomp = {
+          "filecomp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xkbcommon
             ];
           };
-          keyseq = {
+          "keyseq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xkbcommon
             ];
           };
-          keysym = {
+          "keysym" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xkbcommon
             ];
           };
-          rulescomp = {
+          "rulescomp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xkbcommon
               hsPkgs.unix
             ];
           };
-          state = {
+          "state" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xkbcommon
             ];
           };
-          stringcomp = {
+          "stringcomp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xkbcommon
@@ -81,7 +81,7 @@ let
           };
         };
         benchmarks = {
-          bench-key-proc = {
+          "bench-key-proc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xkbcommon

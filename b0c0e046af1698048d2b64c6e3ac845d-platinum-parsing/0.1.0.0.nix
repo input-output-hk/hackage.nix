@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        platinum-parsing = {
+        "platinum-parsing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          pp = {
+          "pp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.platinum-parsing
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          pp-test = {
+          "pp-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.platinum-parsing

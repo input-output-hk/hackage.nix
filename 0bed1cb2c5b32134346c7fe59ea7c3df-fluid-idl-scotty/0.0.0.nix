@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fluid-idl-scotty = {
+        "fluid-idl-scotty" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-sqlite-simple-jwt-auth = {
+        "snaplet-sqlite-simple-jwt-auth" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec

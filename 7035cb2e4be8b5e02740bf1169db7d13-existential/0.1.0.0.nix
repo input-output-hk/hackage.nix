@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        existential = {
+        "existential" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          example-Eq = {
+          "example-Eq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

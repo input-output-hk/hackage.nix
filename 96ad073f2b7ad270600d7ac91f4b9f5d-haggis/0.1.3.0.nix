@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haggis = {
+        "haggis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filemanip
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          haggis = {
+          "haggis" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filemanip

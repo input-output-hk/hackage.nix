@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        disassembler = {
+        "disassembler" = {
           depends  = if _flags.split-base
             then [ hsPkgs.base ]
             else [

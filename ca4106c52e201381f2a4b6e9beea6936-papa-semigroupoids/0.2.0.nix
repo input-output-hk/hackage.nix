@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-semigroupoids = {
+        "papa-semigroupoids" = {
           depends  = [
             hsPkgs.base
             hsPkgs.papa-semigroupoids-export
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

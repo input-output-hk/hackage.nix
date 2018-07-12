@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-sbchan = {
+        "stm-sbchan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

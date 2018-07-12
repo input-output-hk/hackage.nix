@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hstradeking = {
+        "hstradeking" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hoauth
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          tradeking = {
+          "tradeking" = {
             depends  = [
               hsPkgs.hstradeking
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polyseq = {
+        "polyseq" = {
           depends  = [
             hsPkgs.array
             hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          polyseq.cgi = {
+          "polyseq.cgi" = {
             depends  = [
               hsPkgs.xhtml
               hsPkgs.cgi

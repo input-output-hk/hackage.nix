@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hs-gen-iface = {
+          "hs-gen-iface" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

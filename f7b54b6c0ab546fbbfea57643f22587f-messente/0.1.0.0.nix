@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        messente = {
+        "messente" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          wordsetdiff = {
+          "wordsetdiff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

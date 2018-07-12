@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Nomyx-Rules = {
+        "Nomyx-Rules" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

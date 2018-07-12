@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        funbot-ext-events = {
+        "funbot-ext-events" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

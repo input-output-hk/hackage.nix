@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        cuda = {
+        "cuda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

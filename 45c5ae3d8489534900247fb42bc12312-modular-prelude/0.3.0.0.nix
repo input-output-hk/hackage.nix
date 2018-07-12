@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        modular-prelude = {
+        "modular-prelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude

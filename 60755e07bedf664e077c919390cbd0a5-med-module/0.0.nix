@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        med-module = {
+        "med-module" = {
           depends  = [
             hsPkgs.storable-endian
             hsPkgs.utility-ht
@@ -30,13 +30,13 @@ let
           ];
         };
         exes = {
-          unmed2 = {
+          "unmed2" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.med-module
               hsPkgs.base
             ];
           };
-          animed = {
+          "animed" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.med-module
               hsPkgs.hps

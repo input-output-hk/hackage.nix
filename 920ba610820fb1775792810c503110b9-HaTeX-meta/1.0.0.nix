@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          metahatex = {
+          "metahatex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

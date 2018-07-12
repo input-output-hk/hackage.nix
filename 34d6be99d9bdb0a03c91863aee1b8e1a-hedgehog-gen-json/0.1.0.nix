@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedgehog-gen-json = {
+        "hedgehog-gen-json" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

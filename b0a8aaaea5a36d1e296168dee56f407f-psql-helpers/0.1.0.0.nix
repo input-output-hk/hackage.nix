@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        psql-helpers = {
+        "psql-helpers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.postgresql-simple

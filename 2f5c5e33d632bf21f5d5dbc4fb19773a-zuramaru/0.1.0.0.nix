@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zuramaru = {
+        "zuramaru" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmdargs
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          maru = {
+          "maru" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -76,7 +76,7 @@ let
           };
         };
         tests = {
-          integrate-test = {
+          "integrate-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -106,7 +106,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          unit-test = {
+          "unit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        classy-influxdb-simple = {
+        "classy-influxdb-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq

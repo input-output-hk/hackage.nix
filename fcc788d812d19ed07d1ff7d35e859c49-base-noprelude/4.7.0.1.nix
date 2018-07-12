@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        base-noprelude = {
+        "base-noprelude" = {
           depends  = [ hsPkgs.base ];
         };
       };

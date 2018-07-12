@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        aws-performance-tests = {
+        "aws-performance-tests" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aws
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          dynamodb-performance = {
+          "dynamodb-performance" = {
             depends  = [
               hsPkgs.async
               hsPkgs.aws

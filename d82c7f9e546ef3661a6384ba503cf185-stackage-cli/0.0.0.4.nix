@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stackage-cli = {
+        "stackage-cli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -39,21 +39,21 @@ let
           ];
         };
         exes = {
-          stackage = {
+          "stackage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.stackage-cli
             ];
           };
-          stk = {
+          "stk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.stackage-cli
             ];
           };
-          stackage-init = {
+          "stackage-init" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -66,7 +66,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          stackage-purge = {
+          "stackage-purge" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -78,7 +78,7 @@ let
               hsPkgs.exceptions
             ];
           };
-          stackage-upgrade = {
+          "stackage-upgrade" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -87,7 +87,7 @@ let
               hsPkgs.optparse-applicative
             ];
           };
-          stackage-sandbox = {
+          "stackage-sandbox" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

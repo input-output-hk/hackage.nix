@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-fftw = {
+        "accelerate-fftw" = {
           depends  = [
             hsPkgs.fft
             hsPkgs.carray

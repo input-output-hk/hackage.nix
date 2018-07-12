@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        curry-frontend = {
+        "curry-frontend" = {
           depends  = [ hsPkgs.filepath ];
         };
         exes = {
-          cymake = {
+          "cymake" = {
             depends  = [
               hsPkgs.curry-base
               hsPkgs.mtl

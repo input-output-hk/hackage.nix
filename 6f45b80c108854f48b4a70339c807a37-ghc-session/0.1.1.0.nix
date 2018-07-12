@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-session = {
+        "ghc-session" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          ghc-test = {
+          "ghc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-session

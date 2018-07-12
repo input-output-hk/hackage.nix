@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        statistics-hypergeometric-genvar = {
+        "statistics-hypergeometric-genvar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive

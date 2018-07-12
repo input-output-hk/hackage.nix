@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pandoc-crossref = {
+        "pandoc-crossref" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          pandoc-crossref = {
+          "pandoc-crossref" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -68,7 +68,7 @@ let
           };
         };
         tests = {
-          test-integrative = {
+          "test-integrative" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -90,7 +90,7 @@ let
               hsPkgs.utility-ht
             ];
           };
-          test-pandoc-crossref = {
+          "test-pandoc-crossref" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

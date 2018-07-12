@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-prim = {
+        "hw-prim" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          hw-prim-test = {
+          "hw-prim-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

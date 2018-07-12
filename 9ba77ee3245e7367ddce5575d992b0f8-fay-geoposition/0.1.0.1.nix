@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fay-geoposition = {
+        "fay-geoposition" = {
           depends  = [
             hsPkgs.fay-base
             hsPkgs.fay-text

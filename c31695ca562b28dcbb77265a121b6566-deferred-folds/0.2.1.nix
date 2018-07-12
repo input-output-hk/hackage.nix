@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deferred-folds = {
+        "deferred-folds" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foldl

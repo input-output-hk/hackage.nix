@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-bcryptdb = {
+        "yesod-auth-bcryptdb" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

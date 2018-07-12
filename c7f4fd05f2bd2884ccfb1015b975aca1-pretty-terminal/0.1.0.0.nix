@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty-terminal = {
+        "pretty-terminal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty-terminal

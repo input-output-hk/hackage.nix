@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        base-encoding = {
+        "base-encoding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base16-bytestring

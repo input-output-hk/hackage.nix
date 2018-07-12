@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pred-trie = {
+        "pred-trie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.composition-extra
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -60,7 +60,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          homplexity = {
+          "homplexity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          Comments = {
+          "Comments" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts

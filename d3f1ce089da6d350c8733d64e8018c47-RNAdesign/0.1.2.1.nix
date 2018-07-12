@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RNAdesign = {
+        "RNAdesign" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          RNAdesign = {
+          "RNAdesign" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.cmdargs

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        partial-semigroup-hedgehog = {
+        "partial-semigroup-hedgehog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hedgehog

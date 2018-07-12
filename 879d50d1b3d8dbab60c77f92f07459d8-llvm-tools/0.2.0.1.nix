@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-tools = {
+        "llvm-tools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -37,13 +37,13 @@ let
           ];
         };
         exes = {
-          DumpLLVMModule = {
+          "DumpLLVMModule" = {
             depends  = [
               hsPkgs.base
               hsPkgs.llvm-data-interop
             ];
           };
-          FindValue = {
+          "FindValue" = {
             depends  = [
               hsPkgs.base
               hsPkgs.llvm-analysis
@@ -51,7 +51,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          ViewIRGraph = {
+          "ViewIRGraph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -61,7 +61,7 @@ let
               hsPkgs.graphviz
             ];
           };
-          TypeUnificationCheck = {
+          "TypeUnificationCheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.llvm-analysis

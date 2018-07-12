@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        update-nix-fetchgit = {
+        "update-nix-fetchgit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          update-nix-fetchgit = {
+          "update-nix-fetchgit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

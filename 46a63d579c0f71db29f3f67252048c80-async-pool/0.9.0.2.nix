@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        async-pool = {
+        "async-pool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fgl
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

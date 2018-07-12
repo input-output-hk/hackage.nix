@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-osm = {
+        "streaming-osm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          streaming-osm-test = {
+          "streaming-osm-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          streaming-osm-bench = {
+          "streaming-osm-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

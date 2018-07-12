@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simplex-basic = {
+        "simplex-basic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear-grammar
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.linear-grammar

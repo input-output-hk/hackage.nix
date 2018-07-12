@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-kubernetes = {
+        "haskell-kubernetes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          client = {
+          "client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.either
@@ -57,7 +57,7 @@ let
               hsPkgs.transformers
             ];
           };
-          server = {
+          "server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-kubernetes

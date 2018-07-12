@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        idris = {
+        "idris" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          idris = {
+          "idris" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

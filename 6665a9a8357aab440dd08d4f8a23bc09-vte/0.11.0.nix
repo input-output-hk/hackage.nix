@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        vte = {
+        "vte" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

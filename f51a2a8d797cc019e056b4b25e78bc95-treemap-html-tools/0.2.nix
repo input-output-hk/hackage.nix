@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        treemap-html-tools = {
+        "treemap-html-tools" = {
           depends  = [
             hsPkgs.ghc
             hsPkgs.base
@@ -38,8 +38,8 @@ let
           ];
         };
         exes = {
-          dirmap = {};
-          xml2treemap = {};
+          "dirmap" = {};
+          "xml2treemap" = {};
         };
       };
     }

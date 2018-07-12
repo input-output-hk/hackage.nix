@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tnet = {
+        "tnet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

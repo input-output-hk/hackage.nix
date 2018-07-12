@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chatwork = {
+        "chatwork" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          sample-exe = {
+          "sample-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

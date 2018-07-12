@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pathwalk = {
+        "pathwalk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -29,19 +29,19 @@ let
           ];
         };
         tests = {
-          basic = {
+          "basic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pathwalk
             ];
           };
-          stoprecursing = {
+          "stoprecursing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pathwalk
             ];
           };
-          lazy = {
+          "lazy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pathwalk

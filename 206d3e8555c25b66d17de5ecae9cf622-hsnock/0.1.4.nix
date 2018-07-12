@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsnock = {
+        "hsnock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hsnock = {
+          "hsnock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        homeomorphic = {
+        "homeomorphic" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

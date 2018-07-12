@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskyapi = {
+        "haskyapi" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          haskyapi = {
+          "haskyapi" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

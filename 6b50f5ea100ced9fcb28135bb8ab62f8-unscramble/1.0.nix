@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          unscramble = {
+          "unscramble" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

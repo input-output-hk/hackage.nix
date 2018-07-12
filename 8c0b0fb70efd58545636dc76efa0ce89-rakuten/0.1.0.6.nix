@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rakuten = {
+        "rakuten" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

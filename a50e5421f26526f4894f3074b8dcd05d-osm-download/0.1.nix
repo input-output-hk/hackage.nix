@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        osm-download = {
+        "osm-download" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

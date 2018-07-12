@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-plot = {
+        "haskell-plot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

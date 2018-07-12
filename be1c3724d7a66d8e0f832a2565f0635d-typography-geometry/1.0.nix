@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typography-geometry = {
+        "typography-geometry" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

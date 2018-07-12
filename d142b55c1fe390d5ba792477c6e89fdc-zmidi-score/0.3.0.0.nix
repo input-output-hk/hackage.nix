@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zmidi-score = {
+        "zmidi-score" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zmidi-core

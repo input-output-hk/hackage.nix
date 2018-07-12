@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-memocombinators = {
+        "data-memocombinators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

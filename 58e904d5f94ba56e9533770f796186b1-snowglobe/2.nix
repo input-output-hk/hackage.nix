@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          snowglobe = {
+          "snowglobe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

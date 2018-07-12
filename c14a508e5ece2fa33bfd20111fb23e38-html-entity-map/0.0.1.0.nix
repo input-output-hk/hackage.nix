@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        html-entity-map = {
+        "html-entity-map" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

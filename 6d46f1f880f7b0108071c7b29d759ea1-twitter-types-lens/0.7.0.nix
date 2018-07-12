@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twitter-types-lens = {
+        "twitter-types-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

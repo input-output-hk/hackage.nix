@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-ml = {
+        "haskell-ml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          iris = {
+          "iris" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-ml
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          fcnTest1 = {
+          "fcnTest1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-ml

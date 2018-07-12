@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FormalGrammars = {
+        "FormalGrammars" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          GrammarPP = {
+          "GrammarPP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint
@@ -55,7 +55,7 @@ let
               hsPkgs.FormalGrammars
             ];
           };
-          NussinovFG = {
+          "NussinovFG" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.template-haskell
@@ -65,7 +65,7 @@ let
               hsPkgs.PrimitiveArray
             ];
           };
-          NeedlemanWunschFG = {
+          "NeedlemanWunschFG" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.containers
@@ -76,7 +76,7 @@ let
               hsPkgs.PrimitiveArray
             ];
           };
-          TriNeedleFG = {
+          "TriNeedleFG" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.containers
@@ -89,7 +89,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-wget = {
+        "http-wget" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

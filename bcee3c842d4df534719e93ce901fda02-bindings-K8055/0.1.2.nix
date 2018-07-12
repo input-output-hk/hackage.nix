@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-K8055 = {
+        "bindings-K8055" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.K8055D ];
         };

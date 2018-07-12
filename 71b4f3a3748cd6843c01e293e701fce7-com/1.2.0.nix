@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        com = {
+        "com" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.old-time

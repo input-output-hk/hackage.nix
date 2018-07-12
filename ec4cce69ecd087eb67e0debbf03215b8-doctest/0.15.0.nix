@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        doctest = {
+        "doctest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -70,7 +70,7 @@ let
               hsPkgs.transformers
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

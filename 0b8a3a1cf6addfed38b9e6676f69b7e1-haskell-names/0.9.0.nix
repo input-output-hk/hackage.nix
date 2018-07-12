@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-names = {
+        "haskell-names" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.8") hsPkgs.tagged;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-names

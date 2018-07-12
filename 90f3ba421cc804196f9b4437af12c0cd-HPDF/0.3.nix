@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HPDF = {
+        "HPDF" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

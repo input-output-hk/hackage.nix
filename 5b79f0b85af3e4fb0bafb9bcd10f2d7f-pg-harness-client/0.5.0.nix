@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pg-harness-client = {
+        "pg-harness-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

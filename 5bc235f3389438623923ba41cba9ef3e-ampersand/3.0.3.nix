@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ampersand = {
+          "ampersand" = {
             depends  = [
               hsPkgs.HDBC
               hsPkgs.HDBC-odbc

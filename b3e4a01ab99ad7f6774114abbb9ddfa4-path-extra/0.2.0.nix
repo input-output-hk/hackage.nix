@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        path-extra = {
+        "path-extra" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          path-extra-test = {
+          "path-extra-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.attoparsec

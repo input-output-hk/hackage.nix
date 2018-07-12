@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conf-json = {
+        "conf-json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

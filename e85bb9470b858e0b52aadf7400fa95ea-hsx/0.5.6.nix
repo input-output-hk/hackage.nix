@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsx = {
+        "hsx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          trhsx = {
+          "trhsx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mysql-haskell = {
+        "mysql-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.mysql-haskell
               hsPkgs.base

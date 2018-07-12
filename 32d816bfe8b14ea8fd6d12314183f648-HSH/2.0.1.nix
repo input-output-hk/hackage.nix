@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HSH = {
+        "HSH" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string
@@ -39,7 +39,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests ([
               hsPkgs.base
               hsPkgs.utf8-string

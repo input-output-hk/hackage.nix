@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bitx-bitcoin = {
+        "bitx-bitcoin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bitx-bitcoin

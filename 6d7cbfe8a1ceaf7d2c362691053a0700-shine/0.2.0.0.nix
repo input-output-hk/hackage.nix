@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shine = {
+        "shine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghcjs-dom
@@ -32,14 +32,14 @@ let
           ];
         };
         tests = {
-          test-shine-animateeverything = {
+          "test-shine-animateeverything" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-dom
               hsPkgs.shine
             ];
           };
-          test-shine-simpleinteraction = {
+          "test-shine-simpleinteraction" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-dom

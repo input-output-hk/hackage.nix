@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        algebraic-graphs = {
+        "algebraic-graphs" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-alga = {
+          "test-alga" = {
             depends  = [
               hsPkgs.algebraic-graphs
               hsPkgs.base
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-alga = {
+          "benchmark-alga" = {
             depends  = [
               hsPkgs.algebraic-graphs
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tuples-homogenous-h98 = {
+        "tuples-homogenous-h98" = {
           depends  = [ hsPkgs.base ];
         };
       };

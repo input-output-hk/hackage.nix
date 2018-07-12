@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-import-graph = {
+        "haskell-import-graph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          haskell-import-graph = {
+          "haskell-import-graph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-import-graph

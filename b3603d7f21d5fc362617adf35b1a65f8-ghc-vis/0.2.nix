@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-vis = {
+        "ghc-vis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fgl

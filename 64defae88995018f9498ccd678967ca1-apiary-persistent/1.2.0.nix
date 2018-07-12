@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-persistent = {
+        "apiary-persistent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.persistent

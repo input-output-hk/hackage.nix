@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadbi = {
+        "monadbi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

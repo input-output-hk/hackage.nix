@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-stream = {
+        "json-stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -48,7 +48,7 @@ let
               hsPkgs.quickcheck-unicode
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        reactive-banana-wx = {
+        "reactive-banana-wx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cabal-macosx
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          Animation = {
+          "Animation" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.process
               hsPkgs.random
@@ -44,7 +44,7 @@ let
               hsPkgs.base
             ];
           };
-          Arithmetic = {
+          "Arithmetic" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.process
               hsPkgs.reactive-banana
@@ -53,7 +53,7 @@ let
               hsPkgs.base
             ];
           };
-          Asteroids = {
+          "Asteroids" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.random
               hsPkgs.executable-path
@@ -64,7 +64,7 @@ let
               hsPkgs.base
             ];
           };
-          Counter = {
+          "Counter" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.reactive-banana
               hsPkgs.wx
@@ -72,7 +72,7 @@ let
               hsPkgs.base
             ];
           };
-          CurrencyConverter = {
+          "CurrencyConverter" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.process
               hsPkgs.reactive-banana
@@ -81,7 +81,7 @@ let
               hsPkgs.base
             ];
           };
-          CRUD = {
+          "CRUD" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.containers
               hsPkgs.reactive-banana
@@ -90,7 +90,7 @@ let
               hsPkgs.base
             ];
           };
-          NetMonitor = {
+          "NetMonitor" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.process
               hsPkgs.reactive-banana
@@ -99,7 +99,7 @@ let
               hsPkgs.base
             ];
           };
-          TicTacToe = {
+          "TicTacToe" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.array
               hsPkgs.reactive-banana
@@ -108,7 +108,7 @@ let
               hsPkgs.base
             ];
           };
-          TwoCounters = {
+          "TwoCounters" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.reactive-banana
               hsPkgs.wx
@@ -116,7 +116,7 @@ let
               hsPkgs.base
             ];
           };
-          Wave = {
+          "Wave" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.reactive-banana
               hsPkgs.wx

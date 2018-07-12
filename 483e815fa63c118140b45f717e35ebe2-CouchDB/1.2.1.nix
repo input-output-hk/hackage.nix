@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CouchDB = {
+        "CouchDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test-couchdb = {
+          "test-couchdb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

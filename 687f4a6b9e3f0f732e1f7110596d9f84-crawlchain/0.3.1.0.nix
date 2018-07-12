@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crawlchain = {
+        "crawlchain" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          http-tests = {
+          "http-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.crawlchain
@@ -48,7 +48,7 @@ let
               hsPkgs.time
             ];
           };
-          html-tests = {
+          "html-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.crawlchain
@@ -56,7 +56,7 @@ let
               hsPkgs.tagsoup
             ];
           };
-          crawling-tests = {
+          "crawling-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.crawlchain

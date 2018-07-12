@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        comark-html = {
+        "comark-html" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          comark-html-profile = {
+          "comark-html-profile" = {
             depends  = pkgs.lib.optionals _flags.profile [
               hsPkgs.base
               hsPkgs.text
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.comark-html
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          progit-bench = {
+          "progit-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        buildwrapper = {
+        "buildwrapper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          buildwrapper = {
+          "buildwrapper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.buildwrapper
@@ -72,7 +72,7 @@ let
           };
         };
         tests = {
-          buildwrapper-test = {
+          "buildwrapper-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.buildwrapper

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dmenu-pmount = {
+          "dmenu-pmount" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

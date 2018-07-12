@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protobuf-simple = {
+        "protobuf-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          protoc = {
+          "protoc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          protobuf-simple-test = {
+          "protobuf-simple-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

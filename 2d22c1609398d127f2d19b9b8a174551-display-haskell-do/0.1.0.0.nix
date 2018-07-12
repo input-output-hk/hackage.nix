@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        display-haskell-do = {
+        "display-haskell-do" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

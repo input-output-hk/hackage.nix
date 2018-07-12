@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        listlike-instances = {
+        "listlike-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

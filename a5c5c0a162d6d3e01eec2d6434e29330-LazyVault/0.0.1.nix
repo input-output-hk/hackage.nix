@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          LazyVault = {
+          "LazyVault" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          profiterole = {
+          "profiterole" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

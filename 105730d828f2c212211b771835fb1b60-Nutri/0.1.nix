@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Nutri = {
+        "Nutri" = {
           depends  = [ hsPkgs.base ];
         };
       };

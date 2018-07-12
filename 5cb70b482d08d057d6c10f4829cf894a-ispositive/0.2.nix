@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        ispositive = {
+        "ispositive" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

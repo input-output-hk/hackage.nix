@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cruncher-types = {
+        "cruncher-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

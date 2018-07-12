@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DynamicTimeWarp = {
+        "DynamicTimeWarp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -37,7 +37,7 @@ let
               hsPkgs.random
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

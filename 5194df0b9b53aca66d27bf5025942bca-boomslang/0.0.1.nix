@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          boomslang = {
+          "boomslang" = {
             depends  = [
               hsPkgs.GLFW-b
               hsPkgs.MonadRandom

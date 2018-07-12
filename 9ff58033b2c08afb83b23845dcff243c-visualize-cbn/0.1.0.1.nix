@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          visualize-cbn = {
+          "visualize-cbn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        titlecase = {
+        "titlecase" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          titlecase = {
+          "titlecase" = {
             depends  = [
               hsPkgs.base
               hsPkgs.titlecase
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.titlecase

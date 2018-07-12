@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parallel-io = {
+        "parallel-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          benchmark = {
+          "benchmark" = {
             depends  = pkgs.lib.optionals (!(!_flags.benchmark)) [
               hsPkgs.base
               hsPkgs.extensible-exceptions
@@ -42,7 +42,7 @@ let
               hsPkgs.time
             ];
           };
-          tests = {
+          "tests" = {
             depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.extensible-exceptions

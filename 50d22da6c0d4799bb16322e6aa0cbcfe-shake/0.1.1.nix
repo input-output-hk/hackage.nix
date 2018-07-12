@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake = {
+        "shake" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time
@@ -38,6 +38,6 @@ let
             hsPkgs.transformers
           ];
         };
-        exes = { shake = {}; };
+        exes = { "shake" = {}; };
       };
     }

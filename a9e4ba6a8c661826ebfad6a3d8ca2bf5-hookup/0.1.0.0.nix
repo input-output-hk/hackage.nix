@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hookup = {
+        "hookup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.socks

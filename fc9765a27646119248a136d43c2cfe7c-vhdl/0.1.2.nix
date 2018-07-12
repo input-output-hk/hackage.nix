@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vhdl = {
+        "vhdl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-posix

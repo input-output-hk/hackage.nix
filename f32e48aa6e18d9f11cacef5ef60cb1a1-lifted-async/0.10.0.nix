@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lifted-async = {
+        "lifted-async" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -30,7 +30,7 @@ let
           ] ++ [ hsPkgs.constraints ];
         };
         tests = {
-          test-lifted-async = {
+          "test-lifted-async" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -43,7 +43,7 @@ let
               hsPkgs.tasty-th
             ];
           };
-          regression-tests = {
+          "regression-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -55,7 +55,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-lifted-async = {
+          "benchmark-lifted-async" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -64,7 +64,7 @@ let
               hsPkgs.lifted-async
             ];
           };
-          benchmark-lifted-async-threaded = {
+          "benchmark-lifted-async-threaded" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

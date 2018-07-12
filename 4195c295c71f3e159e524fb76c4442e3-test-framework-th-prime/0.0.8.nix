@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-framework-th-prime = {
+        "test-framework-th-prime" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cpphs

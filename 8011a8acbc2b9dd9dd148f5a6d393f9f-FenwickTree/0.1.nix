@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FenwickTree = {
+        "FenwickTree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test_FenwickTree = {
+          "test_FenwickTree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

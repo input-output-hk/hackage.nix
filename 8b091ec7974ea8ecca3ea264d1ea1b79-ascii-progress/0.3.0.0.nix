@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ascii-progress = {
+        "ascii-progress" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.concurrent-output
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.ansi-terminal
               hsPkgs.concurrent-output
@@ -43,7 +43,7 @@ let
               hsPkgs.time
             ];
           };
-          download-example = {
+          "download-example" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.HTTP
               hsPkgs.concurrent-output
@@ -59,7 +59,7 @@ let
               hsPkgs.transformers
             ];
           };
-          multi-example = {
+          "multi-example" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.ansi-terminal
               hsPkgs.concurrent-output
@@ -69,7 +69,7 @@ let
               hsPkgs.time
             ];
           };
-          crazy-multi-example = {
+          "crazy-multi-example" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.ansi-terminal
               hsPkgs.concurrent-output
@@ -82,7 +82,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.concurrent-output

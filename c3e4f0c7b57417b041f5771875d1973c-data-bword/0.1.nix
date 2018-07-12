@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        data-bword = {
+        "data-bword" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.5") hsPkgs.ghc-prim;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

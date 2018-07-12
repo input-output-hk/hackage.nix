@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Kleislify = {
+        "Kleislify" = {
           depends  = [ hsPkgs.base ];
         };
       };

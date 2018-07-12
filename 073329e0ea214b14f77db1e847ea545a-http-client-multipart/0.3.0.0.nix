@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client-multipart = {
+        "http-client-multipart" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client

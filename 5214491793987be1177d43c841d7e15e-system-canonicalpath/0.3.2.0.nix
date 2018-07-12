@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        system-canonicalpath = {
+        "system-canonicalpath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          canonicalpath_tests = {
+          "canonicalpath_tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude

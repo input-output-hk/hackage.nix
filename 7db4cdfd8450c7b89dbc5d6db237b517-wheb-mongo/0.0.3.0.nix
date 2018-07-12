@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wheb-mongo = {
+        "wheb-mongo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

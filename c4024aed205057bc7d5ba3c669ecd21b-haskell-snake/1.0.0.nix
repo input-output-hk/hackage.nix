@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-snake = {
+        "haskell-snake" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          haskell-snake = {
+          "haskell-snake" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

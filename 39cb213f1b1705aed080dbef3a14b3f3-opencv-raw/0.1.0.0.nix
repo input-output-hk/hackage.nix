@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        opencv-raw = {
+        "opencv-raw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

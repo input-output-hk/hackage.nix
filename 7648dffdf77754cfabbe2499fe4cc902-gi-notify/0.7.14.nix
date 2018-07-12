@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-notify = {
+        "gi-notify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

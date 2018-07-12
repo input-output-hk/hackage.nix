@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cprng-aes = {
+        "cprng-aes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

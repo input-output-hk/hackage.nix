@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nylas = {
+        "nylas" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        project-template = {
+        "project-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.project-template

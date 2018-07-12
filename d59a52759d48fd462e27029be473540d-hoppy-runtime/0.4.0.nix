@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoppy-runtime = {
+        "hoppy-runtime" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

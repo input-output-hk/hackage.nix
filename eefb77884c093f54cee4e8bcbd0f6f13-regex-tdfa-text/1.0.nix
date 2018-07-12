@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-tdfa-text = {
+        "regex-tdfa-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

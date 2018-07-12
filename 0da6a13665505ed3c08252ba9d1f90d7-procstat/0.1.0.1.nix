@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        procstat = {
+        "procstat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

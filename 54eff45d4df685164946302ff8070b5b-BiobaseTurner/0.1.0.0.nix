@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseTurner = {
+        "BiobaseTurner" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

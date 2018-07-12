@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Ranka = {
+          "Ranka" = {
             depends  = [
               hsPkgs.base
               hsPkgs.XMPP

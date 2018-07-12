@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        difftodo = {
+        "difftodo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          all-todos = {
+          "all-todos" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -40,7 +40,7 @@ let
               hsPkgs.optparse-applicative
             ];
           };
-          diff-todo = {
+          "diff-todo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -50,7 +50,7 @@ let
               hsPkgs.optparse-applicative
             ];
           };
-          git-todo = {
+          "git-todo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -64,7 +64,7 @@ let
           };
         };
         tests = {
-          fixme-tests = {
+          "fixme-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

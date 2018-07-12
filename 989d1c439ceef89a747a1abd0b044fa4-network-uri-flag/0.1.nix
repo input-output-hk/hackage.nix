@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-uri-flag = {
+        "network-uri-flag" = {
           depends  = [
             hsPkgs.network-uri
             hsPkgs.network

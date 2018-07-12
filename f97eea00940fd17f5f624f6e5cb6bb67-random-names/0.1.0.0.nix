@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-names = {
+        "random-names" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base

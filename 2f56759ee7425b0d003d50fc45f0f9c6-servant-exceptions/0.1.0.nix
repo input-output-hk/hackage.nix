@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-exceptions = {
+        "servant-exceptions" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

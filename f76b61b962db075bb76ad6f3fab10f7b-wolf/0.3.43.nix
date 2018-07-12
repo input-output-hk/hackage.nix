@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wolf = {
+        "wolf" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.amazonka
@@ -41,21 +41,21 @@ let
           ];
         };
         exes = {
-          wolf-actor = {
+          "wolf-actor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wolf
               hsPkgs.optparse-generic
             ];
           };
-          wolf-decider = {
+          "wolf-decider" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wolf
               hsPkgs.optparse-generic
             ];
           };
-          wolf-counter = {
+          "wolf-counter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wolf

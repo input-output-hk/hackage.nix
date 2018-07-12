@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          BotPP = {
+          "BotPP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -35,7 +35,7 @@ let
               hsPkgs.fps
             ];
           };
-          lambdabot = {
+          "lambdabot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -49,7 +49,7 @@ let
               hsPkgs.fps
             ];
           };
-          hoogle = {
+          "hoogle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -63,7 +63,7 @@ let
               hsPkgs.fps
             ];
           };
-          djinn = {
+          "djinn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -77,7 +77,7 @@ let
               hsPkgs.fps
             ];
           };
-          unlambda = {
+          "unlambda" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -91,7 +91,7 @@ let
               hsPkgs.fps
             ];
           };
-          runplugs = {
+          "runplugs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        global-config = {
+        "global-config" = {
           depends  = [
             hsPkgs.base
             hsPkgs.global-variables
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

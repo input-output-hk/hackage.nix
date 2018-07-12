@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hebrew-time = {
+        "hebrew-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck

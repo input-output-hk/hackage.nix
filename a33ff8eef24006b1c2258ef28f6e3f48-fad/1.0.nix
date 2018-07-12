@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fad = {
+        "fad" = {
           depends  = [ hsPkgs.base ];
         };
       };

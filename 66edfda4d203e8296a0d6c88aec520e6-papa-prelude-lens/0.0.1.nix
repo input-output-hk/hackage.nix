@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-prelude-lens = {
+        "papa-prelude-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

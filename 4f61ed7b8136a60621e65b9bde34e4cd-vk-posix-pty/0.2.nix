@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vk-posix-pty = {
+        "vk-posix-pty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          ptywrap = {
+          "ptywrap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

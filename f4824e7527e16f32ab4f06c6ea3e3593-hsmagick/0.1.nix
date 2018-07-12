@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsmagick = {
+        "hsmagick" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

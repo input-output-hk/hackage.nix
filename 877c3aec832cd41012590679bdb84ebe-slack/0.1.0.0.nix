@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        slack = {
+        "slack" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

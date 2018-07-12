@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmark-patterns = {
+        "cmark-patterns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmark

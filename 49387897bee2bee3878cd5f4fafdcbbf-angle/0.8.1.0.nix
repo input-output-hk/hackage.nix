@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        angle = {
+        "angle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          angle = {
+          "angle" = {
             depends  = [
               hsPkgs.angle
               hsPkgs.base
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.angle
@@ -65,21 +65,21 @@ let
           };
         };
         benchmarks = {
-          parsing = {
+          "parsing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.angle
             ];
           };
-          scanning = {
+          "scanning" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.angle
             ];
           };
-          operations = {
+          "operations" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

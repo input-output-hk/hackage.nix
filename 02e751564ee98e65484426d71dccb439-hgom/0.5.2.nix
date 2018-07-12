@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hgom = {
+          "hgom" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

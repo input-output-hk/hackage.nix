@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        activitystreams-aeson = {
+        "activitystreams-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

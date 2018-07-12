@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conductive-song = {
+        "conductive-song" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conductive-base

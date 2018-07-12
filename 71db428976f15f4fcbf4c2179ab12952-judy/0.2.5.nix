@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        judy = {
+        "judy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -31,7 +31,7 @@ let
           libs = [ pkgs.Judy ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

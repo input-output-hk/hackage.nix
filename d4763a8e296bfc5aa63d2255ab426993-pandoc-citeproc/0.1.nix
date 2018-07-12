@@ -27,7 +27,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pandoc-citeproc = {
+        "pandoc-citeproc" = {
           depends  = (((([
             hsPkgs.containers
             hsPkgs.directory
@@ -63,7 +63,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          pandoc-citeproc = {
+          "pandoc-citeproc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-citeproc
@@ -71,7 +71,7 @@ let
               hsPkgs.aeson
             ];
           };
-          biblio2yaml = {
+          "biblio2yaml" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-citeproc
@@ -84,7 +84,7 @@ let
           };
         };
         tests = {
-          test-pandoc-citeproc = {
+          "test-pandoc-citeproc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.utf8-string

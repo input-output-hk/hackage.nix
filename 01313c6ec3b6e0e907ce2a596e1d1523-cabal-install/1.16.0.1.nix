@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          cabal = {
+          "cabal" = {
             depends  = (([
               hsPkgs.base
               hsPkgs.Cabal

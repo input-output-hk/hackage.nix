@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ide-backend-common = {
+        "ide-backend-common" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

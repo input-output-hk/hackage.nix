@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        comark-syntax = {
+        "comark-syntax" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

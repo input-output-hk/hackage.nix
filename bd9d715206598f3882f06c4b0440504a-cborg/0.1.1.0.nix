@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cborg = {
+        "cborg" = {
           depends  = ([
             hsPkgs.array
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-icu-normalized = {
+        "text-icu-normalized" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

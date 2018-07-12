@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-banana-wx = {
+        "reactive-banana-wx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.reactive-banana
@@ -29,8 +29,8 @@ let
           ];
         };
         exes = {
-          Counter = {};
-          TwoCounters = {};
+          "Counter" = {};
+          "TwoCounters" = {};
         };
       };
     }

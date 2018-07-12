@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iso8583-bitmaps = {
+        "iso8583-bitmaps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

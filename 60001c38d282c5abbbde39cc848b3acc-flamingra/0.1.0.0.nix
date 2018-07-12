@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        flamingra = {
+        "flamingra" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          flamingra = {
+          "flamingra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes

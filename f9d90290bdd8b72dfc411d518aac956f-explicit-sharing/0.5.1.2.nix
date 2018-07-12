@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        explicit-sharing = {
+        "explicit-sharing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

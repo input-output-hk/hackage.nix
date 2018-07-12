@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-poppler = {
+        "gi-poppler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsc3-server = {
+        "hsc3-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bitset
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          hsc3-server-test = {
+          "hsc3-server-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bitset

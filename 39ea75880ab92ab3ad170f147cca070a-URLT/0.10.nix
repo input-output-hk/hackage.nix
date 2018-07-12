@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        URLT = {
+        "URLT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

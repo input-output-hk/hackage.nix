@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opencog-atomspace = {
+        "opencog-atomspace" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -29,14 +29,14 @@ let
         buildType = "Custom";
       };
       components = {
-        hmatrix = {
+        "hmatrix" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.array
             hsPkgs.storable-complex
             hsPkgs.process
           ] ++ pkgs.lib.optional _flags.vector hsPkgs.vector) ++ pkgs.lib.optional _flags.binary hsPkgs.binary;
-          libs = ((if _flags.mkl && system.isX86_64
+          libs = (pkgs.lib.optionals _flags.mkl (if system.isX86_64
             then [
               pkgs.gsl
               pkgs.mkl_lapack

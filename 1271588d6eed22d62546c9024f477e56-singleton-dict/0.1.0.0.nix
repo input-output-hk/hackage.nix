@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        singleton-dict = {
+        "singleton-dict" = {
           depends  = [
             hsPkgs.base
             hsPkgs.singletons

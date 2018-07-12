@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-with = {
+        "streaming-with" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

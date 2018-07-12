@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-certificatemanager-pca = {
+        "amazonka-certificatemanager-pca" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-certificatemanager-pca-test = {
+          "amazonka-certificatemanager-pca-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-angular-ui = {
+        "yesod-angular-ui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

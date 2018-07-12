@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        azubi = {
+        "azubi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test_unix = {
+          "test_unix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -44,7 +44,7 @@ let
               hsPkgs.hspec
             ];
           };
-          test_core = {
+          "test_core" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

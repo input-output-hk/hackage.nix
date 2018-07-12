@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          quicktest = {
+          "quicktest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        react-haskell = {
+        "react-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

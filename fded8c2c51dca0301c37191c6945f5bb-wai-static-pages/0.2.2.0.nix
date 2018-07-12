@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-static-pages = {
+        "wai-static-pages" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

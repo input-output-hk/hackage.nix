@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-properties = {
+        "quickcheck-properties" = {
           depends  = [ hsPkgs.base ];
         };
       };

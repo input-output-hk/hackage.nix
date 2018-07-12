@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagsoup = {
+        "tagsoup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-tagsoup = {
+          "test-tagsoup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

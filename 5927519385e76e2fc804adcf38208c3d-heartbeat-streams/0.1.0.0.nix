@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heartbeat-streams = {
+        "heartbeat-streams" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base

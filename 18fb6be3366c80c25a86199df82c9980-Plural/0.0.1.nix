@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          plural = {
+          "plural" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.regex-tdfa

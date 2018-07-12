@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tcod-haskell = {
+        "tcod-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,19 +37,19 @@ let
           pkgconfig = pkgs.lib.optional _flags.use-pkg-config pkgconfPkgs.libtcod;
         };
         exes = {
-          tcod-haskell-sample01 = {
+          "tcod-haskell-sample01" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tcod-haskell
             ];
           };
-          tcod-haskell-sample02 = {
+          "tcod-haskell-sample02" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tcod-haskell
             ];
           };
-          tcod-haskell-sample03 = {
+          "tcod-haskell-sample03" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tcod-haskell

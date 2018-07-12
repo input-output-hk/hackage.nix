@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-core = {
+        "snap-core" = {
           depends  = (([
             hsPkgs.HUnit
             hsPkgs.attoparsec
@@ -65,7 +65,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = (([
               hsPkgs.HUnit
               hsPkgs.attoparsec

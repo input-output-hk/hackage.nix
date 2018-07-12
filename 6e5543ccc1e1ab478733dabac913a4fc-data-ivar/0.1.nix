@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-ivar = {
+        "data-ivar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

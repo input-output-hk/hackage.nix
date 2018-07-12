@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filesystem-trees = {
+        "filesystem-trees" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

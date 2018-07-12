@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wild-bind-task-x11 = {
+        "wild-bind-task-x11" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wild-bind
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          import-test = {
+          "import-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wild-bind-task-x11

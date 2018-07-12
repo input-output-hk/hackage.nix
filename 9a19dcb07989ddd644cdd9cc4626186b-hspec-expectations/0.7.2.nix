@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-expectations = {
+        "hspec-expectations" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit

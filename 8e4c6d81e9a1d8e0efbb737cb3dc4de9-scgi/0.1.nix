@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        scgi = {
+        "scgi" = {
           depends  = [
             hsPkgs.cgi
           ] ++ (if _flags.split-base

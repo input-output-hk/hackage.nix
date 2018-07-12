@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        base91 = {
+        "base91" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mono-traversable
           ];
         };
         exes = {
-          base91 = {
+          "base91" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base91
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base91

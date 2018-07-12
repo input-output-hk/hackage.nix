@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          headergen = {
+          "headergen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

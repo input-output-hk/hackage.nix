@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Elm = {
+        "Elm" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          elm = {
+          "elm" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -69,7 +69,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          elm-doc = {
+          "elm-doc" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -91,7 +91,7 @@ let
           };
         };
         tests = {
-          test-elm = {
+          "test-elm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

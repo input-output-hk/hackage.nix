@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hoodle = {
+        "hoodle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional _flags.dyre hsPkgs.dyre;
         };
         exes = {
-          hoodle = {
+          "hoodle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

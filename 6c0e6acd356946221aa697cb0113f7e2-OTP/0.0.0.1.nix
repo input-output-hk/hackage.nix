@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OTP = {
+        "OTP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Crypto
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Crypto

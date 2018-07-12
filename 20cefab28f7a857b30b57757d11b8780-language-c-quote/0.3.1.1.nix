@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        language-c-quote = {
+        "language-c-quote" = {
           depends  = ([
             hsPkgs.array
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.0" && (compiler.isGhc && compiler.version.lt "7.2")) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.template-haskell;
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

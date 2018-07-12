@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        odpic-raw = {
+        "odpic-raw" = {
           depends  = [
             hsPkgs.Decimal
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          odpic-raw-test = {
+          "odpic-raw-test" = {
             depends  = [
               hsPkgs.Decimal
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-fieldtrip = {
+        "reactive-fieldtrip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unamb

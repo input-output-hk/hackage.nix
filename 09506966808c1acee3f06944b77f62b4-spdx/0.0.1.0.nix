@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        spdx = {
+        "spdx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

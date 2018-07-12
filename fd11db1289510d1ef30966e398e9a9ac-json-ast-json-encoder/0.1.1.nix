@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-ast-json-encoder = {
+        "json-ast-json-encoder" = {
           depends  = [
             hsPkgs.json-encoder
             hsPkgs.json-ast

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        danibot = {
+        "danibot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          danibot = {
+          "danibot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-hypergeometric = {
+        "random-hypergeometric" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random-fu
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        stream-monad = {
+        "stream-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.logict
           ];
         };
         exes = {
-          stream-monad-benchmarks = {
+          "stream-monad-benchmarks" = {
             depends  = pkgs.lib.optionals _flags.benchmarks [
               hsPkgs.base
               hsPkgs.logict

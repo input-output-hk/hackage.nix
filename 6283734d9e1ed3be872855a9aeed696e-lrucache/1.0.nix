@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lrucache = {
+        "lrucache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

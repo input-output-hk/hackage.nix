@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        derive = {
+        "derive" = {
           depends  = [
             hsPkgs.haskell-src-exts
             hsPkgs.filepath
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          derive = {
+          "derive" = {
             depends  = [
               hsPkgs.directory
               hsPkgs.process

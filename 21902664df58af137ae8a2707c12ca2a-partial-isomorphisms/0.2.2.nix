@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        partial-isomorphisms = {
+        "partial-isomorphisms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

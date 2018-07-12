@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        ImperativeHaskell = {
+        "ImperativeHaskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         exes = {
-          test1 = {
+          "test1" = {
             depends  = [ hsPkgs.base ];
           };
         };

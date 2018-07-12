@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        computational-geometry = {
+        "computational-geometry" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude

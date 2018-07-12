@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        sparse-lin-alg = {
+        "sparse-lin-alg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

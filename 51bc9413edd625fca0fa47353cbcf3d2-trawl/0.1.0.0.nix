@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          trawl = {
+          "trawl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

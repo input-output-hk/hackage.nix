@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-data-compat = {
+        "th-data-compat" = {
           depends  = [ hsPkgs.base ] ++ [
             hsPkgs.template-haskell
           ];

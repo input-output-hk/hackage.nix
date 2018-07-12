@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitcoin-payment-channel = {
+        "bitcoin-payment-channel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskoin-core
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          test-all = {
+          "test-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskoin-core
@@ -87,7 +87,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskoin-core

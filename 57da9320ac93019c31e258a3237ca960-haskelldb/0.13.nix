@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelldb = {
+        "haskelldb" = {
           depends  = [
             hsPkgs.mtl
           ] ++ (if _flags.split-base

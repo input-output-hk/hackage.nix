@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        indentation = {
+        "indentation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

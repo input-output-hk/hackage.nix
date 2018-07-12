@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-bacon = {
+        "reactive-bacon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm

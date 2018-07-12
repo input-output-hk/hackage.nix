@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filecache = {
+        "filecache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers

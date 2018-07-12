@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BenchmarkHistory = {
+        "BenchmarkHistory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          BenchmarkHistogram = {
+          "BenchmarkHistogram" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.base
               hsPkgs.BenchmarkHistory

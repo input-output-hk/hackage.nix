@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        indextype = {
+        "indextype" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

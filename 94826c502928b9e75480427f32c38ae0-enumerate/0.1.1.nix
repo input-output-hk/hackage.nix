@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enumerate = {
+        "enumerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          enumerate-example = {
+          "enumerate-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.enumerate

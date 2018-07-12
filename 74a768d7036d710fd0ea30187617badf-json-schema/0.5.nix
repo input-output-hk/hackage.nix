@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-schema = {
+        "json-schema" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

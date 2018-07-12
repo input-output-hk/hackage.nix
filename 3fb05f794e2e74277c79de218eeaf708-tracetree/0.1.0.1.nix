@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tracetree = {
+        "tracetree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          ttrender = {
+          "ttrender" = {
             depends  = pkgs.lib.optionals _flags.ttrender [
               hsPkgs.base
               hsPkgs.colour

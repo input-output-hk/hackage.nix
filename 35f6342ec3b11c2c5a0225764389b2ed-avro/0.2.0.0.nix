@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        avro = {
+        "avro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -47,7 +47,7 @@ let
           ] ++ pkgs.lib.optional _flags.templatehaskell hsPkgs.template-haskell;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.avro

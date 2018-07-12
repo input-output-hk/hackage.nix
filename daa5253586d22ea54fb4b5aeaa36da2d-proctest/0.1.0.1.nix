@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proctest = {
+        "proctest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          example-netcat-test = {
+          "example-netcat-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

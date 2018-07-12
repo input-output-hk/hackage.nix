@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-syntax-highlighter = {
+        "ghc-syntax-highlighter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-syntax-highlighter

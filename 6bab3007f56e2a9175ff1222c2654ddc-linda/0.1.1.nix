@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linda = {
+        "linda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hstats

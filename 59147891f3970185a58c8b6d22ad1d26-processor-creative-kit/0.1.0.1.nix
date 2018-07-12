@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        processor-creative-kit = {
+        "processor-creative-kit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

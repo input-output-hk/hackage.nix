@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fastirc = {
+        "fastirc" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [ hsPkgs.base ];
           };
         };

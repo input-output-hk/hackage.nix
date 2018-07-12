@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protocol-radius = {
+        "protocol-radius" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

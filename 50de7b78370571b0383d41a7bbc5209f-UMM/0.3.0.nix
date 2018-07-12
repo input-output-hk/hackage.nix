@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          umm = {
+          "umm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

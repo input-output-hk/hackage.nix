@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gridbounds = {
+        "gridbounds" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gridbox
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gridbox

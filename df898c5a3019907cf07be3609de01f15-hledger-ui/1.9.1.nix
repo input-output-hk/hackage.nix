@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hledger-ui = {
+          "hledger-ui" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.ansi-terminal

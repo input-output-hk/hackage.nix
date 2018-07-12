@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        domain-auth = {
+        "domain-auth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.appar

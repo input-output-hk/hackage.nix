@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reified-records = {
+        "reified-records" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

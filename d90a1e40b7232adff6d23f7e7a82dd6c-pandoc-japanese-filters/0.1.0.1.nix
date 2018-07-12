@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tate-math-to-svg-filter = {
+          "tate-math-to-svg-filter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.system-filepath
@@ -35,7 +35,7 @@ let
               hsPkgs.effin
             ];
           };
-          math-to-svg-filter = {
+          "math-to-svg-filter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.system-filepath
@@ -49,7 +49,7 @@ let
               hsPkgs.effin
             ];
           };
-          japanese-filter = {
+          "japanese-filter" = {
             depends  = [
               hsPkgs.HaTeX
               hsPkgs.HaTeX-qq
@@ -62,7 +62,7 @@ let
               hsPkgs.hxt
             ];
           };
-          env-to-div-filter = {
+          "env-to-div-filter" = {
             depends  = [
               hsPkgs.HaTeX
               hsPkgs.HaTeX-qq

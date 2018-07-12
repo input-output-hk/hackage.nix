@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        draw-poker = {
+        "draw-poker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random-shuffle
@@ -28,13 +28,13 @@ let
           ];
         };
         exes = {
-          draw-poker = {
+          "draw-poker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.draw-poker
             ];
           };
-          draw-poker-simple = {
+          "draw-poker-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.draw-poker
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          draw-poker-test = {
+          "draw-poker-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.draw-poker

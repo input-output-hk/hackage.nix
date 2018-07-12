@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-glacier = {
+        "amazonka-glacier" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

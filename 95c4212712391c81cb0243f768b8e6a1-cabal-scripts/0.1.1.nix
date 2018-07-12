@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-scripts = {
+        "cabal-scripts" = {
           depends  = [ hsPkgs.base ];
         };
       };

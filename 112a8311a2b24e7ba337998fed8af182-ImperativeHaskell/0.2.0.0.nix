@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ImperativeHaskell = {
+        "ImperativeHaskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

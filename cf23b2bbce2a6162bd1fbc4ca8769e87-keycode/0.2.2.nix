@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keycode = {
+        "keycode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

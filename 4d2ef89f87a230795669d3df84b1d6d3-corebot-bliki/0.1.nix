@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          corebot-bliki = {
+          "corebot-bliki" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

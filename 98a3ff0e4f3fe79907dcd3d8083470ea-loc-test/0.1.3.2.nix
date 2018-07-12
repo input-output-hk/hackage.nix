@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        loc-test = {
+        "loc-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

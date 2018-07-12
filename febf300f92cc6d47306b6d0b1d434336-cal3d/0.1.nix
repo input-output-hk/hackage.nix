@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cal3d = {
+        "cal3d" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.cal3d ];
         };

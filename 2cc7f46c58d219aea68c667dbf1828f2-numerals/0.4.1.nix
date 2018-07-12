@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numerals = {
+        "numerals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
             else [ hsPkgs.integer-gmp ]);
         };
         tests = {
-          test-numerals = {
+          "test-numerals" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          bench-numerals = {
+          "bench-numerals" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

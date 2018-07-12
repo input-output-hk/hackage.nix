@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pgdl = {
+          "pgdl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tagsoup

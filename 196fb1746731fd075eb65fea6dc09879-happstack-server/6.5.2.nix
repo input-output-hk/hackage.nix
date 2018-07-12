@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-server = {
+        "happstack-server" = {
           depends  = (((([
             hsPkgs.base
             hsPkgs.blaze-html
@@ -67,7 +67,7 @@ let
           ];
         };
         exes = {
-          happstack-server-tests = {
+          "happstack-server-tests" = {
             depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.HUnit
               hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ihaskell = {
+        "ihaskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          IHaskell = {
+          "IHaskell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -85,7 +85,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

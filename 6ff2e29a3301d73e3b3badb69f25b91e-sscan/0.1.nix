@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sscan = {
+          "sscan" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick

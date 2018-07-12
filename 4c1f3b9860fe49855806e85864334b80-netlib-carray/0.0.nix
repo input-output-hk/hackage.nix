@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netlib-carray = {
+        "netlib-carray" = {
           depends  = [
             hsPkgs.carray
             hsPkgs.storable-complex

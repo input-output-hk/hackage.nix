@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arx = {
+        "arx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          arx = {
+          "arx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

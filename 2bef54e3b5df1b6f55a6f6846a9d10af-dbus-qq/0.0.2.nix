@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbus-qq = {
+        "dbus-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

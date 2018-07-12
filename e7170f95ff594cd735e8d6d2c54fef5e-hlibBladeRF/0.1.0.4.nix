@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hlibBladeRF = {
+        "hlibBladeRF" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

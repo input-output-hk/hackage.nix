@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arithmatic = {
+        "arithmatic" = {
           depends  = [ hsPkgs.base ];
         };
       };

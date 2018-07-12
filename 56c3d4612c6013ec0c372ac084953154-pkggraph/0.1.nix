@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pkggraph = {
+          "pkggraph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

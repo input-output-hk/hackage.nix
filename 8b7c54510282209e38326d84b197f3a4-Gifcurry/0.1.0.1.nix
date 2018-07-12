@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gifcurry_gui = {
+          "gifcurry_gui" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk3
@@ -29,7 +29,7 @@ let
               hsPkgs.temporary
             ];
           };
-          gifcurry_cli = {
+          "gifcurry_cli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dequeue = {
+        "dequeue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          dequeue-test = {
+          "dequeue-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

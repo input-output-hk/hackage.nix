@@ -25,7 +25,7 @@ let
       };
       components = {
         exes = {
-          Allure = {
+          "Allure" = {
             depends  = [
               hsPkgs.ConfigFile
               hsPkgs.array
@@ -48,7 +48,7 @@ let
                 else pkgs.lib.optional (!_flags.std) hsPkgs.gtk);
             libs = pkgs.lib.optional _flags.curses pkgs.curses;
           };
-          BotAllure = {
+          "BotAllure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

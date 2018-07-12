@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-tests = {
+        "distributed-process-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          TestCH = {
+          "TestCH" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process-tests
@@ -48,7 +48,7 @@ let
               hsPkgs.test-framework
             ];
           };
-          TestClosure = {
+          "TestClosure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process-tests
@@ -58,7 +58,7 @@ let
               hsPkgs.test-framework
             ];
           };
-          TestStats = {
+          "TestStats" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process-tests
@@ -68,7 +68,7 @@ let
               hsPkgs.test-framework
             ];
           };
-          TestMx = {
+          "TestMx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process-tests
@@ -78,7 +78,7 @@ let
               hsPkgs.test-framework
             ];
           };
-          TestTracing = {
+          "TestTracing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process-tests

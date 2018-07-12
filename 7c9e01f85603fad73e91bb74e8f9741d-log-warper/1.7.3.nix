@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        log-warper = {
+        "log-warper" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-terminal
@@ -54,7 +54,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          play-log = {
+          "play-log" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions
@@ -64,7 +64,7 @@ let
               hsPkgs.yaml
             ];
           };
-          how-to = {
+          "how-to" = {
             depends  = [
               hsPkgs.base
               hsPkgs.log-warper
@@ -74,7 +74,7 @@ let
           };
         };
         tests = {
-          log-test = {
+          "log-test" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

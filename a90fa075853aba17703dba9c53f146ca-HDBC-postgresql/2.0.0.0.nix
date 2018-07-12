@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HDBC-postgresql = {
+        "HDBC-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -42,7 +42,7 @@ let
           libs = [ pkgs.pq ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

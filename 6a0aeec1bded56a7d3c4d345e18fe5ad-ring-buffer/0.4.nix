@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ring-buffer = {
+        "ring-buffer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -38,7 +38,7 @@ let
               hsPkgs.ring-buffer
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

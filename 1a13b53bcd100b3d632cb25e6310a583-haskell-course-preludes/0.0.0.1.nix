@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-course-preludes = {
+        "haskell-course-preludes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

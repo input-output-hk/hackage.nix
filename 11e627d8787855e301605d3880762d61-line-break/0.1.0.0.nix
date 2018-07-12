@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          linebreak = {
+          "linebreak" = {
             depends  = [ hsPkgs.base ];
           };
         };

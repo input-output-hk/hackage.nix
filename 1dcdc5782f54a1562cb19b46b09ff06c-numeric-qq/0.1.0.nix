@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numeric-qq = {
+        "numeric-qq" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.loch-th
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          internal-tests = {
+          "internal-tests" = {
             depends  = [
               hsPkgs.HTF
               hsPkgs.template-haskell

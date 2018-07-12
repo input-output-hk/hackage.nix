@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-ekg = {
+        "distributed-process-ekg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

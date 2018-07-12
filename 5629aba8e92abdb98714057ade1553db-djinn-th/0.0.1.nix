@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        djinn-th = {
+        "djinn-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

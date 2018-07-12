@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twentefp-trees = {
+        "twentefp-trees" = {
           depends  = [
             hsPkgs.base
             hsPkgs.twentefp-eventloop-graphics

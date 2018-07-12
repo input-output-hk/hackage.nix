@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bootstrap-types = {
+        "bootstrap-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

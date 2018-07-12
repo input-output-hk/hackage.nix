@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        symbol = {
+        "symbol" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

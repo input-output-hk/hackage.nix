@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        exact-combinatorics = {
+        "exact-combinatorics" = {
           depends  = [ hsPkgs.base ];
         };
       };

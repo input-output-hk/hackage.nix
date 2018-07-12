@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        emailaddress = {
+        "emailaddress" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          emailaddress-doctest = {
+          "emailaddress-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

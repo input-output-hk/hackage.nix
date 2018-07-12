@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        circ = {
+        "circ" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

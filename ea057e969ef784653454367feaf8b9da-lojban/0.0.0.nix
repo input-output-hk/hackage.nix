@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lojban = {
+        "lojban" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml

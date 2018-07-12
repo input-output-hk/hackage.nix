@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gtk3 = {
+        "gtk3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          gtk2hs-demo-actionMenu = {
+          "gtk2hs-demo-actionMenu" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
@@ -51,14 +51,14 @@ let
               hsPkgs.text
             ];
           };
-          gtk2hs-demo-buttonBox = {
+          "gtk2hs-demo-buttonBox" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
               hsPkgs.transformers
             ];
           };
-          gtk2hs-demo-carsim = {
+          "gtk2hs-demo-carsim" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
@@ -67,21 +67,21 @@ let
               hsPkgs.cairo
             ];
           };
-          gtk2hs-demo-progress = {
+          "gtk2hs-demo-progress" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
               hsPkgs.transformers
             ];
           };
-          gtk2hs-demo-progressThreadedRTS = {
+          "gtk2hs-demo-progressThreadedRTS" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
               hsPkgs.transformers
             ];
           };
-          gtk2hs-demo-fastDraw = {
+          "gtk2hs-demo-fastDraw" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
@@ -90,27 +90,27 @@ let
               hsPkgs.cairo
             ];
           };
-          gtk2hs-demo-fonts = {
+          "gtk2hs-demo-fonts" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
             ];
           };
-          gtk2hs-demo-builder = {
-            depends  = [
-              hsPkgs.gtk3
-              hsPkgs.base
-              hsPkgs.transformers
-            ];
-          };
-          gtk2hs-demo-helloworld = {
+          "gtk2hs-demo-builder" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
               hsPkgs.transformers
             ];
           };
-          gtk2hs-demo-layout = {
+          "gtk2hs-demo-helloworld" = {
+            depends  = [
+              hsPkgs.gtk3
+              hsPkgs.base
+              hsPkgs.transformers
+            ];
+          };
+          "gtk2hs-demo-layout" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
@@ -119,7 +119,7 @@ let
               hsPkgs.text
             ];
           };
-          gtk2hs-demo-menudemo = {
+          "gtk2hs-demo-menudemo" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
@@ -127,7 +127,7 @@ let
               hsPkgs.text
             ];
           };
-          gtk2hs-demo-combodemo = {
+          "gtk2hs-demo-combodemo" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.text
@@ -135,7 +135,7 @@ let
               hsPkgs.transformers
             ];
           };
-          gtk2hs-demo-notebook = {
+          "gtk2hs-demo-notebook" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
@@ -143,14 +143,14 @@ let
               hsPkgs.text
             ];
           };
-          gtk2hs-demo-statusIcon = {
+          "gtk2hs-demo-statusIcon" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
               hsPkgs.transformers
             ];
           };
-          gtk2hs-demo-arabic = {
+          "gtk2hs-demo-arabic" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base
@@ -158,7 +158,7 @@ let
               hsPkgs.text
             ];
           };
-          gtk2hs-demo-overlay = {
+          "gtk2hs-demo-overlay" = {
             depends  = [
               hsPkgs.gtk3
               hsPkgs.base

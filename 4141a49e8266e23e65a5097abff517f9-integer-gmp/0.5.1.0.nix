@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        integer-gmp = {
+        "integer-gmp" = {
           depends  = [ hsPkgs.ghc-prim ];
         };
       };

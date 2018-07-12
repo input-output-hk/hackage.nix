@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iso8601-duration = {
+        "iso8601-duration" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uu-cco = {
+        "uu-cco" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal

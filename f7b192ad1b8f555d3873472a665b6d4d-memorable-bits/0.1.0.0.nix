@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memorable-bits = {
+        "memorable-bits" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.bits
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          membits = {
+          "membits" = {
             depends  = [
               hsPkgs.base
               hsPkgs.memorable-bits
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          test-memorable-bits = {
+          "test-memorable-bits" = {
             depends  = [
               hsPkgs.base
               hsPkgs.memorable-bits
@@ -70,7 +70,7 @@ let
           };
         };
         benchmarks = {
-          bench-memorable-bits = {
+          "bench-memorable-bits" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

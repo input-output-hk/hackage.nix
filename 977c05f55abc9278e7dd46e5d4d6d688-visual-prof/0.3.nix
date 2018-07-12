@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          visual-prof = {
+          "visual-prof" = {
             depends  = [
               hsPkgs.parsec
               hsPkgs.filepath

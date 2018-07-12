@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plot-light = {
+        "plot-light" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-svg
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light

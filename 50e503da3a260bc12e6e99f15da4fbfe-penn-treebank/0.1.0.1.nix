@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        penn-treebank = {
+        "penn-treebank" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-coroutine = {
+        "monad-coroutine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-parallel

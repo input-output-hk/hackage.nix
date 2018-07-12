@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-fsm = {
+        "distributed-process-fsm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.distributed-process
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          FsmTests = {
+          "FsmTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

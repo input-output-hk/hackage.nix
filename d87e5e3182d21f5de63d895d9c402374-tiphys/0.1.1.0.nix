@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tiphys = {
+        "tiphys" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

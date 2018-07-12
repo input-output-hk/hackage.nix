@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        structured-mongoDB = {
+        "structured-mongoDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

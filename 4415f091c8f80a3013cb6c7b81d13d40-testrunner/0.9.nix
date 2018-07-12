@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        testrunner = {
+        "testrunner" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.HUnit

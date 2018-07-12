@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-error-codes = {
+        "postgresql-error-codes" = {
           depends  = [
             hsPkgs.bytestring
           ];

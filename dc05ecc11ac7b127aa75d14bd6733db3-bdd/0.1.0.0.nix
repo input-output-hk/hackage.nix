@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bdd = {
+        "bdd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          system-tests = {
+          "system-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

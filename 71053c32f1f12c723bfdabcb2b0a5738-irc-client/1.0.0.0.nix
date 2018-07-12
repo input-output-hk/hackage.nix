@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc-client = {
+        "irc-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          irc-client = {
+          "irc-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

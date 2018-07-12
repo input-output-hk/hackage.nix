@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        syncthing-hs = {
+        "syncthing-hs" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

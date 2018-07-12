@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          glintcollider = {
+          "glintcollider" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ppm

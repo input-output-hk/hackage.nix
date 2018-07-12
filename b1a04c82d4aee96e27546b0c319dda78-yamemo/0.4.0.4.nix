@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yamemo = {
+        "yamemo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

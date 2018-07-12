@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HsOpenSSL = {
+        "HsOpenSSL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,27 +39,27 @@ let
           ];
         };
         tests = {
-          test-dsa = {
+          "test-dsa" = {
             depends  = [
               hsPkgs.HsOpenSSL
               hsPkgs.base
               hsPkgs.bytestring
             ];
           };
-          test-der = {
+          "test-der" = {
             depends  = [
               hsPkgs.HsOpenSSL
               hsPkgs.base
             ];
           };
-          test-evp-base64 = {
+          "test-evp-base64" = {
             depends  = [
               hsPkgs.HsOpenSSL
               hsPkgs.base
               hsPkgs.bytestring
             ];
           };
-          test-evp-digest = {
+          "test-evp-digest" = {
             depends  = [
               hsPkgs.HsOpenSSL
               hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdl2-compositor = {
+        "sdl2-compositor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sdl2
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          sdl2-comp-example = {
+          "sdl2-comp-example" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.sdl2
@@ -47,7 +47,7 @@ let
               hsPkgs.text
             ];
           };
-          sdl2-comp-res-independent = {
+          "sdl2-comp-res-independent" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.sdl2
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          unittests = {
+          "unittests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hsqml = {
+        "hsqml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          hsqml-test1 = {
+          "hsqml-test1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

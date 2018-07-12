@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-src-meta = {
+        "haskell-src-meta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.safe;
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -43,7 +43,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          splices = {
+          "splices" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-meta

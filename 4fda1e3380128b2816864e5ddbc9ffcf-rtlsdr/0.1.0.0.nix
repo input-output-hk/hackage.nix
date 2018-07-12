@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rtlsdr = {
+        "rtlsdr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

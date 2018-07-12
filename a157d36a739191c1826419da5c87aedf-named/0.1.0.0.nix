@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        named = {
+        "named" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          regression = {
+          "regression" = {
             depends  = [
               hsPkgs.base
               hsPkgs.named

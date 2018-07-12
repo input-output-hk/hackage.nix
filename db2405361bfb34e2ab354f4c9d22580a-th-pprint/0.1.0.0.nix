@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-pprint = {
+        "th-pprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

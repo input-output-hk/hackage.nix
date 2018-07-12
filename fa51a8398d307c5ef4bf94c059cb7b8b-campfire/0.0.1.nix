@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        campfire = {
+        "campfire" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

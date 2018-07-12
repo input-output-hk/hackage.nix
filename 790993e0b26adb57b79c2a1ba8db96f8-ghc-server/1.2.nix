@@ -20,6 +20,6 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-server = {};
+        "ghc-server" = {};
       };
     }

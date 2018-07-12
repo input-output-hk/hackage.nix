@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-Ogre-Binding = {
+        "HGamer3D-Ogre-Binding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

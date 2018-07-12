@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        magic-wormhole = {
+        "magic-wormhole" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          hocus-pocus = {
+          "hocus-pocus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hmumps = {
+          "hmumps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-compat

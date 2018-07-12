@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        loc = {
+        "loc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -35,7 +35,7 @@ let
               hsPkgs.loc
             ];
           };
-          hedgehog = {
+          "hedgehog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

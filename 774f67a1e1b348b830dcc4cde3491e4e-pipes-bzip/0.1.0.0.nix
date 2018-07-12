@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-bzip = {
+        "pipes-bzip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          pipes-bzip-test = {
+          "pipes-bzip-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-bzip

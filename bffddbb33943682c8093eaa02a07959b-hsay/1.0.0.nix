@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsay = {
+          "hsay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadio-unwrappable = {
+        "monadio-unwrappable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monads-tf

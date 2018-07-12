@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          yi = {
+          "yi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yi-core

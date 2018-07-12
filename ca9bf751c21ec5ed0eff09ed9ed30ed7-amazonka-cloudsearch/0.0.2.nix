@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cloudsearch = {
+        "amazonka-cloudsearch" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

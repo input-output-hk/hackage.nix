@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          git-freq = {
+          "git-freq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

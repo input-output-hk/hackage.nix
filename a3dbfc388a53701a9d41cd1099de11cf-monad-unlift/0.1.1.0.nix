@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-unlift = {
+        "monad-unlift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-control

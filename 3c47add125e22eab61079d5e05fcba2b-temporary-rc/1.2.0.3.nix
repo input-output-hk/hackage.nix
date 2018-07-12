@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        temporary-rc = {
+        "temporary-rc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

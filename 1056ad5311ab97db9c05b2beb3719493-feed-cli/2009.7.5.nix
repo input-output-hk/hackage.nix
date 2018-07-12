@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          feed-cli = {
+          "feed-cli" = {
             depends  = [
               hsPkgs.feed
               hsPkgs.xml

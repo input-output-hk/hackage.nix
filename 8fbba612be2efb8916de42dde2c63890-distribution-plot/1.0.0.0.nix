@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distribution-plot = {
+        "distribution-plot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Chart

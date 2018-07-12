@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-tagged = {
+        "binary-tagged" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          binary-tagged-test = {
+          "binary-tagged-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -67,7 +67,7 @@ let
           };
         };
         benchmarks = {
-          binary-tagged-bench = {
+          "binary-tagged-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

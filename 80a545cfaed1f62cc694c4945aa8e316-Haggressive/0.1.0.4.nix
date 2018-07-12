@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Haggressive = {
+        "Haggressive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Haggressive
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Haggressive

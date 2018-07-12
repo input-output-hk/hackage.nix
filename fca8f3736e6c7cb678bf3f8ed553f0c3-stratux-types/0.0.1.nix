@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        stratux-types = {
+        "stratux-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

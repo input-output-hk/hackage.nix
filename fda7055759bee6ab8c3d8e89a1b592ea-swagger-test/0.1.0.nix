@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        swagger-test = {
+        "swagger-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          swagger-test = {
+          "swagger-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

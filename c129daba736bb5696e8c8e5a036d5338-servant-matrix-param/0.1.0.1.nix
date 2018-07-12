@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-matrix-param = {
+        "servant-matrix-param" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant
           ] ++ pkgs.lib.optional _flags.with-servant-aeson-specs hsPkgs.servant-aeson-specs;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -38,7 +38,7 @@ let
               hsPkgs.servant-matrix-param
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        utf8-string = {
+        "utf8-string" = {
           depends  = if _flags.bytestring-in-base
             then [ hsPkgs.base ]
             else [

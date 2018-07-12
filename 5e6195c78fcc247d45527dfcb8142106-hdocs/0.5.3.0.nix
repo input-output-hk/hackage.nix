@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdocs = {
+        "hdocs" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.aeson
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          hdocs = {
+          "hdocs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hdocs
@@ -69,7 +69,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hdocs

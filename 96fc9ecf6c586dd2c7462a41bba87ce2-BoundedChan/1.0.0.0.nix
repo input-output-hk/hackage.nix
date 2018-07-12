@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BoundedChan = {
+        "BoundedChan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

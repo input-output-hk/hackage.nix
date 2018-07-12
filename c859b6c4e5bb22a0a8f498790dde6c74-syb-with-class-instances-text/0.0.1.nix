@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        syb-with-class-instances-text = {
+        "syb-with-class-instances-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb-with-class

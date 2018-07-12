@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imprevu-happstack = {
+        "imprevu-happstack" = {
           depends  = [
             hsPkgs.DebugTraceHelpers
             hsPkgs.imprevu
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.imprevu-happstack

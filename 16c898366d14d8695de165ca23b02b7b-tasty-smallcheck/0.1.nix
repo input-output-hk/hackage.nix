@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-smallcheck = {
+        "tasty-smallcheck" = {
           depends  = [
             hsPkgs.tasty
             hsPkgs.smallcheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-sqlite = {
+        "language-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

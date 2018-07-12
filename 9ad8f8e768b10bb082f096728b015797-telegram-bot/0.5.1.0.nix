@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        telegram-bot = {
+        "telegram-bot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client-tls
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hello-bot = {
+          "hello-bot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.telegram-bot
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          telegram-bot-test = {
+          "telegram-bot-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.telegram-bot

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        touched = {
+        "touched" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          touched = {
+          "touched" = {
             depends  = [
               hsPkgs.base
               hsPkgs.touched

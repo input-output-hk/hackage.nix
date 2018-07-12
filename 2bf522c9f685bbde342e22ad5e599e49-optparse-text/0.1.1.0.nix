@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        optparse-text = {
+        "optparse-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.optparse-applicative
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

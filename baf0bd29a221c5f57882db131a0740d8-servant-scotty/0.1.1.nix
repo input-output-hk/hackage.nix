@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-scotty = {
+        "servant-scotty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-types

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hieroglyph = {
+        "Hieroglyph" = {
           depends  = [
             hsPkgs.IfElse
             hsPkgs.OpenGL

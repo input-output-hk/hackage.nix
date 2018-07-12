@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web3 = {
+        "web3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -46,7 +46,7 @@ let
           ] ++ pkgs.lib.optional _flags.tls hsPkgs.http-client-tls;
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec-expectations
@@ -65,7 +65,7 @@ let
               hsPkgs.web3
             ];
           };
-          live = {
+          "live" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec-expectations

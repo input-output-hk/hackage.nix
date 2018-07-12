@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        chan = {
+        "chan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
           ];
         };
         tests = {
-          chan-test = {
+          "chan-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chan

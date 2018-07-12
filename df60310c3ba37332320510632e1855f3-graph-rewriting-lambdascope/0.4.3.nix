@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graph-rewriting-lambdascope = {
+        "graph-rewriting-lambdascope" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          lambdascope = {
+          "lambdascope" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pastepipe = {
+          "pastepipe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP

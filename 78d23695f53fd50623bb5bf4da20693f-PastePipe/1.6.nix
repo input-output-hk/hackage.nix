@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PastePipe = {
+        "PastePipe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          pastepipe = {
+          "pastepipe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP

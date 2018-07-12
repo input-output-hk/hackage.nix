@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ForSyDe = {
+        "ForSyDe" = {
           depends  = [
             hsPkgs.type-level
             hsPkgs.parameterized-data

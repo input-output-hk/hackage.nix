@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        datetime-sb = {
+        "datetime-sb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

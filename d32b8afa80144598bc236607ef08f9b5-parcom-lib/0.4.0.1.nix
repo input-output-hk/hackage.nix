@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parcom-lib = {
+        "parcom-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

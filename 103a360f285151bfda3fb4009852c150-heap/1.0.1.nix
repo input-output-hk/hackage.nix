@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        heap = {
+        "heap" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          heap-tests = {
+          "heap-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

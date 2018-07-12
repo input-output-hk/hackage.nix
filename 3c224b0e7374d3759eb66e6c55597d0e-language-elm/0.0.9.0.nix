@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-elm = {
+        "language-elm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          language-elm-test = {
+          "language-elm-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-elm

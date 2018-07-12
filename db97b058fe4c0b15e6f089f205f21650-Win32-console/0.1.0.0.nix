@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Win32-console = {
+        "Win32-console" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Win32

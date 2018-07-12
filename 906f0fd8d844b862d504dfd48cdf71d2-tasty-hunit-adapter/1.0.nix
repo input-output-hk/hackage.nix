@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-hunit-adapter = {
+        "tasty-hunit-adapter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit

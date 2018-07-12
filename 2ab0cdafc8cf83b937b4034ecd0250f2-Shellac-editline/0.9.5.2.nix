@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Shellac-editline = {
+        "Shellac-editline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.editline

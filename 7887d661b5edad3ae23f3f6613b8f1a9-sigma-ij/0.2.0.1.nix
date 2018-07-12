@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sigma-ij = {
+        "sigma-ij" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          sigma-ij = {
+          "sigma-ij" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gtk-mac-integration = {
+        "gtk-mac-integration" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

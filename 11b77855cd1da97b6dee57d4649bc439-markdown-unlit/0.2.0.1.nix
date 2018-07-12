@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        markdown-unlit = {
+        "markdown-unlit" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          markdown-unlit = {
+          "markdown-unlit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.markdown-unlit
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stringbuilder

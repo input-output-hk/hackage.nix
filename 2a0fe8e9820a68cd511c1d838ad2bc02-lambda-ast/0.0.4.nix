@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambda-ast = {
+        "lambda-ast" = {
           depends  = [ hsPkgs.base ];
         };
       };

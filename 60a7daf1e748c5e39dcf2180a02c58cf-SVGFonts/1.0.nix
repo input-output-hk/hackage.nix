@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SVGFonts = {
+        "SVGFonts" = {
           depends  = [
             hsPkgs.array
             hsPkgs.attoparsec-text
@@ -44,6 +44,6 @@ let
             hsPkgs.xml
           ];
         };
-        exes = { Fonts = {}; };
+        exes = { "Fonts" = {}; };
       };
     }

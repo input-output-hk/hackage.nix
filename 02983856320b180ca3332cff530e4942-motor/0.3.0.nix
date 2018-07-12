@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        motor = {
+        "motor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.indexed
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          example-door = {
+          "example-door" = {
             depends  = [
               hsPkgs.base
               hsPkgs.indexed
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.indexed

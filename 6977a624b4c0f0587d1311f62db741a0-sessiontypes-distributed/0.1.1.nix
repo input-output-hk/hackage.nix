@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sessiontypes-distributed = {
+        "sessiontypes-distributed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sessiontypes
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          sessiontypes-distributed-spawn = {
+          "sessiontypes-distributed-spawn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sessiontypes-distributed
@@ -43,7 +43,7 @@ let
               hsPkgs.network-transport-tcp
             ];
           };
-          sessiontypes-distributed-lifted = {
+          "sessiontypes-distributed-lifted" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sessiontypes-distributed

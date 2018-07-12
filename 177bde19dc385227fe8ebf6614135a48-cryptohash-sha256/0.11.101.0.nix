@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptohash-sha256 = {
+        "cryptohash-sha256" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         exes = {
-          sha256sum = {
+          "sha256sum" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.cryptohash-sha256
               hsPkgs.base
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          test-sha256 = {
+          "test-sha256" = {
             depends  = [
               hsPkgs.cryptohash-sha256
               hsPkgs.base
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          bench-sha256 = {
+          "bench-sha256" = {
             depends  = [
               hsPkgs.cryptohash-sha256
               hsPkgs.base

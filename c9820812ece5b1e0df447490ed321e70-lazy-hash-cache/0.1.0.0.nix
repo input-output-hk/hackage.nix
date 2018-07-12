@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazy-hash-cache = {
+        "lazy-hash-cache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lazy-hash

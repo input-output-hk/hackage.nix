@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex = {
+        "regex" = {
           depends  = [
             hsPkgs.array
             hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          re-gen-modules = {
+          "re-gen-modules" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -58,7 +58,7 @@ let
               hsPkgs.text
             ];
           };
-          re-include = {
+          "re-include" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.bytestring
@@ -67,7 +67,7 @@ let
               hsPkgs.text
             ];
           };
-          re-pp = {
+          "re-pp" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.bytestring
@@ -79,7 +79,7 @@ let
           };
         };
         tests = {
-          re-include-test = {
+          "re-include-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.bytestring
@@ -88,7 +88,7 @@ let
               hsPkgs.text
             ];
           };
-          re-gen-modules-test = {
+          "re-gen-modules-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -101,7 +101,7 @@ let
               hsPkgs.text
             ];
           };
-          re-nginx-log-processor = {
+          "re-nginx-log-processor" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -118,7 +118,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-pp-test = {
+          "re-pp-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.bytestring
@@ -128,7 +128,7 @@ let
               hsPkgs.text
             ];
           };
-          re-tests = {
+          "re-tests" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -144,7 +144,7 @@ let
               hsPkgs.text
             ];
           };
-          re-tutorial = {
+          "re-tutorial" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array

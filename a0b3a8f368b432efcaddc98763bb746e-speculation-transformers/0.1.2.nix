@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        speculation-transformers = {
+        "speculation-transformers" = {
           depends  = [
             hsPkgs.speculation
           ];

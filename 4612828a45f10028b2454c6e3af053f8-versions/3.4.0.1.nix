@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        versions = {
+        "versions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          versions-test = {
+          "versions-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

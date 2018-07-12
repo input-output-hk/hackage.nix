@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec2 = {
+        "hspec2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec-discover

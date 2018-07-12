@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-printf = {
+        "th-printf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          format = {
+          "format" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

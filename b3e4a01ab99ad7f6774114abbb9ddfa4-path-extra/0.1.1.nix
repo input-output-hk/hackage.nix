@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        path-extra = {
+        "path-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.path

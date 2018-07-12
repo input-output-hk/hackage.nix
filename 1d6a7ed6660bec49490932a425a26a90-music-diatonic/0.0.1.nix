@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        music-diatonic = {
+        "music-diatonic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

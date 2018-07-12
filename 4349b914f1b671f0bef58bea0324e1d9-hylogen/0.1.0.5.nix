@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hylogen = {
+        "hylogen" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          hylogen = {
+          "hylogen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

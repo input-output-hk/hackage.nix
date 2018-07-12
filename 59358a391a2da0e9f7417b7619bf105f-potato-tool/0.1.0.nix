@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          potato-tool = {
+          "potato-tool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

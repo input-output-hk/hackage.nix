@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netlink = {
+        "netlink" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,25 +34,25 @@ let
           ];
         };
         exes = {
-          dump_nl80211 = {
+          "dump_nl80211" = {
             depends  = [
               hsPkgs.base
               hsPkgs.netlink
             ];
           };
-          genlinfo = {
+          "genlinfo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.netlink
             ];
           };
-          dump_rtnetlink = {
+          "dump_rtnetlink" = {
             depends  = [
               hsPkgs.base
               hsPkgs.netlink
             ];
           };
-          Generate = {
+          "Generate" = {
             depends  = pkgs.lib.optionals _flags.generators [
               hsPkgs.base
               hsPkgs.language-c
@@ -61,7 +61,7 @@ let
               hsPkgs.regex-pcre
             ];
           };
-          GenerateGenl = {
+          "GenerateGenl" = {
             depends  = pkgs.lib.optionals _flags.generators [
               hsPkgs.base
               hsPkgs.language-c
@@ -70,7 +70,7 @@ let
               hsPkgs.regex-pcre
             ];
           };
-          GenerateNL80211 = {
+          "GenerateNL80211" = {
             depends  = pkgs.lib.optionals _flags.generators [
               hsPkgs.base
               hsPkgs.language-c

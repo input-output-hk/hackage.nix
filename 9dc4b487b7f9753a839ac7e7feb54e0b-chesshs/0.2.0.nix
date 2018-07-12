@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chesshs = {
+        "chesshs" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.base

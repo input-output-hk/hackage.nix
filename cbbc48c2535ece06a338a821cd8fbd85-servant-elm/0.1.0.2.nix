@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-elm = {
+        "servant-elm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          servant-elm-test = {
+          "servant-elm-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

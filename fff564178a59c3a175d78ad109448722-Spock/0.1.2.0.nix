@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock = {
+        "Spock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.scotty

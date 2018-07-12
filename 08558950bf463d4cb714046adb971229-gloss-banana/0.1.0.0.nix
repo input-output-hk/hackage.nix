@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gloss-banana = {
+        "gloss-banana" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gloss

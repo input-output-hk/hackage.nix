@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-qq = {
+        "json-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-glut = {
+        "reactive-glut" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

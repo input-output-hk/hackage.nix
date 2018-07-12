@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-instances = {
+        "ghc-instances" = {
           depends  = ((([
             hsPkgs.array
             hsPkgs.base

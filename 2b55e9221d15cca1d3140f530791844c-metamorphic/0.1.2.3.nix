@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        metamorphic = {
+        "metamorphic" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shelly = {
+        "shelly" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsyscall = {
+        "hsyscall" = {
           depends  = [ hsPkgs.base ];
           build-tools = [
             hsPkgs.buildPackages.hsc2hs

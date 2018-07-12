@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          linkchecker = {
+          "linkchecker" = {
             depends  = [
               hsPkgs.tagsoup
               hsPkgs.containers

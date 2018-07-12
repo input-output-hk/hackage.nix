@@ -21,19 +21,19 @@ let
       };
       components = {
         exes = {
-          language-python-roundtrip = {
+          "language-python-roundtrip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-python
             ];
           };
-          language-python-tokens = {
+          "language-python-tokens" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-python
             ];
           };
-          language-python-parse-pretty = {
+          "language-python-parse-pretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-python

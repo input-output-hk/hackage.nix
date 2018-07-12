@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hkt = {
+        "hkt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
           ];
         };
         tests = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hkt

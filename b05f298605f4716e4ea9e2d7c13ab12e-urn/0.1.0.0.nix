@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        urn = {
+        "urn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

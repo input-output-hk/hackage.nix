@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mios = {
+        "mios" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          cnf-stat = {
+          "cnf-stat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
               hsPkgs.vector
             ];
           };
-          mios-1.6.0 = {
+          "mios-1.6.0" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

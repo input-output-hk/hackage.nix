@@ -21,22 +21,14 @@ let
       };
       components = {
         exes = {
-          json-concat = {
+          "json-concat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AttoJson
               hsPkgs.bytestring
             ];
           };
-          json-deep-select-key = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.AttoJson
-              hsPkgs.bytestring
-              hsPkgs.containers
-            ];
-          };
-          json-select = {
+          "json-deep-select-key" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AttoJson
@@ -44,7 +36,15 @@ let
               hsPkgs.containers
             ];
           };
-          json-iter = {
+          "json-select" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.AttoJson
+              hsPkgs.bytestring
+              hsPkgs.containers
+            ];
+          };
+          "json-iter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AttoJson
@@ -52,42 +52,42 @@ let
               hsPkgs.process
             ];
           };
-          json-lines = {
+          "json-lines" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AttoJson
               hsPkgs.bytestring
             ];
           };
-          json-strings = {
+          "json-strings" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AttoJson
               hsPkgs.bytestring
             ];
           };
-          json-unlines = {
+          "json-unlines" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AttoJson
               hsPkgs.bytestring
             ];
           };
-          json-wrap = {
+          "json-wrap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AttoJson
               hsPkgs.bytestring
             ];
           };
-          json-xargs = {
+          "json-xargs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AttoJson
               hsPkgs.bytestring
             ];
           };
-          tar2json = {
+          "tar2json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

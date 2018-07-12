@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        boolexpr = {
+        "boolexpr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

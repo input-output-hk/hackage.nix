@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wl-pprint-text = {
+        "wl-pprint-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Agda = {
+        "Agda" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.QuickCheck
@@ -53,7 +53,7 @@ let
           ];
         };
         exes = {
-          agda-mode = {
+          "agda-mode" = {
             depends  = [
               hsPkgs.filepath
               hsPkgs.process

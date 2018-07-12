@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Webrexp = {
+        "Webrexp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          webrexp = {
+          "webrexp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

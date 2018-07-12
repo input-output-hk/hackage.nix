@@ -23,14 +23,14 @@ let
         buildType = "Simple";
       };
       components = {
-        unix-fcntl = {
+        "unix-fcntl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foreign-var
           ];
         };
         exes = {
-          record-lock = {
+          "record-lock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foreign-var

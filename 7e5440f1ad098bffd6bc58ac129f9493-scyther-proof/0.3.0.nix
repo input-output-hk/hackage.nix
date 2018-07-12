@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scyther-proof = {
+        "scyther-proof" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          scyther-proof = {
+          "scyther-proof" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

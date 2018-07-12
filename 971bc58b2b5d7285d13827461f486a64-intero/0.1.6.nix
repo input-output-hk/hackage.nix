@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          intero = {
+          "intero" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          intero-test = {
+          "intero-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

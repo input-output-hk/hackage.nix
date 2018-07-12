@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mpvguihs = {
+          "mpvguihs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

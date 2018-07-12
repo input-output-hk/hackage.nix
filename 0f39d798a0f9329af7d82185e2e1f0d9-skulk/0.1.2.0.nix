@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        skulk = {
+        "skulk" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.skulk
               hsPkgs.base

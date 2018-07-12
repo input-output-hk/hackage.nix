@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tensorflow-logging = {
+        "tensorflow-logging" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          LoggingTest = {
+          "LoggingTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

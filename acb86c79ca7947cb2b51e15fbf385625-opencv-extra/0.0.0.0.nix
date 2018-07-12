@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        opencv-extra = {
+        "opencv-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          doc-images-opencv-extra = {
+          "doc-images-opencv-extra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

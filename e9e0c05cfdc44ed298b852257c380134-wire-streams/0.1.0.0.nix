@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wire-streams = {
+        "wire-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          encode-decode-binary = {
+          "encode-decode-binary" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wire-streams

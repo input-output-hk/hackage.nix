@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-css = {
+        "hxt-css" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          hxt-css = {
+          "hxt-css" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.hxt-css

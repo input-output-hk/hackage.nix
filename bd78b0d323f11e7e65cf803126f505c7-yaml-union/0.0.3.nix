@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml-union = {
+        "yaml-union" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -36,14 +36,14 @@ let
           ];
         };
         exes = {
-          yaml-validate = {
+          "yaml-validate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.yaml
             ];
           };
-          yaml-union = {
+          "yaml-union" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -53,7 +53,7 @@ let
               hsPkgs.directory
             ];
           };
-          yaml-concat = {
+          "yaml-concat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -65,7 +65,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

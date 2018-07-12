@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vorbiscomment = {
+        "vorbiscomment" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

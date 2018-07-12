@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambda-placeholders = {
+        "lambda-placeholders" = {
           depends  = [ hsPkgs.base ];
         };
       };

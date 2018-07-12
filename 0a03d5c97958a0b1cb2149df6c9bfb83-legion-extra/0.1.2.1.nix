@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        legion-extra = {
+        "legion-extra" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          legion-extra-test = {
+          "legion-extra-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.legion-extra

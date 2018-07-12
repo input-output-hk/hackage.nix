@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-serialise-cbor = {
+        "binary-serialise-cbor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

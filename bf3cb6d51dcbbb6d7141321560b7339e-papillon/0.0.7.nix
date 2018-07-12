@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        papillon = {
+        "papillon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          papillon = {
+          "papillon" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

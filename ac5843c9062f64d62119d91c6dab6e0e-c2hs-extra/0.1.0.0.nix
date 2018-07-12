@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        c2hs-extra = {
+        "c2hs-extra" = {
           depends  = [ hsPkgs.base ];
           build-tools = [
             hsPkgs.buildPackages.c2hs

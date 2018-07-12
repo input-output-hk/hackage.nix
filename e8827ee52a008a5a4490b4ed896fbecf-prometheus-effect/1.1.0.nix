@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prometheus-effect = {
+        "prometheus-effect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.warp
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          weight = {
+          "weight" = {
             depends  = [
               hsPkgs.base
               hsPkgs.weigh
@@ -66,7 +66,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

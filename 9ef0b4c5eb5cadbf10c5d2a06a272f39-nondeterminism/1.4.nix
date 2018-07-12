@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nondeterminism = {
+        "nondeterminism" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          AmbTests = {
+          "AmbTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

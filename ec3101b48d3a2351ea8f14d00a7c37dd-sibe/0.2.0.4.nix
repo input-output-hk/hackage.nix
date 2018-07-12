@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sibe = {
+        "sibe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          example-xor = {
+          "example-xor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sibe
@@ -49,7 +49,7 @@ let
               hsPkgs.data-default-class
             ];
           };
-          example-word2vec = {
+          "example-word2vec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sibe
@@ -61,7 +61,7 @@ let
               hsPkgs.random
             ];
           };
-          example-424 = {
+          "example-424" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sibe
@@ -69,7 +69,7 @@ let
               hsPkgs.data-default-class
             ];
           };
-          example-notmnist = {
+          "example-notmnist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sibe
@@ -84,7 +84,7 @@ let
               hsPkgs.Chart-cairo
             ];
           };
-          example-naivebayes-doc-classifier = {
+          "example-naivebayes-doc-classifier" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sibe

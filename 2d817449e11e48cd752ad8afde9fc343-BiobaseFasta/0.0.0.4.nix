@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseFasta = {
+        "BiobaseFasta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,6 +31,6 @@ let
             hsPkgs.transformers
           ];
         };
-        exes = { Test = {}; };
+        exes = { "Test" = {}; };
       };
     }

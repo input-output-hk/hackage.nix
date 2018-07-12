@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thrift = {
+        "thrift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -47,7 +47,7 @@ let
             else [ hsPkgs.network ]);
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.thrift

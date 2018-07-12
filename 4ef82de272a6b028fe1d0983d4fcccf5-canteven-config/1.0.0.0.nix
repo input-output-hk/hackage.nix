@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        canteven-config = {
+        "canteven-config" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

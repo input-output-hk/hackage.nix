@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yampa-glfw = {
+        "yampa-glfw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Yampa
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          yampa-glfw-example = {
+          "yampa-glfw-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Yampa

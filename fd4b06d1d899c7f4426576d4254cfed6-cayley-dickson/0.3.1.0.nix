@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        cayley-dickson = {
+        "cayley-dickson" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

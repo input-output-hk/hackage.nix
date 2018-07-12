@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        butterflies = {
+        "butterflies" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          butterflies-flat = {
+          "butterflies-flat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

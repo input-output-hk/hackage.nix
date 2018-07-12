@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-predicates = {
+        "snap-predicates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          snap-predicates-test-suite = {
+          "snap-predicates-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

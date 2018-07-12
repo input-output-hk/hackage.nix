@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pandoc-citeproc = {
+        "pandoc-citeproc" = {
           depends  = (((([
             hsPkgs.containers
             hsPkgs.directory
@@ -61,10 +61,10 @@ let
               hsPkgs.time
             ]
             else [ hsPkgs.base ]);
-          build-tools = pkgs.lib.optional (_flags.embed_data_files && system.isOsx) hsPkgs.buildPackages.cpphs;
+          build-tools = pkgs.lib.optionals _flags.embed_data_files (pkgs.lib.optional system.isOsx hsPkgs.buildPackages.cpphs);
         };
         exes = {
-          pandoc-citeproc = {
+          "pandoc-citeproc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-citeproc
@@ -80,7 +80,7 @@ let
               hsPkgs.filepath
             ];
           };
-          test-citeproc = {
+          "test-citeproc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -101,7 +101,7 @@ let
           };
         };
         tests = {
-          test-pandoc-citeproc = {
+          "test-pandoc-citeproc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

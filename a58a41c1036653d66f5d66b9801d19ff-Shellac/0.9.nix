@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Shellac = {
+        "Shellac" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multistate = {
+        "multistate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          multistate-example = {
+          "multistate-example" = {
             depends  = pkgs.lib.optionals _flags.build-example [
               hsPkgs.multistate
               hsPkgs.base
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          multistate-test = {
+          "multistate-test" = {
             depends  = [
               hsPkgs.multistate
               hsPkgs.base

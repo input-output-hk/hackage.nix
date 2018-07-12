@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        horname = {
+        "horname" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          horname = {
+          "horname" = {
             depends  = [
               hsPkgs.base
               hsPkgs.horname

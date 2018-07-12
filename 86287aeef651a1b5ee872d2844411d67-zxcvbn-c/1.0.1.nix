@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        zxcvbn-c = {
+        "zxcvbn-c" = {
           depends  = [ hsPkgs.base ];
           libs = pkgs.lib.optional _flags.use-shared-lib pkgs.zxcvbn;
         };

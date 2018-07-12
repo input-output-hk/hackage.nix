@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        fingertree = {
+        "fingertree" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          ft-properties = {
+          "ft-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

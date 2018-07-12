@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vacuum = {
+        "vacuum" = {
           depends  = [
             hsPkgs.ghc-prim
             hsPkgs.base

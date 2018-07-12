@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-language = {
+        "gogol-language" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

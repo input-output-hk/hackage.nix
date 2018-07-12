@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        primesieve = {
+        "primesieve" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foundation
           ];
         };
         exes = {
-          prime-example = {
+          "prime-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foundation

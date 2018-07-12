@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        terminfo-hs = {
+        "terminfo-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.errors
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          System.Terminfo.Internal = {
+          "System.Terminfo.Internal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        leapseconds = {
+        "leapseconds" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

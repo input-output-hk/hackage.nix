@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GPipe-GLFW = {
+        "GPipe-GLFW" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          gpipe-glfw-smoketests = {
+          "gpipe-glfw-smoketests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GPipe

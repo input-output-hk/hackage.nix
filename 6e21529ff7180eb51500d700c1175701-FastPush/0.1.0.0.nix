@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FastPush = {
+        "FastPush" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

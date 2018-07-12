@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ctpl = {
+        "ctpl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chatty-text

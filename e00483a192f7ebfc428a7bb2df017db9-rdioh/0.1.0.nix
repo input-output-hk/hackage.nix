@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rdioh = {
+        "rdioh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

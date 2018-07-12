@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hprotoc = {
+          "hprotoc" = {
             depends  = [
               hsPkgs.protocol-buffers
               hsPkgs.protocol-buffers-descriptor

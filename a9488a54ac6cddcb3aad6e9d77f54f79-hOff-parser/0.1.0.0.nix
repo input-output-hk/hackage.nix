@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hOff-parser = {
+        "hOff-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

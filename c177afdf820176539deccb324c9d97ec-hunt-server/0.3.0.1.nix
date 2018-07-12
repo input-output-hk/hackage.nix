@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hunt-server = {
+          "hunt-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

@@ -23,25 +23,25 @@ let
         buildType = "Simple";
       };
       components = {
-        interprocess = {
+        "interprocess" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          concurrent-malloc = {
+          "concurrent-malloc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.typed-process
               hsPkgs.interprocess
             ];
           };
-          wait-qsem = {
+          "wait-qsem" = {
             depends  = [
               hsPkgs.base
               hsPkgs.typed-process
               hsPkgs.interprocess
             ];
           };
-          wait-mvar = {
+          "wait-mvar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.typed-process
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          StoredMVar = {
+          "StoredMVar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.typed-process

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-emacs-colours = {
+        "yi-emacs-colours" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

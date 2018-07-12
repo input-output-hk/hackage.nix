@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-zeppelin = {
+        "servant-zeppelin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.singletons

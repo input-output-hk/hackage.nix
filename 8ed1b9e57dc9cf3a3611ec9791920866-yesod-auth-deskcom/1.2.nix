@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-deskcom = {
+        "yesod-auth-deskcom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

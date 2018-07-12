@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netlist-to-vhdl = {
+        "netlist-to-vhdl" = {
           depends  = [
             hsPkgs.netlist
             hsPkgs.pretty

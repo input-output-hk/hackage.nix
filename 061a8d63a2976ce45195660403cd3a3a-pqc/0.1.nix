@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pqc = {
+        "pqc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

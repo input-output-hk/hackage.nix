@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        flow-er = {
+        "flow-er" = {
           depends  = [
             hsPkgs.base
             hsPkgs.flow
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

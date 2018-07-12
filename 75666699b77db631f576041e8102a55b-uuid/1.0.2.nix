@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuid = {
+        "uuid" = {
           depends  = [
             hsPkgs.random
             hsPkgs.binary

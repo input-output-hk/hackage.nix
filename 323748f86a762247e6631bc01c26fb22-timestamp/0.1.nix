@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timestamp = {
+        "timestamp" = {
           depends  = [
             hsPkgs.cereal
             hsPkgs.hashable

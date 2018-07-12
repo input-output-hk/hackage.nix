@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ebnf-bff = {
+        "ebnf-bff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          ebnf-parse = {
+          "ebnf-parse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

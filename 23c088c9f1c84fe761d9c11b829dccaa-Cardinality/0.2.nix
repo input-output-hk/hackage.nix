@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Cardinality = {
+        "Cardinality" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unsequential = {
+        "unsequential" = {
           depends  = [
             hsPkgs.dlist
             hsPkgs.transformers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          attoparsec-integration-test = {
+          "attoparsec-integration-test" = {
             depends  = [
               hsPkgs.unsequential
               hsPkgs.interspersed

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-dockerfile = {
+        "language-dockerfile" = {
           depends  = [
             hsPkgs.ShellCheck
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          dockerfmt = {
+          "dockerfmt" = {
             depends  = [
               hsPkgs.ShellCheck
               hsPkgs.base
@@ -57,7 +57,7 @@ let
               hsPkgs.language-dockerfile
             ];
           };
-          hadolint = {
+          "hadolint" = {
             depends  = [
               hsPkgs.ShellCheck
               hsPkgs.base
@@ -76,7 +76,7 @@ let
           };
         };
         tests = {
-          hadolint-unit-tests = {
+          "hadolint-unit-tests" = {
             depends  = [
               hsPkgs.ShellCheck
               hsPkgs.base
@@ -95,7 +95,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.ShellCheck
               hsPkgs.base

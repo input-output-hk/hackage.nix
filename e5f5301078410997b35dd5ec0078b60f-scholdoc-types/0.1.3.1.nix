@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scholdoc-types = {
+        "scholdoc-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

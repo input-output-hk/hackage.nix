@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        finite-field = {
+        "finite-field" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -38,7 +38,7 @@ let
             ]);
         };
         tests = {
-          TestPrimeField = {
+          "TestPrimeField" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.containers

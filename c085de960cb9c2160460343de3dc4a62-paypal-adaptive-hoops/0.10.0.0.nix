@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        paypal-adaptive-hoops = {
+        "paypal-adaptive-hoops" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          local = {
+          "local" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -62,7 +62,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          remote = {
+          "remote" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

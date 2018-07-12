@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ll-picosat = {
+        "ll-picosat" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.picosat ];
         };

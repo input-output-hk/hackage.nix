@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validate = {
+        "validate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        triangulation = {
+        "triangulation" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

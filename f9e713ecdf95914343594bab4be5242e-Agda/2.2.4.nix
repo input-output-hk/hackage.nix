@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Agda = {
+        "Agda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          agda-mode = {
+          "agda-mode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

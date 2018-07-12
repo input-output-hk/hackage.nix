@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsnsq = {
+        "hsnsq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          nsq-example = {
+          "nsq-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

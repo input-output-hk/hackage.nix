@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        reify = {
+        "reify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
           ];
         };
         exes = {
-          reify = {
+          "reify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

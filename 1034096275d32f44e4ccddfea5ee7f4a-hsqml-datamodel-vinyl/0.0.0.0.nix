@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsqml-datamodel-vinyl = {
+        "hsqml-datamodel-vinyl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsqml-datamodel

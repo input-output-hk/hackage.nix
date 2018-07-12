@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsbencher-fusion = {
+        "hsbencher-fusion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

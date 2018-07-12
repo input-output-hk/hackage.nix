@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yices = {
+        "yices" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

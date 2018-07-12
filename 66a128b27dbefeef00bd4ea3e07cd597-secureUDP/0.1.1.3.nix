@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        secureUDP = {
+        "secureUDP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

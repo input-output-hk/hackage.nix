@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scotty = {
+        "scotty" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        labyrinth = {
+        "labyrinth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          labyrinth-server = {
+          "labyrinth-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

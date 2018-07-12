@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snipcheck = {
+        "snipcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pandoc

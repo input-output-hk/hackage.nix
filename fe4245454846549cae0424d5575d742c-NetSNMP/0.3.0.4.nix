@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NetSNMP = {
+        "NetSNMP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-rust = {
+        "language-rust" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.prettyprinter
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -50,7 +50,7 @@ let
               hsPkgs.language-rust
             ];
           };
-          rustc-tests = {
+          "rustc-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -69,7 +69,7 @@ let
           };
         };
         benchmarks = {
-          timing-benchmarks = {
+          "timing-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -82,7 +82,7 @@ let
               hsPkgs.aeson
             ];
           };
-          allocation-benchmarks = {
+          "allocation-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

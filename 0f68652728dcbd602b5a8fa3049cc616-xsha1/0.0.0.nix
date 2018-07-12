@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xsha1 = {
+        "xsha1" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

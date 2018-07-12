@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-level-sets = {
+        "type-level-sets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

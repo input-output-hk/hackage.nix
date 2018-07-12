@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-search = {
+        "binary-search" = {
           depends  = [ hsPkgs.base ];
         };
       };

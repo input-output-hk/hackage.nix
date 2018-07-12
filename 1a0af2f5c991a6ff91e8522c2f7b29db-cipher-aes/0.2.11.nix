@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cipher-aes = {
+        "cipher-aes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test-cipher-aes = {
+          "test-cipher-aes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cipher-aes
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          bench-cipher-aes = {
+          "bench-cipher-aes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

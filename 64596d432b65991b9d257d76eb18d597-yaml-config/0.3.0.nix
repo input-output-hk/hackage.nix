@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml-config = {
+        "yaml-config" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          yaml-config-tests = {
+          "yaml-config-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

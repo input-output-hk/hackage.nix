@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskheap = {
+        "haskheap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-fft = {
+        "accelerate-fft" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.accelerate

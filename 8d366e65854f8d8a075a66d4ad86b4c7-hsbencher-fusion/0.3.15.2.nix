@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsbencher-fusion = {
+        "hsbencher-fusion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          hsbencher-fusion-upload-criterion = {
+          "hsbencher-fusion-upload-criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -51,7 +51,7 @@ let
               hsPkgs.hsbencher
             ];
           };
-          hsbencher-fusion-upload-csv = {
+          "hsbencher-fusion-upload-csv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

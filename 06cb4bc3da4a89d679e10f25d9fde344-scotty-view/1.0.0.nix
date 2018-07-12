@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scotty-view = {
+        "scotty-view" = {
           depends  = [
             hsPkgs.base
             hsPkgs.scotty
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          web = {
+          "web" = {
             depends  = [
               hsPkgs.base
               hsPkgs.scotty

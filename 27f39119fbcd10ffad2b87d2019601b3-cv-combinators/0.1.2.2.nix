@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cv-combinators = {
+        "cv-combinators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HOpenCV
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          test-cv-combinators = {
+          "test-cv-combinators" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HOpenCV
@@ -37,7 +37,7 @@ let
               hsPkgs.vector-space
             ];
           };
-          test-cv-combinators2 = {
+          "test-cv-combinators2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HOpenCV

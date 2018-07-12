@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        groot = {
+        "groot" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.amazonka
@@ -67,7 +67,7 @@ let
           ];
         };
         exes = {
-          groot = {
+          "groot" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.amazonka
@@ -109,7 +109,7 @@ let
           };
         };
         tests = {
-          groot-test = {
+          "groot-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

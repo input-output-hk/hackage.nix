@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serversession-backend-acid-state = {
+        "serversession-backend-acid-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.acid-state
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.acid-state

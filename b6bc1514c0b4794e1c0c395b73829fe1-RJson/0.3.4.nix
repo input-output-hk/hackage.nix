@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RJson = {
+        "RJson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

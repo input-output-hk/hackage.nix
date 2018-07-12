@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deka = {
+        "deka" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           libs = [ pkgs.mpdec ];
         };
         tests = {
-          dectest = {
+          "dectest" = {
             depends  = [
               hsPkgs.deka
               hsPkgs.base
@@ -41,7 +41,7 @@ let
             ];
             libs = [ pkgs.mpdec ];
           };
-          native = {
+          "native" = {
             depends  = [
               hsPkgs.deka
               hsPkgs.base

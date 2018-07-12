@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        representable-tries = {
+        "representable-tries" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors

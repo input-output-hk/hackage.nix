@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linear-vect = {
+        "linear-vect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

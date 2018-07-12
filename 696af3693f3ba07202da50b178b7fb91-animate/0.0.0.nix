@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        animate = {
+        "animate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
           ];
         };
         tests = {
-          animate-test-suite = {
+          "animate-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.animate

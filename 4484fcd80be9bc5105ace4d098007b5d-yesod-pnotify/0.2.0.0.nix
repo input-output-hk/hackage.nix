@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-pnotify = {
+        "yesod-pnotify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod

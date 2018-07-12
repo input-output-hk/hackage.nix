@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chatwork = {
+        "chatwork" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

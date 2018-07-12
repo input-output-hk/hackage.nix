@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        resource-pool-catchio = {
+        "resource-pool-catchio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

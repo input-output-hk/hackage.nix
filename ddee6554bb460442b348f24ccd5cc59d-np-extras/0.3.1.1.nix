@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        np-extras = {
+        "np-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.numeric-prelude

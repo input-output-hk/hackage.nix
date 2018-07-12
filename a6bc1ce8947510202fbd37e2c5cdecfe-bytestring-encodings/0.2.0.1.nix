@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-encodings = {
+        "bytestring-encodings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          microbenchmark = {
+          "microbenchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

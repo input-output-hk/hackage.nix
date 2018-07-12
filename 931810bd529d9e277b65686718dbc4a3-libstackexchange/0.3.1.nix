@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libstackexchange = {
+        "libstackexchange" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          rep-watcher = {
+          "rep-watcher" = {
             depends  = [
               hsPkgs.aeson-lens
               hsPkgs.base
@@ -45,7 +45,7 @@ let
               hsPkgs.libstackexchange
             ];
           };
-          badges-watcher = {
+          "badges-watcher" = {
             depends  = [
               hsPkgs.aeson-lens
               hsPkgs.base
@@ -53,7 +53,7 @@ let
               hsPkgs.libstackexchange
             ];
           };
-          server-side-authentication = {
+          "server-side-authentication" = {
             depends  = [
               hsPkgs.base
               hsPkgs.happstack-server
@@ -64,7 +64,7 @@ let
           };
         };
         tests = {
-          api = {
+          "api" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

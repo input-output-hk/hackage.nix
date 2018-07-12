@@ -25,7 +25,7 @@ let
         buildType = "Configure";
       };
       components = {
-        mersenne-random = {
+        "mersenne-random" = {
           depends  = if _flags.small_base
             then [ hsPkgs.base ]
             else [

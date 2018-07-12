@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hybrid-vectors = {
+        "hybrid-vectors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

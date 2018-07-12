@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tinyXml = {
+        "tinyXml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          validate = {
+          "validate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

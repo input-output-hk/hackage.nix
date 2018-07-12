@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prolog-graph-lib = {
+        "prolog-graph-lib" = {
           depends  = [
             hsPkgs.prolog
             hsPkgs.base

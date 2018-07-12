@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        th-to-exp = {
+        "th-to-exp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          th-to-exp-test-suite = {
+          "th-to-exp-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

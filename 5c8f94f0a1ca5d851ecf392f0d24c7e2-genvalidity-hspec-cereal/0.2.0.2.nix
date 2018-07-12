@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-hspec-cereal = {
+        "genvalidity-hspec-cereal" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          genvalidity-hspec-cereal-doctests = {
+          "genvalidity-hspec-cereal-doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -40,7 +40,7 @@ let
               hsPkgs.hspec
             ];
           };
-          genvalidity-hspec-cereal-test = {
+          "genvalidity-hspec-cereal-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.genvalidity

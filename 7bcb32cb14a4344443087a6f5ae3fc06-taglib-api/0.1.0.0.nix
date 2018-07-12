@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        taglib-api = {
+        "taglib-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

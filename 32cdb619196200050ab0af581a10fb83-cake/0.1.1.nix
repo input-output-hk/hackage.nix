@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cake = {
+        "cake" = {
           depends  = [
             hsPkgs.base
             hsPkgs.derive
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          cake = {
+          "cake" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

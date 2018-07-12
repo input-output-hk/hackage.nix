@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smartGroup = {
+        "smartGroup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

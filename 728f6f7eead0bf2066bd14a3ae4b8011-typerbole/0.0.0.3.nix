@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typerbole = {
+        "typerbole" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          typerbole-diagrams = {
+          "typerbole-diagrams" = {
             depends  = [
               hsPkgs.base
               hsPkgs.diagrams-lib
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          typerbole-testing = {
+          "typerbole-testing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

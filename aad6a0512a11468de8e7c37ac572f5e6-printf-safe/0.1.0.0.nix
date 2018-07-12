@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        printf-safe = {
+        "printf-safe" = {
           depends  = [ hsPkgs.base ];
         };
       };

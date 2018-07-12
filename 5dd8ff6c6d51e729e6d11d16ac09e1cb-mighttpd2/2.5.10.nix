@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mighty = {
+          "mighty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
               hsPkgs.warp
             ];
           };
-          mkindex = {
+          "mkindex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

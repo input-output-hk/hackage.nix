@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-lambda = {
+        "aws-lambda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

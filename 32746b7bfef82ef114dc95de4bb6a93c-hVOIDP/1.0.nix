@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hVOIDP = {
+          "hVOIDP" = {
             depends  = [
               hsPkgs.array
               hsPkgs.hmatrix

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TransformeR = {
+        "TransformeR" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          TransformeR-exe = {
+          "TransformeR-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.TransformeR
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          TransformeR-test = {
+          "TransformeR-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.TransformeR

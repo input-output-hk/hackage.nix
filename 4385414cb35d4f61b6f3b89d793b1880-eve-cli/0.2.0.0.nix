@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eve-cli = {
+        "eve-cli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          eve-cli-exe = {
+          "eve-cli-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          eve-cli-test = {
+          "eve-cli-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

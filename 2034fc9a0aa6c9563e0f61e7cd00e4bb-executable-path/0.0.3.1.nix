@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        executable-path = {
+        "executable-path" = {
           depends  = (((([
             hsPkgs.base
             hsPkgs.filepath

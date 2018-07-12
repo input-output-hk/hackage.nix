@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nemesis = {
+        "nemesis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          nemesis = {
+          "nemesis" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NTRU = {
+        "NTRU" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SHA

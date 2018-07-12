@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hscd = {
+        "hscd" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hscd = {
+          "hscd" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        wxdirect = {
+        "wxdirect" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          wxdirect = {
+          "wxdirect" = {
             depends  = [
               hsPkgs.parsec
               hsPkgs.time

@@ -21,42 +21,42 @@ let
       };
       components = {
         exes = {
-          lesson01 = {
+          "lesson01" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL
               hsPkgs.GLUT
             ];
           };
-          lesson02 = {
+          "lesson02" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL
               hsPkgs.GLUT
             ];
           };
-          lesson03 = {
+          "lesson03" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL
               hsPkgs.GLUT
             ];
           };
-          lesson04 = {
+          "lesson04" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL
               hsPkgs.GLUT
             ];
           };
-          lesson05 = {
+          "lesson05" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL
               hsPkgs.GLUT
             ];
           };
-          lesson06 = {
+          "lesson06" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL
@@ -64,28 +64,28 @@ let
               hsPkgs.haskell98
             ];
           };
-          lesson07 = {
+          "lesson07" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL
               hsPkgs.GLUT
             ];
           };
-          lesson08 = {
+          "lesson08" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL
               hsPkgs.GLUT
             ];
           };
-          lesson09 = {
+          "lesson09" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL
               hsPkgs.GLUT
             ];
           };
-          lesson10 = {
+          "lesson10" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL
@@ -93,14 +93,14 @@ let
               hsPkgs.array
             ];
           };
-          lesson11 = {
+          "lesson11" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL
               hsPkgs.GLUT
             ];
           };
-          lesson12 = {
+          "lesson12" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-webdriver = {
+        "hspec-webdriver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit

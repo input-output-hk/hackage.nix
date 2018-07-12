@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          gtc = {
+          "gtc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -37,7 +37,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          gtg = {
+          "gtg" = {
             depends  = pkgs.lib.optionals _flags.gui [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex-jsx = {
+        "reflex-jsx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

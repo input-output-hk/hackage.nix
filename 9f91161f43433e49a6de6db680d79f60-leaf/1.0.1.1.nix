@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          leaf = {
+          "leaf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

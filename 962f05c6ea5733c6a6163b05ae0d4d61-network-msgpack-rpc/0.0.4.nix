@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-msgpack-rpc = {
+        "network-msgpack-rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MissingH
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

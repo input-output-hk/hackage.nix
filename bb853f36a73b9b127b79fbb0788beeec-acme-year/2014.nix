@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-year = {
+        "acme-year" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.acme-year
@@ -33,7 +33,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.acme-year

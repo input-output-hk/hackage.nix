@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrent-machines = {
+        "concurrent-machines" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-control
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.concurrent-machines
@@ -48,7 +48,7 @@ let
               hsPkgs.time
             ];
           };
-          splotime = {
+          "splotime" = {
             depends  = pkgs.lib.optionals _flags.splot [
               hsPkgs.base
               hsPkgs.concurrent-machines
@@ -62,7 +62,7 @@ let
           };
         };
         benchmarks = {
-          fanout = {
+          "fanout" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

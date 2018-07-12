@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        floating-bits = {
+        "floating-bits" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.floating-bits
@@ -32,7 +32,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.floating-bits

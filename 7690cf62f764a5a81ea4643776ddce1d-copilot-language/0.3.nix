@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        copilot-language = {
+        "copilot-language" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

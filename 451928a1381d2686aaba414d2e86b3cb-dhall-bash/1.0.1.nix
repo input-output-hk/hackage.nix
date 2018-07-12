@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dhall-bash = {
+        "dhall-bash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          dhall-to-bash = {
+          "dhall-to-bash" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

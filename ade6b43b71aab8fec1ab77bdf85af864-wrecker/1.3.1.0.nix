@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wrecker = {
+        "wrecker" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-terminal
@@ -75,7 +75,7 @@ let
           ];
         };
         exes = {
-          wreck = {
+          "wreck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-client

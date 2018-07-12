@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Control-Engine = {
+        "Control-Engine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

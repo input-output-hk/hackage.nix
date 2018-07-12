@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        engineering-units = {
+        "engineering-units" = {
           depends  = [ hsPkgs.base ];
         };
       };

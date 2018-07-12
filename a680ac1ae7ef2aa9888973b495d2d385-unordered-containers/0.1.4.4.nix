@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unordered-containers = {
+        "unordered-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          map-properties = {
+          "map-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hashable
@@ -38,7 +38,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          set-properties = {
+          "set-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

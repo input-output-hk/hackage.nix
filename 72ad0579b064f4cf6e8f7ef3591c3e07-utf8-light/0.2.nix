@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        utf8-light = {
+        "utf8-light" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         exes = {
-          utf8flip = {
+          "utf8flip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

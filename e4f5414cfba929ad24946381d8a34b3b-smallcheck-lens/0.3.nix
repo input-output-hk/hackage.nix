@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smallcheck-lens = {
+        "smallcheck-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

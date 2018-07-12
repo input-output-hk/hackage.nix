@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nsis = {
+        "nsis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          nsis-test = {
+          "nsis-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nsis

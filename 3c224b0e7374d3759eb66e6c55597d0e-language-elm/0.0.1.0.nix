@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-elm = {
+        "language-elm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          language-elm-exe = {
+          "language-elm-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-elm
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          language-elm-test = {
+          "language-elm-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-elm

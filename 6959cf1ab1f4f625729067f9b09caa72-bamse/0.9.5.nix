@@ -25,7 +25,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bamse = {
+        "bamse" = {
           depends  = [
             hsPkgs.com
             hsPkgs.process
@@ -37,9 +37,9 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          hsDotnetGen = {};
-          bamseGen = {};
-          runTests = {
+          "hsDotnetGen" = {};
+          "bamseGen" = {};
+          "runTests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HUnit

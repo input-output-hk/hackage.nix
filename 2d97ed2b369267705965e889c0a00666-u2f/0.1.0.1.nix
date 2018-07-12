@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        u2f = {
+        "u2f" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cryptonite
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          hspec-suite = {
+          "hspec-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

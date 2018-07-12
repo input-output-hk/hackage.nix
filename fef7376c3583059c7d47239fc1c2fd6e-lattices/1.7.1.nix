@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lattices = {
+        "lattices" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.base-compat
@@ -38,7 +38,7 @@ let
           ]) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.5")) hsPkgs.ghc-prim;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

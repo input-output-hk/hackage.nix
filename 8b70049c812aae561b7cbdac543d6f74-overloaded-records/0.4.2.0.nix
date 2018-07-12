@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        overloaded-records = {
+        "overloaded-records" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8" && _flags.force-functor-classes) hsPkgs.transformers;
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default-class

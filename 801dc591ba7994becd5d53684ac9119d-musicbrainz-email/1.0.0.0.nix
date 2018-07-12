@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        musicbrainz-email = {
+        "musicbrainz-email" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.amqp
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          musicbrainz-emailer = {
+          "musicbrainz-emailer" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.amqp
@@ -53,7 +53,7 @@ let
               hsPkgs.xmlhtml
             ];
           };
-          enqueue-mail = {
+          "enqueue-mail" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.amqp
@@ -68,7 +68,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.amqp

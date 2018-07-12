@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoppy-docs = {
+        "hoppy-docs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nvim-hs = {
+        "nvim-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -54,7 +54,7 @@ let
           ];
         };
         exes = {
-          nvim-hs = {
+          "nvim-hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nvim-hs
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nvim-hs

@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        backdropper = {};
+        "backdropper" = {};
         exes = {
-          backdropper_consol = {
+          "backdropper_consol" = {
             depends  = [
               hsPkgs.old-time
               hsPkgs.base

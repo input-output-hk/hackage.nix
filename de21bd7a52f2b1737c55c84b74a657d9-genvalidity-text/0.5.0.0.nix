@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-text = {
+        "genvalidity-text" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.array
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          genvalidity-text-test = {
+          "genvalidity-text-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

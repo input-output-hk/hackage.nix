@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        suspend = {
+        "suspend" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base

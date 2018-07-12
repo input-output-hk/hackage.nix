@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-wnck = {
+        "gi-wnck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

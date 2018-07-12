@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cufft = {
+        "cufft" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cuda

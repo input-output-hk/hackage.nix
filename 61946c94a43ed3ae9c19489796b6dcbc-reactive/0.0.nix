@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        reactive = {
+        "reactive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.TypeCompose

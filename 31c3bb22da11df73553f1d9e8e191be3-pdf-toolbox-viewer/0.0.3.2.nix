@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pdf-toolbox-viewer = {
+          "pdf-toolbox-viewer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        call-haskell-from-anything = {
+        "call-haskell-from-anything" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          call-haskell-from-anything.so = {
+          "call-haskell-from-anything.so" = {
             depends  = [
               hsPkgs.call-haskell-from-anything
               hsPkgs.base

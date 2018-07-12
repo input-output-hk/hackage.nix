@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-embed = {
+        "data-embed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          embedtool = {
+          "embedtool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cereal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hascat-setup = {
+        "hascat-setup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hascat-lib
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          hascat-setup = {
+          "hascat-setup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hascat-lib

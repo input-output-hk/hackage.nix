@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        print-debugger = {
+        "print-debugger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

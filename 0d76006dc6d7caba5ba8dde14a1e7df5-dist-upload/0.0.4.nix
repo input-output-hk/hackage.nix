@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dist-upload = {
+        "dist-upload" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -29,6 +29,6 @@ let
             hsPkgs.Cabal
           ];
         };
-        exes = { dist-upload = {}; };
+        exes = { "dist-upload" = {}; };
       };
     }

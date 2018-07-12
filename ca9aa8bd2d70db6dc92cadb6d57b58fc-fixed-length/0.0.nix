@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixed-length = {
+        "fixed-length" = {
           depends  = [
             hsPkgs.non-empty
             hsPkgs.utility-ht

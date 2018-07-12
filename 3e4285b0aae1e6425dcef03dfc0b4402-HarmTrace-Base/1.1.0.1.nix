@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HarmTrace-Base = {
+        "HarmTrace-Base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uu-parsinglib

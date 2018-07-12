@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsc3-server = {
+        "hsc3-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bitset
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          hsc3-hello = {
+          "hsc3-hello" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hosc
@@ -52,7 +52,7 @@ let
               hsPkgs.transformers
             ];
           };
-          hsc3-sine-grains = {
+          "hsc3-sine-grains" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hosc
@@ -65,7 +65,7 @@ let
           };
         };
         tests = {
-          hsc3-server-test = {
+          "hsc3-server-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.failure

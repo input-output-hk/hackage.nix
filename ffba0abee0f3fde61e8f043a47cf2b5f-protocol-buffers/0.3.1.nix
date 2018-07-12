@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protocol-buffers = {
+        "protocol-buffers" = {
           depends  = [
             hsPkgs.binary
             hsPkgs.parsec

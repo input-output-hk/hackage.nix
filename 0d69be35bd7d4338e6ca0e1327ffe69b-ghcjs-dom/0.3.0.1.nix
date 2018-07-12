@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-dom = {
+        "ghcjs-dom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

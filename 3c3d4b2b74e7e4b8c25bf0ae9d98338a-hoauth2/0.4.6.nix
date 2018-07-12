@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoauth2 = {
+        "hoauth2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          test-weibo = {
+          "test-weibo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -43,18 +43,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-google = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.http-types
-              hsPkgs.http-conduit
-              hsPkgs.text
-              hsPkgs.bytestring
-              hsPkgs.aeson
-              hsPkgs.hoauth2
-            ];
-          };
-          test-github = {
+          "test-google" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -65,7 +54,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-douban = {
+          "test-github" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -76,7 +65,18 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-fb = {
+          "test-douban" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.http-types
+              hsPkgs.http-conduit
+              hsPkgs.text
+              hsPkgs.bytestring
+              hsPkgs.aeson
+              hsPkgs.hoauth2
+            ];
+          };
+          "test-fb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types

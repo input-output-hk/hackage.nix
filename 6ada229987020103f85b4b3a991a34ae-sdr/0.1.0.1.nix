@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdr = {
+        "sdr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fftwRaw
@@ -52,7 +52,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -66,7 +66,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

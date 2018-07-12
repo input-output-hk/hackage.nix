@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-inv-route = {
+        "web-inv-route" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.containers
@@ -40,7 +40,7 @@ let
           ] ++ pkgs.lib.optional _flags.uri hsPkgs.network-uri) ++ pkgs.lib.optional _flags.wai hsPkgs.wai) ++ pkgs.lib.optional _flags.snap hsPkgs.snap-core) ++ pkgs.lib.optional _flags.happstack hsPkgs.happstack-server;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

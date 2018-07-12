@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xournal-render = {
+        "xournal-render" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

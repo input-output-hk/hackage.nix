@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-routes = {
+        "web-routes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ircbouncer = {
+          "ircbouncer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-compat

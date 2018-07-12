@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kontrakcja-templates = {
+        "kontrakcja-templates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HStringTemplate
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test-text-string-templates = {
+          "test-text-string-templates" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb

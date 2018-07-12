@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        random-access-list = {
+        "random-access-list" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

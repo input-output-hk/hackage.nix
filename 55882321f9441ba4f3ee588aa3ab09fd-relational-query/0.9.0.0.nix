@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        relational-query = {
+        "relational-query" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -41,7 +41,7 @@ let
           ] ++ pkgs.lib.optional _flags.ghc74-generic hsPkgs.ghc-prim;
         };
         tests = {
-          sqls = {
+          "sqls" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quickcheck-simple
@@ -50,7 +50,7 @@ let
               hsPkgs.transformers
             ] ++ pkgs.lib.optional _flags.ghc74-generic hsPkgs.ghc-prim;
           };
-          sqlsArrow = {
+          "sqlsArrow" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quickcheck-simple

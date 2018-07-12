@@ -22,18 +22,18 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-morpheus = {
+        "hmatrix-morpheus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
           ];
-          libs = if system.isLinux && _flags.openblas
+          libs = pkgs.lib.optionals system.isLinux (if _flags.openblas
             then [ pkgs.openblas ]
-            else [ pkgs.blas pkgs.lapack ];
+            else [ pkgs.blas pkgs.lapack ]);
           frameworks = pkgs.lib.optional system.isOsx pkgs.Accelerate;
         };
         tests = {
-          hmatrix-morpheus-test = {
+          "hmatrix-morpheus-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hmatrix-morpheus
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          hmatrix-morpheus-bench = {
+          "hmatrix-morpheus-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hmatrix-morpheus

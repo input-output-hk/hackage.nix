@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fadno = {
+        "fadno" = {
           depends  = [
             hsPkgs.Decimal
             hsPkgs.HUnit
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

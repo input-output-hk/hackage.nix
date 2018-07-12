@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atom-msp430 = {
+        "atom-msp430" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

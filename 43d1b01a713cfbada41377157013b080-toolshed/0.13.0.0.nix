@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toolshed = {
+        "toolshed" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional _flags.havedeepseq hsPkgs.deepseq;
         };
         exes = {
-          toolshed = {
+          "toolshed" = {
             depends  = [ hsPkgs.Cabal ];
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        procrastinating-variable = {
+        "procrastinating-variable" = {
           depends  = [ hsPkgs.base ];
         };
       };

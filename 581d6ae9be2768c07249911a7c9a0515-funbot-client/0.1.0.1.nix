@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        funbot-client = {
+        "funbot-client" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty

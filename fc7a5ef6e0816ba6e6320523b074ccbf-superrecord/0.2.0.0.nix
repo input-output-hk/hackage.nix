@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        superrecord = {
+        "superrecord" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          superrecord-test = {
+          "superrecord-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.superrecord
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          superrecord-bench = {
+          "superrecord-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.superrecord

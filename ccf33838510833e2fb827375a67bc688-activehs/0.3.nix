@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          activehs = {
+          "activehs" = {
             depends  = [
               hsPkgs.Agda
               hsPkgs.highlighting-kate

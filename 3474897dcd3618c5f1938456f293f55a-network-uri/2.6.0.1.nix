@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        network-uri = {
+        "network-uri" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         tests = {
-          uri = {
+          "uri" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsdns-cache = {
+        "hsdns-cache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

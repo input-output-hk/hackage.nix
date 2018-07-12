@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cdeps = {
+        "cdeps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          cdeps = {
+          "cdeps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cdeps
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          cdeps-test = {
+          "cdeps-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cdeps

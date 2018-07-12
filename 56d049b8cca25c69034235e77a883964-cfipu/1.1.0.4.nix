@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cfipu = {
+          "cfipu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

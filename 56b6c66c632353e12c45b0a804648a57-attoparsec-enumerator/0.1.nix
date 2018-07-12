@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec-enumerator = {
+        "attoparsec-enumerator" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.bytestring

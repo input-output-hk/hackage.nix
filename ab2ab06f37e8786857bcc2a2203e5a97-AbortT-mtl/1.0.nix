@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AbortT-mtl = {
+        "AbortT-mtl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.AbortT-transformers

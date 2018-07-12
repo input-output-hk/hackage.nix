@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          baskell = {
+          "baskell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

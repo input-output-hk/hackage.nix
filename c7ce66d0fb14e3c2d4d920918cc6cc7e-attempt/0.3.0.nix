@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attempt = {
+        "attempt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.failure

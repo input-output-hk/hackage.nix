@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        adhoc-network = {
+        "adhoc-network" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

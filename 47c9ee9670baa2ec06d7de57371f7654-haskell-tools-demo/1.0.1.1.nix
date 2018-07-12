@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-demo = {
+        "haskell-tools-demo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          ht-demo = {
+          "ht-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-tools-demo
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          haskell-tools-demo-tests = {
+          "haskell-tools-demo-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

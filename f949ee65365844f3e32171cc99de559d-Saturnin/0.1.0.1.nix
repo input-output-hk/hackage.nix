@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Saturnin = {
+        "Saturnin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          saturnin = {
+          "saturnin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Saturnin
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Saturnin
@@ -63,14 +63,14 @@ let
               hsPkgs.hspec
             ];
           };
-          documentation = {
+          "documentation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.regex-compat
             ];
           };
-          style = {
+          "style" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        invariant = {
+        "invariant" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant

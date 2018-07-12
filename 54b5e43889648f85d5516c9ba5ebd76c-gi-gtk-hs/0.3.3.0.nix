@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gi-gtk-hs = {
+        "gi-gtk-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat

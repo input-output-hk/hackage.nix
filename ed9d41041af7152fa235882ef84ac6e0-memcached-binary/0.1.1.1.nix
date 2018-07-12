@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memcached-binary = {
+        "memcached-binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.memcached-binary

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          midimory = {
+          "midimory" = {
             depends  = [
               hsPkgs.wx
               hsPkgs.wxcore
@@ -38,7 +38,7 @@ let
               hsPkgs.base
             ];
           };
-          midimory-reactive = {
+          "midimory-reactive" = {
             depends  = pkgs.lib.optionals _flags.reactive [
               hsPkgs.reactive-banana-wx
               hsPkgs.reactive-banana

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          happy = {
+          "happy" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.mtl

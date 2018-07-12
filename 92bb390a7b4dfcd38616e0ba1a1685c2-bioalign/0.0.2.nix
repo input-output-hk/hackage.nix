@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bioalign = {
+        "bioalign" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bitcoin-hs = {
+        "bitcoin-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          bitcoin-hs-tests = {
+          "bitcoin-hs-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

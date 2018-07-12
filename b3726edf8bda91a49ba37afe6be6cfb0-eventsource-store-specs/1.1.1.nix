@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventsource-store-specs = {
+        "eventsource-store-specs" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.async

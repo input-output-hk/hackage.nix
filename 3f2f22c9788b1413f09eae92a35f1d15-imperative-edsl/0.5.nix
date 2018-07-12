@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imperative-edsl = {
+        "imperative-edsl" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -50,7 +50,7 @@ let
             ]);
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.imperative-edsl

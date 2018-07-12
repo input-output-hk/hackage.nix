@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opentheory = {
+        "opentheory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          opentheory-test = {
+          "opentheory-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

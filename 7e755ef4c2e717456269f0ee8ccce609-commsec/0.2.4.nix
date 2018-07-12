@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        commsec = {
+        "commsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cipher-aes128

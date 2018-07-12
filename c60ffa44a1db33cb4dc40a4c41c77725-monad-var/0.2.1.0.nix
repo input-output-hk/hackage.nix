@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-var = {
+        "monad-var" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat

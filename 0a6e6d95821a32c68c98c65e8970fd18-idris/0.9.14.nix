@@ -27,7 +27,7 @@ let
         buildType = "Custom";
       };
       components = {
-        idris = {
+        "idris" = {
           depends  = ((((((([
             hsPkgs.base
             hsPkgs.Cabal
@@ -72,7 +72,7 @@ let
           ]) ++ pkgs.lib.optional _flags.ffi hsPkgs.libffi) ++ pkgs.lib.optional _flags.gmp hsPkgs.libffi) ++ pkgs.lib.optional _flags.curses hsPkgs.hscurses;
         };
         exes = {
-          idris = {
+          "idris" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base

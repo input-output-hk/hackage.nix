@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hbeanstalk = {
+        "hbeanstalk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

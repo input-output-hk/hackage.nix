@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genders = {
+        "genders" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           libs = [ pkgs.genders ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

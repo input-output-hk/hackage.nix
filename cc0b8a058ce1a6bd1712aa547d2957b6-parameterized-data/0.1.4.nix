@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parameterized-data = {
+        "parameterized-data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-level

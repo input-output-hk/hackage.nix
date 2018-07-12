@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          stack-bump = {
+          "stack-bump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

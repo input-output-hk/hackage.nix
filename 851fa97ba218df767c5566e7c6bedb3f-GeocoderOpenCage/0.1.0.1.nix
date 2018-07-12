@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GeocoderOpenCage = {
+        "GeocoderOpenCage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        process-progress = {
+        "process-progress" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -37,6 +37,6 @@ let
             hsPkgs.utf8-string
           ];
         };
-        exes = { tests = {}; };
+        exes = { "tests" = {}; };
       };
     }

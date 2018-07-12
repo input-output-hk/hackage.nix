@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hugs2yc = {
+        "hugs2yc" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.uniplate

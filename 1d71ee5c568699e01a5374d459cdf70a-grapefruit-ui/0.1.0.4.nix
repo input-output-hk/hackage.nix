@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grapefruit-ui = {
+        "grapefruit-ui" = {
           depends  = [
             hsPkgs.arrows
             hsPkgs.base

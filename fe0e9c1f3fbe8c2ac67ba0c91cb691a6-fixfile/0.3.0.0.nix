@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixfile = {
+        "fixfile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test-fixfile = {
+          "test-fixfile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fixfile

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        llvm-base = {
+        "llvm-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

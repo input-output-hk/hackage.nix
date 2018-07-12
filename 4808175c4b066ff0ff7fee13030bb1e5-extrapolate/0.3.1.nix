@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extrapolate = {
+        "extrapolate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.leancheck
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -37,7 +37,7 @@ let
               hsPkgs.extrapolate
             ];
           };
-          derive = {
+          "derive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -45,7 +45,7 @@ let
               hsPkgs.extrapolate
             ];
           };
-          utils = {
+          "utils" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -53,7 +53,7 @@ let
               hsPkgs.extrapolate
             ];
           };
-          new = {
+          "new" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -61,7 +61,7 @@ let
               hsPkgs.extrapolate
             ];
           };
-          step-by-step = {
+          "step-by-step" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          git-fmt = {
+          "git-fmt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        LDAP = {
+        "LDAP" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.ldap ];
         };

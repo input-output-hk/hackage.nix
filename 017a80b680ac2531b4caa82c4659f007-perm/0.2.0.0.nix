@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        perm = {
+        "perm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

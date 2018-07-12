@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hgeos = {
+        "hgeos" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           libs = [ pkgs.geos_c ];
         };
         tests = {
-          hgeos-app = {
+          "hgeos-app" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.base

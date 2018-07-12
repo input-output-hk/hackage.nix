@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-raml = {
+        "yesod-raml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          raml-utils = {
+          "raml-utils" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          test-routes = {
+          "test-routes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

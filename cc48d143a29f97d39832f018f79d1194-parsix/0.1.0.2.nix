@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parsix = {
+        "parsix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

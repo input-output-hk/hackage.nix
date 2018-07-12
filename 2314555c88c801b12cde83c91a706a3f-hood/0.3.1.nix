@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hood = {
+        "hood" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          hood-test = {
+          "hood-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geo-resolver = {
+        "geo-resolver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          GeoResolver-test = {
+          "GeoResolver-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

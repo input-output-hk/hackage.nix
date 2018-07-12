@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-options = {
+        "aeson-options" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

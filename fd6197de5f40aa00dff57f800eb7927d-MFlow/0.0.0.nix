@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MFlow = {
+        "MFlow" = {
           depends  = [
             hsPkgs.Workflow
             hsPkgs.transformers

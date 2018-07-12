@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        skylighting = {
+        "skylighting" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -48,7 +48,7 @@ let
             ]);
         };
         exes = {
-          skylighting-extract = {
+          "skylighting-extract" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -68,7 +68,7 @@ let
                 hsPkgs.regex-pcre-builtin
               ]);
           };
-          skylighting = {
+          "skylighting" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -83,7 +83,7 @@ let
           };
         };
         tests = {
-          test-skylighting = {
+          "test-skylighting" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -104,7 +104,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-skylighting = {
+          "benchmark-skylighting" = {
             depends  = [
               hsPkgs.skylighting
               hsPkgs.base

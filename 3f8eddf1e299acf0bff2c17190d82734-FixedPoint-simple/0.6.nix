@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FixedPoint-simple = {
+        "FixedPoint-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

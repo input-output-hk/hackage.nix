@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-lss = {
+        "snaplet-lss" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lss
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test-snaplet-lss = {
+          "test-snaplet-lss" = {
             depends  = [
               hsPkgs.base
               hsPkgs.snap

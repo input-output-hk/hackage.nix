@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        test-shouldbe = {
+        "test-shouldbe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.silently

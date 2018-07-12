@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        retry = {
+        "retry" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions

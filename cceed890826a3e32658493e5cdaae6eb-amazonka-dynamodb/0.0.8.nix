@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-dynamodb = {
+        "amazonka-dynamodb" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

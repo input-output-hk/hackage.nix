@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskoin-protocol = {
+        "haskoin-protocol" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-haskoin-protocol = {
+          "test-haskoin-protocol" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

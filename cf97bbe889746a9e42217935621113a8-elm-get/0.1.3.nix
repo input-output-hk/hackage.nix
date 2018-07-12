@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elm-get = {
+        "elm-get" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          elm-get = {
+          "elm-get" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty

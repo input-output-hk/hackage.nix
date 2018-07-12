@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        comfort-graph = {
+        "comfort-graph" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-comfort-graph = {
+          "test-comfort-graph" = {
             depends  = [
               hsPkgs.comfort-graph
               hsPkgs.QuickCheck

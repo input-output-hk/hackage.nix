@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zm = {
+        "zm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
             ]);
         };
         tests = {
-          zm-test = {
+          "zm-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -58,7 +58,7 @@ let
               hsPkgs.zm
             ];
           };
-          zm-doctest = {
+          "zm-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

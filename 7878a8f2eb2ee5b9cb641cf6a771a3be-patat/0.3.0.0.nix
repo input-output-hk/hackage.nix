@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          patat = {
+          "patat" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-terminal

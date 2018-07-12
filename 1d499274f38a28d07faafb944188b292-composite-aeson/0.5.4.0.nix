@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        composite-aeson = {
+        "composite-aeson" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-better-errors
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          composite-aeson-test = {
+          "composite-aeson-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-Wire = {
+        "HGamer3D-Wire" = {
           depends  = [
             hsPkgs.base
             hsPkgs.netwire

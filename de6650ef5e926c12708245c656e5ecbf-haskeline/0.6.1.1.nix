@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskeline = {
+        "haskeline" = {
           depends  = ([
             hsPkgs.filepath
             hsPkgs.mtl
@@ -42,7 +42,7 @@ let
             else [
               hsPkgs.unix
             ] ++ pkgs.lib.optional _flags.terminfo hsPkgs.terminfo);
-          libs = pkgs.lib.optional (!system.isWindows && (system.isOsx || system.isFreebsd || _flags.libiconv)) pkgs.iconv;
+          libs = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (system.isOsx || system.isFreebsd || _flags.libiconv) pkgs.iconv);
         };
       };
     }

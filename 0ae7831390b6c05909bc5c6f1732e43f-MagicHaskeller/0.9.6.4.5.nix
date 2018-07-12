@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MagicHaskeller = {
+        "MagicHaskeller" = {
           depends  = ((([
             hsPkgs.old-time
             hsPkgs.template-haskell
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          MagicHaskeller = {
+          "MagicHaskeller" = {
             depends  = ((([
               hsPkgs.MagicHaskeller
               hsPkgs.old-time
@@ -77,7 +77,7 @@ let
               hsPkgs.network-uri
             ];
           };
-          MagicHaskeller.cgi = {
+          "MagicHaskeller.cgi" = {
             depends  = (([
               hsPkgs.old-time
               hsPkgs.template-haskell

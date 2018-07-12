@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sscgi = {
+        "sscgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

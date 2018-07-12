@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yuiGrid = {
+        "yuiGrid" = {
           depends  = [ hsPkgs.base ];
         };
       };

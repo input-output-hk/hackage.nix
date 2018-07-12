@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-vdom = {
+        "ghcjs-vdom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          ghcjs-vdom-example-table = {
+          "ghcjs-vdom-example-table" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-ffiqq
@@ -44,7 +44,7 @@ let
               hsPkgs.ghcjs-base
             ];
           };
-          ghcjs-vdom-example-components = {
+          "ghcjs-vdom-example-components" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-ffiqq
@@ -53,7 +53,7 @@ let
               hsPkgs.ghcjs-base
             ];
           };
-          ghcjs-vdom-example-render = {
+          "ghcjs-vdom-example-render" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-ffiqq

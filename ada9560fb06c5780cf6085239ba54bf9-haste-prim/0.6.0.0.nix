@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haste-prim = {
+        "haste-prim" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wxFruit = {
+        "wxFruit" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base
@@ -39,7 +39,7 @@ let
             ];
         };
         exes = {
-          paddle = {
+          "paddle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wx

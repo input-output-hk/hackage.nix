@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lapack-carray = {
+        "lapack-carray" = {
           depends  = [
             hsPkgs.lapack-ffi
             hsPkgs.netlib-carray

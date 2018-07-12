@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          burnt-explorer = {
+          "burnt-explorer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

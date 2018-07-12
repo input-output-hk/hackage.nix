@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-timing = {
+        "monad-timing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,13 +33,13 @@ let
           ];
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

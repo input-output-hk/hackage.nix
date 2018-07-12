@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mwc-random = {
+        "mwc-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

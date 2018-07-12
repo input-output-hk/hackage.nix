@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        optparse-applicative-simple = {
+        "optparse-applicative-simple" = {
           depends  = [
             hsPkgs.optparse-applicative
             hsPkgs.attoparsec
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.optparse-applicative-simple
               hsPkgs.attoparsec-data

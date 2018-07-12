@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mmorph = {
+        "mmorph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

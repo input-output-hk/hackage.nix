@@ -24,14 +24,14 @@ let
         buildType = "Simple";
       };
       components = {
-        blake2 = {
+        "blake2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base16-bytestring
@@ -42,7 +42,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.hlint)) [
               hsPkgs.base
               hsPkgs.hlint
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blake2

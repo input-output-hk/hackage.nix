@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tensorflow-records = {
+        "tensorflow-records" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          RecordsTest = {
+          "RecordsTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

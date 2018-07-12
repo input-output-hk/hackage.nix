@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-reactive-wx = {
+        "keera-hails-reactive-wx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wxcore

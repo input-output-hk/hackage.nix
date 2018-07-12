@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        htoml-megaparsec = {
+        "htoml-megaparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.megaparsec
@@ -31,7 +31,7 @@ let
           ];
         };
         sublibs = {
-          htoml-internal = {
+          "htoml-internal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          htoml-test = {
+          "htoml-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.megaparsec
@@ -68,7 +68,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.htoml-megaparsec

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-registry = {
+        "distributed-process-registry" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-accessor
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          RegistryTests = {
+          "RegistryTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

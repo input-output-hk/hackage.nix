@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pg-transact = {
+        "pg-transact" = {
           depends  = [
             hsPkgs.base
             hsPkgs.postgresql-simple
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          pg-transact-test = {
+          "pg-transact-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

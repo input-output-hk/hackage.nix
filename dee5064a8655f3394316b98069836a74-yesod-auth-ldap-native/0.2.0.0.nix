@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-ldap-native = {
+        "yesod-auth-ldap-native" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-core
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          yesod-auth-ldap-native-test = {
+          "yesod-auth-ldap-native-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-auth-ldap-native

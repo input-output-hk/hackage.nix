@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        ascii-art-to-unicode = {
+        "ascii-art-to-unicode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad
           ];
         };
         exes = {
-          aa2u = {
+          "aa2u" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ascii-art-to-unicode
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          ascii-art-to-unicode-test = {
+          "ascii-art-to-unicode-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ascii-art-to-unicode

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CarneadesIntoDung = {
+        "CarneadesIntoDung" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer-dimensional = {
+        "synthesizer-dimensional" = {
           depends  = [
             hsPkgs.synthesizer-core
             hsPkgs.transformers
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          rain = {
+          "rain" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.synthesizer-dimensional
               hsPkgs.synthesizer-core
@@ -52,7 +52,7 @@ let
               hsPkgs.base
             ];
           };
-          demonstration = {
+          "demonstration" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.explicit-exception
               hsPkgs.old-time
@@ -71,7 +71,7 @@ let
               hsPkgs.base
             ];
           };
-          traumzauberbaum = {
+          "traumzauberbaum" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.synthesizer-dimensional
               hsPkgs.synthesizer-core

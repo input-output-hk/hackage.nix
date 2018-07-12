@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-Bullet-Binding = {
+        "HGamer3D-Bullet-Binding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HGamer3D-Data

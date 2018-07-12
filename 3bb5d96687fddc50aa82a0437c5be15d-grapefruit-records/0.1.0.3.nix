@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grapefruit-records = {
+        "grapefruit-records" = {
           depends  = [
             hsPkgs.arrows
             hsPkgs.base

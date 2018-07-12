@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-lines = {
+        "pipes-lines" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          pipes-lines-test = {
+          "pipes-lines-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-lines

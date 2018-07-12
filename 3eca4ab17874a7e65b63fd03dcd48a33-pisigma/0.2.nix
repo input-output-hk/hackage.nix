@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pisigma = {
+        "pisigma" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -37,6 +37,6 @@ let
             hsPkgs.containers
           ];
         };
-        exes = { pisigma = {}; };
+        exes = { "pisigma" = {}; };
       };
     }

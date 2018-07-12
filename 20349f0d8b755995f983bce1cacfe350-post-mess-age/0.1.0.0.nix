@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        post-mess-age = {
+        "post-mess-age" = {
           depends  = [ hsPkgs.base ];
         };
       };

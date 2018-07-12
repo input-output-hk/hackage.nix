@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit = {
+        "conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.resourcet
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.base
@@ -58,7 +58,7 @@ let
           };
         };
         benchmarks = {
-          utf8-memory-usage = {
+          "utf8-memory-usage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text-stream-decode

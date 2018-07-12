@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hint-server = {
+        "hint-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

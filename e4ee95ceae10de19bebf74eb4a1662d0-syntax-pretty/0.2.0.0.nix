@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        syntax-pretty = {
+        "syntax-pretty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syntax

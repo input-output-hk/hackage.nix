@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-migration = {
+        "hasql-migration" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

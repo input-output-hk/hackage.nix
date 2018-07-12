@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        boop = {
+        "boop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          boop-test = {
+          "boop-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.boop

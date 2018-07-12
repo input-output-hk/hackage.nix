@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Cabal = {
+        "Cabal" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.filepath
@@ -39,7 +39,7 @@ let
           ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

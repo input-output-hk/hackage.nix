@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        XMMS = {
+        "XMMS" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

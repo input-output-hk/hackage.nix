@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        beeminder-api = {
+        "beeminder-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

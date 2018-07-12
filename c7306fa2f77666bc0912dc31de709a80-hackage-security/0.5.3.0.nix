@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hackage-security = {
+        "hackage-security" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.base16-bytestring
@@ -67,7 +67,7 @@ let
           ];
         };
         tests = {
-          TestSuite = {
+          "TestSuite" = {
             depends  = [
               hsPkgs.hackage-security
               hsPkgs.base

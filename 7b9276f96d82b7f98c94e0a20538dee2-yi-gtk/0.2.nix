@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        yi-gtk = {
+        "yi-gtk" = {
           depends  = [
             hsPkgs.ghc
             hsPkgs.base

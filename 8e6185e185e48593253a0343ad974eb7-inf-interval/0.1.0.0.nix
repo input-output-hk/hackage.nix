@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inf-interval = {
+        "inf-interval" = {
           depends  = [
             hsPkgs.array
             hsPkgs.deepseq

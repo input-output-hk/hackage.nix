@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tpb = {
+          "tpb" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-wl-pprint
@@ -44,7 +44,7 @@ let
               hsPkgs.servant-pushbullet-client
             ];
           };
-          pb-notify = {
+          "pb-notify" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

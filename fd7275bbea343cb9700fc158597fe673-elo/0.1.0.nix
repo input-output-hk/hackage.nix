@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        elo = {
+        "elo" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          elo-test = {
+          "elo-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elo

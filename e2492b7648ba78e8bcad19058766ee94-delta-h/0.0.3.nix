@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        delta-h = {
+        "delta-h" = {
           depends  = [
             hsPkgs.nlp-scores
             hsPkgs.monad-atom
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          delta-h = {
+          "delta-h" = {
             depends  = [
               hsPkgs.nlp-scores
               hsPkgs.monad-atom

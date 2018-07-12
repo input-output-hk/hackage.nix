@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        puffytools = {
+        "puffytools" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          ptk = {
+          "ptk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

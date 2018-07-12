@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        functional-kmp = {
+        "functional-kmp" = {
           depends  = [ hsPkgs.base ];
         };
       };

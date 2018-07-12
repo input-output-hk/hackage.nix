@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-http = {
+        "monad-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat

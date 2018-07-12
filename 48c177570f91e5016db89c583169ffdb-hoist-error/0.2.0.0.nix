@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoist-error = {
+        "hoist-error" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apecs = {
+        "apecs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          apecs-test = {
+          "apecs-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.apecs
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          apecs-bench = {
+          "apecs-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.apecs

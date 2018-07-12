@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chart-unit = {
+        "chart-unit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colour
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chart-unit

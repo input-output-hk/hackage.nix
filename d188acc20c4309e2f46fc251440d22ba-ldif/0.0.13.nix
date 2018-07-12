@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ldif = {
+        "ldif" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          ldifdiff = {
+          "ldifdiff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ldif
@@ -45,7 +45,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          ldif2html = {
+          "ldif2html" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ldif
@@ -55,7 +55,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          ldifmodify = {
+          "ldifmodify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ldif
@@ -64,7 +64,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          ldifundo = {
+          "ldifundo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ldif
@@ -73,10 +73,10 @@ let
               hsPkgs.bytestring
             ];
           };
-          ldifparse = {};
+          "ldifparse" = {};
         };
         tests = {
-          ldif-test = {
+          "ldif-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        delimiter-separated = {
+        "delimiter-separated" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uhc-util

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          growlnotify = {
+          "growlnotify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

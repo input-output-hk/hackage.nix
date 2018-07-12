@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OpenGLRaw21 = {
+        "OpenGLRaw21" = {
           depends  = [ hsPkgs.OpenGLRaw ];
         };
       };

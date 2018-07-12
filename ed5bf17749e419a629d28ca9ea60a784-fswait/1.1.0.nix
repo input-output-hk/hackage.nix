@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fswait = {
+          "fswait" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-generic

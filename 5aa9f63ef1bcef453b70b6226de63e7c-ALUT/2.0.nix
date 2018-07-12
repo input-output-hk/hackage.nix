@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ALUT = {
+        "ALUT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL

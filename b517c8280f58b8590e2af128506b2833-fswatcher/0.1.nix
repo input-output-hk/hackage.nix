@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fswatcher = {
+          "fswatcher" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

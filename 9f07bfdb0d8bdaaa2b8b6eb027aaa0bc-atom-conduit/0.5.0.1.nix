@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atom-conduit = {
+        "atom-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.atom-conduit
               hsPkgs.base
@@ -65,7 +65,7 @@ let
               hsPkgs.xml-types
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

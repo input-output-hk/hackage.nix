@@ -27,7 +27,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hslua = {
+        "hslua" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,19 +37,19 @@ let
             hsPkgs.mtl
             hsPkgs.text
           ];
-          libs = if (_flags.system-lua || _flags.luajit || _flags.lua501 || _flags.lua502) && _flags.luajit
+          libs = pkgs.lib.optionals (_flags.system-lua || _flags.luajit || _flags.lua501 || _flags.lua502) (if _flags.luajit
             then pkgs.lib.optional (!_flags.use-pkgconfig) pkgs."luajit-5.1"
-            else pkgs.lib.optional (!_flags.use-pkgconfig) pkgs.lua;
-          pkgconfig = if (_flags.system-lua || _flags.luajit || _flags.lua501 || _flags.lua502) && _flags.luajit
+            else pkgs.lib.optional (!_flags.use-pkgconfig) pkgs.lua);
+          pkgconfig = pkgs.lib.optionals (_flags.system-lua || _flags.luajit || _flags.lua501 || _flags.lua502) (if _flags.luajit
             then pkgs.lib.optional _flags.use-pkgconfig pkgconfPkgs.luajit
-            else if _flags.use-pkgconfig && _flags.lua501
+            else pkgs.lib.optionals _flags.use-pkgconfig (if _flags.lua501
               then [ pkgconfPkgs."lua5.1" ]
               else if _flags.lua502
                 then [ pkgconfPkgs."lua5.2" ]
-                else [ pkgconfPkgs."lua5.3" ];
+                else [ pkgconfPkgs."lua5.3" ]));
         };
         tests = {
-          test-hslua = {
+          "test-hslua" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

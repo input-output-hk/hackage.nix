@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-icu = {
+        "text-icu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
             ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

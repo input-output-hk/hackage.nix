@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-general-quote = {
+        "llvm-general-quote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

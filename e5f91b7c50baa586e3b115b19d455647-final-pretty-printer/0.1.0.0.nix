@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        final-pretty-printer = {
+        "final-pretty-printer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

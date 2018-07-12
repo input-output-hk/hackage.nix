@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        shaker = {
+        "shaker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          shaker = {
+          "shaker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shaker
@@ -66,7 +66,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shaker

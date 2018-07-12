@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aern2-real = {
+        "aern2-real" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          aern2-real-benchOp = {
+          "aern2-real-benchOp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mixed-types-num
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aern2-real

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoodle-publish = {
+        "hoodle-publish" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          hoodle-publish = {
+          "hoodle-publish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

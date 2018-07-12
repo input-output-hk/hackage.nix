@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nagios-plugin-ekg = {
+        "nagios-plugin-ekg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.nagios-check
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          check_ekg = {
+          "check_ekg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nagios-check
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          sample-data = {
+          "sample-data" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

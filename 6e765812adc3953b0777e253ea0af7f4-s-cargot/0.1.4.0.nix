@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        s-cargot = {
+        "s-cargot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          s-cargot-qc = {
+          "s-cargot-qc" = {
             depends  = [
               hsPkgs.s-cargot
               hsPkgs.base
@@ -51,7 +51,7 @@ let
               hsPkgs.text
             ];
           };
-          s-cargot-printparse = {
+          "s-cargot-printparse" = {
             depends  = [
               hsPkgs.s-cargot
               hsPkgs.base

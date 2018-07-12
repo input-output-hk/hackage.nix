@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wl-pprint-console = {
+        "wl-pprint-console" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colorful-monoids

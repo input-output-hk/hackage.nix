@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          skeletons = {
+          "skeletons" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base

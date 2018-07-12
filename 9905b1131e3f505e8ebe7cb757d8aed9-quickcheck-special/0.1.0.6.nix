@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-special = {
+        "quickcheck-special" = {
           depends  = [
             hsPkgs.base
             hsPkgs.special-values

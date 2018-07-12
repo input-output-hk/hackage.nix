@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-register-machine = {
+        "text-register-machine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

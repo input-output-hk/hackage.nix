@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scotty-session = {
+        "scotty-session" = {
           depends  = [
             hsPkgs.base
             hsPkgs.scotty

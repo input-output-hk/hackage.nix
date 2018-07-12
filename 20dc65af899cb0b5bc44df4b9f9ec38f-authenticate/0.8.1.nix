@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        authenticate = {
+        "authenticate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-object

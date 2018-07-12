@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        denominate = {
+        "denominate" = {
           depends  = if _flags.small_base
             then [
               hsPkgs.base
@@ -35,7 +35,7 @@ let
             ];
         };
         exes = {
-          denominate = {
+          "denominate" = {
             depends  = if _flags.small_base
               then [
                 hsPkgs.base

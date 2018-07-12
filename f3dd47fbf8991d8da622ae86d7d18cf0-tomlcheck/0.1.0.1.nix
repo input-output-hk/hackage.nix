@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tomlcheck = {
+        "tomlcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.htoml-megaparsec
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          tomlcheck = {
+          "tomlcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tomlcheck

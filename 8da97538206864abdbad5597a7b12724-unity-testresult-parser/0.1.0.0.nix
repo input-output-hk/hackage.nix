@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unity-testresult-parser = {
+        "unity-testresult-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          unity-testresult-parser = {
+          "unity-testresult-parser" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base

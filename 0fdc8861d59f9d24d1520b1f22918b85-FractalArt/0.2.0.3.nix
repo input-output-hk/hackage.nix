@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          FractalArt = {
+          "FractalArt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

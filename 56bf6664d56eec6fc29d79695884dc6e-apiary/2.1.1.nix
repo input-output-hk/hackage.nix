@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary = {
+        "apiary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -57,7 +57,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

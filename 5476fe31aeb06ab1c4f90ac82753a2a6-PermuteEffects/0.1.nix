@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PermuteEffects = {
+        "PermuteEffects" = {
           depends  = [ hsPkgs.base ];
         };
       };

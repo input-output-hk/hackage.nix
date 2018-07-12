@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        orc = {
+        "orc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          orc = {
+          "orc" = {
             depends  = [
               hsPkgs.deepseq
               hsPkgs.random

@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        functor-classes-compat = {
+        "functor-classes-compat" = {
           depends  = ((([
             hsPkgs.hashable
           ] ++ (if _flags.base-transformers-1

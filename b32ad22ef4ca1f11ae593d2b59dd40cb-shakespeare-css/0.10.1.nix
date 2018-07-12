@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shakespeare-css = {
+        "shakespeare-css" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shakespeare
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.shakespeare-css
               hsPkgs.shakespeare

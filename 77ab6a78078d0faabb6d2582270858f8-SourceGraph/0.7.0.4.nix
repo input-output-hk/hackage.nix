@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          SourceGraph = {
+          "SourceGraph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

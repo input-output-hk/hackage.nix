@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-pool = {
+        "hasql-pool" = {
           depends  = [
             hsPkgs.resource-pool
             hsPkgs.hasql

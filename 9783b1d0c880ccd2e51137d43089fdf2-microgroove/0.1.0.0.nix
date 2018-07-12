@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microgroove = {
+        "microgroove" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

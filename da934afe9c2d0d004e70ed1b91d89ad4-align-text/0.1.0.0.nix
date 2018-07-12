@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          align = {
+          "align" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

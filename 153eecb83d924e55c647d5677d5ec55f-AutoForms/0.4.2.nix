@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AutoForms = {
+        "AutoForms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

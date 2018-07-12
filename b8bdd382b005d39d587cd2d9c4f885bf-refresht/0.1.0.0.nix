@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        refresht = {
+        "refresht" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.refresht

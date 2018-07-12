@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpc-coveralls = {
+        "hpc-coveralls" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hpc-coveralls = {
+          "hpc-coveralls" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -39,7 +39,7 @@ let
               hsPkgs.hpc
             ];
           };
-          run-cabal-test = {
+          "run-cabal-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          test-all = {
+          "test-all" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

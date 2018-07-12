@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        config-value-getopt = {
+        "config-value-getopt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

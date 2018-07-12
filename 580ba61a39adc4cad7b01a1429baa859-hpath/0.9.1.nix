@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpath = {
+        "hpath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.IfElse
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.unbuildable;
         };
         tests = {
-          doctests-hpath = {
+          "doctests-hpath" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -45,7 +45,7 @@ let
               hsPkgs.hpath
             ] ++ pkgs.lib.optional system.isWindows hsPkgs.unbuildable;
           };
-          doctests-posix = {
+          "doctests-posix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -56,7 +56,7 @@ let
               hsPkgs.QuickCheck
             ] ++ pkgs.lib.optional system.isWindows hsPkgs.unbuildable;
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

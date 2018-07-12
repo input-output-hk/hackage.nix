@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphviz = {
+        "graphviz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          graphviz-testsuite = {
+          "graphviz-testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -60,7 +60,7 @@ let
           };
         };
         benchmarks = {
-          graphviz-printparse = {
+          "graphviz-printparse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tensorflow-opgen = {
+        "tensorflow-opgen" = {
           depends  = [
             hsPkgs.proto-lens
             hsPkgs.tensorflow-proto

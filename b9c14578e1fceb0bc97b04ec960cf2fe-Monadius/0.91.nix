@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          monadius = {
+          "monadius" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flux-monoid = {
+        "flux-monoid" = {
           depends  = [ hsPkgs.base ];
         };
       };

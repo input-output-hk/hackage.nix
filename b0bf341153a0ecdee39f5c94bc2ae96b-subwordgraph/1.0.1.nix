@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        subwordgraph = {
+        "subwordgraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-subwordgraph = {
+          "test-subwordgraph" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

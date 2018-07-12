@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        greskell = {
+        "greskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.greskell-core
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -48,14 +48,14 @@ let
               hsPkgs.bytestring
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.doctest-discover
             ];
           };
-          hint-test-suite = {
+          "hint-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -63,7 +63,7 @@ let
               hsPkgs.hint
             ];
           };
-          server-test-suite = {
+          "server-test-suite" = {
             depends  = pkgs.lib.optionals _flags.server-test [
               hsPkgs.base
               hsPkgs.aeson

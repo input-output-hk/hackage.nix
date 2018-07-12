@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monoid-absorbing = {
+        "monoid-absorbing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

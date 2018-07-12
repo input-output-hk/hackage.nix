@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        whiskers = {
+        "whiskers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jespresso = {
+        "jespresso" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          jespresso = {
+          "jespresso" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jespresso
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          unittest = {
+          "unittest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jespresso

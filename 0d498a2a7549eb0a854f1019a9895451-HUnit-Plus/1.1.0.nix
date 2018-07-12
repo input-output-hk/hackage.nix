@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HUnit-Plus = {
+        "HUnit-Plus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          RunTests = {
+          "RunTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hfoil = {
+        "hfoil" = {
           depends  = [
             hsPkgs.gloss
             hsPkgs.base
@@ -34,6 +34,6 @@ let
             hsPkgs.HTTP
           ];
         };
-        exes = { hfoil = {}; };
+        exes = { "hfoil" = {}; };
       };
     }

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        storable-record = {
+        "storable-record" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.utility-ht

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liquid = {
+        "liquid" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.QuickCheck
@@ -62,7 +62,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.aeson

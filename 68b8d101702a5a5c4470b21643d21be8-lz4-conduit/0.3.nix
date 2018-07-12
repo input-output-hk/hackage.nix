@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lz4-conduit = {
+        "lz4-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          LZ4 = {
+          "LZ4" = {
             depends  = [
               hsPkgs.lz4-conduit
               hsPkgs.base
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          props = {
+          "props" = {
             depends  = [
               hsPkgs.lz4-conduit
               hsPkgs.base

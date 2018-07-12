@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cheapskate = {
+        "cheapskate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          cheapskate = {
+          "cheapskate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cheapskate

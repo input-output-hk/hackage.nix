@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ruler = {
+          "ruler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

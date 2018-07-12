@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-pretty = {
+        "llvm-pretty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

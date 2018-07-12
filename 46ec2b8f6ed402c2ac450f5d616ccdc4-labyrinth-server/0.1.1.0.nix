@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          labyrinth-server = {
+          "labyrinth-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.labyrinth

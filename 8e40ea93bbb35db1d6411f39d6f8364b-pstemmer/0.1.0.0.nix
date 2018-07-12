@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        pstemmer = {
+        "pstemmer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         exes = {
-          pstemmer-test-exe = {
+          "pstemmer-test-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pstemmer

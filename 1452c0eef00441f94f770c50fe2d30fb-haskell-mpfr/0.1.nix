@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskell-mpfr = {
+        "haskell-mpfr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

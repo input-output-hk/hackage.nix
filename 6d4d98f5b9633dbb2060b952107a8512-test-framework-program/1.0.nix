@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-framework-program = {
+        "test-framework-program" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

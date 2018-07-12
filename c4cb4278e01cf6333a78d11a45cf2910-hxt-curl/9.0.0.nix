@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-curl = {
+        "hxt-curl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

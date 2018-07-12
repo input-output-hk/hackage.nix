@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-common = {
+        "http-common" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pedersen-commitment = {
+        "pedersen-commitment" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test-suite = {
+          "test-suite" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

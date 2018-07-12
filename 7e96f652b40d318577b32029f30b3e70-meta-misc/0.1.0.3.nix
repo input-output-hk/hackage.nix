@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        meta-misc = {
+        "meta-misc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

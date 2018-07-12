@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bgmax = {
+        "bgmax" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

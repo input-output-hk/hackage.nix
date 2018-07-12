@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          bustle = {
+          "bustle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
               pkgconfPkgs."glib-2.0"
             ];
           };
-          test-monitor = {
+          "test-monitor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -72,7 +72,7 @@ let
               pkgconfPkgs."glib-2.0"
             ];
           };
-          dump-messages = {
+          "dump-messages" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -85,7 +85,7 @@ let
           };
         };
         tests = {
-          test-pcap-crash = {
+          "test-pcap-crash" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -96,13 +96,13 @@ let
               hsPkgs.text
             ];
           };
-          test-regions = {
+          "test-regions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
             ];
           };
-          test-renderer = {
+          "test-renderer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cairo

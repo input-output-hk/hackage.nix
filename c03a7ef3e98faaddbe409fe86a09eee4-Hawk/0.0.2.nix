@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hawk = {
+        "Hawk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC

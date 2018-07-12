@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-ip = {
+        "hw-ip" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          hw-ip-test = {
+          "hw-ip-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedgehog

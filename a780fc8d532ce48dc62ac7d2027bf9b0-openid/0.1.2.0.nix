@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openid = {
+        "openid" = {
           depends  = [
             hsPkgs.HTTP
             hsPkgs.monadLib

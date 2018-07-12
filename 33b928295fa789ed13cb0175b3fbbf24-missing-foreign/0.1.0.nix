@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        missing-foreign = {
+        "missing-foreign" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-state-machine-distributed = {
+        "quickcheck-state-machine-distributed" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          quickcheck-state-machine-distributed-test = {
+          "quickcheck-state-machine-distributed-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

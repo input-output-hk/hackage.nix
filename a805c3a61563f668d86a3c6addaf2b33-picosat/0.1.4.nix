@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        picosat = {
+        "picosat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,13 +28,13 @@ let
           ];
         };
         tests = {
-          Sudoku = {
+          "Sudoku" = {
             depends  = [
               hsPkgs.base
               hsPkgs.picosat
             ];
           };
-          Scoped = {
+          "Scoped" = {
             depends  = [
               hsPkgs.base
               hsPkgs.picosat
@@ -42,7 +42,7 @@ let
               hsPkgs.containers
             ];
           };
-          rand-shared-improvement = {
+          "rand-shared-improvement" = {
             depends  = [
               hsPkgs.base
               hsPkgs.picosat

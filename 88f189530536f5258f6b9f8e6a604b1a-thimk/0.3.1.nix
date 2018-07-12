@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          thimk = {
+          "thimk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parseargs
@@ -30,7 +30,7 @@ let
               hsPkgs.sqlite
             ];
           };
-          thimk-makedb = {
+          "thimk-makedb" = {
             depends  = [
               hsPkgs.parseargs
               hsPkgs.sqlite

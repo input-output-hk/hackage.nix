@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ViennaRNA-extras = {
+        "ViennaRNA-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

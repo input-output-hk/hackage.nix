@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WordNet-ghc74 = {
+        "WordNet-ghc74" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

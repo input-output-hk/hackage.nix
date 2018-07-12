@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        queuelike = {
+        "queuelike" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

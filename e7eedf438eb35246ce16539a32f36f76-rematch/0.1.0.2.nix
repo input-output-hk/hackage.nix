@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rematch = {
+        "rematch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit

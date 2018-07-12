@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsaddle-webkit2gtk = {
+        "jsaddle-webkit2gtk" = {
           depends  = ([
             hsPkgs.base
           ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [

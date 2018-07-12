@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mtl-tf = {
+        "mtl-tf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

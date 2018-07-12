@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        phybin = {
+        "phybin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -46,7 +46,7 @@ let
           ] ++ pkgs.lib.optional _flags.bitvec hsPkgs.bitvec;
         };
         exes = {
-          phybin = {
+          "phybin" = {
             depends  = [
               hsPkgs.phybin
               hsPkgs.base

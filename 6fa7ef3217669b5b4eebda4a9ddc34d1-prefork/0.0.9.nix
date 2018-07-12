@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prefork = {
+        "prefork" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          prefork-sample-simple = {
+          "prefork-sample-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
               hsPkgs.prefork
             ];
           };
-          prefork-sample-various-workers = {
+          "prefork-sample-various-workers" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -55,7 +55,7 @@ let
               hsPkgs.prefork
             ];
           };
-          prefork-sample-warp = {
+          "prefork-sample-warp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -74,7 +74,7 @@ let
           };
         };
         tests = {
-          test-prefork = {
+          "test-prefork" = {
             depends  = [
               hsPkgs.base
               hsPkgs.prefork
@@ -88,7 +88,7 @@ let
               hsPkgs.filepath
             ];
           };
-          test-prefork-server = {
+          "test-prefork-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.prefork

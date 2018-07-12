@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        parsers = {
+        "parsers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.charset
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

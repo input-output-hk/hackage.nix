@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shakespeare = {
+        "shakespeare" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

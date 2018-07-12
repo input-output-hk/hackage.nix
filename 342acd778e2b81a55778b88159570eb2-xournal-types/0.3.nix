@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xournal-types = {
+        "xournal-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

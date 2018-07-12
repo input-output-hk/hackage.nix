@@ -32,7 +32,7 @@ let
         buildType = "Custom";
       };
       components = {
-        darcs = {
+        "darcs" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.binary
@@ -83,11 +83,11 @@ let
             else [
               hsPkgs.network
             ])) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
-          libs = pkgs.lib.optional (_flags.curl && !_flags.pkgconfig) pkgs.curl;
-          pkgconfig = pkgs.lib.optional (_flags.curl && _flags.pkgconfig) pkgconfPkgs.libcurl;
+          libs = pkgs.lib.optionals _flags.curl (pkgs.lib.optional (!_flags.pkgconfig) pkgs.curl);
+          pkgconfig = pkgs.lib.optionals _flags.curl (pkgs.lib.optional _flags.pkgconfig pkgconfPkgs.libcurl);
         };
         exes = {
-          darcs = {
+          "darcs" = {
             depends  = [
               hsPkgs.darcs
               hsPkgs.base
@@ -95,7 +95,7 @@ let
           };
         };
         tests = {
-          darcs-test = {
+          "darcs-test" = {
             depends  = [
               hsPkgs.darcs
               hsPkgs.base

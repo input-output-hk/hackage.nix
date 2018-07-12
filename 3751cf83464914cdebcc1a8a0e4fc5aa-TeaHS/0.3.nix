@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TeaHS = {
+        "TeaHS" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SDL

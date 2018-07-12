@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        oscpacking = {
+        "oscpacking" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gloss

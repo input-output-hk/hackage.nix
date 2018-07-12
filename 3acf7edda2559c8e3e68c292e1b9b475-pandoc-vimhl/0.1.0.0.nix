@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          vimhl = {
+          "vimhl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-types

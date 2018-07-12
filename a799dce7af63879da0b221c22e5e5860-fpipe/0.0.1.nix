@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fpipe = {
+        "fpipe" = {
           depends  = [ hsPkgs.base ];
         };
       };

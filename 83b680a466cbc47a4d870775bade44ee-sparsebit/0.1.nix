@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sparsebit = {
+        "sparsebit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

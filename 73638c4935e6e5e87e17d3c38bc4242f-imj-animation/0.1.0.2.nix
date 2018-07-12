@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imj-animation = {
+        "imj-animation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          imj-animation-test = {
+          "imj-animation-test" = {
             depends  = [ hsPkgs.base ];
           };
         };

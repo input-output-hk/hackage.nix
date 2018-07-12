@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mmap = {
+        "mmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

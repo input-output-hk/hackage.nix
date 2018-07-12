@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dmcc = {
+        "dmcc" = {
           depends  = [
             hsPkgs.HsOpenSSL
             hsPkgs.aeson
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          dmcc-ws = {
+          "dmcc-ws" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

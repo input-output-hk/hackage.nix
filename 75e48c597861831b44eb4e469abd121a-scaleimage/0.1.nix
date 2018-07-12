@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          scaleimage = {
+          "scaleimage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gd

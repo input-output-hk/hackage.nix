@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twhs = {
+        "twhs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.twitter-conduit
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          twhs = {
+          "twhs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.twitter-conduit
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsprolog-graph = {
+          "hsprolog-graph" = {
             depends  = [
               hsPkgs.prolog
               hsPkgs.prolog-graph-lib

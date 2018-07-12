@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Shrub = {
+        "Shrub" = {
           depends  = [ hsPkgs.base ];
         };
       };

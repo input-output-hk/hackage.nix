@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ecdsa = {
+        "ecdsa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rdf4h = {
+        "rdf4h" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -45,7 +45,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         exes = {
-          rdf4h = {
+          "rdf4h" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rdf4h
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          test-rdf4h = {
+          "test-rdf4h" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rdf4h
@@ -77,7 +77,7 @@ let
           };
         };
         benchmarks = {
-          rdf4h-bench = {
+          "rdf4h-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

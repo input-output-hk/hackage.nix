@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        codo-notation = {
+        "codo-notation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

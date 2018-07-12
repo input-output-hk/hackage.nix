@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linux-blkid = {
+        "linux-blkid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

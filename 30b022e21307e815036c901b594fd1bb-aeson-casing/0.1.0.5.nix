@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-casing = {
+        "aeson-casing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
           ];
         };
         tests = {
-          casing = {
+          "casing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linebreak = {
+        "linebreak" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hyphenation

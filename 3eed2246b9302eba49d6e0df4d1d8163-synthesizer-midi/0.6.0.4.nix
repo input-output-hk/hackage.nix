@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer-midi = {
+        "synthesizer-midi" = {
           depends  = [
             hsPkgs.synthesizer-dimensional
             hsPkgs.synthesizer-core
@@ -44,7 +44,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          render-midi = {
+          "render-midi" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.synthesizer-midi
               hsPkgs.synthesizer-core
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.synthesizer-midi
               hsPkgs.synthesizer-core

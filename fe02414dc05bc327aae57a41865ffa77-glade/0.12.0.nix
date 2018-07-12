@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        glade = {
+        "glade" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

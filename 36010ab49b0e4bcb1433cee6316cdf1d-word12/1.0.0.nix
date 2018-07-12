@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        word12 = {
+        "word12" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

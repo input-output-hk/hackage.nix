@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ADPfusion = {
+        "ADPfusion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bits
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          NeedlemanWunsch = {
+          "NeedlemanWunsch" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -56,7 +56,7 @@ let
               hsPkgs.vector
             ];
           };
-          spectest = {
+          "spectest" = {
             depends  = pkgs.lib.optionals _flags.spectest [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -84,7 +84,7 @@ let
           };
         };
         benchmarks = {
-          TestBacktrackingStructures = {
+          "TestBacktrackingStructures" = {
             depends  = pkgs.lib.optionals _flags.btstruc [
               hsPkgs.base
               hsPkgs.template-haskell

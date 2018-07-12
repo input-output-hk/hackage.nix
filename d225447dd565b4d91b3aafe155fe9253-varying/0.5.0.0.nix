@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        varying = {
+        "varying" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          varying-example = {
+          "varying-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          varying-test = {
+          "varying-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          varying-bench = {
+          "varying-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

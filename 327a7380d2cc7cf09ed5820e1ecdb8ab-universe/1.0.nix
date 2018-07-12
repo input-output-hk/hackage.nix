@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        universe = {
+        "universe" = {
           depends  = [
             hsPkgs.universe-instances-base
             hsPkgs.universe-instances-extended

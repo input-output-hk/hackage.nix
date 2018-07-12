@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clocked = {
+        "clocked" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.transformers

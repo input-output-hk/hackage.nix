@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        fixed-vector = {
+        "fixed-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive

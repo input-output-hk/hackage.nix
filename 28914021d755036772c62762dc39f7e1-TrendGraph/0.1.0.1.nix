@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TrendGraph = {
+        "TrendGraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

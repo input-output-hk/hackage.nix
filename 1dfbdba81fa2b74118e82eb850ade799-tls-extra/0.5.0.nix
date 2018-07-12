@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tls-extra = {
+        "tls-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tls
@@ -41,7 +41,7 @@ let
           ] ++ pkgs.lib.optional (system.isLinux && _flags.fastaes && (system.isI386 || system.isX86_64)) hsPkgs.cipher-aes;
         };
         exes = {
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit

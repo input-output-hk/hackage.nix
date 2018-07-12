@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          HListPP = {
+          "HListPP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.applicative-quoters

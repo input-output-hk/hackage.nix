@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        has = {
+        "has" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.HUnit
               hsPkgs.test-framework

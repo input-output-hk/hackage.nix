@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-tree-print = {
+        "data-tree-print" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

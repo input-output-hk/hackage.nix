@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gi-gst = {
+        "gi-gst" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

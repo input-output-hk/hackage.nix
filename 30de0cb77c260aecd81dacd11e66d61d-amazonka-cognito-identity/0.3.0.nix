@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cognito-identity = {
+        "amazonka-cognito-identity" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

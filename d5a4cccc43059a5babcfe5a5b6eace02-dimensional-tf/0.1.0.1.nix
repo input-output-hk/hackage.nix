@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dimensional-tf = {
+        "dimensional-tf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

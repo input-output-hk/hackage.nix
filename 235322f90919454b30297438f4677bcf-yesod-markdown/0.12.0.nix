@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-markdown = {
+        "yesod-markdown" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html

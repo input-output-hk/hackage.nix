@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haxparse = {
+        "haxparse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          haxparse = {
+          "haxparse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

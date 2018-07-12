@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          schedule-planner = {
+          "schedule-planner" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

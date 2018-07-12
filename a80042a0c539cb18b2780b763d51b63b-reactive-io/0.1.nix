@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-io = {
+        "reactive-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

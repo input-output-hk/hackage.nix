@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sized-vector = {
+        "sized-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.singletons
@@ -33,7 +33,7 @@ let
           ];
         };
         benchmarks = {
-          coercion-bench = {
+          "coercion-bench" = {
             depends  = [
               hsPkgs.criterion
               hsPkgs.progression

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GPipe-Collada = {
+        "GPipe-Collada" = {
           depends  = [
             hsPkgs.GPipe
             hsPkgs.base

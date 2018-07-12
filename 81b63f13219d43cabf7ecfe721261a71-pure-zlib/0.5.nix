@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pure-zlib = {
+        "pure-zlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          deflate = {
+          "deflate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          test-zlib = {
+          "test-zlib" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

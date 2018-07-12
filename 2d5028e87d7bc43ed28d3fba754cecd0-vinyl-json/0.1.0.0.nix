@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vinyl-json = {
+        "vinyl-json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional _flags.documentation hsPkgs.hscolour;
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          pugs = {
+          "pugs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

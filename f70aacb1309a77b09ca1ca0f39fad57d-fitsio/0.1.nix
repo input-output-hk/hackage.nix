@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        fitsio = {
+        "fitsio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

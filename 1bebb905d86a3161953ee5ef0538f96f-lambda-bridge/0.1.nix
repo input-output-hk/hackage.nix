@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        lambda-bridge = {
+        "lambda-bridge" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          haskell-test1 = {
+          "haskell-test1" = {
             depends  = pkgs.lib.optional _flags.example hsPkgs.base;
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hjsonschema = {
+        "hjsonschema" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          local = {
+          "local" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -69,7 +69,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          remote = {
+          "remote" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.async

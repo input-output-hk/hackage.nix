@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        probable = {
+        "probable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.statistics
@@ -32,7 +32,7 @@ let
           ];
         };
         benchmarks = {
-          random = {
+          "random" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -42,7 +42,7 @@ let
               hsPkgs.mwc-random-monad
             ];
           };
-          distrib = {
+          "distrib" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

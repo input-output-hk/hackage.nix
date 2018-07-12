@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hworker = {
+        "hworker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          hworker-test = {
+          "hworker-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

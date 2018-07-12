@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        yesod-job-queue = {
+        "yesod-job-queue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          yesod-job-queue-example = {
+          "yesod-job-queue-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          yesod-job-queue-test = {
+          "yesod-job-queue-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-job-queue

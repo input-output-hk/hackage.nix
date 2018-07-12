@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        orizentic = {
+        "orizentic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          orizentic = {
+          "orizentic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.orizentic
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          orizentic-test = {
+          "orizentic-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.orizentic

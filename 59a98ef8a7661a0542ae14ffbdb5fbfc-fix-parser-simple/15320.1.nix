@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fix-parser-simple = {
+        "fix-parser-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mmtl

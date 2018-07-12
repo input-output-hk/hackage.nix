@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        IntervalMap = {
+        "IntervalMap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          TestInterval = {
+          "TestInterval" = {
             depends  = [
               hsPkgs.IntervalMap
               hsPkgs.base
@@ -36,7 +36,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          TestIntervalMap = {
+          "TestIntervalMap" = {
             depends  = [
               hsPkgs.IntervalMap
               hsPkgs.base

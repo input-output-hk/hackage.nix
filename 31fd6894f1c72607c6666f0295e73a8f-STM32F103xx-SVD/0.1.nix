@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        STM32F103xx-SVD = {
+        "STM32F103xx-SVD" = {
           depends  = [ hsPkgs.base ];
         };
       };

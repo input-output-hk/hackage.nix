@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hruby = {
+        "hruby" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test-roundtrip = {
+          "test-roundtrip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hruby

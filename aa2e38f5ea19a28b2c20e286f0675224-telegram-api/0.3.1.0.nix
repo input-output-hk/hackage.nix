@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        telegram-api = {
+        "telegram-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          telegram-api-test = {
+          "telegram-api-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

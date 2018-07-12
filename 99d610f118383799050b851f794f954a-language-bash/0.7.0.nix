@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-bash = {
+        "language-bash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-bash

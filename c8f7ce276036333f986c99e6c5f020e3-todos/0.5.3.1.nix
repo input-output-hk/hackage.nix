@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        todos = {
+        "todos" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          todos = {
+          "todos" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

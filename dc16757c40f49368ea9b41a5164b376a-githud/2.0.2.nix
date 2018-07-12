@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        githud = {
+        "githud" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          githud = {
+          "githud" = {
             depends  = [
               hsPkgs.base
               hsPkgs.githud
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          githud-test = {
+          "githud-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

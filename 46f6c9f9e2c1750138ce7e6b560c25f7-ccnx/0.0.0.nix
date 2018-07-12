@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ccnx = {
+        "ccnx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

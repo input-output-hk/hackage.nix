@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blank-canvas = {
+        "blank-canvas" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base64-bytestring
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          wiki-suite = {
+          "wiki-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blank-canvas

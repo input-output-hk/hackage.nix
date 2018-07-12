@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          tplot = {
+          "tplot" = {
             depends  = [
               hsPkgs.Chart
               hsPkgs.cairo

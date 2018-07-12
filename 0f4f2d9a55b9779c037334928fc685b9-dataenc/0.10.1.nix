@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        dataenc = {
+        "dataenc" = {
           depends  = [ hsPkgs.base ];
         };
       };

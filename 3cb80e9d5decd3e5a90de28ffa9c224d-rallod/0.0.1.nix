@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rallod = {
+        "rallod" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

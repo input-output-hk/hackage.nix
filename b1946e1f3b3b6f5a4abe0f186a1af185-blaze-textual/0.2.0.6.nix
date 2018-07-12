@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-textual = {
+        "blaze-textual" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (!_flags.native) hsPkgs.double-conversion) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.11") hsPkgs.integer-gmp) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9" && (compiler.isGhc && compiler.version.lt "6.11")) hsPkgs.integer;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

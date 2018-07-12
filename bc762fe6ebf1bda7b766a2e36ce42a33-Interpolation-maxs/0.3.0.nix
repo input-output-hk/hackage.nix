@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Interpolation-maxs = {
+        "Interpolation-maxs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb

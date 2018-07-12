@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shelly = {
+        "shelly" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.time
@@ -46,21 +46,21 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          drain = {
+          "drain" = {
             depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.base
               hsPkgs.shelly
               hsPkgs.text
             ];
           };
-          run-handles = {
+          "run-handles" = {
             depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.base
               hsPkgs.shelly
               hsPkgs.text
             ];
           };
-          Color = {
+          "Color" = {
             depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.base
               hsPkgs.process
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          shelly-testsuite = {
+          "shelly-testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          clash = {
+          "clash" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

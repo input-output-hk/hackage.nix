@@ -22,11 +22,11 @@ let
         buildType = "Custom";
       };
       components = {
-        casa-abbreviations-and-acronyms = {
+        "casa-abbreviations-and-acronyms" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

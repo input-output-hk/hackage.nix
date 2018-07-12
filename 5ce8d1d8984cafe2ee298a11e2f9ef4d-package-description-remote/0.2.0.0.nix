@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        package-description-remote = {
+        "package-description-remote" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          package-description-remote-test = {
+          "package-description-remote-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.package-description-remote

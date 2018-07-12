@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        music-sibelius = {
+        "music-sibelius" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

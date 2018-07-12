@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        goat = {
+        "goat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          goat-test = {
+          "goat-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        perdure = {
+        "perdure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -53,7 +53,7 @@ let
           ];
         };
         exes = {
-          perdure = {
+          "perdure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

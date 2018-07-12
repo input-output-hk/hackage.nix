@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-etag = {
+        "wai-middleware-etag" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-hashdb = {
+        "yesod-auth-hashdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

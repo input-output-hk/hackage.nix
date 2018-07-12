@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HAppS-Data = {
+        "HAppS-Data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

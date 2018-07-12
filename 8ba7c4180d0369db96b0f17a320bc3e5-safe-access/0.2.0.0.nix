@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-access = {
+        "safe-access" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

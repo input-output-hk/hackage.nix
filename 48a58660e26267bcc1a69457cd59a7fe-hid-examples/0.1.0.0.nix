@@ -21,34 +21,34 @@ let
       };
       components = {
         exes = {
-          locator = {
+          "locator" = {
             depends  = [ hsPkgs.base ];
           };
-          vocab1 = {
+          "vocab1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
             ];
           };
-          vocab2 = {
+          "vocab2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
             ];
           };
-          vocab3 = {
+          "vocab3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
             ];
           };
-          showexpr = {
+          "showexpr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hint
             ];
           };
-          stockquotes = {
+          "stockquotes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

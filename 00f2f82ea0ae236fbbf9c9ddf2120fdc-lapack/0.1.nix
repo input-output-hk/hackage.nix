@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lapack = {
+        "lapack" = {
           depends  = [
             hsPkgs.lapack-ffi
             hsPkgs.blas-ffi

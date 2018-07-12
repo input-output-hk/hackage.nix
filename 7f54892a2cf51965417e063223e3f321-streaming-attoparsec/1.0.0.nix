@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-attoparsec = {
+        "streaming-attoparsec" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          streaming-attoparsec-test = {
+          "streaming-attoparsec-test" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

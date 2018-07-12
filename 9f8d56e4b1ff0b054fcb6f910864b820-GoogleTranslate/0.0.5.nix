@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GoogleTranslate = {
+        "GoogleTranslate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.AttoJson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AC-PPM = {
+        "AC-PPM" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

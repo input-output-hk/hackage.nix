@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger = {
+        "hledger" = {
           depends  = [
             hsPkgs.hledger-lib
             hsPkgs.base
@@ -48,7 +48,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.pretty-show;
         };
         exes = {
-          hledger = {
+          "hledger" = {
             depends  = [
               hsPkgs.hledger-lib
               hsPkgs.base
@@ -75,7 +75,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.hledger-lib
               hsPkgs.hledger

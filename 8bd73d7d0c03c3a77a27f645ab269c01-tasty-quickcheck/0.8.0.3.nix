@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-quickcheck = {
+        "tasty-quickcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tasty

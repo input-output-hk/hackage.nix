@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-token-utils = {
+        "haskell-token-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Diff

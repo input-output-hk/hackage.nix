@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Win32-services = {
+        "Win32-services" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Win32

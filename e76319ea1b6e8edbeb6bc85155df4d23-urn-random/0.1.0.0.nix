@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        urn-random = {
+        "urn-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

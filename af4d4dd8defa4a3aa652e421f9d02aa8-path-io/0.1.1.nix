@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        path-io = {
+        "path-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

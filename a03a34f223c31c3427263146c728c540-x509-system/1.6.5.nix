@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        x509-system = {
+        "x509-system" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

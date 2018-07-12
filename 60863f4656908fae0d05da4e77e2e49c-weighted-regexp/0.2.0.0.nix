@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        weighted-regexp = {
+        "weighted-regexp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -33,13 +33,13 @@ let
           ];
         };
         exes = {
-          quickcheck-re = {
+          "quickcheck-re" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
             ];
           };
-          criterion-re = {
+          "criterion-re" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

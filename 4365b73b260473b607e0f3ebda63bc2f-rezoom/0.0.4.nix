@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rezoom = {
+          "rezoom" = {
             depends  = [
               hsPkgs.base
               hsPkgs.json

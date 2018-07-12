@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sessiontypes = {
+        "sessiontypes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          test-visualizer = {
+          "test-visualizer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sessiontypes
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          sessiontypes-debug = {
+          "sessiontypes-debug" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sessiontypes
@@ -48,7 +48,7 @@ let
               hsPkgs.directory
             ];
           };
-          sessiontypes-normalize = {
+          "sessiontypes-normalize" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sessiontypes
@@ -56,7 +56,7 @@ let
               hsPkgs.directory
             ];
           };
-          sessiontypes-interactive = {
+          "sessiontypes-interactive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sessiontypes

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        science-constants-dimensional = {
+        "science-constants-dimensional" = {
           depends  = [
             hsPkgs.base
             hsPkgs.science-constants

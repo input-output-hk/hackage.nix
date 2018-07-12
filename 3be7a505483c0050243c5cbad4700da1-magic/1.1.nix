@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        magic = {
+        "magic" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.magic ];
         };

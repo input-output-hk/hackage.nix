@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bus-pirate = {
+        "bus-pirate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.serialport

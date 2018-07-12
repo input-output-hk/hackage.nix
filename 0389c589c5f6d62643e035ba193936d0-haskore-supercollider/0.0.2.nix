@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskore-supercollider = {
+        "haskore-supercollider" = {
           depends  = [
             hsPkgs.haskore-realtime
             hsPkgs.haskore
@@ -46,8 +46,8 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          song-air = {};
-          test = {
+          "song-air" = {};
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HUnit

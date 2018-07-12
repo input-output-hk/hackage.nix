@@ -32,7 +32,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monoids = {
+        "monoids" = {
           depends  = (((((((([
             hsPkgs.base
             hsPkgs.category-extras

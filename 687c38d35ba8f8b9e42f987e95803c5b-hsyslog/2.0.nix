@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hsyslog = {
+        "hsyslog" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          self-test = {
+          "self-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

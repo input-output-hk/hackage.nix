@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdabot-social-plugins = {
+        "lambdabot-social-plugins" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

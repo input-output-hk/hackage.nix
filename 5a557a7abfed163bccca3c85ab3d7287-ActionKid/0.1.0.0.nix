@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ActionKid = {
+        "ActionKid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gloss
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          actionkid = {
+          "actionkid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          test-actionkid = {
+          "test-actionkid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

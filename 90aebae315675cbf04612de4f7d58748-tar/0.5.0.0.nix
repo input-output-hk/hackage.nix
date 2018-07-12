@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tar = {
+        "tar" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.filepath
@@ -47,7 +47,7 @@ let
             else [ hsPkgs.bytestring ]);
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.filepath
@@ -75,7 +75,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

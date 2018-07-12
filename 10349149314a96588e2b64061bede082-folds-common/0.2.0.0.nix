@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        folds-common = {
+        "folds-common" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          left-properties = {
+          "left-properties" = {
             depends  = [
               hsPkgs.folds-common
               hsPkgs.containers
@@ -37,7 +37,7 @@ let
               hsPkgs.base
             ];
           };
-          monoid-properties = {
+          "monoid-properties" = {
             depends  = [
               hsPkgs.folds-common
               hsPkgs.containers
@@ -46,7 +46,7 @@ let
               hsPkgs.base
             ];
           };
-          right-properties = {
+          "right-properties" = {
             depends  = [
               hsPkgs.folds-common
               hsPkgs.containers

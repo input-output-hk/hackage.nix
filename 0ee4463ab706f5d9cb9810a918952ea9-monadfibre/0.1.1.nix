@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadfibre = {
+        "monadfibre" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        watcher = {
+        "watcher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude

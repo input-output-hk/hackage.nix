@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          uacpid = {
+          "uacpid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

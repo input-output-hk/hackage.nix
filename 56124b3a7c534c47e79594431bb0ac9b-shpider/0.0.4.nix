@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        shpider = {
+        "shpider" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-posix

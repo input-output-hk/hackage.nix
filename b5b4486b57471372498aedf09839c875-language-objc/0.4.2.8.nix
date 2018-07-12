@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-objc = {
+        "language-objc" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.filepath

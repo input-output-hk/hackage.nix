@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          heyefi = {
+          "heyefi" = {
             depends  = [
               hsPkgs.HandsomeSoup
               hsPkgs.MissingH
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.HandsomeSoup
               hsPkgs.MissingH

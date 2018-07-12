@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-dispatch = {
+        "http-dispatch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          http-dispatch-test = {
+          "http-dispatch-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-dispatch

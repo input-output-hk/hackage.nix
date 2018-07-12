@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        periodic = {
+        "periodic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          periodic-test = {
+          "periodic-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

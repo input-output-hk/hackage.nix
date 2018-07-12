@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wikipedia4epub = {
+        "wikipedia4epub" = {
           depends  = [
             hsPkgs.ghc
             hsPkgs.base
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          wiki4e-mkepub-firefox = {};
+          "wiki4e-mkepub-firefox" = {};
         };
       };
     }

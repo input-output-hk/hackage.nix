@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bimap-server = {
+        "bimap-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

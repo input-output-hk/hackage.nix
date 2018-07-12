@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          replay-convert = {
+          "replay-convert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -42,7 +42,7 @@ let
               hsPkgs.pcap
             ];
           };
-          update = {
+          "update" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -63,7 +63,7 @@ let
               hsPkgs.csv
             ];
           };
-          export = {
+          "export" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -84,7 +84,7 @@ let
               hsPkgs.csv
             ];
           };
-          show = {
+          "show" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust

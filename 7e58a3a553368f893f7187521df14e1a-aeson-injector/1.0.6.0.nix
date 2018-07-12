@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-injector = {
+        "aeson-injector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test-aeson-injector = {
+          "test-aeson-injector" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

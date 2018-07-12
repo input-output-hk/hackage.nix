@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        indentation-parsec = {
+        "indentation-parsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-indentation = {
+          "test-indentation" = {
             depends  = [
               hsPkgs.parsec
               hsPkgs.base

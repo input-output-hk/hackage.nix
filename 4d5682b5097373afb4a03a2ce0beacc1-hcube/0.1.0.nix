@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hcube = {
+        "hcube" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hcube = {
+          "hcube" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

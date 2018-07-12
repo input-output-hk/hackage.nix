@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          flaccuraterip = {
+          "flaccuraterip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

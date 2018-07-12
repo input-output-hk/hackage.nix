@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          prove-everywhere-server = {
+          "prove-everywhere-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.warp

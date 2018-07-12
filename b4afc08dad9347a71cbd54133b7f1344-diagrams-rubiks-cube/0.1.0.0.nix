@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-rubiks-cube = {
+        "diagrams-rubiks-cube" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams-lib

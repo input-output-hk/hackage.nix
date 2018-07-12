@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        processing-for-haskell = {
+        "processing-for-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdabot-novelty-plugins = {
+        "lambdabot-novelty-plugins" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

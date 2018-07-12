@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        failable-list = {
+        "failable-list" = {
           depends  = [ hsPkgs.base ];
         };
       };

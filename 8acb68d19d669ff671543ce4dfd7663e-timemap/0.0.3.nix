@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timemap = {
+        "timemap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          bench2 = {
+          "bench2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -71,7 +71,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

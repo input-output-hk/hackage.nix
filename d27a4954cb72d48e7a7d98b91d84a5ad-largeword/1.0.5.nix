@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        largeword = {
+        "largeword" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

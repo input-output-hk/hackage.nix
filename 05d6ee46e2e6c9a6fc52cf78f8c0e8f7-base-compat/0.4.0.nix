@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        base-compat = {
+        "base-compat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.errorcall-eq-instance
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

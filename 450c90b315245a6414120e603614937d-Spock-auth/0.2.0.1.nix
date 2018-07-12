@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock-auth = {
+        "Spock-auth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Spock

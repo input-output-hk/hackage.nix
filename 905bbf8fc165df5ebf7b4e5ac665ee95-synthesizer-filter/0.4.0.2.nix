@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer-filter = {
+        "synthesizer-filter" = {
           depends  = [
             hsPkgs.synthesizer-core
             hsPkgs.transformers

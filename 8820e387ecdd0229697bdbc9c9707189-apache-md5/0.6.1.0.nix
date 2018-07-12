@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        apache-md5 = {
+        "apache-md5" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           libs = [ pkgs.crypto ];
         };
         tests = {
-          apache-md5-unit-tests = {
+          "apache-md5-unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          apache-md5-benchmark = {
+          "apache-md5-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

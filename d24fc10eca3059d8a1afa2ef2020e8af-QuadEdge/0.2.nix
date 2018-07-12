@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        QuadEdge = {
+        "QuadEdge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

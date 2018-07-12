@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          on-demand-ssh-tunnel = {
+          "on-demand-ssh-tunnel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

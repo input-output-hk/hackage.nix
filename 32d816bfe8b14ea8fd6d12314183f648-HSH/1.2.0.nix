@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HSH = {
+        "HSH" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

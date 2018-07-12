@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        monad-control = {
+        "monad-control" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          test-monad-control = {
+          "test-monad-control" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

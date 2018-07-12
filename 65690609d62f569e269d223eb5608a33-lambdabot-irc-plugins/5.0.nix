@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdabot-irc-plugins = {
+        "lambdabot-irc-plugins" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

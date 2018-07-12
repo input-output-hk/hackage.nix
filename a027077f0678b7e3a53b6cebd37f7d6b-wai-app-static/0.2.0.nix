@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-app-static = {
+        "wai-app-static" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

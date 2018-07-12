@@ -24,14 +24,14 @@ let
       };
       components = {
         exes = {
-          ptq = {
+          "ptq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.containers
             ];
           };
-          ptq.cgi = {
+          "ptq.cgi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

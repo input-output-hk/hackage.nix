@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          resolve-trivial-conflicts = {
+          "resolve-trivial-conflicts" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

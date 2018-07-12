@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          yeganesh = {
+          "yeganesh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -36,7 +36,7 @@ let
               hsPkgs.xdg-basedir
             ];
           };
-          yeganesh-strip = {
+          "yeganesh-strip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        console-program = {
+        "console-program" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

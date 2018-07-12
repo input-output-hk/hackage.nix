@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hint = {
+        "hint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src

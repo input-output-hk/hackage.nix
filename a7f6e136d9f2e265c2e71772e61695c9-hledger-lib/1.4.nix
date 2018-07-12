@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger-lib = {
+        "hledger-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -56,7 +56,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -93,7 +93,7 @@ let
               hsPkgs.Glob
             ];
           };
-          hunittests = {
+          "hunittests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

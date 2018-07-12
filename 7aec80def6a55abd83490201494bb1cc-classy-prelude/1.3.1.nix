@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        classy-prelude = {
+        "classy-prelude" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -58,7 +58,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmidi = {
+        "hmidi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

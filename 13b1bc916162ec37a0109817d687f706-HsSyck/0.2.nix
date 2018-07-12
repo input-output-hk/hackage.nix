@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HsSyck = {
+        "HsSyck" = {
           depends  = [ hsPkgs.base ];
         };
       };

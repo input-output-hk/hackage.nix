@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multiaddr = {
+        "multiaddr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          multiaddr-test = {
+          "multiaddr-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.multiaddr

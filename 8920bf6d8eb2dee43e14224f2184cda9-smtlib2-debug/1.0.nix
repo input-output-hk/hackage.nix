@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smtlib2-debug = {
+        "smtlib2-debug" = {
           depends  = [
             hsPkgs.base
             hsPkgs.smtlib2

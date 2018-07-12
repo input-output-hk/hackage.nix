@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pagarme = {
+        "pagarme" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          testbin = {
+          "testbin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pagarme

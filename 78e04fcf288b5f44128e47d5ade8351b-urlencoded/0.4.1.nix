@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        urlencoded = {
+        "urlencoded" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = pkgs.lib.optional _flags.test hsPkgs.QuickCheck;
           };
         };

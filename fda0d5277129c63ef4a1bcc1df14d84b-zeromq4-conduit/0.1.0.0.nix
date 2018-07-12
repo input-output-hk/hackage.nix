@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zeromq4-conduit = {
+        "zeromq4-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          zeromq4-conduit-test = {
+          "zeromq4-conduit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zeromq4-conduit

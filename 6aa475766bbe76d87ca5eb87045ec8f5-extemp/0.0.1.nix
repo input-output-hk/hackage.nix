@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          extemp = {
+          "extemp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

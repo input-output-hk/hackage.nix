@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Yampa = {
+        "Yampa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint

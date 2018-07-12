@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          shaper-server = {
+          "shaper-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -40,7 +40,7 @@ let
               hsPkgs.split
             ];
           };
-          shaper-client = {
+          "shaper-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -59,7 +59,7 @@ let
               hsPkgs.split
             ];
           };
-          replay-server = {
+          "replay-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -78,7 +78,7 @@ let
               hsPkgs.split
             ];
           };
-          replay-client = {
+          "replay-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -97,7 +97,7 @@ let
               hsPkgs.split
             ];
           };
-          compile = {
+          "compile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust

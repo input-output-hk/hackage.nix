@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ast-monad-json = {
+        "ast-monad-json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          ast-monad-json-test = {
+          "ast-monad-json-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ast-monad

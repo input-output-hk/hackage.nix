@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        possible = {
+        "possible" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;

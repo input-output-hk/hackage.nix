@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FormalGrammars = {
+        "FormalGrammars" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ADPfusion
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          GrammarPP = {
+          "GrammarPP" = {
             depends  = [ hsPkgs.cmdargs ];
           };
         };

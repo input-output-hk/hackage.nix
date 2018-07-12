@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ftp-client = {
+        "ftp-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          ftp-client-test = {
+          "ftp-client-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ftp-client

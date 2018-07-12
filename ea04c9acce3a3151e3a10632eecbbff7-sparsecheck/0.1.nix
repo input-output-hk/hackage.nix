@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        sparsecheck = {
+        "sparsecheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

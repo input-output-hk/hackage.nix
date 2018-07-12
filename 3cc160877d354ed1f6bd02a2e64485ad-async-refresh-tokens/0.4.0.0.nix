@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        async-refresh-tokens = {
+        "async-refresh-tokens" = {
           depends  = [
             hsPkgs.async-refresh
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          async-refresh-tokens-test = {
+          "async-refresh-tokens-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.async-refresh-tokens

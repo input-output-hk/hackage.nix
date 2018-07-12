@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wordcloud = {
+        "wordcloud" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

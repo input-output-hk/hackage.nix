@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kafka-device = {
+        "kafka-device" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          kafka-device = {
+          "kafka-device" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -45,7 +45,7 @@ let
               hsPkgs.mtl
             ];
           };
-          kafka-device-keyboard = {
+          "kafka-device-keyboard" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

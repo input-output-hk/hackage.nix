@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-smallcheck = {
+        "hspec-smallcheck" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -41,7 +41,7 @@ let
               hsPkgs.smallcheck
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

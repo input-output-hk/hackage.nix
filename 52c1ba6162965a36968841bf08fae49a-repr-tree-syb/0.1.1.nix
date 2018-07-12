@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repr-tree-syb = {
+        "repr-tree-syb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

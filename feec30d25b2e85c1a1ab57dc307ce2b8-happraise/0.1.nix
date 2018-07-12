@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          happraise = {
+          "happraise" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

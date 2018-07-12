@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        elm-bridge = {
+        "elm-bridge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          derive-elm-tests = {
+          "derive-elm-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

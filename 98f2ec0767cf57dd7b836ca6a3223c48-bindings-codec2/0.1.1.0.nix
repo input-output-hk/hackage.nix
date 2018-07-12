@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-codec2 = {
+        "bindings-codec2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL
@@ -28,7 +28,7 @@ let
           libs = [ pkgs.codec2 ];
         };
         exes = {
-          bindings-codec2-demo = {
+          "bindings-codec2-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

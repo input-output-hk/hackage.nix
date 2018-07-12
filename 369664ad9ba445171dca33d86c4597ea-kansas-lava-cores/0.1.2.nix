@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kansas-lava-cores = {
+        "kansas-lava-cores" = {
           depends  = [
             hsPkgs.base
             hsPkgs.kansas-lava
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          spartan3e-demo = {
+          "spartan3e-demo" = {
             depends  = if _flags.spartan3e || _flags.all
               then [
                 hsPkgs.base
@@ -53,7 +53,7 @@ let
               ]
               else [ hsPkgs.base ];
           };
-          kansas-lava-cores-tests = {
+          "kansas-lava-cores-tests" = {
             depends  = if _flags.unit || _flags.all
               then [
                 hsPkgs.base

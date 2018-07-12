@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        easyrender = {
+        "easyrender" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zlib

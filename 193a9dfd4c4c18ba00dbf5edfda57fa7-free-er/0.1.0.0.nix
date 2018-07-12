@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        free-er = {
+        "free-er" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          free-er-examples = {
+          "free-er-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.free-er

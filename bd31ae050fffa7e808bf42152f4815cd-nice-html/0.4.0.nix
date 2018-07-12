@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nice-html = {
+        "nice-html" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           ];
         };
         benchmarks = {
-          mem = {
+          "mem" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -54,7 +54,7 @@ let
               hsPkgs.transformers
             ];
           };
-          mem-prof = {
+          "mem-prof" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -69,7 +69,7 @@ let
               hsPkgs.transformers
             ];
           };
-          perf = {
+          "perf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

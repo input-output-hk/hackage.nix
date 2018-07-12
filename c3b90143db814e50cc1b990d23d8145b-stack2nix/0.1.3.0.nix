@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stack2nix = {
+        "stack2nix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          stack2nix = {
+          "stack2nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

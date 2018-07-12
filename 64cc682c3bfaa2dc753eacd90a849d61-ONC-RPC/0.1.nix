@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ONC-RPC = {
+        "ONC-RPC" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          hsrpcgen = {
+          "hsrpcgen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

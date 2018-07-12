@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal2arch = {
+          "cabal2arch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty
@@ -34,7 +34,7 @@ let
               hsPkgs.archlinux
             ];
           };
-          manycabal2arch = {
+          "manycabal2arch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

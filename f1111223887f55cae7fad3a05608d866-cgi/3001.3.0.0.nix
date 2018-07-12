@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cgi = {
+        "cgi" = {
           depends  = ([
             hsPkgs.parsec
             hsPkgs.exceptions
@@ -48,7 +48,7 @@ let
             else [ hsPkgs.mtl ]);
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

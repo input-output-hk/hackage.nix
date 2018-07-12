@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logging-facade = {
+        "logging-facade" = {
           depends  = [
             hsPkgs.base
             hsPkgs.call-stack
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-facade

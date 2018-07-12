@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskelldb-dynamic = {
+        "haskelldb-dynamic" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          DBDirect = {
+          "DBDirect" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

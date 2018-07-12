@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        http-api-data = {
+        "http-api-data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -40,7 +40,7 @@ let
           ] ++ pkgs.lib.optional _flags.use-text-show hsPkgs.text-show;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.hspec
@@ -59,7 +59,7 @@ let
               hsPkgs.buildPackages.hspec-discover
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

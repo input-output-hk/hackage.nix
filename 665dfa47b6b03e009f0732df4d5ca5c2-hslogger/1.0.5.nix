@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hslogger = {
+        "hslogger" = {
           depends  = ([
             hsPkgs.network
             hsPkgs.mtl
@@ -35,6 +35,6 @@ let
             ]
             else [ hsPkgs.base ]);
         };
-        exes = { runtests = {}; };
+        exes = { "runtests" = {}; };
       };
     }

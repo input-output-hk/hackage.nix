@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          formal = {
+          "formal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

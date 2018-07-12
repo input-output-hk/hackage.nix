@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exinst = {
+        "exinst" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints

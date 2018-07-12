@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gelatin-freetype2 = {
+        "gelatin-freetype2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gelatin
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          gelatin-freetype2-test = {
+          "gelatin-freetype2-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gelatin-freetype2

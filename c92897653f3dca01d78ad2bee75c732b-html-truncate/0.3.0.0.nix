@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        html-truncate = {
+        "html-truncate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagsoup

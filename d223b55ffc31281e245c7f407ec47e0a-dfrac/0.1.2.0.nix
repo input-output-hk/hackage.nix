@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dfrac = {
+        "dfrac" = {
           depends  = [
             hsPkgs.base
             hsPkgs.scientific

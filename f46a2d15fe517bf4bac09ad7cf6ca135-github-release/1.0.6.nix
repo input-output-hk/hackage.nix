@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        github-release = {
+        "github-release" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          github-release = {
+          "github-release" = {
             depends  = [
               hsPkgs.base
               hsPkgs.github-release

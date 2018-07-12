@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk2hs-cast-gnomevfs = {
+        "gtk2hs-cast-gnomevfs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hint

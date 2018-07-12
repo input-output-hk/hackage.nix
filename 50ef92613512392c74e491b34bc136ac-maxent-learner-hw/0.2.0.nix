@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        maxent-learner-hw = {
+        "maxent-learner-hw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          phono-learner-hw = {
+          "phono-learner-hw" = {
             depends  = [
               hsPkgs.base
               hsPkgs.maxent-learner-hw

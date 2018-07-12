@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unpacked-containers = {
+        "unpacked-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -29,19 +29,19 @@ let
           ];
         };
         sublibs = {
-          utils = {
+          "utils" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
               hsPkgs.ghc-prim
             ];
           };
-          example = {
+          "example" = {
             depends  = [ hsPkgs.base ];
           };
         };
         exes = {
-          unpacked-set-example = {
+          "unpacked-set-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unpacked-containers

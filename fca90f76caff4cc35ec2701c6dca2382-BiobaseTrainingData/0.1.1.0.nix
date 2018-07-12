@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseTrainingData = {
+        "BiobaseTrainingData" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          MkTrainingData = {
+          "MkTrainingData" = {
             depends  = [ hsPkgs.cmdargs ];
           };
         };

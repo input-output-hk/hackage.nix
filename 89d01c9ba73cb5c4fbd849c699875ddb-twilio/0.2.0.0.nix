@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twilio = {
+        "twilio" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          apitests = {
+          "apitests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -61,7 +61,7 @@ let
               hsPkgs.twilio
             ];
           };
-          integrationtests = {
+          "integrationtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        axiomatic-classes = {
+        "axiomatic-classes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

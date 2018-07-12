@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-framework = {
+        "test-framework" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          test-framework-tests = {
+          "test-framework-tests" = {
             depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

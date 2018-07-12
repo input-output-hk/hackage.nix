@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monetdb-mapi = {
+        "monetdb-mapi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-monetdb-mapi

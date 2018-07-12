@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Parallel-Arrows-Definition = {
+        "Parallel-Arrows-Definition" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

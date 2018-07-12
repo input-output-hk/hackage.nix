@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakaru = {
+        "hakaru" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          hakaru = {
+          "hakaru" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -63,7 +63,7 @@ let
               hsPkgs.hakaru
             ];
           };
-          compile = {
+          "compile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -74,7 +74,7 @@ let
               hsPkgs.hakaru
             ];
           };
-          summary = {
+          "summary" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -85,7 +85,7 @@ let
               hsPkgs.hakaru
             ];
           };
-          hk-maple = {
+          "hk-maple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -96,7 +96,7 @@ let
               hsPkgs.hakaru
             ];
           };
-          density = {
+          "density" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -105,7 +105,7 @@ let
               hsPkgs.hakaru
             ];
           };
-          disintegrate = {
+          "disintegrate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -115,7 +115,7 @@ let
               hsPkgs.hakaru
             ];
           };
-          pretty = {
+          "pretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -123,14 +123,14 @@ let
               hsPkgs.hakaru
             ];
           };
-          momiji = {
+          "momiji" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.hakaru
             ];
           };
-          normalize = {
+          "normalize" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -140,7 +140,7 @@ let
               hsPkgs.hakaru
             ];
           };
-          hkc = {
+          "hkc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -153,7 +153,7 @@ let
               hsPkgs.hakaru
             ];
           };
-          mh = {
+          "mh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -165,7 +165,7 @@ let
           };
         };
         tests = {
-          system-testsuite = {
+          "system-testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

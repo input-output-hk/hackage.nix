@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          g4ip-prover = {
+          "g4ip-prover" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        di-monad = {
+        "di-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

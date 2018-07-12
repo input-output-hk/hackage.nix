@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        storable-endian = {
+        "storable-endian" = {
           depends  = [
             hsPkgs.byteorder
           ] ++ [ hsPkgs.base ];

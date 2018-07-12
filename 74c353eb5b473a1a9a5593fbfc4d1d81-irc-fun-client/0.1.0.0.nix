@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc-fun-client = {
+        "irc-fun-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.irc-fun-messages

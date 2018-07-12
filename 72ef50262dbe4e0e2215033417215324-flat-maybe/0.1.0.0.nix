@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flat-maybe = {
+        "flat-maybe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

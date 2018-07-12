@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pdfname = {
+          "pdfname" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

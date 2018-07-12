@@ -24,14 +24,14 @@ let
         buildType = "Simple";
       };
       components = {
-        var = {
+        "var" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.transformers
           ] ++ pkgs.lib.optional _flags.safe-st hsPkgs.base) ++ pkgs.lib.optional _flags.ghc-conc-sync hsPkgs.base) ++ pkgs.lib.optional _flags.strict-modifyref hsPkgs.base) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          boxed = {
+          "boxed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -50,7 +50,7 @@ let
               hsPkgs.var
             ];
           };
-          unboxed = {
+          "unboxed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -58,14 +58,14 @@ let
               hsPkgs.var
             ];
           };
-          mean = {
+          "mean" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.var
             ];
           };
-          user = {
+          "user" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

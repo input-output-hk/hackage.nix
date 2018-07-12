@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        teams = {
+        "teams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fgl

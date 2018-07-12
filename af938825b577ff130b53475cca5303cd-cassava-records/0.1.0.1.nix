@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassava-records = {
+        "cassava-records" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          cassava-records-exe = {
+          "cassava-records-exe" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          cassava-records-test = {
+          "cassava-records-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

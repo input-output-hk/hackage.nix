@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zlib-bindings = {
+        "zlib-bindings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          zlib-bindings-test = {
+          "zlib-bindings-test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.bytestring

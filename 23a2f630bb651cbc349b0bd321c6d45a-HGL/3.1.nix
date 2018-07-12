@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HGL = {
+        "HGL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.X11

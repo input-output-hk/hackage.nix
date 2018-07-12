@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-util = {
+        "happstack-util" = {
           depends  = (([
             hsPkgs.array
             hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          happstack-util-tests = {
+          "happstack-util-tests" = {
             depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.network
               hsPkgs.HUnit

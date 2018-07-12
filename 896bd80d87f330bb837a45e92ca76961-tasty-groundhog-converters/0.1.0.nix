@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-groundhog-converters = {
+        "tasty-groundhog-converters" = {
           depends  = [
             hsPkgs.base
             hsPkgs.groundhog-converters

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-pagination = {
+        "yesod-pagination" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

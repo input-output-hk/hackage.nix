@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-php = {
+        "acme-php" = {
           depends  = [
             hsPkgs.acme-left-pad
             hsPkgs.base

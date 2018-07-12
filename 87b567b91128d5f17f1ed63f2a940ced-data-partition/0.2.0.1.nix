@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-partition = {
+        "data-partition" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

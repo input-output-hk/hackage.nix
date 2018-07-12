@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        duplo = {
+        "duplo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          duplo = {
+          "duplo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -87,7 +87,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.duplo

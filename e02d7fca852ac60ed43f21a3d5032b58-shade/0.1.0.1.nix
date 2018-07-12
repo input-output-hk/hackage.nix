@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        shade = {
+        "shade" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          shade = {
+          "shade" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shade

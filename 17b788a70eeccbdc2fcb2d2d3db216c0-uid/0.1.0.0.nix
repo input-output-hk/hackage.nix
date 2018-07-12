@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uid = {
+        "uid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

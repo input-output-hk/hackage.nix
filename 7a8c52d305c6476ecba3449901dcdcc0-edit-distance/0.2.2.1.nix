@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        edit-distance = {
+        "edit-distance" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          edit-distance-tests = {
+          "edit-distance-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          edit-distance-benchmark = {
+          "edit-distance-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

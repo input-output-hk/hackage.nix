@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Salsa = {
+        "Salsa" = {
           depends  = if !system.isWindows || _flags.use_mono
             then [
               hsPkgs.base

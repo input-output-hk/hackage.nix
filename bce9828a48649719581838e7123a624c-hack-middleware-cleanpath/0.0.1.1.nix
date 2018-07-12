@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-middleware-cleanpath = {
+        "hack-middleware-cleanpath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

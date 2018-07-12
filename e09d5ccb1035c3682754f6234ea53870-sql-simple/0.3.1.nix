@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sql-simple = {
+        "sql-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

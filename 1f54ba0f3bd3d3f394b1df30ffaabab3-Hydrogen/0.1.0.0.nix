@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hydrogen = {
+        "Hydrogen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          Hydrogen-exe = {
+          "Hydrogen-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Hydrogen
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          Hydrogen-test = {
+          "Hydrogen-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Hydrogen

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        auto-update = {
+        "auto-update" = {
           depends  = [ hsPkgs.base ];
         };
       };

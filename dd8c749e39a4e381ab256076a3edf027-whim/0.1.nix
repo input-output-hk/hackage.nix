@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        whim = {
+        "whim" = {
           depends  = [
             hsPkgs.base
             hsPkgs.X11
@@ -32,6 +32,6 @@ let
             hsPkgs.mtl
           ];
         };
-        exes = { whim = {}; };
+        exes = { "whim" = {}; };
       };
     }

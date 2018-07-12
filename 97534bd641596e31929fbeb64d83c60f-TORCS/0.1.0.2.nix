@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TORCS = {
+        "TORCS" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          Simple = {
+          "Simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.TORCS

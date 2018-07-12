@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        daemonize-doublefork = {
+        "daemonize-doublefork" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

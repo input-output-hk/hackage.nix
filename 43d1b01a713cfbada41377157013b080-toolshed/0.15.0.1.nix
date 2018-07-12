@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toolshed = {
+        "toolshed" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          toolshed = {
+          "toolshed" = {
             depends  = [ hsPkgs.Cabal ];
           };
         };

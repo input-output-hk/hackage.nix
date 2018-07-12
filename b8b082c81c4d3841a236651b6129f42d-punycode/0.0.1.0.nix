@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        punycode = {
+        "punycode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

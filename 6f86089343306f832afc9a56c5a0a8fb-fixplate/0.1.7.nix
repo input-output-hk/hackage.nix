@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        fixplate = {
+        "fixplate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          fixplate-tests = {
+          "fixplate-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

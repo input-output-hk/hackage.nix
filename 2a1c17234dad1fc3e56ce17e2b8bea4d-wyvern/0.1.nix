@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          wyvern = {
+          "wyvern" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

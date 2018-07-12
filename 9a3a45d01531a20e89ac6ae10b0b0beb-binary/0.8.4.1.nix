@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary = {
+        "binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
         };
         tests = {
-          qc = {
+          "qc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
               hsPkgs.containers
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
-          read-write-file = {
+          "read-write-file" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -55,7 +55,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -63,7 +63,7 @@ let
               hsPkgs.containers
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
-          get = {
+          "get" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -76,7 +76,7 @@ let
               hsPkgs.containers
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
-          put = {
+          "put" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -86,7 +86,7 @@ let
               hsPkgs.containers
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
-          generics-bench = {
+          "generics-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -101,7 +101,7 @@ let
               hsPkgs.containers
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim;
           };
-          builder = {
+          "builder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

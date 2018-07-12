@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        config-parser = {
+        "config-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         tests = {
-          parsing = {
+          "parsing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

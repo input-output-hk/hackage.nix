@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ho-rewriting = {
+        "ho-rewriting" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          capture = {
+          "capture" = {
             depends  = [
               hsPkgs.base
               hsPkgs.compdata

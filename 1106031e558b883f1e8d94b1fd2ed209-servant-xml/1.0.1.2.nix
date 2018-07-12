@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-xml = {
+        "servant-xml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

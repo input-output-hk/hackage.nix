@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-default = {
+        "yesod-default" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-core

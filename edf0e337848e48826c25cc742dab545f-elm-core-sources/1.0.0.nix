@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elm-core-sources = {
+        "elm-core-sources" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

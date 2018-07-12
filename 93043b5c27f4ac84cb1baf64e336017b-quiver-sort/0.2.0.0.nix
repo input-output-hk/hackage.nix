@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quiver-sort = {
+        "quiver-sort" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          sorting-tests = {
+          "sorting-tests" = {
             depends  = [
               hsPkgs.quiver-sort
               hsPkgs.base

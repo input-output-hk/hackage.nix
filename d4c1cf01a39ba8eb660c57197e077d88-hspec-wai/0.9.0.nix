@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-wai = {
+        "hspec-wai" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

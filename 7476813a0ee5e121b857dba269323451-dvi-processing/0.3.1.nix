@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dvi-processing = {
+        "dvi-processing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

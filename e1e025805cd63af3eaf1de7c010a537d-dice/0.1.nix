@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dice = {
+        "dice" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random-fu
@@ -28,6 +28,6 @@ let
             hsPkgs.transformers
           ];
         };
-        exes = { dice = {}; };
+        exes = { "dice" = {}; };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-pandoc = {
+        "servant-pandoc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-media

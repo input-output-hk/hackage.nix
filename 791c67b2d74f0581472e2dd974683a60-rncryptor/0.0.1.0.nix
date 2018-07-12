@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rncryptor = {
+        "rncryptor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          rncryptor-stream = {
+          "rncryptor-stream" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          rncryptor-tests = {
+          "rncryptor-tests" = {
             depends  = [
               hsPkgs.rncryptor
               hsPkgs.base

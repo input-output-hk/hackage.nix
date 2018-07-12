@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unicode-names = {
+        "unicode-names" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

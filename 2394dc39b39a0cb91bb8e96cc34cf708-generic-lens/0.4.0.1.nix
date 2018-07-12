@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-lens = {
+        "generic-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.profunctors
           ];
         };
         tests = {
-          generic-lens-test = {
+          "generic-lens-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.generic-lens
@@ -36,7 +36,7 @@ let
           };
         };
         benchmarks = {
-          generic-lens-bench = {
+          "generic-lens-bench" = {
             depends  = [
               hsPkgs.generic-lens
               hsPkgs.base

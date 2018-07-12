@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grouped-list = {
+        "grouped-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,13 +29,13 @@ let
           ];
         };
         tests = {
-          grouped-list-examples = {
+          "grouped-list-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.grouped-list
             ];
           };
-          grouped-list-properties = {
+          "grouped-list-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.grouped-list
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          grouped-list-bench = {
+          "grouped-list-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.grouped-list

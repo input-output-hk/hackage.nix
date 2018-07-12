@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        di-df1 = {
+        "di-df1" = {
           depends  = [
             hsPkgs.base
             hsPkgs.df1
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        s-cargot-letbind = {
+        "s-cargot-letbind" = {
           depends  = [
             hsPkgs.base
             hsPkgs.s-cargot
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          s-cargot-printparselet = {
+          "s-cargot-printparselet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

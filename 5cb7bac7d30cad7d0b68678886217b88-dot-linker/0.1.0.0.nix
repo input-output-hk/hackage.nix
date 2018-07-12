@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dot-linker = {
+        "dot-linker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          dot-linker = {
+          "dot-linker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          dot-linker-spec = {
+          "dot-linker-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

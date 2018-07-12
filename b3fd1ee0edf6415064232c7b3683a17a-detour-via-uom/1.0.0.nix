@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        detour-via-uom = {
+        "detour-via-uom" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -44,7 +44,7 @@ let
               hsPkgs.uom-plugin
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

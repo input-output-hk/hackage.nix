@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        leksah-server = {
+        "leksah-server" = {
           depends  = ((([
             hsPkgs.Cabal
             hsPkgs.base
@@ -51,7 +51,7 @@ let
             hsPkgs.process
             hsPkgs.base-compat
             hsPkgs.aeson
-          ] ++ [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             hsPkgs.haddock-api
             hsPkgs.haddock-library
             hsPkgs.ghc-boot
@@ -74,7 +74,7 @@ let
           ];
         };
         exes = {
-          leksah-server = {
+          "leksah-server" = {
             depends  = ((([
               hsPkgs.Cabal
               hsPkgs.base
@@ -102,7 +102,7 @@ let
               hsPkgs.process
               hsPkgs.leksah-server
               hsPkgs.base-compat
-            ] ++ [
+            ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
               hsPkgs.haddock-api
               hsPkgs.haddock-library
               hsPkgs.ghc-boot
@@ -124,7 +124,7 @@ let
               pkgs."glib-2.0"
             ];
           };
-          leksahecho = {
+          "leksahecho" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslogger
@@ -140,12 +140,12 @@ let
               hsPkgs.leksah-server
             ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
           };
-          leksahtrue = {
+          "leksahtrue" = {
             depends  = [ hsPkgs.base ];
           };
         };
         tests = {
-          test-tool = {
+          "test-tool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslogger

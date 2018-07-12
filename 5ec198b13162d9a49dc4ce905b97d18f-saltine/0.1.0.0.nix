@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        saltine = {
+        "saltine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           pkgconfig = pkgs.lib.optional (!system.isWindows) pkgconfPkgs.libsodium;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.saltine

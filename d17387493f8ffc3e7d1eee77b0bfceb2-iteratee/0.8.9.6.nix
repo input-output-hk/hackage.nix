@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iteratee = {
+        "iteratee" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ListLike
@@ -34,7 +34,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          testIteratee = {
+          "testIteratee" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          bench-all = {
+          "bench-all" = {
             depends  = [
               hsPkgs.iteratee
               hsPkgs.bytestring

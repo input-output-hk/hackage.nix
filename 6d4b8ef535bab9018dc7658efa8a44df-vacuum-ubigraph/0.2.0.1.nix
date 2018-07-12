@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vacuum-ubigraph = {
+        "vacuum-ubigraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vacuum

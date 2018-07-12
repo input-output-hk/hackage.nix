@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-ruby = {
+        "servant-ruby" = {
           depends  = [
             hsPkgs.base
             hsPkgs.casing
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doc-test = {
+          "doc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

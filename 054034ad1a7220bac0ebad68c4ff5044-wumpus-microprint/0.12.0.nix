@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wumpus-microprint = {
+        "wumpus-microprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector-space

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microlens-aeson = {
+        "microlens-aeson" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          microlens-aeson-test = {
+          "microlens-aeson-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

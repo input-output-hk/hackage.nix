@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk-simple-list-view = {
+        "gtk-simple-list-view" = {
           depends  = [
             hsPkgs.gtk
             hsPkgs.base

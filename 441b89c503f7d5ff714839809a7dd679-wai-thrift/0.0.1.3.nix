@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-thrift = {
+        "wai-thrift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.thrift

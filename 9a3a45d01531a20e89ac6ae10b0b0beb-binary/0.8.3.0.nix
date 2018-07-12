@@ -20,16 +20,16 @@ let
         buildType = "Simple";
       };
       components = {
-        binary = {
+        "binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.containers
             hsPkgs.array
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1" && (compiler.isGhc && compiler.version.le "7.6")) hsPkgs.ghc-prim;
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2.1") (pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim);
         };
         tests = {
-          qc = {
+          "qc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
               hsPkgs.containers
             ];
           };
-          read-write-file = {
+          "read-write-file" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -55,7 +55,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -63,7 +63,7 @@ let
               hsPkgs.containers
             ];
           };
-          get = {
+          "get" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -76,7 +76,7 @@ let
               hsPkgs.containers
             ];
           };
-          put = {
+          "put" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -84,9 +84,9 @@ let
               hsPkgs.deepseq
               hsPkgs.array
               hsPkgs.containers
-            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1" && (compiler.isGhc && compiler.version.le "7.6")) hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2.1") (pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim);
           };
-          generics-bench = {
+          "generics-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -99,9 +99,9 @@ let
               hsPkgs.criterion
               hsPkgs.array
               hsPkgs.containers
-            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2.1" && (compiler.isGhc && compiler.version.le "7.6")) hsPkgs.ghc-prim;
+            ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2.1") (pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim);
           };
-          builder = {
+          "builder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

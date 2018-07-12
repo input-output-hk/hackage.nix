@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hermit = {
+        "hermit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -40,7 +40,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.terminfo;
         };
         exes = {
-          hermit = {
+          "hermit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

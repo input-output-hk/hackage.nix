@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        statsd-client = {
+        "statsd-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

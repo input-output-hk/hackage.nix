@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          radix = {
+          "radix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

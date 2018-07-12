@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cli = {
+        "cli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-cli = {
+          "test-cli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

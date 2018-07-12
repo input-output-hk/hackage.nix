@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spatial-math = {
+        "spatial-math" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

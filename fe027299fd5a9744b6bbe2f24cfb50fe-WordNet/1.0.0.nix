@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WordNet = {
+        "WordNet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

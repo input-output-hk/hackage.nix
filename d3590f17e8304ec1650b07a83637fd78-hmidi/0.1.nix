@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmidi = {
+        "hmidi" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;

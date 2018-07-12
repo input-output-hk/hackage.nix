@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasmin = {
+        "hasmin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          hasmin = {
+          "hasmin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -65,7 +65,7 @@ let
               hsPkgs.hasmin
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

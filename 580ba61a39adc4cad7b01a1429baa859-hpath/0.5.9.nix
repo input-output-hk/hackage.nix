@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpath = {
+        "hpath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          doctests-hpath = {
+          "doctests-hpath" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -43,7 +43,7 @@ let
               hsPkgs.hpath
             ];
           };
-          doctests-posix = {
+          "doctests-posix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -54,7 +54,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -68,7 +68,7 @@ let
           };
         };
         benchmarks = {
-          bench.hs = {
+          "bench.hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hpath

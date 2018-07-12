@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        STMonadTrans = {
+        "STMonadTrans" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

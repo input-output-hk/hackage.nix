@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haskintex = {
+          "haskintex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

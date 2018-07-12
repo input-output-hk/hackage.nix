@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-sass = {
+        "yesod-sass" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsass

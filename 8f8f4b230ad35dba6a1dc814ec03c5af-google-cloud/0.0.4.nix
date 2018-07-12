@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-cloud = {
+        "google-cloud" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

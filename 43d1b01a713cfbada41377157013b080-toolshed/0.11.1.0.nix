@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toolshed = {
+        "toolshed" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional _flags.havedeepseq hsPkgs.deepseq;

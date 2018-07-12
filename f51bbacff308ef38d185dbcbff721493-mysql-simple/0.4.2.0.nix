@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mysql-simple = {
+        "mysql-simple" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

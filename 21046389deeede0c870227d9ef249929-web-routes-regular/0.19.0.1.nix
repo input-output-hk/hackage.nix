@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-routes-regular = {
+        "web-routes-regular" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

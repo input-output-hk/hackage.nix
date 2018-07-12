@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          GLFW-b-demo = {
+          "GLFW-b-demo" = {
             depends  = [
               hsPkgs.GLFW-b
               hsPkgs.OpenGL

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        moe = {
+        "moe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

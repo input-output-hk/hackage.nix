@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-travis = {
+        "tasty-travis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tasty
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        one-liner = {
+        "one-liner" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          unittests = {
+          "unittests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.contravariant

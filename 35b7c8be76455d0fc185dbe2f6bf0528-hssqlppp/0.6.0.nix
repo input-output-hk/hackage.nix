@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hssqlppp = {
+        "hssqlppp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

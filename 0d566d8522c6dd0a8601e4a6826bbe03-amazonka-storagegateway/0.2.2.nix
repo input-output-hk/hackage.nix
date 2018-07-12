@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-storagegateway = {
+        "amazonka-storagegateway" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

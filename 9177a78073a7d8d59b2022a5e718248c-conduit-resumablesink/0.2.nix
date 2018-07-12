@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-resumablesink = {
+        "conduit-resumablesink" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.conduit-resumablesink

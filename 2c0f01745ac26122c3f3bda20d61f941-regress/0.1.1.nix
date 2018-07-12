@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regress = {
+        "regress" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ad

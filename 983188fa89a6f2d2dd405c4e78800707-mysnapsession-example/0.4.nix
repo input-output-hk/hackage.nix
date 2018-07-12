@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          animalgame = {
+          "animalgame" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
               hsPkgs.clientsession
             ];
           };
-          clientcount = {
+          "clientcount" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

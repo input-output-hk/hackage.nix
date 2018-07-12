@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        marvin-interpolate = {
+        "marvin-interpolate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          marvin-interpolate-test = {
+          "marvin-interpolate-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.marvin-interpolate

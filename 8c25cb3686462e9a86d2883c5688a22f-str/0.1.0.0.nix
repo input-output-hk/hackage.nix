@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        str = {
+        "str" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

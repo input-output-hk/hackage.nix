@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger = {
+        "hledger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          hledger = {
+          "hledger" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

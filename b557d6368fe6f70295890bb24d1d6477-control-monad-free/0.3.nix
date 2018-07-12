@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        control-monad-free = {
+        "control-monad-free" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opentheory-probability = {
+        "opentheory-probability" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

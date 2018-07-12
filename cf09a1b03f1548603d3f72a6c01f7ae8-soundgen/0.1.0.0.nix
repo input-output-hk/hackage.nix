@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sound = {
+          "sound" = {
             depends  = [
               hsPkgs.base
               hsPkgs.WAVE

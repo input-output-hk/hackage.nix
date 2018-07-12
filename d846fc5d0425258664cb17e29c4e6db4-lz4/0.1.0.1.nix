@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lz4 = {
+        "lz4" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           libs = [ pkgs.lz4 ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

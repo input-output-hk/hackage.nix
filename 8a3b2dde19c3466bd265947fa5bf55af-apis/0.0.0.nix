@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apis = {
+        "apis" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.yql

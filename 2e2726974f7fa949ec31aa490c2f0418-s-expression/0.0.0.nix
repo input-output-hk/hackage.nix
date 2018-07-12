@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        s-expression = {
+        "s-expression" = {
           depends  = [
             hsPkgs.base
             hsPkgs.derive-monoid
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          example-s-expressions = {
+          "example-s-expressions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.s-expression

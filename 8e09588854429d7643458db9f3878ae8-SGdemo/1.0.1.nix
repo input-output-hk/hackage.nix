@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sgdemo = {
+          "sgdemo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SG

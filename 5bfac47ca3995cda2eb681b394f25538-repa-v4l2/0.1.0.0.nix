@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa-v4l2 = {
+        "repa-v4l2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.repa
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.gloss
               hsPkgs.repa-v4l2

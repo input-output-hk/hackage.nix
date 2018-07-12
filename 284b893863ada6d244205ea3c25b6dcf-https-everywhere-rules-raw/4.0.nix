@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        https-everywhere-rules-raw = {
+        "https-everywhere-rules-raw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

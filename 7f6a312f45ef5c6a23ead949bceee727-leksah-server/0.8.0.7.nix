@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        leksah-server = {
+        "leksah-server" = {
           depends  = (([
             hsPkgs.Cabal
             hsPkgs.base
@@ -55,7 +55,7 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
         };
         exes = {
-          leksah-server = {
+          "leksah-server" = {
             depends  = (([
               hsPkgs.Cabal
               hsPkgs.base
@@ -84,7 +84,7 @@ let
               ])) ++ pkgs.lib.optional _flags.libcurl hsPkgs.curl;
             libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
           };
-          leksahecho = {};
+          "leksahecho" = {};
         };
       };
     }

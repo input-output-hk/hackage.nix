@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        ar-timestamp-wiper = {
+        "ar-timestamp-wiper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         exes = {
-          ar-timestamp-wiper = {
+          "ar-timestamp-wiper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

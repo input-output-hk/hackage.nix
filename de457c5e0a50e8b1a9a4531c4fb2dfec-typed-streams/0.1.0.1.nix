@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typed-streams = {
+        "typed-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

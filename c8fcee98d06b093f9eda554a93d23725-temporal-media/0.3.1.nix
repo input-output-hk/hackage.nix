@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        temporal-media = {
+        "temporal-media" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

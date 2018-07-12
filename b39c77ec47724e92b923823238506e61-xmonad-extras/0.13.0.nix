@@ -29,7 +29,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad-extras = {
+        "xmonad-extras" = {
           depends  = ((((([
             hsPkgs.mtl
             hsPkgs.unix
@@ -48,7 +48,7 @@ let
             ]
             else [
               hsPkgs.base
-            ])) ++ pkgs.lib.optional _flags.with_sound hsPkgs.alsa-mixer) ++ [
+            ])) ++ pkgs.lib.optional _flags.with_sound hsPkgs.alsa-mixer) ++ pkgs.lib.optionals _flags.with_hint [
             hsPkgs.hint
             hsPkgs.network
           ]) ++ pkgs.lib.optionals _flags.with_mpd [

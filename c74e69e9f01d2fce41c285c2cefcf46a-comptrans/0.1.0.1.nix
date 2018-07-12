@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        comptrans = {
+        "comptrans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

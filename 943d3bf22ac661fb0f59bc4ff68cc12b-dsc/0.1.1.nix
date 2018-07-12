@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dsc = {
+        "dsc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base64-bytestring

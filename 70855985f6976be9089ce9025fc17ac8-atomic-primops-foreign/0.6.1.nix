@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        atomic-primops-foreign = {
+        "atomic-primops-foreign" = {
           depends  = [
             hsPkgs.bits-atomic
             hsPkgs.base
           ];
         };
         tests = {
-          test-atomic-primops-foreign = {
+          "test-atomic-primops-foreign" = {
             depends  = [
               hsPkgs.bits-atomic
               hsPkgs.base

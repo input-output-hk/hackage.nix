@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-fixture = {
+        "test-fixture" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.transformers;
         };
         tests = {
-          test-fixture-test-suite = {
+          "test-fixture-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-fixture

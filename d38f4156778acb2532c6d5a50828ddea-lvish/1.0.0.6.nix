@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lvish = {
+        "lvish" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional _flags.chaselev hsPkgs.chaselev-deque;
         };
         tests = {
-          test-lvish = {
+          "test-lvish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

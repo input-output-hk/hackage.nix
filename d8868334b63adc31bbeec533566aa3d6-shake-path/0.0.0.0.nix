@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake-path = {
+        "shake-path" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shake

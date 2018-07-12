@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          varan = {
+          "varan" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -32,14 +32,14 @@ let
               hsPkgs.bytestring
             ];
           };
-          vextr = {
+          "vextr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.cmdargs
             ];
           };
-          sparks = {
+          "sparks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

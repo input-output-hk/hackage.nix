@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twisty = {
+        "twisty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jmacro-rpc-snap = {
+        "jmacro-rpc-snap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

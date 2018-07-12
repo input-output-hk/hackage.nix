@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-metrics = {
+        "wai-middleware-metrics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ekg-core
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          metrics-test = {
+          "metrics-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai
@@ -52,7 +52,7 @@ let
           };
         };
         benchmarks = {
-          metrics-bench = {
+          "metrics-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-taskqueue = {
+        "gogol-taskqueue" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

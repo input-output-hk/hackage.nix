@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-level-bst = {
+        "type-level-bst" = {
           depends  = [ hsPkgs.base ];
         };
       };

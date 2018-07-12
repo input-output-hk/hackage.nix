@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        random-strings = {
+        "random-strings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
           ];
         };
         exes = {
-          readme-example = {
+          "readme-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random-strings
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          test-basics = {
+          "test-basics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random-strings
@@ -43,7 +43,7 @@ let
               hsPkgs.mtl
             ];
           };
-          test-randomness = {
+          "test-randomness" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random-strings

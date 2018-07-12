@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nats = {
+        "nats" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable;

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heckle = {
+        "heckle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          heckle = {
+          "heckle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.heckle

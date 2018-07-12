@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          yst = {
+          "yst" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HStringTemplate

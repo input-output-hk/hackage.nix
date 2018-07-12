@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scalp-webhooks = {
+        "scalp-webhooks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Spock
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          scalpel = {
+          "scalpel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.scalp-webhooks
@@ -62,7 +62,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

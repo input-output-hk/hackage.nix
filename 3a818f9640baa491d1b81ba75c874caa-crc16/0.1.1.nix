@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        crc16 = {
+        "crc16" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

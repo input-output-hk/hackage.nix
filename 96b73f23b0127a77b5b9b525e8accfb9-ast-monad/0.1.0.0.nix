@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        ast-monad = {
+        "ast-monad" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          ast-monad-test = {
+          "ast-monad-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ast-monad

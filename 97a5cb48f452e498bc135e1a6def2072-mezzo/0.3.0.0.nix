@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mezzo = {
+        "mezzo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-typelits-natnormalise
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          mezzo-test = {
+          "mezzo-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mezzo

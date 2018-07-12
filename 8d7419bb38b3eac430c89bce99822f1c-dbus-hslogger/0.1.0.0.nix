@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbus-hslogger = {
+        "dbus-hslogger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dbus
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          dbus-hslogger-client = {
+          "dbus-hslogger-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dbus

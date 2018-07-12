@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unbreak = {
+        "unbreak" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          unbreak = {
+          "unbreak" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.cmdargs

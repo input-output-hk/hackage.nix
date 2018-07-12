@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-types = {
+        "http-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.text
               hsPkgs.bytestring

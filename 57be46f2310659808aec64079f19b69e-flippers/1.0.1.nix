@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flippers = {
+        "flippers" = {
           depends  = [ hsPkgs.base ];
         };
       };

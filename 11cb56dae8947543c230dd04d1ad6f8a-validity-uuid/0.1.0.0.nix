@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validity-uuid = {
+        "validity-uuid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uuid

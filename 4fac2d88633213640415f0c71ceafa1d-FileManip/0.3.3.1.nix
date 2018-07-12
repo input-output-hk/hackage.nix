@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FileManip = {
+        "FileManip" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

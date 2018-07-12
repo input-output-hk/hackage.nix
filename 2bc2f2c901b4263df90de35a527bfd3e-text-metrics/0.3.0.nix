@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-metrics = {
+        "text-metrics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          bench-speed = {
+          "bench-speed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -51,7 +51,7 @@ let
               hsPkgs.text-metrics
             ];
           };
-          bench-memory = {
+          "bench-memory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

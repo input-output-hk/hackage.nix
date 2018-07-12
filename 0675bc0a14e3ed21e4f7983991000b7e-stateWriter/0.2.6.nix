@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stateWriter = {
+        "stateWriter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,14 +28,14 @@ let
           ];
         };
         tests = {
-          spaceleak = {
+          "spaceleak" = {
             depends  = [
               hsPkgs.stateWriter
               hsPkgs.base
               hsPkgs.mtl
             ];
           };
-          rwscompare = {
+          "rwscompare" = {
             depends  = [
               hsPkgs.stateWriter
               hsPkgs.base
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.stateWriter
               hsPkgs.base

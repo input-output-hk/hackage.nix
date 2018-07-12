@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hgettext = {
+        "hgettext" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          hgettext = {
+          "hgettext" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uniplate

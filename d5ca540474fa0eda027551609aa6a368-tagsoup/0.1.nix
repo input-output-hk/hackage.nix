@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        tagsoup = {
+        "tagsoup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

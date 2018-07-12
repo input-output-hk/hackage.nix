@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        derive = {
+        "derive" = {
           depends  = ([
             hsPkgs.template-haskell
             hsPkgs.filepath
@@ -42,6 +42,6 @@ let
             ]
             else [ hsPkgs.base ]);
         };
-        exes = { derive = {}; };
+        exes = { "derive" = {}; };
       };
     }

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pqc = {
+        "pqc" = {
           depends  = if _flags.split-base
             then [
               hsPkgs.base

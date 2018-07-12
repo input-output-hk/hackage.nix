@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linearscan = {
+        "linearscan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

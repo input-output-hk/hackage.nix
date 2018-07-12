@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          imbib = {
+          "imbib" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -42,7 +42,7 @@ let
               hsPkgs.ConfigFile
             ];
           };
-          imbibatch = {
+          "imbibatch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-logger-syslog = {
+        "monad-logger-syslog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-logger
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          smoke = {
+          "smoke" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monad-logger

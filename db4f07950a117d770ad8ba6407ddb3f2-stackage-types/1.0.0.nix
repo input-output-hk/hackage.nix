@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stackage-types = {
+        "stackage-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

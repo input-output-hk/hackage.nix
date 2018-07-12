@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        dmc = {
+        "dmc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

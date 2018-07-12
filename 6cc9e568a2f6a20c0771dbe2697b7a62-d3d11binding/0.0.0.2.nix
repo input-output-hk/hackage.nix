@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        d3d11binding = {
+        "d3d11binding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Win32
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          HelloWorld = {
+          "HelloWorld" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Win32

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexpat-lens = {
+        "hexpat-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

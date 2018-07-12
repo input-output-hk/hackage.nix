@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty-relative-time = {
+        "pretty-relative-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          pretty-relative-time-test = {
+          "pretty-relative-time-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

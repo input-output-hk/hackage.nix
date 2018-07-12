@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml-union = {
+        "yaml-union" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          yaml-union = {
+          "yaml-union" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [ hsPkgs.base ];
           };
         };

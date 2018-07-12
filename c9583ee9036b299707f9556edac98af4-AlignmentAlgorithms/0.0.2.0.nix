@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AlignmentAlgorithms = {
+        "AlignmentAlgorithms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ADPfusion

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          apelsin = {
+          "apelsin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

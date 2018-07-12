@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmaes = {
+        "cmaes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmaes

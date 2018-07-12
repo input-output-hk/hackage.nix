@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        engine-io-wai = {
+        "engine-io-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.engine-io

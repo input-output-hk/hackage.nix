@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WL500gPLib = {
+        "WL500gPLib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [ hsPkgs.base ];
           };
         };

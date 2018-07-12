@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdacube-bullet = {
+        "lambdacube-bullet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lambdacube-engine

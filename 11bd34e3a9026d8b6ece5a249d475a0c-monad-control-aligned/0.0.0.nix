@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-control-aligned = {
+        "monad-control-aligned" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

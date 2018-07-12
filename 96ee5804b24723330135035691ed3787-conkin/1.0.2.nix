@@ -22,18 +22,18 @@ let
         buildType = "Simple";
       };
       components = {
-        conkin = {
+        "conkin" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.pretty-show
             ];
           };
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.markdown-unlit

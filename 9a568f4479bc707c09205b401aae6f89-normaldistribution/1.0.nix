@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        normaldistribution = {
+        "normaldistribution" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

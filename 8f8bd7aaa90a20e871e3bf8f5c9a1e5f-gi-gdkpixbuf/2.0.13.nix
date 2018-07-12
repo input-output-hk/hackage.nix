@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-gdkpixbuf = {
+        "gi-gdkpixbuf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

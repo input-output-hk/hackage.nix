@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        speculation = {
+        "speculation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multipart = {
+        "multipart" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MonadCatchIO-mtl

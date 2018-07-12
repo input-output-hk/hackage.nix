@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-bits = {
+        "hw-bits" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          hw-bits-example = {
+          "hw-bits-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          hw-bits-test = {
+          "hw-bits-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -76,7 +76,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

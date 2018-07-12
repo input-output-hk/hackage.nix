@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        global-variables = {
+        "global-variables" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

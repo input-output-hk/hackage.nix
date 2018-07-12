@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pandoc-crossref = {
+        "pandoc-crossref" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pandoc
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          pandoc-crossref = {
+          "pandoc-crossref" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-crossref
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          test-pandoc-crossref = {
+          "test-pandoc-crossref" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-crossref
@@ -67,7 +67,7 @@ let
               hsPkgs.data-accessor-transformers
             ];
           };
-          test-integrative = {
+          "test-integrative" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

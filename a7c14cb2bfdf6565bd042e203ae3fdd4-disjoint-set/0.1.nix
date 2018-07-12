@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        disjoint-set = {
+        "disjoint-set" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

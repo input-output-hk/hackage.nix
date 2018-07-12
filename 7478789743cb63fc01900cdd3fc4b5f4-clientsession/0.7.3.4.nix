@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clientsession = {
+        "clientsession" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

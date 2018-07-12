@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-conduit-tls = {
+        "network-conduit-tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.network-conduit

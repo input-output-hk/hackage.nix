@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbus = {
+        "dbus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

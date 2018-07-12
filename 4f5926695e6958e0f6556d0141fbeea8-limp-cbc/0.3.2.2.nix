@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        limp-cbc = {
+        "limp-cbc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,14 +36,14 @@ let
           ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.limp
               hsPkgs.limp-cbc
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.limp

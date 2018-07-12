@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hosts-server = {
+          "hosts-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdacat = {
+        "lambdacat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -33,6 +33,6 @@ let
             hsPkgs.cmdargs
           ];
         };
-        exes = { lambdacat = {}; };
+        exes = { "lambdacat" = {}; };
       };
     }

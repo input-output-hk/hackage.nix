@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hbro = {
+        "hbro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.webkit
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          hbro = {
+          "hbro" = {
             depends  = [
               hsPkgs.hbro
               hsPkgs.base

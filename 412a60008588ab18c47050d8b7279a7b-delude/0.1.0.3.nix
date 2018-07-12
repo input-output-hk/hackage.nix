@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        delude = {
+        "delude" = {
           depends  = [ hsPkgs.base ];
         };
       };

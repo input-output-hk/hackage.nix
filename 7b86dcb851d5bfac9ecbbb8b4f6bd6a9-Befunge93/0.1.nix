@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Befunge93 = {
+          "Befunge93" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

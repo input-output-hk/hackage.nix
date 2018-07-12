@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Validation = {
+        "Validation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        soxlib = {
+        "soxlib" = {
           depends  = [
             hsPkgs.sample-frame
             hsPkgs.storablevector

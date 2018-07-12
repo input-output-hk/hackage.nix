@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-frontend-vty = {
+        "yi-frontend-vty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

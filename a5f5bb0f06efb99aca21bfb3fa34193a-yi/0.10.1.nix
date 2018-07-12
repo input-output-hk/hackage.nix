@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi = {
+        "yi" = {
           depends  = ((((([
             hsPkgs.Cabal
             hsPkgs.array
@@ -86,7 +86,7 @@ let
           ];
         };
         exes = {
-          yi = {
+          "yi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yi
@@ -94,7 +94,7 @@ let
           };
         };
         tests = {
-          test-suite = {
+          "test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

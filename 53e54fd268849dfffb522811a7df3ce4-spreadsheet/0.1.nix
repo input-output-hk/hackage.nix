@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spreadsheet = {
+        "spreadsheet" = {
           depends  = [
             hsPkgs.utility-ht
             hsPkgs.transformers

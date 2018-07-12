@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLUT = {
+        "GLUT" = {
           depends  = [
             hsPkgs.OpenGL
             hsPkgs.StateVar

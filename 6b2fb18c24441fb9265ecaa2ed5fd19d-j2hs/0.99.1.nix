@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          j2hs = {
+          "j2hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hx

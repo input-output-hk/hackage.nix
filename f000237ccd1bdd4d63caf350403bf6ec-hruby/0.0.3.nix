@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hruby = {
+        "hruby" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
             else [ pkgs."ruby1.8" ];
         };
         tests = {
-          test-roundtrip = {
+          "test-roundtrip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hruby

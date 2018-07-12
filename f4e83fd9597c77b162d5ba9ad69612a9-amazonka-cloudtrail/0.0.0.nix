@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cloudtrail = {
+        "amazonka-cloudtrail" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-natural = {
+        "type-natural" = {
           depends  = [
             hsPkgs.base
             hsPkgs.equational-reasoning

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitwise = {
+        "bitwise" = {
           depends  = ([
             hsPkgs.base
           ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.4") [
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          bitwise-testsuite = {
+          "bitwise-testsuite" = {
             depends  = [
               hsPkgs.bitwise
               hsPkgs.base
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          bitwise-benchmark = {
+          "bitwise-benchmark" = {
             depends  = [
               hsPkgs.bitwise
               hsPkgs.base

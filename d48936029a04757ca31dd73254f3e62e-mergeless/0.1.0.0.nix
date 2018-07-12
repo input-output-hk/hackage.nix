@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mergeless = {
+        "mergeless" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

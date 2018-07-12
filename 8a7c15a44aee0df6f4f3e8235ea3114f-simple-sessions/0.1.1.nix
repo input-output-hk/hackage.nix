@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-sessions = {
+        "simple-sessions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.category-extras

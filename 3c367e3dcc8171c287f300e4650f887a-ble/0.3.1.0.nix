@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ble = {
+        "ble" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          auth = {
+          "auth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -61,7 +61,7 @@ let
               hsPkgs.ble
             ];
           };
-          counter = {
+          "counter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -81,7 +81,7 @@ let
               hsPkgs.stm
             ];
           };
-          hrs = {
+          "hrs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -103,7 +103,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hemkay-core = {
+        "hemkay-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

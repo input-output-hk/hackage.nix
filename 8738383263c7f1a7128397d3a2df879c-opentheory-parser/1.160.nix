@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opentheory-parser = {
+        "opentheory-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          opentheory-parser-test = {
+          "opentheory-parser-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

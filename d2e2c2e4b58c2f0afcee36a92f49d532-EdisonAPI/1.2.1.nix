@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        EdisonAPI = {
+        "EdisonAPI" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

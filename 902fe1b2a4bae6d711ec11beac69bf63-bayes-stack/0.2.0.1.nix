@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bayes-stack = {
+        "bayes-stack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

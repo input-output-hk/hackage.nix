@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dixi = {
+        "dixi" = {
           depends  = [
             hsPkgs.composition-tree
             hsPkgs.patches-vector
@@ -61,7 +61,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          dixi = {
+          "dixi" = {
             depends  = [
               hsPkgs.dixi
               hsPkgs.warp
@@ -80,7 +80,7 @@ let
           };
         };
         tests = {
-          api-docs = {
+          "api-docs" = {
             depends  = [
               hsPkgs.dixi
               hsPkgs.servant-docs

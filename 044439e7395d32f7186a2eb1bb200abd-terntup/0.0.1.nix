@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        terntup = {
+        "terntup" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          reference = {
+          "reference" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

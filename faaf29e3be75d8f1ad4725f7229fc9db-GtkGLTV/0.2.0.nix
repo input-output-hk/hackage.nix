@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GtkGLTV = {
+        "GtkGLTV" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

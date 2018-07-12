@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tuple-th = {
+        "tuple-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        codec = {
+        "codec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          codec-tests = {
+          "codec-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

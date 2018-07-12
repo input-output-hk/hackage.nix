@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-iCalendar = {
+        "servant-iCalendar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-media

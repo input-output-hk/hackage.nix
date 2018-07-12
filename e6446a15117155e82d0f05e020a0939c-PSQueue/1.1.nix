@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PSQueue = {
+        "PSQueue" = {
           depends  = [ hsPkgs.base ];
         };
       };

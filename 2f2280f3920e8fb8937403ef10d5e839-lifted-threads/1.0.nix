@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lifted-threads = {
+        "lifted-threads" = {
           depends  = [
             hsPkgs.base
             hsPkgs.threads

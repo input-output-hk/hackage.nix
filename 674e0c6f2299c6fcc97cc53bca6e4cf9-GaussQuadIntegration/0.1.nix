@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GaussQuadIntegration = {
+        "GaussQuadIntegration" = {
           depends  = [ hsPkgs.base ];
         };
       };

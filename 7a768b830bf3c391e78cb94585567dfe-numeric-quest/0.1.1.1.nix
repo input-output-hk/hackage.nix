@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numeric-quest = {
+        "numeric-quest" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.array

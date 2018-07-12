@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imagemagick = {
+        "imagemagick" = {
           depends  = [
             hsPkgs.base
             hsPkgs.resourcet
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          resize = {
+          "resize" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -57,7 +57,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          extent = {
+          "extent" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -73,7 +73,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          floodfill = {
+          "floodfill" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -89,7 +89,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          cyclops = {
+          "cyclops" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -105,7 +105,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          clipmask = {
+          "clipmask" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -121,7 +121,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          paint-trans = {
+          "paint-trans" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -137,7 +137,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          round-mask = {
+          "round-mask" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -153,7 +153,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          make-tile = {
+          "make-tile" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -169,7 +169,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          draw-shapes = {
+          "draw-shapes" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -185,7 +185,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          text-effects = {
+          "text-effects" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -201,7 +201,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          gel = {
+          "gel" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -218,7 +218,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          reflect = {
+          "reflect" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -234,7 +234,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          3dlogo = {
+          "3dlogo" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -250,7 +250,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          affine = {
+          "affine" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -266,7 +266,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          grayscale = {
+          "grayscale" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -282,7 +282,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          modulate = {
+          "modulate" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -298,7 +298,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          landscape3d = {
+          "landscape3d" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -314,7 +314,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          tilt-shift = {
+          "tilt-shift" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -330,7 +330,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          bunny = {
+          "bunny" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -346,7 +346,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          pixel-mod = {
+          "pixel-mod" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -362,7 +362,7 @@ let
               pkgconfPkgs.MagickWand
             ];
           };
-          wandtest = {
+          "wandtest" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.resourcet
@@ -380,7 +380,7 @@ let
           };
         };
         tests = {
-          image-tests = {
+          "image-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lifted-base

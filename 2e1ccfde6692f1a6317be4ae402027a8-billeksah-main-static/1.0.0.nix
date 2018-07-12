@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          billeksah-main-static = {
+          "billeksah-main-static" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mohws = {
+        "mohws" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          hws = {
+          "hws" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -63,7 +63,7 @@ let
               hsPkgs.data-accessor
             ];
           };
-          hws-dyn = {
+          "hws-dyn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

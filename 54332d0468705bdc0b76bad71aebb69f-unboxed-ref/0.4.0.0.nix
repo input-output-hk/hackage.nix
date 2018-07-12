@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unboxed-ref = {
+        "unboxed-ref" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unboxed-ref

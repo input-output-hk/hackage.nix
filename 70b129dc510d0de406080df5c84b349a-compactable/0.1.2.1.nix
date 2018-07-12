@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compactable = {
+        "compactable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-dsl = {
+        "yesod-dsl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shakespeare
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          yesod-dsl = {
+          "yesod-dsl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shakespeare-text

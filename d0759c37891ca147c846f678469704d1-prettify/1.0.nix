@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prettify = {
+        "prettify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

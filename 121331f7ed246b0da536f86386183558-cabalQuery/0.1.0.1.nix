@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabalQuery = {
+        "cabalQuery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          cabalQuery = {
+          "cabalQuery" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

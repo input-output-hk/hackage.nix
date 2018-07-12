@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nirum = {
+        "nirum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          nirum = {
+          "nirum" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html
@@ -75,7 +75,7 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html
@@ -96,7 +96,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html
@@ -124,7 +124,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          targets = {
+          "targets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html

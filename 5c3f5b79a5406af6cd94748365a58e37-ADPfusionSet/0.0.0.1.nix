@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ADPfusionSet = {
+        "ADPfusionSet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bits
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

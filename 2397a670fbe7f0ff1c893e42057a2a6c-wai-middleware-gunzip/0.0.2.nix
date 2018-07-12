@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-gunzip = {
+        "wai-middleware-gunzip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

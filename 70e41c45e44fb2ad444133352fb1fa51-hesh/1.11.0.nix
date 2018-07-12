@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hesh = {
+        "hesh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hesh = {
+          "hesh" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

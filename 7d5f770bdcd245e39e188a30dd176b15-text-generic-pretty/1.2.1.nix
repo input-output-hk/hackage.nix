@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-generic-pretty = {
+        "text-generic-pretty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          GenericPretty-test = {
+          "GenericPretty-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semaphore-plus = {
+        "semaphore-plus" = {
           depends  = [ hsPkgs.base ];
         };
       };

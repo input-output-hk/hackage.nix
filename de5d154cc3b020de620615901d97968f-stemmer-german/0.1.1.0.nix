@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stemmer-german = {
+        "stemmer-german" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

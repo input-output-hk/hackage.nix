@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hako = {
+        "hako" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hako

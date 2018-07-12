@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cascading = {
+        "cascading" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nano-cryptr = {
+        "nano-cryptr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

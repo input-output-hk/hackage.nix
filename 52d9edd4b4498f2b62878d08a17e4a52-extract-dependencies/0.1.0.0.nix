@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extract-dependencies = {
+        "extract-dependencies" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          extract-dependencies = {
+          "extract-dependencies" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

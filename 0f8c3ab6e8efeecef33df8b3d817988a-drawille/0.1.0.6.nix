@@ -23,21 +23,21 @@ let
         buildType = "Simple";
       };
       components = {
-        drawille = {
+        "drawille" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          senoid = {
+          "senoid" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.AC-Angle
             ];
           };
-          image2term = {
+          "image2term" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.containers
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = pkgs.lib.optionals (!_flags.no-tests) [
               hsPkgs.base
               hsPkgs.hspec

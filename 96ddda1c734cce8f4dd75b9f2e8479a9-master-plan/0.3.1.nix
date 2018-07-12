@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        master-plan = {
+        "master-plan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          master-plan = {
+          "master-plan" = {
             depends  = [
               hsPkgs.base
               hsPkgs.master-plan
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

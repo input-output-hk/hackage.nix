@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        portable-template-haskell-lens = {
+        "portable-template-haskell-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

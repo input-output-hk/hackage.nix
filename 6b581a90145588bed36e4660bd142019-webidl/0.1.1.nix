@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        webidl = {
+        "webidl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-env
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          idlppr = {
+          "idlppr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.utf8-env
@@ -45,7 +45,7 @@ let
               hsPkgs.pretty
             ];
           };
-          idltestlex = {
+          "idltestlex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.utf8-env

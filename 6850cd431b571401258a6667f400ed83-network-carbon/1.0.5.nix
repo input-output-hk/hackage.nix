@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-carbon = {
+        "network-carbon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

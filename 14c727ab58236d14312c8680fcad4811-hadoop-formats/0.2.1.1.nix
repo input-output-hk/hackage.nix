@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hadoop-formats = {
+        "hadoop-formats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -31,7 +31,7 @@ let
           libs = [ pkgs.snappy ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

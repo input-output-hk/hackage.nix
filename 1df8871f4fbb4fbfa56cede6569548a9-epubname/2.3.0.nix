@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          epubname = {
+          "epubname" = {
             depends  = [
               hsPkgs.base
               hsPkgs.epub-metadata

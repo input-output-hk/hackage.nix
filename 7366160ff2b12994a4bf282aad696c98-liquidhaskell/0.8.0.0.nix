@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liquidhaskell = {
+        "liquidhaskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -70,7 +70,7 @@ let
           ];
         };
         exes = {
-          liquid = {
+          "liquid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc
@@ -85,7 +85,7 @@ let
               hsPkgs.liquidhaskell
             ];
           };
-          target = {
+          "target" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hint
@@ -94,7 +94,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -114,7 +114,7 @@ let
               hsPkgs.liquid-fixpoint
             ];
           };
-          liquidhaskell-parser = {
+          "liquidhaskell-parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

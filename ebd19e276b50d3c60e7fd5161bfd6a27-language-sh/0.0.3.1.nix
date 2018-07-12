@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-sh = {
+        "language-sh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mcmc-samplers = {
+        "mcmc-samplers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mwc-random

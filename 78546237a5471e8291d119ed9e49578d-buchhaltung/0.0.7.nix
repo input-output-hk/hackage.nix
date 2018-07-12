@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        buchhaltung = {
+        "buchhaltung" = {
           depends  = [
             hsPkgs.Decimal
             hsPkgs.ListLike
@@ -71,7 +71,7 @@ let
           ];
         };
         exes = {
-          buchhaltung = {
+          "buchhaltung" = {
             depends  = [
               hsPkgs.Decimal
               hsPkgs.ListLike

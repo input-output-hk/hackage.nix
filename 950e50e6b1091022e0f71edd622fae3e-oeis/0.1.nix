@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        oeis = {
+        "oeis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

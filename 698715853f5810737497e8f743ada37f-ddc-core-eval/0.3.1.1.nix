@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddc-core-eval = {
+        "ddc-core-eval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

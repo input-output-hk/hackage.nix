@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hjs = {
+        "hjs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -32,6 +32,6 @@ let
             hsPkgs.bytestring
           ];
         };
-        exes = { hjs = {}; };
+        exes = { "hjs" = {}; };
       };
     }

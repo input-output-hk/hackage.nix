@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nationstates = {
+        "nationstates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

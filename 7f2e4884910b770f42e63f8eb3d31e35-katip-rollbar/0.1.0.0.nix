@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        katip-rollbar = {
+        "katip-rollbar" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.async

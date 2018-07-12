@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-show = {
+        "text-show" = {
           depends  = ([
             hsPkgs.array
             hsPkgs.base
@@ -39,7 +39,7 @@ let
             ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.tagged;
         };
         tests = {
-          text-show-properties = {
+          "text-show-properties" = {
             depends  = ([
               hsPkgs.array
               hsPkgs.base

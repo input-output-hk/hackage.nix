@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ws-chans = {
+        "ws-chans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          ws-chans-test = {
+          "ws-chans-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

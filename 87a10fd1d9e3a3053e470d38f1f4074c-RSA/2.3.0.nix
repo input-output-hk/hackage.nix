@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RSA = {
+        "RSA" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-rsa = {
+          "test-rsa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

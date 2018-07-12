@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-paginate = {
+        "yesod-paginate" = {
           depends  = [
             hsPkgs.yesod
             hsPkgs.template-haskell

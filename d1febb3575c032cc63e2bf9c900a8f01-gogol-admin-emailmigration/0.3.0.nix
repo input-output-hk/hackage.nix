@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-admin-emailmigration = {
+        "gogol-admin-emailmigration" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          caledon = {
+          "caledon" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

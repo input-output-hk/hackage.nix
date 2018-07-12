@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hOpenPGP = {
+        "hOpenPGP" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -68,7 +68,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.hOpenPGP
               hsPkgs.aeson
@@ -119,7 +119,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.hOpenPGP
               hsPkgs.aeson

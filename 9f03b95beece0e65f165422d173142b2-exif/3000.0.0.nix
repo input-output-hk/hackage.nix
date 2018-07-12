@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        exif = {
+        "exif" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.exif pkgs.m ];
         };

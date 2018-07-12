@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        avl-static = {
+        "avl-static" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          avl-test = {
+          "avl-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

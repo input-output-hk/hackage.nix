@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liquid-fixpoint = {
+        "liquid-fixpoint" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.array
@@ -61,7 +61,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.2") hsPkgs.located-base) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.ascii-progress;
         };
         exes = {
-          fixpoint = {
+          "fixpoint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.liquid-fixpoint
@@ -69,7 +69,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -81,7 +81,7 @@ let
               hsPkgs.text
             ];
           };
-          testparser = {
+          "testparser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

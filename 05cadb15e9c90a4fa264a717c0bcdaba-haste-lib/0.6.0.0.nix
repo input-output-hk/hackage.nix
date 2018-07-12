@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haste-lib = {
+        "haste-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.integer-gmp

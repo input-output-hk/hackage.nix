@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          make-package = {
+          "make-package" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

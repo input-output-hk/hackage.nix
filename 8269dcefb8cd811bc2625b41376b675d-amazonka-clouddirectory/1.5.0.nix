@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-clouddirectory = {
+        "amazonka-clouddirectory" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-clouddirectory-test = {
+          "amazonka-clouddirectory-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

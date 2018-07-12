@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskeline = {
+        "haskeline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

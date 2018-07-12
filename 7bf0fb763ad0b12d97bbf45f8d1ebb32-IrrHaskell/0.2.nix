@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        IrrHaskell = {
+        "IrrHaskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

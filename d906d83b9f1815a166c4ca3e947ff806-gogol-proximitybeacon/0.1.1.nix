@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-proximitybeacon = {
+        "gogol-proximitybeacon" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

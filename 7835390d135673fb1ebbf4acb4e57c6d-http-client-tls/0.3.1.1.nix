@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client-tls = {
+        "http-client-tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

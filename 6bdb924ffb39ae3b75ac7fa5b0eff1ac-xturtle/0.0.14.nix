@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xturtle = {
+        "xturtle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yjtools

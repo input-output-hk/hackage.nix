@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imprevu = {
+        "imprevu" = {
           depends  = [
             hsPkgs.DebugTraceHelpers
             hsPkgs.Boolean
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Imprevu

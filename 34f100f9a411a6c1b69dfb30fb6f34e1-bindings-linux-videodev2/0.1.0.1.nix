@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-linux-videodev2 = {
+        "bindings-linux-videodev2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

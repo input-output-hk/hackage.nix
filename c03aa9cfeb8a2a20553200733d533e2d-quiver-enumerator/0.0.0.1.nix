@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quiver-enumerator = {
+        "quiver-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.enumerator

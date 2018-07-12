@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        packman = {
+        "packman" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          simpletest = {
+          "simpletest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -45,20 +45,7 @@ let
               hsPkgs.packman
             ];
           };
-          testexceptions = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.directory
-              hsPkgs.ghc-prim
-              hsPkgs.array
-              hsPkgs.binary
-              hsPkgs.bytestring
-              hsPkgs.primitive
-              hsPkgs.Cabal
-              hsPkgs.packman
-            ];
-          };
-          alltests = {
+          "testexceptions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -71,7 +58,7 @@ let
               hsPkgs.packman
             ];
           };
-          testmthread = {
+          "alltests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -84,7 +71,20 @@ let
               hsPkgs.packman
             ];
           };
-          quickchecktest = {
+          "testmthread" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.directory
+              hsPkgs.ghc-prim
+              hsPkgs.array
+              hsPkgs.binary
+              hsPkgs.bytestring
+              hsPkgs.primitive
+              hsPkgs.Cabal
+              hsPkgs.packman
+            ];
+          };
+          "quickchecktest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

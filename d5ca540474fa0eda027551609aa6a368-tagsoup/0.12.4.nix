@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagsoup = {
+        "tagsoup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional _flags.download hsPkgs.network;
         };
         exes = {
-          tagsoup = {
+          "tagsoup" = {
             depends  = pkgs.lib.optionals _flags.testprog [
               hsPkgs.QuickCheck
               hsPkgs.time

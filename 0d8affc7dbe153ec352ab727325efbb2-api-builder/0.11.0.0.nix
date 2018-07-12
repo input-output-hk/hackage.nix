@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        api-builder = {
+        "api-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -48,7 +48,7 @@ let
               hsPkgs.transformers
             ];
           };
-          test-io = {
+          "test-io" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-cache-redis = {
+        "wai-middleware-cache-redis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder-conduit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        minlen = {
+        "minlen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mono-traversable

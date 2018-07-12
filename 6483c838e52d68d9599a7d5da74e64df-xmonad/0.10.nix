@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad = {
+        "xmonad" = {
           depends  = [
             hsPkgs.X11
             hsPkgs.mtl
@@ -41,7 +41,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          xmonad = {
+          "xmonad" = {
             depends  = pkgs.lib.optional _flags.testing hsPkgs.QuickCheck ++ pkgs.lib.optionals (_flags.testing && _flags.small_base) [
               hsPkgs.filepath
               hsPkgs.process

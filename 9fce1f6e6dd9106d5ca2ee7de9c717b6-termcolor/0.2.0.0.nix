@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        termcolor = {
+        "termcolor" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          termcolor = {
+          "termcolor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.termcolor

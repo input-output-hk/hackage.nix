@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prim-spoon = {
+        "prim-spoon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          prim-spoon-test = {
+          "prim-spoon-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          prim-spoon-bench = {
+          "prim-spoon-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

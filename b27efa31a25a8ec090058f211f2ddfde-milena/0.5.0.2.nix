@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        milena = {
+        "milena" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.milena

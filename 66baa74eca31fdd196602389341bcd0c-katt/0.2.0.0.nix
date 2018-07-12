@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        katt = {
+        "katt" = {
           depends  = [
             hsPkgs.blaze-builder
             hsPkgs.ConfigFile
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          katt = {
+          "katt" = {
             depends  = [
               hsPkgs.http-streams
               hsPkgs.HsOpenSSL
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          test-katt-sourcehandler = {
+          "test-katt-sourcehandler" = {
             depends  = [
               hsPkgs.directory
               hsPkgs.http-streams

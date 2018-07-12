@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ks-test = {
+        "ks-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gamma

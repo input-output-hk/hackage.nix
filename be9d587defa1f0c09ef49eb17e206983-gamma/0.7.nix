@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gamma = {
+        "gamma" = {
           depends  = [
             hsPkgs.base
             hsPkgs.continued-fractions

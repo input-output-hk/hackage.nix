@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        folgerhs = {
+        "folgerhs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml
           ];
         };
         exes = {
-          folger-stage = {
+          "folger-stage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.folgerhs

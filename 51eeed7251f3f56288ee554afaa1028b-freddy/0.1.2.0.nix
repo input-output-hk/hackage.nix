@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        freddy = {
+        "freddy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.base

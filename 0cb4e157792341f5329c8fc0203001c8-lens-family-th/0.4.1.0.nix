@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lens-family-th = {
+        "lens-family-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

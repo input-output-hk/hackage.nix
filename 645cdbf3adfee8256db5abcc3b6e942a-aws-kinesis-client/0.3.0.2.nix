@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-kinesis-client = {
+        "aws-kinesis-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          kinesis-cli = {
+          "kinesis-cli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

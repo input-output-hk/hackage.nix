@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        localize = {
+        "localize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

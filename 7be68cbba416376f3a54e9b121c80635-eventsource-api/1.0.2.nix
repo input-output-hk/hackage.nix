@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventsource-api = {
+        "eventsource-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        resource-pool = {
+        "resource-pool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

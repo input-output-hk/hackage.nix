@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HStringTemplateHelpers = {
+        "HStringTemplateHelpers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HStringTemplate

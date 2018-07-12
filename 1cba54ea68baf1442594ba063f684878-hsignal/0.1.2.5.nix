@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hsignal = {
+        "hsignal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -34,7 +34,7 @@ let
             hsPkgs.hmatrix-gsl-stats
             hsPkgs.hstatistics
           ];
-          libs = ((if _flags.mkl && system.isX86_64
+          libs = (pkgs.lib.optionals _flags.mkl (if system.isX86_64
             then [
               pkgs.gsl
               pkgs.mkl_lapack

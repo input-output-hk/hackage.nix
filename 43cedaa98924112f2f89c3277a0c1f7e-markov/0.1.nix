@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        markov = {
+        "markov" = {
           depends  = [ hsPkgs.base ];
         };
       };

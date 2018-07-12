@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-toolkit = {
+        "aeson-toolkit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson-toolkit

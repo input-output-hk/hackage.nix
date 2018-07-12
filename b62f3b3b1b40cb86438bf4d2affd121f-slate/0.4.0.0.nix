@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        slate = {
+        "slate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          slate = {
+          "slate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          slate-test = {
+          "slate-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

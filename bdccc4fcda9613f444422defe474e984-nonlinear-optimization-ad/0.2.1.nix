@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nonlinear-optimization-ad = {
+        "nonlinear-optimization-ad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.nonlinear-optimization
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          LinearRegression = {
+          "LinearRegression" = {
             depends  = [
               hsPkgs.base
               hsPkgs.csv

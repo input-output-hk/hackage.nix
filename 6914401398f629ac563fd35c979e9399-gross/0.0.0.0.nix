@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gross = {
+        "gross" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ncurses

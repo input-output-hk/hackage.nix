@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        reproject = {
+        "reproject" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          reproject-test = {
+          "reproject-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reproject

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          v4l2-capture = {
+          "v4l2-capture" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bindings-libv4l2

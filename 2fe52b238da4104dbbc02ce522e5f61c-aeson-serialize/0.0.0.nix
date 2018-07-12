@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-serialize = {
+        "aeson-serialize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

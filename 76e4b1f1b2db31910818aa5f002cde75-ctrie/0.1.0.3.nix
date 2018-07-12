@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ctrie = {
+        "ctrie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.atomic-primops
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          map-properties = {
+          "map-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          sequential = {
+          "sequential" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hashable
@@ -55,7 +55,7 @@ let
               hsPkgs.ctrie
             ];
           };
-          concurrent = {
+          "concurrent" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

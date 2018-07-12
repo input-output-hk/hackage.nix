@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        closure = {
+        "closure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

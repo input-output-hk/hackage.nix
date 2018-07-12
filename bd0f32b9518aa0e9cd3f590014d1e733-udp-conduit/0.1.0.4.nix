@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        udp-conduit = {
+        "udp-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mono-traversable

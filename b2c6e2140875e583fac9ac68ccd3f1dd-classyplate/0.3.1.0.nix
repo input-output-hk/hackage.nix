@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        classyplate = {
+        "classyplate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         benchmarks = {
-          measure = {
+          "measure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

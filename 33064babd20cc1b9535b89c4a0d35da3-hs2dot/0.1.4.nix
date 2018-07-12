@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hs2dot = {
+          "hs2dot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

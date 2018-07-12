@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dihaa = {
+          "dihaa" = {
             depends  = [
               hsPkgs.FontyFruity
               hsPkgs.JuicyPixels

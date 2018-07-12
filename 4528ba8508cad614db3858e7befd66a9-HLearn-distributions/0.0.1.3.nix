@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HLearn-distributions = {
+        "HLearn-distributions" = {
           depends  = [
             hsPkgs.HLearn-algebra
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          HLearn-Distributions-Criterion = {
+          "HLearn-Distributions-Criterion" = {
             depends  = [
               hsPkgs.HLearn-algebra
               hsPkgs.ConstraintKinds
@@ -48,7 +48,7 @@ let
               hsPkgs.statistics
             ];
           };
-          HLearn-Distributions-SpaceTests = {
+          "HLearn-Distributions-SpaceTests" = {
             depends  = [
               hsPkgs.HLearn-algebra
               hsPkgs.ConstraintKinds

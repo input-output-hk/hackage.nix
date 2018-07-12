@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hS3 = {
+        "hS3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP
@@ -36,6 +36,6 @@ let
             hsPkgs.bytestring
           ];
         };
-        exes = { hs3 = {}; };
+        exes = { "hs3" = {}; };
       };
     }

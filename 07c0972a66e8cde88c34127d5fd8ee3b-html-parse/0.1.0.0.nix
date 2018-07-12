@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        html-parse = {
+        "html-parse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -29,7 +29,7 @@ let
           ];
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

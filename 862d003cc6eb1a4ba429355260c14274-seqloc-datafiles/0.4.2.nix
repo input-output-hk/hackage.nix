@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        seqloc-datafiles = {
+        "seqloc-datafiles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          gtf-to-bed = {
+          "gtf-to-bed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -57,7 +57,7 @@ let
               hsPkgs.resourcet
             ];
           };
-          bed-to-gtf = {
+          "bed-to-gtf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -76,7 +76,7 @@ let
               hsPkgs.resourcet
             ];
           };
-          gtf-introns = {
+          "gtf-introns" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -94,7 +94,7 @@ let
               hsPkgs.resourcet
             ];
           };
-          bed-subregion = {
+          "bed-subregion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -117,7 +117,7 @@ let
               hsPkgs.resourcet
             ];
           };
-          genome-to-trx = {
+          "genome-to-trx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -136,7 +136,7 @@ let
           };
         };
         tests = {
-          test-gtf = {
+          "test-gtf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -150,7 +150,7 @@ let
               hsPkgs.random
             ];
           };
-          test-bed = {
+          "test-bed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -168,7 +168,7 @@ let
               hsPkgs.conduit-extra
             ];
           };
-          test-subregions = {
+          "test-subregions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

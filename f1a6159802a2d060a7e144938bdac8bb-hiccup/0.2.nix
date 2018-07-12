@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hiccup = {
+          "hiccup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        modulo = {
+        "modulo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -33,6 +33,6 @@ let
             hsPkgs.atto-lisp
           ];
         };
-        exes = { modulo = {}; };
+        exes = { "modulo" = {}; };
       };
     }

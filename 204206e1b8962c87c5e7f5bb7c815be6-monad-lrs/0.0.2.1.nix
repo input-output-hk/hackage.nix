@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-lrs = {
+        "monad-lrs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

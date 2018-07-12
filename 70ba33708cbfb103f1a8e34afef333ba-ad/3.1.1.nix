@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ad = {
+        "ad" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

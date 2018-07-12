@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        error-util = {
+        "error-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SVGPath = {
+        "SVGPath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

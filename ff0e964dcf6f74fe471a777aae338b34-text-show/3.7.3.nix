@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-show = {
+        "text-show" = {
           depends  = (([
             hsPkgs.array
             hsPkgs.base-compat-batteries
@@ -61,7 +61,7 @@ let
             else [ hsPkgs.transformers ]);
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = ((([
               hsPkgs.array
               hsPkgs.base-compat-batteries
@@ -103,7 +103,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = ((([
               hsPkgs.array
               hsPkgs.base-compat-batteries

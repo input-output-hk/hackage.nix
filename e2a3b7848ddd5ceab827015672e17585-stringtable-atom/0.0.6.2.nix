@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stringtable-atom = {
+        "stringtable-atom" = {
           depends  = if _flags.sybinbase
             then [
               hsPkgs.base

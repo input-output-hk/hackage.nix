@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iso8601-time = {
+        "iso8601-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale

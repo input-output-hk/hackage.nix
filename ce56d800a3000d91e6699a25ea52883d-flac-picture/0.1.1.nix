@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flac-picture = {
+        "flac-picture" = {
           depends  = [
             hsPkgs.JuicyPixels
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.JuicyPixels
               hsPkgs.base

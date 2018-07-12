@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dom-parser = {
+        "dom-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.case-insensitive
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default

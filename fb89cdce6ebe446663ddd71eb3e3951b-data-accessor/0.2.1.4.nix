@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-accessor = {
+        "data-accessor" = {
           depends  = [
             hsPkgs.transformers
           ] ++ (if _flags.splitbase

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atlassian-connect-descriptor = {
+        "atlassian-connect-descriptor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-descriptor = {
+          "test-descriptor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.atlassian-connect-descriptor

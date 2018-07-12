@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-core = {
+        "yesod-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -68,7 +68,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -97,7 +97,7 @@ let
           };
         };
         benchmarks = {
-          widgets = {
+          "widgets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

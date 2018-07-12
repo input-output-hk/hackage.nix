@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-cipher-types = {
+        "crypto-cipher-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-crypto-cipher-types = {
+          "test-crypto-cipher-types" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

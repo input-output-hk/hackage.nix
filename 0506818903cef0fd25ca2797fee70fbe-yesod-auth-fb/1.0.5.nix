@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-fb = {
+        "yesod-auth-fb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        VecN = {
+        "VecN" = {
           depends  = [
             hsPkgs.base
             hsPkgs.peano

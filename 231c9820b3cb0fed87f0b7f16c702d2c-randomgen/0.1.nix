@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          randomgen = {
+          "randomgen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mersenne-random-pure64

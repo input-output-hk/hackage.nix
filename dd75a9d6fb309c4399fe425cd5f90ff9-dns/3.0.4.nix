@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dns = {
+        "dns" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.async
@@ -41,7 +41,7 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.iphlpapi;
         };
         tests = {
-          network = {
+          "network" = {
             depends  = [
               hsPkgs.dns
               hsPkgs.base
@@ -50,7 +50,7 @@ let
               hsPkgs.network
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.dns
               hsPkgs.QuickCheck
@@ -61,7 +61,7 @@ let
               hsPkgs.word8
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          jsaddle-hello = {
+          "jsaddle-hello" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-dom

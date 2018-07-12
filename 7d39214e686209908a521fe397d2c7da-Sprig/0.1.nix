@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Sprig = {
+        "Sprig" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SDL

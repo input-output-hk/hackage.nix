@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hs-logo = {
+          "hs-logo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          turtle-tests = {
+          "turtle-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chr-pretty = {
+        "chr-pretty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

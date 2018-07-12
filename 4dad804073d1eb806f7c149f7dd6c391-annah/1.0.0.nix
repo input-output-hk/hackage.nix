@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        annah = {
+        "annah" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          annah = {
+          "annah" = {
             depends  = [
               hsPkgs.base
               hsPkgs.annah

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text = {
+        "text" = {
           depends  = (([
             hsPkgs.array
             hsPkgs.base
@@ -38,7 +38,7 @@ let
             ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.11") hsPkgs.integer-gmp) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9" && (compiler.isGhc && compiler.version.lt "6.11")) hsPkgs.integer;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

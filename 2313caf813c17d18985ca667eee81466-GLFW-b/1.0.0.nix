@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLFW-b = {
+        "GLFW-b" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-GLFW
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.GLFW-b
               hsPkgs.HUnit

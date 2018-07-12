@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snowball = {
+        "snowball" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

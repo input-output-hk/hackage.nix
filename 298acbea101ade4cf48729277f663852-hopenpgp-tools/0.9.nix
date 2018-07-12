@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hot = {
+          "hot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -39,7 +39,7 @@ let
               hsPkgs.transformers
             ];
           };
-          hokey = {
+          "hokey" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -67,7 +67,7 @@ let
               hsPkgs.yaml
             ];
           };
-          hkt = {
+          "hkt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

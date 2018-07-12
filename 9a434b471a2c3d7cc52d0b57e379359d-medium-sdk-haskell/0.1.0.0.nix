@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        medium-sdk-haskell = {
+        "medium-sdk-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

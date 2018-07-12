@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        disjoint-containers = {
+        "disjoint-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.disjoint-containers
@@ -39,7 +39,7 @@ let
               hsPkgs.aeson
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.disjoint-containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atomic-write = {
+        "atomic-write" = {
           depends  = [
             hsPkgs.base
             hsPkgs.temporary
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          atomic-write-test = {
+          "atomic-write-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.temporary

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hs-logo = {
+          "hs-logo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

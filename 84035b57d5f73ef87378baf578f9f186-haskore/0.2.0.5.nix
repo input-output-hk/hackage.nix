@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskore = {
+        "haskore" = {
           depends  = [
             hsPkgs.markov-chain
             hsPkgs.midi
@@ -49,13 +49,13 @@ let
             ]);
         };
         exes = {
-          test = {
+          "test" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.QuickCheck
               hsPkgs.HUnit
             ];
           };
-          autotrack = {};
+          "autotrack" = {};
         };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-clientsession = {
+        "apiary-clientsession" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

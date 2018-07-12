@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        direct-binary-files = {
+        "direct-binary-files" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

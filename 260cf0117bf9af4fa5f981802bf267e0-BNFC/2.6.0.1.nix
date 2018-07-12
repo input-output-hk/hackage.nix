@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        BNFC = {};
+        "BNFC" = {};
         exes = {
-          bnfc = {
+          "bnfc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal2ebuild = {
+          "cabal2ebuild" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

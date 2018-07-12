@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        katip-scalyr-scribe = {
+        "katip-scalyr-scribe" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          katip-json-scribe-test = {
+          "katip-json-scribe-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

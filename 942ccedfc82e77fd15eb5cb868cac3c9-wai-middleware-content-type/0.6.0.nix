@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-content-type = {
+        "wai-middleware-content-type" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -52,7 +52,7 @@ let
           ];
         };
         tests = {
-          wai-middleware-content-type-test = {
+          "wai-middleware-content-type-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoauth2 = {
+        "hoauth2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          test-weibo = {
+          "test-weibo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -50,7 +50,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-google = {
+          "test-google" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -62,7 +62,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-github = {
+          "test-github" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -74,7 +74,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-douban = {
+          "test-douban" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -86,7 +86,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-facebook = {
+          "test-facebook" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -98,7 +98,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-fitbit = {
+          "test-fitbit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -113,7 +113,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-stackexchange = {
+          "test-stackexchange" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -125,7 +125,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-dropbox = {
+          "test-dropbox" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types

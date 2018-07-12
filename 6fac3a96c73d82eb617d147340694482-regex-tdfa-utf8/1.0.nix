@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-tdfa-utf8 = {
+        "regex-tdfa-utf8" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

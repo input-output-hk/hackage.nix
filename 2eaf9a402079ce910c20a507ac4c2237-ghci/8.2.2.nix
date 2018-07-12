@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghci = {
+        "ghci" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

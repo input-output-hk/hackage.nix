@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Proper = {
+        "Proper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          Proper = {
+          "Proper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -36,7 +36,7 @@ let
               hsPkgs.syb
             ];
           };
-          Proper-tests = {
+          "Proper-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

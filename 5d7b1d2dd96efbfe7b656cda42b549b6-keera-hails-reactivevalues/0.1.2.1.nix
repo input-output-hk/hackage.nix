@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-reactivevalues = {
+        "keera-hails-reactivevalues" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant

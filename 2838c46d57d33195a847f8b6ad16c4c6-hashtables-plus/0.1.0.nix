@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashtables-plus = {
+        "hashtables-plus" = {
           depends  = [
             hsPkgs.hashtables
             hsPkgs.hashable

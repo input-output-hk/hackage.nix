@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CSPM-CoreLanguage = {
+        "CSPM-CoreLanguage" = {
           depends  = [ hsPkgs.base ];
         };
       };

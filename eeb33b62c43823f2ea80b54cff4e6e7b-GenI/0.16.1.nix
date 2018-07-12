@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          geni = {
+          "geni" = {
             depends  = if _flags.splitbase
               then [
                 hsPkgs.base

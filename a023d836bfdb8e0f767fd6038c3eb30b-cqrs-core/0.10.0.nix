@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cqrs-core = {
+        "cqrs-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

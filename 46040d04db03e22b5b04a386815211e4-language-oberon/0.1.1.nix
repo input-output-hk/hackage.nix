@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-oberon = {
+        "language-oberon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          parse = {
+          "parse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.either

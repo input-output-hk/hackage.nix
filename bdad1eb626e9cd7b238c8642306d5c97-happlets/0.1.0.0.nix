@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happlets = {
+        "happlets" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.colour

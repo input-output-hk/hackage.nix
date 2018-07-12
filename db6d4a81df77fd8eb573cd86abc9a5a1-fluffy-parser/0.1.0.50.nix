@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fluffy-parser = {
+        "fluffy-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pandoc

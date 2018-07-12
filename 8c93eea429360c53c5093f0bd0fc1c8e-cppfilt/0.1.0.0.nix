@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cppfilt = {
+        "cppfilt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
             else [ pkgs."stdc++" ];
         };
         tests = {
-          cppfilt-test = {
+          "cppfilt-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          cppfilt-benchmarks = {
+          "cppfilt-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

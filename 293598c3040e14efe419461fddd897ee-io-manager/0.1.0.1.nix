@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        io-manager = {
+        "io-manager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          SimpleEchoExample = {
+          "SimpleEchoExample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

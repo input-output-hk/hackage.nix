@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-conduit = {
+        "binary-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-binary-conduit = {
+          "test-binary-conduit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

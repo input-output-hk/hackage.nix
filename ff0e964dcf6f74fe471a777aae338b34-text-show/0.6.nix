@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-show = {
+        "text-show" = {
           depends  = ([
             hsPkgs.array
             hsPkgs.base
@@ -38,7 +38,7 @@ let
             else [ hsPkgs.integer-gmp ]);
         };
         tests = {
-          text-show-properties = {
+          "text-show-properties" = {
             depends  = (([
               hsPkgs.array
               hsPkgs.base

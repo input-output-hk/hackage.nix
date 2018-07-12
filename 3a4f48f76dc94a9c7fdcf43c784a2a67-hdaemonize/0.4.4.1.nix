@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdaemonize = {
+        "hdaemonize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

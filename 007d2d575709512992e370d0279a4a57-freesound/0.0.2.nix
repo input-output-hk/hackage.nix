@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        freesound = {
+        "freesound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl
@@ -31,6 +31,6 @@ let
             hsPkgs.xml
           ];
         };
-        exes = { freesound = {}; };
+        exes = { "freesound" = {}; };
       };
     }

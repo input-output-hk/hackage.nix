@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tweak = {
+        "tweak" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoauth2 = {
+        "hoauth2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          test-weibo = {
+          "test-weibo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -44,18 +44,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-google = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.http-types
-              hsPkgs.http-conduit
-              hsPkgs.text
-              hsPkgs.bytestring
-              hsPkgs.aeson
-              hsPkgs.hoauth2
-            ];
-          };
-          test-github = {
+          "test-google" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -66,7 +55,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-douban = {
+          "test-github" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -77,7 +66,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-facebook = {
+          "test-douban" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -88,7 +77,18 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-fitbit = {
+          "test-facebook" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.http-types
+              hsPkgs.http-conduit
+              hsPkgs.text
+              hsPkgs.bytestring
+              hsPkgs.aeson
+              hsPkgs.hoauth2
+            ];
+          };
+          "test-fitbit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -102,7 +102,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-stackexchange = {
+          "test-stackexchange" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types
@@ -113,7 +113,7 @@ let
               hsPkgs.hoauth2
             ];
           };
-          test-dropbox = {
+          "test-dropbox" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-types

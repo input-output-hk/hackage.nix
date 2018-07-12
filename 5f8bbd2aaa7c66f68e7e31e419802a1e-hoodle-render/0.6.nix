@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoodle-render = {
+        "hoodle-render" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring

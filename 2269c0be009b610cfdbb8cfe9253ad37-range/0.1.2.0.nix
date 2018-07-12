@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        range = {
+        "range" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-range = {
+          "test-range" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

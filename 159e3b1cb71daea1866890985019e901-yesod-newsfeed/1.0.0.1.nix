@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-newsfeed = {
+        "yesod-newsfeed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-core

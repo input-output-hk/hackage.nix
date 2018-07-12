@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llsd = {
+        "llsd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -46,8 +46,8 @@ let
           ];
         };
         exes = {
-          llsdutil = {};
-          testllsd = {
+          "llsdutil" = {};
+          "testllsd" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

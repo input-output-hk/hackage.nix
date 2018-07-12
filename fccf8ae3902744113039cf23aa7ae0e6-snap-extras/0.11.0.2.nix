@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-extras = {
+        "snap-extras" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -55,7 +55,7 @@ let
           ];
         };
         exes = {
-          PollExample = {
+          "PollExample" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -75,7 +75,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

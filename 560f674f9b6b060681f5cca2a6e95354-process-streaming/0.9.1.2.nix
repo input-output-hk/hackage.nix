@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        process-streaming = {
+        "process-streaming" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -76,7 +76,7 @@ let
               hsPkgs.process-streaming
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

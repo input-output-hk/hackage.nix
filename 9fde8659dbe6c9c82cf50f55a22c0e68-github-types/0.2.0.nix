@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        github-types = {
+        "github-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

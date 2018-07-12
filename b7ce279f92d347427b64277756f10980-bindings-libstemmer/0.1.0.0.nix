@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-libstemmer = {
+        "bindings-libstemmer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

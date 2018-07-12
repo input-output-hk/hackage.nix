@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        wl-pprint-terminfo = {
+        "wl-pprint-terminfo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

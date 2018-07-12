@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ms = {
+        "ms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -43,7 +43,7 @@ let
               hsPkgs.vector
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

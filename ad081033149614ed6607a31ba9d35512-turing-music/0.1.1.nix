@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          turing-music = {
+          "turing-music" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ALUT

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-util = {
+        "happstack-util" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.hslogger
@@ -40,7 +40,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          happstack-util-tests = {
+          "happstack-util-tests" = {
             depends  = [ hsPkgs.HUnit ];
           };
         };

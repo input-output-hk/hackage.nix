@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        sysinfo = {
+        "sysinfo" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          sysinfo-test = {
+          "sysinfo-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sysinfo

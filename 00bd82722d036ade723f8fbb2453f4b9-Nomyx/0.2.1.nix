@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Nomyx = {
+          "Nomyx" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.DebugTraceHelpers

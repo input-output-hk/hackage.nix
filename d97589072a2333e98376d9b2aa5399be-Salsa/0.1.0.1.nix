@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Salsa = {
+        "Salsa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Win32

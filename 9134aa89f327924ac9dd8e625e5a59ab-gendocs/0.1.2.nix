@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gendocs = {
+        "gendocs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          gendocs-test = {
+          "gendocs-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gendocs

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskeline = {
+        "haskeline" = {
           depends  = ([
             hsPkgs.stm
             hsPkgs.filepath

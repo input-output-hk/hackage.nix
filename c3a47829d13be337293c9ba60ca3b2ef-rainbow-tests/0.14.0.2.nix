@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rainbow-tests = {
+        "rainbow-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.terminfo

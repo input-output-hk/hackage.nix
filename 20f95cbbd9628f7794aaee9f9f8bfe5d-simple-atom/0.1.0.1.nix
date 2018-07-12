@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-atom = {
+        "simple-atom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

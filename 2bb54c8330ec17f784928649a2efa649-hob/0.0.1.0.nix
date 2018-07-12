@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hob = {
+        "hob" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          hob = {
+          "hob" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk3
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

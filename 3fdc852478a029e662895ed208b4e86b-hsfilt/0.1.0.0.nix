@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsfilt = {
+          "hsfilt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HDBC

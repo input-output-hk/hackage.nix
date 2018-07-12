@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad-windownames = {
+        "xmonad-windownames" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rwlock = {
+        "rwlock" = {
           depends  = [
             hsPkgs.monad-loops
             hsPkgs.stm

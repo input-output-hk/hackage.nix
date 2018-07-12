@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netwire-input = {
+        "netwire-input" = {
           depends  = [
             hsPkgs.base
             hsPkgs.netwire

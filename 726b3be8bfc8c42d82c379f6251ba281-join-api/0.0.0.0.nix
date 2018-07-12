@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        join-api = {
+        "join-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

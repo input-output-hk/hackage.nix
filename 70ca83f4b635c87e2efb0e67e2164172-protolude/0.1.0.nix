@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protolude = {
+        "protolude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Etage-Graph = {
+        "Etage-Graph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Etage
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fgl

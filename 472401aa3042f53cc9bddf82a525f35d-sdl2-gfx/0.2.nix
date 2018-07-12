@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdl2-gfx = {
+        "sdl2-gfx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          sdl2-gfx-example = {
+          "sdl2-gfx-example" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.linear

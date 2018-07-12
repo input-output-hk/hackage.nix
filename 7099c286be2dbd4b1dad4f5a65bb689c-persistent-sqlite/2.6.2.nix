@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-sqlite = {
+        "persistent-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           libs = pkgs.lib.optional _flags.systemlib pkgs.sqlite3 ++ pkgs.lib.optional (!system.isWindows) pkgs.pthread;
         };
         exes = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.persistent-sqlite
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

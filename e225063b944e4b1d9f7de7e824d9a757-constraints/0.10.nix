@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        constraints = {
+        "constraints" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.constraints

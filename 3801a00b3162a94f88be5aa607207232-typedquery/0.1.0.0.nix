@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typedquery = {
+        "typedquery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

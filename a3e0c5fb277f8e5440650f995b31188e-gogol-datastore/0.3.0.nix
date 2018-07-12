@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-datastore = {
+        "gogol-datastore" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

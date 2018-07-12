@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        casr-logbook-meta = {
+        "casr-logbook-meta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.casr-logbook-types
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

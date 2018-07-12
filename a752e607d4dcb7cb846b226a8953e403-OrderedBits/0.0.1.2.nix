@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OrderedBits = {
+        "OrderedBits" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bits
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

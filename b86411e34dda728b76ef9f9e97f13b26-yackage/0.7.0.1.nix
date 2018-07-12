@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          yackage = {
+          "yackage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-core
@@ -48,7 +48,7 @@ let
               hsPkgs.conduit
             ];
           };
-          yackage-upload = {
+          "yackage-upload" = {
             depends  = pkgs.lib.optionals _flags.upload [
               hsPkgs.base
               hsPkgs.http-conduit

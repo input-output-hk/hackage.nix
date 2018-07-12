@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stackage2nix = {
+        "stackage2nix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          stackage2nix = {
+          "stackage2nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stackage2nix
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

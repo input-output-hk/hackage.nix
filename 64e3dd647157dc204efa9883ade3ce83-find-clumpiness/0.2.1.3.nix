@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        find-clumpiness = {
+        "find-clumpiness" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clumpiness
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          find-clumpiness = {
+          "find-clumpiness" = {
             depends  = [
               hsPkgs.base
               hsPkgs.find-clumpiness

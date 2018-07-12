@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-nowq = {
+        "th-nowq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.markdown-unlit

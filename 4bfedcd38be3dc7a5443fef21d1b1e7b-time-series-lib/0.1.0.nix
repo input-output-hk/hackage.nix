@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        time-series-lib = {
+        "time-series-lib" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

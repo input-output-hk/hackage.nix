@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        cli = {
+        "cli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          Example = {
+          "Example" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.cli

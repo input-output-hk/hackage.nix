@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dice-entropy-conduit = {
+        "dice-entropy-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

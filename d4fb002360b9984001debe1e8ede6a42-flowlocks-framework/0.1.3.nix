@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flowlocks-framework = {
+        "flowlocks-framework" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-flowlocks = {
+          "test-flowlocks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.flowlocks-framework

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stackage-metadata = {
+        "stackage-metadata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          all-cabal-metadata-tool = {
+          "all-cabal-metadata-tool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stackage-metadata

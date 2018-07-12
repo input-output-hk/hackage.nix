@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hamusic = {
+        "hamusic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,11 +33,11 @@ let
           ];
         };
         exes = {
-          HaMusic = {
+          "HaMusic" = {
             depends  = [ hsPkgs.filepath ];
           };
-          MusicTranslate = {};
-          MusicCount = {};
+          "MusicTranslate" = {};
+          "MusicCount" = {};
         };
       };
     }

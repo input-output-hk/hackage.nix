@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          4Blocks = {
+          "4Blocks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

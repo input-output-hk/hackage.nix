@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-logger = {
+        "simple-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fast-logger

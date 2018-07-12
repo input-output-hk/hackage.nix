@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        GLFW-b = {
+        "GLFW-b" = {
           depends  = [ hsPkgs.base ];
           libs = if system.isLinux || system.isFreebsd
             then [

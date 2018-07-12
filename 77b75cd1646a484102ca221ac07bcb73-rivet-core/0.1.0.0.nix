@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rivet-core = {
+        "rivet-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

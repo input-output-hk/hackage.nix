@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-form = {
+        "simple-form" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tateti-tateti = {
+          "tateti-tateti" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ncurses

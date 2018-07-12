@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yam-job = {
+        "yam-job" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yam-app

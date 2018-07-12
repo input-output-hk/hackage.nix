@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          HaskellTorrent = {
+          "HaskellTorrent" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

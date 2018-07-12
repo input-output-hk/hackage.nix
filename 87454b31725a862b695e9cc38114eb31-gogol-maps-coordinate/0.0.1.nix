@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-maps-coordinate = {
+        "gogol-maps-coordinate" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BerlekampAlgorithm = {
+        "BerlekampAlgorithm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.besout

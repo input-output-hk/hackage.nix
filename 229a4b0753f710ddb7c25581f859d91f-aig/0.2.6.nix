@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aig = {
+        "aig" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          aig-test = {
+          "aig-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aig

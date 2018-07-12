@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        StrictCheck = {
+        "StrictCheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-strictcheck = {
+          "test-strictcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

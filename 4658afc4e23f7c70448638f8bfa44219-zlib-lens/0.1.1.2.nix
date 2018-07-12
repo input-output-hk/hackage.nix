@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zlib-lens = {
+        "zlib-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

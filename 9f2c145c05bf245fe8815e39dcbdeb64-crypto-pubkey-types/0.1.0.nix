@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-pubkey-types = {
+        "crypto-pubkey-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.crypto-api

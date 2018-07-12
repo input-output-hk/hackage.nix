@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-wai-json = {
+        "hspec-wai-json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec-wai
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec-wai-json

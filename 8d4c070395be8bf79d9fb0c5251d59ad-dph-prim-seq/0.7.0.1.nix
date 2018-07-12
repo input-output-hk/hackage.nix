@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dph-prim-seq = {
+        "dph-prim-seq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

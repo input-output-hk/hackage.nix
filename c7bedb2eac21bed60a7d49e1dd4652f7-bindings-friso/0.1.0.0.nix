@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-friso = {
+        "bindings-friso" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

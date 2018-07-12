@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debug-trace-var = {
+        "debug-trace-var" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gsl-random = {
+        "gsl-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

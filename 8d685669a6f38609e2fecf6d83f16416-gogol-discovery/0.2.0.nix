@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-discovery = {
+        "gogol-discovery" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

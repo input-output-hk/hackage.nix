@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagsoup-ht = {
+        "tagsoup-ht" = {
           depends  = [
             hsPkgs.xml-basic
             hsPkgs.transformers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          tagsouptest = {
+          "tagsouptest" = {
             depends  = [
               hsPkgs.xml-basic
               hsPkgs.transformers
@@ -47,7 +47,7 @@ let
               hsPkgs.base
             ];
           };
-          tagsoupspeed = {
+          "tagsoupspeed" = {
             depends  = [
               hsPkgs.xml-basic
               hsPkgs.transformers
@@ -61,7 +61,7 @@ let
               hsPkgs.old-time
             ];
           };
-          validate-tagsoup = {
+          "validate-tagsoup" = {
             depends  = [
               hsPkgs.xml-basic
               hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        function-combine = {
+        "function-combine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-type

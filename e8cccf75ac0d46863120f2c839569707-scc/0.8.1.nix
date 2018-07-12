@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scc = {
+        "scc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          shsh = {
+          "shsh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        implicit = {
+        "implicit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -43,6 +43,6 @@ let
             hsPkgs.NumInstances
           ];
         };
-        exes = { extopenscad = {}; };
+        exes = { "extopenscad" = {}; };
       };
     }

@@ -22,15 +22,15 @@ let
         buildType = "Simple";
       };
       components = {
-        adler32 = {
+        "adler32" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
-          ] ++ pkgs.lib.optional (_flags.zlib && !(!system.isWindows)) hsPkgs.zlib;
-          libs = pkgs.lib.optional (_flags.zlib && !system.isWindows) pkgs.z;
+          ] ++ pkgs.lib.optionals _flags.zlib (pkgs.lib.optional (!(!system.isWindows)) hsPkgs.zlib);
+          libs = pkgs.lib.optionals _flags.zlib (pkgs.lib.optional (!system.isWindows) pkgs.z);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.adler32

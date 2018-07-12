@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        forkable-monad = {
+        "forkable-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

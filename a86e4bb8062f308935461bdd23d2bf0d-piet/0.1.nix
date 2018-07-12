@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        piet = {
+        "piet" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -29,6 +29,6 @@ let
             hsPkgs.mtl
           ];
         };
-        exes = { piet = {}; };
+        exes = { "piet" = {}; };
       };
     }

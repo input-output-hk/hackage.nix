@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quiver-csv = {
+        "quiver-csv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-src-exts-sc = {
+        "haskell-src-exts-sc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts
           ];
         };
         exes = {
-          sc-example = {
+          "sc-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts

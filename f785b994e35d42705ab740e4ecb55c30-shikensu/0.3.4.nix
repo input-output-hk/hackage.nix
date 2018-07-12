@@ -21,7 +21,7 @@ let
       };
       components = {
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

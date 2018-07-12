@@ -20,23 +20,23 @@ let
         buildType = "Simple";
       };
       components = {
-        data-reify = {
+        "data-reify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
           ];
         };
         exes = {
-          data-reify-test1 = {
+          "data-reify-test1" = {
             depends  = [ hsPkgs.base ];
           };
-          data-reify-test2 = {
+          "data-reify-test2" = {
             depends  = [ hsPkgs.base ];
           };
-          data-reify-test3 = {
+          "data-reify-test3" = {
             depends  = [ hsPkgs.base ];
           };
-          data-reify-test4 = {
+          "data-reify-test4" = {
             depends  = [ hsPkgs.base ];
           };
         };

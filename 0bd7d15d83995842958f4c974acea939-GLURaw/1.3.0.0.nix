@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLURaw = {
+        "GLURaw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGLRaw
@@ -30,7 +30,7 @@ let
           libs = if system.isWindows && _flags.usenativewindowslibraries
             then [ pkgs.glu32 ]
             else pkgs.lib.optional (!system.isOsx) pkgs.GLU;
-          frameworks = pkgs.lib.optional (!(system.isWindows && _flags.usenativewindowslibraries) && system.isOsx) pkgs.OpenGL;
+          frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (pkgs.lib.optional system.isOsx pkgs.OpenGL);
         };
       };
     }

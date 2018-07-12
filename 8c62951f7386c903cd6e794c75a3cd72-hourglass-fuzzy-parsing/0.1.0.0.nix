@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hourglass-fuzzy-parsing = {
+        "hourglass-fuzzy-parsing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hourglass

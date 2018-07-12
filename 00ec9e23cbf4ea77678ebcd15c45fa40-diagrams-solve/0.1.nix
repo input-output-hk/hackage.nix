@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-solve = {
+        "diagrams-solve" = {
           depends  = [ hsPkgs.base ];
         };
       };

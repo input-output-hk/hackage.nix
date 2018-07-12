@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stripe-haskell = {
+        "stripe-haskell" = {
           depends  = [
             hsPkgs.HsOpenSSL
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HsOpenSSL
               hsPkgs.aeson

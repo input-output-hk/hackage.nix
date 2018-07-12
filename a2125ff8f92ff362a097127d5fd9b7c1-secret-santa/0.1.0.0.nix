@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          secret-santa = {
+          "secret-santa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.diagrams-lib

@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hblas = {
+        "hblas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.storable-complex
@@ -43,7 +43,7 @@ let
           frameworks = pkgs.lib.optional (system.isOsx && !_flags.openblas) pkgs.Accelerate;
         };
         tests = {
-          unit-testsuite = {
+          "unit-testsuite" = {
             depends  = [
               hsPkgs.hblas
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        io-choice = {
+        "io-choice" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base

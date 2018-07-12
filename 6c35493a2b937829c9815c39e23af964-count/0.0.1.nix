@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        count = {
+        "count" = {
           depends  = [ hsPkgs.base ];
         };
       };

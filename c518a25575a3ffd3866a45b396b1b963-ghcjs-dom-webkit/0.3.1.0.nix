@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-dom-webkit = {
+        "ghcjs-dom-webkit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

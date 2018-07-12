@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        word-vector = {
+        "word-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

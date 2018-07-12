@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-conduit-downloader = {
+        "http-conduit-downloader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

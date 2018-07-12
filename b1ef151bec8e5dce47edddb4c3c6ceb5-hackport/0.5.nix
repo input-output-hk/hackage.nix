@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hackport = {
+          "hackport" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          test-resolve-category = {
+          "test-resolve-category" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -82,7 +82,7 @@ let
               hsPkgs.xml
             ];
           };
-          test-print-deps = {
+          "test-print-deps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -100,7 +100,7 @@ let
               hsPkgs.xml
             ];
           };
-          test-normalize-deps = {
+          "test-normalize-deps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

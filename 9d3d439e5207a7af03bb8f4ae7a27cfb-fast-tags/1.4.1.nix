@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fast-tags = {
+        "fast-tags" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          fast-tags = {
+          "fast-tags" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          test-fast-tags = {
+          "test-fast-tags" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

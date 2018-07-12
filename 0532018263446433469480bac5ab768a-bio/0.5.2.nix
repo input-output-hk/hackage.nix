@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bio = {
+        "bio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          qc = {
+          "qc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -49,31 +49,31 @@ let
               hsPkgs.old-time
             ];
           };
-          flx = {
+          "flx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
             ];
           };
-          fastout = {
+          "fastout" = {
             depends  = [ hsPkgs.base ];
           };
-          frecover = {
+          "frecover" = {
             depends  = [ hsPkgs.base ];
           };
-          frename = {
+          "frename" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
             ];
           };
-          flowclip = {
+          "flowclip" = {
             depends  = [ hsPkgs.base ];
           };
-          orf = {
+          "orf" = {
             depends  = [ hsPkgs.base ];
           };
-          rselect-pe = {
+          "rselect-pe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

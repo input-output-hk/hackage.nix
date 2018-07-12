@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        c-mosquitto = {
+        "c-mosquitto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.inline-c
@@ -31,7 +31,7 @@ let
           libs = [ pkgs.mosquitto ];
         };
         exes = {
-          c-mosquitto = {
+          "c-mosquitto" = {
             depends  = [
               hsPkgs.base
               hsPkgs.c-mosquitto
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          c-mosquitto-test = {
+          "c-mosquitto-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.c-mosquitto

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        seqloc = {
+        "seqloc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-seqloc = {
+          "test-seqloc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

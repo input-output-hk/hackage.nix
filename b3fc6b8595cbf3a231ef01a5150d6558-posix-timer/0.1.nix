@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        posix-timer = {
+        "posix-timer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

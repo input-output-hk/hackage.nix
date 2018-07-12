@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semi-iso = {
+        "semi-iso" = {
           depends  = [
             hsPkgs.base
             hsPkgs.profunctors

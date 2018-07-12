@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-authenticate = {
+        "happstack-authenticate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.acid-state

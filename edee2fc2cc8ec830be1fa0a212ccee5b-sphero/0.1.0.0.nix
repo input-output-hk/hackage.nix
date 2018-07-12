@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sphero = {
+        "sphero" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

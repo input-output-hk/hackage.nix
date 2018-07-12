@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-nix = {
+        "language-nix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

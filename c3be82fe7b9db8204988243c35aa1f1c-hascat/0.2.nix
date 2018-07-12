@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hascat = {
+          "hascat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hascat-lib

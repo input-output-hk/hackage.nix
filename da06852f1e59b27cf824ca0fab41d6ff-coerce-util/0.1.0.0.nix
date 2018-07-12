@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        coerce-util = {
+        "coerce-util" = {
           depends  = [ hsPkgs.base ];
         };
       };

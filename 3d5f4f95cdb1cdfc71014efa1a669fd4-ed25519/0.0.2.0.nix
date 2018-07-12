@@ -23,14 +23,14 @@ let
         buildType = "Simple";
       };
       components = {
-        ed25519 = {
+        "ed25519" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.ed25519
@@ -38,7 +38,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench1 = {
+          "bench1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

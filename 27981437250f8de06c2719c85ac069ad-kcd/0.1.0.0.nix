@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kcd = {
+        "kcd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.kcd-parser

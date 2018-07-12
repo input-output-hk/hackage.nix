@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mwc-probability = {
+        "mwc-probability" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mwc-random

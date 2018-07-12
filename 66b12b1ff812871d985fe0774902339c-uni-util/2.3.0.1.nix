@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uni-util = {
+        "uni-util" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.mtl

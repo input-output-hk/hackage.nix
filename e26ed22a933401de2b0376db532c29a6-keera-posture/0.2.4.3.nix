@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          keera-posture = {
+          "keera-posture" = {
             depends  = if system.isWindows
               then [
                 hsPkgs.base
@@ -103,13 +103,13 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          haddock-coverage = {
+          "haddock-coverage" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doc-coverage)) [
               hsPkgs.base
               hsPkgs.directory

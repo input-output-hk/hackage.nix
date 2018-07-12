@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conceit = {
+        "conceit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.void

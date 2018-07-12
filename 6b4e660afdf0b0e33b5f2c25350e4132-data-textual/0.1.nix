@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-textual = {
+        "data-textual" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

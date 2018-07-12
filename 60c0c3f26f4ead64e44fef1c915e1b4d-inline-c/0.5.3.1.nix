@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inline-c = {
+        "inline-c" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          gsl-ode = {
+          "gsl-ode" = {
             depends  = pkgs.lib.optionals _flags.gsl-example [
               hsPkgs.base
               hsPkgs.inline-c
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint

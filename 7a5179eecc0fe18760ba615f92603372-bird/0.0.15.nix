@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bird = {
+        "bird" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.MissingH
@@ -36,6 +36,6 @@ let
             hsPkgs.rallod
           ];
         };
-        exes = { bird = {}; };
+        exes = { "bird" = {}; };
       };
     }

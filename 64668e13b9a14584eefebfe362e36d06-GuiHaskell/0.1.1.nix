@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          guihaskell = {
+          "guihaskell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

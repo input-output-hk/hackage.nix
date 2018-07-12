@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Holumbus-Distribution = {
+        "Holumbus-Distribution" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -40,8 +40,8 @@ let
           ];
         };
         exes = {
-          PortRegistry = {};
-          PortRegistryDaemon = {};
+          "PortRegistry" = {};
+          "PortRegistryDaemon" = {};
         };
       };
     }

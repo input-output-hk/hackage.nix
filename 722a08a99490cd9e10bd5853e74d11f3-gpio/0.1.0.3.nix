@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gpio = {
+        "gpio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          gpio = {
+          "gpio" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

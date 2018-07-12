@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gsl-random-fu = {
+        "gsl-random-fu" = {
           depends  = [
             hsPkgs.gsl-random
             hsPkgs.random-fu

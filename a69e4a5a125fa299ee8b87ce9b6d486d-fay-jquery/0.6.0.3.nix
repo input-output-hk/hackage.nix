@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fay-jquery = {
+        "fay-jquery" = {
           depends  = [
             hsPkgs.fay-base
             hsPkgs.fay-text

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Tables = {
+          "Tables" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cookbook

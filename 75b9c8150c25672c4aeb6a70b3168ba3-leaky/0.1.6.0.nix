@@ -33,7 +33,7 @@ let
       };
       components = {
         exes = {
-          leaky = {
+          "leaky" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hinotify = {
+        "hinotify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,42 +30,42 @@ let
           ];
         };
         tests = {
-          test001 = {
+          "test001" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.hinotify
             ];
           };
-          test002 = {
+          "test002" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.hinotify
             ];
           };
-          test003 = {
+          "test003" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.hinotify
             ];
           };
-          test004 = {
+          "test004" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.hinotify
             ];
           };
-          test005 = {
+          "test005" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.hinotify
             ];
           };
-          test006 = {
+          "test006" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

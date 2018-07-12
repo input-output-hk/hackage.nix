@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          keera-posture = {
+          "keera-posture" = {
             depends  = if system.isWindows
               then [
                 hsPkgs.base

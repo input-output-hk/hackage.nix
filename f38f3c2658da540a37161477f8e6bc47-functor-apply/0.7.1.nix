@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        functor-apply = {
+        "functor-apply" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

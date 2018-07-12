@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hunit-rematch = {
+        "hunit-rematch" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          a50 = {
+          "a50" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biopsl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ConcurrentUtils = {
+        "ConcurrentUtils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

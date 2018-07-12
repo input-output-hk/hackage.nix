@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        android-lint-summary = {
+        "android-lint-summary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude
@@ -40,7 +40,7 @@ let
           ] ++ pkgs.lib.optional _flags.documentation hsPkgs.hscolour;
         };
         exes = {
-          android-lint-summary = {
+          "android-lint-summary" = {
             depends  = [
               hsPkgs.base
               hsPkgs.android-lint-summary
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          hspec-tests = {
+          "hspec-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

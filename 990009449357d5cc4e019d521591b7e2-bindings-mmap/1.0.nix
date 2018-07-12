@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-mmap = {
+        "bindings-mmap" = {
           depends  = [
             hsPkgs.bindings-posix
           ];

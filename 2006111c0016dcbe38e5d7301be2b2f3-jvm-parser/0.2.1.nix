@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jvm-parser = {
+        "jvm-parser" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

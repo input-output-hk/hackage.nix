@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kmeans-vector = {
+        "kmeans-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          kmeans-example = {
+          "kmeans-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

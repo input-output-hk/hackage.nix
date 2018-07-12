@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sndfile-enumerators = {
+        "sndfile-enumerators" = {
           depends  = [
             hsPkgs.binary
             hsPkgs.containers

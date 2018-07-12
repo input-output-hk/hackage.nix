@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        biopsl = {
+        "biopsl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.biocore
             hsPkgs.bytestring
           ];
         };
-        exes = { psluniq = {}; };
+        exes = { "psluniq" = {}; };
       };
     }

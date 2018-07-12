@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          lambdacube-hello = {
+          "lambdacube-hello" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -41,7 +41,7 @@ let
               hsPkgs.stb-image
             ];
           };
-          lambdacube-shadowmapping = {
+          "lambdacube-shadowmapping" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -58,7 +58,7 @@ let
               hsPkgs.GLFW-b
             ];
           };
-          lambdacube-cubemap = {
+          "lambdacube-cubemap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -75,7 +75,7 @@ let
               hsPkgs.GLFW-b
             ];
           };
-          lambdacube-convolutionfilter = {
+          "lambdacube-convolutionfilter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -92,7 +92,7 @@ let
               hsPkgs.GLFW-b
             ];
           };
-          lambdacube-bulletexample = {
+          "lambdacube-bulletexample" = {
             depends  = pkgs.lib.optionals _flags.bulletinstalled [
               hsPkgs.base
               hsPkgs.mtl

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hark = {
+          "hark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

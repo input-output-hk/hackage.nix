@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deriving-compat = {
+        "deriving-compat" = {
           depends  = (([
             hsPkgs.containers
             hsPkgs.ghc-prim
@@ -46,7 +46,7 @@ let
             else [ hsPkgs.transformers ]);
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = ([
               hsPkgs.base-compat
               hsPkgs.base-orphans

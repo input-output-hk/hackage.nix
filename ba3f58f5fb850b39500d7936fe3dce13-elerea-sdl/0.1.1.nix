@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elerea-sdl = {
+        "elerea-sdl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.elerea

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gps = {
+        "gps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

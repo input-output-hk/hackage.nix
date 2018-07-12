@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ListLike = {
+        "ListLike" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

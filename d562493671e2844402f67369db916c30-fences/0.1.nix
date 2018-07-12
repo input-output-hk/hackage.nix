@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fences = {
+        "fences" = {
           depends  = [ hsPkgs.base ];
         };
       };

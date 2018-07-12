@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          funbot = {
+          "funbot" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.auto-update

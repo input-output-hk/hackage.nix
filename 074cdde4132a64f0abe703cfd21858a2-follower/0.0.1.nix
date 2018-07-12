@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          follower = {
+          "follower" = {
             depends  = [
               hsPkgs.base
               hsPkgs.old-locale

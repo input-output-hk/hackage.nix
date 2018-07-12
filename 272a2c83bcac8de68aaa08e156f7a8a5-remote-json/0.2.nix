@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        remote-json = {
+        "remote-json" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test-spec = {
+          "test-spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.attoparsec
@@ -46,7 +46,7 @@ let
               hsPkgs.text
             ];
           };
-          test-example = {
+          "test-example" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -57,7 +57,7 @@ let
               hsPkgs.text
             ];
           };
-          front-example = {
+          "front-example" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -66,7 +66,7 @@ let
               hsPkgs.text
             ];
           };
-          remote-json-properties = {
+          "remote-json-properties" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

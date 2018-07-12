@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-conllu = {
+        "hs-conllu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          hs-conllu = {
+          "hs-conllu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        progress-meter = {
+        "progress-meter" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.async

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jobqueue = {
+        "jobqueue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

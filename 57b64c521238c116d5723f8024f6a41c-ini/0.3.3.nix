@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ini = {
+        "ini" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

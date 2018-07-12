@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        svm-light-utils = {
+        "svm-light-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

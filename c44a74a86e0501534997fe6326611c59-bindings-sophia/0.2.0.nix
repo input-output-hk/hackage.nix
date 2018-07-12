@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-sophia = {
+        "bindings-sophia" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

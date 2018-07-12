@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pthread = {
+        "pthread" = {
           depends  = [
             hsPkgs.base
             hsPkgs.generic-deriving
@@ -28,7 +28,7 @@ let
           libs = [ pkgs.pthread ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

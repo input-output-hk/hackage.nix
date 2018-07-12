@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        miso = {
+        "miso" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -50,7 +50,7 @@ let
             ]);
         };
         exes = {
-          todo-mvc = {
+          "todo-mvc" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -58,7 +58,7 @@ let
               hsPkgs.miso
             ];
           };
-          websocket = {
+          "websocket" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -66,14 +66,14 @@ let
               hsPkgs.miso
             ];
           };
-          mario = {
+          "mario" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.miso
             ];
           };
-          simple = {
+          "simple" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.examples)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -81,7 +81,7 @@ let
               hsPkgs.miso
             ];
           };
-          tests = {
+          "tests" = {
             depends  = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !_flags.tests)) [
               hsPkgs.aeson
               hsPkgs.base

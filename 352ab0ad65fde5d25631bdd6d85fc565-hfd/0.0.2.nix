@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hfd = {
+          "hfd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

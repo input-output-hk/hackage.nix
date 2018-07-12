@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        casadi-bindings-snopt-interface = {
+        "casadi-bindings-snopt-interface" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

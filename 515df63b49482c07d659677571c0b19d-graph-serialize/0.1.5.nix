@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graph-serialize = {
+        "graph-serialize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

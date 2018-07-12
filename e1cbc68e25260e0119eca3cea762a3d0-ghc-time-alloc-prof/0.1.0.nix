@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-time-alloc-prof = {
+        "ghc-time-alloc-prof" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          dump = {
+          "dump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          regression = {
+          "regression" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

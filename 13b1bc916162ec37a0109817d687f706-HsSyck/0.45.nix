@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HsSyck = {
+        "HsSyck" = {
           depends  = if _flags.sybinbase
             then [
               hsPkgs.base

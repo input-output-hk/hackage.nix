@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        reinterpret-cast = {
+        "reinterpret-cast" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reinterpret-cast
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reinterpret-cast

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        algebraic = {
+        "algebraic" = {
           depends  = [ hsPkgs.base ];
         };
       };

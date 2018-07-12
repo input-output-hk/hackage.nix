@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ige = {
+          "ige" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cairo

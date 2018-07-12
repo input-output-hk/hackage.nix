@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        coverage = {
+        "coverage" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.coverage

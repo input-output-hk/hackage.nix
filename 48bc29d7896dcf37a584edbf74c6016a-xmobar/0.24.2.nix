@@ -36,7 +36,7 @@ let
       };
       components = {
         exes = {
-          xmobar = {
+          "xmobar" = {
             depends  = (((((((([
               hsPkgs.base
               hsPkgs.containers

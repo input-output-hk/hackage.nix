@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        network-minihttp = {
+        "network-minihttp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

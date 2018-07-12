@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Nomyx-Web = {
+        "Nomyx-Web" = {
           depends  = [
             hsPkgs.Nomyx-Language
             hsPkgs.Nomyx-Core

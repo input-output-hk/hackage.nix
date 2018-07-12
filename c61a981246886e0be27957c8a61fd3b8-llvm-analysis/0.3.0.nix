@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-analysis = {
+        "llvm-analysis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -59,7 +59,7 @@ let
           ];
         };
         tests = {
-          CallGraphTests = {
+          "CallGraphTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -70,7 +70,7 @@ let
               hsPkgs.llvm-data-interop
             ];
           };
-          BlockReturnTests = {
+          "BlockReturnTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -80,7 +80,7 @@ let
               hsPkgs.llvm-data-interop
             ];
           };
-          ReturnTests = {
+          "ReturnTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -92,7 +92,7 @@ let
               hsPkgs.llvm-analysis
             ];
           };
-          AccessPathTests = {
+          "AccessPathTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -102,7 +102,7 @@ let
               hsPkgs.llvm-analysis
             ];
           };
-          ClassHierarchyTests = {
+          "ClassHierarchyTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -114,7 +114,7 @@ let
               hsPkgs.itanium-abi
             ];
           };
-          AndersenTests = {
+          "AndersenTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

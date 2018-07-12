@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uni-htk = {
+        "uni-htk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

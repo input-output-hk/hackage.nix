@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hamlet = {
+        "hamlet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shakespeare
@@ -42,7 +42,7 @@ let
             else [ hsPkgs.blaze-html ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.hamlet
               hsPkgs.base

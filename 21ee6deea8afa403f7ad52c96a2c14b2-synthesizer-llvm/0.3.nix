@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer-llvm = {
+        "synthesizer-llvm" = {
           depends  = [
             hsPkgs.llvm-extra
             hsPkgs.llvm
@@ -55,9 +55,9 @@ let
           ];
         };
         exes = {
-          synthi-llvm-example = {};
-          synthi-llvm-server = {};
-          synthi-llvm-test = {
+          "synthi-llvm-example" = {};
+          "synthi-llvm-server" = {};
+          "synthi-llvm-test" = {
             depends  = pkgs.lib.optional _flags.buildtests hsPkgs.QuickCheck;
           };
         };

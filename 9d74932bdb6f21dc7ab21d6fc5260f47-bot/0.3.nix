@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bot = {
+        "bot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.arrows

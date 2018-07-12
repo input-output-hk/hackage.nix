@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MuCheck-QuickCheck = {
+        "MuCheck-QuickCheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          mucheck-quickcheck = {
+          "mucheck-quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

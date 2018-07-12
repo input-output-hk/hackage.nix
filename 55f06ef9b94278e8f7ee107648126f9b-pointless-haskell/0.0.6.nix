@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pointless-haskell = {
+        "pointless-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GHood

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        test-framework-skip = {
+        "test-framework-skip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.test-framework
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.test-framework-skip
               hsPkgs.base

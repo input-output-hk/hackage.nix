@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vhd = {
+        "vhd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          vhd = {
+          "vhd" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.bytestring
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          test-vhd = {
+          "test-vhd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

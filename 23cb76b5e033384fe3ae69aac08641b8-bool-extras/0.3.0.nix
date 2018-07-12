@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bool-extras = {
+        "bool-extras" = {
           depends  = [ hsPkgs.base ];
         };
       };

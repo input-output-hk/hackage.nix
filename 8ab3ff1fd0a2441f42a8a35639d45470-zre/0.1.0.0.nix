@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zre = {
+        "zre" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          zre = {
+          "zre" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -55,7 +55,7 @@ let
               hsPkgs.zre
             ];
           };
-          mzre = {
+          "mzre" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -65,7 +65,7 @@ let
               hsPkgs.zre
             ];
           };
-          zreworker = {
+          "zreworker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -76,7 +76,7 @@ let
               hsPkgs.zre
             ];
           };
-          zgossip_server = {
+          "zgossip_server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -87,7 +87,7 @@ let
               hsPkgs.zre
             ];
           };
-          zrematch = {
+          "zrematch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -98,7 +98,7 @@ let
               hsPkgs.zre
             ];
           };
-          zretime = {
+          "zretime" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -107,7 +107,7 @@ let
               hsPkgs.zre
             ];
           };
-          zrecat = {
+          "zrecat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -118,7 +118,7 @@ let
           };
         };
         tests = {
-          zre-test = {
+          "zre-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zre

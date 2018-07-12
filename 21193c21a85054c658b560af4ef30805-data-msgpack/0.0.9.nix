@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-msgpack = {
+        "data-msgpack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          msgpack-parser = {
+          "msgpack-parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -64,7 +64,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

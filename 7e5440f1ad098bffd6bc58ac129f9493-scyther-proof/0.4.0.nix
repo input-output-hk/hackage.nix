@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          scyther-proof = {
+          "scyther-proof" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

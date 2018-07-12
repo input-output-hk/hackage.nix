@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        easytensor = {
+        "easytensor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
           ];
         };
         exes = {
-          easytensor-exe = {
+          "easytensor-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.easytensor
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          easytensor-test = {
+          "easytensor-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.easytensor

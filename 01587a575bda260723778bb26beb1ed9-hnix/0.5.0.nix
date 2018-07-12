@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hnix = {
+        "hnix" = {
           depends  = ([
             hsPkgs.aeson
             hsPkgs.ansi-wl-pprint
@@ -83,7 +83,7 @@ let
             ]);
         };
         exes = {
-          hnix = {
+          "hnix" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-wl-pprint
@@ -117,7 +117,7 @@ let
           };
         };
         tests = {
-          hnix-tests = {
+          "hnix-tests" = {
             depends  = [
               hsPkgs.Diff
               hsPkgs.Glob
@@ -163,7 +163,7 @@ let
           };
         };
         benchmarks = {
-          hnix-benchmarks = {
+          "hnix-benchmarks" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        colour-space = {
+        "colour-space" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manifolds

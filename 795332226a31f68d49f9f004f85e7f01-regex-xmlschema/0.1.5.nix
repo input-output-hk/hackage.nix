@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-xmlschema = {
+        "regex-xmlschema" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

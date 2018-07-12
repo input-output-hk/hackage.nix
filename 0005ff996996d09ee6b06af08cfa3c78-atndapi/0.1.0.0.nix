@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atndapi = {
+        "atndapi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          atndapi-test = {
+          "atndapi-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.atndapi

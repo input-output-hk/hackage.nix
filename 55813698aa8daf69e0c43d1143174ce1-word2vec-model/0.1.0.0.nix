@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        word2vec-model = {
+        "word2vec-model" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          word2vec-model-similarity = {
+          "word2vec-model-similarity" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -49,7 +49,7 @@ let
               hsPkgs.word2vec-model
             ];
           };
-          word2vec-model-word-analogy = {
+          "word2vec-model-word-analogy" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          word2vec-model-test = {
+          "word2vec-model-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.attoparsec

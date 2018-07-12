@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        fast-combinatorics = {
+        "fast-combinatorics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.composition-prelude
           ];
         };
         tests = {
-          fast-combinatorics-test = {
+          "fast-combinatorics-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fast-combinatorics
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          fast-combinatorics-bench = {
+          "fast-combinatorics-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fast-combinatorics

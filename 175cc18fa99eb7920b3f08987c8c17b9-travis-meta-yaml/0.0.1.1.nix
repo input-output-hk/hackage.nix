@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        travis-meta-yaml = {
+        "travis-meta-yaml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          travis-meta-yaml = {
+          "travis-meta-yaml" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

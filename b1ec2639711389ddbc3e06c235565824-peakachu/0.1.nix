@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        peakachu = {
+        "peakachu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GLUT

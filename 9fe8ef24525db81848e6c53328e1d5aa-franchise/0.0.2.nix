@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        franchise = {
+        "franchise" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

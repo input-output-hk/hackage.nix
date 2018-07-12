@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        templater = {
+        "templater" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.templater

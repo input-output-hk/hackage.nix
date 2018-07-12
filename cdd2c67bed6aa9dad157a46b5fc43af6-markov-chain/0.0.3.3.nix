@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        markov-chain = {
+        "markov-chain" = {
           depends  = [
             hsPkgs.transformers
           ] ++ (if _flags.splitbase

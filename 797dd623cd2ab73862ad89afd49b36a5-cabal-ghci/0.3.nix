@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-ghci = {
+        "cabal-ghci" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          cabal-ghci = {
+          "cabal-ghci" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-response-decoder = {
+        "http-response-decoder" = {
           depends  = [
             hsPkgs.http-types
             hsPkgs.http-client

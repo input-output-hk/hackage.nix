@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-async = {
+        "pipes-async" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-async
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lifted-async

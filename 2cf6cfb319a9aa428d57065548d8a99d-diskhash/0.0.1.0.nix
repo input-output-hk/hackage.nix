@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diskhash = {
+        "diskhash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          diskhashtest = {
+          "diskhashtest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

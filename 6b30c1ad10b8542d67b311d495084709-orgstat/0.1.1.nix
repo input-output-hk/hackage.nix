@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        orgstat = {
+        "orgstat" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          orgstat = {
+          "orgstat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -66,7 +66,7 @@ let
           };
         };
         tests = {
-          orgstat-test = {
+          "orgstat-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

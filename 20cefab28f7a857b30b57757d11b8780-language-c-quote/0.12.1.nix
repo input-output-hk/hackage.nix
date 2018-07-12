@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-c-quote = {
+        "language-c-quote" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -53,7 +53,7 @@ let
           ];
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

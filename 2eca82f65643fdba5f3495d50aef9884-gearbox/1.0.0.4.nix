@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gearbox = {
+          "gearbox" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT

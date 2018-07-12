@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        fay = {
+        "fay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -54,7 +54,7 @@ let
           ];
         };
         exes = {
-          fay = {
+          "fay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fay
@@ -78,7 +78,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          fay-tests = {
+          "fay-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fay

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        quickselect = {
+        "quickselect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
           ];
         };
         tests = {
-          quickselect-doctests = {
+          "quickselect-doctests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -36,7 +36,7 @@ let
               hsPkgs.vector
             ];
           };
-          quickselect-test = {
+          "quickselect-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

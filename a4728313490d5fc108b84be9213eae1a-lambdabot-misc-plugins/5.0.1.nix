@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdabot-misc-plugins = {
+        "lambdabot-misc-plugins" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

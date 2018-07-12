@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hinotify = {
+        "hinotify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test001 = {
+          "test001" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
               hsPkgs.unix
             ];
           };
-          test002 = {
+          "test002" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
               hsPkgs.unix
             ];
           };
-          test003 = {
+          "test003" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -57,7 +57,7 @@ let
               hsPkgs.unix
             ];
           };
-          test004 = {
+          "test004" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -66,7 +66,7 @@ let
               hsPkgs.unix
             ];
           };
-          test005 = {
+          "test005" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -75,7 +75,7 @@ let
               hsPkgs.unix
             ];
           };
-          test006 = {
+          "test006" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

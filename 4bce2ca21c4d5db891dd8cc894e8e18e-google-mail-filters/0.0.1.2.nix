@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-mail-filters = {
+        "google-mail-filters" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
             else [ hsPkgs.time ]);
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.google-mail-filters

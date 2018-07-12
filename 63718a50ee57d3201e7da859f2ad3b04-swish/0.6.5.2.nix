@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        swish = {
+        "swish" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.binary
@@ -39,7 +39,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.4.0") hsPkgs.intern) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4.0") hsPkgs.intern;
         };
         exes = {
-          Swish = {
+          "Swish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.swish
@@ -47,28 +47,28 @@ let
           };
         };
         tests = {
-          test-builtinmap = {
+          "test-builtinmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.swish
             ];
           };
-          test-graphpartition = {
+          "test-graphpartition" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.swish
             ];
           };
-          test-graph = {
+          "test-graph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.swish
             ];
           };
-          test-nt = {
+          "test-nt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -76,7 +76,7 @@ let
               hsPkgs.text
             ];
           };
-          test-n3parser = {
+          "test-n3parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -85,7 +85,7 @@ let
               hsPkgs.text
             ];
           };
-          test-n3formatter = {
+          "test-n3formatter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -94,7 +94,7 @@ let
               hsPkgs.text
             ];
           };
-          test-rdfdatatypexsdinteger = {
+          "test-rdfdatatypexsdinteger" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -103,7 +103,7 @@ let
               hsPkgs.text
             ];
           };
-          test-rdfgraph = {
+          "test-rdfgraph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -114,7 +114,7 @@ let
               hsPkgs.time
             ];
           };
-          test-rdfproofcontext = {
+          "test-rdfproofcontext" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -123,7 +123,7 @@ let
               hsPkgs.text
             ];
           };
-          test-rdfproof = {
+          "test-rdfproof" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -132,7 +132,7 @@ let
               hsPkgs.text
             ];
           };
-          test-rdfquery = {
+          "test-rdfquery" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -141,7 +141,7 @@ let
               hsPkgs.text
             ];
           };
-          test-rdfruleset = {
+          "test-rdfruleset" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -150,21 +150,21 @@ let
               hsPkgs.text
             ];
           };
-          test-varbinding = {
+          "test-varbinding" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.swish
             ];
           };
-          test-lookupmap = {
+          "test-lookupmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.swish
             ];
           };
-          test-qname = {
+          "test-qname" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

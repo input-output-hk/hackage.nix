@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        lambda-calculator = {
+        "lambda-calculator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         exes = {
-          lambda-calculator = {
+          "lambda-calculator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lambda-calculator
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          lambda-calculus-test = {
+          "lambda-calculus-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lambda-calculator

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yam-config = {
+        "yam-config" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

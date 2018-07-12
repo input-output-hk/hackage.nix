@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        traverse-with-class = {
+        "traverse-with-class" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

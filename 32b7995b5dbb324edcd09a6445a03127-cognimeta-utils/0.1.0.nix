@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cognimeta-utils = {
+        "cognimeta-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          cognimeta-utils = {
+          "cognimeta-utils" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

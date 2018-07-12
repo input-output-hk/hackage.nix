@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          neko-obfs = {
+          "neko-obfs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        classy-prelude-conduit = {
+        "classy-prelude-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

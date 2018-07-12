@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rolling-queue = {
+        "rolling-queue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-primitive = {
+        "monad-primitive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

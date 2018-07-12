@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          geniconvert = {
+          "geniconvert" = {
             depends  = [
               hsPkgs.GenI
               hsPkgs.base

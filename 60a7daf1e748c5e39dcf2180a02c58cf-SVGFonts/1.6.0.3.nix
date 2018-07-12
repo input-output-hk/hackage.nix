@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SVGFonts = {
+        "SVGFonts" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

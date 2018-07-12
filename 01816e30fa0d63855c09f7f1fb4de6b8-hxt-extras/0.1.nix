@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-extras = {
+        "hxt-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt

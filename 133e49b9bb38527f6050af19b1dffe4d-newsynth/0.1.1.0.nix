@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        newsynth = {
+        "newsynth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          newsynth = {
+          "newsynth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

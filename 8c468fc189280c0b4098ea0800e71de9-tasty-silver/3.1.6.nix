@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-silver = {
+        "tasty-silver" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.async
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

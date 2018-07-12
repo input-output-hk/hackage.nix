@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-raml-docs = {
+        "yesod-raml-docs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-raml

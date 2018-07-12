@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-JuicyPixels = {
+        "servant-JuicyPixels" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          image-conversion = {
+          "image-conversion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.JuicyPixels

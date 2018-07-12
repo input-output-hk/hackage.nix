@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hipmunk-Utils = {
+        "Hipmunk-Utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Hipmunk
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          Hipmunk-Utils-test = {
+          "Hipmunk-Utils-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Hipmunk-Utils

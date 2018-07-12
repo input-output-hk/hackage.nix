@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          snowflake-server = {
+          "snowflake-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

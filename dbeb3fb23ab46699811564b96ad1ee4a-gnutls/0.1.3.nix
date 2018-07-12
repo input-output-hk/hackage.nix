@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gnutls = {
+        "gnutls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

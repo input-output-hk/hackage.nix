@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          pwstore = {
+          "pwstore" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

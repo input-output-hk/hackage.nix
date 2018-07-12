@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-protocol = {
+        "binary-protocol" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

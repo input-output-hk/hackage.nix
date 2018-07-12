@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          shuffle = {
+          "shuffle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

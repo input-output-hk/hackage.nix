@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-variates = {
+        "random-variates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          Gen = {
+          "Gen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random-variates
@@ -42,14 +42,14 @@ let
           };
         };
         tests = {
-          vis = {
+          "vis" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.random-variates
             ];
           };
-          units = {
+          "units" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

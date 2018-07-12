@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        h-booru = {
+        "h-booru" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt

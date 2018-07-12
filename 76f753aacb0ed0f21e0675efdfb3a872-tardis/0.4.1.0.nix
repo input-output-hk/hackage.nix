@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tardis = {
+        "tardis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

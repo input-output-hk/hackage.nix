@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nomyx-core = {
+        "nomyx-core" = {
           depends  = [
             hsPkgs.nomyx-language
             hsPkgs.nomyx-library
@@ -65,7 +65,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nomyx-core

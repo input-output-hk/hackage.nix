@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hscurses-fish-ex = {
+          "hscurses-fish-ex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hscurses

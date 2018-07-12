@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rangemin = {
+        "rangemin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

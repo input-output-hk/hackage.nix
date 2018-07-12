@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cantor = {
+          "cantor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -34,7 +34,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

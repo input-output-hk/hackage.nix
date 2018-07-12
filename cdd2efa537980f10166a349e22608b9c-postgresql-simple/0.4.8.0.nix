@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-simple = {
+        "postgresql-simple" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

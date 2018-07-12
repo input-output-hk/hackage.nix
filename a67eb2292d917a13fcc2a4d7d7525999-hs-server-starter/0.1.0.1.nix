@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-server-starter = {
+        "hs-server-starter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          server-starter-warp-example = {
+          "server-starter-warp-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs-server-starter
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          hs-server-starter-test = {
+          "hs-server-starter-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs-server-starter

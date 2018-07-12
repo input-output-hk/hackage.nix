@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shadowsocks = {
+        "shadowsocks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          sslocal = {
+          "sslocal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shadowsocks
@@ -48,7 +48,7 @@ let
               hsPkgs.conduit-extra
             ];
           };
-          ssserver = {
+          "ssserver" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shadowsocks
@@ -62,7 +62,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

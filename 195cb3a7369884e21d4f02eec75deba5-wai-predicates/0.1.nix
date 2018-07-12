@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-predicates = {
+        "wai-predicates" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          wai-predicate-tests = {
+          "wai-predicate-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

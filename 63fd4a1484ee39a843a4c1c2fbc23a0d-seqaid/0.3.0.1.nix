@@ -35,7 +35,7 @@ let
         buildType = "Simple";
       };
       components = {
-        seqaid = {
+        "seqaid" = {
           depends  = (((([
             hsPkgs.base
             hsPkgs.deepseq-bounded
@@ -59,7 +59,7 @@ let
           ];
         };
         exes = {
-          seqaid = {
+          "seqaid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.temporary
@@ -67,7 +67,7 @@ let
               hsPkgs.process
             ] ++ pkgs.lib.optional _flags.use_cpphs hsPkgs.cpphs;
           };
-          seqaidpp = {
+          "seqaidpp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-base

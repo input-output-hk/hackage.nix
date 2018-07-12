@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        libxml = {
+        "libxml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

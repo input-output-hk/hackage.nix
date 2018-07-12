@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-kotlin = {
+        "servant-kotlin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          generate-test = {
+          "generate-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

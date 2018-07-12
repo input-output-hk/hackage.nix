@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-cassava = {
+        "streaming-cassava" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          roundtrip = {
+          "roundtrip" = {
             depends  = [
               hsPkgs.streaming-cassava
               hsPkgs.base

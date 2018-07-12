@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        miniball = {
+        "miniball" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

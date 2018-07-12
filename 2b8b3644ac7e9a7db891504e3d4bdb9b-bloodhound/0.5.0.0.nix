@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bloodhound = {
+        "bloodhound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bloodhound
@@ -53,7 +53,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

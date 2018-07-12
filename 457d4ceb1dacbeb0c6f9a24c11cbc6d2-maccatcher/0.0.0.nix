@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        maccatcher = {
+        "maccatcher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

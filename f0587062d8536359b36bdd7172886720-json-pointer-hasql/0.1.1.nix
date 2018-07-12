@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-pointer-hasql = {
+        "json-pointer-hasql" = {
           depends  = [
             hsPkgs.hasql
             hsPkgs.json-pointer
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.hasql

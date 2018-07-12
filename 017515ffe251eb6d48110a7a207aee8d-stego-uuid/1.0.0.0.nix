@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stego-uuid = {
+        "stego-uuid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uuid
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-stego-uuid = {
+          "test-stego-uuid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stego-uuid

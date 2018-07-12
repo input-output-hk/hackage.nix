@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Ranged-sets = {
+        "Ranged-sets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

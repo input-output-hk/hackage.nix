@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hothasktags = {
+          "hothasktags" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

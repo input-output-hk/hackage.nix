@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        itemfield = {
+        "itemfield" = {
           depends  = ([
             hsPkgs.vty
             hsPkgs.text
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          bookcase = {
+          "bookcase" = {
             depends  = ([
               hsPkgs.vty
               hsPkgs.text
@@ -48,7 +48,7 @@ let
               hsPkgs.brick
             ];
           };
-          workreport = {
+          "workreport" = {
             depends  = ([
               hsPkgs.vty
               hsPkgs.text
@@ -66,7 +66,7 @@ let
           };
         };
         tests = {
-          test_itemfield = {
+          "test_itemfield" = {
             depends  = ([
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -82,7 +82,7 @@ let
               hsPkgs.brick
             ];
           };
-          test_layout = {
+          "test_layout" = {
             depends  = ([
               hsPkgs.HUnit
               hsPkgs.QuickCheck

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          opn = {
+          "opn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ini

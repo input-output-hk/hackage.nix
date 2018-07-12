@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clr-marshal = {
+        "clr-marshal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

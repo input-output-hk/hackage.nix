@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        certificate = {
+        "certificate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
         };
         exes = {
-          certificate = {
+          "certificate" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.cmdargs
               hsPkgs.text
@@ -46,7 +46,7 @@ let
               hsPkgs.directory
             ];
           };
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.directory

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        modelicaparser = {
+        "modelicaparser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-parsers = {
+          "test-parsers" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.modelicaparser
               hsPkgs.base
@@ -40,7 +40,7 @@ let
               hsPkgs.parsec
             ];
           };
-          test-real-code = {
+          "test-real-code" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.modelicaparser
               hsPkgs.base

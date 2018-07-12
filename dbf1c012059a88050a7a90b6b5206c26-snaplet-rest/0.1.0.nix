@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-rest = {
+        "snaplet-rest" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

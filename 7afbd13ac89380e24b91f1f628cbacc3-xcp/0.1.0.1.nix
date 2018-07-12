@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xcp = {
+        "xcp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tinyMesh = {
+        "tinyMesh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

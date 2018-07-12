@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hood-off = {
+        "hood-off" = {
           depends  = [ hsPkgs.base ];
         };
       };

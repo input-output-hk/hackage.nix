@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debug-diff = {
+        "debug-diff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.groom

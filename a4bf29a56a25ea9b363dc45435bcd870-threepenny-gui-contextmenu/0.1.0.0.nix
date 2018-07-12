@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        threepenny-gui-contextmenu = {
+        "threepenny-gui-contextmenu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.threepenny-gui
           ];
         };
         exes = {
-          threepenny-gui-contextmenu-exe = {
+          "threepenny-gui-contextmenu-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.threepenny-gui

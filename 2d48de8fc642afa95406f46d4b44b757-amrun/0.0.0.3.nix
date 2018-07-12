@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          amrun = {
+          "amrun" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

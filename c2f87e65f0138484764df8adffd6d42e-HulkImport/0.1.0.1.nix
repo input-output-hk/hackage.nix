@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HulkImport = {
+        "HulkImport" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          HulkImport-exe = {
+          "HulkImport-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HulkImport
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          HulkImport-test = {
+          "HulkImport-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HulkImport

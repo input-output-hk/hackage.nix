@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hxmppc = {
+          "hxmppc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

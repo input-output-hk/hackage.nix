@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gitignore = {
+          "gitignore" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

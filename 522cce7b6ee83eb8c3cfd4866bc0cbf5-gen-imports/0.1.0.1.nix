@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gen-imports = {
+        "gen-imports" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hackage-db

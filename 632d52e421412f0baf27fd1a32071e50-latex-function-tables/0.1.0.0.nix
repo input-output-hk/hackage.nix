@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        latex-function-tables = {
+        "latex-function-tables" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaTeX
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.latex-function-tables

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        infernu = {
+        "infernu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          infernu = {
+          "infernu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -53,7 +53,7 @@ let
               hsPkgs.derive
             ];
           };
-          infernu-demo = {
+          "infernu-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.infernu
@@ -62,7 +62,7 @@ let
               hsPkgs.derive
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.infernu

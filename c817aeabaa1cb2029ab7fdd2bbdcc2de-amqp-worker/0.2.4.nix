@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amqp-worker = {
+        "amqp-worker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        satchmo = {
+        "satchmo" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.process
@@ -39,28 +39,28 @@ let
           ];
         };
         tests = {
-          PP = {
+          "PP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.satchmo
             ];
           };
-          Ramsey = {
+          "Ramsey" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.satchmo
             ];
           };
-          Spaceship = {
+          "Spaceship" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
               hsPkgs.satchmo
             ];
           };
-          Oscillator = {
+          "Oscillator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

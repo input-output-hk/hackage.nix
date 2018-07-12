@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-banded = {
+        "hmatrix-banded" = {
           depends  = [
             hsPkgs.hmatrix
             hsPkgs.transformers

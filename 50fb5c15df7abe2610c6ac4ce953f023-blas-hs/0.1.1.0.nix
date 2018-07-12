@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blas-hs = {
+        "blas-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.storable-complex
@@ -39,11 +39,11 @@ let
             ]
             else if _flags.openblas
               then [ pkgs.openblas ]
-              else pkgs.lib.optional (!((system.isOsx || system.isOsx) && !_flags.no-accelerate) && !_flags.no-netlib) pkgs.blas);
-          frameworks = pkgs.lib.optional (!_flags.mkl && (!_flags.openblas && ((system.isOsx || system.isOsx) && !_flags.no-accelerate))) pkgs.Accelerate;
+              else pkgs.lib.optionals (!((system.isOsx || system.isOsx) && !_flags.no-accelerate)) (pkgs.lib.optional (!_flags.no-netlib) pkgs.blas));
+          frameworks = pkgs.lib.optionals (!_flags.mkl) (pkgs.lib.optionals (!_flags.openblas) (pkgs.lib.optional ((system.isOsx || system.isOsx) && !_flags.no-accelerate) pkgs.Accelerate));
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blas-hs

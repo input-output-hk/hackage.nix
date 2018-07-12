@@ -42,7 +42,7 @@ let
       };
       components = {
         exes = {
-          accelerate-nofib = {
+          "accelerate-nofib" = {
             depends  = (((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-gpu hsPkgs.accelerate-llvm-ptx) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.nofib)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-fft
@@ -61,7 +61,7 @@ let
             ];
             libs = [ pkgs."stdc++" ];
           };
-          accelerate-smvm = {
+          "accelerate-smvm" = {
             depends  = (((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-gpu hsPkgs.accelerate-llvm-ptx) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.smvm)) [
               hsPkgs.accelerate
               hsPkgs.base
@@ -76,7 +76,7 @@ let
               hsPkgs.vector-algorithms
             ];
           };
-          accelerate-crystal = {
+          "accelerate-crystal" = {
             depends  = (((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-gpu hsPkgs.accelerate-llvm-ptx) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.crystal)) [
               hsPkgs.accelerate
               hsPkgs.base
@@ -85,7 +85,7 @@ let
               hsPkgs.gloss-raster-accelerate
             ];
           };
-          accelerate-canny = {
+          "accelerate-canny" = {
             depends  = (((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-gpu hsPkgs.accelerate-llvm-ptx) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.canny)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-io
@@ -97,7 +97,7 @@ let
               hsPkgs.vector
             ];
           };
-          accelerate-mandelbrot = {
+          "accelerate-mandelbrot" = {
             depends  = ((((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optionals _flags.llvm-cpu [
               hsPkgs.accelerate-llvm-native
               hsPkgs.accelerate-llvm
@@ -111,7 +111,7 @@ let
               hsPkgs.gloss-accelerate
             ];
           };
-          accelerate-fluid = {
+          "accelerate-fluid" = {
             depends  = (((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-gpu hsPkgs.accelerate-llvm-ptx) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.fluid)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-io
@@ -122,7 +122,7 @@ let
               hsPkgs.gloss
             ];
           };
-          accelerate-nbody = {
+          "accelerate-nbody" = {
             depends  = (((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-gpu hsPkgs.accelerate-llvm-ptx) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.nbody)) [
               hsPkgs.accelerate
               hsPkgs.base
@@ -132,7 +132,7 @@ let
               hsPkgs.mwc-random
             ];
           };
-          accelerate-smoothlife = {
+          "accelerate-smoothlife" = {
             depends  = (((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-gpu hsPkgs.accelerate-llvm-ptx) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.smoothlife)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-fft
@@ -145,7 +145,7 @@ let
               hsPkgs.mwc-random
             ];
           };
-          accelerate-hashcat = {
+          "accelerate-hashcat" = {
             depends  = (((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-gpu hsPkgs.accelerate-llvm-ptx) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg) ++ pkgs.lib.optionals (!(!_flags.hashcat)) [
               hsPkgs.accelerate
               hsPkgs.base
@@ -157,7 +157,7 @@ let
               hsPkgs.mwc-random
             ];
           };
-          accelerate-fft = {
+          "accelerate-fft" = {
             depends  = ((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-gpu hsPkgs.accelerate-llvm-ptx) ++ pkgs.lib.optionals (!(!_flags.fft)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-io
@@ -168,7 +168,7 @@ let
               hsPkgs.filepath
             ];
           };
-          accelerate-pagerank = {
+          "accelerate-pagerank" = {
             depends  = ((pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-gpu hsPkgs.accelerate-llvm-ptx) ++ pkgs.lib.optionals (!(!_flags.pagerank)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-io
@@ -182,7 +182,7 @@ let
               hsPkgs.vector-algorithms
             ];
           };
-          accelerate-ray = {
+          "accelerate-ray" = {
             depends  = ((((pkgs.lib.optionals (!(!_flags.ray)) [
               hsPkgs.accelerate
               hsPkgs.accelerate-io
@@ -194,7 +194,7 @@ let
               hsPkgs.gloss-raster-accelerate
             ] ++ pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda) ++ pkgs.lib.optional _flags.llvm-cpu hsPkgs.accelerate-llvm-native) ++ pkgs.lib.optional _flags.llvm-gpu hsPkgs.accelerate-llvm-ptx) ++ pkgs.lib.optional (_flags.llvm-cpu && _flags.llvm-gpu && _flags.llvm-multi) hsPkgs.accelerate-llvm-multidev) ++ pkgs.lib.optional _flags.ekg hsPkgs.ekg;
           };
-          accelerate-kmeans = {
+          "accelerate-kmeans" = {
             depends  = (((pkgs.lib.optionals (!(!_flags.kmeans)) [
               hsPkgs.accelerate
               hsPkgs.base

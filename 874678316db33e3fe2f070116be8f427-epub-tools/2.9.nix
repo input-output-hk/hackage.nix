@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          epubmeta = {
+          "epubmeta" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
               hsPkgs.zip-archive
             ];
           };
-          epubname = {
+          "epubname" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -44,7 +44,7 @@ let
               hsPkgs.regex-compat
             ];
           };
-          epubzip = {
+          "epubzip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          epubname-tests = {
+          "epubname-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

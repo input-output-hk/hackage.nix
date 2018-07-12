@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cairo-canvas = {
+        "cairo-canvas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          cairo-canvas-test = {
+          "cairo-canvas-test" = {
             depends  = pkgs.lib.optionals _flags.builddemo [
               hsPkgs.base
               hsPkgs.sdl2

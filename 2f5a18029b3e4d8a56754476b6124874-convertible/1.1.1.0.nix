@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        convertible = {
+        "convertible" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

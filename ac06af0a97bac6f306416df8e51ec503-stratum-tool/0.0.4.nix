@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          stratum-tool = {
+          "stratum-tool" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.async

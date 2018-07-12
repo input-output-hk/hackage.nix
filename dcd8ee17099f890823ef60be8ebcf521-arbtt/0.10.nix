@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          arbtt-capture = {
+          "arbtt-capture" = {
             depends  = (([
               hsPkgs.base
               hsPkgs.filepath
@@ -47,13 +47,13 @@ let
               then [ hsPkgs.Win32 ]
               else pkgs.lib.optional (!system.isOsx) hsPkgs.X11);
             libs = pkgs.lib.optional system.isWindows pkgs.psapi;
-            frameworks = pkgs.lib.optionals (!system.isWindows && system.isOsx) [
+            frameworks = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optionals system.isOsx [
               pkgs.Foundation
               pkgs.Carbon
               pkgs.IOKit
-            ];
+            ]);
           };
-          arbtt-stats = {
+          "arbtt-stats" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.parsec
@@ -79,7 +79,7 @@ let
               ]
               else [ hsPkgs.time ]);
           };
-          arbtt-dump = {
+          "arbtt-dump" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.parsec
@@ -101,7 +101,7 @@ let
               ]
               else [ hsPkgs.time ]);
           };
-          arbtt-import = {
+          "arbtt-import" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.parsec
@@ -126,7 +126,7 @@ let
               ]
               else [ hsPkgs.time ]);
           };
-          arbtt-recover = {
+          "arbtt-recover" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.containers
@@ -145,7 +145,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.tasty

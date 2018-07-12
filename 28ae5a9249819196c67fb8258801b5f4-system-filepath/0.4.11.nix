@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        system-filepath = {
+        "system-filepath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          filesystem_path_tests = {
+          "filesystem_path_tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

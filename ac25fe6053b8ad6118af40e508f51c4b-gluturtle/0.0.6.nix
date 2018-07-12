@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gluturtle = {
+        "gluturtle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yjtools
@@ -30,8 +30,8 @@ let
           ];
         };
         exes = {
-          testTurtle = {};
-          randomTurtle = {
+          "testTurtle" = {};
+          "randomTurtle" = {
             depends  = [ hsPkgs.random ];
           };
         };

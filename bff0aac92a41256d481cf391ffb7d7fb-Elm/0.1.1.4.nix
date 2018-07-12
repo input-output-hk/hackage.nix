@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        Elm = {};
+        "Elm" = {};
         exes = {
-          elm = {
+          "elm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -34,7 +34,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          elm-server = {
+          "elm-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

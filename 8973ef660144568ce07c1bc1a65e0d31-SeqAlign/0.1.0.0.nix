@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SeqAlign = {
+        "SeqAlign" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

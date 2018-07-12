@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        monad-interleave = {
+        "monad-interleave" = {
           depends  = [ hsPkgs.base ];
         };
       };

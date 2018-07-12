@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yeshql = {
+        "yeshql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yeshql

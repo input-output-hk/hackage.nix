@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-maps-engine = {
+        "gogol-maps-engine" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

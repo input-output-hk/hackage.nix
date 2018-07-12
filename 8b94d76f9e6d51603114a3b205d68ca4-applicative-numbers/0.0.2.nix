@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        applicative-numbers = {
+        "applicative-numbers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wl-pprint

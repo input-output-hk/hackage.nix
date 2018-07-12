@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        QuickPlot = {
+        "QuickPlot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          BasicPlotting = {
+          "BasicPlotting" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.QuickPlot

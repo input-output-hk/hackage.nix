@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spintax = {
+        "Spintax" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

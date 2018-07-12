@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        morfeusz = {
+        "morfeusz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

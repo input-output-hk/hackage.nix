@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsreadability = {
+        "hsreadability" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test-hsreadability = {
+          "test-hsreadability" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsreadability

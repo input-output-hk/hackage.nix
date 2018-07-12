@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoppy-generator = {
+        "hoppy-generator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-protolude = {
+        "pipes-protolude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text-show
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          pipes-protolude-exe = {
+          "pipes-protolude-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-protolude
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          pipes-protolude-test = {
+          "pipes-protolude-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-protolude

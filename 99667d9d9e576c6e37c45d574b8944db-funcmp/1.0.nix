@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        funcmp = {
+        "funcmp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Coadjute = {
+        "Coadjute" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

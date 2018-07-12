@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ApproxFun-hs = {
+        "ApproxFun-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

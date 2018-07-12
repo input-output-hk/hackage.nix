@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-text = {
+        "vector-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

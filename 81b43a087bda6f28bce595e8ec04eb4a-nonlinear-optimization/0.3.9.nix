@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nonlinear-optimization = {
+        "nonlinear-optimization" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive

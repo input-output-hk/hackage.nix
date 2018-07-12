@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-handler-happstack = {
+        "hack-handler-happstack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

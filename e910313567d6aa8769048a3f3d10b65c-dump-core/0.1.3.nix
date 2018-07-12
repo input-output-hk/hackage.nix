@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dump-core = {
+        "dump-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

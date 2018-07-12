@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspear = {
+        "hspear" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

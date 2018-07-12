@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rake = {
+        "rake" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

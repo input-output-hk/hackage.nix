@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bolt = {
+        "bolt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors

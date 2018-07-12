@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        siren-json = {
+        "siren-json" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          siren-json-tests = {
+          "siren-json-tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

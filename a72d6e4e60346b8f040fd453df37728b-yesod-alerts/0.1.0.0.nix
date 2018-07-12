@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-alerts = {
+        "yesod-alerts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.alerts

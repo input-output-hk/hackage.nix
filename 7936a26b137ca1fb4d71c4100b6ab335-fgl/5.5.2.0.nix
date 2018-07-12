@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fgl = {
+        "fgl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -30,7 +30,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
         };
         tests = {
-          fgl-tests = {
+          "fgl-tests" = {
             depends  = [
               hsPkgs.fgl
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vimus = {
+        "vimus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          vimus = {
+          "vimus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vimus
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vimus

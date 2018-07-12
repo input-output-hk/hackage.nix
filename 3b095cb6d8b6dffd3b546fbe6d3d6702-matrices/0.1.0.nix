@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        matrices = {
+        "matrices" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

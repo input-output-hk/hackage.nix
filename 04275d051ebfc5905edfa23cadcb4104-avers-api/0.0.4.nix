@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        avers-api = {
+        "avers-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

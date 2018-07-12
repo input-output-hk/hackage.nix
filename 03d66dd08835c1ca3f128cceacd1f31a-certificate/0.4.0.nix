@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        certificate = {
+        "certificate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -35,13 +35,13 @@ let
           ];
         };
         exes = {
-          certificate = {
+          "certificate" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.cmdargs
               hsPkgs.text
             ];
           };
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.directory

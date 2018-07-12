@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hylolib = {
+        "hylolib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

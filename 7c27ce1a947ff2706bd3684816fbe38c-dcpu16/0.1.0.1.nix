@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dcpu16 = {
+        "dcpu16" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sdl2
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          dcpu16-exe = {
+          "dcpu16-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dcpu16
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          dcpu16-test = {
+          "dcpu16-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dcpu16

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasbolt-extras = {
+        "hasbolt-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

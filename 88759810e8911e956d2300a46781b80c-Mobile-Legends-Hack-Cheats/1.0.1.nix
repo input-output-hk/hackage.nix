@@ -20,11 +20,11 @@ let
         buildType = "Custom";
       };
       components = {
-        Mobile-Legends-Hack-Cheats = {
+        "Mobile-Legends-Hack-Cheats" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -33,7 +33,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

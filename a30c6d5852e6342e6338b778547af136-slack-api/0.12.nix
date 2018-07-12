@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        slack-api = {
+        "slack-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -46,13 +46,13 @@ let
           ];
         };
         exes = {
-          example_echobot = {
+          "example_echobot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.slack-api
             ];
           };
-          example_counterbot = {
+          "example_counterbot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.slack-api
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.slack-api
               hsPkgs.base

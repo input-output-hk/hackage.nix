@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hscaffold = {
+        "hscaffold" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hsfiles-from-directory = {
+          "hsfiles-from-directory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

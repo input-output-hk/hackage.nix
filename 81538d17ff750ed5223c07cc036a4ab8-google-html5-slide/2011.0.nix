@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          google-html5-slide = {
+          "google-html5-slide" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

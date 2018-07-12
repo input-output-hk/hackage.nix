@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        reactive-banana-wx = {
+        "reactive-banana-wx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cabal-macosx
@@ -32,13 +32,13 @@ let
           ];
         };
         exes = {
-          Asteroids = {};
-          Counter = {};
-          CurrencyConverter = {};
-          CRUD = {};
-          NetMonitor = {};
-          TwoCounters = {};
-          Wave = {};
+          "Asteroids" = {};
+          "Counter" = {};
+          "CurrencyConverter" = {};
+          "CRUD" = {};
+          "NetMonitor" = {};
+          "TwoCounters" = {};
+          "Wave" = {};
         };
       };
     }

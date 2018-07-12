@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        read-io = {
+        "read-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsini = {
+        "hsini" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          hsini-tests = {
+          "hsini-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

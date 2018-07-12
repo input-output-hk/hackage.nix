@@ -21,44 +21,44 @@ let
       };
       components = {
         exes = {
-          blog = {
+          "blog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod
             ];
           };
-          ajax = {
+          "ajax" = {
             depends  = [
               hsPkgs.yesod-static
             ];
           };
-          file-echo = {};
-          pretty-yaml = {
+          "file-echo" = {};
+          "pretty-yaml" = {
             depends  = [
               hsPkgs.data-object-yaml
               hsPkgs.data-object
               hsPkgs.bytestring
             ];
           };
-          i18n = {};
-          session = {};
-          widgets = {
+          "i18n" = {};
+          "session" = {};
+          "widgets" = {
             depends  = [
               hsPkgs.yesod-form
             ];
           };
-          generalized-hamlet = {};
-          form = {};
-          persistent-synopsis = {
+          "generalized-hamlet" = {};
+          "form" = {};
+          "persistent-synopsis" = {
             depends  = [
               hsPkgs.transformers
               hsPkgs.persistent-sqlite
             ];
           };
-          hamlet-synopsis = {
+          "hamlet-synopsis" = {
             depends  = [ hsPkgs.hamlet ];
           };
-          chat = {
+          "chat" = {
             depends  = [ hsPkgs.stm ];
           };
         };

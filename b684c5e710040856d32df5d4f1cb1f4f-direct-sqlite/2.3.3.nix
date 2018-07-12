@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        direct-sqlite = {
+        "direct-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           libs = pkgs.lib.optional _flags.systemlib pkgs.sqlite3;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base16-bytestring

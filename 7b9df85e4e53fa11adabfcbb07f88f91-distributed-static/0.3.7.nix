@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-static = {
+        "distributed-static" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rank1dynamic

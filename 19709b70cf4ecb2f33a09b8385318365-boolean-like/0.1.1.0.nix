@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        boolean-like = {
+        "boolean-like" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

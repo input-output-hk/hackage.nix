@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wasm = {
+        "wasm" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          wasm = {
+          "wasm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wasm
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

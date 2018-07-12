@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassava = {
+        "cassava" = {
           depends  = ((([
             hsPkgs.array
             hsPkgs.attoparsec
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = (([
               hsPkgs.attoparsec
               hsPkgs.base

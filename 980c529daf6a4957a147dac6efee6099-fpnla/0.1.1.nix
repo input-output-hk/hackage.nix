@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fpnla = {
+        "fpnla" = {
           depends  = [ hsPkgs.base ];
         };
       };

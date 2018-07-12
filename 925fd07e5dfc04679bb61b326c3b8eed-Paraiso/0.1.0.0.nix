@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Paraiso = {
+        "Paraiso" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

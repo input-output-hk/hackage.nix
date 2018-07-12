@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        identicon = {
+        "identicon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JuicyPixels
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.JuicyPixels
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.JuicyPixels

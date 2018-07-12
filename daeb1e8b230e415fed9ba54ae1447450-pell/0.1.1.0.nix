@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pell = {
+        "pell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.arithmoi
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-pell = {
+          "test-pell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.arithmoi

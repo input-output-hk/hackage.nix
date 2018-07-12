@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          halma-telegram-bot = {
+          "halma-telegram-bot" = {
             depends  = [
               hsPkgs.halma
               hsPkgs.base

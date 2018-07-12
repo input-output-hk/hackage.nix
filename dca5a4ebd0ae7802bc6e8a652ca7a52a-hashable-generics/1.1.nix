@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hashable-generics = {
+        "hashable-generics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hashable

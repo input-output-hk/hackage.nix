@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          genex = {
+          "genex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

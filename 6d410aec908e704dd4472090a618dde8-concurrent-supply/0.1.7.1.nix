@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrent-supply = {
+        "concurrent-supply" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.concurrent-supply

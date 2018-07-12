@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        github-utils = {
+        "github-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude

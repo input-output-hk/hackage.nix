@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        geojson = {
+        "geojson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.json
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

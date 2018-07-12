@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        qr-imager = {
+        "qr-imager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          test-lib = {
+          "test-lib" = {
             depends  = [
               hsPkgs.base
               hsPkgs.qr-imager

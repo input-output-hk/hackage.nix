@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hydra-print = {
+        "hydra-print" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          systemtest-hydra-print = {
+          "systemtest-hydra-print" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -59,7 +59,7 @@ let
               hsPkgs.random
             ];
           };
-          hydra-view = {
+          "hydra-view" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -79,7 +79,7 @@ let
               hsPkgs.random
             ];
           };
-          hydra-head = {
+          "hydra-head" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -101,7 +101,7 @@ let
           };
         };
         tests = {
-          unittest-hydra-print = {
+          "unittest-hydra-print" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

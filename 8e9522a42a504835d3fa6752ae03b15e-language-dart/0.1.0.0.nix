@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        language-dart = {
+        "language-dart" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty
           ];
         };
         tests = {
-          language-dart-test = {
+          "language-dart-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

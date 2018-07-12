@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        biosff = {
+        "biosff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.biocore
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          flower = {
+          "flower" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

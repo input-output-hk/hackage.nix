@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Finance-Quote-Yahoo = {
+        "Finance-Quote-Yahoo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        shuffle = {
+        "shuffle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          shuffle = {
+          "shuffle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shuffle

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cayley-client = {
+        "cayley-client" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.base

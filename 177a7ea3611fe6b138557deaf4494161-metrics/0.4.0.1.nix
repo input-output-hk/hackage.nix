@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        metrics = {
+        "metrics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.metrics

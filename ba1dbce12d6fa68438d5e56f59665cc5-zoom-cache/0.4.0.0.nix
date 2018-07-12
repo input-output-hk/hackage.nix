@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        zoom-cache = {};
+        "zoom-cache" = {};
         exes = {
-          zoom-cache = {
+          "zoom-cache" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

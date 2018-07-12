@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polar-configfile = {
+        "polar-configfile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.HUnit
               hsPkgs.testpack

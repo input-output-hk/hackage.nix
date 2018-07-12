@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        puzzle-draw-cmdline = {
+        "puzzle-draw-cmdline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams-lib
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          drawpuzzle = {
+          "drawpuzzle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.puzzle-draw

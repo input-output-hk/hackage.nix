@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linux-file-extents = {
+        "linux-file-extents" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

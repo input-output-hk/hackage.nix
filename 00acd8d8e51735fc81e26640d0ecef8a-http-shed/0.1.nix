@@ -20,12 +20,12 @@ let
         buildType = "Simple";
       };
       components = {
-        http-shed = {
+        "http-shed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
           ];
         };
-        exes = { test = {}; };
+        exes = { "test" = {}; };
       };
     }

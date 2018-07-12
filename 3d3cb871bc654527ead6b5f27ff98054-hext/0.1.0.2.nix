@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hext = {
+        "hext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hext-exe = {
+          "hext-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hext

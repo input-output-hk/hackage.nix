@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zifter-hindent = {
+        "zifter-hindent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

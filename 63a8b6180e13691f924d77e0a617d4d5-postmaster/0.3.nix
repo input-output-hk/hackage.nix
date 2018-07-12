@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          postmaster = {
+          "postmaster" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openid = {
+        "openid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          openid-test = {
+          "openid-test" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.monadLib

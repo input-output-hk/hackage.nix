@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        barbies = {
+        "barbies" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
           ];
         };
         tests = {
-          barbies-test = {
+          "barbies-test" = {
             depends  = [
               hsPkgs.barbies
               hsPkgs.base

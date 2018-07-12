@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rails-session = {
+        "rails-session" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          specs = {
+          "specs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

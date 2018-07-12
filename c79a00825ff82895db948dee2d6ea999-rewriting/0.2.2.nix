@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        rewriting = {
+        "rewriting" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

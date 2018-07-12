@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        espial = {
+        "espial" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -73,7 +73,7 @@ let
           ];
         };
         exes = {
-          espial = {
+          "espial" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -123,7 +123,7 @@ let
               hsPkgs.yesod-static
             ];
           };
-          migration = {
+          "migration" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -176,7 +176,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

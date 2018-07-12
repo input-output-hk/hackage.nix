@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          huttons-razor = {
+          "huttons-razor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ekg-prometheus-adapter = {
+        "ekg-prometheus-adapter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.prometheus
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ekg-prometheus-adapter

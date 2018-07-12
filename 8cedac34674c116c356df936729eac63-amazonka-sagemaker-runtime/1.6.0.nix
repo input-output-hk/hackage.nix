@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-sagemaker-runtime = {
+        "amazonka-sagemaker-runtime" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-sagemaker-runtime-test = {
+          "amazonka-sagemaker-runtime-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

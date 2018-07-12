@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hastache-aeson = {
+        "hastache-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hastache

@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hlint-test = {
+        "hlint-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hlint
           ];
         };
         exes = {
-          hlint-test = {
+          "hlint-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

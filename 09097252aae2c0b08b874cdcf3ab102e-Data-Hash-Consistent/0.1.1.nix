@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Data-Hash-Consistent = {
+        "Data-Hash-Consistent" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.vector

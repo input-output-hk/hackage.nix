@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hogg = {
+        "hogg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,14 +28,14 @@ let
           ];
         };
         exes = {
-          hogg = {
+          "hogg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.HUnit
             ];
           };
-          ListMergeTest = {
+          "ListMergeTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

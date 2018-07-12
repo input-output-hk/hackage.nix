@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mediabus-fdk-aac = {
+        "mediabus-fdk-aac" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -62,7 +62,7 @@ let
           };
         };
         benchmarks = {
-          encoder-benchmark = {
+          "encoder-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

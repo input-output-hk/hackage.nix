@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-swagger-ui-core = {
+        "servant-swagger-ui-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup

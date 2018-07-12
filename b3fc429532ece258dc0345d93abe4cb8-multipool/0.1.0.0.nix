@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multipool = {
+        "multipool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          multipool-test = {
+          "multipool-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

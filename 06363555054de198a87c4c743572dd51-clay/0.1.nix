@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clay = {
+        "clay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

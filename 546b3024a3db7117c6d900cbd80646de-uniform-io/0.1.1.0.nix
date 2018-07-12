@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uniform-io = {
+        "uniform-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.iproute
@@ -34,7 +34,7 @@ let
           libs = [ pkgs.ssl ];
         };
         tests = {
-          lazyness = {
+          "lazyness" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

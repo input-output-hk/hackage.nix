@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        primitive-indexed = {
+        "primitive-indexed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive-indexed

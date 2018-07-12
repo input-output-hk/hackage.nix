@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Factor = {
+          "Factor" = {
             depends  = [
               hsPkgs.satchmo
               hsPkgs.satchmo-minisat
@@ -31,7 +31,7 @@ let
               hsPkgs.array
             ];
           };
-          HC = {
+          "HC" = {
             depends  = [
               hsPkgs.satchmo
               hsPkgs.satchmo-minisat
@@ -41,7 +41,7 @@ let
               hsPkgs.array
             ];
           };
-          VC = {
+          "VC" = {
             depends  = [
               hsPkgs.satchmo
               hsPkgs.satchmo-funsat

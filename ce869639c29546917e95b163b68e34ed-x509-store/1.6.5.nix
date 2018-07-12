@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        x509-store = {
+        "x509-store" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test-x509-store = {
+          "test-x509-store" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

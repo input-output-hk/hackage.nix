@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hommage-ds = {
+        "hommage-ds" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

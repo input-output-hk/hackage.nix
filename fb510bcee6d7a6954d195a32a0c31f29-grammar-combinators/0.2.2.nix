@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grammar-combinators = {
+        "grammar-combinators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.multirec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        phybin = {
+        "phybin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          phybin = {
+          "phybin" = {
             depends  = [
               hsPkgs.phybin
               hsPkgs.base

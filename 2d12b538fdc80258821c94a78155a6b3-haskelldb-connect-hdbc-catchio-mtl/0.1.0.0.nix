@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelldb-connect-hdbc-catchio-mtl = {
+        "haskelldb-connect-hdbc-catchio-mtl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC

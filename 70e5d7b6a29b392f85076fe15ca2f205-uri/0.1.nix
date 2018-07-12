@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uri = {
+        "uri" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

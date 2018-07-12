@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ion = {
+        "ion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          ion_example = {
+          "ion_example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

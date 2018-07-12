@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vhd = {
+        "vhd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -46,7 +46,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          vhd = {
+          "vhd" = {
             depends  = pkgs.lib.optional _flags.executable hsPkgs.base;
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        collections-base-instances = {
+        "collections-base-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

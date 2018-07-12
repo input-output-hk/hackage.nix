@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ghc-vis = {
+        "ghc-vis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

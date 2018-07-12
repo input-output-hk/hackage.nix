@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        biosff = {
+        "biosff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.biocore
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          flower = {
+          "flower" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -42,10 +42,10 @@ let
               hsPkgs.array
             ];
           };
-          frecover = {
+          "frecover" = {
             depends  = [ hsPkgs.base ];
           };
-          fclip = {
+          "fclip" = {
             depends  = [ hsPkgs.base ];
           };
         };

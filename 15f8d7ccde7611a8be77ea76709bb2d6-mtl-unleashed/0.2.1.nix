@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mtl-unleashed = {
+        "mtl-unleashed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

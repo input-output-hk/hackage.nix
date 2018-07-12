@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gtk-serialized-event = {
+        "gtk-serialized-event" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

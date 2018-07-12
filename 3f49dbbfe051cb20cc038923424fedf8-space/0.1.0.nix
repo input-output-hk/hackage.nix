@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        space = {
+        "space" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          space-test = {
+          "space-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.space

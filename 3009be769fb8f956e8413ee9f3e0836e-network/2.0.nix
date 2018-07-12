@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        network = {
+        "network" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smtlib2-pipe = {
+        "smtlib2-pipe" = {
           depends  = [
             hsPkgs.smtlib2
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test-smtlib2-pipe = {
+          "test-smtlib2-pipe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.smtlib2

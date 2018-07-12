@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsc3-db = {
+        "hsc3-db" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsc3

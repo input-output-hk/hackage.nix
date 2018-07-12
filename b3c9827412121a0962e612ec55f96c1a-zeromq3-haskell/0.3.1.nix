@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zeromq3-haskell = {
+        "zeromq3-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
             else [ pkgs.zmq ];
         };
         tests = {
-          zeromq-haskell-tests = {
+          "zeromq-haskell-tests" = {
             depends  = [
               hsPkgs.zeromq3-haskell
               hsPkgs.base

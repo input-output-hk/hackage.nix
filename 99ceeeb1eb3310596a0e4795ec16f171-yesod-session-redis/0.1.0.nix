@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-session-redis = {
+        "yesod-session-redis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

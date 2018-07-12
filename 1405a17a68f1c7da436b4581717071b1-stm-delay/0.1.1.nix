@@ -20,21 +20,21 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-delay = {
+        "stm-delay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
               hsPkgs.stm-delay
             ];
           };
-          test-threaded = {
+          "test-threaded" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm

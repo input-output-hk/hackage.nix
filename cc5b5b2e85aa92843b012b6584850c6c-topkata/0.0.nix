@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          topkata = {
+          "topkata" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
@@ -33,7 +33,7 @@ let
               hsPkgs.ALUT
             ];
           };
-          pdflaby = {
+          "pdflaby" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT

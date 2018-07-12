@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gpolyline = {
+        "gpolyline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

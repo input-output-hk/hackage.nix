@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-th-unbox = {
+        "vector-th-unbox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polydata-core = {
+        "polydata-core" = {
           depends  = [ hsPkgs.base ];
         };
       };

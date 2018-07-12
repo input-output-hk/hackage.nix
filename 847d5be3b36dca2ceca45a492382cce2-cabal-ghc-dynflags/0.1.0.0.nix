@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-ghc-dynflags = {
+        "cabal-ghc-dynflags" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

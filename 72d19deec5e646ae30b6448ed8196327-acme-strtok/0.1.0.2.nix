@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-strtok = {
+        "acme-strtok" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

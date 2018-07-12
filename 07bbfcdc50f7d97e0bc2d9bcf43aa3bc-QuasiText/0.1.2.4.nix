@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        QuasiText = {
+        "QuasiText" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

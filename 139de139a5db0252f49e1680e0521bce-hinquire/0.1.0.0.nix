@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hinquire = {
+        "hinquire" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors

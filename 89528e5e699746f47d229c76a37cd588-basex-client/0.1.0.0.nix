@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        basex-client = {
+        "basex-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

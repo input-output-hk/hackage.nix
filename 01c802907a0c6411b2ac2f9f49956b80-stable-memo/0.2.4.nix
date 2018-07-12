@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stable-memo = {
+        "stable-memo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashtables

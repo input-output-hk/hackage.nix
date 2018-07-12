@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blocking-transactions = {
+        "blocking-transactions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          _RandomAccounts = {
+          "_RandomAccounts" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-zeppelin-server = {
+        "servant-zeppelin-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          servant-zeppelin-server-test = {
+          "servant-zeppelin-server-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

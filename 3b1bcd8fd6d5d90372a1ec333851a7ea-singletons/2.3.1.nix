@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        singletons = {
+        "singletons" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          singletons-test-suite = {
+          "singletons-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

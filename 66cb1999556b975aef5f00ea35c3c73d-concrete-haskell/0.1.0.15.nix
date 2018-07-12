@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concrete-haskell = {
+        "concrete-haskell" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -54,7 +54,7 @@ let
           ];
         };
         exes = {
-          fetch_service = {
+          "fetch_service" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -88,7 +88,7 @@ let
               hsPkgs.concrete-haskell
             ];
           };
-          ingest_communications = {
+          "ingest_communications" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -122,7 +122,7 @@ let
               hsPkgs.concrete-haskell
             ];
           };
-          inspect_communications = {
+          "inspect_communications" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -156,7 +156,7 @@ let
               hsPkgs.concrete-haskell
             ];
           };
-          store_service = {
+          "store_service" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -192,7 +192,7 @@ let
           };
         };
         tests = {
-          ingesters = {
+          "ingesters" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

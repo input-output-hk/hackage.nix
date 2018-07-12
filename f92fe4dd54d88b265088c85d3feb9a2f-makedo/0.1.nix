@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        makedo = {
+        "makedo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

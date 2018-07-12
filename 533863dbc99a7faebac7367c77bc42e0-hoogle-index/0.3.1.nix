@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hoogle-index = {
+          "hoogle-index" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

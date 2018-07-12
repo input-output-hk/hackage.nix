@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compact = {
+        "compact" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-compact
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          compact-test = {
+          "compact-test" = {
             depends  = [
               hsPkgs.compact
               hsPkgs.base

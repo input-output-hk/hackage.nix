@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mailbox-count = {
+          "mailbox-count" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -55,7 +55,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        natural-transformation = {
+        "natural-transformation" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          natural-transformation-properties = {
+          "natural-transformation-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

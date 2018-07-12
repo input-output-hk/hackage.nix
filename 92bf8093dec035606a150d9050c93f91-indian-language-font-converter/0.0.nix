@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        indian-language-font-converter = {
+        "indian-language-font-converter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pthread = {
+        "pthread" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.pthread ];
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsc3-utils = {
+        "hsc3-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -32,31 +32,31 @@ let
           ];
         };
         exes = {
-          hsc3-hash-at = {
+          "hsc3-hash-at" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsc3-rw
             ];
           };
-          hsc3-hash-paren = {
+          "hsc3-hash-paren" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsc3-rw
             ];
           };
-          hsc3-id-rewrite = {
+          "hsc3-id-rewrite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsc3-rw
             ];
           };
-          hsc3-id-clear = {
+          "hsc3-id-clear" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsc3-rw
             ];
           };
-          hsc3-scsyndef-to-dot = {
+          "hsc3-scsyndef-to-dot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

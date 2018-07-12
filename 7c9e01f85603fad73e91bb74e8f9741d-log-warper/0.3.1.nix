@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        log-warper = {
+        "log-warper" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-terminal
@@ -53,7 +53,7 @@ let
           ];
         };
         exes = {
-          play-log = {
+          "play-log" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions
@@ -64,7 +64,7 @@ let
           };
         };
         tests = {
-          log-test = {
+          "log-test" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

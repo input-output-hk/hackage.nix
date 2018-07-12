@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toxcore = {
+        "toxcore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -32,7 +32,7 @@ let
           libs = [ pkgs.toxcore ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vty-menu = {
+        "vty-menu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vty

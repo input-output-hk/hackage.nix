@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        doctest-driver-gen = {
+        "doctest-driver-gen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.doctest
           ];
         };
         exes = {
-          doctest-driver-gen = {
+          "doctest-driver-gen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest-driver-gen
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          doctest-driver-gen-test = {
+          "doctest-driver-gen-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

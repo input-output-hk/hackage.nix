@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cef = {
+        "cef" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

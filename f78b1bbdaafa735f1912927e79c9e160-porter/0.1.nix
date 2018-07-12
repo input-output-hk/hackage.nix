@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        porter = {
+        "porter" = {
           depends  = [
             hsPkgs.haskell2010
           ];

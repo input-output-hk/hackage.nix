@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stunclient = {
+        "stunclient" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test-serialize = {
+          "test-serialize" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

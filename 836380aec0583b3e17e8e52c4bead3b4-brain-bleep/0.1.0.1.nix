@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          brain-bleep = {
+          "brain-bleep" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

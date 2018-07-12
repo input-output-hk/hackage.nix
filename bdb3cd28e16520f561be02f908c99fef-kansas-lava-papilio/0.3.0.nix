@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kansas-lava-papilio = {
+        "kansas-lava-papilio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.netlist

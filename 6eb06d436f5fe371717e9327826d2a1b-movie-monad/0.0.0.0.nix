@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          movie-monad = {
+          "movie-monad" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

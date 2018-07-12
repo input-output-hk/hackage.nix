@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        combinat = {
+        "combinat" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

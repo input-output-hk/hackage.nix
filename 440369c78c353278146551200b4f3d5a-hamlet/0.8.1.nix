@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hamlet = {
+        "hamlet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          playHangmanGame = {
+          "playHangmanGame" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

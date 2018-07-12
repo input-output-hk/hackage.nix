@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shakers = {
+        "shakers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude

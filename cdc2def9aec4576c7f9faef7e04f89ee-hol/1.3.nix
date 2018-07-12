@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hol = {
+        "hol" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          hol-pkg = {
+          "hol-pkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          hol-test = {
+          "hol-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -65,7 +65,7 @@ let
           };
         };
         benchmarks = {
-          hol-profile = {
+          "hol-profile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

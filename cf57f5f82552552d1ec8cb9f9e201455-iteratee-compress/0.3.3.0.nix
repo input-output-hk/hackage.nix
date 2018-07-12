@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iteratee-compress = {
+        "iteratee-compress" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

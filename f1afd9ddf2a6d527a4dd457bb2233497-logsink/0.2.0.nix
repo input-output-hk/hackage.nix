@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logsink = {
+        "logsink" = {
           depends  = [
             hsPkgs.base
             hsPkgs.logging-facade
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-facade

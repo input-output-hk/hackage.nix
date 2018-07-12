@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-cereal = {
+        "type-cereal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

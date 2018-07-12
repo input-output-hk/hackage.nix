@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bhoogle = {
+          "bhoogle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

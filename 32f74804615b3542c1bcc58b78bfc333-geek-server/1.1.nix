@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geek-server = {
+        "geek-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.air
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          geek = {
+          "geek" = {
             depends  = [
               hsPkgs.base
               hsPkgs.air

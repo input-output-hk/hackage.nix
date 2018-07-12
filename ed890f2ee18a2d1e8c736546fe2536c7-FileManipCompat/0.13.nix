@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FileManipCompat = {
+        "FileManipCompat" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.directory

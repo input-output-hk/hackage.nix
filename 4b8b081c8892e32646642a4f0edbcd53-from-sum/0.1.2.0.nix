@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        from-sum = {
+        "from-sum" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          from-sum-doctest = {
+          "from-sum-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

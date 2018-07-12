@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-mediastore-dataplane = {
+        "amazonka-mediastore-dataplane" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-mediastore-dataplane-test = {
+          "amazonka-mediastore-dataplane-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

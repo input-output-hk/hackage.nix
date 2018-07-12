@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        foundation-edge = {
+        "foundation-edge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foundation

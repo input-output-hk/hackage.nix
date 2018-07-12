@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FloatingHex = {
+        "FloatingHex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

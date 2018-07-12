@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webapp = {
+        "webapp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          test-webapp = {
+          "test-webapp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

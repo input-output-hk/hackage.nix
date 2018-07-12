@@ -25,7 +25,7 @@ let
         buildType = "Custom";
       };
       components = {
-        comonad = {
+        "comonad" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.semigroups
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional _flags.containers hsPkgs.containers) ++ pkgs.lib.optional _flags.contravariant hsPkgs.contravariant) ++ pkgs.lib.optional _flags.distributive hsPkgs.distributive;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.comonad

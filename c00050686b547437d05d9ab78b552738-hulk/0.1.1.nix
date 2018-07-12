@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hulk = {
+          "hulk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -37,7 +37,7 @@ let
               hsPkgs.time
             ];
           };
-          hulk-generate-pass = {
+          "hulk-generate-pass" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

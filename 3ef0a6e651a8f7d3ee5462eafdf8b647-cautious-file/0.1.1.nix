@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cautious-file = {
+        "cautious-file" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

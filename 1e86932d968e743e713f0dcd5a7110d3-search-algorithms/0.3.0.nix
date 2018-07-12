@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        search-algorithms = {
+        "search-algorithms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          search-algorithms-test = {
+          "search-algorithms-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.search-algorithms
@@ -35,7 +35,7 @@ let
               hsPkgs.hspec
             ];
           };
-          doc-test = {
+          "doc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.search-algorithms

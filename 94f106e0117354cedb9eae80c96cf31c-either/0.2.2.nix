@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        either = {
+        "either" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

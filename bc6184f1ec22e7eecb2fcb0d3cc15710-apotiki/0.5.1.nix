@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apotiki = {
+        "apotiki" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          apotiki = {
+          "apotiki" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

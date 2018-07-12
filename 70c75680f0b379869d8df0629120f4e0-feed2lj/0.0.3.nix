@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          feed2lj = {
+          "feed2lj" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

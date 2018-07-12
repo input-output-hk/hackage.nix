@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        butcher = {
+        "butcher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.free
@@ -41,7 +41,7 @@ let
           ] ++ pkgs.lib.optional _flags.butcher-dev hsPkgs.hspec;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.butcher

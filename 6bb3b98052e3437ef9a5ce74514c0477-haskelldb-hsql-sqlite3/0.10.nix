@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskelldb-hsql-sqlite3 = {
+        "haskelldb-hsql-sqlite3" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

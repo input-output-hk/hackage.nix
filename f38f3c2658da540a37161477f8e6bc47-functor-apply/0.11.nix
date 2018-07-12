@@ -20,6 +20,6 @@ let
         buildType = "Simple";
       };
       components = {
-        functor-apply = {};
+        "functor-apply" = {};
       };
     }

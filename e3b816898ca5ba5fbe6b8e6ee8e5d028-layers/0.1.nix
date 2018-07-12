@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        layers = {
+        "layers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

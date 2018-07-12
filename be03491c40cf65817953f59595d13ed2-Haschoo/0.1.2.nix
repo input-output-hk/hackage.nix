@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haschoo = {
+          "haschoo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

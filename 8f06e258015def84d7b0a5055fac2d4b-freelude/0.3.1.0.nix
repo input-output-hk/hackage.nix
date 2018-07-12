@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        freelude = {
+        "freelude" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

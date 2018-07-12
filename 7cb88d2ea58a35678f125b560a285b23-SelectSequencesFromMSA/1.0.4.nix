@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SelectSequencesFromMSA = {
+        "SelectSequencesFromMSA" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmdargs
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          SelectSequencesFromMSA = {
+          "SelectSequencesFromMSA" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

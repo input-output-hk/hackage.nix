@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        epic = {
+        "epic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

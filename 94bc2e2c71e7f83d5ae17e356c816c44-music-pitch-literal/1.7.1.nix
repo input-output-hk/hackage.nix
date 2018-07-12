@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        music-pitch-literal = {
+        "music-pitch-literal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

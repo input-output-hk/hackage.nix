@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fast-math = {
+        "fast-math" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smcdel = {
+        "smcdel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          smcdel = {
+          "smcdel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -52,7 +52,7 @@ let
               hsPkgs.buildPackages.happy
             ];
           };
-          smcdel-web = {
+          "smcdel-web" = {
             depends  = [
               hsPkgs.base
               hsPkgs.file-embed
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          translations = {
+          "translations" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -78,7 +78,7 @@ let
               hsPkgs.smcdel
             ];
           };
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -86,7 +86,7 @@ let
               hsPkgs.smcdel
             ];
           };
-          nonS5 = {
+          "nonS5" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -97,14 +97,14 @@ let
           };
         };
         benchmarks = {
-          bench-diningcrypto = {
+          "bench-diningcrypto" = {
             depends  = [
               hsPkgs.base
               hsPkgs.smcdel
               hsPkgs.time
             ];
           };
-          bench-sumandproduct = {
+          "bench-sumandproduct" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -112,7 +112,7 @@ let
               hsPkgs.time
             ];
           };
-          bench-muddychildren = {
+          "bench-muddychildren" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

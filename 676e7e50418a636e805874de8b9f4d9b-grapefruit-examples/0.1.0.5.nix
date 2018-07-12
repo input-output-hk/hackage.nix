@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grapefruit-examples = {
+        "grapefruit-examples" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colour

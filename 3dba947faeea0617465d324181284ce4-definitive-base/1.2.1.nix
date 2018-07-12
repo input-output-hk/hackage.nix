@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        definitive-base = {
+        "definitive-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

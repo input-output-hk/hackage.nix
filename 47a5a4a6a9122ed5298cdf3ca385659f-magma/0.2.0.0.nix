@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        magma = {
+        "magma" = {
           depends  = [
             hsPkgs.base
             hsPkgs.profunctors

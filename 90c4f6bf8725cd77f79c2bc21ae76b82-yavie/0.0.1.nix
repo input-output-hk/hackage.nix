@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yavie = {
+        "yavie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.event-driven
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          yavie = {
+          "yavie" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

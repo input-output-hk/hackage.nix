@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          jarf = {
+          "jarf" = {
             depends  = [
               hsPkgs.binary
               hsPkgs.bytestring

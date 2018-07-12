@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hackage-security = {
+        "hackage-security" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring

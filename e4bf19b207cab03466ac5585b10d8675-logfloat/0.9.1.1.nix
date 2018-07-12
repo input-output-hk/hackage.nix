@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logfloat = {
+        "logfloat" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.ghc-prim;

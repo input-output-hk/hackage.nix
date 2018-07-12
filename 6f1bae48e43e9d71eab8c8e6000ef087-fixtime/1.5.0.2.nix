@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixtime = {
+        "fixtime" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

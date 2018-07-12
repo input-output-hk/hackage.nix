@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          magico = {
+          "magico" = {
             depends  = [
               hsPkgs.hmatrix
               hsPkgs.transformers

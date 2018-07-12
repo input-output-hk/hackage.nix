@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hstatistics = {
+        "hstatistics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.storable-complex

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ekg-wai = {
+        "ekg-wai" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

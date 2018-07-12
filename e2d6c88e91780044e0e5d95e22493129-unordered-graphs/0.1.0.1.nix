@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unordered-graphs = {
+        "unordered-graphs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

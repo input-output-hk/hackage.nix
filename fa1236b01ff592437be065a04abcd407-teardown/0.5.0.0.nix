@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        teardown = {
+        "teardown" = {
           depends  = [
             hsPkgs.base
             hsPkgs.prettyprinter
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          teardown-test = {
+          "teardown-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rio
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          teardown-benchmark = {
+          "teardown-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gauge

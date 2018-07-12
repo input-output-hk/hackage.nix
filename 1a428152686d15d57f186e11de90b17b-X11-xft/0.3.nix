@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        X11-xft = {
+        "X11-xft" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

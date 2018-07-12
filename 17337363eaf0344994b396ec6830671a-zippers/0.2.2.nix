@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        zippers = {
+        "zippers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          zipper = {
+          "zipper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

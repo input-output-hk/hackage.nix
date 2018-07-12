@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WebCont = {
+        "WebCont" = {
           depends  = [
             hsPkgs.happstack-server
             hsPkgs.happstack-state

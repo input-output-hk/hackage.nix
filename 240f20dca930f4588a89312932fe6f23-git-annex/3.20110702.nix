@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          git-annex = {
+          "git-annex" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.MissingH
@@ -46,7 +46,7 @@ let
               hsPkgs.base
             ];
           };
-          git-annex-shell = {
+          "git-annex-shell" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.MissingH
@@ -71,7 +71,7 @@ let
               hsPkgs.base
             ];
           };
-          git-union-merge = {};
+          "git-union-merge" = {};
         };
       };
     }

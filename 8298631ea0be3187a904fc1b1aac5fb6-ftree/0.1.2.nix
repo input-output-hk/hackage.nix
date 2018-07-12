@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ftree = {
+        "ftree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ShowF

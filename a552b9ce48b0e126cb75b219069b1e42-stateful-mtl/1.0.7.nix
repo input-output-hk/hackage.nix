@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stateful-mtl = {
+        "stateful-mtl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

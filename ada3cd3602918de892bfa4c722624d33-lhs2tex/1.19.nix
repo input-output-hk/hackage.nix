@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lhs2TeX = {
+          "lhs2TeX" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-compat

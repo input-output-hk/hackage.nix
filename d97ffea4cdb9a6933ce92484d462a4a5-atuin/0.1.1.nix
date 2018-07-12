@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          atuin = {
+          "atuin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

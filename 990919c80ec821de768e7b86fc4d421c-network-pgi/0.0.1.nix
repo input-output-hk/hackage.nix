@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-pgi = {
+        "network-pgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timers-updatable = {
+        "timers-updatable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

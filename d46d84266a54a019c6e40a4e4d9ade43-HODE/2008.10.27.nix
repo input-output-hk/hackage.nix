@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HODE = {
+        "HODE" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

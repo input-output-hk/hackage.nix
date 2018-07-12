@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DisTract = {
+        "DisTract" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -39,13 +39,13 @@ let
           ];
         };
         exes = {
-          DisTractNewBug = {};
-          DisTractModifyBug = {};
-          DisTractUpdateFormatAllBugs = {};
-          DisTractUpdateFormatBug = {};
-          DisTractFormatNew = {};
-          DisTractSortBugs = {};
-          DisTractInstaller = {};
+          "DisTractNewBug" = {};
+          "DisTractModifyBug" = {};
+          "DisTractUpdateFormatAllBugs" = {};
+          "DisTractUpdateFormatBug" = {};
+          "DisTractFormatNew" = {};
+          "DisTractSortBugs" = {};
+          "DisTractInstaller" = {};
         };
       };
     }

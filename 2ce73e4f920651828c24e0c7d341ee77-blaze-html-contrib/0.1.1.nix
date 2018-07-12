@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-html-contrib = {
+        "blaze-html-contrib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

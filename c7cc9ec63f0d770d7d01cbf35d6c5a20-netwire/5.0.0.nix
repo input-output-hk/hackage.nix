@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netwire = {
+        "netwire" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          netwire-test = {
+          "netwire-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

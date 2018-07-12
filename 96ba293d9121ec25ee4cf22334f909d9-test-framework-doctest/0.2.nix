@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-framework-doctest = {
+        "test-framework-doctest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.doctest
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

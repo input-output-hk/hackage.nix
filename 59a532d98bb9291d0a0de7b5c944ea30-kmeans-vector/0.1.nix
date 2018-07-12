@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kmeans-vector = {
+        "kmeans-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

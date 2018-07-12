@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-test-quickcheck = {
+        "cabal-test-quickcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

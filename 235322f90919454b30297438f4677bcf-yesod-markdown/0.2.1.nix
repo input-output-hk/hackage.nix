@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-markdown = {
+        "yesod-markdown" = {
           depends  = [
             hsPkgs.yesod
             hsPkgs.pandoc

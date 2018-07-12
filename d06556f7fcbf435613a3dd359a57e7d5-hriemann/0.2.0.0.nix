@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hriemann = {
+        "hriemann" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protocol-buffers
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          hriemann-exe = {
+          "hriemann-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hriemann
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          hriemann-test = {
+          "hriemann-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hriemann

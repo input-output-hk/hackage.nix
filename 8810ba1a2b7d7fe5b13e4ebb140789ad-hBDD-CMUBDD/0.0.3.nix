@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hBDD-CMUBDD = {
+        "hBDD-CMUBDD" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

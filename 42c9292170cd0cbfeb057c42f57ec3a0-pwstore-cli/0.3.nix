@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          pwstore = {
+          "pwstore" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          test-pwstore-cli = {
+          "test-pwstore-cli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

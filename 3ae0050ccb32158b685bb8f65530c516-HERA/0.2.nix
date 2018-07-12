@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HERA = {
+        "HERA" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.mpfr ];
           build-tools = [

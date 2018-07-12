@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Stream = {
+        "Stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

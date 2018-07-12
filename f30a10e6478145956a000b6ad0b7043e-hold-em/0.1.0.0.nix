@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hold-em = {
+        "hold-em" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

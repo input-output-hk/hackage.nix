@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shakespeare-js = {
+        "shakespeare-js" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shakespeare

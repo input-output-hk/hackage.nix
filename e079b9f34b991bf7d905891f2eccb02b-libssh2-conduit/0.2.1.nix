@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libssh2-conduit = {
+        "libssh2-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hs-ssh-client = {
+          "hs-ssh-client" = {
             depends  = pkgs.lib.optionals _flags.example-client [
               hsPkgs.base
               hsPkgs.libssh2

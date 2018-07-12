@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rdf4h = {
+        "rdf4h" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.network
@@ -43,7 +43,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          rdf4h = {
+          "rdf4h" = {
             depends  = [
               hsPkgs.parsec
               hsPkgs.network
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          test-rdf4h = {
+          "test-rdf4h" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

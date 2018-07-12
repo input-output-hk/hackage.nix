@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        real-day-end = {
+        "real-day-end" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         tests = {
-          real-day-end-test = {
+          "real-day-end-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quickcheck-instances

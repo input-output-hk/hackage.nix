@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        split = {
+        "split" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          split-tests = {
+          "split-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

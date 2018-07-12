@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        psqueues = {
+        "psqueues" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.ghc-prim;
         };
         tests = {
-          psqueues-tests = {
+          "psqueues-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          psqueues-benchmarks = {
+          "psqueues-benchmarks" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.unordered-containers

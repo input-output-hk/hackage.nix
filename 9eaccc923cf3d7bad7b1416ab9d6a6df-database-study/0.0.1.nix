@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        database-study = {
+        "database-study" = {
           depends  = [
             hsPkgs.containers
           ] ++ (if _flags.splitbase

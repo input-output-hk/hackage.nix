@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-pgf = {
+        "diagrams-pgf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

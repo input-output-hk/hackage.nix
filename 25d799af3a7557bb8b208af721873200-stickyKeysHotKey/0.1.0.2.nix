@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stickyKeysHotKey = {
+        "stickyKeysHotKey" = {
           depends  = [ hsPkgs.base ];
         };
       };

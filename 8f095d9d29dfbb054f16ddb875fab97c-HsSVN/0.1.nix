@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HsSVN = {
+        "HsSVN" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

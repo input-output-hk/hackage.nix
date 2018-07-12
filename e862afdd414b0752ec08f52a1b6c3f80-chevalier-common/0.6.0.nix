@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chevalier-common = {
+        "chevalier-common" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors

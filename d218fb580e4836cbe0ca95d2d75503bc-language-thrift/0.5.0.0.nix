@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-thrift = {
+        "language-thrift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

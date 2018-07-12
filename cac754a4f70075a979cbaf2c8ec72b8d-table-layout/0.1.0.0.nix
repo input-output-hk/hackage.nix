@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        table-layout = {
+        "table-layout" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          table-layout-test-styles = {
+          "table-layout-test-styles" = {
             depends  = [ hsPkgs.base ];
           };
         };

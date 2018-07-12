@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multihashmap = {
+        "multihashmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

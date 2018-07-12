@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tensorflow = {
+        "tensorflow" = {
           depends  = [
             hsPkgs.proto-lens
             hsPkgs.proto-lens-protoc
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          FFITest = {
+          "FFITest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -62,7 +62,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          VarIntTest = {
+          "VarIntTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

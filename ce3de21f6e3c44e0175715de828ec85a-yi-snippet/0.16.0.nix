@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-snippet = {
+        "yi-snippet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

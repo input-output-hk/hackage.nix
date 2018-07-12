@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        salvia = {
+        "salvia" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

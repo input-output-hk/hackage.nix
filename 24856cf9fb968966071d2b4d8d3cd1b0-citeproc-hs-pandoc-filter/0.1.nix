@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          citeproc-hs = {
+          "citeproc-hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

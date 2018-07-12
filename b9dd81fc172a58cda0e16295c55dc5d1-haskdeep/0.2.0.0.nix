@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haskdeep = {
+          "haskdeep" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.attoparsec-conduit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rosezipper = {
+        "rosezipper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

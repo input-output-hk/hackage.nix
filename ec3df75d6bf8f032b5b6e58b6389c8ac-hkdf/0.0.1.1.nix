@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hkdf = {
+        "hkdf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.byteable
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          hkdf-test = {
+          "hkdf-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.byteable

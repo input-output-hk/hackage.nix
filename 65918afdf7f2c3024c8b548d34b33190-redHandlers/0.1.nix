@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        redHandlers = {
+        "redHandlers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

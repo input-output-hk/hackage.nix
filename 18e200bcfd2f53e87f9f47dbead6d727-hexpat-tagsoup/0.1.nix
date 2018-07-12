@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexpat-tagsoup = {
+        "hexpat-tagsoup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hexpat

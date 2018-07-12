@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FComp = {
+        "FComp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -42,7 +42,7 @@ let
           ] ++ [ hsPkgs.QuickCheck ];
         };
         exes = {
-          fcomp = {
+          "fcomp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

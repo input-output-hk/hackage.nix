@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-class = {
+        "hasql-class" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

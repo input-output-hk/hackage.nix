@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MicrosoftTranslator = {
+        "MicrosoftTranslator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq

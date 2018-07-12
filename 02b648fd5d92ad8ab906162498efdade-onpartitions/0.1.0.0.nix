@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        onpartitions = {
+        "onpartitions" = {
           depends  = [ hsPkgs.base ];
         };
       };

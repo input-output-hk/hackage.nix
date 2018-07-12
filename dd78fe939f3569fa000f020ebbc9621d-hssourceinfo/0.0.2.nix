@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsmodtree = {
+          "hsmodtree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -29,7 +29,7 @@ let
               hsPkgs.regexpr
             ];
           };
-          hscodelines = {
+          "hscodelines" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

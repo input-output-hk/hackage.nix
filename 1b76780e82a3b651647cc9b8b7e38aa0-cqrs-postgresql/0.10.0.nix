@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cqrs-postgresql = {
+        "cqrs-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

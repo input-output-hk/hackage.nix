@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        cf = {
+        "cf" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cf

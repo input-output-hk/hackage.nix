@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphql = {
+        "graphql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          golden = {
+          "golden" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

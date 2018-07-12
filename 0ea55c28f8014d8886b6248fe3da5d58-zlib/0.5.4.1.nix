@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zlib = {
+        "zlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

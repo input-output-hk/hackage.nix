@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Chitra = {
+          "Chitra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

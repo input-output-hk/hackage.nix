@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        storablevector-carray = {
+        "storablevector-carray" = {
           depends  = [
             hsPkgs.storablevector
             hsPkgs.carray

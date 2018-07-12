@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-webdriver = {
+        "quickcheck-webdriver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

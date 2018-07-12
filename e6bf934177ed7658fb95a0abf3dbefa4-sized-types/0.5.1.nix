@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sized-types = {
+        "sized-types" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          sized-types-example1 = {
+          "sized-types-example1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          sized-types-test1 = {
+          "sized-types-test1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libravatar = {
+        "libravatar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

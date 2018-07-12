@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semiring-num = {
+        "semiring-num" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          semiring-test = {
+          "semiring-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.semiring-num
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.semiring-num

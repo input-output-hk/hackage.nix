@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gitlib-libgit2 = {
+        "gitlib-libgit2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gitlib
@@ -53,7 +53,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.missing-foreign;
         };
         tests = {
-          smoke = {
+          "smoke" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gitlib

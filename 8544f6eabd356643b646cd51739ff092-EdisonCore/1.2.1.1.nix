@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        EdisonCore = {
+        "EdisonCore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        htoml = {
+        "htoml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -74,7 +74,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

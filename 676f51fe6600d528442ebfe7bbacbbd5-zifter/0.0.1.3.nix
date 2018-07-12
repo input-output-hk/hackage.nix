@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zifter = {
+        "zifter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          zifter-test = {
+          "zifter-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zifter

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-cdb = {
+        "hs-cdb" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

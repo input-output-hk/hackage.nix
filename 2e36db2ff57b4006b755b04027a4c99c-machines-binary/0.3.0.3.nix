@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        machines-binary = {
+        "machines-binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

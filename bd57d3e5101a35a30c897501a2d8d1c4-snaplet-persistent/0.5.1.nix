@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-persistent = {
+        "snaplet-persistent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

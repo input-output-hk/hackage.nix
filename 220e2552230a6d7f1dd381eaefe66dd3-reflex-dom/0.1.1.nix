@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex-dom = {
+        "reflex-dom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.reflex

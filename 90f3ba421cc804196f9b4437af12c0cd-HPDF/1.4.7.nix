@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HPDF = {
+        "HPDF" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

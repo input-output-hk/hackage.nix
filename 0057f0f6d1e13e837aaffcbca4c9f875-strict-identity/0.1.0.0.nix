@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strict-identity = {
+        "strict-identity" = {
           depends  = [ hsPkgs.base ];
         };
       };

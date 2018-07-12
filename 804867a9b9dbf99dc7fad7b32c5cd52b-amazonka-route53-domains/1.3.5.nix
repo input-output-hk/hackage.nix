@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-route53-domains = {
+        "amazonka-route53-domains" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-route53-domains-test = {
+          "amazonka-route53-domains-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

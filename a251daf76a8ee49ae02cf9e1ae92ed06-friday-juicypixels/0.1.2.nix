@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        friday-juicypixels = {
+        "friday-juicypixels" = {
           depends  = [
             hsPkgs.base
             hsPkgs.friday
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.friday

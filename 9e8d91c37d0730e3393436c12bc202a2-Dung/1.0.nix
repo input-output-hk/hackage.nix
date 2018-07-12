@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Dung = {
+        "Dung" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,6 +28,6 @@ let
             hsPkgs.parsec
           ];
         };
-        exes = { dungell = {}; };
+        exes = { "dungell" = {}; };
       };
     }

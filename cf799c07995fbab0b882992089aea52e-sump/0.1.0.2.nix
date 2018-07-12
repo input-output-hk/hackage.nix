@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sump = {
+        "sump" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

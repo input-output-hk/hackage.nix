@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-combinators = {
+        "conduit-combinators" = {
           depends  = [ hsPkgs.base ];
         };
       };

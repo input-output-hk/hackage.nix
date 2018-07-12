@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        clr-host = {
+        "clr-host" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optionals _flags.enable_mono [
             pkgs."glib-2.0"
             pkgs."mono-2.0"
-          ]) ++ (if !_flags.enable_dotnet && !_flags.enable_mono && system.isWindows
+          ]) ++ pkgs.lib.optionals (!_flags.enable_dotnet && !_flags.enable_mono) (if system.isWindows
             then [
               pkgs.oleaut32
               pkgs.ole32
@@ -46,7 +46,7 @@ let
             ]);
         };
         tests = {
-          clr-host-test = {
+          "clr-host-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clr-host

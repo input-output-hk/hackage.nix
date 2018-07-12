@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numhask = {
+        "numhask" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.numhask

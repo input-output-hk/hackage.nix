@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        pcgen = {
+        "pcgen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
           ];
         };
         tests = {
-          pcgen-tests = {
+          "pcgen-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pcgen
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          pcgen-bench = {
+          "pcgen-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pcgen

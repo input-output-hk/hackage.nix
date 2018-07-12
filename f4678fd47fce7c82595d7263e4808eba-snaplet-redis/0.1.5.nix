@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-redis = {
+        "snaplet-redis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          Example = {
+          "Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

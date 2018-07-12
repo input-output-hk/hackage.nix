@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        more-extensible-effects = {
+        "more-extensible-effects" = {
           depends  = [ hsPkgs.base ];
         };
       };

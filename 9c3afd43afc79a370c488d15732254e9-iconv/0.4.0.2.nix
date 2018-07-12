@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iconv = {
+        "iconv" = {
           depends  = if _flags.bytestring_in_base
             then [ hsPkgs.base ]
             else [

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GeomPredicates-SSE = {
+        "GeomPredicates-SSE" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GeomPredicates

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        nested-sets = {
+        "nested-sets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nested-sets

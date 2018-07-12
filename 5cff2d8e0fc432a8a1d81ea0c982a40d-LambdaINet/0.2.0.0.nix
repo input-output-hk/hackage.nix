@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          LambdaINet = {
+          "LambdaINet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ihaskell-rlangqq = {
+        "ihaskell-rlangqq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Rlang-QQ

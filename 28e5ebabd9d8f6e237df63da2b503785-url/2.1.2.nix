@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        url = {
+        "url" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string

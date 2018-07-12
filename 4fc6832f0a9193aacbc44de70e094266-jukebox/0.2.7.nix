@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jukebox = {
+        "jukebox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          jukebox = {
+          "jukebox" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jukebox

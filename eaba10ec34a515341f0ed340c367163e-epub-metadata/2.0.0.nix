@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        epub-metadata = {
+        "epub-metadata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          epub-meta = {
+          "epub-meta" = {
             depends  = [ hsPkgs.base ];
           };
         };

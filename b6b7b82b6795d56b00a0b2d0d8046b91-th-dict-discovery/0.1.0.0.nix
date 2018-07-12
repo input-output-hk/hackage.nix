@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-dict-discovery = {
+        "th-dict-discovery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgrep = {
+        "hgrep" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          hgrep = {
+          "hgrep" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hgrep

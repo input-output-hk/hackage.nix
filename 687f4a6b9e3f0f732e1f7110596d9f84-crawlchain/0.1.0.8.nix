@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crawlchain = {
+        "crawlchain" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

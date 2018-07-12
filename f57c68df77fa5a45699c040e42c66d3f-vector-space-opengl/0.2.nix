@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-space-opengl = {
+        "vector-space-opengl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-vector-space-opengl = {
+          "test-vector-space-opengl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL

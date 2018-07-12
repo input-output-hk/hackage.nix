@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-bytes-builder = {
+        "json-bytes-builder" = {
           depends  = [
             hsPkgs.scientific
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         benchmarks = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.json-bytes-builder
               hsPkgs.text

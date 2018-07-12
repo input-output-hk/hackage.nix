@@ -20,12 +20,12 @@ let
         buildType = "Simple";
       };
       components = {
-        vty-menu = {
+        "vty-menu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vty
           ];
         };
-        exes = { vty-menu = {}; };
+        exes = { "vty-menu" = {}; };
       };
     }

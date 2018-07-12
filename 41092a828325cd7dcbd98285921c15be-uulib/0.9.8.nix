@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uulib = {
+        "uulib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -26,14 +26,14 @@ let
         buildType = "Simple";
       };
       components = {
-        jsaddle = {
+        "jsaddle" = {
           depends  = (([
             hsPkgs.template-haskell
             hsPkgs.base
             hsPkgs.lens
             hsPkgs.text
             hsPkgs.transformers
-          ] ++ pkgs.lib.optional (_flags.ghcjs && _flags.jsffi) hsPkgs.ghcjs-base) ++ (if (!_flags.ghcjs || _flags.webkit) && _flags.gtk3
+          ] ++ pkgs.lib.optional (_flags.ghcjs && _flags.jsffi) hsPkgs.ghcjs-base) ++ pkgs.lib.optionals (!_flags.ghcjs || _flags.webkit) (if _flags.gtk3
             then [
               hsPkgs.webkitgtk3
               hsPkgs.webkitgtk3-javascriptcore
@@ -44,7 +44,7 @@ let
             ])) ++ pkgs.lib.optional _flags.jmacro hsPkgs.jmacro;
         };
         tests = {
-          test-tool = {
+          "test-tool" = {
             depends  = (([
               hsPkgs.template-haskell
               hsPkgs.base

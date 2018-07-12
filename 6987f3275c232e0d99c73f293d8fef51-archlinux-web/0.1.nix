@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        archlinux-web = {
+        "archlinux-web" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          arch-report = {
+          "arch-report" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP
@@ -63,7 +63,7 @@ let
               hsPkgs.archlinux
             ];
           };
-          distro-map = {
+          "distro-map" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP
@@ -84,7 +84,7 @@ let
               hsPkgs.archlinux
             ];
           };
-          get-arch-url = {
+          "get-arch-url" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP
@@ -100,7 +100,7 @@ let
               hsPkgs.archlinux
             ];
           };
-          arch-haskell-packages = {
+          "arch-haskell-packages" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP
@@ -116,7 +116,7 @@ let
               hsPkgs.archlinux
             ];
           };
-          update-aur-log = {
+          "update-aur-log" = {
             depends  = [ hsPkgs.base ];
           };
         };

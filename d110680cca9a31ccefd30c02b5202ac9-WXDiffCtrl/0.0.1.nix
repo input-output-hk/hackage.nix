@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WXDiffCtrl = {
+        "WXDiffCtrl" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

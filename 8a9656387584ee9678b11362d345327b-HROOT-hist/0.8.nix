@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HROOT-hist = {
+        "HROOT-hist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fficxx-runtime

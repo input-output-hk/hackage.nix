@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clr-inline = {
+        "clr-inline" = {
           depends  = [
             hsPkgs.text
             hsPkgs.base
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.text
               hsPkgs.base
@@ -72,7 +72,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.text
               hsPkgs.base

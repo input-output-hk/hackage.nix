@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        oauthenticated = {
+        "oauthenticated" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

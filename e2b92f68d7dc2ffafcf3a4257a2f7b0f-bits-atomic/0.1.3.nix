@@ -22,11 +22,11 @@ let
         buildType = "Custom";
       };
       components = {
-        bits-atomic = {
+        "bits-atomic" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.QuickCheck

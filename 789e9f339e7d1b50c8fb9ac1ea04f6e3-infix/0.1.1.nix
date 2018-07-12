@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        infix = {
+        "infix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

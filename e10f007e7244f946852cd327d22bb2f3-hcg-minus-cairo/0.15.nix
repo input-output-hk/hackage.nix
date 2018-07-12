@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hcg-minus-cairo = {
+        "hcg-minus-cairo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo

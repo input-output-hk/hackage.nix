@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsCMCompare = {
+          "hsCMCompare" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

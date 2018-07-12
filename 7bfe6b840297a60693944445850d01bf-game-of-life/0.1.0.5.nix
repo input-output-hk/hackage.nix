@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          game-of-life = {
+          "game-of-life" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

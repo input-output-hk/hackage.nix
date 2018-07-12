@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-vcard = {
+        "hs-vcard" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale

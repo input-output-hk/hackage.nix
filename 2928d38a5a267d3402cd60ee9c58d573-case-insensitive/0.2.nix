@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        case-insensitive = {
+        "case-insensitive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

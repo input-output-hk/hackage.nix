@@ -24,18 +24,18 @@ let
         buildType = "Simple";
       };
       components = {
-        argon2 = {
+        "argon2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
             hsPkgs.deepseq
             hsPkgs.text-short
           ];
-          libs = pkgs.lib.optional (_flags.use-system-library && !_flags.pkg-config) pkgs.argon2;
-          pkgconfig = pkgs.lib.optional (_flags.use-system-library && _flags.pkg-config) pkgconfPkgs.libargon2;
+          libs = pkgs.lib.optionals _flags.use-system-library (pkgs.lib.optional (!_flags.pkg-config) pkgs.argon2);
+          pkgconfig = pkgs.lib.optionals _flags.use-system-library (pkgs.lib.optional _flags.pkg-config pkgconfPkgs.libargon2);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.argon2
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock-digestive = {
+        "Spock-digestive" = {
           depends  = [
             hsPkgs.Spock
             hsPkgs.base

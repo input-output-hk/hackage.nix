@@ -29,7 +29,7 @@ let
       };
       components = {
         exes = {
-          hackage-server = {
+          "hackage-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -85,7 +85,7 @@ let
               hsPkgs.buildPackages.happy
             ];
           };
-          hackage-mirror = {
+          "hackage-mirror" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -112,7 +112,7 @@ let
               hsPkgs.aeson
             ];
           };
-          hackage-build = {
+          "hackage-build" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -141,7 +141,7 @@ let
               hsPkgs.hscolour
             ];
           };
-          hackage-import = {
+          "hackage-import" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -173,7 +173,7 @@ let
           };
         };
         tests = {
-          HighLevelTest = {
+          "HighLevelTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -195,7 +195,7 @@ let
               hsPkgs.random
             ];
           };
-          CreateUserTest = {
+          "CreateUserTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

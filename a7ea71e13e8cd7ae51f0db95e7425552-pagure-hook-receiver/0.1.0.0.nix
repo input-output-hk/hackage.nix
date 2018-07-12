@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pagure-hook-receiver = {
+        "pagure-hook-receiver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

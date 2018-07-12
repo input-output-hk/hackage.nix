@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rospkg = {
+        "rospkg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          rospkg = {
+          "rospkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          rospkg-test = {
+          "rospkg-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rospkg

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-oauth = {
+        "yesod-auth-oauth" = {
           depends  = [
             hsPkgs.authenticate-oauth
             hsPkgs.bytestring

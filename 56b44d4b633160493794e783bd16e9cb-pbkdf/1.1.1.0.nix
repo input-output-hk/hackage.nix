@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pbkdf = {
+        "pbkdf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          rfc-6070 = {
+          "rfc-6070" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

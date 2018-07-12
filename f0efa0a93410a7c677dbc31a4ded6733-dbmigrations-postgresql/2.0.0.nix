@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          moo-postgresql = {
+          "moo-postgresql" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dbmigrations
@@ -30,7 +30,7 @@ let
           };
         };
         tests = {
-          dbmigrations-postgresql-tests = {
+          "dbmigrations-postgresql-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dbmigrations

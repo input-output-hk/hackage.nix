@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typehash = {
+        "typehash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

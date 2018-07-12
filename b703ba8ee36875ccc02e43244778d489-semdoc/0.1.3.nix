@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semdoc = {
+        "semdoc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Glob
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          semdoc = {
+          "semdoc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.semdoc

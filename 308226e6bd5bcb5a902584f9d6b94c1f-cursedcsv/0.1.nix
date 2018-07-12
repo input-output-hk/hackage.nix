@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cursedcsv = {
+          "cursedcsv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

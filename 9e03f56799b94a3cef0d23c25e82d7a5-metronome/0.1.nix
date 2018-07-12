@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        metronome = {
+        "metronome" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hosc

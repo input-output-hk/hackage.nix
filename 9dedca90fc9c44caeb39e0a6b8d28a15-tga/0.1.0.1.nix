@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tga = {
+        "tga" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

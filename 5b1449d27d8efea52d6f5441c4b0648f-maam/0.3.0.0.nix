@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        maam = {
+        "maam" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          maam_examples = {
+          "maam_examples" = {
             depends  = [ hsPkgs.maam ];
           };
         };

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pia-forward = {
+          "pia-forward" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

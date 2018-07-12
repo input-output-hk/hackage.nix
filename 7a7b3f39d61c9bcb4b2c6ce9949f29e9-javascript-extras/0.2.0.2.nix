@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        javascript-extras = {
+        "javascript-extras" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.deepseq

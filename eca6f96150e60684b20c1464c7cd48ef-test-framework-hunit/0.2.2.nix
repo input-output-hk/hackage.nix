@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-framework-hunit = {
+        "test-framework-hunit" = {
           depends  = [
             hsPkgs.test-framework
             hsPkgs.HUnit

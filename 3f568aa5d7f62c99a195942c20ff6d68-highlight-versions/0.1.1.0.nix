@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          highlight-versions = {
+          "highlight-versions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

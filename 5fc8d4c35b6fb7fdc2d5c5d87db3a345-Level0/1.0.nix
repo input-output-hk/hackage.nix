@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Level0 = {
+          "Level0" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SDL

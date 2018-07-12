@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shivers-cfg = {
+        "shivers-cfg" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.base

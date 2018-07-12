@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-routes = {
+        "wai-routes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

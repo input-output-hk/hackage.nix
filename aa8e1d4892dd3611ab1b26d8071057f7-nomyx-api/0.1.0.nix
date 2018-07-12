@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nomyx-api = {
+        "nomyx-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

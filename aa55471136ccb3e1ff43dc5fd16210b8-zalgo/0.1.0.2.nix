@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zalgo = {
+        "zalgo" = {
           depends  = [ hsPkgs.base ];
         };
       };

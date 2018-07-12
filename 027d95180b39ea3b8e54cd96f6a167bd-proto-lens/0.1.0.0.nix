@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proto-lens = {
+        "proto-lens" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

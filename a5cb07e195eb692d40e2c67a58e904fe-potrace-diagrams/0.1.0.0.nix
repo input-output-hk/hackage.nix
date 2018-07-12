@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        potrace-diagrams = {
+        "potrace-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams-lib

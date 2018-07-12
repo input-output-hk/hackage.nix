@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bnfc = {
+          "bnfc" = {
             depends  = [
               hsPkgs.mtl
               hsPkgs.directory

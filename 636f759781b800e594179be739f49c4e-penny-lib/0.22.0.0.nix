@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        penny-lib = {
+        "penny-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.action-permutations
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          penny-test = {
+          "penny-test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.random-shuffle
@@ -76,7 +76,7 @@ let
               hsPkgs.transformers
             ];
           };
-          penny-gibberish = {
+          "penny-gibberish" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.QuickCheck
               hsPkgs.random-shuffle

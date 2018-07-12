@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        neat-interpolation = {
+        "neat-interpolation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude

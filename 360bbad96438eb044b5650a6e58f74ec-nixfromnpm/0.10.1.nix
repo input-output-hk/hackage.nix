@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          nixfromnpm = {
+          "nixfromnpm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-prelude

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        expiring-containers = {
+        "expiring-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.expiring-containers
               hsPkgs.base

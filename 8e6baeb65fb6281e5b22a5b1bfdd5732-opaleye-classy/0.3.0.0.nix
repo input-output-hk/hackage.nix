@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opaleye-classy = {
+        "opaleye-classy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

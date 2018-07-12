@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-indexed-queues = {
+        "type-indexed-queues" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-typelits-natnormalise
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          type-indexed-queues-test = {
+          "type-indexed-queues-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-indexed-queues
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-indexed-queues

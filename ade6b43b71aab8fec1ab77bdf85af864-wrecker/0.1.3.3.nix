@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wrecker = {
+        "wrecker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -72,7 +72,7 @@ let
           ];
         };
         exes = {
-          wreck = {
+          "wreck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wrecker
@@ -83,7 +83,7 @@ let
               hsPkgs.lens
             ];
           };
-          example-server = {
+          "example-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wrecker
@@ -100,7 +100,7 @@ let
               hsPkgs.transformers
             ];
           };
-          example-client = {
+          "example-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wrecker
@@ -113,7 +113,7 @@ let
               hsPkgs.connection
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wrecker
@@ -137,7 +137,7 @@ let
           };
         };
         tests = {
-          wrecker-test = {
+          "wrecker-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wrecker

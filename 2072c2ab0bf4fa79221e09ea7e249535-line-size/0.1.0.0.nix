@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          line-size = {
+          "line-size" = {
             depends  = [ hsPkgs.base ];
           };
         };

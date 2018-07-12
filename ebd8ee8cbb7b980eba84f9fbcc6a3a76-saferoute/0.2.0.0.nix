@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        saferoute = {
+        "saferoute" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-zstd = {
+        "conduit-zstd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          conduit-zstd-test = {
+          "conduit-zstd-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

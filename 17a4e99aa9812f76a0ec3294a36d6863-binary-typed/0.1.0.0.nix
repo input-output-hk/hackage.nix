@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-typed = {
+        "binary-typed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -50,7 +50,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          criterion-overview = {
+          "criterion-overview" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

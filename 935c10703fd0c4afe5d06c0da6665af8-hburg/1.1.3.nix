@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hburg = {
+          "hburg" = {
             depends  = [
               hsPkgs.filepath
               hsPkgs.mtl

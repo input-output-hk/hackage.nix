@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghci-pretty = {
+        "ghci-pretty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ipprint

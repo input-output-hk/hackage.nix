@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        concurrent-extra = {
+        "concurrent-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          test-concurrent-extra = {
+          "test-concurrent-extra" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

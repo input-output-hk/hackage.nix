@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-ecs = {
+        "amazonka-ecs" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-ecs-test = {
+          "amazonka-ecs-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

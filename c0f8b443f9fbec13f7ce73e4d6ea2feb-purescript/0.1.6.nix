@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        purescript = {
+        "purescript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          psc = {
+          "psc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdtheline
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        shaker = {
+        "shaker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          shaker = {
+          "shaker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -71,7 +71,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

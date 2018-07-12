@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        optparse-simple = {
+        "optparse-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-simple

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        allocated-processor = {
+        "allocated-processor" = {
           depends  = [ hsPkgs.base ];
         };
       };

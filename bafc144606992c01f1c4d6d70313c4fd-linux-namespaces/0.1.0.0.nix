@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linux-namespaces = {
+        "linux-namespaces" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

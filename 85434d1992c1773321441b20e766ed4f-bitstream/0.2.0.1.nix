@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitstream = {
+        "bitstream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-strict-bitstream = {
+          "test-strict-bitstream" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -38,7 +38,7 @@ let
               hsPkgs.vector
             ];
           };
-          test-lazy-bitstream = {
+          "test-lazy-bitstream" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

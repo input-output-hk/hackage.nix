@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        peggy = {
+        "peggy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          peggy = {
+          "peggy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-transformer = {
+        "list-transformer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

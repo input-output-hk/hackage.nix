@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tai = {
+        "tai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

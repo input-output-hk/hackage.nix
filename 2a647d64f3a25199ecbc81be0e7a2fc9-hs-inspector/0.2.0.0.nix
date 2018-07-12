@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-inspector = {
+        "hs-inspector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src

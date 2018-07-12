@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          loshadka = {
+          "loshadka" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell2010 = {
+        "haskell2010" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

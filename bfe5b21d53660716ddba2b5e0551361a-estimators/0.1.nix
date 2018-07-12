@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        estimators = {
+        "estimators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          hstestprobdist = {
+          "hstestprobdist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

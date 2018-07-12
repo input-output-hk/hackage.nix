@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        easy-file = {
+        "easy-file" = {
           depends  = [
             hsPkgs.base
           ] ++ (if system.isWindows

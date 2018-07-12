@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        potoki-zlib = {
+        "potoki-zlib" = {
           depends  = [
             hsPkgs.acquire
             hsPkgs.base

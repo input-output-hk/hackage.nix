@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        foldl-transduce = {
+        "foldl-transduce" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,14 +36,14 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.free
               hsPkgs.doctest
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -56,7 +56,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

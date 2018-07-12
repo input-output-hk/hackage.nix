@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haroonga-httpd = {
+          "haroonga-httpd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

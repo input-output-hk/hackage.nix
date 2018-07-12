@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-recaptcha2 = {
+        "yesod-recaptcha2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude-yesod

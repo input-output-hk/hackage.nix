@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-gio = {
+        "gi-gio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

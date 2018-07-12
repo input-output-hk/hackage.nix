@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        continued-fraction = {
+        "continued-fraction" = {
           depends  = [
             hsPkgs.base
             hsPkgs.recursion-schemes
           ];
         };
         tests = {
-          continued-fractions-test = {
+          "continued-fractions-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.continued-fraction
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          continued-fractions-bench = {
+          "continued-fractions-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.continued-fraction

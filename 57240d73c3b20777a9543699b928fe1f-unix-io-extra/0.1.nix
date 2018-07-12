@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unix-io-extra = {
+        "unix-io-extra" = {
           depends  = [ hsPkgs.base ];
         };
       };

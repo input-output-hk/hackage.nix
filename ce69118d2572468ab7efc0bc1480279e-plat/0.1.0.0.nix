@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plat = {
+        "plat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

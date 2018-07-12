@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reducers = {
+        "reducers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

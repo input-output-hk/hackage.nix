@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        animate-sdl2 = {
+        "animate-sdl2" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.animate

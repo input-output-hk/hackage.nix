@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-multihash = {
+        "crypto-multihash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base58-bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          mh = {
+          "mh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          crypto-multihash-test = {
+          "crypto-multihash-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

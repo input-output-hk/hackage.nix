@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alga = {
+        "alga" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          alga = {
+          "alga" = {
             depends  = [
               hsPkgs.alga
               hsPkgs.base
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.alga

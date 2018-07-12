@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SHA2 = {
+        "SHA2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

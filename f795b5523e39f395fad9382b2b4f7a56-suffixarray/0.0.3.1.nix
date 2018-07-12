@@ -20,20 +20,20 @@ let
         buildType = "Simple";
       };
       components = {
-        suffixarray = {
+        "suffixarray" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
           ];
         };
         exes = {
-          runTests = {
+          "runTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
             ];
           };
-          benchmark = {
+          "benchmark" = {
             depends  = [ hsPkgs.base ];
           };
         };

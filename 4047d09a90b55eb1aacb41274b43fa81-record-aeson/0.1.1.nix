@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        record-aeson = {
+        "record-aeson" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.aeson
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.record

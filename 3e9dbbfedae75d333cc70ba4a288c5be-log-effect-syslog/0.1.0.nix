@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        log-effect-syslog = {
+        "log-effect-syslog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

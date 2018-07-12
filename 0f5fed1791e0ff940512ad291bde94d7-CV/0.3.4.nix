@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CV = {
+        "CV" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

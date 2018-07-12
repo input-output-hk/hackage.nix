@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        osx-ar = {
+        "osx-ar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shapefile = {
+        "shapefile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

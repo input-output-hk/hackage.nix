@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sat-micro = {
+          "sat-micro" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

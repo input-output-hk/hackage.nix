@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aivika-gpss = {
+        "aivika-gpss" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

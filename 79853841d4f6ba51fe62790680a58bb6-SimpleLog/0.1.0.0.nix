@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SimpleLog = {
+        "SimpleLog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

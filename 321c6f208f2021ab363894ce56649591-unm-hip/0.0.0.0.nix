@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unm-hip = {
+        "unm-hip" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

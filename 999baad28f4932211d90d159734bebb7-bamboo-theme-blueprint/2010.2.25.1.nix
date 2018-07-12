@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bamboo-theme-blueprint = {
+        "bamboo-theme-blueprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

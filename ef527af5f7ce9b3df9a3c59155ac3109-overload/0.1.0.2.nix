@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        overload = {
+        "overload" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

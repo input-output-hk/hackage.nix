@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-graceful = {
+        "wai-graceful" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

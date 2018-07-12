@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-simple-opts = {
+        "postgresql-simple-opts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.postgresql-simple
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          postgresql-simple-opts-test = {
+          "postgresql-simple-opts-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.postgresql-simple-opts

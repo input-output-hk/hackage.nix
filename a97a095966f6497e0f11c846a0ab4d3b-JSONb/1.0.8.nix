@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JSONb = {
+        "JSONb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          json-schema = {
+          "json-schema" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

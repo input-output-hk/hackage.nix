@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hebrew-time = {
+        "hebrew-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

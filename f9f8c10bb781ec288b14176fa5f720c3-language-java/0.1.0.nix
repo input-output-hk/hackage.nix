@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-java = {
+        "language-java" = {
           depends  = [
             hsPkgs.array
             hsPkgs.pretty

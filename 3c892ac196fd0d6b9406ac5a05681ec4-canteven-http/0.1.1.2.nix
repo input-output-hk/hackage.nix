@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        canteven-http = {
+        "canteven-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

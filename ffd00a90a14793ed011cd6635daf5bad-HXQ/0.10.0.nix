@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HXQ = {
+        "HXQ" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.haskell98
@@ -41,7 +41,7 @@ let
             ]);
         };
         exes = {
-          xquery = {
+          "xquery" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.haskell98

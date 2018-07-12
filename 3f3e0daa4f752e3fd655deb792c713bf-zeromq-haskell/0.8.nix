@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zeromq-haskell = {
+        "zeromq-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

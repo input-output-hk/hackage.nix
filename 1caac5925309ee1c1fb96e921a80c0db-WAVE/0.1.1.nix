@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WAVE = {
+        "WAVE" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

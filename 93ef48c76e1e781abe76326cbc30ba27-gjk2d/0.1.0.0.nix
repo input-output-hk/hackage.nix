@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        gjk2d = {
+        "gjk2d" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear
           ];
         };
         tests = {
-          gjk2d-test = {
+          "gjk2d-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.linear

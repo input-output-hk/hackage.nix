@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validity-bytestring = {
+        "validity-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

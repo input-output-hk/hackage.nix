@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heterocephalus = {
+        "heterocephalus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -33,13 +33,13 @@ let
           ];
         };
         tests = {
-          heterocephalus-test = {
+          "heterocephalus-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.heterocephalus
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob

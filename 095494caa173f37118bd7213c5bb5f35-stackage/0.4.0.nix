@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stackage = {
+        "stackage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -57,7 +57,7 @@ let
           ];
         };
         exes = {
-          stackage = {
+          "stackage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stackage
@@ -66,7 +66,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stackage

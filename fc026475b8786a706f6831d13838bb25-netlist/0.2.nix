@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netlist = {
+        "netlist" = {
           depends  = [
             hsPkgs.binary
             hsPkgs.containers

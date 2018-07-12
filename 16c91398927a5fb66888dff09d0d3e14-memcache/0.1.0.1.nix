@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memcache = {
+        "memcache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          full = {
+          "full" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          parser = {
+          "parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

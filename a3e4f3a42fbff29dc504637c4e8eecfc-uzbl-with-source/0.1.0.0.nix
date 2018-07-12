@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uzbl-with-source = {
+        "uzbl-with-source" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

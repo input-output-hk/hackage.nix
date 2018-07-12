@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-timers = {
+        "ghc-timers" = {
           depends  = [ hsPkgs.base ];
         };
       };

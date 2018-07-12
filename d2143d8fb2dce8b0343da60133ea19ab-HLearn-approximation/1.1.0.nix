@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HLearn-approximation = {
+        "HLearn-approximation" = {
           depends  = [
             hsPkgs.HLearn-algebra
             hsPkgs.HLearn-distributions

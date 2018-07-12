@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cost-explorer = {
+        "amazonka-cost-explorer" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-cost-explorer-test = {
+          "amazonka-cost-explorer-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

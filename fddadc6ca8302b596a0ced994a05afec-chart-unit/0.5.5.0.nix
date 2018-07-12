@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chart-unit = {
+        "chart-unit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          chart-source-examples = {
+          "chart-source-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-tikz = {
+        "diagrams-tikz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

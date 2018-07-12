@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strict-concurrency = {
+        "strict-concurrency" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parallel

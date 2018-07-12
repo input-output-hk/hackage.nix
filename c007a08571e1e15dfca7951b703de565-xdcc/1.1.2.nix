@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          xdcc = {
+          "xdcc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ascii-progress

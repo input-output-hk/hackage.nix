@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsqml-morris = {
+          "hsqml-morris" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

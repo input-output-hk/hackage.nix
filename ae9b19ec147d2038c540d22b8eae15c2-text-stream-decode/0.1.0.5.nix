@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        text-stream-decode = {
+        "text-stream-decode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ] ++ [ hsPkgs.text ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          count-chars = {
+          "count-chars" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text-stream-decode
@@ -50,7 +50,7 @@ let
               hsPkgs.text
             ];
           };
-          decode-memory-usage = {
+          "decode-memory-usage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text-stream-decode

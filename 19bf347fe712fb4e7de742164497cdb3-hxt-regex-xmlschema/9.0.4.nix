@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-regex-xmlschema = {
+        "hxt-regex-xmlschema" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

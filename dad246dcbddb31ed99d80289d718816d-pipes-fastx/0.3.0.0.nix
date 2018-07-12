@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-fastx = {
+        "pipes-fastx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

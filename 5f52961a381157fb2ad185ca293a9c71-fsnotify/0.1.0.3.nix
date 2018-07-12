@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fsnotify = {
+        "fsnotify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
               else pkgs.lib.optional system.isOsx hsPkgs.hfsevents);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

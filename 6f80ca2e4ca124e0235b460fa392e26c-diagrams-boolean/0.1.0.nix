@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-boolean = {
+        "diagrams-boolean" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams-lib

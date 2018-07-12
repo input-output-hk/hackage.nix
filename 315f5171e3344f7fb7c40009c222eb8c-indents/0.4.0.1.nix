@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        indents = {
+        "indents" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          indents-tests = {
+          "indents-tests" = {
             depends  = [
               hsPkgs.indents
               hsPkgs.tasty

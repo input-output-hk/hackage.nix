@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        roguestar-gl = {
+        "roguestar-gl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GLUT

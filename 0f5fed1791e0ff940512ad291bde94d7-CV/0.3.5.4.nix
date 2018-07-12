@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CV = {
+        "CV" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parallel

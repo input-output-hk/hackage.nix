@@ -21,39 +21,39 @@ let
       };
       components = {
         exes = {
-          helloworld = {
+          "helloworld" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod
             ];
           };
-          blog = {};
-          ajax = {};
-          file-echo = {};
-          pretty-yaml = {
+          "blog" = {};
+          "ajax" = {};
+          "file-echo" = {};
+          "pretty-yaml" = {
             depends  = [
               hsPkgs.data-object-yaml
               hsPkgs.data-object
               hsPkgs.bytestring
             ];
           };
-          i18n = {};
-          session = {};
-          widgets = {};
-          form = {};
-          mkToForm = {
+          "i18n" = {};
+          "session" = {};
+          "widgets" = {};
+          "form" = {};
+          "mkToForm" = {
             depends  = [
               hsPkgs.time
               hsPkgs.persistent
             ];
           };
-          persistent-synopsis = {
+          "persistent-synopsis" = {
             depends  = [
               hsPkgs.transformers
               hsPkgs.persistent-sqlite
             ];
           };
-          hamlet-synopsis = {
+          "hamlet-synopsis" = {
             depends  = [ hsPkgs.hamlet ];
           };
         };

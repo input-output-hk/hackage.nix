@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-builder = {
+        "network-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          network-builder = {
+          "network-builder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

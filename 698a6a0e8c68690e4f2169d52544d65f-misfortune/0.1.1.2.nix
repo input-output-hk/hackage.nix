@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        misfortune = {
+        "misfortune" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,14 +36,14 @@ let
           ];
         };
         exes = {
-          misfortune = {
+          "misfortune" = {
             depends  = [
               hsPkgs.monad-loops
               hsPkgs.regex-base
               hsPkgs.regex-pcre
             ];
           };
-          misfortune-strfile = {};
+          "misfortune-strfile" = {};
         };
       };
     }

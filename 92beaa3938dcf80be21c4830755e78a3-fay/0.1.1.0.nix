@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fay = {
+        "fay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          fay = {
+          "fay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -49,7 +49,7 @@ let
               hsPkgs.data-default
             ];
           };
-          fay-tests = {
+          "fay-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -62,7 +62,7 @@ let
               hsPkgs.data-default
             ];
           };
-          fay-docs = {
+          "fay-docs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

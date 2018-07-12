@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unroll-ghc-plugin = {
+        "unroll-ghc-plugin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

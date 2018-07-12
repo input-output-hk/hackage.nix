@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        row-types = {
+        "row-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.row-types
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          perf = {
+          "perf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.row-types

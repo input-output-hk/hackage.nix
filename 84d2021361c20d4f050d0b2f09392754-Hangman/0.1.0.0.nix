@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Hangman = {
+          "Hangman" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -30,7 +30,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

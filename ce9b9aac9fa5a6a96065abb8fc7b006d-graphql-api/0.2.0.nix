@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphql-api = {
+        "graphql-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          graphql-api-doctests = {
+          "graphql-api-doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -46,7 +46,7 @@ let
               hsPkgs.doctest
             ];
           };
-          graphql-api-tests = {
+          "graphql-api-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -66,7 +66,7 @@ let
           };
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

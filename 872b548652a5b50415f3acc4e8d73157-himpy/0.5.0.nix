@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          himpy = {
+          "himpy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.NetSNMP

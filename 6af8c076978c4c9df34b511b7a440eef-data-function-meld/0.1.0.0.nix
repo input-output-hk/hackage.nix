@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-function-meld = {
+        "data-function-meld" = {
           depends  = [ hsPkgs.base ];
         };
       };

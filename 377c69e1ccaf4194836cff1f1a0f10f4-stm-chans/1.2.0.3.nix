@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        stm-chans = {
+        "stm-chans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

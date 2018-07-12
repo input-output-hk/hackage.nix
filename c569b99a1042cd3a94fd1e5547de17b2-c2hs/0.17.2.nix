@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          c2hs = {
+          "c2hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-c
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          test-bugs = {
+          "test-bugs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -55,7 +55,7 @@ let
               hsPkgs.buildPackages.c2hs
             ];
           };
-          test-system = {
+          "test-system" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework
@@ -68,7 +68,7 @@ let
               hsPkgs.buildPackages.c2hs
             ];
           };
-          regression-suite = {
+          "regression-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

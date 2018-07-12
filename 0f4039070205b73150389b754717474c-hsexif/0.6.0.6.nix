@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsexif = {
+        "hsexif" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional _flags.iconv hsPkgs.iconv;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

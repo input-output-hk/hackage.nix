@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabalish = {
+          "cabalish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

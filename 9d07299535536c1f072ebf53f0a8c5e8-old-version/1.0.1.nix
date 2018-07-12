@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        old-version = {
+        "old-version" = {
           depends  = [ hsPkgs.base ];
         };
       };

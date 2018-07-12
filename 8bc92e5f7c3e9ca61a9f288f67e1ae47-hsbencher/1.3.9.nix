@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsbencher = {
+        "hsbencher" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           ] ++ pkgs.lib.optional _flags.hydra hsPkgs.hydra-print) ++ pkgs.lib.optional _flags.fusion hsPkgs.handa-gdata;
         };
         tests = {
-          test1 = {
+          "test1" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.bytestring
@@ -61,7 +61,7 @@ let
               hsPkgs.hsbencher
             ] ++ pkgs.lib.optional _flags.hydra hsPkgs.hydra-print) ++ pkgs.lib.optional _flags.fusion hsPkgs.handa-gdata;
           };
-          test2 = {
+          "test2" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.bytestring

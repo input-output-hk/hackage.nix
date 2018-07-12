@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tcp-streams = {
+        "tcp-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.io-streams

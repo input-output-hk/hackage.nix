@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lens-accelerate = {
+        "lens-accelerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate

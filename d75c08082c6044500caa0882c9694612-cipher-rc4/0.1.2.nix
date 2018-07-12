@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        cipher-rc4 = {
+        "cipher-rc4" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          test-cipher-rc4 = {
+          "test-cipher-rc4" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cipher-rc4
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          bench-cipher-rc4 = {
+          "bench-cipher-rc4" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

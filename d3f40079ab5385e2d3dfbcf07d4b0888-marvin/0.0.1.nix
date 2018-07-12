@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        marvin = {
+        "marvin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          marvin-pp = {
+          "marvin-pp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-prelude
@@ -54,7 +54,7 @@ let
               hsPkgs.optparse-generic
             ];
           };
-          marvin-init = {
+          "marvin-init" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-prelude

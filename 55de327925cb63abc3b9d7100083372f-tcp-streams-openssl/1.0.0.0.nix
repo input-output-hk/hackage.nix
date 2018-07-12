@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tcp-streams-openssl = {
+        "tcp-streams-openssl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.io-streams

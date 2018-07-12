@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        setlocale = {
+        "setlocale" = {
           depends  = [ hsPkgs.base ];
         };
       };

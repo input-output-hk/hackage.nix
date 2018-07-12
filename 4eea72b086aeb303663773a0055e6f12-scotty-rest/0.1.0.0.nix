@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scotty-rest = {
+        "scotty-rest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-prelude
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

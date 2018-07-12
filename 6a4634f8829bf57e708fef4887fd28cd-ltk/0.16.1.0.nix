@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ltk = {
+        "ltk" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.base

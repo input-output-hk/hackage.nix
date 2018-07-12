@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-simple-typed = {
+        "postgresql-simple-typed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.typedquery

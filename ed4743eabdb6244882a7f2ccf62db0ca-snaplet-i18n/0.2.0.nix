@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-i18n = {
+        "snaplet-i18n" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.configurator

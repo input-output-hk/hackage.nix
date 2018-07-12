@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blink1 = {
+        "blink1" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals system.isLinux [

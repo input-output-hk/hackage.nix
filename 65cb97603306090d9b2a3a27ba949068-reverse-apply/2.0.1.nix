@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reverse-apply = {
+        "reverse-apply" = {
           depends  = [ hsPkgs.base ];
         };
       };

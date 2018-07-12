@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shady-graphics = {
+        "shady-graphics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

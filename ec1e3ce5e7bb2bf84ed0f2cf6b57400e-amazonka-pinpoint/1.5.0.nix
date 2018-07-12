@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-pinpoint = {
+        "amazonka-pinpoint" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-pinpoint-test = {
+          "amazonka-pinpoint-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

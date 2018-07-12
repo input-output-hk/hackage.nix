@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          typeof = {
+          "typeof" = {
             depends  = [ hsPkgs.base ];
           };
         };

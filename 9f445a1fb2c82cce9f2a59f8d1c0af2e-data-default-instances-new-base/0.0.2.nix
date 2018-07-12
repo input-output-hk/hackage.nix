@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-default-instances-new-base = {
+        "data-default-instances-new-base" = {
           depends  = [
             hsPkgs.base
           ] ++ (if _flags.old-data-default-class

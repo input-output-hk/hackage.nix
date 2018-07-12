@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bio-sequence = {
+        "bio-sequence" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          sequence-test = {
+          "sequence-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bio-sequence
@@ -40,7 +40,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          similarity = {
+          "similarity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bio-sequence

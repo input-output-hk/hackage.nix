@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-worker = {
+        "yesod-worker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.resourcet

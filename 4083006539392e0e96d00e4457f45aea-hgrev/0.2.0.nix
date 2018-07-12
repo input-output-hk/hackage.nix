@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgrev = {
+        "hgrev" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

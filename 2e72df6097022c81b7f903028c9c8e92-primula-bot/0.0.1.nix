@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          primula-bot = {
+          "primula-bot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.XMPP

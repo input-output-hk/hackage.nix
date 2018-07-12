@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hadolint = {
+        "hadolint" = {
           depends  = [
             hsPkgs.ShellCheck
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          hadolint = {
+          "hadolint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          hadolint-unit-tests = {
+          "hadolint-unit-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.ShellCheck

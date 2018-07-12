@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedgehog-checkers = {
+        "hedgehog-checkers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hedgehog
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedgehog

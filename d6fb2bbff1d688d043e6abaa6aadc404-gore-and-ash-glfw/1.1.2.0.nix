@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gore-and-ash-glfw = {
+        "gore-and-ash-glfw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

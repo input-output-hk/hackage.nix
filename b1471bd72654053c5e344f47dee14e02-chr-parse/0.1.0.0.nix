@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chr-parse = {
+        "chr-parse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uulib

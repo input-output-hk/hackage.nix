@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-wlc = {
+        "bindings-wlc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL
@@ -29,7 +29,7 @@ let
           libs = [ pkgs.wlc ];
         };
         tests = {
-          bindings-wlc-test = {
+          "bindings-wlc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bindings-wlc

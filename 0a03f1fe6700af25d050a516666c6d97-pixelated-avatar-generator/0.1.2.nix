@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pixelated-avatar-generator = {
+        "pixelated-avatar-generator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JuicyPixels
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          pixelated-avatar-generator = {
+          "pixelated-avatar-generator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pixelated-avatar-generator
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.JuicyPixels

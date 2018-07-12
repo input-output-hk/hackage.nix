@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hyphenation = {
+        "hyphenation" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.11")) hsPkgs.semigroups) ++ pkgs.lib.optional _flags.embed hsPkgs.file-embed;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

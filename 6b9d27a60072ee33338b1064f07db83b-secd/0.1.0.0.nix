@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        secd = {
+        "secd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          secdi = {
+          "secdi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          secd-test = {
+          "secd-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.secd

@@ -27,7 +27,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi = {
+        "yi" = {
           depends  = (((((([
             hsPkgs.Cabal
             hsPkgs.Diff
@@ -88,7 +88,7 @@ let
           ];
         };
         exes = {
-          parserTest = {
+          "parserTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -98,7 +98,7 @@ let
               hsPkgs.yi
             ];
           };
-          yi = {
+          "yi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yi
@@ -109,7 +109,7 @@ let
           };
         };
         tests = {
-          test-suite = {
+          "test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

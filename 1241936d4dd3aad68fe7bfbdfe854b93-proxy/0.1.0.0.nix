@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proxy = {
+        "proxy" = {
           depends  = [ hsPkgs.base ];
         };
       };

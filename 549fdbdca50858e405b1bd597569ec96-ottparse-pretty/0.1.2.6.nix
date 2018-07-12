@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ottparse-pretty = {
+          "ottparse-pretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.split

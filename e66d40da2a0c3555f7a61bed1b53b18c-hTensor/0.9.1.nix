@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hTensor = {
+        "hTensor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix

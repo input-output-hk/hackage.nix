@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        definitive-graphics = {
+        "definitive-graphics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.definitive-base

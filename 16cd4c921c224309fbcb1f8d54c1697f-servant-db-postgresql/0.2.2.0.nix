@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-db-postgresql = {
+        "servant-db-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          servant-db-postgresql-example01 = {
+          "servant-db-postgresql-example01" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          servant-db-postgresql-test = {
+          "servant-db-postgresql-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dhall-json = {
+        "dhall-json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          dhall-to-json = {
+          "dhall-to-json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -44,7 +44,7 @@ let
               hsPkgs.text
             ];
           };
-          dhall-to-yaml = {
+          "dhall-to-yaml" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

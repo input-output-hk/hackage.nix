@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseNewick = {
+        "BiobaseNewick" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          TestForestStructure = {
+          "TestForestStructure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

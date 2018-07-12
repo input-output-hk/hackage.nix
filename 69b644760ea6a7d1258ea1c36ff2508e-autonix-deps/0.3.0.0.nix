@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        autonix-deps = {
+        "autonix-deps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

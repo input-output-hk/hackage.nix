@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        double-metaphone = {
+        "double-metaphone" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

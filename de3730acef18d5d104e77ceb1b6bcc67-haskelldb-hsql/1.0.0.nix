@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelldb-hsql = {
+        "haskelldb-hsql" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.haskelldb

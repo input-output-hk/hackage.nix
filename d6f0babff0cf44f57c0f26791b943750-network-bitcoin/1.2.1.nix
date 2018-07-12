@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-bitcoin = {
+        "network-bitcoin" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.bytestring

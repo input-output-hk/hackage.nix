@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streamed = {
+        "streamed" = {
           depends  = [
             hsPkgs.midi-alsa
             hsPkgs.midi

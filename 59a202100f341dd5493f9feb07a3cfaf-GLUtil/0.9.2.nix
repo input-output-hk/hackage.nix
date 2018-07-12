@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLUtil = {
+        "GLUtil" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

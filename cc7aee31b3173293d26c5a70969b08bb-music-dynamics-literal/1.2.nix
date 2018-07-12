@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        music-dynamics-literal = {
+        "music-dynamics-literal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

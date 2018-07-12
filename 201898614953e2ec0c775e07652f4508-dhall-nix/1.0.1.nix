@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dhall-nix = {
+        "dhall-nix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          dhall-to-nix = {
+          "dhall-to-nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dhall

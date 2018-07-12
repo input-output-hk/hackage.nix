@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        notzero = {
+        "notzero" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

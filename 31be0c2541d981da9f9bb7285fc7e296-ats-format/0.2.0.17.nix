@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          atsfmt = {
+          "atsfmt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-ats

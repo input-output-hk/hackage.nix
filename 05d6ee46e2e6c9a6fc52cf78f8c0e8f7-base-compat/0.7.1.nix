@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        base-compat = {
+        "base-compat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

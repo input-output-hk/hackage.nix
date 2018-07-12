@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hills = {
+          "hills" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

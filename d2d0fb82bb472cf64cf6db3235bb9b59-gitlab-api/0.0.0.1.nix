@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gitlab-api = {
+        "gitlab-api" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          gitlab-api-test = {
+          "gitlab-api-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gitlab-api

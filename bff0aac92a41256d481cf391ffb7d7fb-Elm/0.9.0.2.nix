@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Elm = {
+        "Elm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          elm = {
+          "elm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          test-elm = {
+          "test-elm" = {
             depends  = [ hsPkgs.base ];
           };
         };

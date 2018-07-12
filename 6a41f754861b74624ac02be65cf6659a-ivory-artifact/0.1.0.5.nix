@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ivory-artifact = {
+        "ivory-artifact" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

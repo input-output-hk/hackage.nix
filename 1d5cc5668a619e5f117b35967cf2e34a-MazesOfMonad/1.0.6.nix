@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mazesofmonad = {
+          "mazesofmonad" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ziptastic-core = {
+        "ziptastic-core" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test-core = {
+          "test-core" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

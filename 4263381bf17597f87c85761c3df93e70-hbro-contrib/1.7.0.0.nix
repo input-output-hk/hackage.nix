@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hbro-contrib = {
+        "hbro-contrib" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty

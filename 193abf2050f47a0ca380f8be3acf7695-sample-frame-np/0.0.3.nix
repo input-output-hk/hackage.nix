@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sample-frame-np = {
+        "sample-frame-np" = {
           depends  = [
             hsPkgs.sample-frame
             hsPkgs.numeric-prelude

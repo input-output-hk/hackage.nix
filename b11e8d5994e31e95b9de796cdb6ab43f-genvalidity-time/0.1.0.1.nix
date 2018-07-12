@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-time = {
+        "genvalidity-time" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          genvalidity-time-test = {
+          "genvalidity-time-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.genvalidity-hspec

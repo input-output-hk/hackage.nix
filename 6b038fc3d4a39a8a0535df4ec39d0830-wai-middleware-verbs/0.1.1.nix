@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-verbs = {
+        "wai-middleware-verbs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions

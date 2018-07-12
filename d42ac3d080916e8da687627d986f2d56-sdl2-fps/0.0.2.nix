@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdl2-fps = {
+        "sdl2-fps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sdl2

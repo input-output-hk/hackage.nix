@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        odbc = {
+        "odbc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -41,7 +41,7 @@ let
             else [ pkgs.odbc ];
         };
         exes = {
-          odbc = {
+          "odbc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.odbc
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -66,7 +66,7 @@ let
           };
         };
         benchmarks = {
-          space = {
+          "space" = {
             depends  = [
               hsPkgs.base
               hsPkgs.odbc

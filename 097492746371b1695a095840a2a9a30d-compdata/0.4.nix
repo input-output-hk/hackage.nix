@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        compdata = {
+        "compdata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell
@@ -53,7 +53,7 @@ let
               hsPkgs.transformers
             ];
           };
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

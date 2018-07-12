@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          cpuperf = {
+          "cpuperf" = {
             depends  = [
               hsPkgs.mtl
             ] ++ (if _flags.small_base

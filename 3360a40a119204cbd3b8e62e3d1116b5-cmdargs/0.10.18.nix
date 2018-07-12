@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmdargs = {
+        "cmdargs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional _flags.quotation hsPkgs.template-haskell;
         };
         exes = {
-          cmdargs = {
+          "cmdargs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

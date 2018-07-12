@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-monad-control = {
+        "distributed-process-monad-control" = {
           depends  = [
             hsPkgs.base
             hsPkgs.distributed-process

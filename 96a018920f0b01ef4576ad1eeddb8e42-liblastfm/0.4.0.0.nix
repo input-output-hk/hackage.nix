@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liblastfm = {
+        "liblastfm" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          api = {
+          "api" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -56,7 +56,7 @@ let
               hsPkgs.xml-html-conduit-lens
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        barbies = {
+        "barbies" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          barbies-test = {
+          "barbies-test" = {
             depends  = [
               hsPkgs.barbies
               hsPkgs.base

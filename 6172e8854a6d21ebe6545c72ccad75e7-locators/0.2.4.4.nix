@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        locators = {
+        "locators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          check = {
+          "check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

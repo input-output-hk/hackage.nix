@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lzma-clib = {
+        "lzma-clib" = {
           depends  = pkgs.lib.optional (!system.isWindows) hsPkgs.only-buildable-on-windows;
         };
       };

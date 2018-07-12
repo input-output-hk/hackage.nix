@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        qc-oi-testgenerator = {
+        "qc-oi-testgenerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

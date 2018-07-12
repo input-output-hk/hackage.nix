@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sensei = {
+        "sensei" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          sensei-web = {
+          "sensei-web" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -64,7 +64,7 @@ let
               hsPkgs.sensei
             ];
           };
-          seito = {
+          "seito" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -86,7 +86,7 @@ let
               hsPkgs.sensei
             ];
           };
-          sensei = {
+          "sensei" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -110,7 +110,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

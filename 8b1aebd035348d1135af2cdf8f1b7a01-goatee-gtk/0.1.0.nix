@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        goatee-gtk = {
+        "goatee-gtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          goatee-gtk = {
+          "goatee-gtk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          test-goatee-gtk = {
+          "test-goatee-gtk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goatee-gtk

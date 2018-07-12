@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Smooth = {
+        "Smooth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

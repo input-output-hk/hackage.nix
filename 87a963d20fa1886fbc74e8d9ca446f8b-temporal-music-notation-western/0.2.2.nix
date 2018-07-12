@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        temporal-music-notation-western = {
+        "temporal-music-notation-western" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

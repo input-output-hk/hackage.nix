@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        suffixtree = {
+        "suffixtree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        asset-bundle = {
+        "asset-bundle" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.base

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          amazon-emailer = {
+          "amazon-emailer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.resourcet
@@ -36,7 +36,7 @@ let
               hsPkgs.configurator
             ];
           };
-          amazon-emailer-queue-cleaner = {
+          "amazon-emailer-queue-cleaner" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lifted-base

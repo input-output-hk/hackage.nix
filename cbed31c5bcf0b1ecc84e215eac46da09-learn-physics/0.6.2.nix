@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        learn-physics = {
+        "learn-physics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector-space
@@ -30,21 +30,21 @@ let
           ];
         };
         exes = {
-          learn-physics-sunEarth = {
+          "learn-physics-sunEarth" = {
             depends  = [
               hsPkgs.gloss
               hsPkgs.base
               hsPkgs.learn-physics
             ];
           };
-          learn-physics-eFieldLine2D = {
+          "learn-physics-eFieldLine2D" = {
             depends  = [
               hsPkgs.gloss
               hsPkgs.base
               hsPkgs.learn-physics
             ];
           };
-          learn-physics-Projectile = {
+          "learn-physics-Projectile" = {
             depends  = [
               hsPkgs.gnuplot
               hsPkgs.base

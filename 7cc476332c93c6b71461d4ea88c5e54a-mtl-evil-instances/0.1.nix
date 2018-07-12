@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mtl-evil-instances = {
+        "mtl-evil-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

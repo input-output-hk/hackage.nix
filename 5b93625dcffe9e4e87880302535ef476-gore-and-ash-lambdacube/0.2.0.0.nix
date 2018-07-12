@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gore-and-ash-lambdacube = {
+        "gore-and-ash-lambdacube" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          gore-and-ash-lambdacube-example01 = {
+          "gore-and-ash-lambdacube-example01" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -57,28 +57,7 @@ let
               hsPkgs.vector
             ];
           };
-          gore-and-ash-lambdacube-example02 = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.deepseq
-              hsPkgs.exceptions
-              hsPkgs.GLFW-b
-              hsPkgs.gore-and-ash
-              hsPkgs.gore-and-ash-glfw
-              hsPkgs.gore-and-ash-lambdacube
-              hsPkgs.JuicyPixels
-              hsPkgs.lambdacube-compiler
-              hsPkgs.lambdacube-gl
-              hsPkgs.lambdacube-ir
-              hsPkgs.mtl
-              hsPkgs.text
-              hsPkgs.transformers
-              hsPkgs.vector
-              hsPkgs.linear
-            ];
-          };
-          gore-and-ash-lambdacube-example03 = {
+          "gore-and-ash-lambdacube-example02" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -99,7 +78,28 @@ let
               hsPkgs.linear
             ];
           };
-          gore-and-ash-lambdacube-example04 = {
+          "gore-and-ash-lambdacube-example03" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.containers
+              hsPkgs.deepseq
+              hsPkgs.exceptions
+              hsPkgs.GLFW-b
+              hsPkgs.gore-and-ash
+              hsPkgs.gore-and-ash-glfw
+              hsPkgs.gore-and-ash-lambdacube
+              hsPkgs.JuicyPixels
+              hsPkgs.lambdacube-compiler
+              hsPkgs.lambdacube-gl
+              hsPkgs.lambdacube-ir
+              hsPkgs.mtl
+              hsPkgs.text
+              hsPkgs.transformers
+              hsPkgs.vector
+              hsPkgs.linear
+            ];
+          };
+          "gore-and-ash-lambdacube-example04" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

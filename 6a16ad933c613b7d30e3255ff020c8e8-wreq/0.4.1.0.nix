@@ -25,7 +25,7 @@ let
         buildType = "Custom";
       };
       components = {
-        wreq = {
+        "wreq" = {
           depends  = [
             hsPkgs.psqueues
             hsPkgs.aeson
@@ -55,7 +55,7 @@ let
           ];
         };
         exes = {
-          httpbin = {
+          "httpbin" = {
             depends  = pkgs.lib.optionals (!(!_flags.httpbin)) [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -75,7 +75,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -107,7 +107,7 @@ let
               hsPkgs.wreq
             ] ++ pkgs.lib.optional _flags.aws hsPkgs.base;
           };
-          doctest = {
+          "doctest" = {
             depends  = pkgs.lib.optionals (!(!_flags.doctest)) [
               hsPkgs.base
               hsPkgs.directory

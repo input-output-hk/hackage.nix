@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opentheory-parser = {
+        "opentheory-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          opentheory-parser-test = {
+          "opentheory-parser-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

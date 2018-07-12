@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ec2-unikernel = {
+          "ec2-unikernel" = {
             depends  = [
               hsPkgs.amazonka
               hsPkgs.amazonka-core

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mueval = {
+        "mueval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,10 +38,10 @@ let
           ];
         };
         exes = {
-          mueval-core = {
+          "mueval-core" = {
             depends  = [ hsPkgs.base ];
           };
-          mueval = {
+          "mueval" = {
             depends  = [ hsPkgs.base ];
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toml = {
+        "toml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

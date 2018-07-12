@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nerf = {
+        "nerf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,6 +38,6 @@ let
             hsPkgs.cmdargs
           ];
         };
-        exes = { nerf = {}; };
+        exes = { "nerf" = {}; };
       };
     }

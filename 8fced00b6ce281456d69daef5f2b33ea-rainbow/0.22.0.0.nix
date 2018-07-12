@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rainbow = {
+        "rainbow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          test8color = {
+          "test8color" = {
             depends  = pkgs.lib.optionals _flags.visual [
               hsPkgs.base
               hsPkgs.text
@@ -39,7 +39,7 @@ let
               hsPkgs.process
             ];
           };
-          test256color = {
+          "test256color" = {
             depends  = pkgs.lib.optionals _flags.visual [
               hsPkgs.base
               hsPkgs.text
@@ -47,7 +47,7 @@ let
               hsPkgs.process
             ];
           };
-          colorTest = {
+          "colorTest" = {
             depends  = pkgs.lib.optionals _flags.visual [
               hsPkgs.base
               hsPkgs.text
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          rainbow-instances = {
+          "rainbow-instances" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

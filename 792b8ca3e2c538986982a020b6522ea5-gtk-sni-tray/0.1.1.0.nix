@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk-sni-tray = {
+        "gtk-sni-tray" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          gtk-sni-tray-standalone = {
+          "gtk-sni-tray-standalone" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dbus

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dynamic-graph = {
+        "dynamic-graph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GLFW-b

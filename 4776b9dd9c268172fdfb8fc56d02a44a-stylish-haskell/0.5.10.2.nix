@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stylish-haskell = {
+        "stylish-haskell" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          stylish-haskell = {
+          "stylish-haskell" = {
             depends  = [
               hsPkgs.stylish-haskell
               hsPkgs.strict
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          stylish-haskell-tests = {
+          "stylish-haskell-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.test-framework

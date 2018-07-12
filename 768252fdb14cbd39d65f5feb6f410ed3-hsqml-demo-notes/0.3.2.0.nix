@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsqml-notes = {
+          "hsqml-notes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

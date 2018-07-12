@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openweathermap = {
+        "openweathermap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          openweathermap = {
+          "openweathermap" = {
             depends  = pkgs.lib.optionals _flags.cmd [
               hsPkgs.base
               hsPkgs.directory

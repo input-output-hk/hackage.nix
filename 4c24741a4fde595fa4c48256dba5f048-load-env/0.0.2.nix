@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        load-env = {
+        "load-env" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.load-env

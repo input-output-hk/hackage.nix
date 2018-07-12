@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        drinkery = {
+        "drinkery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           ];
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.drinkery

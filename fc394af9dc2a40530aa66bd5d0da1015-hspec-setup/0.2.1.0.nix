@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-setup = {
+        "hspec-setup" = {
           depends  = [
             hsPkgs.ansi-wl-pprint
             hsPkgs.pretty
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          hspec-setup = {
+          "hspec-setup" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.pretty
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.pretty

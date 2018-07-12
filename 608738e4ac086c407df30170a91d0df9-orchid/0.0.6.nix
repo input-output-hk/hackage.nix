@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        orchid = {
+        "orchid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

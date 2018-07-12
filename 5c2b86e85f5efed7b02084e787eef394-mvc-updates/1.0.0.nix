@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mvc-updates = {
+        "mvc-updates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

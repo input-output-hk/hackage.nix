@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-mail-filters = {
+        "google-mail-filters" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.google-mail-filters

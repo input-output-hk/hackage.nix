@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        usb = {
+        "usb" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bindings-libusb

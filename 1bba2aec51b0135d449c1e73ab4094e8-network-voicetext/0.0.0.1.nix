@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-voicetext = {
+        "network-voicetext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client-tls

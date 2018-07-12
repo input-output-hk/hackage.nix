@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdaya-bus = {
+        "lambdaya-bus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clash-prelude

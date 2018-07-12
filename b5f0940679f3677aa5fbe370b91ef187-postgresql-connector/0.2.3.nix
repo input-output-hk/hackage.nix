@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-connector = {
+        "postgresql-connector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

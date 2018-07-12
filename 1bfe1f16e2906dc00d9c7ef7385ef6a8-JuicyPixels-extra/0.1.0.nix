@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        JuicyPixels-extra = {
+        "JuicyPixels-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JuicyPixels
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.JuicyPixels

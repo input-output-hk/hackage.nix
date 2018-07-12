@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stackage-curator = {
+        "stackage-curator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -78,7 +78,7 @@ let
           ];
         };
         exes = {
-          stackage-curator = {
+          "stackage-curator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stackage-curator
@@ -93,7 +93,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stackage-curator

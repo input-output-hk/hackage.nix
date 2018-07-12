@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gh-labeler = {
+          "gh-labeler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

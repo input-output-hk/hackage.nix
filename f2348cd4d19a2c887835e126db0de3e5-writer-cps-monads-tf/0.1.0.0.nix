@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        writer-cps-monads-tf = {
+        "writer-cps-monads-tf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

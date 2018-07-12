@@ -27,7 +27,7 @@ let
         buildType = "Custom";
       };
       components = {
-        java-bridge = {
+        "java-bridge" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.directory
@@ -47,7 +47,7 @@ let
           frameworks = pkgs.lib.optionals system.isOsx (pkgs.lib.optional _flags.osx_gui pkgs.Cocoa ++ pkgs.lib.optional _flags.osx_framework pkgs.JavaVM);
         };
         exes = {
-          j2hs = {
+          "j2hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.java-bridge
@@ -64,7 +64,7 @@ let
               hsPkgs.hint
             ];
           };
-          h2js = {
+          "h2js" = {
             depends  = [
               hsPkgs.base
               hsPkgs.java-bridge
@@ -81,13 +81,13 @@ let
               hsPkgs.hint
             ];
           };
-          java-calculator = {
+          "java-calculator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.java-bridge
             ];
           };
-          java-system-properties = {
+          "java-system-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.java-bridge

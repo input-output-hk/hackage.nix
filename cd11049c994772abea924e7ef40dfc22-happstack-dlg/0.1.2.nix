@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-dlg = {
+        "happstack-dlg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-lens = {
+        "time-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-lens-light

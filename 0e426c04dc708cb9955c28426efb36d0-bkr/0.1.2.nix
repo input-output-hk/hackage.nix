@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bkr = {
+        "bkr" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.HDBC-sqlite3
@@ -54,7 +54,7 @@ let
           ];
         };
         exes = {
-          bkr = {
+          "bkr" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.HDBC-sqlite3

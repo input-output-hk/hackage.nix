@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hscolour = {
+        "hscolour" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          HsColour = {
+          "HsColour" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

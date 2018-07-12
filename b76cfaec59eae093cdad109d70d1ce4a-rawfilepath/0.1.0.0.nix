@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rawfilepath = {
+        "rawfilepath" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.unix
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          RawFilePath-test = {
+          "RawFilePath-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rawfilepath

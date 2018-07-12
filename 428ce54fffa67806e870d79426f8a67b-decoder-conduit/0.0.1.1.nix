@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        decoder-conduit = {
+        "decoder-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

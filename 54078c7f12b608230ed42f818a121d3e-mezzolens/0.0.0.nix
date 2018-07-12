@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mezzolens = {
+        "mezzolens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

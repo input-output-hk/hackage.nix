@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Xec = {
+          "Xec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NanoProlog = {
+        "NanoProlog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uu-parsinglib
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          nano-prolog = {
+          "nano-prolog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.NanoProlog

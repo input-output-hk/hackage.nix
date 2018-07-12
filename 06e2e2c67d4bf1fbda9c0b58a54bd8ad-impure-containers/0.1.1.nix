@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        impure-containers = {
+        "impure-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          impure-containers-test = {
+          "impure-containers-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.impure-containers

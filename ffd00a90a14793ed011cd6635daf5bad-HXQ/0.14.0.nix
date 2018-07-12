@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HXQ = {
+        "HXQ" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.haskell98
@@ -44,7 +44,7 @@ let
             ]);
         };
         exes = {
-          xquery = {
+          "xquery" = {
             depends  = (if compiler.isGhc && compiler.version.lt "6.10"
               then [ hsPkgs.readline ]
               else [

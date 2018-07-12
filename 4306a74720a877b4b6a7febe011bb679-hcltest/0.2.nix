@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hcltest = {
+        "hcltest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

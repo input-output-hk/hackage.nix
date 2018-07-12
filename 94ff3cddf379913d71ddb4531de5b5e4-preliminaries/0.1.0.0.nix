@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        preliminaries = {
+        "preliminaries" = {
           depends  = [
             hsPkgs.classy-prelude-conduit
             hsPkgs.abstract-par

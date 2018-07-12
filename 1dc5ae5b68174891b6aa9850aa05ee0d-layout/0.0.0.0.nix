@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        layout = {
+        "layout" = {
           depends  = [
             hsPkgs.base
             hsPkgs.convertible

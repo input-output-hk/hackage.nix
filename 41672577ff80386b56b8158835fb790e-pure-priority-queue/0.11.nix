@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        pure-priority-queue = {
+        "pure-priority-queue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.test-framework-quickcheck2

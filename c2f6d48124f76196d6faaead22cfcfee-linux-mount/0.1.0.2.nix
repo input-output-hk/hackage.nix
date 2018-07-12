@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linux-mount = {
+        "linux-mount" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

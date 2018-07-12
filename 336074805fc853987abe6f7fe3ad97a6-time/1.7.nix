@@ -20,20 +20,20 @@ let
         buildType = "Configure";
       };
       components = {
-        time = {
+        "time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
         };
         tests = {
-          ShowDefaultTZAbbreviations = {
+          "ShowDefaultTZAbbreviations" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskore-synthesizer = {
+        "haskore-synthesizer" = {
           depends  = [
             hsPkgs.synthesizer
             hsPkgs.haskore
@@ -38,6 +38,6 @@ let
             ]
             else [ hsPkgs.base ]);
         };
-        exes = { rendersong = {}; };
+        exes = { "rendersong" = {}; };
       };
     }

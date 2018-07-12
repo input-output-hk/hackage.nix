@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mida = {
+        "mida" = {
           depends  = [
             hsPkgs.HCodecs
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          mida = {
+          "mida" = {
             depends  = [
               hsPkgs.HCodecs
               hsPkgs.base
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HCodecs
               hsPkgs.QuickCheck

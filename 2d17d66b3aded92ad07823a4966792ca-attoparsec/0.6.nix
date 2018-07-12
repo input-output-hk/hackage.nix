@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec = {
+        "attoparsec" = {
           depends  = ([
             hsPkgs.bytestring-lexing
           ] ++ (if _flags.split-base

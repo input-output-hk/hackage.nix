@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        octopus = {
+        "octopus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          octopus = {
+          "octopus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

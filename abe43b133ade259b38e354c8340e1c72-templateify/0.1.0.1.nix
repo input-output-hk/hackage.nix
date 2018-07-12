@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          templateify = {
+          "templateify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tagsoup

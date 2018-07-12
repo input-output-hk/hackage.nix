@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-simplelocalnet = {
+        "distributed-process-simplelocalnet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          TestSimpleLocalnet = {
+          "TestSimpleLocalnet" = {
             depends  = pkgs.lib.optionals _flags.build-example [
               hsPkgs.base
               hsPkgs.bytestring

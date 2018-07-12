@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gravatar = {
+        "gravatar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

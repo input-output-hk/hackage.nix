@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-bool = {
+        "monad-bool" = {
           depends  = [ hsPkgs.base ];
         };
       };

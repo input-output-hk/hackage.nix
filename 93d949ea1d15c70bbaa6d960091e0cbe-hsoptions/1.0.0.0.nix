@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsoptions = {
+        "hsoptions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,19 +31,19 @@ let
           ];
         };
         exes = {
-          SimpleFlag = {
+          "SimpleFlag" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsoptions
             ];
           };
-          ComplexFlag = {
+          "ComplexFlag" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsoptions
             ];
           };
-          DependentDefaultsDemo = {
+          "DependentDefaultsDemo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsoptions
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsoptions

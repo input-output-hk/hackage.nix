@@ -20,14 +20,14 @@ let
         buildType = "Custom";
       };
       components = {
-        uuagc = {
+        "uuagc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
           ];
         };
         exes = {
-          uuagc = {
+          "uuagc" = {
             depends  = [
               hsPkgs.uuagc-bootstrap
               hsPkgs.uuagc-cabal

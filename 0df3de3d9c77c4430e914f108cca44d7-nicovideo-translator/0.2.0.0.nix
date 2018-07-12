@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nicovideo-translator = {
+        "nicovideo-translator" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.async
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          nicovideo-translator = {
+          "nicovideo-translator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nicovideo-translator

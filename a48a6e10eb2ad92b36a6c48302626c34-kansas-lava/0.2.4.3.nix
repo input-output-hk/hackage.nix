@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kansas-lava = {
+        "kansas-lava" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dotgen
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          kansas-lava-unittest = {
+          "kansas-lava-unittest" = {
             depends  = if _flags.unit || _flags.all
               then [
                 hsPkgs.base
@@ -67,7 +67,7 @@ let
               ]
               else [ hsPkgs.base ];
           };
-          kansas-lava-testreport = {
+          "kansas-lava-testreport" = {
             depends  = if _flags.unit || _flags.all
               then [
                 hsPkgs.base
@@ -89,7 +89,7 @@ let
               ]
               else [ hsPkgs.base ];
           };
-          kansas-lava-tbf2vcd = {
+          "kansas-lava-tbf2vcd" = {
             depends  = if _flags.tools || _flags.all
               then [
                 hsPkgs.base

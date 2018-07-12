@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stackage-upload = {
+        "stackage-upload" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          stackage-upload = {
+          "stackage-upload" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stackage-upload

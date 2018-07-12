@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tar-conduit = {
+        "tar-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

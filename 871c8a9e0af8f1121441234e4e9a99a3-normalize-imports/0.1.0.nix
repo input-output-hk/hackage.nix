@@ -21,12 +21,12 @@ let
       };
       components = {
         exes = {
-          normalize-imports = {
+          "normalize-imports" = {
             depends  = [ hsPkgs.base ];
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

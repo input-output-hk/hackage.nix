@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HLearn-classification = {
+        "HLearn-classification" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HLearn-algebra
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          HLearn-Classification-Demo = {
+          "HLearn-Classification-Demo" = {
             depends  = [
               hsPkgs.HLearn-algebra
               hsPkgs.ConstraintKinds

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libnotify = {
+        "libnotify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

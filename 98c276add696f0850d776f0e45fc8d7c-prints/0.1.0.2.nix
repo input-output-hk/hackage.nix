@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prints = {
+        "prints" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hscolour

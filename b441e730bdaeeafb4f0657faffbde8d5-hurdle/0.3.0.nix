@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hurdle = {
+          "hurdle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

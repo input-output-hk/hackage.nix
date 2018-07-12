@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PasswordGenerator = {
+        "PasswordGenerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

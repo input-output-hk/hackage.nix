@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-go = {
+        "language-go" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

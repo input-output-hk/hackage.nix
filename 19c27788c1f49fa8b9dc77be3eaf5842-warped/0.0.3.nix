@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warped = {
+        "warped" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          shake-wolf = {
+          "shake-wolf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shakers

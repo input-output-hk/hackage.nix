@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        editor-open = {
+        "editor-open" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          editor-open-test_yaml_file = {
+          "editor-open-test_yaml_file" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        silently = {
+        "silently" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec-specific = {
+          "spec-specific" = {
             depends  = [
               hsPkgs.base
               hsPkgs.silently
@@ -37,7 +37,7 @@ let
               hsPkgs.temporary
             ];
           };
-          spec-generic = {
+          "spec-generic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        string-similarity = {
+        "string-similarity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.suffixtree
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          bench-lcs = {
+          "bench-lcs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

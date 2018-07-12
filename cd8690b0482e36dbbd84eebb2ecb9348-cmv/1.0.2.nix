@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmv = {
+        "cmv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          CMCV = {
+          "CMCV" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -66,7 +66,7 @@ let
               hsPkgs.StockholmAlignment
             ];
           };
-          CMV = {
+          "CMV" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -87,7 +87,7 @@ let
               hsPkgs.StockholmAlignment
             ];
           };
-          CMCWStoCMCV = {
+          "CMCWStoCMCV" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -107,28 +107,7 @@ let
               hsPkgs.filepath
             ];
           };
-          CMCtoHMMC = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.cmdargs
-              hsPkgs.BiobaseInfernal
-              hsPkgs.BiobaseXNA
-              hsPkgs.diagrams-lib
-              hsPkgs.parsec
-              hsPkgs.colour
-              hsPkgs.containers
-              hsPkgs.bytestring
-              hsPkgs.template-haskell
-              hsPkgs.text
-              hsPkgs.vector
-              hsPkgs.directory
-              hsPkgs.cmv
-              hsPkgs.either-unwrap
-              hsPkgs.filepath
-              hsPkgs.BioHMM
-            ];
-          };
-          HMMCtoCMC = {
+          "CMCtoHMMC" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -149,7 +128,28 @@ let
               hsPkgs.BioHMM
             ];
           };
-          CMVJson = {
+          "HMMCtoCMC" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.cmdargs
+              hsPkgs.BiobaseInfernal
+              hsPkgs.BiobaseXNA
+              hsPkgs.diagrams-lib
+              hsPkgs.parsec
+              hsPkgs.colour
+              hsPkgs.containers
+              hsPkgs.bytestring
+              hsPkgs.template-haskell
+              hsPkgs.text
+              hsPkgs.vector
+              hsPkgs.directory
+              hsPkgs.cmv
+              hsPkgs.either-unwrap
+              hsPkgs.filepath
+              hsPkgs.BioHMM
+            ];
+          };
+          "CMVJson" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -167,7 +167,7 @@ let
               hsPkgs.aeson
             ];
           };
-          HMMCV = {
+          "HMMCV" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -186,7 +186,7 @@ let
               hsPkgs.StockholmAlignment
             ];
           };
-          HMMV = {
+          "HMMV" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

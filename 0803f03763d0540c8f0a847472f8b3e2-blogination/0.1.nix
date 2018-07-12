@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blogination = {
+        "blogination" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          blogination = {
+          "blogination" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ConfigFile

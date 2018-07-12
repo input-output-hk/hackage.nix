@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fitspec = {
+        "fitspec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.leancheck
@@ -29,28 +29,28 @@ let
           ];
         };
         tests = {
-          mutate = {
+          "mutate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
               hsPkgs.fitspec
             ];
           };
-          showmutable = {
+          "showmutable" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
               hsPkgs.fitspec
             ];
           };
-          derive = {
+          "derive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
               hsPkgs.fitspec
             ];
           };
-          utils = {
+          "utils" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -59,80 +59,80 @@ let
           };
         };
         benchmarks = {
-          avltrees = {
+          "avltrees" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec
             ];
           };
-          bools = {
+          "bools" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec
             ];
           };
-          digraphs = {
+          "digraphs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec
             ];
           };
-          heaps = {
+          "heaps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec
             ];
           };
-          id = {
+          "id" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec
             ];
           };
-          list = {
+          "list" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec
             ];
           };
-          mergeheaps = {
+          "mergeheaps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec
             ];
           };
-          pretty = {
+          "pretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec
               hsPkgs.pretty
             ];
           };
-          sets = {
+          "sets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec
             ];
           };
-          setsofsets = {
+          "setsofsets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec
             ];
           };
-          sieve = {
+          "sieve" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec
             ];
           };
-          sorting = {
+          "sorting" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec
             ];
           };
-          spring = {
+          "spring" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fitspec

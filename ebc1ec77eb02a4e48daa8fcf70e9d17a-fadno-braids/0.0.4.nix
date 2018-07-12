@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fadno-braids = {
+        "fadno-braids" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bond-haskell-compiler = {
+        "bond-haskell-compiler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bond
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hbc = {
+          "hbc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          bond-haskell-compiler-test = {
+          "bond-haskell-compiler-test" = {
             depends  = [ hsPkgs.base ];
           };
         };

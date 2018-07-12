@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        highlighter2 = {
+        "highlighter2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          highlighter = {
+          "highlighter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html

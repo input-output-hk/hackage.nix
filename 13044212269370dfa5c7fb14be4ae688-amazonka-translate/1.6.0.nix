@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-translate = {
+        "amazonka-translate" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-translate-test = {
+          "amazonka-translate-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

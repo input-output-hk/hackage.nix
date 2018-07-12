@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cql-io = {
+        "cql-io" = {
           depends  = [
             hsPkgs.async
             hsPkgs.auto-update

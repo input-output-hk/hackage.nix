@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GenussFold = {
+        "GenussFold" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ADPfusion
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          GenussFold = {
+          "GenussFold" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

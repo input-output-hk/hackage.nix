@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pontarius-mediaserver-test = {
+          "pontarius-mediaserver-test" = {
             depends  = [
               hsPkgs.HLogger
               hsPkgs.pontarius-xmpp

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-state = {
+        "json-state" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty

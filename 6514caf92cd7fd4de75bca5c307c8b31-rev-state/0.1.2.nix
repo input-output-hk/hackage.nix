@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        rev-state = {
+        "rev-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         tests = {
-          rev-state-test = {
+          "rev-state-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rev-state

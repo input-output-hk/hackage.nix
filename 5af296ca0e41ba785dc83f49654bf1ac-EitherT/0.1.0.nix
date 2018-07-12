@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        EitherT = {
+        "EitherT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

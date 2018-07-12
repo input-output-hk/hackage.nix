@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsparql = {
+        "hsparql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test-hsparql = {
+          "test-hsparql" = {
             depends  = [
               hsPkgs.hsparql
               hsPkgs.rdf4h

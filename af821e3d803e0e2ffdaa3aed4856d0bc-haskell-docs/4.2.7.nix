@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-docs = {
+        "haskell-docs" = {
           depends  = (((((([
             hsPkgs.Cabal
             hsPkgs.aeson
@@ -50,7 +50,7 @@ let
           ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "7.8.3") hsPkgs.haddock) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.haddock) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.haddock) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8.4") hsPkgs.haddock-api;
         };
         exes = {
-          haskell-docs = {
+          "haskell-docs" = {
             depends  = [
               hsPkgs.text
               hsPkgs.base
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-docs

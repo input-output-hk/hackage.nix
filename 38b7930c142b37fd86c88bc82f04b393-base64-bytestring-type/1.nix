@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        base64-bytestring-type = {
+        "base64-bytestring-type" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.binary
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.5") hsPkgs.ghc-prim;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

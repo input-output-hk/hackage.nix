@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stompl = {
+        "stompl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

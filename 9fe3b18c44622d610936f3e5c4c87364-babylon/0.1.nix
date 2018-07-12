@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          babylon = {
+          "babylon" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

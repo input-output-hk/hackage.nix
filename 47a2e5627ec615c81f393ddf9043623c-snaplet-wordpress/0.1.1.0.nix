@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-wordpress = {
+        "snaplet-wordpress" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -52,7 +52,7 @@ let
           ];
         };
         tests = {
-          test-snaplet-wordpress = {
+          "test-snaplet-wordpress" = {
             depends  = [
               hsPkgs.base
               hsPkgs.heist

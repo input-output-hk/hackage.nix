@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        her-lexer-parsec = {
+        "her-lexer-parsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

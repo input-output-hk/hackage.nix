@@ -24,14 +24,14 @@ let
         buildType = "Simple";
       };
       components = {
-        static-text = {
+        "static-text" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.template-haskell
           ] ++ pkgs.lib.optional _flags.bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.text hsPkgs.text) ++ pkgs.lib.optional _flags.vector hsPkgs.vector;
         };
         tests = {
-          static-text-doctests = {
+          "static-text-doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -39,7 +39,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          static-text-example = {
+          "static-text-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

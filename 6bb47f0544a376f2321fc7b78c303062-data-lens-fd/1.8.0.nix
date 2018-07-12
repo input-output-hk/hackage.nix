@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-lens-fd = {
+        "data-lens-fd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

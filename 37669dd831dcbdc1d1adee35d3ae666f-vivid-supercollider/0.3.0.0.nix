@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vivid-supercollider = {
+        "vivid-supercollider" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vivid-osc
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          vivid-sc-tests = {
+          "vivid-sc-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vivid-supercollider

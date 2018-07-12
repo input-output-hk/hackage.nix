@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alsa-midi = {
+        "alsa-midi" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base
@@ -40,13 +40,13 @@ let
           libs = [ pkgs.asound ];
         };
         exes = {
-          playnote = {
+          "playnote" = {
             libs = [ pkgs.asound ];
           };
-          playmidi = {
+          "playmidi" = {
             libs = [ pkgs.asound ];
           };
-          mididump = {
+          "mididump" = {
             libs = [ pkgs.asound ];
           };
         };

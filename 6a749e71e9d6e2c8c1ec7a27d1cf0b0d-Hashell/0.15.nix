@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hashell = {
+          "hashell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

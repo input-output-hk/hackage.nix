@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-transduce = {
+        "pipes-transduce" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.free
@@ -57,7 +57,7 @@ let
               hsPkgs.foldl
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geniplate-mirror = {
+        "geniplate-mirror" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

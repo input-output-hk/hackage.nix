@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        picologic = {
+        "picologic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.picosat
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          picologic = {
+          "picologic" = {
             depends  = pkgs.lib.optionals _flags.shell [
               hsPkgs.base
               hsPkgs.picosat
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          picologic-quickcheck = {
+          "picologic-quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -58,7 +58,7 @@ let
               hsPkgs.picologic
             ];
           };
-          pretty-print-test = {
+          "pretty-print-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.picologic

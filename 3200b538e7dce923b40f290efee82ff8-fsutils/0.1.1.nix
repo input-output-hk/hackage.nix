@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fsutils = {
+        "fsutils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

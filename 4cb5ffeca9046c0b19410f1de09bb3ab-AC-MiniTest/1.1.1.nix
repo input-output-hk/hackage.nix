@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AC-MiniTest = {
+        "AC-MiniTest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

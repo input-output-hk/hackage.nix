@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pptable = {
+        "pptable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          pptable-test = {
+          "pptable-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pptable

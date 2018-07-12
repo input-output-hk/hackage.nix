@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cloudwatch = {
+        "amazonka-cloudwatch" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

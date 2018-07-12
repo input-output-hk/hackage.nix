@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal = {
+        "cereal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.fail;
         };
         tests = {
-          test-cereal = {
+          "test-cereal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

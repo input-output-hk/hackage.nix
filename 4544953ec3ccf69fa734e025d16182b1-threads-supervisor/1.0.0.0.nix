@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        threads-supervisor = {
+        "threads-supervisor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          threads-supervisor-tests = {
+          "threads-supervisor-tests" = {
             depends  = [
               hsPkgs.threads-supervisor
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-redson = {
+        "snaplet-redson" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

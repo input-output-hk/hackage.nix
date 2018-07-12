@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GoogleSB = {
+        "GoogleSB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

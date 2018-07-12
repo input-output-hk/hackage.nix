@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        seal-module = {
+        "seal-module" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JunkDB-driver-hashtables = {
+        "JunkDB-driver-hashtables" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JunkDB

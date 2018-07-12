@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          intero = {
+          "intero" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          store-test = {
+          "store-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

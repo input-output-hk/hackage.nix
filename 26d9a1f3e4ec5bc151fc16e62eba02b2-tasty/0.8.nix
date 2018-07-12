@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty = {
+        "tasty" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.stm

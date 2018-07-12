@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sequent-core = {
+        "sequent-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -31,26 +31,26 @@ let
           ];
         };
         exes = {
-          DumpExpl = {
+          "DumpExpl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sequent-core
             ];
           };
-          SpecConstrExpl = {
+          "SpecConstrExpl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sequent-core
               hsPkgs.containers
             ];
           };
-          SimplExpl = {
+          "SimplExpl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sequent-core
             ];
           };
-          CasesExpl = {
+          "CasesExpl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sequent-core

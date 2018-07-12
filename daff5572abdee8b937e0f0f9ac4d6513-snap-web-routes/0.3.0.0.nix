@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-web-routes = {
+        "snap-web-routes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.heist

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        async-combinators = {
+        "async-combinators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          async-combinators-test = {
+          "async-combinators-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async-combinators

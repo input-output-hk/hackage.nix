@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        estimators = {
+        "estimators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

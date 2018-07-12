@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        refcount = {
+        "refcount" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

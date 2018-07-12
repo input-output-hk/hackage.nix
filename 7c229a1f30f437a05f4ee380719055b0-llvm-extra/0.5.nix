@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-extra = {
+        "llvm-extra" = {
           depends  = [
             hsPkgs.llvm-tf
             hsPkgs.tfp
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          tone-llvm = {
+          "tone-llvm" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-extra
               hsPkgs.llvm-tf
@@ -49,7 +49,7 @@ let
               hsPkgs.base
             ];
           };
-          prepare-intrinsics = {
+          "prepare-intrinsics" = {
             depends  = pkgs.lib.optionals _flags.buildtools [
               hsPkgs.parsec
               hsPkgs.containers

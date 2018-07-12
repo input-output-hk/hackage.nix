@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reasonable-operational = {
+        "reasonable-operational" = {
           depends  = [ hsPkgs.base ];
         };
       };

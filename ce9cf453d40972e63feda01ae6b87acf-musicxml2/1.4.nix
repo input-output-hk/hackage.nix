@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        musicxml2 = {
+        "musicxml2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

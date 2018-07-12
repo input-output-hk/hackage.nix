@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transformers-compat = {
+        "transformers-compat" = {
           depends  = [ hsPkgs.base ] ++ [
             hsPkgs.transformers
           ];

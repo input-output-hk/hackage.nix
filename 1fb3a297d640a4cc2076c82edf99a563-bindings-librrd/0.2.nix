@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-librrd = {
+        "bindings-librrd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

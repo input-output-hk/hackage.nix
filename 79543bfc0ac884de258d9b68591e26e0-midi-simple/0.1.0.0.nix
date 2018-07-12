@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        midi-simple = {
+        "midi-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          midi-dump = {
+          "midi-dump" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.midi-simple
@@ -39,7 +39,7 @@ let
               hsPkgs.pipes-attoparsec
             ];
           };
-          re-encode = {
+          "re-encode" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.midi-simple
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          midi-tests = {
+          "midi-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.midi-simple
@@ -67,7 +67,7 @@ let
           };
         };
         benchmarks = {
-          midi-bench = {
+          "midi-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.midi-simple

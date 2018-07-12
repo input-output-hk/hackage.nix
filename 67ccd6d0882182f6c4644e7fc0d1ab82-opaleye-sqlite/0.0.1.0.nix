@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opaleye-sqlite = {
+        "opaleye-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base16-bytestring
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -55,7 +55,7 @@ let
               hsPkgs.opaleye-sqlite
             ];
           };
-          tutorial = {
+          "tutorial" = {
             depends  = [
               hsPkgs.base
               hsPkgs.profunctors

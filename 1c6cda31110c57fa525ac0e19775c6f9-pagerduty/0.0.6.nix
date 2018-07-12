@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pagerduty = {
+        "pagerduty" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

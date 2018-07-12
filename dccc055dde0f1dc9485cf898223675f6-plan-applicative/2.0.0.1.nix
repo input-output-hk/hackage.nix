@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plan-applicative = {
+        "plan-applicative" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,13 +32,13 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

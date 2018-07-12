@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-webkit2webextension = {
+        "gi-webkit2webextension" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestringparser-temporary = {
+        "bytestringparser-temporary" = {
           depends  = (if _flags.split-base
             then [ hsPkgs.base ]
             else [

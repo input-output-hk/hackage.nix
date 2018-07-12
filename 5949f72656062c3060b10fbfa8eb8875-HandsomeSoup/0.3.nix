@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HandsomeSoup = {
+        "HandsomeSoup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

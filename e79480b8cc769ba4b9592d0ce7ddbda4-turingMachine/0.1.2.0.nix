@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        turingMachine = {
+        "turingMachine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

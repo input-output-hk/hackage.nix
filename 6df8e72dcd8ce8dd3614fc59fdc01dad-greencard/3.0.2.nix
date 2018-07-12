@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        greencard = {
+        "greencard" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          greencard = {
+          "greencard" = {
             depends  = if _flags.old-base
               then [ hsPkgs.base ]
               else [

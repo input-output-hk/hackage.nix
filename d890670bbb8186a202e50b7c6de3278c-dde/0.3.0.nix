@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dde = {
+        "dde" = {
           depends  = [
             hsPkgs.base
             hsPkgs.free-vector-spaces
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          chimera = {
+          "chimera" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dde
@@ -40,7 +40,7 @@ let
               hsPkgs.vector
             ];
           };
-          mackey-glass = {
+          "mackey-glass" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dde
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          dde-test = {
+          "dde-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dde
@@ -64,7 +64,7 @@ let
           };
         };
         benchmarks = {
-          dde-bench = {
+          "dde-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

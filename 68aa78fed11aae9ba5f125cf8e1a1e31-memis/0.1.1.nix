@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          memis = {
+          "memis" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

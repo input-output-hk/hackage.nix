@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proto-lens-optparse = {
+        "proto-lens-optparse" = {
           depends  = [
             hsPkgs.proto-lens
             hsPkgs.base

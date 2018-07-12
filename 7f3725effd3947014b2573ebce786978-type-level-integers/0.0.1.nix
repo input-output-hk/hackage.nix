@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        type-level-integers = {
+        "type-level-integers" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          type-level-integers-test = {
+          "type-level-integers-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-level-integers

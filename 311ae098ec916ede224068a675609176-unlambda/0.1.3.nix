@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unlambda = {
+        "unlambda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          unlambda = {
+          "unlambda" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

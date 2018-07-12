@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        packer = {
+        "packer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-packer = {
+          "test-packer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

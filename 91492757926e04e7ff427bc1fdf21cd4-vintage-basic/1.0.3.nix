@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          vintbas = {
+          "vintbas" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          test-vintbas = {
+          "test-vintbas" = {
             depends  = [ hsPkgs.base ];
           };
         };

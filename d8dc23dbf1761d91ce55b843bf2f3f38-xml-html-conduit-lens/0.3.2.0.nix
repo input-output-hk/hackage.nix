@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-html-conduit-lens = {
+        "xml-html-conduit-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,13 +32,13 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

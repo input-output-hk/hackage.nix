@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ContextAlgebra = {
+        "ContextAlgebra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MonadCatchIO-mtl = {
+        "MonadCatchIO-mtl" = {
           depends  = [ hsPkgs.mtl ] ++ [
             hsPkgs.base
             hsPkgs.base

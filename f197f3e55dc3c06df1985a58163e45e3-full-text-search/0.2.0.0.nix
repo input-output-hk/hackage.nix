@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        full-text-search = {
+        "full-text-search" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

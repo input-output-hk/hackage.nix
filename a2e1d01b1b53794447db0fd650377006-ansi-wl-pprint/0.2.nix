@@ -23,13 +23,13 @@ let
         buildType = "Simple";
       };
       components = {
-        ansi-wl-pprint = {
+        "ansi-wl-pprint" = {
           depends  = [
             hsPkgs.ansi-terminal
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          ansi-wl-pprint-example = {
+          "ansi-wl-pprint-example" = {
             depends  = [
               hsPkgs.ansi-terminal
             ] ++ [ hsPkgs.base ];

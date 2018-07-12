@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        urldisp-happstack = {
+        "urldisp-happstack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

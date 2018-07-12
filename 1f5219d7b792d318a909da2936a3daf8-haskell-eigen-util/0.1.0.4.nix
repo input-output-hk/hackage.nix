@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-eigen-util = {
+        "haskell-eigen-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.eigen
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          haskell-eigen-util-test = {
+          "haskell-eigen-util-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-eigen-util

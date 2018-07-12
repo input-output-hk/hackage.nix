@@ -21,14 +21,14 @@ let
       };
       components = {
         exes = {
-          hare-evaluate = {
+          "hare-evaluate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hint
               hsPkgs.filepath
             ];
           };
-          hare = {
+          "hare" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb
@@ -44,7 +44,7 @@ let
               hsPkgs.filepath
             ];
           };
-          hare-client = {
+          "hare-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb

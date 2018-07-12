@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hydrogen-version = {
+        "hydrogen-version" = {
           depends  = [ hsPkgs.base ];
         };
       };

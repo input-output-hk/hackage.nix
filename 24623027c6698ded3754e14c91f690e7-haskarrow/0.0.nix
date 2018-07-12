@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haskarrowPrecompiler = {
+          "haskarrowPrecompiler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

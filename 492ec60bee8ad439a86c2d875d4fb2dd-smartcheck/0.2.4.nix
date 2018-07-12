@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smartcheck = {
+        "smartcheck" = {
           depends  = if _flags.regression-flag
             then [
               hsPkgs.base
@@ -45,7 +45,7 @@ let
             ];
         };
         exes = {
-          sc-qc = {
+          "sc-qc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.smartcheck

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        approx-rand-test = {
+        "approx-rand-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          approx_rand_test = {
+          "approx_rand_test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.approx-rand-test
@@ -56,7 +56,7 @@ let
               then [ hsPkgs.Chart-cairo ]
               else [ hsPkgs.Chart-diagrams ]);
           };
-          approx_rand_test_paired = {
+          "approx_rand_test_paired" = {
             depends  = [
               hsPkgs.base
               hsPkgs.approx-rand-test
@@ -80,7 +80,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

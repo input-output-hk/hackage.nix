@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-laws = {
+        "hspec-laws" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec-laws
@@ -36,7 +36,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          README = {
+          "README" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec-laws

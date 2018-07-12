@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glue-core = {
+        "glue-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.glue-common
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          glue-core-tests = {
+          "glue-core-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.glue-common

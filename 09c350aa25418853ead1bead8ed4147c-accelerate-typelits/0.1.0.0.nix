@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-typelits = {
+        "accelerate-typelits" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.accelerate

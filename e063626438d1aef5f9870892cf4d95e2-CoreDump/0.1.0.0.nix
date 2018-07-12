@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CoreDump = {
+        "CoreDump" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          explore = {
+          "explore" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

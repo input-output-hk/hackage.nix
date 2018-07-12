@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        uniplate = {
+        "uniplate" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

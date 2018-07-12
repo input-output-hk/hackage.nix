@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          only = {
+          "only" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

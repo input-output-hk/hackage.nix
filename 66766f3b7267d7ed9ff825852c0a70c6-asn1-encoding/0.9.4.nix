@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        asn1-encoding = {
+        "asn1-encoding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests-asn1-encoding = {
+          "tests-asn1-encoding" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

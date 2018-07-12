@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGL = {
+        "HGL" = {
           depends  = (if _flags.split-base
             then [
               hsPkgs.base

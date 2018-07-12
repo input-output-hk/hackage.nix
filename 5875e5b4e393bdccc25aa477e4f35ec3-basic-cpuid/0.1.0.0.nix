@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        basic-cpuid = {
+        "basic-cpuid" = {
           depends  = [ hsPkgs.base ];
         };
       };

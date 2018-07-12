@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Mechs = {
+        "Mechs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.machines

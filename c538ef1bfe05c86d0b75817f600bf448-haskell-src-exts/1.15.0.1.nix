@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskell-src-exts = {
+        "haskell-src-exts" = {
           depends  = [
             hsPkgs.array
             hsPkgs.pretty
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

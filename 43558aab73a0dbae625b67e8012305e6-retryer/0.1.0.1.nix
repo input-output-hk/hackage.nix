@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          retryer = {
+          "retryer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

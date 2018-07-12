@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-spectrum = {
+        "gogol-spectrum" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

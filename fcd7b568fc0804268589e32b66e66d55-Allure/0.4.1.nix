@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          Allure = {
+          "Allure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

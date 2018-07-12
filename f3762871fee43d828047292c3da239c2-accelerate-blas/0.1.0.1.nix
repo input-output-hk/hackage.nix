@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-blas = {
+        "accelerate-blas" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.accelerate
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          accelerate-blas-test = {
+          "accelerate-blas-test" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.accelerate
@@ -57,7 +57,7 @@ let
           };
         };
         benchmarks = {
-          accelerate-blas-bench = {
+          "accelerate-blas-bench" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.accelerate

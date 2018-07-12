@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        modsplit = {
+        "modsplit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          modsplit = {
+          "modsplit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

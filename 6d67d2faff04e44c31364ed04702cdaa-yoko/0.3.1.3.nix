@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yoko = {
+        "yoko" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

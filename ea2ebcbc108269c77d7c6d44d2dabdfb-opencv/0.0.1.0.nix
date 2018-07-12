@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        opencv = {
+        "opencv" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          doc-images-opencv = {
+          "doc-images-opencv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -68,7 +68,7 @@ let
               hsPkgs.vector
             ];
           };
-          test-opencv = {
+          "test-opencv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -86,7 +86,7 @@ let
           };
         };
         benchmarks = {
-          bench-opencv = {
+          "bench-opencv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

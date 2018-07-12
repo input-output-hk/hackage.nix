@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        async-timer = {
+        "async-timer" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          async-timer-test = {
+          "async-timer-test" = {
             depends  = [
               hsPkgs.async
               hsPkgs.async-timer

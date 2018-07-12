@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-iot-jobs-dataplane = {
+        "amazonka-iot-jobs-dataplane" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-iot-jobs-dataplane-test = {
+          "amazonka-iot-jobs-dataplane-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

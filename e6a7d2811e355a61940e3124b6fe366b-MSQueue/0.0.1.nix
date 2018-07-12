@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MSQueue = {
+        "MSQueue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

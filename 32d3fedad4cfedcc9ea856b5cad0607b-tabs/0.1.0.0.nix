@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tabs = {
+        "tabs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagged
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          tabs = {
+          "tabs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tagged

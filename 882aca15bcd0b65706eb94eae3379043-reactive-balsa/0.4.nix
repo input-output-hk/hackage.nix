@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-balsa = {
+        "reactive-balsa" = {
           depends  = [
             hsPkgs.reactive-midyim
             hsPkgs.reactive-banana-bunch

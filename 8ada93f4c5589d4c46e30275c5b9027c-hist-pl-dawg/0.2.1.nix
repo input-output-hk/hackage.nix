@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hist-pl-dawg = {
+        "hist-pl-dawg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

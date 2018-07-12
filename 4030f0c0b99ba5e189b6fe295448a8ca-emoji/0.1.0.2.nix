@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        emoji = {
+        "emoji" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          emoji-example = {
+          "emoji-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.emoji

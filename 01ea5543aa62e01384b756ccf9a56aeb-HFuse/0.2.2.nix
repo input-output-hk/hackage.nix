@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HFuse = {
+        "HFuse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

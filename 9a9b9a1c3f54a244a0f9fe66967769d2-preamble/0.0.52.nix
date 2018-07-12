@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        preamble = {
+        "preamble" = {
           depends  = [
             hsPkgs.MonadRandom
             hsPkgs.aeson
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          shake-preamble = {
+          "shake-preamble" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shakers

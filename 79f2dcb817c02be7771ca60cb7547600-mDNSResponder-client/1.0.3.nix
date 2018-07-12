@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mDNSResponder-client = {
+        "mDNSResponder-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.mDNSResponder-client
               hsPkgs.base

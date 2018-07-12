@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-c = {
+        "language-c" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.array
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          language-c-harness = {
+          "language-c-harness" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-c

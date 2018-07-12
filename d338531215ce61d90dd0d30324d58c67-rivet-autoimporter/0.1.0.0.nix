@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rivet-autoimporter = {
+          "rivet-autoimporter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

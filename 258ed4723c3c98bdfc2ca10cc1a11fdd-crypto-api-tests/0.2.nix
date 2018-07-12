@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-api-tests = {
+        "crypto-api-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.test-framework-quickcheck2

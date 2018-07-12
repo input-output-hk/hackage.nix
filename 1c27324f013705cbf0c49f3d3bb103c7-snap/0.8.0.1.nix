@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap = {
+        "snap" = {
           depends  = ([
             hsPkgs.MonadCatchIO-transformers
             hsPkgs.aeson
@@ -63,7 +63,7 @@ let
           ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          snap = {
+          "snap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

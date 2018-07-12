@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        full-sessions = {
+        "full-sessions" = {
           depends  = [ hsPkgs.ghc ] ++ [
             hsPkgs.base
             hsPkgs.base

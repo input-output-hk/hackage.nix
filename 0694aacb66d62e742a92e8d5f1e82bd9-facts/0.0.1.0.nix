@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        facts = {
+        "facts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

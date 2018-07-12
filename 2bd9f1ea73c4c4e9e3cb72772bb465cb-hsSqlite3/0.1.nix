@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsSqlite3 = {
+        "hsSqlite3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string

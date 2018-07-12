@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cinvoke = {
+        "cinvoke" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

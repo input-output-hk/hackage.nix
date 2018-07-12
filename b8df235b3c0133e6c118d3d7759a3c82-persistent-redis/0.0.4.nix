@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-redis = {
+        "persistent-redis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hedis
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          basic = {
+          "basic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedis

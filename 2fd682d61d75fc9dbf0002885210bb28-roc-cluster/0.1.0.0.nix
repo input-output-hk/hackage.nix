@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        roc-cluster = {
+        "roc-cluster" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
           ];
         };
         tests = {
-          roc-cluster-test = {
+          "roc-cluster-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.roc-cluster

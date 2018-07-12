@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        impossible = {
+        "impossible" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

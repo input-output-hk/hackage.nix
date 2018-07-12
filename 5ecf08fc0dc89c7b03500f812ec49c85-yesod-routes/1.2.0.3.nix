@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-routes = {
+        "yesod-routes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-routes

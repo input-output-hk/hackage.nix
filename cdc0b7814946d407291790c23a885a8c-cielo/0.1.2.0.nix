@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cielo = {
+        "cielo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

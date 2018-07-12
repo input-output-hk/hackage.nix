@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atmos-dimensional-tf = {
+        "atmos-dimensional-tf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.atmos

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stutter = {
+        "stutter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          stutter = {
+          "stutter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          stutter-test = {
+          "stutter-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

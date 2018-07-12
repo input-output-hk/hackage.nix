@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        data-extend-generic = {
+        "data-extend-generic" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          data-extend-generic-test = {
+          "data-extend-generic-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-extend-generic

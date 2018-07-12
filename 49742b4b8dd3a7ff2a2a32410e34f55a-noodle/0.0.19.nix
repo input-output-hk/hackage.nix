@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        noodle = {
+        "noodle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          noodle = {
+          "noodle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -36,7 +36,7 @@ let
               hsPkgs.noodle
             ];
           };
-          noodle-repl = {
+          "noodle-repl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -44,7 +44,7 @@ let
               hsPkgs.noodle
             ];
           };
-          noodle-eval = {
+          "noodle-eval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

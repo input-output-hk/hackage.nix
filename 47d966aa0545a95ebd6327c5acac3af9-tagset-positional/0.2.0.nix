@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagset-positional = {
+        "tagset-positional" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

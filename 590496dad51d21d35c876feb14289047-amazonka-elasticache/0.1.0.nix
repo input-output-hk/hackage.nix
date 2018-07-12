@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-elasticache = {
+        "amazonka-elasticache" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-svg = {
+        "diagrams-svg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

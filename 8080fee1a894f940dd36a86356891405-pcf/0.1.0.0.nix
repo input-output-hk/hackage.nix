@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pcf = {
+        "pcf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bound

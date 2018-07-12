@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          swearjure = {
+          "swearjure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

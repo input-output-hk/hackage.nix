@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gelatin-fruity = {
+        "gelatin-fruity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gelatin

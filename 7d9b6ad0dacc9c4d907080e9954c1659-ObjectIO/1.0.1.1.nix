@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ObjectIO = {
+        "ObjectIO" = {
           libs = [
             pkgs.user32
             pkgs.gdi32

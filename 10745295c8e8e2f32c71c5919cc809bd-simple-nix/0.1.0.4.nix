@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-nix = {
+        "simple-nix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-prelude

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        non-empty-text = {
+        "non-empty-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.Glob
               hsPkgs.base
@@ -35,7 +35,7 @@ let
               hsPkgs.text
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

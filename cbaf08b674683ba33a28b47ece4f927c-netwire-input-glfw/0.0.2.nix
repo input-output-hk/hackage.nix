@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netwire-input-glfw = {
+        "netwire-input-glfw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.netwire-input

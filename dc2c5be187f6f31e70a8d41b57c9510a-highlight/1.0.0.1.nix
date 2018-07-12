@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        highlight = {
+        "highlight" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -49,13 +49,13 @@ let
             else [ hsPkgs.unix ]);
         };
         exes = {
-          highlight = {
+          "highlight" = {
             depends  = [
               hsPkgs.base
               hsPkgs.highlight
             ];
           };
-          hrep = {
+          "hrep" = {
             depends  = [
               hsPkgs.base
               hsPkgs.highlight
@@ -63,14 +63,14 @@ let
           };
         };
         tests = {
-          highlight-doctest = {
+          "highlight-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.QuickCheck
             ];
           };
-          highlight-test = {
+          "highlight-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -90,7 +90,7 @@ let
           };
         };
         benchmarks = {
-          highlight-bench = {
+          "highlight-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

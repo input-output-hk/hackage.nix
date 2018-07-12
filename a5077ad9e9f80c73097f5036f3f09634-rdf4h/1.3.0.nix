@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rdf4h = {
+        "rdf4h" = {
           depends  = (([
             hsPkgs.parsec
             hsPkgs.HTTP
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          rdf4h = {
+          "rdf4h" = {
             depends  = (([
               hsPkgs.parsec
               hsPkgs.HTTP
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          test-rdf4h = {
+          "test-rdf4h" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.parsec

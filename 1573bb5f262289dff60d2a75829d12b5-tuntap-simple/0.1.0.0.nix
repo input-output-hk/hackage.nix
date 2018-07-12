@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tuntap-simple = {
+        "tuntap-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ioctl

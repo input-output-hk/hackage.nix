@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apportionment = {
+        "apportionment" = {
           depends  = [
             hsPkgs.utility-ht
             hsPkgs.containers

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        woot = {
+        "woot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

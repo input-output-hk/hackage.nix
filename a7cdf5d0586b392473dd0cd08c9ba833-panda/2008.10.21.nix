@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        panda = {
+        "panda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

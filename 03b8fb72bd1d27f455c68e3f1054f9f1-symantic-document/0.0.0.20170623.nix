@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        symantic-document = {
+        "symantic-document" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base

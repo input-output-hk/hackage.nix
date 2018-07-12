@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mongoDB = {
+        "mongoDB" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.mongoDB
               hsPkgs.base
@@ -55,7 +55,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sphinxesc = {
+        "sphinxesc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          sphinxesc = {
+          "sphinxesc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sphinxesc

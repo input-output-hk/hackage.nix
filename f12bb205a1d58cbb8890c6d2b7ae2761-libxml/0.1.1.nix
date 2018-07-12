@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libxml = {
+        "libxml" = {
           depends  = [
             hsPkgs.mtl
           ] ++ (if _flags.small_base

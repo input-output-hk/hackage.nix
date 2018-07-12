@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FirstOrderTheory = {
+        "FirstOrderTheory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

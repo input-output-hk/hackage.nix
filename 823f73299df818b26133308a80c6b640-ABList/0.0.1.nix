@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ABList = {
+        "ABList" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          the-tests = {
+          "the-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

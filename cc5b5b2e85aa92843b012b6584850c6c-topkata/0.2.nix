@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          topkata = {
+          "topkata" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -37,7 +37,7 @@ let
               hsPkgs.ALUT
             ];
           };
-          pdflaby = {
+          "pdflaby" = {
             depends  = pkgs.lib.optionals _flags.pdflaby [
               hsPkgs.base
               hsPkgs.filepath

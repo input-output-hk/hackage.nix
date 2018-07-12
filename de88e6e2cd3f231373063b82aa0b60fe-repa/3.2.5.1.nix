@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa = {
+        "repa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

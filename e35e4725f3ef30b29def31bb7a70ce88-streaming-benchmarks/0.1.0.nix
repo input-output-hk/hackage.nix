@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          makecharts = {
+          "makecharts" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

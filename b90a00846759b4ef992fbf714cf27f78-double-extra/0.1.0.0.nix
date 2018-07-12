@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        double-extra = {
+        "double-extra" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.double-conversion

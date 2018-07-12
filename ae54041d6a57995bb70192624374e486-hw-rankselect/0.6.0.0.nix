@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-rankselect = {
+        "hw-rankselect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hw-balancedparens
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          hw-rankselect-test = {
+          "hw-rankselect-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

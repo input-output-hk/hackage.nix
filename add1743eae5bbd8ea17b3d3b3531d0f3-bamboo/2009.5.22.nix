@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bamboo = {
+        "bamboo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        supplemented = {
+        "supplemented" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.base-prelude
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.supplemented
               hsPkgs.tasty

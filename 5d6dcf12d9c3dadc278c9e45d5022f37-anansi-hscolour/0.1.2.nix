@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        anansi-hscolour = {
+        "anansi-hscolour" = {
           depends  = [
             hsPkgs.anansi
             hsPkgs.base

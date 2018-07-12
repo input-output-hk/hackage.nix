@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tuple-gen = {
+        "tuple-gen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.combinat

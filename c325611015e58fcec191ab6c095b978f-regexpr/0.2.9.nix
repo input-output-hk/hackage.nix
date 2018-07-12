@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regexpr = {
+        "regexpr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-pcap = {
+        "streaming-pcap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          streaming-pcap-test = {
+          "streaming-pcap-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

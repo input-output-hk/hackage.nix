@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pit = {
+        "pit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          pit = {
+          "pit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pit

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memcache-haskell = {
+        "memcache-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          memcache-sample-client = {
+          "memcache-sample-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
               hsPkgs.memcache-haskell
             ];
           };
-          memcache-sample-retrieval = {
+          "memcache-sample-retrieval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -64,7 +64,7 @@ let
           };
         };
         tests = {
-          test-memcache = {
+          "test-memcache" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

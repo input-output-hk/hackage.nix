@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        siggy-chardust = {
+        "siggy-chardust" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          digits = {
+          "digits" = {
             depends  = [
               hsPkgs.base
               hsPkgs.smallcheck
@@ -34,13 +34,13 @@ let
               hsPkgs.tasty-smallcheck
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

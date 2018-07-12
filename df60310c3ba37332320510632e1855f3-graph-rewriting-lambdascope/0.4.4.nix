@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lambdascope = {
+          "lambdascope" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fingertree-psqueue = {
+        "fingertree-psqueue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fingertree

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrent-utilities = {
+        "concurrent-utilities" = {
           depends  = [ hsPkgs.base ];
         };
       };

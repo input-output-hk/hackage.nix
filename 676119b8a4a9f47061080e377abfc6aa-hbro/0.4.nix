@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hbro = {
+          "hbro" = {
             depends  = [
               hsPkgs.base
               hsPkgs.webkit

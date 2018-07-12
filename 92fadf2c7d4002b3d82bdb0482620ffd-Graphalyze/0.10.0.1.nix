@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Graphalyze = {
+        "Graphalyze" = {
           depends  = [
             hsPkgs.base
             hsPkgs.extensible-exceptions

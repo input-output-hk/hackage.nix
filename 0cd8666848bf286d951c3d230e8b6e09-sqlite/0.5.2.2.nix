@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        sqlite = {
+        "sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

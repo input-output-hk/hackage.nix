@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          re-gen-cabals = {
+          "re-gen-cabals" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -36,7 +36,7 @@ let
               hsPkgs.text
             ];
           };
-          re-gen-modules = {
+          "re-gen-modules" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -50,7 +50,7 @@ let
               hsPkgs.text
             ];
           };
-          re-include = {
+          "re-include" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.base
@@ -61,7 +61,7 @@ let
               hsPkgs.text
             ];
           };
-          re-nginx-log-processor = {
+          "re-nginx-log-processor" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.regex-with-pcre
@@ -81,7 +81,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-prep = {
+          "re-prep" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.base
@@ -95,7 +95,7 @@ let
               hsPkgs.text
             ];
           };
-          re-sort-imports = {
+          "re-sort-imports" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.base
@@ -107,7 +107,7 @@ let
               hsPkgs.text
             ];
           };
-          re-tests = {
+          "re-tests" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.regex-with-pcre
@@ -133,7 +133,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial = {
+          "re-tutorial" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -161,7 +161,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial-options = {
+          "re-tutorial-options" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -189,7 +189,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial-replacing = {
+          "re-tutorial-replacing" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -217,7 +217,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial-testbench = {
+          "re-tutorial-testbench" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -245,7 +245,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial-tools = {
+          "re-tutorial-tools" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -275,7 +275,7 @@ let
           };
         };
         tests = {
-          re-gen-cabals-test = {
+          "re-gen-cabals-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -290,7 +290,7 @@ let
               hsPkgs.text
             ];
           };
-          re-gen-modules-test = {
+          "re-gen-modules-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -304,7 +304,7 @@ let
               hsPkgs.text
             ];
           };
-          re-include-test = {
+          "re-include-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.base
@@ -315,7 +315,7 @@ let
               hsPkgs.text
             ];
           };
-          re-nginx-log-processor-test = {
+          "re-nginx-log-processor-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.regex-with-pcre
@@ -335,7 +335,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-prep-test = {
+          "re-prep-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.base
@@ -349,7 +349,7 @@ let
               hsPkgs.text
             ];
           };
-          re-sort-imports-test = {
+          "re-sort-imports-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.base
@@ -361,7 +361,7 @@ let
               hsPkgs.text
             ];
           };
-          re-tests-test = {
+          "re-tests-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.regex-with-pcre
@@ -387,7 +387,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial-test = {
+          "re-tutorial-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -415,7 +415,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial-os-test = {
+          "re-tutorial-os-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -443,7 +443,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial-options-test = {
+          "re-tutorial-options-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -471,7 +471,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial-replacing-test = {
+          "re-tutorial-replacing-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -499,7 +499,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial-testbench-test = {
+          "re-tutorial-testbench-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -527,7 +527,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial-tools-test = {
+          "re-tutorial-tools-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        has-th = {
+        "has-th" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.has

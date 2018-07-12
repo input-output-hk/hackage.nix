@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apns-http2 = {
+        "apns-http2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          apns-http2-example = {
+          "apns-http2-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

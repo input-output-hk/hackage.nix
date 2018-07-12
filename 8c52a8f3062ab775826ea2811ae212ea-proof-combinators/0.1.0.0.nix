@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proof-combinators = {
+        "proof-combinators" = {
           depends  = [ hsPkgs.base ];
         };
       };

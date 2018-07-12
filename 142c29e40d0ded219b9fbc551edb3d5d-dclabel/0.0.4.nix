@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dclabel = {
+        "dclabel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.test-framework

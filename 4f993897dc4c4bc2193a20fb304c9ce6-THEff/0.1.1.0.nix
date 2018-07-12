@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        THEff = {
+        "THEff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

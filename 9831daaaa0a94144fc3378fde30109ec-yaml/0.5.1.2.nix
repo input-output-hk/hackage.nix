@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml = {
+        "yaml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -38,7 +38,7 @@ let
           pkgconfig = pkgs.lib.optional _flags.system-libyaml pkgconfPkgs."yaml-0.1";
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ioref-stable = {
+        "ioref-stable" = {
           depends  = [ hsPkgs.base ];
         };
       };

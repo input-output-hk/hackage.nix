@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kyotocabinet = {
+        "kyotocabinet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal

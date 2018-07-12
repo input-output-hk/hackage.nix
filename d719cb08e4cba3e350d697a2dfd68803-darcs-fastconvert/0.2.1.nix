@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          darcs-fastconvert = {
+          "darcs-fastconvert" = {
             depends  = [
               hsPkgs.darcs
               hsPkgs.hashed-storage

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timerep = {
+        "timerep" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monoid-subclasses
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        modify-fasta = {
+        "modify-fasta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          modify-fasta = {
+          "modify-fasta" = {
             depends  = [
               hsPkgs.modify-fasta
               hsPkgs.base

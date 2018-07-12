@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openpgp-crypto-api = {
+        "openpgp-crypto-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

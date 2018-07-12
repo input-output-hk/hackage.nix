@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sync = {
+        "sync" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

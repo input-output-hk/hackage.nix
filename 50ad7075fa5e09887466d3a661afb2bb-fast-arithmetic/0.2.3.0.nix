@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        fast-arithmetic = {
+        "fast-arithmetic" = {
           depends  = if compiler.isGhc && compiler.version.lt "7.10"
             then [
               hsPkgs.base
@@ -38,7 +38,7 @@ let
             ];
         };
         tests = {
-          fast-arithmetic-test = {
+          "fast-arithmetic-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fast-arithmetic
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          fast-arithmetic-bench = {
+          "fast-arithmetic-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fast-arithmetic

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        SVGFonts = {
+        "SVGFonts" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

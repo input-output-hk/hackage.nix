@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hnn = {
+        "hnn" = {
           depends  = [
             hsPkgs.uvector
             hsPkgs.base

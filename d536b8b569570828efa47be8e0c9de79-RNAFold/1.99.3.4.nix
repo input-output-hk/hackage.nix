@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RNAFold = {
+        "RNAFold" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmdargs
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          RNAFold = {
+          "RNAFold" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -49,7 +49,7 @@ let
               hsPkgs.RNAFold
             ];
           };
-          RNAEval = {
+          "RNAEval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

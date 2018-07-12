@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-logger = {
+        "monad-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

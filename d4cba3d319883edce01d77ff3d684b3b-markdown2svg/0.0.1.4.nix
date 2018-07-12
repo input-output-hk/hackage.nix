@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          markdown2svg = {
+          "markdown2svg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yjsvg

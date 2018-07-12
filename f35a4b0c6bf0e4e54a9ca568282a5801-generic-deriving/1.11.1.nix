@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-deriving = {
+        "generic-deriving" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.ghc-prim
@@ -30,7 +30,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.generic-deriving

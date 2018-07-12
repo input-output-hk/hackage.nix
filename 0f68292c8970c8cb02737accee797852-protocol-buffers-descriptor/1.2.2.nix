@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protocol-buffers-descriptor = {
+        "protocol-buffers-descriptor" = {
           depends  = [
             hsPkgs.protocol-buffers
             hsPkgs.containers

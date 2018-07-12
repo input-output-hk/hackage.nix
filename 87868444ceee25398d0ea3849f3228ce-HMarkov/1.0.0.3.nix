@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HMarkov = {
+        "HMarkov" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          HMarkov-test = {
+          "HMarkov-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HMarkov

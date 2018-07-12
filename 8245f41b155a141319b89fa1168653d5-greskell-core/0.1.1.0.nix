@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        greskell-core = {
+        "greskell-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -41,7 +41,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

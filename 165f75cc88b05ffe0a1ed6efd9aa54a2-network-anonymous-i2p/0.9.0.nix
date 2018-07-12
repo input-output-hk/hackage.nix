@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-anonymous-i2p = {
+        "network-anonymous-i2p" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test-suite = {
+          "test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions

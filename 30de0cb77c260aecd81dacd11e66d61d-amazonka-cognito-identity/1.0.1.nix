@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cognito-identity = {
+        "amazonka-cognito-identity" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-cognito-identity-test = {
+          "amazonka-cognito-identity-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

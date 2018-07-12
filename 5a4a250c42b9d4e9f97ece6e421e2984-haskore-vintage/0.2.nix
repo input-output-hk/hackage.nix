@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskore-vintage = {
+        "haskore-vintage" = {
           depends  = [ hsPkgs.base ];
         };
       };

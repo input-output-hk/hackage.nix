@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        remote-monad = {
+        "remote-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.natural-transformation
@@ -28,14 +28,14 @@ let
           ];
         };
         tests = {
-          remote-monad-example = {
+          "remote-monad-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.natural-transformation
               hsPkgs.remote-monad
             ];
           };
-          remote-monad-properties = {
+          "remote-monad-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

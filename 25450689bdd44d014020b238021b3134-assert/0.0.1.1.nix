@@ -24,7 +24,7 @@ let
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          rewrite = {
+          "rewrite" = {
             depends  = [
               hsPkgs."assert"
               hsPkgs.base

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hamtsolo = {
+          "hamtsolo" = {
             depends  = [
               hsPkgs.async
               hsPkgs.attoparsec

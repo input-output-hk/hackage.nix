@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        partage = {
+        "partage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.partage
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SimpleEA = {
+        "SimpleEA" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MonadRandom

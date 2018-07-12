@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        convert = {
+        "convert" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

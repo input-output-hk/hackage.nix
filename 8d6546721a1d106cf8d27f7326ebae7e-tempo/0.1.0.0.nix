@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tempo = {
+        "tempo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          tempo-git = {
+          "tempo-git" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tempo
@@ -46,7 +46,7 @@ let
               hsPkgs.MissingH
             ];
           };
-          tempo-simple = {
+          "tempo-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tempo
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          tempo-test = {
+          "tempo-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tempo

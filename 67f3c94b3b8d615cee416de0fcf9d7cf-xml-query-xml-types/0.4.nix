@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-query-xml-types = {
+        "xml-query-xml-types" = {
           depends  = [
             hsPkgs.html-entities
             hsPkgs.xml-query
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.xml-query
               hsPkgs.xml-query-xml-types

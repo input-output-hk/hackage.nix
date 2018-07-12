@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        redis-job-queue = {
+        "redis-job-queue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

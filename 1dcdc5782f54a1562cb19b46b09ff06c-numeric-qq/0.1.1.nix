@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        numeric-qq = {
+        "numeric-qq" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.loch-th
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.doctest
               hsPkgs.directory

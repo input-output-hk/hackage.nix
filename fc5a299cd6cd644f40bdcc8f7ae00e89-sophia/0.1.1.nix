@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sophia = {
+        "sophia" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-sophia
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sophia

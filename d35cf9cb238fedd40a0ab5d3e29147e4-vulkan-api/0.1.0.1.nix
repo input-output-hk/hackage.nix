@@ -31,7 +31,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vulkan-api = {
+        "vulkan-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SHA = {
+        "SHA" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          test_sha = {
+          "test_sha" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          sha1 = {
+          "sha1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
               hsPkgs.directory
             ];
           };
-          sha384 = {
+          "sha384" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

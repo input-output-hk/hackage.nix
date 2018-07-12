@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-websockets = {
+        "wai-websockets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hsyslog = {
+        "hsyslog" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          hsyslog-example = {
+          "hsyslog-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsyslog
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          hsyslog-test = {
+          "hsyslog-test" = {
             depends  = [
               hsPkgs.hsyslog
               hsPkgs.base

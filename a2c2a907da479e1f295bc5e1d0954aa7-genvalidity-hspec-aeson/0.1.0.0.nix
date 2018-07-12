@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-hspec-aeson = {
+        "genvalidity-hspec-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.genvalidity-hspec
@@ -33,14 +33,14 @@ let
           ];
         };
         tests = {
-          genvalidity-hspec-aeson-doctests = {
+          "genvalidity-hspec-aeson-doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.genvalidity-hspec-aeson
             ];
           };
-          genvalidity-hspec-aeson-test = {
+          "genvalidity-hspec-aeson-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

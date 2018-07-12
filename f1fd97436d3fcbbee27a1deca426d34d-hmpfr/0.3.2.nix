@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmpfr = {
+        "hmpfr" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.integer-simple;

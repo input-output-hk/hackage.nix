@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        IntervalMap = {
+        "IntervalMap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          TestInterval = {
+          "TestInterval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -39,7 +39,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          TestGenericInterval = {
+          "TestGenericInterval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -48,7 +48,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          TestIntervalMap = {
+          "TestIntervalMap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -57,7 +57,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          TestIntervalSet = {
+          "TestIntervalSet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -68,7 +68,7 @@ let
           };
         };
         benchmarks = {
-          bench-all = {
+          "bench-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -77,7 +77,7 @@ let
               hsPkgs.criterion
             ];
           };
-          bench-generic-lazy-strict = {
+          "bench-generic-lazy-strict" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -86,7 +86,7 @@ let
               hsPkgs.criterion
             ];
           };
-          bench-set = {
+          "bench-set" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -95,7 +95,7 @@ let
               hsPkgs.criterion
             ];
           };
-          bench-compare-types = {
+          "bench-compare-types" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -106,7 +106,7 @@ let
               hsPkgs.criterion
             ];
           };
-          bench-rb-impl = {
+          "bench-rb-impl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

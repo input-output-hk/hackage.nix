@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        containers-verified = {
+        "containers-verified" = {
           depends  = [
             hsPkgs.containers
           ];

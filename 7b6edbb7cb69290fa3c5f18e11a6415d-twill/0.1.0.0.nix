@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twill = {
+        "twill" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

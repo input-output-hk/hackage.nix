@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ssh-known-hosts = {
+        "ssh-known-hosts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.iproute
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          readknownhosts = {
+          "readknownhosts" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ssh-known-hosts
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          test_parsing = {
+          "test_parsing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-combinators = {
+        "conduit-combinators" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.conduit
@@ -47,7 +47,7 @@ let
           ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit-combinators
               hsPkgs.base

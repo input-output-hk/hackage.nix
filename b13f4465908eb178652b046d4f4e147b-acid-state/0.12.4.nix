@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acid-state = {
+        "acid-state" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -40,7 +40,7 @@ let
             else [ hsPkgs.unix ]);
         };
         benchmarks = {
-          loading-benchmark = {
+          "loading-benchmark" = {
             depends  = [
               hsPkgs.random
               hsPkgs.directory

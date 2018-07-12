@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pipeclip = {
+          "pipeclip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

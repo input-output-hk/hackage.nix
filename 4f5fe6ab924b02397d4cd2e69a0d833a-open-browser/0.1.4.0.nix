@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        open-browser = {
+        "open-browser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.open-browser

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-gsl = {
+        "bindings-gsl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-common

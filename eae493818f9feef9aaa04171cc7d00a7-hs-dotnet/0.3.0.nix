@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-dotnet = {
+        "hs-dotnet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

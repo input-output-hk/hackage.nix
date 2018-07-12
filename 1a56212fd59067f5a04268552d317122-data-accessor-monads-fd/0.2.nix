@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-accessor-monads-fd = {
+        "data-accessor-monads-fd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-accessor

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          shake-cabal-build = {
+          "shake-cabal-build" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

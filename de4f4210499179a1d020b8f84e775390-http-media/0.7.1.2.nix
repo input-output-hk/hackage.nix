@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-media = {
+        "http-media" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-http-media = {
+          "test-http-media" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        n-tuple = {
+        "n-tuple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.singletons

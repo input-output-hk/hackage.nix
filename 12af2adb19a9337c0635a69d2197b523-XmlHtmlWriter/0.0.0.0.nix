@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        XmlHtmlWriter = {
+        "XmlHtmlWriter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

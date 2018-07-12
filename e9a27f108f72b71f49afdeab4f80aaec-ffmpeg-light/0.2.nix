@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ffmpeg-light = {
+        "ffmpeg-light" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

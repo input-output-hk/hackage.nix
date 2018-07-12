@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MaybeT-monads-tf = {
+        "MaybeT-monads-tf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monads-tf

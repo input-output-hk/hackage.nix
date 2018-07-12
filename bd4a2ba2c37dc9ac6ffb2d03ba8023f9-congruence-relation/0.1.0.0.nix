@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        congruence-relation = {
+        "congruence-relation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

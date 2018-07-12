@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        duration = {
+        "duration" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -39,7 +39,7 @@ let
               hsPkgs.time
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.duration

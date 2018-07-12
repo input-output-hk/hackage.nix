@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          interpol = {
+          "interpol" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb

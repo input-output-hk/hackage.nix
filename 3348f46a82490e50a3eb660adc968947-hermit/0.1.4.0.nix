@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hermit = {
+        "hermit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          hermit = {
+          "hermit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

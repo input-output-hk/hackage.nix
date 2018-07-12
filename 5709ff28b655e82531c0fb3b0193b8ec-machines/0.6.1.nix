@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        machines = {
+        "machines" = {
           depends  = [
             hsPkgs.adjunctions
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

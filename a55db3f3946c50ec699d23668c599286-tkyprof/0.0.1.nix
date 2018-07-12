@@ -24,9 +24,9 @@ let
         buildType = "Simple";
       };
       components = {
-        tkyprof = {};
+        "tkyprof" = {};
         exes = {
-          tkyprof = {
+          "tkyprof" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -51,10 +51,10 @@ let
               hsPkgs.yesod-form
               hsPkgs.yesod-json
               hsPkgs.yesod-static
-            ] ++ pkgs.lib.optional (_flags.production && !_flags.web) hsPkgs.wai-handler-webkit;
-            pkgconfig = pkgs.lib.optional (_flags.production && !_flags.web) pkgconfPkgs.QtWebKit;
+            ] ++ pkgs.lib.optionals _flags.production (pkgs.lib.optional (!_flags.web) hsPkgs.wai-handler-webkit);
+            pkgconfig = pkgs.lib.optionals _flags.production (pkgs.lib.optional (!_flags.web) pkgconfPkgs.QtWebKit);
           };
-          prof2json = {
+          "prof2json" = {
             depends  = [
               hsPkgs.filepath
               hsPkgs.mtl

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pandoc-include-code = {
+          "pandoc-include-code" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

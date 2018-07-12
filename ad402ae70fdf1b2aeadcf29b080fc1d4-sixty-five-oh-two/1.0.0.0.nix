@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sixty-five-oh-two = {
+        "sixty-five-oh-two" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          sixty-five-oh-two-exe = {
+          "sixty-five-oh-two-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          sixty-five-oh-two-test = {
+          "sixty-five-oh-two-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

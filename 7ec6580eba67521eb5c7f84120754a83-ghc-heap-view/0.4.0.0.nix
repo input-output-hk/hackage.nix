@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ghc-heap-view = {
+        "ghc-heap-view" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

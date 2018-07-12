@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gf = {
+        "gf" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.array
@@ -76,13 +76,13 @@ let
           ];
         };
         exes = {
-          gf = {
+          "gf" = {
             depends  = [
               hsPkgs.gf
               hsPkgs.base
             ];
           };
-          pgf-shell = {
+          "pgf-shell" = {
             depends  = [
               hsPkgs.gf
               hsPkgs.base
@@ -93,7 +93,7 @@ let
           };
         };
         tests = {
-          rgl-tests = {
+          "rgl-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF
@@ -103,7 +103,7 @@ let
               hsPkgs.directory
             ];
           };
-          gf-tests = {
+          "gf-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

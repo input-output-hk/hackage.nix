@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hinotify = {
+        "hinotify" = {
           depends  = [
             hsPkgs.unix
           ] ++ (if _flags.split-base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ltext = {
+        "ltext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          ltext = {
+          "ltext" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

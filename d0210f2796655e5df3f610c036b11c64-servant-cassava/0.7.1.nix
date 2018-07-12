@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-cassava = {
+        "servant-cassava" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cassava

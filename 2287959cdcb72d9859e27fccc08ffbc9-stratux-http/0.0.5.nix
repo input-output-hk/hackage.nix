@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        stratux-http = {
+        "stratux-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stratux-types
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

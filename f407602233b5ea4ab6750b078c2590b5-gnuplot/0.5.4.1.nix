@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gnuplot = {
+        "gnuplot" = {
           depends  = [
             hsPkgs.filepath
             hsPkgs.temporary
@@ -45,7 +45,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          gnuplot-demo = {
+          "gnuplot-demo" = {
             depends  = pkgs.lib.optional _flags.buildexamples hsPkgs.filepath;
           };
         };

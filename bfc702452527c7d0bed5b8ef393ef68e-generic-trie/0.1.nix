@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-trie = {
+        "generic-trie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

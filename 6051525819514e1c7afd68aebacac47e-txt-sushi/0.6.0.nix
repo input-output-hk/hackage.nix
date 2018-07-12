@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        txt-sushi = {
+        "txt-sushi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -32,15 +32,15 @@ let
           ];
         };
         exes = {
-          tssql = {};
-          csvtotab = {};
-          tabtocsv = {};
-          csvtopretty = {};
-          tabtopretty = {};
-          namecolumns = {};
-          transposecsv = {};
-          transposetab = {};
-          csvzip = {};
+          "tssql" = {};
+          "csvtotab" = {};
+          "tabtocsv" = {};
+          "csvtopretty" = {};
+          "tabtopretty" = {};
+          "namecolumns" = {};
+          "transposecsv" = {};
+          "transposetab" = {};
+          "csvzip" = {};
         };
       };
     }

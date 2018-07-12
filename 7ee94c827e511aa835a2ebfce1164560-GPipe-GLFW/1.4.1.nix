@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GPipe-GLFW = {
+        "GPipe-GLFW" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

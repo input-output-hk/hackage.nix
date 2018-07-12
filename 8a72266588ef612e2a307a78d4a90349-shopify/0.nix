@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shopify = {
+        "shopify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base

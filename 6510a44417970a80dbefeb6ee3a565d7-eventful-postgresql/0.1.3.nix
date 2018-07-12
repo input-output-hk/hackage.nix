@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventful-postgresql = {
+        "eventful-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.eventful-core
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eventful-core
@@ -49,7 +49,7 @@ let
               hsPkgs.persistent-postgresql
             ];
           };
-          style = {
+          "style" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eventful-core

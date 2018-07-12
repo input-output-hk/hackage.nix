@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-qq = {
+        "aeson-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson-qq

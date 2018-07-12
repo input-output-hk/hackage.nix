@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty-show = {
+        "pretty-show" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          ppsh = {
+          "ppsh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty-show

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        weeder = {
+        "weeder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -41,7 +41,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         exes = {
-          weeder = {
+          "weeder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.weeder

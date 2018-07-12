@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dotenv = {
+        "dotenv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          dotenv = {
+          "dotenv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          dotenv-test = {
+          "dotenv-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

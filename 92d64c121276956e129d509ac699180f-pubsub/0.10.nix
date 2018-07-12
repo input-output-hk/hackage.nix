@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pubsub = {
+        "pubsub" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -36,10 +36,10 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          pubsub.fcgi = {
+          "pubsub.fcgi" = {
             depends  = [ hsPkgs.fastcgi ];
           };
-          feeder = {};
+          "feeder" = {};
         };
       };
     }

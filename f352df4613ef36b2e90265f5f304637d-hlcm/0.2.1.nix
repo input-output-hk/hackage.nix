@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hlcm = {
+        "hlcm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hlcm = {
+          "hlcm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
               hsPkgs.bytestring-csv
             ];
           };
-          benchHLCM = {};
+          "benchHLCM" = {};
         };
       };
     }

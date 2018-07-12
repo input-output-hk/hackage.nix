@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mathexpr = {
+        "mathexpr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class

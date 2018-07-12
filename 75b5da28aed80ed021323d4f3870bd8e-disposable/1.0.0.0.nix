@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        disposable = {
+        "disposable" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.stm

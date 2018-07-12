@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        system-filepath = {
+        "system-filepath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          filesystem_path_tests = {
+          "filesystem_path_tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-bytestring = {
+        "streaming-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -40,7 +40,7 @@ let
             else [ hsPkgs.bytestring ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

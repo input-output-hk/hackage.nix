@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prim-array = {
+        "prim-array" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive

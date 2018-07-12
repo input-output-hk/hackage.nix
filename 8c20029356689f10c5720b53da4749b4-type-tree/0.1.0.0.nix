@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        type-tree = {
+        "type-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

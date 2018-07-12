@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hofix-mtl = {
+        "hofix-mtl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.star-to-star

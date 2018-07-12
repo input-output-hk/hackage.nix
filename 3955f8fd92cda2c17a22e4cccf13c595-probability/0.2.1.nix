@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        probability = {
+        "probability" = {
           depends  = [
             hsPkgs.mtl
           ] ++ (if _flags.splitbase

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphics-formats-collada = {
+        "graphics-formats-collada" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

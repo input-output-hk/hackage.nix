@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bktrees = {
+        "bktrees" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

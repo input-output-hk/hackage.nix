@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hichi = {
+          "hichi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -32,7 +32,7 @@ let
               hsPkgs.array
             ];
           };
-          test-rc4 = {};
+          "test-rc4" = {};
         };
       };
     }

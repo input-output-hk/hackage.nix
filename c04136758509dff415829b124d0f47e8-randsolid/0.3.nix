@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          randsolid = {
+          "randsolid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11

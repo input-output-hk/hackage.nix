@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-discover = {
+        "hspec-discover" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec
           ];
         };
         exes = {
-          hspec-discover = {
+          "hspec-discover" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -45,14 +45,14 @@ let
               hsPkgs.hspec-shouldbe
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec-shouldbe
               hsPkgs.hspec-discover
             ];
           };
-          integration-test-empty = {
+          "integration-test-empty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec-discover

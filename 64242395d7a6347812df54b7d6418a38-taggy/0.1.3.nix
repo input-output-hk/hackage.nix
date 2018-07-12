@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        taggy = {
+        "taggy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          taggy = {
+          "taggy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html
@@ -55,7 +55,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          integration = {
+          "integration" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html
@@ -71,7 +71,7 @@ let
           };
         };
         benchmarks = {
-          taggytagsoup = {
+          "taggytagsoup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

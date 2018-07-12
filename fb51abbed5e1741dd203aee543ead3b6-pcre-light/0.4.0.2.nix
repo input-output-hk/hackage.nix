@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        pcre-light = {
+        "pcre-light" = {
           depends  = if _flags.old_base
             then [ hsPkgs.base ]
             else [

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        stackage-cabal = {
+        "stackage-cabal" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          stackage-init = {
+          "stackage-init" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -37,7 +37,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          stackage-purge = {
+          "stackage-purge" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -49,7 +49,7 @@ let
               hsPkgs.exceptions
             ];
           };
-          stackage-upgrade = {
+          "stackage-upgrade" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

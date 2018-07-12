@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        functor-infix = {
+        "functor-infix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

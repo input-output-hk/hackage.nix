@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nirum = {
+        "nirum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,13 +34,13 @@ let
           ];
         };
         exes = {
-          nirum = {
+          "nirum" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nirum
             ];
           };
-          nirum-static = {
+          "nirum-static" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nirum
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -67,7 +67,7 @@ let
               hsPkgs.text
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphics-drawingcombinators = {
+        "graphics-drawingcombinators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL
@@ -34,7 +34,7 @@ let
             else [ hsPkgs.GLUT ]);
         };
         exes = {
-          example = {
+          "example" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.GLFW-b

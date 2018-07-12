@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-auth = {
+        "wai-middleware-auth" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -54,7 +54,7 @@ let
           ];
         };
         exes = {
-          wai-auth = {
+          "wai-auth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

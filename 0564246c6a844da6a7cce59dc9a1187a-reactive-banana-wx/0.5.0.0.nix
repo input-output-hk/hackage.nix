@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        reactive-banana-wx = {
+        "reactive-banana-wx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cabal-macosx
@@ -32,29 +32,29 @@ let
           ];
         };
         exes = {
-          Arithmetic = {};
-          Asteroids = {
+          "Arithmetic" = {};
+          "Asteroids" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.random
               hsPkgs.executable-path
               hsPkgs.filepath
             ];
           };
-          Counter = {};
-          CurrencyConverter = {
+          "Counter" = {};
+          "CurrencyConverter" = {
             depends  = pkgs.lib.optional _flags.buildexamples hsPkgs.process;
           };
-          CRUD = {
+          "CRUD" = {
             depends  = pkgs.lib.optional _flags.buildexamples hsPkgs.containers;
           };
-          NetMonitor = {
+          "NetMonitor" = {
             depends  = pkgs.lib.optional _flags.buildexamples hsPkgs.process;
           };
-          TicTacToe = {
+          "TicTacToe" = {
             depends  = pkgs.lib.optional _flags.buildexamples hsPkgs.array;
           };
-          TwoCounters = {};
-          Wave = {};
+          "TwoCounters" = {};
+          "Wave" = {};
         };
       };
     }

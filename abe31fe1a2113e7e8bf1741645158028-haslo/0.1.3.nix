@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haslo = {
+        "haslo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          hasloQC = {
+          "hasloQC" = {
             depends  = [
               hsPkgs.old-time
               hsPkgs.QuickCheck
@@ -38,7 +38,7 @@ let
               hsPkgs.wtk
             ];
           };
-          hasloSample = {
+          "hasloSample" = {
             depends  = [
               hsPkgs.old-time
               hsPkgs.QuickCheck

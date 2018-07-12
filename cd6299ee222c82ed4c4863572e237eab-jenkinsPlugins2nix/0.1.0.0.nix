@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jenkinsPlugins2nix = {
+        "jenkinsPlugins2nix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          jenkinsPlugins2nix = {
+          "jenkinsPlugins2nix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          jenkinsPlugins2nix-test = {
+          "jenkinsPlugins2nix-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

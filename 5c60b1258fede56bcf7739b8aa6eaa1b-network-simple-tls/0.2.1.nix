@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-simple-tls = {
+        "network-simple-tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

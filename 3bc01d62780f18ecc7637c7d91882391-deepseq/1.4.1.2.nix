@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        deepseq = {
+        "deepseq" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.array
-          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.4") hsPkgs.array;
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.2") (pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.4") hsPkgs.array;
         };
         tests = {
-          deepseq-generics-tests = {
+          "deepseq-generics-tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

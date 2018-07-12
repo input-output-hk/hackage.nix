@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stripe-http-streams = {
+        "stripe-http-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

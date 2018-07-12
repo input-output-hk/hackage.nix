@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opaleye = {
+        "opaleye" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -64,7 +64,7 @@ let
               hsPkgs.opaleye
             ];
           };
-          tutorial = {
+          "tutorial" = {
             depends  = [
               hsPkgs.base
               hsPkgs.postgresql-simple

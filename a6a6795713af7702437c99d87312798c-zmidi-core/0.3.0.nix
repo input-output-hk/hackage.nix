@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zmidi-core = {
+        "zmidi-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

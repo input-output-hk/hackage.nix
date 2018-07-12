@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-oauth2 = {
+        "yesod-auth-oauth2" = {
           depends  = ([
             hsPkgs.bytestring
             hsPkgs.http-conduit

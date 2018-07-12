@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gen-passwd = {
+          "gen-passwd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

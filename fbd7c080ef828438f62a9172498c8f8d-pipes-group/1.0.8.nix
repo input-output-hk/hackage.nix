@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-group = {
+        "pipes-group" = {
           depends  = [
             hsPkgs.base
             hsPkgs.free
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens-family-core

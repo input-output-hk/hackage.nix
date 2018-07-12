@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        h-reversi = {
+        "h-reversi" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          h-reversi = {
+          "h-reversi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blank-canvas
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          h-reversi-properties = {
+          "h-reversi-properties" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

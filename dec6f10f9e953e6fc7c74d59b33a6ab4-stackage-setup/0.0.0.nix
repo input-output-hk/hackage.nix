@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          stackage-setup = {
+          "stackage-setup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

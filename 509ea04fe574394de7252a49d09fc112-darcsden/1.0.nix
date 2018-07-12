@@ -26,7 +26,7 @@ let
       };
       components = {
         exes = {
-          darcsden = {
+          "darcsden" = {
             depends  = (([
               hsPkgs.base
               hsPkgs.base64-string
@@ -67,12 +67,12 @@ let
               hsPkgs.highlighting-kate
             ]) ++ pkgs.lib.optional _flags.ssh hsPkgs.ssh;
           };
-          darcsden-ssh = {
+          "darcsden-ssh" = {
             depends  = [
               hsPkgs.darcs
             ] ++ pkgs.lib.optional _flags.ssh hsPkgs.ssh;
           };
-          darcsden-post-hook = {
+          "darcsden-post-hook" = {
             depends  = [
               hsPkgs.darcs
             ] ++ pkgs.lib.optional _flags.closing hsPkgs.pcre-light;

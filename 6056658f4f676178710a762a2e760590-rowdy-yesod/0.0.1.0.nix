@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rowdy-yesod = {
+        "rowdy-yesod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rowdy
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          specs = {
+          "specs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

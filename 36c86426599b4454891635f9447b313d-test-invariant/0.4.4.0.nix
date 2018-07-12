@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        test-invariant = {
+        "test-invariant" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
           ];
         };
         tests = {
-          Tasty = {
+          "Tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-invariant
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          Criterion = {
+          "Criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-invariant

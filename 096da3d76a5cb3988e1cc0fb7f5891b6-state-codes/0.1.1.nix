@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        state-codes = {
+        "state-codes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          state-codes-test = {
+          "state-codes-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

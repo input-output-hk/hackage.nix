@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fillit = {
+        "fillit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -30,14 +30,14 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unordered-containers
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unordered-containers

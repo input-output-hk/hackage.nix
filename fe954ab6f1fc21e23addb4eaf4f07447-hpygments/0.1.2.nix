@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpygments = {
+        "hpygments" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

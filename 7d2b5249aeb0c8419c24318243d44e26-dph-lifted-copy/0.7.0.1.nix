@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dph-lifted-copy = {
+        "dph-lifted-copy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

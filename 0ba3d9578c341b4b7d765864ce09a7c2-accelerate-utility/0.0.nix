@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-utility = {
+        "accelerate-utility" = {
           depends  = [
             hsPkgs.accelerate
             hsPkgs.utility-ht

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rfc-http-client = {
+        "rfc-http-client" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

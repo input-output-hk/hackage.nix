@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OrPatterns = {
+        "OrPatterns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

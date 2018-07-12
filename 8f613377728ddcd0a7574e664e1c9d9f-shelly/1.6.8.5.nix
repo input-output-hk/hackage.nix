@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shelly = {
+        "shelly" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.time
@@ -46,12 +46,12 @@ let
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          drain = {};
-          run-handles = {};
-          Color = {};
+          "drain" = {};
+          "run-handles" = {};
+          "Color" = {};
         };
         tests = {
-          shelly-testsuite = {
+          "shelly-testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

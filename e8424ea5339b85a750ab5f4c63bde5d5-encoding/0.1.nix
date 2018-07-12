@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        encoding = {
+        "encoding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

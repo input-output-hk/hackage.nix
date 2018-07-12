@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        distributive = {
+        "distributive" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.base-orphans
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional _flags.tagged hsPkgs.tagged) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

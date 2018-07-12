@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GPipe = {
+        "GPipe" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.mtl

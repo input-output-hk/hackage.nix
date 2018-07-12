@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jvm = {
+        "jvm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          micro-benchmarks = {
+          "micro-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

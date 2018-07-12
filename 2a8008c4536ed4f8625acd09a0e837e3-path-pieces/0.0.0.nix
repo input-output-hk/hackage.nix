@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        path-pieces = {
+        "path-pieces" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

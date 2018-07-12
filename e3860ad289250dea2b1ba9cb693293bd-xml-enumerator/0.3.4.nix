@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-enumerator = {
+        "xml-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.enumerator
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit

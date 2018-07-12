@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-core = {
+        "yesod-core" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.time
@@ -69,7 +69,7 @@ let
             else [ hsPkgs.blaze-html ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

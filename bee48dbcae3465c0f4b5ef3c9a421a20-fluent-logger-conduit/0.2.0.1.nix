@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fluent-logger-conduit = {
+        "fluent-logger-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

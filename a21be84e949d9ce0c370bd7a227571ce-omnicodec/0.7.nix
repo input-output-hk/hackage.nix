@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          odec = {
+          "odec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -31,7 +31,7 @@ let
               hsPkgs.transformers
             ];
           };
-          oenc = {
+          "oenc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

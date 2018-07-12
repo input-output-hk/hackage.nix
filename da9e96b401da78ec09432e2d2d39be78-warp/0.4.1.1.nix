@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warp = {
+        "warp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

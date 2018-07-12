@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fx = {
+        "fx" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.base-prelude

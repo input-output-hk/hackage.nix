@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-database-url = {
+        "persistent-database-url" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

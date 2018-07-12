@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-totp = {
+        "crypto-totp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

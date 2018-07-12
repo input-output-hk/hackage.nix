@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        perf = {
+        "perf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          perf-examples = {
+          "perf-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.formatting
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

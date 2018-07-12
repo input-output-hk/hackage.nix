@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hackernews = {
+        "hackernews" = {
           depends  = [
             hsPkgs.servant
             hsPkgs.QuickCheck
@@ -45,7 +45,7 @@ let
             ]);
         };
         exes = {
-          hackernews-example = {
+          "hackernews-example" = {
             depends  = if compiler.isGhcjs && true
               then [
                 hsPkgs.base
@@ -59,7 +59,7 @@ let
                 hsPkgs.http-client
               ];
           };
-          ghcjs-tests = {
+          "ghcjs-tests" = {
             depends  = pkgs.lib.optionals (compiler.isGhcjs && true) [
               hsPkgs.base
               hsPkgs.hackernews
@@ -73,7 +73,7 @@ let
           };
         };
         tests = {
-          ghc-tests = {
+          "ghc-tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

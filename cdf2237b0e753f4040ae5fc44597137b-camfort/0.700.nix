@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        camfort = {
+        "camfort" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          camfort = {
+          "camfort" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

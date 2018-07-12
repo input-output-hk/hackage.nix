@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        store-streaming = {
+        "store-streaming" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          store-test = {
+          "store-test" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

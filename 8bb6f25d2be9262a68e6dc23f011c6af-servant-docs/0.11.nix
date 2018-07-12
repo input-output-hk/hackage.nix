@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-docs = {
+        "servant-docs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -40,7 +40,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         exes = {
-          greet-docs = {
+          "greet-docs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

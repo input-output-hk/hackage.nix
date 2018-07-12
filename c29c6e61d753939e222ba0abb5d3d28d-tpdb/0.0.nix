@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tpdb = {
+        "tpdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt
@@ -29,9 +29,9 @@ let
           ];
         };
         tests = {
-          XML = {};
-          TRS = {};
-          SRS = {};
+          "XML" = {};
+          "TRS" = {};
+          "SRS" = {};
         };
       };
     }

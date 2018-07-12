@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        montage-client = {
+        "montage-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

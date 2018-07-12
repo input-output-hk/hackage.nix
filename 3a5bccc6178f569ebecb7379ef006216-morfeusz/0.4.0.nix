@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        morfeusz = {
+        "morfeusz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

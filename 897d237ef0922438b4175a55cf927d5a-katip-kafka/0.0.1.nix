@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        katip-kafka = {
+        "katip-kafka" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

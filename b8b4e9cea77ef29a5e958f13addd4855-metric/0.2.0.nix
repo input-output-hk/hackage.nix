@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        metric = {
+        "metric" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          metric-tests: = {
+          "metric-tests:" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ctpl = {
+        "ctpl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chatty-text
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          ctpl0debug = {
+          "ctpl0debug" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chatty-text
@@ -37,7 +37,7 @@ let
               hsPkgs.array
             ];
           };
-          ctplc = {
+          "ctplc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chatty-text

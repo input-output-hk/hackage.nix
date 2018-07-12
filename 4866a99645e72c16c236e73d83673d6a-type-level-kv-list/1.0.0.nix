@@ -20,17 +20,17 @@ let
         buildType = "Simple";
       };
       components = {
-        type-level-kv-list = {
+        "type-level-kv-list" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          type-level-kv-list-test = {
+          "type-level-kv-list-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-level-kv-list
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob

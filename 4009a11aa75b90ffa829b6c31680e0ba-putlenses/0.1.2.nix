@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        putlenses = {
+        "putlenses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

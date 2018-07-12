@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-hedgehog = {
+        "tasty-hedgehog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagged
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tasty-hedgehog-tests = {
+          "tasty-hedgehog-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

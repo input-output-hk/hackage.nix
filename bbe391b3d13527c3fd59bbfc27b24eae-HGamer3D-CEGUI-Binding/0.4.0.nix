@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-CEGUI-Binding = {
+        "HGamer3D-CEGUI-Binding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HGamer3D-Data

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HList = {
+        "HList" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

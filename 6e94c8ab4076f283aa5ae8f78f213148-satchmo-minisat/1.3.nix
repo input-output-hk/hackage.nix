@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        satchmo-minisat = {
+        "satchmo-minisat" = {
           depends  = [
             hsPkgs.satchmo
             hsPkgs.process

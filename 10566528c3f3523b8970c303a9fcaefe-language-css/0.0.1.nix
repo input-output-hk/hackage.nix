@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-css = {
+        "language-css" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

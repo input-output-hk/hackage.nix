@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        maybe-justify = {
+        "maybe-justify" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          maybe-justify-tests = {
+          "maybe-justify-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openpgp = {
+        "openpgp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

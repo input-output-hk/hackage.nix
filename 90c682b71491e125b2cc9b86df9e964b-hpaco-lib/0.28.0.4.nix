@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpaco-lib = {
+        "hpaco-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-variant

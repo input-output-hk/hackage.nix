@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webdriver-snoy = {
+        "webdriver-snoy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -51,7 +51,7 @@ let
           ];
         };
         tests = {
-          test-search-baidu = {
+          "test-search-baidu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.webdriver

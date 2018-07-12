@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-conduit = {
+        "http-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -58,6 +58,6 @@ let
             ]
             else [ hsPkgs.network ]);
         };
-        exes = { http-conduit = {}; };
+        exes = { "http-conduit" = {}; };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-gitrepo = {
+        "yesod-gitrepo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.temporary

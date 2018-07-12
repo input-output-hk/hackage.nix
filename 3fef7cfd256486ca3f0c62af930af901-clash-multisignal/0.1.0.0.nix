@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clash-multisignal = {
+        "clash-multisignal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clash-prelude

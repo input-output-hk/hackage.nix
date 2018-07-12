@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          uniq-deep = {
+          "uniq-deep" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

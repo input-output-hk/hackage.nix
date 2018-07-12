@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          aws-mfa-credentials = {
+          "aws-mfa-credentials" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

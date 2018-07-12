@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          traypoweroff = {
+          "traypoweroff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

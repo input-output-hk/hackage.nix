@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        entropy = {
+        "entropy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

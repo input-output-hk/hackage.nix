@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        html-entity = {
+        "html-entity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          tablegen = {
+          "tablegen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ordrea = {
+        "ordrea" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ordrea

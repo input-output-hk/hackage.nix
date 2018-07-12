@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspr-sh = {
+        "hspr-sh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

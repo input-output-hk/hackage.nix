@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-simple = {
+        "test-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-simple

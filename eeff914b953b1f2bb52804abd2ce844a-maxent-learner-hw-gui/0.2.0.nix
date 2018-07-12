@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          phono-learner-hw-gui = {
+          "phono-learner-hw-gui" = {
             depends  = [
               hsPkgs.base
               hsPkgs.maxent-learner-hw

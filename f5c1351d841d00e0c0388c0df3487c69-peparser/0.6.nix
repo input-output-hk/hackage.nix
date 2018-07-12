@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        peparser = {
+        "peparser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

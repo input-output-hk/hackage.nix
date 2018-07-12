@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RtMidi = {
+        "RtMidi" = {
           depends  = [ hsPkgs.base ];
           libs = (([
             pkgs."stdc++"

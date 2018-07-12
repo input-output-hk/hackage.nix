@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          uhexdump = {
+          "uhexdump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

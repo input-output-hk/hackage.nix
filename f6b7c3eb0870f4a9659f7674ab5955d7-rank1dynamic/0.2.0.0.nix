@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rank1dynamic = {
+        "rank1dynamic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

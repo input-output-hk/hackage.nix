@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haskell-go-checkers = {
+          "haskell-go-checkers" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

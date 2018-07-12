@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-ses-easy = {
+        "aws-ses-easy" = {
           depends  = [
             hsPkgs.amazonka
             hsPkgs.amazonka-ses
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          aws-ses-easy-test-suite = {
+          "aws-ses-easy-test-suite" = {
             depends  = [
               hsPkgs.aws-ses-easy
               hsPkgs.base
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          aws-ses-easy-benchmarks = {
+          "aws-ses-easy-benchmarks" = {
             depends  = [
               hsPkgs.aws-ses-easy
               hsPkgs.base

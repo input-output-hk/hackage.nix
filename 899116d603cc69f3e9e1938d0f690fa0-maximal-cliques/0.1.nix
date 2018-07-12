@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        maximal-cliques = {
+        "maximal-cliques" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

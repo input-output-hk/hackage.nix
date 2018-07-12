@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kleene = {
+        "kleene" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -19,5 +19,5 @@ let
         description = "This tool is now part of the hsx package, and should be considered deprecated as a stand-alone package.";
         buildType = "Simple";
       };
-      components = { trhsx = {}; };
+      components = { "trhsx" = {}; };
     }

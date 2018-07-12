@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rfc5051 = {
+        "rfc5051" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          MkUnicodeData = {
+          "MkUnicodeData" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

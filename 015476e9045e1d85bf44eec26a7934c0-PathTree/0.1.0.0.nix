@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        PathTree = {
+        "PathTree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          PathTree-test = {
+          "PathTree-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.PathTree

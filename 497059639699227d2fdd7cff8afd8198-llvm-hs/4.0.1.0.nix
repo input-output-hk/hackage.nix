@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        llvm-hs = {
+        "llvm-hs" = {
           depends  = [
             hsPkgs.utf8-string
             hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
             else [ hsPkgs.base ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.tasty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tls-session-manager = {
+        "tls-session-manager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.auto-update

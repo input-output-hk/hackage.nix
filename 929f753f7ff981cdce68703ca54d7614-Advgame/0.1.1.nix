@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          advgame = {
+          "advgame" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

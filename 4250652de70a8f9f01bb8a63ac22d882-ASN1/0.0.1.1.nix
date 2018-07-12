@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ASN1 = {
+        "ASN1" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.QuickCheck

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-asn1 = {
+        "language-asn1" = {
           depends  = (if _flags.splitbase
             then [
               hsPkgs.base

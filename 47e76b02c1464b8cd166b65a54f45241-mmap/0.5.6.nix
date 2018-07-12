@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        mmap = {
+        "mmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         exes = {
-          mmaptest = {
+          "mmaptest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

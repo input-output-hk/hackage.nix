@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inspection-testing = {
+        "inspection-testing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -33,25 +33,25 @@ let
           ];
         };
         tests = {
-          NS_NP = {
+          "NS_NP" = {
             depends  = [
               hsPkgs.inspection-testing
               hsPkgs.base
             ];
           };
-          simple = {
+          "simple" = {
             depends  = [
               hsPkgs.inspection-testing
               hsPkgs.base
             ];
           };
-          fusion = {
+          "fusion" = {
             depends  = [
               hsPkgs.inspection-testing
               hsPkgs.base
             ];
           };
-          text = {
+          "text" = {
             depends  = pkgs.lib.optionals _flags.more-tests [
               hsPkgs.inspection-testing
               hsPkgs.base
@@ -59,7 +59,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          generic-lens = {
+          "generic-lens" = {
             depends  = pkgs.lib.optionals _flags.more-tests [
               hsPkgs.inspection-testing
               hsPkgs.base

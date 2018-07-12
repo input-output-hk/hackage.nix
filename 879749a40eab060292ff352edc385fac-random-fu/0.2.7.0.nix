@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-fu = {
+        "random-fu" = {
           depends  = (([
             hsPkgs.math-functions
             hsPkgs.monad-loops

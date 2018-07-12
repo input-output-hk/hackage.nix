@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        midi-alsa = {
+        "midi-alsa" = {
           depends  = [
             hsPkgs.midi
             hsPkgs.alsa-seq

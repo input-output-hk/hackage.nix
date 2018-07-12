@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lucid-svg = {
+        "lucid-svg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

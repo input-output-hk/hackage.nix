@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Catana = {
+        "Catana" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

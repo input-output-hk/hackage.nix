@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        copilot = {
+        "copilot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.atom

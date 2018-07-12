@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AFSM = {
+        "AFSM" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cipher-aes128 = {
+        "cipher-aes128" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

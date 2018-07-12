@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        magicbane = {
+        "magicbane" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude

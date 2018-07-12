@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HXQ = {
+        "HXQ" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.haskell98
@@ -40,7 +40,7 @@ let
             ]);
         };
         exes = {
-          xquery = {
+          "xquery" = {
             depends  = pkgs.lib.optional (!system.isWindows) hsPkgs.readline ++ (if _flags.mysql
               then [
                 hsPkgs.HDBC

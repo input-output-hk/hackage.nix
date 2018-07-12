@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vty = {
+        "vty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          verify-attribute-ops = {
+          "verify-attribute-ops" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -56,7 +56,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-using-mock-terminal = {
+          "verify-using-mock-terminal" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -75,7 +75,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-display-attributes = {
+          "verify-display-attributes" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -94,7 +94,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-empty-image-props = {
+          "verify-empty-image-props" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -113,7 +113,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-eval-terminfo-caps = {
+          "verify-eval-terminfo-caps" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -132,7 +132,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-image-ops = {
+          "verify-image-ops" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -151,7 +151,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-image-trans = {
+          "verify-image-trans" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -170,7 +170,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-inline = {
+          "verify-inline" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -189,7 +189,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-parse-terminfo-caps = {
+          "verify-parse-terminfo-caps" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -208,7 +208,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-picture-ops = {
+          "verify-picture-ops" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -227,7 +227,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-picture-to-span = {
+          "verify-picture-to-span" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -246,7 +246,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-span-ops = {
+          "verify-span-ops" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck
@@ -265,7 +265,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-utf8-width = {
+          "verify-utf8-width" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck

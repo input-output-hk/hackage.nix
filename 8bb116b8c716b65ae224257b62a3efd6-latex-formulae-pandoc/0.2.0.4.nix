@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        latex-formulae-pandoc = {
+        "latex-formulae-pandoc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pandoc-types
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          latex-formulae-filter = {
+          "latex-formulae-filter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.latex-formulae-pandoc

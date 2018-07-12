@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-purescript = {
+        "snaplet-purescript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snap-core

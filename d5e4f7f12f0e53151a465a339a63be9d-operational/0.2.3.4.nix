@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        operational = {
+        "operational" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         exes = {
-          operational-TicTacToe = {
+          "operational-TicTacToe" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.random

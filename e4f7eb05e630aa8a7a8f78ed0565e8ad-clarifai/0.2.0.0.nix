@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clarifai = {
+        "clarifai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq

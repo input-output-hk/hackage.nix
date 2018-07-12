@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gnome-keyring = {
+        "gnome-keyring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

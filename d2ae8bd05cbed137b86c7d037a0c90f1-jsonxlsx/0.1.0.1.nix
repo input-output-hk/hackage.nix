@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          jsonxlsx = {
+          "jsonxlsx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xlsx

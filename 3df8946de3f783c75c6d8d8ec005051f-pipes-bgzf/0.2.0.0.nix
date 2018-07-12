@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-bgzf = {
+        "pipes-bgzf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.streaming-commons

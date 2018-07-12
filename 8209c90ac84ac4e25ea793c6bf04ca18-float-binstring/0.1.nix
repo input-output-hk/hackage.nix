@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        float-binstring = {
+        "float-binstring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        roller = {
+        "roller" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          roller = {
+          "roller" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

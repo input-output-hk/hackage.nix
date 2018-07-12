@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tablestorage = {
+        "tablestorage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SHA

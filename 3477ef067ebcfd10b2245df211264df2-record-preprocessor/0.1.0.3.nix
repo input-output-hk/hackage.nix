@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        record-preprocessor = {};
+        "record-preprocessor" = {};
         exes = {
-          record-preprocessor = {
+          "record-preprocessor" = {
             depends  = [
               hsPkgs.record-syntax
               hsPkgs.conversion
@@ -34,7 +34,7 @@ let
           };
         };
         benchmarks = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.record
               hsPkgs.basic-lens

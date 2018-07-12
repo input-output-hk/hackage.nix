@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        call = {
+        "call" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

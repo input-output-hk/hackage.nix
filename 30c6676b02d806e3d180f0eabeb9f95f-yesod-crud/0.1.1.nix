@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-crud = {
+        "yesod-crud" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude

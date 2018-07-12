@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rattletrap = {
+        "rattletrap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bimap
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          rattletrap = {
+          "rattletrap" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-casing
@@ -48,13 +48,13 @@ let
           };
         };
         tests = {
-          lint = {
+          "lint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

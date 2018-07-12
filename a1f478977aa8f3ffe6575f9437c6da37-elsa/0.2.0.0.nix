@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elsa = {
+        "elsa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          elsa = {
+          "elsa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

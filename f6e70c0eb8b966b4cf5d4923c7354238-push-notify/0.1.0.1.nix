@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        push-notify = {
+        "push-notify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xdg-basedir = {
+        "xdg-basedir" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-compat

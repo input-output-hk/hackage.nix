@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        base-compat = {
+        "base-compat" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (!system.isWindows && !system.isHalvm) hsPkgs.unix;

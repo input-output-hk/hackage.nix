@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-eval = {
+        "simple-eval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          Eval = {
+          "Eval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.simple-eval

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vcsgui = {
+        "vcsgui" = {
           depends  = [
             hsPkgs.MissingH
             hsPkgs.filepath
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          vcsgui = {
+          "vcsgui" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.filepath
@@ -47,7 +47,7 @@ let
               hsPkgs.gtk
             ];
           };
-          vcsgui-askpass = {
+          "vcsgui-askpass" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.filepath

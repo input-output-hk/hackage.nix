@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        wigner-symbols = {
+        "wigner-symbols" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wigner-symbols
@@ -36,7 +36,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wigner-symbols

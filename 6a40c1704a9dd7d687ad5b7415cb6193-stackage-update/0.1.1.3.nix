@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stackage-update = {
+        "stackage-update" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          stackage-update = {
+          "stackage-update" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stackage-update

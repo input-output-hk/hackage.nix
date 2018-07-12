@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libinfluxdb = {
+        "libinfluxdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        myanimelist-export = {
+        "myanimelist-export" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          myanimelist-export = {
+          "myanimelist-export" = {
             depends  = [
               hsPkgs.base
               hsPkgs.myanimelist-export

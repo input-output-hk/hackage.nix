@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pursuit-client = {
+        "pursuit-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          pursuit-search = {
+          "pursuit-search" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

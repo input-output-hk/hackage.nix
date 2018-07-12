@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        parsedate = {
+        "parsedate" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

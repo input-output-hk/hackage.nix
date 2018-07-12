@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-hash = {
+        "data-hash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

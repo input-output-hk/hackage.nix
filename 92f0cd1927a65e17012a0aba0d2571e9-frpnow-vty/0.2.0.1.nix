@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        frpnow-vty = {
+        "frpnow-vty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.frpnow
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          frpnow-vty-demo = {
+          "frpnow-vty-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.frpnow-vty

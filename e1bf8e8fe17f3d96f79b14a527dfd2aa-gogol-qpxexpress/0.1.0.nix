@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-qpxexpress = {
+        "gogol-qpxexpress" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

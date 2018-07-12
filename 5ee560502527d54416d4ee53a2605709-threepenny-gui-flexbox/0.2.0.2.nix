@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        threepenny-gui-flexbox = {
+        "threepenny-gui-flexbox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clay
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          threepenny-flexbox-exe = {
+          "threepenny-flexbox-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.threepenny-gui

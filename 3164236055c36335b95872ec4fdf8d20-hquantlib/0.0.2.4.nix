@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hquantlib = {
+        "hquantlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          main-test = {
+          "main-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

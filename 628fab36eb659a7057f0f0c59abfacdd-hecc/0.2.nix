@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hecc = {
+        "hecc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MonadRandom

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hCM = {
+        "hCM" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hCM = {
+          "hCM" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hCM
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          hCM-test = {
+          "hCM-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hCM

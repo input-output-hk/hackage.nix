@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-importexport = {
+        "amazonka-importexport" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

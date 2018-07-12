@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        module-management = {
+        "module-management" = {
           depends  = [
             hsPkgs.applicative-extras
             hsPkgs.base

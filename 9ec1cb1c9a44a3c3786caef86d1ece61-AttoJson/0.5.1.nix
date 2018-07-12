@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AttoJson = {
+        "AttoJson" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.base

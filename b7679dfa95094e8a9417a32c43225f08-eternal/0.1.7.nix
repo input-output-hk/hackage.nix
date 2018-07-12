@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        eternal = {
+        "eternal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

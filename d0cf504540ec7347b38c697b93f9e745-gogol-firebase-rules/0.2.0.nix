@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-firebase-rules = {
+        "gogol-firebase-rules" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

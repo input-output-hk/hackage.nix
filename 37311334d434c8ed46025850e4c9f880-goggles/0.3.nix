@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        goggles = {
+        "goggles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goggles

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CMCompare = {
+        "CMCompare" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          CMCompare = {
+          "CMCompare" = {
             depends  = [ hsPkgs.cmdargs ];
           };
         };

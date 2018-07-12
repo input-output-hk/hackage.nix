@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feldspar-compiler = {
+        "feldspar-compiler" = {
           depends  = [
             hsPkgs.feldspar-language
             hsPkgs.base
@@ -34,6 +34,6 @@ let
             hsPkgs.process
           ];
         };
-        exes = { feldspar = {}; };
+        exes = { "feldspar" = {}; };
       };
     }

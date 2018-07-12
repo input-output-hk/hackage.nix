@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microaeson = {
+        "microaeson" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          microaeson = {
+          "microaeson" = {
             depends  = [
               hsPkgs.microaeson
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes = {
+        "pipes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.index-core

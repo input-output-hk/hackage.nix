@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        gstorable = {
+        "gstorable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
           ];
         };
         tests = {
-          generic-storable-test = {
+          "generic-storable-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim

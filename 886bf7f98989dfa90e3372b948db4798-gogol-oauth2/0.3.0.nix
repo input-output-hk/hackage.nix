@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-oauth2 = {
+        "gogol-oauth2" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

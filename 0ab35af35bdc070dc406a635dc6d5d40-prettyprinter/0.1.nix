@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        prettyprinter = {
+        "prettyprinter" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.text
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.void;
         };
         exes = {
-          generate_readme = {
+          "generate_readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.prettyprinter
@@ -37,14 +37,14 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.QuickCheck
             ];
           };
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.prettyprinter
@@ -57,7 +57,7 @@ let
           };
         };
         benchmarks = {
-          fusion = {
+          "fusion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.prettyprinter
@@ -69,7 +69,7 @@ let
               hsPkgs.ansi-wl-pprint
             ];
           };
-          faster-unsafe-text = {
+          "faster-unsafe-text" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

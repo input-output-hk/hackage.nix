@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hyakko = {
+          "hyakko" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

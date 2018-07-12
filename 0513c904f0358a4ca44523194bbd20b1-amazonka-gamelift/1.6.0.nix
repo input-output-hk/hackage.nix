@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-gamelift = {
+        "amazonka-gamelift" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-gamelift-test = {
+          "amazonka-gamelift-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

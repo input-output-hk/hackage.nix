@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dhall = {
+        "dhall" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          dhall = {
+          "dhall" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dhall

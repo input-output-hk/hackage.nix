@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sym-plot = {
+        "sym-plot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sym

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mountpoints = {
+        "mountpoints" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

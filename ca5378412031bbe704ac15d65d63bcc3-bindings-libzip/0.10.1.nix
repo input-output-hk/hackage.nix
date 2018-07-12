@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-libzip = {
+        "bindings-libzip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

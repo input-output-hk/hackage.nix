@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        winery = {
+        "winery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          winery = {
+          "winery" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -75,7 +75,7 @@ let
           };
         };
         benchmarks = {
-          bench-winery = {
+          "bench-winery" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

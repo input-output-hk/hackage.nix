@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lame = {
+        "lame" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           libs = [ pkgs.mp3lame ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default-class

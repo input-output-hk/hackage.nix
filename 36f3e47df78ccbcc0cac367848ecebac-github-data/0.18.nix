@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        github-data = {
+        "github-data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

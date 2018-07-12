@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libssh2-conduit = {
+        "libssh2-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

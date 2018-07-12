@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        species = {
+        "species" = {
           depends  = [
             hsPkgs.base
             hsPkgs.numeric-prelude

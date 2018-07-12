@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell98 = {
+        "haskell98" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        LRU = {
+        "LRU" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

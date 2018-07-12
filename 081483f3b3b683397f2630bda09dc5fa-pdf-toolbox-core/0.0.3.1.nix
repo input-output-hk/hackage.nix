@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pdf-toolbox-core = {
+        "pdf-toolbox-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

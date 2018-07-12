@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        tfp = {
+        "tfp" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          tfp-test = {
+          "tfp-test" = {
             depends  = pkgs.lib.optionals _flags.build-test [
               hsPkgs.tfp
               hsPkgs.QuickCheck

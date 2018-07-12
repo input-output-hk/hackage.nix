@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-framework-quickcheck2 = {
+        "test-framework-quickcheck2" = {
           depends  = [
             hsPkgs.test-framework
             hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-io-access = {
+        "time-io-access" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

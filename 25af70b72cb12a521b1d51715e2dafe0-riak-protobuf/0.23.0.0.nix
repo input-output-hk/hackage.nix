@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        riak-protobuf = {
+        "riak-protobuf" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

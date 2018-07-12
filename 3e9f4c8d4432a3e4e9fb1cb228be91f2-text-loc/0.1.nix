@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-loc = {
+        "text-loc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

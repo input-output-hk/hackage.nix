@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        effect-handlers = {
+        "effect-handlers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.free
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.effect-handlers
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          benchm = {
+          "benchm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.effect-handlers

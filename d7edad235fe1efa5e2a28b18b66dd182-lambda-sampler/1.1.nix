@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambda-sampler = {
+        "lambda-sampler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MonadRandom
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          lambda-sampler-tests = {
+          "lambda-sampler-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-uuid = {
+        "system-uuid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           libs = pkgs.lib.optional system.isLinux pkgs.uuid ++ pkgs.lib.optional system.isWindows pkgs.rpcrt4;
         };
         exes = {
-          hooty = {
+          "hooty" = {
             libs = pkgs.lib.optional system.isLinux pkgs.uuid ++ pkgs.lib.optional system.isWindows pkgs.rpcrt4;
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        logfloat = {
+        "logfloat" = {
           depends  = [ hsPkgs.base ];
         };
       };

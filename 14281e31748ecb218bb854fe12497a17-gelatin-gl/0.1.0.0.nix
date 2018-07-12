@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gelatin-gl = {
+        "gelatin-gl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          gelatin-gl-example = {
+          "gelatin-gl-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gelatin

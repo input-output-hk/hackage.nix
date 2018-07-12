@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventsource-geteventstore-store = {
+        "eventsource-geteventstore-store" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          geteventstore-store-test-suite = {
+          "geteventstore-store-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eventsource-api

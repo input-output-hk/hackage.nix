@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-metrics = {
+        "wai-middleware-metrics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai

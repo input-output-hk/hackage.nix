@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-parsec-picky = {
+        "aeson-parsec-picky" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

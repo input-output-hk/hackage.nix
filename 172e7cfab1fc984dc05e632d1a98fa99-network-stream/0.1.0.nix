@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-stream = {
+        "network-stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

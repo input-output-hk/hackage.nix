@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vty = {
+        "vty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          vty-demo = {
+          "vty-demo" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.base
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          verify-attribute-ops = {
+          "verify-attribute-ops" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -74,7 +74,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-using-mock-terminal = {
+          "verify-using-mock-terminal" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -92,7 +92,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-terminal = {
+          "verify-terminal" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -111,7 +111,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-display-attributes = {
+          "verify-display-attributes" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -128,7 +128,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-empty-image-props = {
+          "verify-empty-image-props" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -145,7 +145,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-eval-terminfo-caps = {
+          "verify-eval-terminfo-caps" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -164,7 +164,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-image-ops = {
+          "verify-image-ops" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -181,7 +181,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-image-trans = {
+          "verify-image-trans" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -198,7 +198,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-inline = {
+          "verify-inline" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -215,7 +215,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-parse-terminfo-caps = {
+          "verify-parse-terminfo-caps" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -233,7 +233,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-simple-span-generation = {
+          "verify-simple-span-generation" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -250,7 +250,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-crop-span-generation = {
+          "verify-crop-span-generation" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -267,7 +267,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-layers-span-generation = {
+          "verify-layers-span-generation" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -284,7 +284,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-utf8-width = {
+          "verify-utf8-width" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -301,7 +301,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-using-mock-input = {
+          "verify-using-mock-input" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal
@@ -326,7 +326,7 @@ let
               hsPkgs.vector
             ];
           };
-          verify-config = {
+          "verify-config" = {
             depends  = [
               hsPkgs.vty
               hsPkgs.Cabal

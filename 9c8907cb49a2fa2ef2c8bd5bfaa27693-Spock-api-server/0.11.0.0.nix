@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock-api-server = {
+        "Spock-api-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Spock-core

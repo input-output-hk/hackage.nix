@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack2-handler-mongrel2-http = {
+        "hack2-handler-mongrel2-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

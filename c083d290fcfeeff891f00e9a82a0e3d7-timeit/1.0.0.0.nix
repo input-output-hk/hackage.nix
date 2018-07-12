@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timeit = {
+        "timeit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

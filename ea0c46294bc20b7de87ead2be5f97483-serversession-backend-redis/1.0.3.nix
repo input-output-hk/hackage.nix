@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serversession-backend-redis = {
+        "serversession-backend-redis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
             else [ hsPkgs.time ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cspmchecker = {
+          "cspmchecker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.libcspm

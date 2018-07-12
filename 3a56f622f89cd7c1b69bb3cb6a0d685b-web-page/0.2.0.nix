@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-page = {
+        "web-page" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          web-page-test = {
+          "web-page-test" = {
             depends  = pkgs.lib.optionals _flags.testprogram [
               hsPkgs.base
               hsPkgs.blaze-html

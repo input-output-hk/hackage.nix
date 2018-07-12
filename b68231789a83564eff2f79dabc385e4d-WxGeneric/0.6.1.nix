@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WxGeneric = {
+        "WxGeneric" = {
           depends  = [
             hsPkgs.SybWidget
             hsPkgs.base

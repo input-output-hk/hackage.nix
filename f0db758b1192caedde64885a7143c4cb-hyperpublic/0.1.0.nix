@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hyperpublic = {
+        "hyperpublic" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hyperpublic-example = {
+          "hyperpublic-example" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

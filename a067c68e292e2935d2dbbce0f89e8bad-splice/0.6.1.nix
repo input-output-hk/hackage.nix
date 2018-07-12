@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        splice = {
+        "splice" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

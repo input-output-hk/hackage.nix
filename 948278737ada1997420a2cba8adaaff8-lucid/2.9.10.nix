@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lucid = {
+        "lucid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lucid
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -60,7 +60,7 @@ let
               hsPkgs.lucid
             ];
           };
-          bench-io = {
+          "bench-io" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

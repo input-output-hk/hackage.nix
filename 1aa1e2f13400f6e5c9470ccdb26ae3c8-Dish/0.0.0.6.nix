@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        Dish = {
+        "Dish" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         exes = {
-          Dish = {
+          "Dish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

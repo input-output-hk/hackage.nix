@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iri = {
+        "iri" = {
           depends  = [
             hsPkgs.th-lift-instances
             hsPkgs.th-lift
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.iri
               hsPkgs.tasty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoogle = {
+        "hoogle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -39,7 +39,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          hoogle = {
+          "hoogle" = {
             depends  = [
               hsPkgs.time
               hsPkgs.old-time

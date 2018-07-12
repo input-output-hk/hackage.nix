@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        html-tokenizer = {
+        "html-tokenizer" = {
           depends  = [
             hsPkgs.html-entities
             hsPkgs.conversion
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.doctest
               hsPkgs.directory

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-zeromq4 = {
+        "pipes-zeromq4" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zeromq4-haskell
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          proxy = {
+          "proxy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-zeromq4
@@ -43,18 +43,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          client = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.pipes-zeromq4
-              hsPkgs.pipes
-              hsPkgs.pipes-safe
-              hsPkgs.zeromq4-haskell
-              hsPkgs.bytestring
-              hsPkgs.semigroups
-            ];
-          };
-          server = {
+          "client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-zeromq4
@@ -65,7 +54,18 @@ let
               hsPkgs.semigroups
             ];
           };
-          serverPipeline = {
+          "server" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.pipes-zeromq4
+              hsPkgs.pipes
+              hsPkgs.pipes-safe
+              hsPkgs.zeromq4-haskell
+              hsPkgs.bytestring
+              hsPkgs.semigroups
+            ];
+          };
+          "serverPipeline" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-zeromq4

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iwlib = {
+        "iwlib" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.iw ];
         };

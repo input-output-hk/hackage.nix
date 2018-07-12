@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mdcat = {
+          "mdcat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Rasenschach = {
+          "Rasenschach" = {
             depends  = [
               hsPkgs.SDL
               hsPkgs.SDL-gfx

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ip6addr = {
+          "ip6addr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

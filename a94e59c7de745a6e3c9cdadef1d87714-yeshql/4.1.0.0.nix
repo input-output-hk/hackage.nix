@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yeshql = {
+        "yeshql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yeshql-core

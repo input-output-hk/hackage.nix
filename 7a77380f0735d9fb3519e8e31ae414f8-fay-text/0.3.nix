@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fay-text = {
+        "fay-text" = {
           depends  = [
             hsPkgs.text
             hsPkgs.fay

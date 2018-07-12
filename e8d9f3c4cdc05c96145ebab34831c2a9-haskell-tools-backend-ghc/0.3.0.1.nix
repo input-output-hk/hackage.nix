@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-backend-ghc = {
+        "haskell-tools-backend-ghc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

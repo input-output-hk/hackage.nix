@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-handler-devel = {
+        "wai-handler-devel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          wai-handler-devel = {
+          "wai-handler-devel" = {
             depends  = [ hsPkgs.cmdargs ];
           };
         };

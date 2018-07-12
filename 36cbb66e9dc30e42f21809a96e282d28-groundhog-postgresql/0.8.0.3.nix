@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        groundhog-postgresql = {
+        "groundhog-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

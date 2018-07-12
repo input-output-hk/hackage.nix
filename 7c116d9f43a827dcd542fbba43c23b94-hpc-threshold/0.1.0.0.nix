@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpc-threshold = {
+        "hpc-threshold" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          hpc-threshold = {
+          "hpc-threshold" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hpc-threshold
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          hpc-threshold-test = {
+          "hpc-threshold-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hpc-threshold

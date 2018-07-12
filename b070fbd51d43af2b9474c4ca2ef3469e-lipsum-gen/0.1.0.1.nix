@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lipsum-gen = {
+        "lipsum-gen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

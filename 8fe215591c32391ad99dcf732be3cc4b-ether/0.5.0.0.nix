@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ether = {
+        "ether" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          regression = {
+          "regression" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -52,7 +52,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

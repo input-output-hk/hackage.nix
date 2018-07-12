@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        recaptcha = {
+        "recaptcha" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

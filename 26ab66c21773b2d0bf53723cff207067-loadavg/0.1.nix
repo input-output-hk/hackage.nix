@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        loadavg = {
+        "loadavg" = {
           depends  = [ hsPkgs.base ];
         };
       };

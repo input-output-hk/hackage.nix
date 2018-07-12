@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-nix = {
+        "language-nix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        friday-devil = {
+        "friday-devil" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

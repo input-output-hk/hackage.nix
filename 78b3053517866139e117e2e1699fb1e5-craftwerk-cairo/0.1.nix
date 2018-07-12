@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        craftwerk-cairo = {
+        "craftwerk-cairo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        dimensions = {
+        "dimensions" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          dimensions-test = {
+          "dimensions-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

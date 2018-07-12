@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        second-transfer = {
+        "second-transfer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -54,14 +54,14 @@ let
           ];
         };
         tests = {
-          compiling-ok = {
+          "compiling-ok" = {
             depends  = [
               hsPkgs.base
               hsPkgs.second-transfer
               hsPkgs.conduit
             ];
           };
-          hunit-tests = {
+          "hunit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

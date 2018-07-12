@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JSON-Combinator = {
+        "JSON-Combinator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JSONb

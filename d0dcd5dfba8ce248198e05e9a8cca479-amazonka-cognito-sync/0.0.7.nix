@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cognito-sync = {
+        "amazonka-cognito-sync" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

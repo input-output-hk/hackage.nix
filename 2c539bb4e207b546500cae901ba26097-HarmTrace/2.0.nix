@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HarmTrace = {
+        "HarmTrace" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          harmtrace = {
+          "harmtrace" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

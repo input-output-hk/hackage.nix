@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clash-lib = {
+        "clash-lib" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        x509-validation = {
+        "x509-validation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test-x509-validation = {
+          "test-x509-validation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

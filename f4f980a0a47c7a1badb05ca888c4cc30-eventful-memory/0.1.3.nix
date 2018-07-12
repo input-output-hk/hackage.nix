@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventful-memory = {
+        "eventful-memory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.eventful-core
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eventful-core
@@ -44,7 +44,7 @@ let
               hsPkgs.eventful-test-helpers
             ];
           };
-          style = {
+          "style" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eventful-core

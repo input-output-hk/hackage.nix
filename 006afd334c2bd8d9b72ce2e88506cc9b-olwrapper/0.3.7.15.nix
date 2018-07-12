@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        olwrapper = {
+        "olwrapper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          olwrapper = {
+          "olwrapper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

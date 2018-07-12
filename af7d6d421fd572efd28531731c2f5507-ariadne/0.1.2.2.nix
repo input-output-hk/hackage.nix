@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ariadne-server = {
+          "ariadne-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-names
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

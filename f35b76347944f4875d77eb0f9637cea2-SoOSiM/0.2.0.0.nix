@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SoOSiM = {
+        "SoOSiM" = {
           depends  = [
             hsPkgs.base
             hsPkgs.concurrent-supply

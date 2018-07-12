@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmath = {
+        "cmath" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.m ];
         };

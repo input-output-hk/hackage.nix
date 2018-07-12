@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        identicon-style-squares = {
+        "identicon-style-squares" = {
           depends  = [
             hsPkgs.base
             hsPkgs.identicon
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          squares = {
+          "squares" = {
             depends  = [
               hsPkgs.base
               hsPkgs.JuicyPixels

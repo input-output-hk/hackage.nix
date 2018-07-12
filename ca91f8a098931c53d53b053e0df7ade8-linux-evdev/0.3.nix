@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linux-evdev = {
+        "linux-evdev" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

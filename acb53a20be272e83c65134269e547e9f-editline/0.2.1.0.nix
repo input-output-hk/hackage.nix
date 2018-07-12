@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        editline = {
+        "editline" = {
           depends  = [ hsPkgs.base ];
         };
       };

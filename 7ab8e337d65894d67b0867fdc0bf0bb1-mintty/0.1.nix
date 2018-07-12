@@ -22,17 +22,17 @@ let
         buildType = "Simple";
       };
       components = {
-        mintty = {
+        "mintty" = {
           depends  = [
             hsPkgs.base
-          ] ++ (if system.isWindows && _flags.win32-2-5
+          ] ++ pkgs.lib.optionals system.isWindows (if _flags.win32-2-5
             then [ hsPkgs.Win32 ]
             else [
               hsPkgs.filepath
               hsPkgs.Win32
             ]);
-          libs = pkgs.lib.optional (system.isWindows && !_flags.win32-2-5) pkgs.ntdll;
-          build-tools = pkgs.lib.optional (system.isWindows && !_flags.win32-2-5) hsPkgs.buildPackages.hsc2hs;
+          libs = pkgs.lib.optionals system.isWindows (pkgs.lib.optional (!_flags.win32-2-5) pkgs.ntdll);
+          build-tools = pkgs.lib.optionals system.isWindows (pkgs.lib.optional (!_flags.win32-2-5) hsPkgs.buildPackages.hsc2hs);
         };
       };
     }

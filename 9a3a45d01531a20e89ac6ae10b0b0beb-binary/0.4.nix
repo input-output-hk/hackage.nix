@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        binary = {
+        "binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

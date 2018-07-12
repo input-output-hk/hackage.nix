@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lmdb-high-level = {
+        "lmdb-high-level" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          lmbd-high-level-test = {
+          "lmbd-high-level-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lmdb-high-level

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twiml = {
+        "twiml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

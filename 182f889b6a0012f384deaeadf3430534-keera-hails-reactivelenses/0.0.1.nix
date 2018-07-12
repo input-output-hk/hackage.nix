@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-reactivelenses = {
+        "keera-hails-reactivelenses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

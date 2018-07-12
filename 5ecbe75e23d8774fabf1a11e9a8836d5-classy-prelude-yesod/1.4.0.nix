@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        classy-prelude-yesod = {
+        "classy-prelude-yesod" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

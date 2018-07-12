@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cl3-hmatrix-interface = {
+        "cl3-hmatrix-interface" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cl3

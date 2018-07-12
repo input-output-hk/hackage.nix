@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iso8601-time = {
+        "iso8601-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -34,7 +34,7 @@ let
             ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.iso8601-time

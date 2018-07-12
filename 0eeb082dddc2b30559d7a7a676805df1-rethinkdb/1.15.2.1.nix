@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rethinkdb = {
+        "rethinkdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

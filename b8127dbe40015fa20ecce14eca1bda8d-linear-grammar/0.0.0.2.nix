@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        linear-grammar = {
+        "linear-grammar" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

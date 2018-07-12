@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arith-encode = {
+        "arith-encode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          UnitTest = {
+          "UnitTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

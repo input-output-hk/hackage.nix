@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fgl-extras-decompositions = {
+        "fgl-extras-decompositions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

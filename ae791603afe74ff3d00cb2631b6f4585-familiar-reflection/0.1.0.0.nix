@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        familiar-reflection = {
+        "familiar-reflection" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-github-webhook = {
+        "servant-github-webhook" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base16-bytestring
@@ -43,7 +43,7 @@ let
             else [ hsPkgs.base ]);
         };
         tests = {
-          multikey = {
+          "multikey" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -54,7 +54,7 @@ let
               hsPkgs.warp
             ] ++ pkgs.lib.optional _flags.old-base hsPkgs.transformers;
           };
-          singlekey = {
+          "singlekey" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

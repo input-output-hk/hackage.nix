@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-replicapool-updater = {
+        "gogol-replicapool-updater" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

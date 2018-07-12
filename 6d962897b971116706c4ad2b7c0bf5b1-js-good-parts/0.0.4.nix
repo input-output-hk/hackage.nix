@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        js-good-parts = {
+        "js-good-parts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wl-pprint

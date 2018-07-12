@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haskell-gi = {
+          "haskell-gi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hyperion = {
+        "hyperion" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-wl-pprint
@@ -47,14 +47,14 @@ let
           ];
         };
         exes = {
-          hyperion-micro-benchmark-example = {
+          "hyperion-micro-benchmark-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hyperion
               hsPkgs.process
             ];
           };
-          hyperion-end-to-end-benchmark-example = {
+          "hyperion-end-to-end-benchmark-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hyperion
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        backprop = {
+        "backprop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ad
@@ -37,13 +37,13 @@ let
           ];
         };
         exes = {
-          backprop-monotest = {
+          "backprop-monotest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.backprop
             ];
           };
-          backprop-neuraltest = {
+          "backprop-neuraltest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ad
@@ -56,7 +56,7 @@ let
               hsPkgs.type-combinators
             ];
           };
-          backprop-mnist = {
+          "backprop-mnist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.backprop
@@ -74,7 +74,7 @@ let
           };
         };
         benchmarks = {
-          backprop-mnist-bench = {
+          "backprop-mnist-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.backprop

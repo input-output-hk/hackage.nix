@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libssh2 = {
+        "libssh2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          hs-ssh-client = {
+          "hs-ssh-client" = {
             depends  = pkgs.lib.optionals _flags.example-client [
               hsPkgs.base
               hsPkgs.utf8-string

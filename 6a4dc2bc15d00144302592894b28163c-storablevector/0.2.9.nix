@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        storablevector = {
+        "storablevector" = {
           depends  = [
             hsPkgs.non-negative
             hsPkgs.utility-ht
@@ -42,7 +42,7 @@ let
               else [ hsPkgs.base ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.storablevector
               hsPkgs.bytestring
@@ -56,14 +56,14 @@ let
           };
         };
         benchmarks = {
-          speedtest = {
+          "speedtest" = {
             depends  = [
               hsPkgs.storablevector
               hsPkgs.sample-frame
               hsPkgs.deepseq
             ] ++ [ hsPkgs.base ];
           };
-          speedpointer = {
+          "speedpointer" = {
             depends  = [
               hsPkgs.storablevector
               hsPkgs.utility-ht

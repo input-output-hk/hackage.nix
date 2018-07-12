@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          alex = {
+          "alex" = {
             depends  = [
               hsPkgs.base
             ] ++ (if _flags.small_base

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        rdtsc = {
+        "rdtsc" = {
           depends  = [ hsPkgs.base ];
         };
       };

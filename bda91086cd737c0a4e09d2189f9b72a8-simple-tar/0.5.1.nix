@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-tar = {
+        "simple-tar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

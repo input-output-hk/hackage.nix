@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kanji = {
+        "kanji" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          kanji = {
+          "kanji" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          kanji-test = {
+          "kanji-test" = {
             depends  = [
               hsPkgs.HUnit-approx
               hsPkgs.aeson
@@ -61,7 +61,7 @@ let
           };
         };
         benchmarks = {
-          kanji-bench = {
+          "kanji-bench" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

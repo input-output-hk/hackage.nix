@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kafka-client = {
+        "kafka-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
               hsPkgs.kafka-client
             ];
           };
-          integration-test = {
+          "integration-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

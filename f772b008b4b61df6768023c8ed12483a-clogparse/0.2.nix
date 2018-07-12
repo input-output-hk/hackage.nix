@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clogparse = {
+        "clogparse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

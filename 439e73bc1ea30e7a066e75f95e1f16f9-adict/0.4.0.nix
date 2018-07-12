@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        adict = {
+        "adict" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

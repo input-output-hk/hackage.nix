@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nn = {
+        "nn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          nn-test = {
+          "nn-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nn

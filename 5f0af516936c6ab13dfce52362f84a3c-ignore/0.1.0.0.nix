@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ignore = {
+        "ignore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.path
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          ignore = {
+          "ignore" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ignore
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          ignore-test = {
+          "ignore-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ignore

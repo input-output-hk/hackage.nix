@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          uuagc = {
+          "uuagc" = {
             depends  = ([
               hsPkgs.haskell98
               hsPkgs.uulib

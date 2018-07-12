@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          elm-reactor = {
+          "elm-reactor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html

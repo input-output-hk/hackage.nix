@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        STLinkUSB = {
+        "STLinkUSB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

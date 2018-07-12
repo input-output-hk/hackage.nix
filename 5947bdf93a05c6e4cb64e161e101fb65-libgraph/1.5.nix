@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libgraph = {
+        "libgraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monads-tf

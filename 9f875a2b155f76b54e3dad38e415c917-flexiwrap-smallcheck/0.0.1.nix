@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flexiwrap-smallcheck = {
+        "flexiwrap-smallcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-type

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stripe-haskell = {
+        "stripe-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stripe-core

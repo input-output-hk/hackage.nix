@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        llvm-hs = {
+        "llvm-hs" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.exceptions
@@ -45,7 +45,7 @@ let
             else [ hsPkgs.base ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.tasty

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-dom-hello = {
+        "ghcjs-dom-hello" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghcjs-dom
@@ -32,12 +32,12 @@ let
           ];
         };
         exes = {
-          ghcjs-dom-hello = {
+          "ghcjs-dom-hello" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-dom
               hsPkgs.mtl
-            ] ++ (if !(compiler.isGhcjs && true) && (system.isOsx || system.isIos)
+            ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if system.isOsx || system.isIos
               then [
                 hsPkgs.jsaddle-wkwebview
               ]
@@ -49,7 +49,7 @@ let
                   hsPkgs.jsaddle-webkitgtk
                 ]);
           };
-          ghcjs-dom-hello-warp = {
+          "ghcjs-dom-hello-warp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-dom
@@ -57,7 +57,7 @@ let
               hsPkgs.mtl
             ];
           };
-          ghcjs-dom-hello-webkitgtk = {
+          "ghcjs-dom-hello-webkitgtk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-dom
@@ -70,7 +70,7 @@ let
                 hsPkgs.jsaddle-webkitgtk
               ]);
           };
-          ghcjs-dom-hello-wkwebview = {
+          "ghcjs-dom-hello-wkwebview" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-dom

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock = {
+        "Spock" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -54,7 +54,7 @@ let
           ];
         };
         tests = {
-          spocktests = {
+          "spocktests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -69,7 +69,7 @@ let
           };
         };
         benchmarks = {
-          spock-simple-example = {
+          "spock-simple-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Spock

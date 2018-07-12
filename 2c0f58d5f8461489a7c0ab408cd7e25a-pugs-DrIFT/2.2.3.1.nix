@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pugs-DrIFT = {
+        "pugs-DrIFT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          pugs-DrIFT = {
+          "pugs-DrIFT" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

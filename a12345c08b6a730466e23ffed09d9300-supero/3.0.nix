@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          supero = {
+          "supero" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

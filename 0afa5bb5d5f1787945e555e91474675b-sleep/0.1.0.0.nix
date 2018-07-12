@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        sleep = {
+        "sleep" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         exes = {
-          sleep = {
+          "sleep" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

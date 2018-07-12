@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        neat = {
+        "neat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          neat = {
+          "neat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

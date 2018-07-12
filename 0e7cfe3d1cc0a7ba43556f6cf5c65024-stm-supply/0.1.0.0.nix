@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-supply = {
+        "stm-supply" = {
           depends  = [
             hsPkgs.base
             hsPkgs.concurrent-supply
           ];
         };
         tests = {
-          stm-supply-test = {
+          "stm-supply-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm-supply

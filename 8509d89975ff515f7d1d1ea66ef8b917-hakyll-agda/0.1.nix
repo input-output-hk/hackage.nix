@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-agda = {
+        "hakyll-agda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hakyll

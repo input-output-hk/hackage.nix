@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        harpy = {
+        "harpy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

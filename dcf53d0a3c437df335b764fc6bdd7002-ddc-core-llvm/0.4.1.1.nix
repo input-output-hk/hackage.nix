@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddc-core-llvm = {
+        "ddc-core-llvm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

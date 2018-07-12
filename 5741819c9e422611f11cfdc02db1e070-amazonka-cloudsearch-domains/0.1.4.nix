@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cloudsearch-domains = {
+        "amazonka-cloudsearch-domains" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

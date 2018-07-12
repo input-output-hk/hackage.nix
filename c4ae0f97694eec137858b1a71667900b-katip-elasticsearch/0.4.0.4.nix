@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        katip-elasticsearch = {
+        "katip-elasticsearch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.katip
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.katip-elasticsearch
               hsPkgs.katip
@@ -75,7 +75,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.katip-elasticsearch

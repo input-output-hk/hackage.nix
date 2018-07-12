@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xilinx-lava = {
+        "xilinx-lava" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

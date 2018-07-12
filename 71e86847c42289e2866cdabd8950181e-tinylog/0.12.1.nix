@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tinylog = {
+        "tinylog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         benchmarks = {
-          tinylog-bench = {
+          "tinylog-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

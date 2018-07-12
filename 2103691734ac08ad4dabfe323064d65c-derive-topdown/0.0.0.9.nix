@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        derive-topdown = {
+        "derive-topdown" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          derive-topdown-test = {
+          "derive-topdown-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

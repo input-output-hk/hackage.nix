@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twine = {
+        "twine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

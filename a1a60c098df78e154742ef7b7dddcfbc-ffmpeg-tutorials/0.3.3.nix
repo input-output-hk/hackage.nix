@@ -21,14 +21,14 @@ let
       };
       components = {
         exes = {
-          tutorial01 = {
+          "tutorial01" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
               hsPkgs.hs-ffmpeg
             ];
           };
-          tutorial02 = {
+          "tutorial02" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -36,7 +36,7 @@ let
               hsPkgs.hs-ffmpeg
             ];
           };
-          tutorial03 = {
+          "tutorial03" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

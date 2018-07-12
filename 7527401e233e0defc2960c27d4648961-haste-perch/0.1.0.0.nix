@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haste-perch = {
+        "haste-perch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haste-compiler

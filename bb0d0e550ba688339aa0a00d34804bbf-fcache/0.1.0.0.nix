@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fcache = {
+        "fcache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          fcache-test = {
+          "fcache-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fcache

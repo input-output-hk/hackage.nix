@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake = {
+        "shake" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.binary
@@ -46,7 +46,7 @@ let
             else pkgs.lib.optional (!system.isWindows) hsPkgs.unix)) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         exes = {
-          shake = {
+          "shake" = {
             depends  = (([
               hsPkgs.base
               hsPkgs.binary
@@ -71,7 +71,7 @@ let
           };
         };
         tests = {
-          shake-test = {
+          "shake-test" = {
             depends  = (([
               hsPkgs.base
               hsPkgs.binary

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-metrics = {
+        "network-metrics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          gmetric-haskell = {
+          "gmetric-haskell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

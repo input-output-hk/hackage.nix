@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        couchdb-enumerator = {
+        "couchdb-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.couchdb-enumerator
               hsPkgs.base

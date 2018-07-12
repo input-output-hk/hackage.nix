@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-mmap = {
+        "bytestring-mmap" = {
           depends  = [
             hsPkgs.unix
           ] ++ (if _flags.split-base

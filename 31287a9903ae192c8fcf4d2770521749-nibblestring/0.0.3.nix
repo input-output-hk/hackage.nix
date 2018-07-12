@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nibblestring = {
+        "nibblestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-nibblestring = {
+          "test-nibblestring" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base16-bytestring

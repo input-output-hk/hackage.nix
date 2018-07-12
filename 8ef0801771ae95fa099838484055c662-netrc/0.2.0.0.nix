@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netrc = {
+        "netrc" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.deepseq
@@ -36,7 +36,7 @@ let
             ]);
         };
         tests = {
-          test-netrc = {
+          "test-netrc" = {
             depends  = [
               hsPkgs.netrc
               hsPkgs.base

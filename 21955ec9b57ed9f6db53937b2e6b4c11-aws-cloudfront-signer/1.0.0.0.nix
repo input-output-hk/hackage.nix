@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-cloudfront-signer = {
+        "aws-cloudfront-signer" = {
           depends  = [
             hsPkgs.RSA
             hsPkgs.asn1-types

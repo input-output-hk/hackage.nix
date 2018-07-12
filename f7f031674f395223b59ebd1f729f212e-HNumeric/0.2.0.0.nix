@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        HNumeric = {
+        "HNumeric" = {
           depends  = [
             hsPkgs.base
             hsPkgs.normaldistribution
           ];
         };
         exes = {
-          HNumeric-exe = {
+          "HNumeric-exe" = {
             depends  = [
               hsPkgs.HNumeric
               hsPkgs.base
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          HNumeric-test = {
+          "HNumeric-test" = {
             depends  = [
               hsPkgs.HNumeric
               hsPkgs.base

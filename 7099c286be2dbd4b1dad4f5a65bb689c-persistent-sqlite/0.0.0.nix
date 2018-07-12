@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-sqlite = {
+        "persistent-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

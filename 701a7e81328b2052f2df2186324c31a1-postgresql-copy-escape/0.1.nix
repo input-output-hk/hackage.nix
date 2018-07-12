@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-copy-escape = {
+        "postgresql-copy-escape" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

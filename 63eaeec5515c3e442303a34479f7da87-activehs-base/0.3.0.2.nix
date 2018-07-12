@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        activehs-base = {
+        "activehs-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

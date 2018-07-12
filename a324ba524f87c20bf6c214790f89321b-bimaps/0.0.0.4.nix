@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bimaps = {
+        "bimaps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bimaps
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          BenchmarkBimaps = {
+          "BenchmarkBimaps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bimaps

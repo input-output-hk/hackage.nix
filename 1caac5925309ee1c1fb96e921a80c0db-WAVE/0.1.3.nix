@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        WAVE = {
+        "WAVE" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         exes = {
-          sinewave = {
+          "sinewave" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

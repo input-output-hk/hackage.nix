@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        craze = {
+        "craze" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          craze-example = {
+          "craze-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curl
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          craze-doctest = {
+          "craze-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curl
@@ -76,7 +76,7 @@ let
               hsPkgs.doctest-discover
             ];
           };
-          craze-spec = {
+          "craze-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curl

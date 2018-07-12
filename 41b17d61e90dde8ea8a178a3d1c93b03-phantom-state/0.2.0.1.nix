@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        phantom-state = {
+        "phantom-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
           ];
         };
         benchmarks = {
-          phantom-state-bench = {
+          "phantom-state-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

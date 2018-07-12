@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tsuntsun = {
+          "tsuntsun" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

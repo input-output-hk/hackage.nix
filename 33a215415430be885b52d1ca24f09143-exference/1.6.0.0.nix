@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exference = {
+        "exference" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-orphans
@@ -55,7 +55,7 @@ let
           ];
         };
         exes = {
-          exference = {
+          "exference" = {
             depends  = pkgs.lib.optionals _flags.build-executables [
               hsPkgs.exference
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typeparams = {
+        "typeparams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

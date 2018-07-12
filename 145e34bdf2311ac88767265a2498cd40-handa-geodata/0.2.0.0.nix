@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        handa-geodata = {
+        "handa-geodata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          handa-test-geojson = {
+          "handa-test-geojson" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -39,7 +39,7 @@ let
               hsPkgs.scientific
             ];
           };
-          handa-geojson-to-vtk = {
+          "handa-geojson-to-vtk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

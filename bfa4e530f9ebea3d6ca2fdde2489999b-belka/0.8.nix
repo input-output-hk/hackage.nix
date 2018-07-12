@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        belka = {
+        "belka" = {
           depends  = [
             hsPkgs.base64-bytestring
             hsPkgs.json-bytes-builder
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.belka
               hsPkgs.iri

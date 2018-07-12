@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        primitive = {
+        "primitive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim

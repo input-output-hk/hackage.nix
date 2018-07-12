@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bake = {
+        "bake" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmdargs
@@ -51,7 +51,7 @@ let
           ];
         };
         exes = {
-          bake-test = {
+          "bake-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

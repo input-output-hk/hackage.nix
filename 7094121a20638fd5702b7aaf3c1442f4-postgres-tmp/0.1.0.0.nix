@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgres-tmp = {
+        "postgres-tmp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

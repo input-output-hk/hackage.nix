@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-streams = {
+        "binary-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          encode-decode = {
+          "encode-decode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

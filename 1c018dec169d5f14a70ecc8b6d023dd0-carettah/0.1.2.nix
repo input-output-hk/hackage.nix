@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          carettah = {
+          "carettah" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

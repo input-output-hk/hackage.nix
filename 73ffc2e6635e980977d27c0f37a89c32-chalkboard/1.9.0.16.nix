@@ -29,7 +29,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chalkboard = {
+        "chalkboard" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -46,15 +46,15 @@ let
           ];
         };
         exes = {
-          chalkboard-server-1_9_0_16 = {};
-          chalkboard-tests-test1 = {};
-          chalkboard-tests-chalkmark = {};
-          chalkboard-tests-simple = {
+          "chalkboard-server-1_9_0_16" = {};
+          "chalkboard-tests-test1" = {};
+          "chalkboard-tests-chalkmark" = {};
+          "chalkboard-tests-simple" = {
             depends  = pkgs.lib.optional (!(_flags.all || _flags.simple)) hsPkgs.base;
           };
-          chalkboard-tests-cbbe1 = {};
-          chalkboard-examples-example = {};
-          chalkboard-tutorial-basic = {};
+          "chalkboard-tests-cbbe1" = {};
+          "chalkboard-examples-example" = {};
+          "chalkboard-tutorial-basic" = {};
         };
       };
     }

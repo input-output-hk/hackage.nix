@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Unixutils-shadow = {
+        "Unixutils-shadow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

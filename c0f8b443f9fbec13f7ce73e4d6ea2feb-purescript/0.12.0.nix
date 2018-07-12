@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        purescript = {
+        "purescript" = {
           depends  = [
             hsPkgs.Glob
             hsPkgs.aeson
@@ -78,7 +78,7 @@ let
           ];
         };
         exes = {
-          purs = {
+          "purs" = {
             depends  = [
               hsPkgs.Glob
               hsPkgs.aeson
@@ -144,7 +144,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.Glob
               hsPkgs.HUnit

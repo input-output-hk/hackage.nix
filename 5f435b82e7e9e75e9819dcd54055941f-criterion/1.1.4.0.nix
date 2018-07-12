@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        criterion = {
+        "criterion" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-wl-pprint
@@ -53,7 +53,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         tests = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -63,7 +63,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

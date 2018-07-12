@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-orphans = {
+        "th-orphans" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.nats
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.4") hsPkgs.generic-deriving) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.th-orphans

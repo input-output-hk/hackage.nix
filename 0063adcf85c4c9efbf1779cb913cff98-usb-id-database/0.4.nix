@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        usb-id-database = {
+        "usb-id-database" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,6 +31,6 @@ let
             hsPkgs.parsimony
           ];
         };
-        exes = { example = {}; };
+        exes = { "example" = {}; };
       };
     }

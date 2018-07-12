@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          github-backup = {
+          "github-backup" = {
             depends  = ([
               hsPkgs.MissingH
               hsPkgs.hslogger
@@ -61,7 +61,7 @@ let
                 hsPkgs.network
               ]);
           };
-          gitriddance = {
+          "gitriddance" = {
             depends  = ([
               hsPkgs.github
               hsPkgs.base

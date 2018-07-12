@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fedora-packages = {
+        "fedora-packages" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          hunit = {
+          "hunit" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -48,7 +48,7 @@ let
               hsPkgs.hspec
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

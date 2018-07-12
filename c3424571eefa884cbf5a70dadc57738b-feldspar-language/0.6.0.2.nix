@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feldspar-language = {
+        "feldspar-language" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          range = {
+          "range" = {
             depends  = [
               hsPkgs.feldspar-language
               hsPkgs.base
@@ -49,7 +49,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          semantics = {
+          "semantics" = {
             depends  = [
               hsPkgs.feldspar-language
               hsPkgs.base
@@ -59,7 +59,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          decoration = {
+          "decoration" = {
             depends  = [
               hsPkgs.feldspar-language
               hsPkgs.base

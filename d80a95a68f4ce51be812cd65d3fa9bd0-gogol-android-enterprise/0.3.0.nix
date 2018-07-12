@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-android-enterprise = {
+        "gogol-android-enterprise" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

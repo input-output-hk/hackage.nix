@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        derivation-trees = {
+        "derivation-trees" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

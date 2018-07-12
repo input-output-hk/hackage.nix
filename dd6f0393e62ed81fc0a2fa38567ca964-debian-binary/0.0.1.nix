@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debian-binary = {
+        "debian-binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -29,9 +29,9 @@ let
           ];
         };
         exes = {
-          manual = {};
-          query = {};
-          update = {};
+          "manual" = {};
+          "query" = {};
+          "update" = {};
         };
       };
     }

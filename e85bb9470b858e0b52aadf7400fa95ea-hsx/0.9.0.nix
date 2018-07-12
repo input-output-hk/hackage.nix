@@ -22,13 +22,13 @@ let
         buildType = "Simple";
       };
       components = {
-        hsx = {
+        "hsx" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.haskell-src-exts
             hsPkgs.utf8-string
           ] ++ [ hsPkgs.base ];
         };
-        exes = { trhsx = {}; };
+        exes = { "trhsx" = {}; };
       };
     }

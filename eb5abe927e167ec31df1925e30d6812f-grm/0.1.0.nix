@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grm = {
+        "grm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wl-pprint
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          grm = {
+          "grm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

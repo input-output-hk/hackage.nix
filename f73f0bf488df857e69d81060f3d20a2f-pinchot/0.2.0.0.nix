@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pinchot = {
+        "pinchot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          print-postal-grammar = {
+          "print-postal-grammar" = {
             depends  = pkgs.lib.optionals _flags.executables [
               hsPkgs.base
               hsPkgs.containers
@@ -41,7 +41,7 @@ let
               hsPkgs.Earley
             ];
           };
-          postal-parser = {
+          "postal-parser" = {
             depends  = pkgs.lib.optionals _flags.executables [
               hsPkgs.pretty-show
               hsPkgs.base

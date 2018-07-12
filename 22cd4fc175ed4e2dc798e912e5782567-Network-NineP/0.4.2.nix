@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Network-NineP = {
+        "Network-NineP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -40,6 +40,6 @@ let
             hsPkgs.hslogger
           ];
         };
-        exes = { test = {}; };
+        exes = { "test" = {}; };
       };
     }

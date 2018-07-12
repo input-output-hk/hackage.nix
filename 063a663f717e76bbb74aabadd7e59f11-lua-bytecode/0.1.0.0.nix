@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lua-bytecode = {
+        "lua-bytecode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hTensor = {
+        "hTensor" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.hmatrix

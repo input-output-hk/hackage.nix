@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        async-io-either = {
+        "async-io-either" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        leveldb-haskell = {
+        "leveldb-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          hsleveldb-example = {
+          "hsleveldb-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leveldb-haskell

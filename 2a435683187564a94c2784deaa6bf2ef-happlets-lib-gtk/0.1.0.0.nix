@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happlets-lib-gtk = {
+        "happlets-lib-gtk" = {
           depends  = [
             hsPkgs.cairo
             hsPkgs.diagrams-cairo
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          happlets-lib-gtk-test = {
+          "happlets-lib-gtk-test" = {
             depends  = [
               hsPkgs.cairo
               hsPkgs.diagrams-cairo

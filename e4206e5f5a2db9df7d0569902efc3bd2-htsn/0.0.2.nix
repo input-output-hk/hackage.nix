@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          htsn = {
+          "htsn" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base

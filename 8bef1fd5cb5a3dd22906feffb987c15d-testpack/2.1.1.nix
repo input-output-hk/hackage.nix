@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        testpack = {
+        "testpack" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.mtl

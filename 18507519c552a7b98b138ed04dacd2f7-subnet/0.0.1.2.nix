@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        subnet = {
+        "subnet" = {
           depends  = [
             hsPkgs.split
             hsPkgs.base

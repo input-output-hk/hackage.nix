@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uni-reactor = {
+        "uni-reactor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        system-info = {
+        "system-info" = {
           depends  = pkgs.lib.optional system.isLinux hsPkgs.base ++ pkgs.lib.optionals system.isWindows [
             hsPkgs.base
             hsPkgs.Win32
           ];
         };
         tests = {
-          system-info-test = {
+          "system-info-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.system-info

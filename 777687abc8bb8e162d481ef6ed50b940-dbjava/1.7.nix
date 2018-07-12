@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbjava = {
+        "dbjava" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          dbjava = {
+          "dbjava" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

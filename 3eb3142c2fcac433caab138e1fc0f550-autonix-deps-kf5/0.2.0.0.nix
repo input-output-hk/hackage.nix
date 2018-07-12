@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        autonix-deps-kf5 = {
+        "autonix-deps-kf5" = {
           depends  = [
             hsPkgs.autonix-deps
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          kf5-deps = {
+          "kf5-deps" = {
             depends  = [
               hsPkgs.autonix-deps
               hsPkgs.autonix-deps-kf5

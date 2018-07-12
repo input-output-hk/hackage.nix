@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haste-app = {
+        "haste-app" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

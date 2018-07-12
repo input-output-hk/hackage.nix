@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        battleship-combinatorics = {
+        "battleship-combinatorics" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.pooled-io
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          battleship-combinatorics = {
+          "battleship-combinatorics" = {
             depends  = [
               hsPkgs.battleship-combinatorics
               hsPkgs.containers
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          battleship-combinatorics-test = {
+          "battleship-combinatorics-test" = {
             depends  = [
               hsPkgs.battleship-combinatorics
               hsPkgs.QuickCheck

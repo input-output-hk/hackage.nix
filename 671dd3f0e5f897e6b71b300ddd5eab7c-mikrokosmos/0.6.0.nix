@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mikrokosmos = {
+          "mikrokosmos" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

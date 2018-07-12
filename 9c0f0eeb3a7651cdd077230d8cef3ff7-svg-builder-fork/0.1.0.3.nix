@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        svg-builder-fork = {
+        "svg-builder-fork" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

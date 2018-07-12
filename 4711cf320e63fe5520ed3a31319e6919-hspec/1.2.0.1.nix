@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec = {
+        "hspec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.silently
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.silently
@@ -45,20 +45,20 @@ let
               hsPkgs.hspec-discover
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
               hsPkgs.HUnit
             ];
           };
-          example-non-monadic = {
+          "example-non-monadic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

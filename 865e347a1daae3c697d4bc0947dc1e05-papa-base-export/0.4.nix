@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        papa-base-export = {
+        "papa-base-export" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

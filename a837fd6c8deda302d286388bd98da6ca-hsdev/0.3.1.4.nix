@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsdev = {
+        "hsdev" = {
           depends  = (((([
             hsPkgs.base
             hsPkgs.HTTP
@@ -93,7 +93,7 @@ let
           ];
         };
         exes = {
-          hsdev = {
+          "hsdev" = {
             depends  = [
               hsPkgs.hsdev
               hsPkgs.base
@@ -117,7 +117,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.hsdev
               hsPkgs.base

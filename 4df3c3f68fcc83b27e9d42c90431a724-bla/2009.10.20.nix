@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bla = {
+          "bla" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

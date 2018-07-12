@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WashNGo = {
+        "WashNGo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-compat
@@ -30,8 +30,8 @@ let
           ];
         };
         exes = {
-          wash2hs = {};
-          washc = {
+          "wash2hs" = {};
+          "washc" = {
             depends  = [
               hsPkgs.ghc-paths
               hsPkgs.process

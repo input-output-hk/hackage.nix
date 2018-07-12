@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        azubi = {
+        "azubi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          config = {
+          "config" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

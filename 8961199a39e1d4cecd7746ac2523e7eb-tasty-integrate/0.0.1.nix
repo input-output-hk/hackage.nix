@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ide-format = {
+          "ide-format" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -30,7 +30,7 @@ let
               hsPkgs.text
             ];
           };
-          tasty-integrate = {
+          "tasty-integrate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          suite = {
+          "suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

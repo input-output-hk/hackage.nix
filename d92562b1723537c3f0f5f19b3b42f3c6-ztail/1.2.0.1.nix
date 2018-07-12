@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          ztail = {
+          "ztail" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

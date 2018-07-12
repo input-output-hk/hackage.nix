@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hformat = {
+        "hformat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        strict = {
+        "strict" = {
           depends  = [ hsPkgs.base ];
         };
       };

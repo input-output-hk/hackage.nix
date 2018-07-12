@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stb-image-redux = {
+        "stb-image-redux" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          stb-image-redux-tests = {
+          "stb-image-redux-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stb-image-redux

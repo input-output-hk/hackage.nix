@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        linear = {
+        "linear" = {
           depends  = [
             hsPkgs.base-orphans
             hsPkgs.adjunctions
@@ -48,7 +48,7 @@ let
           ] ++ pkgs.lib.optional (_flags.template-haskell && (compiler.isGhc && true)) hsPkgs.template-haskell;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -58,7 +58,7 @@ let
               hsPkgs.simple-reflect
             ];
           };
-          UnitTests = {
+          "UnitTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

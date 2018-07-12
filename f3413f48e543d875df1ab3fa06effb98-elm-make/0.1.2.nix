@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          elm-make = {
+          "elm-make" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base

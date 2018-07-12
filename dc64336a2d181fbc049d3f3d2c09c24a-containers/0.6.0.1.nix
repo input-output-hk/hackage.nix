@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        containers = {
+        "containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.ghc-prim;
         };
         tests = {
-          map-lazy-properties = {
+          "map-lazy-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -42,7 +42,7 @@ let
               hsPkgs.transformers
             ];
           };
-          map-strict-properties = {
+          "map-strict-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -56,7 +56,7 @@ let
               hsPkgs.transformers
             ];
           };
-          bitqueue-properties = {
+          "bitqueue-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -65,7 +65,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          set-properties = {
+          "set-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -79,7 +79,7 @@ let
               hsPkgs.transformers
             ];
           };
-          intmap-lazy-properties = {
+          "intmap-lazy-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -92,7 +92,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          intmap-strict-properties = {
+          "intmap-strict-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -105,7 +105,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          intset-properties = {
+          "intset-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -118,7 +118,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          seq-properties = {
+          "seq-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -130,7 +130,7 @@ let
               hsPkgs.transformers
             ];
           };
-          tree-properties = {
+          "tree-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -142,7 +142,7 @@ let
               hsPkgs.transformers
             ];
           };
-          map-strictness-properties = {
+          "map-strictness-properties" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -154,7 +154,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          intmap-strictness-properties = {
+          "intmap-strictness-properties" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -166,7 +166,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          intset-strictness-properties = {
+          "intset-strictness-properties" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -178,7 +178,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          listutils-properties = {
+          "listutils-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ChasingBottoms
@@ -191,7 +191,7 @@ let
           };
         };
         benchmarks = {
-          intmap-benchmarks = {
+          "intmap-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -199,7 +199,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          intset-benchmarks = {
+          "intset-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -207,7 +207,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          map-benchmarks = {
+          "map-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -216,7 +216,7 @@ let
               hsPkgs.transformers
             ];
           };
-          sequence-benchmarks = {
+          "sequence-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -226,7 +226,7 @@ let
               hsPkgs.transformers
             ];
           };
-          set-benchmarks = {
+          "set-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -234,35 +234,35 @@ let
               hsPkgs.deepseq
             ];
           };
-          set-operations-intmap = {
+          "set-operations-intmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.criterion
             ];
           };
-          set-operations-intset = {
+          "set-operations-intset" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.criterion
             ];
           };
-          set-operations-map = {
+          "set-operations-map" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.criterion
             ];
           };
-          set-operations-set = {
+          "set-operations-set" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.criterion
             ];
           };
-          lookupge-intmap = {
+          "lookupge-intmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -271,7 +271,7 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          lookupge-map = {
+          "lookupge-map" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        legion = {
+        "legion" = {
           depends  = [
             hsPkgs.Ranged-sets
             hsPkgs.aeson

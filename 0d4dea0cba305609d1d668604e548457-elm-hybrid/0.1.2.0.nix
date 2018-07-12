@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        elm-hybrid = {
+        "elm-hybrid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          elm-hybrid-test = {
+          "elm-hybrid-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elm-hybrid

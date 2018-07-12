@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaskellNet-SSL = {
+        "HaskellNet-SSL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HaskellNet

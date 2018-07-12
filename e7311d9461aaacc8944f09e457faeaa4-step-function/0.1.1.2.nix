@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        step-function = {
+        "step-function" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          merge = {
+          "merge" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

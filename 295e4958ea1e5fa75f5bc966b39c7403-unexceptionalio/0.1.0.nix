@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unexceptionalio = {
+        "unexceptionalio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.errors

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hzulip = {
+        "hzulip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          hzulip-spec = {
+          "hzulip-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

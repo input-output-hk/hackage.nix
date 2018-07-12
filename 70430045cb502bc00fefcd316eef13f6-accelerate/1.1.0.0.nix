@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate = {
+        "accelerate" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.base-orphans

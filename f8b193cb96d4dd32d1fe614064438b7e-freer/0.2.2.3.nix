@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        freer = {
+        "freer" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.freer
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.freer
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          core = {
+          "core" = {
             depends  = [
               hsPkgs.base
               hsPkgs.freer

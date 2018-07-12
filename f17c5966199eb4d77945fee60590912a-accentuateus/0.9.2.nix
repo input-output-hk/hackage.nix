@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        accentuateus = {
+        "accentuateus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

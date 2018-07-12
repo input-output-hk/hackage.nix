@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        foldl-statistics = {
+        "foldl-statistics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foldl
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          foldl-statistics-test = {
+          "foldl-statistics-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foldl-statistics
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          bench-folds = {
+          "bench-folds" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foldl-statistics

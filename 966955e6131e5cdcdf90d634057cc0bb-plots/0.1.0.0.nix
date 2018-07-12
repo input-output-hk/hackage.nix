@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plots = {
+        "plots" = {
           depends  = [
             hsPkgs.base
             hsPkgs.adjunctions

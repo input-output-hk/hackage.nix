@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typed-wire = {
+        "typed-wire" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          twirec = {
+          "twirec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.typed-wire
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          typed-wire-tests = {
+          "typed-wire-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

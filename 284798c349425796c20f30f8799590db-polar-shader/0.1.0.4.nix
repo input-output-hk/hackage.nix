@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polar-shader = {
+        "polar-shader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-polar-shader = {
+          "test-polar-shader" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

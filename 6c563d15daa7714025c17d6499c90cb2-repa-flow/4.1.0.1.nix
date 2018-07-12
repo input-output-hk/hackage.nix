@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa-flow = {
+        "repa-flow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Lastik = {
+        "Lastik" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

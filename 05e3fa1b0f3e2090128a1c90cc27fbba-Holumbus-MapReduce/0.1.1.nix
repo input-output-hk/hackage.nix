@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Holumbus-MapReduce = {
+        "Holumbus-MapReduce" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -41,8 +41,8 @@ let
           ];
         };
         exes = {
-          Master = {};
-          MasterDaemon = {};
+          "Master" = {};
+          "MasterDaemon" = {};
         };
       };
     }

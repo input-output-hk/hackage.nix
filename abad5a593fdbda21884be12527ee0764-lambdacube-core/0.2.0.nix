@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdacube-core = {
+        "lambdacube-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

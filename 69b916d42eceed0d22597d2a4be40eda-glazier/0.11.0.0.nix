@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glazier = {
+        "glazier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

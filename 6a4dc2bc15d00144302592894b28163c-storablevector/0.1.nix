@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        storablevector = {
+        "storablevector" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

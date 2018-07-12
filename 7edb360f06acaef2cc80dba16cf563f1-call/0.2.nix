@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        call = {
+        "call" = {
           depends  = [
             hsPkgs.audiovisual
             hsPkgs.base
@@ -59,7 +59,7 @@ let
           ];
         };
         exes = {
-          hello-world = {
+          "hello-world" = {
             depends  = [
               hsPkgs.base
               hsPkgs.call

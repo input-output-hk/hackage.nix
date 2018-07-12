@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tutorial = {
+          "tutorial" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -44,7 +44,7 @@ let
               hsPkgs.warp
             ];
           };
-          t8-main = {
+          "t8-main" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -55,7 +55,7 @@ let
               hsPkgs.wai
             ];
           };
-          hackage = {
+          "hackage" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -66,7 +66,7 @@ let
               hsPkgs.transformers
             ];
           };
-          wai-middleware = {
+          "wai-middleware" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -78,7 +78,7 @@ let
               hsPkgs.warp
             ];
           };
-          auth-combinator = {
+          "auth-combinator" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

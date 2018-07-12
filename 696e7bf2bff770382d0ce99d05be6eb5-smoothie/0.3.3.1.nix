@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smoothie = {
+        "smoothie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear

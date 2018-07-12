@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xss-sanitize = {
+        "xss-sanitize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

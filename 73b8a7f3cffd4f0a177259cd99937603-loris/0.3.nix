@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        loris = {
+        "loris" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-compat-tdfa = {
+        "regex-compat-tdfa" = {
           depends  = if _flags.newbase
             then [
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chatter = {
+        "chatter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          tag = {
+          "tag" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.filepath
@@ -50,18 +50,7 @@ let
               hsPkgs.cereal
             ];
           };
-          train = {
-            depends  = [
-              hsPkgs.chatter
-              hsPkgs.filepath
-              hsPkgs.text
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.cereal
-              hsPkgs.containers
-            ];
-          };
-          eval = {
+          "train" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.filepath
@@ -72,7 +61,18 @@ let
               hsPkgs.containers
             ];
           };
-          bench = {
+          "eval" = {
+            depends  = [
+              hsPkgs.chatter
+              hsPkgs.filepath
+              hsPkgs.text
+              hsPkgs.base
+              hsPkgs.bytestring
+              hsPkgs.cereal
+              hsPkgs.containers
+            ];
+          };
+          "bench" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.criterion
@@ -86,7 +86,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.chatter
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logic-TPTP = {
+        "logic-TPTP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

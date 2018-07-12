@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        i18n = {
+        "i18n" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          i18n-test = {
+          "i18n-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

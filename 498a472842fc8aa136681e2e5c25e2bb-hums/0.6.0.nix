@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hums = {
+          "hums" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

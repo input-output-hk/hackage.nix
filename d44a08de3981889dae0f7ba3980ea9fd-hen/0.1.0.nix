@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hen = {
+        "hen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          he = {
+          "he" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          hen-tests = {
+          "hen-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hascal = {
+        "hascal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.numbers
           ];
         };
         exes = {
-          hascal = {
+          "hascal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.numbers

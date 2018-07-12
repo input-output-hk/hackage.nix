@@ -20,11 +20,11 @@ let
         buildType = "Custom";
       };
       components = {
-        loch = {
+        "loch" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          loch = {
+          "loch" = {
             depends  = [ hsPkgs.base ];
           };
         };

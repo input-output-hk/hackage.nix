@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          midimory = {
+          "midimory" = {
             depends  = [
               hsPkgs.wx
               hsPkgs.wxcore

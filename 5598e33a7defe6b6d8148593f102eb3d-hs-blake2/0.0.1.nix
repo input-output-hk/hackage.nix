@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-blake2 = {
+        "hs-blake2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           libs = [ pkgs.b2 ];
         };
         tests = {
-          test-all = {
+          "test-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-all = {
+          "benchmark-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

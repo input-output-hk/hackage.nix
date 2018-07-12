@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AC-Random = {
+        "AC-Random" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        hscurses = {
+        "hscurses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

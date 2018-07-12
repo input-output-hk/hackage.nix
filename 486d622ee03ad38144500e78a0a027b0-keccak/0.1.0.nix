@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        keccak = {
+        "keccak" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          keccak-test = {
+          "keccak-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

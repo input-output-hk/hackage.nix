@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          muon = {
+          "muon" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

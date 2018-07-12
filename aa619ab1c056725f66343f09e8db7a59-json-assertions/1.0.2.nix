@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-assertions = {
+        "json-assertions" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

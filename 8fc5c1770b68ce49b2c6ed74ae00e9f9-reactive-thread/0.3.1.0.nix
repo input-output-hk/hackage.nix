@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-thread = {
+        "reactive-thread" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-parallel

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        html-tokenizer = {
+        "html-tokenizer" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.html-tokenizer
               hsPkgs.attoparsec

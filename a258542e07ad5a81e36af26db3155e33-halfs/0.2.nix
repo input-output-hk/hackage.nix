@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        halfs = {
+        "halfs" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.unix
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          moduleTest = {
+          "moduleTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.unix
@@ -51,7 +51,7 @@ let
               hsPkgs.random
             ];
           };
-          newfs-halfs = {
+          "newfs-halfs" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.unix
@@ -66,7 +66,7 @@ let
               hsPkgs.random
             ];
           };
-          fsck-halfs = {
+          "fsck-halfs" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.unix

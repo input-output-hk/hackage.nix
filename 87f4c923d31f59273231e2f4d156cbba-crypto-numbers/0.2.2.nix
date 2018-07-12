@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-numbers = {
+        "crypto-numbers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test-crypto-numbers = {
+          "test-crypto-numbers" = {
             depends  = [
               hsPkgs.base
               hsPkgs.crypto-random
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          bench-crypto-numbers = {
+          "bench-crypto-numbers" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-loops = {
+        "monad-loops" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test-monad-loops = {
+          "test-monad-loops" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

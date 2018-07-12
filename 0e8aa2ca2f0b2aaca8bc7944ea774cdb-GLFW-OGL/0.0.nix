@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLFW-OGL = {
+        "GLFW-OGL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,12 +28,12 @@ let
           ];
           libs = if system.isLinux
             then [ pkgs.Xrandr pkgs.X11 ]
-            else pkgs.lib.optional (!system.isOsx && system.isWindows) pkgs.opengl32;
-          frameworks = pkgs.lib.optionals (!system.isLinux && system.isOsx) [
+            else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional system.isWindows pkgs.opengl32);
+          frameworks = pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optionals system.isOsx [
             pkgs.AGL
             pkgs.Carbon
             pkgs.OpenGL
-          ];
+          ]);
         };
       };
     }

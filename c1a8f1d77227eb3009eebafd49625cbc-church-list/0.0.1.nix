@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        church-list = {
+        "church-list" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.church-list

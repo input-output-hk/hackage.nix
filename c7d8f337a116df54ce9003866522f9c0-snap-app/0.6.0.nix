@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-app = {
+        "snap-app" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snap-core

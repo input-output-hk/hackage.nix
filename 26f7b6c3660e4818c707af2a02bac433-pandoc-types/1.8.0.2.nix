@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pandoc-types = {
+        "pandoc-types" = {
           depends  = if compiler.isGhc && compiler.version.ge "6.10"
             then [
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        event-monad = {
+        "event-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

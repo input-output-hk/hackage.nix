@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        terrahs = {
+        "terrahs" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.old-time

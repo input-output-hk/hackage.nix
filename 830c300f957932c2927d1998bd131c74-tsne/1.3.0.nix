@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tsne = {
+        "tsne" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          haskell_tsne_example = {
+          "haskell_tsne_example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default
@@ -38,7 +38,7 @@ let
               hsPkgs.tsne
             ];
           };
-          haskell_tsne_timing = {
+          "haskell_tsne_timing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          tSNE-test = {
+          "tSNE-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

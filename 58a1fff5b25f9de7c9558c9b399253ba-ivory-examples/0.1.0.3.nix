@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ivory-c-clang-test = {
+          "ivory-c-clang-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        commutative = {
+        "commutative" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

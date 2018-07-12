@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haven = {
+          "haven" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

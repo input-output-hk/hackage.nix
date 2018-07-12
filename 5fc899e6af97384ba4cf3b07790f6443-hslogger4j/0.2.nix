@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hslogger4j = {
+        "hslogger4j" = {
           depends  = [ hsPkgs.hslogger ];
         };
       };

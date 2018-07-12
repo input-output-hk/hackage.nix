@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        doctest = {
+        "doctest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base-compat
               hsPkgs.ghc
@@ -61,7 +61,7 @@ let
               hsPkgs.setenv
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

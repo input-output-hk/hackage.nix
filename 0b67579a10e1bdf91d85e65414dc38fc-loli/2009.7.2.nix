@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        loli = {
+        "loli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

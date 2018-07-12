@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hyper = {
+        "hyper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

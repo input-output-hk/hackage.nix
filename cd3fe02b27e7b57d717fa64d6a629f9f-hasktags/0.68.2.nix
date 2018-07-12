@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hasktags = {
+          "hasktags" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

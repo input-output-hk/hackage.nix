@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        websockets = {
+        "websockets" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.attoparsec-enumerator
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          websockets-tests = {
+          "websockets-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

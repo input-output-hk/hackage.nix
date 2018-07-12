@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        traildb = {
+        "traildb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           ];
         };
         benchmarks = {
-          bench-traildb = {
+          "bench-traildb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

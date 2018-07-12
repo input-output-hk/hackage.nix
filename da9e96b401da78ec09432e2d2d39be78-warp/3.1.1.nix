@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warp = {
+        "warp" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.array
@@ -71,13 +71,13 @@ let
             ]);
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.array
@@ -125,7 +125,7 @@ let
           };
         };
         benchmarks = {
-          parser = {
+          "parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hmpf = {
+          "hmpf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Crypto

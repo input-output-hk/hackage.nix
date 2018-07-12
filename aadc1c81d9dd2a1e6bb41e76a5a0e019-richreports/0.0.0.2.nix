@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        richreports = {
+        "richreports" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ascetic

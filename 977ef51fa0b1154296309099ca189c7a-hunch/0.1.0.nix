@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hunch = {
+          "hunch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -34,7 +34,7 @@ let
           };
         };
         tests = {
-          hunch-test = {
+          "hunch-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

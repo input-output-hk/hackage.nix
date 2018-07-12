@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mecha = {
+        "mecha" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -30,8 +30,8 @@ let
           ];
         };
         exes = {
-          mecha-csg = {};
-          mecha-bent-axis = {};
+          "mecha-csg" = {};
+          "mecha-bent-axis" = {};
         };
       };
     }

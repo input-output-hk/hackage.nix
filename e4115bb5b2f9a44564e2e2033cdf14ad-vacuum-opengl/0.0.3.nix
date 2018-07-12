@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vacuum-opengl = {
+        "vacuum-opengl" = {
           depends  = [
             hsPkgs.vacuum
           ] ++ [
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          vacuum-opengl-server = {
+          "vacuum-opengl-server" = {
             depends  = [
               hsPkgs.stb-image
               hsPkgs.bitmap

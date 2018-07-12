@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-reify-cse = {
+        "data-reify-cse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

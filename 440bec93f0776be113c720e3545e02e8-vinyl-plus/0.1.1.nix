@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vinyl-plus = {
+        "vinyl-plus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vinyl
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vinyl

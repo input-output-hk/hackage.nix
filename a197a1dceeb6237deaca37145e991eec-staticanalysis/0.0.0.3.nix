@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        staticanalysis = {
+        "staticanalysis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MissingH

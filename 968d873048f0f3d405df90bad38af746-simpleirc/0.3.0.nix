@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simpleirc = {
+        "simpleirc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

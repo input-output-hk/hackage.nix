@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        buster = {
+        "buster" = {
           depends  = [
             hsPkgs.binary
             hsPkgs.parsec

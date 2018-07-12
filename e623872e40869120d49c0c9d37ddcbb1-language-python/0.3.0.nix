@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-python = {
+        "language-python" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

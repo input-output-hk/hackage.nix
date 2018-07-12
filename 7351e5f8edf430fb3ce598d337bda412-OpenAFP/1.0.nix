@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        OpenAFP = {
+        "OpenAFP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        variable-precision = {
+        "variable-precision" = {
           depends  = [
             hsPkgs.base
             hsPkgs.floatshow

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opml-conduit = {
+        "opml-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.case-insensitive
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

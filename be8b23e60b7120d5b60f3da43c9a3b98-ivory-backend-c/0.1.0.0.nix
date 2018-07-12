@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ivory-backend-c = {
+        "ivory-backend-c" = {
           depends  = [
             hsPkgs.base
             hsPkgs.language-c-quote

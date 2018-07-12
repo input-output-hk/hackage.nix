@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mute-unmute = {
+          "mute-unmute" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

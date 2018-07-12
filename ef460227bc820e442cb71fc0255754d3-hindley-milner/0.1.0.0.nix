@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hindley-milner = {
+        "hindley-milner" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hindley-milner

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hg-importorig = {
+          "hg-importorig" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -34,7 +34,7 @@ let
               hsPkgs.HSH
             ];
           };
-          hg-importdsc = {
+          "hg-importdsc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -47,7 +47,7 @@ let
               hsPkgs.HSH
             ];
           };
-          hg-buildpackage = {
+          "hg-buildpackage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -60,7 +60,7 @@ let
               hsPkgs.HSH
             ];
           };
-          hg-markdeb = {
+          "hg-markdeb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -73,7 +73,7 @@ let
               hsPkgs.HSH
             ];
           };
-          hgmerge-debupstream = {
+          "hgmerge-debupstream" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

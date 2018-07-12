@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        psi = {
+        "psi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

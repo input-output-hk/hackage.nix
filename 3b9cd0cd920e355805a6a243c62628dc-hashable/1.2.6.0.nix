@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashable = {
+        "hashable" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,10 +34,10 @@ let
             hsPkgs.ghc-prim
             hsPkgs.text
           ]) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.integer-gmp) hsPkgs.integer-gmp;
-          libs = pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "6.8") && system.isWindows) pkgs.advapi32;
+          libs = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "6.8")) (pkgs.lib.optional system.isWindows pkgs.advapi32);
         };
         exes = {
-          hashable-examples = {
+          "hashable-examples" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.hashable
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -62,7 +62,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.bytestring
@@ -74,7 +74,7 @@ let
               hsPkgs.ghc-prim
               hsPkgs.text
             ]) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.integer-gmp) hsPkgs.integer-gmp;
-            libs = pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "6.8") && system.isWindows) pkgs.advapi32;
+            libs = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "6.8")) (pkgs.lib.optional system.isWindows pkgs.advapi32);
           };
         };
       };

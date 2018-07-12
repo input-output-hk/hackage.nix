@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        macbeth-lib = {
+        "macbeth-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wxcore
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          Macbeth = {
+          "Macbeth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wx
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          macbeth-lib-test = {
+          "macbeth-lib-test" = {
             depends  = [
               hsPkgs.macbeth-lib
               hsPkgs.base

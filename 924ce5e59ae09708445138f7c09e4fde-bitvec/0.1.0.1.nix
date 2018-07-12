@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitvec = {
+        "bitvec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          bitvec-tests = {
+          "bitvec-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

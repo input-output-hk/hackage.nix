@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          systemstats = {
+          "systemstats" = {
             depends  = [
               hsPkgs.base
               hsPkgs.micrologger

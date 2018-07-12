@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        generics-eot = {
+        "generics-eot" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -33,7 +33,7 @@ let
               hsPkgs.doctest
             ];
           };
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

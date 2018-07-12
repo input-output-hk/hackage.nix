@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hoogle = {
+          "hoogle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ieee-utils-tempfix = {
+        "ieee-utils-tempfix" = {
           depends  = [ hsPkgs.base ];
         };
       };

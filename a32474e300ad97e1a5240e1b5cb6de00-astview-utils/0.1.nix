@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        astview-utils = {
+        "astview-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

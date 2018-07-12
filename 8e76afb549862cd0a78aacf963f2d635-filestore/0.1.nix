@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filestore = {
+        "filestore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

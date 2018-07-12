@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        read-editor = {
+        "read-editor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -30,13 +30,13 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.read-editor
             ];
           };
-          example-with = {
+          "example-with" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.read-editor

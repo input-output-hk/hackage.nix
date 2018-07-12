@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ide-backend = {
+        "ide-backend" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filemanip
@@ -52,7 +52,7 @@ let
             else [ hsPkgs.unix ]);
         };
         exes = {
-          ide-backend-exe-cabal = {
+          "ide-backend-exe-cabal" = {
             depends  = [
               hsPkgs.ide-backend
               hsPkgs.ide-backend-common
@@ -92,7 +92,7 @@ let
           };
         };
         tests = {
-          TestSuite = {
+          "TestSuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ide-backend
@@ -119,7 +119,7 @@ let
               then [ hsPkgs.unix-compat ]
               else [ hsPkgs.unix ]);
           };
-          rpc-server = {
+          "rpc-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

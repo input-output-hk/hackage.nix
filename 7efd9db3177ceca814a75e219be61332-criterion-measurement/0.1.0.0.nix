@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        criterion-measurement = {
+        "criterion-measurement" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

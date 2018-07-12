@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        rcu = {
+        "rcu" = {
           depends  = [
             hsPkgs.atomic-primops
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ] ++ pkgs.lib.optional _flags.unstable hsPkgs.stm;
         };
         exes = {
-          MoveStringSTM = {
+          "MoveStringSTM" = {
             depends  = pkgs.lib.optionals (!(!_flags.unstable)) [
               hsPkgs.base
               hsPkgs.rcu
@@ -42,7 +42,7 @@ let
               hsPkgs.transformers
             ];
           };
-          MoveStringQSBR = {
+          "MoveStringQSBR" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rcu
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.directory
@@ -61,7 +61,7 @@ let
               hsPkgs.parallel
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint

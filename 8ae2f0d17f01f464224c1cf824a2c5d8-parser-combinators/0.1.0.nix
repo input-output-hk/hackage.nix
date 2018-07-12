@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parser-combinators = {
+        "parser-combinators" = {
           depends  = [ hsPkgs.base ];
         };
       };

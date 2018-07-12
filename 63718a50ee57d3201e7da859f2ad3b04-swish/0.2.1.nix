@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        swish = {
+        "swish" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -36,25 +36,25 @@ let
           ];
         };
         exes = {
-          BuiltInMapTest = {};
-          GraphPartitionTest = {};
-          GraphTest = {};
-          N3ParserTest = {};
-          N3FormatterTest = {};
-          RDFDatatypeXsdIntegerTest = {};
-          RDFGraphTest = {};
-          RDFProofContextTest = {};
-          RDFProofText = {};
-          RDFQueryTest = {};
-          RDFRulesetTest = {};
-          VarBindingTest = {};
-          LookupMapTest = {};
-          ParseTest = {};
-          ParseURITest = {};
-          QNameTest = {};
-          URITest = {};
-          SwishTest = {};
-          Swish = {};
+          "BuiltInMapTest" = {};
+          "GraphPartitionTest" = {};
+          "GraphTest" = {};
+          "N3ParserTest" = {};
+          "N3FormatterTest" = {};
+          "RDFDatatypeXsdIntegerTest" = {};
+          "RDFGraphTest" = {};
+          "RDFProofContextTest" = {};
+          "RDFProofText" = {};
+          "RDFQueryTest" = {};
+          "RDFRulesetTest" = {};
+          "VarBindingTest" = {};
+          "LookupMapTest" = {};
+          "ParseTest" = {};
+          "ParseURITest" = {};
+          "QNameTest" = {};
+          "URITest" = {};
+          "SwishTest" = {};
+          "Swish" = {};
         };
       };
     }

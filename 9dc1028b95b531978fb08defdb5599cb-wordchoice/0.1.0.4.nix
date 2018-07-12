@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wordchoice = {
+        "wordchoice" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pandoc
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          wrd = {
+          "wrd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wordchoice
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          wordchoice-test = {
+          "wordchoice-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wordchoice
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          wordchoice-bench = {
+          "wordchoice-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

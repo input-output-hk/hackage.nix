@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-io = {
+        "quickcheck-io" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.HUnit

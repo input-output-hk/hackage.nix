@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NumberSieves = {
+        "NumberSieves" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

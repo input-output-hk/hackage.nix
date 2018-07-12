@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HappyTree = {
+        "HappyTree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          HappyTree-exe = {
+          "HappyTree-exe" = {
             depends  = [
               hsPkgs.HappyTree
               hsPkgs.base
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          HappyTree-test = {
+          "HappyTree-test" = {
             depends  = [
               hsPkgs.HappyTree
               hsPkgs.base

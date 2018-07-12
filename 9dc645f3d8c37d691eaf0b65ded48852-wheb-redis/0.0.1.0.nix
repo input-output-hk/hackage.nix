@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wheb-redis = {
+        "wheb-redis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

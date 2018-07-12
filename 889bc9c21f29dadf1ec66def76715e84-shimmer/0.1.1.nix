@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shimmer = {
+        "shimmer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

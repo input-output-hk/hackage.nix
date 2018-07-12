@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tbox = {
+        "tbox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm-io-hooks

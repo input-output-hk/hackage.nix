@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        indices = {
+        "indices" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagged
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.indices
@@ -37,7 +37,7 @@ let
           };
         };
         benchmarks = {
-          unroll = {
+          "unroll" = {
             depends  = [
               hsPkgs.base
               hsPkgs.indices

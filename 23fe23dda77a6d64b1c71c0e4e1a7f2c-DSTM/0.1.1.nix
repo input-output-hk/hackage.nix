@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DSTM = {
+        "DSTM" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          NameServer = {
+          "NameServer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -41,7 +41,7 @@ let
               hsPkgs.containers
             ];
           };
-          Phil = {
+          "Phil" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -51,7 +51,7 @@ let
               hsPkgs.containers
             ];
           };
-          ChatClient = {
+          "ChatClient" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -61,7 +61,7 @@ let
               hsPkgs.containers
             ];
           };
-          ChatServer = {
+          "ChatServer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -71,7 +71,7 @@ let
               hsPkgs.containers
             ];
           };
-          Bomberman = {
+          "Bomberman" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

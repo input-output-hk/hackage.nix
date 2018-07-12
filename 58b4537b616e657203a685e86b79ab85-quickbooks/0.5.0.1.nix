@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickbooks = {
+        "quickbooks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

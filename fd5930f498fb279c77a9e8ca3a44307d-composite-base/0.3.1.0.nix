@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        composite-base = {
+        "composite-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          composite-base-test = {
+          "composite-base-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iterIO = {
+        "iterIO" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

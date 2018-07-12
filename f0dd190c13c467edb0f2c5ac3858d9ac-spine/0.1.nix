@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spine = {
+        "spine" = {
           depends  = [ hsPkgs.base ];
         };
       };

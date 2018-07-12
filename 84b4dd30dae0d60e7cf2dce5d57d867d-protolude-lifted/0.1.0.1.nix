@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protolude-lifted = {
+        "protolude-lifted" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude

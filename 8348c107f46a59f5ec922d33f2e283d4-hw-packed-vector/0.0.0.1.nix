@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-packed-vector = {
+        "hw-packed-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          hw-packed-vector-test = {
+          "hw-packed-vector-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-solve = {
+        "diagrams-solve" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

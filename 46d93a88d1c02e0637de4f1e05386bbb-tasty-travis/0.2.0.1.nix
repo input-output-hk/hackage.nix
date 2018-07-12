@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-travis = {
+        "tasty-travis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tasty
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

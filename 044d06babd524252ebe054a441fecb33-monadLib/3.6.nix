@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadLib = {
+        "monadLib" = {
           depends  = [ hsPkgs.base ];
         };
       };

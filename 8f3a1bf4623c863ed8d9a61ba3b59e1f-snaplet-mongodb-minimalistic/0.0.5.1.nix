@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-mongodb-minimalistic = {
+        "snaplet-mongodb-minimalistic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

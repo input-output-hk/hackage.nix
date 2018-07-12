@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-category = {
+        "pipes-category" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          pipes-category-exe = {
+          "pipes-category-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          pipes-category-test = {
+          "pipes-category-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-category

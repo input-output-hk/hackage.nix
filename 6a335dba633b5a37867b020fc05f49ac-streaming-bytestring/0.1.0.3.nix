@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-bytestring = {
+        "streaming-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

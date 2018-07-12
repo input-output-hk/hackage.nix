@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        argon = {
+        "argon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          argon = {
+          "argon" = {
             depends  = [
               hsPkgs.base
               hsPkgs.docopt
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          argon-test = {
+          "argon-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -74,7 +74,7 @@ let
               hsPkgs.directory
             ];
           };
-          style = {
+          "style" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

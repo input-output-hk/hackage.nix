@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-html-qq = {
+        "xml-html-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup
@@ -38,14 +38,14 @@ let
           ];
         };
         tests = {
-          xml-html-qq-doctest = {
+          "xml-html-qq-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.Glob
             ];
           };
-          xml-html-qq-test = {
+          "xml-html-qq-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

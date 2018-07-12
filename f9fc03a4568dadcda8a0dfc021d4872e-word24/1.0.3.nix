@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        word24 = {
+        "word24" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          testWord24 = {
+          "testWord24" = {
             depends  = [
               hsPkgs.base
             ] ++ pkgs.lib.optionals _flags.buildtests [

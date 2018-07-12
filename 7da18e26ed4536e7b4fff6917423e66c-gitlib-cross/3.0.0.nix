@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        gitlib-cross = {
+        "gitlib-cross" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          smoke = {
+          "smoke" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gitlib

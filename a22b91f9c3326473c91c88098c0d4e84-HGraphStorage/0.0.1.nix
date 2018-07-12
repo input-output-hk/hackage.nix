@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGraphStorage = {
+        "HGraphStorage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          hgraphstorage-test = {
+          "hgraphstorage-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HGraphStorage
@@ -64,7 +64,7 @@ let
           };
         };
         benchmarks = {
-          HGraphStorage-bench = {
+          "HGraphStorage-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HGraphStorage

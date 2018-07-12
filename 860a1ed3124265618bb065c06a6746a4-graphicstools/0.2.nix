@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphicstools = {
+        "graphicstools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          cvexample = {
+          "cvexample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wxcore

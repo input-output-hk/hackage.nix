@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-orphans = {
+        "binary-orphans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          binary-orphans-test = {
+          "binary-orphans-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

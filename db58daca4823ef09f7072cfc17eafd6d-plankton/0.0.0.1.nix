@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plankton = {
+        "plankton" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        poly-control = {
+        "poly-control" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        labeled-graph = {
+        "labeled-graph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.labeled-tree

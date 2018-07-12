@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plumbers = {
+        "plumbers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

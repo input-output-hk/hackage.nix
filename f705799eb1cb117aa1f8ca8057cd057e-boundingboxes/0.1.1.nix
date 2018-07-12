@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        boundingboxes = {
+        "boundingboxes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.linear

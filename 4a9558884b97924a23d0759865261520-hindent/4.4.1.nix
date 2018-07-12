@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hindent = {
+        "hindent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          hindent = {
+          "hindent" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hindent
@@ -43,7 +43,7 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          hindent-generate-tests = {
+          "hindent-generate-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hindent
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hindent

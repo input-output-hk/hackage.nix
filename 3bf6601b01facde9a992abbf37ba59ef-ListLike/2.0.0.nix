@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ListLike = {
+        "ListLike" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

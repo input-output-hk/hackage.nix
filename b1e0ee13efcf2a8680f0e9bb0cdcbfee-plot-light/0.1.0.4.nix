@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plot-light = {
+        "plot-light" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          plot-light = {
+          "plot-light" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light

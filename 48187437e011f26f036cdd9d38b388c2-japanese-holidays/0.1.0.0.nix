@@ -20,20 +20,20 @@ let
         buildType = "Simple";
       };
       components = {
-        japanese-holidays = {
+        "japanese-holidays" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.japanese-holidays

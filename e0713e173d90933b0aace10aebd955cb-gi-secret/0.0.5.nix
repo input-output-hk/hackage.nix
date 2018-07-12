@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-secret = {
+        "gi-secret" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

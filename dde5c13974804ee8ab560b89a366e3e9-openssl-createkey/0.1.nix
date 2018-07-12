@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openssl-createkey = {
+        "openssl-createkey" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

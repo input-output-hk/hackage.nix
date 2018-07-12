@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scalpel-core = {
+        "scalpel-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          lib-tests = {
+          "lib-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

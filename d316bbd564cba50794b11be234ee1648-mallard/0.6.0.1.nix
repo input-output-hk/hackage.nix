@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mallard = {
+        "mallard" = {
           depends  = [
             hsPkgs.base
             hsPkgs.byteable
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          mallard = {
+          "mallard" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mallard

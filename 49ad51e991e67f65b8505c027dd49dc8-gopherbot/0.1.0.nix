@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gopherbot = {
+          "gopherbot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

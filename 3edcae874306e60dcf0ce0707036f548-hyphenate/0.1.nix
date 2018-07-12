@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hyphenate = {
+        "hyphenate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

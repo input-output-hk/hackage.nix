@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        url-generic = {
+        "url-generic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb

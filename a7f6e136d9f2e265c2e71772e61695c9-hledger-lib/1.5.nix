@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger-lib = {
+        "hledger-lib" = {
           depends  = [
             hsPkgs.Decimal
             hsPkgs.HUnit
@@ -57,7 +57,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.Decimal
               hsPkgs.Glob
@@ -95,7 +95,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          hunittests = {
+          "hunittests" = {
             depends  = [
               hsPkgs.Decimal
               hsPkgs.HUnit

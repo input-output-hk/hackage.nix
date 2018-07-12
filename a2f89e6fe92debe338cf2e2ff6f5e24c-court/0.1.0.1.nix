@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          court = {
+          "court" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -37,7 +37,7 @@ let
               hsPkgs.unix
             ];
           };
-          court-darcs-plugin = {
+          "court-darcs-plugin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

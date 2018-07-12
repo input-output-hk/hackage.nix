@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        robot = {
+        "robot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

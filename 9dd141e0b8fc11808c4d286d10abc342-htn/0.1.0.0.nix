@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        htn = {
+        "htn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.htn

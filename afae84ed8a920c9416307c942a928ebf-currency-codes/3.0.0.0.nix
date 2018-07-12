@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        currency-codes = {
+        "currency-codes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          currency-codes-test = {
+          "currency-codes-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.currency-codes

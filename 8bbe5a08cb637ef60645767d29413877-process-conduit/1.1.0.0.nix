@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        process-conduit = {
+        "process-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          process-conduit-test = {
+          "process-conduit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        qq-literals = {
+        "qq-literals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          qq-literals-test = {
+          "qq-literals-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.qq-literals

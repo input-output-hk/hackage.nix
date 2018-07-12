@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        basic-lens = {
+        "basic-lens" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ignore = {
+        "ignore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.path
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional (!_flags.without-pcre) hsPkgs.pcre-heavy;
         };
         exes = {
-          ignore = {
+          "ignore" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ignore
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          ignore-test = {
+          "ignore-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ignore

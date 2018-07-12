@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DysFRP = {
+        "DysFRP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

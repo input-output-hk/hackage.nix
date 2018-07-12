@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        functor-utils = {
+        "functor-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

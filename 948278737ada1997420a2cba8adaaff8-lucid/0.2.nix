@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lucid = {
+        "lucid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

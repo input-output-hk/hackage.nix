@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        VKHS = {
+        "VKHS" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -48,6 +48,6 @@ let
             hsPkgs.text
           ];
         };
-        exes = { vkq = {}; };
+        exes = { "vkq" = {}; };
       };
     }

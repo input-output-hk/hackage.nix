@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scalpel = {
+        "scalpel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          lib-tests = {
+          "lib-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

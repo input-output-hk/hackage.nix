@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        importify = {
+        "importify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          importify = {
+          "importify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.importify
@@ -61,7 +61,7 @@ let
               hsPkgs.universum
             ];
           };
-          golden-generator = {
+          "golden-generator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.importify
@@ -73,7 +73,7 @@ let
           };
         };
         tests = {
-          importify-test = {
+          "importify-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.importify

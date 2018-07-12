@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cgi-undecidable = {
+        "cgi-undecidable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

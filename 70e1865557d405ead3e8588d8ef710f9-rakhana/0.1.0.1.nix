@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rakhana = {
+        "rakhana" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lojysamban = {
+          "lojysamban" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lojbanParser

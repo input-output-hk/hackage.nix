@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pgstream = {
+        "pgstream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

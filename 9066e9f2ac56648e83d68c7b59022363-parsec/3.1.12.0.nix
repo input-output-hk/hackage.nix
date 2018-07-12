@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parsec = {
+        "parsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          parsec. = {
+          "parsec." = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

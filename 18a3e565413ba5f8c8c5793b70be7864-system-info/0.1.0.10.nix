@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-info = {
+        "system-info" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
         };
         tests = {
-          system-info-test = {
+          "system-info-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.system-info

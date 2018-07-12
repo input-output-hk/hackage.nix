@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ide-backend = {
+        "ide-backend" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filemanip
@@ -57,7 +57,7 @@ let
           ];
         };
         exes = {
-          ide-backend-exe-cabal = {
+          "ide-backend-exe-cabal" = {
             depends  = [
               hsPkgs.ide-backend
               hsPkgs.base
@@ -95,7 +95,7 @@ let
           };
         };
         tests = {
-          typecheck-dir = {
+          "typecheck-dir" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ide-backend
@@ -106,7 +106,7 @@ let
               hsPkgs.text
             ];
           };
-          TestSuite = {
+          "TestSuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ide-backend
@@ -129,7 +129,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          rpc-server = {
+          "rpc-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

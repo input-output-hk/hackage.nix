@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        unbounded-delays = {
+        "unbounded-delays" = {
           depends  = [ hsPkgs.base ];
         };
       };

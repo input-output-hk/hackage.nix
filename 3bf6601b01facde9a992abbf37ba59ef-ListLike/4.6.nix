@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ListLike = {
+        "ListLike" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.4")) hsPkgs.semigroups;
         };
         tests = {
-          listlike-tests = {
+          "listlike-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ListLike

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        marihana = {
+        "marihana" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          marihana = {
+          "marihana" = {
             depends  = [
               hsPkgs.base
               hsPkgs.marihana
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          marihana-test = {
+          "marihana-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.marihana

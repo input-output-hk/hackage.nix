@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pangraph = {
+        "pangraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          pangraph-test = {
+          "pangraph-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pangraph

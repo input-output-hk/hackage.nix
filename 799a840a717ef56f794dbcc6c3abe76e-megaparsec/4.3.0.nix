@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        megaparsec = {
+        "megaparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          old-tests = {
+          "old-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.megaparsec
@@ -41,7 +41,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.megaparsec
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.megaparsec

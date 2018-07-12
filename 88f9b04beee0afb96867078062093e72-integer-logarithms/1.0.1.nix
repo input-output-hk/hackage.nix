@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        integer-logarithms = {
+        "integer-logarithms" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.array
@@ -33,7 +33,7 @@ let
             else [ hsPkgs.integer-simple ]);
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.integer-logarithms

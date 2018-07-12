@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gauge = {
+        "gauge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basement
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -43,7 +43,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          verbose = {
+          "verbose" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -53,7 +53,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          quick = {
+          "quick" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -63,7 +63,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          quick-verbose = {
+          "quick-verbose" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -73,7 +73,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          cleanup = {
+          "cleanup" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -87,7 +87,7 @@ let
           };
         };
         benchmarks = {
-          self = {
+          "self" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gauge

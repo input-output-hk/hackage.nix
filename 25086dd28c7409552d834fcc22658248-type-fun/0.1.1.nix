@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        type-fun = {
+        "type-fun" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-fun

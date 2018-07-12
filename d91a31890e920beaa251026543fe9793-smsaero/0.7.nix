@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smsaero = {
+        "smsaero" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashmap = {
+        "hashmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        chalkboard = {
+        "chalkboard" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
           ];
         };
         exes = {
-          chalkboard-test = {
+          "chalkboard-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

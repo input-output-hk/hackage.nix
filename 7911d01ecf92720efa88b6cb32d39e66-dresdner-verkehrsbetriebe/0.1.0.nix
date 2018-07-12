@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dresdner-verkehrsbetriebe = {
+        "dresdner-verkehrsbetriebe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          dresdner-verkehrsbetriebe = {
+          "dresdner-verkehrsbetriebe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP

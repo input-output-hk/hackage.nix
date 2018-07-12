@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazy-io = {
+        "lazy-io" = {
           depends  = [ hsPkgs.base ];
         };
       };

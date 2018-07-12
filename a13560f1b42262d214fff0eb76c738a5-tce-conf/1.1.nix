@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        tce-conf = {
+        "tce-conf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          test-hsmisc = {
+          "test-hsmisc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

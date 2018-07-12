@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mysql-simple = {
+        "mysql-simple" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

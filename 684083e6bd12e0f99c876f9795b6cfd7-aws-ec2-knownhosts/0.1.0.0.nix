@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-ec2-knownhosts = {
+        "aws-ec2-knownhosts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          aws-ec2-pubkeys = {
+          "aws-ec2-pubkeys" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aws-ec2-knownhosts
@@ -45,7 +45,7 @@ let
               hsPkgs.turtle
             ];
           };
-          aws-ec2-knownhosts = {
+          "aws-ec2-knownhosts" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -55,7 +55,7 @@ let
               hsPkgs.turtle
             ];
           };
-          aws-ec2-keysync = {
+          "aws-ec2-keysync" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

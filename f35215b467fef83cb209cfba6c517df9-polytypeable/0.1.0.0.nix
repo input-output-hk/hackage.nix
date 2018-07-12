@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polytypeable = {
+        "polytypeable" = {
           depends  = [ hsPkgs.base ];
         };
       };

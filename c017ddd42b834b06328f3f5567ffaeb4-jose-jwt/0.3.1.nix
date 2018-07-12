@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jose-jwt = {
+        "jose-jwt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.jose-jwt
               hsPkgs.base
@@ -66,7 +66,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -74,7 +74,7 @@ let
           };
         };
         benchmarks = {
-          bench-jwt = {
+          "bench-jwt" = {
             depends  = [
               hsPkgs.jose-jwt
               hsPkgs.base

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        newtype-generics = {
+        "newtype-generics" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

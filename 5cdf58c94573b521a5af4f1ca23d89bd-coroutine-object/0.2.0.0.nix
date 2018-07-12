@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        coroutine-object = {
+        "coroutine-object" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

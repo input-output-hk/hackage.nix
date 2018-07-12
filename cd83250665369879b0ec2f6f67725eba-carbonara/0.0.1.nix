@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        carbonara = {
+        "carbonara" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mysql-simple

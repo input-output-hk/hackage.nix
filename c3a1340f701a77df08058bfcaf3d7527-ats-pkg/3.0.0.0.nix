@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ats-pkg = {
+        "ats-pkg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client
@@ -56,7 +56,7 @@ let
           ];
         };
         sublibs = {
-          quaalude = {
+          "quaalude" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-client
@@ -79,7 +79,7 @@ let
           };
         };
         exes = {
-          atspkg = {
+          "atspkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ats-pkg

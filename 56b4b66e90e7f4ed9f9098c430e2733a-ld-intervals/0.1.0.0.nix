@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ld-intervals = {
+        "ld-intervals" = {
           depends  = [ hsPkgs.base ];
         };
       };

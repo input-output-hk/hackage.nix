@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RFC1751 = {
+        "RFC1751" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-rfc1751 = {
+          "test-rfc1751" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

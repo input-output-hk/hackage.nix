@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deiko-config = {
+        "deiko-config" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

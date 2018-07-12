@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rasa = {
+          "rasa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rasa

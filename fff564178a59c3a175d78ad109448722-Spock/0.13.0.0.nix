@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock = {
+        "Spock" = {
           depends  = [
             hsPkgs.Spock-core
             hsPkgs.base
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          spocktests = {
+          "spocktests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

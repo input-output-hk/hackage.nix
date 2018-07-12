@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        goal-geometry = {
+        "goal-geometry" = {
           depends  = [
             hsPkgs.base
             hsPkgs.goal-core
@@ -29,14 +29,14 @@ let
           ];
         };
         exes = {
-          coordinates = {
+          "coordinates" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
               hsPkgs.goal-geometry
             ];
           };
-          gradient-descent = {
+          "gradient-descent" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core

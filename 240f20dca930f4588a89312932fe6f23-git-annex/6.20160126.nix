@@ -37,7 +37,7 @@ let
       };
       components = {
         exes = {
-          git-annex = {
+          "git-annex" = {
             depends  = (((((((((((((((([
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -115,13 +115,13 @@ let
               hsPkgs.conduit
               hsPkgs.conduit-extra
               hsPkgs.aws
-            ]) ++ pkgs.lib.optional _flags.webdav hsPkgs.DAV) ++ pkgs.lib.optional (_flags.assistant && !system.isSolaris) hsPkgs.dns) ++ (if _flags.assistant && system.isLinux
+            ]) ++ pkgs.lib.optional _flags.webdav hsPkgs.DAV) ++ pkgs.lib.optional (_flags.assistant && !system.isSolaris) hsPkgs.dns) ++ pkgs.lib.optionals _flags.assistant (if system.isLinux
               then [ hsPkgs.hinotify ]
               else if system.isOsx
                 then [ hsPkgs.hfsevents ]
                 else if system.isWindows
                   then [ hsPkgs.Win32-notify ]
-                  else pkgs.lib.optional (!system.isSolaris && !system.isLinux && _flags.android) hsPkgs.hinotify)) ++ pkgs.lib.optionals system.isLinux [
+                  else pkgs.lib.optionals (!system.isSolaris && !system.isLinux) (pkgs.lib.optional _flags.android hsPkgs.hinotify))) ++ pkgs.lib.optionals system.isLinux [
               hsPkgs.dbus
               hsPkgs.fdo-notify
             ]) ++ pkgs.lib.optional _flags.android hsPkgs.data-endian) ++ pkgs.lib.optionals _flags.webapp [

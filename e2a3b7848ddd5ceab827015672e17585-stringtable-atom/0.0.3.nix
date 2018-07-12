@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stringtable-atom = {
+        "stringtable-atom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

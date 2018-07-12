@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Unixutils = {
+        "Unixutils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

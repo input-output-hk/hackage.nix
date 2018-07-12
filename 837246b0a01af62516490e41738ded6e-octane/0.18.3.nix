@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        octane = {
+        "octane" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          octane = {
+          "octane" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

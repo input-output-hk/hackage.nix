@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        brainheck = {
+        "brainheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          brainheck = {
+          "brainheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brainheck
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          brainheck-bench = {
+          "brainheck-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

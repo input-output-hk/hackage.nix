@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-ran = {
+        "monad-ran" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

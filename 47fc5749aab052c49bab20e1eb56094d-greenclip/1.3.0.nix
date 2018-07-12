@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          greenclip = {
+          "greenclip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-prelude

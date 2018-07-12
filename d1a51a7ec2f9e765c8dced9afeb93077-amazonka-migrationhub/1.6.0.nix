@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-migrationhub = {
+        "amazonka-migrationhub" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-migrationhub-test = {
+          "amazonka-migrationhub-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

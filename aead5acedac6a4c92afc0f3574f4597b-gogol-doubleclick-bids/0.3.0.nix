@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-doubleclick-bids = {
+        "gogol-doubleclick-bids" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

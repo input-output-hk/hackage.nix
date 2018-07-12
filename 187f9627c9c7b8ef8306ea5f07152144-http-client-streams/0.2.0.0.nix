@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client-streams = {
+        "http-client-streams" = {
           depends  = [
             hsPkgs.HsOpenSSL
             hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gauge = {
+        "gauge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basement
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
               hsPkgs.foundation
             ];
           };
-          cleanup = {
+          "cleanup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          self = {
+          "self" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gauge

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tak = {
+        "tak" = {
           depends  = [
             hsPkgs.base
             hsPkgs.matrix
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.matrix

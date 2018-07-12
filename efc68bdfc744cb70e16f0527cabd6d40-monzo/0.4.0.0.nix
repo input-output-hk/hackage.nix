@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monzo = {
+        "monzo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monzo

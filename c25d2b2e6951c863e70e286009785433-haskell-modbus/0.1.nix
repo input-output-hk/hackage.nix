@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-modbus = {
+        "haskell-modbus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

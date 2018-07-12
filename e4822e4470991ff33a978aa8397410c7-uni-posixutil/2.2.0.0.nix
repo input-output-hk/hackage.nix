@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uni-posixutil = {
+        "uni-posixutil" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

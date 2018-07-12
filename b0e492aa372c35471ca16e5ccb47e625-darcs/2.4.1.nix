@@ -33,7 +33,7 @@ let
         buildType = "Custom";
       };
       components = {
-        darcs = {
+        "darcs" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.regex-compat
@@ -58,11 +58,11 @@ let
             hsPkgs.HTTP
           ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
           libs = pkgs.lib.optional _flags.curl pkgs.curl;
-          pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
+          pkgconfig = pkgs.lib.optionals _flags.curl (pkgs.lib.optionals _flags.curl-pipelining (pkgs.lib.optional (!system.isWindows) pkgconfPkgs.libcurl));
         };
         exes = {
-          witnesses = {};
-          darcs = {
+          "witnesses" = {};
+          "darcs" = {
             depends  = ((([
               hsPkgs.base
               hsPkgs.regex-compat
@@ -87,9 +87,9 @@ let
               hsPkgs.HTTP
             ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) hsPkgs.mmap) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) hsPkgs.terminfo;
             libs = pkgs.lib.optional _flags.curl pkgs.curl;
-            pkgconfig = pkgs.lib.optional (_flags.curl && (_flags.curl-pipelining && !system.isWindows)) pkgconfPkgs.libcurl;
+            pkgconfig = pkgs.lib.optionals _flags.curl (pkgs.lib.optionals _flags.curl-pipelining (pkgs.lib.optional (!system.isWindows) pkgconfPkgs.libcurl));
           };
-          unit = {
+          "unit" = {
             depends  = ((([
               hsPkgs.base
               hsPkgs.bytestring

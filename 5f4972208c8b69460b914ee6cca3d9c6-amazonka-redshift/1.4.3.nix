@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-redshift = {
+        "amazonka-redshift" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-redshift-test = {
+          "amazonka-redshift-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        charset = {
+        "charset" = {
           depends  = [
             hsPkgs.array
             hsPkgs.bytestring

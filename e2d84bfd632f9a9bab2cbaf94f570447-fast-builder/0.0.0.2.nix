@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fast-builder = {
+        "fast-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          prop = {
+          "prop" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fast-builder
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          aeson = {
+          "aeson" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fast-builder
@@ -57,7 +57,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          vector = {
+          "vector" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fast-builder
@@ -67,7 +67,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          map = {
+          "map" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fast-builder

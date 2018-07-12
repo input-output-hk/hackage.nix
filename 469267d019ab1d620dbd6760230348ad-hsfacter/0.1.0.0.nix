@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsfacter = {
+        "hsfacter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

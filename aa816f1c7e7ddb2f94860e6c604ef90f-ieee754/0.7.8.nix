@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ieee754 = {
+        "ieee754" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serpentine = {
+        "serpentine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.serpentine

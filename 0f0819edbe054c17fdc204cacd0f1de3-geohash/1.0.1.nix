@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geohash = {
+        "geohash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

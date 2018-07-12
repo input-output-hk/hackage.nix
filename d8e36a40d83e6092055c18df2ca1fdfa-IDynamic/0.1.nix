@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        IDynamic = {
+        "IDynamic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        word8 = {
+        "word8" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.word8
@@ -33,7 +33,7 @@ let
           };
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

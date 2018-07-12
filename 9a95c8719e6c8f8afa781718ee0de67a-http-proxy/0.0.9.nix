@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-proxy = {
+        "http-proxy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Rasterific = {
+        "Rasterific" = {
           depends  = [
             hsPkgs.base
             hsPkgs.free
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (!_flags.embed_linear) hsPkgs.linear;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Rasterific

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-common-persistent = {
+        "postgresql-common-persistent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          postgresql-common-persistent-test = {
+          "postgresql-common-persistent-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

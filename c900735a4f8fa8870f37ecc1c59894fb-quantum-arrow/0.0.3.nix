@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quantum-arrow = {
+        "quantum-arrow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

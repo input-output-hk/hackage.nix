@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        riemann = {
+        "riemann" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          property = {
+          "property" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -49,7 +49,7 @@ let
               hsPkgs.riemann
             ];
           };
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

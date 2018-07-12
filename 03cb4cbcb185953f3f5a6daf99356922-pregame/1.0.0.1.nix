@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pregame = {
+        "pregame" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-tokenize-attoparsec = {
+        "conduit-tokenize-attoparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          conduit-tokenize-attoparsec-example = {
+          "conduit-tokenize-attoparsec-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          conduit-tokenize-attoparsec-test = {
+          "conduit-tokenize-attoparsec-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

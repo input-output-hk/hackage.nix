@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        starling = {
+        "starling" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

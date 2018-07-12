@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        torch = {
+        "torch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

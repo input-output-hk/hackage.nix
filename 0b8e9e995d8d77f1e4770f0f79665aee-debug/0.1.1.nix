@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debug = {
+        "debug" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          debug-pp = {
+          "debug-pp" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          debug-test = {
+          "debug-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

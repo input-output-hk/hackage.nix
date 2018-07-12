@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmms2-client = {
+        "xmms2-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

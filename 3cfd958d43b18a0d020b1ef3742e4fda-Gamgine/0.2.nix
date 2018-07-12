@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Gamgine = {
+        "Gamgine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GLFW-b

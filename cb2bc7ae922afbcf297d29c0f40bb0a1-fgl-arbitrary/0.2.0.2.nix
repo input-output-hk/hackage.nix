@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fgl-arbitrary = {
+        "fgl-arbitrary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fgl
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          fgl-arbitrary-tests = {
+          "fgl-arbitrary-tests" = {
             depends  = [
               hsPkgs.fgl-arbitrary
               hsPkgs.fgl

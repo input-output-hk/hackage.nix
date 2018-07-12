@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        roles = {
+        "roles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

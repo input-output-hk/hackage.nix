@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hans = {
+        "hans" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.cereal
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.cereal
@@ -62,8 +62,8 @@ let
               hsPkgs.HALVMCore
             ];
           };
-          web-server = {
-            depends  = pkgs.lib.optionals (!system.isHalvm && _flags.web-server) [
+          "web-server" = {
+            depends  = pkgs.lib.optionals (!system.isHalvm) (pkgs.lib.optionals _flags.web-server [
               hsPkgs.base
               hsPkgs.cereal
               hsPkgs.bytestring
@@ -75,9 +75,9 @@ let
               hsPkgs.blaze-html
               hsPkgs.blaze-markup
               hsPkgs.hans
-            ];
+            ]);
           };
-          tcp-test = {
+          "tcp-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cereal
@@ -92,14 +92,14 @@ let
               hsPkgs.HALVMCore
             ];
           };
-          tcp-test-client = {
+          "tcp-test-client" = {
             depends  = pkgs.lib.optionals (!system.isHalvm) [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.network
             ];
           };
-          test-suite = {
+          "test-suite" = {
             depends  = pkgs.lib.optionals _flags.enable-tests [
               hsPkgs.base
               hsPkgs.containers

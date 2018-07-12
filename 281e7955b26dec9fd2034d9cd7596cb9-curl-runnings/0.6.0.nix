@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        curl-runnings = {
+        "curl-runnings" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          curl-runnings = {
+          "curl-runnings" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          curl-runnings-test = {
+          "curl-runnings-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curl-runnings

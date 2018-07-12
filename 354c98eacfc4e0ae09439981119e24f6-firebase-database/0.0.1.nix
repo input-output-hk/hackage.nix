@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        firebase-database = {
+        "firebase-database" = {
           depends  = [
             hsPkgs.base
             hsPkgs.generic-random
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -69,7 +69,7 @@ let
           };
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

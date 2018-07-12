@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitmap-opengl = {
+        "bitmap-opengl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bitmap

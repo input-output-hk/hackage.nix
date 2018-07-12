@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-rtuple = {
+        "data-rtuple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.typelevel

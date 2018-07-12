@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yampa-canvas = {
+        "yampa-canvas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blank-canvas
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          yampa-canvas-bouncing-balls = {
+          "yampa-canvas-bouncing-balls" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blank-canvas

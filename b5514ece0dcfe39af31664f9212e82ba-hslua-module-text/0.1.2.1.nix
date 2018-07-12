@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hslua-module-text = {
+        "hslua-module-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hslua
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-hslua = {
+          "test-hslua" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslua

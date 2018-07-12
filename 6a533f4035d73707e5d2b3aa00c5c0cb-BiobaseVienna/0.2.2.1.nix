@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseVienna = {
+        "BiobaseVienna" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          ViennaConverter = {
+          "ViennaConverter" = {
             depends  = [ hsPkgs.cmdargs ];
           };
         };

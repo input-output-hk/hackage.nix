@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        packed-multikey-map = {
+        "packed-multikey-map" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

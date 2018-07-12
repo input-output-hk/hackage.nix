@@ -25,7 +25,7 @@ let
       };
       components = {
         exes = {
-          yampasynth-wav = {
+          "yampasynth-wav" = {
             depends  = pkgs.lib.optionals _flags.wav [
               hsPkgs.base
               hsPkgs.array
@@ -35,7 +35,7 @@ let
               hsPkgs.HCodecs
             ];
           };
-          yampasynth-openal = {
+          "yampasynth-openal" = {
             depends  = pkgs.lib.optionals _flags.openal [
               hsPkgs.base
               hsPkgs.array
@@ -45,7 +45,7 @@ let
               hsPkgs.HCodecs
             ];
           };
-          yampasynth-gtk = {
+          "yampasynth-gtk" = {
             depends  = pkgs.lib.optionals _flags.gtk [
               hsPkgs.base
               hsPkgs.array

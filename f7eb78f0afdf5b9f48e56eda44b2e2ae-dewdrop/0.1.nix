@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dewdrop = {
+        "dewdrop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

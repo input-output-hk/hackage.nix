@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoodle-publish = {
+        "hoodle-publish" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -51,7 +51,7 @@ let
             else [ hsPkgs.gtk ]);
         };
         exes = {
-          hoodle-publish = {
+          "hoodle-publish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

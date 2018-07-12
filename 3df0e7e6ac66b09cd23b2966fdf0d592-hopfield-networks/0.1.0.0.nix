@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hopfield-networks = {
+        "hopfield-networks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hopfield_demonstration = {
+          "hopfield_demonstration" = {
             depends  = [
               hsPkgs.hopfield-networks
               hsPkgs.base
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          hopfield_test = {
+          "hopfield_test" = {
             depends  = [
               hsPkgs.hopfield-networks
               hsPkgs.base

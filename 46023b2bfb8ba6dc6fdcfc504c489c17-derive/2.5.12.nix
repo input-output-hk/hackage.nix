@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        derive = {
+        "derive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -36,6 +36,6 @@ let
             hsPkgs.uniplate
           ];
         };
-        exes = { derive = {}; };
+        exes = { "derive" = {}; };
       };
     }

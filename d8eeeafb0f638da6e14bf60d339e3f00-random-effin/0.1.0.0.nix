@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-effin = {
+        "random-effin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.effin

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-kinesis-firehose = {
+        "amazonka-kinesis-firehose" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-kinesis-firehose-test = {
+          "amazonka-kinesis-firehose-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

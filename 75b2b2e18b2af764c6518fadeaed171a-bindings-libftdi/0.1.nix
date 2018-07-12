@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-libftdi = {
+        "bindings-libftdi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

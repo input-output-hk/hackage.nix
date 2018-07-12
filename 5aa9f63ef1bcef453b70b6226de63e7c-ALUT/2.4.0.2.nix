@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ALUT = {
+        "ALUT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -33,53 +33,53 @@ let
           libs = if system.isWindows && _flags.usenativewindowslibraries
             then [ pkgs.alut ]
             else pkgs.lib.optional (!system.isIos) pkgs.alut;
-          frameworks = pkgs.lib.optional (!(system.isWindows && _flags.usenativewindowslibraries) && system.isIos) pkgs.ALUT;
+          frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (pkgs.lib.optional system.isIos pkgs.ALUT);
         };
         exes = {
-          Basic-HelloWorld = {
+          "Basic-HelloWorld" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ALUT
             ];
           };
-          Basic-OpenALInfo = {
+          "Basic-OpenALInfo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty
               hsPkgs.ALUT
             ];
           };
-          Basic-PlayFile = {
+          "Basic-PlayFile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ALUT
             ];
           };
-          TestSuite-TestErrorStuff = {
+          "TestSuite-TestErrorStuff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ALUT
             ];
           };
-          TestSuite-TestFileLoader = {
+          "TestSuite-TestFileLoader" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ALUT
             ];
           };
-          TestSuite-TestMemoryLoader = {
+          "TestSuite-TestMemoryLoader" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ALUT
             ];
           };
-          TestSuite-TestVersion = {
+          "TestSuite-TestVersion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ALUT
             ];
           };
-          TestSuite-TestWaveforms = {
+          "TestSuite-TestWaveforms" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ALUT

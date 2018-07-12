@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debian = {
+        "debian" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -67,7 +67,7 @@ let
             ]);
         };
         exes = {
-          fakechanges = {
+          "fakechanges" = {
             depends  = [
               hsPkgs.base
               hsPkgs.debian
@@ -75,7 +75,7 @@ let
               hsPkgs.filepath
             ];
           };
-          debian-report = {
+          "debian-report" = {
             depends  = [
               hsPkgs.base
               hsPkgs.debian
@@ -84,7 +84,7 @@ let
               hsPkgs.pretty
             ];
           };
-          apt-get-build-depends = {
+          "apt-get-build-depends" = {
             depends  = [
               hsPkgs.base
               hsPkgs.debian
@@ -93,7 +93,7 @@ let
           };
         };
         tests = {
-          debian-tests = {
+          "debian-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.debian

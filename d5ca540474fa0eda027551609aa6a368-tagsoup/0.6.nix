@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagsoup = {
+        "tagsoup" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base
@@ -36,6 +36,6 @@ let
               hsPkgs.mtl
             ];
         };
-        exes = { tagsoup = {}; };
+        exes = { "tagsoup" = {}; };
       };
     }

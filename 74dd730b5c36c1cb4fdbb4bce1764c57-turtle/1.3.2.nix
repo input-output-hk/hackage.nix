@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        turtle = {
+        "turtle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -47,19 +47,19 @@ let
             else [ hsPkgs.unix ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          regression-broken-pipe = {
+          "regression-broken-pipe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.turtle
             ];
           };
-          regression-masking-exception = {
+          "regression-masking-exception" = {
             depends  = [
               hsPkgs.base
               hsPkgs.turtle
@@ -67,7 +67,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

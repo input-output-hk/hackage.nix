@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hspec = {
+        "hspec" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.QuickCheck
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.regex-posix
               hsPkgs.plugins

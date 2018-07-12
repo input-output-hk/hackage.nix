@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          clr-win-linker = {
+          "clr-win-linker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

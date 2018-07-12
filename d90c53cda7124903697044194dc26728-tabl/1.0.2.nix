@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tabl = {
+        "tabl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe

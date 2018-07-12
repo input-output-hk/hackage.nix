@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tag-stream = {
+        "tag-stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

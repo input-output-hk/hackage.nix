@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stack-network = {
+        "stack-network" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.ansi-terminal
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          stack-network = {
+          "stack-network" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.ansi-terminal
@@ -82,7 +82,7 @@ let
           };
         };
         tests = {
-          distributed-test = {
+          "distributed-test" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.ansi-terminal

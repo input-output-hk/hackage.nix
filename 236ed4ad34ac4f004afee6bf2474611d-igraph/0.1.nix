@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        igraph = {
+        "igraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

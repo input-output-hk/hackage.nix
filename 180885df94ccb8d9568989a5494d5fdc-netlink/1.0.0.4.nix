@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netlink = {
+        "netlink" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,19 +32,19 @@ let
           ];
         };
         exes = {
-          dump_nl80211 = {
+          "dump_nl80211" = {
             depends  = [
               hsPkgs.base
               hsPkgs.netlink
             ];
           };
-          genlinfo = {
+          "genlinfo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.netlink
             ];
           };
-          dump_rtnetlink = {
+          "dump_rtnetlink" = {
             depends  = [
               hsPkgs.base
               hsPkgs.netlink

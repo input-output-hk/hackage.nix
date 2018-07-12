@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plugins-auto = {
+        "plugins-auto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test-plugins-auto = {
+          "test-plugins-auto" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

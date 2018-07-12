@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HandlerSocketClient = {
+        "HandlerSocketClient" = {
           depends  = [ hsPkgs.base ];
         };
       };

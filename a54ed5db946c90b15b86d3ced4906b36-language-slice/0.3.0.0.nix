@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-slice = {
+        "language-slice" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-parser = {
+          "test-parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

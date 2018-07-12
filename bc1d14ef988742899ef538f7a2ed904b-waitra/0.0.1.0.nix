@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        waitra = {
+        "waitra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-types

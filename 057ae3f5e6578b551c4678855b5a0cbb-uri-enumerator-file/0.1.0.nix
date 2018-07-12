@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uri-enumerator-file = {
+        "uri-enumerator-file" = {
           depends  = [
             hsPkgs.base
             hsPkgs.enumerator

@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        SHA = {
+        "SHA" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         exes = {
-          test_sha = {
+          "test_sha" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

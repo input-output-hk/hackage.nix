@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        terminfo-hs = {
+        "terminfo-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.errors
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

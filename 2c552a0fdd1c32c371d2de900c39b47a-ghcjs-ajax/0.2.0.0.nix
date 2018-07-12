@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-ajax = {
+        "ghcjs-ajax" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

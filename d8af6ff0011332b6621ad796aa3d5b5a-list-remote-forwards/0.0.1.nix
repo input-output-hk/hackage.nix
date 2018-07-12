@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          list-remote-forwards = {
+          "list-remote-forwards" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -61,7 +61,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

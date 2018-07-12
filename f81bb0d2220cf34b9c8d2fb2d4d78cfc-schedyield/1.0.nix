@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        schedyield = {
+        "schedyield" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

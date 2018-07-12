@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-catalog = {
+        "xml-catalog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

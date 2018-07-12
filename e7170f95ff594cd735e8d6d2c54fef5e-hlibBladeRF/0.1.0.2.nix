@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hlibBladeRF = {
+        "hlibBladeRF" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL
@@ -31,14 +31,14 @@ let
           ];
         };
         tests = {
-          haddock = {
+          "haddock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.regex-compat
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mutable-containers = {
+        "mutable-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mutable-containers
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          deque = {
+          "deque" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mutable-containers
@@ -52,7 +52,7 @@ let
               hsPkgs.containers
             ];
           };
-          ref = {
+          "ref" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mutable-containers

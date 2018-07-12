@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixed-width = {
+        "fixed-width" = {
           depends  = [ hsPkgs.base ];
         };
       };

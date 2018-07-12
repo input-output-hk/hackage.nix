@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smtps-gmail = {
+        "smtps-gmail" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

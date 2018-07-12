@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vaultaire-common = {
+        "vaultaire-common" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          wire-formats-test = {
+          "wire-formats-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -58,7 +58,7 @@ let
               hsPkgs.vaultaire-common
             ];
           };
-          instance-test = {
+          "instance-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

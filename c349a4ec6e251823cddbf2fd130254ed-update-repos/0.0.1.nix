@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        update-repos = {
+        "update-repos" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          update-repos = {
+          "update-repos" = {
             depends  = [
               hsPkgs.base
               hsPkgs.update-repos
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          update-repos-test = {
+          "update-repos-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.update-repos

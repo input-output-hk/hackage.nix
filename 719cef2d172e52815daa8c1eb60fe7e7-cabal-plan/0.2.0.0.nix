@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-plan = {
+        "cabal-plan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          cabal-plan = {
+          "cabal-plan" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.cabal-plan
               hsPkgs.base

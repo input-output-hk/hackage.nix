@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        publicsuffix = {
+        "publicsuffix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.publicsuffix

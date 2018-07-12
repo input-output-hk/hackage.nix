@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prizm = {
+        "prizm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.prizm
               hsPkgs.base

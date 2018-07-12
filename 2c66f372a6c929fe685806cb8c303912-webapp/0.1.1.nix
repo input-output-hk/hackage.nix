@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webapp = {
+        "webapp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -63,7 +63,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

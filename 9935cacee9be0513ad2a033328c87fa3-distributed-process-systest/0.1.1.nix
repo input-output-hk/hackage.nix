@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-systest = {
+        "distributed-process-systest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal

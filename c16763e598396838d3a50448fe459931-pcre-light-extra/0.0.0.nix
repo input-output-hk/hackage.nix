@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pcre-light-extra = {
+        "pcre-light-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

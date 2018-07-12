@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        asn1-codec = {
+        "asn1-codec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.integer-gmp
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          asn1-records-test = {
+          "asn1-records-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.asn1-codec

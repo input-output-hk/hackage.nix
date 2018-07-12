@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        network-bytestring = {
+        "network-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

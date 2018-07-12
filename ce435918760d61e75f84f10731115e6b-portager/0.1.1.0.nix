@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        portager = {
+        "portager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          portager-test = {
+          "portager-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.portager

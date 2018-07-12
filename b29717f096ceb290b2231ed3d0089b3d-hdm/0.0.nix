@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hdm = {
+          "hdm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vty

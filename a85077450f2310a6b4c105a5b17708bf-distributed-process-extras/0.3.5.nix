@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-extras = {
+        "distributed-process-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.distributed-process
@@ -44,7 +44,7 @@ let
             else [ hsPkgs.time ]);
         };
         tests = {
-          InternalQueueTests = {
+          "InternalQueueTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -60,7 +60,7 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          PrimitivesTests = {
+          "PrimitivesTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -82,7 +82,7 @@ let
               hsPkgs.transformers
             ];
           };
-          TimerTests = {
+          "TimerTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -101,7 +101,7 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          LoggerTests = {
+          "LoggerTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

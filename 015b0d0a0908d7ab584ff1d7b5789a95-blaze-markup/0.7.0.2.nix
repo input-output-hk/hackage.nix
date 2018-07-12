@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-markup = {
+        "blaze-markup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          blaze-markup-tests = {
+          "blaze-markup-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

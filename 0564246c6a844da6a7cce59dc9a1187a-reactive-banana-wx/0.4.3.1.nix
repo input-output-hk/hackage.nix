@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        reactive-banana-wx = {
+        "reactive-banana-wx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cabal-macosx
@@ -30,29 +30,29 @@ let
           ];
         };
         exes = {
-          Arithmetic = {};
-          Asteroids = {
+          "Arithmetic" = {};
+          "Asteroids" = {
             depends  = [
               hsPkgs.random
               hsPkgs.executable-path
               hsPkgs.filepath
             ];
           };
-          Counter = {};
-          CurrencyConverter = {};
-          CRUD = {
+          "Counter" = {};
+          "CurrencyConverter" = {};
+          "CRUD" = {
             depends  = [
               hsPkgs.containers
             ];
           };
-          NetMonitor = {
+          "NetMonitor" = {
             depends  = [ hsPkgs.process ];
           };
-          TicTacToe = {
+          "TicTacToe" = {
             depends  = [ hsPkgs.array ];
           };
-          TwoCounters = {};
-          Wave = {};
+          "TwoCounters" = {};
+          "Wave" = {};
         };
       };
     }

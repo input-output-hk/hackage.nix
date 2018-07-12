@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alloy = {
+        "alloy" = {
           depends  = if compiler.isGhc && compiler.version.lt "6.10"
             then [
               hsPkgs.base

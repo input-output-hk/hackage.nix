@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspread = {
+        "hspread" = {
           depends  = [
             hsPkgs.network
             hsPkgs.binary

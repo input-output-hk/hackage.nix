@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        digit = {
+        "digit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

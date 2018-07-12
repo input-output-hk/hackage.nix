@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-redis = {
+        "apiary-redis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hedis

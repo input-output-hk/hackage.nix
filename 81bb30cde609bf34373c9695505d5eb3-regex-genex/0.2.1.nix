@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-genex = {
+        "regex-genex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          genex = {
+          "genex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

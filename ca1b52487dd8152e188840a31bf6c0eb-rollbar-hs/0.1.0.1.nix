@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rollbar-hs = {
+        "rollbar-hs" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          doc-test = {
+          "doc-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

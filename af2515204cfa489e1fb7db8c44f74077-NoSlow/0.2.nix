@@ -26,7 +26,7 @@ let
       };
       components = {
         exes = {
-          noslow = {
+          "noslow" = {
             depends  = ((([
               hsPkgs.base
               hsPkgs.array
@@ -37,7 +37,7 @@ let
               hsPkgs.dph-base
             ]) ++ pkgs.lib.optional _flags.vector hsPkgs.vector) ++ pkgs.lib.optional _flags.uvector hsPkgs.uvector) ++ pkgs.lib.optional _flags.storablevector hsPkgs.storablevector;
           };
-          noslow-table = {
+          "noslow-table" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

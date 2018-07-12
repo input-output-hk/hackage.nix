@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-php-session = {
+        "hs-php-session" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linux-xattr = {
+        "linux-xattr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

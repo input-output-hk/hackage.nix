@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-tdfa-rc = {
+        "regex-tdfa-rc" = {
           depends  = [
             hsPkgs.regex-base
             hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsdip = {
+        "hsdip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,6 +29,6 @@ let
             hsPkgs.cairo
           ];
         };
-        exes = { hsdip = {}; };
+        exes = { "hsdip" = {}; };
       };
     }

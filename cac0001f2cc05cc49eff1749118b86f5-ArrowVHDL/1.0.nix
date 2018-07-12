@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ArrowVHDL = {
+        "ArrowVHDL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

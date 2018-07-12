@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glazier = {
+        "glazier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.alternators
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          glazier-test = {
+          "glazier-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alternators

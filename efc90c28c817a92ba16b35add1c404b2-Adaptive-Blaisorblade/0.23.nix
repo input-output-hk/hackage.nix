@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        Adaptive-Blaisorblade = {
+        "Adaptive-Blaisorblade" = {
           depends  = [ hsPkgs.base ];
         };
-        exes = { spreadsheet = {}; };
+        exes = { "spreadsheet" = {}; };
       };
     }

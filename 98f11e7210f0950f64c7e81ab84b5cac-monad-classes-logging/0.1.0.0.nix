@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-classes-logging = {
+        "monad-classes-logging" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -31,7 +31,7 @@ let
           ] ++ [ hsPkgs.monad-classes ];
         };
         tests = {
-          monad-classes-logging-test = {
+          "monad-classes-logging-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-effect

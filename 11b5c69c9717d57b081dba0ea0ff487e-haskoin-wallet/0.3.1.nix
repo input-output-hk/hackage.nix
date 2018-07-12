@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskoin-wallet = {
+        "haskoin-wallet" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -67,7 +67,7 @@ let
           ];
         };
         exes = {
-          hw = {
+          "hw" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskoin-wallet
@@ -75,7 +75,7 @@ let
           };
         };
         tests = {
-          test-haskoin-wallet = {
+          "test-haskoin-wallet" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

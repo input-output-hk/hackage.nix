@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-vec3 = {
+        "simple-vec3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          pythia-recommender-test = {
+          "pythia-recommender-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          simple-vec3-benchmark = {
+          "simple-vec3-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

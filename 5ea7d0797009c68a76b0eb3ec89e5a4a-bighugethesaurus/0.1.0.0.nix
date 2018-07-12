@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bighugethesaurus = {
+        "bighugethesaurus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

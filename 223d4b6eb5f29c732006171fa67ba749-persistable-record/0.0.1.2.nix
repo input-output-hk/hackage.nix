@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistable-record = {
+        "persistable-record" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

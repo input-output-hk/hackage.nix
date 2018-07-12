@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        composable-associations = {
+        "composable-associations" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.composable-associations

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fake-type = {
+        "fake-type" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-prelude

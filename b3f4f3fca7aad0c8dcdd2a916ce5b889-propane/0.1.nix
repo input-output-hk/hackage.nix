@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        propane = {
+        "propane" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

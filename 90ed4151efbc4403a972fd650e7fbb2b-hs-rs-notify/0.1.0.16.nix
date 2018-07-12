@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-rs-notify = {
+        "hs-rs-notify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          notify = {
+          "notify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs-rs-notify
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          hs-rs-notify-test = {
+          "hs-rs-notify-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs-rs-notify

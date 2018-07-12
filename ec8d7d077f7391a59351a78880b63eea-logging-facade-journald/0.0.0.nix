@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logging-facade-journald = {
+        "logging-facade-journald" = {
           depends  = [
             hsPkgs.base
             hsPkgs.libsystemd-journal
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-facade

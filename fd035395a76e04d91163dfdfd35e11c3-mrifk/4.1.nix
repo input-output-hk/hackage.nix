@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mrifk = {
+          "mrifk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

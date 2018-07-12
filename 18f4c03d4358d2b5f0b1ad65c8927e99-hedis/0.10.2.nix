@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedis = {
+        "hedis" = {
           depends  = [
             hsPkgs.scanner
             hsPkgs.async
@@ -45,7 +45,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          hedis-test = {
+          "hedis-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -61,7 +61,7 @@ let
               hsPkgs.time
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -69,7 +69,7 @@ let
           };
         };
         benchmarks = {
-          hedis-benchmark = {
+          "hedis-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

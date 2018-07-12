@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hamilton = {
+        "hamilton" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ad
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hamilton-examples = {
+          "hamilton-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        latest-npm-version = {
+        "latest-npm-version" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes-http
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          latest-npm-version = {
+          "latest-npm-version" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-http
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          hspec-tests = {
+          "hspec-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

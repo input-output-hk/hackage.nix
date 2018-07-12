@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prettyprinter-convert-ansi-wl-pprint = {
+        "prettyprinter-convert-ansi-wl-pprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

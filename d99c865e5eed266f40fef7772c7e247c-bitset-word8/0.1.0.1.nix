@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitset-word8 = {
+        "bitset-word8" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          bitset-word8-test = {
+          "bitset-word8-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

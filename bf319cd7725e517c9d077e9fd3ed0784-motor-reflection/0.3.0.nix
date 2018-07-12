@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        motor-reflection = {
+        "motor-reflection" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.indexed

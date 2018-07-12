@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventful-core = {
+        "eventful-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -49,7 +49,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          style = {
+          "style" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

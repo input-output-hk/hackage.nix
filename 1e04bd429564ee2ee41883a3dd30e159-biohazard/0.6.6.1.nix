@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        biohazard = {
+        "biohazard" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.async
@@ -54,7 +54,7 @@ let
           ];
         };
         exes = {
-          redeye-dar = {
+          "redeye-dar" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -65,7 +65,7 @@ let
               hsPkgs.vector
             ];
           };
-          redeye-div = {
+          "redeye-div" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -77,7 +77,7 @@ let
               hsPkgs.vector
             ];
           };
-          redeye-pileup = {
+          "redeye-pileup" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -93,7 +93,7 @@ let
               hsPkgs.vector
             ];
           };
-          redeye-single = {
+          "redeye-single" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -109,7 +109,7 @@ let
               hsPkgs.vector
             ];
           };
-          gt-scan = {
+          "gt-scan" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -125,7 +125,7 @@ let
               hsPkgs.vector
             ];
           };
-          afroengineer = {
+          "afroengineer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -137,7 +137,7 @@ let
               hsPkgs.vector
             ];
           };
-          bam-fixpair = {
+          "bam-fixpair" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -148,7 +148,7 @@ let
               hsPkgs.vector
             ];
           };
-          bam-meld = {
+          "bam-meld" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -156,7 +156,7 @@ let
               hsPkgs.containers
             ];
           };
-          bam-resample = {
+          "bam-resample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -164,7 +164,7 @@ let
               hsPkgs.random
             ];
           };
-          bam-rewrap = {
+          "bam-rewrap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -172,7 +172,7 @@ let
               hsPkgs.containers
             ];
           };
-          bam-rmdup = {
+          "bam-rmdup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -184,14 +184,14 @@ let
               hsPkgs.vector-algorithms
             ];
           };
-          bam-trim = {
+          "bam-trim" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
               hsPkgs.bytestring
             ];
           };
-          fastq2bam = {
+          "fastq2bam" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -201,7 +201,7 @@ let
               hsPkgs.vector
             ];
           };
-          jivebunny = {
+          "jivebunny" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -219,7 +219,7 @@ let
               hsPkgs.vector-th-unbox
             ];
           };
-          mt-anno = {
+          "mt-anno" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -227,7 +227,7 @@ let
               hsPkgs.containers
             ];
           };
-          mt-ccheck = {
+          "mt-ccheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

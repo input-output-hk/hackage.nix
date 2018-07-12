@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sifflet = {
+        "sifflet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          sifflet = {
+          "sifflet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sifflet
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cairo

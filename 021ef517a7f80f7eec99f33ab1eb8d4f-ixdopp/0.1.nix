@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ixdopp = {
+          "ixdopp" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

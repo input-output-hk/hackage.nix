@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        syfco = {
+        "syfco" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          syfco = {
+          "syfco" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

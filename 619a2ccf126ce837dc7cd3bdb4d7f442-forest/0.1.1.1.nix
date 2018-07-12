@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        forest = {
+        "forest" = {
           depends  = (([
             hsPkgs.aeson
             hsPkgs.base

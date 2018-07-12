@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        consistent = {
+        "consistent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-control
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.consistent

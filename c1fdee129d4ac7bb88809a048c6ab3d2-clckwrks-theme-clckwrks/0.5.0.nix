@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clckwrks-theme-clckwrks = {
+        "clckwrks-theme-clckwrks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clckwrks

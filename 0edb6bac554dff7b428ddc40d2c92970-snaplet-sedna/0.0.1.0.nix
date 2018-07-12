@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-sedna = {
+        "snaplet-sedna" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quandl-api = {
+        "quandl-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-types

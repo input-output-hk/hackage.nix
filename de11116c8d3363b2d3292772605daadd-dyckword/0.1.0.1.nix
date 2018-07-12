@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dyckword = {
+        "dyckword" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          dyckword-testsuite = {
+          "dyckword-testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

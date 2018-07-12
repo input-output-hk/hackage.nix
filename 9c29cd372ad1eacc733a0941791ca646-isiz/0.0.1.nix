@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          isiz = {
+          "isiz" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk3

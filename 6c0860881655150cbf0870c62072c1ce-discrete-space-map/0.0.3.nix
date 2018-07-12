@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        discrete-space-map = {
+        "discrete-space-map" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        di = {
+        "di" = {
           depends  = [
             hsPkgs.base
             hsPkgs.df1

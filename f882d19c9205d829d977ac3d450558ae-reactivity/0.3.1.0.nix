@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactivity = {
+        "reactivity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-ant-xml = {
+        "tasty-ant-xml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nanocurses = {
+        "nanocurses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

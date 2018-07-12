@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgopher = {
+        "hgopher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

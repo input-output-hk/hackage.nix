@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        propellor = {
+        "propellor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -47,13 +47,13 @@ let
           ];
         };
         exes = {
-          propellor-config = {
+          "propellor-config" = {
             depends  = [
               hsPkgs.propellor
               hsPkgs.base
             ];
           };
-          propellor = {
+          "propellor" = {
             depends  = [
               hsPkgs.propellor
               hsPkgs.base

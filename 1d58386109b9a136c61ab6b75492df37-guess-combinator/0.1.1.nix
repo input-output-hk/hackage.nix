@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        guess-combinator = {
+        "guess-combinator" = {
           depends  = [
             hsPkgs.HList
             hsPkgs.base

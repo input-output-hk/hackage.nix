@@ -26,7 +26,7 @@ let
       };
       components = {
         exes = {
-          d-mucheck = {
+          "d-mucheck" = {
             depends  = ((([
               hsPkgs.base
               hsPkgs.distributed-process-simplelocalnet
@@ -39,7 +39,7 @@ let
               hsPkgs.MuCheck
             ] ++ pkgs.lib.optional _flags.quickcheck hsPkgs.MuCheck-QuickCheck) ++ pkgs.lib.optional _flags.smallcheck hsPkgs.MuCheck-SmallCheck) ++ pkgs.lib.optional _flags.hunit hsPkgs.MuCheck-HUnit) ++ pkgs.lib.optional _flags.hspec hsPkgs.MuCheck-Hspec;
           };
-          d-master = {
+          "d-master" = {
             depends  = ((([
               hsPkgs.base
               hsPkgs.distributed-process-simplelocalnet
@@ -52,7 +52,7 @@ let
               hsPkgs.MuCheck
             ] ++ pkgs.lib.optional _flags.quickcheck hsPkgs.MuCheck-QuickCheck) ++ pkgs.lib.optional _flags.smallcheck hsPkgs.MuCheck-SmallCheck) ++ pkgs.lib.optional _flags.hunit hsPkgs.MuCheck-HUnit) ++ pkgs.lib.optional _flags.hspec hsPkgs.MuCheck-Hspec;
           };
-          d-slave = {
+          "d-slave" = {
             depends  = ((([
               hsPkgs.base
               hsPkgs.distributed-process-simplelocalnet

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        manatee-core = {
+        "manatee-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gtk

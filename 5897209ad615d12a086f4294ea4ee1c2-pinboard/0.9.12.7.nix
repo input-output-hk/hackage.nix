@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pinboard = {
+        "pinboard" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

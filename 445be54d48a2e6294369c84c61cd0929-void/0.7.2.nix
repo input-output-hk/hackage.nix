@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        void = {
+        "void" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.9")) ([

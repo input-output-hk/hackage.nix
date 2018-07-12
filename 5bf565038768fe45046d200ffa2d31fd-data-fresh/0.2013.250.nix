@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-fresh = {
+        "data-fresh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

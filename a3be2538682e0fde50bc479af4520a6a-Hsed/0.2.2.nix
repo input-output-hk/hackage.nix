@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hsed = {
+        "Hsed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Glob
@@ -41,6 +41,6 @@ let
             hsPkgs.haskell98
           ];
         };
-        exes = { Hsed = {}; };
+        exes = { "Hsed" = {}; };
       };
     }

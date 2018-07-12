@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-par = {
+        "monad-par" = {
           depends  = [
             hsPkgs.base
             hsPkgs.abstract-par
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional _flags.chaselev hsPkgs.chaselev-deque;
         };
         tests = {
-          test-monad-par = {
+          "test-monad-par" = {
             depends  = [
               hsPkgs.base
               hsPkgs.abstract-par

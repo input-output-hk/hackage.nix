@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-kat = {
+        "tasty-kat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-tasty-kat = {
+          "test-tasty-kat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

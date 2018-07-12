@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        wreq = {
+        "wreq" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          httpbin = {
+          "httpbin" = {
             depends  = pkgs.lib.optionals (!(!_flags.httpbin)) [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.aeson
@@ -73,7 +73,7 @@ let
               hsPkgs.wreq
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = pkgs.lib.optionals (!(!_flags.doctest)) [
               hsPkgs.base
               hsPkgs.directory

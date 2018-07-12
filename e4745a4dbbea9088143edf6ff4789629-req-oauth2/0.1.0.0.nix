@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        req-oauth2 = {
+        "req-oauth2" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -38,12 +38,12 @@ let
           ];
         };
         exes = {
-          req-oauth2-app = {
+          "req-oauth2-app" = {
             depends  = [ hsPkgs.base ];
           };
         };
         tests = {
-          req-oauth2-test = {
+          "req-oauth2-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

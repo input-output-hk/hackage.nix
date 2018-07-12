@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DescriptiveKeys = {
+        "DescriptiveKeys" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xmonad

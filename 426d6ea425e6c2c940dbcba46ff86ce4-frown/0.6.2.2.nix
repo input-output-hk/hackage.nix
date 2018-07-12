@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          frown = {
+          "frown" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

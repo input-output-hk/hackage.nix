@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec-conduit = {
+        "attoparsec-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit

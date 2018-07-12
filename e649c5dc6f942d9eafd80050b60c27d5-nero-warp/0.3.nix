@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nero-warp = {
+        "nero-warp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.nero

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        comma = {
+        "comma" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          comma-test = {
+          "comma-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

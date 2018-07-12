@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bytes = {
+        "bytes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.directory

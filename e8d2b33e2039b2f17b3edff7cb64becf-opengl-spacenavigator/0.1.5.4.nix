@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opengl-spacenavigator = {
+        "opengl-spacenavigator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          opengl-spacenavigator = {
+          "opengl-spacenavigator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

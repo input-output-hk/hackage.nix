@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-iconv = {
+        "conduit-iconv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -29,7 +29,7 @@ let
           libs = pkgs.lib.optional (system.isOsx || system.isFreebsd) pkgs.iconv;
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          Benchmarks = {
+          "Benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

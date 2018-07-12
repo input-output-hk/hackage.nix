@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rose-trie = {
+        "rose-trie" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.deepseq

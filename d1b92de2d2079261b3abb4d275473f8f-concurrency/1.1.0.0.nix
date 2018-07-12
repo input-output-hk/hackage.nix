@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrency = {
+        "concurrency" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

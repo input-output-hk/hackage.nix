@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mltool = {
+        "mltool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          mltool-test = {
+          "mltool-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mltool

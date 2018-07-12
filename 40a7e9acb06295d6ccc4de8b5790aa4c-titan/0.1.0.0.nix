@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          titan = {
+          "titan" = {
             depends  = [ hsPkgs.base ];
           };
         };

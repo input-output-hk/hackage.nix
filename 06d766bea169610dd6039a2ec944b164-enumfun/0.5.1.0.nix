@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enumfun = {
+        "enumfun" = {
           depends  = [
             hsPkgs.base
             hsPkgs.enummapset-th

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-diagnostics = {
+        "hw-diagnostics" = {
           depends  = [ hsPkgs.base ];
         };
       };

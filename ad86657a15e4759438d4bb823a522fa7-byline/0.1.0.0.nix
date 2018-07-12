@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        byline = {
+        "byline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -38,14 +38,14 @@ let
           ];
         };
         exes = {
-          simple = {
+          "simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.byline
               hsPkgs.text
             ];
           };
-          menu = {
+          "menu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.byline

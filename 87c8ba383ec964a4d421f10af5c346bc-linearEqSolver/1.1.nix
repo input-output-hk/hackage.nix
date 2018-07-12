@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linearEqSolver = {
+        "linearEqSolver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sbv

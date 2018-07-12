@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bdo = {
+        "bdo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.url
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          bdo = {
+          "bdo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.url

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        radium-formula-parser = {
+        "radium-formula-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

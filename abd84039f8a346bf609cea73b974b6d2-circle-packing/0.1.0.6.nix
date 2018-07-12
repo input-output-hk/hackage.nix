@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        circle-packing = {
+        "circle-packing" = {
           depends  = [ hsPkgs.base ];
         };
       };

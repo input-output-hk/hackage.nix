@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        on-demand-ssh-tunnel = {
+        "on-demand-ssh-tunnel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          on-demand-ssh-tunnel = {
+          "on-demand-ssh-tunnel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

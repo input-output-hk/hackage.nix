@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpqtypes-extras = {
+        "hpqtypes-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base16-bytestring

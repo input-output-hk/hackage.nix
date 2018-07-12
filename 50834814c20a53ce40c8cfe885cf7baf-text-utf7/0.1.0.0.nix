@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-utf7 = {
+        "text-utf7" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ] ++ [ hsPkgs.bytestring ];
         };
         tests = {
-          utf7 = {
+          "utf7" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

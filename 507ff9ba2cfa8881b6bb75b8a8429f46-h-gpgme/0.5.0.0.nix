@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        h-gpgme = {
+        "h-gpgme" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-gpgme
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bindings-gpgme

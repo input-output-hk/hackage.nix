@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kafka-device-leap = {
+        "kafka-device-leap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          kafka-device-leap = {
+          "kafka-device-leap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

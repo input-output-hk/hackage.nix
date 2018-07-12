@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gloss-accelerate = {
+        "gloss-accelerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate

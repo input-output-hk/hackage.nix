@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stache = {
+        "stache" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -53,7 +53,7 @@ let
               hsPkgs.text
             ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
-          mustache-spec = {
+          "mustache-spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -69,7 +69,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

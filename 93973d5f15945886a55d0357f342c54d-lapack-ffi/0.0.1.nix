@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lapack-ffi = {
+        "lapack-ffi" = {
           depends  = [
             hsPkgs.netlib-ffi
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        freetype-simple = {
+        "freetype-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.boundingboxes

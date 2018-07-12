@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SoccerFun = {
+        "SoccerFun" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

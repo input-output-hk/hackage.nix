@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        xformat = {
+        "xformat" = {
           depends  = [ hsPkgs.base ];
         };
       };

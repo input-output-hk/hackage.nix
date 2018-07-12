@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        mvclient = {
+        "mvclient" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

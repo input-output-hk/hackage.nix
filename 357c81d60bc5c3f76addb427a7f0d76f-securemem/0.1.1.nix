@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        securemem = {
+        "securemem" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

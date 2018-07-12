@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-core = {
+        "amazonka-core" = {
           depends  = ([
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -58,7 +58,7 @@ let
             else [ hsPkgs.time ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.amazonka-core

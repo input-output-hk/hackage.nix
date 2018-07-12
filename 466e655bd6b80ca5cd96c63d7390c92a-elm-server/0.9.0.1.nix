@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          elm-server = {
+          "elm-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

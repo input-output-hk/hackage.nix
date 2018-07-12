@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-protocol-xmpp = {
+        "network-protocol-xmpp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

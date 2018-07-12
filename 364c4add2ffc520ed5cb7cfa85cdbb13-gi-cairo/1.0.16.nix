@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-cairo = {
+        "gi-cairo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

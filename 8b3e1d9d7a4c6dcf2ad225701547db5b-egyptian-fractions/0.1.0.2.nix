@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        egyptian-fractions = {
+        "egyptian-fractions" = {
           depends  = [ hsPkgs.base ];
         };
       };

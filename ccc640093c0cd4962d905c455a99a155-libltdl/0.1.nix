@@ -22,11 +22,11 @@ let
         buildType = "Custom";
       };
       components = {
-        libltdl = {
+        "libltdl" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          sin = {
+          "sin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.libltdl

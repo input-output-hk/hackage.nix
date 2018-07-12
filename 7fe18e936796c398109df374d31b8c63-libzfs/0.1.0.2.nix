@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libzfs = {
+        "libzfs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           libs = [ pkgs.zfs pkgs.nvpair ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

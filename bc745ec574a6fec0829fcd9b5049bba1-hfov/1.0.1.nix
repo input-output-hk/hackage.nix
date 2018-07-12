@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hfov = {
+        "hfov" = {
           depends  = [ hsPkgs.base ];
         };
       };

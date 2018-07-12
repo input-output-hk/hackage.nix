@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-packages = {
+        "haskell-packages" = {
           depends  = [
             hsPkgs.base
             hsPkgs.optparse-applicative

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yu-core = {
+        "yu-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yu-utils
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-mvc = {
+          "test-mvc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

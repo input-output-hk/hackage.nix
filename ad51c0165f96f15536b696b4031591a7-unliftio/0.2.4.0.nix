@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unliftio = {
+        "unliftio" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          unliftio-spec = {
+          "unliftio-spec" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

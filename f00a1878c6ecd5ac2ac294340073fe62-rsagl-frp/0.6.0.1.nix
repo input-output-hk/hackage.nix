@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rsagl-frp = {
+        "rsagl-frp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rsagl-math

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        github = {
+        "github" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

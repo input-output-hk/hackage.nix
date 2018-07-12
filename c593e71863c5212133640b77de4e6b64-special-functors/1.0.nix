@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        special-functors = {
+        "special-functors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

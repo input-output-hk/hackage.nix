@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-filepath = {
+        "system-filepath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

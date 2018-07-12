@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          msi-kb-backlit = {
+          "msi-kb-backlit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hid

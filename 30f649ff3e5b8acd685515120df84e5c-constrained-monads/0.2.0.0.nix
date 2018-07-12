@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        constrained-monads = {
+        "constrained-monads" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          constrained-monads-test = {
+          "constrained-monads-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.constrained-monads

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SimpleServer = {
+        "SimpleServer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai-routes
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          simpleserver = {
+          "simpleserver" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-routes

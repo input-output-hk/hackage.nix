@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-kinesis-reshard = {
+        "aws-kinesis-reshard" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          kinesis-reshard = {
+          "kinesis-reshard" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

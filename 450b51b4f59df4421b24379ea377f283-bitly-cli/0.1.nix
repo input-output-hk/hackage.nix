@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bitly = {
+          "bitly" = {
             depends  = [
               hsPkgs.Bitly
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smaoin = {
+        "smaoin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

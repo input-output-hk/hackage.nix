@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yampa-sdl2 = {
+        "yampa-sdl2" = {
           depends  = [
             hsPkgs.StateVar
             hsPkgs.Yampa
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          YampaSDL2-test = {
+          "YampaSDL2-test" = {
             depends  = [
               hsPkgs.StateVar
               hsPkgs.Yampa

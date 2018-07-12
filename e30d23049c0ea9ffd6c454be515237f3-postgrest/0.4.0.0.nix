@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgrest = {
+        "postgrest" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-wl-pprint
@@ -65,7 +65,7 @@ let
           ];
         };
         exes = {
-          postgrest = {
+          "postgrest" = {
             depends  = [
               hsPkgs.auto-update
               hsPkgs.base
@@ -82,7 +82,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-qq

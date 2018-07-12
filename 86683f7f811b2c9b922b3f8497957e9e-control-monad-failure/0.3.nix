@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        control-monad-failure = {
+        "control-monad-failure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

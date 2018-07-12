@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rpc = {
+        "rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network-fancy

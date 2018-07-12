@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent = {
+        "persistent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

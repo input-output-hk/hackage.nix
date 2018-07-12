@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        singleton-typelits = {
+        "singleton-typelits" = {
           depends  = [ hsPkgs.base ];
         };
       };

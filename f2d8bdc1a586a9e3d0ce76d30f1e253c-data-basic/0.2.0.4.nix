@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-basic = {
+        "data-basic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.simple-effects
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          basic-test = {
+          "basic-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-basic

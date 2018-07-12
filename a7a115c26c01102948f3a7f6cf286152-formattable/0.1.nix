@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        formattable = {
+        "formattable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        sscript = {
+        "sscript" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          sscript-test = {
+          "sscript-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

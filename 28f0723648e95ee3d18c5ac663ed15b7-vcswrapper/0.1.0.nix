@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vcswrapper = {
+        "vcswrapper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          vcswrapper = {
+          "vcswrapper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

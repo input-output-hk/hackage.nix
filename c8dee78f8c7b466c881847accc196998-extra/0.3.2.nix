@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extra = {
+        "extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -30,7 +30,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          extra-test = {
+          "extra-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.extra

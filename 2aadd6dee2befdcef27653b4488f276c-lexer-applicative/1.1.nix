@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lexer-applicative = {
+        "lexer-applicative" = {
           depends  = [
             hsPkgs.base
             hsPkgs.srcloc
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

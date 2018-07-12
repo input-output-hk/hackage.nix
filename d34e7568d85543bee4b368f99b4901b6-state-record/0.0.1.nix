@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        state-record = {
+        "state-record" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

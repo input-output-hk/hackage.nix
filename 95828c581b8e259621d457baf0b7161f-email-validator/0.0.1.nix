@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          email-validator = {
+          "email-validator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

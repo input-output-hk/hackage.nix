@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        base-generics = {
+        "base-generics" = {
           depends  = [ hsPkgs.base ];
         };
       };

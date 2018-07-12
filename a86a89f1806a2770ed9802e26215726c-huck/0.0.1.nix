@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        huck = {
+        "huck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-prelude
@@ -44,7 +44,7 @@ let
               hsPkgs.time
             ];
           };
-          test-io = {
+          "test-io" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-prelude

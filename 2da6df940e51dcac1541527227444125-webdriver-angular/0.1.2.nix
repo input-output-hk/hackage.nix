@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webdriver-angular = {
+        "webdriver-angular" = {
           depends  = [
             hsPkgs.base
             hsPkgs.webdriver
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

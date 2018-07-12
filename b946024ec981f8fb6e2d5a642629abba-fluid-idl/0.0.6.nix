@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fluid-idl = {
+        "fluid-idl" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          fluid-suite = {
+          "fluid-suite" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

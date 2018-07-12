@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semver-range = {
+        "semver-range" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-prelude

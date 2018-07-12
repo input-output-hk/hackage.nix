@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        porte = {
+        "porte" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,6 +28,6 @@ let
             hsPkgs.stringsearch
           ];
         };
-        exes = { porte = {}; };
+        exes = { "porte" = {}; };
       };
     }

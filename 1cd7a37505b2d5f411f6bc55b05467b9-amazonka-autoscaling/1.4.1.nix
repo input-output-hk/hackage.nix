@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-autoscaling = {
+        "amazonka-autoscaling" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-autoscaling-test = {
+          "amazonka-autoscaling-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        azurify = {
+        "azurify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -47,7 +47,7 @@ let
           ] ++ pkgs.lib.optional (!_flags.no-hxt) hsPkgs.hxt;
         };
         exes = {
-          azurify = {
+          "azurify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

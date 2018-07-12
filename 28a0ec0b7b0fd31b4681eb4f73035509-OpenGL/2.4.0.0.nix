@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OpenGL = {
+        "OpenGL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGLRaw

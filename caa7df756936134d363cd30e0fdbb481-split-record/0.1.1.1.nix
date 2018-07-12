@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          split-record = {
+          "split-record" = {
             depends  = [
               hsPkgs.synthesizer-core
               hsPkgs.soxlib

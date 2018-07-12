@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        takahashi = {
+        "takahashi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-skeleton

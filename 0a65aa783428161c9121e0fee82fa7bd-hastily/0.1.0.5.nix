@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hastily = {
+        "hastily" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          hastily = {
+          "hastily" = {
             depends  = [
               hsPkgs.base
               hsPkgs.string-conversions
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          hastily-test = {
+          "hastily-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hastily

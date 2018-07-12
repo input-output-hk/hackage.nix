@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spata = {
+        "spata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mps

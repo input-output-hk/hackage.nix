@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        seakale-postgresql = {
+        "seakale-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.seakale

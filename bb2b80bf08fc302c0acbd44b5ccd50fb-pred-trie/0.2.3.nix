@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pred-trie = {
+        "pred-trie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          simplevshort = {
+          "simplevshort" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

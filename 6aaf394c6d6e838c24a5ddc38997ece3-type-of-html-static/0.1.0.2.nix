@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-of-html-static = {
+        "type-of-html-static" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-of-html
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-of-html

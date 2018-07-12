@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          buffer-pipe = {
+          "buffer-pipe" = {
             depends  = [ hsPkgs.base ];
           };
         };

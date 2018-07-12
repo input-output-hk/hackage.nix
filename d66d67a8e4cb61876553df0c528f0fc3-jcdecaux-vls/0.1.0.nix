@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jcdecaux-vls = {
+        "jcdecaux-vls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

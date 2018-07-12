@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microsoft-translator = {
+        "microsoft-translator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        playlists-http = {
+        "playlists-http" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = pkgs.lib.optionals (!(!_flags.build-examples)) [
               hsPkgs.base
               hsPkgs.http-client

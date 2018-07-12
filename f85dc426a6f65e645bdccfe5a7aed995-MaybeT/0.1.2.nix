@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MaybeT = {
+        "MaybeT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

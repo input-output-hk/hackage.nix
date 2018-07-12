@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-workspaces = {
+        "amazonka-workspaces" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

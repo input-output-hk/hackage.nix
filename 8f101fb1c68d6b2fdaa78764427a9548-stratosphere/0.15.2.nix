@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stratosphere = {
+        "stratosphere" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          apigw-lambda-dynamodb = {
+          "apigw-lambda-dynamodb" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -52,7 +52,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          auto-scaling-group = {
+          "auto-scaling-group" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -67,7 +67,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          ec2-with-eip = {
+          "ec2-with-eip" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -82,7 +82,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          rds-master-replica = {
+          "rds-master-replica" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -97,7 +97,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          s3-copy = {
+          "s3-copy" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -112,7 +112,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          simple-lambda = {
+          "simple-lambda" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -129,7 +129,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty

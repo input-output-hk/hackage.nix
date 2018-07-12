@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MoeDict = {
+        "MoeDict" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

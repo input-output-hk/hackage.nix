@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hmp3 = {
+          "hmp3" = {
             depends  = [
               hsPkgs.unix
               hsPkgs.binary

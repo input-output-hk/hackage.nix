@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-attoparsec = {
+        "pipes-attoparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes-core

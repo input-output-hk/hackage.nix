@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cipher-des = {
+        "cipher-des" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-cipher-des = {
+          "test-cipher-des" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cipher-des
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench-cipher-des = {
+          "bench-cipher-des" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

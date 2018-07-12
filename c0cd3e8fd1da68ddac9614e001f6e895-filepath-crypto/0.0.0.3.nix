@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filepath-crypto = {
+        "filepath-crypto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

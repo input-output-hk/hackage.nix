@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-session = {
+        "wai-session" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

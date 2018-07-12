@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        leksah = {
+        "leksah" = {
           depends  = (((((([
             hsPkgs.gtk3
             hsPkgs.gtksourceview3
@@ -98,7 +98,7 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
         };
         exes = {
-          leksah = {
+          "leksah" = {
             depends  = ([
               hsPkgs.leksah
               hsPkgs.base
@@ -109,7 +109,7 @@ let
             ];
             libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
           };
-          bewleksah = {
+          "bewleksah" = {
             depends  = [
               hsPkgs.leksah
               hsPkgs.base
@@ -123,7 +123,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

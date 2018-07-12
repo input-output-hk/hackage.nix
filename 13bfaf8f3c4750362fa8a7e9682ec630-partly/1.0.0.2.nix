@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        partly = {
+        "partly" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          partly = {
+          "partly" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          test-partly-lib = {
+          "test-partly-lib" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          test-partly-json = {
+          "test-partly-json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

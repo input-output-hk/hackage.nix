@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hackage-db = {
+        "hackage-db" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          list-known-versions = {
+          "list-known-versions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -44,7 +44,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          show-meta-data = {
+          "show-meta-data" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -54,7 +54,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          show-package-versions = {
+          "show-package-versions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

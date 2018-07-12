@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsmisc = {
+        "hsmisc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-hsmisc = {
+          "test-hsmisc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

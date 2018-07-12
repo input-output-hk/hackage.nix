@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clafer = {
+        "clafer" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          clafer = {
+          "clafer" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -86,7 +86,7 @@ let
           };
         };
         tests = {
-          test-suite = {
+          "test-suite" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

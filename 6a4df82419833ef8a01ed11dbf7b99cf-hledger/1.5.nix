@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger = {
+        "hledger" = {
           depends  = [
             hsPkgs.Decimal
             hsPkgs.Diff
@@ -65,7 +65,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows && _flags.terminfo) hsPkgs.terminfo;
         };
         exes = {
-          hledger = {
+          "hledger" = {
             depends  = [
               hsPkgs.Decimal
               hsPkgs.HUnit
@@ -106,7 +106,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.Decimal
               hsPkgs.HUnit
@@ -149,7 +149,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base

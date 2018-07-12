@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process = {
+        "distributed-process" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -43,7 +43,7 @@ let
           ] ++ pkgs.lib.optional _flags.th hsPkgs.template-haskell;
         };
         tests = {
-          TestCH = {
+          "TestCH" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -54,7 +54,7 @@ let
               hsPkgs.binary
             ];
           };
-          TestClosure = {
+          "TestClosure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptol = {
+        "cryptol" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -64,7 +64,7 @@ let
           ];
         };
         exes = {
-          cryptol = {
+          "cryptol" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base
@@ -86,7 +86,7 @@ let
           };
         };
         benchmarks = {
-          cryptol-bench = {
+          "cryptol-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-printer = {
+        "text-printer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

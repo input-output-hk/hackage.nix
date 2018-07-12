@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcid = {
+        "ghcid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.terminal-size;
         };
         exes = {
-          ghcid = {
+          "ghcid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          ghcid_test = {
+          "ghcid_test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

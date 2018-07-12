@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-gsl = {
+        "hmatrix-gsl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix

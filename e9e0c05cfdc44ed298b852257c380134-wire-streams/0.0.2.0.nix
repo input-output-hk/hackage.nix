@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wire-streams = {
+        "wire-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          encode-decode-cereal = {
+          "encode-decode-cereal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
               hsPkgs.cabal-test-quickcheck
             ];
           };
-          encode-decode-binary = {
+          "encode-decode-binary" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -56,7 +56,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wire-streams

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        git-config = {
+        "git-config" = {
           depends  = [
             hsPkgs.base
             hsPkgs.megaparsec
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          git-config-test = {
+          "git-config-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.git-config

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        blas = {
+        "blas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ieee

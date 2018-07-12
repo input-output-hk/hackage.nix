@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        equivalence = {
+        "equivalence" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

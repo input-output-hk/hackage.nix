@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DistanceUnits = {
+        "DistanceUnits" = {
           depends  = [ hsPkgs.base ];
         };
       };

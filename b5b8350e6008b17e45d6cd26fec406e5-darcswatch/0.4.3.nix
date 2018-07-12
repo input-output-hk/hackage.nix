@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          darcswatch-generate = {
+          "darcswatch-generate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -49,12 +49,12 @@ let
               hsPkgs.mtl
             ];
           };
-          darcswatch-import-mail = {};
-          darcswatch-import-bundle = {};
-          darcswatch-convert-data = {};
-          darcswatch-pull-repos = {};
-          darcswatch-update-data = {};
-          darcswatch-cgi = {};
+          "darcswatch-import-mail" = {};
+          "darcswatch-import-bundle" = {};
+          "darcswatch-convert-data" = {};
+          "darcswatch-pull-repos" = {};
+          "darcswatch-update-data" = {};
+          "darcswatch-cgi" = {};
         };
       };
     }

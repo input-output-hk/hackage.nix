@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          webify = {
+          "webify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

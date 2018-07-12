@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Zora = {
+        "Zora" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

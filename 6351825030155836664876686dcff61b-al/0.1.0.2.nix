@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        al = {
+        "al" = {
           depends  = [ hsPkgs.base ];
           build-tools = [
             hsPkgs.buildPackages.c2hs

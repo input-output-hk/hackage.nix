@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reproject = {
+        "reproject" = {
           depends  = [
             hsPkgs.base
             hsPkgs.labels
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          reproject-test = {
+          "reproject-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reproject

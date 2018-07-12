@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rpm = {
+        "rpm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          test-rpm = {
+          "test-rpm" = {
             depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.test-framework

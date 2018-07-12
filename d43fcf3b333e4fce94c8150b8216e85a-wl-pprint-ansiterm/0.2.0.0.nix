@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wl-pprint-ansiterm = {
+        "wl-pprint-ansiterm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

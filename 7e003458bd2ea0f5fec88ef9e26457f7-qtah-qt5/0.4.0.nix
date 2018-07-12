@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        qtah-qt5 = {
+        "qtah-qt5" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -32,7 +32,7 @@ let
           libs = [ pkgs.qtah ];
         };
         tests = {
-          test-qtah = {
+          "test-qtah" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hoppy-runtime

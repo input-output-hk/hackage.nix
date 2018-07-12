@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ats-storable = {
+        "ats-storable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.composition-prelude
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          ats-storable-test = {
+          "ats-storable-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ats-storable

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HNumeric = {
+        "HNumeric" = {
           depends  = [
             hsPkgs.base
             hsPkgs.math-functions
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          HNumeric-test = {
+          "HNumeric-test" = {
             depends  = [
               hsPkgs.HNumeric
               hsPkgs.base

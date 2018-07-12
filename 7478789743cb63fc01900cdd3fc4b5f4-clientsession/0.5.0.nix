@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clientsession = {
+        "clientsession" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

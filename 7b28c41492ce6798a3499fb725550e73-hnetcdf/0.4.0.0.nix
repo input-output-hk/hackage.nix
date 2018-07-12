@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hnetcdf = {
+        "hnetcdf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          example1 = {
+          "example1" = {
             depends  = [
               hsPkgs.hnetcdf
               hsPkgs.base
@@ -45,7 +45,7 @@ let
               hsPkgs.vector
             ];
           };
-          example2 = {
+          "example2" = {
             depends  = [
               hsPkgs.hnetcdf
               hsPkgs.base
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          test-raw-metadata = {
+          "test-raw-metadata" = {
             depends  = [
               hsPkgs.hnetcdf
               hsPkgs.base
@@ -71,23 +71,7 @@ let
             ];
             libs = [ pkgs.netcdf ];
           };
-          test-raw-get-put = {
-            depends  = [
-              hsPkgs.hnetcdf
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.vector
-              hsPkgs.repa
-              hsPkgs.directory
-              hsPkgs.test-framework
-              hsPkgs.test-framework-hunit
-              hsPkgs.test-framework-quickcheck2
-              hsPkgs.HUnit
-              hsPkgs.QuickCheck
-            ];
-            libs = [ pkgs.netcdf ];
-          };
-          test-raw-attributes = {
+          "test-raw-get-put" = {
             depends  = [
               hsPkgs.hnetcdf
               hsPkgs.base
@@ -103,7 +87,23 @@ let
             ];
             libs = [ pkgs.netcdf ];
           };
-          test-get = {
+          "test-raw-attributes" = {
+            depends  = [
+              hsPkgs.hnetcdf
+              hsPkgs.base
+              hsPkgs.containers
+              hsPkgs.vector
+              hsPkgs.repa
+              hsPkgs.directory
+              hsPkgs.test-framework
+              hsPkgs.test-framework-hunit
+              hsPkgs.test-framework-quickcheck2
+              hsPkgs.HUnit
+              hsPkgs.QuickCheck
+            ];
+            libs = [ pkgs.netcdf ];
+          };
+          "test-get" = {
             depends  = [
               hsPkgs.hnetcdf
               hsPkgs.base
@@ -120,7 +120,7 @@ let
             ];
             libs = [ pkgs.netcdf ];
           };
-          test-put = {
+          "test-put" = {
             depends  = [
               hsPkgs.hnetcdf
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SVGFonts = {
+        "SVGFonts" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base
@@ -30,6 +30,6 @@ let
             hsPkgs.parsec
           ];
         };
-        exes = { Fonts = {}; };
+        exes = { "Fonts" = {}; };
       };
     }

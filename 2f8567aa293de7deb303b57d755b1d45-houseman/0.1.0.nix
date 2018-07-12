@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        houseman = {
+        "houseman" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          houseman = {
+          "houseman" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

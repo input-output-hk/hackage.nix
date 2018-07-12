@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quantities = {
+        "quantities" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          quantities = {
+          "quantities" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quantities
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quantities
@@ -50,20 +50,20 @@ let
               hsPkgs.parsec
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.Glob
             ];
           };
-          coverage = {
+          "coverage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

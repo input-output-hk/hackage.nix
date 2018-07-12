@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-nix = {
+        "servant-nix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hnix

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        adjunctions = {
+        "adjunctions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        load-balancing = {
+        "load-balancing" = {
           depends  = [
             hsPkgs.PSQueue
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-conversion = {
+        "bytestring-conversion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -34,7 +34,7 @@ let
             ]);
         };
         tests = {
-          bytestring-conversion-tests = {
+          "bytestring-conversion-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bytestring-conversion-bench = {
+          "bytestring-conversion-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

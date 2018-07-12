@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gensmspdu = {
+          "gensmspdu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

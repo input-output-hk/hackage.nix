@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pandoc-emphasize-code = {
+        "pandoc-emphasize-code" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          pandoc-emphasize-code = {
+          "pandoc-emphasize-code" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-types
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          filter-tests = {
+          "filter-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unordered-containers

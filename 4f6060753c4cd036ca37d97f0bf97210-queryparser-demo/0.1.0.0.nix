@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        queryparser-demo = {
+        "queryparser-demo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.queryparser

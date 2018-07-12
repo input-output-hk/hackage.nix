@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        manifold-random = {
+        "manifold-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random-fu

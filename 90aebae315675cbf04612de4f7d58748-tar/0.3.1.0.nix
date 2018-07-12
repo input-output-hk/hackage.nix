@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tar = {
+        "tar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

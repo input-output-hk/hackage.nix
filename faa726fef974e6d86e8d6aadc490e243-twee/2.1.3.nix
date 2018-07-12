@@ -25,7 +25,7 @@ let
       };
       components = {
         exes = {
-          twee = {
+          "twee" = {
             depends  = [
               hsPkgs.base
               hsPkgs.twee-lib

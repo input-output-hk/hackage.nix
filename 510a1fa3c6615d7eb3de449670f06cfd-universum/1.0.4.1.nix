@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        universum = {
+        "universum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          universum-doctest = {
+          "universum-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -52,7 +52,7 @@ let
           };
         };
         benchmarks = {
-          universum-benchmark = {
+          "universum-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.universum

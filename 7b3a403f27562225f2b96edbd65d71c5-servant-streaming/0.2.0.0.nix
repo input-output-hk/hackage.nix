@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-streaming = {
+        "servant-streaming" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-types
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

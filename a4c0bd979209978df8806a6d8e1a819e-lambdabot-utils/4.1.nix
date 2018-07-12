@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdabot-utils = {
+        "lambdabot-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src

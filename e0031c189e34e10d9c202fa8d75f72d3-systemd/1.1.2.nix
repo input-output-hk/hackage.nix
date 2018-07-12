@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        systemd = {
+        "systemd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          daemon-test = {
+          "daemon-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

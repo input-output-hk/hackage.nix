@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fresco-binding = {
+        "fresco-binding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

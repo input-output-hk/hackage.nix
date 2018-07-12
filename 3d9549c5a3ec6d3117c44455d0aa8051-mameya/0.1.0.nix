@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        mameya = {
+        "mameya" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          mameya = {
+          "mameya" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mameya
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          mameya-test = {
+          "mameya-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mameya

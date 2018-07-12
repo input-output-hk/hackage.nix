@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        osdkeys = {
+        "osdkeys" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          osdkeys = {
+          "osdkeys" = {
             depends  = [
               hsPkgs.base
               hsPkgs.osdkeys

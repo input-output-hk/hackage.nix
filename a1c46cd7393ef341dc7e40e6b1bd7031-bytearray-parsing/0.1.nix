@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytearray-parsing = {
+        "bytearray-parsing" = {
           depends  = [
             hsPkgs.text
             hsPkgs.bytestring

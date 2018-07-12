@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        io-streams-haproxy = {
+        "io-streams-haproxy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

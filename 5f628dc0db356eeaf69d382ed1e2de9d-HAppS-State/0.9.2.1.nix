@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HAppS-State = {
+        "HAppS-State" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HaXml

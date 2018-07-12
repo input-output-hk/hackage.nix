@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bencoding = {
+        "bencoding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          pp = {
+          "pp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          bench-comparison = {
+          "bench-comparison" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

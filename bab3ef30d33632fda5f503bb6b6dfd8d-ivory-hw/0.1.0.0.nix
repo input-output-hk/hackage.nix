@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ivory-hw = {
+        "ivory-hw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

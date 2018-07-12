@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa-bytestring = {
+        "repa-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.repa

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bugsnag-haskell = {
+        "bugsnag-haskell" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -44,19 +44,19 @@ let
           ];
         };
         exes = {
-          example-cli = {
+          "example-cli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bugsnag-haskell
             ];
           };
-          example-simple = {
+          "example-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bugsnag-haskell
             ];
           };
-          example-warp = {
+          "example-warp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bugsnag-haskell
@@ -64,7 +64,7 @@ let
               hsPkgs.warp
             ];
           };
-          example-yesod = {
+          "example-yesod" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bugsnag-haskell
@@ -76,13 +76,13 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-qq

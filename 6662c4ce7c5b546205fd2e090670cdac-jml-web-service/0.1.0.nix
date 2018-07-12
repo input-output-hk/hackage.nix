@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jml-web-service = {
+        "jml-web-service" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jml-web-service

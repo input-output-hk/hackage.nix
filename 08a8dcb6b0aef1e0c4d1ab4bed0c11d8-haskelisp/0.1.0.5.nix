@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelisp = {
+        "haskelisp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude

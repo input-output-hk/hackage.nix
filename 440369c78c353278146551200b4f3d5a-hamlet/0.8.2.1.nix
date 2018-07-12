@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hamlet = {
+        "hamlet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.hamlet
               hsPkgs.base

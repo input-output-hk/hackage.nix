@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        darkplaces-rcon = {
+        "darkplaces-rcon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          rcon-tests = {
+          "rcon-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

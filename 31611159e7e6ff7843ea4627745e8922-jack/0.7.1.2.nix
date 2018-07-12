@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jack = {
+        "jack" = {
           depends  = [
             hsPkgs.midi
             hsPkgs.event-list
@@ -38,30 +38,19 @@ let
             hsPkgs.base
           ];
           libs = pkgs.lib.optional (!_flags.pkgconfig) pkgs.jack;
-          pkgconfig = [
-            pkgconfPkgs.jack
-          ];
+          pkgconfig = pkgs.lib.optional _flags.pkgconfig pkgconfPkgs.jack;
           build-tools = [
             hsPkgs.buildPackages.hsc2hs
           ];
         };
         exes = {
-          jack-amplify = {
+          "jack-amplify" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.base
             ];
           };
-          jack-capture = {
-            depends  = pkgs.lib.optionals _flags.buildexamples [
-              hsPkgs.jack
-              hsPkgs.explicit-exception
-              hsPkgs.transformers
-              hsPkgs.array
-              hsPkgs.base
-            ];
-          };
-          jack-impulse-train = {
+          "jack-capture" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.explicit-exception
@@ -70,14 +59,23 @@ let
               hsPkgs.base
             ];
           };
-          jack-midimon = {
+          "jack-impulse-train" = {
+            depends  = pkgs.lib.optionals _flags.buildexamples [
+              hsPkgs.jack
+              hsPkgs.explicit-exception
+              hsPkgs.transformers
+              hsPkgs.array
+              hsPkgs.base
+            ];
+          };
+          "jack-midimon" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.midi
               hsPkgs.base
             ];
           };
-          jack-melody = {
+          "jack-melody" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.midi
@@ -88,7 +86,7 @@ let
               hsPkgs.base
             ];
           };
-          jack-synth = {
+          "jack-synth" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.jack
               hsPkgs.midi

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector = {
+        "vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

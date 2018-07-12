@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        djembe = {
+        "djembe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          djembe-test = {
+          "djembe-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

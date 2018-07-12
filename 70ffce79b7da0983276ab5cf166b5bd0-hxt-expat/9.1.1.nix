@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-expat = {
+        "hxt-expat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

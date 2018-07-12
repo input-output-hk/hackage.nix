@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        COrdering = {
+        "COrdering" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eurofxref = {
+        "eurofxref" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsndfile-storablevector = {
+        "hsndfile-storablevector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsndfile

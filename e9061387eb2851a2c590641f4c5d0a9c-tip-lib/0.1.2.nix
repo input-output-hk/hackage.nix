@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tip-lib = {
+        "tip-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.geniplate-mirror
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          tip = {
+          "tip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tip-lib

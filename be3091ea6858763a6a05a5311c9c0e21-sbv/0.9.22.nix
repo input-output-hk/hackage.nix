@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        sbv = {
+        "sbv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -38,6 +38,6 @@ let
             hsPkgs.random
           ];
         };
-        exes = { SBVUnitTests = {}; };
+        exes = { "SBVUnitTests" = {}; };
       };
     }

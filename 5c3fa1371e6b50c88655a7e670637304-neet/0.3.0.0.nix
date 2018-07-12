@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        neet = {
+        "neet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MonadRandom

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        factory = {
+        "factory" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          factory = {
+          "factory" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.QuickCheck

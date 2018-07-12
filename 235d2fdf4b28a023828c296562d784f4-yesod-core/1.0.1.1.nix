@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-core = {
+        "yesod-core" = {
           depends  = (([
             hsPkgs.time
             hsPkgs.yesod-routes
@@ -71,7 +71,7 @@ let
             else [ hsPkgs.blaze-html ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.wai-test

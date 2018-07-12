@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        steeloverseer = {
+        "steeloverseer" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          sos = {
+          "sos" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

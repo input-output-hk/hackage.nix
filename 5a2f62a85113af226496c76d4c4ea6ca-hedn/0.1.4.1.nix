@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedn = {
+        "hedn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test-parser = {
+          "test-parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedn
@@ -43,7 +43,7 @@ let
               hsPkgs.ansi-terminal
             ];
           };
-          test-encoder = {
+          "test-encoder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedn

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          jsontsv = {
+          "jsontsv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

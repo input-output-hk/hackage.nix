@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsaddle-webkitgtk = {
+        "jsaddle-webkitgtk" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

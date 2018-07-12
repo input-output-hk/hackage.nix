@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-channelize = {
+        "stm-channelize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

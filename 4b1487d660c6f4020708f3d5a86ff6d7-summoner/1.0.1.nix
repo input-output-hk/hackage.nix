@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        summoner = {
+        "summoner" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          summon = {
+          "summon" = {
             depends  = [
               hsPkgs.base
               hsPkgs.summoner
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          summoner-test = {
+          "summoner-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedgehog

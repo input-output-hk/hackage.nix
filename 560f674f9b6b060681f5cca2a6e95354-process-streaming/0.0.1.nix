@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        process-streaming = {
+        "process-streaming" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

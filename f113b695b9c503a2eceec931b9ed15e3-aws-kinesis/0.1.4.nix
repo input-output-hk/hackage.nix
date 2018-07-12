@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-kinesis = {
+        "aws-kinesis" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          kinesis-tests = {
+          "kinesis-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

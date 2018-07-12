@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Agda = {
+        "Agda" = {
           depends  = (([
             hsPkgs.array
             hsPkgs.base
@@ -69,13 +69,13 @@ let
           ] ++ pkgs.lib.optional _flags.cpphs hsPkgs.buildPackages.cpphs;
         };
         exes = {
-          agda = {
+          "agda" = {
             depends  = [
               hsPkgs.Agda
               hsPkgs.base
             ];
           };
-          agda-mode = {
+          "agda-mode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

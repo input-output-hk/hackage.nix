@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lrucaching = {
+        "lrucaching" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          lru-test = {
+          "lru-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

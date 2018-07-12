@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-regex-replace = {
+        "text-regex-replace" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          text-regex-replace-specs = {
+          "text-regex-replace-specs" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

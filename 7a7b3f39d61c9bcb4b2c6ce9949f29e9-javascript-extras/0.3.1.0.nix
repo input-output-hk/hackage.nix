@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        javascript-extras = {
+        "javascript-extras" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.deepseq
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhcjs && true) hsPkgs.ghcjs-base) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.ghcjs-base-stub;
         };
         exes = {
-          javascript-extras-test = {
+          "javascript-extras-test" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.javascript-extras

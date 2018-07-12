@@ -27,7 +27,7 @@ let
       };
       components = {
         exes = {
-          lhc = {
+          "lhc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -48,7 +48,7 @@ let
               hsPkgs.parallel
             ];
           };
-          lhc-regress = {
+          "lhc-regress" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -60,7 +60,7 @@ let
               hsPkgs.test-framework-quickcheck
             ];
           };
-          lhc-pkg = {
+          "lhc-pkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

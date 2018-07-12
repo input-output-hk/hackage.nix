@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-default-instances-unordered-containers = {
+        "data-default-instances-unordered-containers" = {
           depends  = [
             hsPkgs.unordered-containers
             hsPkgs.data-default-class

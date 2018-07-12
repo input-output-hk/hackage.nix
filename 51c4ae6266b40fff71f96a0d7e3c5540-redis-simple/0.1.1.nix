@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        redis-simple = {
+        "redis-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.redis

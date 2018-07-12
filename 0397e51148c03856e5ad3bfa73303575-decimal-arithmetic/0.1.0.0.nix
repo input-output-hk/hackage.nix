@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        decimal-arithmetic = {
+        "decimal-arithmetic" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          decimal-arithmetic-test = {
+          "decimal-arithmetic-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.decimal-arithmetic

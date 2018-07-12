@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        supermonad = {
+        "supermonad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

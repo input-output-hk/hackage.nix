@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          table = {
+          "table" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

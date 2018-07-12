@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphql-api = {
+        "graphql-api" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          graphql-api-doctests = {
+          "graphql-api-doctests" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -46,7 +46,7 @@ let
               hsPkgs.transformers
             ];
           };
-          graphql-api-tests = {
+          "graphql-api-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson
@@ -66,7 +66,7 @@ let
           };
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        battleships = {
+        "battleships" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod
@@ -65,7 +65,7 @@ let
           ];
         };
         exes = {
-          main.fcgi = {
+          "main.fcgi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.battleships
@@ -76,7 +76,7 @@ let
                 hsPkgs.wai-handler-fastcgi
               ]);
           };
-          img-gen = {
+          "img-gen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -88,7 +88,7 @@ let
               hsPkgs.filepath
             ];
           };
-          aibenchmark = {
+          "aibenchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.battleships
@@ -98,7 +98,7 @@ let
               hsPkgs.MonadRandom
             ];
           };
-          key-gen = {
+          "key-gen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

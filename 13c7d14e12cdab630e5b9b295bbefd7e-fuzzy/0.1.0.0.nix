@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        fuzzy = {
+        "fuzzy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monoid-subclasses
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fuzzy

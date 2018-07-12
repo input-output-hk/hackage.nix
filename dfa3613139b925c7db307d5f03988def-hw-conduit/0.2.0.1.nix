@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-conduit = {
+        "hw-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          hw-conduit-test = {
+          "hw-conduit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

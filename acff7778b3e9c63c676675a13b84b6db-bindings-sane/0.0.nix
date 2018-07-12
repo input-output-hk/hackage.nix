@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-sane = {
+        "bindings-sane" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

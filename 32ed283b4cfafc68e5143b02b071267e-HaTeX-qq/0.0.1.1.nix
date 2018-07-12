@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaTeX-qq = {
+        "HaTeX-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uniplate

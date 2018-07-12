@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          commands2html = {
+          "commands2html" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html
@@ -34,7 +34,7 @@ let
               hsPkgs.text
             ];
           };
-          mcm = {
+          "mcm" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.base
@@ -48,7 +48,7 @@ let
               hsPkgs.unix
             ];
           };
-          mcm2html = {
+          "mcm2html" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html
@@ -59,7 +59,7 @@ let
               hsPkgs.text
             ];
           };
-          mcmtags = {
+          "mcmtags" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

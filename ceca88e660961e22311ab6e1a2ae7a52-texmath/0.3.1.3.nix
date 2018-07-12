@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        texmath = {
+        "texmath" = {
           depends  = [
             hsPkgs.xml
             hsPkgs.parsec
@@ -33,8 +33,8 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          testTeXMathML = {};
-          texmath-cgi = {
+          "testTeXMathML" = {};
+          "texmath-cgi" = {
             depends  = pkgs.lib.optionals _flags.cgi [
               hsPkgs.cgi
               hsPkgs.json

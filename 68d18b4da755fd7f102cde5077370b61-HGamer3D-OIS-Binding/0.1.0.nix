@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-OIS-Binding = {
+        "HGamer3D-OIS-Binding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HGamer3D-Data

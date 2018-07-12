@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gloss-raster-accelerate = {
+        "gloss-raster-accelerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate

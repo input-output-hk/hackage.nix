@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        word-wrap = {
+        "word-wrap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         tests = {
-          word-wrap-tests = {
+          "word-wrap-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.word-wrap

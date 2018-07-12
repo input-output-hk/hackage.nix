@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concrete-haskell = {
+        "concrete-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.thrift

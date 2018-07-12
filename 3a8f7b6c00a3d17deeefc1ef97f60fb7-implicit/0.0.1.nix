@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        implicit = {
+        "implicit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -30,6 +30,6 @@ let
             hsPkgs.haskell98
           ];
         };
-        exes = { extopenscad = {}; };
+        exes = { "extopenscad" = {}; };
       };
     }

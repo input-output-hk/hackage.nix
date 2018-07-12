@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskore-realtime = {
+        "haskore-realtime" = {
           depends  = [
             hsPkgs.haskore
             hsPkgs.midi

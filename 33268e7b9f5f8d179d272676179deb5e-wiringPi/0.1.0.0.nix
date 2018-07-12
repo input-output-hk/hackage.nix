@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wiringPi = {
+        "wiringPi" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.wiringPi ];
           build-tools = [
@@ -28,43 +28,43 @@ let
           ];
         };
         exes = {
-          pwm-example = {
+          "pwm-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wiringPi
             ];
           };
-          output-example = {
+          "output-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wiringPi
             ];
           };
-          write-byte-example = {
+          "write-byte-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wiringPi
             ];
           };
-          info-example = {
+          "info-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wiringPi
             ];
           };
-          broadcom-example = {
+          "broadcom-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wiringPi
             ];
           };
-          turn-off = {
+          "turn-off" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wiringPi
             ];
           };
-          wiringPi-test = {
+          "wiringPi-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wiringPi

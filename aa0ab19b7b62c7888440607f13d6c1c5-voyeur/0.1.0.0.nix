@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        voyeur = {
+        "voyeur" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

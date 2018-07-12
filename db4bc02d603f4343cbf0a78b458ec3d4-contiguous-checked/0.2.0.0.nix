@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        contiguous-checked = {
+        "contiguous-checked" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive

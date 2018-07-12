@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pure-cdb = {
+        "pure-cdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-simple

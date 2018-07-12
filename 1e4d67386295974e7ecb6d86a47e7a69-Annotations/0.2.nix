@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Annotations = {
+        "Annotations" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaskellNet = {
+        "HaskellNet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

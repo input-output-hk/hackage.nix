@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-events-parallel = {
+        "ghc-events-parallel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          ghc-events = {
+          "ghc-events" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          test-versions = {
+          "test-versions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

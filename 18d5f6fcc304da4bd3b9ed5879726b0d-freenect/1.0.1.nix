@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        freenect = {
+        "freenect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          freenect-haskell-example = {
+          "freenect-haskell-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        KyotoCabinet = {
+        "KyotoCabinet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.extensible-exceptions

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        event-handlers = {
+        "event-handlers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

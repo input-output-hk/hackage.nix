@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hawitter = {
+          "hawitter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

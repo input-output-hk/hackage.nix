@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fclabels = {
+        "fclabels" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

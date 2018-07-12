@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iconv = {
+        "iconv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

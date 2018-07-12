@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        git-object = {
+        "git-object" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

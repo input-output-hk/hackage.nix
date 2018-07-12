@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        X11 = {
+        "X11" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.X11 ];
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reexport-crypto-random = {
+        "reexport-crypto-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.crypto-api

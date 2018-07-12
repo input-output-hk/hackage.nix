@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-monad-control = {
+        "hspec-monad-control" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec-core

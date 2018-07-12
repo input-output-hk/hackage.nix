@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-redshift = {
+        "amazonka-redshift" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

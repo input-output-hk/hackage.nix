@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-exactprint = {
+        "ghc-exactprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.11") hsPkgs.ghc-boot;
         };
         exes = {
-          roundtrip = {
+          "roundtrip" = {
             depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.2" && _flags.roundtrip) ([
               hsPkgs.HUnit
               hsPkgs.base
@@ -54,7 +54,7 @@ let
               hsPkgs.time
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.11") hsPkgs.ghc-boot);
           };
-          static = {
+          "static" = {
             depends  = pkgs.lib.optionals _flags.roundtrip ([
               hsPkgs.base
               hsPkgs.directory
@@ -64,7 +64,7 @@ let
               hsPkgs.Diff
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.11") hsPkgs.ghc-boot);
           };
-          prepare-hackage = {
+          "prepare-hackage" = {
             depends  = pkgs.lib.optionals _flags.roundtrip ([
               hsPkgs.base
               hsPkgs.containers
@@ -80,7 +80,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = ([
               hsPkgs.HUnit
               hsPkgs.base

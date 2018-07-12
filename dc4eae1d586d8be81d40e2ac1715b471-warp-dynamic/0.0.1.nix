@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warp-dynamic = {
+        "warp-dynamic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          warpd = {
+          "warpd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.warp-dynamic

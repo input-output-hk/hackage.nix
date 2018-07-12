@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mysql-simple-quasi = {
+        "mysql-simple-quasi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-meta
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-qq = {
+          "test-qq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

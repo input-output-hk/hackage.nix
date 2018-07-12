@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ttrie = {
+        "ttrie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.atomic-primops
@@ -30,7 +30,7 @@ let
           ];
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

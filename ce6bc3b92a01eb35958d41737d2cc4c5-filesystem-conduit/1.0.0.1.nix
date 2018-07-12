@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filesystem-conduit = {
+        "filesystem-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
             else [ hsPkgs.unix ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        io-storage = {
+        "io-storage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

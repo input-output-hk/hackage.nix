@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          wspace = {
+          "wspace" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.random

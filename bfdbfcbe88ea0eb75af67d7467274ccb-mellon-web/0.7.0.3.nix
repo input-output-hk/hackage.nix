@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mellon-web = {
+        "mellon-web" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          mock-mellon-server = {
+          "mock-mellon-server" = {
             depends  = pkgs.lib.optionals (!(!_flags.mock-example)) [
               hsPkgs.base
               hsPkgs.mellon-core
@@ -55,7 +55,7 @@ let
               hsPkgs.warp
             ];
           };
-          gpio-mellon-server = {
+          "gpio-mellon-server" = {
             depends  = pkgs.lib.optionals (!(!_flags.gpio-example)) [
               hsPkgs.base
               hsPkgs.exceptions
@@ -71,7 +71,7 @@ let
               hsPkgs.warp
             ];
           };
-          mellon-schedule-unlock = {
+          "mellon-schedule-unlock" = {
             depends  = pkgs.lib.optionals (!(!_flags.client-unlock-example)) [
               hsPkgs.base
               hsPkgs.bytestring
@@ -91,13 +91,13 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

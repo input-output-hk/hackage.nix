@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-markup = {
+        "text-markup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-markup-tests = {
+          "test-markup-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text-markup

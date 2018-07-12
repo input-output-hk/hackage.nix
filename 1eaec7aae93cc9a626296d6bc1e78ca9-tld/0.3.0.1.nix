@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tld = {
+        "tld" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          parser-test = {
+          "parser-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

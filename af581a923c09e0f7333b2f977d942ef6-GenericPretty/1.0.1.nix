@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GenericPretty = {
+        "GenericPretty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

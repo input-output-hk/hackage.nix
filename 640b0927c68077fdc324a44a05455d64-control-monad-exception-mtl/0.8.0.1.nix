@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        control-monad-exception-mtl = {
+        "control-monad-exception-mtl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.control-monad-exception

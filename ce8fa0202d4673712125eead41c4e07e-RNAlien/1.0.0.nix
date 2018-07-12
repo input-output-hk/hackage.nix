@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RNAlien = {
+        "RNAlien" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmdargs
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          RNAlien = {
+          "RNAlien" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -65,7 +65,7 @@ let
               hsPkgs.filepath
             ];
           };
-          RNAlienStatistics = {
+          "RNAlienStatistics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -83,7 +83,7 @@ let
               hsPkgs.ViennaRNAParser
             ];
           };
-          SelectSequences = {
+          "SelectSequences" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

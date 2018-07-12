@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        soxlib = {
+        "soxlib" = {
           depends  = [
             hsPkgs.sample-frame
             hsPkgs.storablevector
@@ -36,7 +36,7 @@ let
           pkgconfig = [ pkgconfPkgs.sox ];
         };
         exes = {
-          soxlib-demo = {
+          "soxlib-demo" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.soxlib
               hsPkgs.storablevector

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linear-grammar = {
+        "linear-grammar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SDL2-ttf = {
+        "SDL2-ttf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SDL2

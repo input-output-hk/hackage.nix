@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        anatomy = {
+        "anatomy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          anatomy = {
+          "anatomy" = {
             depends  = [
               hsPkgs.atomo
               hsPkgs.base

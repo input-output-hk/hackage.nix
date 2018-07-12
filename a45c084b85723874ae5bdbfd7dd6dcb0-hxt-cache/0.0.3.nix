@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-cache = {
+        "hxt-cache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

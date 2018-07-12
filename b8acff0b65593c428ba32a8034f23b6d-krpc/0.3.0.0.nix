@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        krpc = {
+        "krpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          test-server = {
+          "test-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
               hsPkgs.krpc
             ];
           };
-          bench-server = {
+          "bench-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          test-client = {
+          "test-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -66,7 +66,7 @@ let
           };
         };
         benchmarks = {
-          bench-client = {
+          "bench-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

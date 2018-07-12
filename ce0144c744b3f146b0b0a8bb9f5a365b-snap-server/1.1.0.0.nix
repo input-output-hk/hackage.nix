@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-server = {
+        "snap-server" = {
           depends  = (([
             hsPkgs.attoparsec
             hsPkgs.base
@@ -54,7 +54,7 @@ let
           ];
         };
         exes = {
-          snap-test-pong-server = {
+          "snap-test-pong-server" = {
             depends  = ([
               hsPkgs.attoparsec
               hsPkgs.base
@@ -80,7 +80,7 @@ let
               hsPkgs.openssl-streams
             ];
           };
-          snap-test-server = {
+          "snap-test-server" = {
             depends  = ([
               hsPkgs.attoparsec
               hsPkgs.base
@@ -110,7 +110,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = (([
               hsPkgs.attoparsec
               hsPkgs.base
@@ -154,7 +154,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

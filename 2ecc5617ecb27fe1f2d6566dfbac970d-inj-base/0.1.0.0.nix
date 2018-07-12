@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inj-base = {
+        "inj-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.inj

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cloud-seeder = {
+        "cloud-seeder" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.amazonka
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          cloud-seeder-test-suite = {
+          "cloud-seeder-test-suite" = {
             depends  = [
               hsPkgs.amazonka-cloudformation
               hsPkgs.base

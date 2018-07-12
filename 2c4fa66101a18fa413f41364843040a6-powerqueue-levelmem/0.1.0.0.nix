@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        powerqueue-levelmem = {
+        "powerqueue-levelmem" = {
           depends  = [
             hsPkgs.base
             hsPkgs.powerqueue
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          powerqueue-levelmem-test = {
+          "powerqueue-levelmem-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.powerqueue-levelmem
@@ -56,7 +56,7 @@ let
           };
         };
         benchmarks = {
-          powerqueue-levelmem-bench = {
+          "powerqueue-levelmem-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.powerqueue

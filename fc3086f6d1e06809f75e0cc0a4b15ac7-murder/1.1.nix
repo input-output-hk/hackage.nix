@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        murder = {
+        "murder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

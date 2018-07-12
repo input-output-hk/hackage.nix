@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-uuid = {
+        "genvalidity-uuid" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          genvalidity-uuid-test = {
+          "genvalidity-uuid-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

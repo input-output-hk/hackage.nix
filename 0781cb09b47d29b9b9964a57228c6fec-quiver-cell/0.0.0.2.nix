@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quiver-cell = {
+        "quiver-cell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-cell

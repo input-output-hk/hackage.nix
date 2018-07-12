@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        StateVar = {
+        "StateVar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

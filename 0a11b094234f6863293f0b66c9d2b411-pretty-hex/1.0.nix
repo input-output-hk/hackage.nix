@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty-hex = {
+        "pretty-hex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

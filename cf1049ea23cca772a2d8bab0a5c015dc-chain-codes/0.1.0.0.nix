@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chain-codes = {
+        "chain-codes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JuicyPixels

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HROOT-graf = {
+        "HROOT-graf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fficxx

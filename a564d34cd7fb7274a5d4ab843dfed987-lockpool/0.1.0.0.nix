@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lockpool = {
+        "lockpool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clock

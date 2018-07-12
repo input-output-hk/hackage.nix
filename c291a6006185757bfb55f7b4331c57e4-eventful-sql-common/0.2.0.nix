@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventful-sql-common = {
+        "eventful-sql-common" = {
           depends  = [
             hsPkgs.base
             hsPkgs.eventful-core

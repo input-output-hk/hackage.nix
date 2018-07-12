@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ZFS = {
+        "ZFS" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-time = {
+        "monad-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

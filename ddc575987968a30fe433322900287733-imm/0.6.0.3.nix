@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imm = {
+        "imm" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -61,7 +61,7 @@ let
           ];
         };
         exes = {
-          imm = {
+          "imm" = {
             depends  = [
               hsPkgs.imm
               hsPkgs.base

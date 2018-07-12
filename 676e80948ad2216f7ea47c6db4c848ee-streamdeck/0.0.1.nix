@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streamdeck = {
+        "streamdeck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hidapi

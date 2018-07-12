@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Munkres-simple = {
+        "Munkres-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

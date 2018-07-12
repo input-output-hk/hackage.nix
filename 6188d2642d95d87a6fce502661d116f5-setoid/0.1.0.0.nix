@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        setoid = {
+        "setoid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          setoid-test = {
+          "setoid-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

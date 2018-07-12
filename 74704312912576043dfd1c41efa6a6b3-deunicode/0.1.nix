@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          deunicode = {
+          "deunicode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

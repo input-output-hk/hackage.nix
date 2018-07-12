@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sequor = {
+        "sequor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          sequor = {
+          "sequor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -51,7 +51,7 @@ let
               hsPkgs.nlp-scores
             ];
           };
-          augment = {
+          "augment" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

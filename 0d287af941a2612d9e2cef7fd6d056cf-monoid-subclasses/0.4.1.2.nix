@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monoid-subclasses = {
+        "monoid-subclasses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

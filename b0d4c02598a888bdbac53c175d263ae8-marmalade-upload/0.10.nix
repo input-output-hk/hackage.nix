@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        marmalade-upload = {
+        "marmalade-upload" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          marmalade-upload = {
+          "marmalade-upload" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -53,7 +53,7 @@ let
               hsPkgs.transformers
             ];
           };
-          build = {
+          "build" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base
@@ -69,7 +69,7 @@ let
           };
         };
         tests = {
-          marmalade = {
+          "marmalade" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

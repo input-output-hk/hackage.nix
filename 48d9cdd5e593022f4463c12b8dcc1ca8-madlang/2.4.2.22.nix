@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        madlang = {
+        "madlang" = {
           depends  = [
             hsPkgs.base
             hsPkgs.megaparsec
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          madlang = {
+          "madlang" = {
             depends  = [
               hsPkgs.base
               hsPkgs.madlang
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          madlang-test = {
+          "madlang-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.madlang
@@ -66,7 +66,7 @@ let
           };
         };
         benchmarks = {
-          madlang-bench = {
+          "madlang-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

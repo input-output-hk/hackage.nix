@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        proto-lens-protobuf-types = {
+        "proto-lens-protobuf-types" = {
           depends  = [
             hsPkgs.proto-lens-protoc
           ];

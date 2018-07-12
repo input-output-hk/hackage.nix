@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-context = {
+        "th-context" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          th-context-tests = {
+          "th-context-tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

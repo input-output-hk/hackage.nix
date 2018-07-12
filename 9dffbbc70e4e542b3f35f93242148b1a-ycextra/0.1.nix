@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ycextra = {
+        "ycextra" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.uniplate

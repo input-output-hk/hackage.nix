@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        long-double = {
+        "long-double" = {
           depends  = [
             hsPkgs.base
             hsPkgs.integer-gmp

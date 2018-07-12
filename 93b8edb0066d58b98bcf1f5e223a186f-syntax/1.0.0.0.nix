@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        syntax = {
+        "syntax" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mono-traversable

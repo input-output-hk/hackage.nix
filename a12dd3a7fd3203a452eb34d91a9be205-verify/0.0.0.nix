@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        verify = {
+        "verify" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          verify = {
+          "verify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.verify
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          verify-test-suite = {
+          "verify-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jwt

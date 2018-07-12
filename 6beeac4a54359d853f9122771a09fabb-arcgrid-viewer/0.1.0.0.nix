@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          arcgrid-viewer = {
+          "arcgrid-viewer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

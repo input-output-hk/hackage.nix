@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cutter = {
+          "cutter" = {
             depends  = [
               hsPkgs.spreadsheet
               hsPkgs.explicit-exception

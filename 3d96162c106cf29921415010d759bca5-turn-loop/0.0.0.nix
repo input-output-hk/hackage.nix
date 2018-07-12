@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        turn-loop = {
+        "turn-loop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          woffex = {
+          "woffex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

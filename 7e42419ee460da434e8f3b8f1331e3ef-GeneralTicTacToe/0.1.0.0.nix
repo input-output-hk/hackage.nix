@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          GeneralTicTacToe = {
+          "GeneralTicTacToe" = {
             depends  = [ hsPkgs.base ];
           };
         };

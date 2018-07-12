@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pandoc-citeproc-preamble = {
+          "pandoc-citeproc-preamble" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-types

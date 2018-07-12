@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-usage = {
+        "ghc-usage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          ghc-usage = {
+          "ghc-usage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-paths

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transient = {
+        "transient" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

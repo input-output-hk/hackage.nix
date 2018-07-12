@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        earclipper = {
+        "earclipper" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          earclipper = {
+          "earclipper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.earclipper
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.earclipper

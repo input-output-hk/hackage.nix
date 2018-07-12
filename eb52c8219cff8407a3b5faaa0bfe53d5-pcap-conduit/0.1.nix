@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pcap-conduit = {
+        "pcap-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

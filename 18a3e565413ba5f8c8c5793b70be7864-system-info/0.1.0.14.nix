@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-info = {
+        "system-info" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          system-info-test = {
+          "system-info-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.system-info

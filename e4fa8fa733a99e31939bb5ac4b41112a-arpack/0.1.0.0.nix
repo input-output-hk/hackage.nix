@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arpack = {
+        "arpack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.concurrent-extra
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.arpack
               hsPkgs.base

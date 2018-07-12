@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ticker = {
+        "ticker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          ticker-hspec = {
+          "ticker-hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ticker
@@ -37,7 +37,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          ticker-doctest = {
+          "ticker-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

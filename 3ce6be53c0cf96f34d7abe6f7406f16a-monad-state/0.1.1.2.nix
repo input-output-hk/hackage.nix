@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-state = {
+        "monad-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fclabels

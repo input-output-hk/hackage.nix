@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-sandbox-compose = {
+        "test-sandbox-compose" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          test-sandbox-compose = {
+          "test-sandbox-compose" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-sandbox-compose
@@ -75,7 +75,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

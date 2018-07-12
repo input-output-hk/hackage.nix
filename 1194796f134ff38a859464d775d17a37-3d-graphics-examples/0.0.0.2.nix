@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mountains = {
+          "mountains" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
@@ -29,7 +29,7 @@ let
               hsPkgs.random
             ];
           };
-          l-systems = {
+          "l-systems" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT

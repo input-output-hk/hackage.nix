@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        popenhs = {
+        "popenhs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

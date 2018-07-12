@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        array = {
+        "array" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (!(compiler.isNhc98 && true)) hsPkgs.syb;

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-codec2 = {
+        "bindings-codec2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

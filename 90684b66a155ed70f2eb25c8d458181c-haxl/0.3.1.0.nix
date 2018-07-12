@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haxl = {
+        "haxl" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.aeson
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          monadbench = {
+          "monadbench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haxl
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.aeson

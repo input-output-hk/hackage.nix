@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          lens-editor = {
+          "lens-editor" = {
             depends  = if _flags.gtk
               then [
                 hsPkgs.base

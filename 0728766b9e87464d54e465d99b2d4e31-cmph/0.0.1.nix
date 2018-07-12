@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmph = {
+        "cmph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           libs = [ pkgs.cmph ];
         };
         tests = {
-          cmph-test = {
+          "cmph-test" = {
             depends  = [
               hsPkgs.cmph
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SizeCompare = {
+        "SizeCompare" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

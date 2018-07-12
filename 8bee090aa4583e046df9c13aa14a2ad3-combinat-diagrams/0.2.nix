@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        combinat-diagrams = {
+        "combinat-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

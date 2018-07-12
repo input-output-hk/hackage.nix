@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unamb-custom = {
+        "unamb-custom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

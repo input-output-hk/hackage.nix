@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          armada = {
+          "armada" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL

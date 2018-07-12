@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        PropLogic = {
+        "PropLogic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time
             hsPkgs.random
           ];
         };
-        exes = { program = {}; };
+        exes = { "program" = {}; };
       };
     }

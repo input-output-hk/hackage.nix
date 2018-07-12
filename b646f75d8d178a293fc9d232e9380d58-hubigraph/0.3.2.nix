@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hubigraph = {
+        "hubigraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        digestive-functors-hsp = {
+        "digestive-functors-hsp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.digestive-functors

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsyslog-udp = {
+        "hsyslog-udp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          specs = {
+          "specs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

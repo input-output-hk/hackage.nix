@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cbor-tool = {
+          "cbor-tool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

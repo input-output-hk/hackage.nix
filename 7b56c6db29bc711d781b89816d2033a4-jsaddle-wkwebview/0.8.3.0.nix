@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsaddle-wkwebview = {
+        "jsaddle-wkwebview" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           frameworks = [
             pkgs.Foundation
             pkgs.WebKit
-          ] ++ (if !(compiler.isGhcjs && true) && system.isIos
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if system.isIos
             then [ pkgs.UIKit ]
             else [ pkgs.Cocoa ]);
         };

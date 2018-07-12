@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        websockets-rpc = {
+        "websockets-rpc" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          sparrow-server-test = {
+          "sparrow-server-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

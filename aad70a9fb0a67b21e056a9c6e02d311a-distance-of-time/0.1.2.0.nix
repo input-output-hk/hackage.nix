@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        distance-of-time = {
+        "distance-of-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         tests = {
-          distance-of-time-test = {
+          "distance-of-time-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distance-of-time

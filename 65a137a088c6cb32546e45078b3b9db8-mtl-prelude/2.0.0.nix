@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mtl-prelude = {
+        "mtl-prelude" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.mtl

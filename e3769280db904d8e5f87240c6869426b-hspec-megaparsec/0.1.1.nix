@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-megaparsec = {
+        "hspec-megaparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec-expectations
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

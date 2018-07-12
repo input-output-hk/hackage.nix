@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exinst-aeson = {
+        "exinst-aeson" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

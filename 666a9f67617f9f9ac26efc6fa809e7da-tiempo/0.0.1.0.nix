@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tiempo = {
+        "tiempo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

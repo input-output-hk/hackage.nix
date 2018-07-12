@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-routing = {
+        "web-routing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,13 +29,13 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

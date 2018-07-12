@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadloc = {
+        "monadloc" = {
           depends  = (([
             hsPkgs.pretty
             hsPkgs.template-haskell
@@ -36,7 +36,7 @@ let
             ])) ++ pkgs.lib.optional _flags.mtl hsPkgs.mtl) ++ pkgs.lib.optional _flags.transformers hsPkgs.transformers;
         };
         exes = {
-          MonadLoc = {
+          "MonadLoc" = {
             depends  = [
               hsPkgs.haskell-src-exts
             ];

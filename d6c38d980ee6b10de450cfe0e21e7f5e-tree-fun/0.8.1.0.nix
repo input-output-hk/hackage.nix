@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tree-fun = {
+        "tree-fun" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lambdabot = {
+          "lambdabot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lambdabot-core

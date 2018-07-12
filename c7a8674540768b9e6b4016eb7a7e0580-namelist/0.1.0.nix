@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        namelist = {
+        "namelist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.case-insensitive
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

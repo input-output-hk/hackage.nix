@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pool = {
+        "pool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

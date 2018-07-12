@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        oanda-rest-api = {
+        "oanda-rest-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -55,7 +55,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          style = {
+          "style" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

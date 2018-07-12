@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        treersec = {
+        "treersec" = {
           depends  = if _flags.haste-inst
             then [
               hsPkgs.base

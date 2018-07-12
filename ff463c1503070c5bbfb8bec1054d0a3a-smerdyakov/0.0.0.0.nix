@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smerdyakov = {
+        "smerdyakov" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -46,7 +46,7 @@ let
               hsPkgs.yaml
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

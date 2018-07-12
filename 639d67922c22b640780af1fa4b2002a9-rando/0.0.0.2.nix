@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rando = {
+        "rando" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tf-random
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          rando-tests = {
+          "rando-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

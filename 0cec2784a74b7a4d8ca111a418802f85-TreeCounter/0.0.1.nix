@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TreeCounter = {
+        "TreeCounter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-loops

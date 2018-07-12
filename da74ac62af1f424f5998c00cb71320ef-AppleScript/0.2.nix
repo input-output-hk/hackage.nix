@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AppleScript = {
+        "AppleScript" = {
           depends  = if system.isOsx
             then [
               hsPkgs.base

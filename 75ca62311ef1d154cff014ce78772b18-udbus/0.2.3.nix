@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        udbus = {
+        "udbus" = {
           depends  = [
             hsPkgs.binary
             hsPkgs.cereal
@@ -37,10 +37,10 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.lt "8.0")) hsPkgs.base;
         };
         exes = {
-          dbus = {
+          "dbus" = {
             depends  = pkgs.lib.optional _flags.executable hsPkgs.network;
           };
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.QuickCheck

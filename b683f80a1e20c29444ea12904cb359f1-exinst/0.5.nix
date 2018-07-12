@@ -29,7 +29,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exinst = {
+        "exinst" = {
           depends  = ((((((([
             hsPkgs.base
             hsPkgs.constraints
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

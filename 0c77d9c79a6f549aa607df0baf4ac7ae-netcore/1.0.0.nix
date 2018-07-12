@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netcore = {
+        "netcore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          frenetic-tests = {
+          "frenetic-tests" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base
@@ -71,7 +71,7 @@ let
           };
         };
         benchmarks = {
-          frenetic-benchmark = {
+          "frenetic-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

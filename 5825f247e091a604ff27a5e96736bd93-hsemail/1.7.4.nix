@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsemail = {
+        "hsemail" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-hsemail = {
+          "test-hsemail" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

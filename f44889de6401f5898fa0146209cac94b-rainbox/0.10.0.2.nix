@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rainbox = {
+        "rainbox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rainbow
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          rainbox-mosaic = {
+          "rainbox-mosaic" = {
             depends  = pkgs.lib.optionals _flags.mosaic [
               hsPkgs.base
               hsPkgs.rainbow
@@ -48,7 +48,7 @@ let
               hsPkgs.ChasingBottoms
             ];
           };
-          rainbox-grid = {
+          "rainbox-grid" = {
             depends  = pkgs.lib.optionals _flags.grid [
               hsPkgs.base
               hsPkgs.rainbow
@@ -64,7 +64,7 @@ let
           };
         };
         tests = {
-          rainbox-visual = {
+          "rainbox-visual" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rainbow
@@ -78,7 +78,7 @@ let
               hsPkgs.ChasingBottoms
             ];
           };
-          rainbox-test = {
+          "rainbox-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rainbow

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          networkedit = {
+          "networkedit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -36,7 +36,7 @@ let
               hsPkgs.transformers
             ];
           };
-          idfilepathdb = {
+          "idfilepathdb" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty

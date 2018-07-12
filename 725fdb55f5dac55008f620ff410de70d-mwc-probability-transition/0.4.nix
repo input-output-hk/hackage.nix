@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mwc-probability-transition = {
+        "mwc-probability-transition" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-effect

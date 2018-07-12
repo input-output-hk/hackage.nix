@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        liquid-fixpoint = {
+        "liquid-fixpoint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -53,7 +53,7 @@ let
           ];
         };
         exes = {
-          fixpoint.native = {
+          "fixpoint.native" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -78,7 +78,7 @@ let
               hsPkgs.liquid-fixpoint
             ];
           };
-          fixpoint = {
+          "fixpoint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -105,7 +105,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

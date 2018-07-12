@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Monaris = {
+          "Monaris" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

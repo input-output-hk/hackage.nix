@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        credentials = {
+        "credentials" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.amazonka
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.credentials

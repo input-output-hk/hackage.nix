@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validity-aeson = {
+        "validity-aeson" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

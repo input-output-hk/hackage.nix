@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        separated = {
+        "separated" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

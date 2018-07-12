@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-crud-persist = {
+        "yesod-crud-persist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-core

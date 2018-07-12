@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uvector = {
+        "uvector" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.gt "6.8.2") hsPkgs.ghc-prim;

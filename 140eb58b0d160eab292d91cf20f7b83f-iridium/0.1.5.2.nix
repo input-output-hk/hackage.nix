@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iridium = {
+        "iridium" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          iridium = {
+          "iridium" = {
             depends  = [
               hsPkgs.iridium
               hsPkgs.base

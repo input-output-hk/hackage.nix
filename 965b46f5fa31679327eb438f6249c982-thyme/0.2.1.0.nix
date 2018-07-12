@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thyme = {
+        "thyme" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -46,7 +46,7 @@ let
             else [ hsPkgs.bytestring ]);
         };
         tests = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.attoparsec

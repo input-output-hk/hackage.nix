@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-random = {
+        "generic-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
           ];
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

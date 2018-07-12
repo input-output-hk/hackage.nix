@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jenga = {
+        "jenga" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          jenga = {
+          "jenga" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jenga

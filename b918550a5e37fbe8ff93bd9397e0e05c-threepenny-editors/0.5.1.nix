@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        threepenny-editors = {
+        "threepenny-editors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          person = {
+          "person" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.bifunctors

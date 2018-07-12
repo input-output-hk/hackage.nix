@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-lenses = {
+        "cabal-lenses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        beam-core = {
+        "beam-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          beam-core-tests = {
+          "beam-core-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.beam-core

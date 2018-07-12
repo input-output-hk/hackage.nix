@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pulse = {
+        "pulse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

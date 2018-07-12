@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        miso = {
+        "miso" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -47,7 +47,7 @@ let
             ]);
         };
         exes = {
-          todo-mvc = {
+          "todo-mvc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -55,14 +55,14 @@ let
               hsPkgs.miso
             ];
           };
-          mario = {
+          "mario" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.miso
             ];
           };
-          simple = {
+          "simple" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -70,7 +70,7 @@ let
               hsPkgs.miso
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

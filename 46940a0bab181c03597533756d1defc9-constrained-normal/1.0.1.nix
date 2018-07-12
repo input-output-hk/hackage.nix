@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        constrained-normal = {
+        "constrained-normal" = {
           depends  = [ hsPkgs.base ];
         };
       };

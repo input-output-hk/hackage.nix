@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plotlyhs = {
+        "plotlyhs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        manatee-editor = {
+        "manatee-editor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manatee-core
@@ -38,6 +38,8 @@ let
             hsPkgs.filepath
           ];
         };
-        exes = { manatee-editor = {}; };
+        exes = {
+          "manatee-editor" = {};
+        };
       };
     }

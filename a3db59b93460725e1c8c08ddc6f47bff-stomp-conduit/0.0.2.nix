@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stomp-conduit = {
+        "stomp-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stomp-queue

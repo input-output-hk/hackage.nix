@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pi-forall = {
+        "pi-forall" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          pi-forall = {
+          "pi-forall" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

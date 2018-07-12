@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pred-trie = {
+        "pred-trie" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          pred-trie-test = {
+          "pred-trie-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.attoparsec
@@ -64,7 +64,7 @@ let
           };
         };
         benchmarks = {
-          pred-trie-bench = {
+          "pred-trie-bench" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.attoparsec

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stb-image = {
+        "stb-image" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.bitmap

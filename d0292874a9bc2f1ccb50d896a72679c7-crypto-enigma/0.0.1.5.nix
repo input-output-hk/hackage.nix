@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-enigma = {
+        "crypto-enigma" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

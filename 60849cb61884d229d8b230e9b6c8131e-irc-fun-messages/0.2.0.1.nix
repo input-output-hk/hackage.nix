@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc-fun-messages = {
+        "irc-fun-messages" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-applicative

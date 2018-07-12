@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shikensu = {
+        "shikensu" = {
           depends  = [
             hsPkgs.Glob
             hsPkgs.aeson
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.Glob
               hsPkgs.aeson

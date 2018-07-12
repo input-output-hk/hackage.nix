@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          mmark = {
+          "mmark" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

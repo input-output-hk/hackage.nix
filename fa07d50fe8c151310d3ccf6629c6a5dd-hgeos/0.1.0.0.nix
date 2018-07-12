@@ -20,12 +20,12 @@ let
         buildType = "Simple";
       };
       components = {
-        hgeos = {
+        "hgeos" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.geos_c ];
         };
         exes = {
-          hgeos = {
+          "hgeos" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hgeos
@@ -33,7 +33,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.Glob
               hsPkgs.base

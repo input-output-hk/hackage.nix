@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rison = {
+        "rison" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

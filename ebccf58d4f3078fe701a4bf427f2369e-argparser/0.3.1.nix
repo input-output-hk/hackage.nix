@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        argparser = {
+        "argparser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          TestsHTF = {
+          "TestsHTF" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF

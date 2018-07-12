@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unix-compat = {
+        "unix-compat" = {
           depends  = [
             hsPkgs.base
           ] ++ (if _flags.portable || system.isWindows

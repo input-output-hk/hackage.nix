@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        LParse = {
+        "LParse" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test-lparse = {
+          "test-lparse" = {
             depends  = [ hsPkgs.base ];
           };
         };

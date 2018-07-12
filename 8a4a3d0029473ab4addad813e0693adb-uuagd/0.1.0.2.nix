@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        uuagd = {
+        "uuagd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
           ];
         };
         exes = {
-          uuagd = {
+          "uuagd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

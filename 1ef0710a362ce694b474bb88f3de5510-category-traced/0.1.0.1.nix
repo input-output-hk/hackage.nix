@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        category-traced = {
+        "category-traced" = {
           depends  = [
             hsPkgs.base
             hsPkgs.categories

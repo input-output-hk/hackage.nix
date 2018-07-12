@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wumpus-drawing = {
+        "wumpus-drawing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

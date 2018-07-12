@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        passman-core = {
+        "passman-core" = {
           depends  = [
             hsPkgs.passman-core-internal
             hsPkgs.base
@@ -44,7 +44,7 @@ let
           ];
         };
         sublibs = {
-          passman-core-internal = {
+          "passman-core-internal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          precomputed = {
+          "precomputed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.passman-core
@@ -62,7 +62,7 @@ let
               hsPkgs.yaml
             ];
           };
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.passman-core

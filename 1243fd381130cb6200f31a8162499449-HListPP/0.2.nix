@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        HListPP = {};
+        "HListPP" = {};
         exes = {
-          HListPP = {
+          "HListPP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.applicative-quoters

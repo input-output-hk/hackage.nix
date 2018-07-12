@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-special = {
+        "hmatrix-special" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix

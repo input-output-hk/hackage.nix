@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ntrip-client = {
+        "ntrip-client" = {
           depends  = [
             hsPkgs.async
             hsPkgs.async

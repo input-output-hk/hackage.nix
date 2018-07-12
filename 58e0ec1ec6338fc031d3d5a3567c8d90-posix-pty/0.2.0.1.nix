@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        posix-pty = {
+        "posix-pty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

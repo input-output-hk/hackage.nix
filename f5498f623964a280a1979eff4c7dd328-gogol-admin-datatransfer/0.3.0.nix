@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-admin-datatransfer = {
+        "gogol-admin-datatransfer" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

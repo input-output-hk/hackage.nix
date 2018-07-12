@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        astar = {
+        "astar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers

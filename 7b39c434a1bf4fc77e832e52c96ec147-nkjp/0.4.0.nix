@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nkjp = {
+        "nkjp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,8 +34,8 @@ let
           ];
         };
         exes = {
-          named2enamex = {};
-          nkjp2text = {};
+          "named2enamex" = {};
+          "nkjp2text" = {};
         };
       };
     }

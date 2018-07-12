@@ -22,11 +22,11 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-x-implement = {
+        "papa-x-implement" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-printf = {
+        "th-printf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          format = {
+          "format" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          perf = {
+          "perf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

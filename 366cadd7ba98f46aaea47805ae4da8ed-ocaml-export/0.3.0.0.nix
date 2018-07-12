@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ocaml-export = {
+        "ocaml-export" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

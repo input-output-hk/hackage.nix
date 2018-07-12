@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        interleavableIO = {
+        "interleavableIO" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

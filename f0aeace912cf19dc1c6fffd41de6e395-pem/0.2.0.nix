@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pem = {
+        "pem" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-pem = {
+          "test-pem" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

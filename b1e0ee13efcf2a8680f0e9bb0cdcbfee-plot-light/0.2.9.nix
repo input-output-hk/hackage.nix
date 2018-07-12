@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plot-light = {
+        "plot-light" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          scatter = {
+          "scatter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light
@@ -49,7 +49,7 @@ let
               hsPkgs.scientific
             ];
           };
-          timeseries = {
+          "timeseries" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light
@@ -62,7 +62,7 @@ let
               hsPkgs.scientific
             ];
           };
-          heatmap = {
+          "heatmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light
@@ -77,7 +77,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.plot-light

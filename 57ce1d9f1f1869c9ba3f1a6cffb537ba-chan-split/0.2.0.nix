@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chan-split = {
+        "chan-split" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cofunctor

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        avwx = {
+        "avwx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          metar = {
+          "metar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.avwx
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          avwx-test = {
+          "avwx-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

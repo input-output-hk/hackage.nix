@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-abstraction = {
+        "th-abstraction" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.th-abstraction
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        asil = {
+        "asil" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

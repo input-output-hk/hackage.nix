@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        SDL-mixer = {
+        "SDL-mixer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SDL

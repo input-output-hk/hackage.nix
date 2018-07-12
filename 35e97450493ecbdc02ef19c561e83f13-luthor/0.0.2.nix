@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        luthor = {
+        "luthor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,21 +29,21 @@ let
           ];
         };
         tests = {
-          test-combinator = {
+          "test-combinator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.parsec
             ];
           };
-          test-syntax = {
+          "test-syntax" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.parsec
             ];
           };
-          test-indent = {
+          "test-indent" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

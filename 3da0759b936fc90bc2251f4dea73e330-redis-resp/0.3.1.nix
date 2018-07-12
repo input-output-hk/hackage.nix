@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        redis-resp = {
+        "redis-resp" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

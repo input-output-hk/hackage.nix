@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        csound-expression-dynamic = {
+        "csound-expression-dynamic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

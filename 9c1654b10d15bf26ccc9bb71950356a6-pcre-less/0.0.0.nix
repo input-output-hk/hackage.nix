@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pcre-less = {
+        "pcre-less" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pcre-light

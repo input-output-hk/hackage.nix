@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kanji = {
+        "kanji" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

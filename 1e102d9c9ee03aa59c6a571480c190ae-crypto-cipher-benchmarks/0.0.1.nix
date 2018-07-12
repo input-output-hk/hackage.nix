@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-cipher-benchmarks = {
+        "crypto-cipher-benchmarks" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

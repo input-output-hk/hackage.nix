@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        purescript = {
+        "purescript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmdtheline
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          psc = {
+          "psc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdtheline
@@ -52,7 +52,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          psc-make = {
+          "psc-make" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdtheline
@@ -66,7 +66,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          psci = {
+          "psci" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -82,7 +82,7 @@ let
               hsPkgs.cmdtheline
             ];
           };
-          docgen = {
+          "docgen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdtheline
@@ -92,7 +92,7 @@ let
               hsPkgs.mtl
             ];
           };
-          hierarchy = {
+          "hierarchy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdtheline
@@ -107,7 +107,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graflog = {
+        "graflog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text-conversions
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          graflog-test = {
+          "graflog-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.graflog

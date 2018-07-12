@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-streaming-docs = {
+        "servant-streaming-docs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

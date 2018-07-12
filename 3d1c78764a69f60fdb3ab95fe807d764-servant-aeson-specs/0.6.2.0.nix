@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-aeson-specs = {
+        "servant-aeson-specs" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

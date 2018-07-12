@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sourcemap = {
+        "sourcemap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reduce-equations = {
+        "reduce-equations" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          reduce-equations = {
+          "reduce-equations" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reduce-equations
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reduce-equations

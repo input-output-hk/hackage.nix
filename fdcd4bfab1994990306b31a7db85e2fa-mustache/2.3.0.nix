@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mustache = {
+        "mustache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          haskell-mustache = {
+          "haskell-mustache" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          language-specifications = {
+          "language-specifications" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -72,7 +72,7 @@ let
               hsPkgs.lens
             ];
           };
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        altcomposition = {
+        "altcomposition" = {
           depends  = [
             hsPkgs.base
             hsPkgs.composition

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sqlvalue-list = {
+        "sqlvalue-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC

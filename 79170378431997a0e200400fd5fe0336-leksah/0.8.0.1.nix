@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          leksah = {
+          "leksah" = {
             depends  = ([
               hsPkgs.Cabal
               hsPkgs.base

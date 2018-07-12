@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        edenmodules = {
+        "edenmodules" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

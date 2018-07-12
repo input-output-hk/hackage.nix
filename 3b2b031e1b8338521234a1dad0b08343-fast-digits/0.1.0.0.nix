@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        fast-digits = {
+        "fast-digits" = {
           depends  = [
             hsPkgs.base
             hsPkgs.integer-gmp
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

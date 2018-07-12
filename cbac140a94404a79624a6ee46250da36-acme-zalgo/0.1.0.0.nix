@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-zalgo = {
+        "acme-zalgo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

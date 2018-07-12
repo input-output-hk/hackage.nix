@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tftp = {
+        "tftp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          tftp_upload = {
+          "tftp_upload" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tftp
@@ -49,14 +49,14 @@ let
           };
         };
         tests = {
-          message-decoding = {
+          "message-decoding" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tftp
               hsPkgs.QuickCheck
             ];
           };
-          protocol = {
+          "protocol" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tftp
@@ -65,7 +65,7 @@ let
               hsPkgs.transformers
             ];
           };
-          udp-io = {
+          "udp-io" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tftp

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pcd-loader = {
+        "pcd-loader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          pcd2bin = {
+          "pcd2bin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pcd-loader
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

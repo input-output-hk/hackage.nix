@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shared-memory = {
+        "shared-memory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-shared-memory-example = {
+          "test-shared-memory-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shared-memory

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bloodhound = {
+        "bloodhound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          bloodhound-tests = {
+          "bloodhound-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

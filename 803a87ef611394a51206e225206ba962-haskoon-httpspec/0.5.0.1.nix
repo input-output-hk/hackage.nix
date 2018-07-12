@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskoon-httpspec = {
+        "haskoon-httpspec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lambdaFeed = {
+          "lambdaFeed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

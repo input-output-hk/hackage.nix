@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AC-Terminal = {
+        "AC-Terminal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal

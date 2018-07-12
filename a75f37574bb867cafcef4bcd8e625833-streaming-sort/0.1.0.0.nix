@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-sort = {
+        "streaming-sort" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          sorting-tests = {
+          "sorting-tests" = {
             depends  = [
               hsPkgs.streaming-sort
               hsPkgs.base

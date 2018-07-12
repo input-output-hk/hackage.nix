@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-short = {
+        "bytestring-short" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          prop-compiled = {
+          "prop-compiled" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring-short

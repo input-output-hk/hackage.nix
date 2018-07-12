@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        statistics-fusion = {
+        "statistics-fusion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

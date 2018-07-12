@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        maybench = {
+        "maybench" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base
@@ -36,7 +36,7 @@ let
             ];
         };
         exes = {
-          maybench = {
+          "maybench" = {
             depends  = if _flags.splitbase
               then [
                 hsPkgs.base
@@ -48,7 +48,7 @@ let
                 hsPkgs.mtl
               ];
           };
-          darcs-benchmark = {
+          "darcs-benchmark" = {
             depends  = if _flags.splitbase
               then [
                 hsPkgs.base

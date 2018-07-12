@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pcf-font = {
+        "pcf-font" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

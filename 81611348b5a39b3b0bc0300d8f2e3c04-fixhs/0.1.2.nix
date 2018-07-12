@@ -27,7 +27,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixhs = {
+        "fixhs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          fix-generator = {
+          "fix-generator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaXml

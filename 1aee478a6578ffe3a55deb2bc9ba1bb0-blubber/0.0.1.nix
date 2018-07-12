@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          blubber = {
+          "blubber" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blubber-server

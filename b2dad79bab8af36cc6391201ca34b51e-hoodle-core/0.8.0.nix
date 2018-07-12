@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hoodle-core = {
+        "hoodle-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

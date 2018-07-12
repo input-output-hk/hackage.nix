@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        welshy = {
+        "welshy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

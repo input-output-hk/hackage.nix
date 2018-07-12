@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-throttle = {
+        "conduit-throttle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          conduit-test = {
+          "conduit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

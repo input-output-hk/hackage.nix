@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pqueue-mtl = {
+        "pqueue-mtl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

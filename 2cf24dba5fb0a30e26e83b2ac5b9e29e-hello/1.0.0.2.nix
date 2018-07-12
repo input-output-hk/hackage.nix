@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hello = {
+          "hello" = {
             depends  = [ hsPkgs.base ];
           };
         };

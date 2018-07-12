@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          firefly-example-exe = {
+          "firefly-example-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.firefly

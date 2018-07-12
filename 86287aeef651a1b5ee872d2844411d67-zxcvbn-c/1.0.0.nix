@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        zxcvbn-c = {
+        "zxcvbn-c" = {
           depends  = [ hsPkgs.base ];
         };
       };

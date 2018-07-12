@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          imj-measure-stdout-exe = {
+          "imj-measure-stdout-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.imj-prelude

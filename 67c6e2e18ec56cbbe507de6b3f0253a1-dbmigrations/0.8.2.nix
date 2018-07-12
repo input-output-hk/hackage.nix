@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbmigrations = {
+        "dbmigrations" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          moo = {
+          "moo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HDBC
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          dbmigrations-tests = {
+          "dbmigrations-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

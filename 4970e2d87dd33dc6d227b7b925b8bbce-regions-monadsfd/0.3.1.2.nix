@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regions-monadsfd = {
+        "regions-monadsfd" = {
           depends  = [
             hsPkgs.base-unicode-symbols
             hsPkgs.transformers

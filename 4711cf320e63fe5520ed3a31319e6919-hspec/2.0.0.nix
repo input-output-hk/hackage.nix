@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec = {
+        "hspec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec-core
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec-core
@@ -41,7 +41,7 @@ let
               hsPkgs.hspec-meta
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

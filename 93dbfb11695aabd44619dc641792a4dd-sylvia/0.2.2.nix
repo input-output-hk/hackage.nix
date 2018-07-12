@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sylvia = {
+          "sylvia" = {
             depends  = [
               hsPkgs.base
               hsPkgs.comonad-transformers
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.void

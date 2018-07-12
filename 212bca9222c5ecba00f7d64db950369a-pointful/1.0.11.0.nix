@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pointful = {
+        "pointful" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          pointful = {
+          "pointful" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pointful

@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        edenskel = {
+        "edenskel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.edenmodules

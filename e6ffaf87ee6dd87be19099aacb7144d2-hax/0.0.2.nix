@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hax = {
+        "hax" = {
           depends  = [
             hsPkgs.Decimal
             hsPkgs.aeson
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          hax = {
+          "hax" = {
             depends  = [
               hsPkgs.Decimal
               hsPkgs.aeson

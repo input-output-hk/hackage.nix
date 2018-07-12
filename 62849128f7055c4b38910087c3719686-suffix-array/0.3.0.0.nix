@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        suffix-array = {
+        "suffix-array" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
           ];
         };
         exes = {
-          suffix-array-exe = {
+          "suffix-array-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.suffix-array
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          suffix-array-test = {
+          "suffix-array-test" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          suffix-array-bench = {
+          "suffix-array-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

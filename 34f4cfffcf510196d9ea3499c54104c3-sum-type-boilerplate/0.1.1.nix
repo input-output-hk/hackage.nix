@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        sum-type-boilerplate = {
+        "sum-type-boilerplate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

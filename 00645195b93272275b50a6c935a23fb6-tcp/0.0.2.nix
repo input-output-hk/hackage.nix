@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tcp = {
+        "tcp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

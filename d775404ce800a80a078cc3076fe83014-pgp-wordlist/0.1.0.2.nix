@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pgp-wordlist = {
+        "pgp-wordlist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.pgp-wordlist
               hsPkgs.base
@@ -43,7 +43,7 @@ let
               hsPkgs.text
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

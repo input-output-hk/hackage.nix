@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typed-wire-utils = {
+        "typed-wire-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

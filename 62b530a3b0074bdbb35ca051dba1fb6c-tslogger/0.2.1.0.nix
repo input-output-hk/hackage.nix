@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tslogger = {
+        "tslogger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

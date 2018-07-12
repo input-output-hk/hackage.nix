@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ghczdecode = {
+          "ghczdecode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zenc

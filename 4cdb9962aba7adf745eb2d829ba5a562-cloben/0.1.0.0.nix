@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cloben = {
+          "cloben" = {
             depends  = [
               hsPkgs.base
               hsPkgs.turtle

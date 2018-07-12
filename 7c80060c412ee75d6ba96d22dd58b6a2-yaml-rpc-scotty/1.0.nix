@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml-rpc-scotty = {
+        "yaml-rpc-scotty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toml-parser = {
+        "toml-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

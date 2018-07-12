@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microlens-contra = {
+        "microlens-contra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant

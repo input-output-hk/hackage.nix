@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FpMLv53 = {
+        "FpMLv53" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HaXml

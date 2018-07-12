@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          leksah = {
+          "leksah" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base
@@ -49,7 +49,7 @@ let
               else [ hsPkgs.unix ]);
             libs = pkgs.lib.optional system.isWindows pkgs.kernel32 ++ pkgs.lib.optional system.isOsx pkgs.igemacintegration;
           };
-          leksahecho = {};
+          "leksahecho" = {};
         };
       };
     }

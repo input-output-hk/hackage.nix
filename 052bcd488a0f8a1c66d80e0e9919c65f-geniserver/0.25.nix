@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geniserver = {
+        "geniserver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          geniserver = {
+          "geniserver" = {
             depends  = [
               hsPkgs.base
               hsPkgs.geniserver

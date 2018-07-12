@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iptables-helpers = {
+        "iptables-helpers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          iptables-helpers-test = {
+          "iptables-helpers-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

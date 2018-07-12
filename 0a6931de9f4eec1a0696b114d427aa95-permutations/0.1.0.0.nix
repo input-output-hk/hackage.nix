@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        permutations = {
+        "permutations" = {
           depends  = [
             hsPkgs.Fin
             hsPkgs.alg
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.Fin
               hsPkgs.alg

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        BitSyntax = {
+        "BitSyntax" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        strio = {
+        "strio" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          new-template-exe = {
+          "new-template-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.strio
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          new-template-test = {
+          "new-template-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.strio

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        key-state = {
+        "key-state" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          key-state-tests = {
+          "key-state-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

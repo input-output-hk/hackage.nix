@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          lhs2TeX = {
+          "lhs2TeX" = {
             depends  = if _flags.splitbase
               then [
                 hsPkgs.base

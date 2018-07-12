@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sfml-audio = {
+        "sfml-audio" = {
           depends  = [ hsPkgs.base ];
           libs = ([
             pkgs."stdc++"

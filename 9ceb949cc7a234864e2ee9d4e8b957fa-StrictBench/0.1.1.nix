@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        StrictBench = {
+        "StrictBench" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parallel

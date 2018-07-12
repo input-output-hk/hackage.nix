@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ansi-escape-codes = {
+        "ansi-escape-codes" = {
           depends  = [ hsPkgs.base ];
         };
       };

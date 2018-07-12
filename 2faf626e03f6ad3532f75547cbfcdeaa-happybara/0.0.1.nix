@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happybara = {
+        "happybara" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

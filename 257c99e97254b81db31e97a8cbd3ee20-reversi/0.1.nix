@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          reversi = {
+          "reversi" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

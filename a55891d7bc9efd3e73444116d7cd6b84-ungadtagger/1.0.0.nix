@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ungadtagger = {
+        "ungadtagger" = {
           depends  = [ hsPkgs.base ];
         };
       };

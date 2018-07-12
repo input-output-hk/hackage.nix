@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linklater = {
+        "linklater" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-prelude

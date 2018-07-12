@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-jquery = {
+        "servant-jquery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          counter = {
+          "counter" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

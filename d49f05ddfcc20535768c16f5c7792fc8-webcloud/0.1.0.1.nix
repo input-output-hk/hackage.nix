@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webcloud = {
+        "webcloud" = {
           depends  = [
             hsPkgs.base
             hsPkgs.optparse-applicative
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          testcloud = {
+          "testcloud" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

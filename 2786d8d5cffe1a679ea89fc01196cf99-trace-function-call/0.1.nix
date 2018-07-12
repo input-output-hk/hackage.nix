@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        trace-function-call = {
+        "trace-function-call" = {
           depends  = [ hsPkgs.base ];
         };
       };

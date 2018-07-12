@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        beam-sqlite = {
+        "beam-sqlite" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.beam-core

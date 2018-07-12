@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        levmar-chart = {
+        "levmar-chart" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Chart
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Chart

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-dbusmenu = {
+        "gi-dbusmenu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

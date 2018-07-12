@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ConfigFileTH = {
+        "ConfigFileTH" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ConfigFile

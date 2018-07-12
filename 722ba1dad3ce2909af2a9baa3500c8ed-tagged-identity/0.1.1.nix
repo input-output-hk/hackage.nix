@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagged-identity = {
+        "tagged-identity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

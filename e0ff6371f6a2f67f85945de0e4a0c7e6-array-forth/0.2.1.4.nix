@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        array-forth = {
+        "array-forth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          mcmc-demo = {
+          "mcmc-demo" = {
             depends  = pkgs.lib.optionals _flags.synthesis [
               hsPkgs.array-forth
               hsPkgs.base
@@ -45,7 +45,7 @@ let
               hsPkgs.optparse-applicative
             ];
           };
-          array-forth = {
+          "array-forth" = {
             depends  = [
               hsPkgs.array-forth
               hsPkgs.base
@@ -53,7 +53,7 @@ let
               hsPkgs.vector
             ];
           };
-          chart = {
+          "chart" = {
             depends  = pkgs.lib.optionals _flags.chart [
               hsPkgs.array-forth
               hsPkgs.base
@@ -65,7 +65,7 @@ let
           };
         };
         tests = {
-          test-array-forth = {
+          "test-array-forth" = {
             depends  = [
               hsPkgs.array-forth
               hsPkgs.base

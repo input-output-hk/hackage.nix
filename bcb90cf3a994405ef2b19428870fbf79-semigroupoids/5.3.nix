@@ -28,7 +28,7 @@ let
         buildType = "Custom";
       };
       components = {
-        semigroupoids = {
+        "semigroupoids" = {
           depends  = ((((((([
             hsPkgs.base
             hsPkgs.base-orphans
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.doctests)) [
               hsPkgs.base
               hsPkgs.doctest

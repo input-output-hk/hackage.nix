@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          timecalc = {
+          "timecalc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline

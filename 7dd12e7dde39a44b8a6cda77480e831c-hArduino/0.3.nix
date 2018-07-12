@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hArduino = {
+        "hArduino" = {
           depends  = [
             hsPkgs.base
             hsPkgs.serialport

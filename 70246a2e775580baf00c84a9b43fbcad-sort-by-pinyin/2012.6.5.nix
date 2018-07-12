@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sort-by-pinyin = {
+        "sort-by-pinyin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

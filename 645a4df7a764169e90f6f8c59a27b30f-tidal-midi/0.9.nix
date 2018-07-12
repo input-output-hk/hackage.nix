@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tidal-midi = {
+        "tidal-midi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tidal

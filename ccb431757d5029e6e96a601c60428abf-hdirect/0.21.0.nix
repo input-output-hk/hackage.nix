@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdirect = {
+        "hdirect" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          hdirect = {
+          "hdirect" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

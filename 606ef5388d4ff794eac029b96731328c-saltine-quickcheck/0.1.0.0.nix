@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        saltine-quickcheck = {
+        "saltine-quickcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           libs = [ pkgs.sodium ];
         };
         tests = {
-          test-all = {
+          "test-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring-arbitrary

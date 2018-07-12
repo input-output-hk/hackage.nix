@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-drive = {
+        "google-drive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

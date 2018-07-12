@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-mquery = {
+        "hw-mquery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hw-mquery-example = {
+          "hw-mquery-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hw-mquery
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          hw-mquery-test = {
+          "hw-mquery-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

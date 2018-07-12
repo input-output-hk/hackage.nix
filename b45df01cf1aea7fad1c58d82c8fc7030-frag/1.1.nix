@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        frag = {
+        "frag" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -29,6 +29,6 @@ let
             hsPkgs.array
           ];
         };
-        exes = { frag = {}; };
+        exes = { "frag" = {}; };
       };
     }

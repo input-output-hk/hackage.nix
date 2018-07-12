@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hscassandra = {
+        "hscassandra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

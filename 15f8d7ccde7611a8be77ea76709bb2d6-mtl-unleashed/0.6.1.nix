@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mtl-unleashed = {
+        "mtl-unleashed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          mtl-unleashed-tests = {
+          "mtl-unleashed-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

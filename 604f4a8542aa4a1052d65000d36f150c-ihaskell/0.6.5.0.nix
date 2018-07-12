@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ihaskell = {
+        "ihaskell" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -62,7 +62,7 @@ let
           ] ++ pkgs.lib.optional _flags.binpkgdb hsPkgs.bin-package-db;
         };
         exes = {
-          ihaskell = {
+          "ihaskell" = {
             depends  = [
               hsPkgs.ihaskell
               hsPkgs.base
@@ -81,7 +81,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.ihaskell
               hsPkgs.aeson

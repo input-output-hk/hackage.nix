@@ -20,16 +20,16 @@ let
         buildType = "Simple";
       };
       components = {
-        PortMidi = {
+        "PortMidi" = {
           depends  = [ hsPkgs.base ];
           libs = if system.isLinux
             then [ pkgs.asound ]
-            else pkgs.lib.optional (!system.isOsx && system.isWindows) pkgs.winmm;
-          frameworks = pkgs.lib.optionals (!system.isLinux && system.isOsx) [
+            else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional system.isWindows pkgs.winmm);
+          frameworks = pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optionals system.isOsx [
             pkgs.CoreMIDI
             pkgs.CoreFoundation
             pkgs.CoreAudio
-          ];
+          ]);
         };
       };
     }

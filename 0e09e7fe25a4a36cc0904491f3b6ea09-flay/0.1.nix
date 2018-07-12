@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        flay = {
+        "flay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.flay

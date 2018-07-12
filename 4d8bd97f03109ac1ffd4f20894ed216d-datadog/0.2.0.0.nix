@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        datadog = {
+        "datadog" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.auto-update
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          datadog-api-test = {
+          "datadog-api-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.auto-update

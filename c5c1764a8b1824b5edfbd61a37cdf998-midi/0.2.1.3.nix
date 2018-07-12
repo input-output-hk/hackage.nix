@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        midi = {
+        "midi" = {
           depends  = [
             hsPkgs.event-list
             hsPkgs.non-negative
@@ -41,7 +41,7 @@ let
             else [ hsPkgs.base ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.midi
               hsPkgs.explicit-exception

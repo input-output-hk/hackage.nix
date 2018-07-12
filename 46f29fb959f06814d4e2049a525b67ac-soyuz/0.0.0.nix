@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        soyuz = {
+        "soyuz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -36,6 +36,6 @@ let
             hsPkgs.cmdargs
           ];
         };
-        exes = { soyuz = {}; };
+        exes = { "soyuz" = {}; };
       };
     }

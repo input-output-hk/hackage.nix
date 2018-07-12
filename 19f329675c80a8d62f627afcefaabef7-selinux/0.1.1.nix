@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        selinux = {
+        "selinux" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

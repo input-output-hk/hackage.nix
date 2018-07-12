@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        manatee-mplayer = {
+        "manatee-mplayer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manatee-core
@@ -45,8 +45,8 @@ let
           ];
         };
         exes = {
-          manatee-mplayer-daemon = {};
-          manatee-mplayer = {};
+          "manatee-mplayer-daemon" = {};
+          "manatee-mplayer" = {};
         };
       };
     }

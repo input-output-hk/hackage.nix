@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        irc = {
+        "irc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

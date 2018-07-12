@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wavefront-obj = {
+        "wavefront-obj" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          wavefront-obj-test = {
+          "wavefront-obj-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.linear

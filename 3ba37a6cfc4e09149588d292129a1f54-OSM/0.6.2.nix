@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OSM = {
+        "OSM" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hxt

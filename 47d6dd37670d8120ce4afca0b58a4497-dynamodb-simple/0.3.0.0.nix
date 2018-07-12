@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dynamodb-simple = {
+        "dynamodb-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.amazonka-dynamodb
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dynamodb-simple

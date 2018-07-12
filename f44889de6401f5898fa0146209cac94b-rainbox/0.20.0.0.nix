@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rainbox = {
+        "rainbox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          rainbox-properties = {
+          "rainbox-properties" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -44,7 +44,7 @@ let
               hsPkgs.text
             ];
           };
-          rainbox-visual = {
+          "rainbox-visual" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        discount = {
+        "discount" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

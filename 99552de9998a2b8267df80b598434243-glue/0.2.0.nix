@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glue = {
+        "glue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          glue-example = {
+          "glue-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.glue
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        binding-core = {
+        "binding-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
           ];
         };
         tests = {
-          hunit = {
+          "hunit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binding-core
@@ -35,7 +35,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binding-core

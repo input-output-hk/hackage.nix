@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sext = {
+        "sext" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.template-haskell

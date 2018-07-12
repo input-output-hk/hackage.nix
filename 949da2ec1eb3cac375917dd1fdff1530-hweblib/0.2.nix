@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hweblib = {
+        "hweblib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

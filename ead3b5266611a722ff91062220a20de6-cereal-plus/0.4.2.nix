@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal-plus = {
+        "cereal-plus" = {
           depends  = [
             hsPkgs.cereal
             hsPkgs.stm
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          cereal-plus-htf-test-suite = {
+          "cereal-plus-htf-test-suite" = {
             depends  = [
               hsPkgs.cereal-plus
               hsPkgs.quickcheck-instances

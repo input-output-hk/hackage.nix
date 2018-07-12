@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-meta = {
+        "hspec-meta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec-expectations
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          hspec-meta-discover = {
+          "hspec-meta-discover" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

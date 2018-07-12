@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dominion = {
+        "dominion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          dominion = {
+          "dominion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          test-dominion = {
+          "test-dominion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

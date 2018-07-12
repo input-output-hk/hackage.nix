@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazon-emailer-client-snap = {
+        "amazon-emailer-client-snap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snap

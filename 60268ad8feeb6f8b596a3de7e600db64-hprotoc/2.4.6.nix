@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hprotoc = {
+        "hprotoc" = {
           depends  = [
             hsPkgs.protocol-buffers
             hsPkgs.protocol-buffers-descriptor
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          hprotoc = {
+          "hprotoc" = {
             depends  = [
               hsPkgs.protocol-buffers
               hsPkgs.protocol-buffers-descriptor

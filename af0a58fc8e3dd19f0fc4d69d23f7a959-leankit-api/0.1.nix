@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        leankit-api = {
+        "leankit-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl

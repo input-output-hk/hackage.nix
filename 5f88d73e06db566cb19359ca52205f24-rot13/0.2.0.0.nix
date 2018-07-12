@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rot13 = {
+        "rot13" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

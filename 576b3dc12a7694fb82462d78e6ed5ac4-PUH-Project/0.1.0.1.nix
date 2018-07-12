@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PUH-Project = {
+        "PUH-Project" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

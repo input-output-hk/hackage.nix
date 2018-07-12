@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec = {
+        "hspec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          hspec-discover = {
+          "hspec-discover" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -64,20 +64,20 @@ let
               hsPkgs.ghc-paths
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
               hsPkgs.QuickCheck
             ];
           };
-          hspec-discover-spec = {
+          "hspec-discover-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -85,14 +85,14 @@ let
               hsPkgs.hspec-meta
             ];
           };
-          hspec-discover-example = {
+          "hspec-discover-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
               hsPkgs.QuickCheck
             ];
           };
-          hspec-discover-integration-test-empty = {
+          "hspec-discover-integration-test-empty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

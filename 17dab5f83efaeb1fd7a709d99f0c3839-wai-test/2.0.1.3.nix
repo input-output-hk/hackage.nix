@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-test = {
+        "wai-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-test

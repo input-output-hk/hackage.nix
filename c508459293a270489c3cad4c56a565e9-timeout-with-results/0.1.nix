@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timeout-with-results = {
+        "timeout-with-results" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parallel

@@ -22,28 +22,28 @@ let
         buildType = "Custom";
       };
       components = {
-        HUnit = {
+        "HUnit" = {
           depends  = ([ hsPkgs.base ] ++ [
             hsPkgs.base
           ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
         };
         exes = {
-          basic-tests = {
+          "basic-tests" = {
             depends  = ([ hsPkgs.base ] ++ [
               hsPkgs.base
             ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
           };
-          extended-tests = {
+          "extended-tests" = {
             depends  = ([ hsPkgs.base ] ++ [
               hsPkgs.base
             ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
           };
-          terminal-tests = {
+          "terminal-tests" = {
             depends  = ([ hsPkgs.base ] ++ [
               hsPkgs.base
             ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
           };
-          optimize-1-tests = {
+          "optimize-1-tests" = {
             depends  = ([ hsPkgs.base ] ++ [
               hsPkgs.base
             ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;

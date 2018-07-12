@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        relational-query-HDBC = {
+        "relational-query-HDBC" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

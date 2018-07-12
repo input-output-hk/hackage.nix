@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        judge = {
+        "judge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          judge = {
+          "judge" = {
             depends  = [
               hsPkgs.base
               hsPkgs.judge

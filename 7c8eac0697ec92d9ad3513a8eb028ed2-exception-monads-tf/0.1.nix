@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exception-monads-tf = {
+        "exception-monads-tf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monads-tf

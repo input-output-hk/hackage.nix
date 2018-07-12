@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        template-haskell-compat-v0208 = {
+        "template-haskell-compat-v0208" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.base-prelude

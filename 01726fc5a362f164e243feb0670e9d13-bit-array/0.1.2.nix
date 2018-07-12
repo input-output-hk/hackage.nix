@@ -20,14 +20,14 @@ let
         buildType = "Custom";
       };
       components = {
-        bit-array = {
+        "bit-array" = {
           depends  = [
             hsPkgs.numeric-qq
             hsPkgs.base
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.doctest
               hsPkgs.directory

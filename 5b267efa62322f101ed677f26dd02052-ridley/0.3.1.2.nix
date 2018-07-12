@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ridley = {
+        "ridley" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          ridley-test = {
+          "ridley-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

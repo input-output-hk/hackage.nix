@@ -22,15 +22,15 @@ let
         buildType = "Custom";
       };
       components = {
-        fullstop = {
+        "fullstop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split
           ];
         };
         exes = {
-          fullstop = {};
-          hstest-fullstop = {
+          "fullstop" = {};
+          "hstest-fullstop" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit

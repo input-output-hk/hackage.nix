@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdacms-media = {
+        "lambdacms-media" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod

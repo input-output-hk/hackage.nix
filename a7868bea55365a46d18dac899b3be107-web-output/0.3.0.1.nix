@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-output = {
+        "web-output" = {
           depends  = [
             hsPkgs.base
             hsPkgs.temporary
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.temporary

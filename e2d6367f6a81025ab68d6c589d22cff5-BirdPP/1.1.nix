@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          BirdPP = {
+          "BirdPP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

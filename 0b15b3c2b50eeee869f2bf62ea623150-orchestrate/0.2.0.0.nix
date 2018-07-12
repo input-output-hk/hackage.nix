@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        orchestrate = {
+        "orchestrate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          orchestrate-specs = {
+          "orchestrate-specs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.orchestrate

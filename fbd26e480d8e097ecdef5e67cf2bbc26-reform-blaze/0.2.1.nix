@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reform-blaze = {
+        "reform-blaze" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup

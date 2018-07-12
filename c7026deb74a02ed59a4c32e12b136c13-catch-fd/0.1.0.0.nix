@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        catch-fd = {
+        "catch-fd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

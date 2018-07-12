@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          seito = {
+          "seito" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base
@@ -42,7 +42,7 @@ let
               hsPkgs.warp
             ];
           };
-          sensei = {
+          "sensei" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base
@@ -63,7 +63,7 @@ let
               hsPkgs.warp
             ];
           };
-          sensei-web = {
+          "sensei-web" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base
@@ -86,7 +86,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base

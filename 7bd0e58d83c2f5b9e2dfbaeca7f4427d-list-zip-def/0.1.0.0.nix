@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-zip-def = {
+        "list-zip-def" = {
           depends  = [ hsPkgs.base ];
         };
       };

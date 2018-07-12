@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        log-postgres = {
+        "log-postgres" = {
           depends  = [
             hsPkgs.base
             hsPkgs.log-base

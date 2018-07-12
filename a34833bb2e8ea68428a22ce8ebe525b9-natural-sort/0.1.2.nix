@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        natural-sort = {
+        "natural-sort" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        byteset = {
+        "byteset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

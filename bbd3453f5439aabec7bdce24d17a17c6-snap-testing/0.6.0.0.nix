@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-testing = {
+        "snap-testing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          test-snap-testing = {
+          "test-snap-testing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

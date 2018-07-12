@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        legion-discovery = {
+        "legion-discovery" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.SHA
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          legion-discovery = {
+          "legion-discovery" = {
             depends  = [
               hsPkgs.base
               hsPkgs.legion-discovery
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          legion-discovery-test = {
+          "legion-discovery-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.legion-discovery

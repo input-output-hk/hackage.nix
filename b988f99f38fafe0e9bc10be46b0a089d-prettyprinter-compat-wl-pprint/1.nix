@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prettyprinter-compat-wl-pprint = {
+        "prettyprinter-compat-wl-pprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

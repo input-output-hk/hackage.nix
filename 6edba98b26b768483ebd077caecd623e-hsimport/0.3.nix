@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsimport = {
+        "hsimport" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmdargs
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          hsimport = {
+          "hsimport" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsimport
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          hsimport-tests = {
+          "hsimport-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

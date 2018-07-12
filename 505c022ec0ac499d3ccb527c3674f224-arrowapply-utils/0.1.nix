@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arrowapply-utils = {
+        "arrowapply-utils" = {
           depends  = [ hsPkgs.base ];
         };
       };

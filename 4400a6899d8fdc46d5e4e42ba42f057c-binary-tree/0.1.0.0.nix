@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-tree = {
+        "binary-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
           ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.ghc-prim;
         };
         tests = {
-          binary-tree-test = {
+          "binary-tree-test" = {
             depends  = [
               hsPkgs.ChasingBottoms
               hsPkgs.HUnit
@@ -39,7 +39,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary-tree

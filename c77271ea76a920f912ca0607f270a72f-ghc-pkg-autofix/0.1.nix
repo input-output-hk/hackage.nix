@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ghc-pkg-autofix = {
+          "ghc-pkg-autofix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

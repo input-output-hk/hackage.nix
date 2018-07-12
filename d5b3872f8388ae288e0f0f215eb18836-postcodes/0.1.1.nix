@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postcodes = {
+        "postcodes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

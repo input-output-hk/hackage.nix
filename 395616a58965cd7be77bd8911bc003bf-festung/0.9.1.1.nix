@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        festung = {
+        "festung" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.argparser
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          festung = {
+          "festung" = {
             depends  = [
               hsPkgs.argparser
               hsPkgs.base
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warp-tls-uid = {
+        "warp-tls-uid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          warp-tls-uid-test = {
+          "warp-tls-uid-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NumberTheory = {
+        "NumberTheory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          NumberTheory_Tests = {
+          "NumberTheory_Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

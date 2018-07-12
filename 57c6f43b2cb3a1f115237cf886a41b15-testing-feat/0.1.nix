@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        testing-feat = {
+        "testing-feat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

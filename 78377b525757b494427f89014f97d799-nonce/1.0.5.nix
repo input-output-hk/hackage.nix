@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nonce = {
+        "nonce" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring

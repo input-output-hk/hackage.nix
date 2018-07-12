@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gym-http-api = {
+        "gym-http-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant-client
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-client

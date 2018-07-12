@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Cabal = {
+        "Cabal" = {
           depends  = ((((([
             hsPkgs.array
             hsPkgs.base
@@ -57,7 +57,7 @@ let
           build-tools = pkgs.lib.optional _flags.parsec hsPkgs.buildPackages.alex;
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -73,7 +73,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          parser-tests = {
+          "parser-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -84,7 +84,7 @@ let
               hsPkgs.Cabal
             ];
           };
-          parser-hackage-tests = {
+          "parser-hackage-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

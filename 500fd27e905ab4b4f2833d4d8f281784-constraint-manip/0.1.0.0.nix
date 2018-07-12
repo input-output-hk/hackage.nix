@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        constraint-manip = {
+        "constraint-manip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.indextype

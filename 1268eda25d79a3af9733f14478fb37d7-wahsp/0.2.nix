@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wahsp = {
+        "wahsp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

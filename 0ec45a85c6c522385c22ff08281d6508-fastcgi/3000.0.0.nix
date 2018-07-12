@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        fastcgi = {
+        "fastcgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

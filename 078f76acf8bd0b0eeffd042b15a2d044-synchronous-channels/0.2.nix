@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synchronous-channels = {
+        "synchronous-channels" = {
           depends  = [ hsPkgs.base ];
         };
       };

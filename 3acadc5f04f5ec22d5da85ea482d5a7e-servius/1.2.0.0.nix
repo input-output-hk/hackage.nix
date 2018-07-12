@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          servius = {
+          "servius" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

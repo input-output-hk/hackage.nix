@@ -33,7 +33,7 @@ let
       };
       components = {
         exes = {
-          xmobar = {
+          "xmobar" = {
             depends  = ((((((([
               hsPkgs.unix
               hsPkgs.time

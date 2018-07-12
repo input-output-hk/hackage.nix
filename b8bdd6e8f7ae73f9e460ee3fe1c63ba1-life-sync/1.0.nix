@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        life-sync = {
+        "life-sync" = {
           depends  = [
             hsPkgs.base-noprelude
             hsPkgs.ansi-terminal
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          life = {
+          "life" = {
             depends  = [
               hsPkgs.base-noprelude
               hsPkgs.containers
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          life-sync-test = {
+          "life-sync-test" = {
             depends  = [
               hsPkgs.base-noprelude
               hsPkgs.life-sync

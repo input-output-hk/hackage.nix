@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        non-negative = {
+        "non-negative" = {
           depends  = [
             hsPkgs.semigroups
             hsPkgs.utility-ht
@@ -30,7 +30,7 @@ let
           ] ++ [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.semigroups

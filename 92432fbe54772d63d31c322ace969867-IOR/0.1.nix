@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        IOR = {
+        "IOR" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

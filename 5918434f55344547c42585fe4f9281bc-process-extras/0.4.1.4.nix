@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        process-extras = {
+        "process-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ListLike

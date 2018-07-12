@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        is = {
+        "is" = {
           depends  = (([
             hsPkgs.base
           ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.template-haskell;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

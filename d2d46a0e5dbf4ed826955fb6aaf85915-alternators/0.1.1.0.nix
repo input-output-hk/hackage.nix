@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alternators = {
+        "alternators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mmorph

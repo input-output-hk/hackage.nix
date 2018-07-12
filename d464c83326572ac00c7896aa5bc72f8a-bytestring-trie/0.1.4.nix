@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-trie = {
+        "bytestring-trie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

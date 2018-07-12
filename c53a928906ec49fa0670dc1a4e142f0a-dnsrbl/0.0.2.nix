@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dnsrbl = {
+        "dnsrbl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

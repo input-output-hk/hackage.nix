@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-serializer = {
+        "data-serializer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

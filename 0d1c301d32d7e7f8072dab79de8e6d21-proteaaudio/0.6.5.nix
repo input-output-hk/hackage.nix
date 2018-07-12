@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proteaaudio = {
+        "proteaaudio" = {
           depends  = [ hsPkgs.base ];
           libs = (pkgs.lib.optionals system.isWindows [
             pkgs."stdc++"
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          proteaaudio-play = {
+          "proteaaudio-play" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

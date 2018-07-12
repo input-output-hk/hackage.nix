@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pictikz = {
+          "pictikz" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xml

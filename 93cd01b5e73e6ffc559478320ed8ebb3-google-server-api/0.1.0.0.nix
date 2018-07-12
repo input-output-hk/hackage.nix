@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-server-api = {
+        "google-server-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

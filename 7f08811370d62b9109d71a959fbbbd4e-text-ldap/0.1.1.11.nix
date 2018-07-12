@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-ldap = {
+        "text-ldap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
         };
         exes = {
-          parseTest = {
+          "parseTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          pp = {
+          "pp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

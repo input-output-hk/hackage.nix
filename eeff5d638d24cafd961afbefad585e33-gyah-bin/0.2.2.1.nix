@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gyah = {
+          "gyah" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GiveYouAHead

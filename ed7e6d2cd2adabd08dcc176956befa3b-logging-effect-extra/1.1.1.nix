@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logging-effect-extra = {
+        "logging-effect-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.logging-effect
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          log-extra = {
+          "log-extra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-effect-extra

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsx2hs = {
+        "hsx2hs" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.haskell-src-exts
@@ -32,6 +32,6 @@ let
             hsPkgs.utf8-string
           ] ++ [ hsPkgs.base ];
         };
-        exes = { hsx2hs = {}; };
+        exes = { "hsx2hs" = {}; };
       };
     }

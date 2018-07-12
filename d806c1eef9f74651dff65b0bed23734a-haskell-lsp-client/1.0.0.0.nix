@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-lsp-client = {
+        "haskell-lsp-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-lsp
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          example-client = {
+          "example-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-lsp

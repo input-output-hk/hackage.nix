@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pwstore-purehaskell = {
+        "pwstore-purehaskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

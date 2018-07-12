@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-cell = {
+        "data-cell" = {
           depends  = [ hsPkgs.base ];
         };
       };

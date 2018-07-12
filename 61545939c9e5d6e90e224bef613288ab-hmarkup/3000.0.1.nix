@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmarkup = {
+        "hmarkup" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.parsec

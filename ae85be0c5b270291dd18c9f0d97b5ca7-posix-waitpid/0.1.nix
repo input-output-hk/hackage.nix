@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        posix-waitpid = {
+        "posix-waitpid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

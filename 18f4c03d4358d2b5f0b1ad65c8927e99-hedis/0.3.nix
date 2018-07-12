@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedis = {
+        "hedis" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          hedis-benchmark = {
+          "hedis-benchmark" = {
             depends  = pkgs.lib.optionals _flags.benchmark [
               hsPkgs.base
               hsPkgs.mtl
@@ -44,7 +44,7 @@ let
               hsPkgs.time
             ];
           };
-          hedis-test = {
+          "hedis-test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hatex-guide = {
+        "hatex-guide" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HaTeX

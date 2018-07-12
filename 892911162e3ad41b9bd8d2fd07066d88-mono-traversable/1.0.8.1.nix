@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mono-traversable = {
+        "mono-traversable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          sorting = {
+          "sorting" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gauge

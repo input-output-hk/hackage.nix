@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-split = {
+        "vector-split" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
           ];
         };
         tests = {
-          vector-split-test = {
+          "vector-split-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

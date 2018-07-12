@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        boolector = {
+        "boolector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,28 +32,28 @@ let
           ];
         };
         tests = {
-          API_Usage_Example = {
+          "API_Usage_Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.boolector
             ];
             libs = [ pkgs.boolector ];
           };
-          Array_Example = {
+          "Array_Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.boolector
             ];
             libs = [ pkgs.boolector ];
           };
-          UF_Example = {
+          "UF_Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.boolector
             ];
             libs = [ pkgs.boolector ];
           };
-          Arith_Example = {
+          "Arith_Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.boolector

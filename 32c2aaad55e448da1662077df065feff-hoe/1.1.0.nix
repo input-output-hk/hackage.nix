@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hoe = {
+          "hoe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.exceptions

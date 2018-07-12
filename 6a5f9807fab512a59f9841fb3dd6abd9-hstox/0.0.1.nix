@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hstox = {
+        "hstox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -43,7 +43,7 @@ let
           ] ++ pkgs.lib.optional (!_flags.library-only) hsPkgs.hspec;
         };
         exes = {
-          tox-spectest = {
+          "tox-spectest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hstox
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

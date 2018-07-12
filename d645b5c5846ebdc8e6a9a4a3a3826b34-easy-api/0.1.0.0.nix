@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        easy-api = {
+        "easy-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

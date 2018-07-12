@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        runmemo = {};
+        "runmemo" = {};
         tests = {
-          test-race = {
+          "test-race" = {
             depends  = [
               hsPkgs.data-memocombinators
               hsPkgs.base

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuagc = {
+        "uuagc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          uuagc = {
+          "uuagc" = {
             depends  = ([
               hsPkgs.haskell98
               hsPkgs.uulib

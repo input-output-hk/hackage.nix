@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        notzero = {
+        "notzero" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

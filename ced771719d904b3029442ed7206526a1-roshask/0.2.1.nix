@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        roshask = {
+        "roshask" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.binary
@@ -53,7 +53,7 @@ let
           ] ++ pkgs.lib.optional _flags.logging hsPkgs.template-haskell) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          roshask = {
+          "roshask" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -75,7 +75,7 @@ let
           };
         };
         tests = {
-          testexe = {
+          "testexe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -90,7 +90,7 @@ let
               hsPkgs.pureMD5
             ];
           };
-          servicetest = {
+          "servicetest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

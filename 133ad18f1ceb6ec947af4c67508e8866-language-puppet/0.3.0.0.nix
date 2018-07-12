@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-puppet = {
+        "language-puppet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -56,7 +56,7 @@ let
           ];
         };
         tests = {
-          test-lexer = {
+          "test-lexer" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -64,14 +64,14 @@ let
               hsPkgs.mtl
             ];
           };
-          test-expr = {
+          "test-expr" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
               hsPkgs.parsec
             ];
           };
-          test-interpreter = {
+          "test-interpreter" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -83,7 +83,7 @@ let
           };
         };
         benchmarks = {
-          bench-lexer = {
+          "bench-lexer" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base

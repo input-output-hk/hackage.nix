@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent = {
+        "persistent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
             else [ hsPkgs.blaze-html ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

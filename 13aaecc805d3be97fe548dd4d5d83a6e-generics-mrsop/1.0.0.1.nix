@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generics-mrsop = {
+        "generics-mrsop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

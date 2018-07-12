@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        storable-complex = {
+        "storable-complex" = {
           depends  = [ hsPkgs.base ];
         };
       };

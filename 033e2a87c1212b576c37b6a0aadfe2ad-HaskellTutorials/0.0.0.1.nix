@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Haskell.Tutorials = {
+          "Haskell.Tutorials" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

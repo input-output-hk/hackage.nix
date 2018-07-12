@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-expand-syns = {
+        "th-expand-syns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

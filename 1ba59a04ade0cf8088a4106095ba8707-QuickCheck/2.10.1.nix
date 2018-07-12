@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        QuickCheck = {
+        "QuickCheck" = {
           depends  = (((([
             hsPkgs.base
             hsPkgs.random
@@ -36,25 +36,25 @@ let
           ];
         };
         tests = {
-          test-quickcheck = {
+          "test-quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
             ];
           };
-          test-quickcheck-gcoarbitrary = {
+          "test-quickcheck-gcoarbitrary" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
           };
-          test-quickcheck-generators = {
+          "test-quickcheck-generators" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
             ];
           };
-          test-quickcheck-gshrink = {
+          "test-quickcheck-gshrink" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multirec-alt-deriver = {
+        "multirec-alt-deriver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

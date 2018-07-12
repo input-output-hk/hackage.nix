@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sifflet-lib = {
+        "sifflet-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo

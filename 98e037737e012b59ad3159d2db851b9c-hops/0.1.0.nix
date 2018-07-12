@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hops = {
+          "hops" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.ansi-terminal
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          Properties = {
+          "Properties" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.attoparsec

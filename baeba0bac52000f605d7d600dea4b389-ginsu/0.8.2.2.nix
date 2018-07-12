@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ginsu = {
+          "ginsu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

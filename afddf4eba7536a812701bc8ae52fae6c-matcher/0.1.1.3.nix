@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        matcher = {
+        "matcher" = {
           depends  = [
             hsPkgs.text
             hsPkgs.success

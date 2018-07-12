@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gpio = {
+        "gpio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          gpio = {
+          "gpio" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gpio

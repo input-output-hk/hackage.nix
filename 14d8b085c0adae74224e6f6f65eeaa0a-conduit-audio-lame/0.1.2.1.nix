@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-audio-lame = {
+        "conduit-audio-lame" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

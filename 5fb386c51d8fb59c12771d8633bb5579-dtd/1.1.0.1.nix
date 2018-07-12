@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dtd = {
+        "dtd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

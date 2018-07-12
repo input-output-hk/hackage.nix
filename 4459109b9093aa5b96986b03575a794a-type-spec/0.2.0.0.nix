@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-spec = {
+        "type-spec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-spec

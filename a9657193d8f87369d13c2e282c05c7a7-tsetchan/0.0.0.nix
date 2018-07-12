@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tsetchan = {
+        "tsetchan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tsetchan-test = {
+          "tsetchan-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tsetchan

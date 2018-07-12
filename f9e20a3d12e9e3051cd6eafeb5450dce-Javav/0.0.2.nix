@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          javav = {
+          "javav" = {
             depends  = [ hsPkgs.base ];
           };
         };

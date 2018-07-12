@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HsASA = {
+        "HsASA" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

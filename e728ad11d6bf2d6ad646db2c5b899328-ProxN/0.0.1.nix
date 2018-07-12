@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ProxN = {
+        "ProxN" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

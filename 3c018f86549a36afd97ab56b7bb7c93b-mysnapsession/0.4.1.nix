@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mysnapsession = {
+        "mysnapsession" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

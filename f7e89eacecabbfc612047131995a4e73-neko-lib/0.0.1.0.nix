@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        neko-lib = {
+        "neko-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-lib = {
+          "test-lib" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

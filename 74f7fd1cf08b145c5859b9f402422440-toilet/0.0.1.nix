@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          toilet = {
+          "toilet" = {
             depends  = [
               hsPkgs.utility-ht
               hsPkgs.strict

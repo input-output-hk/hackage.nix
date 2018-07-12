@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        friday = {
+        "friday" = {
           depends  = [
             hsPkgs.base
             hsPkgs.convertible
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

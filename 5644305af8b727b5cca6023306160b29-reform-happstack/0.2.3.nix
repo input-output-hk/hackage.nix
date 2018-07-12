@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reform-happstack = {
+        "reform-happstack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

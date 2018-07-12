@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        satchmo = {
+        "satchmo" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.process

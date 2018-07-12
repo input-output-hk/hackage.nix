@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        goal-core = {
+        "goal-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          contours = {
+          "contours" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core

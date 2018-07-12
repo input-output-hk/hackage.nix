@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        multiarg = {
+        "multiarg" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          grover = {
+          "grover" = {
             depends  = pkgs.lib.optionals _flags.programs [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -35,7 +35,7 @@ let
               hsPkgs.tasty-th
             ];
           };
-          telly = {
+          "telly" = {
             depends  = pkgs.lib.optionals _flags.programs [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          multiarg-tests = {
+          "multiarg-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

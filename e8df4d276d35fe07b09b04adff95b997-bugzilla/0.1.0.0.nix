@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bugzilla = {
+        "bugzilla" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          bugzilla = {
+          "bugzilla" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bugzilla

@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        augeas = {
+        "augeas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          test-haskell-augeas = {
+          "test-haskell-augeas" = {
             depends  = [ hsPkgs.HUnit ];
             libs = [ pkgs.augeas ];
             pkgconfig = [

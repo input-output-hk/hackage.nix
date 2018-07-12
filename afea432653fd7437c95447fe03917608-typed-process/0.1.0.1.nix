@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typed-process = {
+        "typed-process" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          typed-process-test = {
+          "typed-process-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        himg = {
+        "himg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gtk
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          himg = {
+          "himg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

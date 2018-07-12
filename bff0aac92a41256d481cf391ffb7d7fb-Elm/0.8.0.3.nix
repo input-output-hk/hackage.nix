@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Elm = {
+        "Elm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          elm = {
+          "elm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -63,7 +63,7 @@ let
               hsPkgs.directory
             ];
           };
-          elm-doc = {
+          "elm-doc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

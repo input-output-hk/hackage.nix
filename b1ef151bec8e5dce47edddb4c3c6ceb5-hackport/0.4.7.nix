@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hackport = {
+          "hackport" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -52,7 +52,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          hackport-guess-ghc-version = {
+          "hackport-guess-ghc-version" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -76,7 +76,7 @@ let
           };
         };
         tests = {
-          test-resolve-category = {
+          "test-resolve-category" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -94,7 +94,7 @@ let
               hsPkgs.xml
             ];
           };
-          test-print-deps = {
+          "test-print-deps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -112,7 +112,7 @@ let
               hsPkgs.xml
             ];
           };
-          test-normalize-deps = {
+          "test-normalize-deps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

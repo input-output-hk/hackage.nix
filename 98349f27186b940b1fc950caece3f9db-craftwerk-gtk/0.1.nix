@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        craftwerk-gtk = {
+        "craftwerk-gtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          example1 = {
+          "example1" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.craftwerk

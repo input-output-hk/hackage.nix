@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nicify-lib = {
+        "nicify-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

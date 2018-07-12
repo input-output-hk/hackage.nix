@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hup = {
+        "hup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          hup = {
+          "hup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          hup-spec = {
+          "hup-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -76,7 +76,7 @@ let
               hsPkgs.warp
             ];
           };
-          hup-doctest = {
+          "hup-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hup

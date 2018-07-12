@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wreq-stringless = {
+        "wreq-stringless" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

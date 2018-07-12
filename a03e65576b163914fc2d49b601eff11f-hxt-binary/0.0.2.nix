@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-binary = {
+        "hxt-binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        df1 = {
+        "df1" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-plus = {
+        "text-plus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          text-plus-test = {
+          "text-plus-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF

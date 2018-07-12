@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DeepArrow = {
+        "DeepArrow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        incremental-parser = {
+        "incremental-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          test-incremental-parser = {
+          "test-incremental-parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

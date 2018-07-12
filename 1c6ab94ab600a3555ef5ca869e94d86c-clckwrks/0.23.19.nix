@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clckwrks = {
+        "clckwrks" = {
           depends  = [
             hsPkgs.acid-state
             hsPkgs.aeson

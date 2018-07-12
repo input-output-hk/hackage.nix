@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lambdatwit = {
+          "lambdatwit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.acid-state
@@ -51,7 +51,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          oauth_pin = {
+          "oauth_pin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

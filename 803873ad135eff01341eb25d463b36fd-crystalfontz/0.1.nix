@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crystalfontz = {
+        "crystalfontz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.crc16-table

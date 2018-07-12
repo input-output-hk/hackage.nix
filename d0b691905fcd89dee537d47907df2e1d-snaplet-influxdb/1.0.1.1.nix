@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-influxdb = {
+        "snaplet-influxdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snap

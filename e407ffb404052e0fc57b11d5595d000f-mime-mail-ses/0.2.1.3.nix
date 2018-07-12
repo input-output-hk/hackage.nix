@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mime-mail-ses = {
+        "mime-mail-ses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.crypto-api

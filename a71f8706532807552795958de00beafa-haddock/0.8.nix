@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haddock = {
+          "haddock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

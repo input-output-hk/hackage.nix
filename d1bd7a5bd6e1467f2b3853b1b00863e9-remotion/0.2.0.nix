@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        remotion = {
+        "remotion" = {
           depends  = [
             hsPkgs.pipes
             hsPkgs.pipes-bytestring
@@ -54,7 +54,7 @@ let
           ];
         };
         tests = {
-          remotion-htf-test-suite = {
+          "remotion-htf-test-suite" = {
             depends  = [
               hsPkgs.remotion
               hsPkgs.quickcheck-instances

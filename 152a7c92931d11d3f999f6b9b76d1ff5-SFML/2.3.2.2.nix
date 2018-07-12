@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SFML = {
+        "SFML" = {
           depends  = [ hsPkgs.base ];
           libs = if system.isWindows
             then [

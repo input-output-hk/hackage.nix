@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        more-containers = {
+        "more-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          more-containers-test = {
+          "more-containers-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

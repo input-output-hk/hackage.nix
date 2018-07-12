@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hepevt = {
+        "hepevt" = {
           depends  = [
             hsPkgs.haskell2010
             hsPkgs.bytestring

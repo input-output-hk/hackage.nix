@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        instinct = {
+        "instinct" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

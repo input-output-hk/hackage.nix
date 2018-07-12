@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        todos = {
+        "todos" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -40,6 +40,6 @@ let
             hsPkgs.utf8-string
           ];
         };
-        exes = { todos = {}; };
+        exes = { "todos" = {}; };
       };
     }

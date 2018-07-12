@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mailchimp = {
+        "mailchimp" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          sd = {
+          "sd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

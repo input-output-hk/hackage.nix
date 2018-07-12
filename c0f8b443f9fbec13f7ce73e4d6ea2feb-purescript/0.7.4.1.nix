@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        purescript = {
+        "purescript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          psc = {
+          "psc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -68,7 +68,7 @@ let
               hsPkgs.Glob
             ];
           };
-          psci = {
+          "psci" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -86,7 +86,7 @@ let
               hsPkgs.Glob
             ];
           };
-          psc-docs = {
+          "psc-docs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript
@@ -100,7 +100,7 @@ let
               hsPkgs.Glob
             ];
           };
-          psc-publish = {
+          "psc-publish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript
@@ -109,7 +109,7 @@ let
               hsPkgs.optparse-applicative
             ];
           };
-          psc-hierarchy = {
+          "psc-hierarchy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript
@@ -122,7 +122,7 @@ let
               hsPkgs.Glob
             ];
           };
-          psc-bundle = {
+          "psc-bundle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.purescript
@@ -137,7 +137,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -153,7 +153,7 @@ let
               hsPkgs.Glob
             ];
           };
-          psci-tests = {
+          "psci-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

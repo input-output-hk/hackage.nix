@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clutterhs = {
+        "clutterhs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        utility-ht = {
+        "utility-ht" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

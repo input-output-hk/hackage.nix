@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdl2-cairo-image = {
+        "sdl2-cairo-image" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

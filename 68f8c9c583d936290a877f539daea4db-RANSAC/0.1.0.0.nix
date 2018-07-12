@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RANSAC = {
+        "RANSAC" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

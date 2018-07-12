@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cprng-aes = {
+        "cprng-aes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         benchmarks = {
-          bench-cprng-aes = {
+          "bench-cprng-aes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

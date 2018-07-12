@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        digits = {
+        "digits" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

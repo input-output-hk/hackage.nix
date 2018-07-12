@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-logger = {
+        "wai-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

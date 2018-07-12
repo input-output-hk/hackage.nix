@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yarr-image-io = {
+        "yarr-image-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yarr

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          vintbas = {
+          "vintbas" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

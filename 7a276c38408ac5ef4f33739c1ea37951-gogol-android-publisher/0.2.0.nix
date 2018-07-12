@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-android-publisher = {
+        "gogol-android-publisher" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

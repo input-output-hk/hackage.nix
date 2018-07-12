@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        meldable-heap = {
+        "meldable-heap" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        complex-integrate = {
+        "complex-integrate" = {
           depends  = [ hsPkgs.base ];
         };
       };

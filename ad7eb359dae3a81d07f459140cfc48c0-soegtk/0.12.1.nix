@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        soegtk = {
+        "soegtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo

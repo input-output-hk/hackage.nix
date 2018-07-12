@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bsb-http-chunked = {
+        "bsb-http-chunked" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-azure = {
+        "distributed-process-azure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.azure-service-api
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          cloud-haskell-azure-echo = {
+          "cloud-haskell-azure-echo" = {
             depends  = pkgs.lib.optionals _flags.build-demos [
               hsPkgs.base
               hsPkgs.distributed-process-azure
@@ -52,7 +52,7 @@ let
               hsPkgs.transformers
             ];
           };
-          cloud-haskell-azure-ping = {
+          "cloud-haskell-azure-ping" = {
             depends  = pkgs.lib.optionals _flags.build-demos [
               hsPkgs.base
               hsPkgs.distributed-process-azure
@@ -64,7 +64,7 @@ let
               hsPkgs.libssh2
             ];
           };
-          cloud-haskell-azure-fib = {
+          "cloud-haskell-azure-fib" = {
             depends  = pkgs.lib.optionals _flags.build-demos [
               hsPkgs.base
               hsPkgs.distributed-process-azure

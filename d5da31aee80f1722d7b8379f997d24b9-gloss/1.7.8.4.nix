@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gloss = {
+        "gloss" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

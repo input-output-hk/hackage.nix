@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dhall-to-cabal = {
+        "dhall-to-cabal" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          dhall-to-cabal = {
+          "dhall-to-cabal" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base
@@ -48,7 +48,7 @@ let
               hsPkgs.text
             ];
           };
-          cabal-to-dhall = {
+          "cabal-to-dhall" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base
@@ -64,7 +64,7 @@ let
           };
         };
         tests = {
-          golden-tests = {
+          "golden-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

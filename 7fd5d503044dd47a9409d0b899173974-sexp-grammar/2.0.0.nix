@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sexp-grammar = {
+        "sexp-grammar" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          sexp-grammar-test = {
+          "sexp-grammar-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -61,7 +61,7 @@ let
           };
         };
         benchmarks = {
-          sexp-grammar-bench = {
+          "sexp-grammar-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

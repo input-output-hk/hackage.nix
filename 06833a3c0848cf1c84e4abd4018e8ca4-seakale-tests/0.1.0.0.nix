@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        seakale-tests = {
+        "seakale-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.seakale

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        speechmatics = {
+        "speechmatics" = {
           depends  = [
             hsPkgs.HsOpenSSL
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          speechmatics = {
+          "speechmatics" = {
             depends  = [
               hsPkgs.SHA
               hsPkgs.base
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          speechmatics-test = {
+          "speechmatics-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

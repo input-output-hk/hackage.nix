@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-discover = {
+        "hspec-discover" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hspec-discover = {
+          "hspec-discover" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

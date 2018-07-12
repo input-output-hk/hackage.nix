@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        prelude-plus = {
+        "prelude-plus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.test-framework
               hsPkgs.test-framework-hunit

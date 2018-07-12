@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rdf4h = {
+        "rdf4h" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          rdf4h = {
+          "rdf4h" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.rdf4h
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          test-rdf4h = {
+          "test-rdf4h" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.rdf4h
@@ -79,7 +79,7 @@ let
           };
         };
         benchmarks = {
-          rdf4h-bench = {
+          "rdf4h-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

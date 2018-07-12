@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        restricted-workers = {
+        "restricted-workers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

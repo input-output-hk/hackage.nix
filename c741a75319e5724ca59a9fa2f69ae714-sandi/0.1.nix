@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        sandi = {
+        "sandi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.sandi
               hsPkgs.base

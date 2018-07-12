@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bits-bytestring = {
+        "bits-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bits
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          bits-bytestring-test = {
+          "bits-bytestring-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bits
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          bits-bytestring-bench = {
+          "bits-bytestring-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

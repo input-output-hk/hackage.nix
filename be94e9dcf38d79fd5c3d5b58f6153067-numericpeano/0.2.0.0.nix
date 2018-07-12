@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numericpeano = {
+        "numericpeano" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haroonga = {
+        "haroonga" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

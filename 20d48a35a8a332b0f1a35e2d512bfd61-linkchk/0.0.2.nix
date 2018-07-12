@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          linkchk = {
+          "linkchk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

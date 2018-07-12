@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bzlib = {
+        "bzlib" = {
           depends  = if _flags.bytestring-in-base
             then [ hsPkgs.base ]
             else [

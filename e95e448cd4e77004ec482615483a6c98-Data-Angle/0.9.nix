@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Data-Angle = {
+        "Data-Angle" = {
           depends  = [ hsPkgs.base ];
         };
       };

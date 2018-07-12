@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        isohunt = {
+        "isohunt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yam-transaction-odbc = {
+        "yam-transaction-odbc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yam-app

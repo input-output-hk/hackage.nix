@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        djinn-ghc = {
+        "djinn-ghc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

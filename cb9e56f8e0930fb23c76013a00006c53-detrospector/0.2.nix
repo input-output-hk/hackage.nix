@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          detrospector = {
+          "detrospector" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

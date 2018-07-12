@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rbr = {
+        "rbr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,12 +28,12 @@ let
           ];
         };
         exes = {
-          rbr = {
+          "rbr" = {
             depends  = [
               hsPkgs.bytestring
             ];
           };
-          mct = {
+          "mct" = {
             depends  = [
               hsPkgs.bytestring
             ];

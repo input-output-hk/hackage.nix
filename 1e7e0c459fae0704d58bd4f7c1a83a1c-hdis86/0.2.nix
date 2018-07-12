@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdis86 = {
+        "hdis86" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

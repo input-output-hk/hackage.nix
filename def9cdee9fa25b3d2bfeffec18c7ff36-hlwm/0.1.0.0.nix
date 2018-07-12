@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hlwm = {
+        "hlwm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.X11
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          hherbstclient = {
+          "hherbstclient" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11

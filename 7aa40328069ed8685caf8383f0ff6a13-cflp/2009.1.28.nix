@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cflp = {
+        "cflp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-locale-vietnamese = {
+        "time-locale-vietnamese" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pager = {
+        "pager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          hs-pager-test-pager = {
+          "hs-pager-test-pager" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

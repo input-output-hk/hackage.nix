@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sql-simple-pool = {
+        "sql-simple-pool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

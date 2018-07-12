@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cairo-appbase = {
+          "cairo-appbase" = {
             depends  = [
               hsPkgs.base
               hsPkgs.glib

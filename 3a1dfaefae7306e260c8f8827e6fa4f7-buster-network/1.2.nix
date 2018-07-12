@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        buster-network = {
+        "buster-network" = {
           depends  = [
             hsPkgs.network
             hsPkgs.HTTP

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LinearSplit = {
+        "LinearSplit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmdargs

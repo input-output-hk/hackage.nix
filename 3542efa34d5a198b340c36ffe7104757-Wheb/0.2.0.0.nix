@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Wheb = {
+        "Wheb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.Wheb
               hsPkgs.base

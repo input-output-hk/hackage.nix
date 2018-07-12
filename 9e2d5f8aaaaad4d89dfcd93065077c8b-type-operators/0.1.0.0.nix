@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-operators = {
+        "type-operators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

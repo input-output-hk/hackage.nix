@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        moving-averages = {
+        "moving-averages" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          moving-averages-test = {
+          "moving-averages-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.moving-averages

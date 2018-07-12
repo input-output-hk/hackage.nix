@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-resourcegroupstagging = {
+        "amazonka-resourcegroupstagging" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-resourcegroupstagging-test = {
+          "amazonka-resourcegroupstagging-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

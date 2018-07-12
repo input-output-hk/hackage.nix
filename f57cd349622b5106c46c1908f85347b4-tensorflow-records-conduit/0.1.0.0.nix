@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tensorflow-records-conduit = {
+        "tensorflow-records-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

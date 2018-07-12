@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-doubleclick-search = {
+        "gogol-doubleclick-search" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

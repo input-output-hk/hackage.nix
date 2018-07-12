@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        fixpoint = {
+        "fixpoint" = {
           depends  = [ hsPkgs.base ];
         };
       };

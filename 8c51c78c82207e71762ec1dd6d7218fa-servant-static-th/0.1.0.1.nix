@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-static-th = {
+        "servant-static-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          servant-static-th-example = {
+          "servant-static-th-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-server
@@ -51,14 +51,14 @@ let
           };
         };
         tests = {
-          servant-static-th-doctest = {
+          "servant-static-th-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.Glob
             ];
           };
-          servant-static-th-test = {
+          "servant-static-th-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html

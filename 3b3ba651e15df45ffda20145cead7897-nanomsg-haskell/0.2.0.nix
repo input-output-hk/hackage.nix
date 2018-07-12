@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nanomsg-haskell = {
+        "nanomsg-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           libs = [ pkgs.nanomsg ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          send-messages = {
+          "send-messages" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
               hsPkgs.criterion
             ];
           };
-          vs-zeromq-bindings = {
+          "vs-zeromq-bindings" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shana = {
+        "shana" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

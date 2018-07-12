@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        recursors = {
+        "recursors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.recursors

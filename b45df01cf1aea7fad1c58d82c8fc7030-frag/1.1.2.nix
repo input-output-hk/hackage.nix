@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          frag = {
+          "frag" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT

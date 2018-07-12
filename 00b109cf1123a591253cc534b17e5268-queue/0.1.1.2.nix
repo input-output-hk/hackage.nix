@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        queue = {
+        "queue" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional _flags.usestm hsPkgs.stm;

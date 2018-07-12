@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit-algorithms = {
+        "conduit-algorithms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          catest = {
+          "catest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HAppS-Data = {
+        "HAppS-Data" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.template-haskell

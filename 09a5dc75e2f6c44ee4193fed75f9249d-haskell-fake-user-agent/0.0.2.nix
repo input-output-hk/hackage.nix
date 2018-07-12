@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-fake-user-agent = {
+        "haskell-fake-user-agent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

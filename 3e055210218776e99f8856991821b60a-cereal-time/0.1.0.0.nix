@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal-time = {
+        "cereal-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

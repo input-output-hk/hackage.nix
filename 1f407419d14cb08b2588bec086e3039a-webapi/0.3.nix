@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webapi = {
+        "webapi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

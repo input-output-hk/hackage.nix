@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rerebase = {
+        "rerebase" = {
           depends  = [ hsPkgs.rebase ];
         };
       };

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          throttle = {
+          "throttle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

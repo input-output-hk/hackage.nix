@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        llvm = {
+        "llvm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        free = {
+        "free" = {
           depends  = [
             hsPkgs.base
             hsPkgs.distributive

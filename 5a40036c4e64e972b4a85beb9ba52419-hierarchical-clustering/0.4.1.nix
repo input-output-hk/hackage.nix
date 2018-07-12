@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hierarchical-clustering = {
+        "hierarchical-clustering" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

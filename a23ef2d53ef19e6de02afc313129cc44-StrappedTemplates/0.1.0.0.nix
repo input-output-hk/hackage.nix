@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        StrappedTemplates = {
+        "StrappedTemplates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.StrappedTemplates
               hsPkgs.base

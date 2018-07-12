@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fastedit = {
+        "fastedit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-prelude
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fastedit

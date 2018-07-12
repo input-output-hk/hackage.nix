@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        property-list = {
+        "property-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring

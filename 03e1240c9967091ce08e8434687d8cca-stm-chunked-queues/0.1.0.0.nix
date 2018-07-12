@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-chunked-queues = {
+        "stm-chunked-queues" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          UnitTests = {
+          "UnitTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm

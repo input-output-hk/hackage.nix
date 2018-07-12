@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lucienne = {
+          "lucienne" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mongoDB
@@ -41,7 +41,7 @@ let
               hsPkgs.base64-bytestring
             ];
           };
-          lucienne-fetch = {
+          "lucienne-fetch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mongoDB

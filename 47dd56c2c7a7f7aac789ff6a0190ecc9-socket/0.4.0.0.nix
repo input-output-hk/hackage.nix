@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        socket = {
+        "socket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          UDP = {
+          "UDP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
               hsPkgs.async
             ];
           };
-          TCP = {
+          "TCP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
               hsPkgs.async
             ];
           };
-          TCP-sendAndRecvAll = {
+          "TCP-sendAndRecvAll" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -56,7 +56,7 @@ let
               hsPkgs.async
             ];
           };
-          PingPong = {
+          "PingPong" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -64,22 +64,14 @@ let
               hsPkgs.async
             ];
           };
-          AddrInfo = {
+          "AddrInfo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.socket
             ];
           };
-          NonBlockingIO = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.socket
-              hsPkgs.async
-            ];
-          };
-          NonBlockingIO-threaded = {
+          "NonBlockingIO" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -87,7 +79,15 @@ let
               hsPkgs.async
             ];
           };
-          IPV6_V6ONLY = {
+          "NonBlockingIO-threaded" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.bytestring
+              hsPkgs.socket
+              hsPkgs.async
+            ];
+          };
+          "IPV6_V6ONLY" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

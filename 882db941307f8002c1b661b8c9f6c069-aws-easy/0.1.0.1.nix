@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-easy = {
+        "aws-easy" = {
           depends  = [
             hsPkgs.amazonka
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          aws-easy-demo = {
+          "aws-easy-demo" = {
             depends  = [
               hsPkgs.amazonka
               hsPkgs.amazonka-dynamodb

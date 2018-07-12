@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geodetics = {
+        "geodetics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dimensional
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          GeodeticTest = {
+          "GeodeticTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hyphenation = {
+        "hyphenation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

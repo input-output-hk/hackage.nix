@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        log2json = {};
+        "log2json" = {};
         exes = {
-          log2json = {
+          "log2json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

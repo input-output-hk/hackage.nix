@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-audiofile = {
+        "bindings-audiofile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        android-activity = {
+        "android-activity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

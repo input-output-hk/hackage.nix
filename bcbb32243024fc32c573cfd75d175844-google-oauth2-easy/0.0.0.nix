@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-oauth2-easy = {
+        "google-oauth2-easy" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          google-oauth2-easy-test-suite = {
+          "google-oauth2-easy-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.google-oauth2-easy
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          google-oauth2-easy-benchmarks = {
+          "google-oauth2-easy-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

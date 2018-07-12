@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        follow-file = {
+        "follow-file" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          follow-file = {
+          "follow-file" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

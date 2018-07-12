@@ -22,16 +22,16 @@ let
         buildType = "Configure";
       };
       components = {
-        process = {
+        "process" = {
           depends  = ([
             hsPkgs.directory
             hsPkgs.filepath
-          ] ++ (if !(compiler.isNhc98 && true) && system.isWindows
+          ] ++ pkgs.lib.optionals (!(compiler.isNhc98 && true)) (if system.isWindows
             then [ hsPkgs.Win32 ]
             else [ hsPkgs.unix ])) ++ [
             hsPkgs.base
           ];
-          libs = pkgs.lib.optional (!(compiler.isNhc98 && true) && system.isWindows) pkgs.kernel32;
+          libs = pkgs.lib.optionals (!(compiler.isNhc98 && true)) (pkgs.lib.optional system.isWindows pkgs.kernel32);
         };
       };
     }

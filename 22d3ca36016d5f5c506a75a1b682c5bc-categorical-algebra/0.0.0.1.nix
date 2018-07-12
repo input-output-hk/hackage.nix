@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        categorical-algebra = {
+        "categorical-algebra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.newtype

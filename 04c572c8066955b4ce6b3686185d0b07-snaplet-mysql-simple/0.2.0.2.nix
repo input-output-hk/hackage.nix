@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-mysql-simple = {
+        "snaplet-mysql-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alex-prelude = {
+        "alex-prelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

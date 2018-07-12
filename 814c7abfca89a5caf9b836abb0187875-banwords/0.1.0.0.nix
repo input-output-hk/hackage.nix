@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        banwords = {
+        "banwords" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.banwords

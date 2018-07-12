@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-prettify = {
+        "xml-prettify" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          xml-prettify = {
+          "xml-prettify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

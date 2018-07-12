@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        references = {
+        "references" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uniplate
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          lens-creation = {
+          "lens-creation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        radixtree = {
+        "radixtree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          radixtree-test = {
+          "radixtree-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.radixtree
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          radixtree-parsing = {
+          "radixtree-parsing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.radixtree
@@ -59,7 +59,7 @@ let
               hsPkgs.vector
             ];
           };
-          radixtree-search = {
+          "radixtree-search" = {
             depends  = [
               hsPkgs.base
               hsPkgs.radixtree

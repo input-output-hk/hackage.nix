@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          dph-sumsq = {
+          "dph-sumsq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -34,7 +34,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-sumsq-seq = {
+          "dph-sumsq-seq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -45,7 +45,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-dotp = {
+          "dph-dotp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -56,7 +56,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-dotp-seq = {
+          "dph-dotp-seq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -67,7 +67,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-evens = {
+          "dph-evens" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -78,7 +78,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-evens-seq = {
+          "dph-evens-seq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -89,7 +89,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-reverse = {
+          "dph-reverse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -100,7 +100,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-reverse-seq = {
+          "dph-reverse-seq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -111,7 +111,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-smvm = {
+          "dph-smvm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -122,7 +122,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-smvm-seq = {
+          "dph-smvm-seq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -133,7 +133,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-quickhull = {
+          "dph-quickhull" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -144,7 +144,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-quickhull-seq = {
+          "dph-quickhull-seq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -155,7 +155,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-quickhull-vector = {
+          "dph-quickhull-vector" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -163,7 +163,7 @@ let
               hsPkgs.random
             ];
           };
-          dph-quicksort = {
+          "dph-quicksort" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -174,7 +174,7 @@ let
               hsPkgs.old-time
             ];
           };
-          dph-nbody = {
+          "dph-nbody" = {
             depends  = if _flags.gloss
               then [
                 hsPkgs.base

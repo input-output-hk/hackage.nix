@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        work-time = {
+        "work-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          work-time = {
+          "work-time" = {
             depends  = [
               hsPkgs.base
               hsPkgs.work-time

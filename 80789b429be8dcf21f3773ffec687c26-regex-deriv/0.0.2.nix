@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-deriv = {
+        "regex-deriv" = {
           depends  = [
             hsPkgs.regex-base
             hsPkgs.parsec

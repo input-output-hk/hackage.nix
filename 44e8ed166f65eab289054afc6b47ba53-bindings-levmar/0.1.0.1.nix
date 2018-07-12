@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-levmar = {
+        "bindings-levmar" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.lapack ];
         };

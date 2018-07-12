@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedn = {
+        "hedn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedn

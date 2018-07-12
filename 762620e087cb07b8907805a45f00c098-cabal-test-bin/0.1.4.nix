@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-test-bin = {
+        "cabal-test-bin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          cabal-test-bin = {
+          "cabal-test-bin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

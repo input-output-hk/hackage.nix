@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nano-erl = {
+        "nano-erl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

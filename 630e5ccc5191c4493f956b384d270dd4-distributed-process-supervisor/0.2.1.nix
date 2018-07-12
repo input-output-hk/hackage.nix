@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-supervisor = {
+        "distributed-process-supervisor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          SupervisorTests = {
+          "SupervisorTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -77,7 +77,7 @@ let
               hsPkgs.exceptions
             ];
           };
-          NonThreadedSupervisorTests = {
+          "NonThreadedSupervisorTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

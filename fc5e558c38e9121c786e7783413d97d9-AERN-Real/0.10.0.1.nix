@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AERN-Real = {
+        "AERN-Real" = {
           depends  = if _flags.use-hmpfr
             then [
               hsPkgs.base

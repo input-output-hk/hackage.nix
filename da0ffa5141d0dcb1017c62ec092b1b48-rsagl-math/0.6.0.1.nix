@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rsagl-math = {
+        "rsagl-math" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-cnc = {
+        "haskell-cnc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          haskell-cnc-runTests = {
+          "haskell-cnc-runTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

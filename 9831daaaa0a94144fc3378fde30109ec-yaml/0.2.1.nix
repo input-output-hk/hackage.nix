@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml = {
+        "yaml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.control-monad-failure
@@ -32,7 +32,7 @@ let
           ] ++ [ hsPkgs.transformers ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests ([
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

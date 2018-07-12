@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tensorflow-ops = {
+        "tensorflow-ops" = {
           depends  = [
             hsPkgs.proto-lens
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          RegressionTest = {
+          "RegressionTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -49,7 +49,7 @@ let
               hsPkgs.tensorflow-ops
             ];
           };
-          MatrixTest = {
+          "MatrixTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -64,7 +64,7 @@ let
               hsPkgs.vector
             ];
           };
-          BuildTest = {
+          "BuildTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -79,7 +79,7 @@ let
               hsPkgs.vector
             ];
           };
-          EmbeddingOpsTest = {
+          "EmbeddingOpsTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -98,7 +98,7 @@ let
               hsPkgs.vector
             ];
           };
-          ArrayOpsTest = {
+          "ArrayOpsTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -116,7 +116,7 @@ let
               hsPkgs.vector
             ];
           };
-          OpsTest = {
+          "OpsTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -136,7 +136,7 @@ let
               hsPkgs.vector
             ];
           };
-          VariableTest = {
+          "VariableTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -149,7 +149,7 @@ let
               hsPkgs.vector
             ];
           };
-          DataFlowOpsTest = {
+          "DataFlowOpsTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -166,7 +166,7 @@ let
               hsPkgs.vector
             ];
           };
-          GradientTest = {
+          "GradientTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -182,7 +182,7 @@ let
               hsPkgs.vector
             ];
           };
-          MiscTest = {
+          "MiscTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -197,7 +197,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          NNTest = {
+          "NNTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -211,7 +211,7 @@ let
               hsPkgs.vector
             ];
           };
-          QueueTest = {
+          "QueueTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -227,7 +227,7 @@ let
               hsPkgs.vector
             ];
           };
-          TracingTest = {
+          "TracingTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -240,7 +240,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          TypesTest = {
+          "TypesTest" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -261,7 +261,7 @@ let
           };
         };
         benchmarks = {
-          FeedFetchBench = {
+          "FeedFetchBench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

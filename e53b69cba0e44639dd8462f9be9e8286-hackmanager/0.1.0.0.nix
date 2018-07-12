@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hackmanager = {
+        "hackmanager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hastache
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          hackmanager = {
+          "hackmanager" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hackmanager

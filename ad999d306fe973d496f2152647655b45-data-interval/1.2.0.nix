@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-interval = {
+        "data-interval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lattices
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          TestInterval = {
+          "TestInterval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -43,7 +43,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          TestIntegerInterval = {
+          "TestIntegerInterval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

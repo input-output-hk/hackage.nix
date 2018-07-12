@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Rlang-QQ = {
+        "Rlang-QQ" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

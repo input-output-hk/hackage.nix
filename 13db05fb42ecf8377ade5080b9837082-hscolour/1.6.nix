@@ -20,14 +20,14 @@ let
         buildType = "Custom";
       };
       components = {
-        hscolour = {
+        "hscolour" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base
           ];
         };
         exes = {
-          HsColour = {
+          "HsColour" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

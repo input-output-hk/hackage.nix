@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        datadog = {
+        "datadog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

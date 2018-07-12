@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          skypelogexport = {
+          "skypelogexport" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

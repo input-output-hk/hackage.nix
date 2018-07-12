@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Imlib = {
+        "Imlib" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.Imlib2 ];
         };

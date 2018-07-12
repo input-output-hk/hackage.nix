@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-lens = {
+        "data-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

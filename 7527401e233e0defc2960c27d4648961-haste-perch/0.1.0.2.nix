@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haste-perch = {
+        "haste-perch" = {
           depends  = if _flags.haste-inst
             then [
               hsPkgs.base

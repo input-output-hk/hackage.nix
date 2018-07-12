@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock-worker = {
+        "Spock-worker" = {
           depends  = [
             hsPkgs.Spock
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          SpockWorkerTests = {
+          "SpockWorkerTests" = {
             depends  = [
               hsPkgs.HTF
               hsPkgs.Spock-worker

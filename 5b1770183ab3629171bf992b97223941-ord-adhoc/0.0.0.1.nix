@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ord-adhoc = {
+        "ord-adhoc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.void

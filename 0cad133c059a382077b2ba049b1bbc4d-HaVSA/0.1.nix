@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        HaVSA = {
+        "HaVSA" = {
           depends  = [
             hsPkgs.base
             hsPkgs.logict
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logict

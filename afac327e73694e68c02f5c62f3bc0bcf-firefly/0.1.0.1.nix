@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        firefly = {
+        "firefly" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

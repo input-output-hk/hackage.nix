@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          haddock = {
+          "haddock" = {
             depends  = [
               hsPkgs.haskell98
             ] ++ (if _flags.small_base

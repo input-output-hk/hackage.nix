@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        salvia-sessions = {
+        "salvia-sessions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe

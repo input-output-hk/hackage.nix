@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        getopt-generics = {
+        "getopt-generics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.generics-sop
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.getopt-generics

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsc3-dot = {
+        "hsc3-dot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

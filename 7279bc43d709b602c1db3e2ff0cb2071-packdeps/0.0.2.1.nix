@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        packdeps = {
+        "packdeps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tar
@@ -37,9 +37,9 @@ let
           ];
         };
         exes = {
-          packdeps = {};
-          packdeps-yesod = {};
-          save-newest = {
+          "packdeps" = {};
+          "packdeps-yesod" = {};
+          "save-newest" = {
             depends  = [
               hsPkgs.yesod-newsfeed
               hsPkgs.yesod

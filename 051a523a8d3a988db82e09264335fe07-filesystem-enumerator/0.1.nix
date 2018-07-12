@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filesystem-enumerator = {
+        "filesystem-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.enumerator

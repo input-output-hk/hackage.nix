@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pomohoro = {
+        "pomohoro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          pomohoro-exe = {
+          "pomohoro-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          pomohoro-test = {
+          "pomohoro-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pomohoro

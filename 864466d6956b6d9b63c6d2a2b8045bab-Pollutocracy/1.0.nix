@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Pollutocracy = {
+          "Pollutocracy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

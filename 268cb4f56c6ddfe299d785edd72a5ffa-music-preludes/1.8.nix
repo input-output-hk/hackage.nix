@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        music-preludes = {
+        "music-preludes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -50,37 +50,37 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          music2ly = {
+          "music2ly" = {
             depends  = [
               hsPkgs.base
               hsPkgs.music-preludes
             ];
           };
-          music2pdf = {
+          "music2pdf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.music-preludes
             ];
           };
-          music2png = {
+          "music2png" = {
             depends  = [
               hsPkgs.base
               hsPkgs.music-preludes
             ];
           };
-          music2svg = {
+          "music2svg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.music-preludes
             ];
           };
-          music2musicxml = {
+          "music2musicxml" = {
             depends  = [
               hsPkgs.base
               hsPkgs.music-preludes
             ];
           };
-          music2midi = {
+          "music2midi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.music-preludes
@@ -88,7 +88,7 @@ let
           };
         };
         tests = {
-          regression = {
+          "regression" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

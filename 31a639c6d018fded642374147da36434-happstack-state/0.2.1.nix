@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-state = {
+        "happstack-state" = {
           depends  = (([
             hsPkgs.binary
             hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
           ]) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          happstack-state-tests = {
+          "happstack-state-tests" = {
             depends  = [ hsPkgs.HUnit ];
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rail-compiler-editor = {
+        "rail-compiler-editor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.llvm-general-pure
@@ -30,13 +30,13 @@ let
           ];
         };
         exes = {
-          RailCompiler = {
+          "RailCompiler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rail-compiler-editor
             ];
           };
-          RailEditor = {
+          "RailEditor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          testcases = {
+          "testcases" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

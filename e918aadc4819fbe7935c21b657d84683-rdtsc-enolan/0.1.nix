@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rdtsc-enolan = {
+        "rdtsc-enolan" = {
           depends  = [ hsPkgs.base ];
         };
       };

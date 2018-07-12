@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rethinkdb = {
+        "rethinkdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protocol-buffers

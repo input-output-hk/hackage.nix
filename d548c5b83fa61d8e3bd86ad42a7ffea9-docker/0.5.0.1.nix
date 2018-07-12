@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        docker = {
+        "docker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -60,7 +60,7 @@ let
           ];
         };
         tests = {
-          docker-hs-tests = {
+          "docker-hs-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

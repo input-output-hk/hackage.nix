@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numhask-histogram = {
+        "numhask-histogram" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

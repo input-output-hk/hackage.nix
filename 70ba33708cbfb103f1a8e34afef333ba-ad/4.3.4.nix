@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ad = {
+        "ad" = {
           depends  = ([
             hsPkgs.array
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged) ++ pkgs.lib.optional _flags.herbie hsPkgs.HerbiePlugin;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.ad
               hsPkgs.base
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          blackscholes = {
+          "blackscholes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ad

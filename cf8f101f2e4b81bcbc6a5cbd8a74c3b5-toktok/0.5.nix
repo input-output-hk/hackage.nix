@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toktok = {
+        "toktok" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,20 +31,20 @@ let
           ];
         };
         exes = {
-          toktok-benchmark = {
+          "toktok-benchmark" = {
             depends  = [
               hsPkgs.criterion
               hsPkgs.progression
               hsPkgs.filepath
             ];
           };
-          toktok-test = {
+          "toktok-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HUnit
             ];
           };
-          toktok = {
+          "toktok" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -52,7 +52,7 @@ let
               hsPkgs.iconv
             ];
           };
-          gf-extract-lexicon = {
+          "gf-extract-lexicon" = {
             depends  = [ hsPkgs.base ];
           };
         };

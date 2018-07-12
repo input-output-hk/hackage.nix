@@ -28,7 +28,7 @@ let
         buildType = "Custom";
       };
       components = {
-        structures = {
+        "structures" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.structures
@@ -61,7 +61,7 @@ let
               hsPkgs.tasty-th
             ];
           };
-          hunit = {
+          "hunit" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hunit)) [
               hsPkgs.base
               hsPkgs.structures
@@ -71,13 +71,13 @@ let
               hsPkgs.tasty-th
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.bytestring
@@ -92,7 +92,7 @@ let
           };
         };
         benchmarks = {
-          maps = {
+          "maps" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -104,7 +104,7 @@ let
               hsPkgs.vector
             ];
           };
-          lookups = {
+          "lookups" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -117,7 +117,7 @@ let
               hsPkgs.vector
             ];
           };
-          inserts = {
+          "inserts" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

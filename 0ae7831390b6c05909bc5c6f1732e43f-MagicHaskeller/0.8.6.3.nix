@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MagicHaskeller = {
+        "MagicHaskeller" = {
           depends  = (([
             hsPkgs.template-haskell
             hsPkgs.base

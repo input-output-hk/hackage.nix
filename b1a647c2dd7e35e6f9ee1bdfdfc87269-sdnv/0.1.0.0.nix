@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdnv = {
+        "sdnv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

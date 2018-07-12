@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hifi = {
+        "hifi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mustache
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hifi = {
+          "hifi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hifi
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          hifi-test = {
+          "hifi-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hifi

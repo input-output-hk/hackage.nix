@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-default-instances-text = {
+        "data-default-instances-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

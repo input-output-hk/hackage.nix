@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        cv-combinators = {
+        "cv-combinators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HOpenCV
           ];
         };
         exes = {
-          test-cv-combinators = {
+          "test-cv-combinators" = {
             depends  = [ hsPkgs.base ];
           };
         };

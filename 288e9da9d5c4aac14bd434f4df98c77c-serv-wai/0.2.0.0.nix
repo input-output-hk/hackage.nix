@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serv-wai = {
+        "serv-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          serv-wai-test = {
+          "serv-wai-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.serv

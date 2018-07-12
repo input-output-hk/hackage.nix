@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-tagsoup = {
+        "hxt-tagsoup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

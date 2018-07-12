@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RandomDotOrg = {
+        "RandomDotOrg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP-Simple

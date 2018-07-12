@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process = {
+        "distributed-process" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          TestCH = {
+          "TestCH" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -59,7 +59,7 @@ let
               hsPkgs.ansi-terminal
             ];
           };
-          TestClosure = {
+          "TestClosure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

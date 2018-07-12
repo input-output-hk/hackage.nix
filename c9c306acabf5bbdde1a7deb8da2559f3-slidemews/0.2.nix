@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          slidemews = {
+          "slidemews" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        human-parse = {
+        "human-parse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

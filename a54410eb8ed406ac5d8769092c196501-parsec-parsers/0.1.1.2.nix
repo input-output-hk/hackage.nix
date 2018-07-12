@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        parsec-parsers = {
+        "parsec-parsers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        verilog = {
+        "verilog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

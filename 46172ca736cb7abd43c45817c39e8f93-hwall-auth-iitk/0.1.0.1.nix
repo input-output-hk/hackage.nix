@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          firewall-auth = {
+          "firewall-auth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

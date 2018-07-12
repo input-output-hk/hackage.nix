@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NestedSampling = {
+        "NestedSampling" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassy = {
+        "cassy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

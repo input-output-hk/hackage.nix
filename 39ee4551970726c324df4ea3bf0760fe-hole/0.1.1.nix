@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hole = {
+        "hole" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

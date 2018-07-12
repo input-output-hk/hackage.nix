@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        audacity = {
+        "audacity" = {
           depends  = [
             hsPkgs.utility-ht
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          sox-concat = {
+          "sox-concat" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.audacity
               hsPkgs.soxlib

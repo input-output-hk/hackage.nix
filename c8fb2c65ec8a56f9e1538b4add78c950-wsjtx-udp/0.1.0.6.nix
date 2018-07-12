@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wsjtx-udp = {
+        "wsjtx-udp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          wsjtx-dump-udp = {
+          "wsjtx-dump-udp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wsjtx-udp

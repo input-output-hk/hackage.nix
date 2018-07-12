@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          confsolve = {
+          "confsolve" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

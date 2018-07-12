@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambda-devs = {
+        "lambda-devs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          lambda-devs-example = {
+          "lambda-devs-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          lambda-devs-tests = {
+          "lambda-devs-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

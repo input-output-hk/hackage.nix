@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        named-lock = {
+        "named-lock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

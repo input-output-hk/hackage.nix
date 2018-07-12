@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simplemesh = {
+        "simplemesh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear

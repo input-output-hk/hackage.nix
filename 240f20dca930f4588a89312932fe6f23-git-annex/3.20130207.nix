@@ -31,7 +31,7 @@ let
       };
       components = {
         exes = {
-          git-annex = {
+          "git-annex" = {
             depends  = ((((((((([
               hsPkgs.MissingH
               hsPkgs.hslogger
@@ -99,7 +99,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.testpack
               hsPkgs.HUnit

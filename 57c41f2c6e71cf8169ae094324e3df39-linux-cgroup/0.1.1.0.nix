@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linux-cgroup = {
+        "linux-cgroup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

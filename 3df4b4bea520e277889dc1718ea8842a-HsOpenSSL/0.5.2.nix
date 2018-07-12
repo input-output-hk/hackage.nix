@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        HsOpenSSL = {
+        "HsOpenSSL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoogle = {
+        "hoogle" = {
           depends  = [
             hsPkgs.network-uri-flag
             hsPkgs.QuickCheck
@@ -64,7 +64,7 @@ let
           ];
         };
         exes = {
-          hoogle = {
+          "hoogle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hoogle

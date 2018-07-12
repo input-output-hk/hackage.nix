@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        linear = {
+        "linear" = {
           depends  = [
             hsPkgs.adjunctions
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -53,7 +53,7 @@ let
               hsPkgs.simple-reflect
             ];
           };
-          UnitTests = {
+          "UnitTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

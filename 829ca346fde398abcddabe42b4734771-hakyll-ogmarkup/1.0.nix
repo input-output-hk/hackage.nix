@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-ogmarkup = {
+        "hakyll-ogmarkup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hakyll

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        linear = {
+        "linear" = {
           depends  = [
             hsPkgs.base-orphans
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

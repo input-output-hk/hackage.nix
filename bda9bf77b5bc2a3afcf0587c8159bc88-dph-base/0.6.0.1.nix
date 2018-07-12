@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dph-base = {
+        "dph-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

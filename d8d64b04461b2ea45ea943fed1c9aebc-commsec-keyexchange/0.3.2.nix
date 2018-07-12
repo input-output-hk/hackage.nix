@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        commsec-keyexchange = {
+        "commsec-keyexchange" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

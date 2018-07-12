@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cookbook = {
+        "cookbook" = {
           depends  = [ hsPkgs.base ];
         };
       };

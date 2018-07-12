@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        critbit = {
+        "critbit" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

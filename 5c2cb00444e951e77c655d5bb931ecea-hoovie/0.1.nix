@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hoovie = {
+          "hoovie" = {
             depends  = [
               hsPkgs.network-multicast
               hsPkgs.time

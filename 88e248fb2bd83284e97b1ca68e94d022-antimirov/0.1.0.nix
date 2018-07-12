@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        antimirov = {
+        "antimirov" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.base

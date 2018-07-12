@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-pretty-bc-parser = {
+        "llvm-pretty-bc-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          llvm-disasm = {
+          "llvm-disasm" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.base
@@ -51,7 +51,7 @@ let
               hsPkgs.llvm-pretty-bc-parser
             ];
           };
-          fuzz-llvm-disasm = {
+          "fuzz-llvm-disasm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -73,7 +73,7 @@ let
           };
         };
         tests = {
-          disasm-test = {
+          "disasm-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

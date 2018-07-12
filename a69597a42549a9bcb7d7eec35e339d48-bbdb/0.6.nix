@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        bbdb = {
+        "bbdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         tests = {
-          bbdb-tests = {
+          "bbdb-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

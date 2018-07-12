@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        normalize = {
+        "normalize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cassava
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          normalize = {
+          "normalize" = {
             depends  = [
               hsPkgs.base
               hsPkgs.normalize

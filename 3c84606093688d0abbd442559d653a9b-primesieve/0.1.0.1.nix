@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        primesieve = {
+        "primesieve" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foundation
           ];
         };
         exes = {
-          prime-count = {
+          "prime-count" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foundation
@@ -35,7 +35,7 @@ let
             ];
             libs = [ pkgs.primesieve ];
           };
-          prime-example = {
+          "prime-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foundation

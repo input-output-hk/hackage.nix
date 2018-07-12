@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        explicit-exception = {
+        "explicit-exception" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

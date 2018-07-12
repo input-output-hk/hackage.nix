@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chunky = {
+        "chunky" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          chunky-test = {
+          "chunky-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          test-roundtrip = {
+          "test-roundtrip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

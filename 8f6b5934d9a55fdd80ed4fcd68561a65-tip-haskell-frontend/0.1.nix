@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tip-haskell-frontend = {
+        "tip-haskell-frontend" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          tip-ghc = {
+          "tip-ghc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tip-haskell-frontend

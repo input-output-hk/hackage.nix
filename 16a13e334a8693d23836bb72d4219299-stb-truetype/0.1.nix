@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stb-truetype = {
+        "stb-truetype" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

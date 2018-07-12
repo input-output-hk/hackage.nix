@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        tfp = {
+        "tfp" = {
           depends  = [
             hsPkgs.utility-ht
             hsPkgs.base
           ];
         };
         tests = {
-          tfp-test = {
+          "tfp-test" = {
             depends  = [
               hsPkgs.tfp
               hsPkgs.QuickCheck

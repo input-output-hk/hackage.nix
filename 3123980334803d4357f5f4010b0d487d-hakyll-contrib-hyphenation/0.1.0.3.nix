@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-contrib-hyphenation = {
+        "hakyll-contrib-hyphenation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hakyll

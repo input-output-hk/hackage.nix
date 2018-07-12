@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uhttpc = {
+        "uhttpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          uhttpc-bench = {
+          "uhttpc-bench" = {
             depends  = [
               hsPkgs.uhttpc
               hsPkgs.base

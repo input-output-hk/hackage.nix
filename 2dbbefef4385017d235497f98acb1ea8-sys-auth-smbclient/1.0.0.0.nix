@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sys-auth-smbclient = {
+        "sys-auth-smbclient" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

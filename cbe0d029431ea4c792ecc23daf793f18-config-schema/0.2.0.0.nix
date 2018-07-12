@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        config-schema = {
+        "config-schema" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

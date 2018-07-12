@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mustache2hs = {
+          "mustache2hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

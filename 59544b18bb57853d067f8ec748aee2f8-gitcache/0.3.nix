@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gitcache = {
+          "gitcache" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

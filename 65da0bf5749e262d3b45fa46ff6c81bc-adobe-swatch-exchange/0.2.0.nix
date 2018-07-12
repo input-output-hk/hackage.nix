@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        adobe-swatch-exchange = {
+        "adobe-swatch-exchange" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          ase2css = {
+          "ase2css" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -43,7 +43,7 @@ let
               hsPkgs.pretty
             ];
           };
-          ase2less = {
+          "ase2less" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

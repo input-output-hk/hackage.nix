@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atomic-primops = {
+        "atomic-primops" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

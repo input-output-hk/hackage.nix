@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          record-dot-preprocessor = {
+          "record-dot-preprocessor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

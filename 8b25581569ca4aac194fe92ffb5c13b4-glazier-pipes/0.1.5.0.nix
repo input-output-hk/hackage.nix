@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glazier-pipes = {
+        "glazier-pipes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.glazier

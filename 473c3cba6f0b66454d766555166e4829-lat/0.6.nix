@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lat = {
+          "lat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint

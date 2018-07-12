@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          FTPLine = {
+          "FTPLine" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

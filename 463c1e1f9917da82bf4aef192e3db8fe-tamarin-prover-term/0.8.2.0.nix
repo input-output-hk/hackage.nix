@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tamarin-prover-term = {
+        "tamarin-prover-term" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

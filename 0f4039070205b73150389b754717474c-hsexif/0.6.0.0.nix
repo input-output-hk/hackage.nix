@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsexif = {
+        "hsexif" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

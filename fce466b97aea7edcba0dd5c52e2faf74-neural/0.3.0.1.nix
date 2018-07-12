@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        neural = {
+        "neural" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ad
@@ -54,7 +54,7 @@ let
           ];
         };
         exes = {
-          iris = {
+          "iris" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -62,7 +62,7 @@ let
               hsPkgs.text
             ];
           };
-          sin = {
+          "sin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -71,14 +71,14 @@ let
               hsPkgs.MonadRandom
             ];
           };
-          sqrt = {
+          "sqrt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.MonadRandom
               hsPkgs.neural
             ];
           };
-          MNIST = {
+          "MNIST" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -90,7 +90,7 @@ let
           };
         };
         tests = {
-          neural-test = {
+          "neural-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -98,7 +98,7 @@ let
               hsPkgs.neural
             ];
           };
-          neural-doctest = {
+          "neural-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -107,7 +107,7 @@ let
           };
         };
         benchmarks = {
-          neural-bench = {
+          "neural-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

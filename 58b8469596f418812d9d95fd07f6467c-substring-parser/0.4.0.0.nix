@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        substring-parser = {
+        "substring-parser" = {
           depends  = [
             hsPkgs.NoTrace
             hsPkgs.attoparsec
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          substring-parser-test = {
+          "substring-parser-test" = {
             depends  = [
               hsPkgs.NoTrace
               hsPkgs.QuickCheck

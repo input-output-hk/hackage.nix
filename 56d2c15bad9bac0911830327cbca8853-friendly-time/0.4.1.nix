@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        friendly-time = {
+        "friendly-time" = {
           depends  = [
             hsPkgs.time
             hsPkgs.old-locale
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.time
               hsPkgs.old-locale

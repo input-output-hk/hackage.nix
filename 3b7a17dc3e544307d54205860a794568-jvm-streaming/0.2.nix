@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jvm-streaming = {
+        "jvm-streaming" = {
           depends  = [
             hsPkgs.base
             hsPkgs.distributed-closure
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

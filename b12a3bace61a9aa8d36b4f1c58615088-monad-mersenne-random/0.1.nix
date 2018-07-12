@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-mersenne-random = {
+        "monad-mersenne-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mersenne-random-pure64

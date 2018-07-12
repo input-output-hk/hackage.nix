@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gmndl = {
+          "gmndl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

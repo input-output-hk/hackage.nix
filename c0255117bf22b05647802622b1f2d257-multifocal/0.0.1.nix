@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multifocal = {
+        "multifocal" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          multifocal = {
+          "multifocal" = {
             depends  = [
               hsPkgs.mtl
               hsPkgs.base

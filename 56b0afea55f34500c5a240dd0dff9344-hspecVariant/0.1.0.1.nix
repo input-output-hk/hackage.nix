@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspecVariant = {
+        "hspecVariant" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheckVariant

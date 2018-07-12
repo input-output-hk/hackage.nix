@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debian-build = {
+        "debian-build" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          odebuild = {
+          "odebuild" = {
             depends  = [
               hsPkgs.base
               hsPkgs.debian-build

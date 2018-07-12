@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pit = {
+        "pit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          pit = {
+          "pit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pit

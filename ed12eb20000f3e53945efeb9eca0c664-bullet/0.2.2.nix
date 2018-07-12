@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bullet = {
+        "bullet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vect

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hledger-chart = {
+          "hledger-chart" = {
             depends  = [
               hsPkgs.hledger
               hsPkgs.hledger-lib

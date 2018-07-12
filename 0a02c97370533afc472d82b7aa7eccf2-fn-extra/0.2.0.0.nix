@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fn-extra = {
+        "fn-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.heist

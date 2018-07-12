@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protocol-buffers-descriptor-fork = {
+        "protocol-buffers-descriptor-fork" = {
           depends  = [
             hsPkgs.protocol-buffers-fork
             hsPkgs.bytestring

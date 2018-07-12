@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mines = {
+          "mines" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

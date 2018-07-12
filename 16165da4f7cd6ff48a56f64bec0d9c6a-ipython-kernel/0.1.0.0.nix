@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ipython-kernel = {
+        "ipython-kernel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

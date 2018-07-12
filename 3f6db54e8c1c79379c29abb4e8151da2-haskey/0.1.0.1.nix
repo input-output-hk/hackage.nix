@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskey = {
+        "haskey" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          haskey-example = {
+          "haskey-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskey
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          haskey-properties = {
+          "haskey-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -71,7 +71,7 @@ let
               hsPkgs.haskey-btree
             ];
           };
-          haskey-integration = {
+          "haskey-integration" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

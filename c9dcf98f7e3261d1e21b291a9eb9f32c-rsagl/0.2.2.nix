@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rsagl = {
+        "rsagl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

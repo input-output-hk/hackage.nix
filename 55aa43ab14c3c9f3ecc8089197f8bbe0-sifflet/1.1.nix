@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          sifflet = {
+          "sifflet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cairo

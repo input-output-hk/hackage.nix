@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exherbo-cabal = {
+        "exherbo-cabal" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          exherbo-cabal = {
+          "exherbo-cabal" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

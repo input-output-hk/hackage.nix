@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-framework-sandbox = {
+        "test-framework-sandbox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal

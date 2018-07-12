@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iban = {
+        "iban" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.iban

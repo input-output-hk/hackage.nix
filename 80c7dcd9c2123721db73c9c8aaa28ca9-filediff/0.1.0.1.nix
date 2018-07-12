@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filediff = {
+        "filediff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-filediff = {
+          "test-filediff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

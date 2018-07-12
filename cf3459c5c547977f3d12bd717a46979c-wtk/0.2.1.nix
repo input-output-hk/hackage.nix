@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wtk = {
+        "wtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale

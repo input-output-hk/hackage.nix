@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cpython = {
+        "cpython" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

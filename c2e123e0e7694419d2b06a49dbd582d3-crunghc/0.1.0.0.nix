@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          crunghc = {
+          "crunghc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

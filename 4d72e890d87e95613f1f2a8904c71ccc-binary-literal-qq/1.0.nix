@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-literal-qq = {
+        "binary-literal-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

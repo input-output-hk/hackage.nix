@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        silvi = {
+        "silvi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quantification

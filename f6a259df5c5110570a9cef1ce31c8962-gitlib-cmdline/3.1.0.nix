@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gitlib-cmdline = {
+        "gitlib-cmdline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gitlib
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          smoke = {
+          "smoke" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gitlib

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        deburr = {
+        "deburr" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          deburr-test = {
+          "deburr-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deburr

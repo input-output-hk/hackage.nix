@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitcoin-payment-channel = {
+        "bitcoin-payment-channel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

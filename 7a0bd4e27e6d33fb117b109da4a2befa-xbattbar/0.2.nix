@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          xbattbar = {
+          "xbattbar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11

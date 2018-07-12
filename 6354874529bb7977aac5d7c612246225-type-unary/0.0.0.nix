@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-unary = {
+        "type-unary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.functor-combo

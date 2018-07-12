@@ -25,7 +25,7 @@ let
       };
       components = {
         exes = {
-          PortFusion = {
+          "PortFusion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unique = {
+        "unique" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

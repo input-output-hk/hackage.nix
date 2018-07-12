@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          warp = {
+          "warp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.warp

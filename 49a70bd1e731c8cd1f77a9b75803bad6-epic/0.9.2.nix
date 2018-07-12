@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        epic = {
+        "epic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          epic = {
+          "epic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

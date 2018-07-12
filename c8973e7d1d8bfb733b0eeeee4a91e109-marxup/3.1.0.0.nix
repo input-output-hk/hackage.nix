@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        marxup = {
+        "marxup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          marxup = {
+          "marxup" = {
             depends  = [
               hsPkgs.configurator
               hsPkgs.base
@@ -47,7 +47,7 @@ let
               hsPkgs.dlist
             ];
           };
-          marxup-example = {
+          "marxup-example" = {
             depends  = [
               hsPkgs.marxup
               hsPkgs.lp-diagrams

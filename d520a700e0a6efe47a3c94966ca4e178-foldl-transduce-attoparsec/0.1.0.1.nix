@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        foldl-transduce-attoparsec = {
+        "foldl-transduce-attoparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -45,7 +45,7 @@ let
               hsPkgs.attoparsec
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

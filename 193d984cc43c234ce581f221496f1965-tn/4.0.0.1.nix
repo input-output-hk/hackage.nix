@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tn = {
+        "tn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          tn = {
+          "tn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative

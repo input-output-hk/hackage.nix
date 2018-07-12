@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pqc = {
+        "pqc" = {
           depends  = if _flags.split-base
             then [
               hsPkgs.base
@@ -35,7 +35,7 @@ let
             ];
         };
         tests = {
-          Example = {
+          "Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pqc

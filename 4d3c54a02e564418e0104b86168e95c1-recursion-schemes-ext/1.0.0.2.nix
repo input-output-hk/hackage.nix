@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        recursion-schemes-ext = {
+        "recursion-schemes-ext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.recursion-schemes
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          recursion-schemes-test = {
+          "recursion-schemes-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.recursion-schemes-ext
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          recursion-schemes-bench = {
+          "recursion-schemes-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.recursion-schemes-ext

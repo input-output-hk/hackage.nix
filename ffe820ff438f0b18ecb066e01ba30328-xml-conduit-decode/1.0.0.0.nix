@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-conduit-decode = {
+        "xml-conduit-decode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default

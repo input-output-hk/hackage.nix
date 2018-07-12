@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        btree-concurrent = {
+        "btree-concurrent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          quickcheck-highlevel = {
+          "quickcheck-highlevel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

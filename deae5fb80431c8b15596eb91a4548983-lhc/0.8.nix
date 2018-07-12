@@ -26,7 +26,7 @@ let
       };
       components = {
         exes = {
-          lhc = {
+          "lhc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -47,14 +47,14 @@ let
               hsPkgs.ghc
             ];
           };
-          lhc-regress = {
+          "lhc-regress" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.extensible-exceptions
             ];
           };
-          lhc-pkg = {
+          "lhc-pkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

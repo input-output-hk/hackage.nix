@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-ggit = {
+        "gi-ggit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

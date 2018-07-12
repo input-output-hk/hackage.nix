@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        garepinoh = {
+        "garepinoh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskeline
@@ -28,14 +28,14 @@ let
           ];
         };
         exes = {
-          garepinoh = {
+          "garepinoh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline
               hsPkgs.transformers
             ];
           };
-          garepiboh = {
+          "garepiboh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline

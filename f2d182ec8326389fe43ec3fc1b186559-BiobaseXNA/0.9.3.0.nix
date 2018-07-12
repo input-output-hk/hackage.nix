@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseXNA = {
+        "BiobaseXNA" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          SubOptDistance = {
+          "SubOptDistance" = {
             depends  = [
               hsPkgs.base
               hsPkgs.BiobaseXNA

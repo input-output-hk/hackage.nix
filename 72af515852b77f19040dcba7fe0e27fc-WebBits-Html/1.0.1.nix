@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        WebBits-Html = {
+        "WebBits-Html" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

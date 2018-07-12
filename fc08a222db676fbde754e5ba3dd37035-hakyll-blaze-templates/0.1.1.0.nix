@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-blaze-templates = {
+        "hakyll-blaze-templates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hakyll

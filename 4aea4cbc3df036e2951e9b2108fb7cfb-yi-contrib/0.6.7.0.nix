@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-contrib = {
+        "yi-contrib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alloy = {
+        "alloy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

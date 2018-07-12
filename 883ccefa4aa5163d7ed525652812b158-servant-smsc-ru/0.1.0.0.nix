@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-smsc-ru = {
+        "servant-smsc-ru" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-servant-smsc-ru = {
+          "test-servant-smsc-ru" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

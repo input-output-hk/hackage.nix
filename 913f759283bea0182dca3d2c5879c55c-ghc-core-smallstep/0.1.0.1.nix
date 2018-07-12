@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-core-smallstep = {
+        "ghc-core-smallstep" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

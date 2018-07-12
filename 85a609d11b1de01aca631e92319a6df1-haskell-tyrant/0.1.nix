@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tyrant = {
+        "haskell-tyrant" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

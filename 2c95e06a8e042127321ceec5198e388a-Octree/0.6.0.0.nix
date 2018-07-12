@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Octree = {
+        "Octree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test_Octree = {
+          "test_Octree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.linear
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          bench-octree = {
+          "bench-octree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-simple-queue = {
+        "postgresql-simple-queue" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.async

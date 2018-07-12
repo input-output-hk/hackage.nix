@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        msgpack-rpc = {
+        "msgpack-rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

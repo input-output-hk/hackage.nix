@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-foreign = {
+        "servant-foreign" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant

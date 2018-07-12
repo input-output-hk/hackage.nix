@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wraxml = {
+        "wraxml" = {
           depends  = [
             hsPkgs.polyparse
             hsPkgs.tagsoup

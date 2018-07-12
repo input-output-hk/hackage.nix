@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ihaskell-diagrams = {
+        "ihaskell-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude

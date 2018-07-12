@@ -29,7 +29,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-money = {
+        "safe-money" = {
           depends  = ((((((([
             hsPkgs.base
             hsPkgs.constraints
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = ((((((([
               hsPkgs.base
               hsPkgs.bytestring

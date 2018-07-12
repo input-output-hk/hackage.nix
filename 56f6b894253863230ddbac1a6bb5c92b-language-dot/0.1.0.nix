@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-dot = {
+        "language-dot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          ppdot = {
+          "ppdot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

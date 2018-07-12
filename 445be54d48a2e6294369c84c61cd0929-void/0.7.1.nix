@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        void = {
+        "void" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quantum-random = {
+        "quantum-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansigraph
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          qrand = {
+          "qrand" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          test-quantum-random = {
+          "test-quantum-random" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quantum-random

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Quelea = {
+        "Quelea" = {
           depends  = [
             hsPkgs.cassandra-cql
             hsPkgs.base

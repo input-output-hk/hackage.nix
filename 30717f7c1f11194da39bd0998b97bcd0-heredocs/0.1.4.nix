@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heredocs = {
+        "heredocs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

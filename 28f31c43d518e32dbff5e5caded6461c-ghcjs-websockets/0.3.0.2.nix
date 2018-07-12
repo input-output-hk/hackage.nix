@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-websockets = {
+        "ghcjs-websockets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring

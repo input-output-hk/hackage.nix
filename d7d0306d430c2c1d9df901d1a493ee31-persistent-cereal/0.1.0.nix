@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-cereal = {
+        "persistent-cereal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal

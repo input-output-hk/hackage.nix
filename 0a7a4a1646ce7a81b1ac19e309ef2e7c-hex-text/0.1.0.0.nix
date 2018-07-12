@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hex-text = {
+        "hex-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base16-bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

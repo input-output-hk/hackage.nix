@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digestive-functors-snap = {
+        "digestive-functors-snap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extralife = {
+        "extralife" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client

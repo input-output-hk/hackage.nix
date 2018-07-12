@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        prefix-units = {
+        "prefix-units" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test-units = {
+          "test-units" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

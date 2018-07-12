@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mime-mail = {
+        "mime-mail" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

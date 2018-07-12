@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webex-teams-pipes = {
+        "webex-teams-pipes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          webex-teams-pipes-exe = {
+          "webex-teams-pipes-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          webex-teams-conduit-test = {
+          "webex-teams-conduit-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.async

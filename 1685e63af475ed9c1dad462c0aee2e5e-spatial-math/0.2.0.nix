@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        spatial-math = {
+        "spatial-math" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

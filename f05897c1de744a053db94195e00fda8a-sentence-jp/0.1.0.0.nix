@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sentence-jp = {
+        "sentence-jp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mecab

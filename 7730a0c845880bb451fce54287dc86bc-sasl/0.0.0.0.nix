@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sasl = {
+        "sasl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

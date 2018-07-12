@@ -23,26 +23,26 @@ let
       };
       components = {
         exes = {
-          yesod-blog = {
+          "yesod-blog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod
             ];
           };
-          yesod-ajax = {
+          "yesod-ajax" = {
             depends  = [
               hsPkgs.yesod-static
               hsPkgs.blaze-html
               hsPkgs.yesod
             ];
           };
-          yesod-file-echo = {
+          "yesod-file-echo" = {
             depends  = [
               hsPkgs.text
               hsPkgs.yesod
             ];
           };
-          yesod-pretty-yaml = {
+          "yesod-pretty-yaml" = {
             depends  = [
               hsPkgs.data-object-yaml
               hsPkgs.data-object
@@ -50,10 +50,10 @@ let
               hsPkgs.yesod
             ];
           };
-          yesod-i18n = {};
-          yesod-session = {};
-          yesod-form = {};
-          yesod-persistent-synopsis = {
+          "yesod-i18n" = {};
+          "yesod-session" = {};
+          "yesod-form" = {};
+          "yesod-persistent-synopsis" = {
             depends  = [
               hsPkgs.transformers
               hsPkgs.persistent-sqlite
@@ -61,13 +61,13 @@ let
             ];
             libs = [ pkgs.sqlite3 ];
           };
-          yesod-hamlet-synopsis = {
+          "yesod-hamlet-synopsis" = {
             depends  = [
               hsPkgs.hamlet
               hsPkgs.yesod-core
             ];
           };
-          yesod-chat = {
+          "yesod-chat" = {
             depends  = [ hsPkgs.stm ];
           };
         };

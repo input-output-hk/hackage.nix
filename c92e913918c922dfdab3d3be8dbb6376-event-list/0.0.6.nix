@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        event-list = {
+        "event-list" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base
@@ -38,6 +38,6 @@ let
               hsPkgs.QuickCheck
             ];
         };
-        exes = { test = {}; };
+        exes = { "test" = {}; };
       };
     }

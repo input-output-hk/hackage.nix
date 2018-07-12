@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        minioperational = {
+        "minioperational" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ThreadObjects = {
+        "ThreadObjects" = {
           depends  = [ hsPkgs.base ];
         };
       };

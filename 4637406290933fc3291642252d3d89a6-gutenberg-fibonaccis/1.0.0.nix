@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gutenberg-fibonaccis = {
+        "gutenberg-fibonaccis" = {
           depends  = [ hsPkgs.base ];
         };
       };

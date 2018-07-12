@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mwc-probability-transition = {
+        "mwc-probability-transition" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-probability

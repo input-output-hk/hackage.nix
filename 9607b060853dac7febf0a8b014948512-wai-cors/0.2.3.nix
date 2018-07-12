@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-cors = {
+        "wai-cors" = {
           depends  = ((([
             hsPkgs.attoparsec
             hsPkgs.base
@@ -51,7 +51,7 @@ let
             ]);
         };
         tests = {
-          phantomjs = {
+          "phantomjs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-openscad = {
+        "language-openscad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

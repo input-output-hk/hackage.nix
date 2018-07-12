@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mollie-api-haskell = {
+        "mollie-api-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          mollie-test = {
+          "mollie-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mollie-api-haskell

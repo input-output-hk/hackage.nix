@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLFW-b = {
+        "GLFW-b" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

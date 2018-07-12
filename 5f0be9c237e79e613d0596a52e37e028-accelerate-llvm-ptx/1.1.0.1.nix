@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-llvm-ptx = {
+        "accelerate-llvm-ptx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate

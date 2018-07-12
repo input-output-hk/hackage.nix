@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bricks-parsec = {
+        "bricks-parsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bricks-internal
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          cases = {
+          "cases" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bricks-internal
@@ -45,7 +45,7 @@ let
               hsPkgs.text
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bricks-internal

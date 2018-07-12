@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kdt = {
+        "kdt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          KdTreeTest = {
+          "KdTreeTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.kdt
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          KDTBenchmark = {
+          "KDTBenchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.kdt

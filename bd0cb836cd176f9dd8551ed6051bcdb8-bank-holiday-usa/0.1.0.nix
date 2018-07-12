@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        bank-holiday-usa = {
+        "bank-holiday-usa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bank-holiday-usa

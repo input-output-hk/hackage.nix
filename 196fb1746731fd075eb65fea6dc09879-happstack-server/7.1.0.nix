@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-server = {
+        "happstack-server" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -59,7 +59,7 @@ let
             ])) ++ pkgs.lib.optional (_flags.template_haskell && !system.isArm) hsPkgs.template-haskell) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          happstack-server-tests = {
+          "happstack-server-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fortytwo = {
+        "fortytwo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fortytwo
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.fortytwo
               hsPkgs.base
@@ -45,7 +45,7 @@ let
               hsPkgs.hspec
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.fortytwo
               hsPkgs.base

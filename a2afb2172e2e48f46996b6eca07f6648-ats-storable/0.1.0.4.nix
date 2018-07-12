@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        ats-storable = {
+        "ats-storable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.composition-prelude
           ];
         };
         tests = {
-          ats-generic-test = {
+          "ats-generic-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ats-storable

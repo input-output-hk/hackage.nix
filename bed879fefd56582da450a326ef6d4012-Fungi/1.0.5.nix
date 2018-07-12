@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fungi = {
+          "fungi" = {
             depends  = [
               hsPkgs.mwc-random
               hsPkgs.containers

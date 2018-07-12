@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        minio-hs = {
+        "minio-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -52,7 +52,7 @@ let
           ];
         };
         tests = {
-          minio-hs-live-server-test = {
+          "minio-hs-live-server-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.minio-hs
@@ -88,7 +88,7 @@ let
               hsPkgs.xml-conduit
             ];
           };
-          minio-hs-test = {
+          "minio-hs-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.minio-hs

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        craft = {
+        "craft" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -69,7 +69,7 @@ let
           ];
         };
         tests = {
-          craft-test = {
+          "craft-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.craft

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-simple-sop = {
+        "postgresql-simple-sop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.postgresql-simple

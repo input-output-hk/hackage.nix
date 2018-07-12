@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal2spec = {
+        "cabal2spec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          cabal2spec = {
+          "cabal2spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          regression-test = {
+          "regression-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

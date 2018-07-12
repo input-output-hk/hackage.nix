@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        interruptible = {
+        "interruptible" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          all = {
+          "all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

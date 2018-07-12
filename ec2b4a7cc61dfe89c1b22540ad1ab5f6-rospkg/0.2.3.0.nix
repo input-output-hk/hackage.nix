@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rospkg = {
+        "rospkg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.fast-tagsoup;
         };
         exes = {
-          rospkg = {
+          "rospkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          rospkg-test = {
+          "rospkg-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rospkg

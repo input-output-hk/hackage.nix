@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc-fun-types = {
+        "irc-fun-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

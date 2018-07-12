@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-ldap-mediocre = {
+        "yesod-auth-ldap-mediocre" = {
           depends  = [
             hsPkgs.yesod-core
             hsPkgs.yesod-auth

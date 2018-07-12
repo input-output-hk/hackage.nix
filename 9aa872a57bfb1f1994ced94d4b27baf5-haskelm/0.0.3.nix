@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelm = {
+        "haskelm" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          haskelm = {
+          "haskelm" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -69,7 +69,7 @@ let
           };
         };
         tests = {
-          test-haskelm = {
+          "test-haskelm" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

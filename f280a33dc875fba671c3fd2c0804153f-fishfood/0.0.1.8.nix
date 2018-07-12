@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fishfood = {
+        "fishfood" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          fishfood = {
+          "fishfood" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

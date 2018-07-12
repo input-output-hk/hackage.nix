@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thyme = {
+        "thyme" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.attoparsec
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.attoparsec
@@ -58,7 +58,7 @@ let
               hsPkgs.vector-space
             ];
           };
-          rewrite = {
+          "rewrite" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base
@@ -73,7 +73,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

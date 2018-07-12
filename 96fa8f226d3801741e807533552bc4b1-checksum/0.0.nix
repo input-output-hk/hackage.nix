@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        checksum = {
+        "checksum" = {
           depends  = [
             hsPkgs.explicit-exception
             hsPkgs.utility-ht

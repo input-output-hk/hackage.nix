@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hydrogen-data = {
+        "hydrogen-data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hydrogen-prelude

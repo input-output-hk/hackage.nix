@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          defend = {
+          "defend" = {
             depends  = [
               hsPkgs.base
               hsPkgs.peakachu

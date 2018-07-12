@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          husky = {
+          "husky" = {
             depends  = [
               hsPkgs.base
               hsPkgs.readline

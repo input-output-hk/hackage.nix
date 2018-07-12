@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scotty-rest = {
+        "scotty-rest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-prelude
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          database-example = {
+          "database-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.scotty-rest
@@ -54,7 +54,7 @@ let
               hsPkgs.wai-extra
             ];
           };
-          hello-world-example = {
+          "hello-world-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.scotty-rest
@@ -62,7 +62,7 @@ let
               hsPkgs.wai-extra
             ];
           };
-          parameters-example = {
+          "parameters-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.scotty-rest
@@ -71,7 +71,7 @@ let
               hsPkgs.wai-extra
             ];
           };
-          mutable-state-example = {
+          "mutable-state-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.scotty-rest
@@ -82,7 +82,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

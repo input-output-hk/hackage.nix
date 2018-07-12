@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jose = {
+        "jose" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

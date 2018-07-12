@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-short = {
+        "bytestring-short" = {
           depends  = if _flags.use-backport
             then [
               hsPkgs.base
@@ -35,7 +35,7 @@ let
             ];
         };
         tests = {
-          prop-compiled = {
+          "prop-compiled" = {
             depends  = if _flags.use-backport
               then [
                 hsPkgs.base

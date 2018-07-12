@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gloss-game = {
+        "gloss-game" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gloss

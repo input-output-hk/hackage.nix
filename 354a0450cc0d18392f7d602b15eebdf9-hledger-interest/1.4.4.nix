@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hledger-interest = {
+          "hledger-interest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hledger-lib

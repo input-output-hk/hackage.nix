@@ -24,13 +24,13 @@ let
       };
       components = {
         exes = {
-          ghc-pkg-6_8-compat = {
+          "ghc-pkg-6_8-compat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
             ];
           };
-          cabal-dev-test = {
+          "cabal-dev-test" = {
             depends  = pkgs.lib.optionals (!(_flags.no-cabal-dev || !_flags.build-tests)) ([
               hsPkgs.MonadRandom
               hsPkgs.random
@@ -45,7 +45,7 @@ let
               hsPkgs.base
             ]) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
           };
-          cabal-dev = {
+          "cabal-dev" = {
             depends  = pkgs.lib.optionals (!_flags.no-cabal-dev) ([
               hsPkgs.bytestring
               hsPkgs.directory

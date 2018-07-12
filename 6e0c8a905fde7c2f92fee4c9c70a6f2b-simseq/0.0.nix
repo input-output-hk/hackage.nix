@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          simseq = {
+          "simseq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bio

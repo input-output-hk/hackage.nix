@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdph-closure = {
+        "hdph-closure" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.array

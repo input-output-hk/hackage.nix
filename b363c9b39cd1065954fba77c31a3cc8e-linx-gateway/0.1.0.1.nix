@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linx-gateway = {
+        "linx-gateway" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          Ping = {
+          "Ping" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          linx-gateway-tests = {
+          "linx-gateway-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

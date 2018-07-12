@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ascii = {
+        "ascii" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

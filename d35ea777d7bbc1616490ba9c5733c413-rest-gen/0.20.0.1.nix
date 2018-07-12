@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rest-gen = {
+        "rest-gen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -50,7 +50,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
         };
         tests = {
-          rest-gen-tests = {
+          "rest-gen-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

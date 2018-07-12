@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        barrier-monad = {
+        "barrier-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

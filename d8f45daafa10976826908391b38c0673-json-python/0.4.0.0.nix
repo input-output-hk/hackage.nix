@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-python = {
+        "json-python" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

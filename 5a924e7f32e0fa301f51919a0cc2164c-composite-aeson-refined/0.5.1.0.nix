@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        composite-aeson-refined = {
+        "composite-aeson-refined" = {
           depends  = [
             hsPkgs.aeson-better-errors
             hsPkgs.base

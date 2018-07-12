@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-algorithms = {
+        "vector-algorithms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          vector-algorithms-bench = {
+          "vector-algorithms-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = pkgs.lib.optionals (!(!_flags.properties)) [
               hsPkgs.base
               hsPkgs.bytestring

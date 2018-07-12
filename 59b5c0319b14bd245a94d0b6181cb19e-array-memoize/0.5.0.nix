@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        array-memoize = {
+        "array-memoize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

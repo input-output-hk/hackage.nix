@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libGenI = {
+        "libGenI" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

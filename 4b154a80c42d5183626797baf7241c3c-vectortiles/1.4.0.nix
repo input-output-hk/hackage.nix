@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vectortiles = {
+        "vectortiles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          vectortiles-test = {
+          "vectortiles-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -57,7 +57,7 @@ let
           };
         };
         benchmarks = {
-          vectortiles-bench = {
+          "vectortiles-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

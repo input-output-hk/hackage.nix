@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        panhandle = {
+        "panhandle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pandoc
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          panhandle = {
+          "panhandle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.panhandle
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.panhandle

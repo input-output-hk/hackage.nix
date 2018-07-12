@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prototype = {
+        "prototype" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monads-tf

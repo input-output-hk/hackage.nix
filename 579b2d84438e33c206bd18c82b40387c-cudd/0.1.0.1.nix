@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cudd = {
+        "cudd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

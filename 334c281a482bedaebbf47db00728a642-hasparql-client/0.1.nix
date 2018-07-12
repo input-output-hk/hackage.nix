@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasparql-client = {
+        "hasparql-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        envelope = {
+        "envelope" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          envelope-doctest = {
+          "envelope-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

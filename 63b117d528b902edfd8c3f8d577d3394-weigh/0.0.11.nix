@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        weigh = {
+        "weigh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -33,14 +33,14 @@ let
           ];
         };
         tests = {
-          weigh-test = {
+          "weigh-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.weigh
               hsPkgs.deepseq
             ];
           };
-          weigh-maps = {
+          "weigh-maps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.weigh

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-ec2 = {
+        "aws-ec2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          put-metric = {
+          "put-metric" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -60,7 +60,7 @@ let
               hsPkgs.aws-ec2
             ];
           };
-          run-inst = {
+          "run-inst" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

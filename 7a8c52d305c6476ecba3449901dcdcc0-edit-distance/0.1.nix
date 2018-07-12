@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        edit-distance = {
+        "edit-distance" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base
@@ -34,7 +34,7 @@ let
             else [ hsPkgs.base ];
         };
         exes = {
-          edit-distance-tests = {
+          "edit-distance-tests" = {
             depends  = if _flags.splitbase
               then [
                 hsPkgs.base
@@ -47,7 +47,7 @@ let
                 hsPkgs.QuickCheck
               ];
           };
-          edit-distance-benchmark = {
+          "edit-distance-benchmark" = {
             depends  = if _flags.splitbase
               then [
                 hsPkgs.base

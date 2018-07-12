@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-fft = {
+        "accelerate-fft" = {
           depends  = [
             hsPkgs.accelerate
             hsPkgs.base

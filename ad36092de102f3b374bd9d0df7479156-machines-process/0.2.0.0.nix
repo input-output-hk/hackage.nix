@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        machines-process = {
+        "machines-process" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chunked-data

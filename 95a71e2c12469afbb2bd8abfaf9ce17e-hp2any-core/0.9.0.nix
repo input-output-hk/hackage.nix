@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hp2any-core = {
+        "hp2any-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

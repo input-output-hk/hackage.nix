@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        katydid = {
+        "katydid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          katydid-exe = {
+          "katydid-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.katydid
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          katydid-test = {
+          "katydid-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.katydid
@@ -60,7 +60,7 @@ let
           };
         };
         benchmarks = {
-          criterion-benchmarks = {
+          "criterion-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.katydid

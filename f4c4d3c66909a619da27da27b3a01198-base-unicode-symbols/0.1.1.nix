@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        base-unicode-symbols = {
+        "base-unicode-symbols" = {
           depends  = [ hsPkgs.base ];
         };
       };

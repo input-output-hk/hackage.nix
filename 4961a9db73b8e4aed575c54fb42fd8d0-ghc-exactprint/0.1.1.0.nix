@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-exactprint = {
+        "ghc-exactprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        miniforth = {
+        "miniforth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl-compat
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          miniforth = {
+          "miniforth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

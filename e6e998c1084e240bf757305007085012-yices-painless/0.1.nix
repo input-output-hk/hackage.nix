@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yices-painless = {
+        "yices-painless" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

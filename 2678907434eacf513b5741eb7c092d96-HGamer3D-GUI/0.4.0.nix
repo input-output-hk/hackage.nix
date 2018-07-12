@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-GUI = {
+        "HGamer3D-GUI" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

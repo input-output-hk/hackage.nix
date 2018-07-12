@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        statsd-datadog = {
+        "statsd-datadog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-control

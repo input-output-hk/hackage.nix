@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-bson = {
+        "aeson-bson" = {
           depends  = [
             hsPkgs.array
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test-all = {
+          "test-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

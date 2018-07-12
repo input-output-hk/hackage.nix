@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dnscache = {
+        "dnscache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          massdns = {
+          "massdns" = {
             depends  = [ hsPkgs.base ];
           };
         };

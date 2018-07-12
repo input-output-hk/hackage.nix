@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unicode-properties = {
+        "unicode-properties" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

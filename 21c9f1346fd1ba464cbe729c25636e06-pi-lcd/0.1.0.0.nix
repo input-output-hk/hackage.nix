@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pi-lcd = {
+        "pi-lcd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,28 +34,28 @@ let
           ];
         };
         exes = {
-          pi-lcd-demo = {
+          "pi-lcd-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pi-lcd
               hsPkgs.text
             ];
           };
-          pi-lcd-custom = {
+          "pi-lcd-custom" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pi-lcd
               hsPkgs.text
             ];
           };
-          pi-lcd-ui = {
+          "pi-lcd-ui" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pi-lcd
               hsPkgs.text
             ];
           };
-          pi-lcd-test-rom = {
+          "pi-lcd-test-rom" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pi-lcd

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happybara-webkit = {
+        "happybara-webkit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.happybara

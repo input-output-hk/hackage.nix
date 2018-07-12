@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bsd-sysctl = {
+        "bsd-sysctl" = {
           depends  = [ hsPkgs.base ];
         };
       };

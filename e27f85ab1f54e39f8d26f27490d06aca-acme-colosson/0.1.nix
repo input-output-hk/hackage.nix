@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-colosson = {
+        "acme-colosson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

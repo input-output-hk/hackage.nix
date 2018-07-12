@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serversession-frontend-snap = {
+        "serversession-frontend-snap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

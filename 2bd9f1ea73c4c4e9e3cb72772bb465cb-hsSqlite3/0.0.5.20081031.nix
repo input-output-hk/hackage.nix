@@ -22,12 +22,12 @@ let
         buildType = "Custom";
       };
       components = {
-        hsSqlite3 = {
+        "hsSqlite3" = {
           depends  = [ hsPkgs.base ];
           pkgconfig = [
             pkgconfPkgs.sqlite3
           ];
         };
-        exes = { 5minutes = {}; };
+        exes = { "5minutes" = {}; };
       };
     }

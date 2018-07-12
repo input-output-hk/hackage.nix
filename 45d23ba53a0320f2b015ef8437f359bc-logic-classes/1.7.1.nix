@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logic-classes = {
+        "logic-classes" = {
           depends  = [
             hsPkgs.applicative-extras
             hsPkgs.atp-haskell
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          logic-classes-tests = {
+          "logic-classes-tests" = {
             depends  = [
               hsPkgs.applicative-extras
               hsPkgs.atp-haskell

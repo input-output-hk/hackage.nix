@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mysql-effect = {
+        "mysql-effect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

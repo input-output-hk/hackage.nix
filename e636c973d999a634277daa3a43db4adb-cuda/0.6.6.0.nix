@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cuda = {
+        "cuda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          nvidia-device-query = {
+          "nvidia-device-query" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cuda

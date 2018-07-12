@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        googlepolyline = {
+        "googlepolyline" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-googlepolyline = {
+          "test-googlepolyline" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

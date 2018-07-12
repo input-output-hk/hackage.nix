@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fast-mult = {
+        "fast-mult" = {
           depends  = [
             hsPkgs.base
             hsPkgs.integer-gmp

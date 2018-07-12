@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feed2twitter = {
+        "feed2twitter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,6 +29,6 @@ let
             hsPkgs.hs-twitter
           ];
         };
-        exes = { feed2twitter = {}; };
+        exes = { "feed2twitter" = {}; };
       };
     }

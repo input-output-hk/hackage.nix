@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk2hs-cast-gtk = {
+        "gtk2hs-cast-gtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hint

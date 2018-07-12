@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-transport-inmemory = {
+        "network-transport-inmemory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network-transport
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          TestMulticastInMemory = {
+          "TestMulticastInMemory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-transport-inmemory
@@ -39,7 +39,7 @@ let
               hsPkgs.network-transport-tests
             ];
           };
-          TestInMemory = {
+          "TestInMemory" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-transport-inmemory

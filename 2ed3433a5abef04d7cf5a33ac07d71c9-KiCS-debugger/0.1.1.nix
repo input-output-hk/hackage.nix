@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        KiCS-debugger = {
+        "KiCS-debugger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          mkstrict = {
+          "mkstrict" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src

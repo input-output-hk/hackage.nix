@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flat = {
+        "flat" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -52,7 +52,7 @@ let
               hsPkgs.flat
             ];
           };
-          docs = {
+          "docs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

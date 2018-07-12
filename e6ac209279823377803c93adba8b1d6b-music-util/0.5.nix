@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          music-util = {
+          "music-util" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

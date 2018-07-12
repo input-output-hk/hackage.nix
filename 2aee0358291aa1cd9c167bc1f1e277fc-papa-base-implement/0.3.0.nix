@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-base-implement = {
+        "papa-base-implement" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

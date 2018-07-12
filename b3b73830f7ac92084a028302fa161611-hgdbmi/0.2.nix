@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgdbmi = {
+        "hgdbmi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          pure = {
+          "pure" = {
             depends  = [
               hsPkgs.hgdbmi
               hsPkgs.base
@@ -40,7 +40,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          io = {
+          "io" = {
             depends  = [
               hsPkgs.hgdbmi
               hsPkgs.base

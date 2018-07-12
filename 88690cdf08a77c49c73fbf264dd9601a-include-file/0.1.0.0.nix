@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        include-file = {
+        "include-file" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          include-file-test = {
+          "include-file-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.include-file
@@ -37,7 +37,7 @@ let
           };
         };
         benchmarks = {
-          include-file-bench = {
+          "include-file-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.include-file

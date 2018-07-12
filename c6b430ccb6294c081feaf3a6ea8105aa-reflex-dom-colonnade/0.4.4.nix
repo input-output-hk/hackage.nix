@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex-dom-colonnade = {
+        "reflex-dom-colonnade" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colonnade

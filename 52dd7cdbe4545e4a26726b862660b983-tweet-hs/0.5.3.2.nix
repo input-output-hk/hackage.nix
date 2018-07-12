@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tweet-hs = {
+        "tweet-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client-tls
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          tweet = {
+          "tweet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tweet-hs
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          tweeths-test = {
+          "tweeths-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tweet-hs
@@ -64,7 +64,7 @@ let
           };
         };
         benchmarks = {
-          tweeths-bench = {
+          "tweeths-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

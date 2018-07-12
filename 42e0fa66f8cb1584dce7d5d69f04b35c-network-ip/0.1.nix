@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-ip = {
+        "network-ip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

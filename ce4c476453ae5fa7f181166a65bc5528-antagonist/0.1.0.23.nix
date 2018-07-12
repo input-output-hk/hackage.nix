@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        antagonist = {
+        "antagonist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          ironforge-yesod = {
+          "ironforge-yesod" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod

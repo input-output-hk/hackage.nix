@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parse-help = {
+        "parse-help" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [ hsPkgs.cmdargs ];
           };
         };

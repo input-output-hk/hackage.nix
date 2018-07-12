@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typehash = {
+        "typehash" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.bytestring

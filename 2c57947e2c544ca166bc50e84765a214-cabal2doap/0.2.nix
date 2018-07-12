@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal2doap = {
+          "cabal2doap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        thread-local-storage = {
+        "thread-local-storage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          test-tls = {
+          "test-tls" = {
             depends  = [
               hsPkgs.base
               hsPkgs.atomic-primops
@@ -36,7 +36,7 @@ let
           };
         };
         benchmarks = {
-          bench-haskell-tls = {
+          "bench-haskell-tls" = {
             depends  = [
               hsPkgs.thread-local-storage
               hsPkgs.base

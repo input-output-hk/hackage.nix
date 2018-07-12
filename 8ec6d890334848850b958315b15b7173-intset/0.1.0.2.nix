@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        intset = {
+        "intset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bits-extras
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework
@@ -40,7 +40,7 @@ let
               hsPkgs.intset
             ];
           };
-          fusion = {
+          "fusion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.intset
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

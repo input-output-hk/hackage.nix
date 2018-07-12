@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MASMGen = {
+        "MASMGen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

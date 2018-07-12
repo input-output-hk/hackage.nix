@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        double-conversion = {
+        "double-conversion" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.ghc-prim

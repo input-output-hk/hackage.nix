@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ShellCheck = {
+        "ShellCheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          shellcheck = {
+          "shellcheck" = {
             depends  = [
               hsPkgs.ShellCheck
               hsPkgs.base
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          test-shellcheck = {
+          "test-shellcheck" = {
             depends  = [
               hsPkgs.ShellCheck
               hsPkgs.base

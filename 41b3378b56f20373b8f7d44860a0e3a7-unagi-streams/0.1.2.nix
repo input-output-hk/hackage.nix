@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unagi-streams = {
+        "unagi-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unagi-chan

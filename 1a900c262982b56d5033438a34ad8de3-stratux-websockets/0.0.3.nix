@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        stratux-websockets = {
+        "stratux-websockets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stratux-types
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

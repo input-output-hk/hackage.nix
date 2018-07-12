@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dunai = {
+        "dunai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -31,13 +31,13 @@ let
           ];
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          haddock-coverage = {
+          "haddock-coverage" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doc-coverage)) [
               hsPkgs.base
               hsPkgs.directory

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LambdaHack = {
+        "LambdaHack" = {
           depends  = [
             hsPkgs.array
             hsPkgs.assert-failure
@@ -59,7 +59,7 @@ let
               else [ hsPkgs.gtk ]);
         };
         exes = {
-          LambdaHack = {
+          "LambdaHack" = {
             depends  = [
               hsPkgs.LambdaHack
               hsPkgs.template-haskell
@@ -94,7 +94,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.LambdaHack
               hsPkgs.template-haskell

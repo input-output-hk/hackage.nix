@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        consul-haskell = {
+        "consul-haskell" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          consul-haskell-test = {
+          "consul-haskell-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.consul-haskell

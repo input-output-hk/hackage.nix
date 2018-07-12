@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        matlab = {
+        "matlab" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

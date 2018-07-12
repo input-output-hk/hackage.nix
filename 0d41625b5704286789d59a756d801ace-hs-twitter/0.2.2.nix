@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-twitter = {
+        "hs-twitter" = {
           depends  = [
             hsPkgs.HTTP
             hsPkgs.network

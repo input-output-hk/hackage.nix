@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dimensional = {
+        "dimensional" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

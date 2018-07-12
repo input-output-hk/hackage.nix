@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client-restricted = {
+        "http-client-restricted" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client

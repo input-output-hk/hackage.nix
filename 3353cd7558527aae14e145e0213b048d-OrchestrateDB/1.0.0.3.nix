@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OrchestrateDB = {
+        "OrchestrateDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests-example1 = {
+          "tests-example1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP
@@ -44,7 +44,7 @@ let
               hsPkgs.random
             ];
           };
-          test-sherlock = {
+          "test-sherlock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP

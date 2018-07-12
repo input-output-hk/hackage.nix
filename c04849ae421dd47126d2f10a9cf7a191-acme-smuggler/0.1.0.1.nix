@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-smuggler = {
+        "acme-smuggler" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          acme-smuggler-test = {
+          "acme-smuggler-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.acme-smuggler

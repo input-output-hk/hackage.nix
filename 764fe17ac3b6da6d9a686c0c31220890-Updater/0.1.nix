@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Updater = {
+        "Updater" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

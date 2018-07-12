@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        passage = {
+        "passage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

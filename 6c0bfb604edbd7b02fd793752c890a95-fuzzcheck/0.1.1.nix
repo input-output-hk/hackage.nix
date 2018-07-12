@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fuzzcheck = {
+        "fuzzcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-control
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          smoke = {
+          "smoke" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

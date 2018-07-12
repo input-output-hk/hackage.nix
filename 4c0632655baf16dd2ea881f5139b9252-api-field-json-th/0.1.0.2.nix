@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        api-field-json-th = {
+        "api-field-json-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          api-field-json-th-test = {
+          "api-field-json-th-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.api-field-json-th

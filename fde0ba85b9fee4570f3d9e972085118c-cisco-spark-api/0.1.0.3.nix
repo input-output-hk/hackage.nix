@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cisco-spark-api = {
+        "cisco-spark-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          cisco-spark-api-exe = {
+          "cisco-spark-api-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          cisco-spark-api-test = {
+          "cisco-spark-api-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

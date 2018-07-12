@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unsafe-promises = {
+        "unsafe-promises" = {
           depends  = [
             hsPkgs.base
             hsPkgs.threads

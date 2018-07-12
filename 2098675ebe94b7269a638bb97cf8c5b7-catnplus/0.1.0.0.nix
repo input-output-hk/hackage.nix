@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          catnplus = {
+          "catnplus" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base

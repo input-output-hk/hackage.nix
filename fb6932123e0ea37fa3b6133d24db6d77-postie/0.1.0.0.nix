@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postie = {
+        "postie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          simple = {
+          "simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

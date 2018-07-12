@@ -20,12 +20,12 @@ let
         buildType = "Simple";
       };
       components = {
-        Shellac = {
+        "Shellac" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.haskell98
             hsPkgs.mtl
-          ] ++ pkgs.lib.optional (!system.isWindows && (compiler.isGhc && compiler.version.ge "6.8")) hsPkgs.unix) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.8") hsPkgs.directory;
+          ] ++ pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.8") hsPkgs.unix)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.8") hsPkgs.directory;
         };
       };
     }

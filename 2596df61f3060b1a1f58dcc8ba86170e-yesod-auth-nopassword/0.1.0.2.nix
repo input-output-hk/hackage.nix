@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-nopassword = {
+        "yesod-auth-nopassword" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

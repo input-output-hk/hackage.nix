@@ -28,7 +28,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LambdaHack = {
+        "LambdaHack" = {
           depends  = ([
             hsPkgs.assert-failure
             hsPkgs.async
@@ -70,7 +70,7 @@ let
                   ])) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) hsPkgs.zlib;
         };
         exes = {
-          LambdaHack = {
+          "LambdaHack" = {
             depends  = [
               hsPkgs.LambdaHack
               hsPkgs.template-haskell
@@ -104,7 +104,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.LambdaHack
               hsPkgs.template-haskell

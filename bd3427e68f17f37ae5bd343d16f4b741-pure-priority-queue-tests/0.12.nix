@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pure-priority-queue-tests = {
+          "pure-priority-queue-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

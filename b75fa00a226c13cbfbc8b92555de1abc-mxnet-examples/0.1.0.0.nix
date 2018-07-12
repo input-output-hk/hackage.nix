@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ndarray = {
+          "ndarray" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mxnet

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gdiff-ig = {
+        "gdiff-ig" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

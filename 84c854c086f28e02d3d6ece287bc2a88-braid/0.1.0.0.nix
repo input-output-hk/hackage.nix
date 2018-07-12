@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        braid = {
+        "braid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          KappaView = {
+          "KappaView" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

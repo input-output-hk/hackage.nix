@@ -21,47 +21,47 @@ let
       };
       components = {
         exes = {
-          yesod-blog = {
+          "yesod-blog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod
             ];
           };
-          yesod-ajax = {
+          "yesod-ajax" = {
             depends  = [
               hsPkgs.yesod-static
             ];
           };
-          yesod-file-echo = {
+          "yesod-file-echo" = {
             depends  = [ hsPkgs.text ];
           };
-          yesod-pretty-yaml = {
+          "yesod-pretty-yaml" = {
             depends  = [
               hsPkgs.data-object-yaml
               hsPkgs.data-object
               hsPkgs.bytestring
             ];
           };
-          yesod-i18n = {};
-          yesod-session = {};
-          yesod-widgets = {
+          "yesod-i18n" = {};
+          "yesod-session" = {};
+          "yesod-widgets" = {
             depends  = [
               hsPkgs.yesod-form
             ];
           };
-          yesod-generalized-hamlet = {};
-          yesod-form = {};
-          yesod-persistent-synopsis = {
+          "yesod-generalized-hamlet" = {};
+          "yesod-form" = {};
+          "yesod-persistent-synopsis" = {
             depends  = [
               hsPkgs.transformers
               hsPkgs.persistent-sqlite
               hsPkgs.persistent-template
             ];
           };
-          yesod-hamlet-synopsis = {
+          "yesod-hamlet-synopsis" = {
             depends  = [ hsPkgs.hamlet ];
           };
-          yesod-chat = {
+          "yesod-chat" = {
             depends  = [ hsPkgs.stm ];
           };
         };

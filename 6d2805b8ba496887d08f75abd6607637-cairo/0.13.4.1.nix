@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cairo = {
+        "cairo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string

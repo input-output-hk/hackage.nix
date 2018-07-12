@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-enum = {
+        "generic-enum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

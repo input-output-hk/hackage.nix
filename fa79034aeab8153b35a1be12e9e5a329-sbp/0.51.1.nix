@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sbp = {
+        "sbp" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.array
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -55,7 +55,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

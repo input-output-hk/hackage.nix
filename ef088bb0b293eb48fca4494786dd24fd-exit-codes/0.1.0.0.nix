@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exit-codes = {
+        "exit-codes" = {
           depends  = [ hsPkgs.base ];
         };
       };

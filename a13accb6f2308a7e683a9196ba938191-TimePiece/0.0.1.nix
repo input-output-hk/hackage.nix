@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          TimePiece = {
+          "TimePiece" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SDL

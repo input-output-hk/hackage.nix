@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ec2-signature = {
+        "ec2-signature" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,13 +30,13 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

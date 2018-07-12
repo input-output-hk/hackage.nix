@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        direct-http = {
+        "direct-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

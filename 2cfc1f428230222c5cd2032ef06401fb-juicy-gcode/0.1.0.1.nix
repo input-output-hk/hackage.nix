@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          juicy-gcode = {
+          "juicy-gcode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.svg-tree

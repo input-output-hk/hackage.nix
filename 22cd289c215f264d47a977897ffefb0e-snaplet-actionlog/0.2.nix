@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-actionlog = {
+        "snaplet-actionlog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

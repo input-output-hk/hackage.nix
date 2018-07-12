@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alsa-core = {
+        "alsa-core" = {
           depends  = [
             hsPkgs.extensible-exceptions
             hsPkgs.base

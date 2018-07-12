@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validation = {
+        "validation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" && (compiler.isGhc && compiler.version.lt "7.5")) hsPkgs.ghc-prim;
         };
         tests = {
-          hedgehog = {
+          "hedgehog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedgehog
@@ -39,7 +39,7 @@ let
               hsPkgs.validation
             ];
           };
-          hunit = {
+          "hunit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

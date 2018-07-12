@@ -21,10 +21,10 @@ let
       };
       components = {
         exes = {
-          rpokuToAssembler = {
+          "rpokuToAssembler" = {
             depends  = [ hsPkgs.base ];
           };
-          rpokuToLanguage = {
+          "rpokuToLanguage" = {
             depends  = [ hsPkgs.base ];
           };
         };

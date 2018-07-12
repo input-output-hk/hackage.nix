@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iconv-typed = {
+        "iconv-typed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.iconv
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          iconv-typed-test = {
+          "iconv-typed-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.iconv-typed

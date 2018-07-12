@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-heterogenous = {
+        "vector-heterogenous" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

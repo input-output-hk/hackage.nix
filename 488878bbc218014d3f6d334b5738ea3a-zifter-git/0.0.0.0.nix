@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zifter-git = {
+        "zifter-git" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zifter

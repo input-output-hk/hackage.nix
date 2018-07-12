@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        representable-functors = {
+        "representable-functors" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

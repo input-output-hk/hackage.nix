@@ -20,28 +20,28 @@ let
         buildType = "Simple";
       };
       components = {
-        deepcontrol = {
+        "deepcontrol" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.QuickCheck
             ];
           };
-          UnitTest_Applicative = {
+          "UnitTest_Applicative" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.deepcontrol
             ];
           };
-          UnitTest_Monad = {
+          "UnitTest_Monad" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-ip = {
+        "yesod-ip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

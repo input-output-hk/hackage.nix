@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dmenu-pkill = {
+          "dmenu-pkill" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

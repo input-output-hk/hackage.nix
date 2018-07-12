@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-firebase-dynamiclinks = {
+        "gogol-firebase-dynamiclinks" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

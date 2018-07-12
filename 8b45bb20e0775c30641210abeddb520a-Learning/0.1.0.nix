@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Learning = {
+        "Learning" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          learning-pca = {
+          "learning-pca" = {
             depends  = [
               hsPkgs.Learning
               hsPkgs.base
@@ -38,7 +38,7 @@ let
               hsPkgs.vector
             ];
           };
-          learning-pca-advanced = {
+          "learning-pca-advanced" = {
             depends  = [
               hsPkgs.Learning
               hsPkgs.base
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          Learning-test = {
+          "Learning-test" = {
             depends  = [
               hsPkgs.Learning
               hsPkgs.base

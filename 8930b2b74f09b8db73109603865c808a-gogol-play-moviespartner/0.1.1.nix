@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-play-moviespartner = {
+        "gogol-play-moviespartner" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

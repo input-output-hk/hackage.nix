@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        winio = {
+        "winio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

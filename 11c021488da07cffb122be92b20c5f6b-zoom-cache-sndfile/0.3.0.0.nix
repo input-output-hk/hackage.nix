@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          zoom-cache-sndfile = {
+          "zoom-cache-sndfile" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.data-default

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaTeX = {
+        "HaTeX" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          matrix-test = {
+          "matrix-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaTeX
