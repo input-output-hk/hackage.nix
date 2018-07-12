@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-failure = {
+        "safe-failure" = {
           depends  = [
             hsPkgs.control-monad-failure
           ] ++ (if _flags.extensibleexceptions

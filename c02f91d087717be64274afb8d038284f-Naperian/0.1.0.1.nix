@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Naperian = {
+        "Naperian" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

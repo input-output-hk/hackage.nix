@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wavefront = {
+        "wavefront" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

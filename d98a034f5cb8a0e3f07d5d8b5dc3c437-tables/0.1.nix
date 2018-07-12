@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        tables = {
+        "tables" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

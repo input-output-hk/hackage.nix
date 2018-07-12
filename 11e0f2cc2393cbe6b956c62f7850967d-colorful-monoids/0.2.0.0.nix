@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        colorful-monoids = {
+        "colorful-monoids" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.colorful-monoids

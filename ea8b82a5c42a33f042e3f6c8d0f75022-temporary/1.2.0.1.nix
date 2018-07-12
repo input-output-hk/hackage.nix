@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        temporary = {
+        "temporary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

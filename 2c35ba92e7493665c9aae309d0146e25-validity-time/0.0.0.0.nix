@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validity-time = {
+        "validity-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.validity

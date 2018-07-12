@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer-core = {
+        "synthesizer-core" = {
           depends  = [
             hsPkgs.sample-frame-np
             hsPkgs.sox
@@ -51,7 +51,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.synthesizer-core
               hsPkgs.storablevector
@@ -70,7 +70,7 @@ let
           };
         };
         benchmarks = {
-          fouriertest = {
+          "fouriertest" = {
             depends  = [
               hsPkgs.synthesizer-core
               hsPkgs.numeric-prelude
@@ -81,7 +81,7 @@ let
               hsPkgs.base
             ];
           };
-          speedtest = {
+          "speedtest" = {
             depends  = [
               hsPkgs.synthesizer-core
               hsPkgs.numeric-prelude
@@ -93,7 +93,7 @@ let
               hsPkgs.base
             ];
           };
-          speedtest-exp = {
+          "speedtest-exp" = {
             depends  = [
               hsPkgs.synthesizer-core
               hsPkgs.storablevector
@@ -105,7 +105,7 @@ let
               hsPkgs.base
             ];
           };
-          speedtest-simple = {
+          "speedtest-simple" = {
             depends  = [
               hsPkgs.synthesizer-core
               hsPkgs.binary

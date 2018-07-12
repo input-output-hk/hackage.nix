@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        units = {
+        "units" = {
           depends  = [
             hsPkgs.base
             hsPkgs.singletons
           ];
         };
         tests = {
-          travel = {
+          "travel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.units

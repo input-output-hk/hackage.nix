@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        js-flot = {
+        "js-flot" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          js-flot-test = {
+          "js-flot-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP

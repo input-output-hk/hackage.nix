@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digestive-functors = {
+        "digestive-functors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          digestive-functors-tests = {
+          "digestive-functors-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

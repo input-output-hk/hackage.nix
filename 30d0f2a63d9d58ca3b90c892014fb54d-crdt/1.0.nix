@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crdt = {
+        "crdt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hemokit = {
+        "hemokit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          hemokit-mouse = {
+          "hemokit-mouse" = {
             depends  = pkgs.lib.optionals _flags.mouse [
               hsPkgs.base
               hsPkgs.hemokit
@@ -51,7 +51,7 @@ let
               hsPkgs.xhb
             ];
           };
-          hemokit-dump = {
+          "hemokit-dump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hemokit
@@ -68,7 +68,7 @@ let
               hsPkgs.websockets
             ];
           };
-          hemokit-dump-conduit = {
+          "hemokit-dump-conduit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hemokit
@@ -85,7 +85,7 @@ let
               hsPkgs.vector
             ];
           };
-          hemokit-fft = {
+          "hemokit-fft" = {
             depends  = pkgs.lib.optionals _flags.fft [
               hsPkgs.base
               hsPkgs.hemokit
@@ -96,7 +96,7 @@ let
               hsPkgs.vector-fftw
             ];
           };
-          hemokit-headmap = {
+          "hemokit-headmap" = {
             depends  = pkgs.lib.optionals _flags.headmap [
               hsPkgs.base
               hsPkgs.hemokit
@@ -110,7 +110,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hemokit
@@ -121,14 +121,14 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hemokit
               hsPkgs.criterion
             ];
           };
-          bench-rollingbuffer = {
+          "bench-rollingbuffer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

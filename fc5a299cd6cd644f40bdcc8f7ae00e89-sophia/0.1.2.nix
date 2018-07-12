@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sophia = {
+        "sophia" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-sophia
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          main-test-suite = {
+          "main-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sophia
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          main-bench = {
+          "main-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sophia

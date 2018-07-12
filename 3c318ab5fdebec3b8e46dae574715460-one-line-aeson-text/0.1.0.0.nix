@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        one-line-aeson-text = {
+        "one-line-aeson-text" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

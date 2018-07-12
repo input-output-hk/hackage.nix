@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer-alsa = {
+        "synthesizer-alsa" = {
           depends  = [
             hsPkgs.synthesizer-midi
             hsPkgs.synthesizer-dimensional
@@ -50,8 +50,8 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          realtimesynth = {};
-          synthicate = {};
+          "realtimesynth" = {};
+          "synthicate" = {};
         };
       };
     }

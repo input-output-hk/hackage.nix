@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        engine-io = {
+        "engine-io" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.async

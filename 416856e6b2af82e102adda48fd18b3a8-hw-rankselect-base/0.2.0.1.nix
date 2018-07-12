@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-rankselect-base = {
+        "hw-rankselect-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hw-bits
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          hw-rankselect-base-test = {
+          "hw-rankselect-base-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

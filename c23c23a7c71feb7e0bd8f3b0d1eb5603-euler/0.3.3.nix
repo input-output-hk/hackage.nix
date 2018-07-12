@@ -20,18 +20,18 @@ let
         buildType = "Simple";
       };
       components = {
-        euler = {
+        "euler" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.euler
               hsPkgs.hspec
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

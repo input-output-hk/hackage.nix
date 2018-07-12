@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haha = {
+        "haha" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          rotating-lambda = {
+          "rotating-lambda" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

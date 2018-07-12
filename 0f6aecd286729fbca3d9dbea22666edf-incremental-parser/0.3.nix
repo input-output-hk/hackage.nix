@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        incremental-parser = {
+        "incremental-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monoid-subclasses
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monoid-subclasses
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          CSV = {
+          "CSV" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monoid-subclasses

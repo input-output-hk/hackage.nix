@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plugins-multistage = {
+        "plugins-multistage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.plugins
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          regression = {
+          "regression" = {
             depends  = [
               hsPkgs.plugins-multistage
               hsPkgs.base
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          needforspeed = {
+          "needforspeed" = {
             depends  = [
               hsPkgs.plugins-multistage
               hsPkgs.base

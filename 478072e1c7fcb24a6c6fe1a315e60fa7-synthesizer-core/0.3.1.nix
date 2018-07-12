@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer-core = {
+        "synthesizer-core" = {
           depends  = [
             hsPkgs.sample-frame-np
             hsPkgs.sox
@@ -56,16 +56,16 @@ let
             ]);
         };
         exes = {
-          test = {};
-          fusiontest = {};
-          speedtest = {};
-          speedtest-exp = {
+          "test" = {};
+          "fusiontest" = {};
+          "speedtest" = {};
+          "speedtest-exp" = {
             depends  = pkgs.lib.optionals _flags.splitbase [
               hsPkgs.old-time
               hsPkgs.directory
             ];
           };
-          speedtest-simple = {};
+          "speedtest-simple" = {};
         };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rest-gen = {
+        "rest-gen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HStringTemplate
@@ -57,7 +57,7 @@ let
           ];
         };
         tests = {
-          rest-gen-tests = {
+          "rest-gen-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

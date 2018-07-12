@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        fullstop = {
+        "fullstop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
@@ -32,8 +32,8 @@ let
           ];
         };
         exes = {
-          fullstop = {};
-          hstest-fullstop = {};
+          "fullstop" = {};
+          "hstest-fullstop" = {};
         };
       };
     }

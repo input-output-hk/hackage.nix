@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protobuf = {
+        "protobuf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          protoc-gen-hs = {
+          "protoc-gen-hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          protobuf-test = {
+          "protobuf-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim

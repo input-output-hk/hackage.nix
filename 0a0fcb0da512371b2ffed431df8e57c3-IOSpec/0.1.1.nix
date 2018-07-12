@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        IOSpec = {
+        "IOSpec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fusion = {
+        "fusion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

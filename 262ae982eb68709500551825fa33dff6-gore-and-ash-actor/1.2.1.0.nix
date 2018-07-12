@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gore-and-ash-actor = {
+        "gore-and-ash-actor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

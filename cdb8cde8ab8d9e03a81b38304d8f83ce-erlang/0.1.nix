@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        erlang = {
+        "erlang" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

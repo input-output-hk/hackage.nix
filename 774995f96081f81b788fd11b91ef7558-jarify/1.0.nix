@@ -20,11 +20,11 @@ let
         buildType = "Custom";
       };
       components = {
-        jarify = {
+        "jarify" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          jarify = {
+          "jarify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

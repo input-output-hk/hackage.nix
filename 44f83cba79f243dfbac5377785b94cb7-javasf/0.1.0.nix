@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          javasf = {
+          "javasf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-java-classfile
@@ -33,7 +33,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

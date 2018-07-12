@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        obd = {
+        "obd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          obd-terminal = {
+          "obd-terminal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.obd
@@ -48,7 +48,7 @@ let
               hsPkgs.transformers
             ];
           };
-          obd-example = {
+          "obd-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.obd
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          obd-test = {
+          "obd-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.obd

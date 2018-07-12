@@ -22,9 +22,9 @@ let
         buildType = "Simple";
       };
       components = {
-        dtrace = {
+        "dtrace" = {
           depends  = [ hsPkgs.base ];
         };
-        exes = { DTTest = {}; };
+        exes = { "DTTest" = {}; };
       };
     }

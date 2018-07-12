@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lostcities = {
+          "lostcities" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

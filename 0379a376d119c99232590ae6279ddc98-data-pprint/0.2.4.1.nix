@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-pprint = {
+        "data-pprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

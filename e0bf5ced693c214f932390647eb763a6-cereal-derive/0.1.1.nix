@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal-derive = {
+        "cereal-derive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal

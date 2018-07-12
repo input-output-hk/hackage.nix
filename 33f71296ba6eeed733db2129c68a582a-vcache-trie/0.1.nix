@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vcache-trie = {
+        "vcache-trie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

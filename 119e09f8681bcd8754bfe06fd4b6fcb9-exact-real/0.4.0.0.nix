@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        exact-real = {
+        "exact-real" = {
           depends  = [
             hsPkgs.base
             hsPkgs.integer-gmp
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.groups
@@ -41,7 +41,7 @@ let
               hsPkgs.exact-real
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

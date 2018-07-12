@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uni-events = {
+        "uni-events" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

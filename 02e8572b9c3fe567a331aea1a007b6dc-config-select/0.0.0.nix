@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          config-select = {
+          "config-select" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

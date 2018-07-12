@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HsHyperEstraier = {
+        "HsHyperEstraier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.encoding

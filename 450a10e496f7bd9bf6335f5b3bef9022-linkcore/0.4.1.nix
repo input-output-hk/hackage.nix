@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          linkcore = {
+          "linkcore" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.extcore

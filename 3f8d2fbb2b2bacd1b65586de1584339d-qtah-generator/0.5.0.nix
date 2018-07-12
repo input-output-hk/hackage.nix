@@ -20,11 +20,11 @@ let
         buildType = "Custom";
       };
       components = {
-        qtah-generator = {
+        "qtah-generator" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          qtah-generator = {
+          "qtah-generator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

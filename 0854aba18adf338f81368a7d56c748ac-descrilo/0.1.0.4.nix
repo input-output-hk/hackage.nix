@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        descrilo = {
+        "descrilo" = {
           depends  = [ hsPkgs.base ];
         };
       };

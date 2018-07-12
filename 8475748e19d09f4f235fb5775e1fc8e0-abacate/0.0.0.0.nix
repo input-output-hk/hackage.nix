@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        abacate = {
+        "abacate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          abacate-test = {
+          "abacate-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

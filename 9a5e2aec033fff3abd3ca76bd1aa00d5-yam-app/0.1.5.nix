@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yam-app = {
+        "yam-app" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-control

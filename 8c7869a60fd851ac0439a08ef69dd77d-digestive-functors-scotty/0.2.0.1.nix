@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digestive-functors-scotty = {
+        "digestive-functors-scotty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.digestive-functors

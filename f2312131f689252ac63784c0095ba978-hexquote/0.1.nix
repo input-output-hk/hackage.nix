@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexquote = {
+        "hexquote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

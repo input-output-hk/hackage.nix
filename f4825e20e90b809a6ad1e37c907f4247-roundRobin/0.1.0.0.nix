@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        roundRobin = {
+        "roundRobin" = {
           depends  = [ hsPkgs.base ];
         };
       };

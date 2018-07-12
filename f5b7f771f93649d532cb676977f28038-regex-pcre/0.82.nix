@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        regex-pcre = {
+        "regex-pcre" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-base

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stylish-cabal = {
+        "stylish-cabal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          stylish-cabal = {
+          "stylish-cabal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint
@@ -44,13 +44,13 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          strictness = {
+          "strictness" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -64,7 +64,7 @@ let
               hsPkgs.stylish-cabal
             ];
           };
-          roundtrip = {
+          "roundtrip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -76,7 +76,7 @@ let
               hsPkgs.stylish-cabal
             ];
           };
-          roundtrip-hackage = {
+          "roundtrip-hackage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-gsl-stats = {
+        "hmatrix-gsl-stats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

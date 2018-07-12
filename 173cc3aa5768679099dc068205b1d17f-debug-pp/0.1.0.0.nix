@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          debug-pp = {
+          "debug-pp" = {
             depends  = [ hsPkgs.base ];
           };
         };

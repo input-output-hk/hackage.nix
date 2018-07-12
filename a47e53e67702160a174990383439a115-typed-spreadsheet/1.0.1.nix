@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typed-spreadsheet = {
+        "typed-spreadsheet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -36,14 +36,14 @@ let
           ];
         };
         exes = {
-          typed-spreadsheet-example = {
+          "typed-spreadsheet-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.typed-spreadsheet
             ];
           };
-          typed-spreadsheet-example-graphics = {
+          "typed-spreadsheet-example-graphics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.diagrams-cairo

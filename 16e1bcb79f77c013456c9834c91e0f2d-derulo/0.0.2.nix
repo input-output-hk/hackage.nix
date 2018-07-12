@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        derulo = {
+        "derulo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
           ];
         };
         exes = {
-          derulo = {
+          "derulo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

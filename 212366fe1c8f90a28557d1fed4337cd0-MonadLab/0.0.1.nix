@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MonadLab = {
+        "MonadLab" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          mlab = {
+          "mlab" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

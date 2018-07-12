@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        miniutter = {
+        "miniutter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-miniutter = {
+          "test-miniutter" = {
             depends  = [
               hsPkgs.miniutter
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-miscorder = {
+        "acme-miscorder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

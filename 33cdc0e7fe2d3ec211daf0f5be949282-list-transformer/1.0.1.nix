@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        list-transformer = {
+        "list-transformer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

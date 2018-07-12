@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        users-persistent = {
+        "users-persistent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.persistent
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          users-persistent-tests = {
+          "users-persistent-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

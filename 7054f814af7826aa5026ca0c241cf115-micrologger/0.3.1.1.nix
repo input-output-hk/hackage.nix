@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        micrologger = {
+        "micrologger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          micrologger-test = {
+          "micrologger-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.micrologger

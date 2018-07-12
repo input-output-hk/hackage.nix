@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        babl = {
+        "babl" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs."babl-0.1" ];
           pkgconfig = [

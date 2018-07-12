@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        portable-lines = {
+        "portable-lines" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

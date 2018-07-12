@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FTGL = {
+        "FTGL" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.ftgl ];
         };

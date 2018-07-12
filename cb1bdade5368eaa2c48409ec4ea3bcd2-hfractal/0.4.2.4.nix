@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hfractal = {
+          "hfractal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

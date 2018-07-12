@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        xfconf = {
+        "xfconf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.glib
@@ -38,12 +38,12 @@ let
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             pkgconfig = [
               pkgconfPkgs.libxfconf-0
             ];
           };
-          testGlib = {
+          "testGlib" = {
             pkgconfig = [
               pkgconfPkgs.libxfconf-0
             ];

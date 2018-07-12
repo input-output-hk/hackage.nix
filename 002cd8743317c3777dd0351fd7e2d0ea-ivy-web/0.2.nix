@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ivy-web = {
+        "ivy-web" = {
           depends  = [
             hsPkgs.base
             hsPkgs.partial-isomorphisms

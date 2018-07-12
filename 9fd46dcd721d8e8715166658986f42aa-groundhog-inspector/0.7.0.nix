@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        groundhog-inspector = {
+        "groundhog-inspector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

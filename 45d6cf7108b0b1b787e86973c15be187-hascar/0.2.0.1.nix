@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hascar = {
+        "hascar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          hascar = {
+          "hascar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          hascar-test = {
+          "hascar-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

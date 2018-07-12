@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gegl = {
+        "gegl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.inline-c
@@ -40,13 +40,13 @@ let
           ];
         };
         exes = {
-          example00 = {
+          "example00" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.gegl
             ];
           };
-          example01 = {
+          "example01" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.SDL
@@ -56,7 +56,7 @@ let
               hsPkgs.monad-loops
             ];
           };
-          example02 = {
+          "example02" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.sdl2

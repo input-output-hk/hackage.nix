@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mighttpd2 = {
+        "mighttpd2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          mighty = {
+          "mighty" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.bytestring
@@ -80,7 +80,7 @@ let
               hsPkgs.warp-tls
             ];
           };
-          mighty-mkindex = {
+          "mighty-mkindex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -89,7 +89,7 @@ let
               hsPkgs.unix
             ];
           };
-          mightyctl = {
+          "mightyctl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -98,7 +98,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

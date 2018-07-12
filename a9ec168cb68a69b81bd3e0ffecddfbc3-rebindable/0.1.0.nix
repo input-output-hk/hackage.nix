@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rebindable = {
+        "rebindable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class

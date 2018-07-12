@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        curry-frontend = {
+        "curry-frontend" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -40,7 +40,7 @@ let
             else [ hsPkgs.network ]);
         };
         exes = {
-          curry-frontend = {
+          "curry-frontend" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          test-frontend = {
+          "test-frontend" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

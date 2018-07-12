@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-freeze = {
+        "safe-freeze" = {
           depends  = [
             hsPkgs.base
             hsPkgs.indexed

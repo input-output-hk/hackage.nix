@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hwsl2-bytevector = {
+        "hwsl2-bytevector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hwsl2

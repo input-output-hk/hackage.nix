@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-webidl = {
+        "language-webidl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scotty-resource = {
+        "scotty-resource" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

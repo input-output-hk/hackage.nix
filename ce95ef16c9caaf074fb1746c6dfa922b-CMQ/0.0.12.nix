@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CMQ = {
+        "CMQ" = {
           depends  = [
             hsPkgs.base
             hsPkgs.iproute

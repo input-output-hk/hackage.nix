@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SVD2HS = {
+        "SVD2HS" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml-lens

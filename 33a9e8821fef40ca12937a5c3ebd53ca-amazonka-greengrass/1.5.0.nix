@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-greengrass = {
+        "amazonka-greengrass" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-greengrass-test = {
+          "amazonka-greengrass-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

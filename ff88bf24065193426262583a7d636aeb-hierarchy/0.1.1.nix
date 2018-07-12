@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hierarchy = {
+        "hierarchy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -46,7 +46,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hierarchy

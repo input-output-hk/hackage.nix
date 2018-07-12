@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FTGL = {
+        "FTGL" = {
           depends  = [
             hsPkgs.OpenGL
             hsPkgs.GLUT

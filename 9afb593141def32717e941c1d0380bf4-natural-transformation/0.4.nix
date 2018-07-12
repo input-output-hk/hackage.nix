@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        natural-transformation = {
+        "natural-transformation" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          natural-transformation-properties = {
+          "natural-transformation-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

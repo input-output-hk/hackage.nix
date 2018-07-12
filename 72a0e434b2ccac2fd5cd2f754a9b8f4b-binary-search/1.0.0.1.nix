@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-search = {
+        "binary-search" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -35,7 +35,7 @@ let
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary-search

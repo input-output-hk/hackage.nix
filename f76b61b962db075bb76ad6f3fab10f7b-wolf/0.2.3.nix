@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wolf = {
+        "wolf" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.amazonka
@@ -55,7 +55,7 @@ let
           ];
         };
         exes = {
-          wolf-register = {
+          "wolf-register" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude
@@ -66,7 +66,7 @@ let
               hsPkgs.yaml
             ];
           };
-          wolf-execute = {
+          "wolf-execute" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude
@@ -77,7 +77,7 @@ let
               hsPkgs.yaml
             ];
           };
-          wolf-decide = {
+          "wolf-decide" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude
@@ -88,7 +88,7 @@ let
               hsPkgs.yaml
             ];
           };
-          wolf-act = {
+          "wolf-act" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.amazonka-core
@@ -108,7 +108,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude

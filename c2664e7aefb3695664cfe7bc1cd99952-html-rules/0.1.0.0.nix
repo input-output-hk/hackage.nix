@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        html-rules = {
+        "html-rules" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

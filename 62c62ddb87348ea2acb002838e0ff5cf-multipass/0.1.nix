@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multipass = {
+        "multipass" = {
           depends  = [
             hsPkgs.ghc-prim
             hsPkgs.base

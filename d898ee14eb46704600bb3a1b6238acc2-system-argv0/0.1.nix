@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-argv0 = {
+        "system-argv0" = {
           depends  = [
             hsPkgs.base
             hsPkgs.system-filepath

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prometheus-client = {
+        "prometheus-client" = {
           depends  = [
             hsPkgs.atomic-primops
             hsPkgs.base
@@ -34,14 +34,14 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.prometheus-client
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.atomic-primops
@@ -59,7 +59,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

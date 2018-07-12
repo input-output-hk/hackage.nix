@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          glirc2 = {
+          "glirc2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

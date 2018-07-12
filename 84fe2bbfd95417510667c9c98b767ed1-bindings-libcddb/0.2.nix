@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-libcddb = {
+        "bindings-libcddb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-common

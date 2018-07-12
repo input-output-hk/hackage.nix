@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parser241 = {
+        "parser241" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          ProductRule-test = {
+          "ProductRule-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parser241

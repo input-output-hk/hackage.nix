@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validation = {
+        "validation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          hedgehog = {
+          "hedgehog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedgehog
@@ -42,7 +42,7 @@ let
               hsPkgs.validation
             ];
           };
-          hunit = {
+          "hunit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

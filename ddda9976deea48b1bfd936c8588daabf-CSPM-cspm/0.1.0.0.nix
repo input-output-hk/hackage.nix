@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cspm = {
+          "cspm" = {
             depends  = [
               hsPkgs.CSPM-Frontend
               hsPkgs.CSPM-CoreLanguage

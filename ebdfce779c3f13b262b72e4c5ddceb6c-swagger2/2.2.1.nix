@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        swagger2 = {
+        "swagger2" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.base-compat
@@ -46,7 +46,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -72,7 +72,7 @@ let
               hsPkgs.buildPackages.hspec-discover
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

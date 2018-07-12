@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mandrill = {
+        "mandrill" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          mandrill-tests = {
+          "mandrill-tests" = {
             depends  = [
               hsPkgs.mandrill
               hsPkgs.base

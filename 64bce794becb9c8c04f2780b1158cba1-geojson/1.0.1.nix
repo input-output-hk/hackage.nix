@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        geojson = {
+        "geojson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

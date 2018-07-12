@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liblastfm = {
+        "liblastfm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          json = {
+          "json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

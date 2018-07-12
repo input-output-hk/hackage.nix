@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rlwe-challenges = {
+        "rlwe-challenges" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          rlwe-challenges = {
+          "rlwe-challenges" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base

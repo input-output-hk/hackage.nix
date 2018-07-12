@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safecopy-migrate = {
+        "safecopy-migrate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-prelude

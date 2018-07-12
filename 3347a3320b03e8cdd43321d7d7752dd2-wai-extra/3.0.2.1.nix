@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-extra = {
+        "wai-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-extra
@@ -69,7 +69,7 @@ let
               hsPkgs.resourcet
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-extra

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rss2irc = {
+          "rss2irc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.extensible-exceptions

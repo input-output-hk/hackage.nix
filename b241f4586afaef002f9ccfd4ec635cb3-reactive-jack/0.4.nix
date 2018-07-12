@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-jack = {
+        "reactive-jack" = {
           depends  = [
             hsPkgs.reactive-midyim
             hsPkgs.reactive-banana-bunch

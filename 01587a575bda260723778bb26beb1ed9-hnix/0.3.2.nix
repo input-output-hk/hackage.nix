@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hnix = {
+        "hnix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -39,7 +39,7 @@ let
             else [ hsPkgs.trifecta ]);
         };
         exes = {
-          hnix = {
+          "hnix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hnix
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          hnix-tests = {
+          "hnix-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -65,7 +65,7 @@ let
           };
         };
         benchmarks = {
-          hnix-benchmarks = {
+          "hnix-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lift-generics = {
+        "lift-generics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.generic-deriving
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

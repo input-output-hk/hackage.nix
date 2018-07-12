@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedis-simple = {
+        "hedis-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

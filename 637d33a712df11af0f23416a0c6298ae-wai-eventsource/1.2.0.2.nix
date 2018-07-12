@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-eventsource = {
+        "wai-eventsource" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

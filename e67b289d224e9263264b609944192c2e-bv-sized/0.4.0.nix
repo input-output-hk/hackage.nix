@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bv-sized = {
+        "bv-sized" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          bv-tests = {
+          "bv-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bv-sized

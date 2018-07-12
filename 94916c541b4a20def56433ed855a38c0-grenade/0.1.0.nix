@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grenade = {
+        "grenade" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.grenade
@@ -59,7 +59,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -68,7 +68,7 @@ let
               hsPkgs.hmatrix
             ];
           };
-          bench-lstm = {
+          "bench-lstm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

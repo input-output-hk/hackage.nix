@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        derive-storable-plugin = {
+        "derive-storable-plugin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

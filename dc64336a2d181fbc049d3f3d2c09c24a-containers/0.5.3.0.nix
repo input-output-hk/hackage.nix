@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        containers = {
+        "containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.ghc-prim;
         };
         tests = {
-          map-lazy-properties = {
+          "map-lazy-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -41,7 +41,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          map-strict-properties = {
+          "map-strict-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -54,7 +54,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          set-properties = {
+          "set-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -67,7 +67,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          intmap-lazy-properties = {
+          "intmap-lazy-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -80,7 +80,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          intmap-strict-properties = {
+          "intmap-strict-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -93,7 +93,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          intset-properties = {
+          "intset-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -106,7 +106,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          deprecated-properties = {
+          "deprecated-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -117,7 +117,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          seq-properties = {
+          "seq-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -128,7 +128,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          map-strictness-properties = {
+          "map-strictness-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ChasingBottoms
@@ -138,7 +138,7 @@ let
               hsPkgs.test-framework-quickcheck2
             ];
           };
-          intmap-strictness-properties = {
+          "intmap-strictness-properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ChasingBottoms

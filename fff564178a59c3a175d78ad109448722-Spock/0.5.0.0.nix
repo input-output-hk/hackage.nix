@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock = {
+        "Spock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai
@@ -60,7 +60,7 @@ let
           ];
         };
         tests = {
-          spocktests = {
+          "spocktests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai

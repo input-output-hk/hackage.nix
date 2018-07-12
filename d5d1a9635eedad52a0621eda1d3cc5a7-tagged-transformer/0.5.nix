@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagged-transformer = {
+        "tagged-transformer" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

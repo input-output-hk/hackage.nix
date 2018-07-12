@@ -23,11 +23,11 @@ let
         buildType = "Simple";
       };
       components = {
-        freer-effects = {
+        "freer-effects" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          freer-examples = {
+          "freer-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.freer-effects
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.freer-effects
@@ -45,7 +45,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals _flags.test-hlint [
               hsPkgs.base
               hsPkgs.hlint
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          core = {
+          "core" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

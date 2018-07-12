@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ombra = {
+        "ombra" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.Boolean

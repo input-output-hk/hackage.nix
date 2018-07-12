@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpio = {
+        "hpio" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          hpio-example = {
+          "hpio-example" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.async
               hsPkgs.base
@@ -62,7 +62,7 @@ let
               hsPkgs.transformers
             ];
           };
-          hpio-reader-example = {
+          "hpio-reader-example" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.async
               hsPkgs.base
@@ -75,7 +75,7 @@ let
               hsPkgs.transformers
             ];
           };
-          hpio-sysfs-example = {
+          "hpio-sysfs-example" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.async
               hsPkgs.base
@@ -90,7 +90,7 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests || compiler.isGhc && compiler.version.lt "7.10")) [
               hsPkgs.base
               hsPkgs.doctest
@@ -98,14 +98,14 @@ let
               hsPkgs.protolude
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
               hsPkgs.protolude
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

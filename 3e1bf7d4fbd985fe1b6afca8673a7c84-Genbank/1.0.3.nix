@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Genbank = {
+        "Genbank" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          GenbankTest = {
+          "GenbankTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

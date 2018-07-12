@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hellogenetics = {
+          "hellogenetics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random-fu

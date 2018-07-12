@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashabler = {
+        "hashabler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional _flags.integer-gmp hsPkgs.integer-gmp;
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = pkgs.lib.optionals _flags.dev ([
               hsPkgs.base
               hsPkgs.hashabler
@@ -47,7 +47,7 @@ let
               hsPkgs.QuickCheck
             ] ++ pkgs.lib.optional _flags.integer-gmp hsPkgs.integer-gmp);
           };
-          bench = {
+          "bench" = {
             depends  = pkgs.lib.optionals _flags.dev [
               hsPkgs.base
               hsPkgs.array
@@ -60,7 +60,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          viz = {
+          "viz" = {
             depends  = pkgs.lib.optionals _flags.dev [
               hsPkgs.base
               hsPkgs.array
@@ -74,7 +74,7 @@ let
               hsPkgs.hashable
             ];
           };
-          core = {
+          "core" = {
             depends  = pkgs.lib.optionals _flags.dev [
               hsPkgs.base
               hsPkgs.hashabler

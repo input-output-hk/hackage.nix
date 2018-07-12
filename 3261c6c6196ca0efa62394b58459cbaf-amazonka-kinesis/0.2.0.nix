@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-kinesis = {
+        "amazonka-kinesis" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

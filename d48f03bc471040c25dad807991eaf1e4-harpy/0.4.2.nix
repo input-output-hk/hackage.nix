@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        harpy = {
+        "harpy" = {
           depends  = [
             hsPkgs.disassembler
           ] ++ (if _flags.small_base

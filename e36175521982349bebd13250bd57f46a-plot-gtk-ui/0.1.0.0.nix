@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plot-gtk-ui = {
+        "plot-gtk-ui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colour

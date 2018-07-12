@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        dwergaz = {
+        "dwergaz" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dwergaz

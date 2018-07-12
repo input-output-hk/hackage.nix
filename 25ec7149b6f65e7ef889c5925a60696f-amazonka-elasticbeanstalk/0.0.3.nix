@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-elasticbeanstalk = {
+        "amazonka-elasticbeanstalk" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

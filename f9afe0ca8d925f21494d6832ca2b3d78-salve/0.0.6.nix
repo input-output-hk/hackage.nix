@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        salve = {
+        "salve" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -33,7 +33,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

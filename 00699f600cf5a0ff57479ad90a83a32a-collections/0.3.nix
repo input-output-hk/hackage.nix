@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        collections = {
+        "collections" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

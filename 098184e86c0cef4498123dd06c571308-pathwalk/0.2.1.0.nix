@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pathwalk = {
+        "pathwalk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -29,13 +29,13 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pathwalk
             ];
           };
-          stoprecursing = {
+          "stoprecursing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pathwalk

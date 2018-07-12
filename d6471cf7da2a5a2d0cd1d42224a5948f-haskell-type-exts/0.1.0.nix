@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskell-type-exts = {
+        "haskell-type-exts" = {
           depends  = [
             hsPkgs.haskell-src-exts
             hsPkgs.pretty

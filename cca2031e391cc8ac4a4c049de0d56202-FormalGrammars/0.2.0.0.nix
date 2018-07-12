@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FormalGrammars = {
+        "FormalGrammars" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ADPfusion
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          GrammarPP = {
+          "GrammarPP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint
@@ -55,7 +55,7 @@ let
               hsPkgs.FormalGrammars
             ];
           };
-          NussinovFG = {
+          "NussinovFG" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -65,7 +65,7 @@ let
               hsPkgs.vector
             ];
           };
-          NeedlemanWunschFG = {
+          "NeedlemanWunschFG" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion

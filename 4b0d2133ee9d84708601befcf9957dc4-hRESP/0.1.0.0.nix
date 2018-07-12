@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hRESP = {
+        "hRESP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

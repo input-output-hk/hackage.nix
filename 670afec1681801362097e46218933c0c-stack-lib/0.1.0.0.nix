@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stack-lib = {
+        "stack-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-logger

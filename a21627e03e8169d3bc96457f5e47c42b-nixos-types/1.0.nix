@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        nixos-types = {
+        "nixos-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-posix

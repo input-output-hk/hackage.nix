@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tracer = {
+        "tracer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doc-tests = {
+          "doc-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

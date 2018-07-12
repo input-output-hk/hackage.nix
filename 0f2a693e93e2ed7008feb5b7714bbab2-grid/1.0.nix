@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        grid = {
+        "grid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
           ];
         };
         tests = {
-          grid-tests = {
+          "grid-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework-quickcheck2

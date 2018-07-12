@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex = {
+        "reflex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dependent-sum
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          cross-impl = {
+          "cross-impl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.reflex
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          spider-bench = {
+          "spider-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dependent-sum
@@ -68,7 +68,7 @@ let
               hsPkgs.reflex
             ];
           };
-          saulzar-bench = {
+          "saulzar-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

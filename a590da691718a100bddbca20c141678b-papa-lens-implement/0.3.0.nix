@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        papa-lens-implement = {
+        "papa-lens-implement" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

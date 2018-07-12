@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        elf = {
+        "elf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

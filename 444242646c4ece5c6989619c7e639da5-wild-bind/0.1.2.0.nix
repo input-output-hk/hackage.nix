@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wild-bind = {
+        "wild-bind" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wild-bind

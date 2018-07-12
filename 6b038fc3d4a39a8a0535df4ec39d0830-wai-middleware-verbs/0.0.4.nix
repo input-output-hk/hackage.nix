@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-verbs = {
+        "wai-middleware-verbs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors

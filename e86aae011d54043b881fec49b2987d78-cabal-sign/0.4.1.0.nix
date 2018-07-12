@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal-sign = {
+          "cabal-sign" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zlib

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec-text-enumerator = {
+        "attoparsec-text-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec-text

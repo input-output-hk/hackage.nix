@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        png-file = {
+        "png-file" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary-file

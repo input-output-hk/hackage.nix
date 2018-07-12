@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mono-traversable = {
+        "mono-traversable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mono-traversable
@@ -60,7 +60,7 @@ let
           };
         };
         benchmarks = {
-          sorting = {
+          "sorting" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

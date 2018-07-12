@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        rset = {
+        "rset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe
           ];
         };
         tests = {
-          rset-test = {
+          "rset-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

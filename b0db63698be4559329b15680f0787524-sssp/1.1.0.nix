@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sssp = {
+        "sssp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          sssp = {
+          "sssp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

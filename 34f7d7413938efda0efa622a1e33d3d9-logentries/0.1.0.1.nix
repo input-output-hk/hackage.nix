@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logentries = {
+        "logentries" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          logentries-test = {
+          "logentries-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

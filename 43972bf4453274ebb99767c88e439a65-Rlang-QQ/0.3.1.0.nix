@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Rlang-QQ = {
+        "Rlang-QQ" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -52,13 +52,13 @@ let
           ] ++ pkgs.lib.optional _flags.repa hsPkgs.repa;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

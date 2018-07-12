@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mulang = {
+        "mulang" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

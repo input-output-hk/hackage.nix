@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          semantique = {
+          "semantique" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tagsoup

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        antfarm = {
+        "antfarm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          antfarm = {
+          "antfarm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.antfarm
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          antfarm-test = {
+          "antfarm-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.antfarm

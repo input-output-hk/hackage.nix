@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        llvm-general-pure = {
+        "llvm-general-pure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deriving-compat = {
+        "deriving-compat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

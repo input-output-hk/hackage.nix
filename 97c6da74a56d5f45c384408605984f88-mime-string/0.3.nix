@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        mime-string = {
+        "mime-string" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

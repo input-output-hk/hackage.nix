@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lens-text-encoding = {
+        "lens-text-encoding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

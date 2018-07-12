@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HarmTrace-Base = {
+        "HarmTrace-Base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uu-parsinglib
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-harmtrace-base = {
+          "test-harmtrace-base" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HarmTrace-Base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-ord-spine-cereal = {
+        "type-ord-spine-cereal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

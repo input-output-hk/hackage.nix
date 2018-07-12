@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-reverse-proxy = {
+        "http-reverse-proxy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-control
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http-reverse-proxy

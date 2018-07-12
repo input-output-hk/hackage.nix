@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hipbot = {
+        "hipbot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

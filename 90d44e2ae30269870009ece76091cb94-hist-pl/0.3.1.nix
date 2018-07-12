@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hist-pl = {
+        "hist-pl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          hist-pl = {
+          "hist-pl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

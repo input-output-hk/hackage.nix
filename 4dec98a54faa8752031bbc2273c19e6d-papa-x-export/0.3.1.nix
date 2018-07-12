@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        papa-x-export = {
+        "papa-x-export" = {
           depends  = [ hsPkgs.base ];
         };
       };

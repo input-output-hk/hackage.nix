@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-lzma = {
+        "pipes-lzma" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          pipes-lzma-tests = {
+          "pipes-lzma-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          pipes-lzma-unxz = {
+          "pipes-lzma-unxz" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes

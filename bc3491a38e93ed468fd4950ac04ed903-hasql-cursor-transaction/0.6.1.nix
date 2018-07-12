@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-cursor-transaction = {
+        "hasql-cursor-transaction" = {
           depends  = [
             hsPkgs.hasql
             hsPkgs.hasql-transaction

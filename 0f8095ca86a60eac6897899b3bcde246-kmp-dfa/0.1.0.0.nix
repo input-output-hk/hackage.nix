@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kmp-dfa = {
+        "kmp-dfa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

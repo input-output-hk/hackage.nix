@@ -21,31 +21,31 @@ let
       };
       components = {
         exes = {
-          archive = {
+          "archive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
               hsPkgs.HSH
             ];
           };
-          events-to-timelog = {
+          "events-to-timelog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
               hsPkgs.old-locale
             ];
           };
-          extract-non-ascii = {
+          "extract-non-ascii" = {
             depends  = [ hsPkgs.base ];
           };
-          git-prompt = {
+          "git-prompt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
               hsPkgs.HSH
             ];
           };
-          label = {
+          "label" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HSH
@@ -54,54 +54,54 @@ let
               hsPkgs.bytestring
             ];
           };
-          mh-gen-message-id-mapping = {
+          "mh-gen-message-id-mapping" = {
             depends  = [ hsPkgs.base ];
           };
-          drop-non-ascii = {
+          "drop-non-ascii" = {
             depends  = [ hsPkgs.base ];
           };
-          show-non-ascii = {
+          "show-non-ascii" = {
             depends  = [ hsPkgs.base ];
           };
-          summ = {
+          "summ" = {
             depends  = [ hsPkgs.base ];
           };
-          mean = {
+          "mean" = {
             depends  = [ hsPkgs.base ];
           };
-          rot = {
+          "rot" = {
             depends  = [ hsPkgs.base ];
           };
-          pad = {
+          "pad" = {
             depends  = [ hsPkgs.base ];
           };
-          myrev = {
+          "myrev" = {
             depends  = [ hsPkgs.base ];
           };
-          loopback = {
+          "loopback" = {
             depends  = [ hsPkgs.base ];
           };
-          what-I-have-done-today = {
+          "what-I-have-done-today" = {
             depends  = [ hsPkgs.base ];
           };
-          x-printable = {
+          "x-printable" = {
             depends  = [ hsPkgs.base ];
           };
-          cp-rescue = {};
-          timer = {
+          "cp-rescue" = {};
+          "timer" = {
             depends  = [ hsPkgs.unix ];
           };
-          nest = {};
-          getpin = {};
-          starecho = {};
-          color-list = {
+          "nest" = {};
+          "getpin" = {};
+          "starecho" = {};
+          "color-list" = {
             depends  = [
               hsPkgs.base
               hsPkgs.colour
               hsPkgs.array
             ];
           };
-          lmaptool = {
+          "lmaptool" = {
             depends  = [
               hsPkgs.containers
             ];

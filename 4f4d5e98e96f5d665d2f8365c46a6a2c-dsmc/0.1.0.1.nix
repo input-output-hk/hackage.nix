@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dsmc = {
+        "dsmc" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

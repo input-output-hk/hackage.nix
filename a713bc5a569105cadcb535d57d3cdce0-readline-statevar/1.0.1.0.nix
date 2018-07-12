@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        readline-statevar = {
+        "readline-statevar" = {
           depends  = [
             hsPkgs.readline
             hsPkgs.base

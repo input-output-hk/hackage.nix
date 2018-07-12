@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        inflist = {
+        "inflist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
           ];
         };
         tests = {
-          test-inflist = {
+          "test-inflist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

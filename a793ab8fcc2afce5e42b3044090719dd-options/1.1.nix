@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        options = {
+        "options" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows && (compiler.isGhc && compiler.version.lt "7.2")) hsPkgs.bytestring;
         };
         tests = {
-          options_tests = {
+          "options_tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chell

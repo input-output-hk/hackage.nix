@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        units = {
+        "units" = {
           depends  = [
             hsPkgs.base
             hsPkgs.th-desugar
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.units
               hsPkgs.base

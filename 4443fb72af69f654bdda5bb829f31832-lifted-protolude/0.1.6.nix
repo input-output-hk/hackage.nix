@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lifted-protolude = {
+        "lifted-protolude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

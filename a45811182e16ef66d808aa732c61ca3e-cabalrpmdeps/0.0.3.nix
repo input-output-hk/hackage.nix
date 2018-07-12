@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cabalrpmdeps = {
+        "cabalrpmdeps" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base
@@ -28,21 +28,21 @@ let
           ];
         };
         exes = {
-          cabalrpmprov = {
+          "cabalrpmprov" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base
               hsPkgs.Cabal
             ];
           };
-          cabalrpmreq = {
+          "cabalrpmreq" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base
               hsPkgs.Cabal
             ];
           };
-          cabalrpmbr = {
+          "cabalrpmbr" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

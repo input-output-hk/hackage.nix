@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kontra-config = {
+        "kontra-config" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers-base

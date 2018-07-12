@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-contrib-csv = {
+        "hakyll-contrib-csv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          hakyll-contrib-csv-spec = {
+          "hakyll-contrib-csv-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-html

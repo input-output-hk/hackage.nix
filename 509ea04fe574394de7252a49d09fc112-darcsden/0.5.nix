@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          darcsden = {
+          "darcsden" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base64-string
@@ -58,8 +58,8 @@ let
               hsPkgs.xml
             ];
           };
-          darcsden-ssh = {};
-          darcsden-post-hook = {};
+          "darcsden-ssh" = {};
+          "darcsden-post-hook" = {};
         };
       };
     }

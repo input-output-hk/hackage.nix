@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Frames = {
+        "Frames" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          getdata = {
+          "getdata" = {
             depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
               hsPkgs.directory
             ];
           };
-          plot = {
+          "plot" = {
             depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
@@ -70,7 +70,7 @@ let
               hsPkgs.statistics
             ];
           };
-          plot2 = {
+          "plot2" = {
             depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
@@ -88,7 +88,7 @@ let
               hsPkgs.statistics
             ];
           };
-          demo = {
+          "demo" = {
             depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.list-t
@@ -103,7 +103,7 @@ let
               hsPkgs.pipes
             ];
           };
-          tutorial = {
+          "tutorial" = {
             depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
@@ -116,7 +116,7 @@ let
               hsPkgs.pipes
             ];
           };
-          benchdemo = {
+          "benchdemo" = {
             depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
@@ -124,7 +124,7 @@ let
               hsPkgs.pipes
             ];
           };
-          missing = {
+          "missing" = {
             depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
@@ -133,7 +133,7 @@ let
               hsPkgs.pipes-safe
             ];
           };
-          kata04 = {
+          "kata04" = {
             depends  = pkgs.lib.optionals _flags.demos [
               hsPkgs.base
               hsPkgs.Frames
@@ -144,7 +144,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -161,13 +161,13 @@ let
               hsPkgs.HUnit
             ];
           };
-          overlap = {
+          "overlap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Frames
             ];
           };
-          mpg = {
+          "mpg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Frames
@@ -175,7 +175,7 @@ let
           };
         };
         benchmarks = {
-          insurance = {
+          "insurance" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

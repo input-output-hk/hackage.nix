@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multipart-names = {
+        "multipart-names" = {
           depends  = [
             hsPkgs.base
             hsPkgs.case-insensitive
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

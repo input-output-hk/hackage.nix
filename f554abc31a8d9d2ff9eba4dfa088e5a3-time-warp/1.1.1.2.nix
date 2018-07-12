@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-warp = {
+        "time-warp" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.array
@@ -73,7 +73,7 @@ let
           ];
         };
         exes = {
-          ping-pong = {
+          "ping-pong" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -89,7 +89,7 @@ let
               hsPkgs.time
             ];
           };
-          socket-state = {
+          "socket-state" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -108,7 +108,7 @@ let
               hsPkgs.time
             ];
           };
-          net-playground = {
+          "net-playground" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -135,7 +135,7 @@ let
               hsPkgs.random
             ];
           };
-          bench-sender = {
+          "bench-sender" = {
             depends  = [
               hsPkgs.async
               hsPkgs.attoparsec
@@ -163,7 +163,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          bench-receiver = {
+          "bench-receiver" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -186,7 +186,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          bench-log-reader = {
+          "bench-log-reader" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base
@@ -216,7 +216,7 @@ let
           };
         };
         tests = {
-          time-warp-test = {
+          "time-warp-test" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

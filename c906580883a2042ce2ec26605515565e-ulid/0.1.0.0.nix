@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ulid = {
+        "ulid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.crockford
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          ulid-exe = {
+          "ulid-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ulid
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          ulid-test = {
+          "ulid-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

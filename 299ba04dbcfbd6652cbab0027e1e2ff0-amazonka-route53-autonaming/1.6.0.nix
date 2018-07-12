@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-route53-autonaming = {
+        "amazonka-route53-autonaming" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-route53-autonaming-test = {
+          "amazonka-route53-autonaming-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

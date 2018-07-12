@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        failure-detector = {
+        "failure-detector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.failure-detector
               hsPkgs.base

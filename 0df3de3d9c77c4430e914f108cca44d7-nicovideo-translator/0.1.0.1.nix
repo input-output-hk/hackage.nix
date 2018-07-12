@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nicovideo-translator = {
+        "nicovideo-translator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          nicovideo-translator = {
+          "nicovideo-translator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nicovideo-translator

@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        hmatrix-gsl-stats = {
+        "hmatrix-gsl-stats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-binary
             hsPkgs.storable-complex
             hsPkgs.hmatrix
           ];
-          libs = ((if _flags.mkl && system.isX86_64
+          libs = (pkgs.lib.optionals _flags.mkl (if system.isX86_64
             then [
               pkgs.gsl
               pkgs.mkl_lapack

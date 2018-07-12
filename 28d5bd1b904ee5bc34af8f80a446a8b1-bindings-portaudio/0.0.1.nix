@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-portaudio = {
+        "bindings-portaudio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

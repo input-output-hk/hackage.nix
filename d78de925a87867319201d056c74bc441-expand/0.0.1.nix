@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        expand = {
+        "expand" = {
           depends  = [
             hsPkgs.base
             hsPkgs.murder

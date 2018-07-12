@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        palindromes = {};
+        "palindromes" = {};
         exes = {
-          palindromes = {
+          "palindromes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        io-memoize = {
+        "io-memoize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

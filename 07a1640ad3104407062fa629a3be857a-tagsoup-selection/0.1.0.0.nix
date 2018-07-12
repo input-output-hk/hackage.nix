@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagsoup-selection = {
+        "tagsoup-selection" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

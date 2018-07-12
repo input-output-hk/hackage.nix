@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-querystring = {
+        "http-querystring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,13 +29,13 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

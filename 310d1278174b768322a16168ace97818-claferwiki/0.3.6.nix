@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        claferwiki = {
+        "claferwiki" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Wordlint = {
+        "Wordlint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmdargs
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          wordlint = {
+          "wordlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

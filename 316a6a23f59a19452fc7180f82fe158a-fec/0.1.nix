@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fec = {
+        "fec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

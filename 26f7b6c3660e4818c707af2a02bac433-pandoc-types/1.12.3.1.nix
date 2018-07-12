@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pandoc-types = {
+        "pandoc-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

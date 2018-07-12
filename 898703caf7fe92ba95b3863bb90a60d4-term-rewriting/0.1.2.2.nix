@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        term-rewriting = {
+        "term-rewriting" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.multiset
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.term-rewriting

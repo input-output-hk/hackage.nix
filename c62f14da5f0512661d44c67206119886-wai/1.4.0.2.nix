@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai = {
+        "wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

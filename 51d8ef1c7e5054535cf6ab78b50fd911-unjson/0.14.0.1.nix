@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unjson = {
+        "unjson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

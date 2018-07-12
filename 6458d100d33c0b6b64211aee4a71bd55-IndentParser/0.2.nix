@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        IndentParser = {
+        "IndentParser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

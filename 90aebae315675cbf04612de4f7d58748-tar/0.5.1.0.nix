@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tar = {
+        "tar" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.filepath
@@ -48,7 +48,7 @@ let
             ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = (([
               hsPkgs.base
               hsPkgs.filepath
@@ -78,7 +78,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

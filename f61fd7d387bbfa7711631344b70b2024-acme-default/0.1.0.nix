@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-default = {
+        "acme-default" = {
           depends  = [ hsPkgs.base ];
         };
       };

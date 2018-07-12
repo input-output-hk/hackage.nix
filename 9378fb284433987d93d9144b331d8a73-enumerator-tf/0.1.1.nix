@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enumerator-tf = {
+        "enumerator-tf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monads-tf

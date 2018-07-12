@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          example_01 = {
+          "example_01" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hogre
@@ -31,7 +31,7 @@ let
               pkgs."stdc++"
             ];
           };
-          example_02 = {
+          "example_02" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hogre

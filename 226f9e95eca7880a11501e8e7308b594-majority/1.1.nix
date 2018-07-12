@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        majority = {
+        "majority" = {
           depends  = [
             hsPkgs.haskell2010
           ];

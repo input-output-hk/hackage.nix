@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        xlsx-templater = {};
+        "xlsx-templater" = {};
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

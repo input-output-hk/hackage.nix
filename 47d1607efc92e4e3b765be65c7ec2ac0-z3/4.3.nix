@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        z3 = {
+        "z3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          examples = {
+          "examples" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.z3
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.z3

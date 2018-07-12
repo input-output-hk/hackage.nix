@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ReadArgs = {
+        "ReadArgs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.system-filepath
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          ReadArgsEx = {
+          "ReadArgsEx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.system-filepath
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          ReadArgsSpec = {
+          "ReadArgsSpec" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.base

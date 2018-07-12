@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unagi-bloomfilter = {
+        "unagi-bloomfilter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.atomic-primops
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          dev-example = {
+          "dev-example" = {
             depends  = pkgs.lib.optionals (!(!_flags.dev)) [
               hsPkgs.base
               hsPkgs.unagi-bloomfilter
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = pkgs.lib.optionals _flags.dev [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = pkgs.lib.optionals _flags.dev [
               hsPkgs.base
               hsPkgs.criterion

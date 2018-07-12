@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-frontend-happstack = {
+        "hack-frontend-happstack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.happstack-fastcgi

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-safe = {
+        "acme-safe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.acme-dont

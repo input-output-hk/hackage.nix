@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jsonschema-gen = {
+        "jsonschema-gen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

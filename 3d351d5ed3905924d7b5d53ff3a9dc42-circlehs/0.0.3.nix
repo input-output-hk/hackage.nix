@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        circlehs = {
+        "circlehs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

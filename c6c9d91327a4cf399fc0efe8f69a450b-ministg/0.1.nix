@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ministg = {
+          "ministg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monads-tf

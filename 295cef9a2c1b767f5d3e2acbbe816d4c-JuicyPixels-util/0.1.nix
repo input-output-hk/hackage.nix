@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JuicyPixels-util = {
+        "JuicyPixels-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JuicyPixels

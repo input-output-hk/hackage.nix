@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scion-browser = {
+        "scion-browser" = {
           depends  = ([
             hsPkgs.attoparsec
             hsPkgs.base
@@ -58,7 +58,7 @@ let
           ];
         };
         exes = {
-          scion-browser = {
+          "scion-browser" = {
             depends  = ([
               hsPkgs.haskeline
               hsPkgs.attoparsec

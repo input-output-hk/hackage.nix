@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bound = {
+        "bound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -30,7 +30,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.ghc-prim;
         };
         tests = {
-          Simple = {
+          "Simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bound
@@ -38,7 +38,7 @@ let
               hsPkgs.transformers
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

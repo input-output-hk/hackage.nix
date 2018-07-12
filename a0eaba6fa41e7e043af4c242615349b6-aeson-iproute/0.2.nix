@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-iproute = {
+        "aeson-iproute" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

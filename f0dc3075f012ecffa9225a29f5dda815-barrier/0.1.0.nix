@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        barrier = {
+        "barrier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -35,13 +35,13 @@ let
           ];
         };
         exes = {
-          barrier-data-generator = {
+          "barrier-data-generator" = {
             depends  = pkgs.lib.optionals _flags.generator [
               hsPkgs.base
               hsPkgs.freetype2
             ];
           };
-          barrier-example = {
+          "barrier-example" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
               hsPkgs.barrier
             ];
           };
-          barrier-test-result-generator = {
+          "barrier-test-result-generator" = {
             depends  = pkgs.lib.optionals _flags.test-results [
               hsPkgs.base
               hsPkgs.bytestring
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

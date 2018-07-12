@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SFML = {
+        "SFML" = {
           depends  = [ hsPkgs.base ];
           libs = [
             pkgs.csfml-window

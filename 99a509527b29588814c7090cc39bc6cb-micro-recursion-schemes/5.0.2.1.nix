@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        micro-recursion-schemes = {
+        "micro-recursion-schemes" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals _flags.template-haskell [
@@ -32,7 +32,7 @@ let
           build-tools = pkgs.lib.optional _flags.template-haskell hsPkgs.buildPackages.cpphs;
         };
         tests = {
-          Expr = {
+          "Expr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

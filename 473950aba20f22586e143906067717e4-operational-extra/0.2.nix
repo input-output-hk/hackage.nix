@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        operational-extra = {
+        "operational-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.operational

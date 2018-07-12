@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scholdoc-texmath = {
+        "scholdoc-texmath" = {
           depends  = [
             hsPkgs.xml
             hsPkgs.parsec
@@ -35,7 +35,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          texmath = {
+          "texmath" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.scholdoc-texmath
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          test-texmath = {
+          "test-texmath" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

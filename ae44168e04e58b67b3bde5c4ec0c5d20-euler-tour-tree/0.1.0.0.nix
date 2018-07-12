@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        euler-tour-tree = {
+        "euler-tour-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.euler-tour-tree
               hsPkgs.base
@@ -43,7 +43,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          property-tests = {
+          "property-tests" = {
             depends  = [
               hsPkgs.euler-tour-tree
               hsPkgs.base
@@ -55,7 +55,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          hlint-tests = {
+          "hlint-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

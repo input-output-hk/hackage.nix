@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fake = {
+        "fake" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

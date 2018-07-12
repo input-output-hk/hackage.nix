@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-framework = {
+        "test-framework" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.base-orphans) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          test-framework-tests = {
+          "test-framework-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

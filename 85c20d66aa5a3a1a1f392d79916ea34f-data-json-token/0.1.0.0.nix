@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        data-json-token = {
+        "data-json-token" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          data-json-token-exe = {
+          "data-json-token-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-json-token
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          data-json-token-test = {
+          "data-json-token-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-json-token

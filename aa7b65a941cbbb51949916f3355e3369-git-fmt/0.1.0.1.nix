@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        git-fmt = {
+        "git-fmt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          git-fmt = {
+          "git-fmt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          git-fmt-test-json = {
+          "git-fmt-test-json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

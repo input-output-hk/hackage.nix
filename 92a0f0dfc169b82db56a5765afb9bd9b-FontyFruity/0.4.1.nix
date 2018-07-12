@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FontyFruity = {
+        "FontyFruity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          imgurder = {
+          "imgurder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt-xpath

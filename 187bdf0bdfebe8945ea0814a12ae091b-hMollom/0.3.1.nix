@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hMollom = {
+        "hMollom" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec

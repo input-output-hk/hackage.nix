@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pg-harness = {
+        "pg-harness" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          pg-harness = {
+          "pg-harness" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ieee-utils = {
+        "ieee-utils" = {
           depends  = [ hsPkgs.base ];
         };
       };

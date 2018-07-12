@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-typelits-knownnat = {
+        "ghc-typelits-knownnat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-ghc-typelits-knownat = {
+          "test-ghc-typelits-knownat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-typelits-knownnat

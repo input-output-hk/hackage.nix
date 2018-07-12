@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        potoki-cereal = {
+        "potoki-cereal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-prelude

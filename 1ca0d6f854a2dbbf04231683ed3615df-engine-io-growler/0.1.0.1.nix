@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        engine-io-growler = {
+        "engine-io-growler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.growler

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-markov = {
+        "monad-markov" = {
           depends  = [
             hsPkgs.MonadRandom
             hsPkgs.base

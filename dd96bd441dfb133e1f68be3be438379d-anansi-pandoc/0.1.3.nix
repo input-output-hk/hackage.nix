@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        anansi-pandoc = {
+        "anansi-pandoc" = {
           depends  = [
             hsPkgs.anansi
             hsPkgs.base

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          git-repair = {
+          "git-repair" = {
             depends  = ([
               hsPkgs.split
               hsPkgs.hslogger

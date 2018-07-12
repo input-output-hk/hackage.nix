@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Blobs = {
+        "Blobs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wx
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          blobs = {
+          "blobs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wx

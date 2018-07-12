@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        github-webhook-handler-snap = {
+        "github-webhook-handler-snap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

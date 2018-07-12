@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        IntGraph = {
+        "IntGraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          IntGraph-test = {
+          "IntGraph-test" = {
             depends  = [
               hsPkgs.IntGraph
               hsPkgs.base

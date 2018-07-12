@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        sparkle = {
+        "sparkle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.gt "8.0.1") hsPkgs.jvm-streaming;
         };
         exes = {
-          sparkle = {
+          "sparkle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

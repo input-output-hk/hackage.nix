@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        koofr-client = {
+        "koofr-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

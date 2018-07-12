@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hcwiid = {
+        "hcwiid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

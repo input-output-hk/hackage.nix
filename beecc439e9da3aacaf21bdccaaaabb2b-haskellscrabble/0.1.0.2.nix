@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskellscrabble = {
+        "haskellscrabble" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.haskellscrabble
               hsPkgs.base

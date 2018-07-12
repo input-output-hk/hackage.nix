@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hserv = {
+          "hserv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-app-static

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-all-monad = {
+        "acme-all-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

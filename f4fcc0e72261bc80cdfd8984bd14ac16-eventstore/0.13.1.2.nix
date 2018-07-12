@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventstore = {
+        "eventstore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          integration-tests = {
+          "integration-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eventstore

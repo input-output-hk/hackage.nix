@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          clone-all = {
+          "clone-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

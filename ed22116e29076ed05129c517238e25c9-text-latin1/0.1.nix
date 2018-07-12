@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-latin1 = {
+        "text-latin1" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-checked

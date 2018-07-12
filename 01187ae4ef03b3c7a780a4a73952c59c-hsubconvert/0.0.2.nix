@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsubconvert = {
+          "hsubconvert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.svndump

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dense = {
+        "dense" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

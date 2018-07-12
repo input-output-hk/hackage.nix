@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll = {
+        "hakyll" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -51,7 +51,7 @@ let
           ];
         };
         tests = {
-          hakyll-tests = {
+          "hakyll-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambda-calculator = {
+        "lambda-calculator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          lambda-calculator = {
+          "lambda-calculator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lambda-calculator
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          lambda-calculus-test = {
+          "lambda-calculus-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lambda-calculator
@@ -48,7 +48,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          lambda-calculus-lint = {
+          "lambda-calculus-lint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prednote = {
+        "prednote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.explicit-exception
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          prednote-test = {
+          "prednote-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

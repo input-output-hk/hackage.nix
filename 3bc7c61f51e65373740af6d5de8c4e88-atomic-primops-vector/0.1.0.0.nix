@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atomic-primops-vector = {
+        "atomic-primops-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-atomic-primops-vector = {
+          "test-atomic-primops-vector" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

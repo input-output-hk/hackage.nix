@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strive = {
+        "strive" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

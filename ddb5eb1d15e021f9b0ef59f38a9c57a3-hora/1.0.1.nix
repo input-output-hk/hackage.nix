@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hora = {
+        "hora" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

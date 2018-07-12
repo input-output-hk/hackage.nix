@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-jquery = {
+        "servant-jquery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.charset
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          counter = {
+          "counter" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

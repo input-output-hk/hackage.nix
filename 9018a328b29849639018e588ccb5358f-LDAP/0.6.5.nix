@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        LDAP = {
+        "LDAP" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.base;
           libs = [ pkgs.ldap ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.base;
             libs = [ pkgs.ldap ];
           };

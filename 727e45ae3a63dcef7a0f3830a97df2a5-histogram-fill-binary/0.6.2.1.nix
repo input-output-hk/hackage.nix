@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        histogram-fill-binary = {
+        "histogram-fill-binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

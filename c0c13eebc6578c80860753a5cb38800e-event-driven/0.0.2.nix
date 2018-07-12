@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        event-driven = {
+        "event-driven" = {
           depends  = [
             hsPkgs.yjtools
             hsPkgs.monads-tf

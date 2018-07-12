@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-hspec-hashable = {
+        "genvalidity-hspec-hashable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.validity
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          genvalidity-hspec-hashable-doctests = {
+          "genvalidity-hspec-hashable-doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -42,7 +42,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          genvalidity-hspec-hashable-test = {
+          "genvalidity-hspec-hashable-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.genvalidity

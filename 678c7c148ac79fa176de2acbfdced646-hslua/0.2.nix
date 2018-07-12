@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hslua = {
+        "hslua" = {
           depends  = [ hsPkgs.base ];
         };
       };

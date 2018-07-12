@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        interpolate = {
+        "interpolate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell
@@ -40,7 +40,7 @@ let
               hsPkgs.quickcheck-instances
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

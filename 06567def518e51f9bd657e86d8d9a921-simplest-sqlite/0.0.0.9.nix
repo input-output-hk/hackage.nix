@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simplest-sqlite = {
+        "simplest-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PrimitiveArray = {
+        "PrimitiveArray" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

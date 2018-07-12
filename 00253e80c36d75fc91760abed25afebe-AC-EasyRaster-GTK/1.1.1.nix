@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AC-EasyRaster-GTK = {
+        "AC-EasyRaster-GTK" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

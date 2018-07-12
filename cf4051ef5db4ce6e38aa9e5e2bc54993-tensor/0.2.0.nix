@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tensor = {
+        "tensor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          nomyx-server = {
+          "nomyx-server" = {
             depends  = [
               hsPkgs.nomyx-core
               hsPkgs.nomyx-language
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nomyx-server

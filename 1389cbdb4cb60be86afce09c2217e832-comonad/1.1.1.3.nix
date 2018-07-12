@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        comonad = {
+        "comonad" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        notcpp = {
+        "notcpp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

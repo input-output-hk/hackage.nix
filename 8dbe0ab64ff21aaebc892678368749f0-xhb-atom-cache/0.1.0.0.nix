@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xhb-atom-cache = {
+        "xhb-atom-cache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

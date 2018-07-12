@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          typescript-docs = {
+          "typescript-docs" = {
             depends  = [
               hsPkgs.utf8-string
               hsPkgs.syb

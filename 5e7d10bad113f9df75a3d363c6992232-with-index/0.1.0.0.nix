@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        with-index = {
+        "with-index" = {
           depends  = [ hsPkgs.base ];
         };
       };

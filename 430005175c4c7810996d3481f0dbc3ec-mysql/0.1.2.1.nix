@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        mysql = {
+        "mysql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

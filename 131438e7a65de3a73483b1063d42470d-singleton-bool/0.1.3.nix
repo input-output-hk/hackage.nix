@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        singleton-bool = {
+        "singleton-bool" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) hsPkgs.tagged;

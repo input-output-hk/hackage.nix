@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        seacat = {
+        "seacat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

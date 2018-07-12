@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpuz = {
+        "hpuz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

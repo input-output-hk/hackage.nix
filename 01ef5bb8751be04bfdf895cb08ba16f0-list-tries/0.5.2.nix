@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-tries = {
+        "list-tries" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          list-tries-tests = {
+          "list-tries-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

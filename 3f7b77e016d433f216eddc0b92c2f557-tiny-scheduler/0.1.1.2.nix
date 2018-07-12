@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tiny-scheduler = {
+        "tiny-scheduler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

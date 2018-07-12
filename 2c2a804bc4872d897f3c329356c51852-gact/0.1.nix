@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gact = {
+          "gact" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biopsl

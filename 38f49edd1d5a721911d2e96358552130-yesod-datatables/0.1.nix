@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-datatables = {
+        "yesod-datatables" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-datatables

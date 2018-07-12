@@ -25,7 +25,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hmatrix = {
+        "hmatrix" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.QuickCheck
@@ -38,7 +38,7 @@ let
               hsPkgs.array
             ]
             else [ hsPkgs.base ]);
-          libs = (if _flags.mkl && system.isX86_64
+          libs = pkgs.lib.optionals _flags.mkl (if system.isX86_64
             then [
               pkgs.gsl
               pkgs.mkl_lapack

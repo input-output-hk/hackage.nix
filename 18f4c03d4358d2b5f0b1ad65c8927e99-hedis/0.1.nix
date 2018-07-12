@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedis = {
+        "hedis" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hedis-benchmark = {
+          "hedis-benchmark" = {
             depends  = pkgs.lib.optionals (!(!_flags.benchmark)) [
               hsPkgs.base
               hsPkgs.mtl

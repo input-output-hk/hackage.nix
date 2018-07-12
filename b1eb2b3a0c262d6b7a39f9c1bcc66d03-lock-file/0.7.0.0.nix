@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lock-file = {
+        "lock-file" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.transformers;
         };
         tests = {
-          lock-file-unit-tests = {
+          "lock-file-unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default-class

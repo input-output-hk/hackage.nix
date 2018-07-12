@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HiggsSet = {
+        "HiggsSet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

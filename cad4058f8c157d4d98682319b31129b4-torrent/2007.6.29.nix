@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        torrent = {
+        "torrent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bencode

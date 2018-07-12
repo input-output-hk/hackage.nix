@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-discover = {
+        "tasty-discover" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          tasty-discover = {
+          "tasty-discover" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

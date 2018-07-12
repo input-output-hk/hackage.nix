@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        point-octree = {
+        "point-octree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.AC-Vector
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test_Octree = {
+          "test_Octree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -36,7 +36,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AC-Vector
@@ -44,7 +44,7 @@ let
               hsPkgs.markdown-unlit
             ];
           };
-          readme-BB = {
+          "readme-BB" = {
             depends  = [
               hsPkgs.base
               hsPkgs.AC-Vector

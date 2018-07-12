@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          blobs = {
+          "blobs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

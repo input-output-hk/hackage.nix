@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fckeditor = {
+        "fckeditor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

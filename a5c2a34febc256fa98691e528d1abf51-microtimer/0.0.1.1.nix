@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microtimer = {
+        "microtimer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

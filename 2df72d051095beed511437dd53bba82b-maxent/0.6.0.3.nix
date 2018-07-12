@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        maxent = {
+        "maxent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.nonlinear-optimization
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nonlinear-optimization
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nonlinear-optimization

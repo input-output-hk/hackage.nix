@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        live-sequencer = {
+        "live-sequencer" = {
           depends  = [
             hsPkgs.non-negative
             hsPkgs.event-list
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          live-sequencer = {
+          "live-sequencer" = {
             depends  = [
               hsPkgs.transformers
               hsPkgs.explicit-exception
@@ -52,7 +52,7 @@ let
               hsPkgs.base
             ];
           };
-          live-sequencer-gui = {
+          "live-sequencer-gui" = {
             depends  = pkgs.lib.optionals _flags.gui [
               hsPkgs.wx
               hsPkgs.wxcore

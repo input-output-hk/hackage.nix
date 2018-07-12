@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        th-cas = {
+        "th-cas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.th-cas

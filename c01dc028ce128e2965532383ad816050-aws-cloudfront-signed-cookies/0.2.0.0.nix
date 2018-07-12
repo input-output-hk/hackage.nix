@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-cloudfront-signed-cookies = {
+        "aws-cloudfront-signed-cookies" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          aws-cloudfront-signed-cookies = {
+          "aws-cloudfront-signed-cookies" = {
             depends  = [
               hsPkgs.aws-cloudfront-signed-cookies
               hsPkgs.base
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          hedgehog = {
+          "hedgehog" = {
             depends  = [
               hsPkgs.aws-cloudfront-signed-cookies
               hsPkgs.base

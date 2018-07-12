@@ -20,9 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        mecha = {
+        "mecha" = {
           depends  = [ hsPkgs.base ];
         };
-        exes = { mecha-examples = {}; };
+        exes = {
+          "mecha-examples" = {};
+        };
       };
     }

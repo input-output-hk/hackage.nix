@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hackage-find-contribution = {
+          "hackage-find-contribution" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.hackage-db

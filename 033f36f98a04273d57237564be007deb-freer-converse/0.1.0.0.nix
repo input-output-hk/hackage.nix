@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        freer-converse = {
+        "freer-converse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.freer-effects
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          example-Hello = {
+          "example-Hello" = {
             depends  = [
               hsPkgs.base
               hsPkgs.freer-effects

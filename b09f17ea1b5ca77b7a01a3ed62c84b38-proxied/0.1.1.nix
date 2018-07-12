@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proxied = {
+        "proxied" = {
           depends  = [
             hsPkgs.base
             hsPkgs.generic-deriving

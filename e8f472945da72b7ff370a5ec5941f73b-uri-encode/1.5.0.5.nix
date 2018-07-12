@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uri-encode = {
+        "uri-encode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
             else [ hsPkgs.network ]);
         };
         exes = {
-          uri-encode = {
+          "uri-encode" = {
             depends  = pkgs.lib.optionals _flags.tools ([
               hsPkgs.base
               hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
               then [ hsPkgs.network-uri ]
               else [ hsPkgs.network ]));
           };
-          uri-decode = {
+          "uri-decode" = {
             depends  = pkgs.lib.optionals _flags.tools ([
               hsPkgs.base
               hsPkgs.bytestring

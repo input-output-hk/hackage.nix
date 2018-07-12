@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        convertible-ascii = {
+        "convertible-ascii" = {
           depends  = [
             hsPkgs.ascii
             hsPkgs.base

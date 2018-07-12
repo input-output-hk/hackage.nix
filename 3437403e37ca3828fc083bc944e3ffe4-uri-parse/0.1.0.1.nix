@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uri-parse = {
+        "uri-parse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          uri-parse-test = {
+          "uri-parse-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uri-parse

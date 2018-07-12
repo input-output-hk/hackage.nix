@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        derive-monoid = {
+        "derive-monoid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         exes = {
-          example-derive-monoid = {
+          "example-derive-monoid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.derive-monoid
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.derive-monoid

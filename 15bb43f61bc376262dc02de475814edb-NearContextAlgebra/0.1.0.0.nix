@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          NearContextAlgebra = {
+          "NearContextAlgebra" = {
             depends  = [
               hsPkgs.ContextAlgebra
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shortcut-links = {
+        "shortcut-links" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

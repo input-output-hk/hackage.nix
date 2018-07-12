@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parsec-free = {
+        "parsec-free" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

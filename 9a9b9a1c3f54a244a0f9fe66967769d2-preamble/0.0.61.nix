@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        preamble = {
+        "preamble" = {
           depends  = [
             hsPkgs.MonadRandom
             hsPkgs.aeson

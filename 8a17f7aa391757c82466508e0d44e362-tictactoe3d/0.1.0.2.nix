@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tictactoe3d = {
+        "tictactoe3d" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-codecommit = {
+        "amazonka-codecommit" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-codecommit-test = {
+          "amazonka-codecommit-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

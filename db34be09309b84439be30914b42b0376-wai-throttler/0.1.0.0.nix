@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-throttler = {
+        "wai-throttler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tconfig = {
+        "tconfig" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

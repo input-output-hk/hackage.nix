@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-int = {
+        "hw-int" = {
           depends  = [ hsPkgs.base ];
         };
       };

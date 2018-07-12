@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        family-tree = {
+        "family-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

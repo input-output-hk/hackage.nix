@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        bit-vector = {
+        "bit-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

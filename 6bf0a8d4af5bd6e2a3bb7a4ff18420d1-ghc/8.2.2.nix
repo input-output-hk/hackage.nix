@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc = {
+        "ghc" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.deepseq

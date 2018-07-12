@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpp = {
+        "hpp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") hsPkgs.semigroups;
         };
         exes = {
-          hpp = {
+          "hpp" = {
             depends  = [
               hsPkgs.hpp
               hsPkgs.base

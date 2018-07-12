@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-reactive-yampa = {
+        "keera-hails-reactive-yampa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.keera-hails-reactivevalues

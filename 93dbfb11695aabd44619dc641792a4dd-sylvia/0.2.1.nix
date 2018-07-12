@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sylvia = {
+          "sylvia" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.void

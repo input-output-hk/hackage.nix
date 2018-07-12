@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mxnet-dataiter = {
+        "mxnet-dataiter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          streaming = {
+          "streaming" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -41,7 +41,7 @@ let
               hsPkgs.mxnet-dataiter
             ];
           };
-          conduit = {
+          "conduit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

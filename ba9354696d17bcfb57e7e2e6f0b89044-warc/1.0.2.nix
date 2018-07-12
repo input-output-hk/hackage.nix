@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warc = {
+        "warc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          warc-export = {
+          "warc-export" = {
             depends  = [
               hsPkgs.base
               hsPkgs.warc

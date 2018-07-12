@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-data = {
+        "happstack-data" = {
           depends  = (((([
             hsPkgs.binary
             hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           ]) ++ pkgs.lib.optional _flags.old-haxml hsPkgs.HaXml) ++ pkgs.lib.optional _flags.new-haxml hsPkgs.HaXml) ++ pkgs.lib.optional _flags.tests hsPkgs.HUnit;
         };
         exes = {
-          happstack-data-tests = {
+          "happstack-data-tests" = {
             depends  = pkgs.lib.optional _flags.tests hsPkgs.HUnit;
           };
         };

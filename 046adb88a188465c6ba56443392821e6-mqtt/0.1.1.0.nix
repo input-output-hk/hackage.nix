@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mqtt = {
+        "mqtt" = {
           depends  = [
             hsPkgs.async
             hsPkgs.attoparsec
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -61,7 +61,7 @@ let
               hsPkgs.uuid
             ];
           };
-          priority-semaphore = {
+          "priority-semaphore" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -71,13 +71,13 @@ let
               hsPkgs.mqtt
             ];
           };
-          retained-store-strictness-test = {
+          "retained-store-strictness-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mqtt
             ];
           };
-          routing-tree-size-test = {
+          "routing-tree-size-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -87,7 +87,7 @@ let
           };
         };
         benchmarks = {
-          topic-matching = {
+          "topic-matching" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -97,7 +97,7 @@ let
               hsPkgs.text
             ];
           };
-          binary = {
+          "binary" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

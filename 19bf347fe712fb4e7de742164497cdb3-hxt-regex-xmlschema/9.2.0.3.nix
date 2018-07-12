@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-regex-xmlschema = {
+        "hxt-regex-xmlschema" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          SimpleMatch = {
+          "SimpleMatch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          Date = {
+          "Date" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          Benchmark = {
+          "Benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

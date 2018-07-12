@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hackage-plot = {
+          "hackage-plot" = {
             depends  = [
               hsPkgs.gnuplot
               hsPkgs.tagsoup

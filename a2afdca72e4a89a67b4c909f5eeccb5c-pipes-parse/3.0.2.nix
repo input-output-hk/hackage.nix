@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-parse = {
+        "pipes-parse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pipes

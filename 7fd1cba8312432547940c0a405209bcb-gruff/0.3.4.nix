@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        gruff = {
+        "gruff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ruff
           ];
         };
         exes = {
-          gruff = {
+          "gruff" = {
             depends  = [
               hsPkgs.gruff
               hsPkgs.base

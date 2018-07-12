@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        murmur-hash = {
+        "murmur-hash" = {
           depends  = [ hsPkgs.base ];
         };
       };

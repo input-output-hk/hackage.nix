@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrent-st = {
+        "concurrent-st" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

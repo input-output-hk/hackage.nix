@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pango = {
+        "pango" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

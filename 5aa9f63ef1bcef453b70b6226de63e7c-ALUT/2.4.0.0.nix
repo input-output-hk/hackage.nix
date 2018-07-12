@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ALUT = {
+        "ALUT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -32,7 +32,7 @@ let
           libs = if system.isWindows && _flags.usenativewindowslibraries
             then [ pkgs.alut ]
             else pkgs.lib.optional (!system.isIos) pkgs.alut;
-          frameworks = pkgs.lib.optional (!(system.isWindows && _flags.usenativewindowslibraries) && system.isIos) pkgs.ALUT;
+          frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (pkgs.lib.optional system.isIos pkgs.ALUT);
         };
       };
     }

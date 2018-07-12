@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-builder = {
+        "blaze-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

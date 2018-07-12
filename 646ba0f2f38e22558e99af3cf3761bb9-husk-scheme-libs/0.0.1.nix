@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        husk-scheme-libs = {
+        "husk-scheme-libs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

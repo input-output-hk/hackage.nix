@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-kafka = {
+        "pipes-kafka" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

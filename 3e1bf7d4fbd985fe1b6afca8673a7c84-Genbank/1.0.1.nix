@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Genbank = {
+        "Genbank" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

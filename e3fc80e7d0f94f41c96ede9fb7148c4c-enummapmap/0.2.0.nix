@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enummapmap = {
+        "enummapmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-enummapmap-lazy = {
+          "test-enummapmap-lazy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -38,28 +38,7 @@ let
               hsPkgs.enummapmap
             ];
           };
-          test-enummapmap-intmap-lazy = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.HUnit
-              hsPkgs.QuickCheck
-              hsPkgs.hspec
-              hsPkgs.deepseq
-              hsPkgs.containers
-              hsPkgs.enummapmap
-            ];
-          };
-          test-enummapmap-strict = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.HUnit
-              hsPkgs.QuickCheck
-              hsPkgs.hspec
-              hsPkgs.deepseq
-              hsPkgs.enummapmap
-            ];
-          };
-          test-enummapmap-intmap-strict = {
+          "test-enummapmap-intmap-lazy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -70,7 +49,28 @@ let
               hsPkgs.enummapmap
             ];
           };
-          test-enummapset-intset = {
+          "test-enummapmap-strict" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.HUnit
+              hsPkgs.QuickCheck
+              hsPkgs.hspec
+              hsPkgs.deepseq
+              hsPkgs.enummapmap
+            ];
+          };
+          "test-enummapmap-intmap-strict" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.HUnit
+              hsPkgs.QuickCheck
+              hsPkgs.hspec
+              hsPkgs.deepseq
+              hsPkgs.containers
+              hsPkgs.enummapmap
+            ];
+          };
+          "test-enummapset-intset" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

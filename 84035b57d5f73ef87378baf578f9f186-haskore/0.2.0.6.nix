@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskore = {
+        "haskore" = {
           depends  = [
             hsPkgs.markov-chain
             hsPkgs.midi
@@ -49,7 +49,7 @@ let
             ]);
         };
         exes = {
-          autotrack = {
+          "autotrack" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.haskore
               hsPkgs.bytestring
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          test-haskore = {
+          "test-haskore" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HUnit

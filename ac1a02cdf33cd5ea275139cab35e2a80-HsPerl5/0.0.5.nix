@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HsPerl5 = {
+        "HsPerl5" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakaru = {
+        "hakaru" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -53,7 +53,7 @@ let
           ];
         };
         exes = {
-          hakaru = {
+          "hakaru" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -63,7 +63,7 @@ let
               hsPkgs.optparse-applicative
             ];
           };
-          compile = {
+          "compile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -73,7 +73,7 @@ let
               hsPkgs.optparse-applicative
             ];
           };
-          summary = {
+          "summary" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -83,7 +83,7 @@ let
               hsPkgs.optparse-applicative
             ];
           };
-          hk-maple = {
+          "hk-maple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -93,7 +93,7 @@ let
               hsPkgs.containers
             ];
           };
-          density = {
+          "density" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -101,7 +101,7 @@ let
               hsPkgs.pretty
             ];
           };
-          disintegrate = {
+          "disintegrate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -110,7 +110,7 @@ let
               hsPkgs.optparse-applicative
             ];
           };
-          pretty = {
+          "pretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -118,7 +118,7 @@ let
               hsPkgs.optparse-applicative
             ];
           };
-          prettyinternal = {
+          "prettyinternal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -126,13 +126,13 @@ let
               hsPkgs.optparse-applicative
             ];
           };
-          momiji = {
+          "momiji" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
             ];
           };
-          normalize = {
+          "normalize" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -141,7 +141,7 @@ let
               hsPkgs.pretty
             ];
           };
-          hkc = {
+          "hkc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -153,7 +153,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          mh = {
+          "mh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-random
@@ -164,7 +164,7 @@ let
           };
         };
         tests = {
-          system-testsuite = {
+          "system-testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-pony-transformer-http = {
+        "http-pony-transformer-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

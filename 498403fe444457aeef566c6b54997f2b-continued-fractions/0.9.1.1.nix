@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        continued-fractions = {
+        "continued-fractions" = {
           depends  = [ hsPkgs.base ];
         };
       };

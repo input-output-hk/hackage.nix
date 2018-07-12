@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reroute = {
+        "reroute" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          reroutetest = {
+          "reroutetest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-haddock = {
+        "diagrams-haddock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          diagrams-haddock = {
+          "diagrams-haddock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          diagrams-haddock-tests = {
+          "diagrams-haddock-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

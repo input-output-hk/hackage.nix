@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-church = {
+        "generic-church" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagged
           ];
         };
         tests = {
-          test-generic-church = {
+          "test-generic-church" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

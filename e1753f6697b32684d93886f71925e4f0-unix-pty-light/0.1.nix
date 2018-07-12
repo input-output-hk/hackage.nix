@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unix-pty-light = {
+        "unix-pty-light" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

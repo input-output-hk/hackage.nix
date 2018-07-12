@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-ref = {
+        "data-ref" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.stm

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        saltine = {
+        "saltine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           libs = [ pkgs.sodium ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.saltine

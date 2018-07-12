@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-ecmascript-analysis = {
+        "language-ecmascript-analysis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.language-ecmascript

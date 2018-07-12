@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amqp-conduit = {
+        "amqp-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-amqp-conduit = {
+          "test-amqp-conduit" = {
             depends  = [
               hsPkgs.amqp-conduit
               hsPkgs.base

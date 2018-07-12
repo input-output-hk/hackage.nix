@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-vector = {
+        "pipes-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

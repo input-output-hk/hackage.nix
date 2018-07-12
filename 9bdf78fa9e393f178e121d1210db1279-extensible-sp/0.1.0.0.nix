@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extensible-sp = {
+        "extensible-sp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

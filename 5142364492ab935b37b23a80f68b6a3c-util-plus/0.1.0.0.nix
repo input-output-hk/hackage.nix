@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        util-plus = {
+        "util-plus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          util-plus-test = {
+          "util-plus-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF

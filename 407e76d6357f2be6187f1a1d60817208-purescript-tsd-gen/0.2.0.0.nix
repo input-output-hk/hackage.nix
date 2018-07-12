@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        purescript-tsd-gen = {
+        "purescript-tsd-gen" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          purs-tsd-gen = {
+          "purs-tsd-gen" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

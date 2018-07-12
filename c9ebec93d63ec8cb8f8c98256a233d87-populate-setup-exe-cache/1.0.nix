@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        populate-setup-exe-cache = {
+        "populate-setup-exe-cache" = {
           depends  = [ hsPkgs.base ];
         };
       };

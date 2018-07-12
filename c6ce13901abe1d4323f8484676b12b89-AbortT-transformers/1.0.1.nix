@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        AbortT-transformers = {
+        "AbortT-transformers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

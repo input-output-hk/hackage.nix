@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        multiset = {
+        "multiset" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.base
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.Glob
               hsPkgs.base

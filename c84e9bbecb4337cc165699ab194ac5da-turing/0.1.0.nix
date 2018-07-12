@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        turing = {
+        "turing" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          turing-test = {
+          "turing-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

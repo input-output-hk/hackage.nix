@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bson-generic = {
+        "bson-generic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bson

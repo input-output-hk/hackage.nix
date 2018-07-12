@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-batcher = {
+        "monad-batcher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

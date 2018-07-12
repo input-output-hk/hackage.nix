@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        threads = {
+        "threads" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-threads = {
+          "test-threads" = {
             depends  = [
               hsPkgs.threads
               hsPkgs.base

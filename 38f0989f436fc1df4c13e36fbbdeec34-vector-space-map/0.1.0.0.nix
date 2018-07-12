@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-space-map = {
+        "vector-space-map" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

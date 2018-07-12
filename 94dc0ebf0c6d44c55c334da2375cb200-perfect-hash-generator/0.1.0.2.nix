@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        perfect-hash-generator = {
+        "perfect-hash-generator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hash-perfectly-ints-demo = {
+          "hash-perfectly-ints-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unordered-containers
@@ -45,7 +45,7 @@ let
               hsPkgs.containers
             ];
           };
-          hash-perfectly-strings-demo = {
+          "hash-perfectly-strings-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unordered-containers
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          regression-tests = {
+          "regression-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unordered-containers

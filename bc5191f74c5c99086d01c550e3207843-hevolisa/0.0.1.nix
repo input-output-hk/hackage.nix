@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hevolisa = {
+          "hevolisa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

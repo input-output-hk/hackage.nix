@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-tiled = {
+        "aeson-tiled" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          aeson-tiled-exe = {
+          "aeson-tiled-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson-tiled
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          aeson-tiled-test = {
+          "aeson-tiled-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

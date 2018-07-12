@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PerfectHash = {
+        "PerfectHash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -33,16 +33,16 @@ let
           libs = [ pkgs.cmph ];
         };
         exes = {
-          benchmark = {
+          "benchmark" = {
             libs = [ pkgs.cmph ];
           };
-          benchmark_trie = {
+          "benchmark_trie" = {
             depends  = [
               hsPkgs.bytestring-trie
             ];
             libs = [ pkgs.cmph ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HUnit

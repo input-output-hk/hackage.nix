@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        haar = {
+        "haar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split
           ];
         };
         tests = {
-          haar-tests = {
+          "haar-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework-quickcheck2

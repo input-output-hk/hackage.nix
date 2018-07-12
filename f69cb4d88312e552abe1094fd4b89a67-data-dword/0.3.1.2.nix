@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-dword = {
+        "data-dword" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          arrowp = {
+          "arrowp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

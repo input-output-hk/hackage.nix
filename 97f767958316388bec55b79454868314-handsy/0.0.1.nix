@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        handsy = {
+        "handsy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

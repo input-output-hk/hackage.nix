@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        convert = {
+        "convert" = {
           depends  = [
             hsPkgs.ansi-wl-pprint
             hsPkgs.base

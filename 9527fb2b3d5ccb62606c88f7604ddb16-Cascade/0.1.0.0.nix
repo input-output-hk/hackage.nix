@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Cascade = {
+        "Cascade" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

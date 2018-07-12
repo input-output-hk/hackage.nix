@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        fullstop = {
+        "fullstop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split
           ];
         };
         exes = {
-          fullstop = {
+          "fullstop" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fullstop
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          hstest-fullstop = {
+          "hstest-fullstop" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fullstop

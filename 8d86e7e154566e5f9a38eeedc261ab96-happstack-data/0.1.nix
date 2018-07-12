@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-data = {
+        "happstack-data" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.template-haskell
@@ -39,7 +39,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          happstack-data-tests = {
+          "happstack-data-tests" = {
             depends  = [ hsPkgs.HUnit ];
           };
         };

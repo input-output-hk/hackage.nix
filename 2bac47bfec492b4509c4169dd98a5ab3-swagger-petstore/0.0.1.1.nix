@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        swagger-petstore = {
+        "swagger-petstore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

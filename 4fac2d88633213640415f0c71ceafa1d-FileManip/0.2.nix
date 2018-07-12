@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        FileManip = {
+        "FileManip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

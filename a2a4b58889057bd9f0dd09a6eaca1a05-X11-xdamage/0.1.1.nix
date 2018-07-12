@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        X11-xdamage = {
+        "X11-xdamage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.X11

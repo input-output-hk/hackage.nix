@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        solga = {
+        "solga" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          solga-tests = {
+          "solga-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.solga

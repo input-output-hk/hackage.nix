@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Chitra = {
+        "Chitra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          Chitra = {
+          "Chitra" = {
             depends  = [ hsPkgs.base ];
           };
         };

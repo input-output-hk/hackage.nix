@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mathflow = {
+        "mathflow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.singletons
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          mathflow-test = {
+          "mathflow-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mathflow
@@ -44,7 +44,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

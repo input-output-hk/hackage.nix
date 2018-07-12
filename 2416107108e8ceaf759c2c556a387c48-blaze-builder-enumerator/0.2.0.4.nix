@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-builder-enumerator = {
+        "blaze-builder-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

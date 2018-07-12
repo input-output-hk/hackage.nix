@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ply-loader = {
+        "ply-loader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          ply2bin = {
+          "ply2bin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

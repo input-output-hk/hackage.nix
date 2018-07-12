@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-digits = {
+        "type-digits" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

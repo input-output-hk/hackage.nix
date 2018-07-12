@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          capri = {
+          "capri" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

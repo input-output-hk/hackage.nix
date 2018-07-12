@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vty-ui = {
+        "vty-ui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vty
@@ -38,19 +38,19 @@ let
           ];
         };
         exes = {
-          vty-ui-tests = {
+          "vty-ui-tests" = {
             depends  = [
               hsPkgs.QuickCheck
             ];
           };
-          vty-ui-list-demo = {
+          "vty-ui-list-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.vty
             ];
           };
-          vty-ui-complex-demo = {
+          "vty-ui-complex-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -60,21 +60,21 @@ let
               hsPkgs.vty
             ];
           };
-          vty-ui-dirbrowser-demo = {
+          "vty-ui-dirbrowser-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.vty
             ];
           };
-          vty-ui-phoneinput-demo = {
+          "vty-ui-phoneinput-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.vty
             ];
           };
-          vty-ui-dialog-demo = {
+          "vty-ui-dialog-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

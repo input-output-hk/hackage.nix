@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-gcl = {
+        "language-gcl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsers

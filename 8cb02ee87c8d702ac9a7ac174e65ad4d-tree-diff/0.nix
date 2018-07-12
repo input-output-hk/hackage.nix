@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        tree-diff = {
+        "tree-diff" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.aeson
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -58,7 +58,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tree-diff

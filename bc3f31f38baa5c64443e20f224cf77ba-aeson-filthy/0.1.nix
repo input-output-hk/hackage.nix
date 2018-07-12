@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-filthy = {
+        "aeson-filthy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

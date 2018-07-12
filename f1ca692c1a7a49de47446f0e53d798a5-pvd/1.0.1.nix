@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pvd = {
+          "pvd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -35,7 +35,7 @@ let
               hsPkgs.buildPackages.hsc2hs
             ];
           };
-          pvc = {
+          "pvc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

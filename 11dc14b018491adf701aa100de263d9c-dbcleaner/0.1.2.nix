@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbcleaner = {
+        "dbcleaner" = {
           depends  = [
             hsPkgs.base
             hsPkgs.postgresql-simple
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

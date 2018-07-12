@@ -21,10 +21,10 @@ let
       };
       components = {
         exes = {
-          ip6addrval = {
+          "ip6addrval" = {
             depends  = [ hsPkgs.base ];
           };
-          ip6addrgen = {
+          "ip6addrgen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

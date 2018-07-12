@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fcd = {
+        "fcd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          fcd = {
+          "fcd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fcd
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

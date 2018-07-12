@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chr-lang = {
+        "chr-lang" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          chr-term = {
+          "chr-term" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chr-data

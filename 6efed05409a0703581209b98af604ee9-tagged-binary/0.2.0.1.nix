@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagged-binary = {
+        "tagged-binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat

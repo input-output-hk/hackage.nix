@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        http-streams = {
+        "http-streams" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.http-common
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          check = {
+          "check" = {
             depends  = [
               hsPkgs.http-common
               hsPkgs.HUnit

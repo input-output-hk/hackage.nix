@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HDBC = {
+        "HDBC" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.convertible
@@ -40,7 +40,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

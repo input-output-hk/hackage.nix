@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spe = {
+        "spe" = {
           depends  = [ hsPkgs.base ];
         };
       };

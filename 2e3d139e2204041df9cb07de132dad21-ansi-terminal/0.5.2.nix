@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ansi-terminal = {
+        "ansi-terminal" = {
           depends  = (if system.isWindows
             then [ hsPkgs.Win32 ]
             else [ hsPkgs.unix ]) ++ [
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          ansi-terminal-example = {
+          "ansi-terminal-example" = {
             depends  = (if system.isWindows
               then [ hsPkgs.Win32 ]
               else [ hsPkgs.unix ]) ++ [

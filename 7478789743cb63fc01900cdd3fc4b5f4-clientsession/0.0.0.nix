@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clientsession = {
+        "clientsession" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Crypto

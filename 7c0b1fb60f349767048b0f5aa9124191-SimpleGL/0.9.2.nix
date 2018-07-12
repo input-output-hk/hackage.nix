@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SimpleGL = {
+        "SimpleGL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SimpleH

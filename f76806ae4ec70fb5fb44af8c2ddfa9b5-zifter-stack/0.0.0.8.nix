@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zifter-stack = {
+        "zifter-stack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

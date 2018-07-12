@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fluidsynth = {
+        "fluidsynth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

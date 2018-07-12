@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          trimpolya = {
+          "trimpolya" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bio

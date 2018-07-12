@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-prof-aeson = {
+        "ghc-prof-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          ghc-prof-aeson-test = {
+          "ghc-prof-aeson-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

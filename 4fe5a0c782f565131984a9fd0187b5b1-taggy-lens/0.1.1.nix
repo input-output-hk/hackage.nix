@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        taggy-lens = {
+        "taggy-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.taggy
@@ -40,7 +40,7 @@ let
               hsPkgs.hspec
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cpuinfo = {
+        "cpuinfo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

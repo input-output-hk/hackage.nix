@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          konsum = {
+          "konsum" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -36,7 +36,7 @@ let
               hsPkgs.amqp
             ];
           };
-          agitprop = {
+          "agitprop" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

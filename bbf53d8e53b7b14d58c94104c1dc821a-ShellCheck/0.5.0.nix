@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ShellCheck = {
+        "ShellCheck" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         exes = {
-          shellcheck = {
+          "shellcheck" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          test-shellcheck = {
+          "test-shellcheck" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

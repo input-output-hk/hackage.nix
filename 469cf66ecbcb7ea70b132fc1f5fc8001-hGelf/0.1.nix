@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hGelf = {
+        "hGelf" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-http2-extra = {
+        "wai-http2-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.auto-update
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

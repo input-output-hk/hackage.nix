@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelldb-hsql-odbc = {
+        "haskelldb-hsql-odbc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          DBDirect-hsql-odbc = {};
+          "DBDirect-hsql-odbc" = {};
         };
       };
     }

@@ -20,14 +20,14 @@ let
         buildType = "Custom";
       };
       components = {
-        cpphs = {
+        "cpphs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
           ];
         };
         exes = {
-          cpphs = {
+          "cpphs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Chart-gtk = {
+        "Chart-gtk" = {
           depends  = [
             hsPkgs.cairo
             hsPkgs.time

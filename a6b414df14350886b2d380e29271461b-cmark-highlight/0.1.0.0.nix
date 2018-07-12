@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmark-highlight = {
+        "cmark-highlight" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

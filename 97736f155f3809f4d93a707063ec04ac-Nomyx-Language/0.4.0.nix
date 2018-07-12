@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Nomyx-Language = {
+        "Nomyx-Language" = {
           depends  = [
             hsPkgs.DebugTraceHelpers
             hsPkgs.Boolean

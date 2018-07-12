@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc-dcc = {
+        "irc-dcc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          irc-dcc-test = {
+          "irc-dcc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

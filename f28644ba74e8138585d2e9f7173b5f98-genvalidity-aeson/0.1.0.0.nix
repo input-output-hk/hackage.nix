@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-aeson = {
+        "genvalidity-aeson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          genvalidity-aeson-test = {
+          "genvalidity-aeson-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.genvalidity

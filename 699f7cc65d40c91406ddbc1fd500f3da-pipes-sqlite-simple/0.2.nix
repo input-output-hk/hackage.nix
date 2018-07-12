@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-sqlite-simple = {
+        "pipes-sqlite-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

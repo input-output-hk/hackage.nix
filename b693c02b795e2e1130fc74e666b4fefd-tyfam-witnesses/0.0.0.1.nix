@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tyfam-witnesses = {
+        "tyfam-witnesses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gnss-converters = {
+        "gnss-converters" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude
@@ -34,14 +34,14 @@ let
           ];
         };
         exes = {
-          sbp2rtcm3 = {
+          "sbp2rtcm3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude
               hsPkgs.gnss-converters
             ];
           };
-          rtcm32sbp = {
+          "rtcm32sbp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude
@@ -74,7 +74,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude

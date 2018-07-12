@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        special-keys = {
+        "special-keys" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

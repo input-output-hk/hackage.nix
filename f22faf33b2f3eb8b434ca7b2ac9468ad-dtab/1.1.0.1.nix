@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dtab = {
+        "dtab" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          dtab = {
+          "dtab" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

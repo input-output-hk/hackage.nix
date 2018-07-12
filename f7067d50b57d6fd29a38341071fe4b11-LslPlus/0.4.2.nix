@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          LslPlus = {
+          "LslPlus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

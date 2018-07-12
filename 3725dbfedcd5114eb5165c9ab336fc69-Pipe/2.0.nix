@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Pipe = {
+        "Pipe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

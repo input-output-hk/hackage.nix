@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AttoBencode = {
+        "AttoBencode" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.AttoBencode
               hsPkgs.base

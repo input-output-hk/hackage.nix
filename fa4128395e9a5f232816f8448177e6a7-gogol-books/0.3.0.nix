@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-books = {
+        "gogol-books" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

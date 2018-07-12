@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskeline-class = {
+        "haskeline-class" = {
           depends  = [
             hsPkgs.haskeline
             hsPkgs.haskeline

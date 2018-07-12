@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          g-npm = {
+          "g-npm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP

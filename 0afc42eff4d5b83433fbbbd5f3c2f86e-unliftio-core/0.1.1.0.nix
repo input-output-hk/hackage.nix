@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unliftio-core = {
+        "unliftio-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

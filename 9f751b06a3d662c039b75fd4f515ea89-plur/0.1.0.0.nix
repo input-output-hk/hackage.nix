@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plur = {
+        "plur" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

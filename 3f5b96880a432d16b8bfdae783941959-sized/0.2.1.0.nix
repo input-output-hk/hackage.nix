@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sized = {
+        "sized" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-natural

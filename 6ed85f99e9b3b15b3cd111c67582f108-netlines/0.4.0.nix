@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netlines = {
+        "netlines" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

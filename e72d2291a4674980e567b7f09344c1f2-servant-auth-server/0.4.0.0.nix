@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-auth-server = {
+        "servant-auth-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -50,7 +50,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-auth
@@ -66,7 +66,7 @@ let
               hsPkgs.buildPackages.markdown-unlit
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

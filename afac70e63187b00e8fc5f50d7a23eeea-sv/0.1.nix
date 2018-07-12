@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sv = {
+        "sv" = {
           depends  = [
             hsPkgs.ansi-wl-pprint
             hsPkgs.attoparsec
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.ansi-wl-pprint
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        envy = {
+        "envy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

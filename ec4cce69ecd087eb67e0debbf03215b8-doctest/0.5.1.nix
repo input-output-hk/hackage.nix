@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        doctest = {
+        "doctest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -32,7 +32,7 @@ let
           ] ++ [ hsPkgs.haddock ];
         };
         exes = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

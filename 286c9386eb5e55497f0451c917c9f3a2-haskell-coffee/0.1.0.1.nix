@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-coffee = {
+        "haskell-coffee" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

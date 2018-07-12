@@ -22,11 +22,11 @@ let
         buildType = "Custom";
       };
       components = {
-        dedukti = {
+        "dedukti" = {
           depends  = [ hsPkgs.time ];
         };
         exes = {
-          dedukti = {
+          "dedukti" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -44,7 +44,7 @@ let
               hsPkgs.stringtable-atom
             ];
           };
-          dedukti-tests = {
+          "dedukti-tests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test)) [
               hsPkgs.directory
               hsPkgs.filepath

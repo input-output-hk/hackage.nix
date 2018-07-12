@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          peg = {
+          "peg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logict

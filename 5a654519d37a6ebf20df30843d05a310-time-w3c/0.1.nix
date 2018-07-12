@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-w3c = {
+        "time-w3c" = {
           depends  = [
             hsPkgs.base
             hsPkgs.convertible
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          W3CDateTimeUnitTest = {
+          "W3CDateTimeUnitTest" = {
             depends  = pkgs.lib.optional _flags.build-test-suite hsPkgs.HUnit;
           };
         };

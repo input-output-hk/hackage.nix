@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          netwire-vinylglfw-style0 = {
+          "netwire-vinylglfw-style0" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens
@@ -43,7 +43,7 @@ let
               hsPkgs.filepath
             ];
           };
-          netwire-vinylglfw-style1 = {
+          "netwire-vinylglfw-style1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens
@@ -65,7 +65,7 @@ let
               hsPkgs.filepath
             ];
           };
-          netwire-vinylglfw-style2 = {
+          "netwire-vinylglfw-style2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

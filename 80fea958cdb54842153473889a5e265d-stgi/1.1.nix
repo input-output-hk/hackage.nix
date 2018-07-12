@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stgi = {
+        "stgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          stgi-exe = {
+          "stgi-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stgi
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stgi
@@ -72,7 +72,7 @@ let
               hsPkgs.text
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

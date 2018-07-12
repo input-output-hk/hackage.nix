@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bird = {
+        "bird" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.process
@@ -32,6 +32,6 @@ let
             hsPkgs.data-default
           ];
         };
-        exes = { bird = {}; };
+        exes = { "bird" = {}; };
       };
     }

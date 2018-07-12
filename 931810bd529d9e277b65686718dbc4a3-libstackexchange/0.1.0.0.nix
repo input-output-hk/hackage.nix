@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libstackexchange = {
+        "libstackexchange" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          aeson-lens = {
+          "aeson-lens" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell
@@ -49,7 +49,7 @@ let
               hsPkgs.libstackexchange
             ];
           };
-          request = {
+          "request" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -58,7 +58,7 @@ let
               hsPkgs.libstackexchange
             ];
           };
-          api = {
+          "api" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

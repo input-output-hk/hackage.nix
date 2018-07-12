@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        presburger = {
+        "presburger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          pressburger-qc-tests = {
+          "pressburger-qc-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.presburger

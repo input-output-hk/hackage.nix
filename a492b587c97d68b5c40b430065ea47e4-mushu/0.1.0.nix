@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mushu = {
+          "mushu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-prelude
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          mushu-test = {
+          "mushu-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

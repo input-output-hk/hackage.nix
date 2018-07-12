@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec = {
+        "hspec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          hspec-discover = {
+          "hspec-discover" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -70,14 +70,14 @@ let
               hsPkgs.ghc-paths
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
               hsPkgs.QuickCheck
             ];
           };
-          hspec-discover-spec = {
+          "hspec-discover-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

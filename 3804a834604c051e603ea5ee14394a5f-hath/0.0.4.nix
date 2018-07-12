@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hath = {
+          "hath" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

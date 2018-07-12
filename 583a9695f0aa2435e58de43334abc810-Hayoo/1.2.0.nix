@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hayooIndexer = {
+          "hayooIndexer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Holumbus-Searchengine
@@ -49,7 +49,7 @@ let
               hsPkgs.zlib
             ];
           };
-          hayooSearch = {
+          "hayooSearch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Holumbus-Searchengine
@@ -64,7 +64,7 @@ let
               hsPkgs.hack-handler-simpleserver
             ];
           };
-          hayooSnap = {
+          "hayooSnap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

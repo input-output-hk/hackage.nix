@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagsoup = {
+        "tagsoup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          test-tagsoup = {
+          "test-tagsoup" = {
             depends  = pkgs.lib.optionals _flags.testprog [
               hsPkgs.base
               hsPkgs.containers

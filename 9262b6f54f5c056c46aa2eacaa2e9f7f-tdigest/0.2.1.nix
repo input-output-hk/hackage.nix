@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        tdigest = {
+        "tdigest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -34,7 +34,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tdigest-tests = {
+          "tdigest-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tdigest
@@ -48,7 +48,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

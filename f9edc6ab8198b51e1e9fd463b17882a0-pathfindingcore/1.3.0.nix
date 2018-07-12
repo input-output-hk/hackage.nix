@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pathfindingcore = {
+        "pathfindingcore" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base-noprelude
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base-noprelude

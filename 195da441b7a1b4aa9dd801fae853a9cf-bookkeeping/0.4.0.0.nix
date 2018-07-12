@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bookkeeping = {
+        "bookkeeping" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mono-traversable
@@ -30,13 +30,13 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          bookkeeping-test = {
+          "bookkeeping-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bookkeeping
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob

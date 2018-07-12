@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        constaparser = {
+        "constaparser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

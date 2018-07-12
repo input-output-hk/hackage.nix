@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Twofish = {
+        "Twofish" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -29,6 +29,6 @@ let
             hsPkgs.mtl
           ];
         };
-        exes = { Test = {}; };
+        exes = { "Test" = {}; };
       };
     }

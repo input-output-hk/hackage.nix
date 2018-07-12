@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-containers = {
+        "genvalidity-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.validity

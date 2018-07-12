@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        teleshell = {
+        "teleshell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          teleshell-test = {
+          "teleshell-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.teleshell

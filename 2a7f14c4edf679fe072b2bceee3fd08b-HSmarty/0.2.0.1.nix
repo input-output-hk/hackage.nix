@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HSmarty = {
+        "HSmarty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          TestHSmarty = {
+          "TestHSmarty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        data-forest = {
+        "data-forest" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TinyLaunchbury = {
+        "TinyLaunchbury" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

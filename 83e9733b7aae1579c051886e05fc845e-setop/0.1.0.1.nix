@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        setop = {
+        "setop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          setop = {
+          "setop" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -48,13 +48,13 @@ let
               hsPkgs.setop
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

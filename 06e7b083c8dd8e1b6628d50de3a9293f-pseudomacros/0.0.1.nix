@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pseudomacros = {
+        "pseudomacros" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale

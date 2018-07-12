@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uulib = {
+        "uulib" = {
           depends  = [
             hsPkgs.haskell98
           ] ++ (if _flags.have_ghc_prim

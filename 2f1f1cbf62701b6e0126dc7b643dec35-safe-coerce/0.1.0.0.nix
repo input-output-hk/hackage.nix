@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-coerce = {
+        "safe-coerce" = {
           depends  = [ hsPkgs.base ];
         };
       };

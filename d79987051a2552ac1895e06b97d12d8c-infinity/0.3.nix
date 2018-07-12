@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          infinity = {
+          "infinity" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.plugins

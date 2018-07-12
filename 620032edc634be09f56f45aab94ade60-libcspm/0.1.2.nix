@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libcspm = {
+        "libcspm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.libcspm

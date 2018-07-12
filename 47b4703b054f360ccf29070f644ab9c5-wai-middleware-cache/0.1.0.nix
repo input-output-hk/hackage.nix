@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-cache = {
+        "wai-middleware-cache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

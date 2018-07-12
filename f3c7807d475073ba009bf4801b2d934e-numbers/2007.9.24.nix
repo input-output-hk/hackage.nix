@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        numbers = {
+        "numbers" = {
           depends  = [ hsPkgs.base ];
         };
       };

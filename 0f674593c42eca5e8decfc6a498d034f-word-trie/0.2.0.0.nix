@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        word-trie = {
+        "word-trie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

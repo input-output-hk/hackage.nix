@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          getemx = {
+          "getemx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curl

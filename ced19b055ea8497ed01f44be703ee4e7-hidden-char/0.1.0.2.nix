@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hidden-char = {
+        "hidden-char" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          hidden-char-test = {
+          "hidden-char-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hidden-char

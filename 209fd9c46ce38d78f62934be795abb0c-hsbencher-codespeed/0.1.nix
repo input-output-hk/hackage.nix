@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsbencher-codespeed = {
+        "hsbencher-codespeed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

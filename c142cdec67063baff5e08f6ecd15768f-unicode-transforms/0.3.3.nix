@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unicode-transforms = {
+        "unicode-transforms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bitarray
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          extras = {
+          "extras" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -42,7 +42,7 @@ let
               hsPkgs.unicode-transforms
             ];
           };
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -51,7 +51,7 @@ let
               hsPkgs.unicode-transforms
             ] ++ pkgs.lib.optional _flags.has-icu hsPkgs.text-icu;
           };
-          ucd = {
+          "ucd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.getopt-generics
@@ -62,7 +62,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.criterion

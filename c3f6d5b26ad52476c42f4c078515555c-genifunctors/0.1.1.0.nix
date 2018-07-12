@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genifunctors = {
+        "genifunctors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

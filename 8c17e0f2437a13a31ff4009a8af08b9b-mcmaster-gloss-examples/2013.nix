@@ -21,43 +21,43 @@ let
       };
       components = {
         exes = {
-          moving-star = {
+          "moving-star" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          haunted-house = {
+          "haunted-house" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          solar-system = {
+          "solar-system" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          parabolic = {
+          "parabolic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          stare = {
+          "stare" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          waves = {
+          "waves" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          windmills = {
+          "windmills" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss

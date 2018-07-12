@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rosezipper = {
+        "rosezipper" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

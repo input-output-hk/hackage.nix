@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ipatch = {
+          "ipatch" = {
             depends  = [
               hsPkgs.darcs-beta
               hsPkgs.base

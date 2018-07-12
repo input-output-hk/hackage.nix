@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        namecoin-update = {
+        "namecoin-update" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          namecoin-update = {
+          "namecoin-update" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

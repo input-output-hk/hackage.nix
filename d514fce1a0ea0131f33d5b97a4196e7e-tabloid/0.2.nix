@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tabloid = {
+          "tabloid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

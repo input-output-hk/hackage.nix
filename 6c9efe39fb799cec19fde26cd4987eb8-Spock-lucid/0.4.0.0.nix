@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock-lucid = {
+        "Spock-lucid" = {
           depends  = [
             hsPkgs.Spock
             hsPkgs.base

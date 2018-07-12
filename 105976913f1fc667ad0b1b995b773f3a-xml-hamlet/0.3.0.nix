@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-hamlet = {
+        "xml-hamlet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shakespeare
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.HUnit

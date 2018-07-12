@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fromhtml = {
+        "fromhtml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          fromhtml = {
+          "fromhtml" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          transdoc-test = {
+          "transdoc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

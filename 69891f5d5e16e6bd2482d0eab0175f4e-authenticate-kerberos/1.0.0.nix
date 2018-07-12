@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        authenticate-kerberos = {
+        "authenticate-kerberos" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

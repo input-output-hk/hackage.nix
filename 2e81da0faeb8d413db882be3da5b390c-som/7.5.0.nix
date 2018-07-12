@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        som = {
+        "som" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          som-tests = {
+          "som-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework-quickcheck2

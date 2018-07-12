@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cil = {
+        "cil" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

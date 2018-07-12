@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imm = {
+        "imm" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-wl-pprint
@@ -71,7 +71,7 @@ let
           ];
         };
         exes = {
-          imm = {
+          "imm" = {
             depends  = [
               hsPkgs.imm
               hsPkgs.base

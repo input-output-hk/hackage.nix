@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FieldTrip = {
+        "FieldTrip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

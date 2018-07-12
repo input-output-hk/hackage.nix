@@ -20,21 +20,21 @@ let
         buildType = "Simple";
       };
       components = {
-        smtLib = {
+        "smtLib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty
           ];
         };
         exes = {
-          smtLib-test-1 = {
+          "smtLib-test-1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.smtLib
               hsPkgs.process
             ];
           };
-          smtLib-test-2 = {
+          "smtLib-test-2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.smtLib

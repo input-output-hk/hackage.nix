@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        phantom-state = {
+        "phantom-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hist-pl-fusion = {
+        "hist-pl-fusion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hist-pl-fuse = {
+          "hist-pl-fuse" = {
             depends  = [
               hsPkgs.binary
               hsPkgs.cmdargs

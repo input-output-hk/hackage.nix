@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LambdaDB = {
+        "LambdaDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          LambdaDB-exe = {
+          "LambdaDB-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.LambdaDB
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          LambdaDB-test = {
+          "LambdaDB-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.LambdaDB

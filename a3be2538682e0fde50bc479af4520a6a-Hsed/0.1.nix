@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Hsed = {
+          "Hsed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob

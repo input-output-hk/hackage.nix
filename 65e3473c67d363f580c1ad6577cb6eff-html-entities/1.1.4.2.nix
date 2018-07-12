@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        html-entities = {
+        "html-entities" = {
           depends  = [
             hsPkgs.unordered-containers
             hsPkgs.text

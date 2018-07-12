@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Redmine = {
+        "Redmine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          test-Redmine = {
+          "test-Redmine" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

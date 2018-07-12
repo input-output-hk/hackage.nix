@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feature-flipper = {
+        "feature-flipper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          feature-flipper-test = {
+          "feature-flipper-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

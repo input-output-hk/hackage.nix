@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inilist = {
+        "inilist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          inilist-unittest = {
+          "inilist-unittest" = {
             depends  = [
               hsPkgs.tasty
               hsPkgs.testpack

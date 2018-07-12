@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twitter-types = {
+        "twitter-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-types
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

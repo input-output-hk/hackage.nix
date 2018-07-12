@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        decepticons = {
+        "decepticons" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad-transformers

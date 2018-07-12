@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-maps-geocoding = {
+        "google-maps-geocoding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

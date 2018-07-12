@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inline-r = {
+        "inline-r" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.inline-r
               hsPkgs.base
@@ -72,7 +72,7 @@ let
               hsPkgs.vector
             ];
           };
-          test-qq = {
+          "test-qq" = {
             depends  = [
               hsPkgs.inline-r
               hsPkgs.base
@@ -83,7 +83,7 @@ let
               hsPkgs.text
             ];
           };
-          test-shootout = {
+          "test-shootout" = {
             depends  = [
               hsPkgs.inline-r
               hsPkgs.base
@@ -97,7 +97,7 @@ let
           };
         };
         benchmarks = {
-          bench-qq = {
+          "bench-qq" = {
             depends  = [
               hsPkgs.inline-r
               hsPkgs.base
@@ -107,7 +107,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          bench-hexp = {
+          "bench-hexp" = {
             depends  = [
               hsPkgs.inline-r
               hsPkgs.base

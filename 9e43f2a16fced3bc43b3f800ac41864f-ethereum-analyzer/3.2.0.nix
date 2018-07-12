@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ethereum-analyzer = {
+        "ethereum-analyzer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GenericPretty
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GenericPretty

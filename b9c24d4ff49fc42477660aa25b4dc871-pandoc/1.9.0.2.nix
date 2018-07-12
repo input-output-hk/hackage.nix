@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pandoc = {
+        "pandoc" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.parsec
@@ -57,7 +57,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          pandoc = {
+          "pandoc" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.parsec
@@ -89,7 +89,7 @@ let
               then [ hsPkgs.base hsPkgs.syb ]
               else [ hsPkgs.base ]);
           };
-          test-pandoc = {
+          "test-pandoc" = {
             depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.Diff

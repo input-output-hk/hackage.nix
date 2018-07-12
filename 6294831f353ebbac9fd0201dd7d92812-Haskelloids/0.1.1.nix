@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Haskelloids = {
+          "Haskelloids" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

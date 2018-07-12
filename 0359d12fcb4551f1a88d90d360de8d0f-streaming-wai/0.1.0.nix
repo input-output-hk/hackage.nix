@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-wai = {
+        "streaming-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-types

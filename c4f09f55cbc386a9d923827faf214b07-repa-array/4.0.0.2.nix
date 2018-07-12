@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa-array = {
+        "repa-array" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        strict-writer = {
+        "strict-writer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         tests = {
-          strict-writer-test = {
+          "strict-writer-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.strict-writer

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        free-theorems-seq = {
+        "free-theorems-seq" = {
           depends  = [
             hsPkgs.array
             hsPkgs.bytestring

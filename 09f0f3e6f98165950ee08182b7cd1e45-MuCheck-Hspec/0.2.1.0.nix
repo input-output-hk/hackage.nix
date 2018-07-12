@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MuCheck-Hspec = {
+        "MuCheck-Hspec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          mucheck-hspec = {
+          "mucheck-hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

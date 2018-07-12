@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hybrid = {
+          "hybrid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

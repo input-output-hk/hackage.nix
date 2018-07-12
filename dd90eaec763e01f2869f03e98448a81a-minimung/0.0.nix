@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          minimung = {
+          "minimung" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

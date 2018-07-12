@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-compression = {
+        "haskell-compression" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          hs-compress = {
+          "hs-compress" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

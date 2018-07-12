@@ -20,16 +20,16 @@ let
         buildType = "Simple";
       };
       components = {
-        ReadArgs = {
+        "ReadArgs" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          ReadArgsEx = {
+          "ReadArgsEx" = {
             depends  = [ hsPkgs.base ];
           };
         };
         tests = {
-          ReadArgsSpec = {
+          "ReadArgsSpec" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        swift-lda = {
+        "swift-lda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lens = {
+        "lens" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -46,13 +46,13 @@ let
           ] ++ pkgs.lib.optional _flags.template-haskell hsPkgs.template-haskell) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") hsPkgs.ghc-prim;
         };
         tests = {
-          templates = {
+          "templates" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens
             ];
           };
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens
@@ -60,7 +60,7 @@ let
               hsPkgs.transformers
             ];
           };
-          hunit = {
+          "hunit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -72,7 +72,7 @@ let
               hsPkgs.test-framework-th
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -82,7 +82,7 @@ let
           };
         };
         benchmarks = {
-          plated = {
+          "plated" = {
             depends  = [
               hsPkgs.base
               hsPkgs.comonad
@@ -93,7 +93,7 @@ let
               hsPkgs.transformers
             ] ++ pkgs.lib.optional _flags.benchmark-uniplate hsPkgs.uniplate;
           };
-          alongside = {
+          "alongside" = {
             depends  = [
               hsPkgs.base
               hsPkgs.comonad

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        non-empty-zipper = {
+        "non-empty-zipper" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.non-empty-zipper

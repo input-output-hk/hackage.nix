@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ivor = {
+        "ivor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmlgen = {
+        "xmlgen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          xmlgen-tests = {
+          "xmlgen-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTF
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          xmlgen-bench = {
+          "xmlgen-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

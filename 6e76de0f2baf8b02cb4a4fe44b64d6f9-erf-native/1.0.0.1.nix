@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        erf-native = {
+        "erf-native" = {
           depends  = [
             hsPkgs.base
             hsPkgs.polynomial

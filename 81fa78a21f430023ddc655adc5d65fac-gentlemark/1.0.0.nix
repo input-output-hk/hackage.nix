@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gentlemark = {
+        "gentlemark" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          hunit = {
+          "hunit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

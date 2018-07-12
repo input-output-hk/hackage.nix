@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-golden-aeson = {
+        "hspec-golden-aeson" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

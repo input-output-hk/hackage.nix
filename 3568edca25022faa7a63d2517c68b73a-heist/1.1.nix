@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heist = {
+        "heist" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -50,7 +50,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -88,7 +88,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.criterion

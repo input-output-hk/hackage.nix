@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hylotab = {
+          "hylotab" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hackport = {
+          "hackport" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

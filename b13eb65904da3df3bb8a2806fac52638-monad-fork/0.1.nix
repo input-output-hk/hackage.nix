@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-fork = {
+        "monad-fork" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-control

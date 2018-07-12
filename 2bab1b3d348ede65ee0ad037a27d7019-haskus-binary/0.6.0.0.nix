@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskus-binary = {
+        "haskus-binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskus-utils
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskus-binary
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          bench-BitReverse = {
+          "bench-BitReverse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskus-binary

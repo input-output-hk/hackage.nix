@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-cookie = {
+        "apiary-cookie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.apiary

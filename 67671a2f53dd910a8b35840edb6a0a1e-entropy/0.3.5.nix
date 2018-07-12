@@ -22,11 +22,11 @@ let
         buildType = "Custom";
       };
       components = {
-        entropy = {
+        "entropy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
-          ] ++ pkgs.lib.optional (!system.isWindows && !system.isHalvm) hsPkgs.unix;
+          ] ++ pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (!system.isHalvm) hsPkgs.unix);
           libs = pkgs.lib.optional system.isWindows pkgs.advapi32;
         };
       };

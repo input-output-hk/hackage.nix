@@ -20,6 +20,6 @@ let
         buildType = "Simple";
       };
       components = {
-        HAppSHelpers = {};
+        "HAppSHelpers" = {};
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gridfs = {
+        "gridfs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bson

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        MonadRandom = {
+        "MonadRandom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

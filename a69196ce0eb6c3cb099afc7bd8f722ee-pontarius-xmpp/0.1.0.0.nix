@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pontarius-xmpp = {
+        "pontarius-xmpp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          pontarius-xmpp-echoclient = {};
+          "pontarius-xmpp-echoclient" = {};
         };
       };
     }

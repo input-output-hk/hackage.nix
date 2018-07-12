@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Forestry = {
+        "Forestry" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          RNAforestry = {
+          "RNAforestry" = {
             depends  = pkgs.lib.optionals _flags.rnaforestry [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -66,7 +66,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -78,7 +78,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

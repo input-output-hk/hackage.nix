@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelldb-connect-hdbc-lifted = {
+        "haskelldb-connect-hdbc-lifted" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gnuplot = {
+        "gnuplot" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-stringmap = {
+        "data-stringmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.data-stringmap
               hsPkgs.base
@@ -43,7 +43,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          strict = {
+          "strict" = {
             depends  = [
               hsPkgs.data-stringmap
               hsPkgs.base

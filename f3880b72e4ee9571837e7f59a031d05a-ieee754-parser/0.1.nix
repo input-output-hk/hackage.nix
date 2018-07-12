@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ieee754-parser = {
+        "ieee754-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

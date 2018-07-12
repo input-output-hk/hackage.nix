@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HsYAML = {
+        "HsYAML" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          yaml-test = {
+          "yaml-test" = {
             depends  = pkgs.lib.optionals _flags.exe [
               hsPkgs.HsYAML
               hsPkgs.bytestring

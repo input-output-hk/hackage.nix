@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-content-pdf = {
+        "yesod-content-pdf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-core
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          yesod-content-pdf-test = {
+          "yesod-content-pdf-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-content-pdf

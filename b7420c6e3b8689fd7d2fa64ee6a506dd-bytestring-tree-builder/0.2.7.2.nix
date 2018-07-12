@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bytestring-tree-builder = {
+        "bytestring-tree-builder" = {
           depends  = [
             hsPkgs.semigroups
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.bytestring-tree-builder
               hsPkgs.tasty
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.bytestring-tree-builder
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        metaplug = {
+        "metaplug" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

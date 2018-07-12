@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ripple = {
+        "ripple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utility-ht

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-result = {
+        "data-result" = {
           depends  = [
             hsPkgs.base
             hsPkgs.poly-control

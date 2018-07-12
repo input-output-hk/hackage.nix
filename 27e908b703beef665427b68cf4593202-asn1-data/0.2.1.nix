@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        asn1-data = {
+        "asn1-data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit

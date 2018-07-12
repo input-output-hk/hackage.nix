@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dual = {
+        "dual" = {
           depends  = [ hsPkgs.base ];
         };
       };

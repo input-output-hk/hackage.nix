@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monky = {
+        "monky" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.directory
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          monky = {
+          "monky" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

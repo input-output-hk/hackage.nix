@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        oo-prototypes = {
+        "oo-prototypes" = {
           depends  = [ hsPkgs.base ];
         };
       };

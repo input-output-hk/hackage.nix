@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MissingK = {
+        "MissingK" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

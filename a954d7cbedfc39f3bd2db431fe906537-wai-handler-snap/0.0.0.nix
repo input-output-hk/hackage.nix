@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-handler-snap = {
+        "wai-handler-snap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

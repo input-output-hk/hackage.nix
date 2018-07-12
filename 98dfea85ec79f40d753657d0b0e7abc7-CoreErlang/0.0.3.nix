@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CoreErlang = {
+        "CoreErlang" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

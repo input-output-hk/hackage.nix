@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lmdb = {
+        "lmdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

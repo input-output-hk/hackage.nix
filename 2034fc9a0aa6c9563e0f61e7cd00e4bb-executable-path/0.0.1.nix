@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        executable-path = {
+        "executable-path" = {
           depends  = ((((if _flags.splitbase
             then [
               hsPkgs.base

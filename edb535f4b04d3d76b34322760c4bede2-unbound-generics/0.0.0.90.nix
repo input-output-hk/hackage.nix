@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unbound-generics = {
+        "unbound-generics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,14 +30,14 @@ let
           ];
         };
         tests = {
-          test-calc = {
+          "test-calc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.unbound-generics
             ];
           };
-          test-parallelreduction = {
+          "test-parallelreduction" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

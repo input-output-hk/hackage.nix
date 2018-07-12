@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sitepipe = {
+        "sitepipe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.optparse-applicative
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          sitepipe-exe = {
+          "sitepipe-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sitepipe
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          sitepipe-test = {
+          "sitepipe-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sitepipe

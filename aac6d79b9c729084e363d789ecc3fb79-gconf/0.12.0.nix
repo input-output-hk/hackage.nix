@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gconf = {
+        "gconf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

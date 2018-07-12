@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hsql-postgresql = {
+        "hsql-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsql

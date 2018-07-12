@@ -20,18 +20,18 @@ let
         buildType = "Simple";
       };
       components = {
-        jump = {
+        "jump" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          jump-test = {
+          "jump-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jump
               hsPkgs.hspec
             ];
           };
-          jump-bench = {
+          "jump-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jump

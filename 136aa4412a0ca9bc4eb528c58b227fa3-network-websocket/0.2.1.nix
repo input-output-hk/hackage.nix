@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-websocket = {
+        "network-websocket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -30,6 +30,8 @@ let
             hsPkgs.webserver
           ];
         };
-        exes = { websocket-echo = {}; };
+        exes = {
+          "websocket-echo" = {};
+        };
       };
     }

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        idempotent = {
+        "idempotent" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

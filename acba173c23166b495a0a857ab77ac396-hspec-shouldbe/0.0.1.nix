@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-shouldbe = {
+        "hspec-shouldbe" = {
           depends  = [
             hsPkgs.hspec
             hsPkgs.test-shouldbe

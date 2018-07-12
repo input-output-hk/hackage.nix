@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        foreign-var = {
+        "foreign-var" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

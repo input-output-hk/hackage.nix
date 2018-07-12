@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rascal = {
+        "rascal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl-aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          rascal = {
+          "rascal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curl-aeson
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curl-aeson

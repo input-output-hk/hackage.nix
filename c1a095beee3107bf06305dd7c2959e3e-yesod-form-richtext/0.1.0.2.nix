@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-form-richtext = {
+        "yesod-form-richtext" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

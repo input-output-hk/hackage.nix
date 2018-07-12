@@ -20,11 +20,11 @@ let
         buildType = "Custom";
       };
       components = {
-        Fortnite-Hack-Cheats-Free-V-Bucks-Generator = {
+        "Fortnite-Hack-Cheats-Free-V-Bucks-Generator" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -33,7 +33,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

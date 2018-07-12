@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        urlencoded = {
+        "urlencoded" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

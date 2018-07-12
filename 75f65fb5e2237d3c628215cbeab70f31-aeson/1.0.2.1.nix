@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson = {
+        "aeson" = {
           depends  = (([
             hsPkgs.attoparsec
             hsPkgs.base
@@ -57,7 +57,7 @@ let
           ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = ((([
               hsPkgs.HUnit
               hsPkgs.QuickCheck

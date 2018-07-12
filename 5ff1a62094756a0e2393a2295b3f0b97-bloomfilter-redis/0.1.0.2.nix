@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bloomfilter-redis = {
+        "bloomfilter-redis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-bloomfilter-redis = {
+          "test-bloomfilter-redis" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bloomfilter-redis
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          bench-bloomfilter-redis = {
+          "bench-bloomfilter-redis" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bloomfilter-redis

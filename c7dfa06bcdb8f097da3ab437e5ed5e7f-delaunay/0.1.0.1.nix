@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        delaunay = {
+        "delaunay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.AC-Vector

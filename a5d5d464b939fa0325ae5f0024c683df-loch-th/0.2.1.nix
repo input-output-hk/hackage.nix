@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        loch-th = {
+        "loch-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

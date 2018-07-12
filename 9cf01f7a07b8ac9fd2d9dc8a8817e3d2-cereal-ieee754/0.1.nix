@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal-ieee754 = {
+        "cereal-ieee754" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HueAPI = {
+        "HueAPI" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

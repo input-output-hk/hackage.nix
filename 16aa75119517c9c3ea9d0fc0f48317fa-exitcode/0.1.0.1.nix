@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exitcode = {
+        "exitcode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        batch = {
+        "batch" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          batch-test = {
+          "batch-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.batch

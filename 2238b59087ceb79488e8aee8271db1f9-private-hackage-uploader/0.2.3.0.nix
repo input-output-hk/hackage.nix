@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        private-hackage-uploader = {
+        "private-hackage-uploader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          private-hackage-uploader = {
+          "private-hackage-uploader" = {
             depends  = pkgs.lib.optionals (!_flags.library-only) [
               hsPkgs.base
               hsPkgs.text

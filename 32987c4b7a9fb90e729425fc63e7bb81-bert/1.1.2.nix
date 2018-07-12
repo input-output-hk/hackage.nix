@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bert = {
+        "bert" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,6 +33,6 @@ let
             hsPkgs.parsec
           ];
         };
-        exes = { bert = {}; };
+        exes = { "bert" = {}; };
       };
     }

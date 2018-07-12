@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sundown = {
+        "sundown" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

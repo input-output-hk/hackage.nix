@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal-conduit = {
+        "cereal-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit

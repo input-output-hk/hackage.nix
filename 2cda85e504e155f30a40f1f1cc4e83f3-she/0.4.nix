@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        she = {
+        "she" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          she = {
+          "she" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

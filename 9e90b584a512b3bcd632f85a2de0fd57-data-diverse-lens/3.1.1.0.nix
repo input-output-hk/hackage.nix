@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-diverse-lens = {
+        "data-diverse-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-diverse
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          data-diverse-lens-test = {
+          "data-diverse-lens-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-diverse

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fastpbkdf2 = {
+        "fastpbkdf2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
             else [ pkgs.crypto ];
         };
         tests = {
-          fastpbkdf2-hs-test = {
+          "fastpbkdf2-hs-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base16-bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          fastpbkdf2-bench = {
+          "fastpbkdf2-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

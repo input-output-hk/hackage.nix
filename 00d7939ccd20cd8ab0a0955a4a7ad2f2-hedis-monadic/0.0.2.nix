@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedis-monadic = {
+        "hedis-monadic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hedis

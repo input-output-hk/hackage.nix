@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RxHaskell = {
+        "RxHaskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

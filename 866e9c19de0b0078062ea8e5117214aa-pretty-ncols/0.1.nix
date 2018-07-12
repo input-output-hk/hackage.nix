@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty-ncols = {
+        "pretty-ncols" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

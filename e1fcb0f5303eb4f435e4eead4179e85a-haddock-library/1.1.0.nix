@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haddock-library = {
+        "haddock-library" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

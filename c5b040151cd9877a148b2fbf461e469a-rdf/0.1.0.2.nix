@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rdf = {
+        "rdf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -33,7 +33,7 @@ let
           ];
         };
         benchmarks = {
-          bench-rdf = {
+          "bench-rdf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

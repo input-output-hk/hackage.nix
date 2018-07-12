@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        canonical-filepath = {
+        "canonical-filepath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

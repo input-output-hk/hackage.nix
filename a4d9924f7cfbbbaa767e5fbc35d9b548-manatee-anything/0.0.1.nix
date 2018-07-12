@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        manatee-anything = {
+        "manatee-anything" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gtk
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          manatee-anything = {};
+          "manatee-anything" = {};
         };
       };
     }

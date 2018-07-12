@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bert = {
+        "bert" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.tasty
               hsPkgs.tasty-smallcheck

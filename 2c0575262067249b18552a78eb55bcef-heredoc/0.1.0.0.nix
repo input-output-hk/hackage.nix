@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heredoc = {
+        "heredoc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

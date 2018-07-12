@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hylide = {
+        "hylide" = {
           depends  = [
             hsPkgs.hylogen
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hylide = {
+          "hylide" = {
             depends  = [
               hsPkgs.hylogen
               hsPkgs.base

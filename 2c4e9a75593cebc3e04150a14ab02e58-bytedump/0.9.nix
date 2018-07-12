@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        bytedump = {
+        "bytedump" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         exes = {
-          Hexdump = {
+          "Hexdump" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.bytestring

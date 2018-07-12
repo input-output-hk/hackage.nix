@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          spy = {
+          "spy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fsnotify
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          spy-testsuite = {
+          "spy-testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vty = {
+        "vty" = {
           depends  = [
             hsPkgs.extensible-exceptions
             hsPkgs.bytestring

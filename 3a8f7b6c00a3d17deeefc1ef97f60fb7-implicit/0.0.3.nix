@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        implicit = {
+        "implicit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -42,6 +42,6 @@ let
             hsPkgs.JuicyPixels
           ];
         };
-        exes = { extopenscad = {}; };
+        exes = { "extopenscad" = {}; };
       };
     }

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haskell-overridez = {
+          "haskell-overridez" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

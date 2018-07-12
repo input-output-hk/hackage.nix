@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bloodhound-amazonka-auth = {
+        "bloodhound-amazonka-auth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bloodhound
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bloodhound-amazonka-auth

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaXml = {
+        "HaXml" = {
           depends  = ([
             hsPkgs.polyparse
             hsPkgs.filepath
@@ -44,14 +44,14 @@ let
             ]);
         };
         exes = {
-          Canonicalise = {};
-          CanonicaliseLazy = {};
-          Xtract = {};
-          Validate = {};
-          MkOneOf = {};
-          DtdToHaskell = {};
-          XsdToHaskell = {};
-          FpMLToHaskell = {
+          "Canonicalise" = {};
+          "CanonicaliseLazy" = {};
+          "Xtract" = {};
+          "Validate" = {};
+          "MkOneOf" = {};
+          "DtdToHaskell" = {};
+          "XsdToHaskell" = {};
+          "FpMLToHaskell" = {
             depends  = [ hsPkgs.directory ];
           };
         };

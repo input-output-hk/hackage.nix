@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelldb-hsql-postgresql = {
+        "haskelldb-hsql-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          DBDirect-hsql-postgresql = {};
+          "DBDirect-hsql-postgresql" = {};
         };
       };
     }

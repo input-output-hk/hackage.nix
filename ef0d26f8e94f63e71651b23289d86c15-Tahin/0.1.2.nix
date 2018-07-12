@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Tahin = {
+        "Tahin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          tahin = {
+          "tahin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base64-bytestring

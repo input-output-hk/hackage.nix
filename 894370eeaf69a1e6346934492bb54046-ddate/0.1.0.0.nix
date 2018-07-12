@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddate = {
+        "ddate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

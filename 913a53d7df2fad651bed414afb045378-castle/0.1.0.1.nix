@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          castle = {
+          "castle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shelly

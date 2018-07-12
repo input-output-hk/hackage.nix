@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compdata-param = {
+        "compdata-param" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unjson = {
+        "unjson" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.unjson
               hsPkgs.base

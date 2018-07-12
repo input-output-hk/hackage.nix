@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        writer-cps-morph = {
+        "writer-cps-morph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mmorph

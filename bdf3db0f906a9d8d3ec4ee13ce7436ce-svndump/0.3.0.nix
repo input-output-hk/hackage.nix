@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        svndump = {
+        "svndump" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-raw = {
+          "test-raw" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -40,7 +40,7 @@ let
               hsPkgs.svndump
             ];
           };
-          test-cooked = {
+          "test-cooked" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

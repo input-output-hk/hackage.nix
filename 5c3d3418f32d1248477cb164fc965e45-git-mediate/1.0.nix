@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          git-mediate = {
+          "git-mediate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

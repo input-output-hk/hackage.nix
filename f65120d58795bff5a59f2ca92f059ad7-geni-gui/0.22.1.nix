@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        geni-gui = {
+        "geni-gui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GenI
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          geni-gui = {
+          "geni-gui" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GenI

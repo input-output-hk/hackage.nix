@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-static = {
+        "yesod-static" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -55,7 +55,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

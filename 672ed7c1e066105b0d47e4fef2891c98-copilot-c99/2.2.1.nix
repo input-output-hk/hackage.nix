@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        copilot-c99 = {
+        "copilot-c99" = {
           depends  = [
             hsPkgs.atom
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          copilot-c99-qc = {
+          "copilot-c99-qc" = {
             depends  = [
               hsPkgs.atom
               hsPkgs.base

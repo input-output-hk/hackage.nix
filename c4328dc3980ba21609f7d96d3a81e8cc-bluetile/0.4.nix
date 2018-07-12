@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bluetile = {
+          "bluetile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -31,7 +31,7 @@ let
               hsPkgs.xmonad-contrib-bluetilebranch
             ];
           };
-          bluetiledock = {
+          "bluetiledock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -41,14 +41,14 @@ let
               hsPkgs.X11
             ];
           };
-          bluetilemockwin = {
+          "bluetilemockwin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
               hsPkgs.gtk
             ];
           };
-          bluetilegreet = {
+          "bluetilegreet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

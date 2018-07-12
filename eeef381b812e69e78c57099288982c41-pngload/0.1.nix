@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pngload = {
+        "pngload" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zlib

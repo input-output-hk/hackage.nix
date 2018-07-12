@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        vect-opengl = {
+        "vect-opengl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vect

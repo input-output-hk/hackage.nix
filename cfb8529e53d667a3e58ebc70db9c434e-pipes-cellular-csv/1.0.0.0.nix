@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-cellular-csv = {
+        "pipes-cellular-csv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

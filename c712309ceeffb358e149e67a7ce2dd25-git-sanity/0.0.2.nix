@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        git-sanity = {
+        "git-sanity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          git-sanity = {
+          "git-sanity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

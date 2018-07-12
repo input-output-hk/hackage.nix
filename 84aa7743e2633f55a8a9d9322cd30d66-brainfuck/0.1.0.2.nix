@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        brainfuck = {
+        "brainfuck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          bf = {
+          "bf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

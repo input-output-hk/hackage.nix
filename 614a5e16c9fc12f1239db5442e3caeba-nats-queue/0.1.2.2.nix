@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nats-queue = {
+        "nats-queue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nats-queue

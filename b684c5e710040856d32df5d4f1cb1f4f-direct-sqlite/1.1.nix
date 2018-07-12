@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        direct-sqlite = {
+        "direct-sqlite" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.base

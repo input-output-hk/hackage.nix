@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        CouchDB = {
+        "CouchDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

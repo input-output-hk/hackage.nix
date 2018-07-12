@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-test = {
+        "yesod-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-test

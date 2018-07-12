@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lvmlib = {
+        "lvmlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          coreasm = {
+          "coreasm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

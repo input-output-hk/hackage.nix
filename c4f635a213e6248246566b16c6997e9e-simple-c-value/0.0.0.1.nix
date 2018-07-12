@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-c-value = {
+        "simple-c-value" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tuple
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

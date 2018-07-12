@@ -21,14 +21,14 @@ let
       };
       components = {
         exes = {
-          string-literal = {
+          "string-literal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.extra
             ];
           };
-          cmt = {
+          "cmt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          test-string-literal = {
+          "test-string-literal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -46,7 +46,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          test-cmt = {
+          "test-cmt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

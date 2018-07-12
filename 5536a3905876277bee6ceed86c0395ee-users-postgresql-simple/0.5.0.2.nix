@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        users-postgresql-simple = {
+        "users-postgresql-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.users
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          users-postgresql-tests = {
+          "users-postgresql-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

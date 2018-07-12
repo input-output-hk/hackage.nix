@@ -20,11 +20,11 @@ let
         buildType = "Custom";
       };
       components = {
-        hsSqlite3 = {
+        "hsSqlite3" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          hs_sqlite3_test = {
+          "hs_sqlite3_test" = {
             depends  = [ hsPkgs.base ];
             libs = [ pkgs.sqlite3 ];
           };

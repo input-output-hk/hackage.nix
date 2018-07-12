@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty-compact = {
+        "pretty-compact" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

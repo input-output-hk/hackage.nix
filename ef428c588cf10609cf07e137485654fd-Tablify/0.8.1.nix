@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tablify = {
+          "tablify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.utf8-string

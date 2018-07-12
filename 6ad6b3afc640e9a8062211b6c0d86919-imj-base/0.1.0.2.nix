@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imj-base = {
+        "imj-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          imj-base-examples-exe = {
+          "imj-base-examples-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          imj-base-test = {
+          "imj-base-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

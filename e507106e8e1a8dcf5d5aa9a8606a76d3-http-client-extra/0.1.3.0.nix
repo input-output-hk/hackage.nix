@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client-extra = {
+        "http-client-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

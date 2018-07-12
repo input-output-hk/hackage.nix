@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix = {
+        "hmatrix" = {
           depends  = [
             hsPkgs.haskell98
           ] ++ (if _flags.splitbase

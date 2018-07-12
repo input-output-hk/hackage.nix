@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-slow = {
+        "hspec-slow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          hspec-slow-test = {
+          "hspec-slow-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec-slow

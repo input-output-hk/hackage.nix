@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-api = {
+        "json-api" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          json-api-test = {
+          "json-api-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty

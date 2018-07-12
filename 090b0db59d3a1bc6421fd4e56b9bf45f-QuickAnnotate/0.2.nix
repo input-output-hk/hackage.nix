@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        QuickAnnotate = {
+        "QuickAnnotate" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          qapp = {
+          "qapp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts

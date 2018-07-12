@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haquil = {
+        "haquil" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hTensor
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          haquil-test = {
+          "haquil-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hTensor

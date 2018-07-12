@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        YamlReference = {
+        "YamlReference" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.regex-compat
@@ -36,8 +36,8 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          yaml2yeast = {};
-          yaml2yeast-test = {
+          "yaml2yeast" = {};
+          "yaml2yeast-test" = {
             depends  = pkgs.lib.optional _flags.small_base hsPkgs.directory;
           };
         };

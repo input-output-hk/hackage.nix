@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-fay = {
+        "snaplet-fay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

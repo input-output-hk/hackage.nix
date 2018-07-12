@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stable-maps = {
+        "stable-maps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

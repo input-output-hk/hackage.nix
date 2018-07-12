@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hosc = {
+        "hosc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          hosc-test = {
+          "hosc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          hosc-benchmark = {
+          "hosc-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hosc

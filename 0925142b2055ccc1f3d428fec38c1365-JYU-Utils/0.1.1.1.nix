@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JYU-Utils = {
+        "JYU-Utils" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

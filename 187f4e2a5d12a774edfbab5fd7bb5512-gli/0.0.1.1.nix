@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gli = {
+        "gli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          gli = {
+          "gli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gli
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          gli-test = {
+          "gli-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gli

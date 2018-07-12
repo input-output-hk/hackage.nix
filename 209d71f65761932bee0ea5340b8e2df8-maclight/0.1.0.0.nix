@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        maclight = {
+        "maclight" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filemanip
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          maclight = {
+          "maclight" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filemanip
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          MaclightTest.hs = {
+          "MaclightTest.hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.maclight

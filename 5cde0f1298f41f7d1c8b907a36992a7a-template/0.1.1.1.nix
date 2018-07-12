@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        template = {
+        "template" = {
           depends  = [
             hsPkgs.mtl
           ] ++ (if _flags.split-base

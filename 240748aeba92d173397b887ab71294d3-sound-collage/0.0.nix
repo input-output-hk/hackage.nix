@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sound-collage = {
+          "sound-collage" = {
             depends  = [
               hsPkgs.fft
               hsPkgs.carray

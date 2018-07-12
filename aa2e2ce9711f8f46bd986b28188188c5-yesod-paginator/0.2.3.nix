@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-paginator = {
+        "yesod-paginator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

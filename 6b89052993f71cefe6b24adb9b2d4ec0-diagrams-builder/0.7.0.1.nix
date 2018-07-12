@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-builder = {
+        "diagrams-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          diagrams-builder-cairo = {
+          "diagrams-builder-cairo" = {
             depends  = pkgs.lib.optionals _flags.cairo [
               hsPkgs.base
               hsPkgs.filepath
@@ -56,7 +56,7 @@ let
               hsPkgs.lens
             ];
           };
-          diagrams-builder-svg = {
+          "diagrams-builder-svg" = {
             depends  = pkgs.lib.optionals _flags.svg [
               hsPkgs.base
               hsPkgs.filepath
@@ -69,7 +69,7 @@ let
               hsPkgs.cmdargs
             ];
           };
-          diagrams-builder-ps = {
+          "diagrams-builder-ps" = {
             depends  = pkgs.lib.optionals (_flags.ps || _flags.postscript) [
               hsPkgs.base
               hsPkgs.filepath
@@ -81,7 +81,7 @@ let
               hsPkgs.lens
             ];
           };
-          diagrams-builder-rasterific = {
+          "diagrams-builder-rasterific" = {
             depends  = pkgs.lib.optionals _flags.rasterific [
               hsPkgs.base
               hsPkgs.filepath

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ContArrow = {
+        "ContArrow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.arrows

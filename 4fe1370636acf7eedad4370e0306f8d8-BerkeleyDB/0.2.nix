@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        BerkeleyDB = {
+        "BerkeleyDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

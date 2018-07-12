@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        magicbane = {
+        "magicbane" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-qq

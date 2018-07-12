@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        refact = {
+        "refact" = {
           depends  = [ hsPkgs.base ];
         };
       };

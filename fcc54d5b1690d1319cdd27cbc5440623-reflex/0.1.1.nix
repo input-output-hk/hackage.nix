@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reflex = {
+        "reflex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dependent-sum

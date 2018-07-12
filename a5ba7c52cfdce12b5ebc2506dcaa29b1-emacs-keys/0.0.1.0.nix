@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        emacs-keys = {
+        "emacs-keys" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.emacs-keys
               hsPkgs.base
@@ -40,7 +40,7 @@ let
               hsPkgs.xkbcommon
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

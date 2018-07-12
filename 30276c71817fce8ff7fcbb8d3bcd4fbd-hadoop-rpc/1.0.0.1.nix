@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hadoop-rpc = {
+        "hadoop-rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          hdfs-tests = {
+          "hdfs-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hadoop-rpc

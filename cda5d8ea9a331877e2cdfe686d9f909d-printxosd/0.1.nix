@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          printxosd = {
+          "printxosd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xosd

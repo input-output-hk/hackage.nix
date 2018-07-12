@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        siphash = {
+        "siphash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-siphash = {
+          "test-siphash" = {
             depends  = [
               hsPkgs.base
               hsPkgs.siphash

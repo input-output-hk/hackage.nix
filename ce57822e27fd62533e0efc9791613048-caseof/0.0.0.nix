@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        caseof = {
+        "caseof" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

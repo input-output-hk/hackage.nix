@@ -20,11 +20,11 @@ let
         buildType = "Custom";
       };
       components = {
-        lca = {
+        "lca" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

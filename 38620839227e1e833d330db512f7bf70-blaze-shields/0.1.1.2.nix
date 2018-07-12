@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-shields = {
+        "blaze-shields" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup

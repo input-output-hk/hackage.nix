@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nagios-check = {
+        "nagios-check" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          nagios-check-test = {
+          "nagios-check-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

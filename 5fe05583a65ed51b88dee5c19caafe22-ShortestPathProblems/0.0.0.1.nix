@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ShortestPathProblems = {
+        "ShortestPathProblems" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

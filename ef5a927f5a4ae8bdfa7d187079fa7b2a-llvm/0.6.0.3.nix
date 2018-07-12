@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        llvm = {
+        "llvm" = {
           depends  = if _flags.bytestring-in-base
             then [ hsPkgs.base ]
             else [

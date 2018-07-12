@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        structured-cli = {
+        "structured-cli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          some-cli = {
+          "some-cli" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        manatee-imageviewer = {
+        "manatee-imageviewer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manatee-core
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          manatee-imageviewer = {};
+          "manatee-imageviewer" = {};
         };
       };
     }

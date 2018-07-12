@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        planb-token-introspection = {
+        "planb-token-introspection" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          access-token-provider-test = {
+          "access-token-provider-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.planb-token-introspection

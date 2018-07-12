@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector = {
+        "vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          vector-tests-O0 = {
+          "vector-tests-O0" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell
@@ -45,7 +45,7 @@ let
               hsPkgs.transformers
             ];
           };
-          vector-tests-O2 = {
+          "vector-tests-O2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

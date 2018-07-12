@@ -20,14 +20,14 @@ let
         buildType = "Custom";
       };
       components = {
-        direct-rocksdb = {
+        "direct-rocksdb" = {
           depends  = [ hsPkgs.base ];
           libs = [
             pkgs."stdc++"
           ] ++ pkgs.lib.optional system.isWindows pkgs.rpcrt4;
         };
         tests = {
-          direct-rocksdb-test = {
+          "direct-rocksdb-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.direct-rocksdb

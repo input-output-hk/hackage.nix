@@ -20,31 +20,31 @@ let
         buildType = "Simple";
       };
       components = {
-        cold-widow = {
+        "cold-widow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         exes = {
-          cold-widow = {
+          "cold-widow" = {
             depends  = [ hsPkgs.base ];
           };
-          encode45 = {
+          "encode45" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.cold-widow
             ];
           };
-          decode45 = {
+          "decode45" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.cold-widow
             ];
           };
-          compact-decode45 = {
+          "compact-decode45" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          cold-widow-tests = {
+          "cold-widow-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

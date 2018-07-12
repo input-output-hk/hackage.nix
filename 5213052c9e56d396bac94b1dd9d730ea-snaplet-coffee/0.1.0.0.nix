@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-coffee = {
+        "snaplet-coffee" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snap-core

@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        resolv = {
+        "resolv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base16-bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          resolv = {
+          "resolv" = {
             depends  = [
               hsPkgs.resolv
               hsPkgs.base

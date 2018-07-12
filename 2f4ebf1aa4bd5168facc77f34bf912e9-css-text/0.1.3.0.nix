@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        css-text = {
+        "css-text" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.attoparsec

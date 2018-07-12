@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        harmony = {
+        "harmony" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          harmony = {
+          "harmony" = {
             depends  = [
               hsPkgs.base
               hsPkgs.harmony
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -61,7 +61,7 @@ let
               hsPkgs.hslogger
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

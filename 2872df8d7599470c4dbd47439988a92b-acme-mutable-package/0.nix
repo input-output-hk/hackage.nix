@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        acme-mutable-package = {
+        "acme-mutable-package" = {
           depends  = [ hsPkgs.base ];
         };
       };

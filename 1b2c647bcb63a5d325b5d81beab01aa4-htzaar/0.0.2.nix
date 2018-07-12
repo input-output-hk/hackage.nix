@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          htzaar = {
+          "htzaar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL

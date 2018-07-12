@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rest-types = {
+        "rest-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

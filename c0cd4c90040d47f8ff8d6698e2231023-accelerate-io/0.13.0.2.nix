@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        accelerate-io = {
+        "accelerate-io" = {
           depends  = [
             hsPkgs.accelerate
             hsPkgs.base

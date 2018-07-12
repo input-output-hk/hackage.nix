@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-mangopay = {
+        "yesod-mangopay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          yesod-mangopay = {
+          "yesod-mangopay" = {
             depends  = [
               hsPkgs.yesod-mangopay
               hsPkgs.mangopay

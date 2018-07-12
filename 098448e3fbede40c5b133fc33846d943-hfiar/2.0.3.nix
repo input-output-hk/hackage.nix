@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hfiar = {
+        "hfiar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          hfiar = {
+          "hfiar" = {
             depends  = [
               hsPkgs.wxcore
               hsPkgs.wxcore

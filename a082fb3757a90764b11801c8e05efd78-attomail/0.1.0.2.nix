@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          attomail = {
+          "attomail" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          attomail-doctest = {
+          "attomail-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

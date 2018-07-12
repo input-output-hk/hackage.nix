@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yu-utils = {
+        "yu-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

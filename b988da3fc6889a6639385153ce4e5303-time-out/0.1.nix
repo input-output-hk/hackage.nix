@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-out = {
+        "time-out" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

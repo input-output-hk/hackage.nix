@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        protocol-buffers-fork = {
+        "protocol-buffers-fork" = {
           depends  = [
             hsPkgs.array
             hsPkgs.binary

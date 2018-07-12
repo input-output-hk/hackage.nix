@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        tile = {
+        "tile" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tile-test = {
+          "tile-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tile

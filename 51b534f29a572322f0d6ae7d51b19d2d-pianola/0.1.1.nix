@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pianola = {
+        "pianola" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          test-pianola = {
+          "test-pianola" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

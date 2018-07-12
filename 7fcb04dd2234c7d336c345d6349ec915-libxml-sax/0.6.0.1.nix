@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libxml-sax = {
+        "libxml-sax" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        regional-pointers = {
+        "regional-pointers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

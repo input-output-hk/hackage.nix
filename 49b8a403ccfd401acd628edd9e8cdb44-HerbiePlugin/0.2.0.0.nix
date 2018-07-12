@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HerbiePlugin = {
+        "HerbiePlugin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -35,14 +35,14 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.subhask
               hsPkgs.HerbiePlugin
             ];
           };
-          ValidRewrite = {
+          "ValidRewrite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.subhask

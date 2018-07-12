@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        packdeps = {
+        "packdeps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tar
@@ -33,6 +33,6 @@ let
             hsPkgs.directory
           ];
         };
-        exes = { packdeps = {}; };
+        exes = { "packdeps" = {}; };
       };
     }

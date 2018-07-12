@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-lightsail = {
+        "amazonka-lightsail" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-lightsail-test = {
+          "amazonka-lightsail-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

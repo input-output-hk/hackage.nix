@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ltl = {
+        "ltl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vcd

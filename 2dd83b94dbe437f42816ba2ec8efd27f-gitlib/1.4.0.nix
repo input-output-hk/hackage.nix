@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gitlib = {
+        "gitlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base16-bytestring
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

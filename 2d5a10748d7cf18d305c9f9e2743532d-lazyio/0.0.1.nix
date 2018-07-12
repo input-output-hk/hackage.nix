@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazyio = {
+        "lazyio" = {
           depends  = [
             hsPkgs.mtl
           ] ++ (if _flags.splitbase

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        handa-data = {
+        "handa-data" = {
           depends  = [ hsPkgs.base ];
         };
       };

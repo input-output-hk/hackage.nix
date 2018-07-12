@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        metadata = {
+        "metadata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mysql-haskell-openssl = {
+        "mysql-haskell-openssl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

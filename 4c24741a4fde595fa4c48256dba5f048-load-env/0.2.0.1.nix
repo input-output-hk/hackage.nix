@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        load-env = {
+        "load-env" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -29,13 +29,13 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

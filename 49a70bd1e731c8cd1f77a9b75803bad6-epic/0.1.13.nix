@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        epic = {
+        "epic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          epic = {
+          "epic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

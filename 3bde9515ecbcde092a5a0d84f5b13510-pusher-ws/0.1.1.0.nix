@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pusher-ws = {
+        "pusher-ws" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

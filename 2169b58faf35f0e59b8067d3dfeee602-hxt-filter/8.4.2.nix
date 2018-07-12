@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hxt-filter = {
+        "hxt-filter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

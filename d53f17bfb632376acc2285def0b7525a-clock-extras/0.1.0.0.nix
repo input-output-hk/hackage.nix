@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        clock-extras = {
+        "clock-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clock
           ];
         };
         tests = {
-          clock-extras-test = {
+          "clock-extras-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clock-extras

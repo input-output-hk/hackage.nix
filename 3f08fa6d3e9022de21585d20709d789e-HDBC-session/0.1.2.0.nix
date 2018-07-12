@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HDBC-session = {
+        "HDBC-session" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC

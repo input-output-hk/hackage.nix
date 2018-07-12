@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        git-vogue = {
+        "git-vogue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          git-vogue = {
+          "git-vogue" = {
             depends  = [
               hsPkgs.base
               hsPkgs.git-vogue
@@ -46,14 +46,14 @@ let
               hsPkgs.text
             ];
           };
-          git-vogue-cabal = {
+          "git-vogue-cabal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
               hsPkgs.git-vogue
             ];
           };
-          git-vogue-hlint = {
+          "git-vogue-hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors
@@ -65,7 +65,7 @@ let
               hsPkgs.hscolour
             ];
           };
-          git-vogue-stylish = {
+          "git-vogue-stylish" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Diff
@@ -74,7 +74,7 @@ let
               hsPkgs.stylish-haskell
             ];
           };
-          git-vogue-ghc-mod = {
+          "git-vogue-ghc-mod" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-mod
@@ -83,7 +83,7 @@ let
           };
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

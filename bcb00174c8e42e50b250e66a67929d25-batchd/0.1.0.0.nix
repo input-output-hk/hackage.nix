@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          batchd = {
+          "batchd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.persistent
@@ -65,7 +65,7 @@ let
               hsPkgs.th-lift
             ];
           };
-          batchd-admin = {
+          "batchd-admin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.persistent
@@ -107,7 +107,7 @@ let
               hsPkgs.th-lift
             ];
           };
-          batch = {
+          "batch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default

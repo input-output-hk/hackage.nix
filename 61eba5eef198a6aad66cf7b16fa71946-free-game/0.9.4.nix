@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        free-game = {
+        "free-game" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hint = {
+        "hint" = {
           depends  = ([
             hsPkgs.ghc
             hsPkgs.ghc-paths
@@ -48,7 +48,7 @@ let
             ])) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hint

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        atomo = {
+        "atomo" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          atomo = {
+          "atomo" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

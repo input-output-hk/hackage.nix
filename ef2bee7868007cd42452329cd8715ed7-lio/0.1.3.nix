@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        lio = {
+        "lio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

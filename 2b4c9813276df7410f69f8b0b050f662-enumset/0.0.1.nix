@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enumset = {
+        "enumset" = {
           depends  = [
             hsPkgs.storable-record
             hsPkgs.base

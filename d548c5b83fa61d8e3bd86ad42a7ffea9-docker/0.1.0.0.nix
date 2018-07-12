@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        docker = {
+        "docker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

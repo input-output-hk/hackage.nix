@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dow = {
+          "dow" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elerea

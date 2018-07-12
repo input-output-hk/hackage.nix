@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yjsvg = {
+        "yjsvg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HaXml

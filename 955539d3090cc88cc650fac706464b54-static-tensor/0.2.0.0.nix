@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        static-tensor = {
+        "static-tensor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          coreDump = {
+          "coreDump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.static-tensor
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          matMul = {
+          "matMul" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

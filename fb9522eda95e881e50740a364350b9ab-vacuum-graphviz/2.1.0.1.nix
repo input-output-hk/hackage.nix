@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vacuum-graphviz = {
+        "vacuum-graphviz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

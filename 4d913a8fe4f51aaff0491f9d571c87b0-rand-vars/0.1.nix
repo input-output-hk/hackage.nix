@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rand-vars = {
+        "rand-vars" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

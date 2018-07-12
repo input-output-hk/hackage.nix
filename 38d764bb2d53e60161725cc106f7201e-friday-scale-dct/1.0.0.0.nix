@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        friday-scale-dct = {
+        "friday-scale-dct" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.base-compat

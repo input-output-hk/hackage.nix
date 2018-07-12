@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-digestive-functors = {
+        "wai-digestive-functors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

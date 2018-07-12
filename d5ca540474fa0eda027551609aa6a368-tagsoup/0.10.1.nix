@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagsoup = {
+        "tagsoup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          tagsoup = {
+          "tagsoup" = {
             depends  = pkgs.lib.optionals _flags.testprog [
               hsPkgs.QuickCheck
               hsPkgs.time

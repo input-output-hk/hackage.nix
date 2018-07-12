@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bed-and-breakfast = {
+        "bed-and-breakfast" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bed-and-breakfast

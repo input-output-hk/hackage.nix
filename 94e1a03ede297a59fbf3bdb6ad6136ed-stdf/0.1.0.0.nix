@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stdf = {
+        "stdf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          StdfToJson = {
+          "StdfToJson" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
               hsPkgs.stdf
             ];
           };
-          WaferMap = {
+          "WaferMap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

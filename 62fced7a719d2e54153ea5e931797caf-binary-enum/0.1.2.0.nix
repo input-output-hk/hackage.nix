@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-enum = {
+        "binary-enum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ihaskell-hatex = {
+        "ihaskell-hatex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

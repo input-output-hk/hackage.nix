@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-transport-amqp = {
+        "network-transport-amqp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.amqp
@@ -42,7 +42,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.ghc-prim;
         };
         tests = {
-          amqp-tests = {
+          "amqp-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-transport
@@ -53,7 +53,7 @@ let
               hsPkgs.network-transport-tests
             ];
           };
-          api-tests = {
+          "api-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-transport

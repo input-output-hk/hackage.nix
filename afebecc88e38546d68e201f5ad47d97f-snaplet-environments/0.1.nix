@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-environments = {
+        "snaplet-environments" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snap

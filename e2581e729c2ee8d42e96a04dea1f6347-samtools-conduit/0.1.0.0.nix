@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        samtools-conduit = {
+        "samtools-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

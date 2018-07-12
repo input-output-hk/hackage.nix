@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        traced = {
+        "traced" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.pretty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-postgresql = {
+        "persistent-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

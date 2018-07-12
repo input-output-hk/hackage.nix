@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MissingH = {
+        "MissingH" = {
           depends  = ([
             hsPkgs.network
             hsPkgs.parsec
@@ -51,7 +51,7 @@ let
             ])) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.testpack
               hsPkgs.QuickCheck

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          git-repair = {
+          "git-repair" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.hslogger

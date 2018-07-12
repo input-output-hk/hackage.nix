@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-file = {
+        "binary-file" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

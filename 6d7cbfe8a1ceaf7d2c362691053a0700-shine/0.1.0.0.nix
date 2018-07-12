@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shine = {
+        "shine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghcjs-dom
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test-shine = {
+          "test-shine" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghcjs-dom

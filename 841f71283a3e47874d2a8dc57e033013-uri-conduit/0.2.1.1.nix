@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uri-conduit = {
+        "uri-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit

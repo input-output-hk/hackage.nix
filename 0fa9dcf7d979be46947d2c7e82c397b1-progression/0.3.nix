@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        progression = {
+        "progression" = {
           depends  = [
             hsPkgs.base
             hsPkgs.criterion

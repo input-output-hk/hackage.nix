@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        easytest = {
+        "easytest" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.easytest

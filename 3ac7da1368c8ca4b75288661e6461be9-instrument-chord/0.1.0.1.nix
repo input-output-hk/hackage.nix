@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        instrument-chord = {
+        "instrument-chord" = {
           depends  = [ hsPkgs.base ];
         };
       };

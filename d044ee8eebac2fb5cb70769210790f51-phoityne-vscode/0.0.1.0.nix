@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          phoityne-vscode = {
+          "phoityne-vscode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          phoityne-vscode-test = {
+          "phoityne-vscode-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

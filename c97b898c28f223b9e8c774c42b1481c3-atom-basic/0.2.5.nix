@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atom-basic = {
+        "atom-basic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

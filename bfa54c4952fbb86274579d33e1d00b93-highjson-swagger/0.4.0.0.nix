@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        highjson-swagger = {
+        "highjson-swagger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.highjson
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          highjson-swagger-tests = {
+          "highjson-swagger-tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          odec = {
+          "odec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dataenc
@@ -31,7 +31,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          oenc = {
+          "oenc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dataenc

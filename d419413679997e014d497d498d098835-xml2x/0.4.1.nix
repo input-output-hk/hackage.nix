@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          xml2x = {
+          "xml2x" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bio

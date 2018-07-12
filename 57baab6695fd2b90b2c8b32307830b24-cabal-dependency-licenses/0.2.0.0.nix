@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal-dependency-licenses = {
+          "cabal-dependency-licenses" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.containers

@@ -19,5 +19,5 @@ let
         description = "";
         buildType = "Simple";
       };
-      components = { inj = {}; };
+      components = { "inj" = {}; };
     }

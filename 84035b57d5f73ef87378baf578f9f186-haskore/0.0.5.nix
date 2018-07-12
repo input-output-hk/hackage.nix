@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskore = {
+        "haskore" = {
           depends  = [
             hsPkgs.event-list
             hsPkgs.midi
@@ -48,8 +48,8 @@ let
             ]);
         };
         exes = {
-          test = {};
-          autotrack = {};
+          "test" = {};
+          "autotrack" = {};
         };
       };
     }

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postmark = {
+        "postmark" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          postmark-demo = {
+          "postmark-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.postmark

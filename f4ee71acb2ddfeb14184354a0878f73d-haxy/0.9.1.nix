@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haxy = {
+        "haxy" = {
           depends  = [
             hsPkgs.http-server
             hsPkgs.HTTP
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          simple-proxy = {
+          "simple-proxy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

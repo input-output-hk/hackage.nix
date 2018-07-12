@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-watchman = {
+        "hs-watchman" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs-watchman

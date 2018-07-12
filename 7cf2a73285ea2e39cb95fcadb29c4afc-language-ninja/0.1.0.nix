@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        language-ninja = {
+        "language-ninja" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          ninja-lex = {
+          "ninja-lex" = {
             depends  = [
               hsPkgs.language-ninja
               hsPkgs.base
@@ -58,7 +58,7 @@ let
               hsPkgs.transformers
             ];
           };
-          ninja-parse = {
+          "ninja-parse" = {
             depends  = [
               hsPkgs.language-ninja
               hsPkgs.base
@@ -72,7 +72,7 @@ let
               hsPkgs.transformers
             ];
           };
-          ninja-compile = {
+          "ninja-compile" = {
             depends  = [
               hsPkgs.language-ninja
               hsPkgs.base
@@ -88,7 +88,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.language-ninja
               hsPkgs.base
@@ -120,7 +120,7 @@ let
               hsPkgs.versions
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

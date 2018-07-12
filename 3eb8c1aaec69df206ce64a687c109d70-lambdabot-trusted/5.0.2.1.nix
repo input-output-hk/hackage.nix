@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdabot-trusted = {
+        "lambdabot-trusted" = {
           depends  = [
             hsPkgs.base
             hsPkgs.oeis

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        machines-zlib = {
+        "machines-zlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          instapaper-sender = {
+          "instapaper-sender" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

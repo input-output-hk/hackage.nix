@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagchup = {
+        "tagchup" = {
           depends  = [
             hsPkgs.xml-basic
             hsPkgs.transformers
@@ -36,21 +36,21 @@ let
           ];
         };
         exes = {
-          validate-tagchup = {
+          "validate-tagchup" = {
             depends  = [
               hsPkgs.tagchup
               hsPkgs.xml-basic
               hsPkgs.base
             ];
           };
-          escape-html = {
+          "escape-html" = {
             depends  = [
               hsPkgs.tagchup
               hsPkgs.xml-basic
               hsPkgs.base
             ] ++ pkgs.lib.optional _flags.buildexamples hsPkgs.hxt;
           };
-          strip-html = {
+          "strip-html" = {
             depends  = [
               hsPkgs.tagchup
               hsPkgs.xml-basic
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          tagchuptest = {
+          "tagchuptest" = {
             depends  = [
               hsPkgs.tagchup
               hsPkgs.xml-basic
@@ -68,7 +68,7 @@ let
           };
         };
         benchmarks = {
-          tagchupspeed = {
+          "tagchupspeed" = {
             depends  = [
               hsPkgs.old-time
               hsPkgs.xml-basic

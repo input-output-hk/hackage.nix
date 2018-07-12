@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        GLFW-b = {
+        "GLFW-b" = {
           depends  = [ hsPkgs.base ];
           libs = if system.isLinux
             then [
@@ -32,11 +32,11 @@ let
             else if system.isOsx
               then [ pkgs.glfw ]
               else pkgs.lib.optional system.isWindows pkgs.opengl32;
-          frameworks = pkgs.lib.optionals (!system.isLinux && system.isOsx) [
+          frameworks = pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optionals system.isOsx [
             pkgs.AGL
             pkgs.Cocoa
             pkgs.OpenGL
-          ];
+          ]);
         };
       };
     }

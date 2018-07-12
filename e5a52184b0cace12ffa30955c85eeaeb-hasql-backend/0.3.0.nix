@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-backend = {
+        "hasql-backend" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.text

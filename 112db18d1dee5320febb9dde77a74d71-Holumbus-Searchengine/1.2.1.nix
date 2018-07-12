@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Holumbus-Searchengine = {
+        "Holumbus-Searchengine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

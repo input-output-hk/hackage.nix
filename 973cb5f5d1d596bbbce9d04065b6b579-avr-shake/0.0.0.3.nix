@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        avr-shake = {
+        "avr-shake" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shake

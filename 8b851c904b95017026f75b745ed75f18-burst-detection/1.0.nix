@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        burst-detection = {
+        "burst-detection" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
           ];
         };
         tests = {
-          simple-tests = {
+          "simple-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.burst-detection
@@ -35,7 +35,7 @@ let
           };
         };
         benchmarks = {
-          c-bench = {
+          "c-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

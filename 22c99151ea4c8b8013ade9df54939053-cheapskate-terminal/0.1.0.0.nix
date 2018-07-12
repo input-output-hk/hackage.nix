@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cheapskate-terminal = {
+        "cheapskate-terminal" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          cheapskate-terminal = {
+          "cheapskate-terminal" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          cheapskate-terminal-test = {
+          "cheapskate-terminal-test" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base

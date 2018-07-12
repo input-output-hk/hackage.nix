@@ -27,21 +27,21 @@ let
       };
       components = {
         exes = {
-          rpar = {
+          "rpar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
               hsPkgs.parallel
             ];
           };
-          sudoku1 = {
+          "sudoku1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parallel
               hsPkgs.array
             ];
           };
-          sudoku2 = {
+          "sudoku2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parallel
@@ -49,61 +49,53 @@ let
               hsPkgs.deepseq
             ];
           };
-          sudoku3 = {
+          "sudoku3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parallel
               hsPkgs.array
             ];
           };
-          sudoku4 = {
+          "sudoku4" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parallel
               hsPkgs.array
             ];
           };
-          sudoku5 = {
+          "sudoku5" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parallel
               hsPkgs.array
             ];
           };
-          strat = {
+          "strat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parallel
             ];
           };
-          strat2 = {
+          "strat2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parallel
             ];
           };
-          strat3 = {
+          "strat3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parallel
             ];
           };
-          rsa = {
+          "rsa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.deepseq
             ];
           };
-          rsa1 = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.parallel
-              hsPkgs.deepseq
-            ];
-          };
-          rsa2 = {
+          "rsa1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -111,7 +103,15 @@ let
               hsPkgs.deepseq
             ];
           };
-          kmeans = {
+          "rsa2" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.bytestring
+              hsPkgs.parallel
+              hsPkgs.deepseq
+            ];
+          };
+          "kmeans" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parallel
@@ -124,7 +124,7 @@ let
               hsPkgs.vector
             ];
           };
-          GenSamples = {
+          "GenSamples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -136,13 +136,13 @@ let
               hsPkgs.bytestring
             ];
           };
-          parmonad = {
+          "parmonad" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monad-par
             ];
           };
-          rsa-pipeline = {
+          "rsa-pipeline" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -150,7 +150,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          fwsparse = {
+          "fwsparse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -158,7 +158,7 @@ let
               hsPkgs.containers
             ];
           };
-          fwsparse1 = {
+          "fwsparse1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -168,7 +168,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          timetable = {
+          "timetable" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -176,16 +176,7 @@ let
               hsPkgs.random
             ];
           };
-          timetable1 = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.deepseq
-              hsPkgs.monad-par
-              hsPkgs.random
-            ];
-          };
-          timetable2 = {
+          "timetable1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -194,7 +185,7 @@ let
               hsPkgs.random
             ];
           };
-          timetable3 = {
+          "timetable2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -203,7 +194,16 @@ let
               hsPkgs.random
             ];
           };
-          parinfer = {
+          "timetable3" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.containers
+              hsPkgs.deepseq
+              hsPkgs.monad-par
+              hsPkgs.random
+            ];
+          };
+          "parinfer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -212,36 +212,36 @@ let
               hsPkgs.array
             ];
           };
-          fwdense = {
+          "fwdense" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
             ];
           };
-          fwdense1 = {
+          "fwdense1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
               hsPkgs.transformers
             ];
           };
-          rotateimage = {
+          "rotateimage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.repa
             ] ++ pkgs.lib.optional _flags.devil hsPkgs.repa-devil;
           };
-          fwaccel = {
+          "fwaccel" = {
             depends  = [
               hsPkgs.base
             ] ++ pkgs.lib.optional _flags.accelerate hsPkgs.accelerate;
           };
-          fwaccel-gpu = {
+          "fwaccel-gpu" = {
             depends  = ([
               hsPkgs.base
             ] ++ pkgs.lib.optional _flags.accelerate hsPkgs.accelerate) ++ pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda;
           };
-          mandel = {
+          "mandel" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.fclabels
@@ -250,40 +250,40 @@ let
               hsPkgs.accelerate-io
             ]) ++ pkgs.lib.optional _flags.cuda hsPkgs.accelerate-cuda;
           };
-          fork = {
+          "fork" = {
             depends  = [ hsPkgs.base ];
           };
-          reminders = {
+          "reminders" = {
             depends  = [ hsPkgs.base ];
           };
-          reminders2 = {
+          "reminders2" = {
             depends  = [ hsPkgs.base ];
           };
-          mvar1 = {
+          "mvar1" = {
             depends  = [ hsPkgs.base ];
           };
-          mvar2 = {
+          "mvar2" = {
             depends  = [ hsPkgs.base ];
           };
-          mvar3 = {
+          "mvar3" = {
             depends  = [ hsPkgs.base ];
           };
-          logger = {
+          "logger" = {
             depends  = [ hsPkgs.base ];
           };
-          phonebook = {
+          "phonebook" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
             ];
           };
-          chan = {
+          "chan" = {
             depends  = [ hsPkgs.base ];
           };
-          chan2 = {
+          "chan2" = {
             depends  = [ hsPkgs.base ];
           };
-          geturls1 = {
+          "geturls1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -292,7 +292,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          geturls2 = {
+          "geturls2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -302,7 +302,7 @@ let
               hsPkgs.HTTP
             ];
           };
-          geturls3 = {
+          "geturls3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -312,7 +312,7 @@ let
               hsPkgs.HTTP
             ];
           };
-          geturls4 = {
+          "geturls4" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -322,7 +322,7 @@ let
               hsPkgs.HTTP
             ];
           };
-          geturls5 = {
+          "geturls5" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -332,7 +332,7 @@ let
               hsPkgs.HTTP
             ];
           };
-          geturls6 = {
+          "geturls6" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -342,7 +342,7 @@ let
               hsPkgs.HTTP
             ];
           };
-          geturlscancel = {
+          "geturlscancel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -352,7 +352,7 @@ let
               hsPkgs.HTTP
             ];
           };
-          geturlscancel2 = {
+          "geturlscancel2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -362,35 +362,35 @@ let
               hsPkgs.HTTP
             ];
           };
-          modifytwo = {
+          "modifytwo" = {
             depends  = [ hsPkgs.base ];
           };
-          chan3 = {
+          "chan3" = {
             depends  = [ hsPkgs.base ];
           };
-          timeout = {
+          "timeout" = {
             depends  = [ hsPkgs.base ];
           };
-          catch-mask = {
+          "catch-mask" = {
             depends  = [ hsPkgs.base ];
           };
-          catch-mask2 = {
+          "catch-mask2" = {
             depends  = [ hsPkgs.base ];
           };
-          windowman = {
+          "windowman" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.stm
             ];
           };
-          tmvar = {
+          "tmvar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
             ];
           };
-          geturlsfirst = {
+          "geturlsfirst" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -400,41 +400,31 @@ let
               hsPkgs.network
             ];
           };
-          TChan = {
+          "TChan" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
             ];
           };
-          TList = {
+          "TList" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
             ];
           };
-          TQueue = {
+          "TQueue" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
             ];
           };
-          TBQueue = {
+          "TBQueue" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
             ];
           };
-          geturls7 = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.stm
-              hsPkgs.bytestring
-              hsPkgs.time
-              hsPkgs.network
-              hsPkgs.HTTP
-            ];
-          };
-          geturls8 = {
+          "geturls7" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -444,7 +434,7 @@ let
               hsPkgs.HTTP
             ];
           };
-          geturls9 = {
+          "geturls8" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -454,20 +444,30 @@ let
               hsPkgs.HTTP
             ];
           };
-          timeout2 = {
+          "geturls9" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.stm
+              hsPkgs.bytestring
+              hsPkgs.time
+              hsPkgs.network
+              hsPkgs.HTTP
+            ];
+          };
+          "timeout2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
             ];
           };
-          findseq = {
+          "findseq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
               hsPkgs.directory
             ];
           };
-          findpar = {
+          "findpar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -475,7 +475,7 @@ let
               hsPkgs.async
             ];
           };
-          findpar2 = {
+          "findpar2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -483,7 +483,7 @@ let
               hsPkgs.async
             ];
           };
-          findpar3 = {
+          "findpar3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -492,7 +492,7 @@ let
               hsPkgs.stm
             ];
           };
-          findpar4 = {
+          "findpar4" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -504,14 +504,14 @@ let
               hsPkgs.monad-par
             ];
           };
-          server = {
+          "server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
               hsPkgs.network
             ];
           };
-          server2 = {
+          "server2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -519,7 +519,7 @@ let
               hsPkgs.network
             ];
           };
-          chat = {
+          "chat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -528,7 +528,7 @@ let
               hsPkgs.network
             ];
           };
-          ping = {
+          "ping" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.network
@@ -540,7 +540,7 @@ let
               hsPkgs.distributed-static
             ];
           };
-          ping-multi = {
+          "ping-multi" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.network
@@ -552,7 +552,7 @@ let
               hsPkgs.distributed-static
             ];
           };
-          ping-tc = {
+          "ping-tc" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.network
@@ -564,7 +564,7 @@ let
               hsPkgs.distributed-static
             ];
           };
-          ping-tc-merge = {
+          "ping-tc-merge" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.network
@@ -576,7 +576,7 @@ let
               hsPkgs.distributed-static
             ];
           };
-          ping-tc-notify = {
+          "ping-tc-notify" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.network
@@ -588,7 +588,7 @@ let
               hsPkgs.distributed-static
             ];
           };
-          ping-fail = {
+          "ping-fail" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.network
@@ -600,7 +600,7 @@ let
               hsPkgs.distributed-static
             ];
           };
-          distrib-chat = {
+          "distrib-chat" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.containers
@@ -616,7 +616,7 @@ let
               hsPkgs.distributed-static
             ];
           };
-          distrib-chat-noslave = {
+          "distrib-chat-noslave" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.containers
@@ -632,7 +632,7 @@ let
               hsPkgs.distributed-static
             ];
           };
-          distrib-db = {
+          "distrib-db" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.containers
@@ -648,22 +648,22 @@ let
               hsPkgs.distributed-static
             ];
           };
-          mvar4 = {
+          "mvar4" = {
             depends  = [ hsPkgs.base ];
           };
-          deadlock1 = {
+          "deadlock1" = {
             depends  = [ hsPkgs.base ];
           };
-          deadlock2 = {
+          "deadlock2" = {
             depends  = [ hsPkgs.base ];
           };
-          threadperf1 = {
+          "threadperf1" = {
             depends  = [ hsPkgs.base ];
           };
-          threadperf2 = {
+          "threadperf2" = {
             depends  = [ hsPkgs.base ];
           };
-          bingtranslator = {
+          "bingtranslator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -674,7 +674,7 @@ let
               hsPkgs.xml
             ];
           };
-          bingtranslatorconc = {
+          "bingtranslatorconc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -685,7 +685,7 @@ let
               hsPkgs.xml
             ];
           };
-          geturlsstm = {
+          "geturlsstm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm
@@ -695,7 +695,7 @@ let
               hsPkgs.HTTP
             ];
           };
-          Async = {
+          "Async" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stm

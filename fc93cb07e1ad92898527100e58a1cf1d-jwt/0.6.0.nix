@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jwt = {
+        "jwt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cryptohash
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -74,7 +74,7 @@ let
               hsPkgs.network
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals _flags.doctests [
               hsPkgs.base
               hsPkgs.jwt

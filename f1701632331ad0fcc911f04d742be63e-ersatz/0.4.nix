@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ersatz = {
+        "ersatz" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
         };
         exes = {
-          ersatz-regexp-grid = {
+          "ersatz-regexp-grid" = {
             depends  = pkgs.lib.optionals _flags.examples ([
               hsPkgs.base
               hsPkgs.containers
@@ -50,7 +50,7 @@ let
               hsPkgs.parsec
             ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) hsPkgs.ghc-prim);
           };
-          ersatz-sudoku = {
+          "ersatz-sudoku" = {
             depends  = pkgs.lib.optionals _flags.examples ([
               hsPkgs.array
               hsPkgs.base
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -68,19 +68,19 @@ let
               hsPkgs.filepath
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          speed = {
+          "speed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ersatz
             ];
           };
-          moore = {
+          "moore" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -88,7 +88,7 @@ let
               hsPkgs.ersatz
             ];
           };
-          z001 = {
+          "z001" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

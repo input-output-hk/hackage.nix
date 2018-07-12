@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger-lib = {
+        "hledger-lib" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.base-compat
@@ -54,7 +54,7 @@ let
             else [ hsPkgs.time ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = ([
               hsPkgs.hledger-lib
               hsPkgs.base

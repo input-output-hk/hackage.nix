@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-fpco = {
+        "web-fpco" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pushbullet-types = {
+        "pushbullet-types" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

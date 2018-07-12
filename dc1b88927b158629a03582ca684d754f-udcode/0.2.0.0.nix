@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        udcode = {
+        "udcode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

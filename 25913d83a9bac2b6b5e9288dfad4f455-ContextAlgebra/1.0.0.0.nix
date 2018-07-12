@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ContextAlgebra = {
+          "ContextAlgebra" = {
             depends  = [
               hsPkgs.base
               hsPkgs.multiset

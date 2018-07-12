@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uniplate = {
+        "uniplate" = {
           depends  = if _flags.ghc_6_10
             then [
               hsPkgs.base

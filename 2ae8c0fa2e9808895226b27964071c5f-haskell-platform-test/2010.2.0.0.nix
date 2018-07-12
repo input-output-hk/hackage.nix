@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haskell-platform-test = {
+          "haskell-platform-test" = {
             depends  = [
               hsPkgs.ghc
               hsPkgs.array

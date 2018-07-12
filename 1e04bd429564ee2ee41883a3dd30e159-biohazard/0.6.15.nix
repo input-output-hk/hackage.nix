@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        biohazard = {
+        "biohazard" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.async

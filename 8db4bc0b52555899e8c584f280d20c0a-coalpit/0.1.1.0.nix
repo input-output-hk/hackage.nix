@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        coalpit = {
+        "coalpit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.megaparsec
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-coalpit = {
+          "test-coalpit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.coalpit

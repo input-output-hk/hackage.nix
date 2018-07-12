@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        namespace = {
+        "namespace" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          namespace-test = {
+          "namespace-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.namespace

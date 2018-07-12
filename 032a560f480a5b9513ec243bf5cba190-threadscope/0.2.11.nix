@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          threadscope = {
+          "threadscope" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.gtk

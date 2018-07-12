@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock-worker = {
+        "Spock-worker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Spock

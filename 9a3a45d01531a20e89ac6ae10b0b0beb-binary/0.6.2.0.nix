@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary = {
+        "binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          qc = {
+          "qc" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -45,14 +45,14 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
               hsPkgs.bytestring
             ];
           };
-          get = {
+          "get" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -62,7 +62,7 @@ let
               hsPkgs.mtl
             ];
           };
-          builder = {
+          "builder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          free-theorems-webui.cgi = {
+          "free-theorems-webui.cgi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.free-theorems
@@ -40,7 +40,7 @@ let
               hsPkgs.directory
             ];
           };
-          free-theorems-webui = {};
+          "free-theorems-webui" = {};
         };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdbc-tuple = {
+        "hdbc-tuple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.typical

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-css-min = {
+        "snaplet-css-min" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

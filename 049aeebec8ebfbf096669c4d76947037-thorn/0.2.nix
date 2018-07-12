@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thorn = {
+        "thorn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

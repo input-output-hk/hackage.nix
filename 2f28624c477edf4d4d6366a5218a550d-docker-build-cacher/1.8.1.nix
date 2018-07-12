@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          docker-build-cacher = {
+          "docker-build-cacher" = {
             depends  = [
               hsPkgs.base
               hsPkgs.turtle

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-exceptions = {
+        "safe-exceptions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          safe-exceptions-test = {
+          "safe-exceptions-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

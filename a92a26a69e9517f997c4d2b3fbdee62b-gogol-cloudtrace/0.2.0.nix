@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-cloudtrace = {
+        "gogol-cloudtrace" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

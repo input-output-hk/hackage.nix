@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          egison = {
+          "egison" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

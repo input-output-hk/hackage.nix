@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dotfs = {
+        "dotfs" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.base
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          dotfs = {
+          "dotfs" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.base
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          test-dotfs = {
+          "test-dotfs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

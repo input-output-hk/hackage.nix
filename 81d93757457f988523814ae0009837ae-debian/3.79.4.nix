@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debian = {
+        "debian" = {
           depends  = ([
             hsPkgs.ansi-wl-pprint
             hsPkgs.base
@@ -56,13 +56,13 @@ let
             ])) ++ [ hsPkgs.Cabal ];
         };
         exes = {
-          fakechanges = {
+          "fakechanges" = {
             depends  = [ hsPkgs.Cabal ];
           };
-          debian-report = {
+          "debian-report" = {
             depends  = [ hsPkgs.Cabal ];
           };
-          apt-get-build-depends = {
+          "apt-get-build-depends" = {
             depends  = [ hsPkgs.Cabal ];
           };
         };

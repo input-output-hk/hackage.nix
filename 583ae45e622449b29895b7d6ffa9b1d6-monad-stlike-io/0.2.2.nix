@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-stlike-io = {
+        "monad-stlike-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

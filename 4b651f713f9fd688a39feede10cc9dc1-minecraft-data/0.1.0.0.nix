@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        minecraft-data = {
+        "minecraft-data" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        colorful-monoids = {
+        "colorful-monoids" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.colorful-monoids

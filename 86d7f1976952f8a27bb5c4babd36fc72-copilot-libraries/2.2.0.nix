@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        copilot-libraries = {
+        "copilot-libraries" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

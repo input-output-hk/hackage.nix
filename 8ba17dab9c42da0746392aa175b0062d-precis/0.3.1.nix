@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        precis = {
+        "precis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,6 +31,6 @@ let
             hsPkgs.cpphs
           ];
         };
-        exes = { precis = {}; };
+        exes = { "precis" = {}; };
       };
     }

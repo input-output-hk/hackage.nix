@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GLFW-task = {
+        "GLFW-task" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL

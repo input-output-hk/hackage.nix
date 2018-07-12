@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          can-i-have-a-pony = {
+          "can-i-have-a-pony" = {
             depends  = [ hsPkgs.base ];
           };
         };

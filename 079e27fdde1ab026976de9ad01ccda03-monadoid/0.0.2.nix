@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadoid = {
+        "monadoid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

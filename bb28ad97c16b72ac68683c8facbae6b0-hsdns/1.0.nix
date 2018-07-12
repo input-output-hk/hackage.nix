@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hsdns = {
+        "hsdns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -28,7 +28,7 @@ let
           libs = [ pkgs.adns ];
         };
         exes = {
-          adns-reverse-lookup = {
+          "adns-reverse-lookup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

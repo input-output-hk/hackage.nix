@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-orm = {
+        "postgresql-orm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          pg_migrate = {
+          "pg_migrate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

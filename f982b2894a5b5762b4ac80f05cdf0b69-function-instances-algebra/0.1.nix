@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        function-instances-algebra = {
+        "function-instances-algebra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.numeric-prelude

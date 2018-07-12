@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atomic-file-ops = {
+        "atomic-file-ops" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

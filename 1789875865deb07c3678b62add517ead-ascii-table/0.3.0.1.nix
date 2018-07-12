@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ascii-table = {
+        "ascii-table" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

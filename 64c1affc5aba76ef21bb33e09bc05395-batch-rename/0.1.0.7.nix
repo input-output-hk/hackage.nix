@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          batch_rename = {
+          "batch_rename" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Glob

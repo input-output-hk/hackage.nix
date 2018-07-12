@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hinduce-missingh = {
+        "hinduce-missingh" = {
           depends  = [ hsPkgs.base ];
         };
       };

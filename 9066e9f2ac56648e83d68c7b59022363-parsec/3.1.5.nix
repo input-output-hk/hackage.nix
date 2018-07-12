@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parsec = {
+        "parsec" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.bytestring

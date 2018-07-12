@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tower = {
+        "tower" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

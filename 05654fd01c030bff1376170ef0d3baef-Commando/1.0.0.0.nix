@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Commando = {
+        "Commando" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          commando = {
+          "commando" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

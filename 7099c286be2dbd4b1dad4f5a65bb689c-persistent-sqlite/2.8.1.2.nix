@@ -28,7 +28,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-sqlite = {
+        "persistent-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -47,11 +47,11 @@ let
             hsPkgs.resource-pool
             hsPkgs.unordered-containers
           ];
-          libs = pkgs.lib.optional (_flags.systemlib && !_flags.use-pkgconfig) pkgs.sqlite3 ++ pkgs.lib.optional (!system.isWindows) pkgs.pthread;
-          pkgconfig = pkgs.lib.optional (_flags.systemlib && _flags.use-pkgconfig) pkgconfPkgs.sqlite3;
+          libs = pkgs.lib.optionals _flags.systemlib (pkgs.lib.optional (!_flags.use-pkgconfig) pkgs.sqlite3) ++ pkgs.lib.optional (!system.isWindows) pkgs.pthread;
+          pkgconfig = pkgs.lib.optionals _flags.systemlib (pkgs.lib.optional _flags.use-pkgconfig pkgconfPkgs.sqlite3);
         };
         exes = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.persistent-sqlite
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

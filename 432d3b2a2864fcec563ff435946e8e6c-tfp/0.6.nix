@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        tfp = {
+        "tfp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         exes = {
-          tfp-test = {
+          "tfp-test" = {
             depends  = pkgs.lib.optionals _flags.build-test [
               hsPkgs.base
               hsPkgs.template-haskell

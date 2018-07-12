@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        instant-hashable = {
+        "instant-hashable" = {
           depends  = [
             hsPkgs.hashable
             hsPkgs.base

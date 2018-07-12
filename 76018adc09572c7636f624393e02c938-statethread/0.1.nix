@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        statethread = {
+        "statethread" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.applicative

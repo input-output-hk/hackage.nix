@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hsignal = {
+        "hsignal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.storable-complex

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        universe-th = {
+        "universe-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.composition
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

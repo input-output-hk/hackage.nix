@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        relapse = {
+        "relapse" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          relapse-test = {
+          "relapse-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

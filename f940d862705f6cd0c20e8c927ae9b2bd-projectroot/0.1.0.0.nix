@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        projectroot = {
+        "projectroot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

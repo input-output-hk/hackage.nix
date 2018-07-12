@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ipopt-hs = {
+        "ipopt-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ad
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          ipopt-hs_Tests = {
+          "ipopt-hs_Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

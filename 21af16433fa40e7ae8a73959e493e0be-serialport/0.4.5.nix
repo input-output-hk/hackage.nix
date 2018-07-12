@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        serialport = {
+        "serialport" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

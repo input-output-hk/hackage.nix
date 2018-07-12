@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        weighted-search = {
+        "weighted-search" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opentheory-divides = {
+        "opentheory-divides" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          opentheory-divides-test = {
+          "opentheory-divides-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

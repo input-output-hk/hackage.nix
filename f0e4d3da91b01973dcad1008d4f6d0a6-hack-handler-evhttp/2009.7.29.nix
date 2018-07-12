@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-handler-evhttp = {
+        "hack-handler-evhttp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tex2txt = {
+        "tex2txt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          tex2txt = {
+          "tex2txt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

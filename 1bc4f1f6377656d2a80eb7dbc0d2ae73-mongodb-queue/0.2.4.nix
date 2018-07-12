@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mongodb-queue = {
+        "mongodb-queue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mongoDB
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mongoDB

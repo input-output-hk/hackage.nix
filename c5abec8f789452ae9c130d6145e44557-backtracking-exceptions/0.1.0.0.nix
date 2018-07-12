@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        backtracking-exceptions = {
+        "backtracking-exceptions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.either

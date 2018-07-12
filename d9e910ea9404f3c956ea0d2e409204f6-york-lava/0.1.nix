@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        york-lava = {
+        "york-lava" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

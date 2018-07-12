@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strict-data = {
+        "strict-data" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          strict-data-test = {
+          "strict-data-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.strict-data
@@ -56,7 +56,7 @@ let
               hsPkgs.containers
             ];
           };
-          strict-data-doctest = {
+          "strict-data-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

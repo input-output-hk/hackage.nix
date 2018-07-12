@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jmacro-rpc-happstack = {
+        "jmacro-rpc-happstack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

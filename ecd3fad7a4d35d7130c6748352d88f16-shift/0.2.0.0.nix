@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shift = {
+        "shift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.turtle
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          teleport-hask = {
+          "teleport-hask" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shift

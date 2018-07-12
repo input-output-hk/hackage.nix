@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixer = {
+        "fixer" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          fixer-test = {
+          "fixer-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

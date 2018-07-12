@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concrete-haskell = {
+        "concrete-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.thrift
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          ingest_communications = {
+          "ingest_communications" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -60,7 +60,7 @@ let
               hsPkgs.zlib
             ];
           };
-          inspect_communications = {
+          "inspect_communications" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

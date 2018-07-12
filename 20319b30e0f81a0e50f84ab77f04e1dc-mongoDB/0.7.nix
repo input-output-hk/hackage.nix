@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mongoDB = {
+        "mongoDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          beinctl = {
+          "beinctl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HDBC
@@ -29,7 +29,7 @@ let
               hsPkgs.process
             ];
           };
-          beind = {
+          "beind" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HDBC
@@ -47,13 +47,13 @@ let
               hsPkgs.filepath
             ];
           };
-          beinclient = {
+          "beinclient" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
             ];
           };
-          beinminion = {
+          "beinminion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -69,7 +69,7 @@ let
               hsPkgs.directory
             ];
           };
-          beinhttpd = {
+          "beinhttpd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HDBC

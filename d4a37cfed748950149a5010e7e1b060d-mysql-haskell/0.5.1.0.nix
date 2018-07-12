@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mysql-haskell = {
+        "mysql-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-loops
@@ -46,7 +46,7 @@ let
           ] ++ pkgs.lib.optional _flags.openssl hsPkgs.HsOpenSSL;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.mysql-haskell
               hsPkgs.base

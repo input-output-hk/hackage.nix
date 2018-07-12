@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HDBC = {
+        "HDBC" = {
           depends  = [
             hsPkgs.mtl
           ] ++ (if _flags.splitbase

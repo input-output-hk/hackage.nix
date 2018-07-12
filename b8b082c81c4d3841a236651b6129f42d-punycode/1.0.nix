@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        punycode = {
+        "punycode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-punycode = {
+          "test-punycode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

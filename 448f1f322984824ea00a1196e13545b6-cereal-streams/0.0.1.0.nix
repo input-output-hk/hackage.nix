@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal-streams = {
+        "cereal-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.cereal-streams
               hsPkgs.cereal
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cereal-streams

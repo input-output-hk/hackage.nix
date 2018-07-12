@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-vend = {
+        "yesod-vend" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          vend-test-user = {
+          "vend-test-user" = {
             depends  = [
               hsPkgs.yesod-vend
               hsPkgs.base

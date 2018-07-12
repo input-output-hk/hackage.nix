@@ -19,5 +19,5 @@ let
         description = "None";
         buildType = "Simple";
       };
-      components = { blaze = {}; };
+      components = { "blaze" = {}; };
     }

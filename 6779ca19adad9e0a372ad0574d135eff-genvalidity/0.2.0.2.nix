@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity = {
+        "genvalidity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.validity
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          genvalidity-test = {
+          "genvalidity-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

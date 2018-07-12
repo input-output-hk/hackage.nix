@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        libtagc = {
+        "libtagc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.glib

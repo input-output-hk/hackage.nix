@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thyme = {
+        "thyme" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

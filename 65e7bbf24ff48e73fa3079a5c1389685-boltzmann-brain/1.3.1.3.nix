@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        boltzmann-brain = {
+        "boltzmann-brain" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          bb = {
+          "bb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hmatrix

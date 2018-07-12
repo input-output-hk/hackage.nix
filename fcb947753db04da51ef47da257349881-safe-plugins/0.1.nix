@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-plugins = {
+        "safe-plugins" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

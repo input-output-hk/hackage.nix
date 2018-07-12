@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hse-cpp = {
+        "hse-cpp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cpphs

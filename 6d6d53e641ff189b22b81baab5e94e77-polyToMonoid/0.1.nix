@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polyToMonoid = {
+        "polyToMonoid" = {
           depends  = [ hsPkgs.base ];
         };
       };

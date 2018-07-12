@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          styleFromMeta = {
+          "styleFromMeta" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc

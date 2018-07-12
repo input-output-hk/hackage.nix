@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-sub-th = {
+        "type-sub-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

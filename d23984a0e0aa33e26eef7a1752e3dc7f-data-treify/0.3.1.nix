@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-treify = {
+        "data-treify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

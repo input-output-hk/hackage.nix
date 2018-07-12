@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          core-haskell = {
+          "core-haskell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

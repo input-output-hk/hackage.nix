@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Yampa = {
+        "Yampa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -32,13 +32,13 @@ let
           ];
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          haddock-coverage = {
+          "haddock-coverage" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doc-coverage)) [
               hsPkgs.base
               hsPkgs.directory
@@ -47,7 +47,7 @@ let
               hsPkgs.regex-posix
             ];
           };
-          regression = {
+          "regression" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-regression)) [
               hsPkgs.base
               hsPkgs.Yampa

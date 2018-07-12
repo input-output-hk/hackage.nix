@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http2-client-grpc = {
+        "http2-client-grpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          http2-client-grpc-test = {
+          "http2-client-grpc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.http2-client-grpc

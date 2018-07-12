@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        di-handle = {
+        "di-handle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

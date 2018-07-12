@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-pointer = {
+        "json-pointer" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.text

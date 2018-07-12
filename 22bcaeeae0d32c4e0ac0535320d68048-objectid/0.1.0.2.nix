@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        objectid = {
+        "objectid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-all = {
+          "test-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

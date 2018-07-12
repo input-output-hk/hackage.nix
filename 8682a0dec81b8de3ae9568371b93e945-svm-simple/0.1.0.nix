@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        svm-simple = {
+        "svm-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-svm

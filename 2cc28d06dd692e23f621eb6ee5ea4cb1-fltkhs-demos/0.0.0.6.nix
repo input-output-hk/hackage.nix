@@ -23,117 +23,117 @@ let
       };
       components = {
         exes = {
-          fltkhs-threads = {
+          "fltkhs-threads" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
               hsPkgs.stm
             ];
           };
-          fltkhs-pack = {
+          "fltkhs-pack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-tile = {
+          "fltkhs-tile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-nativefilechooser-simple-app = {
+          "fltkhs-nativefilechooser-simple-app" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-table-as-container = {
+          "fltkhs-table-as-container" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-texteditor-simple = {
+          "fltkhs-texteditor-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-textdisplay-with-colors = {
+          "fltkhs-textdisplay-with-colors" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-doublebuffer = {
+          "fltkhs-doublebuffer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-make-tree = {
+          "fltkhs-make-tree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-tree-simple = {
+          "fltkhs-tree-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-table-spreadsheet-with-keyboard-nav = {
+          "fltkhs-table-spreadsheet-with-keyboard-nav" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-table-simple = {
+          "fltkhs-table-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-table-sort = {
+          "fltkhs-table-sort" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
               hsPkgs.process
             ];
           };
-          fltkhs-arc = {
+          "fltkhs-arc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
             ];
           };
-          fltkhs-bitmap = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.fltkhs
-              hsPkgs.bytestring
-            ];
-          };
-          fltkhs-boxtype = {
+          "fltkhs-bitmap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
               hsPkgs.bytestring
             ];
           };
-          fltkhs-browser = {
+          "fltkhs-boxtype" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs
               hsPkgs.bytestring
             ];
           };
-          fltkhs-clock = {
+          "fltkhs-browser" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.fltkhs
+              hsPkgs.bytestring
+            ];
+          };
+          "fltkhs-clock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fltkhs

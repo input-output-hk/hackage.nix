@@ -20,26 +20,26 @@ let
         buildType = "Simple";
       };
       components = {
-        homoiconic = {
+        "homoiconic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          Homogeneous = {
+          "Homogeneous" = {
             depends  = [
               hsPkgs.base
               hsPkgs.homoiconic
             ];
           };
-          Heterogeneous = {
+          "Heterogeneous" = {
             depends  = [
               hsPkgs.base
               hsPkgs.homoiconic
             ];
           };
-          Constrained = {
+          "Constrained" = {
             depends  = [
               hsPkgs.base
               hsPkgs.homoiconic

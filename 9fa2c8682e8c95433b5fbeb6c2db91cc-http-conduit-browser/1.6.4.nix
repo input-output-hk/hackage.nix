@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-conduit-browser = {
+        "http-conduit-browser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -40,7 +40,7 @@ let
           ] ++ [ hsPkgs.http-conduit ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

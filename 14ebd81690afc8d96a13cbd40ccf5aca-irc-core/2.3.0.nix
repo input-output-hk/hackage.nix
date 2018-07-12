@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc-core = {
+        "irc-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.irc-core
               hsPkgs.base

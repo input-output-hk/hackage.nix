@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        igrf = {
+        "igrf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ad

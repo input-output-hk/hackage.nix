@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-scrape = {
+        "hs-scrape" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

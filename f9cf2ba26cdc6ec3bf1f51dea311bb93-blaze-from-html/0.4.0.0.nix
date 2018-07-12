@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          blaze-from-html = {
+          "blaze-from-html" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

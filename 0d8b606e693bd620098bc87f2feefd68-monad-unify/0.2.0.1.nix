@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-unify = {
+        "monad-unify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

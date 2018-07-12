@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ieee = {
+        "ieee" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.m ];
         };

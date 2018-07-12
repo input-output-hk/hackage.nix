@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hyper-haskell-server = {
+          "hyper-haskell-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hs-nombre-generator = {
+          "hs-nombre-generator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt

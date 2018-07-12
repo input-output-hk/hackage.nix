@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        multirec = {
+        "multirec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.multirec

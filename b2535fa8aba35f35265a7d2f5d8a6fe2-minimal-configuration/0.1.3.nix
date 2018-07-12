@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        minimal-configuration = {
+        "minimal-configuration" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

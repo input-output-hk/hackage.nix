@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bloomfilter = {
+        "bloomfilter" = {
           depends  = (if _flags.bytestring-in-base
             then [ hsPkgs.base ]
             else [

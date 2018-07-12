@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-promise = {
+        "ghcjs-promise" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghcjs-base

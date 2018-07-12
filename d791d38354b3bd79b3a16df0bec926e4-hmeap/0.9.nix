@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmeap = {
+        "hmeap" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          hmeap-browse = {
+          "hmeap-browse" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -42,7 +42,7 @@ let
               hsPkgs.parsec
             ];
           };
-          hmeap-parser = {
+          "hmeap-parser" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -53,7 +53,7 @@ let
               hsPkgs.parsec
             ];
           };
-          hmeap-play = {
+          "hmeap-play" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -66,7 +66,7 @@ let
               hsPkgs.parsec
             ];
           };
-          hmeap-plot = {
+          "hmeap-plot" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -79,7 +79,7 @@ let
               hsPkgs.parsec
             ];
           };
-          hmeap-stat = {
+          "hmeap-stat" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

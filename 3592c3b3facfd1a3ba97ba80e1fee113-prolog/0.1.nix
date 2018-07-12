@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prolog = {
+        "prolog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

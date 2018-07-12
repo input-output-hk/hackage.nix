@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sequor = {
+          "sequor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -34,7 +34,7 @@ let
               hsPkgs.text
             ];
           };
-          augment = {
+          "augment" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

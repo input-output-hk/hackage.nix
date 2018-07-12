@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake = {
+        "shake" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.directory
@@ -45,7 +45,7 @@ let
             else pkgs.lib.optional (!system.isWindows) hsPkgs.unix)) ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          shake = {
+          "shake" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.directory
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          shake-test = {
+          "shake-test" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.directory

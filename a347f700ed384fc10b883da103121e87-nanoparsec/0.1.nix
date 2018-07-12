@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nanoparsec = {
+        "nanoparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        asset-map = {
+        "asset-map" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          aeson-asset-map-test = {
+          "aeson-asset-map-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.asset-map

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stb-image = {
+        "stb-image" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

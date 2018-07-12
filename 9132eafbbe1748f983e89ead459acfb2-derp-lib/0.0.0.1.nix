@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        derp-lib = {
+        "derp-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.derp

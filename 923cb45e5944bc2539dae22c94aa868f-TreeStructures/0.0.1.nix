@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TreeStructures = {
+        "TreeStructures" = {
           depends  = [ hsPkgs.base ];
         };
       };

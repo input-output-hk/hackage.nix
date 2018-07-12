@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        dlist = {
+        "dlist" = {
           depends  = [ hsPkgs.base ] ++ [
             hsPkgs.base
           ];

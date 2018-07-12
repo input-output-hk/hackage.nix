@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        d-bus = {
+        "d-bus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          unittests = {
+          "unittests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.d-bus
@@ -65,7 +65,7 @@ let
               hsPkgs.mtl
             ];
           };
-          integrationtest = {
+          "integrationtest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.d-bus

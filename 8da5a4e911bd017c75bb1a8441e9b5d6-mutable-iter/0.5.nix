@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mutable-iter = {
+        "mutable-iter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.iteratee

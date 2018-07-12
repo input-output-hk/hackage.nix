@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        io-streams-http = {
+        "io-streams-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

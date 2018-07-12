@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        syntactic = {
+        "syntactic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.syntactic
               hsPkgs.base
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          syntactic-bench = {
+          "syntactic-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

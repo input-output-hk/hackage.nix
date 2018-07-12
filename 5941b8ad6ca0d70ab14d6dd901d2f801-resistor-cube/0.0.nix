@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          resistor-cube = {
+          "resistor-cube" = {
             depends  = [
               hsPkgs.hmatrix
               hsPkgs.transformers

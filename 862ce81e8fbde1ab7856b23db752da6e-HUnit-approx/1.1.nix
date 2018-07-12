@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        HUnit-approx = {
+        "HUnit-approx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
           ];
         };
         tests = {
-          sanity-check = {
+          "sanity-check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

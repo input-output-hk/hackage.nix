@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          khph = {
+          "khph" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

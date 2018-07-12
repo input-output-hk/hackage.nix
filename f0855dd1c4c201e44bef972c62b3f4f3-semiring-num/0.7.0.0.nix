@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semiring-num = {
+        "semiring-num" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          semiring-test = {
+          "semiring-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.semiring-num

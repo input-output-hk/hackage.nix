@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serf = {
+        "serf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes = {
+        "pipes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mmorph
@@ -30,7 +30,7 @@ let
           ];
         };
         benchmarks = {
-          prelude-benchmarks = {
+          "prelude-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
@@ -38,7 +38,7 @@ let
               hsPkgs.pipes
             ];
           };
-          lift-benchmarks = {
+          "lift-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

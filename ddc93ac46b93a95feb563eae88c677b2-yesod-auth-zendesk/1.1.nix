@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-zendesk = {
+        "yesod-auth-zendesk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

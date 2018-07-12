@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nix-eval = {
+        "nix-eval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

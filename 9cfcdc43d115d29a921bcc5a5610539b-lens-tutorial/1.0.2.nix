@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        lens-tutorial = {
+        "lens-tutorial" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal-debian = {
+        "cabal-debian" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -68,7 +68,7 @@ let
             else [ hsPkgs.debian ]);
         };
         exes = {
-          cabal-debian = {
+          "cabal-debian" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -113,7 +113,7 @@ let
                 hsPkgs.cabal-debian
               ]);
           };
-          cabal-debian-tests = {
+          "cabal-debian-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

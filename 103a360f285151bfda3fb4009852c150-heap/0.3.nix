@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        heap = {
+        "heap" = {
           depends  = [ hsPkgs.base ];
         };
       };

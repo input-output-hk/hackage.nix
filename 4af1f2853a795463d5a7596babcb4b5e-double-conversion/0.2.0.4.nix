@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        double-conversion = {
+        "double-conversion" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           libs = [ pkgs."stdc++" ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

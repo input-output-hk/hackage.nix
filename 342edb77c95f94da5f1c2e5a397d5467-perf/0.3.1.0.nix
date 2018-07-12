@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        perf = {
+        "perf" = {
           depends  = [
             hsPkgs.protolude
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          perf-examples = {
+          "perf-examples" = {
             depends  = [
               hsPkgs.protolude
               hsPkgs.base
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.protolude
               hsPkgs.base

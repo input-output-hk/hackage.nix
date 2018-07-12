@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thank-you-stars = {
+        "thank-you-stars" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          thank-you-stars = {
+          "thank-you-stars" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          thank-you-stars-spec = {
+          "thank-you-stars-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        annotated-wl-pprint = {
+        "annotated-wl-pprint" = {
           depends  = [ hsPkgs.base ];
         };
       };

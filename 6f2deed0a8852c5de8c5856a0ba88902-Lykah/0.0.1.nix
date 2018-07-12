@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Lykah = {
+        "Lykah" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          lykah = {
+          "lykah" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-markup

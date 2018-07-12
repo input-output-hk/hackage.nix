@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wx = {
+        "wx" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.wxcore

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          scroll = {
+          "scroll" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

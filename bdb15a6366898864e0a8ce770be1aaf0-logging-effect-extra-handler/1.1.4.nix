@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logging-effect-extra-handler = {
+        "logging-effect-extra-handler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          iso8601-handler = {
+          "iso8601-handler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-effect
@@ -38,7 +38,7 @@ let
               hsPkgs.wl-pprint-text
             ];
           };
-          iso8601plus-handler = {
+          "iso8601plus-handler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-effect
@@ -46,7 +46,7 @@ let
               hsPkgs.wl-pprint-text
             ];
           };
-          rfc822-handler = {
+          "rfc822-handler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-effect
@@ -54,7 +54,7 @@ let
               hsPkgs.wl-pprint-text
             ];
           };
-          route-handler = {
+          "route-handler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-effect
@@ -62,7 +62,7 @@ let
               hsPkgs.wl-pprint-text
             ];
           };
-          route-handler-with-iso8601 = {
+          "route-handler-with-iso8601" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logging-effect

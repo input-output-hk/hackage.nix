@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-yui = {
+        "happstack-yui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.boomerang

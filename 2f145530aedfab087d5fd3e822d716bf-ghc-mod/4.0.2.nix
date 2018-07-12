@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-mod = {
+        "ghc-mod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -43,7 +43,7 @@ let
             else [ hsPkgs.Cabal ]);
         };
         exes = {
-          ghc-mod = {
+          "ghc-mod" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -52,7 +52,7 @@ let
               hsPkgs.ghc-mod
             ];
           };
-          ghc-modi = {
+          "ghc-modi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -64,13 +64,13 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.containers

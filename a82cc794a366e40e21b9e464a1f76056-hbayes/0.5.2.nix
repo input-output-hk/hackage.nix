@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hbayes = {
+        "hbayes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          hbayes-Tests = {
+          "hbayes-Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hbayes

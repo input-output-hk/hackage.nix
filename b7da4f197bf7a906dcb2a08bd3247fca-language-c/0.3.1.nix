@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-c = {
+        "language-c" = {
           depends  = ([
             hsPkgs.filepath
           ] ++ (if _flags.splitbase

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HaTeX = {
+        "HaTeX" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

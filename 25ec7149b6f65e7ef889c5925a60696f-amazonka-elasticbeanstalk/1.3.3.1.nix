@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-elasticbeanstalk = {
+        "amazonka-elasticbeanstalk" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-elasticbeanstalk-test = {
+          "amazonka-elasticbeanstalk-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

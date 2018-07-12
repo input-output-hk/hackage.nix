@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        refurb = {
+        "refurb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Frames
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          refurb-test = {
+          "refurb-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Frames

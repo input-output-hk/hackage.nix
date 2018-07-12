@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bitset = {
+        "bitset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

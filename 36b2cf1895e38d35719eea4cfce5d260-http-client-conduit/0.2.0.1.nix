@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client-conduit = {
+        "http-client-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client

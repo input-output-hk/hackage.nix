@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fluent-logger = {
+        "fluent-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          fluent-logger-spec = {
+          "fluent-logger-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fluent-logger
@@ -59,7 +59,7 @@ let
           };
         };
         benchmarks = {
-          fluent-logger-benchmark = {
+          "fluent-logger-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fluent-logger

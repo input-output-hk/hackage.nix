@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yajl = {
+        "yajl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

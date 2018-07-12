@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HsSyck = {
+        "HsSyck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

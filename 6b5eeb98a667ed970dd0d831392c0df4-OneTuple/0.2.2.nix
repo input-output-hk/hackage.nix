@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OneTuple = {
+        "OneTuple" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;

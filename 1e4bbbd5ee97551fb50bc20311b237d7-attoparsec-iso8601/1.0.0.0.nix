@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec-iso8601 = {
+        "attoparsec-iso8601" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

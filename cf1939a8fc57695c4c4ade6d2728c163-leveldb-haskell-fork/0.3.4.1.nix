@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        leveldb-haskell-fork = {
+        "leveldb-haskell-fork" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           libs = [ pkgs.hyperleveldb ];
         };
         exes = {
-          leveldb-example-comparator = {
+          "leveldb-example-comparator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -42,7 +42,7 @@ let
               hsPkgs.leveldb-haskell-fork
             ];
           };
-          leveldb-example-features = {
+          "leveldb-example-features" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -52,7 +52,7 @@ let
               hsPkgs.leveldb-haskell-fork
             ];
           };
-          leveldb-example-filterpolicy = {
+          "leveldb-example-filterpolicy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -60,7 +60,7 @@ let
               hsPkgs.leveldb-haskell-fork
             ];
           };
-          leveldb-example-iterforkio = {
+          "leveldb-example-iterforkio" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -71,7 +71,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leveldb-haskell-fork

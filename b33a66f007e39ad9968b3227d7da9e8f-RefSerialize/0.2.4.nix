@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RefSerialize = {
+        "RefSerialize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

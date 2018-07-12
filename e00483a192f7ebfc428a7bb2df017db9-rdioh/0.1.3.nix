@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rdioh = {
+        "rdioh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          rdioh = {
+          "rdioh" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -49,7 +49,7 @@ let
               hsPkgs.transformers
             ];
           };
-          rdioh-spec = {
+          "rdioh-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

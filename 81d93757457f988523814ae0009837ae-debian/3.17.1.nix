@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debian = {
+        "debian" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          fakechanges = {
+          "fakechanges" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -71,7 +71,7 @@ let
               hsPkgs.filepath
             ];
           };
-          debian-report = {
+          "debian-report" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -96,7 +96,7 @@ let
               hsPkgs.filepath
             ];
           };
-          debian-versions = {
+          "debian-versions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -121,7 +121,7 @@ let
               hsPkgs.filepath
             ];
           };
-          cabal-debian = {
+          "cabal-debian" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

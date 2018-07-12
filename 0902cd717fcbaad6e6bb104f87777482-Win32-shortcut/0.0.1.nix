@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Win32-shortcut = {
+        "Win32-shortcut" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Win32

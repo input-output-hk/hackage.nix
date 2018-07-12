@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-files = {
+        "pipes-files" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -59,7 +59,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hierarchy
@@ -73,7 +73,7 @@ let
               hsPkgs.hspec-expectations
             ];
           };
-          find-hs = {
+          "find-hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        asciidiagram = {
+        "asciidiagram" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          asciidiagram = {
+          "asciidiagram" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          docgen = {
+          "docgen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.asciidiagram
@@ -67,7 +67,7 @@ let
               hsPkgs.JuicyPixels
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.asciidiagram

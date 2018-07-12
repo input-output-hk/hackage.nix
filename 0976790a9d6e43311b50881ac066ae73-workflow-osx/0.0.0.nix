@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        workflow-osx = {
+        "workflow-osx" = {
           depends  = [
             hsPkgs.http-types
             hsPkgs.bv
@@ -35,7 +35,7 @@ let
           frameworks = [ pkgs.Cocoa ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.workflow-osx
               hsPkgs.base

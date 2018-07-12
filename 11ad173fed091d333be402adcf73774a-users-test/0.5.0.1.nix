@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        users-test = {
+        "users-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec

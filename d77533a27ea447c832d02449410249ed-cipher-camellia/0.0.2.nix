@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cipher-camellia = {
+        "cipher-camellia" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-cipher-camellia = {
+          "test-cipher-camellia" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench-cipher-camellia = {
+          "bench-cipher-camellia" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

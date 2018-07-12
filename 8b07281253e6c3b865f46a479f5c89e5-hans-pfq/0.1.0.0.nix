@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hans-pfq = {
+        "hans-pfq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hans

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dhall-to-text = {
+          "dhall-to-text" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dhall

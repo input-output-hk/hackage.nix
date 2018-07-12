@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        embroidery = {
+        "embroidery" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [ hsPkgs.base ];
           };
         };

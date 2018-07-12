@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HUnit = {
+        "HUnit" = {
           depends  = [ hsPkgs.base ];
         };
       };

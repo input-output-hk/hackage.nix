@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rspp = {
+        "rspp" = {
           depends  = [ hsPkgs.base ];
         };
       };

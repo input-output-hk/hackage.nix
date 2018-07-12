@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        barchart = {
+        "barchart" = {
           depends  = [
             hsPkgs.base
             hsPkgs.csv
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          barchart = {
+          "barchart" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

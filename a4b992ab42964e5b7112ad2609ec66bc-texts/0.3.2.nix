@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        texts = {
+        "texts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

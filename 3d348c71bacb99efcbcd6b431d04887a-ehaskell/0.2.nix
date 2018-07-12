@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ehs = {
+          "ehs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtlparse

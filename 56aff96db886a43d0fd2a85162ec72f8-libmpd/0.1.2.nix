@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        libmpd = {
+        "libmpd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

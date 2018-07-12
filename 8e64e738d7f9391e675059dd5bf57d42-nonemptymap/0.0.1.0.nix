@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nonemptymap = {
+        "nonemptymap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

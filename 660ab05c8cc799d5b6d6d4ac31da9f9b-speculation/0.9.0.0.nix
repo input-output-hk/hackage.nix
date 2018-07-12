@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        speculation = {
+        "speculation" = {
           depends  = pkgs.lib.optionals (!(!_flags.lib)) [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          test-speculation = {
+          "test-speculation" = {
             depends  = pkgs.lib.optionals (!(!_flags.tests)) [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -49,7 +49,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          benchmark-speculation = {
+          "benchmark-speculation" = {
             depends  = pkgs.lib.optionals (!(!_flags.benchmarks)) [
               hsPkgs.base
               hsPkgs.ghc-prim

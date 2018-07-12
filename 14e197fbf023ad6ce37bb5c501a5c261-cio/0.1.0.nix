@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cio = {
+        "cio" = {
           depends  = [
             hsPkgs.parallel-io
             hsPkgs.monad-stm

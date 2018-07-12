@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddc-core = {
+        "ddc-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

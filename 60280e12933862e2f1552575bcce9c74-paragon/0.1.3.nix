@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        paragon = {
+        "paragon" = {
           depends  = [
             hsPkgs.array
             hsPkgs.pretty
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          parac = {
+          "parac" = {
             depends  = [
               hsPkgs.array
               hsPkgs.pretty

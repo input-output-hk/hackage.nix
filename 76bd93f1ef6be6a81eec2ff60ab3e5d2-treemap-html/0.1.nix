@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        treemap-html = {
+        "treemap-html" = {
           depends  = [
             hsPkgs.ghc
             hsPkgs.base

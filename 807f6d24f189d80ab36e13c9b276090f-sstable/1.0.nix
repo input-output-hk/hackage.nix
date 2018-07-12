@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sstable = {
+        "sstable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,10 +35,10 @@ let
           ];
         };
         exes = {
-          sstable = {
+          "sstable" = {
             depends  = [ hsPkgs.cmdargs ];
           };
-          testSSTable = {
+          "testSSTable" = {
             depends  = pkgs.lib.optionals _flags.tests [
               hsPkgs.QuickCheck
               hsPkgs.test-framework

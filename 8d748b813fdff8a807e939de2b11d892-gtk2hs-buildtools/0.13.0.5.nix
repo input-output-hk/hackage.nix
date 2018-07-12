@@ -23,13 +23,13 @@ let
       };
       components = {
         exes = {
-          gtk2hsTypeGen = {
+          "gtk2hsTypeGen" = {
             depends  = [ hsPkgs.base ];
           };
-          gtk2hsHookGenerator = {
+          "gtk2hsHookGenerator" = {
             depends  = [ hsPkgs.base ];
           };
-          gtk2hsC2hs = {
+          "gtk2hsC2hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

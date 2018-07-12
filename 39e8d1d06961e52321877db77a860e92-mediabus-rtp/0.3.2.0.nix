@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mediabus-rtp = {
+        "mediabus-rtp" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.array
@@ -57,7 +57,7 @@ let
           ];
         };
         exes = {
-          mediabus-demo-rtp-alaw-player = {
+          "mediabus-demo-rtp-alaw-player" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.async
@@ -84,7 +84,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.array

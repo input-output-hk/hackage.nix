@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        highlighting-kate = {
+        "highlighting-kate" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.pcre-light
@@ -36,7 +36,7 @@ let
             else [ hsPkgs.base ]);
         };
         exes = {
-          Highlight = {
+          "Highlight" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

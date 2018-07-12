@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-bits = {
+        "binary-bits" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          qc = {
+          "qc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

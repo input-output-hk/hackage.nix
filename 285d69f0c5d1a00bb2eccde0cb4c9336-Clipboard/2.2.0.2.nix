@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Clipboard = {
+        "Clipboard" = {
           depends  = if system.isWindows
             then [
               hsPkgs.base

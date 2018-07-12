@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hpack-dhall = {
+          "hpack-dhall" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

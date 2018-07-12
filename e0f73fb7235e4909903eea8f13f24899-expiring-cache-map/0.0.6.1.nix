@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        expiring-cache-map = {
+        "expiring-cache-map" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-threads = {
+          "test-threads" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          test-sequence = {
+          "test-sequence" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          invalidate-test = {
+          "invalidate-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -58,7 +58,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          invalidate-cache-test = {
+          "invalidate-cache-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        contravariant = {
+        "contravariant" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.semigroups

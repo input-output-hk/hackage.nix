@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mvar-lock = {
+        "mvar-lock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe-exceptions

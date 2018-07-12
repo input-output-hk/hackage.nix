@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-bignum = {
+        "accelerate-bignum" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.accelerate
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          test-llvm-native = {
+          "test-llvm-native" = {
             depends  = [
               hsPkgs.base
               hsPkgs.accelerate
@@ -51,7 +51,7 @@ let
               hsPkgs.tasty-hedgehog
             ];
           };
-          test-llvm-ptx = {
+          "test-llvm-ptx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.accelerate
@@ -64,7 +64,7 @@ let
           };
         };
         benchmarks = {
-          accelerate-bignum-bench = {
+          "accelerate-bignum-bench" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.accelerate

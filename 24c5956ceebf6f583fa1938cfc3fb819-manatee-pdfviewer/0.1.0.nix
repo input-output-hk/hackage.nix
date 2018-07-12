@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        manatee-pdfviewer = {
+        "manatee-pdfviewer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.manatee-core
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          manatee-pdfviewer = {};
+          "manatee-pdfviewer" = {};
         };
       };
     }

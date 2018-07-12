@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TestExplode = {
+        "TestExplode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.interpolatedstring-perl6

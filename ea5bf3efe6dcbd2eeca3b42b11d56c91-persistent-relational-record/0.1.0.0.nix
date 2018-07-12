@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-relational-record = {
+        "persistent-relational-record" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          unittest = {
+          "unittest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -51,13 +51,13 @@ let
               hsPkgs.persistent-relational-record
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          examples = {
+          "examples" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-examples)) [
               hsPkgs.base
               hsPkgs.bytestring

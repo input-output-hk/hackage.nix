@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ContArrow = {
+        "ContArrow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.arrows

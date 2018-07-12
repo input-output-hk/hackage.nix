@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        preprocessor = {
+        "preprocessor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.template-haskell;
         };
         tests = {
-          preprocessor-test = {
+          "preprocessor-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

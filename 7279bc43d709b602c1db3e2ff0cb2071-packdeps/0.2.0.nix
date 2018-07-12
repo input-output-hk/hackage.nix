@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        packdeps = {
+        "packdeps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tar
@@ -37,14 +37,14 @@ let
           ];
         };
         exes = {
-          packdeps = {
+          "packdeps" = {
             depends  = pkgs.lib.optionals (!_flags.web) [
               hsPkgs.base
               hsPkgs.Cabal
               hsPkgs.packdeps
             ];
           };
-          packdeps-yesod = {
+          "packdeps-yesod" = {
             depends  = pkgs.lib.optionals _flags.web [
               hsPkgs.base
               hsPkgs.text

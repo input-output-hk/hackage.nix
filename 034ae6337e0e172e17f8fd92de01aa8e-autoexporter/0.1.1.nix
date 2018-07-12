@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        autoexporter = {
+        "autoexporter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          autoexporter = {
+          "autoexporter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.autoexporter

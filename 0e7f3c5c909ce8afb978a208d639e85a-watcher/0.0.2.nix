@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        watcher = {
+        "watcher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

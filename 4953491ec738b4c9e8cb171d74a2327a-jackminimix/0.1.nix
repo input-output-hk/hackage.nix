@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jackminimix = {
+        "jackminimix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hosc

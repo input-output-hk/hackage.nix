@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        tables = {
+        "tables" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

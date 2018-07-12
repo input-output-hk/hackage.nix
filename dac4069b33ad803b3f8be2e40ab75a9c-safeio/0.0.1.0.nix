@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safeio = {
+        "safeio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          safeiotest = {
+          "safeiotest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

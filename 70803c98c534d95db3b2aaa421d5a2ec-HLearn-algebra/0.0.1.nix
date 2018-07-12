@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HLearn-algebra = {
+        "HLearn-algebra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-lgbt = {
+        "monad-lgbt" = {
           depends  = [
             hsPkgs.logict
             hsPkgs.hspec
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.logict
               hsPkgs.hspec

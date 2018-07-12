@@ -34,7 +34,7 @@ let
       };
       components = {
         exes = {
-          git-annex = {
+          "git-annex" = {
             depends  = (((((((((([
               hsPkgs.MissingH
               hsPkgs.hslogger

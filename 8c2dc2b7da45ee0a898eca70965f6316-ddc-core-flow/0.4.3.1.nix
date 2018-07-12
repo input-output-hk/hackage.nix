@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddc-core-flow = {
+        "ddc-core-flow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

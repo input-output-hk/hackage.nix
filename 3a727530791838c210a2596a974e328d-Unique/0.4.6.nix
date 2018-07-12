@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Unique = {
+        "Unique" = {
           depends  = [
             hsPkgs.base
             hsPkgs.extra
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          HspecTest = {
+          "HspecTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

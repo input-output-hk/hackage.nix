@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-pagination = {
+        "servant-pagination" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          servant-pagination-simple = {
+          "servant-pagination-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -42,7 +42,7 @@ let
               hsPkgs.warp
             ];
           };
-          servant-pagination-complex = {
+          "servant-pagination-complex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          servant-pagination-test = {
+          "servant-pagination-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-pagination

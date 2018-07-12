@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flock = {
+        "flock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

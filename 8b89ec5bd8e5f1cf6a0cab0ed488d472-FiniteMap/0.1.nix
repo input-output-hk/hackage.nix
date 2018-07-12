@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        FiniteMap = {
+        "FiniteMap" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

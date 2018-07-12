@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compdata = {
+        "compdata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          benchmark = {
+          "benchmark" = {
             depends  = pkgs.lib.optionals (!(!_flags.benchmark)) [
               hsPkgs.base
               hsPkgs.template-haskell
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

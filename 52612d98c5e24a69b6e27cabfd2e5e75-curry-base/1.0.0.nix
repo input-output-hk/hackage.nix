@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        curry-base = {
+        "curry-base" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.transformers
@@ -54,7 +54,7 @@ let
               ]);
         };
         tests = {
-          test-base = {
+          "test-base" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

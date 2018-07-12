@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Checked = {
+        "Checked" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

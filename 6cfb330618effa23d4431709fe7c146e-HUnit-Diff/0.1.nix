@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HUnit-Diff = {
+        "HUnit-Diff" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base

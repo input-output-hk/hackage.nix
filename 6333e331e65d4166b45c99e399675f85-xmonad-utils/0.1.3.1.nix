@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hxsel = {
+          "hxsel" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11
@@ -30,7 +30,7 @@ let
               hsPkgs.random
             ];
           };
-          hxput = {
+          "hxput" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11
@@ -39,7 +39,7 @@ let
               hsPkgs.random
             ];
           };
-          hslock = {
+          "hslock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11
@@ -49,7 +49,7 @@ let
             ];
             libs = [ pkgs.crypt ];
           };
-          hmanage = {
+          "hmanage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11
@@ -58,7 +58,7 @@ let
               hsPkgs.random
             ];
           };
-          hhp = {
+          "hhp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11

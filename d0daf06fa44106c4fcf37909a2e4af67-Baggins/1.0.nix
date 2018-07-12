@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Baggins = {
+        "Baggins" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo

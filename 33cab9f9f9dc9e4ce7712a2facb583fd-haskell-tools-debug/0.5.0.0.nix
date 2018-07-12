@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-debug = {
+        "haskell-tools-debug" = {
           depends  = [
             hsPkgs.base
             hsPkgs.references
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          ht-debug = {
+          "ht-debug" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-tools-debug

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        watchdog = {
+        "watchdog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pocket-dns = {
+        "pocket-dns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dns
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          pocket-dns = {
+          "pocket-dns" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dns
@@ -66,7 +66,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pocket-dns

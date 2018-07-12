@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xeno = {
+        "xeno" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          xeno-test = {
+          "xeno-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xeno
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          xeno-speed-bench = {
+          "xeno-speed-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xeno
@@ -60,7 +60,7 @@ let
               hsPkgs.hexpat
             ] ++ pkgs.lib.optional _flags.libxml2 hsPkgs.libxml;
           };
-          xeno-memory-bench = {
+          "xeno-memory-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xeno

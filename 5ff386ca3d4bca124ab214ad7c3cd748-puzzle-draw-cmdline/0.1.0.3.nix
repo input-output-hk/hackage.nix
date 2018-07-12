@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          drawpuzzle = {
+          "drawpuzzle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.puzzle-draw

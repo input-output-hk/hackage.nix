@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        format-numbers = {
+        "format-numbers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hScraper = {
+        "hScraper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-types

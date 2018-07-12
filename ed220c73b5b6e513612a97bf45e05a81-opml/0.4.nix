@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opml = {
+        "opml" = {
           depends  = [
             hsPkgs.xml
           ] ++ (if _flags.small_base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-fluid = {
+        "pipes-fluid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          pipes-fluid-test = {
+          "pipes-fluid-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

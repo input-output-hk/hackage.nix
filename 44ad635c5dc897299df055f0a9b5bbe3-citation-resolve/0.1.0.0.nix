@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        citation-resolve = {
+        "citation-resolve" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -47,7 +47,7 @@ let
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary-search

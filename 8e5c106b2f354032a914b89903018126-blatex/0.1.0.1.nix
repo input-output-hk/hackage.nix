@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          blatex = {
+          "blatex" = {
             depends  = [
               hsPkgs.HaTeX
               hsPkgs.base

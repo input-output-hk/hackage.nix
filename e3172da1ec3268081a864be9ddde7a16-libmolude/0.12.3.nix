@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        libmolude = {
+        "libmolude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -59,7 +59,7 @@ let
           ];
         };
         tests = {
-          test-libmolude = {
+          "test-libmolude" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

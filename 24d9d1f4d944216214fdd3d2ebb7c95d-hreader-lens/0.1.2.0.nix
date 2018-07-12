@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hreader-lens = {
+        "hreader-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

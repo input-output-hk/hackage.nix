@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-postgres = {
+        "hasql-postgres" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.hasql-backend
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          library-tests = {
+          "library-tests" = {
             depends  = [
               hsPkgs.HTF
               hsPkgs.quickcheck-instances
@@ -71,7 +71,7 @@ let
               hsPkgs.base
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.hasql-postgres
               hsPkgs.hasql-backend
@@ -96,7 +96,7 @@ let
           };
         };
         benchmarks = {
-          competition = {
+          "competition" = {
             depends  = [
               hsPkgs.postgresql-simple
               hsPkgs.hasql-postgres
@@ -115,7 +115,7 @@ let
               hsPkgs.base
             ];
           };
-          profiling = {
+          "profiling" = {
             depends  = [
               hsPkgs.postgresql-simple
               hsPkgs.hasql-postgres

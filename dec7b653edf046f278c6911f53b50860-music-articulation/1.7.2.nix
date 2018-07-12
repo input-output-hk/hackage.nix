@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        music-articulation = {
+        "music-articulation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.average

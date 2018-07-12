@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        uniplate = {
+        "uniplate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

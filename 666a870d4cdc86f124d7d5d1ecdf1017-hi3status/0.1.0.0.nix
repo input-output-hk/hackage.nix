@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hi3status = {
+        "hi3status" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -39,13 +39,13 @@ let
           ];
         };
         exes = {
-          hi3status = {
+          "hi3status" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hi3status
             ];
           };
-          hi3status-ctl = {
+          "hi3status-ctl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dbus

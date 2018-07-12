@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-comonad = {
+        "acme-comonad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

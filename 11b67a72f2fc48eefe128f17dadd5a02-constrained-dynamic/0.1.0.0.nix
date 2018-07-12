@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        constrained-dynamic = {
+        "constrained-dynamic" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          constrained-dynamic-tests = {
+          "constrained-dynamic-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.constrained-dynamic

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pgsql-simple = {
+        "pgsql-simple" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

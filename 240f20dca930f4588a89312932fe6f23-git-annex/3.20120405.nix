@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          git-annex = {
+          "git-annex" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.hslogger
@@ -54,10 +54,10 @@ let
               hsPkgs.bloomfilter
             ];
           };
-          git-annex-shell = {};
+          "git-annex-shell" = {};
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.testpack
               hsPkgs.HUnit

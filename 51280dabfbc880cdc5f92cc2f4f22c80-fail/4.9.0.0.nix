@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fail = {
+        "fail" = {
           depends  = pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.base;
         };
       };

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        samtools-conduit = {
+        "samtools-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          samtools-conduit-copy = {
+          "samtools-conduit-copy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

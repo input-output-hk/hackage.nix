@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wrecker = {
+        "wrecker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -76,7 +76,7 @@ let
           ];
         };
         exes = {
-          wreck = {
+          "wreck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wrecker
@@ -90,7 +90,7 @@ let
           };
         };
         tests = {
-          wrecker-test = {
+          "wrecker-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wrecker

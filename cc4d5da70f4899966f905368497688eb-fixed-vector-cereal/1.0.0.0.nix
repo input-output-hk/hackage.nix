@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixed-vector-cereal = {
+        "fixed-vector-cereal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fixed-vector
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fixed-vector

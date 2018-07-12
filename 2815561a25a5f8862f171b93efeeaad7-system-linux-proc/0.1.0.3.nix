@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-linux-proc = {
+        "system-linux-proc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedgehog

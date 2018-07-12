@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty-error = {
+        "pretty-error" = {
           depends  = [
             hsPkgs.base
             hsPkgs.basic-prelude

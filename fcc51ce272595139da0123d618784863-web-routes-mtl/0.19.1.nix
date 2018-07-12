@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-routes-mtl = {
+        "web-routes-mtl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

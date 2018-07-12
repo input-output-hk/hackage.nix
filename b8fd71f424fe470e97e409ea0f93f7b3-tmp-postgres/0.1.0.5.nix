@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tmp-postgres = {
+        "tmp-postgres" = {
           depends  = [
             hsPkgs.base
             hsPkgs.temporary
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tmp-postgres-test = {
+          "tmp-postgres-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tmp-postgres

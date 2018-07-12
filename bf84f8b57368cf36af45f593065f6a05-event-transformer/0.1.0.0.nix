@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        event-transformer = {
+        "event-transformer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
           ];
         };
         exes = {
-          event-transformer-exe = {
+          "event-transformer-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.event-transformer
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          event-transformer-test = {
+          "event-transformer-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.event-transformer

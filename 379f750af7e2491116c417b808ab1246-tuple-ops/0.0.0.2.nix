@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tuple-ops = {
+        "tuple-ops" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-combinators

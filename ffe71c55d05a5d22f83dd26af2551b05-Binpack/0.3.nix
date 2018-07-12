@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Binpack = {
+        "Binpack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

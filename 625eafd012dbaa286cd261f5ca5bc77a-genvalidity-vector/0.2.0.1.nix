@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-vector = {
+        "genvalidity-vector" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          genvalidity-vector-test = {
+          "genvalidity-vector-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.genvalidity

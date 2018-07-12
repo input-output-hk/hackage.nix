@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HAppS-IxSet = {
+        "HAppS-IxSet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

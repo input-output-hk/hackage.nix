@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdbi-tests = {
+        "hdbi-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Decimal

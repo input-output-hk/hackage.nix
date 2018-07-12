@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-t-libcurl = {
+        "list-t-libcurl" = {
           depends  = [
             hsPkgs.resource-pool
             hsPkgs.stm

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-monad = {
+        "xml-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monadLib

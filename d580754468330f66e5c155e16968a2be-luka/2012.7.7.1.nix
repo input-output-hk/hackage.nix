@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        luka = {
+        "luka" = {
           depends  = [
             hsPkgs.base
             hsPkgs.air

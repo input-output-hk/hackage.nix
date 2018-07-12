@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          htime = {
+          "htime" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

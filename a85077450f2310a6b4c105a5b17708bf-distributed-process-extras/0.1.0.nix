@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-extras = {
+        "distributed-process-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.distributed-process
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          InternalQueueTests = {
+          "InternalQueueTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
@@ -60,7 +60,7 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          TimerTests = {
+          "TimerTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal

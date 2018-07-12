@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CSPM-ToProlog = {
+        "CSPM-ToProlog" = {
           depends  = [
             hsPkgs.CSPM-Frontend
             hsPkgs.base

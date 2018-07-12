@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mahoro = {
+          "mahoro" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-posix

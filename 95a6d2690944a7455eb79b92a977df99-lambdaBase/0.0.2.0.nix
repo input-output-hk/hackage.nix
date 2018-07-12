@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdaBase = {
+        "lambdaBase" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         tests = {
-          test-lambdaBase = {
+          "test-lambdaBase" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

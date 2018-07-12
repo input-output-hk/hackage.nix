@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          hackage-repo-tool = {
+          "hackage-repo-tool" = {
             depends  = (([
               hsPkgs.base
               hsPkgs.Cabal

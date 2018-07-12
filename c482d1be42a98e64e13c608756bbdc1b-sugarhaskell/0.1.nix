@@ -21,13 +21,13 @@ let
       };
       components = {
         exes = {
-          sugarhaskell = {
+          "sugarhaskell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
             ];
           };
-          sugarj = {
+          "sugarj" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

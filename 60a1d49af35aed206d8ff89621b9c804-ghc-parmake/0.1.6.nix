@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-parmake = {
+        "ghc-parmake" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          ghc-parmake = {
+          "ghc-parmake" = {
             depends  = [
               hsPkgs.ghc-parmake
               hsPkgs.array
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

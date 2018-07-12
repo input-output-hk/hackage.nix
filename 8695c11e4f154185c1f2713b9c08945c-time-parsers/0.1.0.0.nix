@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-parsers = {
+        "time-parsers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          date-parsers-tests = {
+          "date-parsers-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsers

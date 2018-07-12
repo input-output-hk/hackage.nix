@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-kinesis-analytics = {
+        "amazonka-kinesis-analytics" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-kinesis-analytics-test = {
+          "amazonka-kinesis-analytics-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

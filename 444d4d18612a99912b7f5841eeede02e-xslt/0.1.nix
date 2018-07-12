@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        xslt = {
+        "xslt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.libxml

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hunit-dejafu = {
+        "hunit-dejafu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dejafu

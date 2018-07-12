@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HerbiePlugin = {
+        "HerbiePlugin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.subhask
               hsPkgs.HerbiePlugin

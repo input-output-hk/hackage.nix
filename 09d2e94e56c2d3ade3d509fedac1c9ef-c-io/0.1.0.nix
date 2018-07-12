@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        c-io = {
+        "c-io" = {
           depends  = [ hsPkgs.base ];
         };
       };

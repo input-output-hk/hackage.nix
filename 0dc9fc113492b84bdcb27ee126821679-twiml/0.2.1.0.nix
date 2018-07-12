@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twiml = {
+        "twiml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

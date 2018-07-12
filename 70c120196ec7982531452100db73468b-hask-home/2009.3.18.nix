@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hask-home = {
+          "hask-home" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.regex-compat
@@ -35,7 +35,7 @@ let
               hsPkgs.parsec
             ];
           };
-          hask-home-upload = {
+          "hask-home-upload" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

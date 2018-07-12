@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        file-command-qq = {
+        "file-command-qq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

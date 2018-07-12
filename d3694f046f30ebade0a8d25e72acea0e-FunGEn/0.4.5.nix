@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FunGEn = {
+        "FunGEn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          fungen-hello = {
+          "fungen-hello" = {
             depends  = [
               hsPkgs.FunGEn
               hsPkgs.base
@@ -38,7 +38,7 @@ let
               hsPkgs.random
             ];
           };
-          fungen-pong = {
+          "fungen-pong" = {
             depends  = [
               hsPkgs.FunGEn
               hsPkgs.base
@@ -47,7 +47,7 @@ let
               hsPkgs.random
             ];
           };
-          fungen-worms = {
+          "fungen-worms" = {
             depends  = [
               hsPkgs.FunGEn
               hsPkgs.base

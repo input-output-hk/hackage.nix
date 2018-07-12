@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serokell-util = {
+        "serokell-util" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.acid-state
@@ -67,7 +67,7 @@ let
           ];
         };
         tests = {
-          serokell-test = {
+          "serokell-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

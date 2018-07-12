@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MuCheck = {
+        "MuCheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AWin32Console = {
+        "AWin32Console" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-compat

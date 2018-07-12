@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        rcu = {
+        "rcu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.directory
@@ -40,7 +40,7 @@ let
               hsPkgs.parallel
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint

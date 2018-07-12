@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gimlh = {
+        "gimlh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

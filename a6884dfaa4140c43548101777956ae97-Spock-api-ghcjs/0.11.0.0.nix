@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock-api-ghcjs = {
+        "Spock-api-ghcjs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghcjs-base

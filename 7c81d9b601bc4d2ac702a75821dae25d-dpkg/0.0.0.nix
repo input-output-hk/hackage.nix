@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dpkg = {
+        "dpkg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rng-utils = {
+        "rng-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

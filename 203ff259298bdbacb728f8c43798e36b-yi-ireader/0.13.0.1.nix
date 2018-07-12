@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-ireader = {
+        "yi-ireader" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

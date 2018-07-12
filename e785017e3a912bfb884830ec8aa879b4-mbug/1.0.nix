@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mbug = {
+        "mbug" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          mbug = {
+          "mbug" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

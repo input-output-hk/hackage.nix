@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cloudhsm = {
+        "amazonka-cloudhsm" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simplenote = {
+        "simplenote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

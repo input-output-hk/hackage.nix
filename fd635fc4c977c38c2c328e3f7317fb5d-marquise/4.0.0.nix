@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        marquise = {
+        "marquise" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -59,7 +59,7 @@ let
           ];
         };
         exes = {
-          marquised = {
+          "marquised" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -72,7 +72,7 @@ let
               hsPkgs.marquise
             ];
           };
-          data = {
+          "data" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -93,7 +93,7 @@ let
           };
         };
         tests = {
-          spool-test = {
+          "spool-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

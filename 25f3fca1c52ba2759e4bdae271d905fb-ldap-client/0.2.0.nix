@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ldap-client = {
+        "ldap-client" = {
           depends  = [
             hsPkgs.asn1-encoding
             hsPkgs.asn1-types
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

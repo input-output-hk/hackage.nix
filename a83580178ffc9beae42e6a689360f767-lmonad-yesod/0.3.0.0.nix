@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lmonad-yesod = {
+        "lmonad-yesod" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

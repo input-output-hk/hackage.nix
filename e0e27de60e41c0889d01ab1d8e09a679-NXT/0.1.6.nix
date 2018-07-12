@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NXT = {
+        "NXT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -31,14 +31,14 @@ let
           libs = pkgs.lib.optional system.isLinux pkgs.bluetooth;
         };
         exes = {
-          nxt-shutdown = {
+          "nxt-shutdown" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
               hsPkgs.NXT
             ];
           };
-          nxt-upload = {
+          "nxt-upload" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

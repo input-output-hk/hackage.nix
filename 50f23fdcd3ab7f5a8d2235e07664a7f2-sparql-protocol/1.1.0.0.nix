@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sparql-protocol = {
+        "sparql-protocol" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          sparql-protocol-test = {
+          "sparql-protocol-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sparql-protocol

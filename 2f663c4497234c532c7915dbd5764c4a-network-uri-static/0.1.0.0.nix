@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-uri-static = {
+        "network-uri-static" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network-uri
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

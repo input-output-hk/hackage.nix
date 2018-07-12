@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fitspec = {
+        "fitspec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.leancheck
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          mutate = {
+          "mutate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -37,7 +37,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          showmutable = {
+          "showmutable" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -45,7 +45,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          derive = {
+          "derive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -53,7 +53,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          utils = {
+          "utils" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -63,7 +63,7 @@ let
           };
         };
         benchmarks = {
-          avltrees = {
+          "avltrees" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -71,7 +71,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          bools = {
+          "bools" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -79,7 +79,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          digraphs = {
+          "digraphs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -87,7 +87,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          heaps = {
+          "heaps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -95,7 +95,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          id = {
+          "id" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -103,7 +103,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          list = {
+          "list" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -111,7 +111,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          mergeheaps = {
+          "mergeheaps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -119,7 +119,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          pretty = {
+          "pretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -128,7 +128,7 @@ let
               hsPkgs.pretty
             ];
           };
-          sets = {
+          "sets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -136,7 +136,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          setsofsets = {
+          "setsofsets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -144,7 +144,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          sieve = {
+          "sieve" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -152,7 +152,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          sorting = {
+          "sorting" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -160,7 +160,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          spring = {
+          "spring" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsbencher = {
+        "hsbencher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           ] ++ pkgs.lib.optional _flags.fusion hsPkgs.handa-gdata;
         };
         tests = {
-          test1 = {
+          "test1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -62,7 +62,7 @@ let
               hsPkgs.hsbencher
             ];
           };
-          test2 = {
+          "test2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

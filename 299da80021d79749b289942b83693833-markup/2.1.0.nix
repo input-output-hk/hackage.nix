@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        markup = {
+        "markup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

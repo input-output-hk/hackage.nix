@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-csv = {
+        "pipes-csv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          hunit = {
+          "hunit" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hunit)) [
               hsPkgs.base
               hsPkgs.HUnit

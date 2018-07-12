@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-conduit = {
+        "vector-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          vector-conduit-tests = {
+          "vector-conduit-tests" = {
             depends  = [
               hsPkgs.vector-conduit
               hsPkgs.base

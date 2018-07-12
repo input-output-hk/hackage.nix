@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmemdb = {
+        "hmemdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

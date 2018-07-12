@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        wl-pprint = {
+        "wl-pprint" = {
           depends  = [ hsPkgs.base ];
         };
       };

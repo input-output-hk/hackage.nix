@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        t-regex = {
+        "t-regex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

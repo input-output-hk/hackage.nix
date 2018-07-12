@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-mod = {
+        "ghc-mod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -40,7 +40,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") hsPkgs.convertible;
         };
         exes = {
-          ghc-mod = {
+          "ghc-mod" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -51,13 +51,13 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.Cabal

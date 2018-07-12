@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cal3d-opengl = {
+        "cal3d-opengl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cal3d

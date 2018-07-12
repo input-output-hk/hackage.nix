@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        posix-realtime = {
+        "posix-realtime" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

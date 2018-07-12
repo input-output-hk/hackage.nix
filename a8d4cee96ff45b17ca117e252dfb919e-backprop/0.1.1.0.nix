@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        backprop = {
+        "backprop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -33,7 +33,7 @@ let
           ];
         };
         benchmarks = {
-          backprop-mnist-bench = {
+          "backprop-mnist-bench" = {
             depends  = [
               hsPkgs.backprop
               hsPkgs.base

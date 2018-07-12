@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          haste-boot = {
+          "haste-boot" = {
             depends  = [
               hsPkgs.ghc
               hsPkgs.base
@@ -43,7 +43,7 @@ let
               hsPkgs.filepath
             ];
           };
-          hastec = {
+          "hastec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -65,7 +65,7 @@ let
               hsPkgs.ghc-simple
             ];
           };
-          haste-pkg = {
+          "haste-pkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -83,7 +83,7 @@ let
               hsPkgs.terminfo
             ];
           };
-          haste-cat = {
+          "haste-cat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shellmate

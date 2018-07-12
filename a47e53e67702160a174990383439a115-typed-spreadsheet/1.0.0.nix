@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typed-spreadsheet = {
+        "typed-spreadsheet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          typed-spreadsheet-example = {
+          "typed-spreadsheet-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.typed-spreadsheet

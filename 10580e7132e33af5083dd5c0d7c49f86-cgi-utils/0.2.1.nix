@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cgi-utils = {
+        "cgi-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

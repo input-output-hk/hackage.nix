@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        skylark-client = {
+        "skylark-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          skylark-client = {
+          "skylark-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit-extra
@@ -43,7 +43,7 @@ let
               hsPkgs.skylark-client
             ];
           };
-          shake-skylark-client = {
+          "shake-skylark-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shakers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        celtchar = {
+        "celtchar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ogmarkup
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          celtchar = {
+          "celtchar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-generic
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          celtchar-test = {
+          "celtchar-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.raw-strings-qq

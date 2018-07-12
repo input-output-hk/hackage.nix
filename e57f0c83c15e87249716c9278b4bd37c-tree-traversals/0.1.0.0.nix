@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        tree-traversals = {
+        "tree-traversals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        string-random = {
+        "string-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          string-random-test = {
+          "string-random-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
               hsPkgs.text
             ];
           };
-          string-random-quickcheck = {
+          "string-random-quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pcre-heavy

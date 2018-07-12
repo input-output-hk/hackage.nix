@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          scurry = {
+          "scurry" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.binary

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parport = {
+        "parport" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        static-hash = {
+        "static-hash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primes

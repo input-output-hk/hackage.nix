@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        remark = {
+        "remark" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GenericPretty
           ];
         };
         exes = {
-          remark = {
+          "remark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.remark
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          remark-test = {
+          "remark-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.remark

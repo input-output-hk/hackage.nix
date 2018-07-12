@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          scrabble-bot = {
+          "scrabble-bot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

@@ -21,13 +21,13 @@ let
       };
       components = {
         exes = {
-          ddc-check = {
+          "ddc-check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ddc-core
             ];
           };
-          ddc = {
+          "ddc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -49,7 +49,7 @@ let
               hsPkgs.ddc-code
             ];
           };
-          ddci-core = {
+          "ddci-core" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

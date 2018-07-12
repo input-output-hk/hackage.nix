@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warped = {
+        "warped" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

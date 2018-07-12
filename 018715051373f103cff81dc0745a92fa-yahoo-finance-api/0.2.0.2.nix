@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yahoo-finance-api = {
+        "yahoo-finance-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          yahoo-finance-api-test = {
+          "yahoo-finance-api-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.either
@@ -51,7 +51,7 @@ let
               hsPkgs.servant-client
             ];
           };
-          yahoo-finance-api-doctest = {
+          "yahoo-finance-api-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

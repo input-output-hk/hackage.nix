@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        compensated = {
+        "compensated" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        adjunctions = {
+        "adjunctions" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.adjunctions
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mud = {
+        "mud" = {
           depends  = [
             hsPkgs.base
             hsPkgs.optparse-applicative
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          mud = {
+          "mud" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mud
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mud

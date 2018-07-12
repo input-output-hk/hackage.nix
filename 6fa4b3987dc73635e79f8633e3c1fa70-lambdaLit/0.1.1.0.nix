@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lambdaLit = {
+          "lambdaLit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lambdaBase

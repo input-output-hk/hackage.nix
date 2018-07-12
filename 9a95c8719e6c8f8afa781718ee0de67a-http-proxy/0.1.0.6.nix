@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-proxy = {
+        "http-proxy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -75,7 +75,7 @@ let
               hsPkgs.warp-tls
             ];
           };
-          test-io = {
+          "test-io" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

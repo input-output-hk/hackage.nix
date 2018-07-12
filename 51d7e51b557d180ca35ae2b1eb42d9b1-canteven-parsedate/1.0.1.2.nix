@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        canteven-parsedate = {
+        "canteven-parsedate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-parsedate = {
+          "test-parsedate" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base

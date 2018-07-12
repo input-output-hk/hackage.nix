@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extensible-effects-concurrent = {
+        "extensible-effects-concurrent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          extensible-effects-concurrent-test = {
+          "extensible-effects-concurrent-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.extensible-effects-concurrent

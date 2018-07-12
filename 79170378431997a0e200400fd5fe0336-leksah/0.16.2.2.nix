@@ -30,7 +30,7 @@ let
         buildType = "Simple";
       };
       components = {
-        leksah = {
+        "leksah" = {
           depends  = ((((((((([
             hsPkgs.base-compat
             hsPkgs.haskell-gi-base
@@ -119,7 +119,7 @@ let
           pkgconfig = pkgs.lib.optional _flags.gtk-318 pkgconfPkgs."gtk+-3.0" ++ pkgs.lib.optional _flags.gtk-320 pkgconfPkgs."gtk+-3.0";
         };
         exes = {
-          leksah = {
+          "leksah" = {
             depends  = (([
               hsPkgs.leksah
               hsPkgs.base

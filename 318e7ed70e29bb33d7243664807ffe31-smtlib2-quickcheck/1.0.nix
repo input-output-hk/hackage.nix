@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smtlib2-quickcheck = {
+        "smtlib2-quickcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

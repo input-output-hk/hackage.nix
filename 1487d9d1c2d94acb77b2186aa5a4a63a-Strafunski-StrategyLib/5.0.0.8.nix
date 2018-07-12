@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Strafunski-StrategyLib = {
+        "Strafunski-StrategyLib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

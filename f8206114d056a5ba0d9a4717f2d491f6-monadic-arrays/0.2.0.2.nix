@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monadic-arrays = {
+        "monadic-arrays" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

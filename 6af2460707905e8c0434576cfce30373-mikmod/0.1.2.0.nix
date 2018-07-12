@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mikmod = {
+        "mikmod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

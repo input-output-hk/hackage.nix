@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        subleq-toolchain = {
+        "subleq-toolchain" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          subleq = {
+          "subleq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          test-subleq-toolchain = {
+          "test-subleq-toolchain" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

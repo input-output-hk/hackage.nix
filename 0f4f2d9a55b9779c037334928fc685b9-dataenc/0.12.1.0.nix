@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dataenc = {
+        "dataenc" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

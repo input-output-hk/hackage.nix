@@ -23,16 +23,16 @@ let
         buildType = "Custom";
       };
       components = {
-        hlibsass = {
+        "hlibsass" = {
           depends  = [ hsPkgs.base ];
           libs = [
             pkgs.sass
-          ] ++ (if !_flags.externallibsass && !_flags.sharedlibsass && system.isOsx
+          ] ++ pkgs.lib.optionals (!_flags.externallibsass && !_flags.sharedlibsass) (if system.isOsx
             then [ pkgs."c++" ]
             else [ pkgs."stdc++" ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

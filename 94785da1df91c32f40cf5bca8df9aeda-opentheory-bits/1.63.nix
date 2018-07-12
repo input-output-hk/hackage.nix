@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opentheory-bits = {
+        "opentheory-bits" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

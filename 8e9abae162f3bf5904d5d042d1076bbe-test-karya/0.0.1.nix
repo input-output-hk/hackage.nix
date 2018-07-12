@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-karya = {
+        "test-karya" = {
           depends  = [
             hsPkgs.Diff
             hsPkgs.QuickCheck
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          test-karya-generate = {
+          "test-karya-generate" = {
             depends  = [
               hsPkgs.test-karya
               hsPkgs.base

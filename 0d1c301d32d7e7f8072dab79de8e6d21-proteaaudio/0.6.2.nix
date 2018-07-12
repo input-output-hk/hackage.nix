@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proteaaudio = {
+        "proteaaudio" = {
           depends  = [ hsPkgs.base ];
           libs = (pkgs.lib.optionals system.isWindows [
             pkgs."stdc++"

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ascetic = {
+        "ascetic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MissingH

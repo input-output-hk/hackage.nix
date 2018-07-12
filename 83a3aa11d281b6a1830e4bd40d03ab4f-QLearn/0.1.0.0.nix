@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        QLearn = {
+        "QLearn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

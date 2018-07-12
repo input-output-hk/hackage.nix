@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        NXTDSL = {
+        "NXTDSL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -32,9 +32,9 @@ let
           ];
         };
         exes = {
-          ExampleRun = {};
-          ExampleVM = {};
-          Parser = {};
+          "ExampleRun" = {};
+          "ExampleVM" = {};
+          "Parser" = {};
         };
       };
     }

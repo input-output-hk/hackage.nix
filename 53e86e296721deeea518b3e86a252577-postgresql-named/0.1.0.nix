@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-named = {
+        "postgresql-named" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          postgresql-named-test = {
+          "postgresql-named-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.generics-sop

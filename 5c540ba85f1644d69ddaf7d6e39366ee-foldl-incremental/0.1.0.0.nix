@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        foldl-incremental = {
+        "foldl-incremental" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foldl
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.foldl

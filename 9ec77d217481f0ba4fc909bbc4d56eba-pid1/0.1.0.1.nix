@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pid1 = {
+        "pid1" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          pid1 = {
+          "pid1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pid1

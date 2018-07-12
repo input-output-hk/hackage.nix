@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        garlic-bread = {
+        "garlic-bread" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          garlic-bread-test = {
+          "garlic-bread-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.garlic-bread

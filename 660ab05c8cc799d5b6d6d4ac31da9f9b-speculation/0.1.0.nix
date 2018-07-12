@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        speculation = {
+        "speculation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

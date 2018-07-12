@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          hledger-ui = {
+          "hledger-ui" = {
             depends  = ([
               hsPkgs.hledger
               hsPkgs.hledger-lib

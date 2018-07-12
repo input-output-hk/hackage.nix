@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          DAG-Tournament = {
+          "DAG-Tournament" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

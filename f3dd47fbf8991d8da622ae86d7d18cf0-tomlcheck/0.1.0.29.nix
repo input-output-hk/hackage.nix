@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          tomlcheck = {
+          "tomlcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.htoml-megaparsec

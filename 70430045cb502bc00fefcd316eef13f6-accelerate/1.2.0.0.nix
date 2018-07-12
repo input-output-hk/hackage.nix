@@ -27,7 +27,7 @@ let
         buildType = "Custom";
       };
       components = {
-        accelerate = {
+        "accelerate" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -70,14 +70,14 @@ let
             ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.th-lift-instances;
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.accelerate
               hsPkgs.doctest
             ];
           };
-          nofib-interpreter = {
+          "nofib-interpreter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.accelerate

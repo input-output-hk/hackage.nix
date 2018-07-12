@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        glob-posix = {
+        "glob-posix" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          glob-posix-test = {
+          "glob-posix-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          glob-posix-bench = {
+          "glob-posix-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

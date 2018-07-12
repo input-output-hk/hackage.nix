@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plailude = {
+        "plailude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

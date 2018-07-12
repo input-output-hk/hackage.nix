@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-group = {
+        "pipes-group" = {
           depends  = [
             hsPkgs.base
             hsPkgs.free

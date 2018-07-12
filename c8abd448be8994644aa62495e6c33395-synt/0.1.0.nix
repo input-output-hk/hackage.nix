@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synt = {
+        "synt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          synt = {
+          "synt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.Synt
               hsPkgs.base

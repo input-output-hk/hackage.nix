@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lambdacube-bullet-example = {
+          "lambdacube-bullet-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lambdacube-engine

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hyperdrive = {
+        "hyperdrive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,6 +32,6 @@ let
             hsPkgs.pretty
           ];
         };
-        exes = { pong = {}; };
+        exes = { "pong" = {}; };
       };
     }

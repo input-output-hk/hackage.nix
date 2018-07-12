@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serialise = {
+        "serialise" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -44,7 +44,7 @@ let
             ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -76,7 +76,7 @@ let
           };
         };
         benchmarks = {
-          instances = {
+          "instances" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -93,7 +93,7 @@ let
                 hsPkgs.old-locale
               ]);
           };
-          micro = {
+          "micro" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -110,7 +110,7 @@ let
               hsPkgs.store
             ];
           };
-          versus = {
+          "versus" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vault-tool = {
+        "vault-tool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

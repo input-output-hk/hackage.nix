@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ghc-events-analyze = {
+          "ghc-events-analyze" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-events

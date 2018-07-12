@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          penrose = {
+          "penrose" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

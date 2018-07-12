@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pdf-toolbox-document = {
+        "pdf-toolbox-document" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

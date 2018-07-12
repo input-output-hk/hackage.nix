@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hydra-hs = {
+        "hydra-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
@@ -35,7 +35,7 @@ let
             else pkgs.lib.optional _flags.usepkgconfig pkgconfPkgs.libsixense_x64;
         };
         tests = {
-          hydra-test = {
+          "hydra-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hydra-hs

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-aliyun = {
+        "haskell-aliyun" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

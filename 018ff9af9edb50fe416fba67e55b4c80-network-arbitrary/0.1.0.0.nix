@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-arbitrary = {
+        "network-arbitrary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network-uri
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          network-arbitrary-tests = {
+          "network-arbitrary-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        socketio = {
+        "socketio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          socketio-test = {
+          "socketio-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

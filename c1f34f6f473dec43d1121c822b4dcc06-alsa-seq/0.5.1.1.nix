@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alsa-seq = {
+        "alsa-seq" = {
           depends  = [
             hsPkgs.alsa-core
             hsPkgs.enumset
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          alsa-seq-dump = {
+          "alsa-seq-dump" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.enumset
@@ -47,7 +47,7 @@ let
               hsPkgs.base
             ];
           };
-          alsa-seq-send-note = {
+          "alsa-seq-send-note" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.enumset
@@ -56,7 +56,7 @@ let
               hsPkgs.base
             ];
           };
-          alsa-seq-broadcast = {
+          "alsa-seq-broadcast" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.enumset
@@ -65,7 +65,7 @@ let
               hsPkgs.base
             ];
           };
-          alsa-seq-list-clients = {
+          "alsa-seq-list-clients" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.enumset
@@ -74,7 +74,7 @@ let
               hsPkgs.base
             ];
           };
-          alsa-seq-melody = {
+          "alsa-seq-melody" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.enumset
@@ -83,7 +83,7 @@ let
               hsPkgs.base
             ];
           };
-          alsa-seq-list-subscribers = {
+          "alsa-seq-list-subscribers" = {
             depends  = [
               hsPkgs.alsa-core
               hsPkgs.enumset

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        GLUT = {
+        "GLUT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL

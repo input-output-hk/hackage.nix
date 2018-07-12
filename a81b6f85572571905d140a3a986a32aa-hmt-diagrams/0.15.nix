@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmt-diagrams = {
+        "hmt-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo

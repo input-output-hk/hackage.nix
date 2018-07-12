@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdl2-ttf = {
+        "sdl2-ttf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          sdl2-ttf-example = {
+          "sdl2-ttf-example" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.bytestring

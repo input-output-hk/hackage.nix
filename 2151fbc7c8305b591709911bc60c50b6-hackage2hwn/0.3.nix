@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hackage2hwn = {
+          "hackage2hwn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

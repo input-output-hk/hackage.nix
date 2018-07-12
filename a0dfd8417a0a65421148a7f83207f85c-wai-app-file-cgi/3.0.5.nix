@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-app-file-cgi = {
+        "wai-app-file-cgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -56,13 +56,13 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

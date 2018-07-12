@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-dump-core = {
+        "ghc-dump-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        help-esb = {
+        "help-esb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

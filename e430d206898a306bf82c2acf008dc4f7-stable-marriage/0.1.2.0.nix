@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stable-marriage = {
+        "stable-marriage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

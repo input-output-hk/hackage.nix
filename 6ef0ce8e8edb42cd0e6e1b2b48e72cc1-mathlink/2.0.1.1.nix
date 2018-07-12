@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        mathlink = {
+        "mathlink" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

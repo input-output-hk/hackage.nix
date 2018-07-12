@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        order-statistic-tree = {
+        "order-statistic-tree" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test-ost = {
+          "test-ost" = {
             depends  = [
               hsPkgs.base
               hsPkgs.order-statistic-tree
@@ -35,7 +35,7 @@ let
           };
         };
         benchmarks = {
-          bench-ost = {
+          "bench-ost" = {
             depends  = [
               hsPkgs.base
               hsPkgs.order-statistic-tree

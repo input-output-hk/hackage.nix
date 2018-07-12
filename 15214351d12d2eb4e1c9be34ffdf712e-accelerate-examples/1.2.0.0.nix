@@ -39,7 +39,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-examples = {
+        "accelerate-examples" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.accelerate
@@ -69,7 +69,7 @@ let
           ];
         };
         exes = {
-          accelerate-smvm = {
+          "accelerate-smvm" = {
             depends  = pkgs.lib.optionals (!(!_flags.smvm)) [
               hsPkgs.base
               hsPkgs.accelerate
@@ -83,7 +83,7 @@ let
               hsPkgs.vector-algorithms
             ];
           };
-          accelerate-crystal = {
+          "accelerate-crystal" = {
             depends  = pkgs.lib.optionals (!(!_flags.crystal)) [
               hsPkgs.base
               hsPkgs.accelerate
@@ -93,7 +93,7 @@ let
               hsPkgs.gloss-raster-accelerate
             ];
           };
-          accelerate-tunnel = {
+          "accelerate-tunnel" = {
             depends  = pkgs.lib.optionals (!(!_flags.tunnel)) [
               hsPkgs.base
               hsPkgs.accelerate
@@ -104,7 +104,7 @@ let
               hsPkgs.linear-accelerate
             ];
           };
-          accelerate-canny = {
+          "accelerate-canny" = {
             depends  = pkgs.lib.optionals (!(!_flags.canny)) [
               hsPkgs.base
               hsPkgs.accelerate
@@ -117,7 +117,7 @@ let
               hsPkgs.vector
             ];
           };
-          accelerate-mandelbrot = {
+          "accelerate-mandelbrot" = {
             depends  = pkgs.lib.optionals (!(!_flags.mandelbrot)) [
               hsPkgs.base
               hsPkgs.accelerate
@@ -129,7 +129,7 @@ let
               hsPkgs.gloss-accelerate
             ];
           };
-          accelerate-fluid = {
+          "accelerate-fluid" = {
             depends  = pkgs.lib.optionals (!(!_flags.fluid)) [
               hsPkgs.base
               hsPkgs.accelerate
@@ -142,7 +142,7 @@ let
               hsPkgs.gloss-rendering
             ];
           };
-          accelerate-nbody = {
+          "accelerate-nbody" = {
             depends  = pkgs.lib.optionals (!(!_flags.nbody)) [
               hsPkgs.base
               hsPkgs.accelerate
@@ -154,7 +154,7 @@ let
               hsPkgs.mwc-random
             ];
           };
-          accelerate-smoothlife = {
+          "accelerate-smoothlife" = {
             depends  = pkgs.lib.optionals (!(!_flags.smoothlife)) [
               hsPkgs.base
               hsPkgs.accelerate
@@ -167,7 +167,7 @@ let
               hsPkgs.mwc-random
             ];
           };
-          accelerate-hashcat = {
+          "accelerate-hashcat" = {
             depends  = pkgs.lib.optionals (!(!_flags.hashcat)) [
               hsPkgs.base
               hsPkgs.accelerate
@@ -180,7 +180,7 @@ let
               hsPkgs.mwc-random
             ];
           };
-          accelerate-fft = {
+          "accelerate-fft" = {
             depends  = pkgs.lib.optionals (!(!_flags.fft)) [
               hsPkgs.base
               hsPkgs.accelerate
@@ -192,7 +192,7 @@ let
               hsPkgs.filepath
             ];
           };
-          accelerate-pagerank = {
+          "accelerate-pagerank" = {
             depends  = pkgs.lib.optionals (!(!_flags.pagerank)) [
               hsPkgs.base
               hsPkgs.accelerate
@@ -206,7 +206,7 @@ let
               hsPkgs.vector-algorithms
             ];
           };
-          accelerate-ray = {
+          "accelerate-ray" = {
             depends  = pkgs.lib.optionals (!(!_flags.ray)) [
               hsPkgs.base
               hsPkgs.accelerate
@@ -220,7 +220,7 @@ let
               hsPkgs.linear-accelerate
             ];
           };
-          accelerate-kmeans = {
+          "accelerate-kmeans" = {
             depends  = pkgs.lib.optionals (!(!_flags.kmeans)) [
               hsPkgs.base
               hsPkgs.accelerate

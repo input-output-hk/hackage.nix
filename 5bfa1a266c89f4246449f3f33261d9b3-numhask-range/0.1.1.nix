@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numhask-range = {
+        "numhask-range" = {
           depends  = [
             hsPkgs.base
             hsPkgs.numhask
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

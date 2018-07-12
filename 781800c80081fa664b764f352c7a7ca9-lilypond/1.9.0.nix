@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lilypond = {
+        "lilypond" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

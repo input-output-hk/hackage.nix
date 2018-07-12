@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-fastcgi = {
+        "happstack-fastcgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

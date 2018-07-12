@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        roku-api = {
+        "roku-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

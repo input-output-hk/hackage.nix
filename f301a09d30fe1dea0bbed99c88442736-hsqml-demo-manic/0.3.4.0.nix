@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsqml-manic = {
+          "hsqml-manic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

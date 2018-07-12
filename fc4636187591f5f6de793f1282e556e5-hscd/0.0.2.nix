@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hscd = {
+          "hscd" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

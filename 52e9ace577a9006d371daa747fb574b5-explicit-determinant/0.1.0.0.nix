@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        explicit-determinant = {
+        "explicit-determinant" = {
           depends  = [ hsPkgs.base ];
         };
       };

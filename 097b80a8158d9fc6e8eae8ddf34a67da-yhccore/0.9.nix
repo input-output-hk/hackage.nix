@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yhccore = {
+        "yhccore" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.uniplate

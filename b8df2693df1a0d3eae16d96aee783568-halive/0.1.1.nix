@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        halive = {
+        "halive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.foreign-store
@@ -39,7 +39,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8") hsPkgs.ghc-boot;
         };
         exes = {
-          halive = {
+          "halive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gl
@@ -70,7 +70,7 @@ let
               hsPkgs.time
             ];
           };
-          subhalive = {
+          "subhalive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.halive

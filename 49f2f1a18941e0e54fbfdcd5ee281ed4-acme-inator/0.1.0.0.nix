@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-inator = {
+        "acme-inator" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          evilplan = {
+          "evilplan" = {
             depends  = [ hsPkgs.base ];
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GPipe-TextureLoad = {
+        "GPipe-TextureLoad" = {
           depends  = [
             hsPkgs.GPipe
             hsPkgs.base

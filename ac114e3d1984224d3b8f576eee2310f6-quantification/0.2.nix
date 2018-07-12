@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quantification = {
+        "quantification" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

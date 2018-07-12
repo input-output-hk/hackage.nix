@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yices-easy = {
+        "yices-easy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

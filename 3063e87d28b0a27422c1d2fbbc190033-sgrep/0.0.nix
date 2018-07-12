@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sgrep = {
+          "sgrep" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bio

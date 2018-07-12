@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        libexpect = {
+        "libexpect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

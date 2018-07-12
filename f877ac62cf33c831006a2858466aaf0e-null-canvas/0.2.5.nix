@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        null-canvas = {
+        "null-canvas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

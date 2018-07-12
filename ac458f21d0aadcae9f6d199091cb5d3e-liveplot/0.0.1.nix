@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liveplot = {
+        "liveplot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.andromeda
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          liveplot = {
+          "liveplot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.liveplot

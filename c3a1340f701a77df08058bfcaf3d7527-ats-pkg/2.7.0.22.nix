@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ats-pkg = {
+        "ats-pkg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client
@@ -58,7 +58,7 @@ let
           ];
         };
         exes = {
-          atspkg = {
+          "atspkg" = {
             depends  = pkgs.lib.optionals (!_flags.no-executable) [
               hsPkgs.base
               hsPkgs.ats-pkg

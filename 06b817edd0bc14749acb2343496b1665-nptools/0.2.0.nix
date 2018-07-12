@@ -21,41 +21,41 @@ let
       };
       components = {
         exes = {
-          archive = {
+          "archive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
               hsPkgs.HSH
             ];
           };
-          color-diff = {
+          "color-diff" = {
             depends  = [ hsPkgs.base ];
           };
-          events-to-timelog = {
+          "events-to-timelog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time
               hsPkgs.old-locale
             ];
           };
-          extract-non-ascii = {
+          "extract-non-ascii" = {
             depends  = [ hsPkgs.base ];
           };
-          git-prompt = {
+          "git-prompt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-terminal
               hsPkgs.HSH
             ];
           };
-          iter-lines = {
+          "iter-lines" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.bytestring
             ];
           };
-          label = {
+          "label" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HSH
@@ -63,16 +63,16 @@ let
               hsPkgs.process
             ];
           };
-          bufferize = {
+          "bufferize" = {
             depends  = [ hsPkgs.base ];
           };
-          mh-gen-message-id-mapping = {
+          "mh-gen-message-id-mapping" = {
             depends  = [ hsPkgs.base ];
           };
-          show-non-ascii = {
+          "show-non-ascii" = {
             depends  = [ hsPkgs.base ];
           };
-          show-pollbox = {
+          "show-pollbox" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -80,28 +80,28 @@ let
               hsPkgs.MissingH
             ];
           };
-          summ = {
+          "summ" = {
             depends  = [ hsPkgs.base ];
           };
-          tac = {
+          "tac" = {
             depends  = [ hsPkgs.base ];
           };
-          rot = {
+          "rot" = {
             depends  = [ hsPkgs.base ];
           };
-          pad = {
+          "pad" = {
             depends  = [ hsPkgs.base ];
           };
-          myrev = {
+          "myrev" = {
             depends  = [ hsPkgs.base ];
           };
-          loopback = {
+          "loopback" = {
             depends  = [ hsPkgs.base ];
           };
-          what-I-have-done-today = {
+          "what-I-have-done-today" = {
             depends  = [ hsPkgs.base ];
           };
-          x-printable = {
+          "x-printable" = {
             depends  = [ hsPkgs.base ];
           };
         };

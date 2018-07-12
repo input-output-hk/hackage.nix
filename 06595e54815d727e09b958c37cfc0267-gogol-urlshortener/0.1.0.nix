@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-urlshortener = {
+        "gogol-urlshortener" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

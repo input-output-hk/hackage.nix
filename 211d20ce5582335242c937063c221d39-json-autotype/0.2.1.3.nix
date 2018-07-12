@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          json-autotype = {
+          "json-autotype" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens

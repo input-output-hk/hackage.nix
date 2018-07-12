@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          splitter = {
+          "splitter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

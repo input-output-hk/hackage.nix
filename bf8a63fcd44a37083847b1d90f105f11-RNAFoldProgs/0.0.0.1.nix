@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsRNAFold = {
+          "hsRNAFold" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -31,7 +31,7 @@ let
               hsPkgs.RNAFold
             ];
           };
-          hsRNAEval = {
+          "hsRNAEval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

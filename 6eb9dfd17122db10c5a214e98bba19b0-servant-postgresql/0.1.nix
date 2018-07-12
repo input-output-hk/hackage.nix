@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-postgresql = {
+        "servant-postgresql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant

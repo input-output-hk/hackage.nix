@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        socket-sctp = {
+        "socket-sctp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          SendReceiveMessage = {
+          "SendReceiveMessage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
               hsPkgs.socket-sctp
             ];
           };
-          TooSmallBuffer = {
+          "TooSmallBuffer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

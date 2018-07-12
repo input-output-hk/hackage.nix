@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dependent-sum-template = {
+        "dependent-sum-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dependent-sum
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dependent-sum

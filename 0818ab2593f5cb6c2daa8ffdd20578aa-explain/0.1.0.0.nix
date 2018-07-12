@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          explain = {
+          "explain" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazy-io-streams = {
+        "lazy-io-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

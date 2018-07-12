@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs2ats = {
+        "hs2ats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          hs2ats = {
+          "hs2ats" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-generic
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          hs2ats-test = {
+          "hs2ats-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs2ats
@@ -56,7 +56,7 @@ let
           };
         };
         benchmarks = {
-          hs2ats-bench = {
+          "hs2ats-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs2ats

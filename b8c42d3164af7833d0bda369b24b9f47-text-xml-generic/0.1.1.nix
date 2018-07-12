@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-xml-generic = {
+        "text-xml-generic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.not-in-base

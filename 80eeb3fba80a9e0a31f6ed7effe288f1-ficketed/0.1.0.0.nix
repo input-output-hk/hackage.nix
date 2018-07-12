@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ficketed = {
+          "ficketed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

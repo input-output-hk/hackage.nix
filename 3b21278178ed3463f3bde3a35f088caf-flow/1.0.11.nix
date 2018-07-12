@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        flow = {
+        "flow" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

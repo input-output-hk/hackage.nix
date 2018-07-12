@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        slave-thread = {
+        "slave-thread" = {
           depends  = [
             hsPkgs.stm-containers
             hsPkgs.partial-handler
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.slave-thread
               hsPkgs.HTF

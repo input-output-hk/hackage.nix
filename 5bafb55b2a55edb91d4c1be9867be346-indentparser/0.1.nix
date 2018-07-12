@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        indentparser = {
+        "indentparser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          simple-expression = {
+          "simple-expression" = {
             depends  = pkgs.lib.optional (!(!_flags.examples)) hsPkgs.parsec;
           };
         };

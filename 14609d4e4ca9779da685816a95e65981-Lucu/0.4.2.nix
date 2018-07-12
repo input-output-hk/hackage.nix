@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Lucu = {
+        "Lucu" = {
           depends  = [
             hsPkgs.HsOpenSSL
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          lucu-implant-file = {};
+          "lucu-implant-file" = {};
         };
       };
     }

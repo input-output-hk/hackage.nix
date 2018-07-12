@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        baserock-schema = {
+        "baserock-schema" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          baserock = {
+          "baserock" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          earthquake-test = {
+          "earthquake-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

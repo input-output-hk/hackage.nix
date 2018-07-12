@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          patronscraper = {
+          "patronscraper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        OpenGL = {
+        "OpenGL" = {
           depends  = [ hsPkgs.base ];
         };
       };

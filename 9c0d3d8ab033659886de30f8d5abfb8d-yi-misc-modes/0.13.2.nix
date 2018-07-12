@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-misc-modes = {
+        "yi-misc-modes" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

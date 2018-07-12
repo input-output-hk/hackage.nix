@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strelka-wai = {
+        "strelka-wai" = {
           depends  = [
             hsPkgs.wai
             hsPkgs.warp

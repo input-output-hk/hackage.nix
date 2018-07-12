@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        debug-tracy = {
+        "debug-tracy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

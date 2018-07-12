@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cplusplus-th = {
+        "cplusplus-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -31,7 +31,7 @@ let
           libs = [ pkgs."c++" ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdacube-gl = {
+        "lambdacube-gl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

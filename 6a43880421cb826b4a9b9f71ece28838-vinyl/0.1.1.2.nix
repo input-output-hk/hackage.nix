@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vinyl = {
+        "vinyl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

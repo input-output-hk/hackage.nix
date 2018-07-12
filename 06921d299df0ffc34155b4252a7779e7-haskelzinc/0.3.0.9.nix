@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskelzinc = {
+        "haskelzinc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

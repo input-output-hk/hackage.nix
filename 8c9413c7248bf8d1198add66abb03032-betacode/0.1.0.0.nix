@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        betacode = {
+        "betacode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.errors
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          betacode-specs = {
+          "betacode-specs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

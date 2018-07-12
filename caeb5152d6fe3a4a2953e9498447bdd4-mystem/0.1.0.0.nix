@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mystem = {
+        "mystem" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          mystem-test-exe = {
+          "mystem-test-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mystem

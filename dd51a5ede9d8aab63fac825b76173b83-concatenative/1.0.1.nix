@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concatenative = {
+        "concatenative" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

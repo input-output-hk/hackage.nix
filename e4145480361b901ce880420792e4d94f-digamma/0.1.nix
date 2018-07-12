@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digamma = {
+        "digamma" = {
           depends  = [
             hsPkgs.base
             hsPkgs.polynomial

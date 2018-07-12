@@ -27,7 +27,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hermes = {
+        "hermes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -90,7 +90,7 @@ let
           ];
         };
         exes = {
-          hermes = {
+          "hermes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.atlas
@@ -105,7 +105,7 @@ let
               hsPkgs.hermes
             ];
           };
-          hermes-docs = {
+          "hermes-docs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hastache
@@ -118,7 +118,7 @@ let
               hsPkgs.text
             ];
           };
-          hermes-server = {
+          "hermes-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.amqp
@@ -164,7 +164,7 @@ let
               hsPkgs.unix
             ];
           };
-          hermes-progress = {
+          "hermes-progress" = {
             depends  = [
               hsPkgs.base
               hsPkgs.atlas
@@ -177,7 +177,7 @@ let
               hsPkgs.io-streams
             ];
           };
-          hermes-tests = {
+          "hermes-tests" = {
             depends  = [
               hsPkgs.async
               hsPkgs.amqp
@@ -218,7 +218,7 @@ let
               hsPkgs.hermes
             ];
           };
-          hermes-bench = {
+          "hermes-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shelly

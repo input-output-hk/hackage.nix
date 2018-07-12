@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RBTree = {
+        "RBTree" = {
           depends  = [ hsPkgs.base ];
         };
       };

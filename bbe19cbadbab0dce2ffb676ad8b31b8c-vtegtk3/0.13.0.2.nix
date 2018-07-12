@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        vtegtk3 = {
+        "vtegtk3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.glib

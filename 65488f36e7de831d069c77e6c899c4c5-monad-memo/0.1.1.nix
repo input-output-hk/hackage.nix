@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-memo = {
+        "monad-memo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

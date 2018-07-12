@@ -22,11 +22,11 @@ let
         buildType = "Configure";
       };
       components = {
-        process = {
+        "process" = {
           depends  = ([
             hsPkgs.directory
             hsPkgs.filepath
-          ] ++ pkgs.lib.optional (!(compiler.isNhc98 && true) && !system.isWindows) hsPkgs.unix) ++ [
+          ] ++ pkgs.lib.optionals (!(compiler.isNhc98 && true)) (pkgs.lib.optional (!system.isWindows) hsPkgs.unix)) ++ [
             hsPkgs.base
           ];
         };

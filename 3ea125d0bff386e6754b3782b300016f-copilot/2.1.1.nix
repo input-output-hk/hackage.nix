@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        copilot = {
+        "copilot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.copilot-core
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          copilot-regression = {
+          "copilot-regression" = {
             depends  = [
               hsPkgs.base
               hsPkgs.copilot-core

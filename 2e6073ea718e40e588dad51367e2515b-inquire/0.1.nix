@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          inquire = {
+          "inquire" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aether

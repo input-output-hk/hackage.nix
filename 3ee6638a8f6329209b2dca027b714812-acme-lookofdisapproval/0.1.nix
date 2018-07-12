@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-lookofdisapproval = {
+        "acme-lookofdisapproval" = {
           depends  = [ hsPkgs.base ];
         };
       };

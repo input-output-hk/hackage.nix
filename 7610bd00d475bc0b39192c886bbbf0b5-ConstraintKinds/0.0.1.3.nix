@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ConstraintKinds = {
+        "ConstraintKinds" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

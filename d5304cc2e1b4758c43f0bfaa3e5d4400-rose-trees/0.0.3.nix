@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rose-trees = {
+        "rose-trees" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -53,7 +53,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

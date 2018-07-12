@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Wired = {
+        "Wired" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chalmers-lava2000

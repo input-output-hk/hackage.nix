@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bson-generics = {
+        "bson-generics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

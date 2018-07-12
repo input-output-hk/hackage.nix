@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liquidhaskell = {
+        "liquidhaskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -74,7 +74,7 @@ let
           ];
         };
         exes = {
-          liquid = {
+          "liquid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc
@@ -92,7 +92,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -114,7 +114,7 @@ let
               hsPkgs.text
             ];
           };
-          liquidhaskell-parser = {
+          "liquidhaskell-parser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-boot

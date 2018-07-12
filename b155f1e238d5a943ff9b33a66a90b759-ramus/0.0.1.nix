@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        ramus = {
+        "ramus" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          ramus-test-suite = {
+          "ramus-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ramus
@@ -35,7 +35,7 @@ let
           };
         };
         benchmarks = {
-          ramus-benchmarks = {
+          "ramus-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ramus

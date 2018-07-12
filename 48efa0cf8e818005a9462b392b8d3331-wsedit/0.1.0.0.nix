@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          wsedit = {
+          "wsedit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

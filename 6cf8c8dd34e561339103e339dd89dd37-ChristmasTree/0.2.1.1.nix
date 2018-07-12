@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ChristmasTree = {
+        "ChristmasTree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

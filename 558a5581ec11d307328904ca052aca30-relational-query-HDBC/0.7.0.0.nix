@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        relational-query-HDBC = {
+        "relational-query-HDBC" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          convertible-iso = {
+          "convertible-iso" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

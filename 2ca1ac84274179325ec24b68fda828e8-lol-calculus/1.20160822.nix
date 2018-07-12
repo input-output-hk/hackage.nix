@@ -27,7 +27,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lol-calculus = {
+        "lol-calculus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          lol-calculus = {
+          "lol-calculus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

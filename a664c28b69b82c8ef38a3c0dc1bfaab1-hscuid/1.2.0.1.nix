@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hscuid = {
+        "hscuid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -35,7 +35,7 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
         };
         exes = {
-          perf-test = {
+          "perf-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hscuid
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          hscuid-test = {
+          "hscuid-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

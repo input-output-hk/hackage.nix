@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vinyl = {
+        "vinyl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens
@@ -37,7 +37,7 @@ let
               hsPkgs.singletons
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vinyl
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          storable = {
+          "storable" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -60,14 +60,14 @@ let
               hsPkgs.primitive
             ];
           };
-          equality = {
+          "equality" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion
               hsPkgs.vinyl
             ];
           };
-          accessors = {
+          "accessors" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

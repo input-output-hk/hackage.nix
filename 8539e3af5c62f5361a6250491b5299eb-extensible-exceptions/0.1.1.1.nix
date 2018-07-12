@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extensible-exceptions = {
+        "extensible-exceptions" = {
           depends  = [ hsPkgs.base ];
         };
       };

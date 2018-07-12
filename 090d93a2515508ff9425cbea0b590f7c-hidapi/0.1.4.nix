@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hidapi = {
+        "hidapi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

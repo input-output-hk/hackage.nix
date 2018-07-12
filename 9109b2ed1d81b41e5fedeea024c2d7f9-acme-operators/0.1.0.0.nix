@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-operators = {
+        "acme-operators" = {
           depends  = [ hsPkgs.base ];
         };
       };

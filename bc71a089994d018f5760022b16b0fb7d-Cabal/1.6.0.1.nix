@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Cabal = {
+        "Cabal" = {
           depends  = ((([
             hsPkgs.filepath
           ] ++ pkgs.lib.optional _flags.base4 hsPkgs.base) ++ pkgs.lib.optional _flags.base3 hsPkgs.base) ++ pkgs.lib.optional (!_flags.base3 && !_flags.base4) hsPkgs.base) ++ pkgs.lib.optionals (_flags.base3 || _flags.base4) [

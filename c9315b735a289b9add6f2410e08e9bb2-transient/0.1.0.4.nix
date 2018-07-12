@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transient = {
+        "transient" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          transient = {
+          "transient" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -52,7 +52,7 @@ let
               hsPkgs.transient
             ];
           };
-          move = {
+          "move" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        carray = {
+        "carray" = {
           depends  = (([
             hsPkgs.ix-shapable
             hsPkgs.binary

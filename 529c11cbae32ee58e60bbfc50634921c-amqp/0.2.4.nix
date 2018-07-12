@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amqp = {
+        "amqp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

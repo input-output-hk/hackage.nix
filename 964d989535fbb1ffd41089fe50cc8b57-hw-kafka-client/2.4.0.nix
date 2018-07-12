@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-kafka-client = {
+        "hw-kafka-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          kafka-client-example = {
+          "kafka-client-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors
@@ -64,7 +64,7 @@ let
               hsPkgs.either
             ];
           };
-          integration-tests = {
+          "integration-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors

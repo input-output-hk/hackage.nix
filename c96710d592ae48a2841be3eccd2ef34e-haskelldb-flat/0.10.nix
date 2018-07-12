@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskelldb-flat = {
+        "haskelldb-flat" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          flatdb-create = {
+          "flatdb-create" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

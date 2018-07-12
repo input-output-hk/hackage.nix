@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mustache-haskell = {
+        "mustache-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          mus = {
+          "mus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

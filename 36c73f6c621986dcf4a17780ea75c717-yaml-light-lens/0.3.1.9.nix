@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml-light-lens = {
+        "yaml-light-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10.1") hsPkgs.transformers-compat;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

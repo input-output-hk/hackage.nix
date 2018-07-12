@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-rpc-generic = {
+        "json-rpc-generic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test-main = {
+          "test-main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        freetype2 = {
+        "freetype2" = {
           depends  = [ hsPkgs.base ];
           build-tools = [
             hsPkgs.buildPackages.hsc2hs
           ];
         };
         exes = {
-          freetype-example1 = {
+          "freetype-example1" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.freetype2

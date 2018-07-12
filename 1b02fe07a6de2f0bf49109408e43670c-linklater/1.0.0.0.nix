@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linklater = {
+        "linklater" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wreq

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gnome-desktop = {
+          "gnome-desktop" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

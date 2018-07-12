@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-routes-happstack = {
+        "web-routes-happstack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

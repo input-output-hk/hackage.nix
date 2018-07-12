@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        resumable-exceptions = {
+        "resumable-exceptions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

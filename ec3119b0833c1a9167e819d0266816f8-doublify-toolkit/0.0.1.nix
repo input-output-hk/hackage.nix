@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        doublify-toolkit = {
+        "doublify-toolkit" = {
           depends  = [ hsPkgs.base ];
         };
       };

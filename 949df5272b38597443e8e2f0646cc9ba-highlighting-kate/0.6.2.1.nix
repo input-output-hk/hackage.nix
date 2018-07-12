@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        highlighting-kate = {
+        "highlighting-kate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -41,7 +41,7 @@ let
             ]);
         };
         exes = {
-          highlighting-kate = {
+          "highlighting-kate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          test-highlighting-kate = {
+          "test-highlighting-kate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

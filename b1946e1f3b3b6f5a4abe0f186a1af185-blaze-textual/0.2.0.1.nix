@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-textual = {
+        "blaze-textual" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.blaze-builder

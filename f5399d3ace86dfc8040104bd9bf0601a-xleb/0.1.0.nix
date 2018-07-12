@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xleb = {
+        "xleb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          atom = {
+          "atom" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xleb

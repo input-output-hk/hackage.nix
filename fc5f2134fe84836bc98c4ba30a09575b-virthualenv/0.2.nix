@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          virthualenv = {
+          "virthualenv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

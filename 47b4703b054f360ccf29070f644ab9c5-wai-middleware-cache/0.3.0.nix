@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-cache = {
+        "wai-middleware-cache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder-conduit
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

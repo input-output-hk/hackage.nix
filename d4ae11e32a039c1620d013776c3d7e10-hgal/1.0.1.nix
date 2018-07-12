@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hgal = {
+        "hgal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-tdfa-quasiquoter = {
+        "regex-tdfa-quasiquoter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

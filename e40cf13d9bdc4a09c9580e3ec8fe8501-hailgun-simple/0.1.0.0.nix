@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hailgun-simple = {
+        "hailgun-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.email-validate

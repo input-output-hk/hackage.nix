@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-aeson-specs = {
+        "servant-aeson-specs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

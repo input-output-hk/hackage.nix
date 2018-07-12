@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        directory = {
+        "directory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -30,7 +30,7 @@ let
             else [ hsPkgs.unix ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

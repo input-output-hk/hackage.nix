@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        event = {
+        "event" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

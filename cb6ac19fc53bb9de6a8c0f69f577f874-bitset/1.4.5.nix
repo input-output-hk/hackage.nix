@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bitset = {
+        "bitset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           libs = [ pkgs.gmp ];
         };
         tests = {
-          bitset-tests = {
+          "bitset-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          bitset-benchmarks = {
+          "bitset-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

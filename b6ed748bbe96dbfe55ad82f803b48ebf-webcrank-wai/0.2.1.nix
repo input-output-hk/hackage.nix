@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        webcrank-wai = {
+        "webcrank-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

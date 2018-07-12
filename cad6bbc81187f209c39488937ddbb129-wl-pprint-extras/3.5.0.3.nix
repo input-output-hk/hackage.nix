@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wl-pprint-extras = {
+        "wl-pprint-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          wl-pprint-tests = {
+          "wl-pprint-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wl-pprint-extras

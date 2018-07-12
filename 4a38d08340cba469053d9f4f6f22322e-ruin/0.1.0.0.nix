@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ruin = {
+        "ruin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ruin

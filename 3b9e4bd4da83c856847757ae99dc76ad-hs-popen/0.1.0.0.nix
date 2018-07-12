@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-popen = {
+        "hs-popen" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          ls-example-exe = {
+          "ls-example-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs-popen

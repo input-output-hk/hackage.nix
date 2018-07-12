@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrent-rpc = {
+        "concurrent-rpc" = {
           depends  = [ hsPkgs.base ];
         };
       };

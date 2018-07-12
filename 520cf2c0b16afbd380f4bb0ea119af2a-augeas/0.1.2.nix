@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        augeas = {
+        "augeas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          test-haskell-augeas = {
+          "test-haskell-augeas" = {
             depends  = [ hsPkgs.HUnit ];
             libs = [ pkgs.augeas ];
           };

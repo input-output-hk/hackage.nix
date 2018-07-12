@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        travis = {
+        "travis" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

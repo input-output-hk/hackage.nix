@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arrow-improve = {
+        "arrow-improve" = {
           depends  = [
             hsPkgs.base
             hsPkgs.arrows

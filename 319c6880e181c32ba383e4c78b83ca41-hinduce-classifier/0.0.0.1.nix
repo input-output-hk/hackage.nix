@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hinduce-classifier = {
+        "hinduce-classifier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.layout

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ascii-progress = {
+        "ascii-progress" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.async
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.async
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.async

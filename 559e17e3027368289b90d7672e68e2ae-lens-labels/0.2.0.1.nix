@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lens-labels = {
+        "lens-labels" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

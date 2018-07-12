@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        encoding-io = {
+        "encoding-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chunked-data

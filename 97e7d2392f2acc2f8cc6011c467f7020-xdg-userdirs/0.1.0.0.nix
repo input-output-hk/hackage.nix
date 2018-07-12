@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xdg-userdirs = {
+        "xdg-userdirs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

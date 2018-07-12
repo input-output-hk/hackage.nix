@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GA = {
+        "GA" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

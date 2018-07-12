@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zeromq4-patterns = {
+        "zeromq4-patterns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          zeromq4-patterns-exe = {
+          "zeromq4-patterns-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zeromq4-patterns
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          zeromq4-patterns-test = {
+          "zeromq4-patterns-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.zeromq4-patterns

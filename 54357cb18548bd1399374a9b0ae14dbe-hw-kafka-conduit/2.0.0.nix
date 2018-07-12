@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-kafka-conduit = {
+        "hw-kafka-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          kafka-conduit-example = {
+          "kafka-conduit-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bifunctors
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          kafka-client-conduit-test = {
+          "kafka-client-conduit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hw-kafka-conduit

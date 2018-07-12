@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        interleave = {
+        "interleave" = {
           depends  = [ hsPkgs.base ];
         };
       };

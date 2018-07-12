@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        free-http = {
+        "free-http" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        number-show = {
+        "number-show" = {
           depends  = [
             hsPkgs.base
             hsPkgs.microlens

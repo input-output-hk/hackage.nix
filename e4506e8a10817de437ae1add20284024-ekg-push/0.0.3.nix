@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ekg-push = {
+        "ekg-push" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          basic = {
+          "basic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ekg-core

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tpar = {
+          "tpar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -69,7 +69,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim

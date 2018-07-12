@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix = {
+        "hmatrix" = {
           depends  = [
             hsPkgs.haskell98
           ] ++ (if _flags.splitbase
@@ -61,7 +61,7 @@ let
             else if _flags.accelerate
               then [ pkgs.gsl ]
               else [ pkgs.gsl pkgs.lapack ];
-          frameworks = pkgs.lib.optional (!_flags.mkl && _flags.accelerate) pkgs.Accelerate;
+          frameworks = pkgs.lib.optionals (!_flags.mkl) (pkgs.lib.optional _flags.accelerate pkgs.Accelerate);
         };
       };
     }

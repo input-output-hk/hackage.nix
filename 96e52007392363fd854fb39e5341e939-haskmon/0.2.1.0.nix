@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskmon = {
+        "haskmon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-streams

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          boomange = {
+          "boomange" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

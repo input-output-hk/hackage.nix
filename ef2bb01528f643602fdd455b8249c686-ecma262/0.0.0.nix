@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ecma262 = {
+        "ecma262" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          ecma262 = {
+          "ecma262" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ecma262

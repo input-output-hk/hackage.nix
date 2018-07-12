@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphite = {
+        "graphite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          graphite-test = {
+          "graphite-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.graphite

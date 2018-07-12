@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambda-options = {
+        "lambda-options" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-loops

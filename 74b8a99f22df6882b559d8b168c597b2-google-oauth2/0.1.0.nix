@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-oauth2 = {
+        "google-oauth2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.google-oauth2

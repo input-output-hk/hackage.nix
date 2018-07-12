@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opensoundcontrol-ht = {
+        "opensoundcontrol-ht" = {
           depends  = [
             hsPkgs.hosc
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LslPlus = {
+        "LslPlus" = {
           depends  = [
             hsPkgs.ghc
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          LslPlus = {
+          "LslPlus" = {
             depends  = [
               hsPkgs.ghc
               hsPkgs.base

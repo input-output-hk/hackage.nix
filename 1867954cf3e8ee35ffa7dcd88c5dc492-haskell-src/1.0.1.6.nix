@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-src = {
+        "haskell-src" = {
           depends  = if _flags.split-base
             then [
               hsPkgs.base

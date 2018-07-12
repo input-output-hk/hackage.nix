@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ploton = {
+        "ploton" = {
           depends  = [
             hsPkgs.base
             hsPkgs.optparse-applicative
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          ploton = {
+          "ploton" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ploton
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ploton

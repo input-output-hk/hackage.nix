@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmpfr = {
+        "hmpfr" = {
           depends  = [
             hsPkgs.base
           ] ++ (if _flags.use-integer-simple

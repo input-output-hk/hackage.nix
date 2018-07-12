@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-handler-launch = {
+        "wai-handler-launch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai

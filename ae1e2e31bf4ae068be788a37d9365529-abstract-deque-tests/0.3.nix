@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        abstract-deque-tests = {
+        "abstract-deque-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.abstract-deque
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test-abstract-deque = {
+          "test-abstract-deque" = {
             depends  = [
               hsPkgs.base
               hsPkgs.abstract-deque

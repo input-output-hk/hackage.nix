@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typesafe-precure = {
+        "typesafe-precure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.autoexporter
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          typesafe-precure-test = {
+          "typesafe-precure-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.typesafe-precure

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          snap = {
+          "snap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

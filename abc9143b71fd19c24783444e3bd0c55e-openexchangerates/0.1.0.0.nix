@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openexchangerates = {
+        "openexchangerates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

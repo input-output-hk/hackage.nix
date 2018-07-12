@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-fu = {
+        "json-fu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

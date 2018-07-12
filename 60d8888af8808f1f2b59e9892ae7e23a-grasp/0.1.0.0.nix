@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        grasp = {
+        "grasp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clock
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          grasp-exe = {
+          "grasp-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.grasp
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          grasp-test = {
+          "grasp-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.grasp

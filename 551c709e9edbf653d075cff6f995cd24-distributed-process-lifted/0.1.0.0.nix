@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-lifted = {
+        "distributed-process-lifted" = {
           depends  = [
             hsPkgs.base
             hsPkgs.distributed-process
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          testlifted = {
+          "testlifted" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

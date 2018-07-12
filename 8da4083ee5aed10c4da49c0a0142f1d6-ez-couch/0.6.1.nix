@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ez-couch = {
+        "ez-couch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

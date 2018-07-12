@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        really-simple-xml-parser = {
+        "really-simple-xml-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

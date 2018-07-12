@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zippo = {
+        "zippo" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.yall

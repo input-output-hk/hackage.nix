@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        basic-prelude = {
+        "basic-prelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

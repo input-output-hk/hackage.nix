@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iterio-server = {
+        "iterio-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

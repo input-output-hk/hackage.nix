@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        handa-gdata = {
+        "handa-gdata" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          hgdata = {
+          "hgdata" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base64-bytestring

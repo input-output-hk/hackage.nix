@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mcmc-types = {
+        "mcmc-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

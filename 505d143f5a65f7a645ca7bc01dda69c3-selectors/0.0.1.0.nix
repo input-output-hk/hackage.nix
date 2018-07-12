@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        selectors = {
+        "selectors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml-conduit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpc-strobe = {
+        "hpc-strobe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hpc

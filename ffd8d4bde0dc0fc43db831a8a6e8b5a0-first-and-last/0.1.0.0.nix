@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        first-and-last = {
+        "first-and-last" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          Golden = {
+          "Golden" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

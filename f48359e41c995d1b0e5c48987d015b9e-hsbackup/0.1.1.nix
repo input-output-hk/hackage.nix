@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hsbackup = {
+          "hsbackup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hashed-storage

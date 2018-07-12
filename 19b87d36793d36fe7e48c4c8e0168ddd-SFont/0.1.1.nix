@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SFont = {
+        "SFont" = {
           depends  = [
             hsPkgs.base
             hsPkgs.SDL

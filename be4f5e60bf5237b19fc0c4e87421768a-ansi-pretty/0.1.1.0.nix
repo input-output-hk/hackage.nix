@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ansi-pretty = {
+        "ansi-pretty" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-wl-pprint

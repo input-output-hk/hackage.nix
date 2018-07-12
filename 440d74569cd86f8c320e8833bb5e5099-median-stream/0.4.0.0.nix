@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        median-stream = {
+        "median-stream" = {
           depends  = [
             hsPkgs.base
             hsPkgs.heap
           ];
         };
         tests = {
-          median-stream-test = {
+          "median-stream-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.median-stream

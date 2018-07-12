@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger-lib = {
+        "hledger-lib" = {
           depends  = [
             hsPkgs.Decimal
             hsPkgs.HUnit
@@ -58,7 +58,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.Decimal
               hsPkgs.Glob
@@ -97,7 +97,7 @@ let
               hsPkgs.utf8-string
             ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
-          easytests = {
+          "easytests" = {
             depends  = [
               hsPkgs.Decimal
               hsPkgs.HUnit
@@ -136,7 +136,7 @@ let
               hsPkgs.utf8-string
             ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
-          hunittests = {
+          "hunittests" = {
             depends  = [
               hsPkgs.Decimal
               hsPkgs.HUnit

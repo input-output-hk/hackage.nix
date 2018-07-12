@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        symantic-grammar = {
+        "symantic-grammar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         tests = {
-          symantic-grammar-test = {
+          "symantic-grammar-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.megaparsec

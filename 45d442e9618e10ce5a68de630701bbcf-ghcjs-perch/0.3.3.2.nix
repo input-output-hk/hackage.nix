@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghcjs-perch = {
+        "ghcjs-perch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

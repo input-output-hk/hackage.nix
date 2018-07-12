@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-plugins = {
+        "web-plugins" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

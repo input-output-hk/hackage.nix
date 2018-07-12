@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lol = {
+        "lol" = {
           depends  = [
             hsPkgs.arithmoi
             hsPkgs.base
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          lol-test-suite = {
+          "lol-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.constraints

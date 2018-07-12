@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stochastic = {
+        "stochastic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,35 +30,35 @@ let
           ];
         };
         tests = {
-          shadyGambler = {
+          "shadyGambler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stochastic
               hsPkgs.containers
             ];
           };
-          monadLaws = {
+          "monadLaws" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stochastic
               hsPkgs.random
             ];
           };
-          normal3 = {
+          "normal3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stochastic
               hsPkgs.random
             ];
           };
-          normal10 = {
+          "normal10" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stochastic
               hsPkgs.random
             ];
           };
-          chart = {
+          "chart" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stochastic
@@ -69,7 +69,7 @@ let
               hsPkgs.mtl
             ];
           };
-          coolCharts = {
+          "coolCharts" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stochastic
@@ -80,7 +80,7 @@ let
               hsPkgs.mtl
             ];
           };
-          swindler = {
+          "swindler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stochastic
@@ -88,7 +88,7 @@ let
               hsPkgs.random
             ];
           };
-          montyHall = {
+          "montyHall" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stochastic
@@ -96,7 +96,7 @@ let
               hsPkgs.random
             ];
           };
-          contrivedGambler = {
+          "contrivedGambler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stochastic

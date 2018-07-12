@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ihaskell-juicypixels = {
+        "ihaskell-juicypixels" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

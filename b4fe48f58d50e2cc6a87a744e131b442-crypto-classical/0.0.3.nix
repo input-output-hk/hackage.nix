@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypto-classical = {
+        "crypto-classical" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base

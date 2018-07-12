@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zendesk-api = {
+        "zendesk-api" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

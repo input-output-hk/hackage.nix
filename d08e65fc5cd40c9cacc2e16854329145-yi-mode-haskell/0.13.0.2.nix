@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-mode-haskell = {
+        "yi-mode-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ftdi = {
+        "ftdi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.derive
               hsPkgs.QuickCheck

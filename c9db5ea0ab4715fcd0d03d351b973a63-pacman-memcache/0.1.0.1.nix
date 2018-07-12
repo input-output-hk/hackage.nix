@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pacman-memcache = {
+          "pacman-memcache" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory-tree

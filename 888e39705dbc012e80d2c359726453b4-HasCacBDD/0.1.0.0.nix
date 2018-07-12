@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HasCacBDD = {
+        "HasCacBDD" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -32,19 +32,19 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HasCacBDD
             ];
           };
-          basics = {
+          "basics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HasCacBDD
             ];
           };
-          tautologies = {
+          "tautologies" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HasCacBDD

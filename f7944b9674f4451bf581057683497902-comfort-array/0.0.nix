@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        comfort-array = {
+        "comfort-array" = {
           depends  = [
             hsPkgs.utility-ht
             hsPkgs.base

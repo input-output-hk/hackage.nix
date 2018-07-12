@@ -20,20 +20,20 @@ let
         buildType = "Simple";
       };
       components = {
-        memoize = {
+        "memoize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          memoize-test1 = {
+          "memoize-test1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.memoize
             ];
           };
-          memoize-test2 = {
+          "memoize-test2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.memoize

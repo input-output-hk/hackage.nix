@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          nikepub = {
+          "nikepub" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

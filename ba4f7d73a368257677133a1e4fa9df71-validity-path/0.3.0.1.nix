@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validity-path = {
+        "validity-path" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          validity-path-test = {
+          "validity-path-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

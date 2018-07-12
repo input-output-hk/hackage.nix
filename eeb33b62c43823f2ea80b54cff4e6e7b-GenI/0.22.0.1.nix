@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GenI = {
+        "GenI" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          geni = {
+          "geni" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GenI
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          geni-test = {
+          "geni-test" = {
             depends  = [
               hsPkgs.GenI
               hsPkgs.base

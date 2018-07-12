@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        shunya-library = {
+        "shunya-library" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          shunya-library-exe = {
+          "shunya-library-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shunya-library
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          shunya-library-test = {
+          "shunya-library-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shunya-library

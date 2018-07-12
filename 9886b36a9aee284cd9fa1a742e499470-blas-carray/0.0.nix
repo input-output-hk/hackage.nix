@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blas-carray = {
+        "blas-carray" = {
           depends  = [
             hsPkgs.blas-ffi
             hsPkgs.netlib-carray

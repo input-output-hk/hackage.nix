@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskell-awk = {
+        "haskell-awk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          hawk = {
+          "hawk" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          reference = {
+          "reference" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

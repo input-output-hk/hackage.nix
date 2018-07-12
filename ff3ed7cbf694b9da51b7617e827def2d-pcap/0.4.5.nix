@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        pcap = {
+        "pcap" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.network

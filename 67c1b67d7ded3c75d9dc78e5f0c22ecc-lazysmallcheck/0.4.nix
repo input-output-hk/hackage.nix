@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazysmallcheck = {
+        "lazysmallcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dead-code-detection = {
+          "dead-code-detection" = {
             depends  = [
               hsPkgs.base
               hsPkgs.silently
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.silently

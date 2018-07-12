@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vinyl-utils = {
+        "vinyl-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant

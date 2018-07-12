@@ -20,21 +20,21 @@ let
         buildType = "Simple";
       };
       components = {
-        HostAndPort = {
+        "HostAndPort" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HostAndPort
               hsPkgs.hspec
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HostAndPort
@@ -43,7 +43,7 @@ let
           };
         };
         benchmarks = {
-          bench-hostandport = {
+          "bench-hostandport" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HostAndPort

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        package-o-tron = {
+        "package-o-tron" = {
           depends  = [
             hsPkgs.base
             hsPkgs.groom
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          Makefilerize = {
+          "Makefilerize" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -39,7 +39,7 @@ let
               hsPkgs.filemanip
             ];
           };
-          CabalLint = {
+          "CabalLint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -50,7 +50,7 @@ let
               hsPkgs.packdeps
             ];
           };
-          ShowPackages = {
+          "ShowPackages" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

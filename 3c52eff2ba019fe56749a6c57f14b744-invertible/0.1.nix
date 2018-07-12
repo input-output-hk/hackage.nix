@@ -29,7 +29,7 @@ let
         buildType = "Simple";
       };
       components = {
-        invertible = {
+        "invertible" = {
           depends  = ((((((([
             hsPkgs.base
             hsPkgs.haskell-src-meta

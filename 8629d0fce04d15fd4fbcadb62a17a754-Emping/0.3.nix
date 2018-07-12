@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          emping = {
+          "emping" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

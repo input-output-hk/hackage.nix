@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jack-bindings = {
+        "jack-bindings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

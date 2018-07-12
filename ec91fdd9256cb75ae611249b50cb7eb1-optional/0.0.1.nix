@@ -22,11 +22,11 @@ let
         buildType = "Custom";
       };
       components = {
-        optional = {
+        "optional" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

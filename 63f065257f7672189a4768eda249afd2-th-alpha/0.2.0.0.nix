@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-alpha = {
+        "th-alpha" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.th-alpha

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gps = {
+        "gps" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          gps-tests = {
+          "gps-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hermit = {
+        "hermit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          hermit = {
+          "hermit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hermit

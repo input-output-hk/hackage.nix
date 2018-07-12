@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk-largeTreeStore = {
+        "gtk-largeTreeStore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.glib
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk-largeTreeStore

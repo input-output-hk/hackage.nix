@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming-pcap = {
+        "streaming-pcap" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          streaming-pcap-test = {
+          "streaming-pcap-test" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

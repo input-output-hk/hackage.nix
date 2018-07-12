@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bond-haskell = {
+        "bond-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bond-haskell-compiler
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          bond-haskell-test = {
+          "bond-haskell-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

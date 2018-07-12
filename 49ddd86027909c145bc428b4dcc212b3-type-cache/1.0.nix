@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-cache = {
+        "type-cache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

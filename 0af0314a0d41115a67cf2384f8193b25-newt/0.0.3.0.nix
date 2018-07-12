@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        newt = {
+        "newt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filemanip
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          newt = {
+          "newt" = {
             depends  = [
               hsPkgs.newt
               hsPkgs.base
@@ -49,7 +49,7 @@ let
               hsPkgs.cmdargs
             ] ++ [ hsPkgs.containers ];
           };
-          test-newt = {
+          "test-newt" = {
             depends  = [
               hsPkgs.newt
               hsPkgs.base

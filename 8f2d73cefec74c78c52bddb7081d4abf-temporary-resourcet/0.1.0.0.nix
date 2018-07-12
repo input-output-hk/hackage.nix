@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        temporary-resourcet = {
+        "temporary-resourcet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          test-temporary-resourcet = {
+          "test-temporary-resourcet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

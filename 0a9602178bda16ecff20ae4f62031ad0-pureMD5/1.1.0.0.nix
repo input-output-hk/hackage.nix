@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pureMD5 = {
+        "pureMD5" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

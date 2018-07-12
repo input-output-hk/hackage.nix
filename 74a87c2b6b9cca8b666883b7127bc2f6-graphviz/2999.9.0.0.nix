@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graphviz = {
+        "graphviz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.extensible-exceptions
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional _flags.test hsPkgs.QuickCheck;
         };
         exes = {
-          graphviz-testsuite = {};
+          "graphviz-testsuite" = {};
         };
       };
     }

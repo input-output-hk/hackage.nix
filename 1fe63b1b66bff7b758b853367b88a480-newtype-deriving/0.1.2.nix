@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        newtype-deriving = {
+        "newtype-deriving" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.monad-control
@@ -31,7 +31,7 @@ let
           ];
         };
         benchmarks = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.newtype-deriving
               hsPkgs.either

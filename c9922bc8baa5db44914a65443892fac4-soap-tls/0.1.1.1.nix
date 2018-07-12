@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        soap-tls = {
+        "soap-tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.soap

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        airtable-api = {
+        "airtable-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          airtable-api-test = {
+          "airtable-api-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.airtable-api

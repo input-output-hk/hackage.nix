@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Paillier = {
+        "Paillier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.crypto-numbers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-Paillier = {
+          "test-Paillier" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.HUnit

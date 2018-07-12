@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        milena = {
+        "milena" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          exkhs = {
+          "exkhs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.milena
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.milena

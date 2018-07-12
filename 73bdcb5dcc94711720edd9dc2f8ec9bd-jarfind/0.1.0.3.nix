@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jarfind = {
+        "jarfind" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          jarf = {
+          "jarf" = {
             depends  = [
               hsPkgs.binary
               hsPkgs.bytestring

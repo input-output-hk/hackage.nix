@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shapes = {
+        "shapes" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          shapes-bench = {
+          "shapes-bench" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          shapes-spec = {
+          "shapes-spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.array

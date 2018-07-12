@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskoin-crypto = {
+        "haskoin-crypto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test-haskoin-crypto = {
+          "test-haskoin-crypto" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hastache = {
+        "hastache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          mkReadme = {
+          "mkReadme" = {
             depends  = [
               hsPkgs.hastache
               hsPkgs.process
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          test-hastache = {
+          "test-hastache" = {
             depends  = [
               hsPkgs.hastache
               hsPkgs.base

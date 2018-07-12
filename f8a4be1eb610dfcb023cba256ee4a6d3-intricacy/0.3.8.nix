@@ -27,7 +27,7 @@ let
       };
       components = {
         exes = {
-          intricacy = {
+          "intricacy" = {
             depends  = (pkgs.lib.optionals _flags.game ([
               hsPkgs.base
               hsPkgs.base
@@ -51,15 +51,15 @@ let
             ] ++ pkgs.lib.optionals _flags.sound [
               hsPkgs.SDL-mixer
               hsPkgs.random
-            ])) ++ pkgs.lib.optional _flags.curses hsPkgs.hscurses) ++ pkgs.lib.optional (!_flags.sdl && !_flags.curses) hsPkgs.Unsatisfiable;
-            libs = pkgs.lib.optionals (_flags.game && (_flags.sdl && system.isWindows)) ([
+            ])) ++ pkgs.lib.optional _flags.curses hsPkgs.hscurses) ++ pkgs.lib.optionals (!_flags.sdl) (pkgs.lib.optional (!_flags.curses) hsPkgs.Unsatisfiable);
+            libs = pkgs.lib.optionals _flags.game (pkgs.lib.optionals _flags.sdl (pkgs.lib.optionals system.isWindows ([
               pkgs.SDL_ttf
               pkgs.SDL
               pkgs.SDL_gfx
               pkgs.freetype
-            ] ++ pkgs.lib.optional _flags.sound pkgs.SDL_mixer);
+            ] ++ pkgs.lib.optional _flags.sound pkgs.SDL_mixer)));
           };
-          intricacy-server = {
+          "intricacy-server" = {
             depends  = pkgs.lib.optionals _flags.server [
               hsPkgs.base
               hsPkgs.base

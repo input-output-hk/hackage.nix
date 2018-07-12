@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-routing = {
+        "wai-routing" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          wai-routing-tests = {
+          "wai-routing-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder
@@ -55,7 +55,7 @@ let
           };
         };
         benchmarks = {
-          wai-routing-bench = {
+          "wai-routing-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

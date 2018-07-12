@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        complex-generic = {
+        "complex-generic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

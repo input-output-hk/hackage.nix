@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jason = {
+        "jason" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          jason = {
+          "jason" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jason
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          jason-test = {
+          "jason-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jason

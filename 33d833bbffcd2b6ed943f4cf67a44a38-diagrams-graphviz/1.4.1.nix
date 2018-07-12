@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-graphviz = {
+        "diagrams-graphviz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

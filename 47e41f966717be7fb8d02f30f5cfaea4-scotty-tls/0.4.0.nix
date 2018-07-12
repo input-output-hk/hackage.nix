@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scotty-tls = {
+        "scotty-tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.scotty

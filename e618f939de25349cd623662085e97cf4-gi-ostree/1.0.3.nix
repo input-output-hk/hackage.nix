@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-ostree = {
+        "gi-ostree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

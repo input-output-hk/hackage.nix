@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gmap = {
+        "gmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

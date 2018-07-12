@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-ffmpeg = {
+        "hs-ffmpeg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

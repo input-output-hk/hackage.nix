@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-vend = {
+        "yesod-vend" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-platform

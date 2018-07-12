@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        solr = {
+        "solr" = {
           depends  = [
             hsPkgs.http-response-decoder
             hsPkgs.http-client

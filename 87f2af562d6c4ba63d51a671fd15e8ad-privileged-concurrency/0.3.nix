@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        privileged-concurrency = {
+        "privileged-concurrency" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

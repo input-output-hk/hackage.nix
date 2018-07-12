@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aterm-utils = {
+        "aterm-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aterm
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          ppaterm = {
+          "ppaterm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aterm

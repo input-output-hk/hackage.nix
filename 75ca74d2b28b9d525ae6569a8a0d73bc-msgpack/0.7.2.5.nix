@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        msgpack = {
+        "msgpack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          msgpack-tests = {
+          "msgpack-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nemesis = {
+        "nemesis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          nemesis = {
+          "nemesis" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

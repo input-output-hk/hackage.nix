@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        blas-hs = {
+        "blas-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.storable-complex
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blas-hs

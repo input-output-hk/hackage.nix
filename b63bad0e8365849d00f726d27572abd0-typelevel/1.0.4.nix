@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        typelevel = {
+        "typelevel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty-show

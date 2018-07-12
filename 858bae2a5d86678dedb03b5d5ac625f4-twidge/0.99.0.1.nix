@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          twidge = {
+          "twidge" = {
             depends  = [
               hsPkgs.network
               hsPkgs.unix

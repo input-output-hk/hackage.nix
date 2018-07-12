@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        indieweb-algorithms = {
+        "indieweb-algorithms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

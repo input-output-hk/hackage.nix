@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        lcs = {
+        "lcs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

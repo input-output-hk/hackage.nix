@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        type-assertions = {
+        "type-assertions" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          type-assertions-test-suite = {
+          "type-assertions-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

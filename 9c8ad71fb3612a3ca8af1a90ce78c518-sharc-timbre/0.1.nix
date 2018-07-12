@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sharc-timbre = {
+        "sharc-timbre" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

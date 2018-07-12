@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        composite-opaleye = {
+        "composite-opaleye" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          composite-opaleye-test = {
+          "composite-opaleye-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

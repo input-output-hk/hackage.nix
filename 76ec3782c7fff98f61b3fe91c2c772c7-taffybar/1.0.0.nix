@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        taffybar = {
+        "taffybar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.alsa-mixer
@@ -73,7 +73,7 @@ let
           ];
         };
         exes = {
-          taffybar = {
+          "taffybar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.X11

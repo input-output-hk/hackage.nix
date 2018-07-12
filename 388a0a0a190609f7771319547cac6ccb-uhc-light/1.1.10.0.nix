@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uhc-light = {
+        "uhc-light" = {
           depends  = [
             hsPkgs.fgl
             hsPkgs.uulib
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          uhcl = {
+          "uhcl" = {
             depends  = [
               hsPkgs.uhc-light
               hsPkgs.fgl
@@ -78,7 +78,7 @@ let
               hsPkgs.old-locale
             ];
           };
-          uhcr = {
+          "uhcr" = {
             depends  = [
               hsPkgs.uhc-light
               hsPkgs.fgl

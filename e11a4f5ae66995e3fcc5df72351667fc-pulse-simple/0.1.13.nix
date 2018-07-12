@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pulse-simple = {
+        "pulse-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

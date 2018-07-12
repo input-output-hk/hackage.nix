@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transfer-db = {
+        "transfer-db" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sqlcli
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          transfer-db = {
+          "transfer-db" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          hspec-tests = {
+          "hspec-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

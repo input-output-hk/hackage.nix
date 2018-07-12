@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SpreadsheetML = {
+        "SpreadsheetML" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml

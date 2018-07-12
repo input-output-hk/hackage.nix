@@ -20,12 +20,12 @@ let
         buildType = "Simple";
       };
       components = {
-        utf8-prelude = {
+        "utf8-prelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string
           ];
         };
-        exes = { utf8-test = {}; };
+        exes = { "utf8-test" = {}; };
       };
     }

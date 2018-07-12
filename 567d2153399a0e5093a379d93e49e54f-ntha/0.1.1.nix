@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ntha = {
+        "ntha" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          ntha = {
+          "ntha" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ntha
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          ntha-test = {
+          "ntha-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ntha

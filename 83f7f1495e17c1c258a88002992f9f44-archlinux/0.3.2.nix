@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        archlinux = {
+        "archlinux" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          arch-report = {
+          "arch-report" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP
@@ -61,7 +61,7 @@ let
               hsPkgs.csv
             ];
           };
-          distro-map = {
+          "distro-map" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP
@@ -81,7 +81,7 @@ let
               hsPkgs.csv
             ];
           };
-          get-arch-url = {
+          "get-arch-url" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP
@@ -101,7 +101,7 @@ let
               hsPkgs.csv
             ];
           };
-          latest-cabal = {
+          "latest-cabal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP
@@ -121,7 +121,7 @@ let
               hsPkgs.csv
             ];
           };
-          mypackages = {
+          "mypackages" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP
@@ -141,10 +141,10 @@ let
               hsPkgs.csv
             ];
           };
-          update-aur-log = {
+          "update-aur-log" = {
             depends  = [ hsPkgs.base ];
           };
-          needs-updates = {
+          "needs-updates" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP

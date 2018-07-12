@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-error-collector = {
+        "snap-error-collector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        brittany = {
+        "brittany" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -58,7 +58,7 @@ let
           ];
         };
         exes = {
-          brittany = {
+          "brittany" = {
             depends  = [
               hsPkgs.brittany
               hsPkgs.base
@@ -95,7 +95,7 @@ let
           };
         };
         tests = {
-          unittests = {
+          "unittests" = {
             depends  = [
               hsPkgs.brittany
               hsPkgs.base
@@ -130,7 +130,7 @@ let
               hsPkgs.hspec
             ];
           };
-          littests = {
+          "littests" = {
             depends  = [
               hsPkgs.brittany
               hsPkgs.base
@@ -167,7 +167,7 @@ let
               hsPkgs.parsec
             ];
           };
-          libinterfacetests = {
+          "libinterfacetests" = {
             depends  = [
               hsPkgs.brittany
               hsPkgs.base

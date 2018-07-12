@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        file-location = {
+        "file-location" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.file-location

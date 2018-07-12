@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        listsafe = {
+        "listsafe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

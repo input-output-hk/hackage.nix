@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fileplow = {
+        "fileplow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          fileplow-test = {
+          "fileplow-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fileplow

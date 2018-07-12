@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-extra = {
+        "pipes-extra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          telnet = {
+          "telnet" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.pipes-core
@@ -40,7 +40,7 @@ let
               hsPkgs.network
             ];
           };
-          compress = {
+          "compress" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.pipes-core
@@ -48,7 +48,7 @@ let
               hsPkgs.pipes-zlib
             ];
           };
-          decompress = {
+          "decompress" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.pipes-core
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -73,7 +73,7 @@ let
           };
         };
         benchmarks = {
-          bench-general = {
+          "bench-general" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-core
@@ -83,7 +83,7 @@ let
               hsPkgs.criterion
             ];
           };
-          bench-simple = {
+          "bench-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-core
@@ -91,7 +91,7 @@ let
               hsPkgs.criterion
             ];
           };
-          bench-zlib = {
+          "bench-zlib" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pipes-core

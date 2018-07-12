@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        matrix = {
+        "matrix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          matrix-test = {
+          "matrix-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.matrix
@@ -39,7 +39,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          matrix-examples = {
+          "matrix-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.matrix
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          matrix-mult = {
+          "matrix-mult" = {
             depends  = [
               hsPkgs.base
               hsPkgs.matrix

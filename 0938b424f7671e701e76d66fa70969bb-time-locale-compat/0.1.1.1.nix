@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-locale-compat = {
+        "time-locale-compat" = {
           depends  = [
             hsPkgs.base
           ] ++ (if _flags.old-locale

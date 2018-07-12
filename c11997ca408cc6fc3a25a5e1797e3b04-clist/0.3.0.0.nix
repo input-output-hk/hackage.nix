@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clist = {
+        "clist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.peano

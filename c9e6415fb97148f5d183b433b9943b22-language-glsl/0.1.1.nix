@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-glsl = {
+        "language-glsl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          glsl-pprint = {
+          "glsl-pprint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-glsl
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

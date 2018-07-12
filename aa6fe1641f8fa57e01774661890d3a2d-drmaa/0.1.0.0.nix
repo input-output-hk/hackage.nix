@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        drmaa = {
+        "drmaa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

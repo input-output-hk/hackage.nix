@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SMTPClient = {
+        "SMTPClient" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsemail

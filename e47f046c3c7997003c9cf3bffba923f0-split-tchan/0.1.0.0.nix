@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        split-tchan = {
+        "split-tchan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

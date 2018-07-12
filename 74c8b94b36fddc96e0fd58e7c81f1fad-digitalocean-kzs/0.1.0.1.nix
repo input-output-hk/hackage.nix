@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        digitalocean-kzs = {
+        "digitalocean-kzs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,14 +33,14 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
               hsPkgs.digitalocean-kzs
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

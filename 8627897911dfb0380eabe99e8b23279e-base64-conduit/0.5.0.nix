@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        base64-conduit = {
+        "base64-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.base

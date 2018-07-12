@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ProbabilityMonads = {
+        "ProbabilityMonads" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

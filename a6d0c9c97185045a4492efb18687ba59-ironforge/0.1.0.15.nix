@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ironforge = {
+        "ironforge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.chatty
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          ironforge = {
+          "ironforge" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chatty

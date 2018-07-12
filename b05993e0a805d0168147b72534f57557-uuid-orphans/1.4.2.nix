@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuid-orphans = {
+        "uuid-orphans" = {
           depends  = [
             hsPkgs.base
             hsPkgs.uuid-types

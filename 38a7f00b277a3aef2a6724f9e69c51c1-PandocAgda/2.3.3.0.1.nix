@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PandocAgda = {
+        "PandocAgda" = {
           depends  = ([
             hsPkgs.Agda
             hsPkgs.base
@@ -43,7 +43,7 @@ let
             ]);
         };
         exes = {
-          agdapandoc = {
+          "agdapandoc" = {
             depends  = [
               hsPkgs.PandocAgda
               hsPkgs.base

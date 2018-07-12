@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        base-compat = {
+        "base-compat" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

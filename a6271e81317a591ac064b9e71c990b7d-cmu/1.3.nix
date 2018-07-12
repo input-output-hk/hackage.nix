@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmu = {
+        "cmu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          cmu = {
+          "cmu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

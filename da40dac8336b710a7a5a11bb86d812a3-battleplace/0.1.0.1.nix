@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        battleplace = {
+        "battleplace" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

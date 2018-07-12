@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        optimization = {
+        "optimization" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

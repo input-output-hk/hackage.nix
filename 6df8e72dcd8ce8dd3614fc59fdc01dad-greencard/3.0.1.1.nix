@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          greencard = {
+          "greencard" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty

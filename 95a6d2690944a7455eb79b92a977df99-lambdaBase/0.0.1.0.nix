@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdaBase = {
+        "lambdaBase" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

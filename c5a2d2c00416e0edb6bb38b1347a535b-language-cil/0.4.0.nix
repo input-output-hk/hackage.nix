@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-cil = {
+        "language-cil" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bool-extras

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmt = {
+        "hmt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cairo

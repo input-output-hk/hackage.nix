@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        predicate-class = {
+        "predicate-class" = {
           depends  = [ hsPkgs.base ];
         };
       };

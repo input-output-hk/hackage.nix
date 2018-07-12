@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HTTP-Simple = {
+        "HTTP-Simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

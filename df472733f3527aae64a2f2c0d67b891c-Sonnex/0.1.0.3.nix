@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        Sonnex = {
+        "Sonnex" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          testMain = {
+          "testMain" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

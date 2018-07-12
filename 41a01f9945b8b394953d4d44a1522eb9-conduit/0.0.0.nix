@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conduit = {
+        "conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-contrib-elm = {
+        "hakyll-contrib-elm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          hakyll-contrib-elm-example = {
+          "hakyll-contrib-elm-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hakyll

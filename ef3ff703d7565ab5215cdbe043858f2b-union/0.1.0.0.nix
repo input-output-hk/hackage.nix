@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        union = {
+        "union" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vinyl
@@ -28,7 +28,7 @@ let
           ];
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.union

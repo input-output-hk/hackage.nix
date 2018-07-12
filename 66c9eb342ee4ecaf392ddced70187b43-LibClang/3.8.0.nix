@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        LibClang = {
+        "LibClang" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

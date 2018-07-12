@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sql-simple-mysql = {
+        "sql-simple-mysql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

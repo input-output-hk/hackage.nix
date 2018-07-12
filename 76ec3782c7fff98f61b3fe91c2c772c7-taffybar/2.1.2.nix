@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        taffybar = {
+        "taffybar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ConfigFile
@@ -87,7 +87,7 @@ let
           ];
         };
         exes = {
-          taffybar = {
+          "taffybar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslogger

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          buildbox-results = {
+          "buildbox-results" = {
             depends  = [
               hsPkgs.base
               hsPkgs.buildbox

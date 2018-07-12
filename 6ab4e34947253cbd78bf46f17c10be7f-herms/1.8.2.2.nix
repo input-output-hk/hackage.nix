@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          herms = {
+          "herms" = {
             depends  = [
               hsPkgs.ansi-terminal
               hsPkgs.base

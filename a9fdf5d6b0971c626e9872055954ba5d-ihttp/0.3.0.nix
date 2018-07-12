@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ihttp = {
+        "ihttp" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          ihttp-test = {
+          "ihttp-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

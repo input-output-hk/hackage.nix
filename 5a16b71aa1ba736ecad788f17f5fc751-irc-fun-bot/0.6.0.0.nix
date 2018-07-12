@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc-fun-bot = {
+        "irc-fun-bot" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.auto-update

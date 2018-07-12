@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Spock-core = {
+        "Spock-core" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          spockcoretests = {
+          "spockcoretests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

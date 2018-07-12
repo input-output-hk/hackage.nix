@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        largeword = {
+        "largeword" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

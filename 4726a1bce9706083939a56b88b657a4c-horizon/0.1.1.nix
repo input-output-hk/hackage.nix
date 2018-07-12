@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        horizon = {
+        "horizon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

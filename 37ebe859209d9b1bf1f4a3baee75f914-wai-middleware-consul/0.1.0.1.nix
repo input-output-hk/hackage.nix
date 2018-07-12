@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-consul = {
+        "wai-middleware-consul" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          wai-middleware-consul-example = {
+          "wai-middleware-consul-example" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

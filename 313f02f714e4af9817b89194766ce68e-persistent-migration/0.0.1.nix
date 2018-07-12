@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-migration = {
+        "persistent-migration" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          persistent-migration-test = {
+          "persistent-migration-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
               hsPkgs.text
             ];
           };
-          persistent-migration-integration = {
+          "persistent-migration-integration" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

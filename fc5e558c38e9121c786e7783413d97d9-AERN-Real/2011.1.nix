@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AERN-Real = {
+        "AERN-Real" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

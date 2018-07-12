@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        twitter-conduit = {
+        "twitter-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -55,19 +55,19 @@ let
             else [ hsPkgs.lens ]);
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec_main = {
+          "spec_main" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.template-haskell

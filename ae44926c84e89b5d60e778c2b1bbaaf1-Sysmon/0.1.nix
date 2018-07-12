@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Sysmon = {
+        "Sysmon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Glob

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        yesod-auth-hmac-keccak = {
+        "yesod-auth-hmac-keccak" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

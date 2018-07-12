@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        convertible-text = {
+        "convertible-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2

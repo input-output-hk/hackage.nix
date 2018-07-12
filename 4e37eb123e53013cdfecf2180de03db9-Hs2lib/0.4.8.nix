@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hs2lib = {
+        "Hs2lib" = {
           depends  = [
             hsPkgs.haskell-src-exts
             hsPkgs.ghc
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          Hs2lib = {
+          "Hs2lib" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.directory

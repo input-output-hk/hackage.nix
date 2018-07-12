@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-compat = {
+        "aeson-compat" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.base-compat
@@ -41,7 +41,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         tests = {
-          aeson-compat-test = {
+          "aeson-compat-test" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.base-compat

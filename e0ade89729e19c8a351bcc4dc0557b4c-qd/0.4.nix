@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        qd = {
+        "qd" = {
           depends  = [ hsPkgs.base ];
           libs = [
             pkgs.qd

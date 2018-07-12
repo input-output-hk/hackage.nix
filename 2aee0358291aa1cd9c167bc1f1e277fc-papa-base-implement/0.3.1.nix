@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        papa-base-implement = {
+        "papa-base-implement" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

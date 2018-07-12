@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tensorflow-test = {
+        "tensorflow-test" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit

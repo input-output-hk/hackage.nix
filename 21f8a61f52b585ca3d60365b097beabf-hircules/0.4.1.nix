@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hircules = {
+          "hircules" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gtk

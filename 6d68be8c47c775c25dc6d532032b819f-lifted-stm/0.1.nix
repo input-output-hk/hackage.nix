@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lifted-stm = {
+        "lifted-stm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        combobuffer = {
+        "combobuffer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

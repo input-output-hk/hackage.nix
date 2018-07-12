@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gelatin = {
+        "gelatin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gelatin-core

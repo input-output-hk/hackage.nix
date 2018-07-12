@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        agda-snippets = {
+        "agda-snippets" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Agda
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          agda-snippets = {
+          "agda-snippets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.agda-snippets

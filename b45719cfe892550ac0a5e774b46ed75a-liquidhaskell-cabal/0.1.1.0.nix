@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liquidhaskell-cabal = {
+        "liquidhaskell-cabal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

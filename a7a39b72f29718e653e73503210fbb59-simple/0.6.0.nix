@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple = {
+        "simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          smpl = {
+          "smpl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsrelp = {
+        "hsrelp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

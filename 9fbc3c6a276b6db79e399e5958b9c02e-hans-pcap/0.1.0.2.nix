@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hans-pcap = {
+        "hans-pcap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hans

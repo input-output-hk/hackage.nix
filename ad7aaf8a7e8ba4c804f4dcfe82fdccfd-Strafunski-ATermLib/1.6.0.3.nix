@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Strafunski-ATermLib = {
+        "Strafunski-ATermLib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

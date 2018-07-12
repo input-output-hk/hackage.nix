@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        assimp = {
+        "assimp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hdevtools = {
+          "hdevtools" = {
             depends  = (([
               hsPkgs.base
               hsPkgs.cmdargs

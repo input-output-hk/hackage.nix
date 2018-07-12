@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        processing = {
+        "processing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

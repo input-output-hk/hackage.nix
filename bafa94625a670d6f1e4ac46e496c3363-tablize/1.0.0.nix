@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tablize = {
+          "tablize" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

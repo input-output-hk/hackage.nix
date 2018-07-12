@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbmigrations = {
+        "dbmigrations" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC
@@ -39,15 +39,15 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.HDBC-postgresql
               hsPkgs.HUnit
               hsPkgs.process
             ];
           };
-          moo = {};
-          store-manager = {
+          "moo" = {};
+          "store-manager" = {
             depends  = [ hsPkgs.hscurses ];
           };
         };

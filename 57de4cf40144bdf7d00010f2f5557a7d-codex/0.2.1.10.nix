@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        codex = {
+        "codex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          codex = {
+          "codex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasktags = {
+        "hasktags" = {
           depends  = [
             hsPkgs.utf8-string
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         exes = {
-          hasktags = {
+          "hasktags" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -41,7 +41,7 @@ let
               hsPkgs.hasktags
             ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.utf8-string
               hsPkgs.base
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.utf8-string
               hsPkgs.base

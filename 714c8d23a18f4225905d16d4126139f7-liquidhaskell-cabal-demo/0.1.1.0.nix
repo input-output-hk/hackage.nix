@@ -22,14 +22,14 @@ let
         buildType = "Custom";
       };
       components = {
-        liquidhaskell-cabal-demo = {
+        "liquidhaskell-cabal-demo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.liquidhaskell-cabal
           ];
         };
         exes = {
-          ffi = {
+          "ffi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.liquidhaskell-cabal

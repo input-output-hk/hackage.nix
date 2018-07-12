@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        schematic = {
+        "schematic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.aeson

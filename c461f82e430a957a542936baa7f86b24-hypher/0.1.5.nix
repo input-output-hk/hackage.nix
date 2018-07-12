@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hypher = {
+        "hypher" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          test-hypher = {
+          "test-hypher" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

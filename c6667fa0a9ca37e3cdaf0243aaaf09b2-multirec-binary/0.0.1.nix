@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multirec-binary = {
+        "multirec-binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.multirec

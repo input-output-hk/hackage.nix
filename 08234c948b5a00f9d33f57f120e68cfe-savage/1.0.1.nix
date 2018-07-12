@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        savage = {
+        "savage" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.ansi-terminal

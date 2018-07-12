@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        borel = {
+        "borel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -56,7 +56,7 @@ let
           ];
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens-properties

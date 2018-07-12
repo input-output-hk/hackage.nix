@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numeric-prelude = {
+        "numeric-prelude" = {
           depends  = [
             hsPkgs.parsec
             hsPkgs.QuickCheck
@@ -37,13 +37,13 @@ let
           ];
         };
         exes = {
-          numeric-prelude-demo = {
+          "numeric-prelude-demo" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.numeric-prelude
               hsPkgs.base
             ];
           };
-          numeric-prelude-test = {
+          "numeric-prelude-test" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.HUnit
               hsPkgs.numeric-prelude
@@ -53,7 +53,7 @@ let
               hsPkgs.base
             ];
           };
-          numeric-prelude-gaussian = {
+          "numeric-prelude-gaussian" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.gnuplot
               hsPkgs.HTam

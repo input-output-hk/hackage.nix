@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hedi = {
+        "Hedi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          hedi = {
+          "hedi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

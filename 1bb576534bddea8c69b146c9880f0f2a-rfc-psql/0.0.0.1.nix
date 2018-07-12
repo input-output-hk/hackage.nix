@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rfc-psql = {
+        "rfc-psql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

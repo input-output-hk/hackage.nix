@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fficxx-runtime = {
+        "fficxx-runtime" = {
           depends  = [ hsPkgs.base ];
         };
       };

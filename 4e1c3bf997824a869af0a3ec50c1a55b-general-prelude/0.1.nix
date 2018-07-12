@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        general-prelude = {
+        "general-prelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

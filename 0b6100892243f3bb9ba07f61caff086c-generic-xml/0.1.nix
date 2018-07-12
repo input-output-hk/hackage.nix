@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        generic-xml = {
+        "generic-xml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

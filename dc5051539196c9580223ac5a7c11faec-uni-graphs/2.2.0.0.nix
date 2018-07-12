@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uni-graphs = {
+        "uni-graphs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

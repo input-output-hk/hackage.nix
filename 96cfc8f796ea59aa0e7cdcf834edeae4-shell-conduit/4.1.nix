@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shell-conduit = {
+        "shell-conduit" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base

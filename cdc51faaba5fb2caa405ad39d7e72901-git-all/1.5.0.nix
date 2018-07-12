@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          git-all = {
+          "git-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shelly

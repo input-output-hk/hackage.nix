@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vcache = {
+        "vcache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.direct-murmur-hash

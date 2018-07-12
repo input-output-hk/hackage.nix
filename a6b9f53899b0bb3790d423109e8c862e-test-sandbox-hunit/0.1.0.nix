@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        test-sandbox-hunit = {
+        "test-sandbox-hunit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lifted-base

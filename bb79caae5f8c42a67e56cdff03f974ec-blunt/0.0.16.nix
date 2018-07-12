@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blunt = {
+        "blunt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          blunt = {
+          "blunt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blunt

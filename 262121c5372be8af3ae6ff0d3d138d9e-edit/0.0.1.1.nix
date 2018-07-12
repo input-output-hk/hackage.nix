@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        edit = {
+        "edit" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.deepseq
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test-edit = {
+          "test-edit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.edit

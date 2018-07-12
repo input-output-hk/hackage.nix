@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        preamble = {
+        "preamble" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          shake-preamble = {
+          "shake-preamble" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude

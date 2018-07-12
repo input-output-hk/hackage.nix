@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        coercible-utils = {
+        "coercible-utils" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          coercible-utils-test = {
+          "coercible-utils-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.coercible-utils
@@ -32,7 +32,7 @@ let
           };
         };
         benchmarks = {
-          coercible-utils-benchmark = {
+          "coercible-utils-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gauge

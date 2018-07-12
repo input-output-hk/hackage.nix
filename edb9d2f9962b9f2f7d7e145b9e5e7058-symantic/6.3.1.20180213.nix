@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        symantic = {
+        "symantic" = {
           depends  = [
             hsPkgs.symantic-grammar
             hsPkgs.symantic-document

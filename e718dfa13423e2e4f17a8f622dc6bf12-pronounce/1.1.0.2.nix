@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pronounce = {
+        "pronounce" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        call = {
+        "call" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-portaudio
@@ -60,7 +60,7 @@ let
           ];
         };
         exes = {
-          hello-world = {
+          "hello-world" = {
             depends  = [
               hsPkgs.base
               hsPkgs.call

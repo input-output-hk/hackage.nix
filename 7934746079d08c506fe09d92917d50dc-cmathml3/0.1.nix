@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cmathml3 = {
+        "cmathml3" = {
           depends  = [
             hsPkgs.hxt
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          mathtest = {
+          "mathtest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

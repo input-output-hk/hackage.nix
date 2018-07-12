@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        groundhog-sqlite = {
+        "groundhog-sqlite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

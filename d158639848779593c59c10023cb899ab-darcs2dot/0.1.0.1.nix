@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          darcs2dot = {
+          "darcs2dot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.darcs

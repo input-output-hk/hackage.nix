@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ipprint = {
+        "ipprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src

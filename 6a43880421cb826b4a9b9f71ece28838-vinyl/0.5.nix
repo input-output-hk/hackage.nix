@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        vinyl = {
+        "vinyl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lens
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          bench-builder-all = {
+          "bench-builder-all" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

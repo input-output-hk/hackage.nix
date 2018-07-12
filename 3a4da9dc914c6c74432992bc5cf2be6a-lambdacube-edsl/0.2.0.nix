@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdacube-edsl = {
+        "lambdacube-edsl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

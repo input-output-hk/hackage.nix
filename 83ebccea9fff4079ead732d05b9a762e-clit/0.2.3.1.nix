@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clit = {
+        "clit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          tweet = {
+          "tweet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clit

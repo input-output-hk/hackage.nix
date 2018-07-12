@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassava-embed = {
+        "cassava-embed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cassava
@@ -32,12 +32,12 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cassava
               hsPkgs.template-haskell
-            ] ++ (if _flags.build-examples && (compiler.isGhc && compiler.version.lt "8.0.1")
+            ] ++ pkgs.lib.optionals _flags.build-examples (if compiler.isGhc && compiler.version.lt "8.0.1"
               then [
                 hsPkgs.cassava-embed
                 hsPkgs.th-lift

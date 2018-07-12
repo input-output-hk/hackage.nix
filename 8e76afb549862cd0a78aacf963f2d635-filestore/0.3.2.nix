@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        filestore = {
+        "filestore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

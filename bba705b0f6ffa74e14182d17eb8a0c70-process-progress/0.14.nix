@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        process-progress = {
+        "process-progress" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        selda = {
+        "selda" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring

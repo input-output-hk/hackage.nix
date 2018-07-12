@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        projection = {
+        "projection" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

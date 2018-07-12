@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        casadi-bindings-ipopt-interface = {
+        "casadi-bindings-ipopt-interface" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

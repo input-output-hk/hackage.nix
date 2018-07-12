@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        compact-mutable = {
+        "compact-mutable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.prim-array

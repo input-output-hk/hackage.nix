@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kibro = {
+        "kibro" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HDBC
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          kibro = {
+          "kibro" = {
             depends  = [
               hsPkgs.base
               hsPkgs.regex-compat

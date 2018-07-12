@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        archlinux = {
+        "archlinux" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          recdeps = {
+          "recdeps" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

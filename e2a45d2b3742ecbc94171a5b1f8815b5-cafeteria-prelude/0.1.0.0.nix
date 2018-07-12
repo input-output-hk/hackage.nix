@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cafeteria-prelude = {
+        "cafeteria-prelude" = {
           depends  = [ hsPkgs.base ];
         };
       };

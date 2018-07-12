@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-variates = {
+        "random-variates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,14 +32,14 @@ let
           ];
         };
         tests = {
-          vis = {
+          "vis" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
               hsPkgs.random-variates
             ];
           };
-          units = {
+          "units" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

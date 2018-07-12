@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bad-context-sharing = {
+          "bad-context-sharing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

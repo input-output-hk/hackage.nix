@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        strelka-core = {
+        "strelka-core" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.text

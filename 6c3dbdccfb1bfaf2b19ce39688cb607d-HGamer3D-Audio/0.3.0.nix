@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-Audio = {
+        "HGamer3D-Audio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HGamer3D-Data

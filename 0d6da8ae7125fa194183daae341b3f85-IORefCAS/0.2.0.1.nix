@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        IORefCAS = {
+        "IORefCAS" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-IORefCAS = {
+          "test-IORefCAS" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

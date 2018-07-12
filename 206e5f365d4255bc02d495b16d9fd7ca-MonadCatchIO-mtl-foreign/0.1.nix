@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MonadCatchIO-mtl-foreign = {
+        "MonadCatchIO-mtl-foreign" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MonadCatchIO-mtl

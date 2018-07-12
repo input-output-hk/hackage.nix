@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tidal-serial = {
+        "tidal-serial" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tidal

@@ -26,7 +26,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hsqml = {
+        "hsqml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -45,26 +45,26 @@ let
               pkgs."stdc++"
             ]
             else [ pkgs."stdc++" ];
-          frameworks = pkgs.lib.optionals (!(system.isWindows && !_flags.usepkgconfig) && (system.isOsx && !_flags.usepkgconfig)) [
+          frameworks = pkgs.lib.optionals (!(system.isWindows && !_flags.usepkgconfig)) (pkgs.lib.optionals (system.isOsx && !_flags.usepkgconfig) [
             pkgs.QtCore
             pkgs.QtGui
             pkgs.QtWidgets
             pkgs.QtQml
             pkgs.QtQuick
-          ];
-          pkgconfig = pkgs.lib.optionals (!(system.isWindows && !_flags.usepkgconfig) && !(system.isOsx && !_flags.usepkgconfig)) [
+          ]);
+          pkgconfig = pkgs.lib.optionals (!(system.isWindows && !_flags.usepkgconfig)) (pkgs.lib.optionals (!(system.isOsx && !_flags.usepkgconfig)) [
             pkgconfPkgs.Qt5Core
             pkgconfPkgs.Qt5Gui
             pkgconfPkgs.Qt5Widgets
             pkgconfPkgs.Qt5Qml
             pkgconfPkgs.Qt5Quick
-          ];
+          ]);
           build-tools = [
             hsPkgs.buildPackages.c2hs
           ];
         };
         tests = {
-          hsqml-test1 = {
+          "hsqml-test1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

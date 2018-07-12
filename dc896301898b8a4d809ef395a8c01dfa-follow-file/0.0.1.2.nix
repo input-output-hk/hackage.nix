@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        follow-file = {
+        "follow-file" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          follow-file = {
+          "follow-file" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

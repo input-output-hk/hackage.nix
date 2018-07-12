@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          inch = {
+          "inch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.IndentParser
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          test-inch = {
+          "test-inch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.IndentParser

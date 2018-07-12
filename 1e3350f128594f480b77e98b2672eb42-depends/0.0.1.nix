@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          depends = {
+          "depends" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -34,7 +34,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

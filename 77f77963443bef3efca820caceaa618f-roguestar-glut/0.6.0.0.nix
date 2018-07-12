@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          roguestar-glut = {
+          "roguestar-glut" = {
             depends  = [
               hsPkgs.base
               hsPkgs.roguestar-gl

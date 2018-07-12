@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          cabal-debian = {
+          "cabal-debian" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

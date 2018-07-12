@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pretty-sop = {
+        "pretty-sop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.generics-sop

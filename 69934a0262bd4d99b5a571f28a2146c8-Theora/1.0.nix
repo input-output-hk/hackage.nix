@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Theora = {
+        "Theora" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.ogg pkgs.theora ];
         };

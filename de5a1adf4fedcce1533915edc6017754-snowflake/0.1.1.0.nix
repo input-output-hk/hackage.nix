@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snowflake = {
+        "snowflake" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

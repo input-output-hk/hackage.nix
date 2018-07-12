@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diversity = {
+        "diversity" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          diversity = {
+          "diversity" = {
             depends  = [
               hsPkgs.diversity
               hsPkgs.base

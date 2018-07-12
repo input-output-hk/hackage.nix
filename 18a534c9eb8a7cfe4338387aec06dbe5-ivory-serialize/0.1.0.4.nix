@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ivory-serialize = {
+        "ivory-serialize" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat

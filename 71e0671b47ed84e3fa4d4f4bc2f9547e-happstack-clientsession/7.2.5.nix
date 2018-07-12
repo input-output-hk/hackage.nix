@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-clientsession = {
+        "happstack-clientsession" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

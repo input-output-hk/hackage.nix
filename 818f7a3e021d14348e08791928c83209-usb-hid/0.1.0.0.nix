@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        usb-hid = {
+        "usb-hid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

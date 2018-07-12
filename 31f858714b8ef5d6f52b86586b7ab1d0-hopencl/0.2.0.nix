@@ -20,19 +20,19 @@ let
         buildType = "Custom";
       };
       components = {
-        hopencl = {
+        "hopencl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
-          libs = pkgs.lib.optional (!system.isWindows && !system.isOsx) pkgs.OpenCL;
-          frameworks = pkgs.lib.optional (!system.isWindows && system.isOsx) pkgs.OpenCL;
+          libs = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (!system.isOsx) pkgs.OpenCL);
+          frameworks = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional system.isOsx pkgs.OpenCL);
           build-tools = [
             hsPkgs.buildPackages.c2hs
           ];
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

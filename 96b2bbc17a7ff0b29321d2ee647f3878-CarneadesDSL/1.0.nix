@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CarneadesDSL = {
+        "CarneadesDSL" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

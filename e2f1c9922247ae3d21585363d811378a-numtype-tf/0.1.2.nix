@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numtype-tf = {
+        "numtype-tf" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        direct-rocksdb = {
+        "direct-rocksdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          direct-rocksdb-test = {
+          "direct-rocksdb-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

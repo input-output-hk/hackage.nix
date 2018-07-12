@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conversion-case-insensitive = {
+        "conversion-case-insensitive" = {
           depends  = [
             hsPkgs.case-insensitive
             hsPkgs.conversion

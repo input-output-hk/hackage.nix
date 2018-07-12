@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          free-theorems-seq-webui.cgi = {
+          "free-theorems-seq-webui.cgi" = {
             depends  = [
               hsPkgs.cgi
               hsPkgs.containers

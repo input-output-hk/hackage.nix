@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-cors = {
+        "snap-cors" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

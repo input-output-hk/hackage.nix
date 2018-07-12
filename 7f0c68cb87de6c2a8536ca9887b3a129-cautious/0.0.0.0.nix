@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cautious = {
+        "cautious" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          cautious-test = {
+          "cautious-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson

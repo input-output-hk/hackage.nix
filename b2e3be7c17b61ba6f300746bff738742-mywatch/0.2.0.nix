@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mywatch = {
+          "mywatch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

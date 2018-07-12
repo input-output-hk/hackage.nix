@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        qnap-decrypt = {
+        "qnap-decrypt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          qnap-decrypt = {
+          "qnap-decrypt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          qnap-decrypt-test = {
+          "qnap-decrypt-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

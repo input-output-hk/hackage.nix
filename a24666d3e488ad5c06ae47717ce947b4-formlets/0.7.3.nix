@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        formlets = {
+        "formlets" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.mtl

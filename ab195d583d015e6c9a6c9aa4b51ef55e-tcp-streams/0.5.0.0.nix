@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tcp-streams = {
+        "tcp-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -38,12 +38,12 @@ let
             hsPkgs.HsOpenSSL
             hsPkgs.HsOpenSSL-x509-system
           ];
-          libs = if _flags.openssl && (system.isWindows || system.isWindows)
+          libs = pkgs.lib.optionals _flags.openssl (if system.isWindows || system.isWindows
             then [ pkgs.eay32 pkgs.ssl32 ]
-            else [ pkgs.crypto ];
+            else [ pkgs.crypto ]);
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.io-streams

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hback = {
+          "hback" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

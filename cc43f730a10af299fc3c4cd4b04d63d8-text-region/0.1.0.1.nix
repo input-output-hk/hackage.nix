@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-region = {
+        "text-region" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

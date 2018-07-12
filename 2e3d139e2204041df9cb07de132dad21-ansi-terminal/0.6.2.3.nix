@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ansi-terminal = {
+        "ansi-terminal" = {
           depends  = [
             hsPkgs.base
           ] ++ (if system.isWindows
@@ -31,7 +31,7 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
         };
         exes = {
-          ansi-terminal-example = {
+          "ansi-terminal-example" = {
             depends  = [
               hsPkgs.base
             ] ++ (if system.isWindows

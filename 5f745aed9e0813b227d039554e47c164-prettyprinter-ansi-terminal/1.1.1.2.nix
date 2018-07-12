@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prettyprinter-ansi-terminal = {
+        "prettyprinter-ansi-terminal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

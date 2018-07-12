@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jvm-binary = {
+        "jvm-binary" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          jvm-binary-test = {
+          "jvm-binary-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.attoparsec
@@ -65,7 +65,7 @@ let
           };
         };
         benchmarks = {
-          jvm-binary-benchmarks = {
+          "jvm-binary-benchmarks" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

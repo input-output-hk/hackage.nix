@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heckle = {
+        "heckle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          heckle = {
+          "heckle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.heckle

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-reify-many = {
+        "th-reify-many" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

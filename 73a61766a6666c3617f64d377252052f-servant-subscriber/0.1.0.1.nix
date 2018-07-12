@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-subscriber = {
+        "servant-subscriber" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.async
@@ -52,7 +52,7 @@ let
           ];
         };
         exes = {
-          psGenerator = {
+          "psGenerator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-subscriber
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          servant-subscriber-test = {
+          "servant-subscriber-test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-compat

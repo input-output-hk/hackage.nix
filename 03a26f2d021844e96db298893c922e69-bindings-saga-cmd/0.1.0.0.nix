@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-saga-cmd = {
+        "bindings-saga-cmd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          sagaPipe = {
+          "sagaPipe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -44,7 +44,7 @@ let
               hsPkgs.bindings-saga-cmd
             ];
           };
-          sagaTopo = {
+          "sagaTopo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -57,7 +57,7 @@ let
               hsPkgs.bindings-saga-cmd
             ];
           };
-          sagaLut = {
+          "sagaLut" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bindings-saga-cmd

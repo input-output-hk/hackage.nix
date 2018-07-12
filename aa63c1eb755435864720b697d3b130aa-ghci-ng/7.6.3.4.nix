@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ghci-ng = {
+          "ghci-ng" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

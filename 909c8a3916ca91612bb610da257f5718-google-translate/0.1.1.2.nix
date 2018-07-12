@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        google-translate = {
+        "google-translate" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

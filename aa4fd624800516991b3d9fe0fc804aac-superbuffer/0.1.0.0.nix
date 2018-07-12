@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        superbuffer = {
+        "superbuffer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          sbuf-bench = {
+          "sbuf-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

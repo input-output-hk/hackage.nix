@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kan-extensions = {
+        "kan-extensions" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

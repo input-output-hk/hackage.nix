@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ripple-federation = {
+        "ripple-federation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

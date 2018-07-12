@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ffmpeg-light = {
+        "ffmpeg-light" = {
           depends  = [
             hsPkgs.base
             hsPkgs.either
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -60,7 +60,7 @@ let
               hsPkgs.time
             ];
           };
-          raster = {
+          "raster" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector
@@ -72,7 +72,7 @@ let
               hsPkgs.Rasterific
             ];
           };
-          vplay = {
+          "vplay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -85,7 +85,7 @@ let
               hsPkgs.sdl2
             ];
           };
-          transcode = {
+          "transcode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.JuicyPixels

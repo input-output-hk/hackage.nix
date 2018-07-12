@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        restyle = {
+        "restyle" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          restyle = {
+          "restyle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

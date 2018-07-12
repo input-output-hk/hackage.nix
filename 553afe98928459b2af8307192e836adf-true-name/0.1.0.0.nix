@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        true-name = {
+        "true-name" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

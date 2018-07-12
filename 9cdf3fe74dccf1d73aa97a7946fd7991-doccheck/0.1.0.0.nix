@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          doccheck = {
+          "doccheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

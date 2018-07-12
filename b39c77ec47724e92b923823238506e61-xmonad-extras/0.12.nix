@@ -30,7 +30,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad-extras = {
+        "xmonad-extras" = {
           depends  = ((((([
             hsPkgs.mtl
             hsPkgs.unix
@@ -52,7 +52,7 @@ let
             ])) ++ pkgs.lib.optionals (_flags.with_parsec && _flags.with_split) [
             hsPkgs.parsec
             hsPkgs.split
-          ]) ++ [
+          ]) ++ pkgs.lib.optionals _flags.with_hint [
             hsPkgs.hint
             hsPkgs.network
           ]) ++ pkgs.lib.optionals _flags.with_mpd [

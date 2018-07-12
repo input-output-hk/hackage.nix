@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-ste = {
+        "monad-ste" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

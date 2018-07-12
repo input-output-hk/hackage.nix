@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskakafka = {
+        "haskakafka" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,14 +34,14 @@ let
           ];
         };
         exes = {
-          simple = {
+          "simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskakafka
               hsPkgs.bytestring
             ];
           };
-          basic = {
+          "basic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskakafka
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

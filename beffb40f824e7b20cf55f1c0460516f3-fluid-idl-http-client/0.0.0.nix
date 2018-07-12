@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fluid-idl-http-client = {
+        "fluid-idl-http-client" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

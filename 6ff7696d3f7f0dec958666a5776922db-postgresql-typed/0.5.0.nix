@@ -28,7 +28,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-typed = {
+        "postgresql-typed" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.array
@@ -55,7 +55,7 @@ let
             else (pkgs.lib.optional _flags.text hsPkgs.text ++ pkgs.lib.optional _flags.uuid hsPkgs.uuid) ++ pkgs.lib.optional _flags.scientific hsPkgs.scientific)) ++ pkgs.lib.optional _flags.aeson hsPkgs.aeson) ++ pkgs.lib.optional _flags.hdbc hsPkgs.HDBC;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network
@@ -65,7 +65,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          hdbc = {
+          "hdbc" = {
             depends  = pkgs.lib.optionals _flags.hdbc [
               hsPkgs.base
               hsPkgs.network

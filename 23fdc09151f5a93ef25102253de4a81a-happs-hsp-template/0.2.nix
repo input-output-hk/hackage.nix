@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happs-hsp-template = {
+        "happs-hsp-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

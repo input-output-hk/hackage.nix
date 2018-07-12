@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snake-game = {
+        "snake-game" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL

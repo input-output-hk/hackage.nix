@@ -28,7 +28,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-money = {
+        "safe-money" = {
           depends  = (((((([
             hsPkgs.base
             hsPkgs.binary
@@ -38,7 +38,7 @@ let
           ] ++ pkgs.lib.optional _flags.aeson hsPkgs.aeson) ++ pkgs.lib.optional _flags.cereal hsPkgs.cereal) ++ pkgs.lib.optional _flags.hashable hsPkgs.hashable) ++ pkgs.lib.optional _flags.serialise hsPkgs.serialise) ++ pkgs.lib.optional (_flags.store && !(compiler.isGhcjs && true)) hsPkgs.store) ++ pkgs.lib.optional _flags.vector-space hsPkgs.vector-space) ++ pkgs.lib.optional _flags.xmlbf hsPkgs.xmlbf;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = (((((([
               hsPkgs.base
               hsPkgs.binary

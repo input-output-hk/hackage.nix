@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        proj4-hs-bindings = {
+        "proj4-hs-bindings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

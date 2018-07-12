@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        Adaptive = {
+        "Adaptive" = {
           depends  = [ hsPkgs.base ];
         };
-        exes = { spreadsheet = {}; };
+        exes = { "spreadsheet" = {}; };
       };
     }

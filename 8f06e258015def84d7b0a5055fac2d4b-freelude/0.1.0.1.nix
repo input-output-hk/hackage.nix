@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        freelude = {
+        "freelude" = {
           depends  = [
             hsPkgs.base
             hsPkgs.indextype
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.indextype
@@ -39,7 +39,7 @@ let
               hsPkgs.array
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

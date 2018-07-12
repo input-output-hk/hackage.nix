@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-syb-utils = {
+        "ghc-syb-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb
@@ -32,7 +32,7 @@ let
             ]);
         };
         tests = {
-          regression-tests = {
+          "regression-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

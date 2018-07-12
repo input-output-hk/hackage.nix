@@ -27,7 +27,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer-inference = {
+        "synthesizer-inference" = {
           depends  = [
             hsPkgs.synthesizer-core
             hsPkgs.transformers
@@ -46,6 +46,6 @@ let
               hsPkgs.special-functors
             ]);
         };
-        exes = { alinea = {}; };
+        exes = { "alinea" = {}; };
       };
     }

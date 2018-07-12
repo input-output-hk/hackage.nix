@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tokenizer-monad = {
+        "tokenizer-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

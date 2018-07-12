@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fault-tree = {
+        "fault-tree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yices

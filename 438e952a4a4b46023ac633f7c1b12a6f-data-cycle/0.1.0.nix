@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-cycle = {
+        "data-cycle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.collections-api

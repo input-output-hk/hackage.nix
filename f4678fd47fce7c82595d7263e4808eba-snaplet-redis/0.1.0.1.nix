@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-redis = {
+        "snaplet-redis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-lens

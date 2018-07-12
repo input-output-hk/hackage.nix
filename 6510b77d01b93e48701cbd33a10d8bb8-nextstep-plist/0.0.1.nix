@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nextstep-plist = {
+        "nextstep-plist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

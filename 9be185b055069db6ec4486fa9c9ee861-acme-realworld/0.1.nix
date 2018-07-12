@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-realworld = {
+        "acme-realworld" = {
           depends  = [ hsPkgs.base ];
         };
       };

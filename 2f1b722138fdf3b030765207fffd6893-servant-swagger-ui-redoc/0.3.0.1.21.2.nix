@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-swagger-ui-redoc = {
+        "servant-swagger-ui-redoc" = {
           depends  = [
             hsPkgs.servant-swagger-ui-core
             hsPkgs.base

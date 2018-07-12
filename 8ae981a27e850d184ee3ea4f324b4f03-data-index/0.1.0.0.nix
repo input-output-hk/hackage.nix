@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        data-index = {
+        "data-index" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

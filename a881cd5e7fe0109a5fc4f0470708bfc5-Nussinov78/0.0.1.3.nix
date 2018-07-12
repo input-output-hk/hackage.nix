@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Nussinov78 = {
+        "Nussinov78" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -33,6 +33,6 @@ let
             hsPkgs.ADPfusion
           ];
         };
-        exes = { Nussinov78 = {}; };
+        exes = { "Nussinov78" = {}; };
       };
     }

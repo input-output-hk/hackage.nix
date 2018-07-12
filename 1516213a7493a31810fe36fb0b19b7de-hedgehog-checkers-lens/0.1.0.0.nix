@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedgehog-checkers-lens = {
+        "hedgehog-checkers-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hedgehog
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedgehog

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polar-configfile = {
+        "polar-configfile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-polar-configfile = {
+          "test-polar-configfile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

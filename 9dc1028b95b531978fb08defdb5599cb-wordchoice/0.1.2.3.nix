@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wordchoice = {
+        "wordchoice" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pandoc
@@ -42,7 +42,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "7.10") hsPkgs.transformers;
         };
         exes = {
-          wrd = {
+          "wrd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wordchoice
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          wordchoice-test = {
+          "wordchoice-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wordchoice
@@ -58,7 +58,7 @@ let
           };
         };
         benchmarks = {
-          wordchoice-bench = {
+          "wordchoice-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

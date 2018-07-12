@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stack-type = {
+        "stack-type" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

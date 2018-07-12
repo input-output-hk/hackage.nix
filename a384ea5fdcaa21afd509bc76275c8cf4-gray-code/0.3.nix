@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        gray-code = {
+        "gray-code" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test-qc = {
+          "test-qc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

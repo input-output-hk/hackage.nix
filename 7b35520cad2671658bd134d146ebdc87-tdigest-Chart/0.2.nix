@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tdigest-Chart = {
+        "tdigest-Chart" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tdigest-chart-examples = {
+          "tdigest-chart-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

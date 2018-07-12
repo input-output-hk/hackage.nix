@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        meep = {
+        "meep" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -38,7 +38,7 @@ let
               hsPkgs.semigroups
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

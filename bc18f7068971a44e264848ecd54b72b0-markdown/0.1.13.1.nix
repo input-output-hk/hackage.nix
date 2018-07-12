@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        markdown = {
+        "markdown" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.markdown
               hsPkgs.base

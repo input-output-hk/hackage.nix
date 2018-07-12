@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Barracuda = {
+        "Barracuda" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Crypto
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          Barracuda = {
+          "Barracuda" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Crypto

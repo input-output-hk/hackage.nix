@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          kit = {
+          "kit" = {
             depends  = [
               hsPkgs.process
               hsPkgs.network

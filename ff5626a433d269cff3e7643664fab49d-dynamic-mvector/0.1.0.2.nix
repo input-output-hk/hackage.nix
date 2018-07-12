@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dynamic-mvector = {
+        "dynamic-mvector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive

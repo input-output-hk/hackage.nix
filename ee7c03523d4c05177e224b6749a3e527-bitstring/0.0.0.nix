@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bitstring = {
+        "bitstring" = {
           depends  = ([
             hsPkgs.bytestring
           ] ++ [

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        derangement = {
+        "derangement" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fgl

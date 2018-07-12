@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Ninjas = {
+          "Ninjas" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

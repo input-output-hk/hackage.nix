@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        async-extras = {
+        "async-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

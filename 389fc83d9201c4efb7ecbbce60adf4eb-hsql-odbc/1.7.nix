@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hsql-odbc = {
+        "hsql-odbc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsql

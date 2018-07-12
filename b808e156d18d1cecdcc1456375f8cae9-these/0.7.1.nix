@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        these = {
+        "these" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.aeson
@@ -43,7 +43,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.5") hsPkgs.ghc-prim) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.these
               hsPkgs.base

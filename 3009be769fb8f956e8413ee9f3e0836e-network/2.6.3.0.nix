@@ -20,14 +20,14 @@ let
         buildType = "Configure";
       };
       components = {
-        network = {
+        "network" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
         };
         tests = {
-          simple = {
+          "simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          regression = {
+          "regression" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
               hsPkgs.test-framework-hunit
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal = {
+        "cabal" = {
           depends  = [
             hsPkgs.youProbablyWantCapitalCabal
             hsPkgs.base

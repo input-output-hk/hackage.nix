@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        messagepack = {
+        "messagepack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          messagepack-tests = {
+          "messagepack-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        PerfectHash = {
+        "PerfectHash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

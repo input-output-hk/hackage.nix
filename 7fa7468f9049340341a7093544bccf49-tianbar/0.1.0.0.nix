@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tianbar = {
+          "tianbar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.split

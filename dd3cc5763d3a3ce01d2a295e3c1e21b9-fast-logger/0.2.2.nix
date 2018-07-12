@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fast-logger = {
+        "fast-logger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -39,7 +39,7 @@ let
             ]);
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

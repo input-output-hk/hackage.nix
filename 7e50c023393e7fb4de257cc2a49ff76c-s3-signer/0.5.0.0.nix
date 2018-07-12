@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        s3-signer = {
+        "s3-signer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base64-bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test-simple = {
+          "test-simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base64-bytestring

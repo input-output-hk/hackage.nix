@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        EstProgress = {
+        "EstProgress" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hasktags = {
+          "hasktags" = {
             depends  = [
               hsPkgs.utf8-string
               hsPkgs.base

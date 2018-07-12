@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yampa-glut = {
+        "yampa-glut" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenGL

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        doctest-prop = {
+        "doctest-prop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

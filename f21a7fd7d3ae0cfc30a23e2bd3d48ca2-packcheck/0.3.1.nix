@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        packcheck = {
+        "packcheck" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.packcheck
               hsPkgs.base
@@ -32,7 +32,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.packcheck
               hsPkgs.base

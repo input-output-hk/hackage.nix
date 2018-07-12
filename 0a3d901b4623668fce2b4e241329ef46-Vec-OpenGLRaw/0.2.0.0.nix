@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Vec-OpenGLRaw = {
+        "Vec-OpenGLRaw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Vec

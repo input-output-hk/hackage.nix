@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gtk-toy = {
+        "gtk-toy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

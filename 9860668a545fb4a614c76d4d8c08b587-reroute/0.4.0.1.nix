@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reroute = {
+        "reroute" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          reroute-test = {
+          "reroute-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          reroute-benchmarks = {
+          "reroute-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

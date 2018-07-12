@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-serverlessrepo = {
+        "amazonka-serverlessrepo" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-serverlessrepo-test = {
+          "amazonka-serverlessrepo-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

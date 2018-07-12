@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-hq9plus = {
+        "acme-hq9plus" = {
           depends  = [ hsPkgs.base ];
         };
       };

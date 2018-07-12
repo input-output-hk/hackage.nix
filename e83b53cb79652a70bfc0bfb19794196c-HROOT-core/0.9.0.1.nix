@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HROOT-core = {
+        "HROOT-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fficxx

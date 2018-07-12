@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text1 = {
+        "text1" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          hunit = {
+          "hunit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -39,7 +39,7 @@ let
               hsPkgs.text1
             ];
           };
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

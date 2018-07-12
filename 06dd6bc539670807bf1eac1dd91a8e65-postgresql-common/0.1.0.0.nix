@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-common = {
+        "postgresql-common" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          postgresql-common-test = {
+          "postgresql-common-test" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

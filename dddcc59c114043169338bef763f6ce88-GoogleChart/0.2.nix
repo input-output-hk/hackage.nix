@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        GoogleChart = {
+        "GoogleChart" = {
           depends  = [ hsPkgs.base ];
         };
       };

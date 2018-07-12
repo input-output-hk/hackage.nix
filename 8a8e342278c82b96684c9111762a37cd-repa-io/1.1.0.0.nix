@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repa-io = {
+        "repa-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dph-prim-par

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gi-javascriptcore = {
+        "gi-javascriptcore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

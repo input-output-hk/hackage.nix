@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-random = {
+        "vector-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mersenne-random

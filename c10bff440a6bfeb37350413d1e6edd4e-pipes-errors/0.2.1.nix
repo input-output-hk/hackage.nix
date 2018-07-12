@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-errors = {
+        "pipes-errors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.errors

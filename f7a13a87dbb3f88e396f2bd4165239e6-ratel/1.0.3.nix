@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ratel = {
+        "ratel" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

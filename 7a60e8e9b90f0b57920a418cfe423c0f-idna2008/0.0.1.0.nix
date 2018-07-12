@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        idna2008 = {
+        "idna2008" = {
           depends  = [
             hsPkgs.base
             hsPkgs.punycode

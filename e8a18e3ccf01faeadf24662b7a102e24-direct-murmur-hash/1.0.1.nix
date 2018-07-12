@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        direct-murmur-hash = {
+        "direct-murmur-hash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

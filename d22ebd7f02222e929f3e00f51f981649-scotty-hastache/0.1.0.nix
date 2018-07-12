@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scotty-hastache = {
+        "scotty-hastache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

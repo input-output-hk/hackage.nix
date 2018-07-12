@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        btrfs = {
+        "btrfs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          btrfs-defrag = {
+          "btrfs-defrag" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.btrfs
@@ -42,13 +42,13 @@ let
               hsPkgs.filepath
             ];
           };
-          btrfs-clone-range = {
+          "btrfs-clone-range" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.btrfs
             ];
           };
-          btrfs-list-subvols = {
+          "btrfs-list-subvols" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.btrfs

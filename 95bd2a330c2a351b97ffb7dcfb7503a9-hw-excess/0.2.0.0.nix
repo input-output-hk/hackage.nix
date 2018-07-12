@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-excess = {
+        "hw-excess" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hw-bits
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          hw-excess-test = {
+          "hw-excess-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

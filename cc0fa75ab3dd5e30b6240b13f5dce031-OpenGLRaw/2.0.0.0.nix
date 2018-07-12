@@ -23,14 +23,14 @@ let
         buildType = "Simple";
       };
       components = {
-        OpenGLRaw = {
+        "OpenGLRaw" = {
           depends  = [ hsPkgs.base ];
           libs = if system.isWindows && _flags.usenativewindowslibraries
             then [ pkgs.opengl32 ]
-            else pkgs.lib.optional (!system.isOsx && !system.isIos) pkgs.GL;
-          frameworks = if !(system.isWindows && _flags.usenativewindowslibraries) && system.isOsx
+            else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (!system.isIos) pkgs.GL);
+          frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (if system.isOsx
             then [ pkgs.OpenGL ]
-            else pkgs.lib.optional system.isIos pkgs.OpenGLES;
+            else pkgs.lib.optional system.isIos pkgs.OpenGLES);
         };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-timeout = {
+        "data-timeout" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagged

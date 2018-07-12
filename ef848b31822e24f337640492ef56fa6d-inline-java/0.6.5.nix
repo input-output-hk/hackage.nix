@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inline-java = {
+        "inline-java" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        minimorph = {
+        "minimorph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         tests = {
-          test-minimorph = {
+          "test-minimorph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

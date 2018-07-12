@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geojson-types = {
+        "geojson-types" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

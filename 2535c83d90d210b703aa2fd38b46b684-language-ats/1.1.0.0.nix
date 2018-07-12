@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-ats = {
+        "language-ats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          language-ats-test = {
+          "language-ats-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-ats
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          language-ats-bench = {
+          "language-ats-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.language-ats

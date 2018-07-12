@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-core = {
+        "hspec-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

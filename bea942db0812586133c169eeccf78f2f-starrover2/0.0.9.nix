@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          starrover2 = {
+          "starrover2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

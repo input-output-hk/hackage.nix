@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger-lib = {
+        "hledger-lib" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.base-compat
@@ -62,7 +62,7 @@ let
             else [ hsPkgs.time ]);
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.base-compat
@@ -103,7 +103,7 @@ let
               ]
               else [ hsPkgs.time ]);
           };
-          hunittests = {
+          "hunittests" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.base-compat

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tldr = {
+        "tldr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmark
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          tldr = {
+          "tldr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tldr
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          tldr-test = {
+          "tldr-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tldr

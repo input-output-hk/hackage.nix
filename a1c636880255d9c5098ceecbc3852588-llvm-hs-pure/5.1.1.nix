@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-hs-pure = {
+        "llvm-hs-pure" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
             else [ hsPkgs.base ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.tasty
               hsPkgs.tasty-hunit
@@ -56,7 +56,7 @@ let
               ]
               else [ hsPkgs.base ]);
           };
-          test-irbuilder = {
+          "test-irbuilder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

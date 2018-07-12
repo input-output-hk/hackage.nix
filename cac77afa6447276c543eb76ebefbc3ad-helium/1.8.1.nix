@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        helium = {
+        "helium" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          helium = {
+          "helium" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -53,7 +53,7 @@ let
               hsPkgs.lvmlib
             ];
           };
-          texthint = {
+          "texthint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -64,7 +64,7 @@ let
               hsPkgs.process
             ];
           };
-          runhelium = {
+          "runhelium" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -74,7 +74,7 @@ let
               hsPkgs.process
             ];
           };
-          heliumpath = {
+          "heliumpath" = {
             depends  = [ hsPkgs.base ];
           };
         };

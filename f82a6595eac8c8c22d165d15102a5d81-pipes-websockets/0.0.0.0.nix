@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-websockets = {
+        "pipes-websockets" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.pipes-websockets
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-globals = {
+        "safe-globals" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

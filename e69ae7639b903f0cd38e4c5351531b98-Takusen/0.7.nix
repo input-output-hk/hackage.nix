@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Takusen = {
+        "Takusen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hclip = {
+        "Hclip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

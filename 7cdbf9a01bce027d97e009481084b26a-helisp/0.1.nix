@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          helisp = {
+          "helisp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

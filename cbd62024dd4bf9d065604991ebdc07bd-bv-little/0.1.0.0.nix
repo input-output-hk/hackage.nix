@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bv-little = {
+        "bv-little" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          test-suite = {
+          "test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bv-little
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-suite = {
+          "benchmark-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bv-little

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AC-Colour = {
+        "AC-Colour" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

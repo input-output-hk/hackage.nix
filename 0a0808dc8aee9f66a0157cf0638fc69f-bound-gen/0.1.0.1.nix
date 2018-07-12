@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bound-gen = {
+        "bound-gen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bound

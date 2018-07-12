@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-cctools = {
+        "bindings-cctools" = {
           depends  = ([
             hsPkgs.bindings-DSL
           ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.base) ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.base;

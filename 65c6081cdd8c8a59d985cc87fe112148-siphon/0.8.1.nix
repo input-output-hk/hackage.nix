@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        siphon = {
+        "siphon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colonnade
@@ -33,14 +33,14 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.siphon
               hsPkgs.doctest
             ];
           };
-          siphon-test = {
+          "siphon-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.either

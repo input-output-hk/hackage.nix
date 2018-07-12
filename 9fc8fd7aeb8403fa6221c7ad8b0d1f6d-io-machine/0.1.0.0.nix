@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        io-machine = {
+        "io-machine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
           ];
         };
         tests = {
-          io-machine-test = {
+          "io-machine-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.io-machine

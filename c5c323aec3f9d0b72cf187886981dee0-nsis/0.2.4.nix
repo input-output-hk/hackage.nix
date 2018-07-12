@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nsis = {
+        "nsis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          shake-test = {
+          "shake-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

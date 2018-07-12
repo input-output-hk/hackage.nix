@@ -22,14 +22,14 @@ let
         buildType = "Simple";
       };
       components = {
-        easytensor = {
+        "easytensor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dimensions
           ];
         };
         tests = {
-          et-test = {
+          "et-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -40,14 +40,14 @@ let
           };
         };
         benchmarks = {
-          et-bench-misc = {
+          "et-bench-misc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.easytensor
               hsPkgs.dimensions
             ];
           };
-          et-bench-spfolds = {
+          "et-bench-spfolds" = {
             depends  = [
               hsPkgs.base
               hsPkgs.easytensor

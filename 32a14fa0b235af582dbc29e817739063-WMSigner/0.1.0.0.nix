@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WMSigner = {
+        "WMSigner" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          test-WMSigner = {
+          "test-WMSigner" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

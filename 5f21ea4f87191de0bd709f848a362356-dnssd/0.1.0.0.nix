@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dnssd = {
+        "dnssd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

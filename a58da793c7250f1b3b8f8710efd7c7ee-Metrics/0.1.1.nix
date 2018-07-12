@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Metrics = {
+        "Metrics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hstats

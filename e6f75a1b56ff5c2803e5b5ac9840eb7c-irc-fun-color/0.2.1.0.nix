@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        irc-fun-color = {
+        "irc-fun-color" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dlist
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.irc-fun-color

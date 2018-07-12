@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logger-thread = {
+        "logger-thread" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          logger-thread-exe = {
+          "logger-thread-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.logger-thread

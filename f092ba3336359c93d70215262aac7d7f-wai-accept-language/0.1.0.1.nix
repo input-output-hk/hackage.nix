@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-accept-language = {
+        "wai-accept-language" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          wai-accept-language-exe = {
+          "wai-accept-language-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-accept-language

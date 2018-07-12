@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        future-resource = {
+        "future-resource" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

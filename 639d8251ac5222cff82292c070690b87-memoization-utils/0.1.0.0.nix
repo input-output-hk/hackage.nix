@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memoization-utils = {
+        "memoization-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time-units

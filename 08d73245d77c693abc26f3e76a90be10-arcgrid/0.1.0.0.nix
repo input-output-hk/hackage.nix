@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arcgrid = {
+        "arcgrid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          arcgrid-dump = {
+          "arcgrid-dump" = {
             depends  = [
               hsPkgs.base
               hsPkgs.arcgrid

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sexp = {
+        "sexp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          sexp = {
+          "sexp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          conversions = {
+          "conversions" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

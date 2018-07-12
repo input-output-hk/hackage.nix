@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        not-gloss = {
+        "not-gloss" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GLUT

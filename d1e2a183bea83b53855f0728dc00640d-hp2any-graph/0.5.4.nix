@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hp2any-graph = {
+        "hp2any-graph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hp2any-core
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hp2any-graph = {
+          "hp2any-graph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -44,7 +44,7 @@ let
             ];
             libs = [ pkgs.glut ];
           };
-          hp2any-relay = {
+          "hp2any-relay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

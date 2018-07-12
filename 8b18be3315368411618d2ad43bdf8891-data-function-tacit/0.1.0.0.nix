@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-function-tacit = {
+        "data-function-tacit" = {
           depends  = [ hsPkgs.base ];
         };
       };

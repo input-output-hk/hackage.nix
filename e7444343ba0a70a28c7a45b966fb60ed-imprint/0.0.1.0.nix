@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        imprint = {
+        "imprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

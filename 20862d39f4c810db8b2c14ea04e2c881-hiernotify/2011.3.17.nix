@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hiernotify = {
+        "hiernotify" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

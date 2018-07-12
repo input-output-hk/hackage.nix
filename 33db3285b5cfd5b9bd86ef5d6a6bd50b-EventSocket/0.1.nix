@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        EventSocket = {
+        "EventSocket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

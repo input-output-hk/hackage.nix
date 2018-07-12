@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pvss = {
+        "pvss" = {
           depends  = [
             hsPkgs.base
             hsPkgs.memory
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          pvss-exe = {
+          "pvss-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          pvss-test = {
+          "pvss-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cryptonite

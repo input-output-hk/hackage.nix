@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        menoh = {
+        "menoh" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          vgg16_example = {
+          "vgg16_example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.JuicyPixels
@@ -44,7 +44,7 @@ let
               hsPkgs.vector
             ];
           };
-          mnist_example = {
+          "mnist_example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

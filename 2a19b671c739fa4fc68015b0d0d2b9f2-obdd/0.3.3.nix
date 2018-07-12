@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        obdd = {
+        "obdd" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -30,14 +30,14 @@ let
           ];
         };
         tests = {
-          obdd-placement = {
+          "obdd-placement" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.obdd
             ];
           };
-          obdd-queens = {
+          "obdd-queens" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

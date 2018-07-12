@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbus-client = {
+        "dbus-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dbus-core

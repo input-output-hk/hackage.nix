@@ -24,14 +24,14 @@ let
       };
       components = {
         exes = {
-          mbox-counting = {
+          "mbox-counting" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.codec-mbox
             ];
           };
-          mbox-average-size = {
+          "mbox-average-size" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -39,14 +39,14 @@ let
               hsPkgs.fclabels
             ];
           };
-          mbox-quoting = {
+          "mbox-quoting" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.codec-mbox
             ];
           };
-          redact-mbox = {
+          "redact-mbox" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -55,7 +55,7 @@ let
               hsPkgs.random
             ];
           };
-          mbox-list = {
+          "mbox-list" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -67,7 +67,7 @@ let
               hsPkgs.mtl
             ];
           };
-          mbox-pick = {
+          "mbox-pick" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -79,7 +79,7 @@ let
               hsPkgs.mtl
             ];
           };
-          mbox-partition = {
+          "mbox-partition" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -92,7 +92,7 @@ let
               hsPkgs.containers
             ];
           };
-          mbox-grep = {
+          "mbox-grep" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -104,7 +104,7 @@ let
               hsPkgs.mtl
             ] ++ pkgs.lib.optional _flags.use_hutt hsPkgs.hutt;
           };
-          split-mbox = {
+          "split-mbox" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -116,7 +116,7 @@ let
               hsPkgs.mtl
             ];
           };
-          mbox-iter = {
+          "mbox-iter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -129,7 +129,7 @@ let
               hsPkgs.process
             ];
           };
-          mbox-from-files = {
+          "mbox-from-files" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

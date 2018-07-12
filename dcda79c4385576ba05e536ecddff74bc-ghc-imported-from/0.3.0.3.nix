@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-imported-from = {
+        "ghc-imported-from" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb
@@ -47,14 +47,14 @@ let
           ] ++ [ hsPkgs.Cabal ];
         };
         exes = {
-          fake-ghc-for-ghc-imported-from = {
+          "fake-ghc-for-ghc-imported-from" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
               hsPkgs.process-streaming
             ];
           };
-          ghc-imported-from = {
+          "ghc-imported-from" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb
@@ -83,7 +83,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.syb

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-llvm-ptx = {
+        "accelerate-llvm-ptx" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          nofib-llvm-ptx = {
+          "nofib-llvm-ptx" = {
             depends  = [
               hsPkgs.base
               hsPkgs.accelerate

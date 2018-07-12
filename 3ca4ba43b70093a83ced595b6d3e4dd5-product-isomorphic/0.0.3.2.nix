@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        product-isomorphic = {
+        "product-isomorphic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && false) hsPkgs.ghc-prim;
         };
         tests = {
-          th = {
+          "th" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

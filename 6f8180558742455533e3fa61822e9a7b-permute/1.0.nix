@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        permute = {
+        "permute" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.base

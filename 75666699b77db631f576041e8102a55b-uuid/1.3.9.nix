@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuid = {
+        "uuid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          testuuid = {
+          "testuuid" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uuid
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uuid

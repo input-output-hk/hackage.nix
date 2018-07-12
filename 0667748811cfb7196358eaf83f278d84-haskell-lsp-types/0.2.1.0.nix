@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-lsp-types = {
+        "haskell-lsp-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

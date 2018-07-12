@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        myo = {
+        "myo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -37,7 +37,7 @@ let
           libs = [ pkgs."stdc++" ];
         };
         exes = {
-          myo-ws-example = {
+          "myo-ws-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.myo
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          myo-test = {
+          "myo-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.myo

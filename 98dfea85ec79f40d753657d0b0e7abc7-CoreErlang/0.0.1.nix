@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CoreErlang = {
+        "CoreErlang" = {
           depends  = if _flags.split-base
             then [
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        qed = {
+        "qed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          qed-test = {
+          "qed-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.qed

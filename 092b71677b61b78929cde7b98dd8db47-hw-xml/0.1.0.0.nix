@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-xml = {
+        "hw-xml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          hw-xml-example = {
+          "hw-xml-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          hw-xml-test = {
+          "hw-xml-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -81,7 +81,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

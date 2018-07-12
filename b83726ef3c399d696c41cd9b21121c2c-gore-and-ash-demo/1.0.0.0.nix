@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gore-and-ash-demo-client = {
+          "gore-and-ash-demo-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
               hsPkgs.vector
             ];
           };
-          gore-and-ash-demo-server = {
+          "gore-and-ash-demo-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

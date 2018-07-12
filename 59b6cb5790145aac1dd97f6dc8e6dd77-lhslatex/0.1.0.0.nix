@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lhslatex = {
+          "lhslatex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

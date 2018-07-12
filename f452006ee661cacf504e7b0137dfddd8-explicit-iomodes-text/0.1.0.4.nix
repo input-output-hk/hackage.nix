@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        explicit-iomodes-text = {
+        "explicit-iomodes-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

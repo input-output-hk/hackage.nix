@@ -27,7 +27,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transformers-compat = {
+        "transformers-compat" = {
           depends  = (([
             hsPkgs.base
           ] ++ (if _flags.five
@@ -44,7 +44,7 @@ let
                   ] ++ pkgs.lib.optional _flags.mtl hsPkgs.mtl
                   else [
                     hsPkgs.transformers
-                  ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" || _flags.generic-deriving) hsPkgs.ghc-prim) ++ pkgs.lib.optional (_flags.generic-deriving && (compiler.isGhc && compiler.version.lt "8.0" && _flags.generic-deriving)) hsPkgs.generic-deriving;
+                  ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2" || _flags.generic-deriving) hsPkgs.ghc-prim) ++ pkgs.lib.optionals _flags.generic-deriving (pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0" && _flags.generic-deriving) hsPkgs.generic-deriving);
         };
       };
     }

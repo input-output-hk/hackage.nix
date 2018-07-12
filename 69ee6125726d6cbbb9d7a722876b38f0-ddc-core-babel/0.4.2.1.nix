@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddc-core-babel = {
+        "ddc-core-babel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

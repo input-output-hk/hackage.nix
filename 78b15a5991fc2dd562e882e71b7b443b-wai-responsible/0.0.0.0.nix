@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-responsible = {
+        "wai-responsible" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-types

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AC-Vector-Fancy = {
+        "AC-Vector-Fancy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.AC-Angle

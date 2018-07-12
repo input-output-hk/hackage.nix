@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lol-cpp = {
+        "lol-cpp" = {
           depends  = [
             hsPkgs.arithmoi
             hsPkgs.base
@@ -53,7 +53,7 @@ let
           ];
         };
         tests = {
-          test-lol-cpp = {
+          "test-lol-cpp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lol-cpp
@@ -62,7 +62,7 @@ let
           };
         };
         benchmarks = {
-          bench-lol-cpp = {
+          "bench-lol-cpp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.DRBG

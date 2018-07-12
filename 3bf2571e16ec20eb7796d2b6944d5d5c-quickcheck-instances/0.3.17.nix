@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-instances = {
+        "quickcheck-instances" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -43,7 +43,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.nats;
         };
         tests = {
-          self-test = {
+          "self-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

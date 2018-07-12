@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-with-counterexamples = {
+        "quickcheck-with-counterexamples" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

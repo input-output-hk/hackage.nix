@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concraft-pl = {
+        "concraft-pl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.concraft
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          concraft-pl = {
+          "concraft-pl" = {
             depends  = [ hsPkgs.cmdargs ];
           };
         };

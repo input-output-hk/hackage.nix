@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-grouping = {
+        "list-grouping" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        tempus-fugit = {
+        "tempus-fugit" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          tempus = {
+          "tempus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tempus-fugit
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          tempus-test = {
+          "tempus-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tempus-fugit

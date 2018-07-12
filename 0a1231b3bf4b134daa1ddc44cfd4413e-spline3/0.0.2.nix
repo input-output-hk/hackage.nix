@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          spline3 = {
+          "spline3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -40,13 +40,13 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

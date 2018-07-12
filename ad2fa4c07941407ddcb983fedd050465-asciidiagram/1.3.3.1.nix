@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        asciidiagram = {
+        "asciidiagram" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          asciidiagram = {
+          "asciidiagram" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

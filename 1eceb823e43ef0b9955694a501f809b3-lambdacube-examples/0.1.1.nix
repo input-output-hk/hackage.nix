@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lambdacube-basic = {
+          "lambdacube-basic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lambdacube-engine
@@ -32,7 +32,7 @@ let
               hsPkgs.hslogger
             ];
           };
-          lambdacube-cameratrack = {
+          "lambdacube-cameratrack" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lambdacube-engine

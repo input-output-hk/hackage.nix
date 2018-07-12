@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wxturtle = {
+        "wxturtle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yjtools
@@ -30,6 +30,6 @@ let
             hsPkgs.wx
           ];
         };
-        exes = { testTurtle = {}; };
+        exes = { "testTurtle" = {}; };
       };
     }

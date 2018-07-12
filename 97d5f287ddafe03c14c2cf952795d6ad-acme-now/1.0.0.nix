@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-now = {
+        "acme-now" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          embeddock = {
+          "embeddock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

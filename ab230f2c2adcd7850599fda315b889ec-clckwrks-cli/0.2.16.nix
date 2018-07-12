@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          clckwrks-cli = {
+          "clckwrks-cli" = {
             depends  = [
               hsPkgs.acid-state
               hsPkgs.base

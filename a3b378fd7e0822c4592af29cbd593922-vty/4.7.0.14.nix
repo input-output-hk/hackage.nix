@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vty = {
+        "vty" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

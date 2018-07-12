@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hyperfunctions = {
+        "hyperfunctions" = {
           depends  = [
             hsPkgs.adjunctions
             hsPkgs.base

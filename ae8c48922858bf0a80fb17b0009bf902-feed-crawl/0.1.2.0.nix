@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feed-crawl = {
+        "feed-crawl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

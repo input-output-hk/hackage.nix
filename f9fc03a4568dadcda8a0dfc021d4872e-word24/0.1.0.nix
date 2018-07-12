@@ -23,13 +23,13 @@ let
         buildType = "Simple";
       };
       components = {
-        word24 = {
+        "word24" = {
           depends  = [
             hsPkgs.haskell98
           ] ++ [ hsPkgs.base ];
         };
         exes = {
-          testWord24 = {
+          "testWord24" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.QuickCheck
               hsPkgs.test-framework

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Pup-Events-Server = {
+        "Pup-Events-Server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cplex-hs = {
+        "cplex-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        riscv-isa = {
+        "riscv-isa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          riscv-isa-test = {
+          "riscv-isa-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

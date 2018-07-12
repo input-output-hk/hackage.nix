@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Hate = {
+        "Hate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.GLFW-b
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          sample_shapes = {
+          "sample_shapes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLFW-b
@@ -55,7 +55,7 @@ let
               hsPkgs.Hate
             ];
           };
-          sample_scheduler = {
+          "sample_scheduler" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLFW-b
@@ -72,7 +72,7 @@ let
               hsPkgs.lens
             ];
           };
-          sample_sprite = {
+          "sample_sprite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLFW-b
@@ -90,7 +90,7 @@ let
               hsPkgs.lens
             ];
           };
-          sample_spritesheet = {
+          "sample_spritesheet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLFW-b
@@ -108,7 +108,7 @@ let
               hsPkgs.lens
             ];
           };
-          sample_asteroids = {
+          "sample_asteroids" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLFW-b

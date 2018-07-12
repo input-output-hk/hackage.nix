@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prelude2010 = {
+        "prelude2010" = {
           depends  = [
             hsPkgs.prelude-compat
           ];

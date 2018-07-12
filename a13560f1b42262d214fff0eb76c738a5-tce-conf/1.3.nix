@@ -20,21 +20,21 @@ let
         buildType = "Simple";
       };
       components = {
-        tce-conf = {
+        "tce-conf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          KVConf-example = {
+          "KVConf-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
               hsPkgs.tce-conf
             ];
           };
-          ReadConf-example = {
+          "ReadConf-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          test-hsmisc = {
+          "test-hsmisc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

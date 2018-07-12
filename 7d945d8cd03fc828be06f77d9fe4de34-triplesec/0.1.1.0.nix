@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        triplesec = {
+        "triplesec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cryptonite
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-triplesec = {
+          "test-triplesec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -42,7 +42,7 @@ let
               hsPkgs.memory
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.triplesec

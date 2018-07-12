@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SpinCounter = {
+        "SpinCounter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-loops

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rhine-gloss = {
+        "rhine-gloss" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rhine
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          rhine-gloss-gears = {
+          "rhine-gloss-gears" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rhine-gloss

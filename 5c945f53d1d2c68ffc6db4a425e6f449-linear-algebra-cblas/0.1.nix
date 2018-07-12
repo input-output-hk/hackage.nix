@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        linear-algebra-cblas = {
+        "linear-algebra-cblas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ieee754
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          test-hs-linear-algebra = {
+          "test-hs-linear-algebra" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.test-framework

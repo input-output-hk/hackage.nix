@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reform-hsp = {
+        "reform-hsp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hsp

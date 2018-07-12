@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HSlippyMap = {
+        "HSlippyMap" = {
           depends  = [ hsPkgs.base ];
         };
       };

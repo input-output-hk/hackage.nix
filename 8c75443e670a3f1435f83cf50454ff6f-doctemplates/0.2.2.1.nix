@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        doctemplates = {
+        "doctemplates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          doctemplates-test = {
+          "doctemplates-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctemplates

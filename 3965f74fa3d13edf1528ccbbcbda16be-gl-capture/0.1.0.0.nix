@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gl-capture = {
+        "gl-capture" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

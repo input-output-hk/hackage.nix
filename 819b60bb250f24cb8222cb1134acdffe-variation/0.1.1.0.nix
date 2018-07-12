@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        variation = {
+        "variation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal

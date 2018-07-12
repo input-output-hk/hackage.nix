@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuid = {
+        "uuid" = {
           depends  = [ hsPkgs.base ];
           libs = pkgs.lib.optional (!system.isOsx) pkgs.uuid;
         };

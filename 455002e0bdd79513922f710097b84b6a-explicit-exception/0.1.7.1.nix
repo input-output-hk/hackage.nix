@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        explicit-exception = {
+        "explicit-exception" = {
           depends  = [
             hsPkgs.transformers
           ] ++ (if compiler.isJhc && true
@@ -39,17 +39,17 @@ let
               ]);
         };
         exes = {
-          ee-tar = {
+          "ee-tar" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.bytestring
               hsPkgs.tar
             ];
           };
-          ee-test = {
+          "ee-test" = {
             depends  = pkgs.lib.optional _flags.buildtests hsPkgs.bytestring;
           };
-          ee-unzip = {};
-          ee-writer = {};
+          "ee-unzip" = {};
+          "ee-writer" = {};
         };
       };
     }

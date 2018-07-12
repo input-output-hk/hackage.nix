@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        baserock-schema = {
+        "baserock-schema" = {
           depends  = [
             hsPkgs.algebraic-graphs
             hsPkgs.base
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          baserock = {
+          "baserock" = {
             depends  = [
               hsPkgs.algebraic-graphs
               hsPkgs.base
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          earthquake-test = {
+          "earthquake-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.algebraic-graphs

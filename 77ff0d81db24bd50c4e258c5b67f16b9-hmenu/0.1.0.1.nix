@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hmenu = {
+          "hmenu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        boolsimplifier = {
+        "boolsimplifier" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

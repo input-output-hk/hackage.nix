@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdabot = {
+        "lambdabot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          lambdabot = {
+          "lambdabot" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.directory

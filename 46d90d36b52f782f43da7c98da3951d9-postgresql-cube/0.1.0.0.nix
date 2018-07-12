@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgresql-cube = {
+        "postgresql-cube" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

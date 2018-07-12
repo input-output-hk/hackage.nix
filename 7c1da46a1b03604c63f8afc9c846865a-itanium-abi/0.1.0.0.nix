@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        itanium-abi = {
+        "itanium-abi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.boomerang
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          DemangleTests = {
+          "DemangleTests" = {
             depends  = [
               hsPkgs.itanium-abi
               hsPkgs.base

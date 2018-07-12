@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Imlib = {
+        "Imlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deka-tests = {
+        "deka-tests" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          deka-dectest = {
+          "deka-dectest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          deka-native = {
+          "deka-native" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

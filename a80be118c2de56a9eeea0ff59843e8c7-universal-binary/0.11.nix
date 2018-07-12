@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        universal-binary = {
+        "universal-binary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

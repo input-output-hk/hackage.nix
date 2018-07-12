@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        floatshow = {
+        "floatshow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          lentil = {
+          "lentil" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

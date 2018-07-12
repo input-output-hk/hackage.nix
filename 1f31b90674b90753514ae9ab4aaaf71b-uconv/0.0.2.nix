@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        uconv = {
+        "uconv" = {
           depends  = if _flags.bytestring_in_base
             then [ hsPkgs.base ]
             else [

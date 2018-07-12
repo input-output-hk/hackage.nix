@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        AppleScript = {
+        "AppleScript" = {
           depends  = [ hsPkgs.base ];
           frameworks = [ pkgs.Carbon ];
         };

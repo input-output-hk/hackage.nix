@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        valor = {
+        "valor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          valor-test = {
+          "valor-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

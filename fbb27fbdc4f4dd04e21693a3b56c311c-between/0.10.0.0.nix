@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        between = {
+        "between" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        star-to-star-contra = {
+        "star-to-star-contra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.star-to-star

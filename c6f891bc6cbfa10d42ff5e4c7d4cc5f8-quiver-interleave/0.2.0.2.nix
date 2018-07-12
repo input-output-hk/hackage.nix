@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        quiver-interleave = {
+        "quiver-interleave" = {
           depends  = [
             hsPkgs.base
             hsPkgs.quiver
           ];
         };
         tests = {
-          interleave-tests = {
+          "interleave-tests" = {
             depends  = [
               hsPkgs.quiver-interleave
               hsPkgs.base

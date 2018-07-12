@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gender = {
+        "gender" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          gender = {
+          "gender" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

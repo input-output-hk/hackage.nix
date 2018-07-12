@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod = {
+        "yesod" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale
@@ -53,12 +53,12 @@ let
           ];
         };
         exes = {
-          yesod = {
+          "yesod" = {
             depends  = [
               hsPkgs.file-embed
             ];
           };
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.test-framework
               hsPkgs.test-framework-quickcheck2
@@ -67,12 +67,12 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          helloworld = {};
-          hellotemplate = {};
-          fact = {};
-          i18n = {};
-          pretty-yaml = {};
-          tweedle = {};
+          "helloworld" = {};
+          "hellotemplate" = {};
+          "fact" = {};
+          "i18n" = {};
+          "pretty-yaml" = {};
+          "tweedle" = {};
         };
       };
     }

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        websockets-snap = {
+        "websockets-snap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder

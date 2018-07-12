@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BioHMM = {
+        "BioHMM" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

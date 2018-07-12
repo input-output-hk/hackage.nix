@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GroteTrap = {
+        "GroteTrap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

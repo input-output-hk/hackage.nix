@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hask-home = {
+          "hask-home" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.regex-compat
@@ -38,7 +38,7 @@ let
               ]
               else [ hsPkgs.base ]);
           };
-          hask-home-upload = {
+          "hask-home-upload" = {
             depends  = if _flags.split-base
               then [
                 hsPkgs.base

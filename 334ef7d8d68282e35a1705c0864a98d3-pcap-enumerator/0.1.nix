@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pcap-enumerator = {
+        "pcap-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pcap

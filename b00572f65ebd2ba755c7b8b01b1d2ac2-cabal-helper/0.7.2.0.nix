@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cabal-helper = {
+        "cabal-helper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          cabal-helper-wrapper-v0.7 = {
+          "cabal-helper-wrapper-v0.7" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

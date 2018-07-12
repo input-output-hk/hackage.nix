@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hfusion = {
+        "hfusion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        curl = {
+        "curl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

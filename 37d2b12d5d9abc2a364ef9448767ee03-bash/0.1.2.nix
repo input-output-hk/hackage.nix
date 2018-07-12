@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bash = {
+        "bash" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.bytestring

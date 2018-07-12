@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warp = {
+        "warp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-builder
@@ -47,7 +47,7 @@ let
             else [ hsPkgs.network ]);
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.blaze-builder

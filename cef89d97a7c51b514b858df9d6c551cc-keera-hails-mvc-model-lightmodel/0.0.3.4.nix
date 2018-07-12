@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-mvc-model-lightmodel = {
+        "keera-hails-mvc-model-lightmodel" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

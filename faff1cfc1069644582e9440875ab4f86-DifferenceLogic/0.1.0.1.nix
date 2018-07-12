@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DifferenceLogic = {
+        "DifferenceLogic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

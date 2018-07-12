@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stm-orelse-io = {
+        "stm-orelse-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

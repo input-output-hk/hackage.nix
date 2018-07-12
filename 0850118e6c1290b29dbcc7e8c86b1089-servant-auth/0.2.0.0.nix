@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-auth = {
+        "servant-auth" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -32,7 +32,7 @@ let
               hsPkgs.yaml
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-auth

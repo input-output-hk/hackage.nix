@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        GLUT = {
+        "GLUT" = {
           depends  = [
             hsPkgs.OpenGL
           ] ++ (if _flags.split-base

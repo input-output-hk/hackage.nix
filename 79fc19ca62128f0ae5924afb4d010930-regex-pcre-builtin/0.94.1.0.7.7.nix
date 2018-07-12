@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex-pcre-builtin = {
+        "regex-pcre-builtin" = {
           depends  = if _flags.splitbase
             then [
               hsPkgs.base

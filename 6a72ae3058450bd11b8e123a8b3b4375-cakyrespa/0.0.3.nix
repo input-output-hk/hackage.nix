@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cakyrespa = {
+          "cakyrespa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lojbanParser

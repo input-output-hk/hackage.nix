@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        newtype-generics = {
+        "newtype-generics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.newtype-generics
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

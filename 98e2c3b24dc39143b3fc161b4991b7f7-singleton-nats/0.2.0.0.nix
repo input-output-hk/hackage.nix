@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        singleton-nats = {
+        "singleton-nats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.singletons

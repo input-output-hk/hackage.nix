@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-brainfuck = {
+        "haskell-brainfuck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          brainfuck = {
+          "brainfuck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-brainfuck

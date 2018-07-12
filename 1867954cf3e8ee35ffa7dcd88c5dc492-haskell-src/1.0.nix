@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        haskell-src = {
+        "haskell-src" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

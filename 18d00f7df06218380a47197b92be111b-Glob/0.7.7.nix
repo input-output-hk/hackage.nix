@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Glob = {
+        "Glob" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups) ++ pkgs.lib.optional system.isWindows hsPkgs.Win32;
         };
         tests = {
-          glob-tests = {
+          "glob-tests" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.containers

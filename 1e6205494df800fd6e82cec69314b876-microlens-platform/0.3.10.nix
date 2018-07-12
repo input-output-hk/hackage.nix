@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microlens-platform = {
+        "microlens-platform" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

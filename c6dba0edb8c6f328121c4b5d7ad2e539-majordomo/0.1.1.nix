@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        majordomo = {
+        "majordomo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.zeromq-haskell
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          mdp_client = {
+          "mdp_client" = {
             depends  = [
               hsPkgs.majordomo
               hsPkgs.base
@@ -39,7 +39,7 @@ let
               hsPkgs.cmdargs
             ];
           };
-          echoworker = {
+          "echoworker" = {
             depends  = [
               hsPkgs.majordomo
               hsPkgs.base

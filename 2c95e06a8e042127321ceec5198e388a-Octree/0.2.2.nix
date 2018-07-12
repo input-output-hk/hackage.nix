@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Octree = {
+        "Octree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test_Octree = {
+          "test_Octree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

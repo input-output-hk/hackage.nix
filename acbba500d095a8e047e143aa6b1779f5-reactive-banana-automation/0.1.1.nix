@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reactive-banana-automation = {
+        "reactive-banana-automation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.reactive-banana
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

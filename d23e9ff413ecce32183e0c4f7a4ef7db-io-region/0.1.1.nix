@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        io-region = {
+        "io-region" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

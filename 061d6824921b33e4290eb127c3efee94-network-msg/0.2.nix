@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-msg = {
+        "network-msg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

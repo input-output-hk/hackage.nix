@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mixed-types-num = {
+        "mixed-types-num" = {
           depends  = [
             hsPkgs.base
             hsPkgs.convertible
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mixed-types-num

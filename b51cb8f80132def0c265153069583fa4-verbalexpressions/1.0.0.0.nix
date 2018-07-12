@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        verbalexpressions = {
+        "verbalexpressions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-pcre

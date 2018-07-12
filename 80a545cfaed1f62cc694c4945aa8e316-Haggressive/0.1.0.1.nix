@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          Haggressive = {
+          "Haggressive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Haggressive
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Haggressive

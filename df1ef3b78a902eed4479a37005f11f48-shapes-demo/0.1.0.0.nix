@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          shapes-demo = {
+          "shapes-demo" = {
             depends  = [
               hsPkgs.StateVar
               hsPkgs.array

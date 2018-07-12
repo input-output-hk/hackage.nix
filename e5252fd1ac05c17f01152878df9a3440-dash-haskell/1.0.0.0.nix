@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dash-haskell = {
+          "dash-haskell" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.base

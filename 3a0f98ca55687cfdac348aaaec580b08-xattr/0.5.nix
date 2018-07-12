@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        xattr = {
+        "xattr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

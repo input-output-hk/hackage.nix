@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clippings = {
+        "clippings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          clippings2tsv = {
+          "clippings2tsv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clippings
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          wright-tests = {
+          "wright-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clippings

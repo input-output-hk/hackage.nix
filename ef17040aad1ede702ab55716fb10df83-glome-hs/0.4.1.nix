@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          glome = {
+          "glome" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

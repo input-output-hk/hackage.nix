@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-http-client = {
+        "apiary-http-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

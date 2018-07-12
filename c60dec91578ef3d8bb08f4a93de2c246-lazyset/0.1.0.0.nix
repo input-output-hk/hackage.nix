@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazyset = {
+        "lazyset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-ordlist
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          settest = {
+          "settest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -36,7 +36,7 @@ let
               hsPkgs.data-ordlist
             ];
           };
-          maptest = {
+          "maptest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.time

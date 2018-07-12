@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        unpacked-either = {
+        "unpacked-either" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
           ];
         };
         tests = {
-          unpacked-either-test = {
+          "unpacked-either-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unpacked-either

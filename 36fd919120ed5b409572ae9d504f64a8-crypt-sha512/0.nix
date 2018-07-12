@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crypt-sha512 = {
+        "crypt-sha512" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.crypt-sha512

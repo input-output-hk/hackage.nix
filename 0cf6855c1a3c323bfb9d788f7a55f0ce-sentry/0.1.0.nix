@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sentry = {
+        "sentry" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          sentry = {
+          "sentry" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -47,7 +47,7 @@ let
               hsPkgs.unix
             ];
           };
-          sentry-sleep = {
+          "sentry-sleep" = {
             depends  = [ hsPkgs.base ];
           };
         };

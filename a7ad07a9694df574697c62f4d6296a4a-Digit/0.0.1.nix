@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Digit = {
+        "Digit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit

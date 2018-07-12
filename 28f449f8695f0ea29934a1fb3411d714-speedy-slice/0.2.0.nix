@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        speedy-slice = {
+        "speedy-slice" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -32,14 +32,14 @@ let
           ];
         };
         tests = {
-          rosenbrock = {
+          "rosenbrock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mwc-probability
               hsPkgs.speedy-slice
             ];
           };
-          bnn = {
+          "bnn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

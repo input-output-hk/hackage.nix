@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          roguestar-engine = {
+          "roguestar-engine" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

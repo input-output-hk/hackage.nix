@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nakadi-client = {
+        "nakadi-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -55,7 +55,7 @@ let
           ];
         };
         tests = {
-          nakadi-client-test-suite = {
+          "nakadi-client-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vty-ui = {
+        "vty-ui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vty
@@ -31,12 +31,12 @@ let
           ];
         };
         exes = {
-          vty-ui-tests = {
+          "vty-ui-tests" = {
             depends  = [
               hsPkgs.QuickCheck
             ];
           };
-          vty-ui-demo = {
+          "vty-ui-demo" = {
             depends  = [ hsPkgs.mtl ];
           };
         };

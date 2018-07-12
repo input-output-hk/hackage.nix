@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        windns = {
+        "windns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        huckleberry = {
+        "huckleberry" = {
           depends  = [ hsPkgs.base ];
         };
       };

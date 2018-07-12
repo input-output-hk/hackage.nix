@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-house = {
+        "network-house" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

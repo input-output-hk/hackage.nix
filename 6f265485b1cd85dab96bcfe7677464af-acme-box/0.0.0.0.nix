@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-box = {
+        "acme-box" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          acme-box = {
+          "acme-box" = {
             depends  = [
               hsPkgs.base
               hsPkgs.acme-box
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.acme-box

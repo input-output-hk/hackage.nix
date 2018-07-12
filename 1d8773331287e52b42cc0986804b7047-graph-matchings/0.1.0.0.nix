@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graph-matchings = {
+        "graph-matchings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

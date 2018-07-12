@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        jumpthefive = {
+        "jumpthefive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parallel
           ];
         };
         exes = {
-          jumpthefive = {
+          "jumpthefive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parallel

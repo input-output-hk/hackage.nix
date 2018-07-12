@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eternity = {
+        "eternity" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.eternity
               hsPkgs.potoki

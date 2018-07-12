@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        string-transform = {
+        "string-transform" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

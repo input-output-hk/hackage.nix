@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hamtmap = {
+        "hamtmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

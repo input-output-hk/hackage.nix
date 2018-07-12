@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pg-store = {
+        "pg-store" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pg-store

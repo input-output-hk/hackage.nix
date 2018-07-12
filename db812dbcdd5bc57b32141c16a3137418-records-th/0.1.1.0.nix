@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        records-th = {
+        "records-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.records

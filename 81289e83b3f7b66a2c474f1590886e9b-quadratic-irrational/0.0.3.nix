@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quadratic-irrational = {
+        "quadratic-irrational" = {
           depends  = [
             hsPkgs.base
             hsPkgs.arithmoi
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tasty-tests = {
+          "tasty-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quadratic-irrational
@@ -40,7 +40,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        potoki-hasql = {
+        "potoki-hasql" = {
           depends  = [
             hsPkgs.hasql
             hsPkgs.potoki

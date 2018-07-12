@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixie = {
+        "fixie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          fixie-test-suite = {
+          "fixie-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fixie

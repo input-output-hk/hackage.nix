@@ -28,14 +28,14 @@ let
         buildType = "Custom";
       };
       components = {
-        ed25519 = {
+        "ed25519" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-properties)) [
               hsPkgs.base
               hsPkgs.ed25519
@@ -47,7 +47,7 @@ let
               hsPkgs.tasty-th
             ];
           };
-          hunit = {
+          "hunit" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hunit)) [
               hsPkgs.base
               hsPkgs.ed25519
@@ -59,13 +59,13 @@ let
               hsPkgs.tasty-th
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.bytestring
@@ -79,7 +79,7 @@ let
           };
         };
         benchmarks = {
-          bench1 = {
+          "bench1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

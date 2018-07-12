@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bzlib-conduit = {
+        "bzlib-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           libs = pkgs.lib.optional (!system.isWindows) pkgs.bz2;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit

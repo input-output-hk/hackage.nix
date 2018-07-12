@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haddock = {
+        "haddock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional _flags.test hsPkgs.QuickCheck;
         };
         exes = {
-          haddock = {
+          "haddock" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.filepath

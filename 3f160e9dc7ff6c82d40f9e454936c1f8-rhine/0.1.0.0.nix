@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rhine = {
+        "rhine" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dunai
@@ -31,19 +31,19 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rhine
             ];
           };
-          HelloWorld = {
+          "HelloWorld" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rhine
             ];
           };
-          Demonstration = {
+          "Demonstration" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rhine

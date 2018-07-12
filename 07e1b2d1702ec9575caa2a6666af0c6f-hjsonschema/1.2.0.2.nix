@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hjsonschema = {
+        "hjsonschema" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          local = {
+          "local" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -60,7 +60,7 @@ let
               hsPkgs.hspec
             ];
           };
-          remote = {
+          "remote" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

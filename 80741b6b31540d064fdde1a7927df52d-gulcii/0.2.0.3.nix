@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gulcii = {
+          "gulcii" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

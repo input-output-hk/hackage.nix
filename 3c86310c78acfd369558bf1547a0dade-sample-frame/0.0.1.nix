@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sample-frame = {
+        "sample-frame" = {
           depends  = [
             hsPkgs.storable-record
             hsPkgs.QuickCheck

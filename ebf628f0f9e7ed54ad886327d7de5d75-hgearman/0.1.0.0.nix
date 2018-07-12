@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgearman = {
+        "hgearman" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bindings-yices = {
+        "bindings-yices" = {
           depends  = [ hsPkgs.base ];
           libs = [
             pkgs.yices

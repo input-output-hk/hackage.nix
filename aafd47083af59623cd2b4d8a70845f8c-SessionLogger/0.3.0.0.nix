@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SessionLogger = {
+        "SessionLogger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

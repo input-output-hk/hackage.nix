@@ -20,13 +20,13 @@ let
         buildType = "Simple";
       };
       components = {
-        cmdargs = {
+        "cmdargs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
             hsPkgs.filepath
           ];
         };
-        exes = { cmdargs = {}; };
+        exes = { "cmdargs" = {}; };
       };
     }

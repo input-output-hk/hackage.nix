@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unlit = {
+        "unlit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          unlit = {
+          "unlit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

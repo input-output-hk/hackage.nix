@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fathead-util = {
+        "fathead-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

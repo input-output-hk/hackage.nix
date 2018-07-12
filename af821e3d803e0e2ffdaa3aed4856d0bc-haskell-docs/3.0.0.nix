@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-docs = {
+        "haskell-docs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          haskell-docs = {
+          "haskell-docs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

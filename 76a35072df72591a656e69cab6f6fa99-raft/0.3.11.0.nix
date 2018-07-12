@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        raft = {
+        "raft" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        echo = {
+        "echo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          password = {
+          "password" = {
             depends  = [
               hsPkgs.base
               hsPkgs.echo

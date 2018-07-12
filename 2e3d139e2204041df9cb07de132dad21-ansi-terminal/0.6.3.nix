@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ansi-terminal = {
+        "ansi-terminal" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optionals system.isWindows [
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          ansi-terminal-example = {
+          "ansi-terminal-example" = {
             depends  = [
               hsPkgs.base
             ] ++ pkgs.lib.optionals system.isWindows [

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexpat-pickle-generic = {
+        "hexpat-pickle-generic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          hexpat-pickle-generic-tests = {
+          "hexpat-pickle-generic-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

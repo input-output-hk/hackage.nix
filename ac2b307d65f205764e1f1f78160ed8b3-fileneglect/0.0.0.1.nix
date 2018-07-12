@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fileneglect = {
+        "fileneglect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hinotify

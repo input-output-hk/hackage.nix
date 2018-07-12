@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timeparsers = {
+        "timeparsers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

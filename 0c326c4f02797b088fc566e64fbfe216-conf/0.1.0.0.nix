@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        conf = {
+        "conf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src

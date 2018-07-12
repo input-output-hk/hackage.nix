@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fmt = {
+        "fmt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base16-bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

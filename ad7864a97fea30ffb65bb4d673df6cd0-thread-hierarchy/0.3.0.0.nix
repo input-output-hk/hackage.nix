@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        thread-hierarchy = {
+        "thread-hierarchy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          thread-hierarchy-test = {
+          "thread-hierarchy-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

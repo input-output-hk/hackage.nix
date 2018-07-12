@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sednaDBXML = {
+        "sednaDBXML" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-DSL

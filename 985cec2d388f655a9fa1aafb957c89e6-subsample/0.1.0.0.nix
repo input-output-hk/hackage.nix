@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        subsample = {
+        "subsample" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          subsample = {
+          "subsample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.subsample

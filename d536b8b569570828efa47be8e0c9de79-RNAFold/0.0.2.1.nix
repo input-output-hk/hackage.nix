@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        RNAFold = {
+        "RNAFold" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

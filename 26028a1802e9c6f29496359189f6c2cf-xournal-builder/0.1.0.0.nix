@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xournal-builder = {
+        "xournal-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xournal-types

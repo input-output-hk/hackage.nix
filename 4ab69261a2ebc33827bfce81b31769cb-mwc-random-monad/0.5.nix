@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mwc-random-monad = {
+        "mwc-random-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

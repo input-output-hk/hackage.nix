@@ -38,7 +38,7 @@ let
       };
       components = {
         exes = {
-          git-annex = {
+          "git-annex" = {
             depends  = ((((((((((((((([
               hsPkgs.MissingH
               hsPkgs.hslogger
@@ -79,11 +79,11 @@ let
             ]) ++ pkgs.lib.optionals (_flags.assistant && !system.isWindows && !system.isSolaris) [
               hsPkgs.async
               hsPkgs.stm
-            ]) ++ pkgs.lib.optional _flags.android hsPkgs.data-endian) ++ (if _flags.assistant && (system.isLinux && _flags.inotify)
+            ]) ++ pkgs.lib.optional _flags.android hsPkgs.data-endian) ++ pkgs.lib.optionals _flags.assistant (if system.isLinux && _flags.inotify
               then [ hsPkgs.hinotify ]
               else if system.isOsx
                 then [ hsPkgs.hfsevents ]
-                else pkgs.lib.optional (!system.isWindows && !system.isSolaris && !system.isLinux && _flags.android) hsPkgs.hinotify)) ++ pkgs.lib.optional (system.isLinux && _flags.dbus) hsPkgs.dbus) ++ pkgs.lib.optionals (_flags.webapp && !system.isWindows) [
+                else pkgs.lib.optionals (!system.isWindows && !system.isSolaris && !system.isLinux) (pkgs.lib.optional _flags.android hsPkgs.hinotify))) ++ pkgs.lib.optional (system.isLinux && _flags.dbus) hsPkgs.dbus) ++ pkgs.lib.optionals (_flags.webapp && !system.isWindows) [
               hsPkgs.yesod
               hsPkgs.yesod-default
               hsPkgs.yesod-static

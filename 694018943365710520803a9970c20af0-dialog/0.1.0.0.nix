@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dialog = {
+        "dialog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

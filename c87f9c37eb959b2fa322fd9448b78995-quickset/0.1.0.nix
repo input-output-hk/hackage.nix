@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickset = {
+        "quickset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

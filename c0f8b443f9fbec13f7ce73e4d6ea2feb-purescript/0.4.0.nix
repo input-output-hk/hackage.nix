@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        purescript = {
+        "purescript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmdtheline
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          psc = {
+          "psc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdtheline
@@ -52,7 +52,7 @@ let
               hsPkgs.utf8-string
             ];
           };
-          psci = {
+          "psci" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -66,7 +66,7 @@ let
               hsPkgs.process
             ];
           };
-          docgen = {
+          "docgen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdtheline
@@ -78,7 +78,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

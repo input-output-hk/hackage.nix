@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-ast-gen = {
+        "haskell-tools-ast-gen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

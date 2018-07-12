@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Numbers = {
+        "Numbers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

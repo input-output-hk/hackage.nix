@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        env-parser = {
+        "env-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

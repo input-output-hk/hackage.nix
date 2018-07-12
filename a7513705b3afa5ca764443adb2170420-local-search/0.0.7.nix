@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        local-search = {
+        "local-search" = {
           depends  = [
             hsPkgs.base
             hsPkgs.erf

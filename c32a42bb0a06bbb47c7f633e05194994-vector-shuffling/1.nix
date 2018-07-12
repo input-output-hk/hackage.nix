@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-shuffling = {
+        "vector-shuffling" = {
           depends  = [
             hsPkgs.random
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        battlenet = {
+        "battlenet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-conduit

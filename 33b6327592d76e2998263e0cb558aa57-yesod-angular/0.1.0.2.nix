@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-angular = {
+        "yesod-angular" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

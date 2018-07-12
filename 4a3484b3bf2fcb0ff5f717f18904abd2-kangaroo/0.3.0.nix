@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kangaroo = {
+        "kangaroo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

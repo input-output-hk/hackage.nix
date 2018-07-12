@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-open = {
+        "monad-open" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions

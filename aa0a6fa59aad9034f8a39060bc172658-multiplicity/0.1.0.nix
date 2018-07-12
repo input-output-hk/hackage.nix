@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          multiplicity = {
+          "multiplicity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

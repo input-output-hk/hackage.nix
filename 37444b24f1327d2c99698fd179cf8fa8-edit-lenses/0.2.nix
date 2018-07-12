@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        edit-lenses = {
+        "edit-lenses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

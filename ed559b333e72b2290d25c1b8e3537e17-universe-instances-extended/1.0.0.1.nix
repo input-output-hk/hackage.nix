@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        universe-instances-extended = {
+        "universe-instances-extended" = {
           depends  = [
             hsPkgs.adjunctions
             hsPkgs.base

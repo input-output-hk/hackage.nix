@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          profiteur = {
+          "profiteur" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

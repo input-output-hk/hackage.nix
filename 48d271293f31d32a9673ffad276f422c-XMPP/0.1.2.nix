@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        XMPP = {
+        "XMPP" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

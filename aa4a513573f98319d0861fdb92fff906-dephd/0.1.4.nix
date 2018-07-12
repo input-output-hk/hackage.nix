@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dephd = {
+          "dephd" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bio
@@ -32,7 +32,7 @@ let
               hsPkgs.cmdargs
             ];
           };
-          fakequal = {
+          "fakequal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bio

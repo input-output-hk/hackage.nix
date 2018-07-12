@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bidispec-extras = {
+        "bidispec-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

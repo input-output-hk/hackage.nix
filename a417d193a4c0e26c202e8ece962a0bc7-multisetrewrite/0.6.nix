@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multisetrewrite = {
+        "multisetrewrite" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

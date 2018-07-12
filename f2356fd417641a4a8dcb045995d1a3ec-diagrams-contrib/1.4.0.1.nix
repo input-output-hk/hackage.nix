@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-contrib = {
+        "diagrams-contrib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -50,7 +50,7 @@ let
           ];
         };
         tests = {
-          turtle-tests = {
+          "turtle-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

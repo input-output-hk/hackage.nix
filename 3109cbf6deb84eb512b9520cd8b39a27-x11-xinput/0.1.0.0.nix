@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        x11-xinput = {
+        "x11-xinput" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

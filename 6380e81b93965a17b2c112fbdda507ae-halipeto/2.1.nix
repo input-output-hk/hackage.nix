@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        halipeto = {
+        "halipeto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

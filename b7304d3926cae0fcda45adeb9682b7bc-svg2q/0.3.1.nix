@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          svg2q = {
+          "svg2q" = {
             depends  = [
               hsPkgs.base
               hsPkgs.svgutils

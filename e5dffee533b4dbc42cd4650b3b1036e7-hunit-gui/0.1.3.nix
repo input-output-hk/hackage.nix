@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hunit-gui = {
+        "hunit-gui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

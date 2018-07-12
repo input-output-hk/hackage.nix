@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kademlia = {
+        "kademlia" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          library-test = {
+          "library-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

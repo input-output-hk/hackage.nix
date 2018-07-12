@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alpino-tools = {
+        "alpino-tools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,14 +37,14 @@ let
           ];
         };
         exes = {
-          at_model_rescore_data = {
+          "at_model_rescore_data" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alpino-tools
               hsPkgs.conduit
             ];
           };
-          at_model_filter_data = {
+          "at_model_filter_data" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alpino-tools
@@ -53,14 +53,14 @@ let
               hsPkgs.utf8-string
             ];
           };
-          at_model_oracle = {
+          "at_model_oracle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alpino-tools
               hsPkgs.conduit
             ];
           };
-          at_model_random_sample = {
+          "at_model_random_sample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alpino-tools
@@ -70,7 +70,7 @@ let
               hsPkgs.MonadRandom
             ];
           };
-          at_model_statistics_data = {
+          "at_model_statistics_data" = {
             depends  = [
               hsPkgs.base
               hsPkgs.alpino-tools

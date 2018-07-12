@@ -20,13 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        lenses = {
+        "lenses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
-          ] ++ [
-            hsPkgs.template-haskell
-          ];
+          ] ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.template-haskell;
         };
       };
     }

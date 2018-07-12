@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arithmetic = {
+        "arithmetic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          arithmetic = {
+          "arithmetic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          arithmetic-test = {
+          "arithmetic-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

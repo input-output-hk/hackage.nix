@@ -23,13 +23,13 @@ let
         buildType = "Simple";
       };
       components = {
-        base91 = {
+        "base91" = {
           depends  = ([
             hsPkgs.base
           ] ++ pkgs.lib.optional _flags.bytestring hsPkgs.bytestring) ++ pkgs.lib.optional _flags.text hsPkgs.text;
         };
         exes = {
-          base91 = {
+          "base91" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base91
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base91

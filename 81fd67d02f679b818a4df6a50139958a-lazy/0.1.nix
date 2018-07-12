@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lazy = {
+        "lazy" = {
           depends  = [
             hsPkgs.comonad
             hsPkgs.base

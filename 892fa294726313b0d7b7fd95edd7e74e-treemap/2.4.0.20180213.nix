@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        treemap = {
+        "treemap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          treemap-test = {
+          "treemap-test" = {
             depends  = [
               hsPkgs.treemap
               hsPkgs.base

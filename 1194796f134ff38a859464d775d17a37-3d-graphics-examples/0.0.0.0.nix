@@ -21,14 +21,14 @@ let
       };
       components = {
         exes = {
-          l-systems = {
+          "l-systems" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT
               hsPkgs.OpenGL
             ];
           };
-          mountains = {
+          "mountains" = {
             depends  = [
               hsPkgs.base
               hsPkgs.GLUT

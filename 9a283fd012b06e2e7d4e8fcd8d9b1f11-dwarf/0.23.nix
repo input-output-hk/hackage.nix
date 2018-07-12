@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        dwarf = {
+        "dwarf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

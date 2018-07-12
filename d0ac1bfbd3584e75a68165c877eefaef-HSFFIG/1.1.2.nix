@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HSFFIG = {
+        "HSFFIG" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          ffipkg = {
+          "ffipkg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -47,7 +47,7 @@ let
               hsPkgs.directory
             ];
           };
-          hsffig = {
+          "hsffig" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec
@@ -60,7 +60,7 @@ let
               hsPkgs.directory
             ];
           };
-          testparser = {
+          "testparser" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

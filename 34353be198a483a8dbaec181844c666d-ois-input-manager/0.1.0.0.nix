@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ois-input-manager = {
+        "ois-input-manager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hogre

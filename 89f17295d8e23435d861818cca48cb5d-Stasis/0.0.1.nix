@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        Stasis = {
+        "Stasis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         exes = {
-          Stasis = {
+          "Stasis" = {
             depends  = [ hsPkgs.base ];
           };
         };

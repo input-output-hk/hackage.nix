@@ -21,21 +21,21 @@ let
       };
       components = {
         exes = {
-          not-gloss-display = {
+          "not-gloss-display" = {
             depends  = [
               hsPkgs.not-gloss
               hsPkgs.spatial-math
               hsPkgs.base
             ];
           };
-          not-gloss-animate = {
+          "not-gloss-animate" = {
             depends  = [
               hsPkgs.not-gloss
               hsPkgs.spatial-math
               hsPkgs.base
             ];
           };
-          not-gloss-simulate = {
+          "not-gloss-simulate" = {
             depends  = [
               hsPkgs.not-gloss
               hsPkgs.spatial-math

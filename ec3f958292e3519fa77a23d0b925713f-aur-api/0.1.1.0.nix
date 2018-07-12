@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aur-api = {
+        "aur-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

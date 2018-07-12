@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gist = {
+          "gist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

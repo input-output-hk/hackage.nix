@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          report = {
+          "report" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

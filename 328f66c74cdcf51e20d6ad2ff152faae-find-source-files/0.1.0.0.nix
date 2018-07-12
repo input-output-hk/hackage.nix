@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        find-source-files = {
+        "find-source-files" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal

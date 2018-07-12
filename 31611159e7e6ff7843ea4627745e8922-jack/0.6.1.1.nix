@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jack = {
+        "jack" = {
           depends  = [
             hsPkgs.midi
             hsPkgs.bytestring
@@ -41,13 +41,13 @@ let
           ];
         };
         exes = {
-          amplify = {
+          "amplify" = {
             libs = [ pkgs.jack ];
           };
-          impulse-train = {
+          "impulse-train" = {
             libs = [ pkgs.jack ];
           };
-          midimon = {
+          "midimon" = {
             libs = [ pkgs.jack ];
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        checkmate = {
+        "checkmate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diff-parse
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          checkmate = {
+          "checkmate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.diff-parse
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.diff-parse
@@ -62,7 +62,7 @@ let
               hsPkgs.hlint
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.diff-parse

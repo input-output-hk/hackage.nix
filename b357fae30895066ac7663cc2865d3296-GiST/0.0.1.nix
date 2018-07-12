@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GiST = {
+        "GiST" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

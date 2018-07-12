@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          commando = {
+          "commando" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

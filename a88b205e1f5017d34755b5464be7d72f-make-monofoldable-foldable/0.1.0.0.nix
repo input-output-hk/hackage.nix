@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        make-monofoldable-foldable = {
+        "make-monofoldable-foldable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mono-traversable

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        applicative-parsec = {
+        "applicative-parsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

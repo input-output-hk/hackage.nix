@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        IPv6Addr = {
+        "IPv6Addr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

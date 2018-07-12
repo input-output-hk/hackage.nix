@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        cabal2nix = {
+        "cabal2nix" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.aeson
@@ -48,7 +48,7 @@ let
           ];
         };
         exes = {
-          cabal2nix = {
+          "cabal2nix" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.aeson
@@ -76,7 +76,7 @@ let
               hsPkgs.yaml
             ];
           };
-          hackage2nix = {
+          "hackage2nix" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.aeson
@@ -110,7 +110,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.aeson

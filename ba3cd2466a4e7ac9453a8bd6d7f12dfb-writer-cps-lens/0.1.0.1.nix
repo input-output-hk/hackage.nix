@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        writer-cps-lens = {
+        "writer-cps-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.writer-cps-transformers

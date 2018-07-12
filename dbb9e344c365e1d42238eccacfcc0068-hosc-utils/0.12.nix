@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hosc-utils-benchmark = {
+          "hosc-utils-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           };
         };
         tests = {
-          hosc-utils-test = {
+          "hosc-utils-test" = {
             depends  = [
               hsPkgs.hosc
               hsPkgs.QuickCheck

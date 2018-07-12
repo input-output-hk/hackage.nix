@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-connect = {
+        "monad-connect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

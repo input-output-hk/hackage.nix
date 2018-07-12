@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-random-effect = {
+        "system-random-effect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.extensible-effects
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          extensible-effects-tests = {
+          "extensible-effects-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

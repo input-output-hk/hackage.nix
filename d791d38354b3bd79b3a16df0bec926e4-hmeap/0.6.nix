@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmeap = {
+        "hmeap" = {
           depends  = [ hsPkgs.base ];
         };
       };

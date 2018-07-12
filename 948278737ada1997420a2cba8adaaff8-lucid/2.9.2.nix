@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lucid = {
+        "lucid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lucid
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

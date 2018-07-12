@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        data-interval = {
+        "data-interval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lattices
           ];
         };
         tests = {
-          TestInterval = {
+          "TestInterval" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

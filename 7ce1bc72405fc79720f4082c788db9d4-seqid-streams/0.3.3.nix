@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        seqid-streams = {
+        "seqid-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.io-streams

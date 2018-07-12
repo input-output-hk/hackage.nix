@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lsmbox = {
+          "lsmbox" = {
             depends  = [
               hsPkgs.hsemail
               hsPkgs.parsec

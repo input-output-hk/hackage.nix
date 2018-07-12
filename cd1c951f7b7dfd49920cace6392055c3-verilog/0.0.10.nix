@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        verilog = {
+        "verilog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          verilog-gt = {
+          "verilog-gt" = {
             depends  = [
               hsPkgs.base
               hsPkgs.verilog

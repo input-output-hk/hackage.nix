@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        antiprimes = {
+        "antiprimes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primes
           ];
         };
         tests = {
-          antiprimes-test = {
+          "antiprimes-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.antiprimes

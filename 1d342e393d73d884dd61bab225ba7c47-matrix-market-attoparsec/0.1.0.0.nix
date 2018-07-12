@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        matrix-market-attoparsec = {
+        "matrix-market-attoparsec" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bitspeak = {
+          "bitspeak" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bindings-DSL

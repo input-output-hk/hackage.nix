@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glome-hs = {
+        "glome-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          Glome = {
+          "Glome" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

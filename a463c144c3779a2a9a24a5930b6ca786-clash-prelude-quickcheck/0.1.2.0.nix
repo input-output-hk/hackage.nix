@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clash-prelude-quickcheck = {
+        "clash-prelude-quickcheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

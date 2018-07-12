@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Contract = {
+        "Contract" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ziptastic-client = {
+        "ziptastic-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client

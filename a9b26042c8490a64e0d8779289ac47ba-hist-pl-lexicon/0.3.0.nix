@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hist-pl-lexicon = {
+        "hist-pl-lexicon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,8 +36,8 @@ let
           ];
         };
         exes = {
-          hist-pl-binarize = {};
-          hist-pl-show = {};
+          "hist-pl-binarize" = {};
+          "hist-pl-show" = {};
         };
       };
     }

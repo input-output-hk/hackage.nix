@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        relative-date = {
+        "relative-date" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

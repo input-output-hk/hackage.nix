@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-streams = {
+        "aeson-streams" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec

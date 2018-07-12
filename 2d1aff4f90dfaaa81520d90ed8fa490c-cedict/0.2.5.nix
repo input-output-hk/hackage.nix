@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cedict = {
+        "cedict" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,6 +30,6 @@ let
             hsPkgs.mtl
           ];
         };
-        exes = { zi4pu3 = {}; };
+        exes = { "zi4pu3" = {}; };
       };
     }

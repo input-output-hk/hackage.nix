@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        murmurhash3 = {
+        "murmurhash3" = {
           depends  = [
             hsPkgs.haskell2010
           ];

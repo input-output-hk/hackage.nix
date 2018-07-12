@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SCalendar = {
+        "SCalendar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

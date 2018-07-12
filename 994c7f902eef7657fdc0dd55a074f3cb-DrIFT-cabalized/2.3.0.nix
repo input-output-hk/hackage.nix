@@ -21,14 +21,14 @@ let
       };
       components = {
         exes = {
-          DrIFT = {
+          "DrIFT" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
               hsPkgs.old-time
             ];
           };
-          drift-ghc = {
+          "drift-ghc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        boring-game = {
+        "boring-game" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gloss
           ];
         };
         exes = {
-          boring-game-exe = {
+          "boring-game-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.boring-game
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          boring-game-test = {
+          "boring-game-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.boring-game

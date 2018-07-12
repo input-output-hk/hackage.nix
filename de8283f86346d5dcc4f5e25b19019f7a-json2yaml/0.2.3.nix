@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          json2yaml = {
+          "json2yaml" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-object

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pidfile = {
+        "pidfile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

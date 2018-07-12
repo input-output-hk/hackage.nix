@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          zmachine = {
+          "zmachine" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

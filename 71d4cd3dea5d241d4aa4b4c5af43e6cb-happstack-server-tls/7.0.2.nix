@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-server-tls = {
+        "happstack-server-tls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

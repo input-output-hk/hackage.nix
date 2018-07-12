@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-p2p = {
+        "distributed-process-p2p" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          jollycloud = {
+          "jollycloud" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

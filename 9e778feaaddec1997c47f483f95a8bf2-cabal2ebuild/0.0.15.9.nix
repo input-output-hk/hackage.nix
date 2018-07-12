@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cabal2ebuild = {
+        "cabal2ebuild" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -29,14 +29,14 @@ let
           ];
         };
         exes = {
-          cabal2ebuild = {
+          "cabal2ebuild" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cabal2ebuild
               hsPkgs.directory
             ];
           };
-          hackage2ebuild = {
+          "hackage2ebuild" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cabal2ebuild

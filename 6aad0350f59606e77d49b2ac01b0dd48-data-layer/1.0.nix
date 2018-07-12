@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-layer = {
+        "data-layer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

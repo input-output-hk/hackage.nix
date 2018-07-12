@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hashrename = {
+          "hashrename" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

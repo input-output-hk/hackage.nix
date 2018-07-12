@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-pig = {
+        "language-pig" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

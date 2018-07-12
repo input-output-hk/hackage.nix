@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hetero-dict = {
+        "hetero-dict" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -31,7 +31,7 @@ let
           ];
         };
         benchmarks = {
-          criterion = {
+          "criterion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

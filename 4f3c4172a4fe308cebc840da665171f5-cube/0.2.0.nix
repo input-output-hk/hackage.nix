@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cube = {
+        "cube" = {
           depends  = [
             hsPkgs.base
             hsPkgs.STL
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          house = {
+          "house" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cube
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cube

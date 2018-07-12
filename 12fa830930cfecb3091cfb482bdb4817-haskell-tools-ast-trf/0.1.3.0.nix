@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-ast-trf = {
+        "haskell-tools-ast-trf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

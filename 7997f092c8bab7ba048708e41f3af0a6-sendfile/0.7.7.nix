@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sendfile = {
+        "sendfile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

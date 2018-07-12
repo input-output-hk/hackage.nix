@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        twitter-feed = {
+        "twitter-feed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.json
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          twitter-library = {
+          "twitter-library" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

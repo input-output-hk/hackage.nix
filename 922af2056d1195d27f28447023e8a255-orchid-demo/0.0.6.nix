@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          orchid-demo = {
+          "orchid-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.salvia

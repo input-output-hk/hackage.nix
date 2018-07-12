@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        configurator-ng = {
+        "configurator-ng" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

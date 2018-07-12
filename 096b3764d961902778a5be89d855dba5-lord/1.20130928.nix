@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          lord = {
+          "lord" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

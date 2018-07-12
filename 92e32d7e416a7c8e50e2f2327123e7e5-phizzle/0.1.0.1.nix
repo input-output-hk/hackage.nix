@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        phizzle = {
+        "phizzle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          phizzle-test = {
+          "phizzle-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.phizzle

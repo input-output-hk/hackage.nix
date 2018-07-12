@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        speculate = {
+        "speculate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.leancheck
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          expr = {
+          "expr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck
@@ -39,7 +39,7 @@ let
           };
         };
         benchmarks = {
-          plus-abs = {
+          "plus-abs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.leancheck

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          augur = {
+          "augur" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MHask = {
+        "MHask" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

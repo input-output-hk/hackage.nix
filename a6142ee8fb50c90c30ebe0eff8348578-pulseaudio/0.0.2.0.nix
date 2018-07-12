@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pulseaudio = {
+        "pulseaudio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -30,7 +30,7 @@ let
           libs = [ pkgs.pulse ];
         };
         exes = {
-          pulse-test = {
+          "pulse-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pulseaudio

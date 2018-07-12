@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        d3js = {
+        "d3js" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

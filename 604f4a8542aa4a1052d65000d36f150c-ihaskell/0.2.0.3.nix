@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ihaskell = {
+        "ihaskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tar
@@ -53,7 +53,7 @@ let
           ];
         };
         exes = {
-          IHaskell = {
+          "IHaskell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tar
@@ -91,7 +91,7 @@ let
           };
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tar

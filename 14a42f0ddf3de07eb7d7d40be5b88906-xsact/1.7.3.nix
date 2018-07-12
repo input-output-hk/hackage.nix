@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          xsact = {
+          "xsact" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -32,10 +32,10 @@ let
               hsPkgs.process
             ];
           };
-          xplit = {
+          "xplit" = {
             depends  = [ hsPkgs.base ];
           };
-          xtract = {
+          "xtract" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ampersand = {
+          "ampersand" = {
             depends  = [
               hsPkgs.HStringTemplate
               hsPkgs.SpreadsheetML
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          ampersand-test = {
+          "ampersand-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

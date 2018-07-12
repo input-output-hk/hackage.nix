@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-identity-toolkit = {
+        "gogol-identity-toolkit" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ADPfusion = {
+        "ADPfusion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          NeedlemanWunsch = {};
+          "NeedlemanWunsch" = {};
         };
       };
     }

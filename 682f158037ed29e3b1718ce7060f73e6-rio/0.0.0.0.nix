@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rio = {
+        "rio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

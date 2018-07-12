@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        resource-pool-monad = {
+        "resource-pool-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.free

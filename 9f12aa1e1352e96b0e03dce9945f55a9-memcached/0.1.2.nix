@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        memcached = {
+        "memcached" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        X11 = {
+        "X11" = {
           depends  = if _flags.smaller_base
             then [ hsPkgs.base hsPkgs.syb ]
             else [ hsPkgs.base ];

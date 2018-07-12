@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-cassava = {
+        "servant-cassava" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

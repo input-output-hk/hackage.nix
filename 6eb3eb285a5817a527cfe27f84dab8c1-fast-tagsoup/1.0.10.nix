@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fast-tagsoup = {
+        "fast-tagsoup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

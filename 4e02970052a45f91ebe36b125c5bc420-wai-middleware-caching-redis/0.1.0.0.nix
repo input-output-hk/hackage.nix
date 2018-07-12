@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-caching-redis = {
+        "wai-middleware-caching-redis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai-middleware-caching
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          wai-middleware-caching-redis-test = {
+          "wai-middleware-caching-redis-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai-middleware-caching-redis

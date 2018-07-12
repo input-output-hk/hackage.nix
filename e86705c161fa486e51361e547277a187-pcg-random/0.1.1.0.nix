@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pcg-random = {
+        "pcg-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

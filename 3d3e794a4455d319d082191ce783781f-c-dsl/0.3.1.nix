@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        c-dsl = {
+        "c-dsl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.language-c

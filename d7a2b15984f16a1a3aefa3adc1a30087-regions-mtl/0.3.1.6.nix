@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regions-mtl = {
+        "regions-mtl" = {
           depends  = [
             hsPkgs.base-unicode-symbols
             hsPkgs.mtl

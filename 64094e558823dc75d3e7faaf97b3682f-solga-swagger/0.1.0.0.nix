@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        solga-swagger = {
+        "solga-swagger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.solga

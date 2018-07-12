@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-pony-transformer-case-insensitive = {
+        "http-pony-transformer-case-insensitive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.profunctors

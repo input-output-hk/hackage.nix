@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bytestring-builder = {
+        "bytestring-builder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

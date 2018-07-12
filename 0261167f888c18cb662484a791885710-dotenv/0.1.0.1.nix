@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        dotenv = {
+        "dotenv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
           ];
         };
         exes = {
-          dotenv = {
+          "dotenv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-applicative
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          dotenv-test = {
+          "dotenv-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

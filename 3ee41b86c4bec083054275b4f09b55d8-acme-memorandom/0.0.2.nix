@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-memorandom = {
+        "acme-memorandom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MemoTrie

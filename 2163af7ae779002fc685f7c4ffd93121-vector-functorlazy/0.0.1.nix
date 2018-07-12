@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-functorlazy = {
+        "vector-functorlazy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

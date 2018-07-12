@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        glabrous = {
+        "glabrous" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.base

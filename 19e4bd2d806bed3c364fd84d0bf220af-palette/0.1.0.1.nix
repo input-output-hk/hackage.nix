@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        palette = {
+        "palette" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

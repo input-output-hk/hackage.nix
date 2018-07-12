@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ekg-influxdb = {
+        "ekg-influxdb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ekg-core

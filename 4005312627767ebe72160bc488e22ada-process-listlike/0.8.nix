@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        process-listlike = {
+        "process-listlike" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          x509-util = {
+          "x509-util" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        condor = {
+        "condor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          condor = {
+          "condor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -43,7 +43,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-holes-th = {
+        "haskell-holes-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Consumer = {
+        "Consumer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

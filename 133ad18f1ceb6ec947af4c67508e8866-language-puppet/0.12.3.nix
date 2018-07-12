@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-puppet = {
+        "language-puppet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -65,7 +65,7 @@ let
           ] ++ pkgs.lib.optional _flags.hruby hsPkgs.hruby;
         };
         exes = {
-          puppetresources = {
+          "puppetresources" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -90,7 +90,7 @@ let
               hsPkgs.hspec
             ];
           };
-          pdbquery = {
+          "pdbquery" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -106,7 +106,7 @@ let
           };
         };
         tests = {
-          test-lexer = {
+          "test-lexer" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -118,7 +118,7 @@ let
               hsPkgs.unix
             ];
           };
-          test-expr = {
+          "test-expr" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -128,7 +128,7 @@ let
               hsPkgs.ansi-wl-pprint
             ];
           };
-          test-hiera = {
+          "test-hiera" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -142,7 +142,7 @@ let
               hsPkgs.text
             ];
           };
-          test-puppetdb = {
+          "test-puppetdb" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base
@@ -152,7 +152,7 @@ let
               hsPkgs.text
             ];
           };
-          erbparser = {
+          "erbparser" = {
             depends  = [
               hsPkgs.language-puppet
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-derive = {
+        "random-derive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

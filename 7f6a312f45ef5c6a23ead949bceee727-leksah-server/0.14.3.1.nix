@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        leksah-server = {
+        "leksah-server" = {
           depends  = ((([
             hsPkgs.Cabal
             hsPkgs.base
@@ -73,7 +73,7 @@ let
           ];
         };
         exes = {
-          leksah-server = {
+          "leksah-server" = {
             depends  = ((([
               hsPkgs.Cabal
               hsPkgs.base
@@ -122,7 +122,7 @@ let
               pkgs."glib-2.0"
             ];
           };
-          leksahecho = {
+          "leksahecho" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslogger
@@ -141,7 +141,7 @@ let
           };
         };
         tests = {
-          test-tool = {
+          "test-tool" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hslogger

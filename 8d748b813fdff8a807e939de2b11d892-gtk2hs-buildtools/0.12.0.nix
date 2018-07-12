@@ -23,9 +23,9 @@ let
       };
       components = {
         exes = {
-          gtk2hsTypeGen = {};
-          gtk2hsHookGenerator = {};
-          gtk2hsC2hs = {
+          "gtk2hsTypeGen" = {};
+          "gtk2hsHookGenerator" = {};
+          "gtk2hsC2hs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

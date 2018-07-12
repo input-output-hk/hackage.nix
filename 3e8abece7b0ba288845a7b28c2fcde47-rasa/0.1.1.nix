@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rasa = {
+        "rasa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

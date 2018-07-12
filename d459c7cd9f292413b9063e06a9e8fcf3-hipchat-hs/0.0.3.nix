@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hipchat-hs = {
+        "hipchat-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

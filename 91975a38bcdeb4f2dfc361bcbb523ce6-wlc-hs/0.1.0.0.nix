@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        wlc-hs = {
+        "wlc-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

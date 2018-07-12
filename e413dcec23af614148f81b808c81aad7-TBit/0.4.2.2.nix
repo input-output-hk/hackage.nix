@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TBit = {
+        "TBit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

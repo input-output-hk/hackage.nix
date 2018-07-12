@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snaplet-fay = {
+        "snaplet-fay" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

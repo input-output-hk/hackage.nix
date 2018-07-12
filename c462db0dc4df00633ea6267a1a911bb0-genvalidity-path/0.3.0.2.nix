@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        genvalidity-path = {
+        "genvalidity-path" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          genvalidity-path-test = {
+          "genvalidity-path-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.genvalidity-hspec
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          genvalidity-path-bench = {
+          "genvalidity-path-bench" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

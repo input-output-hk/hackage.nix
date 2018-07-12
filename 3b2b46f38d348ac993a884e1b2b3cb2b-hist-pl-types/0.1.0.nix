@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hist-pl-types = {
+        "hist-pl-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

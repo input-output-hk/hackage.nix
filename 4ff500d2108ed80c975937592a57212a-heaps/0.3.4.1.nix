@@ -20,11 +20,11 @@ let
         buildType = "Custom";
       };
       components = {
-        heaps = {
+        "heaps" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

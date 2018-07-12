@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        queryparser-hive = {
+        "queryparser-hive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

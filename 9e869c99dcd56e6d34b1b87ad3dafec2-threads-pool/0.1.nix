@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        threads-pool = {
+        "threads-pool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        latex-formulae-hakyll = {
+        "latex-formulae-hakyll" = {
           depends  = [
             hsPkgs.base
             hsPkgs.latex-formulae-image

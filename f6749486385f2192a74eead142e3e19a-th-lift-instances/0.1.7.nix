@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        th-lift-instances = {
+        "th-lift-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

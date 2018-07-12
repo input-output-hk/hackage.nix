@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kraken = {
+        "kraken" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          life = {
+          "life" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL

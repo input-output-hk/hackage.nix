@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-src-meta = {
+        "haskell-src-meta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

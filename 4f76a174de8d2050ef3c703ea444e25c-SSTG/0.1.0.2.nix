@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SSTG = {
+        "SSTG" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          SSTG-exe = {
+          "SSTG-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SSTG
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          SSTG-test = {
+          "SSTG-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SSTG

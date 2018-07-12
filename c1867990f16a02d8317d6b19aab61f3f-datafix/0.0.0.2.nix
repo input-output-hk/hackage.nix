@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        datafix = {
+        "datafix" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ] ++ pkgs.lib.optional (!_flags.no-lattices) hsPkgs.lattices;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.Cabal
@@ -53,7 +53,7 @@ let
               hsPkgs.text
             ] ++ pkgs.lib.optional (!_flags.no-lattices) hsPkgs.lattices) ++ pkgs.lib.optional _flags.no-lattices hsPkgs.pomaps;
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -64,7 +64,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.Cabal

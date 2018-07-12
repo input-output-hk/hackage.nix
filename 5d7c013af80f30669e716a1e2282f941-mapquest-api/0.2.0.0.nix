@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mapquest-api = {
+        "mapquest-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.req

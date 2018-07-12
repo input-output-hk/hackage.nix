@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-tracer = {
+        "json-tracer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          unit-test = {
+          "unit-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.json-tracer
@@ -48,7 +48,7 @@ let
               hsPkgs.microlens
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.json-tracer

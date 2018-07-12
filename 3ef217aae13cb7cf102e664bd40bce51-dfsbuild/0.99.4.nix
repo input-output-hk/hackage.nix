@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          dfsbuild = {
+          "dfsbuild" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

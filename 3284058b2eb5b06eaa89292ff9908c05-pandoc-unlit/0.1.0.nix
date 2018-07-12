@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          pandoc-unlit = {
+          "pandoc-unlit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc

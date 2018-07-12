@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          structured-haskell-mode = {
+          "structured-haskell-mode" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts

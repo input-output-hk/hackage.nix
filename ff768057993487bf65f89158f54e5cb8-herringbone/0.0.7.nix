@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        herringbone = {
+        "herringbone" = {
           depends  = [
             hsPkgs.base
             hsPkgs.wai
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          herringbone-test-server = {
+          "herringbone-test-server" = {
             depends  = [
               hsPkgs.base
               hsPkgs.herringbone
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          herringbone-tests = {
+          "herringbone-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wai

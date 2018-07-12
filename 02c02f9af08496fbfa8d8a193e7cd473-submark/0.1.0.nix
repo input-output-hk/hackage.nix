@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        submark = {
+        "submark" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cmark
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          submark = {
+          "submark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmark
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmark
@@ -49,7 +49,7 @@ let
               hsPkgs.hlint
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmark

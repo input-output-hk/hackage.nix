@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        isotope = {
+        "isotope" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          Element-isotopes-test = {
+          "Element-isotopes-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

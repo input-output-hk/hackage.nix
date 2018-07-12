@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transformers-eff = {
+        "transformers-eff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -30,7 +30,7 @@ let
           ];
         };
         benchmarks = {
-          oleg = {
+          "oleg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.effect-interpreters

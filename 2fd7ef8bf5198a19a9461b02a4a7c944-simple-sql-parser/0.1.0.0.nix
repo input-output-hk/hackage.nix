@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-sql-parser = {
+        "simple-sql-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          Tests = {
+          "Tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

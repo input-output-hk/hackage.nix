@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-secretsmanager = {
+        "amazonka-secretsmanager" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-secretsmanager-test = {
+          "amazonka-secretsmanager-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

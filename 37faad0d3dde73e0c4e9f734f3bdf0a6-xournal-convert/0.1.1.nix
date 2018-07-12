@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xournal-convert = {
+        "xournal-convert" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          xournal-convert = {
+          "xournal-convert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

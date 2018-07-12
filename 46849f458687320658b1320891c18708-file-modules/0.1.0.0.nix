@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        file-modules = {
+        "file-modules" = {
           depends  = [
             hsPkgs.MissingH
             hsPkgs.directory
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          file-modules = {
+          "file-modules" = {
             depends  = [
               hsPkgs.base
               hsPkgs.MissingH

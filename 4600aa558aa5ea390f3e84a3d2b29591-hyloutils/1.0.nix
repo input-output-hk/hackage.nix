@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          mcheck = {
+          "mcheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -33,7 +33,7 @@ let
               hsPkgs.hylolib
             ];
           };
-          rewriter = {
+          "rewriter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

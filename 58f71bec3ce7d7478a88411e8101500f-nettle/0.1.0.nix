@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nettle = {
+        "nettle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
           pkgconfig = pkgs.lib.optional _flags.usepkgconfig pkgconfPkgs.nettle;
         };
         tests = {
-          test-ciphers = {
+          "test-ciphers" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -47,7 +47,7 @@ let
               hsPkgs.nettle
             ];
           };
-          test-hashes = {
+          "test-hashes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -59,7 +59,7 @@ let
               hsPkgs.nettle
             ];
           };
-          test-hmac = {
+          "test-hmac" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -71,7 +71,7 @@ let
               hsPkgs.nettle
             ];
           };
-          test-umac = {
+          "test-umac" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

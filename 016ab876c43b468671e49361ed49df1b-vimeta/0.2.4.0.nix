@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vimeta = {
+        "vimeta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -51,7 +51,7 @@ let
           ];
         };
         exes = {
-          vimeta = {
+          "vimeta" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vimeta

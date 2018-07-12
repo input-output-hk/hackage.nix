@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoogle = {
+        "hoogle" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -68,7 +68,7 @@ let
           ];
         };
         exes = {
-          hoogle = {
+          "hoogle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hoogle

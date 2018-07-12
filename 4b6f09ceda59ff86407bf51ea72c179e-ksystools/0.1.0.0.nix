@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ksystools = {
+        "ksystools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

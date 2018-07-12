@@ -28,7 +28,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad-extras = {
+        "xmonad-extras" = {
           depends  = (((([
             hsPkgs.base
             hsPkgs.mtl

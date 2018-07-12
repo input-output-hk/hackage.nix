@@ -20,6 +20,6 @@ let
         buildType = "Custom";
       };
       components = {
-        Blueprint = {};
+        "Blueprint" = {};
       };
     }

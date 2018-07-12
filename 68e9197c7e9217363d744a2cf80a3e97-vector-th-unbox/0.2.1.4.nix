@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-th-unbox = {
+        "vector-th-unbox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default

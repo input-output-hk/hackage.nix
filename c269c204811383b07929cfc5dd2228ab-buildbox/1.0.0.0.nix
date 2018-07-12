@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        buildbox = {
+        "buildbox" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rasa-ext-style = {
+        "rasa-ext-style" = {
           depends  = [
             hsPkgs.base
             hsPkgs.rasa

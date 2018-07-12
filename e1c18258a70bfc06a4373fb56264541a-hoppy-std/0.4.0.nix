@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hoppy-std = {
+        "hoppy-std" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

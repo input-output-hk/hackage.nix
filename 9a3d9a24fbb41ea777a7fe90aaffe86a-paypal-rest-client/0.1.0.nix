@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        paypal-rest-client = {
+        "paypal-rest-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

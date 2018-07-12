@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HaXml = {
+        "HaXml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -28,49 +28,49 @@ let
           ];
         };
         exes = {
-          Canonicalise = {
+          "Canonicalise" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
               hsPkgs.polyparse
             ];
           };
-          CanonicaliseLazy = {
+          "CanonicaliseLazy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
               hsPkgs.polyparse
             ];
           };
-          Xtract = {
+          "Xtract" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
               hsPkgs.polyparse
             ];
           };
-          XtractLazy = {
+          "XtractLazy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
               hsPkgs.polyparse
             ];
           };
-          Validate = {
+          "Validate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
               hsPkgs.polyparse
             ];
           };
-          MkOneOf = {
+          "MkOneOf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
               hsPkgs.polyparse
             ];
           };
-          DtdToHaskell = {
+          "DtdToHaskell" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

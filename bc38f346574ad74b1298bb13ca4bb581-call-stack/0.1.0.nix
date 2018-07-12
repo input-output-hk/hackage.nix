@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        call-stack = {
+        "call-stack" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nanospec

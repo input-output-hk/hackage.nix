@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        identicon = {
+        "identicon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.JuicyPixels
@@ -30,7 +30,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.JuicyPixels
               hsPkgs.QuickCheck
@@ -42,7 +42,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.JuicyPixels

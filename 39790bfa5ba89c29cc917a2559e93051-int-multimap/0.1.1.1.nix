@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        int-multimap = {
+        "int-multimap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

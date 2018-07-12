@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        configuration-tools = {
+        "configuration-tools" = {
           depends  = [
             hsPkgs.Cabal
             hsPkgs.aeson
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          url-example-test = {
+          "url-example-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols
@@ -53,7 +53,7 @@ let
               hsPkgs.mtl
             ];
           };
-          trivial = {
+          "trivial" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-unicode-symbols

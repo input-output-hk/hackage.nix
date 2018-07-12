@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        analyze-client = {
+        "analyze-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snap

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-random-effect = {
+        "system-random-effect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.extensible-effects
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

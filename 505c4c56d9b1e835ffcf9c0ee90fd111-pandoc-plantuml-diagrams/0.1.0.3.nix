@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pandoc-plantuml-diagrams = {
+        "pandoc-plantuml-diagrams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pandoc-types
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          pandoc-plantuml-diagrams = {
+          "pandoc-plantuml-diagrams" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pandoc-plantuml-diagrams
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          test-pandoc-crossref = {
+          "test-pandoc-crossref" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.hspec-discover

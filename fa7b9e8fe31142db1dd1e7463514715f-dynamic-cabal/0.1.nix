@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        dynamic-cabal = {
+        "dynamic-cabal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          dynamic-cabal-tests = {
+          "dynamic-cabal-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dynamic-cabal
@@ -45,7 +45,7 @@ let
               hsPkgs.tasty-th
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

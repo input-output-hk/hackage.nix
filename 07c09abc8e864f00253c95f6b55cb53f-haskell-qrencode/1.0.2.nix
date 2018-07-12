@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-qrencode = {
+        "haskell-qrencode" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

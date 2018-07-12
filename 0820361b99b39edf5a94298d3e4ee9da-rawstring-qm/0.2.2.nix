@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rawstring-qm = {
+        "rawstring-qm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

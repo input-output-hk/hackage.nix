@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-subscriber = {
+        "servant-subscriber" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -53,7 +53,7 @@ let
           ] ++ [ hsPkgs.websockets ];
         };
         exes = {
-          subscriber-psGenerator = {
+          "subscriber-psGenerator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-subscriber

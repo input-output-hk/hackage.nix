@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        satchmo-toysat = {
+        "satchmo-toysat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

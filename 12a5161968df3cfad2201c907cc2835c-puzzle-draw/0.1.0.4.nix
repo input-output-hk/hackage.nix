@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        puzzle-draw = {
+        "puzzle-draw" = {
           depends  = [
             hsPkgs.base
             hsPkgs.diagrams-lib
@@ -43,7 +43,7 @@ let
             else [ hsPkgs.diagrams-svg ]);
         };
         exes = {
-          drawpuzzle = {
+          "drawpuzzle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.puzzle-draw
@@ -58,7 +58,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

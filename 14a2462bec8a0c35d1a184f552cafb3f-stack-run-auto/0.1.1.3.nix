@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stack-run-auto = {
+        "stack-run-auto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          module-package = {
+          "module-package" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -58,7 +58,7 @@ let
               hsPkgs.stack-run-auto
             ];
           };
-          stack-run-auto = {
+          "stack-run-auto" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -79,7 +79,7 @@ let
           };
         };
         tests = {
-          stack-run-auto-test = {
+          "stack-run-auto-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

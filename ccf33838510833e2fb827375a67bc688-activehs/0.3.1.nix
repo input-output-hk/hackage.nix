@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          activehs = {
+          "activehs" = {
             depends  = [
               hsPkgs.highlighting-kate
               hsPkgs.hoogle

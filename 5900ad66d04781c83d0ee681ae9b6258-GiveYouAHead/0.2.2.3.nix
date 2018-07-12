@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GiveYouAHead = {
+        "GiveYouAHead" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exception-transformers = {
+        "exception-transformers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

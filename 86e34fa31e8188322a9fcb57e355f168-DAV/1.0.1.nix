@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DAV = {
+        "DAV" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          hdav = {
+          "hdav" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

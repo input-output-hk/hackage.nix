@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal-text = {
+        "cereal-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal

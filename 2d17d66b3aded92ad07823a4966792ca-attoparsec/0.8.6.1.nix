@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        attoparsec = {
+        "attoparsec" = {
           depends  = ([
             hsPkgs.deepseq
           ] ++ (if _flags.split-base

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          layers = {
+          "layers" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

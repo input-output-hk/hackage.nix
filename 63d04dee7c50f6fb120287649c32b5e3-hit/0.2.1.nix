@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hit = {
+        "hit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          Hit = {
+          "Hit" = {
             depends  = pkgs.lib.optionals _flags.executable [
               hsPkgs.base
               hsPkgs.mtl
@@ -58,7 +58,7 @@ let
               hsPkgs.bytedump
             ];
           };
-          Tests = {
+          "Tests" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit

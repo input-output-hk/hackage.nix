@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          GGg = {
+          "GGg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bimap

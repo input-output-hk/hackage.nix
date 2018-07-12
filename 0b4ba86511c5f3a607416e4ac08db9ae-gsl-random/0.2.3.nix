@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        gsl-random = {
+        "gsl-random" = {
           depends  = [ hsPkgs.base ];
         };
       };

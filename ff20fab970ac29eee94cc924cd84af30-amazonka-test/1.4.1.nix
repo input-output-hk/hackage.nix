@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-test = {
+        "amazonka-test" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.amazonka-core

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rvar = {
+        "rvar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MonadPrompt

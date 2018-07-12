@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        postgrest-ws = {
+        "postgrest-ws" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hasql-pool
@@ -50,7 +50,7 @@ let
           ];
         };
         exes = {
-          postgrest-ws = {
+          "postgrest-ws" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -74,7 +74,7 @@ let
           };
         };
         tests = {
-          postgrest-ws-test = {
+          "postgrest-ws-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

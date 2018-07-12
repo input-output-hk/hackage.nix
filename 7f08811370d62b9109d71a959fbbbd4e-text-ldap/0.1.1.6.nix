@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-ldap = {
+        "text-ldap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,14 +33,14 @@ let
           ];
         };
         exes = {
-          parseTest = {
+          "parseTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
               hsPkgs.text-ldap
             ];
           };
-          ppTest = {
+          "ppTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -49,7 +49,7 @@ let
           };
         };
         tests = {
-          pp = {
+          "pp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hscolour = {
+        "hscolour" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          HsColour = {
+          "HsColour" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

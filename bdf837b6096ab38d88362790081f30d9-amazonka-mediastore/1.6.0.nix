@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-mediastore = {
+        "amazonka-mediastore" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-mediastore-test = {
+          "amazonka-mediastore-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmark = {
+        "hmark" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tokyocabinet-haskell
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          hmark = {
+          "hmark" = {
             depends  = [ hsPkgs.base ];
           };
         };

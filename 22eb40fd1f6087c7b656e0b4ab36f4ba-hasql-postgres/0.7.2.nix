@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-postgres = {
+        "hasql-postgres" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.attoparsec
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          library-tests = {
+          "library-tests" = {
             depends  = [
               hsPkgs.HTF
               hsPkgs.quickcheck-instances
@@ -74,7 +74,7 @@ let
               hsPkgs.base
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.hasql-postgres
               hsPkgs.hasql-backend
@@ -99,7 +99,7 @@ let
           };
         };
         benchmarks = {
-          competition = {
+          "competition" = {
             depends  = [
               hsPkgs.HDBC
               hsPkgs.HDBC-postgresql

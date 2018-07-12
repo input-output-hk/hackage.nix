@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributive = {
+        "distributive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

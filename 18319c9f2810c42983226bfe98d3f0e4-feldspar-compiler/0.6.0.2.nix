@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feldspar-compiler = {
+        "feldspar-compiler" = {
           depends  = [
             hsPkgs.feldspar-language
             hsPkgs.ansi-terminal
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          feldspar = {
+          "feldspar" = {
             depends  = [
               hsPkgs.feldspar-language
               hsPkgs.feldspar-compiler

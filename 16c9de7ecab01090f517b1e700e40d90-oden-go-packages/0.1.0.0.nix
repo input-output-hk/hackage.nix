@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        oden-go-packages = {
+        "oden-go-packages" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

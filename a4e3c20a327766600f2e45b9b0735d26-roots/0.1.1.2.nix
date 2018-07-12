@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        roots = {
+        "roots" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagged

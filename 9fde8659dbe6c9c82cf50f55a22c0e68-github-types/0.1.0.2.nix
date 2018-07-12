@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        github-types = {
+        "github-types" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

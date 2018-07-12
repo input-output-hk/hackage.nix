@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        work-time = {
+        "work-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

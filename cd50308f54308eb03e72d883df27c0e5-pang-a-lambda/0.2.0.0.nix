@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          pang-a-lambda-dumbplayer = {
+          "pang-a-lambda-dumbplayer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SDL
@@ -31,7 +31,7 @@ let
               hsPkgs.Yampa
             ];
           };
-          pang-a-lambda-arrowup = {
+          "pang-a-lambda-arrowup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SDL
@@ -39,7 +39,7 @@ let
               hsPkgs.Yampa
             ];
           };
-          pang-a-lambda-stickyarrow = {
+          "pang-a-lambda-stickyarrow" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SDL
@@ -47,7 +47,7 @@ let
               hsPkgs.Yampa
             ];
           };
-          pang-a-lambda-player = {
+          "pang-a-lambda-player" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SDL
@@ -55,7 +55,7 @@ let
               hsPkgs.Yampa
             ];
           };
-          pang-a-lambda-physics = {
+          "pang-a-lambda-physics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -69,28 +69,28 @@ let
               hsPkgs.SDL-ttf
             ];
           };
-          pang-a-lambda-circlingboxes = {
+          "pang-a-lambda-circlingboxes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SDL
               hsPkgs.Yampa
             ];
           };
-          pang-a-lambda-splittingboxes = {
+          "pang-a-lambda-splittingboxes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SDL
               hsPkgs.Yampa
             ];
           };
-          pang-a-lambda-split = {
+          "pang-a-lambda-split" = {
             depends  = [
               hsPkgs.base
               hsPkgs.SDL
               hsPkgs.Yampa
             ];
           };
-          pang-a-lambda-splitballs = {
+          "pang-a-lambda-splitballs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -104,7 +104,7 @@ let
               hsPkgs.SDL-ttf
             ];
           };
-          pang-a-lambda = {
+          "pang-a-lambda" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

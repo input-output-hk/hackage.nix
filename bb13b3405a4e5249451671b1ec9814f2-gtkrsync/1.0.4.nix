@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          gtkrsync = {
+          "gtkrsync" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -33,7 +33,7 @@ let
               hsPkgs.process
             ];
           };
-          gtkrsyncp = {
+          "gtkrsyncp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        var-monad = {
+        "var-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

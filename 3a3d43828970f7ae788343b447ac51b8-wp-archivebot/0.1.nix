@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          wp-archivebot = {
+          "wp-archivebot" = {
             depends  = [
               hsPkgs.feed
               hsPkgs.tagsoup

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        unix-compat = {
+        "unix-compat" = {
           depends  = [ hsPkgs.base ];
         };
       };

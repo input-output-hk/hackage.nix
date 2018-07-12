@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        liblastfm = {
+        "liblastfm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

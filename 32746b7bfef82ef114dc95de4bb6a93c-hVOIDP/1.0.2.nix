@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        hVOIDP = {};
+        "hVOIDP" = {};
         exes = {
-          hVOIDP = {
+          "hVOIDP" = {
             depends  = [
               hsPkgs.array
               hsPkgs.hmatrix

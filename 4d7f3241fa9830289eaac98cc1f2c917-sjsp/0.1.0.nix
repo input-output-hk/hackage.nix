@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sjsp = {
+          "sjsp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim

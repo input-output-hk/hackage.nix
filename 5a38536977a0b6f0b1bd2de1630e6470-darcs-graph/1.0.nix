@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          darcs-graph = {
+          "darcs-graph" = {
             depends  = [
               hsPkgs.time
             ] ++ (if _flags.small_base

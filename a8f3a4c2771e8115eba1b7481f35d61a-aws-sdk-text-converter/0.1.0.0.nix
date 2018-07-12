@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-sdk-text-converter = {
+        "aws-sdk-text-converter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

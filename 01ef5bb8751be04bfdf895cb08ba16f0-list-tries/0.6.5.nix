@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-tries = {
+        "list-tries" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          list-tries-tests = {
+          "list-tries-tests" = {
             depends  = [
               hsPkgs.list-tries
               hsPkgs.base

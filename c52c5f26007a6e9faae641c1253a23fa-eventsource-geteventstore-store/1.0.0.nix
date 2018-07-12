@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eventsource-geteventstore-store = {
+        "eventsource-geteventstore-store" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          geteventstore-store-test-suite = {
+          "geteventstore-store-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.eventsource-geteventstore-store

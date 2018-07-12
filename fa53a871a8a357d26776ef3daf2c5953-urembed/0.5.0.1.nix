@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          urembed = {
+          "urembed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

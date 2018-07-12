@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        EnumContainers = {
+        "EnumContainers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

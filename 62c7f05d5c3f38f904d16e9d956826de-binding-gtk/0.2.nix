@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binding-gtk = {
+        "binding-gtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gtk

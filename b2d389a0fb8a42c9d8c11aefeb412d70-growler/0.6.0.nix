@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        growler = {
+        "growler" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

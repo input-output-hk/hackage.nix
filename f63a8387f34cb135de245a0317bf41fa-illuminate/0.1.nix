@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        illuminate = {
+        "illuminate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          illuminate = {
+          "illuminate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        openssh-github-keys = {
+        "openssh-github-keys" = {
           depends  = [
             hsPkgs.base
             hsPkgs.octohat
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          openssh-github-keys = {
+          "openssh-github-keys" = {
             depends  = [
               hsPkgs.base
               hsPkgs.octohat
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          openssh-github-keys-test = {
+          "openssh-github-keys-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.octohat

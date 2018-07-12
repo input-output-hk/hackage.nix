@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-program = {
+        "tasty-program" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory

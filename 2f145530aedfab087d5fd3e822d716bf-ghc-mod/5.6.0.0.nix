@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ghc-mod = {
+        "ghc-mod" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring
@@ -58,7 +58,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.convertible) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") hsPkgs.ghc-boot;
         };
         exes = {
-          ghc-mod = {
+          "ghc-mod" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -74,7 +74,7 @@ let
               hsPkgs.ghc-mod
             ];
           };
-          ghc-modi = {
+          "ghc-modi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -89,13 +89,13 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [ hsPkgs.hspec ];
           };
         };

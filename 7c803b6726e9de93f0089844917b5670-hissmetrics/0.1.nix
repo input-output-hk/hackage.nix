@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hissmetrics = {
+        "hissmetrics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

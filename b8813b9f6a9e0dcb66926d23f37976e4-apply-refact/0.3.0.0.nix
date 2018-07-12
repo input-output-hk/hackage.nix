@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apply-refact = {
+        "apply-refact" = {
           depends  = [
             hsPkgs.base
             hsPkgs.refact
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          refactor = {
+          "refactor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.refact
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.tasty
               hsPkgs.tasty-golden

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pansite = {
+        "pansite" = {
           depends  = [
             hsPkgs.MissingH
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          pansite = {
+          "pansite" = {
             depends  = [
               hsPkgs.MissingH
               hsPkgs.aeson
@@ -65,14 +65,14 @@ let
           };
         };
         tests = {
-          pansite-doctest = {
+          "pansite-doctest" = {
             depends  = [
               hsPkgs.Glob
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          pansite-spec = {
+          "pansite-spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

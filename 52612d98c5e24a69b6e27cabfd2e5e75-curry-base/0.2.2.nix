@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        curry-base = {
+        "curry-base" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

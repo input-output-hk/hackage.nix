@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        withdependencies = {
+        "withdependencies" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.withdependencies
               hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TrieMap = {
+        "TrieMap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

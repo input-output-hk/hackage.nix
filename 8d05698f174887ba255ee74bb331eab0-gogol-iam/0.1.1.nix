@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-iam = {
+        "gogol-iam" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

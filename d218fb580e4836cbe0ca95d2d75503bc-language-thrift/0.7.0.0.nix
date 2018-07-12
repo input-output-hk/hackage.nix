@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-thrift = {
+        "language-thrift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansi-wl-pprint

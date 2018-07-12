@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        peyotls = {
+        "peyotls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.word24
@@ -47,7 +47,7 @@ let
           ];
         };
         tests = {
-          stm-test = {
+          "stm-test" = {
             depends  = [
               hsPkgs.peyotls
               hsPkgs.handle-like
@@ -60,21 +60,7 @@ let
               hsPkgs.crypto-random
             ];
           };
-          debug-test = {
-            depends  = [
-              hsPkgs.peyotls
-              hsPkgs.handle-like
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.network
-              hsPkgs.stm
-              hsPkgs.x509
-              hsPkgs.x509-store
-              hsPkgs.crypto-random
-              hsPkgs.random
-            ];
-          };
-          reneg-test = {
+          "debug-test" = {
             depends  = [
               hsPkgs.peyotls
               hsPkgs.handle-like
@@ -88,7 +74,21 @@ let
               hsPkgs.random
             ];
           };
-          ci-reneg-test = {
+          "reneg-test" = {
+            depends  = [
+              hsPkgs.peyotls
+              hsPkgs.handle-like
+              hsPkgs.base
+              hsPkgs.bytestring
+              hsPkgs.network
+              hsPkgs.stm
+              hsPkgs.x509
+              hsPkgs.x509-store
+              hsPkgs.crypto-random
+              hsPkgs.random
+            ];
+          };
+          "ci-reneg-test" = {
             depends  = [
               hsPkgs.peyotls
               hsPkgs.handle-like

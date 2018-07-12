@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        brick = {
+        "brick" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vty
@@ -42,24 +42,14 @@ let
           ];
         };
         exes = {
-          brick-readme-demo = {
+          "brick-readme-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
               hsPkgs.text
             ];
           };
-          brick-cache-demo = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.brick
-              hsPkgs.vty
-              hsPkgs.text
-              hsPkgs.microlens
-              hsPkgs.microlens-th
-            ];
-          };
-          brick-visibility-demo = {
+          "brick-cache-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -69,7 +59,17 @@ let
               hsPkgs.microlens-th
             ];
           };
-          brick-viewport-scroll-demo = {
+          "brick-visibility-demo" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.brick
+              hsPkgs.vty
+              hsPkgs.text
+              hsPkgs.microlens
+              hsPkgs.microlens-th
+            ];
+          };
+          "brick-viewport-scroll-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -78,7 +78,7 @@ let
               hsPkgs.microlens
             ];
           };
-          brick-dialog-demo = {
+          "brick-dialog-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -87,7 +87,7 @@ let
               hsPkgs.microlens
             ];
           };
-          brick-mouse-demo = {
+          "brick-mouse-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -98,7 +98,7 @@ let
               hsPkgs.text-zipper
             ];
           };
-          brick-layer-demo = {
+          "brick-layer-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -108,7 +108,7 @@ let
               hsPkgs.microlens-th
             ];
           };
-          brick-suspend-resume-demo = {
+          "brick-suspend-resume-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -118,7 +118,7 @@ let
               hsPkgs.microlens-th
             ];
           };
-          brick-padding-demo = {
+          "brick-padding-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -127,7 +127,7 @@ let
               hsPkgs.microlens
             ];
           };
-          brick-attr-demo = {
+          "brick-attr-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -136,7 +136,7 @@ let
               hsPkgs.microlens
             ];
           };
-          brick-markup-demo = {
+          "brick-markup-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -145,7 +145,7 @@ let
               hsPkgs.microlens
             ];
           };
-          brick-list-demo = {
+          "brick-list-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -155,7 +155,7 @@ let
               hsPkgs.vector
             ];
           };
-          brick-custom-event-demo = {
+          "brick-custom-event-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -165,7 +165,7 @@ let
               hsPkgs.microlens-th
             ];
           };
-          brick-hello-world-demo = {
+          "brick-hello-world-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -174,7 +174,7 @@ let
               hsPkgs.microlens
             ];
           };
-          brick-edit-demo = {
+          "brick-edit-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -185,7 +185,7 @@ let
               hsPkgs.microlens-th
             ];
           };
-          brick-border-demo = {
+          "brick-border-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick
@@ -194,7 +194,7 @@ let
               hsPkgs.microlens
             ];
           };
-          brick-progressbar-demo = {
+          "brick-progressbar-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.brick

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binembed = {
+        "binembed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          binembed = {
+          "binembed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

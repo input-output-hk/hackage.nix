@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ethereum-analyzer-cli = {
+        "ethereum-analyzer-cli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          ea-dump-contract = {
+          "ea-dump-contract" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-java-classfile = {
+        "language-java-classfile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jupyter = {
+        "jupyter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -44,28 +44,28 @@ let
           ];
         };
         exes = {
-          kernel-basic = {
+          "kernel-basic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.jupyter
             ];
           };
-          kernel-calculator = {
+          "kernel-calculator" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.jupyter
             ];
           };
-          kernel-stdin = {
+          "kernel-stdin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
               hsPkgs.jupyter
             ];
           };
-          client-kernel-info = {
+          "client-kernel-info" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process
@@ -75,7 +75,7 @@ let
           };
         };
         tests = {
-          test-jupyter = {
+          "test-jupyter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

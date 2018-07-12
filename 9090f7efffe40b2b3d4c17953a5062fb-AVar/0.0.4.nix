@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        AVar = {
+        "AVar" = {
           depends  = [ hsPkgs.base ];
         };
       };

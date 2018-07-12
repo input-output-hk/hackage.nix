@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alure = {
+        "alure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.OpenAL

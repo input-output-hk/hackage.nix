@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        QuickCheck = {
+        "QuickCheck" = {
           depends  = (((if _flags.base4
             then [
               hsPkgs.base
@@ -37,7 +37,7 @@ let
               ]
               else [
                 hsPkgs.base
-              ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.7" && (compiler.isGhc && compiler.version.lt "6.13")) hsPkgs.ghc) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.extensible-exceptions) ++ pkgs.lib.optional (compiler.isGhc && true && (_flags.templatehaskell && (compiler.isGhc && compiler.version.ge "6.12"))) hsPkgs.template-haskell;
+              ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.7" && (compiler.isGhc && compiler.version.lt "6.13")) hsPkgs.ghc) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") hsPkgs.extensible-exceptions) ++ pkgs.lib.optionals (compiler.isGhc && true) (pkgs.lib.optional (_flags.templatehaskell && (compiler.isGhc && compiler.version.ge "6.12")) hsPkgs.template-haskell);
         };
       };
     }

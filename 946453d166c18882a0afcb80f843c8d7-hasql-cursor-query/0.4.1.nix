@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-cursor-query = {
+        "hasql-cursor-query" = {
           depends  = [
             hsPkgs.hasql
             hsPkgs.hasql-transaction
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.hasql
               hsPkgs.hasql-cursor-query

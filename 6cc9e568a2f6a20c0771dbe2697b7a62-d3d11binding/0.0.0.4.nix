@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        d3d11binding = {
+        "d3d11binding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Win32
@@ -37,14 +37,14 @@ let
           ];
         };
         exes = {
-          Triangle = {
+          "Triangle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Win32
               hsPkgs.d3d11binding
             ];
           };
-          Cube = {
+          "Cube" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Win32

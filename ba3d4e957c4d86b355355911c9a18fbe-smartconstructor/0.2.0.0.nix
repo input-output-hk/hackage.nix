@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        smartconstructor = {
+        "smartconstructor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Bitly = {
+        "Bitly" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

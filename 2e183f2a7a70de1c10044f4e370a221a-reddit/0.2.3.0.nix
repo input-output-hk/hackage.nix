@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        reddit = {
+        "reddit" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.api-builder
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.aeson
@@ -54,7 +54,7 @@ let
               hsPkgs.transformers
             ];
           };
-          test-anon = {
+          "test-anon" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.api-builder
@@ -67,7 +67,7 @@ let
               hsPkgs.transformers
             ];
           };
-          test-io = {
+          "test-io" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.api-builder

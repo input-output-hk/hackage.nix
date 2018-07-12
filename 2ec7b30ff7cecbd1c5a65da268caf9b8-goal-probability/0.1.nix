@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        goal-probability = {
+        "goal-probability" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mwc-random
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          cross-entropy-descent = {
+          "cross-entropy-descent" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
@@ -42,7 +42,7 @@ let
               hsPkgs.goal-probability
             ];
           };
-          poisson-binomial = {
+          "poisson-binomial" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
@@ -50,7 +50,7 @@ let
               hsPkgs.goal-probability
             ];
           };
-          univariate = {
+          "univariate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
@@ -58,7 +58,7 @@ let
               hsPkgs.goal-probability
             ];
           };
-          multivariate = {
+          "multivariate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
@@ -67,7 +67,7 @@ let
               hsPkgs.vector
             ];
           };
-          transducer = {
+          "transducer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
@@ -75,7 +75,7 @@ let
               hsPkgs.goal-probability
             ];
           };
-          transducer-field = {
+          "transducer-field" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
@@ -83,7 +83,7 @@ let
               hsPkgs.goal-probability
             ];
           };
-          divergence = {
+          "divergence" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core
@@ -91,7 +91,7 @@ let
               hsPkgs.goal-probability
             ];
           };
-          backpropagation = {
+          "backpropagation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.goal-core

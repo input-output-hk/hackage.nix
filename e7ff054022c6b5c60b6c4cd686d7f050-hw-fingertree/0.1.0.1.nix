@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-fingertree = {
+        "hw-fingertree" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
           ];
         };
         tests = {
-          hw-fingertree-tests = {
+          "hw-fingertree-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        operate-do = {
+        "operate-do" = {
           depends  = [
             hsPkgs.base
             hsPkgs.charset
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec-test = {
+          "spec-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.operate-do
@@ -39,7 +39,7 @@ let
               hsPkgs.hspec
             ];
           };
-          doc-test = {
+          "doc-test" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctest)) [
               hsPkgs.base
               hsPkgs.doctest

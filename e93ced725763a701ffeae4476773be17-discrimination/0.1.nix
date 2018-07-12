@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        discrimination = {
+        "discrimination" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

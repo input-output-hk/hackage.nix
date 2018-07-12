@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        timelike = {
+        "timelike" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

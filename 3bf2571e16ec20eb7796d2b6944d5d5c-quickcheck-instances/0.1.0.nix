@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quickcheck-instances = {
+        "quickcheck-instances" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

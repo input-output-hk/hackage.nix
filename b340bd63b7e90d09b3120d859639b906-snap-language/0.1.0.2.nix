@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-language = {
+        "snap-language" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

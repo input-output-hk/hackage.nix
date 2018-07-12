@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-lucid = {
+        "servant-lucid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-media
@@ -30,7 +30,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lucid

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-conduit = {
+        "xml-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

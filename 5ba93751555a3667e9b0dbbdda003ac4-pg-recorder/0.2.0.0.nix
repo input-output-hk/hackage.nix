@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pg-recorder = {
+        "pg-recorder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          pg-recorder = {
+          "pg-recorder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pg-recorder
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          pg-recorder-test = {
+          "pg-recorder-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pg-recorder

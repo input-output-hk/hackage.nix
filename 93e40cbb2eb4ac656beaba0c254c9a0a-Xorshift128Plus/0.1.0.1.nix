@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Xorshift128Plus = {
+        "Xorshift128Plus" = {
           depends  = [ hsPkgs.base ];
         };
       };

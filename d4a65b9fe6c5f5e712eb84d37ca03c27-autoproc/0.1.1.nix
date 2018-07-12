@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        autoproc = {
+        "autoproc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,6 +29,6 @@ let
             hsPkgs.process
           ];
         };
-        exes = { autoproc = {}; };
+        exes = { "autoproc" = {}; };
       };
     }

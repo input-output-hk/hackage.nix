@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hask-home = {
+          "hask-home" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base
@@ -29,7 +29,7 @@ let
               hsPkgs.xhtml
             ];
           };
-          hask-home-upload = {
+          "hask-home-upload" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

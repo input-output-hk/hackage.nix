@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        interspersed = {
+        "interspersed" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.base-prelude

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        task-distribution = {
+        "task-distribution" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hint
@@ -49,7 +49,7 @@ let
           ];
         };
         exes = {
-          slave = {
+          "slave" = {
             depends  = [
               hsPkgs.base
               hsPkgs.task-distribution
@@ -60,7 +60,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.split
@@ -72,7 +72,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          task-distribution-object-code-remote = {
+          "task-distribution-object-code-remote" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -92,7 +92,7 @@ let
               hsPkgs.zlib
             ];
           };
-          run-demo-task = {
+          "run-demo-task" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -101,7 +101,7 @@ let
               hsPkgs.async
             ];
           };
-          test-visit-performance = {
+          "test-visit-performance" = {
             depends  = [
               hsPkgs.base
               hsPkgs.split
@@ -112,7 +112,7 @@ let
           };
         };
         tests = {
-          test-node-matching = {
+          "test-node-matching" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

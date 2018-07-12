@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linear = {
+        "linear" = {
           depends  = [
             hsPkgs.base
             hsPkgs.distributive
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        jukebox = {
+        "jukebox" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          jukebox = {
+          "jukebox" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.base

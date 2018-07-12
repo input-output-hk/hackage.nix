@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spiros = {
+        "spiros" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe

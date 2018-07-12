@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        numeric-ranges = {
+        "numeric-ranges" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.numeric-ranges

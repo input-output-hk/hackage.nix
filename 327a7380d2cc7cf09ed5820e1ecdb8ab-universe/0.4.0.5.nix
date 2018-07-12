@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        universe = {
+        "universe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad-transformers

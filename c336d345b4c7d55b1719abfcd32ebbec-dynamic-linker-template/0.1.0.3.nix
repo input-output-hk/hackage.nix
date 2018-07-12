@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dynamic-linker-template = {
+        "dynamic-linker-template" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

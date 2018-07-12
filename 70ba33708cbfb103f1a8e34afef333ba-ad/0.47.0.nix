@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ad = {
+        "ad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-reify

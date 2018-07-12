@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geocode-google = {
+        "geocode-google" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

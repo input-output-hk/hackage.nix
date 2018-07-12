@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        svgutils = {
+        "svgutils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml
           ];
         };
         exes = {
-          SVGtile = {
+          "SVGtile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xml

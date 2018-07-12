@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hspec-jenkins = {
+        "hspec-jenkins" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hspec

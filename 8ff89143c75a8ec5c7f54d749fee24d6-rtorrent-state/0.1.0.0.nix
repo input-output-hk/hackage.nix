@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rtorrent-state = {
+        "rtorrent-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bencoding
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bencoding

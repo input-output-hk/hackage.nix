@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        set-monad = {
+        "set-monad" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

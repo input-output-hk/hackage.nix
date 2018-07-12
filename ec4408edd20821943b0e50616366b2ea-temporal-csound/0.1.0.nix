@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        temporal-csound = {
+        "temporal-csound" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        change-monger = {
+        "change-monger" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
           ];
         };
         exes = {
-          change-monger = {
+          "change-monger" = {
             depends  = [ hsPkgs.directory ];
           };
         };

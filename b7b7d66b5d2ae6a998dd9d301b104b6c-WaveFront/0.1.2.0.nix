@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        WaveFront = {
+        "WaveFront" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

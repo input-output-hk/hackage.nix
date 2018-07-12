@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eibd-client-simple = {
+        "eibd-client-simple" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

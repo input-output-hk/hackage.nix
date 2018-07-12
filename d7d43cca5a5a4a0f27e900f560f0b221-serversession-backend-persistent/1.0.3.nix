@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serversession-backend-persistent = {
+        "serversession-backend-persistent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

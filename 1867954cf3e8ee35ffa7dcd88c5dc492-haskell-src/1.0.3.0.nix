@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-src = {
+        "haskell-src" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        directory-layout = {
+        "directory-layout" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          basics-suite = {
+          "basics-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory-layout
@@ -43,7 +43,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory-layout
@@ -52,7 +52,7 @@ let
               hsPkgs.wordexp
             ];
           };
-          layout-laws = {
+          "layout-laws" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory-layout

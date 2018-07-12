@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagshare = {
+        "tagshare" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

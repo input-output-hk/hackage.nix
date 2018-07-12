@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        repl = {
+        "repl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

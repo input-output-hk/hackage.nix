@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scope = {
+        "scope" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.containers

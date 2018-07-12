@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        tickle = {
+        "tickle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

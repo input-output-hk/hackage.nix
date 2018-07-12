@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        basen-bytestring = {
+        "basen-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          basen-bytestring-test = {
+          "basen-bytestring-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basen-bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        archiver = {
+        "archiver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          archiver = {
+          "archiver" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

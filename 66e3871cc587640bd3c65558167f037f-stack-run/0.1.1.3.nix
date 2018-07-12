@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          stack-run = {
+          "stack-run" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.terminal-size

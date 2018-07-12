@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fenfire = {
+          "fenfire" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaXml
@@ -34,7 +34,7 @@ let
             ];
             libs = [ pkgs.raptor ];
           };
-          functortest = {
+          "functortest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaXml
@@ -46,7 +46,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          vobtest = {
+          "vobtest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaXml
@@ -58,7 +58,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          darcs2rdf = {
+          "darcs2rdf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HaXml

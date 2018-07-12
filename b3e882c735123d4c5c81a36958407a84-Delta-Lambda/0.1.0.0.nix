@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          Delta-Lambda = {
+          "Delta-Lambda" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

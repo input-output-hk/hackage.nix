@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SBench = {
+        "SBench" = {
           depends  = [
             hsPkgs.base
             hsPkgs.criterion

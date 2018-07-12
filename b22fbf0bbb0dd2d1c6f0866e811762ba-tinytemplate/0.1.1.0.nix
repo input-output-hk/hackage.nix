@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        tinytemplate = {
+        "tinytemplate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         tests = {
-          tinytemplate-tests = {
+          "tinytemplate-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

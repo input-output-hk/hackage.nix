@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inline-c-cpp = {
+        "inline-c-cpp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.inline-c
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.inline-c-cpp

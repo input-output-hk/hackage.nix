@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml-query = {
+        "xml-query" = {
           depends  = [
             hsPkgs.text
             hsPkgs.free

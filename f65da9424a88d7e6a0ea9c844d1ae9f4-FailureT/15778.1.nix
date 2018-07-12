@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        FailureT = {
+        "FailureT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

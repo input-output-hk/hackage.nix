@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quiver-bytestring = {
+        "quiver-bytestring" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

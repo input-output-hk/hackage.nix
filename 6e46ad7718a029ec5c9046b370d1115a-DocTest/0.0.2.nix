@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

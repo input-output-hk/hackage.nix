@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        biohazard = {
+        "biohazard" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.aeson-pretty
@@ -59,7 +59,7 @@ let
           ];
         };
         exes = {
-          test-pileup = {
+          "test-pileup" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -72,7 +72,7 @@ let
               hsPkgs.vector
             ];
           };
-          redeye-dar = {
+          "redeye-dar" = {
             depends  = [
               hsPkgs.aeson-pretty
               hsPkgs.async
@@ -87,7 +87,7 @@ let
               hsPkgs.vector
             ];
           };
-          redeye-single = {
+          "redeye-single" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -104,7 +104,7 @@ let
               hsPkgs.vector
             ];
           };
-          redeye-flow = {
+          "redeye-flow" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.aeson-pretty
@@ -120,7 +120,7 @@ let
               hsPkgs.vector
             ];
           };
-          afroengineer = {
+          "afroengineer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -131,7 +131,7 @@ let
               hsPkgs.vector
             ];
           };
-          bam-fixpair = {
+          "bam-fixpair" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base
@@ -145,7 +145,7 @@ let
               hsPkgs.vector
             ];
           };
-          bam-meld = {
+          "bam-meld" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -153,7 +153,7 @@ let
               hsPkgs.containers
             ];
           };
-          bam-resample = {
+          "bam-resample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -161,7 +161,7 @@ let
               hsPkgs.random
             ];
           };
-          bam-rewrap = {
+          "bam-rewrap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -169,7 +169,7 @@ let
               hsPkgs.containers
             ];
           };
-          bam-rmdup = {
+          "bam-rmdup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -179,14 +179,14 @@ let
               hsPkgs.vector
             ];
           };
-          bam-trim = {
+          "bam-trim" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
               hsPkgs.bytestring
             ];
           };
-          fastq2bam = {
+          "fastq2bam" = {
             depends  = [
               hsPkgs.base
               hsPkgs.biohazard
@@ -195,7 +195,7 @@ let
               hsPkgs.vector
             ];
           };
-          jivebunny = {
+          "jivebunny" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -212,7 +212,7 @@ let
               hsPkgs.vector-th-unbox
             ];
           };
-          mt-anno = {
+          "mt-anno" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -220,7 +220,7 @@ let
               hsPkgs.containers
             ];
           };
-          mt-ccheck = {
+          "mt-ccheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

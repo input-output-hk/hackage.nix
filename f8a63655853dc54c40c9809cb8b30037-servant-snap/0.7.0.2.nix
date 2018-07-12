@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-snap = {
+        "servant-snap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          snap-greet = {
+          "snap-greet" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -67,7 +67,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

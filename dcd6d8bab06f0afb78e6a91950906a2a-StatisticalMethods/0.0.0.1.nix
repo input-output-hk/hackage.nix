@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        StatisticalMethods = {
+        "StatisticalMethods" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

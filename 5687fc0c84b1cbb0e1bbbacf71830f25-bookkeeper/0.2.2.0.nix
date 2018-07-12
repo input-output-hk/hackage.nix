@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bookkeeper = {
+        "bookkeeper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-level-sets
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-level-sets
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-level-sets
@@ -50,7 +50,7 @@ let
               hsPkgs.yaml
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-level-sets
@@ -62,7 +62,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.type-level-sets

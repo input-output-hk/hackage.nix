@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        freq = {
+        "freq" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          freq-train = {
+          "freq-train" = {
             depends  = [
               hsPkgs.base
               hsPkgs.freq
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

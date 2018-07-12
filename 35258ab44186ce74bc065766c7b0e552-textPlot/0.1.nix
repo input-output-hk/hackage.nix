@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        textPlot = {
+        "textPlot" = {
           depends  = [ hsPkgs.base ];
         };
       };

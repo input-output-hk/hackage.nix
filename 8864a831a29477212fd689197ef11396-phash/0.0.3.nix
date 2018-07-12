@@ -20,12 +20,12 @@ let
         buildType = "Simple";
       };
       components = {
-        phash = {
+        "phash" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.pHash ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -36,7 +36,7 @@ let
             ];
             libs = [ pkgs.pHash ];
           };
-          docs = {
+          "docs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

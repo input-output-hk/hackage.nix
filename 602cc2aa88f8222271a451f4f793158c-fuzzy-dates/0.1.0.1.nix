@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fuzzy-dates = {
+        "fuzzy-dates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hourglass
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          fuzzy-dates-exe = {
+          "fuzzy-dates-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fuzzy-dates
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          fuzzy-dates-test = {
+          "fuzzy-dates-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fuzzy-dates

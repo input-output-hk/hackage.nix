@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rl-satton = {
+        "rl-satton" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.rl-satton

@@ -23,14 +23,14 @@ let
         buildType = "Simple";
       };
       components = {
-        ncurses = {
+        "ncurses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
             hsPkgs.text
             hsPkgs.transformers
           ];
-          libs = if !_flags.use-pkgconfig && (system.isOsx || _flags.force-narrow-library)
+          libs = pkgs.lib.optionals (!_flags.use-pkgconfig) (if system.isOsx || _flags.force-narrow-library
             then [
               pkgs.panel
               pkgs.ncurses
@@ -40,8 +40,8 @@ let
               pkgs.panelw
               pkgs.ncursesw
               pkgs.pthread
-            ];
-          pkgconfig = if _flags.use-pkgconfig && _flags.force-narrow-library
+            ]);
+          pkgconfig = pkgs.lib.optionals _flags.use-pkgconfig (if _flags.force-narrow-library
             then [
               pkgconfPkgs.ncurses
               pkgconfPkgs.panel
@@ -49,7 +49,7 @@ let
             else [
               pkgconfPkgs.ncursesw
               pkgconfPkgs.panelw
-            ];
+            ]);
           build-tools = [
             hsPkgs.buildPackages.c2hs
           ];

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dbmigrations-mysql = {
+        "dbmigrations-mysql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dbmigrations
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          moo-mysql = {
+          "moo-mysql" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dbmigrations-mysql
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          dbmigrations-mysql-tests = {
+          "dbmigrations-mysql-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dbmigrations

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parsestar = {
+        "parsestar" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          PrintCSTypes = {
+          "PrintCSTypes" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -52,7 +52,7 @@ let
               hsPkgs.parsestar
             ];
           };
-          MergeCoord = {
+          "MergeCoord" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -63,7 +63,7 @@ let
               hsPkgs.parsestar
             ];
           };
-          TestChemShifts = {
+          "TestChemShifts" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base
@@ -74,7 +74,7 @@ let
               hsPkgs.parsestar
             ];
           };
-          STAR2Fasta = {
+          "STAR2Fasta" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

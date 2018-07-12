@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        udbus = {
+        "udbus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cereal
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          dbus = {
+          "dbus" = {
             depends  = pkgs.lib.optional _flags.executable hsPkgs.network;
           };
         };

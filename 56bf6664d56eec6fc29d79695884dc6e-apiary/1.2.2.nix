@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary = {
+        "apiary" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -51,7 +51,7 @@ let
           ];
         };
         tests = {
-          test-framework = {
+          "test-framework" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

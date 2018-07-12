@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        overture = {
+        "overture" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

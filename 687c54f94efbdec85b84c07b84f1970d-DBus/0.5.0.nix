@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        DBus = {
+        "DBus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

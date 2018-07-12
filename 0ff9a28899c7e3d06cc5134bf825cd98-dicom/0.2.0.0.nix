@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dicom = {
+        "dicom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        locked-poll = {
+        "locked-poll" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          locked-poll = {
+          "locked-poll" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

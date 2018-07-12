@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        easytensor-vulkan = {
+        "easytensor-vulkan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dimensions

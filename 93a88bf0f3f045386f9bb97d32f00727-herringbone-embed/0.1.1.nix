@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        herringbone-embed = {
+        "herringbone-embed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.herringbone

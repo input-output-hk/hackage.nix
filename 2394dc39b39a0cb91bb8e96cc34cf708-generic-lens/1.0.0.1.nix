@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generic-lens = {
+        "generic-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.profunctors
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          generic-lens-examples = {
+          "generic-lens-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.generic-lens
@@ -39,7 +39,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          generic-lens-test = {
+          "generic-lens-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.generic-lens
@@ -49,7 +49,7 @@ let
               hsPkgs.HUnit
             ] ++ pkgs.lib.optional _flags.dump-core hsPkgs.dump-core;
           };
-          generic-lens-bifunctor = {
+          "generic-lens-bifunctor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.generic-lens
@@ -57,7 +57,7 @@ let
               hsPkgs.HUnit
             ] ++ pkgs.lib.optional _flags.dump-core hsPkgs.dump-core;
           };
-          generic-lens-syb-tree = {
+          "generic-lens-syb-tree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.generic-lens
@@ -66,13 +66,13 @@ let
               hsPkgs.HUnit
             ] ++ pkgs.lib.optional _flags.dump-core hsPkgs.dump-core;
           };
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          examples-doctests = {
+          "examples-doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -80,7 +80,7 @@ let
           };
         };
         benchmarks = {
-          generic-lens-bench = {
+          "generic-lens-bench" = {
             depends  = [
               hsPkgs.generic-lens
               hsPkgs.base

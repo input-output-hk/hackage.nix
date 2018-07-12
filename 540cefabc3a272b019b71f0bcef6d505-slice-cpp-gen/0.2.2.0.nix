@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          slice-cpp-gen = {
+          "slice-cpp-gen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

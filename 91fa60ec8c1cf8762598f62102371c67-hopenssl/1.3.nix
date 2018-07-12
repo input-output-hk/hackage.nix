@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hopenssl = {
+        "hopenssl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

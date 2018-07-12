@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        specialize-th = {
+        "specialize-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.DebugTraceHelpers

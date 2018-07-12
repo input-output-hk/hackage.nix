@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        game-tree = {
+        "game-tree" = {
           depends  = [ hsPkgs.base ];
         };
       };

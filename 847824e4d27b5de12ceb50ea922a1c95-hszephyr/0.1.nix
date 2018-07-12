@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hszephyr = {
+        "hszephyr" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

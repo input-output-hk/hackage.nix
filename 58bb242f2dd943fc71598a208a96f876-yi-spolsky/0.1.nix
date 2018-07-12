@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-spolsky = {
+        "yi-spolsky" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yi

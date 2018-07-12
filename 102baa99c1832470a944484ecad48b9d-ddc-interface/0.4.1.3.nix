@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ddc-interface = {
+        "ddc-interface" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

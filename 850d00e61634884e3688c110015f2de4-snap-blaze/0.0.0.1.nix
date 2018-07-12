@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-blaze = {
+        "snap-blaze" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-html

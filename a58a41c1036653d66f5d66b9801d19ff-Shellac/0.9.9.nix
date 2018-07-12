@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Shellac = {
+        "Shellac" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        socket-icmp = {
+        "socket-icmp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.socket

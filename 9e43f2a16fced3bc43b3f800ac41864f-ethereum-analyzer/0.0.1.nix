@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ethereum-analyzer = {
+        "ethereum-analyzer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -64,7 +64,7 @@ let
           ];
         };
         exes = {
-          ethereum-analyzer = {
+          "ethereum-analyzer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ethereum-analyzer
@@ -73,7 +73,7 @@ let
               hsPkgs.monad-logger
             ];
           };
-          ea-dump-contract = {
+          "ea-dump-contract" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -87,7 +87,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

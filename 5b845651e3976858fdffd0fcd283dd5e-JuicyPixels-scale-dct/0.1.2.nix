@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JuicyPixels-scale-dct = {
+        "JuicyPixels-scale-dct" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

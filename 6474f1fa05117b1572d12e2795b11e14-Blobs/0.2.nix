@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Blobs = {
+        "Blobs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          blobs = {
+          "blobs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

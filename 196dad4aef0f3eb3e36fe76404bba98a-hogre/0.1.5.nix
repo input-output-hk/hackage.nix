@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hogre = {
+        "hogre" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgen

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ponder = {
+        "ponder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

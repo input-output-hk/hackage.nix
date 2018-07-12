@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mvc = {
+        "mvc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-extras = {
+        "th-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monoidal-containers = {
+        "monoidal-containers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskey-mtl = {
+        "haskey-mtl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          haskey-mtl-example = {
+          "haskey-mtl-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskey

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        XInput = {
+        "XInput" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Win32

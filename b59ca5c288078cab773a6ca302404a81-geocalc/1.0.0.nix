@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        geocalc = {
+        "geocalc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

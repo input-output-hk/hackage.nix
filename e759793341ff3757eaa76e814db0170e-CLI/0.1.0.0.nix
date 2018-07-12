@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        CLI = {
+        "CLI" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

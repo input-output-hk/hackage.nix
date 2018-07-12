@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GoogleSuggest = {
+        "GoogleSuggest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.download-curl

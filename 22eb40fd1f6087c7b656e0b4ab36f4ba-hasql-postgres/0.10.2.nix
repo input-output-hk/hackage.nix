@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hasql-postgres = {
+        "hasql-postgres" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.attoparsec
@@ -48,7 +48,7 @@ let
           ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.doctest
               hsPkgs.directory
@@ -57,7 +57,7 @@ let
               hsPkgs.base
             ];
           };
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.postgresql-binary
               hsPkgs.hasql-postgres
@@ -83,7 +83,7 @@ let
           };
         };
         benchmarks = {
-          competition = {
+          "competition" = {
             depends  = [
               hsPkgs.HDBC
               hsPkgs.HDBC-postgresql

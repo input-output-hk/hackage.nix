@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        ansigraph = {
+        "ansigraph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-terminal
           ];
         };
         tests = {
-          test-ansigraph = {
+          "test-ansigraph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ansigraph

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enummapset = {
+        "enummapset" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

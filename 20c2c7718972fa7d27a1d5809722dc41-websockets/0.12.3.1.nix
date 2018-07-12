@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        websockets = {
+        "websockets" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          websockets-example = {
+          "websockets-example" = {
             depends  = [
               hsPkgs.websockets
               hsPkgs.attoparsec
@@ -59,7 +59,7 @@ let
               hsPkgs.entropy
             ];
           };
-          websockets-autobahn = {
+          "websockets-autobahn" = {
             depends  = [
               hsPkgs.websockets
               hsPkgs.attoparsec
@@ -79,7 +79,7 @@ let
           };
         };
         tests = {
-          websockets-tests = {
+          "websockets-tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck
@@ -104,7 +104,7 @@ let
           };
         };
         benchmarks = {
-          bench-mask = {
+          "bench-mask" = {
             depends  = [
               hsPkgs.criterion
               hsPkgs.attoparsec

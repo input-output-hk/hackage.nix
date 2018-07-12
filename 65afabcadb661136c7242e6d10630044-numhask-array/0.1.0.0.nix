@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        numhask-array = {
+        "numhask-array" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.accelerate
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

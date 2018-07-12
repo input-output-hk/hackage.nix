@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        morph = {
+        "morph" = {
           depends  = [
             hsPkgs.base
             hsPkgs.optparse-applicative
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          morph = {
+          "morph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.morph

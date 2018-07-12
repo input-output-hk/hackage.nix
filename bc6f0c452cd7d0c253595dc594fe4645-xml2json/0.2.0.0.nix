@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml2json = {
+        "xml2json" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          xml2json = {
+          "xml2json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

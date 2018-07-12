@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        matrix-as-xyz = {
+        "matrix-as-xyz" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          matrix-as-xyz-doctest = {
+          "matrix-as-xyz-doctest" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -41,7 +41,7 @@ let
               hsPkgs.parsec
             ];
           };
-          matrix-as-xyz-test = {
+          "matrix-as-xyz-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

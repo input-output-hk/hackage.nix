@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        Adaptive = {
+        "Adaptive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
           ];
         };
         exes = {
-          spreadsheet = {
+          "spreadsheet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

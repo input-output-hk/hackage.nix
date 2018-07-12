@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hackage-proxy = {
+          "hackage-proxy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.classy-prelude

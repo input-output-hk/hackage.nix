@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stack-yaml = {
+        "stack-yaml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          hup-doctest = {
+          "hup-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stack-yaml

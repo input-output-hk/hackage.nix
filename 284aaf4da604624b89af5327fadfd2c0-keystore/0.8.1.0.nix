@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keystore = {
+        "keystore" = {
           depends  = [
             hsPkgs.api-tools
             hsPkgs.asn1-types
@@ -57,13 +57,13 @@ let
           ];
         };
         exes = {
-          ks = {
+          "ks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.keystore
             ];
           };
-          deploy = {
+          "deploy" = {
             depends  = [
               hsPkgs.api-tools
               hsPkgs.ansi-wl-pprint

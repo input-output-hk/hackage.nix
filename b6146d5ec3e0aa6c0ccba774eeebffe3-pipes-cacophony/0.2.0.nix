@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-cacophony = {
+        "pipes-cacophony" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          echo-server = {
+          "echo-server" = {
             depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.aeson
               hsPkgs.async
@@ -54,7 +54,7 @@ let
               hsPkgs.unix-time
             ];
           };
-          echo-client = {
+          "echo-client" = {
             depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.aeson
               hsPkgs.async
@@ -74,7 +74,7 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.hlint)) [
               hsPkgs.base
               hsPkgs.hlint

@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        vector-space = {};
+        "vector-space" = {};
         exes = {
-          Perf = {
+          "Perf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL

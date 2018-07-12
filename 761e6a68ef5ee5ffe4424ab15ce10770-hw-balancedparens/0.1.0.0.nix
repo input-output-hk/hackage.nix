@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hw-balancedparens = {
+        "hw-balancedparens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hw-bits
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          hw-balancedparens-test = {
+          "hw-balancedparens-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

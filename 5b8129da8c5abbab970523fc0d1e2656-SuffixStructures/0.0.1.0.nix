@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SuffixStructures = {
+        "SuffixStructures" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          mkesa = {
+          "mkesa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          BenchmarkSuffixStructures = {
+          "BenchmarkSuffixStructures" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

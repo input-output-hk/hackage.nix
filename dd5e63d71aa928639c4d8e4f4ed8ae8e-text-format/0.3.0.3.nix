@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-format = {
+        "text-format" = {
           depends  = ([
             hsPkgs.array
             hsPkgs.base

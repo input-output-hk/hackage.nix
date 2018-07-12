@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quiver = {
+        "quiver" = {
           depends  = [ hsPkgs.base ];
         };
       };

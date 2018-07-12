@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        salvia-protocol = {
+        "salvia-protocol" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

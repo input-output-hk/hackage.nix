@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal = {
+        "cereal" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.containers
@@ -36,7 +36,7 @@ let
             else [ hsPkgs.bytestring ]);
         };
         tests = {
-          test-cereal = {
+          "test-cereal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

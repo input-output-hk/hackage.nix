@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scrape-changes = {
+        "scrape-changes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.validation
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          scrapechanges-tests = {
+          "scrapechanges-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mount = {
+        "mount" = {
           depends  = [ hsPkgs.base ];
         };
       };

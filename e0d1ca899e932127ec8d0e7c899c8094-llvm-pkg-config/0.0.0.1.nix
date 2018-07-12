@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          llvm-pkg-config = {
+          "llvm-pkg-config" = {
             depends  = [
               hsPkgs.Cabal
               hsPkgs.process

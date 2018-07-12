@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        socket = {
+        "socket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          default = {
+          "default" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty
@@ -43,7 +43,7 @@ let
               hsPkgs.socket
             ];
           };
-          threaded = {
+          "threaded" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        octane = {
+        "octane" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          octane = {
+          "octane" = {
             depends  = [
               hsPkgs.base
               hsPkgs.octane
@@ -47,14 +47,14 @@ let
           };
         };
         tests = {
-          octane-doctest = {
+          "octane-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.octane
               hsPkgs.doctest
             ];
           };
-          octane-test-suite = {
+          "octane-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.octane
@@ -64,7 +64,7 @@ let
           };
         };
         benchmarks = {
-          octane-benchmark = {
+          "octane-benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

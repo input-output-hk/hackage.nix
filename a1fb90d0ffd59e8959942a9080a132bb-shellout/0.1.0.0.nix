@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shellout = {
+        "shellout" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

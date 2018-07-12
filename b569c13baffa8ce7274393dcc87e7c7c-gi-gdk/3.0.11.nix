@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gi-gdk = {
+        "gi-gdk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-gi-base

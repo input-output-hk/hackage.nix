@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          xpathdsv = {
+          "xpathdsv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hxt

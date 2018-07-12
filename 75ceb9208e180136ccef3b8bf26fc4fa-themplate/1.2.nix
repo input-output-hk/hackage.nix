@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          themplate = {
+          "themplate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

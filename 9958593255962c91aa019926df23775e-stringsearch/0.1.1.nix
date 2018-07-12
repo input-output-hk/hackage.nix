@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        stringsearch = {
+        "stringsearch" = {
           depends  = [ hsPkgs.base ];
         };
       };

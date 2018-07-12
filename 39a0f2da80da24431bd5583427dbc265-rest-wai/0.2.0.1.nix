@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rest-wai = {
+        "rest-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat

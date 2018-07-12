@@ -28,13 +28,13 @@ let
       };
       components = {
         exes = {
-          penny = {
+          "penny" = {
             depends  = [
               hsPkgs.base
               hsPkgs.penny-lib
             ];
           };
-          penny-selloff = {
+          "penny-selloff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.penny-lib
@@ -47,7 +47,7 @@ let
               hsPkgs.transformers
             ];
           };
-          penny-diff = {
+          "penny-diff" = {
             depends  = [
               hsPkgs.base
               hsPkgs.penny-lib
@@ -56,7 +56,7 @@ let
               hsPkgs.explicit-exception
             ];
           };
-          penny-reprint = {
+          "penny-reprint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.penny-lib
@@ -64,7 +64,7 @@ let
               hsPkgs.text
             ];
           };
-          penny-reconcile = {
+          "penny-reconcile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.penny-lib

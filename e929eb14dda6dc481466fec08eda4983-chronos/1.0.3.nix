@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chronos = {
+        "chronos" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          chronos-test = {
+          "chronos-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chronos

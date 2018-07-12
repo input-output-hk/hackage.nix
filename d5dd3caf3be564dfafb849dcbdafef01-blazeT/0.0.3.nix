@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        blazeT = {
+        "blazeT" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup

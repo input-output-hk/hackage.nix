@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-key-value-csv = {
+        "pipes-key-value-csv" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -43,7 +43,7 @@ let
           ];
         };
         tests = {
-          test-kvc = {
+          "test-kvc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.contravariant

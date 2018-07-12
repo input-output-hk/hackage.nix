@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atmos-dimensional = {
+        "atmos-dimensional" = {
           depends  = [
             hsPkgs.base
             hsPkgs.atmos

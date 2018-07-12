@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          zeno = {
+          "zeno" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

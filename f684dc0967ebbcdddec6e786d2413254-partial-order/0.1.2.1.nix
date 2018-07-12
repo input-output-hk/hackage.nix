@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        partial-order = {
+        "partial-order" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          partial-order-test = {
+          "partial-order-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.partial-order

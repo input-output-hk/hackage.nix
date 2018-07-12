@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HTF = {
+        "HTF" = {
           depends  = [
             hsPkgs.HUnit
             hsPkgs.QuickCheck
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          htfpp = {
+          "htfpp" = {
             depends  = [
               hsPkgs.cpphs
               hsPkgs.haskell-src-exts

@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        terminfo = {
+        "terminfo" = {
           depends  = [ hsPkgs.base ];
         };
       };

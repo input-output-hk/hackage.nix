@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Holumbus-Storage = {
+        "Holumbus-Storage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

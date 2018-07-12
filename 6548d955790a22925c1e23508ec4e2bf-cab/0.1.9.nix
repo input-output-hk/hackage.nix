@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cab = {
+          "cab" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

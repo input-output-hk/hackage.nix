@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        configurator-export = {
+        "configurator-export" = {
           depends  = if compiler.isGhc && compiler.version.ge "7.10"
             then [
               hsPkgs.base
@@ -43,7 +43,7 @@ let
             ];
         };
         tests = {
-          configurator-export-test = {
+          "configurator-export-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.configurator-export

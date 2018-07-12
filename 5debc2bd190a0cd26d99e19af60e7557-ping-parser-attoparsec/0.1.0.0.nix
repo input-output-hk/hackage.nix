@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ping-parser-attoparsec = {
+        "ping-parser-attoparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.placeholders
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          ping-parser-attoparsec-exe = {
+          "ping-parser-attoparsec-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ping-parser-attoparsec
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          ping-parser-attoparsec-test = {
+          "ping-parser-attoparsec-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ping-parser-attoparsec

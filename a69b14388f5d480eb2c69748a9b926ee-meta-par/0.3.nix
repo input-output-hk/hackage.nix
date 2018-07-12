@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        meta-par = {
+        "meta-par" = {
           depends  = [
             hsPkgs.base
             hsPkgs.abstract-par

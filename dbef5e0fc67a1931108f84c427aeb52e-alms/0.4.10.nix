@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          alms = {
+          "alms" = {
             depends  = [
               hsPkgs.haskell98
               hsPkgs.base

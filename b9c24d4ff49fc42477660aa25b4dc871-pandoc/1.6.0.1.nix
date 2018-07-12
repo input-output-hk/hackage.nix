@@ -27,7 +27,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pandoc = {
+        "pandoc" = {
           depends  = (([
             hsPkgs.pretty
             hsPkgs.containers
@@ -54,7 +54,7 @@ let
             ])) ++ pkgs.lib.optional _flags.highlighting hsPkgs.highlighting-kate) ++ pkgs.lib.optional _flags.citeproc hsPkgs.citeproc-hs;
         };
         exes = {
-          pandoc = {
+          "pandoc" = {
             depends  = (([
               hsPkgs.pretty
               hsPkgs.containers
@@ -80,7 +80,7 @@ let
                 hsPkgs.base
               ])) ++ pkgs.lib.optional _flags.highlighting hsPkgs.highlighting-kate) ++ pkgs.lib.optional _flags.citeproc hsPkgs.citeproc-hs;
           };
-          markdown2pdf = {};
+          "markdown2pdf" = {};
         };
       };
     }

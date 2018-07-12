@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xml2html = {
+        "xml2html" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

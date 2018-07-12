@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mosaico-lib = {
+        "mosaico-lib" = {
           depends  = [
             hsPkgs.JuicyPixels
             hsPkgs.base

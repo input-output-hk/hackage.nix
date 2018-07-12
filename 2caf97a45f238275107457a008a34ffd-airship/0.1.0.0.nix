@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        airship = {
+        "airship" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          airship-example = {
+          "airship-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.airship
@@ -63,7 +63,7 @@ let
           };
         };
         tests = {
-          unit = {
+          "unit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.airship

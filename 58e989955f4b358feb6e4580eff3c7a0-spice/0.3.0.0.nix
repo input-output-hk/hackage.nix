@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spice = {
+        "spice" = {
           depends  = [
             hsPkgs.base
             hsPkgs.elerea

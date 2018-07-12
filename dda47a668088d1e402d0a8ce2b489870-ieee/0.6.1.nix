@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ieee = {
+        "ieee" = {
           depends  = [ hsPkgs.base ];
         };
       };

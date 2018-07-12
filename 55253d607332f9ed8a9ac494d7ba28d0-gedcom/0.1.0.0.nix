@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gedcom = {
+        "gedcom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          gedcom-test = {
+          "gedcom-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gedcom

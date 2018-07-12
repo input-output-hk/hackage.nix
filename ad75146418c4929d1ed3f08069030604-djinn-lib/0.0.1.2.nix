@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        djinn-lib = {
+        "djinn-lib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

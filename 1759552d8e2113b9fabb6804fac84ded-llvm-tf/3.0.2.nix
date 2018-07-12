@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llvm-tf = {
+        "llvm-tf" = {
           depends  = [
             hsPkgs.llvm-base
             hsPkgs.tfp
@@ -35,35 +35,35 @@ let
           frameworks = pkgs.lib.optional system.isOsx pkgs.vecLib;
         };
         exes = {
-          llvm-align = {
+          "llvm-align" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
-          llvm-arith = {
+          "llvm-arith" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
-          llvm-array = {
+          "llvm-array" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
-          llvm-brainf = {
+          "llvm-brainf" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
-          llvm-call-conv = {
+          "llvm-call-conv" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.llvm-base
@@ -71,49 +71,49 @@ let
               hsPkgs.base
             ];
           };
-          llvm-dot-prod = {
+          "llvm-dot-prod" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
-          llvm-fibonacci = {
+          "llvm-fibonacci" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
-          llvm-hello-jit = {
+          "llvm-hello-jit" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
-          llvm-list = {
+          "llvm-list" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
-          llvm-struct = {
+          "llvm-struct" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
-          llvm-varargs = {
+          "llvm-varargs" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp
               hsPkgs.base
             ];
           };
-          llvm-vector = {
+          "llvm-vector" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.llvm-tf
               hsPkgs.tfp

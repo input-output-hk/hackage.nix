@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        case-insensitive-match = {
+        "case-insensitive-match" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          readme-example = {
+          "readme-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.case-insensitive-match
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          test-basics = {
+          "test-basics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.case-insensitive-match
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          bench-others = {
+          "bench-others" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -60,7 +60,7 @@ let
               hsPkgs.criterion
             ];
           };
-          bench-tagsoup = {
+          "bench-tagsoup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

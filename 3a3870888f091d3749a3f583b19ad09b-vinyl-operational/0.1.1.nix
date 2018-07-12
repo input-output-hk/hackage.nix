@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vinyl-operational = {
+        "vinyl-operational" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vinyl-plus

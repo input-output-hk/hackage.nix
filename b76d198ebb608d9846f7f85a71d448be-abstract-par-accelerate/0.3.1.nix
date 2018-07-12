@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        abstract-par-accelerate = {
+        "abstract-par-accelerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.abstract-par

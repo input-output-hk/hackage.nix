@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parameterized-utils = {
+        "parameterized-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.th-abstraction
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          parameterizedTests = {
+          "parameterizedTests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hashable

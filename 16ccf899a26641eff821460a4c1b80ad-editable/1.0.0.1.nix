@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        editable = {
+        "editable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

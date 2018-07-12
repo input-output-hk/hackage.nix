@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pinch = {
+        "pinch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          pinch-spec = {
+          "pinch-spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -50,7 +50,7 @@ let
           };
         };
         benchmarks = {
-          pinch-bench = {
+          "pinch-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

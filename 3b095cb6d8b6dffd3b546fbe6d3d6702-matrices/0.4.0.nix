@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        matrices = {
+        "matrices" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -29,7 +29,7 @@ let
           ];
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.matrices

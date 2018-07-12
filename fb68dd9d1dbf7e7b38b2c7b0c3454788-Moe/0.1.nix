@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Moe = {
+        "Moe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          MoeExample = {
+          "MoeExample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

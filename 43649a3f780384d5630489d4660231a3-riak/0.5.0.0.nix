@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        riak = {
+        "riak" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec

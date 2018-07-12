@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nested-routes = {
+        "nested-routes" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

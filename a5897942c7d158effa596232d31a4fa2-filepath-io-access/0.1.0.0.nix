@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filepath-io-access = {
+        "filepath-io-access" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

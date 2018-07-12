@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabal2spec = {
+          "cabal2spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

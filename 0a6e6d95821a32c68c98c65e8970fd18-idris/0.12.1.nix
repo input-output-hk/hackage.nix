@@ -27,7 +27,7 @@ let
         buildType = "Custom";
       };
       components = {
-        idris = {
+        "idris" = {
           depends  = (((((([
             hsPkgs.base
             hsPkgs.aeson
@@ -81,7 +81,7 @@ let
           libs = pkgs.lib.optional _flags.gmp pkgs.gmp;
         };
         exes = {
-          idris = {
+          "idris" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base
@@ -91,7 +91,7 @@ let
               hsPkgs.transformers
             ];
           };
-          idris-codegen-c = {
+          "idris-codegen-c" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base
@@ -100,7 +100,7 @@ let
               hsPkgs.transformers
             ];
           };
-          idris-codegen-javascript = {
+          "idris-codegen-javascript" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base
@@ -109,7 +109,7 @@ let
               hsPkgs.transformers
             ];
           };
-          idris-codegen-node = {
+          "idris-codegen-node" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base
@@ -120,7 +120,7 @@ let
           };
         };
         tests = {
-          regression-and-sanity-tests = {
+          "regression-and-sanity-tests" = {
             depends  = [
               hsPkgs.idris
               hsPkgs.base

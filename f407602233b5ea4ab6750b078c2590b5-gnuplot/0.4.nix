@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gnuplot = {
+        "gnuplot" = {
           depends  = [
             hsPkgs.array
             hsPkgs.containers
@@ -41,6 +41,6 @@ let
             ]
             else [ hsPkgs.base ]);
         };
-        exes = { gnuplot-demo = {}; };
+        exes = { "gnuplot-demo" = {}; };
       };
     }

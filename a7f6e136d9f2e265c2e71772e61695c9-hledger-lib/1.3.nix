@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hledger-lib = {
+        "hledger-lib" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.base-compat
@@ -62,7 +62,7 @@ let
             else [ hsPkgs.time ]);
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -96,7 +96,7 @@ let
               hsPkgs.Glob
             ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
           };
-          hunittests = {
+          "hunittests" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.base-compat

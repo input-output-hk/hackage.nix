@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HDBC-odbc = {
+        "HDBC-odbc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -35,7 +35,7 @@ let
             else [ pkgs.odbc ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

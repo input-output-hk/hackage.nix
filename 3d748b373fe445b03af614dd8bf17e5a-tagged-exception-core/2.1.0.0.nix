@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagged-exception-core = {
+        "tagged-exception-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

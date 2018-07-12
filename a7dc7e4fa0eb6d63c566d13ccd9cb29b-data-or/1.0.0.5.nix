@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-or = {
+        "data-or" = {
           depends  = [ hsPkgs.base ];
         };
       };

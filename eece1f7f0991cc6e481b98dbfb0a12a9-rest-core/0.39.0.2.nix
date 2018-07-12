@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rest-core = {
+        "rest-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -51,7 +51,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.semigroups;
         };
         tests = {
-          rest-tests = {
+          "rest-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-firewire = {
+        "simple-firewire" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bindings-dc1394

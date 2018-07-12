@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pointless-rewrite = {
+        "pointless-rewrite" = {
           depends  = [
             hsPkgs.mtl
             hsPkgs.base

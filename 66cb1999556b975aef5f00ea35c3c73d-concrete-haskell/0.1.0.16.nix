@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concrete-haskell = {
+        "concrete-haskell" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -63,7 +63,7 @@ let
           ];
         };
         exes = {
-          apply_annotators = {
+          "apply_annotators" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -106,7 +106,7 @@ let
               hsPkgs.zlib
             ];
           };
-          build_graphs = {
+          "build_graphs" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -149,7 +149,7 @@ let
               hsPkgs.zlib
             ];
           };
-          fetch_service = {
+          "fetch_service" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -192,7 +192,7 @@ let
               hsPkgs.zlib
             ];
           };
-          ingest_communications = {
+          "ingest_communications" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -235,7 +235,7 @@ let
               hsPkgs.zlib
             ];
           };
-          inspect_communications = {
+          "inspect_communications" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -278,7 +278,7 @@ let
               hsPkgs.zlib
             ];
           };
-          store_service = {
+          "store_service" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -323,7 +323,7 @@ let
           };
         };
         tests = {
-          ingesters = {
+          "ingesters" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -366,7 +366,7 @@ let
               hsPkgs.zlib
             ];
           };
-          serialization = {
+          "serialization" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        arrow-list = {
+        "arrow-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

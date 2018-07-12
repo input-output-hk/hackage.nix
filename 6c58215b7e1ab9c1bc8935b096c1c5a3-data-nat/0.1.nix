@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-nat = {
+        "data-nat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups

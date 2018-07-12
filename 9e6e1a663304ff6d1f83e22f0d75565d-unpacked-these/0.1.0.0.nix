@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unpacked-these = {
+        "unpacked-these" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          unpacked-these-test = {
+          "unpacked-these-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unpacked-these

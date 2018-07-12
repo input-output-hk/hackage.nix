@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hinterface = {
+        "hinterface" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.array
@@ -49,7 +49,7 @@ let
           ];
         };
         tests = {
-          hinterface-test = {
+          "hinterface-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.async

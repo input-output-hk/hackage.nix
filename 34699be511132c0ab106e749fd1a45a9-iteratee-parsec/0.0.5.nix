@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iteratee-parsec = {
+        "iteratee-parsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.iteratee

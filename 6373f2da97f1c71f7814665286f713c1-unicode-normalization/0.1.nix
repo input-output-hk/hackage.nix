@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        unicode-normalization = {
+        "unicode-normalization" = {
           depends  = if _flags.split-base
             then [
               hsPkgs.base

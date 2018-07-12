@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          modsplit = {
+          "modsplit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

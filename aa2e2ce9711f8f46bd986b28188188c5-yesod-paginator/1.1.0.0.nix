@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-paginator = {
+        "yesod-paginator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          yesod-paginator-example = {
+          "yesod-paginator-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.warp
@@ -47,13 +47,13 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

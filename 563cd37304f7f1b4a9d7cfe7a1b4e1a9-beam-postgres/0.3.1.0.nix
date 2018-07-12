@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        beam-postgres = {
+        "beam-postgres" = {
           depends  = [
             hsPkgs.base
             hsPkgs.beam-core

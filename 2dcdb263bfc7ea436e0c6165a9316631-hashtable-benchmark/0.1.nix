@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

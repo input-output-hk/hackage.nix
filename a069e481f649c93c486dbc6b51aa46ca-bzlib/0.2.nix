@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        bzlib = {
+        "bzlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fps

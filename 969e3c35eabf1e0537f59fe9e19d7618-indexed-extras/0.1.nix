@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        indexed-extras = {
+        "indexed-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.indexed

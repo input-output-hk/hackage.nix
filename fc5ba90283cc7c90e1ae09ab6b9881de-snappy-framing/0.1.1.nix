@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snappy-framing = {
+        "snappy-framing" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

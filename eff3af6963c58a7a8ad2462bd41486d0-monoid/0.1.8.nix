@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monoid = {
+        "monoid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -24,7 +24,7 @@ let
         buildType = "Custom";
       };
       components = {
-        folds = {
+        "folds" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad
@@ -40,13 +40,13 @@ let
           ];
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.bytestring

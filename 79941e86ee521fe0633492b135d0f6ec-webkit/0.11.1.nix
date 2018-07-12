@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        webkit = {
+        "webkit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

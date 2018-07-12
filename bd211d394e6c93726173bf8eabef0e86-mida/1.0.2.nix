@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mida = {
+        "mida" = {
           depends  = [
             hsPkgs.HCodecs
             hsPkgs.QuickCheck
@@ -39,7 +39,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         exes = {
-          mida = {
+          "mida" = {
             depends  = [
               hsPkgs.HCodecs
               hsPkgs.QuickCheck
@@ -68,7 +68,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HCodecs
               hsPkgs.QuickCheck

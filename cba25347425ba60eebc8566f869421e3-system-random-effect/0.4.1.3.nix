@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-random-effect = {
+        "system-random-effect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -51,7 +51,7 @@ let
           };
         };
         benchmarks = {
-          benchmarks = {
+          "benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

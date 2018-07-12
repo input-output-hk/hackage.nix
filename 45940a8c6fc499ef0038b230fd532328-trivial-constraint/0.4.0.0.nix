@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        trivial-constraint = {
+        "trivial-constraint" = {
           depends  = [ hsPkgs.base ];
         };
       };

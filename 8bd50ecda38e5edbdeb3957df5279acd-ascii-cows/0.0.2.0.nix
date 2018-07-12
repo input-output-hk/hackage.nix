@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ascii-cows = {
+        "ascii-cows" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

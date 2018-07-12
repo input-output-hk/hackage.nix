@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mega-sdist = {
+          "mega-sdist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shelly

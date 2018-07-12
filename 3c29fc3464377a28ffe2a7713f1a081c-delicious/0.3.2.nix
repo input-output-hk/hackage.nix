@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        delicious = {
+        "delicious" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml

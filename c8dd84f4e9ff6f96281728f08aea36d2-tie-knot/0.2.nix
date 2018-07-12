@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tie-knot = {
+        "tie-knot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.recursion-schemes

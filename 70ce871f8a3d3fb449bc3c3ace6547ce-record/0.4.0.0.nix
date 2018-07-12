@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        record = {
+        "record" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.basic-lens

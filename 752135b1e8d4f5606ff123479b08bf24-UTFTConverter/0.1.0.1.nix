@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        UTFTConverter = {
+        "UTFTConverter" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          UTFTConverter = {
+          "UTFTConverter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          lib-tests = {
+          "lib-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

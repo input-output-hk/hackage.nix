@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mbtiles = {
+        "mbtiles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sqlite-simple
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          mbtiles-test = {
+          "mbtiles-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mbtiles

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client-openssl = {
+        "http-client-openssl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

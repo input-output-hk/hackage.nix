@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        instant-bytes = {
+        "instant-bytes" = {
           depends  = [
             hsPkgs.bytes
             hsPkgs.base
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytes

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml = {
+        "yaml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -41,7 +41,7 @@ let
           pkgconfig = pkgs.lib.optional _flags.system-libyaml pkgconfPkgs."yaml-0.1";
         };
         exes = {
-          yaml2json = {
+          "yaml2json" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yaml
@@ -49,7 +49,7 @@ let
               hsPkgs.aeson
             ];
           };
-          json2yaml = {
+          "json2yaml" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yaml
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.HUnit

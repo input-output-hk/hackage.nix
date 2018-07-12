@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hastache = {
+        "hastache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

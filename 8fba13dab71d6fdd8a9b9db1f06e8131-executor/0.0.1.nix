@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        executor = {
+        "executor" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test-executor = {
+          "test-executor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

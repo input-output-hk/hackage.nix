@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        contstuff-monads-tf = {
+        "contstuff-monads-tf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contstuff

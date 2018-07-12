@@ -20,9 +20,9 @@ let
         buildType = "Simple";
       };
       components = {
-        cpphs = {
+        "cpphs" = {
           depends  = [ hsPkgs.base ];
         };
-        exes = { cpphs = {}; };
+        exes = { "cpphs" = {}; };
       };
     }

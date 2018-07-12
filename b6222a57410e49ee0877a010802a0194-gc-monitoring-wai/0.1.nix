@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gc-monitoring-wai = {
+        "gc-monitoring-wai" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

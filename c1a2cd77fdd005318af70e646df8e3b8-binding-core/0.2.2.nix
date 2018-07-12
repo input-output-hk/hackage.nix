@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        binding-core = {
+        "binding-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm
           ];
         };
         tests = {
-          HTF = {
+          "HTF" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binding-core

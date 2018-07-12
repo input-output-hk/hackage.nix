@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        implicit-logging = {
+        "implicit-logging" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

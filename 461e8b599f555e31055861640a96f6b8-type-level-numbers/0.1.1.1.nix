@@ -20,21 +20,21 @@ let
         buildType = "Simple";
       };
       components = {
-        type-level-numbers = {
+        "type-level-numbers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
           ];
         };
         tests = {
-          test-nat = {
+          "test-nat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell
               hsPkgs.type-level-numbers
             ];
           };
-          test-int = {
+          "test-int" = {
             depends  = [
               hsPkgs.base
               hsPkgs.template-haskell

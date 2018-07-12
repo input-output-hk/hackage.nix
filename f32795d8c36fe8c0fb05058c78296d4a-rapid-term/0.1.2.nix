@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rapid-term = {
+        "rapid-term" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clock

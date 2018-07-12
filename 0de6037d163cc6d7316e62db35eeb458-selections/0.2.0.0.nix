@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        selections = {
+        "selections" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad

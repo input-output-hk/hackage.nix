@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-src-exts = {
+        "haskell-src-exts" = {
           depends  = [
             hsPkgs.base
           ] ++ (if _flags.splitbase

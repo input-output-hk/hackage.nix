@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-list-sequences = {
+        "data-list-sequences" = {
           depends  = [ hsPkgs.base ];
         };
       };

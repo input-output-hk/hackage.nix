@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        awesomium-raw = {
+        "awesomium-raw" = {
           depends  = [ hsPkgs.base ];
           libs = [
             pkgs."awesomium-1.6.5"

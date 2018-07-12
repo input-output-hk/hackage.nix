@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rattletrap = {
+        "rattletrap" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         exes = {
-          rattletrap = {
+          "rattletrap" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

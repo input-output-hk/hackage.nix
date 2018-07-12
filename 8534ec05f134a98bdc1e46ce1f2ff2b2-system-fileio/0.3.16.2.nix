@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-fileio = {
+        "system-fileio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -35,7 +35,7 @@ let
             else [ hsPkgs.unix ]);
         };
         tests = {
-          filesystem_tests = {
+          "filesystem_tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

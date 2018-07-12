@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        OptDir = {
+        "OptDir" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb

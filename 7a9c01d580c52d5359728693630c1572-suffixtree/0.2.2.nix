@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        suffixtree = {
+        "suffixtree" = {
           depends  = ([
             hsPkgs.QuickCheck
           ] ++ (if _flags.bytestring-in-base

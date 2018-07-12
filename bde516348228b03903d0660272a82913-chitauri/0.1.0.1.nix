@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          chitauri = {
+          "chitauri" = {
             depends  = [
               hsPkgs.base
               hsPkgs.either-unwrap
@@ -35,7 +35,7 @@ let
           };
         };
         tests = {
-          chitauri-test = {
+          "chitauri-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chitauri

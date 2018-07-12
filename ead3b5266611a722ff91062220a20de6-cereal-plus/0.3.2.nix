@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal-plus = {
+        "cereal-plus" = {
           depends  = [
             hsPkgs.cereal
             hsPkgs.stm

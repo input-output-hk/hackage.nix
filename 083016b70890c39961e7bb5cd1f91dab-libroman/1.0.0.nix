@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        libroman = {
+        "libroman" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          libroman-test = {
+          "libroman-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

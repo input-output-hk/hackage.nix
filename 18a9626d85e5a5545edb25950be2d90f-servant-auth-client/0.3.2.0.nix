@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-auth-client = {
+        "servant-auth-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -37,7 +37,7 @@ let
             else [ hsPkgs.servant-client ]);
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-client

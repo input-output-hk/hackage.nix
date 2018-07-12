@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sized-grid = {
+        "sized-grid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sized-grid
@@ -53,7 +53,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.markdown-unlit

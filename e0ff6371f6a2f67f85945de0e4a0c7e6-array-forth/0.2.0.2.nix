@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        array-forth = {
+        "array-forth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mcmc-synthesis
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          mcmc-demo = {
+          "mcmc-demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mcmc-synthesis
@@ -39,7 +39,7 @@ let
               hsPkgs.MonadRandom
             ];
           };
-          array-forth = {
+          "array-forth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.vector

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MetaHDBC = {
+        "MetaHDBC" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

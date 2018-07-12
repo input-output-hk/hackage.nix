@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Ordinals = {
+        "Ordinals" = {
           depends  = [ hsPkgs.base ];
         };
       };

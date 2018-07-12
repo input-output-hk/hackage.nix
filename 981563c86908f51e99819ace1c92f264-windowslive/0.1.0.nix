@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        windowslive = {
+        "windowslive" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Crypto
@@ -34,6 +34,6 @@ let
             hsPkgs.HUnit
           ];
         };
-        exes = { test = {}; };
+        exes = { "test" = {}; };
       };
     }

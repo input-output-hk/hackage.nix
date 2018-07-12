@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        argon2 = {
+        "argon2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           libs = pkgs.lib.optional _flags.use-system-library pkgs.argon2;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.argon2
               hsPkgs.base

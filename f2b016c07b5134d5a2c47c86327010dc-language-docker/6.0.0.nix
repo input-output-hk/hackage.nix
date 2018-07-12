@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-docker = {
+        "language-docker" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.Glob
               hsPkgs.HUnit

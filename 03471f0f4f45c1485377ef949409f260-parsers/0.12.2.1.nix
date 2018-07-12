@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        parsers = {
+        "parsers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.charset
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -48,7 +48,7 @@ let
               hsPkgs.quickcheck-instances
             ];
           };
-          quickcheck = {
+          "quickcheck" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

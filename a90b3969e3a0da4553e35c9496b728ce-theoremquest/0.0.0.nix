@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        theoremquest = {
+        "theoremquest" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

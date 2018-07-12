@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        terminal-text = {
+        "terminal-text" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base

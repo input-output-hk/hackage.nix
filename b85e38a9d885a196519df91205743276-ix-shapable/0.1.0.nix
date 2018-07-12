@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ix-shapable = {
+        "ix-shapable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

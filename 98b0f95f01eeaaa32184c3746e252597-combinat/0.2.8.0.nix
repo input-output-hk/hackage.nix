@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        combinat = {
+        "combinat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

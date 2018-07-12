@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vect-floating = {
+        "vect-floating" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sync-mht = {
+          "sync-mht" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

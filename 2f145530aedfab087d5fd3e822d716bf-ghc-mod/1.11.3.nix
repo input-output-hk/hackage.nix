@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ghc-mod = {
+          "ghc-mod" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

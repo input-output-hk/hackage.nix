@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        instance-control = {
+        "instance-control" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

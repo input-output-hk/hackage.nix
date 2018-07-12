@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hamlet = {
+        "hamlet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shakespeare
@@ -40,7 +40,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.hamlet
               hsPkgs.base

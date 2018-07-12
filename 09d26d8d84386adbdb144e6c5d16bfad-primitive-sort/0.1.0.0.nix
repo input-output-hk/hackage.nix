@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        primitive-sort = {
+        "primitive-sort" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive-sort
@@ -44,7 +44,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive-sort
@@ -54,7 +54,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primitive-sort

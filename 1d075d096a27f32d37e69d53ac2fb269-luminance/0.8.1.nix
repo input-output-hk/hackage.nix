@@ -25,7 +25,7 @@ let
         buildType = "Simple";
       };
       components = {
-        luminance = {
+        "luminance" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

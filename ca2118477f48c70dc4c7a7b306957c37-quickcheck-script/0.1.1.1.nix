@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          quickCheck = {
+          "quickCheck" = {
             depends  = if _flags.splitbase
               then [
                 hsPkgs.base

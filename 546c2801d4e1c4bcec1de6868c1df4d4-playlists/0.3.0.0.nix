@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        playlists = {
+        "playlists" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          playlist = {
+          "playlist" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -54,13 +54,13 @@ let
               hsPkgs.playlists
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
               hsPkgs.base
               hsPkgs.hlint
             ];
           };
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctest)) [
               hsPkgs.base
               hsPkgs.doctest

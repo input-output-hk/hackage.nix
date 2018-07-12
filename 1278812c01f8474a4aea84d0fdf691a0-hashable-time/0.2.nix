@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hashable-time = {
+        "hashable-time" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

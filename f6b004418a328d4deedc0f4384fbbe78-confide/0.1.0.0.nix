@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        confide = {
+        "confide" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deiko-config
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          confide-test = {
+          "confide-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.confide

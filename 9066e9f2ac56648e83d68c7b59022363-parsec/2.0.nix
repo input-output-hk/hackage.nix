@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        parsec = {
+        "parsec" = {
           depends  = [ hsPkgs.base ];
         };
       };

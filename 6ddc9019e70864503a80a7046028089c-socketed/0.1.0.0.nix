@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        socketed = {
+        "socketed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          socketed = {
+          "socketed" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

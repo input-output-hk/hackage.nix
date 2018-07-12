@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fclabels = {
+        "fclabels" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          suite = {
+          "suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fclabels
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          benchmark = {
+          "benchmark" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fclabels

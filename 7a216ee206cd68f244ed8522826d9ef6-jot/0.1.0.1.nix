@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          jot = {
+          "jot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default

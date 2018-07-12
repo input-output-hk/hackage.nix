@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-mode-javascript = {
+        "yi-mode-javascript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

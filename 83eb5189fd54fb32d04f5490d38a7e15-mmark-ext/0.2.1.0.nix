@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mmark-ext = {
+        "mmark-ext" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.foldl
@@ -35,7 +35,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.4") hsPkgs.ghc-syntax-highlighter) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

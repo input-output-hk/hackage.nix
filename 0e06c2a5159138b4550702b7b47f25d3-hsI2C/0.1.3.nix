@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsI2C = {
+        "hsI2C" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

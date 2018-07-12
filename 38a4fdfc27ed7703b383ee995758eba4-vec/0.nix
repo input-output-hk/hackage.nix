@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vec = {
+        "vec" = {
           depends  = [
             hsPkgs.adjunctions
             hsPkgs.base
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          inspection = {
+          "inspection" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fin
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fin

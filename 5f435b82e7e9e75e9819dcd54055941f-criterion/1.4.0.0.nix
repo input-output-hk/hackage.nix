@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        criterion = {
+        "criterion" = {
           depends  = ([
             hsPkgs.aeson
             hsPkgs.ansi-wl-pprint
@@ -60,7 +60,7 @@ let
           ];
         };
         exes = {
-          criterion-report = {
+          "criterion-report" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -71,7 +71,7 @@ let
           };
         };
         tests = {
-          sanity = {
+          "sanity" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base
@@ -82,7 +82,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -96,7 +96,7 @@ let
               hsPkgs.aeson
             ];
           };
-          cleanup = {
+          "cleanup" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.base

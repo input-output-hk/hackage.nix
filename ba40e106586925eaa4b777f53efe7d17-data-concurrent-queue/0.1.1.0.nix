@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-concurrent-queue = {
+        "data-concurrent-queue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

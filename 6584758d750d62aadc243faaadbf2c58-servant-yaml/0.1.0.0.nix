@@ -13,14 +13,14 @@ let
         copyright = "";
         maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
         author = "Oleg Grenrus <oleg.grenrus@iki.fi>";
-        homepage = "https://github.com/phadej/servant-yaml#readme";
+        homepage = "https://github.com/haskell-servant/servant-yaml#readme";
         url = "";
         synopsis = "Servant support for yaml";
         description = "Servant support for yaml.";
         buildType = "Simple";
       };
       components = {
-        servant-yaml = {
+        "servant-yaml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

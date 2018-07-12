@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mime-types = {
+        "mime-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

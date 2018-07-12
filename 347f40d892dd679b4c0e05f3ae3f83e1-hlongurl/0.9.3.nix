@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hlongurl = {
+        "hlongurl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.curl
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          hlongurl = {
+          "hlongurl" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

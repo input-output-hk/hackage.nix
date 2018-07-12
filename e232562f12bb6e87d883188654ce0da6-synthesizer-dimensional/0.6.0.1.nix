@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        synthesizer-dimensional = {
+        "synthesizer-dimensional" = {
           depends  = [
             hsPkgs.synthesizer-core
             hsPkgs.transformers
@@ -40,14 +40,14 @@ let
           ];
         };
         exes = {
-          rain = {};
-          demonstration = {
+          "rain" = {};
+          "demonstration" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.explicit-exception
               hsPkgs.old-time
             ];
           };
-          traumzauberbaum = {};
+          "traumzauberbaum" = {};
         };
       };
     }

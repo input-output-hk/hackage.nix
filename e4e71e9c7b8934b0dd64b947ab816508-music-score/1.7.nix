@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        music-score = {
+        "music-score" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

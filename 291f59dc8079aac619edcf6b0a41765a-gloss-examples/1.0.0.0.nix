@@ -21,45 +21,45 @@ let
       };
       components = {
         exes = {
-          gloss-easy = {
+          "gloss-easy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          gloss-clock = {
+          "gloss-clock" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          gloss-eden = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.gloss
-              hsPkgs.random
-            ];
-          };
-          gloss-flake = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.gloss
-            ];
-          };
-          gloss-hello = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.gloss
-            ];
-          };
-          gloss-lifespan = {
+          "gloss-eden" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
               hsPkgs.random
             ];
           };
-          gloss-styrene = {
+          "gloss-flake" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.gloss
+            ];
+          };
+          "gloss-hello" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.gloss
+            ];
+          };
+          "gloss-lifespan" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.gloss
+              hsPkgs.random
+            ];
+          };
+          "gloss-styrene" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
@@ -67,13 +67,13 @@ let
               hsPkgs.ghc-prim
             ];
           };
-          gloss-tree = {
+          "gloss-tree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss
             ];
           };
-          gloss-zen = {
+          "gloss-zen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gloss

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yaml-pretty-extras = {
+        "yaml-pretty-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.microlens-platform
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          yaml-pretty-extras-test = {
+          "yaml-pretty-extras-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

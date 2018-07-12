@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        email = {
+        "email" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

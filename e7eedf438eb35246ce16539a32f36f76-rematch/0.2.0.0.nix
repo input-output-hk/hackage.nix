@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        rematch = {
+        "rematch" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

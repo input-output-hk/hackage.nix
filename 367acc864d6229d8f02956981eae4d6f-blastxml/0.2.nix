@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blastxml = {
+        "blastxml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

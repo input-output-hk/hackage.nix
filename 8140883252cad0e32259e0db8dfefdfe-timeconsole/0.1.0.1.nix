@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          timeconsole = {
+          "timeconsole" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

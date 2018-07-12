@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pig = {
+        "pig" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          pig = {
+          "pig" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseInfernal = {
+        "BiobaseInfernal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -62,7 +62,7 @@ let
           ];
         };
         exes = {
-          cmsearchFilter = {
+          "cmsearchFilter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -71,7 +71,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -86,7 +86,7 @@ let
           };
         };
         benchmarks = {
-          parsing = {
+          "parsing" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

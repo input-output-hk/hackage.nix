@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hdbi-conduit = {
+        "hdbi-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          runtests = {
+          "runtests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

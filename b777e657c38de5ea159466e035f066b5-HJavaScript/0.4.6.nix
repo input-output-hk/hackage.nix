@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HJavaScript = {
+        "HJavaScript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pretty

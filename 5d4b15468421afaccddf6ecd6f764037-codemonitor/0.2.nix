@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          codemonitor = {
+          "codemonitor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

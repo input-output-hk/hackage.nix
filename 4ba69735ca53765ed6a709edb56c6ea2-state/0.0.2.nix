@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        state = {
+        "state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.arrows

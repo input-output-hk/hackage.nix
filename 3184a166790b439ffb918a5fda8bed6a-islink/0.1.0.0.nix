@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        islink = {
+        "islink" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers

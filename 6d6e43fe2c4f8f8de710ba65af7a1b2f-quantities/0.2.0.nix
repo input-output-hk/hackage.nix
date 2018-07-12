@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quantities = {
+        "quantities" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quantities
@@ -39,7 +39,7 @@ let
               hsPkgs.parsec
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

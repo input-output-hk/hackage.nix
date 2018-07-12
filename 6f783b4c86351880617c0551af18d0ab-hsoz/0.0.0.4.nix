@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hsoz = {
+        "hsoz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -59,7 +59,7 @@ let
           ];
         };
         exes = {
-          hsoz-example = {
+          "hsoz-example" = {
             depends  = [
               hsPkgs.hsoz
               hsPkgs.aeson
@@ -82,7 +82,7 @@ let
               hsPkgs.warp
             ];
           };
-          iron = {
+          "iron" = {
             depends  = [
               hsPkgs.hsoz
               hsPkgs.aeson
@@ -98,7 +98,7 @@ let
           };
         };
         tests = {
-          hsoz-test = {
+          "hsoz-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hsoz

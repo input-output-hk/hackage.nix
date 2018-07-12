@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          ptq = {
+          "ptq" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -32,7 +32,7 @@ let
               hsPkgs.containers
             ] ++ pkgs.lib.optional _flags.utf8terminal hsPkgs.utf8-string;
           };
-          ptq.cgi = {
+          "ptq.cgi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

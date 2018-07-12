@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zlib-enum = {
+        "zlib-enum" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          zlib-enum-test = {
+          "zlib-enum-test" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.bytestring

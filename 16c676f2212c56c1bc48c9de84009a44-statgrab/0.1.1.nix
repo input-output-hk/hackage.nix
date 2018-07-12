@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        statgrab = {
+        "statgrab" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base

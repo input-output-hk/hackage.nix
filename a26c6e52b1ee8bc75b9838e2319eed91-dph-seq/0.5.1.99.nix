@@ -19,5 +19,7 @@ let
         description = "This package used to export DPH array primitives, but they're in dph-prim-seq now.";
         buildType = "Simple";
       };
-      components = { dph-seq = {}; };
+      components = {
+        "dph-seq" = {};
+      };
     }

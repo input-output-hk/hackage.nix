@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-core = {
+        "amazonka-core" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -53,7 +53,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) hsPkgs.nats;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.aeson

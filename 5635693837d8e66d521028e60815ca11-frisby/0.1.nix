@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        frisby = {
+        "frisby" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

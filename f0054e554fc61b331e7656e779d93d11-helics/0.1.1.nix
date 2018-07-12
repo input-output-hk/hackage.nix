@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        helics = {
+        "helics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default-class
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          helics-example = {
+          "helics-example" = {
             depends  = pkgs.lib.optionals _flags.example [
               hsPkgs.base
               hsPkgs.helics

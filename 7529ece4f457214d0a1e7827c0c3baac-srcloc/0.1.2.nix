@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        srcloc = {
+        "srcloc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.symbol

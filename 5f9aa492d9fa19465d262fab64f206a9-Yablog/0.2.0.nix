@@ -23,9 +23,9 @@ let
         buildType = "Simple";
       };
       components = {
-        Yablog = {};
+        "Yablog" = {};
         exes = {
-          Yablog = {
+          "Yablog" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yesod-platform

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        list-t-http-client = {
+        "list-t-http-client" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.http-client

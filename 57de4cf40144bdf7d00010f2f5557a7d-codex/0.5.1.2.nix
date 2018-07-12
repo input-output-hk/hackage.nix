@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        codex = {
+        "codex" = {
           depends  = [
             hsPkgs.ascii-progress
             hsPkgs.base
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          codex = {
+          "codex" = {
             depends  = [
               hsPkgs.ascii-progress
               hsPkgs.base

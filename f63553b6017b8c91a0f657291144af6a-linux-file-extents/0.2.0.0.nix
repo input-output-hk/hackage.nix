@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linux-file-extents = {
+        "linux-file-extents" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          print-extents = {
+          "print-extents" = {
             depends  = pkgs.lib.optionals (!(!_flags.examples)) [
               hsPkgs.base
               hsPkgs.linux-file-extents

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        functor-combo = {
+        "functor-combo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-orphans

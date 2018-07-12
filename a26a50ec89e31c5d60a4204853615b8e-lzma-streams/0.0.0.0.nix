@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lzma-streams = {
+        "lzma-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           libs = [ pkgs.lzma ];
         };
         tests = {
-          lzma-streams-test = {
+          "lzma-streams-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

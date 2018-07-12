@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          elm-get = {
+          "elm-get" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

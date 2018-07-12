@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        clckwrks-plugin-media = {
+        "clckwrks-plugin-media" = {
           depends  = [
             hsPkgs.base
             hsPkgs.acid-state

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        integration = {
+        "integration" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parallel

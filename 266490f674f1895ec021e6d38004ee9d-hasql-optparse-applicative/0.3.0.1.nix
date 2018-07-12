@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hasql-optparse-applicative = {
+        "hasql-optparse-applicative" = {
           depends  = [
             hsPkgs.hasql
             hsPkgs.hasql-pool

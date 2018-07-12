@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        treeviz = {
+        "treeviz" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          treeviz = {
+          "treeviz" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          test-treeviz = {
+          "test-treeviz" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        forward-chan = {
+        "forward-chan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unagi-chan

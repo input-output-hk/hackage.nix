@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wryte = {
+        "wryte" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          wryte-test = {
+          "wryte-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.wryte

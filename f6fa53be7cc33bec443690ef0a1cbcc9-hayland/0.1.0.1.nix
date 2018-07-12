@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hayland = {
+        "hayland" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xml
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          wayland-list-globals = {
+          "wayland-list-globals" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hayland
@@ -45,7 +45,7 @@ let
           };
         };
         tests = {
-          firsttest = {
+          "firsttest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hayland
@@ -53,7 +53,7 @@ let
               hsPkgs.process
             ];
           };
-          enumtest = {
+          "enumtest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hayland

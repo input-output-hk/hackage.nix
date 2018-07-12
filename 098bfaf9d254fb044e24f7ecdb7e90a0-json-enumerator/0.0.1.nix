@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-enumerator = {
+        "json-enumerator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.enumerator

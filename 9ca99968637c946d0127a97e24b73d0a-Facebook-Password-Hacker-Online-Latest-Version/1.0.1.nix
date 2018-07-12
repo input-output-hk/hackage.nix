@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Facebook-Password-Hacker-Online-Latest-Version = {
+        "Facebook-Password-Hacker-Online-Latest-Version" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
@@ -40,7 +40,7 @@ let
               hsPkgs.template-haskell
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

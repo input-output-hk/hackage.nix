@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        context-stack = {
+        "context-stack" = {
           depends  = [
             hsPkgs.base
             hsPkgs.classy-prelude

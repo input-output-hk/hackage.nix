@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        state-plus = {
+        "state-plus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

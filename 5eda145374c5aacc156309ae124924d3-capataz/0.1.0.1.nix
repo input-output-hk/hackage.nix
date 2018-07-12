@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        capataz = {
+        "capataz" = {
           depends  = [
             hsPkgs.async
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          capataz-test = {
+          "capataz-test" = {
             depends  = [
               hsPkgs.async
               hsPkgs.base

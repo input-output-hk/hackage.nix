@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scientific = {
+        "scientific" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test-scientific = {
+          "test-scientific" = {
             depends  = [
               hsPkgs.scientific
               hsPkgs.base
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          bench-scientific = {
+          "bench-scientific" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

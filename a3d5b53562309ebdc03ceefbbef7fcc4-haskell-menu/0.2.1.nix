@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-menu = {
+        "haskell-menu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

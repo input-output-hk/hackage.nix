@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Finance-Quote-Yahoo = {
+        "Finance-Quote-Yahoo" = {
           depends  = [
             hsPkgs.network
             hsPkgs.HTTP

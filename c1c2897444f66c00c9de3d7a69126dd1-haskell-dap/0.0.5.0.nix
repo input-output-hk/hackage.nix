@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-dap = {
+        "haskell-dap" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          haskell-dap = {
+          "haskell-dap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc

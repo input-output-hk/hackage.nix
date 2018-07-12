@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ztar = {
+        "ztar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.path
@@ -42,7 +42,7 @@ let
               hsPkgs.ztar
             ];
           };
-          ztar-test = {
+          "ztar-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.extra

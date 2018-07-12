@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pugixml = {
+        "pugixml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           libs = [ pkgs."stdc++" ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        niagra = {
+        "niagra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          niagra-testsuite = {
+          "niagra-testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

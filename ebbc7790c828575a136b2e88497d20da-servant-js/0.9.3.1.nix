@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-js = {
+        "servant-js" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          counter = {
+          "counter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

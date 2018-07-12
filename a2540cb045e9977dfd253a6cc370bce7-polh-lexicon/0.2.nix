@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        polh-lexicon = {
+        "polh-lexicon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -36,8 +36,8 @@ let
           ];
         };
         exes = {
-          polh-binarize = {};
-          polh-show = {};
+          "polh-binarize" = {};
+          "polh-show" = {};
         };
       };
     }

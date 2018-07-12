@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Animas = {
+        "Animas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random

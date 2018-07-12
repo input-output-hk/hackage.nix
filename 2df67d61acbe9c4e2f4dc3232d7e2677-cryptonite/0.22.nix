@@ -30,7 +30,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptonite = {
+        "cryptonite" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.advapi32;
         };
         tests = {
-          test-cryptonite = {
+          "test-cryptonite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

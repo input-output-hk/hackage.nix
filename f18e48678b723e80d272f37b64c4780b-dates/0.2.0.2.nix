@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dates = {
+        "dates" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

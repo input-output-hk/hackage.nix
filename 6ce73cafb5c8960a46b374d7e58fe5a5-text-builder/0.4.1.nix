@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-builder = {
+        "text-builder" = {
           depends  = [
             hsPkgs.semigroups
             hsPkgs.bytestring
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.text-builder
               hsPkgs.tasty
@@ -43,14 +43,14 @@ let
           };
         };
         benchmarks = {
-          text-benchmark = {
+          "text-benchmark" = {
             depends  = [
               hsPkgs.text-builder
               hsPkgs.criterion
               hsPkgs.rerebase
             ];
           };
-          char-benchmark = {
+          "char-benchmark" = {
             depends  = [
               hsPkgs.text-builder
               hsPkgs.criterion

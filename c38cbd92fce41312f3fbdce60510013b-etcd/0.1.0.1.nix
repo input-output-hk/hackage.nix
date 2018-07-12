@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        etcd = {
+        "etcd" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          etcd-client = {
+          "etcd-client" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

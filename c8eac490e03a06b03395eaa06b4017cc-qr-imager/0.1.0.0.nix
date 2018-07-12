@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        qr-imager = {
+        "qr-imager" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          QRPipe = {
+          "QRPipe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.qr-imager

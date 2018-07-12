@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        base64-string = {
+        "base64-string" = {
           depends  = [ hsPkgs.base ];
         };
       };

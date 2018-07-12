@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        projectroot = {
+        "projectroot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

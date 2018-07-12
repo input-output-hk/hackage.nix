@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        lackey = {
+        "lackey" = {
           depends  = [
             hsPkgs.base
             hsPkgs.servant
           ];
         };
         tests = {
-          lackey-test-suite = {
+          "lackey-test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lackey

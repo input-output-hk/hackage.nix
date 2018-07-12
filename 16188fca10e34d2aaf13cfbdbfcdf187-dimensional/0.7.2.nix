@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        dimensional = {
+        "dimensional" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

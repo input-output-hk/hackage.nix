@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unique-logic = {
+        "unique-logic" = {
           depends  = [
             hsPkgs.explicit-exception
             hsPkgs.transformers
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-unique-logic = {
+          "test-unique-logic" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.unique-logic

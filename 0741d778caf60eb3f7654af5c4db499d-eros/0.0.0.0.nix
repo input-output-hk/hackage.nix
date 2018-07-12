@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        eros = {
+        "eros" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-phrase = {
+          "test-phrase" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

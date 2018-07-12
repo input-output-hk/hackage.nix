@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        t3-client = {
+        "t3-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.t3-game

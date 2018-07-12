@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-flags = {
+        "data-flags" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

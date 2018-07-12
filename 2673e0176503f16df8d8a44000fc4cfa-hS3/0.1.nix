@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hS3 = {
+        "hS3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

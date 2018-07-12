@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        goggles-gcs = {
+        "goggles-gcs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.goggles

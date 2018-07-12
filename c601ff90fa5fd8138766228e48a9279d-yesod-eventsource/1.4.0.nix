@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-eventsource = {
+        "yesod-eventsource" = {
           depends  = [
             hsPkgs.base
             hsPkgs.yesod-core

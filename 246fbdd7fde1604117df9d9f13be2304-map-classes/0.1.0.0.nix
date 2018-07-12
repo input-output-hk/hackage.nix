@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        map-classes = {
+        "map-classes" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base

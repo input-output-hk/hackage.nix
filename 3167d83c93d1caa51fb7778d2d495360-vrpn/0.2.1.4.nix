@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        vrpn = {
+        "vrpn" = {
           depends  = [ hsPkgs.base ];
           libs = if _flags.quatstatic
             then [
@@ -36,7 +36,7 @@ let
             ];
         };
         exes = {
-          test-vrpn = {
+          "test-vrpn" = {
             depends  = [ hsPkgs.base ];
             libs = [
               pkgs.vrpn

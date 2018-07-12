@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack2 = {
+        "hack2" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

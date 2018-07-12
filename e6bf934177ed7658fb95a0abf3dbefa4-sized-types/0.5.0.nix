@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sized-types = {
+        "sized-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          sized-types-test1 = {
+          "sized-types-test1" = {
             depends  = if _flags.all
               then [
                 hsPkgs.base
@@ -39,7 +39,7 @@ let
               ]
               else [ hsPkgs.base ];
           };
-          sized-types-example1 = {
+          "sized-types-example1" = {
             depends  = [ hsPkgs.base ];
           };
         };

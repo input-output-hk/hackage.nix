@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        store-core = {
+        "store-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive

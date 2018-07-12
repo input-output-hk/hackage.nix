@@ -43,7 +43,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deepseq-bounded = {
+        "deepseq-bounded" = {
           depends  = (((((([
             hsPkgs.base
             hsPkgs.array
@@ -52,10 +52,10 @@ let
             hsPkgs.deepseq
           ] ++ pkgs.lib.optional _flags.use_cpphs hsPkgs.cpphs) ++ pkgs.lib.optional (!_flags.haskell98_fragment) hsPkgs.syb) ++ pkgs.lib.optionals _flags.use_ww_deepseq ([
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional (!_flags.haskell98_fragment) hsPkgs.deepseq-generics)) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_sop) hsPkgs.generics-sop) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_par_seqable) hsPkgs.parallel) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_par_patnode) hsPkgs.parallel) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_pseq_patnode) hsPkgs.parallel;
+          ] ++ pkgs.lib.optional (!_flags.haskell98_fragment) hsPkgs.deepseq-generics)) ++ pkgs.lib.optionals (!_flags.haskell98_fragment) (pkgs.lib.optional _flags.use_sop hsPkgs.generics-sop)) ++ pkgs.lib.optionals (!_flags.haskell98_fragment) (pkgs.lib.optional _flags.use_par_seqable hsPkgs.parallel)) ++ pkgs.lib.optionals (!_flags.haskell98_fragment) (pkgs.lib.optional _flags.use_par_patnode hsPkgs.parallel)) ++ pkgs.lib.optionals (!_flags.haskell98_fragment) (pkgs.lib.optional _flags.use_pseq_patnode hsPkgs.parallel);
         };
         tests = {
-          deepseq-bounded-tests = {
+          "deepseq-bounded-tests" = {
             depends  = ((((((([
               hsPkgs.base
               hsPkgs.deepseq-bounded
@@ -65,7 +65,7 @@ let
               hsPkgs.deepseq
             ] ++ pkgs.lib.optional _flags.use_cpphs hsPkgs.cpphs) ++ pkgs.lib.optional (!_flags.haskell98_fragment) hsPkgs.ghc-prim) ++ pkgs.lib.optional (!_flags.haskell98_fragment) hsPkgs.syb) ++ pkgs.lib.optionals _flags.use_ww_deepseq ([
               hsPkgs.deepseq
-            ] ++ pkgs.lib.optional (!_flags.haskell98_fragment) hsPkgs.deepseq-generics)) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_sop) hsPkgs.generics-sop) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_par_seqable) hsPkgs.parallel) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_par_patnode) hsPkgs.parallel) ++ pkgs.lib.optional (!_flags.haskell98_fragment && _flags.use_pseq_patnode) hsPkgs.parallel;
+            ] ++ pkgs.lib.optional (!_flags.haskell98_fragment) hsPkgs.deepseq-generics)) ++ pkgs.lib.optionals (!_flags.haskell98_fragment) (pkgs.lib.optional _flags.use_sop hsPkgs.generics-sop)) ++ pkgs.lib.optionals (!_flags.haskell98_fragment) (pkgs.lib.optional _flags.use_par_seqable hsPkgs.parallel)) ++ pkgs.lib.optionals (!_flags.haskell98_fragment) (pkgs.lib.optional _flags.use_par_patnode hsPkgs.parallel)) ++ pkgs.lib.optionals (!_flags.haskell98_fragment) (pkgs.lib.optional _flags.use_pseq_patnode hsPkgs.parallel);
           };
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgeometry = {
+        "hgeometry" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -45,13 +45,13 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          bapc_examples = {
+          "bapc_examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

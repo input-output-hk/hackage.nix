@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagged = {
+        "tagged" = {
           depends  = [
             hsPkgs.base
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") hsPkgs.template-haskell;

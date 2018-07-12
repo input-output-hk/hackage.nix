@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plivo = {
+        "plivo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network-uri

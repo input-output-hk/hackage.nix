@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        criu-rpc-types = {
+        "criu-rpc-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.proto-lens

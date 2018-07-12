@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-cli = {
+        "wai-cli" = {
           depends  = [
             hsPkgs.base
             hsPkgs.options

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        validated-types = {
+        "validated-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.refined
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          validated-types-test = {
+          "validated-types-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.validated-types

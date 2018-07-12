@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          rosmsg = {
+          "rosmsg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -29,7 +29,7 @@ let
               hsPkgs.filepath
             ];
           };
-          genhs = {
+          "genhs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

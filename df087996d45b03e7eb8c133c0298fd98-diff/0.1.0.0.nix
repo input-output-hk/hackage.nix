@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diff = {
+        "diff" = {
           depends  = [
             hsPkgs.Enum
             hsPkgs.base

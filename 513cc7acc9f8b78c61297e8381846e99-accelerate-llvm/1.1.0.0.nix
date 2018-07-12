@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        accelerate-llvm = {
+        "accelerate-llvm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.abstract-deque

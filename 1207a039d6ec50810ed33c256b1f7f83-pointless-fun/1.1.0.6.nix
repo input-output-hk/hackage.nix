@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pointless-fun = {
+        "pointless-fun" = {
           depends  = [ hsPkgs.base ];
         };
       };

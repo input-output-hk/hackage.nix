@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        parsedate = {
+        "parsedate" = {
           depends  = [
             hsPkgs.parsec
           ] ++ (if _flags.split-base

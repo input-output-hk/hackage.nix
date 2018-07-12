@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hbayes = {
+        "hbayes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

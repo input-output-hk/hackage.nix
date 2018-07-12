@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        duckling = {
+        "duckling" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          duckling-regen-exe = {
+          "duckling-regen-exe" = {
             depends  = [
               hsPkgs.duckling
               hsPkgs.base
@@ -51,7 +51,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          duckling-example-exe = {
+          "duckling-example-exe" = {
             depends  = [
               hsPkgs.duckling
               hsPkgs.base
@@ -70,7 +70,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          duckling-request-sample = {
+          "duckling-request-sample" = {
             depends  = [
               hsPkgs.duckling
               hsPkgs.base
@@ -85,7 +85,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          duckling-expensive = {
+          "duckling-expensive" = {
             depends  = [
               hsPkgs.duckling
               hsPkgs.base
@@ -102,7 +102,7 @@ let
           };
         };
         tests = {
-          duckling-test = {
+          "duckling-test" = {
             depends  = [
               hsPkgs.duckling
               hsPkgs.base

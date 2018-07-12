@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          foo = {
+          "foo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.OpenGL

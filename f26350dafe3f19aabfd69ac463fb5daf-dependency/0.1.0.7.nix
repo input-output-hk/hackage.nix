@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dependency = {
+        "dependency" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ansi-wl-pprint
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          dependency-test = {
+          "dependency-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dependency
@@ -45,7 +45,7 @@ let
           };
         };
         benchmarks = {
-          dependency-bench = {
+          "dependency-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.dependency

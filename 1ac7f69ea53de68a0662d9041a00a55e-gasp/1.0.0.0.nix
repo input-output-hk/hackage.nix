@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gasp = {
+        "gasp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        io-streams = {
+        "io-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

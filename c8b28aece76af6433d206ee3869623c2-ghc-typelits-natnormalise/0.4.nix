@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-typelits-natnormalise = {
+        "ghc-typelits-natnormalise" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-ghc-typelits-natnormalise = {
+          "test-ghc-typelits-natnormalise" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-typelits-natnormalise

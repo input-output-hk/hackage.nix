@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-vector-sized = {
+        "hmatrix-vector-sized" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hmatrix
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          hmatrix-vector-sized-test = {
+          "hmatrix-vector-sized-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-typelits-knownnat

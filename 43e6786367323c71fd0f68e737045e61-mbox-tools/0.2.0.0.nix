@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mbox-tools = {
+        "mbox-tools" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,23 +38,23 @@ let
           ];
         };
         exes = {
-          mbox-counting = {};
-          mbox-average-size = {};
-          mbox-quoting = {};
-          redact-mbox = {
+          "mbox-counting" = {};
+          "mbox-average-size" = {};
+          "mbox-quoting" = {};
+          "redact-mbox" = {
             depends  = [ hsPkgs.random ];
           };
-          mbox-list = {};
-          mbox-pick = {};
-          mbox-partition = {};
-          mbox-grep = {
+          "mbox-list" = {};
+          "mbox-pick" = {};
+          "mbox-partition" = {};
+          "mbox-grep" = {
             depends  = pkgs.lib.optional _flags.use_hutt hsPkgs.hutt;
           };
-          split-mbox = {};
-          mbox-iter = {
+          "split-mbox" = {};
+          "mbox-iter" = {
             depends  = [ hsPkgs.process ];
           };
-          mbox-from-files = {};
+          "mbox-from-files" = {};
         };
       };
     }

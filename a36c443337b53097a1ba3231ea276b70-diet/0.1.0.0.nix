@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diet = {
+        "diet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primitive
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

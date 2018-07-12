@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-json-rpc = {
+        "hs-json-rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

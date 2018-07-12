@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        usb-safe = {
+        "usb-safe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

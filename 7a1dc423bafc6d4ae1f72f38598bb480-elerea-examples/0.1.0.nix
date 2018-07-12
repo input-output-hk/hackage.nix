@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          elerea-breakout = {
+          "elerea-breakout" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elerea
@@ -29,7 +29,7 @@ let
               hsPkgs.GLFW
             ];
           };
-          elerea-chase = {
+          "elerea-chase" = {
             depends  = [
               hsPkgs.base
               hsPkgs.elerea

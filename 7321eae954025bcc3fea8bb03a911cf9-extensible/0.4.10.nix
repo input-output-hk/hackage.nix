@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extensible = {
+        "extensible" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -51,13 +51,13 @@ let
           ];
         };
         tests = {
-          effects = {
+          "effects" = {
             depends  = [
               hsPkgs.base
               hsPkgs.extensible
             ];
           };
-          bits = {
+          "bits" = {
             depends  = [
               hsPkgs.base
               hsPkgs.extensible

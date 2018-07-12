@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        crjdt-haskell = {
+        "crjdt-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          crjdt-haskell-test = {
+          "crjdt-haskell-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.crjdt-haskell

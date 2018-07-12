@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          fast-tags = {
+          "fast-tags" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

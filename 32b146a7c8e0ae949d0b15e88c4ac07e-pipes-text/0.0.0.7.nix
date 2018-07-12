@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-text = {
+        "pipes-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        animate-frames = {
+        "animate-frames" = {
           depends  = [
             hsPkgs.JuicyPixels
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          animate-frames = {
+          "animate-frames" = {
             depends  = [
               hsPkgs.animate-frames
               hsPkgs.base
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          animate-frames-test-suite = {
+          "animate-frames-test-suite" = {
             depends  = [
               hsPkgs.animate-frames
               hsPkgs.base

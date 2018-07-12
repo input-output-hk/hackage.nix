@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        Decimal = {
+        "Decimal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
           ];
         };
         tests = {
-          Main = {
+          "Main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

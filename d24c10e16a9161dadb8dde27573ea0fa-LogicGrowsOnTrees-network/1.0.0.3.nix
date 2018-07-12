@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LogicGrowsOnTrees-network = {
+        "LogicGrowsOnTrees-network" = {
           depends  = [
             hsPkgs.LogicGrowsOnTrees
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          count-all-nqueens-solutions = {
+          "count-all-nqueens-solutions" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees-network
               hsPkgs.LogicGrowsOnTrees
@@ -50,7 +50,7 @@ let
               hsPkgs.cmdtheline
             ];
           };
-          count-all-trivial-tree-leaves = {
+          "count-all-trivial-tree-leaves" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees-network
               hsPkgs.LogicGrowsOnTrees
@@ -61,7 +61,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.LogicGrowsOnTrees-network
               hsPkgs.LogicGrowsOnTrees

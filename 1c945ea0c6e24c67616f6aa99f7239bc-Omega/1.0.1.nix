@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Omega = {
+        "Omega" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test-Omega = {
+          "test-Omega" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

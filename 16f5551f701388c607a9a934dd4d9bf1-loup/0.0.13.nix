@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        loup = {
+        "loup" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.amazonka
@@ -39,28 +39,28 @@ let
           ];
         };
         exes = {
-          loup-actor = {
+          "loup-actor" = {
             depends  = [
               hsPkgs.base
               hsPkgs.loup
               hsPkgs.optparse-generic
             ];
           };
-          loup-decider = {
+          "loup-decider" = {
             depends  = [
               hsPkgs.base
               hsPkgs.loup
               hsPkgs.optparse-generic
             ];
           };
-          loup-converger = {
+          "loup-converger" = {
             depends  = [
               hsPkgs.base
               hsPkgs.loup
               hsPkgs.optparse-generic
             ];
           };
-          shake-loup = {
+          "shake-loup" = {
             depends  = [
               hsPkgs.base
               hsPkgs.shakers

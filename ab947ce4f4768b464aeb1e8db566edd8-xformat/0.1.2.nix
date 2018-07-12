@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        xformat = {
+        "xformat" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xformat

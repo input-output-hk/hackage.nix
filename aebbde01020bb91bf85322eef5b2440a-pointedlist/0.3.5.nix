@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        pointedlist = {
+        "pointedlist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        permutation = {
+        "permutation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        riak = {
+        "riak" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -57,7 +57,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.riak
@@ -77,7 +77,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.riak

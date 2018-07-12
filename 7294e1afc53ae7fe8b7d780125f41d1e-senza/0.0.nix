@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        senza = {
+        "senza" = {
           depends  = [
             hsPkgs.base
             hsPkgs.blaze-markup

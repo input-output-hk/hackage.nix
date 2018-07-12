@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unfoldable = {
+        "unfoldable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

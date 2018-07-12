@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GlomeTrace = {
+        "GlomeTrace" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        product-profunctors = {
+        "product-profunctors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.profunctors
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") hsPkgs.transformers;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.profunctors
@@ -40,7 +40,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HDBC-sqlite3 = {
+        "HDBC-sqlite3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

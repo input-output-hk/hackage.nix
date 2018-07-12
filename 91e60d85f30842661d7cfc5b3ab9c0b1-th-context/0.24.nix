@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-context = {
+        "th-context" = {
           depends  = [
             hsPkgs.atp-haskell
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          th-context-tests = {
+          "th-context-tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.atp-haskell

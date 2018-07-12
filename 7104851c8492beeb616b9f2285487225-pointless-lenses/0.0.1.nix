@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pointless-lenses = {
+        "pointless-lenses" = {
           depends  = [
             hsPkgs.base
             hsPkgs.pointless-haskell

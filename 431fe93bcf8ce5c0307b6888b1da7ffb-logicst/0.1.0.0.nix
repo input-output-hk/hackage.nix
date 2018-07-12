@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        logicst = {
+        "logicst" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.transformers

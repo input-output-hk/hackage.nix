@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          cabal-rpm = {
+          "cabal-rpm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

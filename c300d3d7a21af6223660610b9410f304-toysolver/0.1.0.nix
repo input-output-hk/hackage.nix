@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        toysolver = {
+        "toysolver" = {
           depends  = ((([
             hsPkgs.base
             hsPkgs.containers
@@ -73,7 +73,7 @@ let
             ])) ++ pkgs.lib.optional (compiler.isGhc && true) hsPkgs.ghc-prim;
         };
         exes = {
-          toysolver = {
+          "toysolver" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -85,7 +85,7 @@ let
               hsPkgs.toysolver
             ];
           };
-          toysat = {
+          "toysat" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
@@ -103,7 +103,7 @@ let
               hsPkgs.toysolver
             ] ++ pkgs.lib.optional (_flags.forcechar8 && (compiler.isGhc && true)) hsPkgs.base;
           };
-          toyfmf = {
+          "toyfmf" = {
             depends  = pkgs.lib.optionals _flags.buildtoyfmf [
               hsPkgs.base
               hsPkgs.containers
@@ -111,7 +111,7 @@ let
               hsPkgs.logic-TPTP
             ];
           };
-          lpconvert = {
+          "lpconvert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -120,7 +120,7 @@ let
               hsPkgs.toysolver
             ];
           };
-          pbconvert = {
+          "pbconvert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -129,7 +129,7 @@ let
               hsPkgs.toysolver
             ];
           };
-          pigeonhole = {
+          "pigeonhole" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -137,7 +137,7 @@ let
               hsPkgs.toysolver
             ];
           };
-          maxsatverify = {
+          "maxsatverify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -146,7 +146,7 @@ let
               hsPkgs.toysolver
             ];
           };
-          pbverify = {
+          "pbverify" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -157,7 +157,7 @@ let
           };
         };
         tests = {
-          TestSAT = {
+          "TestSAT" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -171,7 +171,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          TestSimplex = {
+          "TestSimplex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -183,7 +183,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          TestSimplex2 = {
+          "TestSimplex2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -195,7 +195,7 @@ let
               hsPkgs.HUnit
             ];
           };
-          TestMIPSolver2 = {
+          "TestMIPSolver2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -209,7 +209,7 @@ let
               hsPkgs.stm
             ];
           };
-          TestPolynomial = {
+          "TestPolynomial" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -225,7 +225,7 @@ let
               hsPkgs.prettyclass
             ];
           };
-          TestAReal = {
+          "TestAReal" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -239,7 +239,7 @@ let
               hsPkgs.data-interval
             ];
           };
-          TestQE = {
+          "TestQE" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -254,7 +254,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          TestContiTraverso = {
+          "TestContiTraverso" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -269,7 +269,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          TestCongruenceClosure = {
+          "TestCongruenceClosure" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -282,7 +282,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          TestLPFile = {
+          "TestLPFile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -295,7 +295,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          TestMPSFile = {
+          "TestMPSFile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -308,7 +308,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          TestPBFile = {
+          "TestPBFile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.toysolver
@@ -320,7 +320,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          TestSDPFile = {
+          "TestSDPFile" = {
             depends  = [
               hsPkgs.base
               hsPkgs.toysolver
@@ -332,7 +332,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          TestUtil = {
+          "TestUtil" = {
             depends  = [
               hsPkgs.base
               hsPkgs.toysolver
@@ -346,7 +346,7 @@ let
           };
         };
         benchmarks = {
-          BenchmarkSATLIB = {
+          "BenchmarkSATLIB" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

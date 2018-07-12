@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        fastcgi = {
+        "fastcgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

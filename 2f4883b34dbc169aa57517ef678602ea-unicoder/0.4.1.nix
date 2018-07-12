@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unicoder = {
+        "unicoder" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          unicoder = {
+          "unicoder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          test-unicoder = {
+          "test-unicoder" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ghc-core-html = {
+          "ghc-core-html" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

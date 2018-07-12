@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        compression = {
+        "compression" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

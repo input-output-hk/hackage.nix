@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        compactmap = {
+        "compactmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.compactmap

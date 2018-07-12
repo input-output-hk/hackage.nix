@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-lexer = {
+        "haskell-lexer" = {
           depends  = [ hsPkgs.base ];
         };
       };

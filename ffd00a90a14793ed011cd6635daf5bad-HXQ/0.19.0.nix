@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HXQ = {
+        "HXQ" = {
           depends  = ([
             hsPkgs.haskell98
             hsPkgs.array

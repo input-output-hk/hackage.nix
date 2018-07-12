@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kaleidoscope = {
+        "kaleidoscope" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskeline
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          chapter2 = {
+          "chapter2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline
@@ -44,7 +44,7 @@ let
               hsPkgs.transformers
             ];
           };
-          chapter3 = {
+          "chapter3" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline
@@ -56,7 +56,7 @@ let
               hsPkgs.containers
             ];
           };
-          chapter4 = {
+          "chapter4" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline
@@ -68,7 +68,7 @@ let
               hsPkgs.transformers
             ];
           };
-          chapter5 = {
+          "chapter5" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline
@@ -80,7 +80,7 @@ let
               hsPkgs.transformers
             ];
           };
-          chapter6 = {
+          "chapter6" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline
@@ -92,7 +92,7 @@ let
               hsPkgs.transformers
             ];
           };
-          chapter7 = {
+          "chapter7" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskeline

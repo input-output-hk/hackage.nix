@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stringsearch = {
+        "stringsearch" = {
           depends  = if _flags.base4
             then [
               hsPkgs.base

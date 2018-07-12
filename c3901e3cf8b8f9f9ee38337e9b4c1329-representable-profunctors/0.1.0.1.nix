@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        representable-profunctors = {
+        "representable-profunctors" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroupoids

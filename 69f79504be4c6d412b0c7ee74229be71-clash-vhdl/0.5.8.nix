@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clash-vhdl = {
+        "clash-vhdl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clash-lib

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        deepcontrol = {
+        "deepcontrol" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -29,28 +29,28 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
               hsPkgs.QuickCheck
             ];
           };
-          UnitTest_Applicative = {
+          "UnitTest_Applicative" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.deepcontrol
             ];
           };
-          UnitTest_Commutative = {
+          "UnitTest_Commutative" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
               hsPkgs.deepcontrol
             ];
           };
-          UnitTest_Monad = {
+          "UnitTest_Monad" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -59,7 +59,7 @@ let
               hsPkgs.safe
             ];
           };
-          UnitTest_Monad-Level1 = {
+          "UnitTest_Monad-Level1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -68,7 +68,7 @@ let
               hsPkgs.deepcontrol
             ];
           };
-          UnitTest_Monad-Level2 = {
+          "UnitTest_Monad-Level2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -77,7 +77,7 @@ let
               hsPkgs.deepcontrol
             ];
           };
-          UnitTest_Monad-Level2-2 = {
+          "UnitTest_Monad-Level2-2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -86,7 +86,7 @@ let
               hsPkgs.deepcontrol
             ];
           };
-          UnitTest_MonadMorph = {
+          "UnitTest_MonadMorph" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -94,7 +94,7 @@ let
               hsPkgs.deepcontrol
             ];
           };
-          UnitTest_MonadMorph-Level1 = {
+          "UnitTest_MonadMorph-Level1" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

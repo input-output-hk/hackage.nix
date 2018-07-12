@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HDBC-sqlite3 = {
+        "HDBC-sqlite3" = {
           depends  = ([
             hsPkgs.mtl
             hsPkgs.HDBC
@@ -39,7 +39,7 @@ let
           libs = [ pkgs.sqlite3 ];
         };
         exes = {
-          runtests = {
+          "runtests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        type-combinators-singletons = {
+        "type-combinators-singletons" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-combinators

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakismet = {
+        "hakismet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        readshp = {
+        "readshp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        invariant = {
+        "invariant" = {
           depends  = [
             hsPkgs.base
             hsPkgs.contravariant
           ];
         };
         tests = {
-          qc-tests = {
+          "qc-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

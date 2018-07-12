@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-routes-typescript = {
+        "yesod-routes-typescript" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base

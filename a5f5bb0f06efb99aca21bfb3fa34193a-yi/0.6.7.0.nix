@@ -31,7 +31,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi = {
+        "yi" = {
           depends  = (((((((([
             hsPkgs.Cabal
             hsPkgs.Diff
@@ -104,7 +104,7 @@ let
           ];
         };
         exes = {
-          parserTest = {
+          "parserTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -113,7 +113,7 @@ let
               hsPkgs.filepath
             ] ++ pkgs.lib.optional (!_flags.dochack) hsPkgs.yi;
           };
-          yi = {
+          "yi" = {
             depends  = [
               hsPkgs.base
             ] ++ pkgs.lib.optional (!_flags.dochack) hsPkgs.yi;

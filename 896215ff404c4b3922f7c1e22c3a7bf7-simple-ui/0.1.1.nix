@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-ui = {
+        "simple-ui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

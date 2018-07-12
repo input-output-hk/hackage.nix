@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          organize-imports = {
+          "organize-imports" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec

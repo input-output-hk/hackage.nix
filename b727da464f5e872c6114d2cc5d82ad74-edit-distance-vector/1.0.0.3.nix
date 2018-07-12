@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        edit-distance-vector = {
+        "edit-distance-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

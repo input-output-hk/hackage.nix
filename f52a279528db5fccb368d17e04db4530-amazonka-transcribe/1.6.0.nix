@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-transcribe = {
+        "amazonka-transcribe" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-transcribe-test = {
+          "amazonka-transcribe-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

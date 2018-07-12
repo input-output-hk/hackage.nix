@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        global-lock = {
+        "global-lock" = {
           depends  = [ hsPkgs.base ];
         };
       };

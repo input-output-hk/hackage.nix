@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        asynchronous-exceptions = {
+        "asynchronous-exceptions" = {
           depends  = [ hsPkgs.base ];
         };
       };

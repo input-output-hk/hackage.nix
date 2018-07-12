@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake-ats = {
+        "shake-ats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

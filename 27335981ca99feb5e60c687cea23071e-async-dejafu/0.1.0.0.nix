@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        async-dejafu = {
+        "async-dejafu" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dejafu
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async-dejafu

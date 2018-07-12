@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hxweb = {
+        "hxweb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

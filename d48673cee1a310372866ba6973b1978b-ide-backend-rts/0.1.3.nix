@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ide-backend-rts = {
+        "ide-backend-rts" = {
           depends  = [ hsPkgs.base ];
         };
       };

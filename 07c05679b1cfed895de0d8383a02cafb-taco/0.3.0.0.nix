@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        taco = {
+        "taco" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.taco

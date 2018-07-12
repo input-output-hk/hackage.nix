@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-random = {
+        "pipes-random" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mwc-random

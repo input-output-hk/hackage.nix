@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        isdicom = {
+        "isdicom" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          isdicom = {
+          "isdicom" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -39,7 +39,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

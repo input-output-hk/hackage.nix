@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          PDB2Fasta = {
+          "PDB2Fasta" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -39,7 +39,7 @@ let
               hsPkgs.hPDB
             ];
           };
-          ShiftToCenter = {
+          "ShiftToCenter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -57,7 +57,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          CleanPDB = {
+          "CleanPDB" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -75,7 +75,7 @@ let
               hsPkgs.hPDB
             ];
           };
-          SplitModels = {
+          "SplitModels" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -93,7 +93,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          CanonicalAxes = {
+          "CanonicalAxes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -111,7 +111,7 @@ let
               hsPkgs.hPDB
             ];
           };
-          PrintEvents = {
+          "PrintEvents" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -129,7 +129,7 @@ let
               hsPkgs.hPDB
             ];
           };
-          PrintStructureObject = {
+          "PrintStructureObject" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -147,7 +147,7 @@ let
               hsPkgs.hPDB
             ];
           };
-          Rg = {
+          "Rg" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -165,7 +165,7 @@ let
               hsPkgs.hPDB
             ];
           };
-          StericClashCheck = {
+          "StericClashCheck" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base
@@ -185,7 +185,7 @@ let
               hsPkgs.hPDB
             ];
           };
-          Viewer = {
+          "Viewer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

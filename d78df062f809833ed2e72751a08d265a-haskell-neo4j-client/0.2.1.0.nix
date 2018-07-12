@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-neo4j-client = {
+        "haskell-neo4j-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -42,7 +42,7 @@ let
           ];
         };
         tests = {
-          test-haskell-neo4j-rest-client = {
+          "test-haskell-neo4j-rest-client" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

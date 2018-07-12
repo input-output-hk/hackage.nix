@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          defend = {
+          "defend" = {
             depends  = [
               hsPkgs.base
               hsPkgs.peakachu
@@ -40,7 +40,7 @@ let
               hsPkgs.zlib
             ];
           };
-          defendFontEdit = {
+          "defendFontEdit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.peakachu

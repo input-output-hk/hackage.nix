@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transient-universe = {
+        "transient-universe" = {
           depends  = [
             hsPkgs.transformers
             hsPkgs.containers
@@ -65,7 +65,7 @@ let
             ]);
         };
         tests = {
-          test-transient = {
+          "test-transient" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

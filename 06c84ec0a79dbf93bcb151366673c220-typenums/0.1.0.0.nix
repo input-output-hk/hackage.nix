@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        typenums = {
+        "typenums" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          typenums-tests = {
+          "typenums-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

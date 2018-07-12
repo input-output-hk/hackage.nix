@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-core = {
+        "snap-core" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -48,7 +48,7 @@ let
           ] ++ pkgs.lib.optional (!(_flags.portable || system.isWindows)) hsPkgs.bytestring-mmap;
         };
         exes = {
-          snap = {
+          "snap" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

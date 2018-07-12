@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        samtools-iteratee = {
+        "samtools-iteratee" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          bam-filter = {
+          "bam-filter" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

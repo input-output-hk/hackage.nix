@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-zlib = {
+        "pipes-zlib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

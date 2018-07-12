@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        atp-haskell = {
+        "atp-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          atp-haskell-tests = {
+          "atp-haskell-tests" = {
             depends  = [
               hsPkgs.atp-haskell
               hsPkgs.base

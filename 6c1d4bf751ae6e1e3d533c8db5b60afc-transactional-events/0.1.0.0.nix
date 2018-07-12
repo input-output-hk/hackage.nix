@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transactional-events = {
+        "transactional-events" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stm

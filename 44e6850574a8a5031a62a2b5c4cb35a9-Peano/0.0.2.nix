@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Peano = {
+        "Peano" = {
           depends  = [ hsPkgs.base ];
         };
       };

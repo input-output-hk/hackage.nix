@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap-routes = {
+        "snap-routes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        derive-storable = {
+        "derive-storable" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          c_alignment = {
+          "c_alignment" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec
@@ -32,7 +32,7 @@ let
               hsPkgs.derive-storable
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.derive-storable

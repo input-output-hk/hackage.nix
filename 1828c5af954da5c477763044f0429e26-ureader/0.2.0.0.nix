@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ureader = {
+          "ureader" = {
             depends  = [
               hsPkgs.base
               hsPkgs.implicit-params

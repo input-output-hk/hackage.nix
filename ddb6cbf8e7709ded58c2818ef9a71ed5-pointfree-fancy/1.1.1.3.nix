@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pointfree-fancy = {
+        "pointfree-fancy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          pointfree = {
+          "pointfree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array
@@ -41,7 +41,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

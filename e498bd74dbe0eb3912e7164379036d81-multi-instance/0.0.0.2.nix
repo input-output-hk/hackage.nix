@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        multi-instance = {
+        "multi-instance" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hinduce-classifier-decisiontree = {
+        "hinduce-classifier-decisiontree" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

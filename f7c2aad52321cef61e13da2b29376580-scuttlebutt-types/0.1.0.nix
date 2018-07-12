@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scuttlebutt-types = {
+        "scuttlebutt-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          scuttlebutt-types-test = {
+          "scuttlebutt-types-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.scuttlebutt-types

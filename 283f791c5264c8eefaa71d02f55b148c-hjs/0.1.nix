@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          FixHappy = {
+          "FixHappy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.happy
@@ -29,7 +29,7 @@ let
               hsPkgs.mtl
             ];
           };
-          hjs = {
+          "hjs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.happy

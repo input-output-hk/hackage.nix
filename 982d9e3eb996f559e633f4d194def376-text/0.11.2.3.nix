@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text = {
+        "text" = {
           depends  = (([
             hsPkgs.array
             hsPkgs.base
@@ -36,14 +36,14 @@ let
             ]
             else [
               hsPkgs.extensible-exceptions
-            ])) ++ (if compiler.isGhc && compiler.version.ge "6.11" && _flags.integer-simple
+            ])) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.11") (if _flags.integer-simple
             then [ hsPkgs.integer-simple ]
             else [
               hsPkgs.integer-gmp
             ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9" && (compiler.isGhc && compiler.version.lt "6.11")) hsPkgs.integer;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

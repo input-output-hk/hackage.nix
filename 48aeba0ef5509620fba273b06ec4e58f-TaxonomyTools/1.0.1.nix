@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          TaxIds2Text = {
+          "TaxIds2Text" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -31,7 +31,7 @@ let
               hsPkgs.text
             ];
           };
-          Accessions2TaxIds = {
+          "Accessions2TaxIds" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -48,7 +48,7 @@ let
               hsPkgs.hxt
             ];
           };
-          TaxIds2TreeCompare = {
+          "TaxIds2TreeCompare" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -62,7 +62,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          TaxIds2Tree = {
+          "TaxIds2Tree" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -77,7 +77,7 @@ let
               hsPkgs.aeson
             ];
           };
-          TaxIdsDistance = {
+          "TaxIdsDistance" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        si-clock = {
+        "si-clock" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

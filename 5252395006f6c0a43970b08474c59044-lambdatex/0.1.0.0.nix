@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lambdatex = {
+        "lambdatex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HaTeX
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          lambdatex-test = {
+          "lambdatex-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.lambdatex

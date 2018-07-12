@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ifcxt = {
+        "ifcxt" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fastbayes = {
+        "fastbayes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

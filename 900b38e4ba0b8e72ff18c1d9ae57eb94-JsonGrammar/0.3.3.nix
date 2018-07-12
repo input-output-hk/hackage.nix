@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JsonGrammar = {
+        "JsonGrammar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

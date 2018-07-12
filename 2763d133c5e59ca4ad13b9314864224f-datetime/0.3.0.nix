@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        datetime = {
+        "datetime" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-locale
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.datetime
               hsPkgs.old-locale

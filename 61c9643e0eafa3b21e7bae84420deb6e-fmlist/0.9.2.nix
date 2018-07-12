@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fmlist = {
+        "fmlist" = {
           depends  = [ hsPkgs.base ];
         };
       };

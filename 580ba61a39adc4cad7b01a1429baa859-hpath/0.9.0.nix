@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hpath = {
+        "hpath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.IfElse
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          doctests-hpath = {
+          "doctests-hpath" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -45,7 +45,7 @@ let
               hsPkgs.hpath
             ];
           };
-          doctests-posix = {
+          "doctests-posix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -56,7 +56,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

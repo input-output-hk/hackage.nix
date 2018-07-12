@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        definitive-filesystem = {
+        "definitive-filesystem" = {
           depends  = [
             hsPkgs.base
             hsPkgs.definitive-base

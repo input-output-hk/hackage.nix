@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        io-string-like = {
+        "io-string-like" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

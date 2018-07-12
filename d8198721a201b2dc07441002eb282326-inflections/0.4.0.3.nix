@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        inflections = {
+        "inflections" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) hsPkgs.void;
         };
         tests = {
-          test = {
+          "test" = {
             depends  = ([
               hsPkgs.inflections
               hsPkgs.QuickCheck

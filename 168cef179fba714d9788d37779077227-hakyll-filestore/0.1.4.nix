@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hakyll-filestore = {
+        "hakyll-filestore" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mixed-strategies = {
+        "mixed-strategies" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          oms = {
+          "oms" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

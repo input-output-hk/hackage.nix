@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cve = {
+        "cve" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        frpnow = {
+        "frpnow" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

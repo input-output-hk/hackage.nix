@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        binary-shared = {
+        "binary-shared" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

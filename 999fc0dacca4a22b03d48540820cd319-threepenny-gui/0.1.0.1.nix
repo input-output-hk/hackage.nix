@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        threepenny-gui = {
+        "threepenny-gui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.snap-server
@@ -42,28 +42,28 @@ let
           ];
         };
         exes = {
-          threepenny-examples-bartab = {
+          "threepenny-examples-bartab" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.filepath
             ];
           };
-          threepenny-examples-buttons = {
+          "threepenny-examples-buttons" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.filepath
             ];
           };
-          threepenny-examples-dragndropexample = {
+          "threepenny-examples-dragndropexample" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
               hsPkgs.filepath
             ];
           };
-          threepenny-examples-missing-dollars = {
+          "threepenny-examples-missing-dollars" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.filepath
@@ -71,7 +71,7 @@ let
               hsPkgs.safe
             ];
           };
-          threepenny-examples-use-words = {
+          "threepenny-examples-use-words" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui
@@ -79,7 +79,7 @@ let
               hsPkgs.parsec
             ];
           };
-          threepenny-examples-chat = {
+          "threepenny-examples-chat" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.threepenny-gui

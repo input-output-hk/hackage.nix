@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-form-bulma = {
+        "yesod-form-bulma" = {
           depends  = [
             hsPkgs.base
             hsPkgs.email-validate
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.email-validate
@@ -43,7 +43,7 @@ let
               hsPkgs.yesod-form-bulma
             ];
           };
-          showcase = {
+          "showcase" = {
             depends  = [
               hsPkgs.base
               hsPkgs.email-validate
@@ -57,7 +57,7 @@ let
           };
         };
         tests = {
-          yesod-form-bulma-test = {
+          "yesod-form-bulma-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.email-validate

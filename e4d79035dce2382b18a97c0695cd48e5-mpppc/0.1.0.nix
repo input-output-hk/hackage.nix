@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mpppc = {
+        "mpppc" = {
           depends  = [
             hsPkgs.ansi-terminal
             hsPkgs.base

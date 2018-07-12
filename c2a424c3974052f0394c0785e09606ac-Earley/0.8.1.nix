@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Earley = {
+        "Earley" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -30,39 +30,39 @@ let
           ];
         };
         exes = {
-          earley-english = {
+          "earley-english" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Earley
               hsPkgs.unordered-containers
             ];
           };
-          earley-expr = {
+          "earley-expr" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Earley
             ];
           };
-          earley-expr2 = {
+          "earley-expr2" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Earley
             ];
           };
-          earley-mixfix = {
+          "earley-mixfix" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Earley
               hsPkgs.containers
             ];
           };
-          earley-very-ambiguous = {
+          "earley-very-ambiguous" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Earley
             ];
           };
-          earley-words = {
+          "earley-words" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Earley
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Earley
@@ -81,7 +81,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bookshelf = {
+          "bookshelf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.citeproc-hs
@@ -34,7 +34,7 @@ let
           };
         };
         tests = {
-          documentation = {
+          "documentation" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

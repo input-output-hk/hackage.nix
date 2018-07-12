@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hleap = {
+        "hleap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          leap-tracker = {
+          "leap-tracker" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        caramia = {
+        "caramia" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -34,7 +34,7 @@ let
           frameworks = pkgs.lib.optional system.isOsx pkgs.OpenGL;
         };
         tests = {
-          smoke-test = {
+          "smoke-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.caramia
@@ -42,7 +42,7 @@ let
               hsPkgs.text
             ];
           };
-          memory-info = {
+          "memory-info" = {
             depends  = [
               hsPkgs.base
               hsPkgs.caramia

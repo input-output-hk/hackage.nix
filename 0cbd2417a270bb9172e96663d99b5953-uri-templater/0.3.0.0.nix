@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uri-templater = {
+        "uri-templater" = {
           depends  = [
             hsPkgs.base
             hsPkgs.trifecta
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          test-uri-templates = {
+          "test-uri-templates" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

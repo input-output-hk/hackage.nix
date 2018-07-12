@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        diagrams-pdf = {
+        "diagrams-pdf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        simple-postgresql-orm = {
+        "simple-postgresql-orm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

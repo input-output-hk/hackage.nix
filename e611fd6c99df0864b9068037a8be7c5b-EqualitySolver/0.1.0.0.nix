@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        EqualitySolver = {
+        "EqualitySolver" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit

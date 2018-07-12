@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        frquotes = {
+        "frquotes" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          frquotes = {
+          "frquotes" = {
             depends  = [ hsPkgs.base ];
           };
         };

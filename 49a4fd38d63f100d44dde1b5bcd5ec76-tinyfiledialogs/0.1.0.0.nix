@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tinyfiledialogs = {
+        "tinyfiledialogs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

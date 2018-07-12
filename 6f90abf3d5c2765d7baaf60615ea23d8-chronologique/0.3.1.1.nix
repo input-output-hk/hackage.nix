@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chronologique = {
+        "chronologique" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -31,13 +31,13 @@ let
           ];
         };
         tests = {
-          experiment = {
+          "experiment" = {
             depends  = [
               hsPkgs.base
               hsPkgs.chronologique
             ];
           };
-          check = {
+          "check" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

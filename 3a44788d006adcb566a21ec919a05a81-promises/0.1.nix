@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        promises = {
+        "promises" = {
           depends  = [
             hsPkgs.base
             hsPkgs.monad-st

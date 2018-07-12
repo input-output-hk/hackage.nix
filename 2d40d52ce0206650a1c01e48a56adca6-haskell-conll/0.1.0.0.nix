@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-conll = {
+        "haskell-conll" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

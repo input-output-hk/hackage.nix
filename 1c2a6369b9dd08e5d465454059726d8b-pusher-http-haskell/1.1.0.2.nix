@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pusher-http-haskell = {
+        "pusher-http-haskell" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

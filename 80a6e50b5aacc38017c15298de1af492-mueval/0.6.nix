@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mueval = {
+        "mueval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.directory
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          mueval = {
+          "mueval" = {
             depends  = [ hsPkgs.base ];
           };
         };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Persistence = {
+        "Persistence" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

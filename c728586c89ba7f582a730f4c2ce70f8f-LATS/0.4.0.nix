@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LATS = {
+        "LATS" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraint-classes

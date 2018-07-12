@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        text1 = {
+        "text1" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

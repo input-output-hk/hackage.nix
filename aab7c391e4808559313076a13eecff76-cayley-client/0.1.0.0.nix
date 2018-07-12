@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cayley-client = {
+        "cayley-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base

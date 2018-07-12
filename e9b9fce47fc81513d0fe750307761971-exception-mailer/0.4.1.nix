@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exception-mailer = {
+        "exception-mailer" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

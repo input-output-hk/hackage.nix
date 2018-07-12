@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hyperloglogplus = {
+        "hyperloglogplus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bits
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          hyperloglogplus-test = {
+          "hyperloglogplus-test" = {
             depends  = [
               hsPkgs.hyperloglogplus
               hsPkgs.HUnit

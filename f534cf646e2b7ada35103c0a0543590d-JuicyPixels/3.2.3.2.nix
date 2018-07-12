@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JuicyPixels = {
+        "JuicyPixels" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

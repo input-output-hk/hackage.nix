@@ -25,7 +25,7 @@ let
         buildType = "Custom";
       };
       components = {
-        java-bridge = {
+        "java-bridge" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.directory

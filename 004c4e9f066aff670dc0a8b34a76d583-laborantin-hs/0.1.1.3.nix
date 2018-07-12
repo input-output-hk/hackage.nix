@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        laborantin-hs = {
+        "laborantin-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          labor-example = {
+          "labor-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

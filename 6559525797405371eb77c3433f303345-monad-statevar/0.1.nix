@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-statevar = {
+        "monad-statevar" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.monad-statevar

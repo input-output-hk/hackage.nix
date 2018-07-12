@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagsoup-megaparsec = {
+        "tagsoup-megaparsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tagsoup-megaparsec-test = {
+          "tagsoup-megaparsec-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

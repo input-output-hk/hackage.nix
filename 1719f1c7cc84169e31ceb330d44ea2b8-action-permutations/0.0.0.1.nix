@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        action-permutations = {
+        "action-permutations" = {
           depends  = [ hsPkgs.base ];
         };
       };

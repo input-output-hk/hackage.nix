@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        tensorflow-core-ops = {
+        "tensorflow-core-ops" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.proto-lens

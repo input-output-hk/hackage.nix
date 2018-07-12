@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        safer-file-handles = {
+        "safer-file-handles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

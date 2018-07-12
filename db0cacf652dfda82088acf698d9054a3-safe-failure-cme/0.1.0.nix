@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        safe-failure-cme = {
+        "safe-failure-cme" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safe-failure

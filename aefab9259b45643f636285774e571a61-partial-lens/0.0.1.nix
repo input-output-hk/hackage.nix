@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        partial-lens = {
+        "partial-lens" = {
           depends  = [
             hsPkgs.base
             hsPkgs.comonad-transformers

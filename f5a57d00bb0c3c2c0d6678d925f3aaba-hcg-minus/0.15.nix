@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hcg-minus = {
+        "hcg-minus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.colour

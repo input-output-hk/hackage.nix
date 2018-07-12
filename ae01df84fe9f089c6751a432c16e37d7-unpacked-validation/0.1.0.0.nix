@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unpacked-validation = {
+        "unpacked-validation" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          unpacked-validation-test = {
+          "unpacked-validation-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unpacked-validation

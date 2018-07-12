@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        bunz = {
+        "bunz" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
           ];
         };
         exes = {
-          bunz = {
+          "bunz" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bunz
@@ -38,7 +38,7 @@ let
           };
         };
         tests = {
-          bunz-test = {
+          "bunz-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bunz

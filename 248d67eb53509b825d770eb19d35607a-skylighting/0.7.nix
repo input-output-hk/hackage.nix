@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        skylighting = {
+        "skylighting" = {
           depends  = [
             hsPkgs.base
             hsPkgs.skylighting-core
@@ -51,7 +51,7 @@ let
             ]);
         };
         exes = {
-          skylighting = {
+          "skylighting" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

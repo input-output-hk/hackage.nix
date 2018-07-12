@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shakespeare-text = {
+        "shakespeare-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.shakespeare
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.shakespeare-text
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-autoscaler = {
+        "gogol-autoscaler" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-schema = {
+        "json-schema" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") hsPkgs.ghc-prim;
         };
         tests = {
-          json-schema-generic-aeson-tests = {
+          "json-schema-generic-aeson-tests" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.aeson

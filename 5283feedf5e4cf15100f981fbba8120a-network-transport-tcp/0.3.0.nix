@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-transport-tcp = {
+        "network-transport-tcp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network-transport
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          TestTCP = {
+          "TestTCP" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network-transport-tests

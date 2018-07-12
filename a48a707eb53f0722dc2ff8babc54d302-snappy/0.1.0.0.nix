@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snappy = {
+        "snappy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

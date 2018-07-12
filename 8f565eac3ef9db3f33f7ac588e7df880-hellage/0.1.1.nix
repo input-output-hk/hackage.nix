@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hellage = {
+          "hellage" = {
             depends  = [
               hsPkgs.hellnet
               hsPkgs.Lucu
@@ -35,7 +35,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          hellage-genmeta = {
+          "hellage-genmeta" = {
             depends  = [
               hsPkgs.hellnet
               hsPkgs.hjpath

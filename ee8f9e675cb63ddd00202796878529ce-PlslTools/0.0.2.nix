@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          PlslLint = {
+          "PlslLint" = {
             depends  = [
               hsPkgs.old-locale
               hsPkgs.old-time

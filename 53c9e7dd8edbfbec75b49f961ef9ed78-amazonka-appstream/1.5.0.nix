@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-appstream = {
+        "amazonka-appstream" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-appstream-test = {
+          "amazonka-appstream-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

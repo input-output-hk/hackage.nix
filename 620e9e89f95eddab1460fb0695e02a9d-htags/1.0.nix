@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          htags = {
+          "htags" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath

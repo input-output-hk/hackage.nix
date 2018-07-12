@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-purescript = {
+        "yesod-purescript" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gps2htmlReport = {
+        "gps2htmlReport" = {
           depends  = [
             hsPkgs.base
             hsPkgs.html
@@ -38,6 +38,8 @@ let
             hsPkgs.gd
           ];
         };
-        exes = { gps2htmlReport = {}; };
+        exes = {
+          "gps2htmlReport" = {};
+        };
       };
     }

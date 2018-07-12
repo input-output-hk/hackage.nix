@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          imapget = {
+          "imapget" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

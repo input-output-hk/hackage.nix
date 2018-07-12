@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        secp256k1 = {
+        "secp256k1" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base16-bytestring
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          secp256k1-test = {
+          "secp256k1-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base16-bytestring

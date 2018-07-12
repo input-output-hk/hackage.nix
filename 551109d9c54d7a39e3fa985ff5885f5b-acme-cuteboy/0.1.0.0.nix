@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        acme-cuteboy = {
+        "acme-cuteboy" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          CuteBoy = {
+          "CuteBoy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.acme-cuteboy

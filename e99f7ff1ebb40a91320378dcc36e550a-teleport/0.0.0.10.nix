@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        teleport = {
+        "teleport" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          teleport-exe = {
+          "teleport-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.teleport
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          teleport-test = {
+          "teleport-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.teleport

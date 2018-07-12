@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        azubi = {
+        "azubi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath

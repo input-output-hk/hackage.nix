@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        markdown-unlit = {
+        "markdown-unlit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
           ];
         };
         exes = {
-          markdown-unlit = {
+          "markdown-unlit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base-compat

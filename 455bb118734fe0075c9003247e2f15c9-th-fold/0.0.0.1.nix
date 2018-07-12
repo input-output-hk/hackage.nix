@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        th-fold = {
+        "th-fold" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

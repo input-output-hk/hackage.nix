@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          attic-schedule = {
+          "attic-schedule" = {
             depends  = [
               hsPkgs.base
               hsPkgs.attoparsec
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

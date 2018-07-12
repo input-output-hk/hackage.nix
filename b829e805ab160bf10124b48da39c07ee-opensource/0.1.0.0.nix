@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        opensource = {
+        "opensource" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -37,7 +37,7 @@ let
             else [ hsPkgs.transformers ]);
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.opensource

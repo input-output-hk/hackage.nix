@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        random-eff = {
+        "random-eff" = {
           depends  = [
             hsPkgs.base
             hsPkgs.extensible-effects

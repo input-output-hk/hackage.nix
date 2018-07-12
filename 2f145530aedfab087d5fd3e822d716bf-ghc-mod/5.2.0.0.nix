@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-mod = {
+        "ghc-mod" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.containers
@@ -55,7 +55,7 @@ let
             ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.4.2") hsPkgs.random;
         };
         exes = {
-          ghc-mod = {
+          "ghc-mod" = {
             depends  = [
               hsPkgs.base
               hsPkgs.data-default
@@ -68,7 +68,7 @@ let
               hsPkgs.ghc-mod
             ];
           };
-          ghc-modi = {
+          "ghc-modi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async
@@ -85,13 +85,13 @@ let
           };
         };
         tests = {
-          doctest = {
+          "doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest
             ];
           };
-          spec = {
+          "spec" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.containers

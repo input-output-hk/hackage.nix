@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hans = {
+        "hans" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.cereal
@@ -44,7 +44,7 @@ let
           ]) ++ pkgs.lib.optional (system.isOsx || system.isLinux) hsPkgs.unix;
         };
         exes = {
-          echo-server = {
+          "echo-server" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.bytestring
@@ -53,7 +53,7 @@ let
           };
         };
         tests = {
-          hans-tests = {
+          "hans-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

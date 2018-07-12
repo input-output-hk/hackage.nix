@@ -29,7 +29,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-default-extra = {
+        "data-default-extra" = {
           depends  = (((((((([
             hsPkgs.base
             hsPkgs.data-default-class

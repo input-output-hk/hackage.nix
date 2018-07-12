@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-filepath = {
+        "data-filepath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split

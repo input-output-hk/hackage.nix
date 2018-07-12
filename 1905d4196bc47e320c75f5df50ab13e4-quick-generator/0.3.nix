@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quick-generator = {
+        "quick-generator" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

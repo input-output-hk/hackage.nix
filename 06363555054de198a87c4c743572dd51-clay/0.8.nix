@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clay = {
+        "clay" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          Test-Clay = {
+          "Test-Clay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

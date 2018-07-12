@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shorten-strings = {
+        "shorten-strings" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

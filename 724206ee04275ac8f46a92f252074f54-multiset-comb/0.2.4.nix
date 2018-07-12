@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multiset-comb = {
+        "multiset-comb" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

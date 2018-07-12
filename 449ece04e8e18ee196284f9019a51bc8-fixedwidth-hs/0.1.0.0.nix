@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixedwidth-hs = {
+        "fixedwidth-hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson

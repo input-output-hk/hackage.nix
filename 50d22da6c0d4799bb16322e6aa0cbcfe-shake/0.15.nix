@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        shake = {
+        "shake" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time
@@ -41,10 +41,10 @@ let
             hsPkgs.transformers
             hsPkgs.extra
             hsPkgs.deepseq
-          ] ++ pkgs.lib.optional (!_flags.portable && !system.isWindows) hsPkgs.unix;
+          ] ++ pkgs.lib.optionals (!_flags.portable) (pkgs.lib.optional (!system.isWindows) hsPkgs.unix);
         };
         exes = {
-          shake = {
+          "shake" = {
             depends  = [
               hsPkgs.base
               hsPkgs.old-time
@@ -63,11 +63,11 @@ let
               hsPkgs.transformers
               hsPkgs.extra
               hsPkgs.deepseq
-            ] ++ pkgs.lib.optional (!_flags.portable && !system.isWindows) hsPkgs.unix;
+            ] ++ pkgs.lib.optionals (!_flags.portable) (pkgs.lib.optional (!system.isWindows) hsPkgs.unix);
           };
         };
         tests = {
-          shake-test = {
+          "shake-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.old-time
@@ -87,7 +87,7 @@ let
               hsPkgs.deepseq
               hsPkgs.extra
               hsPkgs.QuickCheck
-            ] ++ pkgs.lib.optional (!_flags.portable && !system.isWindows) hsPkgs.unix;
+            ] ++ pkgs.lib.optionals (!_flags.portable) (pkgs.lib.optional (!system.isWindows) hsPkgs.unix);
           };
         };
       };

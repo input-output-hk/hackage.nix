@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-time-range = {
+        "haskell-time-range" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

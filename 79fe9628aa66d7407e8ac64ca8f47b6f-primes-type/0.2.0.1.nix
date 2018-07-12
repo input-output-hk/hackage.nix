@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        primes-type = {
+        "primes-type" = {
           depends  = [
             hsPkgs.base
             hsPkgs.primes
           ];
         };
         tests = {
-          primes-type-test = {
+          "primes-type-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.primes

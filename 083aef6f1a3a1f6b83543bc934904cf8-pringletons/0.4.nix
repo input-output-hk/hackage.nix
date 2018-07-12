@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pringletons = {
+        "pringletons" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

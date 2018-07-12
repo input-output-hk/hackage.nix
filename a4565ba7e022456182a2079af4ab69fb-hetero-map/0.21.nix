@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hetero-map = {
+        "hetero-map" = {
           depends  = [ hsPkgs.base ];
         };
       };

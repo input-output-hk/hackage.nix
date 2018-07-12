@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        collada-types = {
+        "collada-types" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

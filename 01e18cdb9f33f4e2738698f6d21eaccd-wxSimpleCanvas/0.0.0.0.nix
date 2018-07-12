@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wxSimpleCanvas = {
+        "wxSimpleCanvas" = {
           depends  = [
             hsPkgs.cubicbezier
             hsPkgs.base

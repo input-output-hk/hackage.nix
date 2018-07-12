@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        s-cargot = {
+        "s-cargot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec

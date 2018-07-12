@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        farmhash = {
+        "farmhash" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          test-farmhash = {
+          "test-farmhash" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -38,7 +38,7 @@ let
           };
         };
         benchmarks = {
-          bench-farmhash = {
+          "bench-farmhash" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

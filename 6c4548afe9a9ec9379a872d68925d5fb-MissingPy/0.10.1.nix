@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        MissingPy = {
+        "MissingPy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.MissingH

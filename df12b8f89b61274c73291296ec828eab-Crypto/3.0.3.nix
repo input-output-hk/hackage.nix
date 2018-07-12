@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        Crypto = {
+        "Crypto" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          BERTest = {
+          "BERTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -39,7 +39,7 @@ let
               hsPkgs.NewBinary
             ];
           };
-          X509Example = {
+          "X509Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -48,7 +48,7 @@ let
               hsPkgs.NewBinary
             ];
           };
-          PKCS8Example = {
+          "PKCS8Example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -57,7 +57,7 @@ let
               hsPkgs.NewBinary
             ];
           };
-          AttributeCertificate = {
+          "AttributeCertificate" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -66,7 +66,7 @@ let
               hsPkgs.NewBinary
             ];
           };
-          RSAEncryptionExample = {
+          "RSAEncryptionExample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -75,7 +75,7 @@ let
               hsPkgs.NewBinary
             ];
           };
-          RSAVerifyExample = {
+          "RSAVerifyExample" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -84,7 +84,7 @@ let
               hsPkgs.NewBinary
             ];
           };
-          SymmetricTest = {
+          "SymmetricTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -93,7 +93,7 @@ let
               hsPkgs.NewBinary
             ];
           };
-          RSATest = {
+          "RSATest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -102,7 +102,7 @@ let
               hsPkgs.NewBinary
             ];
           };
-          QuickTest = {
+          "QuickTest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

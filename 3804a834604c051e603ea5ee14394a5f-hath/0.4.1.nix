@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hath = {
+          "hath" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -33,7 +33,7 @@ let
           };
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -43,7 +43,7 @@ let
               hsPkgs.tasty-quickcheck
             ];
           };
-          shelltests = {
+          "shelltests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

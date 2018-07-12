@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exinst-hashable = {
+        "exinst-hashable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

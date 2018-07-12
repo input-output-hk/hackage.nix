@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ViennaRNAParser = {
+        "ViennaRNAParser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          hspec = {
+          "hspec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

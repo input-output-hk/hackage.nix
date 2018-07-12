@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-recaptcha = {
+        "yesod-recaptcha" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

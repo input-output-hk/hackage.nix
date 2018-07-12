@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        llvm-data-interop = {
+        "llvm-data-interop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

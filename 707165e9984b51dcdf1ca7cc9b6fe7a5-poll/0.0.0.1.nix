@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        poll = {
+        "poll" = {
           depends  = [
             hsPkgs.enumset
             hsPkgs.utility-ht

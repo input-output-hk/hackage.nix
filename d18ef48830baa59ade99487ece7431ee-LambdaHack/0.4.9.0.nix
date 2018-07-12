@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LambdaHack = {
+        "LambdaHack" = {
           depends  = [
             hsPkgs.array
             hsPkgs.assert-failure
@@ -58,13 +58,13 @@ let
             else if _flags.vty
               then [ hsPkgs.vty ]
               else [ hsPkgs.gtk ]);
-          pkgconfig = [
+          pkgconfig = pkgs.lib.optionals (!_flags.curses) (pkgs.lib.optionals (!_flags.vty) [
             pkgconfPkgs."gtk+-2.0"
             pkgconfPkgs.x11
-          ];
+          ]);
         };
         exes = {
-          LambdaHack = {
+          "LambdaHack" = {
             depends  = [
               hsPkgs.LambdaHack
               hsPkgs.template-haskell
@@ -99,7 +99,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.LambdaHack
               hsPkgs.template-haskell

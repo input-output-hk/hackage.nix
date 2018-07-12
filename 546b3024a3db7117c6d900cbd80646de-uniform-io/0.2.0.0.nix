@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uniform-io = {
+        "uniform-io" = {
           depends  = [
             hsPkgs.base
             hsPkgs.iproute
@@ -37,7 +37,7 @@ let
           ];
         };
         tests = {
-          targets = {
+          "targets" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal
@@ -45,7 +45,7 @@ let
               hsPkgs.uniform-io
             ];
           };
-          blocking = {
+          "blocking" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

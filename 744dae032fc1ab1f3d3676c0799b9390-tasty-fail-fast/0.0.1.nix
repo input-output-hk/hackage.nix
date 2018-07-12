@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-fail-fast = {
+        "tasty-fail-fast" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tasty
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty

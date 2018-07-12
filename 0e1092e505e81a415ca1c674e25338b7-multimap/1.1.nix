@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multimap = {
+        "multimap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

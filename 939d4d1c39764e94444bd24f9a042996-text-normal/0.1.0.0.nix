@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        text-normal = {
+        "text-normal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq

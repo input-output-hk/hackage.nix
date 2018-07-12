@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        directory-listing-webpage-parser = {
+        "directory-listing-webpage-parser" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagsoup

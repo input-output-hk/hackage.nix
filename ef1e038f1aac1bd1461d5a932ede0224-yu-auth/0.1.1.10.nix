@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yu-auth = {
+        "yu-auth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cryptonite
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-core = {
+          "test-core" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yu-utils
@@ -40,7 +40,7 @@ let
               hsPkgs.yu-auth
             ];
           };
-          test-auth = {
+          "test-auth" = {
             depends  = [
               hsPkgs.base
               hsPkgs.yu-auth

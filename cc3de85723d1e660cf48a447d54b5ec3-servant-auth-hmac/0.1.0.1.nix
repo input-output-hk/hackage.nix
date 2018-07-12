@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-auth-hmac = {
+        "servant-auth-hmac" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -70,7 +70,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

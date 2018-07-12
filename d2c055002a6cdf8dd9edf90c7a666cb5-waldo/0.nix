@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        waldo = {
+        "waldo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -56,7 +56,7 @@ let
           ];
         };
         exes = {
-          waldo-example = {
+          "waldo-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.waldo
@@ -68,7 +68,7 @@ let
               hsPkgs.safe
             ];
           };
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.waldo

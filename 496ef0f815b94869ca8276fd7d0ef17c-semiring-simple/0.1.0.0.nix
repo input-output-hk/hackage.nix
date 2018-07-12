@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semiring-simple = {
+        "semiring-simple" = {
           depends  = [ hsPkgs.base ];
         };
       };

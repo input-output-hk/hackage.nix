@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tagged-timers = {
+        "tagged-timers" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers

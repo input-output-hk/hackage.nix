@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-static-routing = {
+        "happstack-static-routing" = {
           depends  = [
             hsPkgs.base
             hsPkgs.happstack-server

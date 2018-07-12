@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-service = {
+        "network-service" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -32,7 +32,7 @@ let
           ] ++ pkgs.lib.optional _flags.documentation hsPkgs.hscolour;
         };
         exes = {
-          echo = {
+          "echo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

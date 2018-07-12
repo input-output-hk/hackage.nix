@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multiplate = {
+        "multiplate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

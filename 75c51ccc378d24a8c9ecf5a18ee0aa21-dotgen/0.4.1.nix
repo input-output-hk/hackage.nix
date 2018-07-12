@@ -22,12 +22,12 @@ let
         buildType = "Simple";
       };
       components = {
-        dotgen = {
+        "dotgen" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
-        exes = { dotgen-test = {}; };
+        exes = { "dotgen-test" = {}; };
       };
     }

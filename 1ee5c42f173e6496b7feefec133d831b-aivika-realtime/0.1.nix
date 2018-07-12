@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aivika-realtime = {
+        "aivika-realtime" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

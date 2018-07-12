@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        network-transport-composed = {
+        "network-transport-composed" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

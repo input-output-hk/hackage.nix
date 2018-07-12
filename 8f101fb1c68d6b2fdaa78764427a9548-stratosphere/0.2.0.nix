@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stratosphere = {
+        "stratosphere" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          api-gateway-lambda = {
+          "api-gateway-lambda" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -48,7 +48,7 @@ let
               hsPkgs.stratosphere
             ];
           };
-          auto-scaling-group = {
+          "auto-scaling-group" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -61,7 +61,7 @@ let
               hsPkgs.stratosphere
             ];
           };
-          ec2-with-eip = {
+          "ec2-with-eip" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -74,7 +74,7 @@ let
               hsPkgs.stratosphere
             ];
           };
-          rds-master-replica = {
+          "rds-master-replica" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -87,7 +87,7 @@ let
               hsPkgs.stratosphere
             ];
           };
-          s3-copy = {
+          "s3-copy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -100,7 +100,7 @@ let
               hsPkgs.stratosphere
             ];
           };
-          simple-lambda = {
+          "simple-lambda" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -115,7 +115,7 @@ let
           };
         };
         tests = {
-          style = {
+          "style" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson
@@ -130,7 +130,7 @@ let
               hsPkgs.hlint
             ];
           };
-          tasty = {
+          "tasty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

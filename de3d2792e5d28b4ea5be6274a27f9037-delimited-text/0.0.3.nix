@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        delimited-text = {
+        "delimited-text" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

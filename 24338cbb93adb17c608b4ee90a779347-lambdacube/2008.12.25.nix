@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cube = {
+          "cube" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pretty

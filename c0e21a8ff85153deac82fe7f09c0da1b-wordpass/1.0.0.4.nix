@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wordpass = {
+        "wordpass" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          wordpass = {
+          "wordpass" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

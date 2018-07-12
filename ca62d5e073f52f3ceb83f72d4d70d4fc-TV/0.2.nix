@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        TV = {
+        "TV" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          duplo = {
+          "duplo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.MissingH

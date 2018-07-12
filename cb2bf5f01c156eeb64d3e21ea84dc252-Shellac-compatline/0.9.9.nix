@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Shellac-compatline = {
+        "Shellac-compatline" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.Shellac

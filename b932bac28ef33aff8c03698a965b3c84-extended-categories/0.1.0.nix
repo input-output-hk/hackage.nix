@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extended-categories = {
+        "extended-categories" = {
           depends  = [
             hsPkgs.base
             hsPkgs.constraints

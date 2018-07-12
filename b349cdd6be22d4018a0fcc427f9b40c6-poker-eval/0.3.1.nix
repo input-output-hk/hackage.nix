@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        poker-eval = {
+        "poker-eval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

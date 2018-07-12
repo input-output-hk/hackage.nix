@@ -23,13 +23,13 @@ let
         buildType = "Simple";
       };
       components = {
-        cmdargs = {
+        "cmdargs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
             hsPkgs.process
           ] ++ pkgs.lib.optional _flags.quotation hsPkgs.template-haskell;
         };
-        exes = { cmdargs = {}; };
+        exes = { "cmdargs" = {}; };
       };
     }

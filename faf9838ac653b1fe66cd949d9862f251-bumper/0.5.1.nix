@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          bumper = {
+          "bumper" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Cabal

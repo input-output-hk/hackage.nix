@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          mirror-tweet = {
+          "mirror-tweet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.twitter-conduit

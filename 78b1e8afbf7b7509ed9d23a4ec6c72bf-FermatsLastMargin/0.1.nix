@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          flm = {
+          "flm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

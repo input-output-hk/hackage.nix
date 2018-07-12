@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ag-pictgen = {
+          "ag-pictgen" = {
             depends  = [
               hsPkgs.base
               hsPkgs.uulib

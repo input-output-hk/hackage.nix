@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yahoo-web-search = {
+        "yahoo-web-search" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HTTP

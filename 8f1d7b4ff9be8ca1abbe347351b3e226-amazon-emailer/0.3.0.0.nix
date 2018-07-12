@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          amazon-emailer = {
+          "amazon-emailer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.resourcet

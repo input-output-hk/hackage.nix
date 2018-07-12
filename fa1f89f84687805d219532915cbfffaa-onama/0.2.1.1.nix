@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        onama = {
+        "onama" = {
           depends  = [
             hsPkgs.base
             hsPkgs.tagsoup

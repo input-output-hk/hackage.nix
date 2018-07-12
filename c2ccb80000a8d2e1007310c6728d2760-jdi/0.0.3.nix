@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        jdi = {
+        "jdi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.jdi

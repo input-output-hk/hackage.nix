@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          github-post-receive = {
+          "github-post-receive" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

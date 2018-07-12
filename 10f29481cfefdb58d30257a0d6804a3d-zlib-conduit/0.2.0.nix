@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        zlib-conduit = {
+        "zlib-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.conduit
               hsPkgs.base

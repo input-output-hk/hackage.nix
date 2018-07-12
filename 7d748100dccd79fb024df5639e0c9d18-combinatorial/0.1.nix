@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        combinatorial = {
+        "combinatorial" = {
           depends  = [
             hsPkgs.containers
             hsPkgs.array
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          combinatorial-test = {
+          "combinatorial-test" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.containers

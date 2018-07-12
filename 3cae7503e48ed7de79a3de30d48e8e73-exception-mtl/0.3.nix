@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        exception-mtl = {
+        "exception-mtl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exception-transformers

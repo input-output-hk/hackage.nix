@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pbc4hs = {
+        "pbc4hs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hslua

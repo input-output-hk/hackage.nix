@@ -28,7 +28,7 @@ let
         buildType = "Simple";
       };
       components = {
-        leksah = {
+        "leksah" = {
           depends  = (((((((([
             hsPkgs.Cabal
             hsPkgs.base
@@ -71,7 +71,7 @@ let
             then [ hsPkgs.Win32 ]
             else [
               hsPkgs.unix
-            ])) ++ (if system.isOsx && _flags.gtk3
+            ])) ++ pkgs.lib.optionals system.isOsx (if _flags.gtk3
             then [
               hsPkgs.gtk3-mac-integration
             ]
@@ -114,7 +114,7 @@ let
           libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
         };
         exes = {
-          leksah = {
+          "leksah" = {
             depends  = ([
               hsPkgs.leksah
               hsPkgs.base
@@ -125,7 +125,7 @@ let
             ];
             libs = pkgs.lib.optional system.isWindows pkgs.kernel32;
           };
-          bewleksah = {
+          "bewleksah" = {
             depends  = pkgs.lib.optionals (!(!_flags.webkit)) ([
               hsPkgs.leksah
               hsPkgs.base
@@ -147,7 +147,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.Cabal

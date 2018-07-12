@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Earley = {
+        "Earley" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

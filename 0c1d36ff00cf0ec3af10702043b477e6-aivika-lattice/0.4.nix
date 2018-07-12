@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aivika-lattice = {
+        "aivika-lattice" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

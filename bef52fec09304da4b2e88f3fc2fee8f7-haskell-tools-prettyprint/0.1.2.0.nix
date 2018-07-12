@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-tools-prettyprint = {
+        "haskell-tools-prettyprint" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc

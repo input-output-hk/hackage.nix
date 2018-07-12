@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        operational-class = {
+        "operational-class" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

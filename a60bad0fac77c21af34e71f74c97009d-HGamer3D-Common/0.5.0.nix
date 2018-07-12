@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HGamer3D-Common = {
+        "HGamer3D-Common" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HGamer3D-Data

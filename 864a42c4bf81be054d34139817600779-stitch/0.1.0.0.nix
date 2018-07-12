@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stitch = {
+        "stitch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        NestedSampling = {
+        "NestedSampling" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
           ];
         };
         exes = {
-          lighthouse = {
+          "lighthouse" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random

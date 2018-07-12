@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        classyplate = {
+        "classyplate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.type-list

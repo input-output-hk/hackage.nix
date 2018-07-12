@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hack-contrib = {
+        "hack-contrib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.cgi

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hscamwire = {
+        "hscamwire" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

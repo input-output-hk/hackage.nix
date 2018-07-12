@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          txt2rtf = {
+          "txt2rtf" = {
             depends  = [ hsPkgs.base ];
           };
         };

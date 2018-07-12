@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extensible-effects = {
+        "extensible-effects" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers-base
@@ -31,7 +31,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") hsPkgs.transformers;
         };
         tests = {
-          extensible-effects-tests = {
+          "extensible-effects-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck
@@ -47,7 +47,7 @@ let
           };
         };
         benchmarks = {
-          extensible-effects-benchmarks = {
+          "extensible-effects-benchmarks" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

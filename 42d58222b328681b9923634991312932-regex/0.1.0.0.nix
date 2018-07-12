@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regex = {
+        "regex" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          re-gen-cabals = {
+          "re-gen-cabals" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -57,7 +57,7 @@ let
               hsPkgs.text
             ];
           };
-          re-gen-modules = {
+          "re-gen-modules" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -71,7 +71,7 @@ let
               hsPkgs.text
             ];
           };
-          re-include = {
+          "re-include" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.base
@@ -82,7 +82,7 @@ let
               hsPkgs.text
             ];
           };
-          re-nginx-log-processor = {
+          "re-nginx-log-processor" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -100,7 +100,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-prep = {
+          "re-prep" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.base
@@ -113,7 +113,7 @@ let
               hsPkgs.text
             ];
           };
-          re-tests = {
+          "re-tests" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -136,7 +136,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial = {
+          "re-tutorial" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -166,7 +166,7 @@ let
           };
         };
         tests = {
-          re-gen-cabals-test = {
+          "re-gen-cabals-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -181,7 +181,7 @@ let
               hsPkgs.text
             ];
           };
-          re-gen-modules-test = {
+          "re-gen-modules-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -195,7 +195,7 @@ let
               hsPkgs.text
             ];
           };
-          re-include-test = {
+          "re-include-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.base
@@ -206,7 +206,7 @@ let
               hsPkgs.text
             ];
           };
-          re-nginx-log-processor-test = {
+          "re-nginx-log-processor-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -224,7 +224,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-prep-test = {
+          "re-prep-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.base
@@ -237,7 +237,7 @@ let
               hsPkgs.text
             ];
           };
-          re-tests-test = {
+          "re-tests-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -260,7 +260,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial-test = {
+          "re-tutorial-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array
@@ -288,7 +288,7 @@ let
               hsPkgs.unordered-containers
             ];
           };
-          re-tutorial-os-test = {
+          "re-tutorial-os-test" = {
             depends  = [
               hsPkgs.regex
               hsPkgs.array

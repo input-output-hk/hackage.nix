@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        blaze-html-hexpat = {
+        "blaze-html-hexpat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text

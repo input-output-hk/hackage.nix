@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        socket = {
+        "socket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          basic = {
+          "basic" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -39,7 +39,7 @@ let
               hsPkgs.async
             ];
           };
-          AddrInfo = {
+          "AddrInfo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ADPfusion = {
+        "ADPfusion" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bits
@@ -44,7 +44,7 @@ let
           ];
         };
         exes = {
-          NeedlemanWunsch = {
+          "NeedlemanWunsch" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -53,7 +53,7 @@ let
               hsPkgs.vector
             ];
           };
-          Nussinov = {
+          "Nussinov" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -62,7 +62,7 @@ let
               hsPkgs.vector
             ];
           };
-          PartNussinov = {
+          "PartNussinov" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -72,7 +72,7 @@ let
               hsPkgs.vector
             ];
           };
-          Durbin = {
+          "Durbin" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -81,7 +81,7 @@ let
               hsPkgs.vector
             ];
           };
-          Pseudoknot = {
+          "Pseudoknot" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -90,7 +90,7 @@ let
               hsPkgs.vector
             ];
           };
-          OverlappingPalindromes = {
+          "OverlappingPalindromes" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -99,7 +99,7 @@ let
               hsPkgs.vector
             ];
           };
-          SplitTests = {
+          "SplitTests" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -108,7 +108,7 @@ let
               hsPkgs.vector
             ];
           };
-          spectest = {
+          "spectest" = {
             depends  = pkgs.lib.optionals _flags.spectest [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -119,7 +119,7 @@ let
           };
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ADPfusion
@@ -136,7 +136,7 @@ let
           };
         };
         benchmarks = {
-          performance = {
+          "performance" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ADPfusion

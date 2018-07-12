@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        persistent-mongoDB = {
+        "persistent-mongoDB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.persistent

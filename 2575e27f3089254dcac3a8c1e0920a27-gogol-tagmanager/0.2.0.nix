@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        gogol-tagmanager = {
+        "gogol-tagmanager" = {
           depends  = [
             hsPkgs.gogol-core
             hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yesod-auth-ldap = {
+        "yesod-auth-ldap" = {
           depends  = [
             hsPkgs.LDAP
             hsPkgs.bytestring

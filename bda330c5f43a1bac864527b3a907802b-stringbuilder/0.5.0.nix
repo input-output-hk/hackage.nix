@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        stringbuilder = {
+        "stringbuilder" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.stringbuilder

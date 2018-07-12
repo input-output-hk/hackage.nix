@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clash-ghc = {
+        "clash-ghc" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -57,13 +57,13 @@ let
             else [ hsPkgs.unix ]);
         };
         exes = {
-          clash = {
+          "clash" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clash-ghc
             ];
           };
-          clashi = {
+          "clashi" = {
             depends  = [
               hsPkgs.base
               hsPkgs.clash-ghc

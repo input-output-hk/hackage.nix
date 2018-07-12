@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ogmarkup = {
+        "ogmarkup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          ogmadown-test = {
+          "ogmadown-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linux-perf = {
+        "linux-perf" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -31,14 +31,14 @@ let
           ];
         };
         exes = {
-          dump-perf = {
+          "dump-perf" = {
             depends  = [
               hsPkgs.linux-perf
               hsPkgs.base
               hsPkgs.bytestring
             ];
           };
-          ghc-events-perf-record = {
+          "ghc-events-perf-record" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix
@@ -46,7 +46,7 @@ let
               hsPkgs.filepath
             ];
           };
-          ghc-events-perf-sync = {
+          "ghc-events-perf-sync" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-events
@@ -54,7 +54,7 @@ let
               hsPkgs.process
             ];
           };
-          ghc-events-perf = {
+          "ghc-events-perf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -62,7 +62,7 @@ let
               hsPkgs.unix
             ];
           };
-          count-events = {
+          "count-events" = {
             depends  = [
               hsPkgs.linux-perf
               hsPkgs.base

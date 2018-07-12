@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hascas = {
+        "hascas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          hascas-test = {
+          "hascas-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hascas

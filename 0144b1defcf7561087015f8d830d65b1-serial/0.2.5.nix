@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serial = {
+        "serial" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

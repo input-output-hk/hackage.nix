@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        data-accessor = {
+        "data-accessor" = {
           depends  = [
             hsPkgs.array
             hsPkgs.containers

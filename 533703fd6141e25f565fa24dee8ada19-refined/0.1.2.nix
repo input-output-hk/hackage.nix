@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        refined = {
+        "refined" = {
           depends  = [
             hsPkgs.template-haskell
             hsPkgs.base-prelude

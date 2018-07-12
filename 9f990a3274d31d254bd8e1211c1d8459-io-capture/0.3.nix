@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        io-capture = {
+        "io-capture" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix

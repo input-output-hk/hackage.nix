@@ -24,7 +24,7 @@ let
         buildType = "Simple";
       };
       components = {
-        L-seed = {
+        "L-seed" = {
           depends  = (([
             hsPkgs.base
             hsPkgs.random
@@ -41,11 +41,11 @@ let
           ]) ++ pkgs.lib.optional _flags.webtools hsPkgs.json;
         };
         exes = {
-          runGarden = {};
-          validate = {};
-          fastScorer = {};
-          dbclient = {};
-          dbscorer = {};
+          "runGarden" = {};
+          "validate" = {};
+          "fastScorer" = {};
+          "dbclient" = {};
+          "dbscorer" = {};
         };
       };
     }

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          address-exchanger = {
+          "address-exchanger" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

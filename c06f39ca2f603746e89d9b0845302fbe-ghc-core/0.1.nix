@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          ghc-core = {
+          "ghc-core" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

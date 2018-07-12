@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hinduce-associations-apriori = {
+        "hinduce-associations-apriori" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hinduce-missingh

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        prologue = {
+        "prologue" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bifunctors

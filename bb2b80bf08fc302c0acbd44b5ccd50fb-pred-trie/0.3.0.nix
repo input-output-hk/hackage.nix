@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pred-trie = {
+        "pred-trie" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -32,7 +32,7 @@ let
           ];
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pred-trie

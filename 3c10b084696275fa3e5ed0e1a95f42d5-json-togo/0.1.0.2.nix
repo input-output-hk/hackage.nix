@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-togo = {
+        "json-togo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stomp-patterns = {
+        "stomp-patterns" = {
           depends  = [
             hsPkgs.base
             hsPkgs.stomp-queue

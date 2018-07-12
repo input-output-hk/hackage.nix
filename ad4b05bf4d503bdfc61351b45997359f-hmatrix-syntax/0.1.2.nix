@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hmatrix-syntax = {
+        "hmatrix-syntax" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts

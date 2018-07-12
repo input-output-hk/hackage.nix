@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hoodle = {
+        "hoodle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          hoodle = {
+          "hoodle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs

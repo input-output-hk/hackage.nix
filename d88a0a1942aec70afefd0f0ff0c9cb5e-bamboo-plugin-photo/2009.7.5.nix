@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bamboo-plugin-photo = {
+        "bamboo-plugin-photo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mps

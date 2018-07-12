@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lagrangian = {
+        "lagrangian" = {
           depends  = [
             hsPkgs.base
             hsPkgs.nonlinear-optimization
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nonlinear-optimization

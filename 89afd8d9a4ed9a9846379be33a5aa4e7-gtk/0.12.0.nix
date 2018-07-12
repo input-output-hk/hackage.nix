@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gtk = {
+        "gtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

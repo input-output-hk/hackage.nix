@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linear-opengl = {
+        "linear-opengl" = {
           depends  = [
             hsPkgs.base
             hsPkgs.linear

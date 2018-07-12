@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        nemesis-titan = {
+        "nemesis-titan" = {
           depends  = [
             hsPkgs.base
             hsPkgs.nemesis

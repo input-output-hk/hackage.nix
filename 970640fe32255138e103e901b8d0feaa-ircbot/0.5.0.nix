@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ircbot = {
+        "ircbot" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

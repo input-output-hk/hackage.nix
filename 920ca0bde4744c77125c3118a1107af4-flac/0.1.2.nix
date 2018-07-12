@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flac = {
+        "flac" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -40,7 +40,7 @@ let
           libs = [ pkgs.FLAC ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

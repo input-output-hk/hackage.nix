@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unused = {
+        "unused" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -43,7 +43,7 @@ let
           ];
         };
         exes = {
-          unused = {
+          "unused" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unused
@@ -54,7 +54,7 @@ let
           };
         };
         tests = {
-          unused-test = {
+          "unused-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unused

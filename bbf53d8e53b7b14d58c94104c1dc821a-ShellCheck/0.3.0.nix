@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ShellCheck = {
+        "ShellCheck" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base
@@ -32,6 +32,6 @@ let
             hsPkgs.json
           ];
         };
-        exes = { shellcheck = {}; };
+        exes = { "shellcheck" = {}; };
       };
     }

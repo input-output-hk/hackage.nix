@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          clua = {
+          "clua" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

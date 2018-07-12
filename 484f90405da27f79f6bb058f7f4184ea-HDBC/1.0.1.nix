@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        HDBC = {
+        "HDBC" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

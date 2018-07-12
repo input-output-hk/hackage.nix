@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json-rpc = {
+        "json-rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test-json-rpc = {
+          "test-json-rpc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

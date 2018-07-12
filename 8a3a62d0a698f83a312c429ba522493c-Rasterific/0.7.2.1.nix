@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Rasterific = {
+        "Rasterific" = {
           depends  = [
             hsPkgs.base
             hsPkgs.free

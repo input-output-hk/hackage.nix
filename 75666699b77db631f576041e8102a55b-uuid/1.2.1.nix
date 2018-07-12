@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        uuid = {
+        "uuid" = {
           depends  = [
             hsPkgs.random
             hsPkgs.binary
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          benchuuid = {
+          "benchuuid" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.random
               hsPkgs.binary
@@ -51,7 +51,7 @@ let
               hsPkgs.mersenne-random-pure64
             ];
           };
-          testuuid = {
+          "testuuid" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.random
               hsPkgs.binary

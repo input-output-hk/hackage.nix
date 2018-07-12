@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ede = {
+        "ede" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.ansi-wl-pprint
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          ede = {
+          "ede" = {
             depends  = pkgs.lib.optionals (!(!_flags.build-executable)) [
               hsPkgs.aeson
               hsPkgs.base
@@ -62,7 +62,7 @@ let
           };
         };
         tests = {
-          golden = {
+          "golden" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          animate-example = {
+          "animate-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.animate

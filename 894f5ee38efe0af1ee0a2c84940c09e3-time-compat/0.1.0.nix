@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-compat = {
+        "time-compat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.old-time

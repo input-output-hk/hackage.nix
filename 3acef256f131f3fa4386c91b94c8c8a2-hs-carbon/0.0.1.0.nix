@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-carbon = {
+        "hs-carbon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

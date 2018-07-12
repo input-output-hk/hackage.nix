@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hpage = {
+          "hpage" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

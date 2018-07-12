@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        perf-analysis = {
+        "perf-analysis" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          perf-examples = {
+          "perf-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ssh = {
+        "ssh" = {
           depends  = [
             hsPkgs.asn1-data
             hsPkgs.base
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          ssh-test = {
+          "ssh-test" = {
             depends  = [
               hsPkgs.tasty
               hsPkgs.tasty-hunit

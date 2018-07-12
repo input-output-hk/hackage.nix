@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        htaglib = {
+        "htaglib" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           libs = [ pkgs.tag_c ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

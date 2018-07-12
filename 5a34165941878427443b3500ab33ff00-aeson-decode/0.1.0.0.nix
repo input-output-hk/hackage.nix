@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-decode = {
+        "aeson-decode" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          hedgehog = {
+          "hedgehog" = {
             depends  = [
               hsPkgs.aeson-decode
               hsPkgs.aeson-qq

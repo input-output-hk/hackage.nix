@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-proxy-list = {
+        "haskell-proxy-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lens

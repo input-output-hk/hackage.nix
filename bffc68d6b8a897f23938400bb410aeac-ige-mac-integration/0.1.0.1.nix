@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        ige-mac-integration = {
+        "ige-mac-integration" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

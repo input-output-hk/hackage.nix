@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cabalsearch = {
+          "cabalsearch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HDBC

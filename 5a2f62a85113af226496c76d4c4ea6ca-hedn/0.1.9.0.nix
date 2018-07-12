@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hedn = {
+        "hedn" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-compat
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hedn

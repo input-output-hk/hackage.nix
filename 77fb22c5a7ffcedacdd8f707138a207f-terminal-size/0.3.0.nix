@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        terminal-size = {
+        "terminal-size" = {
           depends  = [ hsPkgs.base ];
           build-tools = [
             hsPkgs.buildPackages.hsc2hs

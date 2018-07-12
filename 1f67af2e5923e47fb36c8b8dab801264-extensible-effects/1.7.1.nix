@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extensible-effects = {
+        "extensible-effects" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          extensible-effects-tests = {
+          "extensible-effects-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

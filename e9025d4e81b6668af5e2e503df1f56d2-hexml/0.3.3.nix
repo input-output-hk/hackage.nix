@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hexml = {
+        "hexml" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          hexml-test = {
+          "hexml-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

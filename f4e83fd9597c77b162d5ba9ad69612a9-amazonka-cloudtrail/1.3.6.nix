@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-cloudtrail = {
+        "amazonka-cloudtrail" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-cloudtrail-test = {
+          "amazonka-cloudtrail-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

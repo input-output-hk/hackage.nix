@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-bool = {
+        "monad-bool" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attempt
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

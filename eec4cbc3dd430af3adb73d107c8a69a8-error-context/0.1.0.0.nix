@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        error-context = {
+        "error-context" = {
           depends  = [
             hsPkgs.base
             hsPkgs.either
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          error-context-tests = {
+          "error-context-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.either

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        plugins-multistage = {
+        "plugins-multistage" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

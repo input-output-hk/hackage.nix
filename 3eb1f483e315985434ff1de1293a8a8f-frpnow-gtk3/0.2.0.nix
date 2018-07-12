@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        frpnow-gtk3 = {
+        "frpnow-gtk3" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          funion = {
+          "funion" = {
             depends  = [
               hsPkgs.base
               hsPkgs.base

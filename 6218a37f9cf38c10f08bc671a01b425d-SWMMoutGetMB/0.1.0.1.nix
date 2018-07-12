@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        SWMMoutGetMB = {
+        "SWMMoutGetMB" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary

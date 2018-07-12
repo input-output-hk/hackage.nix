@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        extractable-singleton = {
+        "extractable-singleton" = {
           depends  = [ hsPkgs.base ];
         };
       };

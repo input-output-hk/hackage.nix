@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        filecache = {
+        "filecache" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unordered-containers
@@ -32,7 +32,7 @@ let
           ];
         };
         tests = {
-          simpletest = {
+          "simpletest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filecache

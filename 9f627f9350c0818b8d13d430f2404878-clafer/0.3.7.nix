@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        clafer = {
+        "clafer" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -45,7 +45,7 @@ let
           ] ++ [ hsPkgs.HaXml ];
         };
         exes = {
-          clafer = {
+          "clafer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -59,7 +59,7 @@ let
           };
         };
         tests = {
-          test-suite = {
+          "test-suite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

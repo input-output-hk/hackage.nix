@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptoconditions = {
+        "cryptoconditions" = {
           depends  = [
             hsPkgs.base
             hsPkgs.asn1-encoding
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          cryptoconditions-test = {
+          "cryptoconditions-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cryptoconditions

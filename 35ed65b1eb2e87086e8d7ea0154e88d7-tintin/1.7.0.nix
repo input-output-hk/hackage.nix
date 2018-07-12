@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tintin = {
+        "tintin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.clay
@@ -41,7 +41,7 @@ let
           ];
         };
         exes = {
-          tintin = {
+          "tintin" = {
             depends  = [
               hsPkgs.base
               hsPkgs.optparse-generic
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          tintin-test = {
+          "tintin-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.require

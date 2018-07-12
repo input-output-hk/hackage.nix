@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        stringable = {
+        "stringable" = {
           depends  = [
             hsPkgs.base
             hsPkgs.system-filepath

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        enchant = {
+        "enchant" = {
           depends  = [ hsPkgs.base ];
           pkgconfig = [
             pkgconfPkgs.enchant
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          enchant-examples-spell-check = {
+          "enchant-examples-spell-check" = {
             depends  = pkgs.lib.optionals _flags.buildexamples [
               hsPkgs.base
               hsPkgs.enchant
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          enchant-test = {
+          "enchant-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.enchant

@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          hayooIndexer = {
+          "hayooIndexer" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary
@@ -51,7 +51,7 @@ let
               hsPkgs.deepseq
             ];
           };
-          hayooSnap = {
+          "hayooSnap" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdl2-image = {
+        "sdl2-image" = {
           depends  = [
             hsPkgs.base
             hsPkgs.sdl2

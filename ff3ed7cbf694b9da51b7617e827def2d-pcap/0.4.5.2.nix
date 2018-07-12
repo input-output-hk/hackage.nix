@@ -20,7 +20,7 @@ let
         buildType = "Configure";
       };
       components = {
-        pcap = {
+        "pcap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

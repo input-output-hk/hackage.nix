@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          flow2dot = {
+          "flow2dot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

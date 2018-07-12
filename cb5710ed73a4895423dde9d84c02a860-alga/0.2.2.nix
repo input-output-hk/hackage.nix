@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        alga = {
+        "alga" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base
@@ -40,7 +40,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         exes = {
-          alga = {
+          "alga" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.aeson
@@ -68,7 +68,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.alga

@@ -20,20 +20,20 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-proofs = {
+        "ghc-proofs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc
           ];
         };
         tests = {
-          successors = {
+          "successors" = {
             depends  = [
               hsPkgs.ghc-proofs
               hsPkgs.base
             ];
           };
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.ghc-proofs
               hsPkgs.base

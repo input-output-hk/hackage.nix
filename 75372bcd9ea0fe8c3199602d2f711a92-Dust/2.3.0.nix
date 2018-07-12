@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        Dust = {
+        "Dust" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Dust-crypto
@@ -44,7 +44,7 @@ let
           ];
         };
         tests = {
-          crypto = {
+          "crypto" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust
@@ -59,7 +59,7 @@ let
               hsPkgs.QuickCheck
             ];
           };
-          core = {
+          "core" = {
             depends  = [
               hsPkgs.base
               hsPkgs.Dust

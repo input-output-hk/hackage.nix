@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-interval = {
+        "time-interval" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time-units

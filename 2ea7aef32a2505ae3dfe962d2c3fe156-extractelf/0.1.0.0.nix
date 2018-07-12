@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          extractelf = {
+          "extractelf" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

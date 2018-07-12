@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        waddle = {
+        "waddle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          export-to-js = {
+          "export-to-js" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -44,7 +44,7 @@ let
               hsPkgs.waddle
             ];
           };
-          export-to-png = {
+          "export-to-png" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -56,7 +56,7 @@ let
               hsPkgs.waddle
             ];
           };
-          wad-info = {
+          "wad-info" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

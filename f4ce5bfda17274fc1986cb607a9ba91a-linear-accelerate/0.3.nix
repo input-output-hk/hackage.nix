@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        linear-accelerate = {
+        "linear-accelerate" = {
           depends  = [
             hsPkgs.base
             hsPkgs.accelerate

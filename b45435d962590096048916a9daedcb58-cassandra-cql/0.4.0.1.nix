@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cassandra-cql = {
+        "cassandra-cql" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

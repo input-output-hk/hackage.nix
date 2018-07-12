@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        llrbtree = {
+        "llrbtree" = {
           depends  = [ hsPkgs.base ];
         };
       };

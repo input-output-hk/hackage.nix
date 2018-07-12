@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mappy = {
+        "mappy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parsec
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          mappy = {
+          "mappy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mappy
@@ -37,7 +37,7 @@ let
           };
         };
         tests = {
-          mappy-test = {
+          "mappy-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

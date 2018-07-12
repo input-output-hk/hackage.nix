@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixed-point-vector = {
+        "fixed-point-vector" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fixed-point

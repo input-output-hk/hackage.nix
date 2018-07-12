@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        cryptohash-sha512 = {
+        "cryptohash-sha512" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          test-sha512 = {
+          "test-sha512" = {
             depends  = [
               hsPkgs.cryptohash-sha512
               hsPkgs.base
@@ -41,7 +41,7 @@ let
           };
         };
         benchmarks = {
-          bench-sha512 = {
+          "bench-sha512" = {
             depends  = [
               hsPkgs.cryptohash-sha512
               hsPkgs.base

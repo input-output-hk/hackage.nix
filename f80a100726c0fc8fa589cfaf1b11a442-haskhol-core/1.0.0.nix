@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskhol-core = {
+        "haskhol-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

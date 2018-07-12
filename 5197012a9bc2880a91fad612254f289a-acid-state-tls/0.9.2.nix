@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acid-state-tls = {
+        "acid-state-tls" = {
           depends  = [
             hsPkgs.acid-state
             hsPkgs.base

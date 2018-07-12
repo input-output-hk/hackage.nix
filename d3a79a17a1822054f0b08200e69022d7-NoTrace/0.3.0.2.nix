@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        NoTrace = {
+        "NoTrace" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          main = {
+          "main" = {
             depends  = [ hsPkgs.base ];
           };
         };

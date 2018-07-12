@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        enummapmap = {
+        "enummapmap" = {
           depends  = [
             hsPkgs.base
             hsPkgs.deepseq
           ];
         };
         tests = {
-          test-enummapmap-lazy = {
+          "test-enummapmap-lazy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -37,7 +37,7 @@ let
               hsPkgs.enummapmap
             ];
           };
-          test-enummapmap-intmap-lazy = {
+          "test-enummapmap-intmap-lazy" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -48,7 +48,7 @@ let
               hsPkgs.enummapmap
             ];
           };
-          test-enummapmap-strict = {
+          "test-enummapmap-strict" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -58,7 +58,7 @@ let
               hsPkgs.enummapmap
             ];
           };
-          test-enummapmap-intmap-strict = {
+          "test-enummapmap-intmap-strict" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

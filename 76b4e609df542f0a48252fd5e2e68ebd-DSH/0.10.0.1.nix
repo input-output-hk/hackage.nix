@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        DSH = {
+        "DSH" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -46,7 +46,7 @@ let
           ];
         };
         exes = {
-          vldot = {
+          "vldot" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -61,7 +61,7 @@ let
               hsPkgs.algebra-sql
             ];
           };
-          manual = {
+          "manual" = {
             depends  = [
               hsPkgs.base
               hsPkgs.DSH
@@ -71,7 +71,7 @@ let
           };
         };
         tests = {
-          Flattening_TA = {
+          "Flattening_TA" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

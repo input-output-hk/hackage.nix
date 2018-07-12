@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hs-di = {
+        "hs-di" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          hs-di-test = {
+          "hs-di-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hs-di

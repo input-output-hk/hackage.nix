@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fixplate = {
+        "fixplate" = {
           depends  = ([
             hsPkgs.base
           ] ++ pkgs.lib.optional _flags.withutils hsPkgs.containers) ++ pkgs.lib.optional _flags.withquickcheck hsPkgs.QuickCheck;

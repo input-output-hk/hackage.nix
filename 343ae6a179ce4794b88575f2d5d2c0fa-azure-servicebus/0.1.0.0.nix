@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        azure-servicebus = {
+        "azure-servicebus" = {
           depends  = [
             hsPkgs.base
             hsPkgs.azure-acs

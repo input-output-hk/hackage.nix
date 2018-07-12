@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aeson-coerce = {
+        "aeson-coerce" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

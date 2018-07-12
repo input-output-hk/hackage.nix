@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        target = {
+        "target" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          target = {
+          "target" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hint
@@ -56,7 +56,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.target
@@ -77,7 +77,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.aeson

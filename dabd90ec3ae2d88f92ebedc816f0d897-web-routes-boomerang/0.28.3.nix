@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        web-routes-boomerang = {
+        "web-routes-boomerang" = {
           depends  = [
             hsPkgs.base
             hsPkgs.boomerang

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        metricsd-client = {
+        "metricsd-client" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network

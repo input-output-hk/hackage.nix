@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        fastcgi = {
+        "fastcgi" = {
           depends  = [
             hsPkgs.cgi
           ] ++ (if _flags.small_base

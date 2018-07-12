@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        TraceUtils = {
+        "TraceUtils" = {
           depends  = [ hsPkgs.base ];
         };
       };

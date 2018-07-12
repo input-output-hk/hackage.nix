@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        boxes = {
+        "boxes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.split
           ];
         };
         tests = {
-          test-boxes = {
+          "test-boxes" = {
             depends  = [
               hsPkgs.base
               hsPkgs.split

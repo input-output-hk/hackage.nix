@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseFasta = {
+        "BiobaseFasta" = {
           depends  = [
             hsPkgs.base
             hsPkgs.biocore
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          FastaTool = {
+          "FastaTool" = {
             depends  = [ hsPkgs.cmdargs ];
           };
         };

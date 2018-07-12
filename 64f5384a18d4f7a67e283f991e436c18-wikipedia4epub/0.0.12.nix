@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wikipedia4epub = {
+        "wikipedia4epub" = {
           depends  = [
             hsPkgs.base
             hsPkgs.filepath
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          wiki4e-mkepub-subtree = {};
+          "wiki4e-mkepub-subtree" = {};
         };
       };
     }

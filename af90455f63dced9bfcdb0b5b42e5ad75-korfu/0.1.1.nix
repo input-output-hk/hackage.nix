@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          korfu = {
+          "korfu" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bio

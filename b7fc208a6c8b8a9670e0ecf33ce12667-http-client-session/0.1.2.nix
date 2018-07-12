@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-client-session = {
+        "http-client-session" = {
           depends  = [
             hsPkgs.http-client
             hsPkgs.bytestring

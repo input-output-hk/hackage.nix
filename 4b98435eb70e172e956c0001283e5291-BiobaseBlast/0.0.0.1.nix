@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        BiobaseBlast = {
+        "BiobaseBlast" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

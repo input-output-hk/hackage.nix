@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          teleport-hask = {
+          "teleport-hask" = {
             depends  = [
               hsPkgs.base
               hsPkgs.turtle

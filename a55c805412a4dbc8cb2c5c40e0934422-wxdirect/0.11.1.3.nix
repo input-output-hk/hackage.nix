@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        wxdirect = {
+        "wxdirect" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          wxdirect = {
+          "wxdirect" = {
             depends  = if _flags.splitbase
               then [
                 hsPkgs.base

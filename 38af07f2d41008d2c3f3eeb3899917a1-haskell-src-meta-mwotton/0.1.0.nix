@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-src-meta-mwotton = {
+        "haskell-src-meta-mwotton" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim

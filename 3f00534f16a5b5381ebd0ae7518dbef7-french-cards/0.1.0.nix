@@ -20,18 +20,18 @@ let
         buildType = "Simple";
       };
       components = {
-        french-cards = {
+        "french-cards" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          card = {
+          "card" = {
             depends  = [
               hsPkgs.base
               hsPkgs.french-cards
               hsPkgs.HUnit
             ];
           };
-          misc = {
+          "misc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.french-cards

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        process-iterio = {
+        "process-iterio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          Test = {
+          "Test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-player = {
+        "haskell-player" = {
           depends  = [
             hsPkgs.base
             hsPkgs.brick
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          haskell-player = {
+          "haskell-player" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-player
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          haskell-player-test = {
+          "haskell-player-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-player

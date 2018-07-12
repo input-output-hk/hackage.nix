@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mattermost-api = {
+        "mattermost-api" = {
           depends  = [
             hsPkgs.base
             hsPkgs.websockets
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          mm-get-teams = {
+          "mm-get-teams" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mattermost-api
@@ -59,7 +59,7 @@ let
               hsPkgs.pretty-show
             ];
           };
-          mm-get-channels = {
+          "mm-get-channels" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mattermost-api
@@ -71,7 +71,7 @@ let
               hsPkgs.pretty-show
             ];
           };
-          mm-get-posts = {
+          "mm-get-posts" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mattermost-api
@@ -83,7 +83,7 @@ let
               hsPkgs.pretty-show
             ];
           };
-          mm-make-post = {
+          "mm-make-post" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mattermost-api
@@ -95,7 +95,7 @@ let
               hsPkgs.pretty-show
             ];
           };
-          mm-get-websocket-connection = {
+          "mm-get-websocket-connection" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mattermost-api
@@ -107,7 +107,7 @@ let
               hsPkgs.pretty-show
             ];
           };
-          mm-show-raw-events = {
+          "mm-show-raw-events" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mattermost-api
@@ -121,7 +121,7 @@ let
           };
         };
         tests = {
-          test-mm-api = {
+          "test-mm-api" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

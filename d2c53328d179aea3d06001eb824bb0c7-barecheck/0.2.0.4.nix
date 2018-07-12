@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        barecheck = {
+        "barecheck" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        happstack-fay-ajax = {
+        "happstack-fay-ajax" = {
           depends  = [
             hsPkgs.fay-base
             hsPkgs.fay-jquery

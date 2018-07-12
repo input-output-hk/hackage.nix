@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-logger-json = {
+        "monad-logger-json" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          gruff-convert = {
+          "gruff-convert" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -31,7 +31,7 @@ let
               hsPkgs.gruff
             ];
           };
-          gruff-labels = {
+          "gruff-labels" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers
@@ -39,7 +39,7 @@ let
               hsPkgs.ruff
             ];
           };
-          gruff-octopus = {
+          "gruff-octopus" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gruff
@@ -49,7 +49,7 @@ let
               hsPkgs.Vec
             ] ++ pkgs.lib.optional _flags.mpfr hsPkgs.hmpfr;
           };
-          gruff-fives = {
+          "gruff-fives" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gruff
@@ -59,7 +59,7 @@ let
               hsPkgs.Vec
             ] ++ pkgs.lib.optional _flags.mpfr hsPkgs.hmpfr;
           };
-          gruff-patterns = {
+          "gruff-patterns" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gruff
@@ -69,7 +69,7 @@ let
               hsPkgs.Vec
             ] ++ pkgs.lib.optional _flags.mpfr hsPkgs.hmpfr;
           };
-          gruff-randoms = {
+          "gruff-randoms" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gruff
@@ -80,7 +80,7 @@ let
               hsPkgs.random
             ] ++ pkgs.lib.optional _flags.mpfr hsPkgs.hmpfr;
           };
-          gruff-whn = {
+          "gruff-whn" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gruff
@@ -91,7 +91,7 @@ let
               hsPkgs.data-memocombinators
             ] ++ pkgs.lib.optional _flags.mpfr hsPkgs.hmpfr;
           };
-          gruff-zoom = {
+          "gruff-zoom" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gruff

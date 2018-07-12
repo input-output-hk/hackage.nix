@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        feature-flipper-postgres = {
+        "feature-flipper-postgres" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          feature-flipper-postgres-test = {
+          "feature-flipper-postgres-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        monad-products = {
+        "monad-products" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroupoids

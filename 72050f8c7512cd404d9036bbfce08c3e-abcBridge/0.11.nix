@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        abcBridge = {
+        "abcBridge" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aig
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          long-test = {
+          "long-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.abcBridge
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          abc-test = {
+          "abc-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.abcBridge

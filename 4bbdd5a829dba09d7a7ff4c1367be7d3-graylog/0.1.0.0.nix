@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graylog = {
+        "graylog" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          test-state = {
+          "test-state" = {
             depends  = [
               hsPkgs.base
               hsPkgs.graylog

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-process-zookeeper = {
+        "distributed-process-zookeeper" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hzk
@@ -39,7 +39,7 @@ let
           ];
         };
         exes = {
-          boss = {
+          "boss" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process-zookeeper
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.distributed-process-zookeeper

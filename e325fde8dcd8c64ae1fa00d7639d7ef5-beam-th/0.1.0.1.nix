@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        beam-th = {
+        "beam-th" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-beam-th = {
+          "test-beam-th" = {
             depends  = [
               hsPkgs.base
               hsPkgs.beam-th
@@ -42,7 +42,7 @@ let
               hsPkgs.tasty-hunit
             ];
           };
-          doctest-beam-th = {
+          "doctest-beam-th" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

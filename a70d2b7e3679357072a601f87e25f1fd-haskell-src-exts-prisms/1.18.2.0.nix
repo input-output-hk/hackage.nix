@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-src-exts-prisms = {
+        "haskell-src-exts-prisms" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts

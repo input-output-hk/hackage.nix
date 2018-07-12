@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          yesod-fast-devel = {
+          "yesod-fast-devel" = {
             depends  = [
               hsPkgs.Glob
               hsPkgs.ansi-terminal

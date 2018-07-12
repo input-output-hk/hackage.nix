@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aws-dynamodb-streams = {
+        "aws-dynamodb-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

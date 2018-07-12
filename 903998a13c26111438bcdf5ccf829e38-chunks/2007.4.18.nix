@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        chunks = {
+        "chunks" = {
           depends  = [
             hsPkgs.haskell98
             hsPkgs.base

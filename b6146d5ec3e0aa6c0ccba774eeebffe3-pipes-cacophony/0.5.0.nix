@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-cacophony = {
+        "pipes-cacophony" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          loopback = {
+          "loopback" = {
             depends  = pkgs.lib.optionals _flags.build-examples [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          hlint = {
+          "hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

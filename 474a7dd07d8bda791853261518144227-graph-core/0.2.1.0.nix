@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graph-core = {
+        "graph-core" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -34,7 +34,7 @@ let
           ];
         };
         tests = {
-          graph-core-tests = {
+          "graph-core-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hashable

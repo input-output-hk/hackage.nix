@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        system-lifted = {
+        "system-lifted" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          main = {
+          "main" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

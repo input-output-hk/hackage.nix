@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hfann = {
+        "hfann" = {
           depends  = [ hsPkgs.base ];
           libs = [
             pkgs.doublefann
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          HFANNTest = {
+          "HFANNTest" = {
             depends  = [ hsPkgs.base ];
             libs = [
               pkgs.doublefann

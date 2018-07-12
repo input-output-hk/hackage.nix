@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          hasktags = {
+          "hasktags" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -32,7 +32,7 @@ let
               hsPkgs.json
             ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
           };
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

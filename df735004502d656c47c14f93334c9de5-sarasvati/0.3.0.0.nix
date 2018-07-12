@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sarasvati = {
+        "sarasvati" = {
           depends  = [
             hsPkgs.base
             hsPkgs.portaudio

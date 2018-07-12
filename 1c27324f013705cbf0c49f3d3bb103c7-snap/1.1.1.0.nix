@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snap = {
+        "snap" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.attoparsec
@@ -55,7 +55,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.async

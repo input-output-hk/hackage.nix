@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        utc = {
+        "utc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

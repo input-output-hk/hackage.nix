@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xls = {
+        "xls" = {
           depends  = [
             hsPkgs.base
             hsPkgs.conduit
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          xls2csv = {
+          "xls2csv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.conduit
@@ -44,7 +44,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xls

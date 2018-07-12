@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        interpolatedstring-perl6 = {
+        "interpolatedstring-perl6" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

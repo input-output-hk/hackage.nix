@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        csv-enumerator = {
+        "csv-enumerator" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.attoparsec-enumerator

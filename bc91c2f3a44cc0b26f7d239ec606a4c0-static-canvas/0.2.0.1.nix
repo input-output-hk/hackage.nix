@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        static-canvas = {
+        "static-canvas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

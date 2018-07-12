@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-typescript = {
+        "haskell-typescript" = {
           depends  = [
             hsPkgs.base
             hsPkgs.process

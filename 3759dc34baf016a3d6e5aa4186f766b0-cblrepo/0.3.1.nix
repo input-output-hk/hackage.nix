@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          cblrepo = {
+          "cblrepo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cmdargs
@@ -41,7 +41,7 @@ let
               hsPkgs.ansi-wl-pprint
             ];
           };
-          tests = {
+          "tests" = {
             depends  = pkgs.lib.optionals _flags.buildtests [
               hsPkgs.base
               hsPkgs.test-framework-th

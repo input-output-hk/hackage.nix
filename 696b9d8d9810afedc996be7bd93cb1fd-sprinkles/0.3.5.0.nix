@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sprinkles = {
+        "sprinkles" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -77,7 +77,7 @@ let
           ];
         };
         exes = {
-          sprinkles = {
+          "sprinkles" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sprinkles
@@ -89,7 +89,7 @@ let
           };
         };
         tests = {
-          sprinkles-test = {
+          "sprinkles-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.sprinkles

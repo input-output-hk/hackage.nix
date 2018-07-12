@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        streaming = {
+        "streaming" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hstzaar = {
+          "hstzaar" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

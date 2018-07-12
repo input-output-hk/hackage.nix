@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fernet = {
+        "fernet" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -34,7 +34,7 @@ let
           ];
         };
         exes = {
-          fernet = {
+          "fernet" = {
             depends  = [
               hsPkgs.base
               hsPkgs.fernet
@@ -47,7 +47,7 @@ let
           };
         };
         tests = {
-          fernet-test = {
+          "fernet-test" = {
             depends  = [
               hsPkgs.HUnit
               hsPkgs.QuickCheck

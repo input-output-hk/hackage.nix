@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        powerpc = {
+        "powerpc" = {
           depends  = [ hsPkgs.base ];
         };
       };

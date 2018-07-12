@@ -21,14 +21,14 @@ let
       };
       components = {
         exes = {
-          DrIFT-cabalized = {
+          "DrIFT-cabalized" = {
             depends  = [
               hsPkgs.base
               hsPkgs.random
               hsPkgs.old-time
             ];
           };
-          DrIFT-cabalized-ghc = {
+          "DrIFT-cabalized-ghc" = {
             depends  = [
               hsPkgs.base
               hsPkgs.process

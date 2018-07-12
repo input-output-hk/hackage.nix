@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        gdp = {
+        "gdp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.lawful
           ];
         };
         exes = {
-          gdp = {
+          "gdp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.gdp

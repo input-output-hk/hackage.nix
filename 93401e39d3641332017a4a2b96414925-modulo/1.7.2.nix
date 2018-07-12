@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        modulo = {
+        "modulo" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroups
@@ -38,6 +38,6 @@ let
             hsPkgs.directory
           ];
         };
-        exes = { modulo = {}; };
+        exes = { "modulo" = {}; };
       };
     }

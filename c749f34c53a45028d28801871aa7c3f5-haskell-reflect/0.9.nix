@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-reflect = {
+        "haskell-reflect" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

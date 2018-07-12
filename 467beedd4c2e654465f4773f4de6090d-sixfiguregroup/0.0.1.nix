@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        sixfiguregroup = {
+        "sixfiguregroup" = {
           depends  = [
             hsPkgs.base
             hsPkgs.digit
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GrammarProducts = {
+        "GrammarProducts" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ADPfusion
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          AlignGlobal = {
+          "AlignGlobal" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.ADPfusion

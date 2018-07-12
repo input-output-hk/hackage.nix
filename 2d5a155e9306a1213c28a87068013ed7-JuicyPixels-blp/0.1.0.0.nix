@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        JuicyPixels-blp = {
+        "JuicyPixels-blp" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          blp2any = {
+          "blp2any" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

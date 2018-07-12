@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          org2anki = {
+          "org2anki" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

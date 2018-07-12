@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        language-lua = {
+        "language-lua" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.deepseq

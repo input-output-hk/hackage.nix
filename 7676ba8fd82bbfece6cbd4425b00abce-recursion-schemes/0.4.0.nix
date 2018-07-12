@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        recursion-schemes = {
+        "recursion-schemes" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

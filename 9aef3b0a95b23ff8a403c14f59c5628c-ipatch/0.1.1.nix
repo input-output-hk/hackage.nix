@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          ipatch = {
+          "ipatch" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix

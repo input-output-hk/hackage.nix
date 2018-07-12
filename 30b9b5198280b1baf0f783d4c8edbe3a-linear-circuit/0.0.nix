@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linear-circuit = {
+        "linear-circuit" = {
           depends  = [
             hsPkgs.comfort-graph
             hsPkgs.hmatrix
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test-linear-circuit = {
+          "test-linear-circuit" = {
             depends  = [
               hsPkgs.linear-circuit
               hsPkgs.QuickCheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multirec = {
+        "multirec" = {
           depends  = [ hsPkgs.base ];
         };
       };

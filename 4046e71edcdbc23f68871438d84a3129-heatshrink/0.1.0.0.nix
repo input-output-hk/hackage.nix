@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heatshrink = {
+        "heatshrink" = {
           depends  = [
             hsPkgs.bytestring
             hsPkgs.cereal
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          heatshrink-test = {
+          "heatshrink-test" = {
             depends  = [
               hsPkgs.bytestring
               hsPkgs.cereal

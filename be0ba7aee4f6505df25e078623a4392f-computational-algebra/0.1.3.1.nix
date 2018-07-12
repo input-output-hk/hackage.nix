@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        computational-algebra = {
+        "computational-algebra" = {
           depends  = [
             hsPkgs.base
             hsPkgs.algebra

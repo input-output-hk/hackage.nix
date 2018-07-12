@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hindent = {
+        "hindent" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          hindent = {
+          "hindent" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hindent
@@ -50,7 +50,7 @@ let
           };
         };
         tests = {
-          hindent-test = {
+          "hindent-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hindent
@@ -68,7 +68,7 @@ let
           };
         };
         benchmarks = {
-          hindent-bench = {
+          "hindent-bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hindent

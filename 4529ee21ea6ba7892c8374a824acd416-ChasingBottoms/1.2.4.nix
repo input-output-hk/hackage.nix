@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ChasingBottoms = {
+        "ChasingBottoms" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.mtl

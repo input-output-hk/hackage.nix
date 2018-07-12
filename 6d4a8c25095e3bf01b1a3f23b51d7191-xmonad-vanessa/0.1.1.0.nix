@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        xmonad-vanessa = {
+        "xmonad-vanessa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.xmonad
@@ -32,13 +32,13 @@ let
           ];
         };
         exes = {
-          xmonad = {
+          "xmonad" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xmonad-vanessa
             ];
           };
-          getkb = {
+          "getkb" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xmonad-vanessa
@@ -46,7 +46,7 @@ let
           };
         };
         tests = {
-          xmonad-test = {
+          "xmonad-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.xmonad-vanessa

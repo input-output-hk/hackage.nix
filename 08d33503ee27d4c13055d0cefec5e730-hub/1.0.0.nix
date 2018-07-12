@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          hub = {
+          "hub" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hexpat

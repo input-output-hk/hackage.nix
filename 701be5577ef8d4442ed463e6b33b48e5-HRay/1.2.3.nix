@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          HRay = {
+          "HRay" = {
             depends  = [
               hsPkgs.base
               hsPkgs.array

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        wai-middleware-catch = {
+        "wai-middleware-catch" = {
           depends  = [
             hsPkgs.base
             hsPkgs.enumerator

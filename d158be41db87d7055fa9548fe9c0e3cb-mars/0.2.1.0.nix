@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        mars = {
+        "mars" = {
           depends  = [
             hsPkgs.base
             hsPkgs.gloss

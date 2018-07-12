@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrent-supply = {
+        "concurrent-supply" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ip = {
+        "ip" = {
           depends  = [
             hsPkgs.base
             hsPkgs.attoparsec

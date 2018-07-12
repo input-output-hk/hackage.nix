@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        concurrent-state = {
+        "concurrent-state" = {
           depends  = [
             hsPkgs.base
             hsPkgs.exceptions
@@ -32,7 +32,7 @@ let
           ];
         };
         exes = {
-          chat-server = {
+          "chat-server" = {
             depends  = pkgs.lib.optionals _flags.examples [
               hsPkgs.base
               hsPkgs.concurrent-state

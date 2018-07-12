@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pandoc-csv2table = {
+        "pandoc-csv2table" = {
           depends  = [
             hsPkgs.base
             hsPkgs.csv
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          pandoc-csv2table = {
+          "pandoc-csv2table" = {
             depends  = [
               hsPkgs.base
               hsPkgs.csv

@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          cabal-nirvana = {
+          "cabal-nirvana" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HTTP
@@ -34,7 +34,7 @@ let
               hsPkgs.containers
             ];
           };
-          cabal-nirvana-generate = {
+          "cabal-nirvana-generate" = {
             depends  = pkgs.lib.optionals _flags.generate [
               hsPkgs.Cabal
               hsPkgs.containers

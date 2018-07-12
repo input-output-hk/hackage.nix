@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          pandoc-placetable = {
+          "pandoc-placetable" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        dawg-ord = {
+        "dawg-ord" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

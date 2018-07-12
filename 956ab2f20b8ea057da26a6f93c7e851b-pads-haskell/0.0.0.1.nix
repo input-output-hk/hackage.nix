@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pads-haskell = {
+        "pads-haskell" = {
           depends  = [
             hsPkgs.base
             hsPkgs.syb
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          examples = {
+          "examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.old-locale

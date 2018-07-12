@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        HsJudy = {
+        "HsJudy" = {
           depends  = [
             hsPkgs.bytestring
           ] ++ (if _flags.small_base

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        perceptron = {
+        "perceptron" = {
           depends  = [ hsPkgs.base ];
         };
       };

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bencoding = {
+        "bencoding" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-prim
@@ -33,7 +33,7 @@ let
           ];
         };
         tests = {
-          properties = {
+          "properties" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim
@@ -48,7 +48,7 @@ let
           };
         };
         benchmarks = {
-          bench-comparison = {
+          "bench-comparison" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-prim

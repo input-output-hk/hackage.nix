@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rtorrent-rpc = {
+        "rtorrent-rpc" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

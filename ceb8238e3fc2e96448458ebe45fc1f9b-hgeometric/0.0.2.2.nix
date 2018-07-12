@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hgeometric = {
+        "hgeometric" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        servant-github = {
+        "servant-github" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -42,7 +42,7 @@ let
           ];
         };
         exes = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.servant-github
@@ -52,7 +52,7 @@ let
           };
         };
         tests = {
-          servant-github-test = {
+          "servant-github-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

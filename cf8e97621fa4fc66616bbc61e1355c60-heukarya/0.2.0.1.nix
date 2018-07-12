@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        heukarya = {
+        "heukarya" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        chatty-utils = {
+        "chatty-utils" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

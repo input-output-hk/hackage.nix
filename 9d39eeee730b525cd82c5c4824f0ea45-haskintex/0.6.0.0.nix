@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskintex = {
+        "haskintex" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          haskintex = {
+          "haskintex" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskintex

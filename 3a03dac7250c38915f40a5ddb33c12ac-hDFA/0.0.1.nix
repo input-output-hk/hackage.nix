@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hDFA = {
+        "hDFA" = {
           depends  = [ hsPkgs.base ];
         };
       };

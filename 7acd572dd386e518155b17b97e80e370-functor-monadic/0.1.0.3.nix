@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        functor-monadic = {
+        "functor-monadic" = {
           depends  = [ hsPkgs.base ];
         };
       };

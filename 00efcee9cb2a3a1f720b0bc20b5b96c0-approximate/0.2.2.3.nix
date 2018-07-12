@@ -23,7 +23,7 @@ let
         buildType = "Custom";
       };
       components = {
-        approximate = {
+        "approximate" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.binary
@@ -44,7 +44,7 @@ let
           ] ++ pkgs.lib.optional _flags.herbie hsPkgs.HerbiePlugin) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) hsPkgs.ghc-prim;
         };
         tests = {
-          doctests = {
+          "doctests" = {
             depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
               hsPkgs.base
               hsPkgs.directory

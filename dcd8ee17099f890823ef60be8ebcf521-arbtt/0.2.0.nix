@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          arbtt-capture = {
+          "arbtt-capture" = {
             depends  = [
               hsPkgs.base
               hsPkgs.filepath
@@ -33,7 +33,7 @@ let
             ];
             libs = [ pkgs.Xss ];
           };
-          arbtt-stats = {
+          "arbtt-stats" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

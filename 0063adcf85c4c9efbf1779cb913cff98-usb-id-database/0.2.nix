@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        usb-id-database = {
+        "usb-id-database" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bimap

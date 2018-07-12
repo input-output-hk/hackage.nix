@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        lin-alg = {
+        "lin-alg" = {
           depends  = [
             hsPkgs.base
             hsPkgs.NumInstances

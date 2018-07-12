@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        warp-tls-uid = {
+        "warp-tls-uid" = {
           depends  = [
             hsPkgs.base
             hsPkgs.unix
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          testServer = {
+          "testServer" = {
             depends  = [
               hsPkgs.warp-tls-uid
               hsPkgs.base

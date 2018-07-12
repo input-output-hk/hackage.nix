@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        snowball = {
+        "snowball" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -29,7 +29,7 @@ let
           ];
         };
         tests = {
-          test-snowball = {
+          "test-snowball" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit
@@ -44,7 +44,7 @@ let
           };
         };
         benchmarks = {
-          bench-snowball = {
+          "bench-snowball" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

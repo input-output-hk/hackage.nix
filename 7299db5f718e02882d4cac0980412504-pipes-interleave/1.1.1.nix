@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-interleave = {
+        "pipes-interleave" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

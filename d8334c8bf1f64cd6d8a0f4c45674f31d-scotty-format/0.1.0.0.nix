@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        scotty-format = {
+        "scotty-format" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -31,7 +31,7 @@ let
           ];
         };
         exes = {
-          scotty-format-example = {
+          "scotty-format-example" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          scotty-format-test = {
+          "scotty-format-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.scotty-format

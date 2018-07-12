@@ -23,7 +23,7 @@ let
       };
       components = {
         exes = {
-          splot = {
+          "splot" = {
             depends  = [
               hsPkgs.cairo
               hsPkgs.bytestring

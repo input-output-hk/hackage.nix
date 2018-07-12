@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        regular-web = {
+        "regular-web" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

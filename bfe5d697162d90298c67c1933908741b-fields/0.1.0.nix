@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        fields = {
+        "fields" = {
           depends  = [
             hsPkgs.base
             hsPkgs.fclabels

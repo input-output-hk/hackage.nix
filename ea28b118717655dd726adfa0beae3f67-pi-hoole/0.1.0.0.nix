@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pi-hoole = {
+        "pi-hoole" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          pi-hoole-cfg = {
+          "pi-hoole-cfg" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -48,7 +48,7 @@ let
               hsPkgs.yaml
             ];
           };
-          pi-hoole-shell = {
+          "pi-hoole-shell" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -61,7 +61,7 @@ let
               hsPkgs.yaml
             ];
           };
-          pi-hoole-web = {
+          "pi-hoole-web" = {
             depends  = [
               hsPkgs.aeson
               hsPkgs.base
@@ -81,7 +81,7 @@ let
           };
         };
         tests = {
-          pi-hoole-test = {
+          "pi-hoole-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.pi-hoole

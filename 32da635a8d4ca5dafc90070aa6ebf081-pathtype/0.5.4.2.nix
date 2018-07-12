@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pathtype = {
+        "pathtype" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.time
@@ -35,7 +35,7 @@ let
             else [ hsPkgs.directory ]);
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.process
               hsPkgs.base

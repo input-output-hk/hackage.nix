@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        iteratee = {
+        "iteratee" = {
           depends  = ([
             hsPkgs.haskell98
             hsPkgs.containers

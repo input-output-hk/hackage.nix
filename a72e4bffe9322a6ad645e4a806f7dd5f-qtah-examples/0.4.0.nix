@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          qtah-examples = {
+          "qtah-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

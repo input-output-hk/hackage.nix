@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        apiary-session = {
+        "apiary-session" = {
           depends  = [
             hsPkgs.base
             hsPkgs.apiary

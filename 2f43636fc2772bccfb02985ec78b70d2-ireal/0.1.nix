@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ireal = {
+        "ireal" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck

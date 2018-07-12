@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        spir-v = {
+        "spir-v" = {
           depends  = [ hsPkgs.base ];
         };
       };

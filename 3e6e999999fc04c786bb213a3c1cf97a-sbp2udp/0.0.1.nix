@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          sbp2udp = {
+          "sbp2udp" = {
             depends  = [
               hsPkgs.base
               hsPkgs.basic-prelude

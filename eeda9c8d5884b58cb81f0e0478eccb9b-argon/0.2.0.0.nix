@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        argon = {
+        "argon" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell-src-exts
@@ -33,7 +33,7 @@ let
           ];
         };
         exes = {
-          argon = {
+          "argon" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell-src-exts
@@ -48,7 +48,7 @@ let
           };
         };
         tests = {
-          argon-test = {
+          "argon-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.argon
@@ -62,7 +62,7 @@ let
               hsPkgs.bytestring
             ];
           };
-          style = {
+          "style" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint

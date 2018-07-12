@@ -26,7 +26,7 @@ let
         buildType = "Simple";
       };
       components = {
-        json = {
+        "json" = {
           depends  = if _flags.split-base
             then (([
               hsPkgs.array

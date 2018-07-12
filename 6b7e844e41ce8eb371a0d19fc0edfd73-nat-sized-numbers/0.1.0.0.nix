@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        nat-sized-numbers = {
+        "nat-sized-numbers" = {
           depends  = [ hsPkgs.base ];
         };
         tests = {
-          nat-sized-numbers-test = {
+          "nat-sized-numbers-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.nat-sized-numbers

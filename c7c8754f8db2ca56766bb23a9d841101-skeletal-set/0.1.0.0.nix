@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        skeletal-set = {
+        "skeletal-set" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers
           ];
         };
         tests = {
-          skeletal-set-test = {
+          "skeletal-set-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.containers

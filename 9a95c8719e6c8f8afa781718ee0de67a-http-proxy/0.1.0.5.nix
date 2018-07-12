@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        http-proxy = {
+        "http-proxy" = {
           depends  = [
             hsPkgs.base
             hsPkgs.async
@@ -46,7 +46,7 @@ let
           ];
         };
         tests = {
-          testsuite = {
+          "testsuite" = {
             depends  = [
               hsPkgs.base
               hsPkgs.async

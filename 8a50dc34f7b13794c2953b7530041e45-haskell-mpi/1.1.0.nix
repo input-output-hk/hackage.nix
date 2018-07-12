@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haskell-mpi = {
+        "haskell-mpi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98
@@ -40,7 +40,7 @@ let
           ];
         };
         exes = {
-          haskell-mpi-testsuite = {
+          "haskell-mpi-testsuite" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.HUnit
@@ -55,7 +55,7 @@ let
               hsPkgs.buildPackages.c2hs
             ];
           };
-          haskell-mpi-comprunclean = {
+          "haskell-mpi-comprunclean" = {
             depends  = pkgs.lib.optionals _flags.test [
               hsPkgs.base
               hsPkgs.process

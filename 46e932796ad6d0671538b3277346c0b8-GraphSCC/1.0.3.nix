@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GraphSCC = {
+        "GraphSCC" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

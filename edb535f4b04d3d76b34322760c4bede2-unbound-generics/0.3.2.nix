@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unbound-generics = {
+        "unbound-generics" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -36,7 +36,7 @@ let
           ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          test-unbound-generics = {
+          "test-unbound-generics" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -49,7 +49,7 @@ let
           };
         };
         benchmarks = {
-          benchmark-unbound-generics = {
+          "benchmark-unbound-generics" = {
             depends  = ([
               hsPkgs.base
               hsPkgs.criterion

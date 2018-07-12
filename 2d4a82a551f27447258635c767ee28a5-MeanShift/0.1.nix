@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        MeanShift = {
+        "MeanShift" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        science-constants = {
+        "science-constants" = {
           depends  = [ hsPkgs.base ];
         };
       };

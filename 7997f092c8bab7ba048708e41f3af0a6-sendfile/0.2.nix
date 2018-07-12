@@ -22,11 +22,11 @@ let
         buildType = "Simple";
       };
       components = {
-        sendfile = {
+        "sendfile" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
-          ] ++ pkgs.lib.optional (!(system.isWindows && !_flags.portable) && !(system.isLinux && !_flags.portable)) hsPkgs.bytestring;
+          ] ++ pkgs.lib.optionals (!(system.isWindows && !_flags.portable)) (pkgs.lib.optional (!(system.isLinux && !_flags.portable)) hsPkgs.bytestring);
           libs = pkgs.lib.optionals (system.isWindows && !_flags.portable) [
             pkgs.kernel32
             pkgs.mswsock

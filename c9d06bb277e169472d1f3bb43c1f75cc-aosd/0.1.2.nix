@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        aosd = {
+        "aosd" = {
           depends  = [
             hsPkgs.colour
             hsPkgs.transformers
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          test-aosd = {
+          "test-aosd" = {
             depends  = [
               hsPkgs.colour
               hsPkgs.base

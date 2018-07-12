@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        flat = {
+        "flat" = {
           depends  = [
             hsPkgs.array
             hsPkgs.base
@@ -39,7 +39,7 @@ let
           ];
         };
         tests = {
-          flat-test = {
+          "flat-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.cpu

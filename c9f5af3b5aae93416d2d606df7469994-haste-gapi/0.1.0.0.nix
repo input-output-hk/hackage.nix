@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        haste-gapi = {
+        "haste-gapi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.data-default

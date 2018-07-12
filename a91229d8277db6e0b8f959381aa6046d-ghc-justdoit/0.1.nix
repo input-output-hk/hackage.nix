@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghc-justdoit = {
+        "ghc-justdoit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hashable
@@ -28,7 +28,7 @@ let
           ];
         };
         tests = {
-          demo = {
+          "demo" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc-justdoit

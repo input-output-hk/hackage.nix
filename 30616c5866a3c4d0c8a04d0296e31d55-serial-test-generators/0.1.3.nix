@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        serial-test-generators = {
+        "serial-test-generators" = {
           depends  = [
             hsPkgs.base
             hsPkgs.aeson
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hspec

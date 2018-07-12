@@ -22,7 +22,7 @@ let
         buildType = "Configure";
       };
       components = {
-        network = {
+        "network" = {
           depends  = ([
             hsPkgs.base
             hsPkgs.bytestring

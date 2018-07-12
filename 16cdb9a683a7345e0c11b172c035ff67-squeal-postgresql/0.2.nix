@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        squeal-postgresql = {
+        "squeal-postgresql" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -45,7 +45,7 @@ let
           ];
         };
         exes = {
-          squeal-postgresql-example = {
+          "squeal-postgresql-example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -60,7 +60,7 @@ let
           };
         };
         tests = {
-          squeal-postgresql-doctest = {
+          "squeal-postgresql-doctest" = {
             depends  = [
               hsPkgs.base
               hsPkgs.doctest

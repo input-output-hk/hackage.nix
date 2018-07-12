@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hydrogen-prelude-parsec = {
+        "hydrogen-prelude-parsec" = {
           depends  = [
             hsPkgs.base
             hsPkgs.hydrogen-prelude

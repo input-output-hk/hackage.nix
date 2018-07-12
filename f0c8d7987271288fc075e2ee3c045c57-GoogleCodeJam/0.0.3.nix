@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        GoogleCodeJam = {
+        "GoogleCodeJam" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers

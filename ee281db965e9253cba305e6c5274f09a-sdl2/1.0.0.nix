@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        sdl2 = {
+        "sdl2" = {
           depends  = [ hsPkgs.base ];
           libs = [ pkgs.SDL2 ];
           pkgconfig = [

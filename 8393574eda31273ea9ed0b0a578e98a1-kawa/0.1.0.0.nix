@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        kawa = {
+        "kawa" = {
           depends  = [
             hsPkgs.base
             hsPkgs.text
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          kawa = {
+          "kawa" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          unit-tests = {
+          "unit-tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.text

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        authenticate-oauth = {
+        "authenticate-oauth" = {
           depends  = [
             hsPkgs.base
             hsPkgs.http-client

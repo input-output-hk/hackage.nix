@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          tssql = {
+          "tssql" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -30,7 +30,7 @@ let
               hsPkgs.parsec
             ];
           };
-          csvtotab = {
+          "csvtotab" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -38,7 +38,7 @@ let
               hsPkgs.containers
             ];
           };
-          tabtocsv = {
+          "tabtocsv" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -46,7 +46,7 @@ let
               hsPkgs.containers
             ];
           };
-          csvtopretty = {
+          "csvtopretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98
@@ -54,7 +54,7 @@ let
               hsPkgs.containers
             ];
           };
-          tabtopretty = {
+          "tabtopretty" = {
             depends  = [
               hsPkgs.base
               hsPkgs.haskell98

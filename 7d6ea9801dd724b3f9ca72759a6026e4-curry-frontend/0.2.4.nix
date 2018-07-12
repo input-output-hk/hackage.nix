@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          cymake = {
+          "cymake" = {
             depends  = [
               hsPkgs.base
               hsPkgs.curry-base

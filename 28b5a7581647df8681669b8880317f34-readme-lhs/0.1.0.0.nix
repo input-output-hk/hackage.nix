@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        readme-lhs = {
+        "readme-lhs" = {
           depends  = [
             hsPkgs.base
             hsPkgs.protolude
@@ -30,7 +30,7 @@ let
           ];
         };
         exes = {
-          lhs = {
+          "lhs" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -41,7 +41,7 @@ let
               hsPkgs.containers
             ];
           };
-          readme = {
+          "readme" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude
@@ -51,7 +51,7 @@ let
           };
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.protolude

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        acid-state-dist = {
+        "acid-state-dist" = {
           depends  = [
             hsPkgs.base
             hsPkgs.safecopy
@@ -41,7 +41,7 @@ let
           ];
         };
         tests = {
-          Simple = {
+          "Simple" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -51,7 +51,7 @@ let
               hsPkgs.acid-state-dist
             ];
           };
-          SlaveUpdates = {
+          "SlaveUpdates" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -61,7 +61,7 @@ let
               hsPkgs.acid-state-dist
             ];
           };
-          CRCFail = {
+          "CRCFail" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -71,7 +71,7 @@ let
               hsPkgs.acid-state-dist
             ];
           };
-          CheckpointSync = {
+          "CheckpointSync" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -81,7 +81,7 @@ let
               hsPkgs.acid-state-dist
             ];
           };
-          OrderingRandom = {
+          "OrderingRandom" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -92,7 +92,7 @@ let
               hsPkgs.acid-state-dist
             ];
           };
-          NReplication = {
+          "NReplication" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -102,7 +102,7 @@ let
               hsPkgs.acid-state-dist
             ];
           };
-          UpdateError = {
+          "UpdateError" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -112,7 +112,7 @@ let
               hsPkgs.acid-state-dist
             ];
           };
-          SyncTimeout = {
+          "SyncTimeout" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -124,7 +124,7 @@ let
           };
         };
         benchmarks = {
-          Local = {
+          "Local" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -134,18 +134,7 @@ let
               hsPkgs.acid-state
             ];
           };
-          MasterOnly = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.directory
-              hsPkgs.mtl
-              hsPkgs.criterion
-              hsPkgs.safecopy
-              hsPkgs.acid-state
-              hsPkgs.acid-state-dist
-            ];
-          };
-          MasterSlave = {
+          "MasterOnly" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory
@@ -156,7 +145,18 @@ let
               hsPkgs.acid-state-dist
             ];
           };
-          Slave = {
+          "MasterSlave" = {
+            depends  = [
+              hsPkgs.base
+              hsPkgs.directory
+              hsPkgs.mtl
+              hsPkgs.criterion
+              hsPkgs.safecopy
+              hsPkgs.acid-state
+              hsPkgs.acid-state-dist
+            ];
+          };
+          "Slave" = {
             depends  = [
               hsPkgs.base
               hsPkgs.directory

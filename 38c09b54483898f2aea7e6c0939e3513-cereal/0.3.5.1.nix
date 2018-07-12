@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        cereal = {
+        "cereal" = {
           depends  = ([
             hsPkgs.bytestring
           ] ++ (if _flags.split-base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        self-extract = {
+        "self-extract" = {
           depends  = [
             hsPkgs.base
             hsPkgs.Cabal
@@ -38,7 +38,7 @@ let
           ];
         };
         exes = {
-          self-bundle = {
+          "self-bundle" = {
             depends  = [
               hsPkgs.base
               hsPkgs.self-extract

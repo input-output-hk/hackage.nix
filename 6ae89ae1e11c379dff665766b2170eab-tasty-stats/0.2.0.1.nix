@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tasty-stats = {
+        "tasty-stats" = {
           depends  = [
             hsPkgs.base
             hsPkgs.containers

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          helf = {
+          "helf" = {
             depends  = [
               hsPkgs.array
               hsPkgs.base

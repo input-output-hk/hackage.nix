@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        takusen-oracle = {
+        "takusen-oracle" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl
@@ -34,7 +34,7 @@ let
             else [ pkgs.clntsh ];
         };
         exes = {
-          takusen_tests = {
+          "takusen_tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl
@@ -44,7 +44,7 @@ let
               hsPkgs.random
             ] ++ pkgs.lib.optional (!(!_flags.buildtests)) hsPkgs.takusen-oracle;
           };
-          miniunit_tests = {
+          "miniunit_tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

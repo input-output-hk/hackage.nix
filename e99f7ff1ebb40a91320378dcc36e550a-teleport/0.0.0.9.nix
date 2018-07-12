@@ -20,11 +20,11 @@ let
         buildType = "Simple";
       };
       components = {
-        teleport = {
+        "teleport" = {
           depends  = [ hsPkgs.base ];
         };
         exes = {
-          warp-haskell-exe = {
+          "warp-haskell-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.warp-haskell
@@ -40,7 +40,7 @@ let
           };
         };
         tests = {
-          warp-haskell-test = {
+          "warp-haskell-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.warp-haskell

@@ -22,7 +22,7 @@ let
         buildType = "Custom";
       };
       components = {
-        regex-compat = {
+        "regex-compat" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-base

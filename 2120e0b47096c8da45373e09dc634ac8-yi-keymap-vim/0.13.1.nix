@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        yi-keymap-vim = {
+        "yi-keymap-vim" = {
           depends  = [
             hsPkgs.attoparsec
             hsPkgs.base
@@ -45,7 +45,7 @@ let
           ];
         };
         tests = {
-          spec = {
+          "spec" = {
             depends  = [
               hsPkgs.attoparsec
               hsPkgs.base

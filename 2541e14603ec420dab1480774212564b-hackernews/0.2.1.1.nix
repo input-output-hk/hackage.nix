@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hackernews = {
+        "hackernews" = {
           depends  = [
             hsPkgs.HsOpenSSL
             hsPkgs.aeson
@@ -36,7 +36,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hackernews

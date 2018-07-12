@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        razom-text-util = {
+        "razom-text-util" = {
           depends  = [
             hsPkgs.base
             hsPkgs.regex-applicative
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

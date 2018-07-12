@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        strict-concurrency = {
+        "strict-concurrency" = {
           depends  = [ hsPkgs.base ];
         };
       };

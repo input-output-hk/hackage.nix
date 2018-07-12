@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        rfc1413-server = {
+        "rfc1413-server" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network-simple

@@ -23,7 +23,7 @@ let
         buildType = "Simple";
       };
       components = {
-        event-list = {
+        "event-list" = {
           depends  = [
             hsPkgs.non-negative
             hsPkgs.transformers
@@ -37,7 +37,7 @@ let
             ]);
         };
         exes = {
-          test = {
+          "test" = {
             depends  = pkgs.lib.optionals _flags.buildtests ([
               hsPkgs.QuickCheck
             ] ++ pkgs.lib.optional _flags.splitbase hsPkgs.random);

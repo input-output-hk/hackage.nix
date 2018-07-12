@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        quantfin = {
+        "quantfin" = {
           depends  = [
             hsPkgs.base
             hsPkgs.vector
@@ -35,7 +35,7 @@ let
           ];
         };
         exes = {
-          example = {
+          "example" = {
             depends  = [
               hsPkgs.base
               hsPkgs.quantfin

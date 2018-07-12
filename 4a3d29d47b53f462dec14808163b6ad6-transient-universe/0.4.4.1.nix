@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        transient-universe = {
+        "transient-universe" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -54,7 +54,7 @@ let
             ]);
         };
         exes = {
-          monitorService = {
+          "monitorService" = {
             depends  = [
               hsPkgs.base
             ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && compiler.version.ge "0.1")) [
@@ -65,7 +65,7 @@ let
           };
         };
         tests = {
-          test-transient = {
+          "test-transient" = {
             depends  = [
               hsPkgs.base
             ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && compiler.version.ge "0.1")) [

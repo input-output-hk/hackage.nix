@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tropical = {
+        "tropical" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semiring-simple

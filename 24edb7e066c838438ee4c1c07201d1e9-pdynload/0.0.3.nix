@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pdynload = {
+        "pdynload" = {
           depends  = [
             hsPkgs.base
             hsPkgs.ghc-paths

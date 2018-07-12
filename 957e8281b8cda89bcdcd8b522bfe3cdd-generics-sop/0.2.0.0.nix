@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        generics-sop = {
+        "generics-sop" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell
@@ -28,7 +28,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") hsPkgs.tagged;
         };
         tests = {
-          generic-sop-examples = {
+          "generic-sop-examples" = {
             depends  = [
               hsPkgs.base
               hsPkgs.generics-sop

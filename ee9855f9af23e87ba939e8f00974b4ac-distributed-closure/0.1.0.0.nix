@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        distributed-closure = {
+        "distributed-closure" = {
           depends  = [
             hsPkgs.base
             hsPkgs.binary
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.binary

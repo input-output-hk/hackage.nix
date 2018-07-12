@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        expression-parser = {
+        "expression-parser" = {
           depends  = [ hsPkgs.base ];
         };
       };

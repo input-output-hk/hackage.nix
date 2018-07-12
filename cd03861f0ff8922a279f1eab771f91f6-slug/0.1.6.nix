@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        slug = {
+        "slug" = {
           depends  = [
             hsPkgs.QuickCheck
             hsPkgs.aeson
@@ -35,7 +35,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.QuickCheck
               hsPkgs.base

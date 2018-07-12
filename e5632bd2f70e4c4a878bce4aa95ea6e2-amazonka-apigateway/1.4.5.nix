@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        amazonka-apigateway = {
+        "amazonka-apigateway" = {
           depends  = [
             hsPkgs.amazonka-core
             hsPkgs.base
           ];
         };
         tests = {
-          amazonka-apigateway-test = {
+          "amazonka-apigateway-test" = {
             depends  = [
               hsPkgs.amazonka-core
               hsPkgs.amazonka-test

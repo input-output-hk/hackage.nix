@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        gio = {
+        "gio" = {
           depends  = [
             hsPkgs.base
             hsPkgs.array

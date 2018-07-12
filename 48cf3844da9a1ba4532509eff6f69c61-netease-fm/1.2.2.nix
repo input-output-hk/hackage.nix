@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        netease-fm = {
+        "netease-fm" = {
           depends  = [
             hsPkgs.base
             hsPkgs.random
@@ -47,7 +47,7 @@ let
           ];
         };
         exes = {
-          netease-fm = {
+          "netease-fm" = {
             depends  = [
               hsPkgs.base
               hsPkgs.transformers

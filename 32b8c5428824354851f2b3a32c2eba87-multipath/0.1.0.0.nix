@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        multipath = {
+        "multipath" = {
           depends  = [
             hsPkgs.base
             hsPkgs.utf8-string

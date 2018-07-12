@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ghci-history-parser = {
+        "ghci-history-parser" = {
           depends  = if _flags.use_parsec
             then [
               hsPkgs.base
@@ -31,7 +31,7 @@ let
             else [ hsPkgs.base ];
         };
         tests = {
-          ghci-history-parser-test = {
+          "ghci-history-parser-test" = {
             depends  = if _flags.use_parsec
               then [
                 hsPkgs.base
@@ -45,7 +45,7 @@ let
                 hsPkgs.ghci-history-parser
               ];
           };
-          ghci-history-parser-doctest = {
+          "ghci-history-parser-doctest" = {
             depends  = if _flags.use_parsec
               then [
                 hsPkgs.base

@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        com = {
+        "com" = {
           depends  = pkgs.lib.optionals system.isWindows ([
             hsPkgs.old-time
           ] ++ [ hsPkgs.base ]);

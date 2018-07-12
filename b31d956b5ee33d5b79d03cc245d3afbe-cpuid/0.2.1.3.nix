@@ -22,9 +22,9 @@ let
         buildType = "Simple";
       };
       components = {
-        cpuid = {
+        "cpuid" = {
           depends  = [ hsPkgs.base ];
         };
-        exes = { cpuid-test = {}; };
+        exes = { "cpuid-test" = {}; };
       };
     }

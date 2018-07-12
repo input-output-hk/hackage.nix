@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        free-operational = {
+        "free-operational" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.mtl

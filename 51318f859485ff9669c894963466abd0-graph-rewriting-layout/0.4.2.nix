@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        graph-rewriting-layout = {
+        "graph-rewriting-layout" = {
           depends  = [
             hsPkgs.base
             hsPkgs.base-unicode-symbols

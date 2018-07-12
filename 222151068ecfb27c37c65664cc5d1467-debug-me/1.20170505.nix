@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          debug-me = {
+          "debug-me" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          zampolit = {
+          "zampolit" = {
             depends  = [
               hsPkgs.base
               hsPkgs.parsec

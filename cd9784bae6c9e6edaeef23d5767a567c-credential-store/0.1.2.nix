@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        credential-store = {
+        "credential-store" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
@@ -33,7 +33,7 @@ let
             else [ hsPkgs.dbus ]);
         };
         exes = {
-          credential-store-exe = {
+          "credential-store-exe" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring
@@ -42,7 +42,7 @@ let
           };
         };
         tests = {
-          credential-store-test = {
+          "credential-store-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.bytestring

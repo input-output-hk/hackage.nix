@@ -20,14 +20,14 @@ let
         buildType = "Configure";
       };
       components = {
-        deka = {
+        "deka" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring
           ];
         };
         tests = {
-          tasty-test = {
+          "tasty-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.tasty-quickcheck

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        ekg-elastic = {
+        "ekg-elastic" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

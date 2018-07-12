@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        unix-process-conduit = {
+        "unix-process-conduit" = {
           depends  = [
             hsPkgs.base
             hsPkgs.transformers
@@ -30,7 +30,7 @@ let
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.unix-process-conduit

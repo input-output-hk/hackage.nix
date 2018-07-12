@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        bond = {
+        "bond" = {
           depends  = [
             hsPkgs.aeson
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ];
         };
         exes = {
-          gbc = {
+          "gbc" = {
             depends  = [
               hsPkgs.bond
               hsPkgs.aeson
@@ -55,7 +55,7 @@ let
           };
         };
         tests = {
-          gbc-tests = {
+          "gbc-tests" = {
             depends  = [
               hsPkgs.bond
               hsPkgs.aeson

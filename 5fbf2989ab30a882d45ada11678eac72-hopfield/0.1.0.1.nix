@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hopfield = {
+        "hopfield" = {
           depends  = [
             hsPkgs.base
             hsPkgs.parallel
@@ -48,14 +48,14 @@ let
           ];
         };
         exes = {
-          experiment = {
+          "experiment" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hopfield
               hsPkgs.optparse-applicative
             ];
           };
-          recognize = {
+          "recognize" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hopfield
@@ -69,7 +69,7 @@ let
           };
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hopfield

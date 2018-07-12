@@ -26,7 +26,7 @@ let
       };
       components = {
         exes = {
-          lhc = {
+          "lhc" = {
             depends  = [
               hsPkgs.containers
               hsPkgs.mtl
@@ -54,7 +54,7 @@ let
               then [ hsPkgs.base hsPkgs.syb ]
               else [ hsPkgs.base ]);
           };
-          lhc-regress = {
+          "lhc-regress" = {
             depends  = [
               hsPkgs.process
             ] ++ [ hsPkgs.base ];

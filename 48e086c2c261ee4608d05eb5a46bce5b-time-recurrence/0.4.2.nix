@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        time-recurrence = {
+        "time-recurrence" = {
           depends  = [
             hsPkgs.base
             hsPkgs.time
@@ -31,7 +31,7 @@ let
           ];
         };
         tests = {
-          test-time-recurrence = {
+          "test-time-recurrence" = {
             depends  = [
               hsPkgs.base
               hsPkgs.test-framework

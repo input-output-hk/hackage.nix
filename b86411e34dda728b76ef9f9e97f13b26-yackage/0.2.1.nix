@@ -24,7 +24,7 @@ let
       };
       components = {
         exes = {
-          yackage = {
+          "yackage" = {
             depends  = pkgs.lib.optionals _flags.yackage [
               hsPkgs.base
               hsPkgs.yesod-core
@@ -46,7 +46,7 @@ let
               hsPkgs.http-types
             ];
           };
-          yackage-upload = {
+          "yackage-upload" = {
             depends  = pkgs.lib.optionals _flags.upload [
               hsPkgs.base
               hsPkgs.http-enumerator

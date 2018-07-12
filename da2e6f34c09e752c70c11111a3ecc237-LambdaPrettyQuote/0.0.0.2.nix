@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        LambdaPrettyQuote = {
+        "LambdaPrettyQuote" = {
           depends  = [
             hsPkgs.base
             hsPkgs.QuickCheck
@@ -38,7 +38,7 @@ let
           ];
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.QuickCheck

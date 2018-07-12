@@ -20,14 +20,14 @@ let
         buildType = "Simple";
       };
       components = {
-        do-list = {
+        "do-list" = {
           depends  = [
             hsPkgs.base
             hsPkgs.dlist
           ];
         };
         tests = {
-          test = {
+          "test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.do-list
@@ -36,7 +36,7 @@ let
           };
         };
         benchmarks = {
-          bench = {
+          "bench" = {
             depends  = [
               hsPkgs.base
               hsPkgs.criterion

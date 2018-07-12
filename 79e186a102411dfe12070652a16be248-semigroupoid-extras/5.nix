@@ -22,7 +22,7 @@ let
         buildType = "Simple";
       };
       components = {
-        semigroupoid-extras = {
+        "semigroupoid-extras" = {
           depends  = [
             hsPkgs.base
             hsPkgs.semigroupoids

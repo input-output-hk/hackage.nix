@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        microstache = {
+        "microstache" = {
           depends  = ([
             hsPkgs.aeson
             hsPkgs.base
@@ -37,7 +37,7 @@ let
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.6") hsPkgs.ghc-prim) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
         };
         tests = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.aeson
@@ -48,7 +48,7 @@ let
               hsPkgs.text
             ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) hsPkgs.semigroups;
           };
-          mustache-spec = {
+          "mustache-spec" = {
             depends  = [
               hsPkgs.hspec
               hsPkgs.aeson

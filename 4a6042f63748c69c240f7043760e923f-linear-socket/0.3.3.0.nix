@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        linear-socket = {
+        "linear-socket" = {
           depends  = [
             hsPkgs.base
             hsPkgs.network
@@ -28,7 +28,7 @@ let
           ];
         };
         exes = {
-          linear-socket-hlint = {
+          "linear-socket-hlint" = {
             depends  = [
               hsPkgs.base
               hsPkgs.hlint
@@ -36,7 +36,7 @@ let
           };
         };
         tests = {
-          linear-socket-test = {
+          "linear-socket-test" = {
             depends  = [
               hsPkgs.base
               hsPkgs.network

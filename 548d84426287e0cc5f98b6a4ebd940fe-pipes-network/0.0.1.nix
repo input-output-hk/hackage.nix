@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        pipes-network = {
+        "pipes-network" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        tamarin-prover-theory = {
+        "tamarin-prover-theory" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

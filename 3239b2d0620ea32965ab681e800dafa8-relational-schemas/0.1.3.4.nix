@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        relational-schemas = {
+        "relational-schemas" = {
           depends  = [
             hsPkgs.base
             hsPkgs.template-haskell

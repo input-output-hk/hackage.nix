@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        keera-hails-reactive-gtk = {
+        "keera-hails-reactive-gtk" = {
           depends  = [
             hsPkgs.base
             hsPkgs.mtl

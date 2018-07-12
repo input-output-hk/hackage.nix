@@ -20,7 +20,7 @@ let
         buildType = "Custom";
       };
       components = {
-        hunit-gui = {
+        "hunit-gui" = {
           depends  = [
             hsPkgs.base
             hsPkgs.HUnit
@@ -29,7 +29,7 @@ let
           ];
         };
         exes = {
-          tests = {
+          "tests" = {
             depends  = [
               hsPkgs.base
               hsPkgs.HUnit

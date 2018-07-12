@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        hinze-streams = {
+        "hinze-streams" = {
           depends  = [
             hsPkgs.base
             hsPkgs.haskell98

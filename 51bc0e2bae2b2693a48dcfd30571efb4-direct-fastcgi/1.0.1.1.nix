@@ -20,7 +20,7 @@ let
         buildType = "Simple";
       };
       components = {
-        direct-fastcgi = {
+        "direct-fastcgi" = {
           depends  = [
             hsPkgs.base
             hsPkgs.bytestring

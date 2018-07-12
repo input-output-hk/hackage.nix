@@ -21,7 +21,7 @@ let
       };
       components = {
         exes = {
-          haddocset = {
+          "haddocset" = {
             depends  = [
               hsPkgs.base
               hsPkgs.ghc
