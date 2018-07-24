@@ -11,8 +11,8 @@ let
         };
         license = "CC0-1.0";
         copyright = "";
-        maintainer = "koral@mailoo.org";
-        author = "koral";
+        maintainer = "chahine.moreau@gmail.com";
+        author = "chahine.moreau@gmail.com";
         homepage = "";
         url = "";
         synopsis = "Streaming conversion from/to base64";

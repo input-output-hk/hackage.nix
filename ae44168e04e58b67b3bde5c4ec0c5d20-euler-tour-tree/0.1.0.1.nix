@@ -13,8 +13,8 @@ let
         };
         license = "LicenseRef-PublicDomain";
         copyright = "";
-        maintainer = "koral@mailoo.org";
-        author = "koral";
+        maintainer = "chahine.moreau@gmail.com";
+        author = "chahine.moreau@gmail.com";
         homepage = "https://github.com/k0ral/euler-tour-tree";
         url = "";
         synopsis = "Euler tour trees";

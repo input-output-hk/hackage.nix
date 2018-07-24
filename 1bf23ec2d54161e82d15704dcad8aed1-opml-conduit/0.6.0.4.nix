@@ -13,8 +13,8 @@ let
         };
         license = "LicenseRef-PublicDomain";
         copyright = "";
-        maintainer = "koral <koral@mailoo.org>";
-        author = "koral <koral@mailoo.org>";
+        maintainer = "chahine.moreau@gmail.com";
+        author = "chahine.moreau@gmail.com";
         homepage = "https://github.com/k0ral/opml-conduit";
         url = "";
         synopsis = "Streaming parser/renderer for the OPML 2.0 format.";

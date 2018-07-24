@@ -13,8 +13,8 @@ let
         };
         license = "LicenseRef-PublicDomain";
         copyright = "";
-        maintainer = "koral@mailoo.org";
-        author = "koral";
+        maintainer = "chahine.moreau@gmail.com";
+        author = "chahine.moreau@gmail.com";
         homepage = "https://github.com/k0ral/dublincore-xml-conduit";
         url = "";
         synopsis = "XML streaming parser/renderer for the Dublin Core standard elements.";

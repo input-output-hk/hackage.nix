@@ -11,9 +11,9 @@ let
         };
         license = "MIT";
         copyright = "(c) 2012 Artem Leshchev";
-        maintainer = "matshch@gmail.com";
+        maintainer = "hvr@gnu.org";
         author = "Artem Leshchev";
-        homepage = "https://github.com/matshch/OTP";
+        homepage = "https://github.com/hvr/OTP";
         url = "";
         synopsis = "HMAC-Based and Time-Based One-Time Passwords";
         description = "Implements HMAC-Based One-Time Password Algorithm as defined in RFC 4226 and Time-Based One-Time Password Algorithm as defined in RFC 6238.";

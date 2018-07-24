@@ -13,8 +13,8 @@ let
         };
         license = "LicenseRef-OtherLicense";
         copyright = "";
-        maintainer = "koral <koral@mailoo.org>";
-        author = "koral <koral@mailoo.org>";
+        maintainer = "chahine.moreau@gmail.com";
+        author = "chahine.moreau@gmail.com";
         homepage = "https://github.com/k0ral/xml-conduit-parse";
         url = "";
         synopsis = "Streaming XML parser based on conduits.";

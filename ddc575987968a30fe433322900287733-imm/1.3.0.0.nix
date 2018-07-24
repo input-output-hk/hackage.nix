@@ -11,8 +11,8 @@ let
         };
         license = "LicenseRef-PublicDomain";
         copyright = "";
-        maintainer = "koral <koral@mailoo.org>";
-        author = "kamaradclimber, koral";
+        maintainer = "chahine.moreau@gmail.com";
+        author = "kamaradclimber, chahine.moreau@gmail.com";
         homepage = "https://github.com/k0ral/imm";
         url = "";
         synopsis = "Execute arbitrary actions for each unread element of RSS/Atom feeds";

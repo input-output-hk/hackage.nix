@@ -10,9 +10,9 @@ let
           version = "0.1.0.0";
         };
         license = "BSD-3-Clause";
-        copyright = "2017 Author name here";
-        maintainer = "example@example.com";
-        author = "Author name here";
+        copyright = "2017 John Ky";
+        maintainer = "newhoggy@gmail.com";
+        author = "John Ky";
         homepage = "https://github.com/githubuser/hw-hedgehog#readme";
         url = "";
         synopsis = "Extra hedgehog functionality";

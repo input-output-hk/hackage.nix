@@ -11,8 +11,8 @@ let
         };
         license = "LicenseRef-OtherLicense";
         copyright = "";
-        maintainer = "koral <koral at mailoo dot org>";
-        author = "koral <koral at mailoo dot org>";
+        maintainer = "chahine.moreau@gmail.com";
+        author = "chahine.moreau@gmail.com";
         homepage = "https://github.com/k0ral/hbro-contrib";
         url = "";
         synopsis = "Third-party extensions to hbro.";

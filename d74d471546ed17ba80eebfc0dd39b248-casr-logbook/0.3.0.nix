@@ -31,7 +31,6 @@ let
             hsPkgs.time
             hsPkgs.lucid
             hsPkgs.lens
-            hsPkgs.digit
             hsPkgs.time
             hsPkgs.text
           ];
