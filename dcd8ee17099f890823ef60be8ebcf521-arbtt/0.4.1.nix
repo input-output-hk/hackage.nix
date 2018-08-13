@@ -38,7 +38,7 @@
             (hsPkgs.bytestring)
             (hsPkgs.binary)
           ];
-          libs = [ (pkgs.Xss) ];
+          libs = [ (pkgs."Xss") ];
         };
         "arbtt-stats" = {
           depends  = [

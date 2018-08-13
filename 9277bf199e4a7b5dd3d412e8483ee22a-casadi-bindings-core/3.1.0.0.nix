@@ -33,8 +33,8 @@
           (hsPkgs.casadi-bindings-internal)
         ];
         libs = [
-          (pkgs.stdc++)
-          (pkgs.casadi)
+          (pkgs."stdc++")
+          (pkgs."casadi")
         ];
       };
     };

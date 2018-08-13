@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.floatshow)
         ];
-        libs = [ (pkgs.qd) ];
+        libs = [ (pkgs."qd") ];
       };
     };
   }

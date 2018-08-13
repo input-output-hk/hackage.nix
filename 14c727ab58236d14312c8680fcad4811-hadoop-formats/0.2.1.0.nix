@@ -33,7 +33,7 @@
           (hsPkgs.text)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.snappy) ];
+        libs = [ (pkgs."snappy") ];
       };
       tests = {
         "tests" = {

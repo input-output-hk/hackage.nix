@@ -27,7 +27,7 @@
     components = {
       "gsasl" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.gsasl) ];
+        libs = [ (pkgs."gsasl") ];
         pkgconfig = [
           (pkgconfPkgs.libgsasl)
         ];

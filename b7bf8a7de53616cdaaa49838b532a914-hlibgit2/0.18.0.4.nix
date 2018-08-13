@@ -32,8 +32,8 @@
           (hsPkgs.zlib)
         ];
         libs = pkgs.lib.optionals (!system.isWindows) [
-          (pkgs.ssl)
-          (pkgs.crypto)
+          (pkgs."ssl")
+          (pkgs."crypto")
         ];
       };
       tests = {

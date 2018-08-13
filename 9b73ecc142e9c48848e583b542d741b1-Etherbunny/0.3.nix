@@ -45,7 +45,7 @@
             (hsPkgs.binary)
             (hsPkgs.bytestring)
           ];
-          libs = [ (pkgs.pcap) ];
+          libs = [ (pkgs."pcap") ];
         };
       };
     };

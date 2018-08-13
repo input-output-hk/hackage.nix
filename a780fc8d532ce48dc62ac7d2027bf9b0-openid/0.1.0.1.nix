@@ -43,8 +43,8 @@
           ]
           else [ (hsPkgs.base) ]);
         libs = [
-          (pkgs.crypto)
-          (pkgs.ssl)
+          (pkgs."crypto")
+          (pkgs."ssl")
         ];
       };
     };

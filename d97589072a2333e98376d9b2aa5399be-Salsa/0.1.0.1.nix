@@ -32,8 +32,8 @@
           (hsPkgs.bytestring)
         ];
         libs = [
-          (pkgs.oleaut32)
-          (pkgs.ole32)
+          (pkgs."oleaut32")
+          (pkgs."ole32")
         ];
       };
     };

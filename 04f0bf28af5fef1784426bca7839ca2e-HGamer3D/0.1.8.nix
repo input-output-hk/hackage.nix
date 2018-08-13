@@ -36,7 +36,7 @@
           (hsPkgs.HGamer3D-Ogre-Binding)
           (hsPkgs.HGamer3D-SFML-Binding)
         ];
-        libs = [ (pkgs.stdc++.dll) ];
+        libs = [ (pkgs."stdc++.dll") ];
       };
     };
   }

@@ -33,14 +33,14 @@
       "RtMidi" = {
         depends  = [ (hsPkgs.base) ];
         libs = (([
-          (pkgs.stdc++)
+          (pkgs."stdc++")
         ] ++ pkgs.lib.optionals (_flags.alsa) [
-          (pkgs.asound)
-          (pkgs.pthread)
-        ]) ++ pkgs.lib.optional (_flags.jack) (pkgs.jack)) ++ pkgs.lib.optionals (_flags.core) [
-          (pkgs.CoreMIDI)
-          (pkgs.CoreAudio)
-          (pkgs.CoreFoundation)
+          (pkgs."asound")
+          (pkgs."pthread")
+        ]) ++ pkgs.lib.optional (_flags.jack) (pkgs."jack")) ++ pkgs.lib.optionals (_flags.core) [
+          (pkgs."CoreMIDI")
+          (pkgs."CoreAudio")
+          (pkgs."CoreFoundation")
         ];
       };
     };

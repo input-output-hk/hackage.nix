@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

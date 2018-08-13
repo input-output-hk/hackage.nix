@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.crypt) ];
+        libs = [ (pkgs."crypt") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

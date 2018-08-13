@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (!system.isHalvm) (hsPkgs.unix));
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.advapi32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."advapi32");
       };
     };
   }

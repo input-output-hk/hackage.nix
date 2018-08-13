@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.yarr)
         ];
-        libs = [ (pkgs.IL) ];
+        libs = [ (pkgs."IL") ];
       };
     };
   }

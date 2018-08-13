@@ -27,7 +27,7 @@
     components = {
       "network-info" = {
         depends  = [ (hsPkgs.base) ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.iphlpapi);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."iphlpapi");
       };
     };
   }

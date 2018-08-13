@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
         ];
-        libs = [ (pkgs.sqlite3) ];
+        libs = [ (pkgs."sqlite3") ];
       };
     };
   }

@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.lzma-clib);
-        libs = pkgs.lib.optional (!system.isWindows) (pkgs.lzma);
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."lzma");
       };
       tests = {
         "lzma-tests" = {

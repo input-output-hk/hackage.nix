@@ -32,7 +32,7 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.zmq) ];
+        libs = [ (pkgs."zmq") ];
       };
     };
   }

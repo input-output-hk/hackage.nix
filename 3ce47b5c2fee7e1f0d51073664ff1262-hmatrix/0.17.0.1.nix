@@ -40,29 +40,29 @@
           (hsPkgs.vector)
         ];
         libs = ((pkgs.lib.optionals (system.isOsx) (if _flags.openblas
-          then [ (pkgs.openblas) ]
+          then [ (pkgs."openblas") ]
           else [
-            (pkgs.blas)
-            (pkgs.lapack)
+            (pkgs."blas")
+            (pkgs."lapack")
           ]) ++ pkgs.lib.optionals (system.isFreebsd) ([
-          (pkgs.gfortran)
+          (pkgs."gfortran")
         ] ++ (if _flags.openblas
-          then [ (pkgs.openblas) ]
+          then [ (pkgs."openblas") ]
           else [
-            (pkgs.blas)
-            (pkgs.lapack)
+            (pkgs."blas")
+            (pkgs."lapack")
           ]))) ++ pkgs.lib.optionals (system.isWindows) (if _flags.openblas
-          then [ (pkgs.libopenblas) ]
+          then [ (pkgs."libopenblas") ]
           else [
-            (pkgs.blas)
-            (pkgs.lapack)
+            (pkgs."blas")
+            (pkgs."lapack")
           ])) ++ pkgs.lib.optionals (system.isLinux) (if _flags.openblas
-          then [ (pkgs.openblas) ]
+          then [ (pkgs."openblas") ]
           else [
-            (pkgs.blas)
-            (pkgs.lapack)
+            (pkgs."blas")
+            (pkgs."lapack")
           ]);
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Accelerate);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate");
       };
     };
   }

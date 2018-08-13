@@ -60,7 +60,7 @@
           (hsPkgs.vector-algorithms)
           (hsPkgs.PSQueue)
         ] ++ pkgs.lib.optional (!(_flags.portable || system.isWindows)) (hsPkgs.unix)) ++ pkgs.lib.optional (_flags.libev) (hsPkgs.hlibev);
-        libs = pkgs.lib.optional (_flags.gnutls) (pkgs.gnutls);
+        libs = pkgs.lib.optional (_flags.gnutls) (pkgs."gnutls");
       };
     };
   }

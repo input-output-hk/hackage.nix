@@ -31,7 +31,7 @@
           (hsPkgs.unix)
           (hsPkgs.filepath)
         ];
-        libs = [ (pkgs.mtp) ];
+        libs = [ (pkgs."mtp") ];
       };
     };
   }

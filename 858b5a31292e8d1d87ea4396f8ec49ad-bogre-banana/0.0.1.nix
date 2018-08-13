@@ -35,7 +35,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.hogre)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
       exes = {
         "bogre-banana-snake" = {

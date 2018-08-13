@@ -39,9 +39,9 @@
           (hsPkgs.bytestring-show)
         ];
         libs = pkgs.lib.optionals (!(_flags.dummy && !system.isLinux)) [
-          (pkgs.newrelic-collector-client)
-          (pkgs.newrelic-transaction)
-          (pkgs.newrelic-common)
+          (pkgs."newrelic-collector-client")
+          (pkgs."newrelic-transaction")
+          (pkgs."newrelic-common")
         ];
         build-tools = pkgs.lib.optional (!(_flags.dummy && !system.isLinux)) (hsPkgs.buildPackages.hsc2hs);
       };

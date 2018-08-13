@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
         ];
-        libs = [ (pkgs.Judy) ];
+        libs = [ (pkgs."Judy") ];
       };
     };
   }

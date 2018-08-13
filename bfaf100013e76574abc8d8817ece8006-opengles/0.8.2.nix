@@ -47,21 +47,21 @@
         ];
         libs = pkgs.lib.optionals (system.isLinux) (if _flags.useegl
           then [
-            (pkgs.EGL)
-            (pkgs.GLESv2)
+            (pkgs."EGL")
+            (pkgs."GLESv2")
           ]
           else [
-            (pkgs.GL)
+            (pkgs."GL")
           ]) ++ pkgs.lib.optionals (system.isWindows) (if _flags.useegl
           then [
-            (pkgs.libEGL)
-            (pkgs.libGLESv2)
+            (pkgs."libEGL")
+            (pkgs."libGLESv2")
           ]
-          else [ (pkgs.opengl32) ]);
+          else [ (pkgs."opengl32") ]);
         frameworks = pkgs.lib.optionals (system.isIos) [
-          (pkgs.QuartzCore)
-          (pkgs.OpenGLES)
-        ] ++ pkgs.lib.optional (system.isOsx) (pkgs.OpenGL);
+          (pkgs."QuartzCore")
+          (pkgs."OpenGLES")
+        ] ++ pkgs.lib.optional (system.isOsx) (pkgs."OpenGL");
       };
       exes = {
         "windmill" = {

@@ -31,21 +31,21 @@
         depends  = [ (hsPkgs.base) ];
         libs = if _flags.quatstatic
           then [
-            (pkgs.vrpn)
-            (pkgs.quat)
-            (pkgs.stdc++)
+            (pkgs."vrpn")
+            (pkgs."quat")
+            (pkgs."stdc++")
           ]
           else [
-            (pkgs.vrpn)
-            (pkgs.stdc++)
+            (pkgs."vrpn")
+            (pkgs."stdc++")
           ];
       };
       exes = {
         "test-vrpn" = {
           depends  = [ (hsPkgs.base) ];
           libs = [
-            (pkgs.vrpn)
-            (pkgs.stdc++)
+            (pkgs."vrpn")
+            (pkgs."stdc++")
           ];
         };
       };

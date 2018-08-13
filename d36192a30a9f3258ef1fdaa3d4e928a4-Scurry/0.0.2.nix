@@ -40,8 +40,8 @@
             (hsPkgs.random)
           ] ++ pkgs.lib.optional (system.isLinux) (hsPkgs.unix)) ++ pkgs.lib.optional (system.isOsx || system.isFreebsd) (hsPkgs.unix);
           libs = pkgs.lib.optionals (system.isWindows) [
-            (pkgs.Iphlpapi)
-            (pkgs.ws2_32)
+            (pkgs."Iphlpapi")
+            (pkgs."ws2_32")
           ];
         };
       };

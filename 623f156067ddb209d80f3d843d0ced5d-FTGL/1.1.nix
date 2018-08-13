@@ -31,7 +31,7 @@
           (hsPkgs.GLUT)
           (hsPkgs.base)
         ];
-        libs = [ (pkgs.ftgl) ];
+        libs = [ (pkgs."ftgl") ];
       };
     };
   }

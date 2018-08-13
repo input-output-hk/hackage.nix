@@ -33,11 +33,11 @@
           (hsPkgs.jsaddle)
         ];
         frameworks = [
-          (pkgs.Foundation)
-          (pkgs.WebKit)
+          (pkgs."Foundation")
+          (pkgs."WebKit")
         ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if system.isIos
-          then [ (pkgs.UIKit) ]
-          else [ (pkgs.Cocoa) ]);
+          then [ (pkgs."UIKit") ]
+          else [ (pkgs."Cocoa") ]);
       };
     };
   }

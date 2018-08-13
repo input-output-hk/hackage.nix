@@ -34,7 +34,7 @@
           (hsPkgs.vector)
           (hsPkgs.seqloc)
         ];
-        libs = [ (pkgs.z) ];
+        libs = [ (pkgs."z") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];
@@ -49,7 +49,7 @@
             (hsPkgs.process)
             (hsPkgs.filepath)
           ];
-          libs = [ (pkgs.z) ];
+          libs = [ (pkgs."z") ];
           build-tools = [
             (hsPkgs.buildPackages.c2hs)
           ];

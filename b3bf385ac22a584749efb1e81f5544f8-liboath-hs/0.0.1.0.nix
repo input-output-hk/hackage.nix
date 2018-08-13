@@ -33,7 +33,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.time)
         ];
-        libs = [ (pkgs.oath) ];
+        libs = [ (pkgs."oath") ];
         pkgconfig = [
           (pkgconfPkgs.liboath)
         ];

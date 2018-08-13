@@ -36,7 +36,7 @@
             (hsPkgs.bytestring)
           ]
           else [ (hsPkgs.base) ]);
-        libs = [ (pkgs.xml2) ];
+        libs = [ (pkgs."xml2") ];
       };
     };
   }

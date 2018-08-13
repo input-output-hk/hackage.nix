@@ -32,8 +32,8 @@
           (hsPkgs.safe-exceptions)
         ];
         libs = [
-          (pkgs.stdc++)
-        ] ++ pkgs.lib.optional (system.isWindows) (pkgs.rpcrt4);
+          (pkgs."stdc++")
+        ] ++ pkgs.lib.optional (system.isWindows) (pkgs."rpcrt4");
       };
       tests = {
         "direct-rocksdb-test" = {
@@ -46,8 +46,8 @@
             (hsPkgs.filepath)
           ];
           libs = [
-            (pkgs.stdc++)
-          ] ++ pkgs.lib.optional (system.isWindows) (pkgs.rpcrt4);
+            (pkgs."stdc++")
+          ] ++ pkgs.lib.optional (system.isWindows) (pkgs."rpcrt4");
         };
       };
     };

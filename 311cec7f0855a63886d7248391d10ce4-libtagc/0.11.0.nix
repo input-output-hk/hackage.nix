@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.glib)
         ];
-        libs = [ (pkgs.tag_c) ];
+        libs = [ (pkgs."tag_c") ];
         pkgconfig = [
           (pkgconfPkgs.taglib_c)
         ];

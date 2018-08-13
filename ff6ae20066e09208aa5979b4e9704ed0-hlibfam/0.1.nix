@@ -27,7 +27,7 @@
     components = {
       "hlibfam" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.fam) ];
+        libs = [ (pkgs."fam") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

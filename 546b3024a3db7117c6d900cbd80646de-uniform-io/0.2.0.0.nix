@@ -37,8 +37,8 @@
           (hsPkgs.data-default-class)
         ];
         libs = [
-          (pkgs.ssl)
-          (pkgs.pthread)
+          (pkgs."ssl")
+          (pkgs."pthread")
         ];
       };
       tests = {

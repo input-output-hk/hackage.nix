@@ -31,7 +31,7 @@
           (hsPkgs.hsql)
           (hsPkgs.Cabal)
         ];
-        libs = [ (pkgs.mysqlclient) ];
+        libs = [ (pkgs."mysqlclient") ];
       };
     };
   }

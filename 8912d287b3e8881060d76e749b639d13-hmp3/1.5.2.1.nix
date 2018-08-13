@@ -46,7 +46,7 @@
               (hsPkgs.process)
             ]
             else [ (hsPkgs.base) ]);
-          libs = [ (pkgs.curses) ];
+          libs = [ (pkgs."curses") ];
         };
       };
     };

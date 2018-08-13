@@ -32,7 +32,7 @@
           (hsPkgs.hashable)
           (hsPkgs.text)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

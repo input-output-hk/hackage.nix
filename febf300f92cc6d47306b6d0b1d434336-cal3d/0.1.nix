@@ -27,7 +27,7 @@
     components = {
       "cal3d" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.cal3d) ];
+        libs = [ (pkgs."cal3d") ];
       };
     };
   }

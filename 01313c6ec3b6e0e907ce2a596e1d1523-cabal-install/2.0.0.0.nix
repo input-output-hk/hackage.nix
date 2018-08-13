@@ -111,7 +111,7 @@
             (hsPkgs.time)
             (hsPkgs.zlib)
           ];
-          libs = pkgs.lib.optional (system.isAix) (pkgs.bsd);
+          libs = pkgs.lib.optional (system.isAix) (pkgs."bsd");
         };
       };
       tests = {

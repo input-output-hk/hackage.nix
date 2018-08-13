@@ -33,14 +33,14 @@
           (hsPkgs.filepath)
         ];
         libs = [
-          (pkgs.notmuch)
-          (pkgs.gmime-2.4)
-          (pkgs.z)
-          (pkgs.nsl)
-          (pkgs.gobject-2.0)
-          (pkgs.glib-2.0)
-          (pkgs.talloc)
-          (pkgs.xapian)
+          (pkgs."notmuch")
+          (pkgs."gmime-2.4")
+          (pkgs."z")
+          (pkgs."nsl")
+          (pkgs."gobject-2.0")
+          (pkgs."glib-2.0")
+          (pkgs."talloc")
+          (pkgs."xapian")
         ];
       };
       exes = {
@@ -51,7 +51,7 @@
             (hsPkgs.old-locale)
             (hsPkgs.parseargs)
           ];
-          libs = [ (pkgs.notmuch) ];
+          libs = [ (pkgs."notmuch") ];
         };
       };
     };

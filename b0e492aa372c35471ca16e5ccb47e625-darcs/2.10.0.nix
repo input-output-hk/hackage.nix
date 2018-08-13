@@ -94,7 +94,7 @@
           (hsPkgs.network)
           (hsPkgs.HTTP)
         ]) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) (hsPkgs.terminfo)) ++ pkgs.lib.optional (_flags.hashed-storage-diff) (hsPkgs.lcs)) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
-        libs = pkgs.lib.optionals (_flags.curl) (pkgs.lib.optional (!_flags.pkgconfig) (pkgs.curl));
+        libs = pkgs.lib.optionals (_flags.curl) (pkgs.lib.optional (!_flags.pkgconfig) (pkgs."curl"));
         pkgconfig = pkgs.lib.optionals (_flags.curl) (pkgs.lib.optional (_flags.pkgconfig) (pkgconfPkgs.libcurl));
       };
       exes = {

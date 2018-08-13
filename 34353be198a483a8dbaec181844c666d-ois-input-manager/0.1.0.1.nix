@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.hogre)
         ];
-        libs = [ (pkgs.OIS) ];
+        libs = [ (pkgs."OIS") ];
       };
     };
   }

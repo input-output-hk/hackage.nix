@@ -31,8 +31,8 @@
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
         ];
-        libs = pkgs.lib.optional (system.isLinux) (pkgs.OpenCL);
-        frameworks = pkgs.lib.optional (system.isLinux) (pkgs.OpenCL) ++ pkgs.lib.optional (system.isOsx) (pkgs.OpenCL);
+        libs = pkgs.lib.optional (system.isLinux) (pkgs."OpenCL");
+        frameworks = pkgs.lib.optional (system.isLinux) (pkgs."OpenCL") ++ pkgs.lib.optional (system.isOsx) (pkgs."OpenCL");
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

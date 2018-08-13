@@ -40,7 +40,7 @@
             (hsPkgs.base)
             (hsPkgs.regex-base)
           ];
-        libs = [ (pkgs.pcre) ];
+        libs = [ (pkgs."pcre") ];
       };
     };
   }

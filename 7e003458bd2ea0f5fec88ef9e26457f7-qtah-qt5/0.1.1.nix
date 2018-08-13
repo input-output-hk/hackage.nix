@@ -34,7 +34,7 @@
           (hsPkgs.qtah-cpp-qt5)
           (hsPkgs.qtah-generator)
         ];
-        libs = [ (pkgs.qtah) ];
+        libs = [ (pkgs."qtah") ];
       };
       tests = {
         "test-qtah" = {
@@ -44,7 +44,7 @@
             (hsPkgs.HUnit)
             (hsPkgs.qtah-qt5)
           ];
-          libs = [ (pkgs.qtah) ];
+          libs = [ (pkgs."qtah") ];
         };
       };
     };

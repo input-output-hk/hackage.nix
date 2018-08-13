@@ -28,9 +28,9 @@
       "GLHUI" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.X11)
-          (pkgs.GL)
-          (pkgs.rt)
+          (pkgs."X11")
+          (pkgs."GL")
+          (pkgs."rt")
         ];
       };
     };

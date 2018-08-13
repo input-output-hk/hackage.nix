@@ -33,14 +33,14 @@
           (hsPkgs.HGamer3D-Data)
         ];
         libs = if system.isWindows
-          then [ (pkgs.hg3dogre033) ]
+          then [ (pkgs."hg3dogre033") ]
           else [
-            (pkgs.hg3dogre033)
-            (pkgs.OgreMain)
-            (pkgs.OgrePaging)
-            (pkgs.OgreProperty)
-            (pkgs.OgreRTShaderSystem)
-            (pkgs.OgreTerrain)
+            (pkgs."hg3dogre033")
+            (pkgs."OgreMain")
+            (pkgs."OgrePaging")
+            (pkgs."OgreProperty")
+            (pkgs."OgreRTShaderSystem")
+            (pkgs."OgreTerrain")
           ];
       };
     };

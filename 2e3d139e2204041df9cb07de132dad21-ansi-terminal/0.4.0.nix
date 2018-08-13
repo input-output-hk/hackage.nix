@@ -35,8 +35,8 @@
           (hsPkgs.base)
         ];
         libs = pkgs.lib.optionals (system.isWindows) [
-          (pkgs.kernel32)
-          (pkgs.msvcrt)
+          (pkgs."kernel32")
+          (pkgs."msvcrt")
         ];
       };
       exes = {
@@ -47,8 +47,8 @@
             (hsPkgs.base)
           ];
           libs = pkgs.lib.optionals (system.isWindows) [
-            (pkgs.kernel32)
-            (pkgs.msvcrt)
+            (pkgs."kernel32")
+            (pkgs."msvcrt")
           ];
         };
       };

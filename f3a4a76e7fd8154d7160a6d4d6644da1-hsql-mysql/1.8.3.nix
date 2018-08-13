@@ -32,8 +32,8 @@
           (hsPkgs.Cabal)
         ];
         libs = if system.isWindows || system.isWindows
-          then [ (pkgs.libmysql) ]
-          else [ (pkgs.mysqlclient) ];
+          then [ (pkgs."libmysql") ]
+          else [ (pkgs."mysqlclient") ];
       };
     };
   }

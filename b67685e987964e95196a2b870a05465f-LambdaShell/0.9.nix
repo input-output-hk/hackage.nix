@@ -36,7 +36,7 @@
             (hsPkgs.Shellac)
             (hsPkgs.Shellac-readline)
           ];
-          libs = [ (pkgs.readline) ];
+          libs = [ (pkgs."readline") ];
         };
       };
     };

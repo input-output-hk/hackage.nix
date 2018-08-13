@@ -43,8 +43,8 @@
           (hsPkgs.vector)
         ];
         libs = [
-          (pkgs.traildb)
-          (pkgs.Judy)
+          (pkgs."traildb")
+          (pkgs."Judy")
         ];
       };
       benchmarks = {

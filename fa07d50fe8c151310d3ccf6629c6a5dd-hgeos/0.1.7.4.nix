@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.geos_c) ];
+        libs = [ (pkgs."geos_c") ];
       };
       tests = {
         "hgeos-app" = {

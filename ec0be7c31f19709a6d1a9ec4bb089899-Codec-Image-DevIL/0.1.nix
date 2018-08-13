@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.array)
         ];
-        libs = [ (pkgs.IL) ];
+        libs = [ (pkgs."IL") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

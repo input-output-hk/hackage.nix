@@ -32,7 +32,7 @@
           (hsPkgs.array)
           (hsPkgs.parsec)
         ];
-        libs = [ (pkgs.puz) ];
+        libs = [ (pkgs."puz") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

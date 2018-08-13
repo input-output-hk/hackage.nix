@@ -54,10 +54,10 @@
             (hsPkgs.SDL-gfx)
           ]) ++ pkgs.lib.optional (_flags.curses) (hsPkgs.hscurses);
           libs = pkgs.lib.optionals (_flags.game) (pkgs.lib.optionals (_flags.sdl) (pkgs.lib.optionals (system.isWindows) [
-            (pkgs.SDL_ttf)
-            (pkgs.SDL)
-            (pkgs.SDL_gfx)
-            (pkgs.freetype)
+            (pkgs."SDL_ttf")
+            (pkgs."SDL")
+            (pkgs."SDL_gfx")
+            (pkgs."freetype")
           ]));
         };
         "intricacy-server" = {

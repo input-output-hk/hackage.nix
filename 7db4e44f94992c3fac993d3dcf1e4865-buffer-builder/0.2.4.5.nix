@@ -34,7 +34,7 @@
           (hsPkgs.vector)
           (hsPkgs.unordered-containers)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
       tests = {
         "tests" = {

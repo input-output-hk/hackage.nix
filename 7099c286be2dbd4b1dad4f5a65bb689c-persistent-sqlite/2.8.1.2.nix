@@ -52,7 +52,7 @@
           (hsPkgs.resource-pool)
           (hsPkgs.unordered-containers)
         ];
-        libs = pkgs.lib.optionals (_flags.systemlib) (pkgs.lib.optional (!_flags.use-pkgconfig) (pkgs.sqlite3)) ++ pkgs.lib.optional (!system.isWindows) (pkgs.pthread);
+        libs = pkgs.lib.optionals (_flags.systemlib) (pkgs.lib.optional (!_flags.use-pkgconfig) (pkgs."sqlite3")) ++ pkgs.lib.optional (!system.isWindows) (pkgs."pthread");
         pkgconfig = pkgs.lib.optionals (_flags.systemlib) (pkgs.lib.optional (_flags.use-pkgconfig) (pkgconfPkgs.sqlite3));
       };
       exes = {

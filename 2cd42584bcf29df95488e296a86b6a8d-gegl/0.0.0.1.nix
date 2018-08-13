@@ -39,7 +39,7 @@
           (hsPkgs.glib)
           (hsPkgs.babl)
         ];
-        libs = [ (pkgs.gegl-0.3) ];
+        libs = [ (pkgs."gegl-0.3") ];
         pkgconfig = [
           (pkgconfPkgs.gegl-0.3)
         ];

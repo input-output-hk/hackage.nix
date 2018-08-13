@@ -54,8 +54,8 @@
           (hsPkgs.time)
         ];
         libs = [
-          (pkgs.ssl)
-          (pkgs.crypto)
+          (pkgs."ssl")
+          (pkgs."crypto")
         ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs)

@@ -32,7 +32,7 @@
           (hsPkgs.HDBC)
           (hsPkgs.parsec)
         ];
-        libs = [ (pkgs.pq) ];
+        libs = [ (pkgs."pq") ];
       };
     };
   }

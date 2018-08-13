@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.fficxx-runtime)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

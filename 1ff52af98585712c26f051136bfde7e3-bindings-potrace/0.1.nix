@@ -31,8 +31,8 @@
           (hsPkgs.bindings-DSL)
         ];
         libs = [
-          (pkgs.potrace)
-          (pkgs.m)
+          (pkgs."potrace")
+          (pkgs."m")
         ];
       };
     };

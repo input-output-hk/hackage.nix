@@ -41,7 +41,7 @@
           (hsPkgs.Win32)
           (hsPkgs.asn1-encoding)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.Crypt32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."Crypt32");
       };
     };
   }

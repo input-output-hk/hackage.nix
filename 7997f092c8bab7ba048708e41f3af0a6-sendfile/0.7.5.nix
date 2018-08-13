@@ -33,7 +33,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.network)
         ] ++ pkgs.lib.optional (system.isWindows && !_flags.portable) (hsPkgs.Win32);
-        libs = pkgs.lib.optional (system.isWindows && !_flags.portable) (pkgs.mswsock);
+        libs = pkgs.lib.optional (system.isWindows && !_flags.portable) (pkgs."mswsock");
       };
     };
   }

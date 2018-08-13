@@ -38,7 +38,7 @@
           (hsPkgs.containers)
           (hsPkgs.List)
         ];
-        libs = pkgs.lib.optional (!_flags.bundle) (pkgs.expat);
+        libs = pkgs.lib.optional (!_flags.bundle) (pkgs."expat");
       };
     };
   }

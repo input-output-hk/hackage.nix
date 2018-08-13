@@ -81,7 +81,7 @@
             (hsPkgs.network-uri)
           ]
           else [ (hsPkgs.network) ]);
-        libs = [ (pkgs.ssl) ];
+        libs = [ (pkgs."ssl") ];
       };
     };
   }

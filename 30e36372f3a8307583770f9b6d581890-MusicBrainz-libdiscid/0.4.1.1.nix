@@ -31,7 +31,7 @@
           (hsPkgs.containers)
           (hsPkgs.vector)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.winmm);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."winmm");
       };
     };
   }

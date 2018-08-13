@@ -42,7 +42,7 @@
           (hsPkgs.setenv)
           (hsPkgs.pretty)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
       tests = {
         "test" = {

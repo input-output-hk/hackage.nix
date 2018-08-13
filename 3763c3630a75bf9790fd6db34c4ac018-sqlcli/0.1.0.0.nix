@@ -33,8 +33,8 @@
           (hsPkgs.transformers)
         ];
         libs = pkgs.lib.optionals (_flags.odbc) (if system.isWindows
-          then [ (pkgs.odbc32) ]
-          else [ (pkgs.odbc) ]);
+          then [ (pkgs."odbc32") ]
+          else [ (pkgs."odbc") ]);
       };
     };
   }

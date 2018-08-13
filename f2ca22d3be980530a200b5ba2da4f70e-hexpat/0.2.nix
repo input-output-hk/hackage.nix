@@ -31,7 +31,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.expat) ];
+        libs = [ (pkgs."expat") ];
       };
     };
   }

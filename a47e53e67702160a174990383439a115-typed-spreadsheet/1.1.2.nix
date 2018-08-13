@@ -39,7 +39,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
         ];
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Cocoa);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Cocoa");
       };
       exes = {
         "typed-spreadsheet-example-text" = {
@@ -48,7 +48,7 @@
             (hsPkgs.text)
             (hsPkgs.typed-spreadsheet)
           ];
-          frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Cocoa);
+          frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Cocoa");
         };
         "typed-spreadsheet-example-cell" = {
           depends  = [
@@ -56,7 +56,7 @@
             (hsPkgs.text)
             (hsPkgs.typed-spreadsheet)
           ];
-          frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Cocoa);
+          frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Cocoa");
         };
         "typed-spreadsheet-example-graphics" = {
           depends  = [
@@ -64,7 +64,7 @@
             (hsPkgs.diagrams-lib)
             (hsPkgs.typed-spreadsheet)
           ];
-          frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Cocoa);
+          frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Cocoa");
         };
       };
     };

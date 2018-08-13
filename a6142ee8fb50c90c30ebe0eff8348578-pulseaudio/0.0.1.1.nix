@@ -32,7 +32,7 @@
           (hsPkgs.stm)
           (hsPkgs.containers)
         ];
-        libs = [ (pkgs.pulse) ];
+        libs = [ (pkgs."pulse") ];
       };
       exes = {
         "pulse-test" = {

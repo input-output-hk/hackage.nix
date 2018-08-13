@@ -33,7 +33,7 @@
           (hsPkgs.either)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.decnumber) ];
+        libs = [ (pkgs."decnumber") ];
       };
       tests = {
         "tasty-test" = {
@@ -46,7 +46,7 @@
             (hsPkgs.bytestring)
             (hsPkgs.transformers)
           ];
-          libs = [ (pkgs.decnumber) ];
+          libs = [ (pkgs."decnumber") ];
         };
       };
     };

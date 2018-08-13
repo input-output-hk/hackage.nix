@@ -44,8 +44,8 @@
             (hsPkgs.hopenssl)
           ];
           libs = [
-            (pkgs.adns)
-            (pkgs.crypto)
+            (pkgs."adns")
+            (pkgs."crypto")
           ];
         };
       };

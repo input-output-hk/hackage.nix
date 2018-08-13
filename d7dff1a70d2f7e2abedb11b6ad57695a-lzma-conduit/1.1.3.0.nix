@@ -34,7 +34,7 @@
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.lzma) ];
+        libs = [ (pkgs."lzma") ];
       };
       tests = {
         "lzma-test" = {

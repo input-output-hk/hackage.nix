@@ -42,7 +42,7 @@
           (hsPkgs.parallel)
           (hsPkgs.filepath)
         ];
-        libs = [ (pkgs.crypt) ];
+        libs = [ (pkgs."crypt") ];
       };
     };
   }

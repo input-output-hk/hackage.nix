@@ -44,7 +44,7 @@
           (hsPkgs.transformers)
           (hsPkgs.LogicGrowsOnTrees)
         ];
-        libs = [ (pkgs.mpi) ];
+        libs = [ (pkgs."mpi") ];
       };
       exes = {
         "test-trivial" = {
@@ -54,7 +54,7 @@
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.LogicGrowsOnTrees-MPI)
           ];
-          libs = [ (pkgs.mpi) ];
+          libs = [ (pkgs."mpi") ];
         };
         "test-nqueens" = {
           depends  = [
@@ -65,7 +65,7 @@
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.LogicGrowsOnTrees-MPI)
           ];
-          libs = [ (pkgs.mpi) ];
+          libs = [ (pkgs."mpi") ];
         };
       };
     };

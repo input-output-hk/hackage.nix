@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.gfortran) ];
+        libs = [ (pkgs."gfortran") ];
       };
       tests = {
         "test" = {

@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.array)
         ];
-        libs = [ (pkgs.ode) ];
+        libs = [ (pkgs."ode") ];
       };
     };
   }

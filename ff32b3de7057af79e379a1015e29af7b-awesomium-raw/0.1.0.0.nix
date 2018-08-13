@@ -28,7 +28,7 @@
       "awesomium-raw" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.awesomium-1.6.5)
+          (pkgs."awesomium-1.6.5")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

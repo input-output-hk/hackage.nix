@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.array)
         ];
-        libs = [ (pkgs.lmdb) ];
+        libs = [ (pkgs."lmdb") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

@@ -37,7 +37,7 @@
           (hsPkgs.parallel)
           (hsPkgs.neural-network-base)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.openblas) ++ pkgs.lib.optional (system.isLinux) (pkgs.blas);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."openblas") ++ pkgs.lib.optional (system.isLinux) (pkgs."blas");
       };
     };
   }

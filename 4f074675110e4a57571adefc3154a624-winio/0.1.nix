@@ -34,8 +34,8 @@
           (hsPkgs.winerror)
         ];
         libs = [
-          (pkgs.kernel32)
-          (pkgs.ws2_32)
+          (pkgs."kernel32")
+          (pkgs."ws2_32")
         ];
       };
     };

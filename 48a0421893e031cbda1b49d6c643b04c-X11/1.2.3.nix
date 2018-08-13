@@ -27,7 +27,7 @@
     components = {
       "X11" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.X11) ];
+        libs = [ (pkgs."X11") ];
       };
     };
   }

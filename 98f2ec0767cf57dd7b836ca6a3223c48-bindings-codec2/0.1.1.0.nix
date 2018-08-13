@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.codec2) ];
+        libs = [ (pkgs."codec2") ];
       };
       exes = {
         "bindings-codec2-demo" = {

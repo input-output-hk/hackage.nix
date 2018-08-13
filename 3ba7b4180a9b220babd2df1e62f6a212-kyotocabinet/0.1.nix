@@ -31,7 +31,9 @@
           (hsPkgs.cereal)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.kyotocabinet) ];
+        libs = [
+          (pkgs."kyotocabinet")
+        ];
       };
     };
   }

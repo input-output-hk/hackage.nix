@@ -27,7 +27,7 @@
     components = {
       "qd" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.qd) ];
+        libs = [ (pkgs."qd") ];
       };
     };
   }

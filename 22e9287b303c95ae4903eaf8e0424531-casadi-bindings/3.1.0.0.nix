@@ -39,8 +39,8 @@
           (hsPkgs.casadi-bindings-core)
         ];
         libs = [
-          (pkgs.stdc++)
-          (pkgs.casadi)
+          (pkgs."stdc++")
+          (pkgs."casadi")
         ];
       };
       tests = {
@@ -49,7 +49,7 @@
             (hsPkgs.base)
             (hsPkgs.doctest)
           ];
-          libs = [ (pkgs.stdc++) ];
+          libs = [ (pkgs."stdc++") ];
         };
         "unit-tests" = {
           depends  = [

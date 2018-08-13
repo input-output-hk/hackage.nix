@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.cgen)
         ];
-        libs = [ (pkgs.OgreMain) ];
+        libs = [ (pkgs."OgreMain") ];
         pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.OGRE);
       };
     };

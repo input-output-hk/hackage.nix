@@ -33,11 +33,11 @@
           (hsPkgs.HGamer3D-Data)
         ];
         libs = if system.isWindows
-          then [ (pkgs.hg3dsdl2050) ]
+          then [ (pkgs."hg3dsdl2050") ]
           else [
-            (pkgs.hg3dsdl2050)
-            (pkgs.SDL2-2.0)
-            (pkgs.X11)
+            (pkgs."hg3dsdl2050")
+            (pkgs."SDL2-2.0")
+            (pkgs."X11")
           ];
       };
     };

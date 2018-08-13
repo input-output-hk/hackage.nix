@@ -31,23 +31,23 @@
         depends  = [ (hsPkgs.base) ];
         libs = if system.isWindows
           then [
-            (pkgs.csfml-window)
-            (pkgs.csfml-system)
-            (pkgs.csfml-graphics)
-            (pkgs.csfml-network)
-            (pkgs.csfml-audio)
+            (pkgs."csfml-window")
+            (pkgs."csfml-system")
+            (pkgs."csfml-graphics")
+            (pkgs."csfml-network")
+            (pkgs."csfml-audio")
           ]
           else [
-            (pkgs.csfml-window)
-            (pkgs.csfml-system)
-            (pkgs.csfml-graphics)
-            (pkgs.csfml-network)
-            (pkgs.csfml-audio)
-            (pkgs.sfml-window)
-            (pkgs.sfml-system)
-            (pkgs.sfml-graphics)
-            (pkgs.sfml-network)
-            (pkgs.sfml-audio)
+            (pkgs."csfml-window")
+            (pkgs."csfml-system")
+            (pkgs."csfml-graphics")
+            (pkgs."csfml-network")
+            (pkgs."csfml-audio")
+            (pkgs."sfml-window")
+            (pkgs."sfml-system")
+            (pkgs."sfml-graphics")
+            (pkgs."sfml-network")
+            (pkgs."sfml-audio")
           ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

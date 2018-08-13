@@ -34,7 +34,7 @@
           (hsPkgs.iteratee)
           (hsPkgs.mtl)
         ];
-        libs = [ (pkgs.sedna) ];
+        libs = [ (pkgs."sedna") ];
       };
     };
   }

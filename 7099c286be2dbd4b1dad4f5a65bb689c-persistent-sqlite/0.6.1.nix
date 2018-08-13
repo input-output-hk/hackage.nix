@@ -37,7 +37,7 @@
           (hsPkgs.containers)
           (hsPkgs.text)
         ];
-        libs = pkgs.lib.optional (_flags.systemlib) (pkgs.sqlite3);
+        libs = pkgs.lib.optional (_flags.systemlib) (pkgs."sqlite3");
       };
     };
   }

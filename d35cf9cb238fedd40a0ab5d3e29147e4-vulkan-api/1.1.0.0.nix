@@ -41,7 +41,7 @@
           (hsPkgs.base)
           (hsPkgs.ghc-prim)
         ];
-        libs = [ (pkgs.vulkan) ];
+        libs = [ (pkgs."vulkan") ];
       };
     };
   }

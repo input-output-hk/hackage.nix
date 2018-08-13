@@ -41,7 +41,7 @@
           (hsPkgs.containers)
           (hsPkgs.base)
         ];
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.vecLib);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."vecLib");
       };
       exes = {
         "llvm-align" = {

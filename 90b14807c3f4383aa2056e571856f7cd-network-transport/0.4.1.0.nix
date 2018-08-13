@@ -33,7 +33,7 @@
           (hsPkgs.hashable)
           (hsPkgs.transformers)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs.ghc-prim);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.ws2_32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."ws2_32");
       };
     };
   }

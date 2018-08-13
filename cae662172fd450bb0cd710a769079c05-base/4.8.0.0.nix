@@ -35,9 +35,9 @@
           (hsPkgs.ghc-prim)
         ] ++ pkgs.lib.optional (_flags.integer-simple) (hsPkgs.integer-simple)) ++ pkgs.lib.optional (_flags.integer-gmp) (hsPkgs.integer-gmp)) ++ pkgs.lib.optional (_flags.integer-gmp2) (hsPkgs.integer-gmp);
         libs = pkgs.lib.optionals (system.isWindows) [
-          (pkgs.wsock32)
-          (pkgs.user32)
-          (pkgs.shell32)
+          (pkgs."wsock32")
+          (pkgs."user32")
+          (pkgs."shell32")
         ];
       };
     };

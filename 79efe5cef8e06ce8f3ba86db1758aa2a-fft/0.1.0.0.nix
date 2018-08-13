@@ -31,7 +31,7 @@
           (hsPkgs.array)
           (hsPkgs.carray)
         ];
-        libs = [ (pkgs.fftw3) ];
+        libs = [ (pkgs."fftw3") ];
       };
     };
   }

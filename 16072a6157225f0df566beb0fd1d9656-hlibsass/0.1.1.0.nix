@@ -28,9 +28,9 @@
       "hlibsass" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.sass)
-          (pkgs.stdc++)
-          (pkgs.sass)
+          (pkgs."sass")
+          (pkgs."stdc++")
+          (pkgs."sass")
         ];
       };
       tests = {

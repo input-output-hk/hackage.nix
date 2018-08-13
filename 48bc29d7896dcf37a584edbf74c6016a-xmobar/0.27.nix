@@ -80,9 +80,9 @@
             (hsPkgs.http-types)
           ];
           libs = ([
-            (pkgs.Xrandr)
-            (pkgs.Xrender)
-          ] ++ pkgs.lib.optional (_flags.with_iwlib || _flags.all_extensions) (pkgs.iw)) ++ pkgs.lib.optional (_flags.with_xpm || _flags.all_extensions) (pkgs.Xpm);
+            (pkgs."Xrandr")
+            (pkgs."Xrender")
+          ] ++ pkgs.lib.optional (_flags.with_iwlib || _flags.all_extensions) (pkgs."iw")) ++ pkgs.lib.optional (_flags.with_xpm || _flags.all_extensions) (pkgs."Xpm");
         };
       };
       tests = {

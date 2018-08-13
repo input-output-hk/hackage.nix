@@ -34,14 +34,14 @@
         ];
         libs = if system.isOsx
           then [
-            (pkgs.panel)
-            (pkgs.ncurses)
-            (pkgs.pthread)
+            (pkgs."panel")
+            (pkgs."ncurses")
+            (pkgs."pthread")
           ]
           else [
-            (pkgs.panelw)
-            (pkgs.ncursesw)
-            (pkgs.pthread)
+            (pkgs."panelw")
+            (pkgs."ncursesw")
+            (pkgs."pthread")
           ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

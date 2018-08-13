@@ -36,12 +36,12 @@
           (hsPkgs.vector)
         ];
         libs = pkgs.lib.optionals (!system.isOsx) [
-          (pkgs.GLU)
-          (pkgs.GL)
-          (pkgs.m)
-          (pkgs.GLEW)
+          (pkgs."GLU")
+          (pkgs."GL")
+          (pkgs."m")
+          (pkgs."GLEW")
         ];
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.OpenGL);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."OpenGL");
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

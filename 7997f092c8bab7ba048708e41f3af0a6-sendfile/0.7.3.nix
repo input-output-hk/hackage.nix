@@ -37,7 +37,7 @@
             (hsPkgs.bytestring)
             (hsPkgs.network-bytestring)
           ])));
-        libs = pkgs.lib.optional (system.isWindows && !_flags.portable) (pkgs.mswsock);
+        libs = pkgs.lib.optional (system.isWindows && !_flags.portable) (pkgs."mswsock");
       };
     };
   }

@@ -27,7 +27,7 @@
     components = {
       "hapstone" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.capstone) ];
+        libs = [ (pkgs."capstone") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

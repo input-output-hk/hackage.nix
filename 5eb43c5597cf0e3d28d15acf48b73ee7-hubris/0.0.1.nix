@@ -40,7 +40,7 @@
           (hsPkgs.haskell-src-meta)
           (hsPkgs.hint)
         ];
-        libs = [ (pkgs.ruby) ];
+        libs = [ (pkgs."ruby") ];
       };
       exes = {
         "Hubrify" = {
@@ -59,7 +59,7 @@
             (hsPkgs.haskell-src-meta)
             (hsPkgs.hint)
           ];
-          libs = [ (pkgs.ruby) ];
+          libs = [ (pkgs."ruby") ];
         };
       };
     };

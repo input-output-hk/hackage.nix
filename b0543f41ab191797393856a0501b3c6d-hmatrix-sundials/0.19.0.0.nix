@@ -35,7 +35,7 @@
           (hsPkgs.hmatrix)
         ];
         libs = [
-          (pkgs.sundials_arkode)
+          (pkgs."sundials_arkode")
         ];
       };
       tests = {
@@ -54,7 +54,7 @@
             (hsPkgs.hspec)
           ];
           libs = [
-            (pkgs.sundials_arkode)
+            (pkgs."sundials_arkode")
           ];
         };
       };

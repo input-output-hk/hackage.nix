@@ -33,7 +33,7 @@
           (hsPkgs.unix)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.fuse) ];
+        libs = [ (pkgs."fuse") ];
       };
       exes = {
         "HelloFS" = {

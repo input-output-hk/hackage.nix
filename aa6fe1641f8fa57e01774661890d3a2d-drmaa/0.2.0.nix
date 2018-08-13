@@ -31,7 +31,7 @@
           (hsPkgs.inline-c)
           (hsPkgs.directory)
         ];
-        libs = [ (pkgs.drmaa) ];
+        libs = [ (pkgs."drmaa") ];
       };
     };
   }

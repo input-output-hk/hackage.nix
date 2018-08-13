@@ -33,8 +33,8 @@
           (hsPkgs.managed)
         ];
         libs = [
-          (pkgs.mesos)
-          (pkgs.stdc++)
+          (pkgs."mesos")
+          (pkgs."stdc++")
         ];
       };
       exes = {
@@ -45,8 +45,8 @@
             (hsPkgs.bytestring)
           ];
           libs = [
-            (pkgs.mesos)
-            (pkgs.stdc++)
+            (pkgs."mesos")
+            (pkgs."stdc++")
           ];
         };
         "test-framework" = {
@@ -57,8 +57,8 @@
             (hsPkgs.lens)
           ];
           libs = [
-            (pkgs.mesos)
-            (pkgs.stdc++)
+            (pkgs."mesos")
+            (pkgs."stdc++")
           ];
         };
       };

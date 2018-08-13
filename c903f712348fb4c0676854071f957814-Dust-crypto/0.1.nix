@@ -46,7 +46,7 @@
           (hsPkgs.cryptohash)
           (hsPkgs.threefish)
         ];
-        libs = pkgs.lib.optional (system.isLinux || system.isOsx) (pkgs.crypto);
+        libs = pkgs.lib.optional (system.isLinux || system.isOsx) (pkgs."crypto");
       };
       tests = {
         "crypto" = {

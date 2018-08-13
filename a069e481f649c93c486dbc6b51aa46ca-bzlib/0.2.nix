@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.fps)
         ];
-        libs = [ (pkgs.bz2) ];
+        libs = [ (pkgs."bz2") ];
       };
     };
   }

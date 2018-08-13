@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.haskell98)
         ];
-        libs = [ (pkgs.OgreMain) ];
+        libs = [ (pkgs."OgreMain") ];
         pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.OGRE);
       };
     };

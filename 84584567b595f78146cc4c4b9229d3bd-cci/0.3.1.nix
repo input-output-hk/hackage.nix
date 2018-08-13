@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.cci) ];
+        libs = [ (pkgs."cci") ];
       };
       exes = {
         "cci-example-client" = {

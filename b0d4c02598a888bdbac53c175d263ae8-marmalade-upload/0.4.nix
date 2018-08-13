@@ -44,8 +44,8 @@
             (hsPkgs.http-client-multipart)
           ] ++ pkgs.lib.optional (!system.isOsx) (hsPkgs.udbus);
           frameworks = pkgs.lib.optionals (system.isOsx) [
-            (pkgs.Security)
-            (pkgs.CoreFoundation)
+            (pkgs."Security")
+            (pkgs."CoreFoundation")
           ];
         };
       };

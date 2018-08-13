@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.SDL)
         ];
-        libs = [ (pkgs.SDL_ttf) ];
+        libs = [ (pkgs."SDL_ttf") ];
       };
     };
   }

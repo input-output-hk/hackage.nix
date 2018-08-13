@@ -30,9 +30,9 @@
       "ghc-prim" = {
         depends  = [ (hsPkgs.rts) ];
         libs = pkgs.lib.optionals (system.isWindows) [
-          (pkgs.user32)
-          (pkgs.mingw32)
-          (pkgs.mingwex)
+          (pkgs."user32")
+          (pkgs."mingw32")
+          (pkgs."mingwex")
         ];
       };
     };

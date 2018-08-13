@@ -36,7 +36,7 @@
           (hsPkgs.time)
           (hsPkgs.directory)
         ];
-        libs = pkgs.lib.optional (!_flags.builtin-sqlite3) (pkgs.sqlite3);
+        libs = pkgs.lib.optional (!_flags.builtin-sqlite3) (pkgs."sqlite3");
       };
     };
   }

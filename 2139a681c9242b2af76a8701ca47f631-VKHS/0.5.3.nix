@@ -55,7 +55,7 @@
       };
       exes = {
         "vknews" = {
-          libs = [ (pkgs.curl) ];
+          libs = [ (pkgs."curl") ];
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs)
           ];

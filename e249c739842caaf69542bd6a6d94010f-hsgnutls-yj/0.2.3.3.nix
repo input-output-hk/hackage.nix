@@ -33,8 +33,8 @@
           (hsPkgs.bytestring)
         ];
         libs = [
-          (pkgs.gnutls)
-          (pkgs.gcrypt)
+          (pkgs."gnutls")
+          (pkgs."gcrypt")
         ];
       };
     };

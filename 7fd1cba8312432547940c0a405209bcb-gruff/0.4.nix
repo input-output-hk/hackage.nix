@@ -56,7 +56,7 @@
             (hsPkgs.bytestring)
             (hsPkgs.mtl)
           ] ++ pkgs.lib.optional (_flags.mpfr) (hsPkgs.hmpfr);
-          libs = [ (pkgs.stdc++) ];
+          libs = [ (pkgs."stdc++") ];
         };
       };
     };

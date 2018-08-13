@@ -41,8 +41,8 @@
           (hsPkgs.setenv)
         ];
         libs = [
-          (pkgs.LLVM-3.2svn)
-          (pkgs.stdc++)
+          (pkgs."LLVM-3.2svn")
+          (pkgs."stdc++")
         ];
       };
       tests = {

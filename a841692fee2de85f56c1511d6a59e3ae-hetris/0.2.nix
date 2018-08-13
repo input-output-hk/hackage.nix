@@ -34,7 +34,7 @@
             (hsPkgs.old-time)
             (hsPkgs.hscurses)
           ];
-          libs = [ (pkgs.curses) ];
+          libs = [ (pkgs."curses") ];
         };
       };
     };

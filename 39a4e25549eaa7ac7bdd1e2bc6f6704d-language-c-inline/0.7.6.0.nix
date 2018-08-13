@@ -46,7 +46,7 @@
             (hsPkgs.language-c-inline)
           ];
           frameworks = [
-            (pkgs.Foundation)
+            (pkgs."Foundation")
           ];
         };
       };

@@ -37,7 +37,7 @@
           (hsPkgs.hsyslog)
         ];
         libs = [
-          (pkgs.systemd-journal)
+          (pkgs."systemd-journal")
         ];
       };
     };

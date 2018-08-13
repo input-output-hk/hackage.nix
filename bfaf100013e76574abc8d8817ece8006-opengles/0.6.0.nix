@@ -38,12 +38,12 @@
           (hsPkgs.packer)
         ];
         libs = [
-          (pkgs.EGL)
-          (pkgs.GLESv2)
+          (pkgs."EGL")
+          (pkgs."GLESv2")
         ];
         frameworks = pkgs.lib.optionals (system.isIos) [
-          (pkgs.QuartzCore)
-          (pkgs.OpenGLES)
+          (pkgs."QuartzCore")
+          (pkgs."OpenGLES")
         ];
       };
     };

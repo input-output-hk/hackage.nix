@@ -34,7 +34,7 @@
           (hsPkgs.HROOT-core)
           (hsPkgs.HROOT-hist)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

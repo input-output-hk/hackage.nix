@@ -31,7 +31,7 @@
           (hsPkgs.transformers)
           (hsPkgs.base)
         ];
-        libs = [ (pkgs.lapack) ];
+        libs = [ (pkgs."lapack") ];
       };
     };
   }

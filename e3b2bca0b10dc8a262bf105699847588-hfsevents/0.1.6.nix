@@ -34,8 +34,8 @@
           (hsPkgs.mtl)
           (hsPkgs.text)
         ];
-        libs = [ (pkgs.pthread) ];
-        frameworks = [ (pkgs.Cocoa) ];
+        libs = [ (pkgs."pthread") ];
+        frameworks = [ (pkgs."Cocoa") ];
       };
     };
   }

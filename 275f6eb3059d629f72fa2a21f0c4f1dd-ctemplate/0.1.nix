@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.ctemplate) ];
+        libs = [ (pkgs."ctemplate") ];
       };
     };
   }

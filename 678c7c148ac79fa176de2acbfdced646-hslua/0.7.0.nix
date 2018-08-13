@@ -43,8 +43,8 @@
           (hsPkgs.text)
         ];
         libs = pkgs.lib.optionals (_flags.system-lua || _flags.luajit || _flags.lua501 || _flags.lua502) (if _flags.luajit
-          then pkgs.lib.optional (!_flags.use-pkgconfig) (pkgs.luajit-5.1)
-          else pkgs.lib.optional (!_flags.use-pkgconfig) (pkgs.lua));
+          then pkgs.lib.optional (!_flags.use-pkgconfig) (pkgs."luajit-5.1")
+          else pkgs.lib.optional (!_flags.use-pkgconfig) (pkgs."lua"));
         pkgconfig = pkgs.lib.optionals (_flags.system-lua || _flags.luajit || _flags.lua501 || _flags.lua502) (if _flags.luajit
           then pkgs.lib.optional (_flags.use-pkgconfig) (pkgconfPkgs.luajit)
           else pkgs.lib.optionals (_flags.use-pkgconfig) (if _flags.lua501

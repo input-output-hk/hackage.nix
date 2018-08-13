@@ -28,16 +28,16 @@
       "vrpn" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.vrpn)
-          (pkgs.stdc++)
+          (pkgs."vrpn")
+          (pkgs."stdc++")
         ];
       };
       exes = {
         "test-vrpn" = {
           depends  = [ (hsPkgs.base) ];
           libs = [
-            (pkgs.vrpn)
-            (pkgs.stdc++)
+            (pkgs."vrpn")
+            (pkgs."stdc++")
           ];
         };
       };

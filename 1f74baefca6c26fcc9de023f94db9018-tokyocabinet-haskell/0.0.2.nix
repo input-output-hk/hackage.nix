@@ -31,7 +31,9 @@
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
         ];
-        libs = [ (pkgs.tokyocabinet) ];
+        libs = [
+          (pkgs."tokyocabinet")
+        ];
       };
     };
   }

@@ -39,7 +39,7 @@
           (hsPkgs.ghc-prim)
           (hsPkgs.text)
         ]) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.integer-gmp) (hsPkgs.integer-gmp);
-        libs = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "6.8")) (pkgs.lib.optional (system.isWindows) (pkgs.advapi32));
+        libs = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "6.8")) (pkgs.lib.optional (system.isWindows) (pkgs."advapi32"));
       };
       exes = {
         "hashable-examples" = {
@@ -79,7 +79,7 @@
             (hsPkgs.ghc-prim)
             (hsPkgs.text)
           ]) ++ pkgs.lib.optional (compiler.isGhc && true && _flags.integer-gmp) (hsPkgs.integer-gmp);
-          libs = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "6.8")) (pkgs.lib.optional (system.isWindows) (pkgs.advapi32));
+          libs = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "6.8")) (pkgs.lib.optional (system.isWindows) (pkgs."advapi32"));
         };
       };
     };

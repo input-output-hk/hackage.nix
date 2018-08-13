@@ -38,7 +38,7 @@
           (hsPkgs.x509)
           (hsPkgs.x509-store)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.Crypt32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."Crypt32");
       };
     };
   }

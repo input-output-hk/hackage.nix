@@ -38,7 +38,7 @@
           (hsPkgs.sdl2)
           (hsPkgs.vector)
         ];
-        libs = pkgs.lib.optional (!_flags.use-pkg-config) (pkgs.tcod);
+        libs = pkgs.lib.optional (!_flags.use-pkg-config) (pkgs."tcod");
         pkgconfig = pkgs.lib.optional (_flags.use-pkg-config) (pkgconfPkgs.libtcod);
       };
       exes = {

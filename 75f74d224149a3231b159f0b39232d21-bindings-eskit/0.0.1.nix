@@ -31,7 +31,7 @@
           (hsPkgs.bindings-DSL)
           (hsPkgs.array)
         ];
-        libs = [ (pkgs.eskit) ];
+        libs = [ (pkgs."eskit") ];
         pkgconfig = [
           (pkgconfPkgs.eskit)
         ];

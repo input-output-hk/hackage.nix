@@ -32,8 +32,8 @@
           (hsPkgs.ghc-prim)
         ] ++ [ (hsPkgs.base) ];
         libs = [
-          (pkgs.ole32)
-          (pkgs.oleaut32)
+          (pkgs."ole32")
+          (pkgs."oleaut32")
         ];
       };
     };

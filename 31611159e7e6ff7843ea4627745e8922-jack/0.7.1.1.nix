@@ -41,7 +41,7 @@
           (hsPkgs.array)
           (hsPkgs.base)
         ];
-        libs = pkgs.lib.optional (!_flags.pkgconfig) (pkgs.jack);
+        libs = pkgs.lib.optional (!_flags.pkgconfig) (pkgs."jack");
         pkgconfig = pkgs.lib.optional (_flags.pkgconfig) (pkgconfPkgs.jack);
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

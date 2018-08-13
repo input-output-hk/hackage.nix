@@ -31,7 +31,7 @@
           (hsPkgs.hsql)
           (hsPkgs.old-time)
         ];
-        libs = [ (pkgs.odbc) ];
+        libs = [ (pkgs."odbc") ];
       };
     };
   }

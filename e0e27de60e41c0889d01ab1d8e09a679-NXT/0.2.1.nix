@@ -33,7 +33,7 @@
           (hsPkgs.time)
           (hsPkgs.serialport)
         ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-        libs = pkgs.lib.optional (system.isLinux) (pkgs.bluetooth);
+        libs = pkgs.lib.optional (system.isLinux) (pkgs."bluetooth");
       };
       exes = {
         "nxt-shutdown" = {

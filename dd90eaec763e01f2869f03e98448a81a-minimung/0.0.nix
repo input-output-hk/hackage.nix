@@ -34,8 +34,8 @@
             (hsPkgs.GLUT)
           ];
           frameworks = [
-            (pkgs.QuickTime)
-            (pkgs.Carbon)
+            (pkgs."QuickTime")
+            (pkgs."Carbon")
           ];
         };
       };

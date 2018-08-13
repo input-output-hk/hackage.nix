@@ -32,7 +32,7 @@
           (hsPkgs.data-default-class)
           (hsPkgs.template-haskell)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
       tests = {
         "test" = {

@@ -31,9 +31,9 @@
           (hsPkgs.data-default)
         ];
         libs = [
-          (pkgs.X11)
-          (pkgs.Xrandr)
-          (pkgs.Xext)
+          (pkgs."X11")
+          (pkgs."Xrandr")
+          (pkgs."Xext")
         ];
       };
     };

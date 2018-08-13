@@ -31,13 +31,13 @@
           (hsPkgs.HGamer3D-Data)
         ];
         libs = if system.isWindows
-          then [ (pkgs.hg3dsfml040) ]
+          then [ (pkgs."hg3dsfml040") ]
           else [
-            (pkgs.hg3dsfml040)
-            (pkgs.sfml-audio)
-            (pkgs.sfml-system)
-            (pkgs.sfml-window)
-            (pkgs.sfml-network)
+            (pkgs."hg3dsfml040")
+            (pkgs."sfml-audio")
+            (pkgs."sfml-system")
+            (pkgs."sfml-window")
+            (pkgs."sfml-network")
           ];
       };
     };

@@ -32,7 +32,7 @@
           (hsPkgs.storable-complex)
           (hsPkgs.QuickCheck)
         ];
-        libs = [ (pkgs.blas) ];
+        libs = [ (pkgs."blas") ];
       };
     };
   }

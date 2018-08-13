@@ -39,7 +39,7 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
         ] ++ pkgs.lib.optional (!_flags.no-linear) (hsPkgs.linear);
-        libs = [ (pkgs.SDL2) ];
+        libs = [ (pkgs."SDL2") ];
         pkgconfig = [
           (pkgconfPkgs.sdl2)
         ];

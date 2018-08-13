@@ -46,8 +46,8 @@
           (hsPkgs.unordered-containers)
         ];
         libs = if system.isWindows
-          then [ (pkgs.gmp-10) ]
-          else [ (pkgs.gmp) ];
+          then [ (pkgs."gmp-10") ]
+          else [ (pkgs."gmp") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

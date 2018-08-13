@@ -31,7 +31,7 @@
           (hsPkgs.alsa-core)
           (hsPkgs.unix)
         ];
-        libs = [ (pkgs.asound) ];
+        libs = [ (pkgs."asound") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

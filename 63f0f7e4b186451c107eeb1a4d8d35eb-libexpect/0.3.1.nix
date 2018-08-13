@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.unix)
         ];
-        libs = [ (pkgs.expect) ];
+        libs = [ (pkgs."expect") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

@@ -40,25 +40,25 @@
           (hsPkgs.template-haskell)
         ];
         libs = pkgs.lib.optionals (system.isLinux || system.isFreebsd) [
-          (pkgs.GL)
-          (pkgs.X11)
-          (pkgs.Xi)
-          (pkgs.Xrandr)
-          (pkgs.Xxf86vm)
-          (pkgs.Xcursor)
-          (pkgs.Xinerama)
-          (pkgs.pthread)
+          (pkgs."GL")
+          (pkgs."X11")
+          (pkgs."Xi")
+          (pkgs."Xrandr")
+          (pkgs."Xxf86vm")
+          (pkgs."Xcursor")
+          (pkgs."Xinerama")
+          (pkgs."pthread")
         ] ++ pkgs.lib.optionals (system.isWindows) [
-          (pkgs.opengl32)
-          (pkgs.Gdi32)
+          (pkgs."opengl32")
+          (pkgs."Gdi32")
         ];
         frameworks = pkgs.lib.optionals (system.isOsx) [
-          (pkgs.AGL)
-          (pkgs.Cocoa)
-          (pkgs.OpenGL)
-          (pkgs.IOKit)
-          (pkgs.CoreFoundation)
-          (pkgs.CoreVideo)
+          (pkgs."AGL")
+          (pkgs."Cocoa")
+          (pkgs."OpenGL")
+          (pkgs."IOKit")
+          (pkgs."CoreFoundation")
+          (pkgs."CoreVideo")
         ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
@@ -74,12 +74,12 @@
             (hsPkgs.test-framework-hunit)
           ];
           frameworks = [
-            (pkgs.AGL)
-            (pkgs.Cocoa)
-            (pkgs.OpenGL)
-            (pkgs.IOKit)
-            (pkgs.CoreFoundation)
-            (pkgs.CoreVideo)
+            (pkgs."AGL")
+            (pkgs."Cocoa")
+            (pkgs."OpenGL")
+            (pkgs."IOKit")
+            (pkgs."CoreFoundation")
+            (pkgs."CoreVideo")
           ];
         };
       };

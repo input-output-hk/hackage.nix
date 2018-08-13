@@ -32,7 +32,7 @@
           (hsPkgs.utf8-string)
           (hsPkgs.base)
         ];
-        libs = [ (pkgs.tag_c) ];
+        libs = [ (pkgs."tag_c") ];
         pkgconfig = [
           (pkgconfPkgs.taglib_c)
         ];

@@ -32,7 +32,7 @@
           (hsPkgs.mtl)
           (hsPkgs.array)
         ];
-        libs = [ (pkgs.xenctrl) ];
+        libs = [ (pkgs."xenctrl") ];
       };
     };
   }

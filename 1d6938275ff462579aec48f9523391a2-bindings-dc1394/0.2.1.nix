@@ -30,7 +30,7 @@
           (hsPkgs.bindings-DSL)
           (hsPkgs.base)
         ];
-        libs = [ (pkgs.dc1394) ];
+        libs = [ (pkgs."dc1394") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

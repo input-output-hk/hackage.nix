@@ -32,8 +32,8 @@
           (hsPkgs.vector)
         ];
         libs = [
-          (pkgs.stdc++)
-          (pkgs.pthread)
+          (pkgs."stdc++")
+          (pkgs."pthread")
         ];
       };
       tests = {

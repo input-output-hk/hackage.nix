@@ -29,7 +29,7 @@
     components = {
       "zxcvbn-c" = {
         depends  = [ (hsPkgs.base) ];
-        libs = pkgs.lib.optional (_flags.use-shared-lib) (pkgs.zxcvbn);
+        libs = pkgs.lib.optional (_flags.use-shared-lib) (pkgs."zxcvbn");
       };
     };
   }

@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.odpic) ];
+        libs = [ (pkgs."odpic") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

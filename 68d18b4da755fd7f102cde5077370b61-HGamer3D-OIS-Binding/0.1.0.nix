@@ -33,8 +33,8 @@
           (hsPkgs.haskell98)
         ];
         libs = [
-          (pkgs.stdc++.dll)
-          (pkgs.HGamer3DOIS)
+          (pkgs."stdc++.dll")
+          (pkgs."HGamer3DOIS")
         ];
       };
     };

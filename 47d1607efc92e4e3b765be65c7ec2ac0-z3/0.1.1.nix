@@ -32,9 +32,9 @@
           (hsPkgs.mtl)
         ];
         libs = [
-          (pkgs.gomp)
-          (pkgs.z3)
-          (pkgs.gomp)
+          (pkgs."gomp")
+          (pkgs."z3")
+          (pkgs."gomp")
         ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

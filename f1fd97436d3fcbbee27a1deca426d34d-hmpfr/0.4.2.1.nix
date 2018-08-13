@@ -33,7 +33,7 @@
         ] ++ (if _flags.use-integer-simple
           then [ (hsPkgs.integer-simple) ]
           else [ (hsPkgs.integer-gmp) ]);
-        libs = [ (pkgs.mpfr) ];
+        libs = [ (pkgs."mpfr") ];
       };
     };
   }

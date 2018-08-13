@@ -72,8 +72,8 @@
             (hsPkgs.terminfo)
           ]);
         libs = pkgs.lib.optionals (_flags.c-runtime) [
-          (pkgs.pgf)
-          (pkgs.gu)
+          (pkgs."pgf")
+          (pkgs."gu")
         ];
         build-tools = pkgs.lib.optional (_flags.c-runtime) (hsPkgs.buildPackages.hsc2hs) ++ [
           (hsPkgs.buildPackages.happy)

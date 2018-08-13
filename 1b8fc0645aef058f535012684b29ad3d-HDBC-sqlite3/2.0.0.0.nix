@@ -39,7 +39,7 @@
             (hsPkgs.bytestring)
           ]
           else [ (hsPkgs.base) ]);
-        libs = [ (pkgs.sqlite3) ];
+        libs = [ (pkgs."sqlite3") ];
       };
       exes = {
         "runtests" = {
@@ -53,7 +53,7 @@
             (hsPkgs.time)
             (hsPkgs.old-locale)
           ];
-          libs = [ (pkgs.sqlite3) ];
+          libs = [ (pkgs."sqlite3") ];
         };
       };
     };

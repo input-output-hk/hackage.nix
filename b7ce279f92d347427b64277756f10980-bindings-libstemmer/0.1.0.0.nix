@@ -32,7 +32,7 @@
           (hsPkgs.transformers)
           (hsPkgs.resourcet)
         ];
-        libs = [ (pkgs.stemmer) ];
+        libs = [ (pkgs."stemmer") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

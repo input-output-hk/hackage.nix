@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.OpenAL)
         ];
-        libs = [ (pkgs.alure) ];
+        libs = [ (pkgs."alure") ];
       };
     };
   }

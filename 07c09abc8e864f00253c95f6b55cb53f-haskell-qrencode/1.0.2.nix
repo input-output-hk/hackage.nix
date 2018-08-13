@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.qrencode) ];
+        libs = [ (pkgs."qrencode") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

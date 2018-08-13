@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
-        libs = [ (pkgs.pthread) ];
+        libs = [ (pkgs."pthread") ];
       };
       tests = {
         "test-tls" = {

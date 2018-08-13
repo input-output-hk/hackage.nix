@@ -34,7 +34,7 @@
           (hsPkgs.vector)
           (hsPkgs.unordered-containers)
         ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
       tests = {
         "tests" = {

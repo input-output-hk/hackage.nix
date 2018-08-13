@@ -31,7 +31,7 @@
           (hsPkgs.unix)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.curses) ];
+        libs = [ (pkgs."curses") ];
       };
     };
   }

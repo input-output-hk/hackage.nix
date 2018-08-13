@@ -34,7 +34,7 @@
           (hsPkgs.process)
           (hsPkgs.type-level)
         ];
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.vecLib);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."vecLib");
       };
     };
   }

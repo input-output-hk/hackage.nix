@@ -37,8 +37,8 @@
           (hsPkgs.binary)
         ];
         libs = pkgs.lib.optionals (!_flags.have_urandom) (if _flags.have_ssl
-          then [ (pkgs.ssl) ]
-          else pkgs.lib.optional (_flags.have_win32_crypt) (pkgs.advapi32));
+          then [ (pkgs."ssl") ]
+          else pkgs.lib.optional (_flags.have_win32_crypt) (pkgs."advapi32"));
       };
     };
   }

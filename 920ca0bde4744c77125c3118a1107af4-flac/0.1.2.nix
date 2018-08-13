@@ -42,7 +42,7 @@
           (hsPkgs.vector)
           (hsPkgs.wave)
         ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        libs = [ (pkgs.FLAC) ];
+        libs = [ (pkgs."FLAC") ];
       };
       tests = {
         "tests" = {

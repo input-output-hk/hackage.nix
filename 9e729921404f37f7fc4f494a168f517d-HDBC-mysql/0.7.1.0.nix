@@ -36,9 +36,9 @@
           (hsPkgs.utf8-string)
         ];
         libs = [
-          (pkgs.z)
-          (pkgs.ssl)
-          (pkgs.mysqlclient)
+          (pkgs."z")
+          (pkgs."ssl")
+          (pkgs."mysqlclient")
         ];
       };
     };

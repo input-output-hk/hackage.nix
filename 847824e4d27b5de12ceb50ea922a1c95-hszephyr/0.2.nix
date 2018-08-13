@@ -33,8 +33,8 @@
           (hsPkgs.time)
         ];
         libs = [
-          (pkgs.zephyr)
-          (pkgs.com_err)
+          (pkgs."zephyr")
+          (pkgs."com_err")
         ];
       };
     };

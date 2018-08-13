@@ -34,7 +34,7 @@
           (hsPkgs.resourcet)
           (hsPkgs.time)
         ];
-        libs = [ (pkgs.odpic) ];
+        libs = [ (pkgs."odpic") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

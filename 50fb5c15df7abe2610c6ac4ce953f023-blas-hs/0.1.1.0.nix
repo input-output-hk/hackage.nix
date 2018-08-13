@@ -36,16 +36,16 @@
           (hsPkgs.base)
           (hsPkgs.storable-complex)
         ];
-        libs = pkgs.lib.optional (_flags.cblas) (pkgs.cblas) ++ (if _flags.mkl
+        libs = pkgs.lib.optional (_flags.cblas) (pkgs."cblas") ++ (if _flags.mkl
           then [
-            (pkgs.mkl_rt)
-            (pkgs.pthread)
-            (pkgs.m)
+            (pkgs."mkl_rt")
+            (pkgs."pthread")
+            (pkgs."m")
           ]
           else if _flags.openblas
-            then [ (pkgs.openblas) ]
-            else pkgs.lib.optionals (!((system.isOsx || system.isOsx) && !_flags.no-accelerate)) (pkgs.lib.optional (!_flags.no-netlib) (pkgs.blas)));
-        frameworks = pkgs.lib.optionals (!_flags.mkl) (pkgs.lib.optionals (!_flags.openblas) (pkgs.lib.optional ((system.isOsx || system.isOsx) && !_flags.no-accelerate) (pkgs.Accelerate)));
+            then [ (pkgs."openblas") ]
+            else pkgs.lib.optionals (!((system.isOsx || system.isOsx) && !_flags.no-accelerate)) (pkgs.lib.optional (!_flags.no-netlib) (pkgs."blas")));
+        frameworks = pkgs.lib.optionals (!_flags.mkl) (pkgs.lib.optionals (!_flags.openblas) (pkgs.lib.optional ((system.isOsx || system.isOsx) && !_flags.no-accelerate) (pkgs."Accelerate")));
       };
       tests = {
         "test" = {

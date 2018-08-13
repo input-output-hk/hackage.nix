@@ -33,7 +33,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
         ];
-        libs = [ (pkgs.tag_c) ];
+        libs = [ (pkgs."tag_c") ];
       };
       tests = {
         "tests" = {

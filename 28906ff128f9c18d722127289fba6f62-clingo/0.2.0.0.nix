@@ -40,7 +40,7 @@
           (hsPkgs.StateVar)
           (hsPkgs.hashable)
         ];
-        libs = [ (pkgs.clingo) ];
+        libs = [ (pkgs."clingo") ];
       };
       exes = {
         "version" = {

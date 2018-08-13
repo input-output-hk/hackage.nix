@@ -33,7 +33,7 @@
           (hsPkgs.conduit)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.lzma) ];
+        libs = [ (pkgs."lzma") ];
       };
     };
   }

@@ -37,7 +37,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.unix)
         ];
-        libs = [ (pkgs.ssh2) ];
+        libs = [ (pkgs."ssh2") ];
         pkgconfig = [
           (pkgconfPkgs.libssh2)
         ];

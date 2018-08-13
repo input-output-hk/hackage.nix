@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.io-streams)
         ];
-        libs = [ (pkgs.lzma) ];
+        libs = [ (pkgs."lzma") ];
       };
       tests = {
         "lzma-streams-test" = {

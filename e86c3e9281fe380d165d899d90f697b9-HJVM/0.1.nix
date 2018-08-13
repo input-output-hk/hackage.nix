@@ -36,7 +36,7 @@
           (hsPkgs.parsec)
           (hsPkgs.haskell-src-exts)
         ];
-        libs = [ (pkgs.jvm) ];
+        libs = [ (pkgs."jvm") ];
       };
       tests = {
         "hjvm-test" = {

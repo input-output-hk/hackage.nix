@@ -36,8 +36,8 @@
             (hsPkgs.mtl)
           ];
           libs = [
-            (pkgs.IL)
-            (pkgs.pthread)
+            (pkgs."IL")
+            (pkgs."pthread")
           ];
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs)

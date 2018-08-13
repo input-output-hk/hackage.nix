@@ -36,8 +36,8 @@
           (hsPkgs.bytestring)
         ];
         libs = if system.isWindows || system.isWindows
-          then [ (pkgs.odbc32) ]
-          else [ (pkgs.odbc) ];
+          then [ (pkgs."odbc32") ]
+          else [ (pkgs."odbc") ];
       };
       exes = {
         "runtests" = {
@@ -52,8 +52,8 @@
             (hsPkgs.convertible)
           ];
           libs = if system.isWindows || system.isWindows
-            then [ (pkgs.odbc32) ]
-            else [ (pkgs.odbc) ];
+            then [ (pkgs."odbc32") ]
+            else [ (pkgs."odbc") ];
         };
       };
     };

@@ -32,7 +32,7 @@
           (hsPkgs.filepath)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.genders) ];
+        libs = [ (pkgs."genders") ];
       };
       tests = {
         "tests" = {

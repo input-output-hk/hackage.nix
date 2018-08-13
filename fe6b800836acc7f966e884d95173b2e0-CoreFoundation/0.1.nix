@@ -41,7 +41,7 @@
           (hsPkgs.deepseq)
         ];
         frameworks = [
-          (pkgs.CoreFoundation)
+          (pkgs."CoreFoundation")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

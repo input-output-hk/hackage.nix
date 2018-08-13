@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.integer)
         ];
-        libs = [ (pkgs.mpfr) ];
+        libs = [ (pkgs."mpfr") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

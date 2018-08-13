@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
         ];
-        libs = pkgs.lib.optional (!system.isWindows) (pkgs.OpenCL);
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."OpenCL");
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

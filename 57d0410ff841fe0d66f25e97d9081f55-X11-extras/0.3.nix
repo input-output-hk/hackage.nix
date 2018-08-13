@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.X11)
         ];
-        libs = [ (pkgs.X11) ];
+        libs = [ (pkgs."X11") ];
       };
     };
   }

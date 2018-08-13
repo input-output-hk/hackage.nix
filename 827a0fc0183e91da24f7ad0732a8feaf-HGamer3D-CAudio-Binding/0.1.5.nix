@@ -32,7 +32,7 @@
           (hsPkgs.haskell98)
         ];
         libs = [
-          (pkgs.HGamer3DCAudio015)
+          (pkgs."HGamer3DCAudio015")
         ];
       };
     };

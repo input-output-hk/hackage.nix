@@ -38,14 +38,14 @@
         ];
         libs = pkgs.lib.optionals (!_flags.use-pkgconfig) (if system.isOsx || _flags.force-narrow-library
           then [
-            (pkgs.panel)
-            (pkgs.ncurses)
-            (pkgs.pthread)
+            (pkgs."panel")
+            (pkgs."ncurses")
+            (pkgs."pthread")
           ]
           else [
-            (pkgs.panelw)
-            (pkgs.ncursesw)
-            (pkgs.pthread)
+            (pkgs."panelw")
+            (pkgs."ncursesw")
+            (pkgs."pthread")
           ]);
         pkgconfig = pkgs.lib.optionals (_flags.use-pkgconfig) (if _flags.force-narrow-library
           then [

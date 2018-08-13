@@ -31,7 +31,7 @@
           (hsPkgs.vector)
           (hsPkgs.profunctors)
         ];
-        libs = [ (pkgs.sodium) ];
+        libs = [ (pkgs."sodium") ];
       };
       tests = {
         "tests" = {

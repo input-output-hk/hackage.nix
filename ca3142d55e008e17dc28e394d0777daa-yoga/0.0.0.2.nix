@@ -33,7 +33,7 @@
           (hsPkgs.ieee754)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

@@ -33,8 +33,8 @@
           (hsPkgs.storable-complex)
         ];
         libs = if system.isWindows
-          then [ (pkgs.fftw3-3) ]
-          else [ (pkgs.fftw3) ];
+          then [ (pkgs."fftw3-3") ]
+          else [ (pkgs."fftw3") ];
       };
     };
   }

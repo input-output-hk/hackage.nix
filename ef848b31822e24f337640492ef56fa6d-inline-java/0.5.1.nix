@@ -60,7 +60,7 @@
             (hsPkgs.singletons)
             (hsPkgs.text)
           ];
-          libs = [ (pkgs.pthread) ];
+          libs = [ (pkgs."pthread") ];
         };
       };
     };

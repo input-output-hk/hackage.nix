@@ -31,10 +31,10 @@
           (hsPkgs.bytestring)
         ];
         libs = [
-          (pkgs.pq)
+          (pkgs."pq")
         ] ++ pkgs.lib.optionals (system.isOpenbsd) [
-          (pkgs.crypto)
-          (pkgs.ssl)
+          (pkgs."crypto")
+          (pkgs."ssl")
         ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

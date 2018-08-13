@@ -38,7 +38,7 @@
             (hsPkgs.base)
             (hsPkgs.inline-c-cpp)
           ];
-          libs = [ (pkgs.stdc++) ];
+          libs = [ (pkgs."stdc++") ];
         };
       };
     };

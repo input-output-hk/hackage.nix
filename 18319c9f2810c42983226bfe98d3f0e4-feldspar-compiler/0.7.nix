@@ -45,7 +45,7 @@
           (hsPkgs.storable-tuple)
           (hsPkgs.storable-record)
         ];
-        libs = pkgs.lib.optional (system.isLinux) (pkgs.gcc_s);
+        libs = pkgs.lib.optional (system.isLinux) (pkgs."gcc_s");
       };
       tests = {
         "regression" = {

@@ -27,7 +27,7 @@
     components = {
       "ll-picosat" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.picosat) ];
+        libs = [ (pkgs."picosat") ];
       };
     };
   }

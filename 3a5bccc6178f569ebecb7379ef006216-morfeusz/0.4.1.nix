@@ -34,7 +34,7 @@
           (hsPkgs.mtl)
           (hsPkgs.directory)
         ];
-        libs = [ (pkgs.morfeusz) ];
+        libs = [ (pkgs."morfeusz") ];
       };
     };
   }

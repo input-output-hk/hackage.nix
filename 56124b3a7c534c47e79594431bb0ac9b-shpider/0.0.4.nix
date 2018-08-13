@@ -36,7 +36,7 @@
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.curl) ];
+        libs = [ (pkgs."curl") ];
       };
     };
   }

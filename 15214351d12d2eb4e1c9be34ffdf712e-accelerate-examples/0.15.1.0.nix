@@ -92,7 +92,7 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.random)
           ];
-          libs = [ (pkgs.stdc++) ];
+          libs = [ (pkgs."stdc++") ];
         };
         "accelerate-smvm" = {
           depends  = pkgs.lib.optionals (!(!_flags.smvm)) [

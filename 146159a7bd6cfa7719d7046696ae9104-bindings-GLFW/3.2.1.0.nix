@@ -40,25 +40,25 @@
           (hsPkgs.bindings-DSL)
         ];
         libs = pkgs.lib.optionals (!_flags.system-glfw) (pkgs.lib.optionals (system.isLinux || system.isFreebsd) [
-          (pkgs.GL)
-          (pkgs.X11)
-          (pkgs.Xi)
-          (pkgs.Xrandr)
-          (pkgs.Xxf86vm)
-          (pkgs.Xcursor)
-          (pkgs.Xinerama)
-          (pkgs.pthread)
+          (pkgs."GL")
+          (pkgs."X11")
+          (pkgs."Xi")
+          (pkgs."Xrandr")
+          (pkgs."Xxf86vm")
+          (pkgs."Xcursor")
+          (pkgs."Xinerama")
+          (pkgs."pthread")
         ] ++ pkgs.lib.optionals (system.isWindows) [
-          (pkgs.opengl32)
-          (pkgs.Gdi32)
+          (pkgs."opengl32")
+          (pkgs."Gdi32")
         ]);
         frameworks = pkgs.lib.optionals (!_flags.system-glfw) (pkgs.lib.optionals (system.isOsx) [
-          (pkgs.AGL)
-          (pkgs.Cocoa)
-          (pkgs.OpenGL)
-          (pkgs.IOKit)
-          (pkgs.CoreFoundation)
-          (pkgs.CoreVideo)
+          (pkgs."AGL")
+          (pkgs."Cocoa")
+          (pkgs."OpenGL")
+          (pkgs."IOKit")
+          (pkgs."CoreFoundation")
+          (pkgs."CoreVideo")
         ]);
         pkgconfig = pkgs.lib.optional (_flags.system-glfw) (pkgconfPkgs.glfw3);
         build-tools = [
@@ -75,12 +75,12 @@
             (hsPkgs.test-framework-hunit)
           ];
           frameworks = [
-            (pkgs.AGL)
-            (pkgs.Cocoa)
-            (pkgs.OpenGL)
-            (pkgs.IOKit)
-            (pkgs.CoreFoundation)
-            (pkgs.CoreVideo)
+            (pkgs."AGL")
+            (pkgs."Cocoa")
+            (pkgs."OpenGL")
+            (pkgs."IOKit")
+            (pkgs."CoreFoundation")
+            (pkgs."CoreVideo")
           ];
         };
       };

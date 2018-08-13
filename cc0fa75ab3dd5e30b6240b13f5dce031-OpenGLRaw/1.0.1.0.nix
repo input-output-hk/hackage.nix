@@ -31,8 +31,8 @@
       "OpenGLRaw" = {
         depends  = [ (hsPkgs.base) ];
         libs = if system.isWindows && _flags.usenativewindowslibraries
-          then [ (pkgs.opengl32) ]
-          else [ (pkgs.GL) ];
+          then [ (pkgs."opengl32") ]
+          else [ (pkgs."GL") ];
       };
     };
   }

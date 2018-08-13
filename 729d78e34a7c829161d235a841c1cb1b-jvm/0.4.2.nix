@@ -49,7 +49,7 @@
             (hsPkgs.jvm)
             (hsPkgs.text)
           ];
-          libs = [ (pkgs.pthread) ];
+          libs = [ (pkgs."pthread") ];
         };
       };
       benchmarks = {

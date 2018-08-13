@@ -35,7 +35,7 @@
           (hsPkgs.transformers)
           (hsPkgs.mtl)
         ];
-        libs = [ (pkgs.geos_c) ];
+        libs = [ (pkgs."geos_c") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];
@@ -51,7 +51,7 @@
             (hsPkgs.hspec)
             (hsPkgs.cassava)
           ];
-          libs = [ (pkgs.geos_c) ];
+          libs = [ (pkgs."geos_c") ];
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs)
           ];

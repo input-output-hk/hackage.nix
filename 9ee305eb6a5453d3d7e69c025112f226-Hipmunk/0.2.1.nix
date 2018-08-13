@@ -34,7 +34,7 @@
           (hsPkgs.array)
           (hsPkgs.containers)
         ];
-        libs = [ (pkgs.m) ];
+        libs = [ (pkgs."m") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

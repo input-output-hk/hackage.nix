@@ -34,8 +34,8 @@
           (hsPkgs.bytestring)
         ];
         libs = if system.isOsx
-          then [ (pkgs.osxfuse) ]
-          else [ (pkgs.fuse) ];
+          then [ (pkgs."osxfuse") ]
+          else [ (pkgs."fuse") ];
       };
       exes = {
         "HelloFS" = {

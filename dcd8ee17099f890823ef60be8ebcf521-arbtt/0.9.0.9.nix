@@ -50,12 +50,12 @@
             then [ (hsPkgs.Win32) ]
             else pkgs.lib.optional (!system.isOsx) (hsPkgs.X11));
           libs = if system.isWindows
-            then [ (pkgs.psapi) ]
-            else pkgs.lib.optional (!system.isOsx) (pkgs.Xss);
+            then [ (pkgs."psapi") ]
+            else pkgs.lib.optional (!system.isOsx) (pkgs."Xss");
           frameworks = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optionals (system.isOsx) [
-            (pkgs.Foundation)
-            (pkgs.Carbon)
-            (pkgs.IOKit)
+            (pkgs."Foundation")
+            (pkgs."Carbon")
+            (pkgs."IOKit")
           ]);
         };
         "arbtt-stats" = {

@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.grib_api) ];
+        libs = [ (pkgs."grib_api") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

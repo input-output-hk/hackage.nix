@@ -101,7 +101,7 @@
               (hsPkgs.keera-hails-mvc-solutions-config)
               (hsPkgs.keera-hails-reactivevalues)
             ];
-          libs = [ (pkgs.SDL_mixer) ];
+          libs = [ (pkgs."SDL_mixer") ];
         };
       };
     };

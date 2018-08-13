@@ -36,7 +36,7 @@
           (hsPkgs.uuid)
           (hsPkgs.async)
         ];
-        libs = [ (pkgs.rados) ];
+        libs = [ (pkgs."rados") ];
       };
       tests = {
         "check" = {
@@ -50,7 +50,7 @@
             (hsPkgs.async)
             (hsPkgs.rados-haskell)
           ];
-          libs = [ (pkgs.rados) ];
+          libs = [ (pkgs."rados") ];
         };
       };
       benchmarks = {

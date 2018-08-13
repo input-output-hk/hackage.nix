@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.utf8-string)
         ];
-        libs = [ (pkgs.netsnmp) ];
+        libs = [ (pkgs."netsnmp") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

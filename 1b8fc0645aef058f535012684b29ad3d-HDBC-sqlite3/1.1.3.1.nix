@@ -31,7 +31,7 @@
           (hsPkgs.mtl)
           (hsPkgs.HDBC)
         ];
-        libs = [ (pkgs.sqlite3) ];
+        libs = [ (pkgs."sqlite3") ];
       };
     };
   }

@@ -42,7 +42,7 @@
           (hsPkgs.time)
           (hsPkgs.word8)
         ] ++ pkgs.lib.optional (system.isLinux || system.isFreebsd || _flags.x11) (hsPkgs.X11);
-        frameworks = pkgs.lib.optional (system.isOsx || _flags.carbon) (pkgs.Carbon);
+        frameworks = pkgs.lib.optional (system.isOsx || _flags.carbon) (pkgs."Carbon");
       };
     };
   }

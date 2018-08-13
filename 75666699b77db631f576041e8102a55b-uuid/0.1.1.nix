@@ -27,7 +27,7 @@
     components = {
       "uuid" = {
         depends  = [ (hsPkgs.base) ];
-        libs = pkgs.lib.optional (!system.isOsx) (pkgs.uuid);
+        libs = pkgs.lib.optional (!system.isOsx) (pkgs."uuid");
       };
     };
   }

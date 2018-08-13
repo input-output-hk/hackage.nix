@@ -37,7 +37,7 @@
             (hsPkgs.vector)
             (hsPkgs.JuicyPixels)
           ];
-          libs = pkgs.lib.optional (system.isLinux) (pkgs.X11) ++ pkgs.lib.optional (system.isOsx) (pkgs.objc);
+          libs = pkgs.lib.optional (system.isLinux) (pkgs."X11") ++ pkgs.lib.optional (system.isOsx) (pkgs."objc");
         };
       };
     };

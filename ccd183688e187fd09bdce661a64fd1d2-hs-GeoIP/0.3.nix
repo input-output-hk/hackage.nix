@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.deepseq)
         ];
-        libs = [ (pkgs.GeoIP) ];
+        libs = [ (pkgs."GeoIP") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

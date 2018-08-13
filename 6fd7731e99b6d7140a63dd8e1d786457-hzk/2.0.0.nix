@@ -30,7 +30,9 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.zookeeper_mt) ];
+        libs = [
+          (pkgs."zookeeper_mt")
+        ];
       };
       tests = {
         "test-zookeeper" = {
@@ -40,7 +42,9 @@
             (hsPkgs.bytestring)
             (hsPkgs.tasty-hunit)
           ];
-          libs = [ (pkgs.zookeeper_mt) ];
+          libs = [
+            (pkgs."zookeeper_mt")
+          ];
         };
       };
     };

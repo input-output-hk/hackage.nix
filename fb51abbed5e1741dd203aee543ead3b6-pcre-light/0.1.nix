@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.pcre) ];
+        libs = [ (pkgs."pcre") ];
       };
     };
   }

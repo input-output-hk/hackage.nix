@@ -34,11 +34,11 @@
           (hsPkgs.transformers)
         ];
         libs = if system.isWindows && _flags.usenativewindowslibraries
-          then [ (pkgs.opengl32) ]
-          else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (!system.isIos) (pkgs.GL));
+          then [ (pkgs."opengl32") ]
+          else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (!system.isIos) (pkgs."GL"));
         frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (if system.isOsx
-          then [ (pkgs.OpenGL) ]
-          else pkgs.lib.optional (system.isIos) (pkgs.OpenGLES));
+          then [ (pkgs."OpenGL") ]
+          else pkgs.lib.optional (system.isIos) (pkgs."OpenGLES"));
       };
     };
   }

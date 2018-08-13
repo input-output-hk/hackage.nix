@@ -28,8 +28,8 @@
       "qd" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.qd)
-        ] ++ pkgs.lib.optional (system.isLinux) (pkgs.stdc++);
+          (pkgs."qd")
+        ] ++ pkgs.lib.optional (system.isLinux) (pkgs."stdc++");
       };
     };
   }

@@ -40,17 +40,17 @@
             (hsPkgs.array)
           ]
           else [ (hsPkgs.base) ]);
-        libs = [ (pkgs.asound) ];
+        libs = [ (pkgs."asound") ];
       };
       exes = {
         "playnote" = {
-          libs = [ (pkgs.asound) ];
+          libs = [ (pkgs."asound") ];
         };
         "playmidi" = {
-          libs = [ (pkgs.asound) ];
+          libs = [ (pkgs."asound") ];
         };
         "mididump" = {
-          libs = [ (pkgs.asound) ];
+          libs = [ (pkgs."asound") ];
         };
       };
     };

@@ -36,10 +36,10 @@
           (hsPkgs.QuickCheck)
         ];
         libs = [
-          (pkgs.lapacke)
-          (pkgs.lapack)
-          (pkgs.cblas)
-          (pkgs.f77blas)
+          (pkgs."lapacke")
+          (pkgs."lapack")
+          (pkgs."cblas")
+          (pkgs."f77blas")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

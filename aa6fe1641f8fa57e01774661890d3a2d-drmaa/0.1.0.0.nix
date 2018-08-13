@@ -35,7 +35,7 @@
           (hsPkgs.text)
           (hsPkgs.shelly)
         ];
-        libs = [ (pkgs.drmaa) ];
+        libs = [ (pkgs."drmaa") ];
       };
     };
   }

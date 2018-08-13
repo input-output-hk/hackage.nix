@@ -64,7 +64,7 @@
             (hsPkgs.persistent-sqlite)
             (hsPkgs.persistent-template)
           ];
-          libs = [ (pkgs.sqlite3) ];
+          libs = [ (pkgs."sqlite3") ];
         };
         "yesod-hamlet-synopsis" = {
           depends  = [

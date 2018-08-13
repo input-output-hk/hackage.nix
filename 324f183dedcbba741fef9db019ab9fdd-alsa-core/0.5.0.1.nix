@@ -32,7 +32,7 @@
           (hsPkgs.extensible-exceptions)
           (hsPkgs.base)
         ];
-        libs = pkgs.lib.optional (!_flags.pkgconfig) (pkgs.asound);
+        libs = pkgs.lib.optional (!_flags.pkgconfig) (pkgs."asound");
         pkgconfig = pkgs.lib.optional (_flags.pkgconfig) (pkgconfPkgs.alsa);
       };
     };

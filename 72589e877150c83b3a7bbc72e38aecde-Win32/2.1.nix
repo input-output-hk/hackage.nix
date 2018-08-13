@@ -28,11 +28,11 @@
       "Win32" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.user32)
-          (pkgs.gdi32)
-          (pkgs.winmm)
-          (pkgs.kernel32)
-          (pkgs.advapi32)
+          (pkgs."user32")
+          (pkgs."gdi32")
+          (pkgs."winmm")
+          (pkgs."kernel32")
+          (pkgs."advapi32")
         ];
       };
     };

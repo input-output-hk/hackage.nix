@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.haskell98)
         ];
-        libs = [ (pkgs.sndfile) ];
+        libs = [ (pkgs."sndfile") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

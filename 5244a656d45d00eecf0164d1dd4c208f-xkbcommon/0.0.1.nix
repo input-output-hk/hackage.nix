@@ -38,7 +38,7 @@
           (hsPkgs.data-flags)
           (hsPkgs.filepath)
         ];
-        libs = [ (pkgs.xkbcommon) ];
+        libs = [ (pkgs."xkbcommon") ];
       };
       tests = {
         "context" = {

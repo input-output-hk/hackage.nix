@@ -33,8 +33,8 @@
           (hsPkgs.mtl)
         ];
         libs = if system.isWindows
-          then [ (pkgs.OpenAL32) ]
-          else [ (pkgs.openal) ];
+          then [ (pkgs."OpenAL32") ]
+          else [ (pkgs."openal") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

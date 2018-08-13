@@ -31,12 +31,12 @@
           (hsPkgs.OpenGL)
         ];
         libs = [
-          (pkgs.qtc_core)
-          (pkgs.qtc_gui)
-          (pkgs.qtc_network)
-          (pkgs.qtc_opengl)
-          (pkgs.qtc_tools)
-          (pkgs.qtc_script)
+          (pkgs."qtc_core")
+          (pkgs."qtc_gui")
+          (pkgs."qtc_network")
+          (pkgs."qtc_opengl")
+          (pkgs."qtc_tools")
+          (pkgs."qtc_script")
         ];
       };
     };

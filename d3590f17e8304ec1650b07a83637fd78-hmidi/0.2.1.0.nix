@@ -32,11 +32,11 @@
           (hsPkgs.base)
           (hsPkgs.stm)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.winmm);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."winmm");
         frameworks = pkgs.lib.optionals (system.isOsx) [
-          (pkgs.CoreFoundation)
-          (pkgs.CoreAudio)
-          (pkgs.CoreMIDI)
+          (pkgs."CoreFoundation")
+          (pkgs."CoreAudio")
+          (pkgs."CoreMIDI")
         ];
       };
     };

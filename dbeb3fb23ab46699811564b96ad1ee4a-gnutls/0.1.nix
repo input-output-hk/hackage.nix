@@ -33,8 +33,8 @@
           (hsPkgs.monads-tf)
         ];
         libs = [
-          (pkgs.gnutls)
-          (pkgs.gnutls-extra)
+          (pkgs."gnutls")
+          (pkgs."gnutls-extra")
         ];
         pkgconfig = [
           (pkgconfPkgs.gnutls)

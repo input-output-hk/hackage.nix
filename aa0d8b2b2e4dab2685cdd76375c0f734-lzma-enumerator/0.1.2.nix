@@ -33,7 +33,7 @@
           (hsPkgs.enumerator)
           (hsPkgs.mtl)
         ];
-        libs = [ (pkgs.lzma) ];
+        libs = [ (pkgs."lzma") ];
       };
       tests = {
         "lzma-test" = {

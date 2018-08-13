@@ -32,7 +32,7 @@
           (hsPkgs.base-prelude)
           (hsPkgs.split)
         ];
-        libs = [ (pkgs.Xtst) ];
+        libs = [ (pkgs."Xtst") ];
       };
     };
   }

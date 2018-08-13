@@ -45,8 +45,8 @@
           (hsPkgs.split)
         ];
         libs = [
-          (pkgs.MagickWand)
-          (pkgs.MagickCore)
+          (pkgs."MagickWand")
+          (pkgs."MagickCore")
         ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

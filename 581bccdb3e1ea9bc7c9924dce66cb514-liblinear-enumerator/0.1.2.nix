@@ -33,7 +33,7 @@
           (hsPkgs.mtl)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

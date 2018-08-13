@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.socket)
         ];
-        libs = [ (pkgs.sctp) ];
+        libs = [ (pkgs."sctp") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

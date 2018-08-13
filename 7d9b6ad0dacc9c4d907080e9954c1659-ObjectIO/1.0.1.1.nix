@@ -27,15 +27,15 @@
     components = {
       "ObjectIO" = {
         libs = [
-          (pkgs.user32)
-          (pkgs.gdi32)
-          (pkgs.kernel32)
-          (pkgs.comctl32)
-          (pkgs.comdlg32)
-          (pkgs.shell32)
-          (pkgs.winmm)
-          (pkgs.winspool)
-          (pkgs.ole32)
+          (pkgs."user32")
+          (pkgs."gdi32")
+          (pkgs."kernel32")
+          (pkgs."comctl32")
+          (pkgs."comdlg32")
+          (pkgs."shell32")
+          (pkgs."winmm")
+          (pkgs."winspool")
+          (pkgs."ole32")
         ];
       };
     };

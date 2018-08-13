@@ -51,7 +51,7 @@
             else if _flags.vty
               then [ (hsPkgs.vty) ]
               else pkgs.lib.optional (!_flags.std) (hsPkgs.gtk));
-          libs = pkgs.lib.optional (_flags.curses) (pkgs.curses);
+          libs = pkgs.lib.optional (_flags.curses) (pkgs."curses");
         };
         "BotAllure" = {
           depends  = [

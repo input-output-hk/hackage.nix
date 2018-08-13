@@ -33,7 +33,7 @@
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.archive) ];
+        libs = [ (pkgs."archive") ];
       };
     };
   }

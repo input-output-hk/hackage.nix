@@ -33,7 +33,7 @@
             (hsPkgs.array)
             (hsPkgs.old-time)
           ];
-          libs = [ (pkgs.curses) ];
+          libs = [ (pkgs."curses") ];
         };
       };
     };

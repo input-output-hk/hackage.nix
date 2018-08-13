@@ -31,8 +31,8 @@
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs.base);
         libs = [
-          (pkgs.snappy)
-          (pkgs.stdc++)
+          (pkgs."snappy")
+          (pkgs."stdc++")
         ];
       };
     };

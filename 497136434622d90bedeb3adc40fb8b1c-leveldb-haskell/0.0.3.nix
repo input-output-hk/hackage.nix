@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.filepath)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

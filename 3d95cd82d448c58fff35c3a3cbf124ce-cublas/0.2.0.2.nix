@@ -35,8 +35,8 @@
           (hsPkgs.storable-complex)
         ];
         libs = [
-          (pkgs.cublas)
-          (pkgs.cusparse)
+          (pkgs."cublas")
+          (pkgs."cusparse")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

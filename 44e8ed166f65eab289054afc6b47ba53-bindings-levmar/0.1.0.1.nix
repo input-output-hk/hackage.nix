@@ -27,7 +27,7 @@
     components = {
       "bindings-levmar" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.lapack) ];
+        libs = [ (pkgs."lapack") ];
       };
     };
   }

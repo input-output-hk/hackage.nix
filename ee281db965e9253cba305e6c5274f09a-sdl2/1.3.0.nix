@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.SDL2) ];
+        libs = [ (pkgs."SDL2") ];
         pkgconfig = [
           (pkgconfPkgs.sdl2)
         ];

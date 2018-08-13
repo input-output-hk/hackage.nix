@@ -35,9 +35,9 @@
           (hsPkgs.vector)
         ];
         libs = pkgs.lib.optionals (system.isLinux) [
-          (pkgs.cplex)
-          (pkgs.m)
-          (pkgs.pthread)
+          (pkgs."cplex")
+          (pkgs."m")
+          (pkgs."pthread")
         ];
       };
     };

@@ -70,14 +70,14 @@
             (hsPkgs.base)
             (hsPkgs.clash-ghc)
           ];
-          libs = [ (pkgs.pthread) ];
+          libs = [ (pkgs."pthread") ];
         };
         "clashi" = {
           depends  = [
             (hsPkgs.base)
             (hsPkgs.clash-ghc)
           ];
-          libs = [ (pkgs.pthread) ];
+          libs = [ (pkgs."pthread") ];
         };
       };
     };

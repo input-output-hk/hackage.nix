@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.hamlib) ];
+        libs = [ (pkgs."hamlib") ];
       };
       exes = {
         "hamlib-hs-demo" = {

@@ -31,10 +31,10 @@
           (hsPkgs.bytestring)
         ];
         libs = [
-          (pkgs.nitro)
-          (pkgs.nitronacl)
-          (pkgs.ev)
-          (pkgs.pthread)
+          (pkgs."nitro")
+          (pkgs."nitronacl")
+          (pkgs."ev")
+          (pkgs."pthread")
         ];
       };
     };

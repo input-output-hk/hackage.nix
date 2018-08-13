@@ -30,7 +30,9 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.hidapi-hidraw) ];
+        libs = [
+          (pkgs."hidapi-hidraw")
+        ];
       };
     };
   }

@@ -31,7 +31,7 @@
           (hsPkgs.vector)
           (hsPkgs.primitive)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

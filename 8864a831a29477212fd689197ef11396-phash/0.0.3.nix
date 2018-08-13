@@ -27,7 +27,7 @@
     components = {
       "phash" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.pHash) ];
+        libs = [ (pkgs."pHash") ];
       };
       tests = {
         "spec" = {
@@ -39,7 +39,7 @@
             (hsPkgs.HUnit)
             (hsPkgs.smallcheck)
           ];
-          libs = [ (pkgs.pHash) ];
+          libs = [ (pkgs."pHash") ];
         };
         "docs" = {
           depends  = [
@@ -47,7 +47,7 @@
             (hsPkgs.doctest)
             (hsPkgs.phash)
           ];
-          libs = [ (pkgs.pHash) ];
+          libs = [ (pkgs."pHash") ];
         };
       };
     };

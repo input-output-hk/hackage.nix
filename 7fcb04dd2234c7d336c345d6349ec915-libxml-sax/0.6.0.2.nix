@@ -32,7 +32,7 @@
           (hsPkgs.text)
           (hsPkgs.xml-types)
         ];
-        libs = [ (pkgs.xml2) ];
+        libs = [ (pkgs."xml2") ];
         pkgconfig = [
           (pkgconfPkgs.libxml-2.0)
         ];

@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.markdown) ];
+        libs = [ (pkgs."markdown") ];
       };
     };
   }

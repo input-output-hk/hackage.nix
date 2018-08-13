@@ -32,8 +32,8 @@
             (hsPkgs.hogre)
           ];
           libs = [
-            (pkgs.OgreMain)
-            (pkgs.stdc++)
+            (pkgs."OgreMain")
+            (pkgs."stdc++")
           ];
         };
         "example_02" = {
@@ -42,8 +42,8 @@
             (hsPkgs.hogre)
           ];
           libs = [
-            (pkgs.OgreMain)
-            (pkgs.stdc++)
+            (pkgs."OgreMain")
+            (pkgs."stdc++")
           ];
         };
       };

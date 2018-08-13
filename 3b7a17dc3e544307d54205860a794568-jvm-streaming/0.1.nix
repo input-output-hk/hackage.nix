@@ -46,7 +46,7 @@
             (hsPkgs.jvm-streaming)
             (hsPkgs.streaming)
           ];
-          libs = [ (pkgs.pthread) ];
+          libs = [ (pkgs."pthread") ];
         };
       };
     };

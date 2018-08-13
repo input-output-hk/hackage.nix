@@ -38,7 +38,7 @@
             (hsPkgs.containers)
             (hsPkgs.old-locale)
           ];
-          libs = [ (pkgs.ncursesw) ];
+          libs = [ (pkgs."ncursesw") ];
         };
       };
     };

@@ -33,22 +33,22 @@
           (hsPkgs.bytestring)
         ];
         libs = (pkgs.lib.optionals (system.isWindows) [
-          (pkgs.stdc++)
-          (pkgs.ole32)
-          (pkgs.dsound)
-          (pkgs.winmm)
+          (pkgs."stdc++")
+          (pkgs."ole32")
+          (pkgs."dsound")
+          (pkgs."winmm")
         ] ++ pkgs.lib.optionals (system.isLinux) [
-          (pkgs.stdc++)
-          (pkgs.pthread)
-          (pkgs.pulse-simple)
-          (pkgs.pulse)
+          (pkgs."stdc++")
+          (pkgs."pthread")
+          (pkgs."pulse-simple")
+          (pkgs."pulse")
         ]) ++ pkgs.lib.optionals (system.isOsx) [
-          (pkgs.stdc++)
-          (pkgs.pthread)
+          (pkgs."stdc++")
+          (pkgs."pthread")
         ];
         frameworks = pkgs.lib.optionals (system.isOsx) [
-          (pkgs.CoreFoundation)
-          (pkgs.CoreAudio)
+          (pkgs."CoreFoundation")
+          (pkgs."CoreAudio")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

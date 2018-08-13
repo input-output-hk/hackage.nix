@@ -42,8 +42,8 @@
           (hsPkgs.unix)
           (hsPkgs.directory)
         ]) ++ pkgs.lib.optional (system.isSolaris) (hsPkgs.unix);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.CoreFoundation);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."CoreFoundation");
       };
     };
   }

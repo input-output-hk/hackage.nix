@@ -48,8 +48,8 @@
             (hsPkgs.process)
           ];
           libs = [
-            (pkgs.ssl)
-            (pkgs.crypto)
+            (pkgs."ssl")
+            (pkgs."crypto")
           ];
         };
       };

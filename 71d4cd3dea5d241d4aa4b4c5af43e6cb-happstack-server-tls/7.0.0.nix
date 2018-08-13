@@ -38,8 +38,8 @@
           (hsPkgs.time)
         ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
         libs = [
-          (pkgs.ssl)
-        ] ++ pkgs.lib.optional (!system.isOsx) (pkgs.cryptopp);
+          (pkgs."ssl")
+        ] ++ pkgs.lib.optional (!system.isOsx) (pkgs."cryptopp");
       };
     };
   }

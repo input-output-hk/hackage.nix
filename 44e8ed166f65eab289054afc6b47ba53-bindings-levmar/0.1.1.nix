@@ -32,18 +32,18 @@
         depends  = [ (hsPkgs.base) ];
         libs = pkgs.lib.optionals (_flags.mkl) (if system.isX86_64
           then [
-            (pkgs.mkl_lapack)
-            (pkgs.mkl_intel_lp64)
-            (pkgs.mkl_sequential)
-            (pkgs.mkl_core)
+            (pkgs."mkl_lapack")
+            (pkgs."mkl_intel_lp64")
+            (pkgs."mkl_sequential")
+            (pkgs."mkl_core")
           ]
           else [
-            (pkgs.mkl_lapack)
-            (pkgs.mkl_intel)
-            (pkgs.mkl_sequential)
-            (pkgs.mkl_core)
+            (pkgs."mkl_lapack")
+            (pkgs."mkl_intel")
+            (pkgs."mkl_sequential")
+            (pkgs."mkl_core")
           ]);
-        frameworks = pkgs.lib.optional (_flags.accelerate) (pkgs.Accelerate);
+        frameworks = pkgs.lib.optional (_flags.accelerate) (pkgs."Accelerate");
       };
     };
   }

@@ -49,7 +49,7 @@
         ]) ++ (if system.isOsx
           then [ (hsPkgs.unix) ]
           else pkgs.lib.optional (system.isLinux) (hsPkgs.unix));
-        frameworks = pkgs.lib.optionals (system.isOsx) (pkgs.lib.optional (_flags.osx_gui) (pkgs.Cocoa) ++ pkgs.lib.optional (_flags.osx_framework) (pkgs.JavaVM));
+        frameworks = pkgs.lib.optionals (system.isOsx) (pkgs.lib.optional (_flags.osx_gui) (pkgs."Cocoa") ++ pkgs.lib.optional (_flags.osx_framework) (pkgs."JavaVM"));
       };
       exes = {
         "j2hs" = {

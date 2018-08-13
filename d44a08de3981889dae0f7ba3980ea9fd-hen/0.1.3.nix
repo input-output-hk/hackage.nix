@@ -34,7 +34,7 @@
           (hsPkgs.uuid)
           (hsPkgs.bitset)
         ];
-        libs = [ (pkgs.xenctrl) ];
+        libs = [ (pkgs."xenctrl") ];
       };
       tests = {
         "hen-tests" = {

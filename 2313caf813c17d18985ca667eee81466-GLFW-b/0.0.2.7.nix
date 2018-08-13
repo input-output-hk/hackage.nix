@@ -29,14 +29,14 @@
         depends  = [ (hsPkgs.base) ];
         libs = if system.isLinux || system.isFreebsd
           then [
-            (pkgs.GL)
-            (pkgs.GLU)
-            (pkgs.X11)
-            (pkgs.Xrandr)
+            (pkgs."GL")
+            (pkgs."GLU")
+            (pkgs."X11")
+            (pkgs."Xrandr")
           ]
           else if system.isOsx
-            then [ (pkgs.glfw) ]
-            else pkgs.lib.optional (system.isWindows) (pkgs.opengl32);
+            then [ (pkgs."glfw") ]
+            else pkgs.lib.optional (system.isWindows) (pkgs."opengl32");
       };
     };
   }

@@ -31,7 +31,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.vect)
         ];
-        libs = [ (pkgs.assimp) ];
+        libs = [ (pkgs."assimp") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
           (hsPkgs.buildPackages.hsc2hs)

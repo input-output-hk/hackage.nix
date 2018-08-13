@@ -32,9 +32,9 @@
           (hsPkgs.text)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs.base);
         libs = [
-          (pkgs.icui18n)
-          (pkgs.icuuc)
-          (pkgs.icudata)
+          (pkgs."icui18n")
+          (pkgs."icuuc")
+          (pkgs."icudata")
         ];
       };
     };

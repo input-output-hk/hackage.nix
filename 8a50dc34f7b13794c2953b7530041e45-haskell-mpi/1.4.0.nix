@@ -38,14 +38,14 @@
         ];
         libs = if _flags.mpich14
           then [
-            (pkgs.mpich)
-            (pkgs.opa)
-            (pkgs.mpl)
+            (pkgs."mpich")
+            (pkgs."opa")
+            (pkgs."mpl")
           ]
           else [
-            (pkgs.mpi)
-            (pkgs.open-rte)
-            (pkgs.open-pal)
+            (pkgs."mpi")
+            (pkgs."open-rte")
+            (pkgs."open-pal")
           ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
@@ -62,14 +62,14 @@
           ];
           libs = if _flags.mpich14
             then [
-              (pkgs.mpich)
-              (pkgs.opa)
-              (pkgs.mpl)
+              (pkgs."mpich")
+              (pkgs."opa")
+              (pkgs."mpl")
             ]
             else [
-              (pkgs.mpi)
-              (pkgs.open-rte)
-              (pkgs.open-pal)
+              (pkgs."mpi")
+              (pkgs."open-rte")
+              (pkgs."open-pal")
             ];
           build-tools = [
             (hsPkgs.buildPackages.c2hs)

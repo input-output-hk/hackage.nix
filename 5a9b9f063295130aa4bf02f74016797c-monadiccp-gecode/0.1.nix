@@ -36,13 +36,15 @@
           (hsPkgs.monadiccp)
         ];
         libs = [
-          (pkgs.gecodesupport)
-          (pkgs.gecodeset)
-          (pkgs.gecodeint)
-          (pkgs.gecodekernel)
-          (pkgs.gecodesearch)
+          (pkgs."gecodesupport")
+          (pkgs."gecodeset")
+          (pkgs."gecodeint")
+          (pkgs."gecodekernel")
+          (pkgs."gecodesearch")
         ];
-        frameworks = [ (pkgs.gecode) ];
+        frameworks = [
+          (pkgs."gecode")
+        ];
       };
     };
   }

@@ -47,7 +47,7 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.tensorflow) ];
+        libs = [ (pkgs."tensorflow") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

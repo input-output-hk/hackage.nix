@@ -32,7 +32,7 @@
           (hsPkgs.mtl)
           (hsPkgs.X11)
         ];
-        libs = [ (pkgs.Xi) ];
+        libs = [ (pkgs."Xi") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

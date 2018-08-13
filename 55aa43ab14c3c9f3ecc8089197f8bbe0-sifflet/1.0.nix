@@ -44,8 +44,8 @@
             (hsPkgs.sifflet-lib)
           ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
           libs = [
-            (pkgs.gdk-x11-2.0)
-            (pkgs.gtk-x11-2.0)
+            (pkgs."gdk-x11-2.0")
+            (pkgs."gtk-x11-2.0")
           ];
         };
       };

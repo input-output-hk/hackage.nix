@@ -34,7 +34,7 @@
             (hsPkgs.base)
             (hsPkgs.bytestring)
           ];
-        libs = [ (pkgs.icuuc) ];
+        libs = [ (pkgs."icuuc") ];
       };
     };
   }

@@ -33,7 +33,7 @@
           (hsPkgs.exception-hierarchy)
           (hsPkgs.template-haskell)
         ];
-        libs = [ (pkgs.sqlite3) ];
+        libs = [ (pkgs."sqlite3") ];
       };
     };
   }

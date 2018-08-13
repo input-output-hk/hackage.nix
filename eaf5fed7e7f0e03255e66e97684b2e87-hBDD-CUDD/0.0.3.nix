@@ -33,12 +33,12 @@
           (hsPkgs.hBDD)
           (hsPkgs.unix)
         ];
-        libs = pkgs.lib.optional (system.isOsx) (pkgs.cudd) ++ pkgs.lib.optionals (system.isLinux) [
-          (pkgs.cudd)
-          (pkgs.mtr)
-          (pkgs.st)
-          (pkgs.util)
-          (pkgs.epd)
+        libs = pkgs.lib.optional (system.isOsx) (pkgs."cudd") ++ pkgs.lib.optionals (system.isLinux) [
+          (pkgs."cudd")
+          (pkgs."mtr")
+          (pkgs."st")
+          (pkgs."util")
+          (pkgs."epd")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

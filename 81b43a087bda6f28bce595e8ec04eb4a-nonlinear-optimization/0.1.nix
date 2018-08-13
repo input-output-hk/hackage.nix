@@ -31,7 +31,7 @@
           (hsPkgs.vector)
           (hsPkgs.primitive)
         ];
-        libs = [ (pkgs.m) ];
+        libs = [ (pkgs."m") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

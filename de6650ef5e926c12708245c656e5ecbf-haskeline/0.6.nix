@@ -46,7 +46,7 @@
           else [
             (hsPkgs.unix)
           ] ++ pkgs.lib.optional (_flags.terminfo) (hsPkgs.terminfo));
-        libs = pkgs.lib.optional (!system.isWindows) (pkgs.iconv);
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."iconv");
       };
     };
   }

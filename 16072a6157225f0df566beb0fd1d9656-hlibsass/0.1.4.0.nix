@@ -31,10 +31,10 @@
       "hlibsass" = {
         depends  = [ (hsPkgs.base) ];
         libs = if _flags.externallibsass
-          then [ (pkgs.sass) ]
+          then [ (pkgs."sass") ]
           else [
-            (pkgs.sass)
-            (pkgs.stdc++)
+            (pkgs."sass")
+            (pkgs."stdc++")
           ];
       };
       tests = {

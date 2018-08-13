@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.ffi) ];
+        libs = [ (pkgs."ffi") ];
         pkgconfig = [
           (pkgconfPkgs.libffi)
         ];

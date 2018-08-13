@@ -81,7 +81,7 @@
             (hsPkgs.snowball)
             (hsPkgs.tokenize)
           ];
-          libs = pkgs.lib.optional (!system.isOsx) (pkgs.crypt);
+          libs = pkgs.lib.optional (!system.isOsx) (pkgs."crypt");
           build-tools = [
             (hsPkgs.buildPackages.alex)
             (hsPkgs.buildPackages.happy)

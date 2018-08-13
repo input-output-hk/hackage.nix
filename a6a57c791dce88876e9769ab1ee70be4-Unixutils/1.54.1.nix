@@ -40,7 +40,7 @@
           (hsPkgs.unix)
           (hsPkgs.zlib)
         ];
-        libs = pkgs.lib.optional (!system.isOsx) (pkgs.crypt);
+        libs = pkgs.lib.optional (!system.isOsx) (pkgs."crypt");
       };
     };
   }

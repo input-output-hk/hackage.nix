@@ -50,8 +50,11 @@
             ]
             else [ (hsPkgs.base) ]);
           libs = if _flags.no_curses
-            then [ (pkgs.z) ]
-            else [ (pkgs.z) (pkgs.curses) ];
+            then [ (pkgs."z") ]
+            else [
+              (pkgs."z")
+              (pkgs."curses")
+            ];
         };
       };
     };

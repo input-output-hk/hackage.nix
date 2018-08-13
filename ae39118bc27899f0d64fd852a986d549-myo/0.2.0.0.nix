@@ -53,7 +53,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.inline-c)
         ];
-        libs = pkgs.lib.optional (_flags.foreign-api) (pkgs.stdc++);
+        libs = pkgs.lib.optional (_flags.foreign-api) (pkgs."stdc++");
       };
       exes = {
         "myo-ws-example" = {

@@ -27,7 +27,7 @@
     components = {
       "cmath" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.m) ];
+        libs = [ (pkgs."m") ];
       };
     };
   }

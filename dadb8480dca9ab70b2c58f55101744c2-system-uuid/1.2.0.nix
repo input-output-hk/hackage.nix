@@ -35,11 +35,11 @@
           (hsPkgs.parsec)
           (hsPkgs.uuid)
         ];
-        libs = pkgs.lib.optional (system.isLinux) (pkgs.uuid) ++ pkgs.lib.optional (system.isWindows) (pkgs.rpcrt4);
+        libs = pkgs.lib.optional (system.isLinux) (pkgs."uuid") ++ pkgs.lib.optional (system.isWindows) (pkgs."rpcrt4");
       };
       exes = {
         "hooty" = {
-          libs = pkgs.lib.optional (system.isLinux) (pkgs.uuid) ++ pkgs.lib.optional (system.isWindows) (pkgs.rpcrt4);
+          libs = pkgs.lib.optional (system.isLinux) (pkgs."uuid") ++ pkgs.lib.optional (system.isWindows) (pkgs."rpcrt4");
         };
       };
     };

@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.bcm2835) ];
+        libs = [ (pkgs."bcm2835") ];
       };
     };
   }

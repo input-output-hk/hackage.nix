@@ -36,19 +36,19 @@
         ];
         libs = if !_flags.embedded
           then [
-            (pkgs.Cbc)
-            (pkgs.Clp)
-            (pkgs.CbcSolver)
-            (pkgs.Cgl)
-            (pkgs.Osi)
-            (pkgs.OsiCbc)
-            (pkgs.OsiClp)
-            (pkgs.OsiCommonTests)
-            (pkgs.CoinUtils)
-            (pkgs.CoinMP)
-            (pkgs.stdc++)
+            (pkgs."Cbc")
+            (pkgs."Clp")
+            (pkgs."CbcSolver")
+            (pkgs."Cgl")
+            (pkgs."Osi")
+            (pkgs."OsiCbc")
+            (pkgs."OsiClp")
+            (pkgs."OsiCommonTests")
+            (pkgs."CoinUtils")
+            (pkgs."CoinMP")
+            (pkgs."stdc++")
           ]
-          else [ (pkgs.stdc++) ];
+          else [ (pkgs."stdc++") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

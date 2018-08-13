@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optionals (_flags.zlib) (pkgs.lib.optional (!(!system.isWindows)) (hsPkgs.zlib));
-        libs = pkgs.lib.optionals (_flags.zlib) (pkgs.lib.optional (!system.isWindows) (pkgs.z));
+        libs = pkgs.lib.optionals (_flags.zlib) (pkgs.lib.optional (!system.isWindows) (pkgs."z"));
       };
       tests = {
         "test" = {

@@ -39,7 +39,7 @@
           (hsPkgs.blaze-builder-conduit)
           (hsPkgs.zlib-conduit)
         ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.process);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.Shell32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."Shell32");
       };
     };
   }

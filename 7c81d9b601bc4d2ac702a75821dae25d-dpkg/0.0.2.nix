@@ -44,7 +44,7 @@
             (hsPkgs.dpkg)
             (hsPkgs.bytestring)
           ];
-          libs = [ (pkgs.dpkg) ];
+          libs = [ (pkgs."dpkg") ];
           pkgconfig = [
             (pkgconfPkgs.libdpkg)
           ];

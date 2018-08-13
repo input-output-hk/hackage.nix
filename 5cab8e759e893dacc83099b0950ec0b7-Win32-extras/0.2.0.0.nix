@@ -32,8 +32,8 @@
           (hsPkgs.Win32)
         ];
         libs = [
-          (pkgs.msimg32)
-          (pkgs.imm32)
+          (pkgs."msimg32")
+          (pkgs."imm32")
         ];
       };
     };

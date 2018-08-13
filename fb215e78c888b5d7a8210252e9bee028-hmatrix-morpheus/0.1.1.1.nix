@@ -33,12 +33,12 @@
           (hsPkgs.hmatrix)
         ];
         libs = pkgs.lib.optionals (system.isLinux) (if _flags.openblas
-          then [ (pkgs.openblas) ]
+          then [ (pkgs."openblas") ]
           else [
-            (pkgs.blas)
-            (pkgs.lapack)
+            (pkgs."blas")
+            (pkgs."lapack")
           ]);
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Accelerate);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate");
       };
       tests = {
         "hmatrix-morpheus-test" = {

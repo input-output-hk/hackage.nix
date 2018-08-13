@@ -34,11 +34,11 @@
           (hsPkgs.mtl)
         ];
         libs = if system.isOsx || system.isWindows
-          then [ (pkgs.z3) ]
+          then [ (pkgs."z3") ]
           else [
-            (pkgs.gomp)
-            (pkgs.z3)
-            (pkgs.gomp)
+            (pkgs."gomp")
+            (pkgs."z3")
+            (pkgs."gomp")
           ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

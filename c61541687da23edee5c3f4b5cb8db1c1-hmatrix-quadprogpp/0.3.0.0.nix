@@ -32,8 +32,8 @@
           (hsPkgs.hmatrix)
         ];
         libs = [
-          (pkgs.QuadProgpp)
-          (pkgs.stdc++)
+          (pkgs."QuadProgpp")
+          (pkgs."stdc++")
         ];
       };
     };

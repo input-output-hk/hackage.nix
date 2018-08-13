@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.network)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.ws2_32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."ws2_32");
       };
     };
   }

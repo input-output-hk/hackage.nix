@@ -27,7 +27,7 @@
     components = {
       "uuid" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.uuid) ];
+        libs = [ (pkgs."uuid") ];
       };
     };
   }

@@ -40,7 +40,7 @@
           (hsPkgs.old-locale)
           (hsPkgs.time)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") (hsPkgs.base);
-        libs = [ (pkgs.pq) ];
+        libs = [ (pkgs."pq") ];
       };
       exes = {
         "runtests" = {
@@ -53,7 +53,7 @@
             (hsPkgs.time)
             (hsPkgs.old-locale)
           ];
-          libs = [ (pkgs.pq) ];
+          libs = [ (pkgs."pq") ];
         };
       };
     };

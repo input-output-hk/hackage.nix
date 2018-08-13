@@ -27,8 +27,10 @@
     components = {
       "SDL" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.SDL) ];
-        frameworks = [ (pkgs.AppKit) ];
+        libs = [ (pkgs."SDL") ];
+        frameworks = [
+          (pkgs."AppKit")
+        ];
       };
     };
   }

@@ -34,7 +34,7 @@
           (hsPkgs.time)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.statgrab) ];
+        libs = [ (pkgs."statgrab") ];
       };
     };
   }

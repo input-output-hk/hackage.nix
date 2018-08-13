@@ -60,7 +60,9 @@
             (hsPkgs.transformers-base)
             (hsPkgs.nanomsg-haskell)
           ];
-          libs = [ (pkgs.hyperleveldb) ];
+          libs = [
+            (pkgs."hyperleveldb")
+          ];
         };
       };
     };

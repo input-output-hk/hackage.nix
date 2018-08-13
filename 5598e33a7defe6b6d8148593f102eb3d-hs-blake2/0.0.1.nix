@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.b2) ];
+        libs = [ (pkgs."b2") ];
       };
       tests = {
         "test-all" = {
@@ -43,7 +43,7 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
           ];
-          libs = [ (pkgs.b2) ];
+          libs = [ (pkgs."b2") ];
         };
       };
       benchmarks = {
@@ -55,7 +55,7 @@
             (hsPkgs.criterion)
             (hsPkgs.hs-blake2)
           ];
-          libs = [ (pkgs.b2) ];
+          libs = [ (pkgs."b2") ];
         };
       };
     };

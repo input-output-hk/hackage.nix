@@ -36,10 +36,10 @@
           (hsPkgs.transformers)
         ];
         libs = pkgs.lib.optionals (system.isWindows) [
-          (pkgs.QtCore4)
-          (pkgs.QtGui4)
-          (pkgs.QtDeclarative4)
-          (pkgs.stdc++)
+          (pkgs."QtCore4")
+          (pkgs."QtGui4")
+          (pkgs."QtDeclarative4")
+          (pkgs."stdc++")
         ];
         pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.QtDeclarative);
         build-tools = [

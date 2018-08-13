@@ -33,17 +33,17 @@
           (hsPkgs.OpenGL)
         ];
         libs = if _flags.dynamic
-          then [ (pkgs.glfw) ]
+          then [ (pkgs."glfw") ]
           else if system.isLinux
             then [
-              (pkgs.Xrandr)
-              (pkgs.X11)
+              (pkgs."Xrandr")
+              (pkgs."X11")
             ]
-            else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (system.isWindows) (pkgs.opengl32));
+            else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (system.isWindows) (pkgs."opengl32"));
         frameworks = pkgs.lib.optionals (!_flags.dynamic) (pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optionals (system.isOsx) [
-          (pkgs.AGL)
-          (pkgs.Carbon)
-          (pkgs.OpenGL)
+          (pkgs."AGL")
+          (pkgs."Carbon")
+          (pkgs."OpenGL")
         ]));
       };
     };

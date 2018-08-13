@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.Win32)
         ];
-        libs = [ (pkgs.xinput) ];
+        libs = [ (pkgs."xinput") ];
       };
     };
   }

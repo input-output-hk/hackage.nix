@@ -33,13 +33,13 @@
           (hsPkgs.transformers)
         ];
         libs = [
-          (pkgs.cudd)
-          (pkgs.mtr)
-          (pkgs.st)
-          (pkgs.util)
-          (pkgs.epd)
-          (pkgs.dddmp)
-          (pkgs.m)
+          (pkgs."cudd")
+          (pkgs."mtr")
+          (pkgs."st")
+          (pkgs."util")
+          (pkgs."epd")
+          (pkgs."dddmp")
+          (pkgs."m")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

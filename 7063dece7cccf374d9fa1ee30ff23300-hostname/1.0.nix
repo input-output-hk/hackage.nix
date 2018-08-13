@@ -29,7 +29,7 @@
         depends  = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
       };
     };
   }

@@ -33,8 +33,8 @@
           (hsPkgs.base)
         ];
         libs = [
-          (pkgs.ldap)
-          (pkgs.lber)
+          (pkgs."ldap")
+          (pkgs."lber")
         ];
       };
       exes = {
@@ -50,8 +50,8 @@
             (hsPkgs.HUnit)
           ];
           libs = [
-            (pkgs.ldap)
-            (pkgs.lber)
+            (pkgs."ldap")
+            (pkgs."lber")
           ];
         };
       };

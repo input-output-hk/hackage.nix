@@ -70,7 +70,7 @@
             (hsPkgs.unix-compat)
             (hsPkgs.exceptions)
           ];
-          libs = [ (pkgs.argon2) ];
+          libs = [ (pkgs."argon2") ];
         };
       };
     };

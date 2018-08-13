@@ -38,8 +38,8 @@
           (hsPkgs.Cabal)
         ];
         libs = [
-          (pkgs.mx)
-        ] ++ pkgs.lib.optional (_flags.engine) (pkgs.eng);
+          (pkgs."mx")
+        ] ++ pkgs.lib.optional (_flags.engine) (pkgs."eng");
       };
     };
   }

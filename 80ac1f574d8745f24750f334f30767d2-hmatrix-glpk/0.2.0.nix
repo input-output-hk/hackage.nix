@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.hmatrix)
         ];
-        libs = [ (pkgs.glpk) ];
+        libs = [ (pkgs."glpk") ];
       };
     };
   }

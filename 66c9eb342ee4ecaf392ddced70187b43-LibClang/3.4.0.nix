@@ -42,7 +42,7 @@
           (hsPkgs.transformers-base)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.ncurses) ];
+        libs = [ (pkgs."ncurses") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

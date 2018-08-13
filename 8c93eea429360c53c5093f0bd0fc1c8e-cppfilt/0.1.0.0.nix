@@ -33,8 +33,8 @@
           (hsPkgs.bytestring)
         ];
         libs = if _flags.use-libcpp || system.isOsx
-          then [ (pkgs.c++) ]
-          else [ (pkgs.stdc++) ];
+          then [ (pkgs."c++") ]
+          else [ (pkgs."stdc++") ];
       };
       tests = {
         "cppfilt-test" = {

@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.hmatrix)
         ];
-        libs = pkgs.lib.optional (!_flags.usepkgconfig) (pkgs.sixense);
+        libs = pkgs.lib.optional (!_flags.usepkgconfig) (pkgs."sixense");
         pkgconfig = pkgs.lib.optional (_flags.usepkgconfig) (pkgconfPkgs.libsixense);
       };
       tests = {

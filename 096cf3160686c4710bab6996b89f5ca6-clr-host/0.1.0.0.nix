@@ -35,19 +35,19 @@
           (hsPkgs.file-embed)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
         libs = (pkgs.lib.optionals (_flags.enable_dotnet) [
-          (pkgs.oleaut32)
-          (pkgs.ole32)
+          (pkgs."oleaut32")
+          (pkgs."ole32")
         ] ++ pkgs.lib.optionals (_flags.enable_mono) [
-          (pkgs.glib-2.0)
-          (pkgs.mono-2.0)
+          (pkgs."glib-2.0")
+          (pkgs."mono-2.0")
         ]) ++ pkgs.lib.optionals (!_flags.enable_dotnet && !_flags.enable_mono) (if system.isWindows
           then [
-            (pkgs.oleaut32)
-            (pkgs.ole32)
+            (pkgs."oleaut32")
+            (pkgs."ole32")
           ]
           else [
-            (pkgs.glib-2.0)
-            (pkgs.mono-2.0)
+            (pkgs."glib-2.0")
+            (pkgs."mono-2.0")
           ]);
       };
       tests = {

@@ -44,7 +44,7 @@
           (hsPkgs.text)
           (hsPkgs.unordered-containers)
         ];
-        libs = [ (pkgs.rocksdb) ];
+        libs = [ (pkgs."rocksdb") ];
       };
     };
   }

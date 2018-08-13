@@ -32,10 +32,10 @@
           (hsPkgs.warp)
         ];
         libs = pkgs.lib.optionals (system.isWindows) [
-          (pkgs.QtCore4)
-          (pkgs.QtGui4)
-          (pkgs.QtNetwork4)
-          (pkgs.QtWebKit4)
+          (pkgs."QtCore4")
+          (pkgs."QtGui4")
+          (pkgs."QtNetwork4")
+          (pkgs."QtWebKit4")
         ];
         pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.QtWebKit);
       };

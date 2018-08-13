@@ -41,18 +41,18 @@
         ];
         libs = if system.isWindows && !_flags.usepkgconfig
           then [
-            (pkgs.QtCore4)
-            (pkgs.QtGui4)
-            (pkgs.QtScript4)
-            (pkgs.QtDeclarative4)
-            (pkgs.stdc++)
+            (pkgs."QtCore4")
+            (pkgs."QtGui4")
+            (pkgs."QtScript4")
+            (pkgs."QtDeclarative4")
+            (pkgs."stdc++")
           ]
-          else [ (pkgs.stdc++) ];
+          else [ (pkgs."stdc++") ];
         frameworks = pkgs.lib.optionals (!(system.isWindows && !_flags.usepkgconfig)) (pkgs.lib.optionals (system.isOsx && !_flags.usepkgconfig) [
-          (pkgs.QtCore)
-          (pkgs.QtGui)
-          (pkgs.QtScript)
-          (pkgs.QtDeclarative)
+          (pkgs."QtCore")
+          (pkgs."QtGui")
+          (pkgs."QtScript")
+          (pkgs."QtDeclarative")
         ]);
         pkgconfig = pkgs.lib.optionals (!(system.isWindows && !_flags.usepkgconfig)) (pkgs.lib.optionals (!(system.isOsx && !_flags.usepkgconfig)) [
           (pkgconfPkgs.QtScript)

@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.lz4) ];
+        libs = [ (pkgs."lz4") ];
       };
       tests = {
         "spec" = {
@@ -43,7 +43,7 @@
             (hsPkgs.hspec-shouldbe)
             (hsPkgs.bytestring)
           ];
-          libs = [ (pkgs.lz4) ];
+          libs = [ (pkgs."lz4") ];
         };
       };
     };

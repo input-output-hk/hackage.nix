@@ -34,9 +34,9 @@
           (hsPkgs.template-haskell)
         ];
         libs = [
-          (pkgs.mesos)
-          (pkgs.stdc++)
-          (pkgs.protobuf)
+          (pkgs."mesos")
+          (pkgs."stdc++")
+          (pkgs."protobuf")
         ];
       };
       exes = {
@@ -47,8 +47,8 @@
             (hsPkgs.bytestring)
           ];
           libs = [
-            (pkgs.mesos)
-            (pkgs.stdc++)
+            (pkgs."mesos")
+            (pkgs."stdc++")
           ];
         };
         "test-framework" = {
@@ -59,8 +59,8 @@
             (hsPkgs.lens)
           ];
           libs = [
-            (pkgs.mesos)
-            (pkgs.stdc++)
+            (pkgs."mesos")
+            (pkgs."stdc++")
           ];
         };
       };

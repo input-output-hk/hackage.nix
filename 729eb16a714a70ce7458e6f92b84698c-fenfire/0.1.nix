@@ -37,7 +37,7 @@
             (hsPkgs.harp)
             (hsPkgs.template-haskell)
           ];
-          libs = [ (pkgs.raptor) ];
+          libs = [ (pkgs."raptor") ];
         };
         "functortest" = {
           depends  = [

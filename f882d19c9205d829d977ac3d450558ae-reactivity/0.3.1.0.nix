@@ -46,10 +46,10 @@
           (hsPkgs.concurrent-extra)
         ];
         libs = [
-          (pkgs.gdi32)
-          (pkgs.comdlg32)
-          (pkgs.winspool)
-          (pkgs.comctl32)
+          (pkgs."gdi32")
+          (pkgs."comdlg32")
+          (pkgs."winspool")
+          (pkgs."comctl32")
         ];
       };
     };

@@ -33,7 +33,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
       tests = {
         "test-solve" = {

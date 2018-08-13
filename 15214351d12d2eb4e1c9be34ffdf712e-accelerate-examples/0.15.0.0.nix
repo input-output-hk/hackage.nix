@@ -64,7 +64,7 @@
             (hsPkgs.test-framework-quickcheck2)
             (hsPkgs.random)
           ];
-          libs = [ (pkgs.stdc++) ];
+          libs = [ (pkgs."stdc++") ];
         };
         "accelerate-smvm" = {
           depends  = (((pkgs.lib.optional (_flags.cuda) (hsPkgs.accelerate-cuda) ++ pkgs.lib.optional (_flags.llvm-cpu) (hsPkgs.accelerate-llvm-native)) ++ pkgs.lib.optional (_flags.llvm-gpu) (hsPkgs.accelerate-llvm-ptx)) ++ pkgs.lib.optional (_flags.ekg) (hsPkgs.ekg)) ++ pkgs.lib.optionals (!(!_flags.smvm)) [

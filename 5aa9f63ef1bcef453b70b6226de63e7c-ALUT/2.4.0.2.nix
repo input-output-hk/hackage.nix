@@ -36,9 +36,9 @@
           (hsPkgs.OpenAL)
         ];
         libs = if system.isWindows && _flags.usenativewindowslibraries
-          then [ (pkgs.alut) ]
-          else pkgs.lib.optional (!system.isIos) (pkgs.alut);
-        frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (pkgs.lib.optional (system.isIos) (pkgs.ALUT));
+          then [ (pkgs."alut") ]
+          else pkgs.lib.optional (!system.isIos) (pkgs."alut");
+        frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (pkgs.lib.optional (system.isIos) (pkgs."ALUT"));
       };
       exes = {
         "Basic-HelloWorld" = {

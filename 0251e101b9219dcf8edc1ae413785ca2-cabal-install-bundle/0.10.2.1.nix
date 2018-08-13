@@ -41,7 +41,7 @@
             (hsPkgs.bytestring)
             (hsPkgs.unix)
           ];
-          libs = [ (pkgs.z) ];
+          libs = [ (pkgs."z") ];
         };
       };
     };

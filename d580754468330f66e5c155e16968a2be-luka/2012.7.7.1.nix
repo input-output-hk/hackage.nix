@@ -31,7 +31,7 @@
           (hsPkgs.air)
           (hsPkgs.libffi)
         ];
-        libs = [ (pkgs.objc) ];
+        libs = [ (pkgs."objc") ];
       };
     };
   }

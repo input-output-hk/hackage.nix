@@ -32,7 +32,7 @@
           (hsPkgs.containers)
           (hsPkgs.directory)
         ];
-        libs = [ (pkgs.fluidsynth) ];
+        libs = [ (pkgs."fluidsynth") ];
       };
     };
   }

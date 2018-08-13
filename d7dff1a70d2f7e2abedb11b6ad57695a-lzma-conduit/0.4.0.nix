@@ -35,7 +35,7 @@
           (hsPkgs.transformers-base)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.lzma) ];
+        libs = [ (pkgs."lzma") ];
       };
     };
   }

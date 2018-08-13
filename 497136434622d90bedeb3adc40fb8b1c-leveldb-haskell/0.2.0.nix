@@ -34,7 +34,7 @@
           (hsPkgs.resourcet)
           (hsPkgs.data-default)
         ];
-        libs = [ (pkgs.leveldb) ];
+        libs = [ (pkgs."leveldb") ];
       };
     };
   }

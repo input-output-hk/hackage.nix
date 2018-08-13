@@ -86,7 +86,7 @@
           (hsPkgs.mintty)
           (hsPkgs.Win32)
         ]) ++ pkgs.lib.optional (_flags.ffi) (hsPkgs.libffi)) ++ pkgs.lib.optional (_flags.gmp) (hsPkgs.libffi);
-        libs = pkgs.lib.optional (_flags.gmp) (pkgs.gmp);
+        libs = pkgs.lib.optional (_flags.gmp) (pkgs."gmp");
       };
       exes = {
         "idris" = {

@@ -43,16 +43,16 @@
           (hsPkgs.deepseq)
         ];
         libs = [
-          (pkgs.opencv_calib3d)
-          (pkgs.opencv_contrib)
-          (pkgs.opencv_core)
-          (pkgs.opencv_features2d)
-          (pkgs.opencv_highgui)
-          (pkgs.opencv_imgproc)
-          (pkgs.opencv_legacy)
-          (pkgs.opencv_ml)
-          (pkgs.opencv_objdetect)
-          (pkgs.opencv_video)
+          (pkgs."opencv_calib3d")
+          (pkgs."opencv_contrib")
+          (pkgs."opencv_core")
+          (pkgs."opencv_features2d")
+          (pkgs."opencv_highgui")
+          (pkgs."opencv_imgproc")
+          (pkgs."opencv_legacy")
+          (pkgs."opencv_ml")
+          (pkgs."opencv_objdetect")
+          (pkgs."opencv_video")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

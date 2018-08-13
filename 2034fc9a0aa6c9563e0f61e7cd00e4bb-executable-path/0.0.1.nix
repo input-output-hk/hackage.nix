@@ -36,8 +36,8 @@
           else [
             (hsPkgs.base)
           ]) ++ pkgs.lib.optional (system.isLinux) (hsPkgs.unix)) ++ pkgs.lib.optional (system.isFreebsd) (hsPkgs.unix)) ++ pkgs.lib.optional (system.isOpenbsd || system.isNetbsd) (hsPkgs.unix)) ++ pkgs.lib.optional (system.isSolaris) (hsPkgs.unix);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.CoreFoundation);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."CoreFoundation");
       };
     };
   }

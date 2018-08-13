@@ -37,10 +37,10 @@
           then [ (hsPkgs.integer-gmp) ]
           else [ (hsPkgs.integer) ]);
         libs = if system.isWindows
-          then [ (pkgs.eay32) ]
+          then [ (pkgs."eay32") ]
           else [
-            (pkgs.crypto)
-            (pkgs.ssl)
+            (pkgs."crypto")
+            (pkgs."ssl")
           ];
       };
     };

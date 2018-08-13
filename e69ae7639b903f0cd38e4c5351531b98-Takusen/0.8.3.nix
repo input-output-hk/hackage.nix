@@ -38,14 +38,14 @@
           (hsPkgs.old-time)
         ];
         libs = ((pkgs.lib.optionals (_flags.odbc) (if system.isWindows
-          then [ (pkgs.odbc32) ]
+          then [ (pkgs."odbc32") ]
           else [
-            (pkgs.odbc)
+            (pkgs."odbc")
           ]) ++ pkgs.lib.optionals (_flags.oracle) (if system.isWindows
-          then [ (pkgs.oci) ]
+          then [ (pkgs."oci") ]
           else [
-            (pkgs.clntsh)
-          ])) ++ pkgs.lib.optional (_flags.postgres) (pkgs.pq)) ++ pkgs.lib.optional (_flags.sqlite) (pkgs.sqlite3);
+            (pkgs."clntsh")
+          ])) ++ pkgs.lib.optional (_flags.postgres) (pkgs."pq")) ++ pkgs.lib.optional (_flags.sqlite) (pkgs."sqlite3");
         pkgconfig = pkgs.lib.optionals (_flags.sqlite) (pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.sqlite3));
       };
     };

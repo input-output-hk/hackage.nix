@@ -33,7 +33,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
         ];
-        libs = [ (pkgs.morfeusz) ];
+        libs = [ (pkgs."morfeusz") ];
       };
     };
   }

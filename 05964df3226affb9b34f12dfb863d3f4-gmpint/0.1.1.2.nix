@@ -29,7 +29,7 @@
     components = {
       "gmpint" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.gmp) ];
+        libs = [ (pkgs."gmp") ];
       };
     };
   }

@@ -33,8 +33,8 @@
           (hsPkgs.transformers)
         ];
         libs = [
-          (pkgs.gssapi_krb5)
-          (pkgs.krb5)
+          (pkgs."gssapi_krb5")
+          (pkgs."krb5")
         ];
       };
     };

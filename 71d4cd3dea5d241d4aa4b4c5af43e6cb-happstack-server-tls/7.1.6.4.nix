@@ -37,7 +37,7 @@
           (hsPkgs.sendfile)
           (hsPkgs.time)
         ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-        libs = [ (pkgs.ssl) ];
+        libs = [ (pkgs."ssl") ];
       };
     };
   }

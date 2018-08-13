@@ -50,26 +50,26 @@
         libs = if _flags.mkl
           then if system.isX86_64
             then [
-              (pkgs.gsl)
-              (pkgs.mkl_lapack)
-              (pkgs.mkl_intel_lp64)
-              (pkgs.mkl_sequential)
-              (pkgs.mkl_core)
+              (pkgs."gsl")
+              (pkgs."mkl_lapack")
+              (pkgs."mkl_intel_lp64")
+              (pkgs."mkl_sequential")
+              (pkgs."mkl_core")
             ]
             else [
-              (pkgs.gsl)
-              (pkgs.mkl_lapack)
-              (pkgs.mkl_intel)
-              (pkgs.mkl_sequential)
-              (pkgs.mkl_core)
+              (pkgs."gsl")
+              (pkgs."mkl_lapack")
+              (pkgs."mkl_intel")
+              (pkgs."mkl_sequential")
+              (pkgs."mkl_core")
             ]
           else if _flags.accelerate
-            then [ (pkgs.gsl) ]
+            then [ (pkgs."gsl") ]
             else [
-              (pkgs.gsl)
-              (pkgs.lapack)
+              (pkgs."gsl")
+              (pkgs."lapack")
             ];
-        frameworks = pkgs.lib.optionals (!_flags.mkl) (pkgs.lib.optional (_flags.accelerate) (pkgs.Accelerate));
+        frameworks = pkgs.lib.optionals (!_flags.mkl) (pkgs.lib.optional (_flags.accelerate) (pkgs."Accelerate"));
       };
     };
   }

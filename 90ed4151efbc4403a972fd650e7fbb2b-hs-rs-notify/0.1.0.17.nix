@@ -43,8 +43,8 @@
             (hsPkgs.protolude)
           ];
           libs = [
-            (pkgs.notifier)
-            (pkgs.pthread)
+            (pkgs."notifier")
+            (pkgs."pthread")
           ];
         };
       };

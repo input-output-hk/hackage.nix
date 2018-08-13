@@ -34,7 +34,7 @@
           (hsPkgs.deepseq)
           (hsPkgs.gasp)
         ];
-        libs = [ (pkgs.glpk) ];
+        libs = [ (pkgs."glpk") ];
       };
     };
   }

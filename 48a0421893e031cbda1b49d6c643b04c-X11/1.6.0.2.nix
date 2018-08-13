@@ -28,9 +28,9 @@
       "X11" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.X11)
-          (pkgs.Xrandr)
-          (pkgs.Xext)
+          (pkgs."X11")
+          (pkgs."Xrandr")
+          (pkgs."Xext")
         ];
       };
     };

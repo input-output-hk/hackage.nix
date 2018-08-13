@@ -45,7 +45,7 @@
           (hsPkgs.dwarf)
           (hsPkgs.deepseq)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

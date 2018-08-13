@@ -27,7 +27,7 @@
     components = {
       "hharp" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.harp) ];
+        libs = [ (pkgs."harp") ];
       };
     };
   }

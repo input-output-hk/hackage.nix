@@ -31,7 +31,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.unix)
         ];
-        libs = [ (pkgs.expect) ];
+        libs = [ (pkgs."expect") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

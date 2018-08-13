@@ -36,7 +36,7 @@
           (hsPkgs.extensible-exceptions)
           (hsPkgs.array)
         ];
-        libs = [ (pkgs.mpi) ];
+        libs = [ (pkgs."mpi") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];
@@ -50,7 +50,7 @@
             (hsPkgs.hpc)
             (hsPkgs.unix)
           ];
-          libs = [ (pkgs.mpi) ];
+          libs = [ (pkgs."mpi") ];
           build-tools = [
             (hsPkgs.buildPackages.c2hs)
           ];

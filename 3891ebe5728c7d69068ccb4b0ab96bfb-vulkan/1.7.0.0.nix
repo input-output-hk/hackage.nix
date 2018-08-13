@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.vector-sized)
         ];
-        libs = [ (pkgs.vulkan) ];
+        libs = [ (pkgs."vulkan") ];
       };
     };
   }

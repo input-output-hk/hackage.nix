@@ -60,7 +60,7 @@
             (hsPkgs.vcache)
             (hsPkgs.vector)
           ];
-          libs = pkgs.lib.optional (!system.isOsx) (pkgs.crypt);
+          libs = pkgs.lib.optional (!system.isOsx) (pkgs."crypt");
           pkgconfig = [
             (pkgconfPkgs.libpcre)
           ];

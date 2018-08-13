@@ -37,7 +37,7 @@
           (hsPkgs.stm)
           (hsPkgs.scientific)
         ];
-        libs = [ (pkgs.ruby) ];
+        libs = [ (pkgs."ruby") ];
       };
       tests = {
         "test-roundtrip" = {

@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.hsql)
         ];
-        libs = [ (pkgs.pq) ];
+        libs = [ (pkgs."pq") ];
       };
     };
   }

@@ -33,7 +33,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.HROOT-core)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

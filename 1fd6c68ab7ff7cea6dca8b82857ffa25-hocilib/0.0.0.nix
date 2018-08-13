@@ -32,7 +32,7 @@
           (hsPkgs.inline-c)
           (hsPkgs.template-haskell)
         ];
-        libs = [ (pkgs.ocilib) ];
+        libs = [ (pkgs."ocilib") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

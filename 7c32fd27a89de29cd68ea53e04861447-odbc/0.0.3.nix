@@ -40,8 +40,8 @@
           (hsPkgs.transformers)
         ];
         libs = if system.isWindows || system.isWindows
-          then [ (pkgs.odbc32) ]
-          else [ (pkgs.odbc) ];
+          then [ (pkgs."odbc32") ]
+          else [ (pkgs."odbc") ];
       };
       exes = {
         "odbc" = {

@@ -34,10 +34,10 @@
         ];
         libs = if _flags.useinstalledomega
           then [
-            (pkgs.omega)
-            (pkgs.stdc++)
+            (pkgs."omega")
+            (pkgs."stdc++")
           ]
-          else [ (pkgs.stdc++) ];
+          else [ (pkgs."stdc++") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];
@@ -51,10 +51,10 @@
           ];
           libs = if _flags.useinstalledomega
             then [
-              (pkgs.omega)
-              (pkgs.stdc++)
+              (pkgs."omega")
+              (pkgs."stdc++")
             ]
-            else [ (pkgs.stdc++) ];
+            else [ (pkgs."stdc++") ];
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs)
           ];

@@ -33,7 +33,9 @@
           (hsPkgs.composition-prelude)
           (hsPkgs.gmpint)
         ];
-        libs = [ (pkgs.numbertheory) ];
+        libs = [
+          (pkgs."numbertheory")
+        ];
       };
       tests = {
         "fast-arithmetic-test" = {

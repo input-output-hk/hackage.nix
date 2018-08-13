@@ -36,7 +36,7 @@
           (hsPkgs.time)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.ssh2) ];
+        libs = [ (pkgs."ssh2") ];
         pkgconfig = [
           (pkgconfPkgs.libssh2)
         ];

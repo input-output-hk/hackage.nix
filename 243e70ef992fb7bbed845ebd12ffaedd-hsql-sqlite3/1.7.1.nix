@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.hsql)
         ];
-        libs = [ (pkgs.sqlite3) ];
+        libs = [ (pkgs."sqlite3") ];
       };
     };
   }

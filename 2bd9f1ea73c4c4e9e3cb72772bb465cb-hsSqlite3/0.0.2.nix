@@ -41,7 +41,7 @@
             (hsPkgs.mtl)
             (hsPkgs.stateLocal)
           ];
-          libs = [ (pkgs.sqlite3) ];
+          libs = [ (pkgs."sqlite3") ];
         };
       };
     };

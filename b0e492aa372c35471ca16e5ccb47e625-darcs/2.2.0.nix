@@ -62,7 +62,7 @@
           (hsPkgs.network)
           (hsPkgs.HTTP)
         ]))) ++ pkgs.lib.optional (_flags.external-bytestring) (hsPkgs.bytestring)) ++ pkgs.lib.optional (_flags.external-zlib) (hsPkgs.zlib)) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) (hsPkgs.terminfo)) ++ pkgs.lib.optional (_flags.haskeline) (hsPkgs.haskeline);
-        libs = (pkgs.lib.optional (_flags.curl) (pkgs.curl) ++ pkgs.lib.optional (!_flags.external-zlib) (pkgs.z)) ++ pkgs.lib.optional (_flags.curses) (pkgs.curses);
+        libs = (pkgs.lib.optional (_flags.curl) (pkgs."curl") ++ pkgs.lib.optional (!_flags.external-zlib) (pkgs."z")) ++ pkgs.lib.optional (_flags.curses) (pkgs."curses");
         pkgconfig = pkgs.lib.optionals (_flags.curl) (pkgs.lib.optionals (_flags.curl-pipelining) (pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.libcurl)));
       };
       exes = {
@@ -90,7 +90,7 @@
             (hsPkgs.network)
             (hsPkgs.HTTP)
           ]))) ++ pkgs.lib.optional (_flags.external-bytestring) (hsPkgs.bytestring)) ++ pkgs.lib.optional (_flags.external-zlib) (hsPkgs.zlib)) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) (hsPkgs.terminfo)) ++ pkgs.lib.optional (_flags.haskeline && !system.isWindows) (hsPkgs.haskeline);
-          libs = ((pkgs.lib.optional (!_flags.external-zlib) (pkgs.z) ++ pkgs.lib.optional (_flags.curl) (pkgs.curl)) ++ pkgs.lib.optional (!_flags.external-zlib) (pkgs.z)) ++ pkgs.lib.optional (_flags.curses) (pkgs.curses);
+          libs = ((pkgs.lib.optional (!_flags.external-zlib) (pkgs."z") ++ pkgs.lib.optional (_flags.curl) (pkgs."curl")) ++ pkgs.lib.optional (!_flags.external-zlib) (pkgs."z")) ++ pkgs.lib.optional (_flags.curses) (pkgs."curses");
           pkgconfig = pkgs.lib.optionals (_flags.curl) (pkgs.lib.optionals (_flags.curl-pipelining) (pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.libcurl)));
         };
       };

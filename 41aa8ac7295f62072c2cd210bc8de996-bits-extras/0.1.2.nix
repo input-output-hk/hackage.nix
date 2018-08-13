@@ -27,7 +27,7 @@
     components = {
       "bits-extras" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.gcc_s) ];
+        libs = [ (pkgs."gcc_s") ];
       };
     };
   }

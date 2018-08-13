@@ -36,7 +36,7 @@
           (hsPkgs.network)
           (hsPkgs.directory)
         ];
-        libs = pkgs.lib.optional (!system.isWindows) (pkgs.z);
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."z");
       };
     };
   }

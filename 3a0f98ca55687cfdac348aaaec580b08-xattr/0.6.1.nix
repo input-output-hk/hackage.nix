@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.unix)
         ];
-        libs = pkgs.lib.optional (!system.isOsx) (pkgs.attr);
+        libs = pkgs.lib.optional (!system.isOsx) (pkgs."attr");
       };
       tests = {
         "tests" = {

@@ -33,7 +33,7 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.mosquitto) ];
+        libs = [ (pkgs."mosquitto") ];
       };
       exes = {
         "c-mosquitto" = {

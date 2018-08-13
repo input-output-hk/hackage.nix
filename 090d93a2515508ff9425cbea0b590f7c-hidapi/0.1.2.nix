@@ -33,10 +33,10 @@
         ];
         libs = if system.isWindows
           then [
-            (pkgs.hid)
-            (pkgs.setupapi)
+            (pkgs."hid")
+            (pkgs."setupapi")
           ]
-          else [ (pkgs.udev) ];
+          else [ (pkgs."udev") ];
       };
     };
   }

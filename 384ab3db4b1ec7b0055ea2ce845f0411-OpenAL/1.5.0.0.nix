@@ -33,9 +33,9 @@
           (hsPkgs.OpenGL)
         ];
         libs = if system.isWindows && _flags.usenativewindowslibraries
-          then [ (pkgs.OpenAL32) ]
-          else pkgs.lib.optional (!(system.isOsx || system.isIos)) (pkgs.openal);
-        frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (pkgs.lib.optional (system.isOsx || system.isIos) (pkgs.OpenAL));
+          then [ (pkgs."OpenAL32") ]
+          else pkgs.lib.optional (!(system.isOsx || system.isIos)) (pkgs."openal");
+        frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (pkgs.lib.optional (system.isOsx || system.isIos) (pkgs."OpenAL"));
       };
     };
   }

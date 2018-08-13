@@ -35,8 +35,8 @@
           (hsPkgs.vector)
         ];
         libs = [
-          (pkgs.abc)
-        ] ++ pkgs.lib.optional (_flags.enable-pthreads) (pkgs.pthread);
+          (pkgs."abc")
+        ] ++ pkgs.lib.optional (_flags.enable-pthreads) (pkgs."pthread");
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

@@ -31,7 +31,7 @@
           (hsPkgs.text)
           (hsPkgs.reflection)
         ];
-        libs = [ (pkgs.odpic) ];
+        libs = [ (pkgs."odpic") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

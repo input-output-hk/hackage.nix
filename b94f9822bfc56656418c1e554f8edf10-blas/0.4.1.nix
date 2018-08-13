@@ -39,23 +39,23 @@
           (hsPkgs.QuickCheck)
         ];
         libs = (((pkgs.lib.optionals (_flags.atlas) [
-          (pkgs.cblas)
-          (pkgs.atlas)
-        ] ++ pkgs.lib.optional (_flags.gsl) (pkgs.gslcblas)) ++ pkgs.lib.optionals (_flags.mkl) (if system.isX86_64
+          (pkgs."cblas")
+          (pkgs."atlas")
+        ] ++ pkgs.lib.optional (_flags.gsl) (pkgs."gslcblas")) ++ pkgs.lib.optionals (_flags.mkl) (if system.isX86_64
           then [
-            (pkgs.mkl_lapack)
-            (pkgs.mkl_intel_lp64)
-            (pkgs.mkl_sequential)
-            (pkgs.mkl_core)
+            (pkgs."mkl_lapack")
+            (pkgs."mkl_intel_lp64")
+            (pkgs."mkl_sequential")
+            (pkgs."mkl_core")
           ]
           else [
-            (pkgs.mkl_lapack)
-            (pkgs.mkl_intel)
-            (pkgs.mkl_sequential)
-            (pkgs.mkl_core)
-          ])) ++ pkgs.lib.optional (_flags.veclib) (pkgs.cblas)) ++ pkgs.lib.optionals (!_flags.atlas && !_flags.gsl && !_flags.mkl && !_flags.veclib && !_flags.custom) [
-          (pkgs.cblas)
-          (pkgs.atlas)
+            (pkgs."mkl_lapack")
+            (pkgs."mkl_intel")
+            (pkgs."mkl_sequential")
+            (pkgs."mkl_core")
+          ])) ++ pkgs.lib.optional (_flags.veclib) (pkgs."cblas")) ++ pkgs.lib.optionals (!_flags.atlas && !_flags.gsl && !_flags.mkl && !_flags.veclib && !_flags.custom) [
+          (pkgs."cblas")
+          (pkgs."atlas")
         ];
       };
     };

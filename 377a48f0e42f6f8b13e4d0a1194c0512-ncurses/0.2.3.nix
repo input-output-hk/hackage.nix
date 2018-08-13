@@ -33,8 +33,8 @@
           (hsPkgs.transformers)
         ];
         libs = [
-          (pkgs.panelw)
-          (pkgs.ncursesw)
+          (pkgs."panelw")
+          (pkgs."ncursesw")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

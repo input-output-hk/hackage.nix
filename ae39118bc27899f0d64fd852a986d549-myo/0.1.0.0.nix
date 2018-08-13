@@ -39,7 +39,7 @@
           (hsPkgs.scientific)
           (hsPkgs.inline-c)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
       exes = {
         "myo-ws-example" = {

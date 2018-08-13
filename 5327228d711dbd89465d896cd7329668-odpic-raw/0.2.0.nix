@@ -35,7 +35,7 @@
           (hsPkgs.monad-control)
           (hsPkgs.unliftio-core)
         ];
-        libs = [ (pkgs.odpic) ];
+        libs = [ (pkgs."odpic") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

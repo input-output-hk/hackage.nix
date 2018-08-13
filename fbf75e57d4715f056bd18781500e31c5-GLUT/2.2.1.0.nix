@@ -41,8 +41,8 @@
           ]
           else [ (hsPkgs.base) ]);
         libs = if system.isWindows && _flags.usenativewindowslibraries
-          then [ (pkgs.glut32) ]
-          else [ (pkgs.glut) ];
+          then [ (pkgs."glut32") ]
+          else [ (pkgs."glut") ];
       };
     };
   }

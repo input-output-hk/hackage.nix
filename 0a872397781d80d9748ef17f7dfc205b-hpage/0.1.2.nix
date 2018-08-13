@@ -43,7 +43,7 @@
           ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
-          libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
         };
       };
     };

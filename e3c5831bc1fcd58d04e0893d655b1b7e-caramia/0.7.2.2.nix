@@ -43,7 +43,7 @@
           (hsPkgs.vector)
           (hsPkgs.gl)
         ];
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.OpenGL);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."OpenGL");
       };
       exes = {
         "smoke-test" = {

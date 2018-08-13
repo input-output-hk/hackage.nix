@@ -47,7 +47,7 @@
             (hsPkgs.formatting)
             (hsPkgs.process)
           ];
-          libs = [ (pkgs.python3) ];
+          libs = [ (pkgs."python3") ];
         };
       };
     };

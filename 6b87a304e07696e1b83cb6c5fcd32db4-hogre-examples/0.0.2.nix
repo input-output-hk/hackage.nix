@@ -32,7 +32,7 @@
             (hsPkgs.haskell98)
             (hsPkgs.hogre)
           ];
-          libs = [ (pkgs.OgreMain) ];
+          libs = [ (pkgs."OgreMain") ];
         };
         "example_02" = {
           depends  = [
@@ -41,7 +41,7 @@
             (hsPkgs.hogre)
             (hsPkgs.SDL)
           ];
-          libs = [ (pkgs.OgreMain) ];
+          libs = [ (pkgs."OgreMain") ];
         };
         "example_03" = {
           depends  = [
@@ -51,7 +51,7 @@
             (hsPkgs.SDL)
             (hsPkgs.stm)
           ];
-          libs = [ (pkgs.OgreMain) ];
+          libs = [ (pkgs."OgreMain") ];
         };
       };
     };

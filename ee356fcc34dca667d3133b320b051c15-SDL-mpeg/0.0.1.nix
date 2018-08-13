@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.SDL)
         ];
-        libs = [ (pkgs.smpeg) ];
+        libs = [ (pkgs."smpeg") ];
       };
     };
   }

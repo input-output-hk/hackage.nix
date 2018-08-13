@@ -33,7 +33,7 @@
           (hsPkgs.array)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.poker-eval) ];
+        libs = [ (pkgs."poker-eval") ];
       };
     };
   }

@@ -32,7 +32,7 @@
           (hsPkgs.carray)
           (hsPkgs.storable-complex)
         ];
-        libs = [ (pkgs.fftw3) ];
+        libs = [ (pkgs."fftw3") ];
       };
     };
   }

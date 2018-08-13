@@ -27,7 +27,7 @@
     components = {
       "magic" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.magic) ];
+        libs = [ (pkgs."magic") ];
       };
     };
   }

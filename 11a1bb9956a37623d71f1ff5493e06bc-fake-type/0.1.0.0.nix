@@ -31,7 +31,7 @@
           (hsPkgs.base-prelude)
           (hsPkgs.X11)
         ];
-        libs = [ (pkgs.Xtst) ];
+        libs = [ (pkgs."Xtst") ];
       };
     };
   }

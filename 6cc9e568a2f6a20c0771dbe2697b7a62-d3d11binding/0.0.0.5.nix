@@ -33,12 +33,12 @@
           (hsPkgs.vect)
         ];
         libs = [
-          (pkgs.d3d11)
-          (pkgs.d3dx11)
-          (pkgs.D3DCompiler)
-          (pkgs.d3dxof)
-          (pkgs.dxgi)
-          (pkgs.dxguid)
+          (pkgs."d3d11")
+          (pkgs."d3dx11")
+          (pkgs."D3DCompiler")
+          (pkgs."d3dxof")
+          (pkgs."dxgi")
+          (pkgs."dxguid")
         ];
       };
       exes = {

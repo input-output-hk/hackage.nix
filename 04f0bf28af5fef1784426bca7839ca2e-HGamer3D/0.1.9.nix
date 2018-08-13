@@ -39,7 +39,7 @@
           (hsPkgs.HGamer3D-SFML-Binding)
           (hsPkgs.HGamer3D-CEGUI-Binding)
         ];
-        libs = [ (pkgs.stdc++.dll) ];
+        libs = [ (pkgs."stdc++.dll") ];
       };
     };
   }

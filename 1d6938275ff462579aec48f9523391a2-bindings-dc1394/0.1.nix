@@ -31,7 +31,7 @@
           (hsPkgs.base)
           (hsPkgs.CV)
         ];
-        libs = [ (pkgs.dc1394) ];
+        libs = [ (pkgs."dc1394") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

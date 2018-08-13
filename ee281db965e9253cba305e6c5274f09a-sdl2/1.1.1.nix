@@ -27,7 +27,7 @@
     components = {
       "sdl2" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.SDL2) ];
+        libs = [ (pkgs."SDL2") ];
         pkgconfig = [
           (pkgconfPkgs.sdl2)
         ];

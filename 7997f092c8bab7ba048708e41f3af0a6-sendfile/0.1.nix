@@ -34,8 +34,8 @@
           (hsPkgs.network)
         ];
         libs = pkgs.lib.optionals (!_flags.portable) (pkgs.lib.optionals (system.isWindows) [
-          (pkgs.kernel32)
-          (pkgs.mswsock)
+          (pkgs."kernel32")
+          (pkgs."mswsock")
         ]);
       };
     };

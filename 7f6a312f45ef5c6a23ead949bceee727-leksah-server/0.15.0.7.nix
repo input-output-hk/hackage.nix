@@ -77,9 +77,9 @@
           ]
           else [ (hsPkgs.network) ]);
         libs = pkgs.lib.optionals (system.isWindows) [
-          (pkgs.kernel32)
-          (pkgs.pango-1.0)
-          (pkgs.glib-2.0)
+          (pkgs."kernel32")
+          (pkgs."pango-1.0")
+          (pkgs."glib-2.0")
         ];
       };
       exes = {
@@ -132,9 +132,9 @@
             ]
             else [ (hsPkgs.network) ]);
           libs = pkgs.lib.optionals (system.isWindows) [
-            (pkgs.kernel32)
-            (pkgs.pango-1.0)
-            (pkgs.glib-2.0)
+            (pkgs."kernel32")
+            (pkgs."pango-1.0")
+            (pkgs."glib-2.0")
           ];
         };
         "leksahecho" = {

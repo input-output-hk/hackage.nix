@@ -32,15 +32,15 @@
           (hsPkgs.filepath)
         ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unbuildable);
         libs = [
-          (pkgs.user32)
-          (pkgs.gdi32)
-          (pkgs.winmm)
-          (pkgs.advapi32)
-          (pkgs.shell32)
-          (pkgs.shfolder)
-          (pkgs.shlwapi)
-          (pkgs.msimg32)
-          (pkgs.imm32)
+          (pkgs."user32")
+          (pkgs."gdi32")
+          (pkgs."winmm")
+          (pkgs."advapi32")
+          (pkgs."shell32")
+          (pkgs."shfolder")
+          (pkgs."shlwapi")
+          (pkgs."msimg32")
+          (pkgs."imm32")
         ];
       };
     };

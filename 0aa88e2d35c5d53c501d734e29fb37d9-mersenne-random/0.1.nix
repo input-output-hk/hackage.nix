@@ -37,7 +37,7 @@
             (hsPkgs.base)
             (hsPkgs.old-time)
           ];
-        libs = [ (pkgs.m) ];
+        libs = [ (pkgs."m") ];
       };
     };
   }

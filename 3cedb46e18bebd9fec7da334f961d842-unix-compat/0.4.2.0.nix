@@ -42,7 +42,7 @@
               (hsPkgs.directory)
             ])
           else [ (hsPkgs.unix) ]);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.msvcrt);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."msvcrt");
       };
     };
   }

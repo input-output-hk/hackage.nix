@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.profunctors)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.sodium);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."sodium");
         pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.libsodium);
       };
       tests = {

@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.mtl)
         ];
-        libs = [ (pkgs.crypto) ];
+        libs = [ (pkgs."crypto") ];
       };
     };
   }

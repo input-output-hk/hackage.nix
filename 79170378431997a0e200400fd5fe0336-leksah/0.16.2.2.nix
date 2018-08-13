@@ -120,7 +120,7 @@
           (hsPkgs.haskell-src-exts)
           (hsPkgs.leksah-server)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
         pkgconfig = pkgs.lib.optional (_flags.gtk-318) (pkgconfPkgs.gtk+-3.0) ++ pkgs.lib.optional (_flags.gtk-320) (pkgconfPkgs.gtk+-3.0);
       };
       exes = {
@@ -134,7 +134,7 @@
             (hsPkgs.hgettext)
             (hsPkgs.setlocale)
           ]) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs.leksah-server);
-          libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
         };
       };
     };

@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.nfc) ];
+        libs = [ (pkgs."nfc") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

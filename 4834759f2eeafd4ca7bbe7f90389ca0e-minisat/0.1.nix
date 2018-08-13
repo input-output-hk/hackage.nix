@@ -31,8 +31,8 @@
           (hsPkgs.async)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.zlib);
         libs = [
-          (pkgs.stdc++)
-        ] ++ pkgs.lib.optional (!system.isWindows) (pkgs.z);
+          (pkgs."stdc++")
+        ] ++ pkgs.lib.optional (!system.isWindows) (pkgs."z");
       };
     };
   }

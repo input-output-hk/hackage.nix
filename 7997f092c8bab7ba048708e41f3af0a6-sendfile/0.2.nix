@@ -33,8 +33,8 @@
           (hsPkgs.network)
         ] ++ pkgs.lib.optionals (!(system.isWindows && !_flags.portable)) (pkgs.lib.optional (!(system.isLinux && !_flags.portable)) (hsPkgs.bytestring));
         libs = pkgs.lib.optionals (system.isWindows && !_flags.portable) [
-          (pkgs.kernel32)
-          (pkgs.mswsock)
+          (pkgs."kernel32")
+          (pkgs."mswsock")
         ];
       };
     };

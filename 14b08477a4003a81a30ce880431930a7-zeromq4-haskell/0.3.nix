@@ -35,7 +35,7 @@
           (hsPkgs.semigroups)
           (hsPkgs.transformers)
         ];
-        libs = pkgs.lib.optional (system.isFreebsd) (pkgs.pthread);
+        libs = pkgs.lib.optional (system.isFreebsd) (pkgs."pthread");
         pkgconfig = [
           (pkgconfPkgs.libzmq)
         ];

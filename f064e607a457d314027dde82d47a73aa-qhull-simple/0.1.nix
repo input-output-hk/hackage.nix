@@ -31,8 +31,8 @@
           (hsPkgs.vector)
         ];
         libs = [
-          (pkgs.qhull)
-          (pkgs.pthread)
+          (pkgs."qhull")
+          (pkgs."pthread")
         ];
       };
     };

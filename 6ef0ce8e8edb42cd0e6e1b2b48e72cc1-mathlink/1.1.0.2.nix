@@ -35,8 +35,8 @@
           (hsPkgs.array)
         ];
         libs = if system.isI386 || _flags.32bit
-          then [ (pkgs.ML32i3) ]
-          else [ (pkgs.ML64i3) ];
+          then [ (pkgs."ML32i3") ]
+          else [ (pkgs."ML64i3") ];
       };
     };
   }

@@ -38,7 +38,7 @@
           (hsPkgs.thread-local-storage)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.jvm) ];
+        libs = [ (pkgs."jvm") ];
       };
     };
   }

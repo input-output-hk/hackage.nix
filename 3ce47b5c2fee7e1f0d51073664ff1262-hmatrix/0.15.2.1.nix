@@ -45,28 +45,28 @@
         ];
         libs = ((pkgs.lib.optionals (_flags.mkl) (if system.isX86_64
           then [
-            (pkgs.gsl)
-            (pkgs.mkl_lapack)
-            (pkgs.mkl_intel_lp64)
-            (pkgs.mkl_sequential)
-            (pkgs.mkl_core)
+            (pkgs."gsl")
+            (pkgs."mkl_lapack")
+            (pkgs."mkl_intel_lp64")
+            (pkgs."mkl_sequential")
+            (pkgs."mkl_core")
           ]
           else [
-            (pkgs.gsl)
-            (pkgs.mkl_lapack)
-            (pkgs.mkl_intel)
-            (pkgs.mkl_sequential)
-            (pkgs.mkl_core)
-          ]) ++ pkgs.lib.optional (system.isOsx) (pkgs.gsl)) ++ pkgs.lib.optionals (system.isFreebsd) [
-          (pkgs.gsl)
-          (pkgs.blas)
-          (pkgs.lapack)
+            (pkgs."gsl")
+            (pkgs."mkl_lapack")
+            (pkgs."mkl_intel")
+            (pkgs."mkl_sequential")
+            (pkgs."mkl_core")
+          ]) ++ pkgs.lib.optional (system.isOsx) (pkgs."gsl")) ++ pkgs.lib.optionals (system.isFreebsd) [
+          (pkgs."gsl")
+          (pkgs."blas")
+          (pkgs."lapack")
         ]) ++ pkgs.lib.optionals (system.isWindows) [
-          (pkgs.gsl-0)
-          (pkgs.blas)
-          (pkgs.lapack)
+          (pkgs."gsl-0")
+          (pkgs."blas")
+          (pkgs."lapack")
         ];
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Accelerate);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate");
       };
     };
   }

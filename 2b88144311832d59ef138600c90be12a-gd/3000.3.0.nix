@@ -28,15 +28,15 @@
       "gd" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.gd)
-          (pkgs.png)
-          (pkgs.z)
-          (pkgs.jpeg)
-          (pkgs.m)
-          (pkgs.fontconfig)
-          (pkgs.freetype)
-          (pkgs.pthread)
-          (pkgs.expat)
+          (pkgs."gd")
+          (pkgs."png")
+          (pkgs."z")
+          (pkgs."jpeg")
+          (pkgs."m")
+          (pkgs."fontconfig")
+          (pkgs."freetype")
+          (pkgs."pthread")
+          (pkgs."expat")
         ];
       };
     };

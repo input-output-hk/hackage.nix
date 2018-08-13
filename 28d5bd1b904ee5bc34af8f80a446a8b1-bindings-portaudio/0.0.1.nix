@@ -37,9 +37,9 @@
           (hsPkgs.bindings-DSL)
         ];
         libs = pkgs.lib.optionals (system.isWindows && !_flags.mingw-external) ([
-          (pkgs.winmm)
-          (pkgs.ole32)
-        ] ++ pkgs.lib.optional (_flags.wdmks) (pkgs.Setupapi));
+          (pkgs."winmm")
+          (pkgs."ole32")
+        ] ++ pkgs.lib.optional (_flags.wdmks) (pkgs."Setupapi"));
         pkgconfig = pkgs.lib.optional (system.isLinux || system.isFreebsd || system.isOsx) (pkgconfPkgs.portaudio-2.0);
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

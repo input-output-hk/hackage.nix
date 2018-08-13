@@ -31,10 +31,10 @@
       "hlibsass" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.sass)
+          (pkgs."sass")
         ] ++ pkgs.lib.optionals (!_flags.externallibsass && !_flags.sharedlibsass) (if system.isOsx
-          then [ (pkgs.c++) ]
-          else [ (pkgs.stdc++) ]);
+          then [ (pkgs."c++") ]
+          else [ (pkgs."stdc++") ]);
       };
       tests = {
         "tests" = {

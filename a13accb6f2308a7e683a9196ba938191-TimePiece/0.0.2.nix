@@ -38,7 +38,7 @@
             (hsPkgs.old-locale)
             (hsPkgs.old-time)
           ];
-          libs = [ (pkgs.SDLmain) ];
+          libs = [ (pkgs."SDLmain") ];
         };
       };
     };

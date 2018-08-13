@@ -35,7 +35,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.parsec)
         ] ++ [ (hsPkgs.base) ];
-        libs = pkgs.lib.optional (system.isLinux) (pkgs.uuid) ++ pkgs.lib.optional (system.isWindows) (pkgs.rpcrt4);
+        libs = pkgs.lib.optional (system.isLinux) (pkgs."uuid") ++ pkgs.lib.optional (system.isWindows) (pkgs."rpcrt4");
       };
       exes = {
         "hooty" = {
@@ -45,7 +45,7 @@
             (hsPkgs.template-haskell)
             (hsPkgs.parsec)
           ] ++ [ (hsPkgs.base) ];
-          libs = pkgs.lib.optional (system.isLinux) (pkgs.uuid) ++ pkgs.lib.optional (system.isWindows) (pkgs.rpcrt4);
+          libs = pkgs.lib.optional (system.isLinux) (pkgs."uuid") ++ pkgs.lib.optional (system.isWindows) (pkgs."rpcrt4");
         };
       };
     };

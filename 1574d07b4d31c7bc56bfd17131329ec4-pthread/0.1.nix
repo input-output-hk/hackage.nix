@@ -27,7 +27,7 @@
     components = {
       "pthread" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.pthread) ];
+        libs = [ (pkgs."pthread") ];
       };
     };
   }

@@ -33,12 +33,12 @@
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix)) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
         libs = pkgs.lib.optionals (!_flags.use-pkg-config) (if system.isWindows
-          then [ (pkgs.libpq) ]
+          then [ (pkgs."libpq") ]
           else [
-            (pkgs.pq)
+            (pkgs."pq")
           ] ++ pkgs.lib.optionals (system.isOpenbsd) [
-            (pkgs.crypto)
-            (pkgs.ssl)
+            (pkgs."crypto")
+            (pkgs."ssl")
           ]);
         pkgconfig = pkgs.lib.optional (_flags.use-pkg-config) (pkgconfPkgs.libpq);
         build-tools = [

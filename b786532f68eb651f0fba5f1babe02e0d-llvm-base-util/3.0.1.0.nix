@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.llvm-base)
         ];
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.vecLib);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."vecLib");
       };
     };
   }

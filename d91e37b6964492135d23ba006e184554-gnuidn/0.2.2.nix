@@ -31,7 +31,7 @@
           (hsPkgs.text)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.idn) ];
+        libs = [ (pkgs."idn") ];
         pkgconfig = [
           (pkgconfPkgs.libidn)
         ];
@@ -50,7 +50,7 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.text)
           ];
-          libs = [ (pkgs.idn) ];
+          libs = [ (pkgs."idn") ];
           pkgconfig = [
             (pkgconfPkgs.libidn)
           ];

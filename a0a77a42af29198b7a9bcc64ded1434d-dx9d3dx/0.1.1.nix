@@ -32,7 +32,7 @@
           (hsPkgs.dx9base)
           (hsPkgs.dx9d3d)
         ];
-        libs = [ (pkgs.d3dx9) ];
+        libs = [ (pkgs."d3dx9") ];
       };
     };
   }

@@ -121,7 +121,7 @@
                         (hsPkgs.transformers)
                         (hsPkgs.transformers-compat)
                       ];
-        libs = [ (pkgs.config) ];
+        libs = [ (pkgs."config") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

@@ -48,7 +48,7 @@
             else if _flags.vty
               then [ (hsPkgs.vty) ]
               else [ (hsPkgs.gtk) ]);
-          libs = pkgs.lib.optional (_flags.curses) (pkgs.curses);
+          libs = pkgs.lib.optional (_flags.curses) (pkgs."curses");
         };
       };
     };

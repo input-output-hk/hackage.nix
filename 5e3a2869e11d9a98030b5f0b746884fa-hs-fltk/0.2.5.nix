@@ -28,8 +28,8 @@
       "hs-fltk" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.fltk)
-          (pkgs.fltk_images)
+          (pkgs."fltk")
+          (pkgs."fltk_images")
         ];
       };
     };

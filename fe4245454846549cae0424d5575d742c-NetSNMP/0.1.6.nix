@@ -27,7 +27,7 @@
     components = {
       "NetSNMP" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.netsnmp) ];
+        libs = [ (pkgs."netsnmp") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

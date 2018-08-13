@@ -33,16 +33,16 @@
           (hsPkgs.base)
         ];
         libs = [
-          (pkgs.ldap)
-          (pkgs.lber)
+          (pkgs."ldap")
+          (pkgs."lber")
         ];
       };
       exes = {
         "runtests" = {
           depends  = [ (hsPkgs.base) ];
           libs = [
-            (pkgs.ldap)
-            (pkgs.lber)
+            (pkgs."ldap")
+            (pkgs."lber")
           ];
         };
       };

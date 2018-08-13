@@ -35,7 +35,7 @@
           (hsPkgs.sendfile)
           (hsPkgs.network)
         ];
-        libs = [ (pkgs.z) ];
+        libs = [ (pkgs."z") ];
       };
     };
   }

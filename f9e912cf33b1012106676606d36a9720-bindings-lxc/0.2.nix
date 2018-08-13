@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.lxc) ];
+        libs = [ (pkgs."lxc") ];
       };
     };
   }

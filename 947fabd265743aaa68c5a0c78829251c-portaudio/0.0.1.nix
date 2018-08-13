@@ -31,7 +31,7 @@
           (hsPkgs.mtl)
           (hsPkgs.haskell98)
         ];
-        libs = [ (pkgs.portaudio) ];
+        libs = [ (pkgs."portaudio") ];
       };
     };
   }

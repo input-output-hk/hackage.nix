@@ -31,9 +31,9 @@
           (hsPkgs.hmatrix)
         ];
         libs = [
-          (pkgs.mkl_intel)
-          (pkgs.mkl_sequential)
-          (pkgs.mkl_core)
+          (pkgs."mkl_intel")
+          (pkgs."mkl_sequential")
+          (pkgs."mkl_core")
         ];
       };
     };

@@ -27,7 +27,7 @@
     components = {
       "libconfig" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.config) ];
+        libs = [ (pkgs."config") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

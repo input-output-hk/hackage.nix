@@ -37,7 +37,7 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.netcdf) ];
+        libs = [ (pkgs."netcdf") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];
@@ -84,7 +84,7 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
           ];
-          libs = [ (pkgs.netcdf) ];
+          libs = [ (pkgs."netcdf") ];
         };
         "test-raw-get-put" = {
           depends  = [
@@ -100,7 +100,7 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
           ];
-          libs = [ (pkgs.netcdf) ];
+          libs = [ (pkgs."netcdf") ];
         };
         "test-raw-attributes" = {
           depends  = [
@@ -116,7 +116,7 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
           ];
-          libs = [ (pkgs.netcdf) ];
+          libs = [ (pkgs."netcdf") ];
         };
         "test-get" = {
           depends  = [
@@ -134,7 +134,7 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
           ];
-          libs = [ (pkgs.netcdf) ];
+          libs = [ (pkgs."netcdf") ];
         };
         "test-put" = {
           depends  = [
@@ -145,7 +145,7 @@
             (hsPkgs.vector)
             (hsPkgs.directory)
           ];
-          libs = [ (pkgs.netcdf) ];
+          libs = [ (pkgs."netcdf") ];
         };
         "test-hmatrix" = {
           depends  = [
@@ -162,7 +162,7 @@
             (hsPkgs.HUnit)
             (hsPkgs.QuickCheck)
           ];
-          libs = [ (pkgs.netcdf) ];
+          libs = [ (pkgs."netcdf") ];
         };
       };
     };

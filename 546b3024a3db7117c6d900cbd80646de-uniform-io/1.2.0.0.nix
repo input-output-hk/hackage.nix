@@ -40,9 +40,9 @@
           (hsPkgs.interruptible)
         ];
         libs = [
-          (pkgs.ssl)
-          (pkgs.crypto)
-          (pkgs.pthread)
+          (pkgs."ssl")
+          (pkgs."crypto")
+          (pkgs."pthread")
         ];
       };
       tests = {

@@ -43,8 +43,8 @@
           (hsPkgs.wave)
         ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
         libs = [
-          (pkgs.FLAC)
-          (pkgs.FLAC)
+          (pkgs."FLAC")
+          (pkgs."FLAC")
         ];
       };
       tests = {

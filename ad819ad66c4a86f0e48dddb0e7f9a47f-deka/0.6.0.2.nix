@@ -32,7 +32,7 @@
           (hsPkgs.parsec)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.mpdec) ];
+        libs = [ (pkgs."mpdec") ];
       };
     };
   }

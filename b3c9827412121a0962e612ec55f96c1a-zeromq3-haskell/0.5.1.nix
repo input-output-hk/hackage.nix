@@ -37,10 +37,10 @@
         ];
         libs = if system.isFreebsd
           then [
-            (pkgs.zmq)
-            (pkgs.pthread)
+            (pkgs."zmq")
+            (pkgs."pthread")
           ]
-          else [ (pkgs.zmq) ];
+          else [ (pkgs."zmq") ];
       };
       tests = {
         "zeromq-haskell-tests" = {

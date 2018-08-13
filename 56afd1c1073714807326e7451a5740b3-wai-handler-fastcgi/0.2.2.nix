@@ -32,7 +32,7 @@
           (hsPkgs.wai-extra)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.fcgi) ];
+        libs = [ (pkgs."fcgi") ];
       };
     };
   }

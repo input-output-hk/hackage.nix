@@ -42,7 +42,7 @@
             (hsPkgs.ats-storable)
             (hsPkgs.hspec)
           ];
-          libs = [ (pkgs.storable) ];
+          libs = [ (pkgs."storable") ];
         };
       };
     };

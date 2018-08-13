@@ -31,12 +31,12 @@
         depends  = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") (hsPkgs.base);
-        libs = [ (pkgs.ldap) ];
+        libs = [ (pkgs."ldap") ];
       };
       exes = {
         "runtests" = {
           depends  = pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") (hsPkgs.base);
-          libs = [ (pkgs.ldap) ];
+          libs = [ (pkgs."ldap") ];
         };
       };
     };

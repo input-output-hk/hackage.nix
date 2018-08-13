@@ -50,10 +50,10 @@
             ]
             else [ (hsPkgs.base) ]);
           libs = [
-            (pkgs.z)
+            (pkgs."z")
           ] ++ pkgs.lib.optionals (_flags.curses) [
-            (pkgs.curses)
-            (pkgs.curl)
+            (pkgs."curses")
+            (pkgs."curl")
           ];
         };
       };

@@ -36,7 +36,7 @@
           (hsPkgs.hack)
           (hsPkgs.hack-contrib)
         ];
-        libs = [ (pkgs.event) ];
+        libs = [ (pkgs."event") ];
       };
     };
   }

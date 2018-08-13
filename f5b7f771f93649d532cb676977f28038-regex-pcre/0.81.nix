@@ -31,7 +31,7 @@
           (hsPkgs.base)
           (hsPkgs.fps)
         ];
-        libs = [ (pkgs.pcre) ];
+        libs = [ (pkgs."pcre") ];
       };
     };
   }

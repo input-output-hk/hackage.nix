@@ -32,7 +32,7 @@
           (hsPkgs.integer-gmp)
           (hsPkgs.ghc-prim)
         ];
-        libs = [ (pkgs.gmp) ];
+        libs = [ (pkgs."gmp") ];
       };
       tests = {
         "bitset-tests" = {
@@ -57,7 +57,7 @@
             (hsPkgs.random)
             (hsPkgs.random-shuffle)
           ];
-          libs = [ (pkgs.gmp) ];
+          libs = [ (pkgs."gmp") ];
         };
       };
     };

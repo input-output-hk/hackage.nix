@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
-        libs = [ (pkgs.xine) ];
+        libs = [ (pkgs."xine") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

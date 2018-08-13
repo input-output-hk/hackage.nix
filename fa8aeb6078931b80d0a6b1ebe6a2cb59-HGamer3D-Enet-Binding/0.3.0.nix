@@ -31,10 +31,10 @@
           (hsPkgs.HGamer3D-Data)
         ];
         libs = if system.isWindows
-          then [ (pkgs.hg3denet030) ]
+          then [ (pkgs."hg3denet030") ]
           else [
-            (pkgs.hg3denet030)
-            (pkgs.:libenet.so.2)
+            (pkgs."hg3denet030")
+            (pkgs.":libenet.so.2")
           ];
       };
     };

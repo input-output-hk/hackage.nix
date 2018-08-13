@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.haskell98)
         ];
-        libs = [ (pkgs.stdc++.dll) ];
+        libs = [ (pkgs."stdc++.dll") ];
       };
     };
   }

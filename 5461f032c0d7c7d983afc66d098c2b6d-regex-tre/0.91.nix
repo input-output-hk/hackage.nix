@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.regex-base)
         ];
-        libs = [ (pkgs.tre) ];
+        libs = [ (pkgs."tre") ];
       };
     };
   }

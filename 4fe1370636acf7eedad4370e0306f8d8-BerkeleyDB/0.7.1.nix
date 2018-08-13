@@ -34,8 +34,11 @@
           (hsPkgs.bytestring)
         ];
         libs = if _flags.cxx
-          then [ (pkgs.db) (pkgs.db_cxx) ]
-          else [ (pkgs.db) ];
+          then [
+            (pkgs."db")
+            (pkgs."db_cxx")
+          ]
+          else [ (pkgs."db") ];
       };
     };
   }

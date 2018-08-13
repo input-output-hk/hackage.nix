@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.transformers)
         ];
-        libs = pkgs.lib.optional (!system.isOsx) (pkgs.dns_sd);
+        libs = pkgs.lib.optional (!system.isOsx) (pkgs."dns_sd");
       };
     };
   }

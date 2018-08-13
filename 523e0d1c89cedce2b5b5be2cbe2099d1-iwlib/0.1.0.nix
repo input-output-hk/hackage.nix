@@ -27,7 +27,7 @@
     components = {
       "iwlib" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.iw) ];
+        libs = [ (pkgs."iw") ];
       };
     };
   }

@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
         ];
-        libs = [ (pkgs.yajl) ];
+        libs = [ (pkgs."yajl") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

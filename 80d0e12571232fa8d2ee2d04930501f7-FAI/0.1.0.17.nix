@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.inline-c)
         ];
-        libs = pkgs.lib.optional (_flags.enable-cuda) (pkgs.cudart);
+        libs = pkgs.lib.optional (_flags.enable-cuda) (pkgs."cudart");
       };
       tests = {
         "spec" = {

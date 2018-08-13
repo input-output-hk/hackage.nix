@@ -41,13 +41,13 @@
           ]
           else [ (hsPkgs.base) ]);
         libs = [
-          (pkgs.sndfile)
+          (pkgs."sndfile")
         ] ++ pkgs.lib.optionals (!(system.isOsx && _flags.useframework)) (if _flags.usedouble
-          then [ (pkgs.csound64) ]
-          else [ (pkgs.csound32) ]);
+          then [ (pkgs."csound64") ]
+          else [ (pkgs."csound32") ]);
         frameworks = pkgs.lib.optionals (system.isOsx && _flags.useframework) (if _flags.usedouble
-          then [ (pkgs.CsoundLib64) ]
-          else [ (pkgs.CsoundLib) ]);
+          then [ (pkgs."CsoundLib64") ]
+          else [ (pkgs."CsoundLib") ]);
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

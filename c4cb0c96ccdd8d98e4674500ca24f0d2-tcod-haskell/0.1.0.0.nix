@@ -37,7 +37,7 @@
           (hsPkgs.sdl2)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.tcod) ];
+        libs = [ (pkgs."tcod") ];
       };
       exes = {
         "tcod-haskell-sample01" = {

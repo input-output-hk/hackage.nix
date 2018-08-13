@@ -27,7 +27,7 @@
     components = {
       "judy" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.Judy) ];
+        libs = [ (pkgs."Judy") ];
       };
     };
   }

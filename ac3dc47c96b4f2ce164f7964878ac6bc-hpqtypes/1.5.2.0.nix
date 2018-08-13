@@ -45,7 +45,7 @@
           (hsPkgs.data-default-class)
           (hsPkgs.text-show)
         ];
-        libs = [ (pkgs.pq) ];
+        libs = [ (pkgs."pq") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

@@ -28,8 +28,8 @@
       "gsl-random" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.gsl)
-          (pkgs.cblas)
+          (pkgs."gsl")
+          (pkgs."cblas")
         ];
       };
     };

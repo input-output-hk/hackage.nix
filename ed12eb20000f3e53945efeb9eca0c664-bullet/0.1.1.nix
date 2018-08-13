@@ -28,9 +28,9 @@
       "bullet" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.BulletDynamics)
-          (pkgs.LinearMath)
-          (pkgs.BulletCollision)
+          (pkgs."BulletDynamics")
+          (pkgs."LinearMath")
+          (pkgs."BulletCollision")
         ];
       };
     };

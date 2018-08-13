@@ -37,7 +37,7 @@
           (hsPkgs.terminfo)
           (hsPkgs.transformers)
         ];
-        libs = pkgs.lib.optional (_flags.cursed) (pkgs.curses);
+        libs = pkgs.lib.optional (_flags.cursed) (pkgs."curses");
       };
     };
   }

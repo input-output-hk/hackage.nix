@@ -39,10 +39,10 @@
           (hsPkgs.cereal)
         ];
         libs = if system.isWindows
-          then [ (pkgs.hgamer3d061) ]
+          then [ (pkgs."hgamer3d061") ]
           else [
-            (pkgs.hgamer3d061)
-            (pkgs.Urho3D)
+            (pkgs."hgamer3d061")
+            (pkgs."Urho3D")
           ];
       };
     };

@@ -44,7 +44,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.time-locale-compat)
         ];
-        libs = [ (pkgs.ncursesw) ];
+        libs = [ (pkgs."ncursesw") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

@@ -37,14 +37,14 @@
           (hsPkgs.containers)
         ];
         frameworks = [
-          (pkgs.Foundation)
-          (pkgs.WebKit)
+          (pkgs."Foundation")
+          (pkgs."WebKit")
         ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if system.isIos
           then [
-            (pkgs.UIKit)
-            (pkgs.UserNotifications)
+            (pkgs."UIKit")
+            (pkgs."UserNotifications")
           ]
-          else [ (pkgs.Cocoa) ]);
+          else [ (pkgs."Cocoa") ]);
       };
     };
   }

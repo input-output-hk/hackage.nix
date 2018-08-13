@@ -35,7 +35,7 @@
           (hsPkgs.filepath)
           (hsPkgs.Win32)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.ntdll);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."ntdll");
         build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs);
       };
       exes = {

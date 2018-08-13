@@ -57,7 +57,7 @@
           (hsPkgs.vinyl)
           (hsPkgs.verifiable-expressions)
         ];
-        libs = [ (pkgs.flint) ];
+        libs = [ (pkgs."flint") ];
         build-tools = [
           (hsPkgs.buildPackages.alex)
           (hsPkgs.buildPackages.happy)

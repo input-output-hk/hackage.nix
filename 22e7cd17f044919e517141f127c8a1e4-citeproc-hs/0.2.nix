@@ -45,7 +45,7 @@
             (hsPkgs.syb)
           ]
           else [ (hsPkgs.base) ]);
-        libs = pkgs.lib.optional (_flags.bibutils) (pkgs.bibutils);
+        libs = pkgs.lib.optional (_flags.bibutils) (pkgs."bibutils");
       };
     };
   }

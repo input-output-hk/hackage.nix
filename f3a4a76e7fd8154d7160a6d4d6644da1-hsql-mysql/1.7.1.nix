@@ -32,7 +32,7 @@
           (hsPkgs.Cabal)
           (hsPkgs.old-time)
         ];
-        libs = [ (pkgs.mysqlclient) ];
+        libs = [ (pkgs."mysqlclient") ];
       };
     };
   }

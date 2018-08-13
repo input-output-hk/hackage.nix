@@ -36,7 +36,7 @@
             (hsPkgs.containers)
           ]
           else [ (hsPkgs.base) ]);
-        libs = [ (pkgs.Judy) ];
+        libs = [ (pkgs."Judy") ];
       };
     };
   }

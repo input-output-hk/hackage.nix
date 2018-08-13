@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.utf8-string)
         ];
-        libs = [ (pkgs.tag_c) ];
+        libs = [ (pkgs."tag_c") ];
       };
     };
   }

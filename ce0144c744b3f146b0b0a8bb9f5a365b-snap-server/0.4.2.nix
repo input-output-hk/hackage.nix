@@ -60,8 +60,8 @@
           (hsPkgs.PSQueue)
         ] ++ pkgs.lib.optional (!(_flags.portable || system.isWindows)) (hsPkgs.unix)) ++ pkgs.lib.optional (_flags.libev) (hsPkgs.hlibev);
         libs = pkgs.lib.optionals (_flags.gnutls) [
-          (pkgs.gnutls)
-          (pkgs.gcrypt)
+          (pkgs."gnutls")
+          (pkgs."gcrypt")
         ];
       };
     };

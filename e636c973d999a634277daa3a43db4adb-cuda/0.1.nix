@@ -33,8 +33,8 @@
           (hsPkgs.extensible-exceptions)
         ];
         libs = [
-          (pkgs.cuda)
-          (pkgs.cudart)
+          (pkgs."cuda")
+          (pkgs."cudart")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

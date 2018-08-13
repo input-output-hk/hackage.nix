@@ -36,7 +36,7 @@
           (hsPkgs.utf8-string)
           (hsPkgs.parallel)
         ];
-        libs = [ (pkgs.expat) ];
+        libs = [ (pkgs."expat") ];
       };
     };
   }

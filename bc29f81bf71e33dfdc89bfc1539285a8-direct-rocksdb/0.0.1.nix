@@ -28,8 +28,8 @@
       "direct-rocksdb" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.stdc++)
-        ] ++ pkgs.lib.optional (system.isWindows) (pkgs.rpcrt4);
+          (pkgs."stdc++")
+        ] ++ pkgs.lib.optional (system.isWindows) (pkgs."rpcrt4");
       };
       tests = {
         "direct-rocksdb-test" = {
@@ -38,8 +38,8 @@
             (hsPkgs.direct-rocksdb)
           ];
           libs = [
-            (pkgs.stdc++)
-          ] ++ pkgs.lib.optional (system.isWindows) (pkgs.rpcrt4);
+            (pkgs."stdc++")
+          ] ++ pkgs.lib.optional (system.isWindows) (pkgs."rpcrt4");
         };
       };
     };

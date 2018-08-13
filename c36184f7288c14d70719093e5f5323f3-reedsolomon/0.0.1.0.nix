@@ -40,7 +40,7 @@
           (hsPkgs.profunctors)
           (hsPkgs.gitrev)
         ];
-        libs = pkgs.lib.optional (_flags.simd) (pkgs.reedsolomon);
+        libs = pkgs.lib.optional (_flags.simd) (pkgs."reedsolomon");
       };
       exes = {
         "reedsolomon-simple-encoder" = {

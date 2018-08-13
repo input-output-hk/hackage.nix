@@ -31,7 +31,7 @@
           (hsPkgs.repa)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.IL) ];
+        libs = [ (pkgs."IL") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

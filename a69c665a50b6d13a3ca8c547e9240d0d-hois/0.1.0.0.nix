@@ -27,7 +27,7 @@
     components = {
       "hois" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.OIS) ];
+        libs = [ (pkgs."OIS") ];
       };
       exes = {
         "OISConsole" = {

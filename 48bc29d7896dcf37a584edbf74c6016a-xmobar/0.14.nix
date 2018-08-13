@@ -67,7 +67,7 @@
             (hsPkgs.timezone-olson)
             (hsPkgs.timezone-series)
           ];
-          libs = pkgs.lib.optional true (pkgs.Xrandr) ++ pkgs.lib.optional (_flags.with_iwlib || _flags.all_extensions) (pkgs.iw);
+          libs = pkgs.lib.optional true (pkgs."Xrandr") ++ pkgs.lib.optional (_flags.with_iwlib || _flags.all_extensions) (pkgs."iw");
         };
       };
     };

@@ -31,7 +31,7 @@
           (hsPkgs.extensible-exceptions)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.db) ];
+        libs = [ (pkgs."db") ];
       };
     };
   }

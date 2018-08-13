@@ -44,8 +44,8 @@
             (hsPkgs.StateVar)
           ];
         libs = [
-          (pkgs.m)
-        ] ++ pkgs.lib.optional (_flags.system-chipmunk) (pkgs.chipmunk);
+          (pkgs."m")
+        ] ++ pkgs.lib.optional (_flags.system-chipmunk) (pkgs."chipmunk");
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

@@ -32,8 +32,8 @@
           (hsPkgs.bytestring)
         ];
         libs = [
-          (pkgs.brotlidec)
-          (pkgs.brotlienc)
+          (pkgs."brotlidec")
+          (pkgs."brotlienc")
         ];
         pkgconfig = [
           (pkgconfPkgs.libbrotlidec)

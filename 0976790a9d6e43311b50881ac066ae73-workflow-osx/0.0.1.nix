@@ -37,7 +37,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.base)
         ];
-        frameworks = [ (pkgs.Cocoa) ];
+        frameworks = [ (pkgs."Cocoa") ];
       };
       exes = {
         "example" = {

@@ -38,7 +38,7 @@
           (hsPkgs.HROOT-graf)
           (hsPkgs.HROOT-io)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

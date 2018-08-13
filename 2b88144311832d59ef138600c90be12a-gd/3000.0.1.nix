@@ -28,10 +28,10 @@
       "gd" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.gd)
-          (pkgs.jpeg)
-          (pkgs.m)
-          (pkgs.png)
+          (pkgs."gd")
+          (pkgs."jpeg")
+          (pkgs."m")
+          (pkgs."png")
         ];
       };
     };

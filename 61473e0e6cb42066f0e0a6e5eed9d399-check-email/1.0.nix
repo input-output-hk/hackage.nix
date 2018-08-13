@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.email-validate)
         ];
-        libs = [ (pkgs.resolv) ];
+        libs = [ (pkgs."resolv") ];
       };
     };
   }

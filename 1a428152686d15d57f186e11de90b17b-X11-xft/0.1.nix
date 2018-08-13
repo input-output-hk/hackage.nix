@@ -32,7 +32,7 @@
           (hsPkgs.X11)
           (hsPkgs.utf8-string)
         ];
-        libs = [ (pkgs.Xft) ];
+        libs = [ (pkgs."Xft") ];
       };
     };
   }

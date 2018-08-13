@@ -35,8 +35,8 @@
           (hsPkgs.process)
         ];
         libs = [
-          (pkgs.notifier)
-          (pkgs.pthread)
+          (pkgs."notifier")
+          (pkgs."pthread")
         ];
       };
       exes = {
@@ -47,8 +47,8 @@
             (hsPkgs.protolude)
           ];
           libs = [
-            (pkgs.notifier)
-            (pkgs.pthread)
+            (pkgs."notifier")
+            (pkgs."pthread")
           ];
         };
       };

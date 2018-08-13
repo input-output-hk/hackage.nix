@@ -28,11 +28,11 @@
       "sfml-audio" = {
         depends  = [ (hsPkgs.base) ];
         libs = ([
-          (pkgs.stdc++)
-          (pkgs.sndfile)
-          (pkgs.pthread)
-        ] ++ pkgs.lib.optional (system.isLinux) (pkgs.openal)) ++ pkgs.lib.optional (system.isWindows) (pkgs.openal32);
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.OpenAL);
+          (pkgs."stdc++")
+          (pkgs."sndfile")
+          (pkgs."pthread")
+        ] ++ pkgs.lib.optional (system.isLinux) (pkgs."openal")) ++ pkgs.lib.optional (system.isWindows) (pkgs."openal32");
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."OpenAL");
       };
     };
   }

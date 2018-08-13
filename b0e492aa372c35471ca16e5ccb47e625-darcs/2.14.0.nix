@@ -82,7 +82,7 @@
           else [
             (hsPkgs.unix)
           ])) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) (hsPkgs.terminfo);
-        libs = pkgs.lib.optionals (_flags.curl) (pkgs.lib.optional (!_flags.pkgconfig) (pkgs.curl));
+        libs = pkgs.lib.optionals (_flags.curl) (pkgs.lib.optional (!_flags.pkgconfig) (pkgs."curl"));
         pkgconfig = pkgs.lib.optionals (_flags.curl) (pkgs.lib.optional (_flags.pkgconfig) (pkgconfPkgs.libcurl));
       };
       exes = {

@@ -27,7 +27,9 @@
     components = {
       "AppleScript" = {
         depends  = [ (hsPkgs.base) ];
-        frameworks = [ (pkgs.Carbon) ];
+        frameworks = [
+          (pkgs."Carbon")
+        ];
       };
     };
   }

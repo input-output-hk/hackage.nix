@@ -37,10 +37,10 @@
           (hsPkgs.primitive)
         ];
         libs = [
-          (pkgs.crypto)
-          (pkgs.gmpxx)
-          (pkgs.mcl)
-          (pkgs.stdc++)
+          (pkgs."crypto")
+          (pkgs."gmpxx")
+          (pkgs."mcl")
+          (pkgs."stdc++")
         ];
       };
       tests = {

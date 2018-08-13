@@ -35,11 +35,11 @@
         };
         "cansend" = {
           depends  = [ (hsPkgs.base) ];
-          libs = [ (pkgs.canlib) ];
+          libs = [ (pkgs."canlib") ];
         };
         "canview" = {
           depends  = [ (hsPkgs.base) ];
-          libs = [ (pkgs.canlib) ];
+          libs = [ (pkgs."canlib") ];
         };
         "probe" = {
           depends  = [
@@ -47,7 +47,7 @@
             (hsPkgs.digest)
             (hsPkgs.vcd)
           ];
-          libs = [ (pkgs.canlib) ];
+          libs = [ (pkgs."canlib") ];
         };
         "toesb" = {
           depends  = [

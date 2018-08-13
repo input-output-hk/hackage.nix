@@ -32,7 +32,7 @@
           (hsPkgs.containers)
           (hsPkgs.mtl)
         ];
-        libs = [ (pkgs.glpk) ];
+        libs = [ (pkgs."glpk") ];
       };
     };
   }

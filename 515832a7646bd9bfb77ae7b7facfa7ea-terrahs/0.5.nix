@@ -27,7 +27,7 @@
     components = {
       "terrahs" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.terrahsc) ];
+        libs = [ (pkgs."terrahsc") ];
       };
     };
   }

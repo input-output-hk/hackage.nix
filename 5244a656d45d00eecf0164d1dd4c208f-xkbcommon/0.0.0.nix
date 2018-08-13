@@ -45,28 +45,28 @@
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
           ];
-          libs = [ (pkgs.xkbcommon) ];
+          libs = [ (pkgs."xkbcommon") ];
         };
         "filecomp" = {
           depends  = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
           ];
-          libs = [ (pkgs.xkbcommon) ];
+          libs = [ (pkgs."xkbcommon") ];
         };
         "keyseq" = {
           depends  = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
           ];
-          libs = [ (pkgs.xkbcommon) ];
+          libs = [ (pkgs."xkbcommon") ];
         };
         "keysym" = {
           depends  = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
           ];
-          libs = [ (pkgs.xkbcommon) ];
+          libs = [ (pkgs."xkbcommon") ];
         };
         "rulescomp" = {
           depends  = [
@@ -74,21 +74,21 @@
             (hsPkgs.xkbcommon)
             (hsPkgs.unix)
           ];
-          libs = [ (pkgs.xkbcommon) ];
+          libs = [ (pkgs."xkbcommon") ];
         };
         "state" = {
           depends  = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
           ];
-          libs = [ (pkgs.xkbcommon) ];
+          libs = [ (pkgs."xkbcommon") ];
         };
         "stringcomp" = {
           depends  = [
             (hsPkgs.base)
             (hsPkgs.xkbcommon)
           ];
-          libs = [ (pkgs.xkbcommon) ];
+          libs = [ (pkgs."xkbcommon") ];
         };
       };
       benchmarks = {
@@ -100,7 +100,7 @@
             (hsPkgs.vector)
             (hsPkgs.time)
           ];
-          libs = [ (pkgs.xkbcommon) ];
+          libs = [ (pkgs."xkbcommon") ];
         };
       };
     };

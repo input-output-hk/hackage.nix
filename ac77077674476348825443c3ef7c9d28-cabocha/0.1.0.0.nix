@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.text)
         ];
-        libs = [ (pkgs.cabocha) ];
+        libs = [ (pkgs."cabocha") ];
       };
       tests = {
         "tests" = {

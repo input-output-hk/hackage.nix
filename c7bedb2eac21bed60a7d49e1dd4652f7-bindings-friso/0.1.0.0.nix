@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.friso) ];
+        libs = [ (pkgs."friso") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

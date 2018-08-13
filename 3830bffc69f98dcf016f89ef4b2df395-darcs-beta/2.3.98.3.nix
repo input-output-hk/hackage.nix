@@ -62,7 +62,7 @@
           (hsPkgs.network)
           (hsPkgs.HTTP)
         ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) (hsPkgs.mmap)) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) (hsPkgs.terminfo);
-        libs = pkgs.lib.optional (_flags.curl) (pkgs.curl);
+        libs = pkgs.lib.optional (_flags.curl) (pkgs."curl");
         pkgconfig = pkgs.lib.optionals (_flags.curl) (pkgs.lib.optionals (_flags.curl-pipelining) (pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.libcurl)));
       };
       exes = {
@@ -91,7 +91,7 @@
             (hsPkgs.network)
             (hsPkgs.HTTP)
           ]) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) (hsPkgs.mmap)) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) (hsPkgs.terminfo);
-          libs = pkgs.lib.optional (_flags.curl) (pkgs.curl);
+          libs = pkgs.lib.optional (_flags.curl) (pkgs."curl");
           pkgconfig = pkgs.lib.optionals (_flags.curl) (pkgs.lib.optionals (_flags.curl-pipelining) (pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.libcurl)));
         };
         "unit" = {

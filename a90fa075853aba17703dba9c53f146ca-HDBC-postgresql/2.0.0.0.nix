@@ -44,7 +44,7 @@
             (hsPkgs.old-time)
           ]
           else [ (hsPkgs.base) ]);
-        libs = [ (pkgs.pq) ];
+        libs = [ (pkgs."pq") ];
       };
       exes = {
         "runtests" = {
@@ -57,7 +57,7 @@
             (hsPkgs.time)
             (hsPkgs.old-locale)
           ];
-          libs = [ (pkgs.pq) ];
+          libs = [ (pkgs."pq") ];
         };
       };
     };

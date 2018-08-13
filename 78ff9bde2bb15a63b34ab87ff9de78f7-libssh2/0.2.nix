@@ -35,7 +35,7 @@
           (hsPkgs.time)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.ssh2) ];
+        libs = [ (pkgs."ssh2") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

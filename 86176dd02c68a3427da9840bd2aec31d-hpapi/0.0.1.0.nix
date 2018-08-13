@@ -27,7 +27,7 @@
     components = {
       "hpapi" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.papi) ];
+        libs = [ (pkgs."papi") ];
       };
     };
   }

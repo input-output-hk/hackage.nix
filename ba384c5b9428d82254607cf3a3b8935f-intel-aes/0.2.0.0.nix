@@ -42,7 +42,7 @@
           (hsPkgs.rdtsc)
           (hsPkgs.unix)
         ];
-        libs = [ (pkgs.intel_aes) ];
+        libs = [ (pkgs."intel_aes") ];
       };
     };
   }

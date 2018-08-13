@@ -33,7 +33,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.deepseq)
         ] ++ pkgs.lib.optional (!(system.isWindows || _flags.allow-non-windows)) (hsPkgs.base);
-        libs = [ (pkgs.dnsapi) ];
+        libs = [ (pkgs."dnsapi") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

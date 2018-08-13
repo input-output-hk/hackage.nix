@@ -35,16 +35,16 @@
           (hsPkgs.primitive)
         ];
         libs = (pkgs.lib.optionals (_flags.openblas) [
-          (pkgs.openblas)
-          (pkgs.pthread)
+          (pkgs."openblas")
+          (pkgs."pthread")
         ] ++ pkgs.lib.optionals (system.isWindows && !_flags.openblas) [
-          (pkgs.blas)
-          (pkgs.lapack)
+          (pkgs."blas")
+          (pkgs."lapack")
         ]) ++ pkgs.lib.optionals (!system.isWindows && !system.isOsx && !_flags.openblas) [
-          (pkgs.blas)
-          (pkgs.lapack)
+          (pkgs."blas")
+          (pkgs."lapack")
         ];
-        frameworks = pkgs.lib.optional (system.isOsx && !_flags.openblas) (pkgs.Accelerate);
+        frameworks = pkgs.lib.optional (system.isOsx && !_flags.openblas) (pkgs."Accelerate");
       };
       tests = {
         "unit-testsuite" = {

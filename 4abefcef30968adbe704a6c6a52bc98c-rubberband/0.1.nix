@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.rubberband) ];
+        libs = [ (pkgs."rubberband") ];
       };
     };
   }

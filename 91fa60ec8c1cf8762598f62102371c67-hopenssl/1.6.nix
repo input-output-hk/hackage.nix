@@ -31,7 +31,7 @@
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.crypto) ];
+        libs = [ (pkgs."crypto") ];
       };
     };
   }

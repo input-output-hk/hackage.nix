@@ -27,7 +27,7 @@
     components = {
       "LDAP" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.ldap) ];
+        libs = [ (pkgs."ldap") ];
       };
     };
   }

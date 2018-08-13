@@ -34,13 +34,13 @@
           (hsPkgs.vect-floating)
         ];
         libs = [
-          (pkgs.ovr)
-          (pkgs.udev)
-          (pkgs.pthread)
-          (pkgs.GL)
-          (pkgs.X11)
-          (pkgs.Xinerama)
-          (pkgs.stdc++)
+          (pkgs."ovr")
+          (pkgs."udev")
+          (pkgs."pthread")
+          (pkgs."GL")
+          (pkgs."X11")
+          (pkgs."Xinerama")
+          (pkgs."stdc++")
         ];
       };
     };

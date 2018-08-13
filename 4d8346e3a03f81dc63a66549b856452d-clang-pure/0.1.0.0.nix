@@ -36,7 +36,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.stm)
         ];
-        libs = [ (pkgs.clang) ];
+        libs = [ (pkgs."clang") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

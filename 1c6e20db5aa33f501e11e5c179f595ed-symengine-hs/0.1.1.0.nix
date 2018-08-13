@@ -35,10 +35,10 @@
             (hsPkgs.symengine-hs)
           ];
           libs = [
-            (pkgs.symengine)
-            (pkgs.stdc++)
-            (pkgs.gmpxx)
-            (pkgs.gmp)
+            (pkgs."symengine")
+            (pkgs."stdc++")
+            (pkgs."gmpxx")
+            (pkgs."gmp")
           ];
         };
       };
@@ -49,10 +49,10 @@
             (hsPkgs.symengine-hs)
           ];
           libs = [
-            (pkgs.symengine)
-            (pkgs.stdc++)
-            (pkgs.gmpxx)
-            (pkgs.gmp)
+            (pkgs."symengine")
+            (pkgs."stdc++")
+            (pkgs."gmpxx")
+            (pkgs."gmp")
           ];
         };
       };

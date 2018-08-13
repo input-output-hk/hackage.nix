@@ -94,10 +94,10 @@
           (hsPkgs.handa-gdata)
         ];
         libs = [
-          (pkgs.X11)
-          (pkgs.Xi)
-          (pkgs.dl)
-          (pkgs.pthread)
+          (pkgs."X11")
+          (pkgs."Xi")
+          (pkgs."dl")
+          (pkgs."pthread")
         ];
       };
     };

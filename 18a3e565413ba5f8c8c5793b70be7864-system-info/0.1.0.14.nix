@@ -33,9 +33,9 @@
           (hsPkgs.text)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
         libs = pkgs.lib.optionals (system.isWindows) [
-          (pkgs.ole32)
-          (pkgs.oleaut32)
-          (pkgs.wbemuuid)
+          (pkgs."ole32")
+          (pkgs."oleaut32")
+          (pkgs."wbemuuid")
         ];
       };
       tests = {

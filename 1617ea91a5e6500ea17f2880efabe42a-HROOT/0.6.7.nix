@@ -27,7 +27,7 @@
     components = {
       "HROOT" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

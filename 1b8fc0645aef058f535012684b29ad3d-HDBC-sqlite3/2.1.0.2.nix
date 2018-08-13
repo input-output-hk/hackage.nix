@@ -41,7 +41,7 @@
           else [
             (hsPkgs.base)
           ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") (hsPkgs.base);
-        libs = [ (pkgs.sqlite3) ];
+        libs = [ (pkgs."sqlite3") ];
       };
       exes = {
         "runtests" = {
@@ -55,7 +55,7 @@
             (hsPkgs.time)
             (hsPkgs.old-locale)
           ];
-          libs = [ (pkgs.sqlite3) ];
+          libs = [ (pkgs."sqlite3") ];
         };
       };
     };

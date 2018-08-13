@@ -33,7 +33,7 @@
           (hsPkgs.temporary)
           (hsPkgs.unix)
         ];
-        libs = [ (pkgs.rdkafka) ];
+        libs = [ (pkgs."rdkafka") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

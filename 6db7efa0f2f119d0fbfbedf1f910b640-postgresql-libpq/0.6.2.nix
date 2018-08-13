@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.unix)
         ];
-        libs = [ (pkgs.pq) ];
+        libs = [ (pkgs."pq") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

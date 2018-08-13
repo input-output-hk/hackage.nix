@@ -42,7 +42,7 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
         pkgconfig = [
           (pkgconfPkgs.opencv)
         ];

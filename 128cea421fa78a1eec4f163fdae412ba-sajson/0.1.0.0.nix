@@ -35,7 +35,7 @@
           (hsPkgs.scientific)
           (hsPkgs.unordered-containers)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
       exes = {
         "sajson-bench" = {

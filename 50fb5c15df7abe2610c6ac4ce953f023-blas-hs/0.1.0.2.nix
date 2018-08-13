@@ -39,7 +39,7 @@
             (hsPkgs.Cabal)
             (hsPkgs.vector)
           ];
-          libs = [ (pkgs.blas) ];
+          libs = [ (pkgs."blas") ];
         };
       };
     };

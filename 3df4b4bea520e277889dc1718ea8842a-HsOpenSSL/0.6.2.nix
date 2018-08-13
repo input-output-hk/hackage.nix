@@ -36,10 +36,10 @@
           (hsPkgs.network)
         ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
         libs = if system.isWindows
-          then [ (pkgs.eay32) ]
+          then [ (pkgs."eay32") ]
           else [
-            (pkgs.crypto)
-            (pkgs.ssl)
+            (pkgs."crypto")
+            (pkgs."ssl")
           ];
       };
     };

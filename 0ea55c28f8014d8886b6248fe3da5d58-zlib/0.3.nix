@@ -27,7 +27,7 @@
     components = {
       "zlib" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.z) ];
+        libs = [ (pkgs."z") ];
       };
     };
   }

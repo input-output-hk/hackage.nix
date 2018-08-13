@@ -32,7 +32,7 @@
           (hsPkgs.glib)
           (hsPkgs.gtk)
         ];
-        libs = [ (pkgs.notify) ];
+        libs = [ (pkgs."notify") ];
       };
     };
   }

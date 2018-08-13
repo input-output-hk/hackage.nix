@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.libusb-1.0);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."libusb-1.0");
         pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.libusb-1.0);
       };
     };

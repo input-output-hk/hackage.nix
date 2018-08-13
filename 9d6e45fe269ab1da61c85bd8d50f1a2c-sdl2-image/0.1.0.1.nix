@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.sdl2)
         ];
-        libs = [ (pkgs.sdl2) ];
+        libs = [ (pkgs."sdl2") ];
         pkgconfig = [
           (pkgconfPkgs.sdl2)
           (pkgconfPkgs.SDL2_image)

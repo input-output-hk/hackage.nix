@@ -34,7 +34,7 @@
             (hsPkgs.mtl)
             (hsPkgs.containers)
           ];
-          libs = [ (pkgs.curses) ];
+          libs = [ (pkgs."curses") ];
         };
       };
     };

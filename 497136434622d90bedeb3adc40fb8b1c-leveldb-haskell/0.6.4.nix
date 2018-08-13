@@ -37,7 +37,7 @@
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.leveldb) ];
+        libs = [ (pkgs."leveldb") ];
       };
       exes = {
         "leveldb-example-comparator" = {

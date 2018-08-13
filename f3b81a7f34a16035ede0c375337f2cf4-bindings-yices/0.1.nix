@@ -27,7 +27,7 @@
     components = {
       "bindings-yices" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.yices) ];
+        libs = [ (pkgs."yices") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

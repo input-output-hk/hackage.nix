@@ -35,7 +35,9 @@
           (hsPkgs.parallel)
           (hsPkgs.deepseq)
         ];
-        libs = [ (pkgs.tokyocabinet) ];
+        libs = [
+          (pkgs."tokyocabinet")
+        ];
       };
     };
   }

@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.v4l2) ];
+        libs = [ (pkgs."v4l2") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

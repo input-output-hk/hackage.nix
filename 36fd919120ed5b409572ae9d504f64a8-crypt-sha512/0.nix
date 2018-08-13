@@ -44,7 +44,7 @@
             (hsPkgs.tasty-quickcheck)
             (hsPkgs.quickcheck-instances)
           ];
-          libs = [ (pkgs.crypt) ];
+          libs = [ (pkgs."crypt") ];
         };
       };
     };

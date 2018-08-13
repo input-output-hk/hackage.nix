@@ -68,7 +68,7 @@
           else [
             (hsPkgs.unix)
           ])) ++ pkgs.lib.optional (system.isOsx) (hsPkgs.gtk-mac-integration)) ++ pkgs.lib.optional (_flags.yi) (hsPkgs.yi)) ++ pkgs.lib.optional (_flags.yi && _flags.dyre) (hsPkgs.dyre);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
       };
       exes = {
         "leksah" = {
@@ -115,7 +115,7 @@
               (hsPkgs.leksah)
               (hsPkgs.base)
             ]);
-          libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
         };
       };
     };

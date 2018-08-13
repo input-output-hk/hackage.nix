@@ -35,10 +35,10 @@
           (hsPkgs.time)
         ];
         libs = [
-          (pkgs.wayland-client)
-          (pkgs.wayland-cursor)
-          (pkgs.wayland-egl)
-          (pkgs.wayland-server)
+          (pkgs."wayland-client")
+          (pkgs."wayland-cursor")
+          (pkgs."wayland-egl")
+          (pkgs."wayland-server")
         ];
       };
       exes = {

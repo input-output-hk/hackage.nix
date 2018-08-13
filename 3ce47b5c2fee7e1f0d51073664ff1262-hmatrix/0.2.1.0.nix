@@ -45,9 +45,9 @@
             (hsPkgs.storable-complex)
           ]);
         libs = [
-          (pkgs.gsl)
-          (pkgs.blas)
-          (pkgs.lapack)
+          (pkgs."gsl")
+          (pkgs."blas")
+          (pkgs."lapack")
         ];
       };
     };

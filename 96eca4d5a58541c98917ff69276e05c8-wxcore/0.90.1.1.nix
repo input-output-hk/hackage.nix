@@ -42,7 +42,9 @@
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
-        frameworks = [ (pkgs.Carbon) ];
+        frameworks = [
+          (pkgs."Carbon")
+        ];
       };
     };
   }

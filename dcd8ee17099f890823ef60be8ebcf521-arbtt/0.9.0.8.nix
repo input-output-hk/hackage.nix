@@ -50,8 +50,8 @@
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.X11) ]);
           libs = if system.isWindows
-            then [ (pkgs.psapi) ]
-            else [ (pkgs.Xss) ];
+            then [ (pkgs."psapi") ]
+            else [ (pkgs."Xss") ];
         };
         "arbtt-stats" = {
           depends  = ([

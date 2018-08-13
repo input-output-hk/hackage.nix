@@ -31,7 +31,7 @@
           (hsPkgs.filepath)
           (hsPkgs.mtl)
         ];
-        libs = [ (pkgs.cfitsio) ];
+        libs = [ (pkgs."cfitsio") ];
       };
     };
   }

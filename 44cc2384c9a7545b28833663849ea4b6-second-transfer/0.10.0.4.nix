@@ -59,7 +59,7 @@
           (hsPkgs.vector-algorithms)
           (hsPkgs.mmorph)
         ];
-        libs = (pkgs.lib.optionals (system.isOsx) (pkgs.lib.optional (_flags.enable-botan) (pkgs.second_transfer__enable_tls)) ++ pkgs.lib.optional (system.isLinux) (pkgs.stdc++)) ++ pkgs.lib.optionals (_flags.enable-botan) (pkgs.lib.optional (system.isLinux) (pkgs.botan-1.11));
+        libs = (pkgs.lib.optionals (system.isOsx) (pkgs.lib.optional (_flags.enable-botan) (pkgs."second_transfer__enable_tls")) ++ pkgs.lib.optional (system.isLinux) (pkgs."stdc++")) ++ pkgs.lib.optionals (_flags.enable-botan) (pkgs.lib.optional (system.isLinux) (pkgs."botan-1.11"));
         build-tools = [
           (hsPkgs.buildPackages.cpphs)
         ];

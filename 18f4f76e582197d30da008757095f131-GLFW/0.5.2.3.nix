@@ -33,14 +33,17 @@
           (hsPkgs.OpenGL)
         ];
         libs = if _flags.dynamic
-          then [ (pkgs.glfw) ]
+          then [ (pkgs."glfw") ]
           else pkgs.lib.optionals (!system.isOsx) (if system.isWindows
-            then [ (pkgs.opengl32) ]
-            else [ (pkgs.X11) (pkgs.GL) ]);
+            then [ (pkgs."opengl32") ]
+            else [
+              (pkgs."X11")
+              (pkgs."GL")
+            ]);
         frameworks = pkgs.lib.optionals (!_flags.dynamic) (pkgs.lib.optionals (system.isOsx) [
-          (pkgs.Cocoa)
-          (pkgs.OpenGL)
-          (pkgs.IOKit)
+          (pkgs."Cocoa")
+          (pkgs."OpenGL")
+          (pkgs."IOKit")
         ]);
       };
     };

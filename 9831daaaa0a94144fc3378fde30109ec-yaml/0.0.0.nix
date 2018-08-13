@@ -33,7 +33,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.haskell98)
         ];
-        libs = [ (pkgs.yaml) ];
+        libs = [ (pkgs."yaml") ];
       };
     };
   }

@@ -31,7 +31,7 @@
           (hsPkgs.Win32)
           (hsPkgs.Win32-errors)
         ];
-        libs = [ (pkgs.Advapi32) ];
+        libs = [ (pkgs."Advapi32") ];
       };
     };
   }

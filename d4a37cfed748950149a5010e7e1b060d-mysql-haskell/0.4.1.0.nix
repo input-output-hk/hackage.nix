@@ -49,10 +49,10 @@
         ] ++ pkgs.lib.optional (_flags.openssl) (hsPkgs.HsOpenSSL);
         libs = pkgs.lib.optionals (_flags.openssl) (if system.isWindows || system.isWindows
           then [
-            (pkgs.eay32)
-            (pkgs.ssl32)
+            (pkgs."eay32")
+            (pkgs."ssl32")
           ]
-          else [ (pkgs.crypto) ]);
+          else [ (pkgs."crypto") ]);
       };
       tests = {
         "test" = {

@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.mtl)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.OpenAL32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."OpenAL32");
         pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs.openal);
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

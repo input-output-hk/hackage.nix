@@ -55,9 +55,9 @@
             (hsPkgs.cereal)
           ];
           libs = [
-            (pkgs.stdc++)
-            (pkgs.leveldb)
-            (pkgs.snappy)
+            (pkgs."stdc++")
+            (pkgs."leveldb")
+            (pkgs."snappy")
           ];
         };
       };
@@ -72,9 +72,9 @@
             (hsPkgs.cereal)
           ];
           libs = [
-            (pkgs.stdc++)
-            (pkgs.leveldb)
-            (pkgs.snappy)
+            (pkgs."stdc++")
+            (pkgs."leveldb")
+            (pkgs."snappy")
           ];
         };
       };

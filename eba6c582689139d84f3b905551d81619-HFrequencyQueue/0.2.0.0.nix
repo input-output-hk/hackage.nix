@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.c-storable-deriving)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

@@ -33,9 +33,9 @@
           (hsPkgs.containers)
         ] ++ pkgs.lib.optional (!system.isOsx) (hsPkgs.clock)) ++ pkgs.lib.optional (system.isOsx) (hsPkgs.time);
         libs = [
-          (pkgs.stdc++)
-        ] ++ pkgs.lib.optional (system.isWindows) (pkgs.QtCore4);
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.QtCore);
+          (pkgs."stdc++")
+        ] ++ pkgs.lib.optional (system.isWindows) (pkgs."QtCore4");
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."QtCore");
         pkgconfig = pkgs.lib.optional (system.isLinux) (pkgconfPkgs.QtCore);
       };
     };

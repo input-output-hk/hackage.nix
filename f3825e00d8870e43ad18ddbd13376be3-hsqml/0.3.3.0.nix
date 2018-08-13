@@ -41,20 +41,20 @@
         ];
         libs = if system.isWindows && !_flags.usepkgconfig
           then [
-            (pkgs.Qt5Core)
-            (pkgs.Qt5Gui)
-            (pkgs.Qt5Widgets)
-            (pkgs.Qt5Qml)
-            (pkgs.Qt5Quick)
-            (pkgs.stdc++)
+            (pkgs."Qt5Core")
+            (pkgs."Qt5Gui")
+            (pkgs."Qt5Widgets")
+            (pkgs."Qt5Qml")
+            (pkgs."Qt5Quick")
+            (pkgs."stdc++")
           ]
-          else [ (pkgs.stdc++) ];
+          else [ (pkgs."stdc++") ];
         frameworks = pkgs.lib.optionals (!(system.isWindows && !_flags.usepkgconfig)) (pkgs.lib.optionals (system.isOsx && !_flags.usepkgconfig) [
-          (pkgs.QtCore)
-          (pkgs.QtGui)
-          (pkgs.QtWidgets)
-          (pkgs.QtQml)
-          (pkgs.QtQuick)
+          (pkgs."QtCore")
+          (pkgs."QtGui")
+          (pkgs."QtWidgets")
+          (pkgs."QtQml")
+          (pkgs."QtQuick")
         ]);
         pkgconfig = pkgs.lib.optionals (!(system.isWindows && !_flags.usepkgconfig)) (pkgs.lib.optionals (!(system.isOsx && !_flags.usepkgconfig)) [
           (pkgconfPkgs.Qt5Core)

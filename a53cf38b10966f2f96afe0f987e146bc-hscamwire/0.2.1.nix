@@ -33,9 +33,9 @@
           (hsPkgs.time)
         ];
         libs = [
-          (pkgs.dc1394_control)
-          (pkgs.raw1394)
-          (pkgs.camwire_1394)
+          (pkgs."dc1394_control")
+          (pkgs."raw1394")
+          (pkgs."camwire_1394")
         ];
       };
     };

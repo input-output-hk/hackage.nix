@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
-        libs = [ (pkgs.portaudio) ];
+        libs = [ (pkgs."portaudio") ];
       };
     };
   }

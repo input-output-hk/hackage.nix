@@ -27,7 +27,7 @@
     components = {
       "bindings-sipc" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.sipc) ];
+        libs = [ (pkgs."sipc") ];
       };
       exes = {
         "MQCreator" = {

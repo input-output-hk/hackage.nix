@@ -33,8 +33,8 @@
           (hsPkgs.jsaddle)
         ];
         frameworks = [
-          (pkgs.Cocoa)
-          (pkgs.WebKit)
+          (pkgs."Cocoa")
+          (pkgs."WebKit")
         ];
       };
     };

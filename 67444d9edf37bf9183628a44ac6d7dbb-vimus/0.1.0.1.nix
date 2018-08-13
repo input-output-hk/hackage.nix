@@ -43,7 +43,7 @@
           (hsPkgs.data-default)
           (hsPkgs.template-haskell)
         ];
-        libs = [ (pkgs.ncursesw) ];
+        libs = [ (pkgs."ncursesw") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

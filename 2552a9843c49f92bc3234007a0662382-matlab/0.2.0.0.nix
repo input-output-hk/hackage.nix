@@ -36,9 +36,9 @@
           (hsPkgs.Cabal)
         ] ++ pkgs.lib.optional (_flags.runtime) (hsPkgs.unix);
         libs = [
-          (pkgs.mx)
-          (pkgs.mat)
-        ] ++ pkgs.lib.optional (_flags.engine) (pkgs.eng);
+          (pkgs."mx")
+          (pkgs."mat")
+        ] ++ pkgs.lib.optional (_flags.engine) (pkgs."eng");
       };
     };
   }

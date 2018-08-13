@@ -31,7 +31,7 @@
           (hsPkgs.base)
           (hsPkgs.time)
         ];
-        libs = [ (pkgs.curl) ];
+        libs = [ (pkgs."curl") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

@@ -34,7 +34,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.tag_c) ];
+        libs = [ (pkgs."tag_c") ];
       };
       tests = {
         "tests" = {

@@ -28,8 +28,8 @@
       "Theora" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.ogg)
-          (pkgs.theora)
+          (pkgs."ogg")
+          (pkgs."theora")
         ];
       };
     };

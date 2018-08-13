@@ -36,7 +36,7 @@
           (hsPkgs.securemem)
           (hsPkgs.crypto-cipher-types)
         ];
-        libs = pkgs.lib.optional (!_flags.usepkgconfig) (pkgs.nettle);
+        libs = pkgs.lib.optional (!_flags.usepkgconfig) (pkgs."nettle");
         pkgconfig = pkgs.lib.optional (_flags.usepkgconfig) (pkgconfPkgs.nettle);
       };
       tests = {

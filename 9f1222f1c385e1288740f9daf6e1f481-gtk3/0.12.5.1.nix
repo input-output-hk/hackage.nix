@@ -40,7 +40,7 @@
           (hsPkgs.pango)
           (hsPkgs.cairo)
         ] ++ pkgs.lib.optional (_flags.have-gio) (hsPkgs.gio);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
         pkgconfig = [
           (pkgconfPkgs.gthread-2.0)
           (pkgconfPkgs.gtk+-3.0)

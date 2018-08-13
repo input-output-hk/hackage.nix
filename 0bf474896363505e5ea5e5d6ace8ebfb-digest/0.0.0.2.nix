@@ -37,7 +37,7 @@
             (hsPkgs.base)
             (hsPkgs.bytestring)
           ]);
-        libs = pkgs.lib.optional (!system.isWindows) (pkgs.z);
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."z");
       };
     };
   }

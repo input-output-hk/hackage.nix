@@ -37,7 +37,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.hdf5) ];
+        libs = [ (pkgs."hdf5") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

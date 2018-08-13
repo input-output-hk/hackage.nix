@@ -34,7 +34,7 @@
           (hsPkgs.HsOpenSSL)
           (hsPkgs.HsOpenSSL-x509-system)
         ];
-        libs = [ (pkgs.ssl) ];
+        libs = [ (pkgs."ssl") ];
       };
     };
   }

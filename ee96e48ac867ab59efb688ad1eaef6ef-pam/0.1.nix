@@ -27,7 +27,7 @@
     components = {
       "pam" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.pam) ];
+        libs = [ (pkgs."pam") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

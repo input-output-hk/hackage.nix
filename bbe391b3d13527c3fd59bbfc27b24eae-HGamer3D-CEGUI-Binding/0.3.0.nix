@@ -31,11 +31,11 @@
           (hsPkgs.HGamer3D-Data)
         ];
         libs = if system.isWindows
-          then [ (pkgs.hg3dcegui030) ]
+          then [ (pkgs."hg3dcegui030") ]
           else [
-            (pkgs.hg3dcegui030)
-            (pkgs.CEGUIBase-0.7.7)
-            (pkgs.CEGUIOgreRenderer-0.7.7)
+            (pkgs."hg3dcegui030")
+            (pkgs."CEGUIBase-0.7.7")
+            (pkgs."CEGUIOgreRenderer-0.7.7")
           ];
       };
     };

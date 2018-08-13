@@ -31,7 +31,7 @@
       exes = {
         "hs_sqlite3_test" = {
           depends  = [ (hsPkgs.base) ];
-          libs = [ (pkgs.sqlite3) ];
+          libs = [ (pkgs."sqlite3") ];
         };
       };
     };

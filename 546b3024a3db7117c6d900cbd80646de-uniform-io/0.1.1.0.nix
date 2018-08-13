@@ -36,7 +36,7 @@
           (hsPkgs.attoparsec)
           (hsPkgs.data-default-class)
         ];
-        libs = [ (pkgs.ssl) ];
+        libs = [ (pkgs."ssl") ];
       };
       tests = {
         "lazyness" = {

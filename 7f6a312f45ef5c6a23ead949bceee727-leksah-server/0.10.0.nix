@@ -58,7 +58,7 @@
           else [
             (hsPkgs.unix)
           ])) ++ pkgs.lib.optional (_flags.libcurl) (hsPkgs.curl);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
       };
       exes = {
         "leksah-server" = {
@@ -90,7 +90,7 @@
             else [
               (hsPkgs.unix)
             ])) ++ pkgs.lib.optional (_flags.libcurl) (hsPkgs.curl);
-          libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
         };
         "leksahecho" = {};
       };

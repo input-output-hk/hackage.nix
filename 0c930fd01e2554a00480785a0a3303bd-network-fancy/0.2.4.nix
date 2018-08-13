@@ -31,8 +31,8 @@
           (hsPkgs.bytestring)
         ];
         libs = if system.isWindows
-          then [ (pkgs.ws2_32) ]
-          else pkgs.lib.optional (system.isSolaris) (pkgs.socket) ++ pkgs.lib.optional (system.isLinux) (pkgs.pthread);
+          then [ (pkgs."ws2_32") ]
+          else pkgs.lib.optional (system.isSolaris) (pkgs."socket") ++ pkgs.lib.optional (system.isLinux) (pkgs."pthread");
       };
     };
   }

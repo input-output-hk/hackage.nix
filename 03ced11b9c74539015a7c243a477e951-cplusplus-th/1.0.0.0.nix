@@ -33,7 +33,7 @@
           (hsPkgs.process)
           (hsPkgs.containers)
         ];
-        libs = [ (pkgs.c++) ];
+        libs = [ (pkgs."c++") ];
       };
       tests = {
         "tests" = {

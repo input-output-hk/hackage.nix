@@ -28,12 +28,12 @@
       "PortMidi" = {
         depends  = [ (hsPkgs.base) ];
         libs = if system.isLinux || system.isFreebsd
-          then [ (pkgs.asound) ]
-          else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (system.isWindows) (pkgs.winmm));
+          then [ (pkgs."asound") ]
+          else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (system.isWindows) (pkgs."winmm"));
         frameworks = pkgs.lib.optionals (!(system.isLinux || system.isFreebsd)) (pkgs.lib.optionals (system.isOsx) [
-          (pkgs.CoreMIDI)
-          (pkgs.CoreFoundation)
-          (pkgs.CoreAudio)
+          (pkgs."CoreMIDI")
+          (pkgs."CoreFoundation")
+          (pkgs."CoreAudio")
         ]);
       };
     };

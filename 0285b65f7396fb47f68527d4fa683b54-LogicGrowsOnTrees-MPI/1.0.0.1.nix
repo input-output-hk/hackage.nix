@@ -45,7 +45,7 @@
           (hsPkgs.transformers)
           (hsPkgs.LogicGrowsOnTrees)
         ];
-        libs = [ (pkgs.mpi) ];
+        libs = [ (pkgs."mpi") ];
       };
       exes = {
         "count-all-trivial-tree-leavesl" = {
@@ -56,7 +56,7 @@
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.LogicGrowsOnTrees-MPI)
           ];
-          libs = [ (pkgs.mpi) ];
+          libs = [ (pkgs."mpi") ];
         };
         "test-trivial" = {
           depends  = [
@@ -65,7 +65,7 @@
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.LogicGrowsOnTrees-MPI)
           ];
-          libs = [ (pkgs.mpi) ];
+          libs = [ (pkgs."mpi") ];
         };
         "test-nqueens" = {
           depends  = [
@@ -76,7 +76,7 @@
             (hsPkgs.LogicGrowsOnTrees)
             (hsPkgs.LogicGrowsOnTrees-MPI)
           ];
-          libs = [ (pkgs.mpi) ];
+          libs = [ (pkgs."mpi") ];
         };
       };
     };

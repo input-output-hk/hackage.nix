@@ -39,7 +39,7 @@
             (hsPkgs.base)
             (hsPkgs.pulseaudio)
           ];
-          libs = [ (pkgs.pulse) ];
+          libs = [ (pkgs."pulse") ];
         };
       };
     };

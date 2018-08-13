@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.unix)
         ];
-        libs = [ (pkgs.attr) ];
+        libs = [ (pkgs."attr") ];
       };
       tests = {
         "tests" = {

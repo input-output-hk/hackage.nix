@@ -34,7 +34,7 @@
           (hsPkgs.unix)
           (hsPkgs.process)
         ];
-        libs = [ (pkgs.notifier) ];
+        libs = [ (pkgs."notifier") ];
       };
       tests = {
         "hs-rs-notify-test" = {

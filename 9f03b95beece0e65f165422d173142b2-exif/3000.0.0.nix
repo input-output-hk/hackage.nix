@@ -27,7 +27,10 @@
     components = {
       "exif" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.exif) (pkgs.m) ];
+        libs = [
+          (pkgs."exif")
+          (pkgs."m")
+        ];
       };
     };
   }

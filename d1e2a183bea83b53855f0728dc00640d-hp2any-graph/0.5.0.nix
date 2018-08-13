@@ -47,7 +47,7 @@
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
           ];
-          libs = [ (pkgs.glut) ];
+          libs = [ (pkgs."glut") ];
         };
         "hp2any-relay" = {
           depends  = [

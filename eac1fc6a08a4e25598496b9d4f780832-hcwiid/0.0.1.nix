@@ -31,8 +31,8 @@
           (hsPkgs.unix)
         ];
         libs = [
-          (pkgs.bluetooth)
-          (pkgs.cwiid)
+          (pkgs."bluetooth")
+          (pkgs."cwiid")
         ];
       };
     };

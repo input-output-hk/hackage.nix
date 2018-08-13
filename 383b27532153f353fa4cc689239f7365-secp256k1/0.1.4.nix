@@ -34,7 +34,7 @@
           (hsPkgs.string-conversions)
           (hsPkgs.base16-bytestring)
         ];
-        libs = [ (pkgs.secp256k1) ];
+        libs = [ (pkgs."secp256k1") ];
       };
       tests = {
         "secp256k1-test" = {

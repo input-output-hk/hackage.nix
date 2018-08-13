@@ -27,7 +27,7 @@
     components = {
       "FTGL" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.ftgl) ];
+        libs = [ (pkgs."ftgl") ];
       };
     };
   }

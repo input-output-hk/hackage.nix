@@ -34,7 +34,7 @@
           (hsPkgs.deepseq)
           (hsPkgs.ghc-prim)
         ];
-        libs = pkgs.lib.optional (!_flags.standalone) (pkgs.zstd);
+        libs = pkgs.lib.optional (!_flags.standalone) (pkgs."zstd");
       };
       tests = {
         "tests" = {

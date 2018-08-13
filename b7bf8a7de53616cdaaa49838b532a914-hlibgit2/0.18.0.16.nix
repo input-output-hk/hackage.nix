@@ -33,18 +33,18 @@
         ];
         libs = if system.isWindows
           then [
-            (pkgs.ws2_32)
-            (pkgs.regex)
-            (pkgs.winhttp)
-            (pkgs.crypt32)
-            (pkgs.rpcrt4)
-            (pkgs.ssl)
-            (pkgs.crypto)
+            (pkgs."ws2_32")
+            (pkgs."regex")
+            (pkgs."winhttp")
+            (pkgs."crypt32")
+            (pkgs."rpcrt4")
+            (pkgs."ssl")
+            (pkgs."crypto")
           ]
           else [
-            (pkgs.ssl)
-            (pkgs.crypto)
-            (pkgs.pthread)
+            (pkgs."ssl")
+            (pkgs."crypto")
+            (pkgs."pthread")
           ];
       };
       tests = {

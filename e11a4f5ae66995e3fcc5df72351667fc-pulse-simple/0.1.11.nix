@@ -30,7 +30,9 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.pulse-simple) ];
+        libs = [
+          (pkgs."pulse-simple")
+        ];
       };
     };
   }

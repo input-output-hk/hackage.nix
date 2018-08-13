@@ -39,7 +39,7 @@
           (hsPkgs.microlens)
           (hsPkgs.microlens-contra)
         ];
-        libs = [ (pkgs.clang) ];
+        libs = [ (pkgs."clang") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

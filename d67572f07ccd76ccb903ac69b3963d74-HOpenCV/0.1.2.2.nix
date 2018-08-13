@@ -32,16 +32,16 @@
           (hsPkgs.vector-space)
         ];
         libs = [
-          (pkgs.cv)
-          (pkgs.highgui)
+          (pkgs."cv")
+          (pkgs."highgui")
         ];
       };
       exes = {
         "test-hopencv" = {
           depends  = [ (hsPkgs.base) ];
           libs = [
-            (pkgs.cv)
-            (pkgs.highgui)
+            (pkgs."cv")
+            (pkgs."highgui")
           ];
         };
       };

@@ -35,7 +35,7 @@
           (hsPkgs.containers)
           (hsPkgs.pretty)
         ];
-        libs = [ (pkgs.arbb_dev) ];
+        libs = [ (pkgs."arbb_dev") ];
       };
     };
   }

@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.crypto) ];
+        libs = [ (pkgs."crypto") ];
       };
       tests = {
         "check-low-level-digest-api" = {

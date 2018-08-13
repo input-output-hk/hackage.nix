@@ -33,7 +33,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.mtl)
         ];
-        libs = pkgs.lib.optional (_flags.link) (pkgs.OpenCL);
+        libs = pkgs.lib.optional (_flags.link) (pkgs."OpenCL");
       };
     };
   }

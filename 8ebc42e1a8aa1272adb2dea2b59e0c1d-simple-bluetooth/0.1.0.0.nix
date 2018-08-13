@@ -32,8 +32,8 @@
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32);
         libs = if system.isWindows
-          then [ (pkgs.ws2_32) ]
-          else [ (pkgs.bluetooth) ];
+          then [ (pkgs."ws2_32") ]
+          else [ (pkgs."bluetooth") ];
       };
     };
   }

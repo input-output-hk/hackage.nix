@@ -36,10 +36,10 @@
           (hsPkgs.vector)
         ];
         libs = [
-          (pkgs.GLU)
-          (pkgs.GL)
-          (pkgs.m)
-          (pkgs.GLEW)
+          (pkgs."GLU")
+          (pkgs."GL")
+          (pkgs."m")
+          (pkgs."GLEW")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

@@ -39,7 +39,7 @@
           (hsPkgs.transformers)
           (hsPkgs.wave)
         ];
-        libs = [ (pkgs.mp3lame) ];
+        libs = [ (pkgs."mp3lame") ];
       };
       tests = {
         "tests" = {

@@ -27,7 +27,7 @@
     components = {
       "hgeos" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.geos_c) ];
+        libs = [ (pkgs."geos_c") ];
       };
       tests = {
         "hgeos-app" = {

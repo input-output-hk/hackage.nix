@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.pafe) ];
+        libs = [ (pkgs."pafe") ];
       };
       tests = {
         "test-read" = {

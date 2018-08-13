@@ -36,7 +36,9 @@
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.hyperleveldb) ];
+        libs = [
+          (pkgs."hyperleveldb")
+        ];
       };
       exes = {
         "leveldb-example-comparator" = {

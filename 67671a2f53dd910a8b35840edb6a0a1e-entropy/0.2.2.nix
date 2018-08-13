@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.advapi32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."advapi32");
       };
     };
   }

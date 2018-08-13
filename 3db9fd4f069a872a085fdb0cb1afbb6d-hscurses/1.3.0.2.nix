@@ -33,7 +33,7 @@
           (hsPkgs.old-time)
           (hsPkgs.old-locale)
         ];
-        libs = [ (pkgs.ncurses) ];
+        libs = [ (pkgs."ncurses") ];
       };
     };
   }

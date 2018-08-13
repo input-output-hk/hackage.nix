@@ -31,7 +31,7 @@
           (hsPkgs.array)
           (hsPkgs.X11)
         ];
-        libs = [ (pkgs.Imlib2) ];
+        libs = [ (pkgs."Imlib2") ];
       };
     };
   }

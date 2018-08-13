@@ -27,7 +27,7 @@
     components = {
       "loris" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.loris) ];
+        libs = [ (pkgs."loris") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

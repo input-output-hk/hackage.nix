@@ -34,7 +34,7 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.saltine)
         ];
-        libs = [ (pkgs.sodium) ];
+        libs = [ (pkgs."sodium") ];
       };
       tests = {
         "test-all" = {

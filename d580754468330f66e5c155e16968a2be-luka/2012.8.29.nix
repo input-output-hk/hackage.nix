@@ -32,7 +32,7 @@
           (hsPkgs.libffi)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.objc) ];
+        libs = [ (pkgs."objc") ];
       };
     };
   }

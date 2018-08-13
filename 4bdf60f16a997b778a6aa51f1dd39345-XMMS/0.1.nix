@@ -31,8 +31,8 @@
           (hsPkgs.containers)
         ];
         libs = [
-          (pkgs.xmmsclient)
-          (pkgs.xmmsclient-glib)
+          (pkgs."xmmsclient")
+          (pkgs."xmmsclient-glib")
         ];
       };
     };

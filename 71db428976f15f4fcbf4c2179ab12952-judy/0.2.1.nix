@@ -31,7 +31,7 @@
           (hsPkgs.ghc-prim)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.Judy) ];
+        libs = [ (pkgs."Judy") ];
       };
     };
   }

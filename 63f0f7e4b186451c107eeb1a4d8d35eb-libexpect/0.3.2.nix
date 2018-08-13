@@ -31,8 +31,8 @@
           (hsPkgs.unix)
         ];
         libs = [
-          (pkgs.expect)
-          (pkgs.tcl)
+          (pkgs."expect")
+          (pkgs."tcl")
         ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

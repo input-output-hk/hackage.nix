@@ -29,16 +29,16 @@
         depends  = [ (hsPkgs.base) ];
         libs = if system.isLinux
           then [
-            (pkgs.GL)
-            (pkgs.GLU)
-            (pkgs.X11)
-            (pkgs.Xrandr)
+            (pkgs."GL")
+            (pkgs."GLU")
+            (pkgs."X11")
+            (pkgs."Xrandr")
           ]
-          else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (system.isWindows) (pkgs.opengl32));
+          else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (system.isWindows) (pkgs."opengl32"));
         frameworks = pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optionals (system.isOsx) [
-          (pkgs.AGL)
-          (pkgs.Cocoa)
-          (pkgs.OpenGL)
+          (pkgs."AGL")
+          (pkgs."Cocoa")
+          (pkgs."OpenGL")
         ]);
       };
     };

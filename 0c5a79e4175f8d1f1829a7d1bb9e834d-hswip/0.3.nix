@@ -32,9 +32,9 @@
           (hsPkgs.mtl)
         ];
         libs = [
-          (pkgs.swipl)
-          (pkgs.readline)
-          (pkgs.ncurses)
+          (pkgs."swipl")
+          (pkgs."readline")
+          (pkgs."ncurses")
         ];
       };
     };

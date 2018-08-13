@@ -33,9 +33,9 @@
             (hsPkgs.hogre)
           ];
           libs = [
-            (pkgs.CEGUIOgreRenderer)
-            (pkgs.OgreMain)
-            (pkgs.CEGUIBase)
+            (pkgs."CEGUIOgreRenderer")
+            (pkgs."OgreMain")
+            (pkgs."CEGUIBase")
           ];
         };
         "example_02" = {
@@ -46,9 +46,9 @@
             (hsPkgs.SDL)
           ];
           libs = [
-            (pkgs.CEGUIOgreRenderer)
-            (pkgs.OgreMain)
-            (pkgs.CEGUIBase)
+            (pkgs."CEGUIOgreRenderer")
+            (pkgs."OgreMain")
+            (pkgs."CEGUIBase")
           ];
         };
         "example_03" = {
@@ -60,9 +60,9 @@
             (hsPkgs.stm)
           ];
           libs = [
-            (pkgs.CEGUIOgreRenderer)
-            (pkgs.OgreMain)
-            (pkgs.CEGUIBase)
+            (pkgs."CEGUIOgreRenderer")
+            (pkgs."OgreMain")
+            (pkgs."CEGUIBase")
           ];
         };
       };

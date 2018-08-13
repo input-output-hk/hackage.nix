@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.svm) ];
+        libs = [ (pkgs."svm") ];
         pkgconfig = [
           (pkgconfPkgs.libsvm)
         ];

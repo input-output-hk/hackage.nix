@@ -50,8 +50,8 @@
             (hsPkgs.vector)
           ];
           libs = [
-            (pkgs.pcre)
-          ] ++ pkgs.lib.optional (!system.isOsx) (pkgs.crypt);
+            (pkgs."pcre")
+          ] ++ pkgs.lib.optional (!system.isOsx) (pkgs."crypt");
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs)
           ];

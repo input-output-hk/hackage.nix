@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.syb)
         ];
-        libs = [ (pkgs.virt) ];
+        libs = [ (pkgs."virt") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

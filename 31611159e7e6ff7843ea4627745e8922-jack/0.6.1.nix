@@ -47,13 +47,13 @@
       };
       exes = {
         "amplify" = {
-          libs = [ (pkgs.jack) ];
+          libs = [ (pkgs."jack") ];
         };
         "impulse-train" = {
-          libs = [ (pkgs.jack) ];
+          libs = [ (pkgs."jack") ];
         };
         "midimon" = {
-          libs = [ (pkgs.jack) ];
+          libs = [ (pkgs."jack") ];
         };
       };
     };

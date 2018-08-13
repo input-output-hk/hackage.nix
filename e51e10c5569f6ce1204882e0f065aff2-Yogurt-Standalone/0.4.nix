@@ -47,7 +47,7 @@
               (hsPkgs.base)
               (hsPkgs.base)
             ]);
-          libs = [ (pkgs.readline) ];
+          libs = [ (pkgs."readline") ];
         };
       };
     };

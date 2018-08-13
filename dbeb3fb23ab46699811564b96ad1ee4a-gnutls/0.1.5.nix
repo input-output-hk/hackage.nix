@@ -32,7 +32,7 @@
           (hsPkgs.transformers)
           (hsPkgs.monads-tf)
         ];
-        libs = [ (pkgs.gnutls) ];
+        libs = [ (pkgs."gnutls") ];
         pkgconfig = [
           (pkgconfPkgs.gnutls)
         ];

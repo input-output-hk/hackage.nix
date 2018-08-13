@@ -27,7 +27,7 @@
     components = {
       "hsndfile" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.sndfile) ];
+        libs = [ (pkgs."sndfile") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

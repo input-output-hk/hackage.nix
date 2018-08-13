@@ -31,8 +31,8 @@
           (hsPkgs.array)
         ];
         libs = [
-          (pkgs.RNA)
-          (pkgs.gomp)
+          (pkgs."RNA")
+          (pkgs."gomp")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

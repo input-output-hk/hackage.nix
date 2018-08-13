@@ -27,7 +27,7 @@
     components = {
       "clipper" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

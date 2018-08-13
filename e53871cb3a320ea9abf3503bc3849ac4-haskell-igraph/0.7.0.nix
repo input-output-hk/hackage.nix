@@ -44,7 +44,7 @@
           (hsPkgs.diagrams-lib)
           (hsPkgs.diagrams-cairo)
         ];
-        libs = [ (pkgs.igraph) ];
+        libs = [ (pkgs."igraph") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

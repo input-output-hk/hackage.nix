@@ -34,7 +34,7 @@
             (hsPkgs.Crypto)
             (hsPkgs.binary)
           ];
-          libs = [ (pkgs.pcap) ];
+          libs = [ (pkgs."pcap") ];
         };
       };
     };

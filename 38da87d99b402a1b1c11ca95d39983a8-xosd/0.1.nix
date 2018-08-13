@@ -27,7 +27,7 @@
     components = {
       "xosd" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.xosd) ];
+        libs = [ (pkgs."xosd") ];
       };
     };
   }

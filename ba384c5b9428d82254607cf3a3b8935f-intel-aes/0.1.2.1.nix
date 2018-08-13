@@ -39,7 +39,7 @@
           (hsPkgs.cereal)
           (hsPkgs.tagged)
         ];
-        libs = [ (pkgs.intel_aes) ];
+        libs = [ (pkgs."intel_aes") ];
       };
       exes = {
         "benchmark-intel-aes-rng" = {

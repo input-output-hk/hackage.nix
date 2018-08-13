@@ -39,7 +39,7 @@
           (hsPkgs.QuickCheck)
           (hsPkgs.directory)
         ]) ++ pkgs.lib.optional (_flags.benchmarks) (hsPkgs.criterion);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.advapi32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."advapi32");
       };
     };
   }

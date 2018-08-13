@@ -33,8 +33,8 @@
           (hsPkgs.bindings-DSL)
         ];
         libs = pkgs.lib.optionals (_flags.nopkgconfig) [
-          (pkgs.zip)
-          (pkgs.z)
+          (pkgs."zip")
+          (pkgs."z")
         ];
         pkgconfig = pkgs.lib.optional (!_flags.nopkgconfig) (pkgconfPkgs.libzip);
       };

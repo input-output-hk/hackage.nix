@@ -35,7 +35,7 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.mp3lame) ];
+        libs = [ (pkgs."mp3lame") ];
       };
     };
   }

@@ -34,7 +34,7 @@
           (hsPkgs.time)
           (hsPkgs.monad-control)
         ];
-        libs = [ (pkgs.odpic) ];
+        libs = [ (pkgs."odpic") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

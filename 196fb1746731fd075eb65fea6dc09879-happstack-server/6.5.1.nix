@@ -67,8 +67,8 @@
           (hsPkgs.syb)
         ]) ++ pkgs.lib.optional (_flags.tests) (hsPkgs.HUnit);
         libs = pkgs.lib.optionals (!_flags.disable-https) [
-          (pkgs.crypto++)
-          (pkgs.ssl)
+          (pkgs."crypto++")
+          (pkgs."ssl")
         ];
       };
       exes = {

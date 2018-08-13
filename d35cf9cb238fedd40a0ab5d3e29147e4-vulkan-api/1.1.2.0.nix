@@ -40,8 +40,8 @@
     components = {
       "vulkan-api" = {
         depends  = [ (hsPkgs.base) ];
-        libs = pkgs.lib.optionals (_flags.usenativeffi-1-0 || _flags.usenativeffi-1-1) (pkgs.lib.optional (system.isWindows) (pkgs.vulkan-1) ++ pkgs.lib.optional (!system.isWindows && !system.isOsx) (pkgs.vulkan));
-        frameworks = pkgs.lib.optionals (_flags.usenativeffi-1-0 || _flags.usenativeffi-1-1) (pkgs.lib.optional (system.isOsx) (pkgs.MoltenVK));
+        libs = pkgs.lib.optionals (_flags.usenativeffi-1-0 || _flags.usenativeffi-1-1) (pkgs.lib.optional (system.isWindows) (pkgs."vulkan-1") ++ pkgs.lib.optional (!system.isWindows && !system.isOsx) (pkgs."vulkan"));
+        frameworks = pkgs.lib.optionals (_flags.usenativeffi-1-0 || _flags.usenativeffi-1-1) (pkgs.lib.optional (system.isOsx) (pkgs."MoltenVK"));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

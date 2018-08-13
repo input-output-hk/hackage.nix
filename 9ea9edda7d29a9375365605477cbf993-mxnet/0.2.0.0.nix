@@ -34,7 +34,7 @@
           (hsPkgs.unordered-containers)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.mxnet) ];
+        libs = [ (pkgs."mxnet") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

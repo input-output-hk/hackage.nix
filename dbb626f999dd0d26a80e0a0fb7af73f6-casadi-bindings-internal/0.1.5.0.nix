@@ -32,8 +32,8 @@
           (hsPkgs.containers)
         ];
         libs = [
-          (pkgs.stdc++)
-          (pkgs.casadi)
+          (pkgs."stdc++")
+          (pkgs."casadi")
         ];
       };
     };

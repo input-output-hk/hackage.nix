@@ -34,8 +34,8 @@
           (hsPkgs.mtl)
           (hsPkgs.cassava)
         ];
-        libs = [ (pkgs.geos_c) ];
-        frameworks = [ (pkgs.GEOS) ];
+        libs = [ (pkgs."geos_c") ];
+        frameworks = [ (pkgs."GEOS") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];
@@ -51,8 +51,8 @@
             (hsPkgs.hspec)
             (hsPkgs.cassava)
           ];
-          libs = [ (pkgs.geos_c) ];
-          frameworks = [ (pkgs.GEOS) ];
+          libs = [ (pkgs."geos_c") ];
+          frameworks = [ (pkgs."GEOS") ];
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs)
           ];

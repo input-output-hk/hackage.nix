@@ -34,7 +34,10 @@
           (hsPkgs.iteratee)
           (hsPkgs.mtl)
         ];
-        libs = [ (pkgs.z) (pkgs.bz2) ];
+        libs = [
+          (pkgs."z")
+          (pkgs."bz2")
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

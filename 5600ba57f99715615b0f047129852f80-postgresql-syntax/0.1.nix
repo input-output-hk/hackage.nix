@@ -32,7 +32,7 @@
           (hsPkgs.base-prelude)
           (hsPkgs.base)
         ];
-        libs = [ (pkgs.pg_query) ];
+        libs = [ (pkgs."pg_query") ];
       };
       tests = {
         "demo" = {

@@ -32,7 +32,7 @@
           (hsPkgs.inline-c)
           (hsPkgs.template-haskell)
         ];
-        libs = [ (pkgs.ocilib) ];
+        libs = [ (pkgs."ocilib") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];
@@ -46,7 +46,7 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-hunit)
           ];
-          libs = [ (pkgs.ocilib) ];
+          libs = [ (pkgs."ocilib") ];
         };
       };
     };

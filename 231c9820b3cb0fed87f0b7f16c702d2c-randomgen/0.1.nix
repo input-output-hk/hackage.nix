@@ -33,7 +33,7 @@
             (hsPkgs.bytestring)
             (hsPkgs.binary)
           ];
-          libs = [ (pkgs.crypto) ];
+          libs = [ (pkgs."crypto") ];
         };
       };
     };

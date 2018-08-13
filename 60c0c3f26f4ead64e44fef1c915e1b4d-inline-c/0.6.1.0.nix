@@ -53,9 +53,9 @@
             (hsPkgs.Chart-cairo)
           ];
           libs = [
-            (pkgs.gsl)
-            (pkgs.gslcblas)
-            (pkgs.m)
+            (pkgs."gsl")
+            (pkgs."gslcblas")
+            (pkgs."m")
           ];
         };
       };

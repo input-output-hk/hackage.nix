@@ -32,7 +32,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.template-haskell)
         ];
-        libs = [ (pkgs.asound) ];
+        libs = [ (pkgs."asound") ];
       };
     };
   }

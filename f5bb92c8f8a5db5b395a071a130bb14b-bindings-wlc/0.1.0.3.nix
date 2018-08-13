@@ -31,7 +31,7 @@
           (hsPkgs.bindings-DSL)
           (hsPkgs.convertible)
         ];
-        libs = [ (pkgs.wlc) ];
+        libs = [ (pkgs."wlc") ];
       };
       tests = {
         "bindings-wlc-test" = {

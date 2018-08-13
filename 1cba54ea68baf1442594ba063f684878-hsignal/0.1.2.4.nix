@@ -37,8 +37,8 @@
           (hsPkgs.hmatrix-gsl-stats)
           (hsPkgs.hstatistics)
         ];
-        libs = pkgs.lib.optional (system.isOsx) (pkgs.gsl);
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Accelerate);
+        libs = pkgs.lib.optional (system.isOsx) (pkgs."gsl");
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate");
       };
     };
   }

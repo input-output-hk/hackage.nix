@@ -68,8 +68,8 @@
             (hsPkgs.timezone-series)
           ]) ++ pkgs.lib.optional (_flags.with_mpris || _flags.all_extensions) (hsPkgs.dbus)) ++ pkgs.lib.optional (_flags.with_dbus || _flags.all_extensions) (hsPkgs.dbus);
           libs = ([
-            (pkgs.Xrandr)
-          ] ++ pkgs.lib.optional (_flags.with_iwlib || _flags.all_extensions) (pkgs.iw)) ++ pkgs.lib.optional (_flags.with_xpm || _flags.all_extensions) (pkgs.Xpm);
+            (pkgs."Xrandr")
+          ] ++ pkgs.lib.optional (_flags.with_iwlib || _flags.all_extensions) (pkgs."iw")) ++ pkgs.lib.optional (_flags.with_xpm || _flags.all_extensions) (pkgs."Xpm");
         };
       };
     };

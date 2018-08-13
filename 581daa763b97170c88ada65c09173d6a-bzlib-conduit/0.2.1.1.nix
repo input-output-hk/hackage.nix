@@ -35,7 +35,7 @@
           (hsPkgs.data-default)
           (hsPkgs.bindings-DSL)
         ];
-        libs = pkgs.lib.optional (!system.isWindows) (pkgs.bz2);
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."bz2");
       };
       tests = {
         "test" = {

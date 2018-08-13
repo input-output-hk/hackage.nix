@@ -31,9 +31,9 @@
           (hsPkgs.allocated-processor)
         ];
         libs = [
-          (pkgs.canlib)
-          (pkgs.ftd2xx)
-          (pkgs.stdc++)
+          (pkgs."canlib")
+          (pkgs."ftd2xx")
+          (pkgs."stdc++")
         ];
       };
       exes = {
@@ -43,9 +43,9 @@
             (hsPkgs.allocated-processor)
           ];
           libs = [
-            (pkgs.canlib)
-            (pkgs.ftd2xx)
-            (pkgs.stdc++)
+            (pkgs."canlib")
+            (pkgs."ftd2xx")
+            (pkgs."stdc++")
           ];
         };
         "rmp-test-facedetect" = {
@@ -57,9 +57,9 @@
             (hsPkgs.vector-space)
           ];
           libs = [
-            (pkgs.canlib)
-            (pkgs.ftd2xx)
-            (pkgs.stdc++)
+            (pkgs."canlib")
+            (pkgs."ftd2xx")
+            (pkgs."stdc++")
           ];
         };
       };

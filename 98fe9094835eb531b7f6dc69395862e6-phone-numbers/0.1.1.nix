@@ -31,9 +31,9 @@
           (hsPkgs.bytestring)
         ];
         libs = [
-          (pkgs.phonenumber)
-          (pkgs.stdc++)
-          (pkgs.protobuf)
+          (pkgs."phonenumber")
+          (pkgs."stdc++")
+          (pkgs."protobuf")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

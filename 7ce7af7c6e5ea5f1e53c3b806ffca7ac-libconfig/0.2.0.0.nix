@@ -113,7 +113,7 @@
                         (hsPkgs.deepseq)
                         (hsPkgs.transformers)
                       ];
-        libs = [ (pkgs.config) ];
+        libs = [ (pkgs."config") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

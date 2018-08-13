@@ -27,7 +27,7 @@
     components = {
       "termbox-bindings" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.termbox) ];
+        libs = [ (pkgs."termbox") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

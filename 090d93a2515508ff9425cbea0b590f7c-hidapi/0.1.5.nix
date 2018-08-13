@@ -33,8 +33,8 @@
           (hsPkgs.deepseq-generics)
         ];
         libs = if system.isWindows
-          then [ (pkgs.setupapi) ]
-          else pkgs.lib.optional (!system.isOsx) (pkgs.udev);
+          then [ (pkgs."setupapi") ]
+          else pkgs.lib.optional (!system.isOsx) (pkgs."udev");
       };
     };
   }

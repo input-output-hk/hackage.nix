@@ -28,11 +28,11 @@
       "SFML" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.csfml-window)
-          (pkgs.csfml-system)
-          (pkgs.csfml-graphics)
-          (pkgs.csfml-network)
-          (pkgs.csfml-audio)
+          (pkgs."csfml-window")
+          (pkgs."csfml-system")
+          (pkgs."csfml-graphics")
+          (pkgs."csfml-network")
+          (pkgs."csfml-audio")
         ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

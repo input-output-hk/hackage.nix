@@ -49,7 +49,7 @@
             (hsPkgs.OpenGL)
             (hsPkgs.GLUT)
           ];
-          libs = pkgs.lib.optional (!_flags.serveronly) (pkgs.glut);
+          libs = pkgs.lib.optional (!_flags.serveronly) (pkgs."glut");
         };
         "hp2any-relay" = {
           depends  = [

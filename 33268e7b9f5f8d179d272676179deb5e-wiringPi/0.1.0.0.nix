@@ -27,7 +27,7 @@
     components = {
       "wiringPi" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.wiringPi) ];
+        libs = [ (pkgs."wiringPi") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

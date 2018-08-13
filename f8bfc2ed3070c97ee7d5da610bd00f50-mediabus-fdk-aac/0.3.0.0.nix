@@ -46,7 +46,7 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.m) ];
+        libs = [ (pkgs."m") ];
         pkgconfig = [
           (pkgconfPkgs.fdk-aac)
         ];

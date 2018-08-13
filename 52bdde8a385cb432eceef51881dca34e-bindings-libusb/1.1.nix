@@ -31,7 +31,7 @@
           (hsPkgs.bindings-common)
           (hsPkgs.bindings-posix)
         ];
-        libs = [ (pkgs.usb-1.0) ];
+        libs = [ (pkgs."usb-1.0") ];
       };
     };
   }

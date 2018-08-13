@@ -36,14 +36,16 @@
           (hsPkgs.monadiccp)
         ];
         libs = [
-          (pkgs.gecodesupport)
-          (pkgs.gecodeset)
-          (pkgs.gecodeint)
-          (pkgs.gecodekernel)
-          (pkgs.gecodesearch)
-          (pkgs.stdc++)
+          (pkgs."gecodesupport")
+          (pkgs."gecodeset")
+          (pkgs."gecodeint")
+          (pkgs."gecodekernel")
+          (pkgs."gecodesearch")
+          (pkgs."stdc++")
         ];
-        frameworks = [ (pkgs.gecode) ];
+        frameworks = [
+          (pkgs."gecode")
+        ];
       };
       tests = {
         "Queens" = {

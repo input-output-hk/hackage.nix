@@ -30,7 +30,7 @@
           (hsPkgs.OpenGL)
           (hsPkgs.base)
         ];
-        libs = [ (pkgs.ftgl) ];
+        libs = [ (pkgs."ftgl") ];
       };
     };
   }

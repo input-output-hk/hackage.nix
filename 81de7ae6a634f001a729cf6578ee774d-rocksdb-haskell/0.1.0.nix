@@ -34,7 +34,7 @@
           (hsPkgs.resourcet)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.rocksdb) ];
+        libs = [ (pkgs."rocksdb") ];
       };
     };
   }

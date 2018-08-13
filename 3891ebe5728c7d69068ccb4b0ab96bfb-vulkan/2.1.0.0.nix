@@ -44,8 +44,8 @@
           (hsPkgs.vector-sized)
         ];
         libs = if system.isWindows
-          then [ (pkgs.vulkan-1) ]
-          else [ (pkgs.vulkan) ];
+          then [ (pkgs."vulkan-1") ]
+          else [ (pkgs."vulkan") ];
       };
     };
   }

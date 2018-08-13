@@ -38,7 +38,7 @@
             (hsPkgs.foundation)
             (hsPkgs.xgboost-haskell)
           ];
-          libs = [ (pkgs.xgboost) ];
+          libs = [ (pkgs."xgboost") ];
         };
         "xgb-agaricus" = {
           depends  = [
@@ -46,7 +46,7 @@
             (hsPkgs.foundation)
             (hsPkgs.xgboost-haskell)
           ];
-          libs = [ (pkgs.xgboost) ];
+          libs = [ (pkgs."xgboost") ];
         };
       };
     };

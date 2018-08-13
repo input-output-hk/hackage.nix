@@ -33,10 +33,10 @@
         ];
         libs = if system.isWindows || system.isWindows
           then [
-            (pkgs.eay32)
-            (pkgs.ssl32)
+            (pkgs."eay32")
+            (pkgs."ssl32")
           ]
-          else [ (pkgs.crypto) ];
+          else [ (pkgs."crypto") ];
       };
       tests = {
         "test-cryptonite-openssl" = {

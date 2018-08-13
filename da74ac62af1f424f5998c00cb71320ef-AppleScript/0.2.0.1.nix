@@ -41,7 +41,7 @@
             (hsPkgs.mtl)
           ]
           else [ (hsPkgs.base) ];
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Carbon);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Carbon");
       };
     };
   }

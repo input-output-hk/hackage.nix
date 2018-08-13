@@ -36,7 +36,7 @@
           (hsPkgs.glib)
           (hsPkgs.gtk)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
         pkgconfig = [
           (pkgconfPkgs.appindicator-0.1)
         ];

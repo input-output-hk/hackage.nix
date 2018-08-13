@@ -34,38 +34,38 @@
       "gsl-random" = {
         depends  = [ (hsPkgs.base) ];
         libs = (((pkgs.lib.optionals (_flags.atlas) [
-          (pkgs.gsl)
-          (pkgs.cblas)
-          (pkgs.atlas)
-          (pkgs.m)
+          (pkgs."gsl")
+          (pkgs."cblas")
+          (pkgs."atlas")
+          (pkgs."m")
         ] ++ pkgs.lib.optionals (_flags.gsl) [
-          (pkgs.gsl)
-          (pkgs.gslcblas)
-          (pkgs.m)
+          (pkgs."gsl")
+          (pkgs."gslcblas")
+          (pkgs."m")
         ]) ++ pkgs.lib.optionals (_flags.mkl) (if system.isX86_64
           then [
-            (pkgs.gsl)
-            (pkgs.mkl_lapack)
-            (pkgs.mkl_intel_lp64)
-            (pkgs.mkl_sequential)
-            (pkgs.mkl_core)
-            (pkgs.m)
+            (pkgs."gsl")
+            (pkgs."mkl_lapack")
+            (pkgs."mkl_intel_lp64")
+            (pkgs."mkl_sequential")
+            (pkgs."mkl_core")
+            (pkgs."m")
           ]
           else [
-            (pkgs.gsl)
-            (pkgs.mkl_lapack)
-            (pkgs.mkl_intel)
-            (pkgs.mkl_sequential)
-            (pkgs.mkl_core)
-            (pkgs.m)
+            (pkgs."gsl")
+            (pkgs."mkl_lapack")
+            (pkgs."mkl_intel")
+            (pkgs."mkl_sequential")
+            (pkgs."mkl_core")
+            (pkgs."m")
           ])) ++ pkgs.lib.optionals (_flags.veclib) [
-          (pkgs.gsl)
-          (pkgs.cblas)
-          (pkgs.m)
+          (pkgs."gsl")
+          (pkgs."cblas")
+          (pkgs."m")
         ]) ++ pkgs.lib.optionals (!_flags.atlas && !_flags.gsl && !_flags.mkl && !_flags.veclib && !_flags.custom) [
-          (pkgs.gsl)
-          (pkgs.gslcblas)
-          (pkgs.m)
+          (pkgs."gsl")
+          (pkgs."gslcblas")
+          (pkgs."m")
         ];
       };
     };

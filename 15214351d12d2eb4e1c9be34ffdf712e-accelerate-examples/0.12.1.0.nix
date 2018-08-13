@@ -64,7 +64,7 @@
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
           ] ++ pkgs.lib.optional (_flags.cuda) (hsPkgs.accelerate-cuda)) ++ pkgs.lib.optional (_flags.opencl) (hsPkgs.accelerate-opencl)) ++ pkgs.lib.optional (_flags.io) (hsPkgs.accelerate-io);
-          libs = [ (pkgs.stdc++) ];
+          libs = [ (pkgs."stdc++") ];
         };
         "accelerate-crystal" = {
           depends  = ([

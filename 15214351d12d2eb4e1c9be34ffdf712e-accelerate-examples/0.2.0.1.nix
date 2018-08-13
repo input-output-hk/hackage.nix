@@ -49,7 +49,7 @@
             (hsPkgs.vector)
             (hsPkgs.vector-algorithms)
           ];
-          libs = [ (pkgs.stdc++) ];
+          libs = [ (pkgs."stdc++") ];
         };
       };
     };

@@ -27,7 +27,7 @@
     components = {
       "Imlib" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.Imlib2) ];
+        libs = [ (pkgs."Imlib2") ];
       };
     };
   }

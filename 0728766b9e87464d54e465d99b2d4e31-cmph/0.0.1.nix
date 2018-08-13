@@ -32,7 +32,7 @@
           (hsPkgs.containers)
           (hsPkgs.array)
         ];
-        libs = [ (pkgs.cmph) ];
+        libs = [ (pkgs."cmph") ];
       };
       tests = {
         "cmph-test" = {
@@ -46,7 +46,7 @@
             (hsPkgs.semigroups)
             (hsPkgs.text)
           ];
-          libs = [ (pkgs.cmph) ];
+          libs = [ (pkgs."cmph") ];
         };
       };
     };

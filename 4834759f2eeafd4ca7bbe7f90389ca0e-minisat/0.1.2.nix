@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.async)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

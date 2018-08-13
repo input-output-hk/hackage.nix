@@ -32,7 +32,7 @@
           (hsPkgs.time)
           (hsPkgs.filepath)
         ];
-        libs = [ (pkgs.notmuch) ];
+        libs = [ (pkgs."notmuch") ];
       };
       exes = {
         "notmuch-test" = {
@@ -41,7 +41,7 @@
             (hsPkgs.old-locale)
             (hsPkgs.parseargs)
           ];
-          libs = [ (pkgs.notmuch) ];
+          libs = [ (pkgs."notmuch") ];
         };
       };
     };

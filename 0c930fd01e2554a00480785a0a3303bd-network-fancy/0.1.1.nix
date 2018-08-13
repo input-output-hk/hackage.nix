@@ -31,8 +31,8 @@
           (hsPkgs.bytestring)
         ];
         libs = if system.isWindows
-          then [ (pkgs.ws2_32) ]
-          else pkgs.lib.optional (system.isSolaris) (pkgs.socket);
+          then [ (pkgs."ws2_32") ]
+          else pkgs.lib.optional (system.isSolaris) (pkgs."socket");
       };
       exes = {
         "network-fancy-test" = {
@@ -43,8 +43,8 @@
             (hsPkgs.directory)
           ];
           libs = if system.isWindows
-            then [ (pkgs.ws2_32) ]
-            else pkgs.lib.optional (system.isSolaris) (pkgs.socket);
+            then [ (pkgs."ws2_32") ]
+            else pkgs.lib.optional (system.isSolaris) (pkgs."socket");
         };
       };
     };

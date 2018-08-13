@@ -27,7 +27,7 @@
     components = {
       "terminfo" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.curses) ];
+        libs = [ (pkgs."curses") ];
       };
     };
   }

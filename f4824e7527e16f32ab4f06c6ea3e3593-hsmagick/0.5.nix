@@ -35,14 +35,14 @@
           (hsPkgs.bytestring)
         ];
         libs = [
-          (pkgs.tiff)
-          (pkgs.jasper)
-          (pkgs.jpeg)
-          (pkgs.png)
-          (pkgs.wmflite)
-          (pkgs.bz2)
-          (pkgs.z)
-          (pkgs.m)
+          (pkgs."tiff")
+          (pkgs."jasper")
+          (pkgs."jpeg")
+          (pkgs."png")
+          (pkgs."wmflite")
+          (pkgs."bz2")
+          (pkgs."z")
+          (pkgs."m")
         ];
         pkgconfig = [
           (pkgconfPkgs.GraphicsMagick)

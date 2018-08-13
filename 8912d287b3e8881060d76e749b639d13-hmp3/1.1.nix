@@ -32,7 +32,7 @@
             (hsPkgs.unix)
             (hsPkgs.fps)
           ];
-          libs = [ (pkgs.curses) ];
+          libs = [ (pkgs."curses") ];
         };
       };
     };

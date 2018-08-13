@@ -31,7 +31,7 @@
           (hsPkgs.libxml)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.xslt) ];
+        libs = [ (pkgs."xslt") ];
       };
     };
   }

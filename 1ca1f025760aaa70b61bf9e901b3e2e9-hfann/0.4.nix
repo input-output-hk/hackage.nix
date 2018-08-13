@@ -30,8 +30,8 @@
       "hfann" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
-          (pkgs.doublefann)
-          (pkgs.m)
+          (pkgs."doublefann")
+          (pkgs."m")
         ];
         pkgconfig = [
           (pkgconfPkgs.fann)
@@ -41,8 +41,8 @@
         "HFANNTest" = {
           depends  = [ (hsPkgs.base) ];
           libs = [
-            (pkgs.doublefann)
-            (pkgs.m)
+            (pkgs."doublefann")
+            (pkgs."m")
           ];
         };
       };

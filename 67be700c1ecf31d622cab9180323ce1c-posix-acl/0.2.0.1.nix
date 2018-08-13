@@ -36,7 +36,7 @@
           (hsPkgs.transformers-base)
           (hsPkgs.unix)
         ];
-        libs = [ (pkgs.acl) ];
+        libs = [ (pkgs."acl") ];
       };
     };
   }

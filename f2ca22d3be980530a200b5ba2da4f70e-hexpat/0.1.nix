@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.haskell98)
         ];
-        libs = [ (pkgs.expat) ];
+        libs = [ (pkgs."expat") ];
       };
     };
   }

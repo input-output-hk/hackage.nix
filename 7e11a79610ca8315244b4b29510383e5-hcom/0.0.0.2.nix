@@ -31,11 +31,11 @@
           (hsPkgs.base)
         ];
         libs = pkgs.lib.optionals (system.isWindows) [
-          (pkgs.kernel32)
-          (pkgs.user32)
-          (pkgs.ole32)
-          (pkgs.oleaut32)
-          (pkgs.advapi32)
+          (pkgs."kernel32")
+          (pkgs."user32")
+          (pkgs."ole32")
+          (pkgs."oleaut32")
+          (pkgs."advapi32")
         ];
       };
     };

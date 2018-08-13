@@ -36,7 +36,7 @@
           (hsPkgs.mtl)
           (hsPkgs.template-haskell)
         ];
-        libs = [ (pkgs.pthread) ];
+        libs = [ (pkgs."pthread") ];
       };
     };
   }

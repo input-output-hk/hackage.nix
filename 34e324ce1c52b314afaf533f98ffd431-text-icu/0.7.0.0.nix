@@ -33,15 +33,15 @@
           (hsPkgs.text)
         ];
         libs = [
-          (pkgs.icuuc)
+          (pkgs."icuuc")
         ] ++ (if system.isWindows
           then [
-            (pkgs.icuin)
-            (pkgs.icudt)
+            (pkgs."icuin")
+            (pkgs."icudt")
           ]
           else [
-            (pkgs.icui18n)
-            (pkgs.icudata)
+            (pkgs."icui18n")
+            (pkgs."icudata")
           ]);
       };
       tests = {

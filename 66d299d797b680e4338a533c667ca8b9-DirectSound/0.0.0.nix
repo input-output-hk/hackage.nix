@@ -31,7 +31,7 @@
         depends  = [
           (hsPkgs.Win32)
         ] ++ [ (hsPkgs.base) ];
-        libs = [ (pkgs.dsound) ];
+        libs = [ (pkgs."dsound") ];
       };
     };
   }

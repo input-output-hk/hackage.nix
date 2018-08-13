@@ -36,7 +36,7 @@
           (hsPkgs.semigroups)
           (hsPkgs.OpenGLRaw)
         ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.OpenGL);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."OpenGL");
       };
       tests = {
         "smoke-test" = {

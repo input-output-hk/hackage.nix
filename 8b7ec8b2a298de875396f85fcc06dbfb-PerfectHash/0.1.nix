@@ -35,24 +35,24 @@
           (hsPkgs.array)
           (hsPkgs.time)
         ];
-        libs = [ (pkgs.cmph) ];
+        libs = [ (pkgs."cmph") ];
       };
       exes = {
         "benchmark" = {
-          libs = [ (pkgs.cmph) ];
+          libs = [ (pkgs."cmph") ];
         };
         "benchmark_trie" = {
           depends  = [
             (hsPkgs.bytestring-trie)
           ];
-          libs = [ (pkgs.cmph) ];
+          libs = [ (pkgs."cmph") ];
         };
         "test" = {
           depends  = [
             (hsPkgs.QuickCheck)
             (hsPkgs.HUnit)
           ];
-          libs = [ (pkgs.cmph) ];
+          libs = [ (pkgs."cmph") ];
         };
       };
     };

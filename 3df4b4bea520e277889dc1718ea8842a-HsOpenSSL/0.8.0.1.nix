@@ -38,12 +38,12 @@
           else [ (hsPkgs.integer) ]);
         libs = if system.isWindows
           then [
-            (pkgs.eay32)
-            (pkgs.ssl2)
+            (pkgs."eay32")
+            (pkgs."ssl2")
           ]
           else [
-            (pkgs.crypto)
-            (pkgs.ssl)
+            (pkgs."crypto")
+            (pkgs."ssl")
           ];
       };
     };

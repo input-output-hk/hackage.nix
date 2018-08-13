@@ -35,10 +35,10 @@
           (hsPkgs.extensible-exceptions)
         ];
         libs = [
-          (pkgs.cuda)
+          (pkgs."cuda")
         ] ++ (if _flags.emu
-          then [ (pkgs.cudartemu) ]
-          else [ (pkgs.cudart) ]);
+          then [ (pkgs."cudartemu") ]
+          else [ (pkgs."cudart") ]);
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
           (hsPkgs.buildPackages.hsc2hs)

@@ -31,7 +31,7 @@
           (hsPkgs.transformers)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.gsasl) ];
+        libs = [ (pkgs."gsasl") ];
         pkgconfig = [
           (pkgconfPkgs.libgsasl)
         ];

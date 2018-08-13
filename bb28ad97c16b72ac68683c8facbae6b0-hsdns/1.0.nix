@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.network)
         ];
-        libs = [ (pkgs.adns) ];
+        libs = [ (pkgs."adns") ];
       };
       exes = {
         "adns-reverse-lookup" = {
@@ -38,7 +38,7 @@
             (hsPkgs.base)
             (hsPkgs.network)
           ];
-          libs = [ (pkgs.adns) ];
+          libs = [ (pkgs."adns") ];
         };
       };
     };

@@ -31,8 +31,8 @@
           (hsPkgs.vector)
         ];
         libs = [
-          (pkgs.nm-glib)
-          (pkgs.g)
+          (pkgs."nm-glib")
+          (pkgs."g")
         ];
         pkgconfig = [
           (pkgconfPkgs.glib-2.0)

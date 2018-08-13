@@ -38,7 +38,7 @@
           (hsPkgs.template-haskell)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.SDL2_mixer) ];
+        libs = [ (pkgs."SDL2_mixer") ];
         pkgconfig = [
           (pkgconfPkgs.SDL2_mixer)
         ];

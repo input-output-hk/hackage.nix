@@ -42,7 +42,7 @@
             (hsPkgs.QuickCheck)
             (hsPkgs.OpenCL)
           ];
-          libs = [ (pkgs.OpenCL) ];
+          libs = [ (pkgs."OpenCL") ];
         };
       };
     };

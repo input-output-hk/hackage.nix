@@ -35,8 +35,8 @@
           (hsPkgs.old-time)
         ];
         libs = if system.isWindows
-          then [ (pkgs.oci) ]
-          else [ (pkgs.clntsh) ];
+          then [ (pkgs."oci") ]
+          else [ (pkgs."clntsh") ];
       };
       exes = {
         "takusen_tests" = {

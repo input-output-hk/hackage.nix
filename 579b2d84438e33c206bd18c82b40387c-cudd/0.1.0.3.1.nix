@@ -32,7 +32,10 @@
           (hsPkgs.array)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.cudd) (pkgs.m) ];
+        libs = [
+          (pkgs."cudd")
+          (pkgs."m")
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
           (hsPkgs.buildPackages.hsc2hs)

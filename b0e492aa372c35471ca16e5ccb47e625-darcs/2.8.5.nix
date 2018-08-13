@@ -84,7 +84,7 @@
             (hsPkgs.network)
             (hsPkgs.network)
           ]))) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) (hsPkgs.mmap)) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) (hsPkgs.terminfo));
-        libs = pkgs.lib.optionals (!(!_flags.library)) (pkgs.lib.optional (_flags.curl) (pkgs.curl));
+        libs = pkgs.lib.optionals (!(!_flags.library)) (pkgs.lib.optional (_flags.curl) (pkgs."curl"));
       };
       exes = {
         "darcs" = {
@@ -129,7 +129,7 @@
               (hsPkgs.network)
               (hsPkgs.network)
             ]))) ++ pkgs.lib.optional (_flags.mmap && !system.isWindows) (hsPkgs.mmap)) ++ pkgs.lib.optional (_flags.terminfo && !system.isWindows) (hsPkgs.terminfo);
-          libs = pkgs.lib.optional (_flags.curl) (pkgs.curl);
+          libs = pkgs.lib.optional (_flags.curl) (pkgs."curl");
         };
         "darcs-test" = {
           depends  = pkgs.lib.optionals (!(!_flags.test)) ((((((([
@@ -181,7 +181,7 @@
               (hsPkgs.network)
               (hsPkgs.network)
             ])));
-          libs = pkgs.lib.optionals (!(!_flags.test)) (pkgs.lib.optional (_flags.curl) (pkgs.curl));
+          libs = pkgs.lib.optionals (!(!_flags.test)) (pkgs.lib.optional (_flags.curl) (pkgs."curl"));
         };
       };
     };

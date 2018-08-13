@@ -41,7 +41,7 @@
             (hsPkgs.transformers)
             (hsPkgs.StateVar)
           ];
-        libs = [ (pkgs.m) ];
+        libs = [ (pkgs."m") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

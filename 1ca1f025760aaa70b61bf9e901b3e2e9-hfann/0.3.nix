@@ -29,12 +29,12 @@
     components = {
       "hfann" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.doublefann) ];
+        libs = [ (pkgs."doublefann") ];
       };
       exes = {
         "HFANNTest" = {
           depends  = [ (hsPkgs.base) ];
-          libs = [ (pkgs.doublefann) ];
+          libs = [ (pkgs."doublefann") ];
         };
       };
     };

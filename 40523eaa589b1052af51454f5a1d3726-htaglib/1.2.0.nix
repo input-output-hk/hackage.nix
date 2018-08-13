@@ -34,7 +34,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
         ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups);
-        libs = [ (pkgs.tag_c) ];
+        libs = [ (pkgs."tag_c") ];
       };
       tests = {
         "tests" = {

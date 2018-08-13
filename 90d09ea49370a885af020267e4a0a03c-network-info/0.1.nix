@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.base)
         ];
-        libs = pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optional (system.isWindows) (pkgs.iphlpapi));
+        libs = pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optional (system.isWindows) (pkgs."iphlpapi"));
       };
       exes = {
         "test-network-info" = {

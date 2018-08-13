@@ -33,10 +33,10 @@
           (hsPkgs.bytestring)
         ];
         libs = pkgs.lib.optionals (!_flags.use-pkg-config) ([
-          (pkgs.pq)
+          (pkgs."pq")
         ] ++ pkgs.lib.optionals (system.isOpenbsd) [
-          (pkgs.crypto)
-          (pkgs.ssl)
+          (pkgs."crypto")
+          (pkgs."ssl")
         ]);
         pkgconfig = pkgs.lib.optional (_flags.use-pkg-config) (pkgconfPkgs.libpq);
         build-tools = [

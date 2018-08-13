@@ -31,7 +31,7 @@
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.ssh2) ];
+        libs = [ (pkgs."ssh2") ];
       };
     };
   }

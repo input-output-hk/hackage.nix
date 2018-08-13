@@ -31,7 +31,7 @@
           (hsPkgs.fficxx-runtime)
           (hsPkgs.HROOT-core)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

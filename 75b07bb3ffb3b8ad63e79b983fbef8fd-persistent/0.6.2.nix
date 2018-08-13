@@ -68,7 +68,7 @@
             (hsPkgs.random)
             (hsPkgs.QuickCheck)
           ];
-          libs = [ (pkgs.sqlite3) ];
+          libs = [ (pkgs."sqlite3") ];
         };
       };
     };

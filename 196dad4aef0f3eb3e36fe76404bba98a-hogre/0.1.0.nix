@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.haskell98)
         ];
-        libs = [ (pkgs.OgreMain) ];
+        libs = [ (pkgs."OgreMain") ];
         pkgconfig = [
           (pkgconfPkgs.OGRE)
         ];

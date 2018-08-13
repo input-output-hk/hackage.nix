@@ -31,8 +31,8 @@
           (hsPkgs.containers)
         ];
         libs = [
-          (pkgs.omega)
-          (pkgs.stdc++)
+          (pkgs."omega")
+          (pkgs."stdc++")
         ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

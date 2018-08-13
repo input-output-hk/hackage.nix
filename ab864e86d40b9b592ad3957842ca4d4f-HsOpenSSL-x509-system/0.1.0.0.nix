@@ -35,7 +35,7 @@
           else if system.isOsx
             then [ (hsPkgs.process) ]
             else [ (hsPkgs.unix) ]);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.Crypt32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."Crypt32");
         build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs);
       };
     };

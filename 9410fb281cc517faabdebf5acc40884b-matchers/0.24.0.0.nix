@@ -32,7 +32,7 @@
           (hsPkgs.text)
           (hsPkgs.prednote)
         ];
-        libs = [ (pkgs.pcre) ];
+        libs = [ (pkgs."pcre") ];
       };
     };
   }

@@ -43,7 +43,7 @@
           (hsPkgs.criterion)
           (hsPkgs.deepseq)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.advapi32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."advapi32");
       };
     };
   }

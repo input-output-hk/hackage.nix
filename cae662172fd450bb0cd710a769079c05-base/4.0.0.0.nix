@@ -32,11 +32,11 @@
           (hsPkgs.integer)
         ];
         libs = pkgs.lib.optionals (system.isWindows) [
-          (pkgs.wsock32)
-          (pkgs.msvcrt)
-          (pkgs.kernel32)
-          (pkgs.user32)
-          (pkgs.shell32)
+          (pkgs."wsock32")
+          (pkgs."msvcrt")
+          (pkgs."kernel32")
+          (pkgs."user32")
+          (pkgs."shell32")
         ];
       };
     };

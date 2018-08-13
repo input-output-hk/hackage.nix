@@ -33,7 +33,7 @@
           (hsPkgs.transformers)
           (hsPkgs.mtl)
         ];
-        libs = [ (pkgs.eibclient) ];
+        libs = [ (pkgs."eibclient") ];
       };
     };
   }

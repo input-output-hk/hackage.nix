@@ -38,8 +38,8 @@
           (hsPkgs.array)
         ];
         libs = [
-          (pkgs.mpi)
-        ] ++ pkgs.lib.optional (_flags.mpich14) (pkgs.mpl);
+          (pkgs."mpi")
+        ] ++ pkgs.lib.optional (_flags.mpich14) (pkgs."mpl");
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];
@@ -54,8 +54,8 @@
             (hsPkgs.unix)
           ];
           libs = [
-            (pkgs.mpi)
-          ] ++ pkgs.lib.optional (_flags.mpich14) (pkgs.mpl);
+            (pkgs."mpi")
+          ] ++ pkgs.lib.optional (_flags.mpich14) (pkgs."mpl");
           build-tools = [
             (hsPkgs.buildPackages.c2hs)
           ];

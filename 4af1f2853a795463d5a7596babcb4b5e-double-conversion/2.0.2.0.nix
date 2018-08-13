@@ -37,16 +37,16 @@
         libs = if system.isWindows
           then if system.isX86_64
             then [
-              (pkgs.stdc++-6)
-              (pkgs.gcc_s_seh-1)
+              (pkgs."stdc++-6")
+              (pkgs."gcc_s_seh-1")
             ]
             else [
-              (pkgs.stdc++-6)
-              (pkgs.gcc_s_dw2-1)
+              (pkgs."stdc++-6")
+              (pkgs."gcc_s_dw2-1")
             ]
           else if system.isOsx
-            then [ (pkgs.c++) ]
-            else [ (pkgs.stdc++) ];
+            then [ (pkgs."c++") ]
+            else [ (pkgs."stdc++") ];
       };
       tests = {
         "tests" = {

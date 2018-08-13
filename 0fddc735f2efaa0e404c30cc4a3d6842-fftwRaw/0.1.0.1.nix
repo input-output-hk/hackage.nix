@@ -27,7 +27,7 @@
     components = {
       "fftwRaw" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.fftw3) ];
+        libs = [ (pkgs."fftw3") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

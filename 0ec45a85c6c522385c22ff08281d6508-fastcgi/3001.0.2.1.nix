@@ -36,7 +36,7 @@
             (hsPkgs.bytestring)
           ]
           else [ (hsPkgs.base) ]);
-        libs = [ (pkgs.fcgi) ];
+        libs = [ (pkgs."fcgi") ];
       };
     };
   }

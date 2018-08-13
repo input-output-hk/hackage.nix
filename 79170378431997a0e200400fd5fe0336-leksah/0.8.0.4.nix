@@ -61,7 +61,7 @@
             else [
               (hsPkgs.unix)
             ])) ++ pkgs.lib.optional (_flags.yi) (hsPkgs.yi);
-          libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32) ++ pkgs.lib.optional (system.isOsx) (pkgs.igemacintegration);
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32") ++ pkgs.lib.optional (system.isOsx) (pkgs."igemacintegration");
         };
       };
     };

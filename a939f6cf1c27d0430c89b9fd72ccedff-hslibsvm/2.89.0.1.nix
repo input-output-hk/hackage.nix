@@ -31,8 +31,8 @@
           (hsPkgs.containers)
         ];
         libs = [
-          (pkgs.stdc++)
-          (pkgs.svm)
+          (pkgs."stdc++")
+          (pkgs."svm")
         ];
       };
     };

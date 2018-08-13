@@ -37,11 +37,11 @@
           (hsPkgs.random)
         ];
         libs = pkgs.lib.optionals (_flags.runtimegecode) [
-          (pkgs.gecodesupport)
-          (pkgs.gecodeset)
-          (pkgs.gecodeint)
-          (pkgs.gecodekernel)
-          (pkgs.gecodesearch)
+          (pkgs."gecodesupport")
+          (pkgs."gecodeset")
+          (pkgs."gecodeint")
+          (pkgs."gecodekernel")
+          (pkgs."gecodesearch")
         ];
       };
     };

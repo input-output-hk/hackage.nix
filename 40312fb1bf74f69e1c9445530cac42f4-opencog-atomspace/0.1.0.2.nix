@@ -36,7 +36,7 @@
           (hsPkgs.filepath)
         ];
         libs = [
-          (pkgs.atomspace-cwrapper)
+          (pkgs."atomspace-cwrapper")
         ];
       };
     };

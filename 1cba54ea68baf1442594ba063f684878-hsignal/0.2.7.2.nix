@@ -43,21 +43,21 @@
           (hsPkgs.hstatistics)
         ];
         libs = ((((if _flags.openblas
-          then [ (pkgs.openblas) ]
+          then [ (pkgs."openblas") ]
           else [
-            (pkgs.blas)
-            (pkgs.lapack)
-          ]) ++ pkgs.lib.optional (system.isOsx) (pkgs.gsl)) ++ pkgs.lib.optionals (system.isFreebsd) [
-          (pkgs.blas)
-          (pkgs.lapack)
-          (pkgs.gfortran)
-          (pkgs.gsl)
+            (pkgs."blas")
+            (pkgs."lapack")
+          ]) ++ pkgs.lib.optional (system.isOsx) (pkgs."gsl")) ++ pkgs.lib.optionals (system.isFreebsd) [
+          (pkgs."blas")
+          (pkgs."lapack")
+          (pkgs."gfortran")
+          (pkgs."gsl")
         ]) ++ pkgs.lib.optionals (system.isWindows) [
-          (pkgs.blas)
-          (pkgs.lapack)
-          (pkgs.gsl-0)
-        ]) ++ pkgs.lib.optional (_flags.onlygsl) (pkgs.gsl);
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Accelerate);
+          (pkgs."blas")
+          (pkgs."lapack")
+          (pkgs."gsl-0")
+        ]) ++ pkgs.lib.optional (_flags.onlygsl) (pkgs."gsl");
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate");
         pkgconfig = pkgs.lib.optional (!_flags.onlygsl) (pkgconfPkgs.gsl);
       };
     };

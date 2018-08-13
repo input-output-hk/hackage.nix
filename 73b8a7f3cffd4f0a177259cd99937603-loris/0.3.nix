@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.loris) ];
+        libs = [ (pkgs."loris") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

@@ -33,17 +33,17 @@
           (hsPkgs.limp)
         ];
         libs = [
-          (pkgs.Cbc)
-          (pkgs.Clp)
-          (pkgs.CbcSolver)
-          (pkgs.Cgl)
-          (pkgs.Osi)
-          (pkgs.OsiCbc)
-          (pkgs.OsiClp)
-          (pkgs.OsiCommonTests)
-          (pkgs.CoinUtils)
-          (pkgs.CoinMP)
-          (pkgs.stdc++)
+          (pkgs."Cbc")
+          (pkgs."Clp")
+          (pkgs."CbcSolver")
+          (pkgs."Cgl")
+          (pkgs."Osi")
+          (pkgs."OsiCbc")
+          (pkgs."OsiClp")
+          (pkgs."OsiCommonTests")
+          (pkgs."CoinUtils")
+          (pkgs."CoinMP")
+          (pkgs."stdc++")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

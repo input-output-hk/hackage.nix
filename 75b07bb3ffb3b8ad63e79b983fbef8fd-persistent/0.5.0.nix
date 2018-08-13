@@ -56,7 +56,7 @@
             (hsPkgs.HDBC)
             (hsPkgs.web-routes-quasi)
           ];
-          libs = [ (pkgs.sqlite3) ];
+          libs = [ (pkgs."sqlite3") ];
         };
       };
     };

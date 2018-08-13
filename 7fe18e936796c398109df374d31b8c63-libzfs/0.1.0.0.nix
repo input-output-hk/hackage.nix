@@ -32,8 +32,8 @@
           (hsPkgs.transformers)
         ];
         libs = [
-          (pkgs.zfs)
-          (pkgs.nvpair)
+          (pkgs."zfs")
+          (pkgs."nvpair")
         ];
       };
       exes = {
@@ -44,8 +44,8 @@
             (hsPkgs.transformers)
           ];
           libs = [
-            (pkgs.zfs)
-            (pkgs.nvpair)
+            (pkgs."zfs")
+            (pkgs."nvpair")
           ];
         };
       };

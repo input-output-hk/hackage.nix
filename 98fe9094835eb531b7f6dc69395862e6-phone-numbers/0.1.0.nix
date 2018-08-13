@@ -31,8 +31,8 @@
           (hsPkgs.bytestring)
         ];
         libs = [
-          (pkgs.phonenumber)
-          (pkgs.stdc++)
+          (pkgs."phonenumber")
+          (pkgs."stdc++")
         ];
       };
       tests = {

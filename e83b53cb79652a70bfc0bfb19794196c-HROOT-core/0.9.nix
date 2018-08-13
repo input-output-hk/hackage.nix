@@ -32,7 +32,7 @@
           (hsPkgs.fficxx-runtime)
           (hsPkgs.template-haskell)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
     };
   }

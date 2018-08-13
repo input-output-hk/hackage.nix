@@ -45,7 +45,7 @@
             (hsPkgs.xml)
             (hsPkgs.hslogger)
           ];
-          libs = [ (pkgs.zip) ];
+          libs = [ (pkgs."zip") ];
           build-tools = [
             (hsPkgs.buildPackages.cpphs)
           ];
@@ -69,7 +69,7 @@
             (hsPkgs.HFuse)
             (hsPkgs.hslogger)
           ];
-          libs = [ (pkgs.zip) ];
+          libs = [ (pkgs."zip") ];
           build-tools = [
             (hsPkgs.buildPackages.cpphs)
           ];

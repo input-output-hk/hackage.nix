@@ -27,7 +27,7 @@
     components = {
       "mpg123-bindings" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.mpg123) ];
+        libs = [ (pkgs."mpg123") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

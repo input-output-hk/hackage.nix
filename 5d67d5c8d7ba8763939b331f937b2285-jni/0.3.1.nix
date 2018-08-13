@@ -35,7 +35,7 @@
           (hsPkgs.singletons)
           (hsPkgs.thread-local-storage)
         ];
-        libs = [ (pkgs.jvm) ];
+        libs = [ (pkgs."jvm") ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs)
         ];

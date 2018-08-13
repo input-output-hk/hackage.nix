@@ -37,7 +37,7 @@
       };
       exes = {
         "DBDirect-hdbc-postgresql" = {
-          libs = [ (pkgs.pq) ];
+          libs = [ (pkgs."pq") ];
         };
       };
     };

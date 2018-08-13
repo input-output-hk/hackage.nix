@@ -27,7 +27,7 @@
     components = {
       "broker-haskell" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.broker) ];
+        libs = [ (pkgs."broker") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

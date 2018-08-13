@@ -36,7 +36,7 @@
           (hsPkgs.xkbcommon)
           (hsPkgs.pretty)
         ];
-        libs = [ (pkgs.wlc) ];
+        libs = [ (pkgs."wlc") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

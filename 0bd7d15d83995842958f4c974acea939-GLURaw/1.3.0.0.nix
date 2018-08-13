@@ -33,9 +33,9 @@
           (hsPkgs.OpenGLRaw)
         ];
         libs = if system.isWindows && _flags.usenativewindowslibraries
-          then [ (pkgs.glu32) ]
-          else pkgs.lib.optional (!system.isOsx) (pkgs.GLU);
-        frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (pkgs.lib.optional (system.isOsx) (pkgs.OpenGL));
+          then [ (pkgs."glu32") ]
+          else pkgs.lib.optional (!system.isOsx) (pkgs."GLU");
+        frameworks = pkgs.lib.optionals (!(system.isWindows && _flags.usenativewindowslibraries)) (pkgs.lib.optional (system.isOsx) (pkgs."OpenGL"));
       };
     };
   }

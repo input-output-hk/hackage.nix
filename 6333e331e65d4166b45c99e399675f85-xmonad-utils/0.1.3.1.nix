@@ -52,7 +52,7 @@
             (hsPkgs.unix)
             (hsPkgs.random)
           ];
-          libs = [ (pkgs.crypt) ];
+          libs = [ (pkgs."crypt") ];
         };
         "hmanage" = {
           depends  = [

@@ -32,7 +32,9 @@
           (hsPkgs.bytestring)
           (hsPkgs.time)
         ];
-        libs = [ (pkgs.gnome-keyring) ];
+        libs = [
+          (pkgs."gnome-keyring")
+        ];
         pkgconfig = [
           (pkgconfPkgs.gnome-keyring-1)
         ];

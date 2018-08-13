@@ -37,10 +37,10 @@
           (hsPkgs.directory)
         ];
         libs = if _flags.builtin-sqlcipher
-          then [ (pkgs.crypto) ]
+          then [ (pkgs."crypto") ]
           else [
-            (pkgs.sqlcipher)
-            (pkgs.crypto)
+            (pkgs."sqlcipher")
+            (pkgs."crypto")
           ];
       };
       tests = {

@@ -43,8 +43,8 @@
           (hsPkgs.mtl)
         ] ++ pkgs.lib.optional (!_flags.custom-binary) (hsPkgs.binary);
         libs = pkgs.lib.optionals (_flags.c-runtime) [
-          (pkgs.gu)
-          (pkgs.pgf)
+          (pkgs."gu")
+          (pkgs."pgf")
         ];
         build-tools = pkgs.lib.optional (_flags.c-runtime) (hsPkgs.buildPackages.hsc2hs);
       };

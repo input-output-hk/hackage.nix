@@ -34,7 +34,7 @@
           (hsPkgs.text)
           (hsPkgs.transformers)
         ];
-        libs = pkgs.lib.optional (_flags.use-system-library) (pkgs.argon2);
+        libs = pkgs.lib.optional (_flags.use-system-library) (pkgs."argon2");
       };
       tests = {
         "tests" = {

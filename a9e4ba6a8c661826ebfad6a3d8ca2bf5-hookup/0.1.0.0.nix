@@ -35,7 +35,7 @@
           (hsPkgs.HsOpenSSL-x509-system)
           (hsPkgs.template-haskell)
         ];
-        libs = [ (pkgs.ssl) ];
+        libs = [ (pkgs."ssl") ];
       };
     };
   }

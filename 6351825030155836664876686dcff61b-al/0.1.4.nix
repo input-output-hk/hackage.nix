@@ -32,8 +32,8 @@
           (hsPkgs.base)
           (hsPkgs.mtl)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.OpenAL32);
-        frameworks = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (system.isOsx) (pkgs.OpenAL));
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."OpenAL32");
+        frameworks = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (system.isOsx) (pkgs."OpenAL"));
         pkgconfig = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (!system.isOsx) (pkgconfPkgs.openal));
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

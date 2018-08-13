@@ -43,7 +43,7 @@
           (hsPkgs.split)
           (hsPkgs.cipher-aes)
         ];
-        libs = pkgs.lib.optional (system.isLinux || system.isOsx) (pkgs.crypto);
+        libs = pkgs.lib.optional (system.isLinux || system.isOsx) (pkgs."crypto");
       };
       tests = {
         "crypto" = {

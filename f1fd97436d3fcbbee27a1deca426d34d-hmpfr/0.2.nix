@@ -29,7 +29,7 @@
         depends  = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs.integer);
-        libs = [ (pkgs.mpfr) ];
+        libs = [ (pkgs."mpfr") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

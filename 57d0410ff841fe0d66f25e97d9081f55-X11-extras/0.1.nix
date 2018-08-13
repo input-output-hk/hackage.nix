@@ -31,8 +31,8 @@
           (hsPkgs.X11)
         ];
         libs = [
-          (pkgs.X11)
-          (pkgs.Xext)
+          (pkgs."X11")
+          (pkgs."Xext")
         ];
       };
     };

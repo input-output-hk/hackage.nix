@@ -35,7 +35,7 @@
             (hsPkgs.base)
             (hsPkgs.bytestring)
           ];
-        libs = pkgs.lib.optional (system.isOsx || system.isFreebsd) (pkgs.iconv);
+        libs = pkgs.lib.optional (system.isOsx || system.isFreebsd) (pkgs."iconv");
       };
     };
   }

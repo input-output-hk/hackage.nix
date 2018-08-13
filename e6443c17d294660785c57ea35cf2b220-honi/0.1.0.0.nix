@@ -32,8 +32,8 @@
           (hsPkgs.bytestring)
         ];
         libs = [
-          (pkgs.OpenNI2)
-          (pkgs.freenect)
+          (pkgs."OpenNI2")
+          (pkgs."freenect")
         ];
       };
       tests = {
@@ -45,8 +45,8 @@
             (hsPkgs.HUnit)
           ];
           libs = [
-            (pkgs.OpenNI2)
-            (pkgs.freenect)
+            (pkgs."OpenNI2")
+            (pkgs."freenect")
           ];
         };
       };

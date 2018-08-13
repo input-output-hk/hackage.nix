@@ -58,7 +58,7 @@
             (hsPkgs.utf8-string)
             (hsPkgs.X11-xft)
           ]) ++ pkgs.lib.optional (_flags.with_utf8) (hsPkgs.utf8-string)) ++ pkgs.lib.optional (_flags.with_inotify) (hsPkgs.hinotify)) ++ pkgs.lib.optional (_flags.with_mpd) (hsPkgs.libmpd);
-          libs = pkgs.lib.optional (_flags.with_iwlib) (pkgs.iw);
+          libs = pkgs.lib.optional (_flags.with_iwlib) (pkgs."iw");
         };
       };
     };

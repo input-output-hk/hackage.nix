@@ -42,7 +42,7 @@
             (hsPkgs.HUnit)
             (hsPkgs.dpkg)
           ];
-          libs = [ (pkgs.dpkg) ];
+          libs = [ (pkgs."dpkg") ];
           pkgconfig = [
             (pkgconfPkgs.libdpkg)
           ];

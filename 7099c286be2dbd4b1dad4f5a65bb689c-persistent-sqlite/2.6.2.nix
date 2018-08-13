@@ -47,7 +47,7 @@
           (hsPkgs.resource-pool)
           (hsPkgs.unordered-containers)
         ];
-        libs = pkgs.lib.optional (_flags.systemlib) (pkgs.sqlite3) ++ pkgs.lib.optional (!system.isWindows) (pkgs.pthread);
+        libs = pkgs.lib.optional (_flags.systemlib) (pkgs."sqlite3") ++ pkgs.lib.optional (!system.isWindows) (pkgs."pthread");
       };
       exes = {
         "sanity" = {

@@ -34,7 +34,7 @@
           (hsPkgs.time)
           (hsPkgs.prednote)
         ];
-        libs = [ (pkgs.pcre) ];
+        libs = [ (pkgs."pcre") ];
       };
     };
   }

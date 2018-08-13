@@ -32,12 +32,12 @@
           (hsPkgs.BerkeleyDB)
         ];
         libs = [
-          (pkgs.db)
-          (pkgs.dbxml)
-          (pkgs.db_cxx)
-          (pkgs.xqilla)
-          (pkgs.xerces-c)
-          (pkgs.xml2)
+          (pkgs."db")
+          (pkgs."dbxml")
+          (pkgs."db_cxx")
+          (pkgs."xqilla")
+          (pkgs."xerces-c")
+          (pkgs."xml2")
         ];
       };
     };

@@ -73,7 +73,7 @@
           (hsPkgs.fsnotify)
           (hsPkgs.async)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10.3") (hsPkgs.zlib)) ++ pkgs.lib.optional (system.isLinux) (hsPkgs.unix)) ++ pkgs.lib.optional (system.isFreebsd) (hsPkgs.unix)) ++ pkgs.lib.optional (system.isOsx) (hsPkgs.unix)) ++ pkgs.lib.optional (system.isWindows) (hsPkgs.Win32)) ++ pkgs.lib.optional (_flags.ffi) (hsPkgs.libffi)) ++ pkgs.lib.optional (_flags.gmp) (hsPkgs.libffi)) ++ pkgs.lib.optional (_flags.curses) (hsPkgs.hscurses);
-        libs = pkgs.lib.optional (_flags.gmp) (pkgs.gmp);
+        libs = pkgs.lib.optional (_flags.gmp) (pkgs."gmp");
       };
       exes = {
         "idris" = {

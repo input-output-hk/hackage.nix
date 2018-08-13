@@ -34,7 +34,7 @@
           (hsPkgs.colour)
           (hsPkgs.unix)
         ];
-        libs = [ (pkgs.pfs-1.2) ];
+        libs = [ (pkgs."pfs-1.2") ];
       };
     };
   }

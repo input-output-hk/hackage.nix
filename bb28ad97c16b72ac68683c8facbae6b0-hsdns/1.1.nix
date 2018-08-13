@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.network)
         ];
-        libs = [ (pkgs.adns) ];
+        libs = [ (pkgs."adns") ];
       };
     };
   }

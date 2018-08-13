@@ -27,7 +27,7 @@
     components = {
       "FModExRaw" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.fmodex) ];
+        libs = [ (pkgs."fmodex") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

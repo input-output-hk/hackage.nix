@@ -39,7 +39,7 @@
       exes = {
         "test-haskell-augeas" = {
           depends  = [ (hsPkgs.HUnit) ];
-          libs = [ (pkgs.augeas) ];
+          libs = [ (pkgs."augeas") ];
           pkgconfig = [
             (pkgconfPkgs.augeas)
           ];

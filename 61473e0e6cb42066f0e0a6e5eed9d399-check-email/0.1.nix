@@ -31,15 +31,15 @@
           (hsPkgs.email-validate)
         ];
         libs = [
-          (pkgs.gd)
-          (pkgs.png)
-          (pkgs.z)
-          (pkgs.jpeg)
-          (pkgs.m)
-          (pkgs.fontconfig)
-          (pkgs.freetype)
-          (pkgs.expat)
-          (pkgs.resolv)
+          (pkgs."gd")
+          (pkgs."png")
+          (pkgs."z")
+          (pkgs."jpeg")
+          (pkgs."m")
+          (pkgs."fontconfig")
+          (pkgs."freetype")
+          (pkgs."expat")
+          (pkgs."resolv")
         ];
       };
     };

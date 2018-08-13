@@ -35,7 +35,7 @@
           (hsPkgs.data-default)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.bz2) ];
+        libs = [ (pkgs."bz2") ];
       };
       tests = {
         "test" = {

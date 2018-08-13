@@ -37,7 +37,7 @@
             (hsPkgs.haskell98)
           ]
           else [ (hsPkgs.base) ]);
-        libs = [ (pkgs.curl) ];
+        libs = [ (pkgs."curl") ];
       };
     };
   }

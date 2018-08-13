@@ -33,7 +33,7 @@
           (hsPkgs.mtl)
           (hsPkgs.time)
         ];
-        libs = [ (pkgs.glpk) ];
+        libs = [ (pkgs."glpk") ];
       };
     };
   }

@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.haskell98)
         ];
-        libs = [ (pkgs.antlr3c) ];
+        libs = [ (pkgs."antlr3c") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

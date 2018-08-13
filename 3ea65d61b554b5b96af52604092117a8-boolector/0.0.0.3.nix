@@ -33,7 +33,7 @@
           (hsPkgs.temporary)
           (hsPkgs.directory)
         ];
-        libs = [ (pkgs.boolector) ];
+        libs = [ (pkgs."boolector") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];
@@ -44,35 +44,35 @@
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];
-          libs = [ (pkgs.boolector) ];
+          libs = [ (pkgs."boolector") ];
         };
         "Array_Example" = {
           depends  = [
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];
-          libs = [ (pkgs.boolector) ];
+          libs = [ (pkgs."boolector") ];
         };
         "UF_Example" = {
           depends  = [
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];
-          libs = [ (pkgs.boolector) ];
+          libs = [ (pkgs."boolector") ];
         };
         "Arith_Example" = {
           depends  = [
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];
-          libs = [ (pkgs.boolector) ];
+          libs = [ (pkgs."boolector") ];
         };
         "GetSetSymbol_Example" = {
           depends  = [
             (hsPkgs.base)
             (hsPkgs.boolector)
           ];
-          libs = [ (pkgs.boolector) ];
+          libs = [ (pkgs."boolector") ];
         };
       };
     };

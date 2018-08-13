@@ -43,7 +43,7 @@
           (hsPkgs.containers)
           (hsPkgs.exceptions)
         ];
-        libs = [ (pkgs.pq) ];
+        libs = [ (pkgs."pq") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

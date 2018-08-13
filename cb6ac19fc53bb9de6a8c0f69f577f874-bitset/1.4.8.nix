@@ -33,8 +33,8 @@
           (hsPkgs.ghc-prim)
         ];
         libs = if system.isWindows
-          then [ (pkgs.gmp-10) ]
-          else [ (pkgs.gmp) ];
+          then [ (pkgs."gmp-10") ]
+          else [ (pkgs."gmp") ];
       };
       tests = {
         "bitset-tests" = {
@@ -59,7 +59,7 @@
             (hsPkgs.random)
             (hsPkgs.random-shuffle)
           ];
-          libs = [ (pkgs.gmp) ];
+          libs = [ (pkgs."gmp") ];
         };
       };
     };

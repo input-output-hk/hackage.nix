@@ -34,8 +34,8 @@
           (hsPkgs.cplusplus-th)
         ];
         libs = [
-          (pkgs.protobuf)
-          (pkgs.c++)
+          (pkgs."protobuf")
+          (pkgs."c++")
         ];
       };
       exes = {

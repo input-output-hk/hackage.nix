@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.unix)
         ];
-        libs = [ (pkgs.fuse) ];
+        libs = [ (pkgs."fuse") ];
       };
     };
   }

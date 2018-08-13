@@ -31,7 +31,7 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.Judy) ];
+        libs = [ (pkgs."Judy") ];
       };
     };
   }

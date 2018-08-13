@@ -35,7 +35,7 @@
           (hsPkgs.process)
           (hsPkgs.setlocale)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.libintl);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."libintl");
       };
       exes = {
         "hgettext" = {

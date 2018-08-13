@@ -36,8 +36,8 @@
           (hsPkgs.vector)
         ];
         libs = [
-          (pkgs.yices)
-        ] ++ pkgs.lib.optional (_flags.yices-dynamic) (pkgs.gmp);
+          (pkgs."yices")
+        ] ++ pkgs.lib.optional (_flags.yices-dynamic) (pkgs."gmp");
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

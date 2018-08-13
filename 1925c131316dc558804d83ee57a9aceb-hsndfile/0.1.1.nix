@@ -32,7 +32,7 @@
           (hsPkgs.carray)
           (hsPkgs.haskell98)
         ];
-        libs = [ (pkgs.sndfile) ];
+        libs = [ (pkgs."sndfile") ];
       };
     };
   }

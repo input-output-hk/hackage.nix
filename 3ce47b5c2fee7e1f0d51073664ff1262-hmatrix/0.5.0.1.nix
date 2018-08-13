@@ -49,22 +49,22 @@
         libs = if _flags.mkl
           then if system.isX86_64
             then [
-              (pkgs.gsl)
-              (pkgs.mkl_lapack)
-              (pkgs.mkl_intel_lp64)
-              (pkgs.mkl_sequential)
-              (pkgs.mkl_core)
+              (pkgs."gsl")
+              (pkgs."mkl_lapack")
+              (pkgs."mkl_intel_lp64")
+              (pkgs."mkl_sequential")
+              (pkgs."mkl_core")
             ]
             else [
-              (pkgs.gsl)
-              (pkgs.mkl_lapack)
-              (pkgs.mkl_intel)
-              (pkgs.mkl_sequential)
-              (pkgs.mkl_core)
+              (pkgs."gsl")
+              (pkgs."mkl_lapack")
+              (pkgs."mkl_intel")
+              (pkgs."mkl_sequential")
+              (pkgs."mkl_core")
             ]
           else [
-            (pkgs.gsl)
-            (pkgs.lapack)
+            (pkgs."gsl")
+            (pkgs."lapack")
           ];
       };
     };

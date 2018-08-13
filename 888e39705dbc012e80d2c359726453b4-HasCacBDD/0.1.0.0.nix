@@ -32,8 +32,8 @@
           (hsPkgs.QuickCheck)
         ];
         libs = [
-          (pkgs.stdc++)
-          (pkgs.CacBDD)
+          (pkgs."stdc++")
+          (pkgs."CacBDD")
         ];
       };
       tests = {

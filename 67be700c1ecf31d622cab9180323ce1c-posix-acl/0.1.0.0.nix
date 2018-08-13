@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.containers)
         ];
-        libs = [ (pkgs.acl) ];
+        libs = [ (pkgs."acl") ];
       };
     };
   }

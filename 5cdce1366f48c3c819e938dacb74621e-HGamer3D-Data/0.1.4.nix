@@ -32,7 +32,7 @@
           (hsPkgs.Vec-Transform)
           (hsPkgs.haskell98)
         ];
-        libs = [ (pkgs.stdc++.dll) ];
+        libs = [ (pkgs."stdc++.dll") ];
       };
     };
   }

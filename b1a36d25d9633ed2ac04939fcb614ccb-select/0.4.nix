@@ -27,7 +27,7 @@
     components = {
       "select" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.rt) ];
+        libs = [ (pkgs."rt") ];
       };
     };
   }

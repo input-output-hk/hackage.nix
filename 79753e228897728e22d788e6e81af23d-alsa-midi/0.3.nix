@@ -32,7 +32,7 @@
           (hsPkgs.event-list)
           (hsPkgs.non-negative)
         ];
-        libs = [ (pkgs.asound) ];
+        libs = [ (pkgs."asound") ];
       };
       exes = {
         "playnote" = {
@@ -42,7 +42,7 @@
             (hsPkgs.event-list)
             (hsPkgs.non-negative)
           ];
-          libs = [ (pkgs.asound) ];
+          libs = [ (pkgs."asound") ];
         };
         "playmidi" = {
           depends  = [
@@ -51,7 +51,7 @@
             (hsPkgs.event-list)
             (hsPkgs.non-negative)
           ];
-          libs = [ (pkgs.asound) ];
+          libs = [ (pkgs."asound") ];
         };
         "mididump" = {
           depends  = [
@@ -60,7 +60,7 @@
             (hsPkgs.event-list)
             (hsPkgs.non-negative)
           ];
-          libs = [ (pkgs.asound) ];
+          libs = [ (pkgs."asound") ];
         };
       };
     };

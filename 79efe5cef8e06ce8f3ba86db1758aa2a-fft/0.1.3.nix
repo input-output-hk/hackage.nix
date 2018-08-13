@@ -46,7 +46,7 @@
             (hsPkgs.syb)
           ]
           else [ (hsPkgs.base) ]);
-        libs = [ (pkgs.fftw3) ];
+        libs = [ (pkgs."fftw3") ];
       };
     };
   }

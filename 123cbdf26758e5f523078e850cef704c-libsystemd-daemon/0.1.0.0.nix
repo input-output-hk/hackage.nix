@@ -35,7 +35,7 @@
           (hsPkgs.utf8-string)
         ];
         libs = [
-          (pkgs.systemd-daemon)
+          (pkgs."systemd-daemon")
         ];
         pkgconfig = pkgs.lib.optional (_flags.usepkgconfig) (pkgconfPkgs.libsystemd-daemon);
       };

@@ -32,7 +32,7 @@
           (hsPkgs.transformers)
           (hsPkgs.StateVar-transformer)
         ];
-        libs = [ (pkgs.ftgl) ];
+        libs = [ (pkgs."ftgl") ];
       };
     };
   }

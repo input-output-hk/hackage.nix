@@ -32,7 +32,7 @@
             (hsPkgs.unix)
             (hsPkgs.binary)
           ];
-          libs = [ (pkgs.curses) ];
+          libs = [ (pkgs."curses") ];
         };
       };
     };

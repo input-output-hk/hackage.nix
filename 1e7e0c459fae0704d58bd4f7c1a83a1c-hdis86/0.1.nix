@@ -33,7 +33,7 @@
           (hsPkgs.containers)
           (hsPkgs.bytestring)
         ];
-        libs = pkgs.lib.optional (_flags.external-udis86) (pkgs.udis86);
+        libs = pkgs.lib.optional (_flags.external-udis86) (pkgs."udis86");
       };
     };
   }

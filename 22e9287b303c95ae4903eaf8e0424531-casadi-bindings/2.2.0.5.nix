@@ -34,7 +34,7 @@
           (hsPkgs.casadi-bindings-internal)
           (hsPkgs.casadi-bindings-core)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
         pkgconfig = [
           (pkgconfPkgs.casadi)
         ];

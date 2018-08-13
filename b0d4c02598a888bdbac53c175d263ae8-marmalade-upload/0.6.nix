@@ -45,7 +45,7 @@
             (hsPkgs.process)
             (hsPkgs.deepseq)
           ]);
-        libs = pkgs.lib.optional (_flags.libmagic) (pkgs.magic);
+        libs = pkgs.lib.optional (_flags.libmagic) (pkgs."magic");
         build-tools = pkgs.lib.optional (_flags.libmagic) (hsPkgs.buildPackages.hsc2hs);
       };
       exes = {

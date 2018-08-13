@@ -52,7 +52,7 @@
           ] ++ (if system.isWindows
             then [ (hsPkgs.Win32) ]
             else [ (hsPkgs.unix) ]);
-          libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32) ++ pkgs.lib.optional (system.isOsx) (pkgs.igemacintegration);
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32") ++ pkgs.lib.optional (system.isOsx) (pkgs."igemacintegration");
         };
         "leksahecho" = {};
       };

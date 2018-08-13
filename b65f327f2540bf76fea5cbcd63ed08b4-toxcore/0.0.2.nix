@@ -34,7 +34,7 @@
           (hsPkgs.data-default-class)
           (hsPkgs.saltine)
         ];
-        libs = [ (pkgs.toxcore) ];
+        libs = [ (pkgs."toxcore") ];
       };
       tests = {
         "testsuite" = {

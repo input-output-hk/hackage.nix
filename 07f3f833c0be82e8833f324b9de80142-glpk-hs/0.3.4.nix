@@ -33,7 +33,7 @@
           (hsPkgs.mtl)
           (hsPkgs.deepseq)
         ];
-        libs = [ (pkgs.glpk) ];
+        libs = [ (pkgs."glpk") ];
       };
     };
   }

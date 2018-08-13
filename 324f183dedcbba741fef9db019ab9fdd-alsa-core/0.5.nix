@@ -30,7 +30,7 @@
           (hsPkgs.extensible-exceptions)
           (hsPkgs.base)
         ];
-        libs = [ (pkgs.asound) ];
+        libs = [ (pkgs."asound") ];
       };
     };
   }

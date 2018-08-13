@@ -27,7 +27,7 @@
     components = {
       "crack" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.crack) ];
+        libs = [ (pkgs."crack") ];
       };
     };
   }

@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.generic-deriving)
         ];
-        libs = [ (pkgs.pthread) ];
+        libs = [ (pkgs."pthread") ];
       };
       tests = {
         "spec" = {

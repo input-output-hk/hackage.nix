@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.fluidsynth) ];
+        libs = [ (pkgs."fluidsynth") ];
       };
     };
   }

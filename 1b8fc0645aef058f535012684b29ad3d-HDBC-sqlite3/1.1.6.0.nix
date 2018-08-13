@@ -37,7 +37,7 @@
             (hsPkgs.bytestring)
           ]
           else [ (hsPkgs.base) ]);
-        libs = [ (pkgs.sqlite3) ];
+        libs = [ (pkgs."sqlite3") ];
       };
     };
   }

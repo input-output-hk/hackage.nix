@@ -38,7 +38,7 @@
           (hsPkgs.containers)
           (hsPkgs.extensible-exceptions)
         ];
-        libs = [ (pkgs.expat) ];
+        libs = [ (pkgs."expat") ];
       };
     };
   }

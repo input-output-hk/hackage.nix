@@ -38,7 +38,7 @@
             (hsPkgs.foundation)
             (hsPkgs.primesieve)
           ];
-          libs = [ (pkgs.primesieve) ];
+          libs = [ (pkgs."primesieve") ];
         };
         "prime-example" = {
           depends  = [
@@ -46,7 +46,7 @@
             (hsPkgs.foundation)
             (hsPkgs.primesieve)
           ];
-          libs = [ (pkgs.primesieve) ];
+          libs = [ (pkgs."primesieve") ];
         };
       };
     };

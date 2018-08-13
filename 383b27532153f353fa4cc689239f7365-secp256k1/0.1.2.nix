@@ -32,7 +32,7 @@
           (hsPkgs.mtl)
           (hsPkgs.entropy)
         ];
-        libs = [ (pkgs.secp256k1) ];
+        libs = [ (pkgs."secp256k1") ];
       };
       tests = {
         "secp256k1-test" = {

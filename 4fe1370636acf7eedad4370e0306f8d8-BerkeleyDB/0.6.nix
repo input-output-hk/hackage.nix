@@ -31,8 +31,8 @@
           (hsPkgs.bytestring)
         ];
         libs = [
-          (pkgs.db)
-          (pkgs.db_cxx)
+          (pkgs."db")
+          (pkgs."db_cxx")
         ];
       };
     };

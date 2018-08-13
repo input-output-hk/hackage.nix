@@ -38,9 +38,9 @@
           (hsPkgs.transformers)
         ];
         libs = [
-          (pkgs.leveldb)
-          (pkgs.snappy)
-          (pkgs.stdc++)
+          (pkgs."leveldb")
+          (pkgs."snappy")
+          (pkgs."stdc++")
         ];
       };
       exes = {

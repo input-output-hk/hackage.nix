@@ -31,11 +31,11 @@
           (hsPkgs.vect)
         ];
         libs = pkgs.lib.optionals (!system.isLinux) [
-          (pkgs.BulletSoftBody)
-          (pkgs.BulletDynamics)
-          (pkgs.BulletCollision)
-          (pkgs.LinearMath)
-          (pkgs.stdc++)
+          (pkgs."BulletSoftBody")
+          (pkgs."BulletDynamics")
+          (pkgs."BulletCollision")
+          (pkgs."LinearMath")
+          (pkgs."stdc++")
         ];
         pkgconfig = pkgs.lib.optional (system.isLinux) (pkgconfPkgs.bullet);
         build-tools = [

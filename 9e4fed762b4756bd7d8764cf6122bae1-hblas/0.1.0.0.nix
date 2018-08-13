@@ -33,13 +33,13 @@
           (hsPkgs.primitive)
         ];
         libs = pkgs.lib.optionals (system.isWindows) [
-          (pkgs.blas)
-          (pkgs.lapack)
+          (pkgs."blas")
+          (pkgs."lapack")
         ] ++ pkgs.lib.optionals (!system.isWindows && !system.isOsx) [
-          (pkgs.blas)
-          (pkgs.lapack)
+          (pkgs."blas")
+          (pkgs."lapack")
         ];
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Accelerate);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate");
       };
       tests = {
         "simple-test" = {

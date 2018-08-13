@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.binary)
         ];
-        libs = [ (pkgs.db) ];
+        libs = [ (pkgs."db") ];
       };
     };
   }

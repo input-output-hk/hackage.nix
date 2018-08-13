@@ -44,7 +44,7 @@
           (hsPkgs.pureMD5)
           (hsPkgs.zlib)
         ];
-        libs = pkgs.lib.optional (!system.isOsx) (pkgs.crypt);
+        libs = pkgs.lib.optional (!system.isOsx) (pkgs."crypt");
       };
       exes = {
         "unixtutils-test" = {};

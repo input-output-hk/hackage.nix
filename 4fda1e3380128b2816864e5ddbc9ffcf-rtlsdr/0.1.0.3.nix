@@ -27,7 +27,7 @@
     components = {
       "rtlsdr" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.rtlsdr) ];
+        libs = [ (pkgs."rtlsdr") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

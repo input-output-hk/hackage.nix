@@ -32,7 +32,7 @@
             (hsPkgs.syb)
           ]
           else [ (hsPkgs.base) ];
-        libs = [ (pkgs.bibutils) ];
+        libs = [ (pkgs."bibutils") ];
       };
     };
   }

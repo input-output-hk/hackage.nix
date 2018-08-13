@@ -31,7 +31,9 @@
           (hsPkgs.extensible-exceptions)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.kyotocabinet) ];
+        libs = [
+          (pkgs."kyotocabinet")
+        ];
       };
     };
   }

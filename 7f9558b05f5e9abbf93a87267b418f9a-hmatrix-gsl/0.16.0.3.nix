@@ -36,8 +36,8 @@
           (hsPkgs.process)
           (hsPkgs.random)
         ];
-        libs = ((pkgs.lib.optional (system.isOsx) (pkgs.gsl) ++ pkgs.lib.optional (system.isFreebsd) (pkgs.gsl)) ++ pkgs.lib.optional (system.isWindows) (pkgs.gsl-0)) ++ pkgs.lib.optional (_flags.onlygsl) (pkgs.gsl);
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Accelerate);
+        libs = ((pkgs.lib.optional (system.isOsx) (pkgs."gsl") ++ pkgs.lib.optional (system.isFreebsd) (pkgs."gsl")) ++ pkgs.lib.optional (system.isWindows) (pkgs."gsl-0")) ++ pkgs.lib.optional (_flags.onlygsl) (pkgs."gsl");
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate");
         pkgconfig = pkgs.lib.optional (!_flags.onlygsl) (pkgconfPkgs.gsl);
       };
     };

@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.profunctors)
         ];
-        libs = [ (pkgs.sodium) ];
+        libs = [ (pkgs."sodium") ];
       };
       tests = {
         "tests" = {

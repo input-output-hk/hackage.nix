@@ -27,7 +27,7 @@
     components = {
       "babl" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.babl-0.1) ];
+        libs = [ (pkgs."babl-0.1") ];
         pkgconfig = [
           (pkgconfPkgs.babl)
         ];

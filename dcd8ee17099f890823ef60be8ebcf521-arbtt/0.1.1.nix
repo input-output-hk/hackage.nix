@@ -36,7 +36,7 @@
             (hsPkgs.unix)
             (hsPkgs.X11)
           ];
-          libs = [ (pkgs.Xss) ];
+          libs = [ (pkgs."Xss") ];
         };
         "arbtt-stats" = {
           depends  = [

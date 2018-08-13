@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.cgi)
         ];
-        libs = [ (pkgs.fcgi) ];
+        libs = [ (pkgs."fcgi") ];
       };
     };
   }

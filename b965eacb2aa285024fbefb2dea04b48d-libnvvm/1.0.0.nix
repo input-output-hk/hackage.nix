@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.cuda)
         ];
-        libs = [ (pkgs.nvvm) ];
+        libs = [ (pkgs."nvvm") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

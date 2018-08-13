@@ -39,10 +39,10 @@
           (hsPkgs.unordered-containers)
         ];
         libs = if _flags.ruby20
-          then [ (pkgs.ruby) ]
+          then [ (pkgs."ruby") ]
           else if _flags.ruby19
-            then [ (pkgs.ruby1.9) ]
-            else [ (pkgs.ruby1.8) ];
+            then [ (pkgs."ruby1.9") ]
+            else [ (pkgs."ruby1.8") ];
       };
       tests = {
         "test-roundtrip" = {

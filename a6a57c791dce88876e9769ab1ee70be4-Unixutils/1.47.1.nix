@@ -44,7 +44,7 @@
           (hsPkgs.pureMD5)
           (hsPkgs.zlib)
         ];
-        libs = [ (pkgs.crypt) ];
+        libs = [ (pkgs."crypt") ];
       };
       exes = {
         "unixtutils-test" = {};

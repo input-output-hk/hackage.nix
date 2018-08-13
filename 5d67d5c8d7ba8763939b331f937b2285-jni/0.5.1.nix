@@ -35,7 +35,7 @@
           (hsPkgs.deepseq)
           (hsPkgs.singletons)
         ] ++ [ (hsPkgs.inline-c) ];
-        libs = [ (pkgs.jvm) ];
+        libs = [ (pkgs."jvm") ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs)
         ];

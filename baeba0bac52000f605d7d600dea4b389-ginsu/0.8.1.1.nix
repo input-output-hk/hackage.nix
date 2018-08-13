@@ -50,8 +50,8 @@
             (hsPkgs.hashable)
           ];
           libs = [
-            (pkgs.ssl)
-            (pkgs.crypto)
+            (pkgs."ssl")
+            (pkgs."crypto")
           ];
         };
       };

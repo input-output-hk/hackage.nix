@@ -32,7 +32,7 @@
           (hsPkgs.base)
           (hsPkgs.recursion-schemes)
         ];
-        libs = [ (pkgs.gmp) ];
+        libs = [ (pkgs."gmp") ];
       };
     };
   }

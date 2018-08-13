@@ -33,8 +33,8 @@
           (hsPkgs.OpenGLRaw)
         ];
         libs = if system.isWindows && _flags.usenativewindowslibraries
-          then [ (pkgs.glu32) ]
-          else [ (pkgs.GLU) ];
+          then [ (pkgs."glu32") ]
+          else [ (pkgs."GLU") ];
       };
     };
   }

@@ -32,7 +32,7 @@
           (hsPkgs.parsec)
           (hsPkgs.transformers)
         ];
-        libs = [ (pkgs.mpdec) ];
+        libs = [ (pkgs."mpdec") ];
       };
       tests = {
         "dectest" = {
@@ -44,7 +44,7 @@
             (hsPkgs.containers)
             (hsPkgs.pipes)
           ];
-          libs = [ (pkgs.mpdec) ];
+          libs = [ (pkgs."mpdec") ];
         };
         "native" = {
           depends  = [
@@ -55,7 +55,7 @@
             (hsPkgs.tasty)
             (hsPkgs.tasty-quickcheck)
           ];
-          libs = [ (pkgs.mpdec) ];
+          libs = [ (pkgs."mpdec") ];
         };
       };
     };

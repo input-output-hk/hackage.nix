@@ -34,8 +34,8 @@
           (hsPkgs.unix)
         ];
         libs = [
-          (pkgs.bdd)
-          (pkgs.mem)
+          (pkgs."bdd")
+          (pkgs."mem")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

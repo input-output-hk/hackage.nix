@@ -34,8 +34,8 @@
           (hsPkgs.mtl)
         ];
         libs = [
-          (pkgs.csound64)
-          (pkgs.sndfile)
+          (pkgs."csound64")
+          (pkgs."sndfile")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

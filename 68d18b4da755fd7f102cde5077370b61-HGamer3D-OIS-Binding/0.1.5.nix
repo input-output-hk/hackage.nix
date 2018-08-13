@@ -33,7 +33,7 @@
           (hsPkgs.haskell98)
         ];
         libs = [
-          (pkgs.HGamer3DOIS015)
+          (pkgs."HGamer3DOIS015")
         ];
       };
     };

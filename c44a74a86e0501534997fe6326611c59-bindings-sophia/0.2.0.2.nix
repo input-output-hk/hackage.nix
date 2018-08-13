@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.pthread) ];
+        libs = [ (pkgs."pthread") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

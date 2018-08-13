@@ -60,7 +60,7 @@
             (hsPkgs.utf8-string)
             (hsPkgs.X11-xft)
           ]) ++ pkgs.lib.optional (_flags.with_utf8 || _flags.all_extensions) (hsPkgs.utf8-string)) ++ pkgs.lib.optional (_flags.with_inotify || _flags.all_extensions) (hsPkgs.hinotify)) ++ pkgs.lib.optional (_flags.with_mpd || _flags.all_extensions) (hsPkgs.libmpd)) ++ pkgs.lib.optional (_flags.with_alsa || _flags.all_extensions) (hsPkgs.alsa-mixer);
-          libs = pkgs.lib.optional (_flags.with_iwlib || _flags.all_extensions) (pkgs.iw);
+          libs = pkgs.lib.optional (_flags.with_iwlib || _flags.all_extensions) (pkgs."iw");
         };
       };
     };

@@ -32,8 +32,8 @@
           (hsPkgs.unix)
         ];
         libs = [
-          (pkgs.bfd)
-          (pkgs.opcodes)
+          (pkgs."bfd")
+          (pkgs."opcodes")
         ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

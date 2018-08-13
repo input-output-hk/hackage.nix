@@ -31,7 +31,7 @@
           (hsPkgs.mtl)
           (hsPkgs.bytestring)
         ];
-        libs = [ (pkgs.msgpackc) ];
+        libs = [ (pkgs."msgpackc") ];
       };
     };
   }

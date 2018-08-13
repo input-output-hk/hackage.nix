@@ -34,7 +34,7 @@
           (hsPkgs.transformers)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.samplerate) ];
+        libs = [ (pkgs."samplerate") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

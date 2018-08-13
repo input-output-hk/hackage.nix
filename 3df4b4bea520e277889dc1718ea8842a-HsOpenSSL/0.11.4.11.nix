@@ -38,15 +38,15 @@
         ] ++ pkgs.lib.optional (_flags.fast-bignum && (compiler.isGhc && compiler.version.ge "7.10.1")) (hsPkgs.integer-gmp);
         libs = if system.isWindows
           then pkgs.lib.optionals (system.isX86_64) [
-            (pkgs.eay32)
-            (pkgs.ssl)
+            (pkgs."eay32")
+            (pkgs."ssl")
           ] ++ pkgs.lib.optionals (system.isI386) [
-            (pkgs.eay32)
-            (pkgs.ssl32)
+            (pkgs."eay32")
+            (pkgs."ssl32")
           ]
           else [
-            (pkgs.crypto)
-            (pkgs.ssl)
+            (pkgs."crypto")
+            (pkgs."ssl")
           ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

@@ -32,8 +32,8 @@
           (hsPkgs.mtl)
         ];
         libs = [
-          (pkgs.tokyocabinet)
-          (pkgs.tokyotyrant)
+          (pkgs."tokyocabinet")
+          (pkgs."tokyotyrant")
         ];
       };
     };

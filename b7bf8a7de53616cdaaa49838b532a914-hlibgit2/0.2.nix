@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)
         ];
-        libs = [ (pkgs.git2) ];
+        libs = [ (pkgs."git2") ];
       };
       tests = {
         "smoke" = {

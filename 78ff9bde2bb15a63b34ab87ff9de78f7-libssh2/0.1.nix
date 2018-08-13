@@ -32,7 +32,7 @@
           (hsPkgs.syb)
           (hsPkgs.time)
         ];
-        libs = [ (pkgs.ssh2) ];
+        libs = [ (pkgs."ssh2") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

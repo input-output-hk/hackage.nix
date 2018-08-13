@@ -107,7 +107,7 @@
           (hsPkgs.hgettext)
           (hsPkgs.setlocale)
         ];
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
       };
       exes = {
         "leksah" = {
@@ -119,7 +119,7 @@
             (hsPkgs.hgettext)
             (hsPkgs.setlocale)
           ];
-          libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
         };
         "bewleksah" = {
           depends  = pkgs.lib.optionals (!(!_flags.webkit)) ([

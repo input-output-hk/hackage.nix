@@ -33,8 +33,8 @@
           (hsPkgs.vector)
         ];
         libs = if _flags.link-nlopt-cxx
-          then [ (pkgs.nlopt_cxx) ]
-          else [ (pkgs.nlopt) ];
+          then [ (pkgs."nlopt_cxx") ]
+          else [ (pkgs."nlopt") ];
       };
       tests = {
         "example" = {

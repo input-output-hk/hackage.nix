@@ -31,8 +31,8 @@
           (hsPkgs.vector)
         ];
         libs = [
-          (pkgs.freenect)
-          (pkgs.freenect_sync)
+          (pkgs."freenect")
+          (pkgs."freenect_sync")
         ];
       };
     };

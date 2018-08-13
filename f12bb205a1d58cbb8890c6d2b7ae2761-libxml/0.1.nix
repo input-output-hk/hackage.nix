@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.mtl)
         ];
-        libs = [ (pkgs.xml2) ];
+        libs = [ (pkgs."xml2") ];
       };
     };
   }

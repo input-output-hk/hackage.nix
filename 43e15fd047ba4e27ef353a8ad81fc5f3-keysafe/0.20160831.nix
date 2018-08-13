@@ -59,7 +59,7 @@
             (hsPkgs.socks)
             (hsPkgs.network)
           ];
-          libs = [ (pkgs.argon2) ];
+          libs = [ (pkgs."argon2") ];
         };
       };
     };

@@ -36,8 +36,8 @@
           (hsPkgs.bytestring)
         ]) ++ pkgs.lib.optional (!system.isOsx || _flags.allbackends) (hsPkgs.udbus);
         frameworks = pkgs.lib.optionals (system.isOsx) [
-          (pkgs.Security)
-          (pkgs.CoreFoundation)
+          (pkgs."Security")
+          (pkgs."CoreFoundation")
         ];
         build-tools = pkgs.lib.optional (system.isOsx) (hsPkgs.buildPackages.hsc2hs);
       };

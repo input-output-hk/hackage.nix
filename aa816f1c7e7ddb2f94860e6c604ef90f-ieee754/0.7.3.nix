@@ -29,7 +29,7 @@
     components = {
       "ieee754" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.m) ];
+        libs = [ (pkgs."m") ];
       };
     };
   }

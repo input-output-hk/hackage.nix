@@ -31,7 +31,9 @@
           (hsPkgs.bytestring)
           (hsPkgs.deepseq-generics)
         ];
-        libs = [ (pkgs.hidapi-hidraw) ];
+        libs = [
+          (pkgs."hidapi-hidraw")
+        ];
       };
     };
   }

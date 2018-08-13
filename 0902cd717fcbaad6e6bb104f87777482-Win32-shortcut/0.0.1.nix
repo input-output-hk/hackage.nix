@@ -33,8 +33,8 @@
           (hsPkgs.th-utilities)
         ];
         libs = [
-          (pkgs.ole32)
-          (pkgs.uuid)
+          (pkgs."ole32")
+          (pkgs."uuid")
         ];
       };
     };

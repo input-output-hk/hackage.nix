@@ -36,8 +36,8 @@
           (hsPkgs.text)
         ];
         libs = if _flags.systemlib
-          then [ (pkgs.sqlite3) ]
-          else pkgs.lib.optional (!system.isWindows) (pkgs.pthread);
+          then [ (pkgs."sqlite3") ]
+          else pkgs.lib.optional (!system.isWindows) (pkgs."pthread");
       };
       tests = {
         "test" = {

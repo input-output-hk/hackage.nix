@@ -31,9 +31,9 @@
           (hsPkgs.haskell98)
         ];
         libs = [
-          (pkgs.CEGUIOgreRenderer)
-          (pkgs.OgreMain)
-          (pkgs.CEGUIBase)
+          (pkgs."CEGUIOgreRenderer")
+          (pkgs."OgreMain")
+          (pkgs."CEGUIBase")
         ];
         pkgconfig = [
           (pkgconfPkgs.OGRE)

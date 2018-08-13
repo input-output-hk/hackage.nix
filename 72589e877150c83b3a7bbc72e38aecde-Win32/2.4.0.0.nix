@@ -31,13 +31,13 @@
           (hsPkgs.bytestring)
         ];
         libs = [
-          (pkgs.user32)
-          (pkgs.gdi32)
-          (pkgs.winmm)
-          (pkgs.advapi32)
-          (pkgs.shell32)
-          (pkgs.shfolder)
-          (pkgs.shlwapi)
+          (pkgs."user32")
+          (pkgs."gdi32")
+          (pkgs."winmm")
+          (pkgs."advapi32")
+          (pkgs."shell32")
+          (pkgs."shfolder")
+          (pkgs."shlwapi")
         ];
       };
     };

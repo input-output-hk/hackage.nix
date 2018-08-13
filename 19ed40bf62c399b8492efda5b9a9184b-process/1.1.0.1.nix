@@ -36,7 +36,7 @@
           else [ (hsPkgs.unix) ])) ++ [
           (hsPkgs.base)
         ];
-        libs = pkgs.lib.optionals (!(compiler.isNhc98 && true)) (pkgs.lib.optional (system.isWindows) (pkgs.kernel32));
+        libs = pkgs.lib.optionals (!(compiler.isNhc98 && true)) (pkgs.lib.optional (system.isWindows) (pkgs."kernel32"));
       };
     };
   }

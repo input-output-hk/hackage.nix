@@ -52,14 +52,14 @@
           (hsPkgs.text)
           (hsPkgs.time)
         ];
-        libs = [ (pkgs.curl) ];
+        libs = [ (pkgs."curl") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];
       };
       exes = {
         "vkq" = {
-          libs = [ (pkgs.curl) ];
+          libs = [ (pkgs."curl") ];
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs)
           ];

@@ -29,7 +29,7 @@
         depends  = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs.integer-simple);
-        libs = [ (pkgs.mpfr) ];
+        libs = [ (pkgs."mpfr") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

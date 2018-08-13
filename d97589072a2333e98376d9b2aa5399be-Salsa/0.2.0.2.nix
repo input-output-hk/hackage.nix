@@ -42,12 +42,12 @@
           ];
         libs = if !system.isWindows || _flags.use_mono
           then [
-            (pkgs.glib-2.0)
-            (pkgs.mono-2.0)
+            (pkgs."glib-2.0")
+            (pkgs."mono-2.0")
           ]
           else [
-            (pkgs.oleaut32)
-            (pkgs.ole32)
+            (pkgs."oleaut32")
+            (pkgs."ole32")
           ];
       };
     };

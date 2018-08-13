@@ -33,8 +33,8 @@
             (hsPkgs.base)
           ];
           libs = [
-            (pkgs.lapack)
-            (pkgs.blas)
+            (pkgs."lapack")
+            (pkgs."blas")
           ];
         };
       };

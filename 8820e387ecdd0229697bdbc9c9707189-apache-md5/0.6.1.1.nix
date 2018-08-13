@@ -33,7 +33,7 @@
           (hsPkgs.base)
           (hsPkgs.bytestring)
         ] ++ pkgs.lib.optional (_flags.deepseq) (hsPkgs.deepseq);
-        libs = [ (pkgs.crypto) ];
+        libs = [ (pkgs."crypto") ];
       };
       tests = {
         "apache-md5-unit-tests" = {
@@ -48,7 +48,7 @@
             (hsPkgs.test-framework)
             (hsPkgs.test-framework-hunit)
           ];
-          libs = [ (pkgs.crypto) ];
+          libs = [ (pkgs."crypto") ];
         };
       };
       benchmarks = {
@@ -60,7 +60,7 @@
             (hsPkgs.criterion)
             (hsPkgs.MonadRandom)
           ];
-          libs = [ (pkgs.crypto) ];
+          libs = [ (pkgs."crypto") ];
         };
       };
     };

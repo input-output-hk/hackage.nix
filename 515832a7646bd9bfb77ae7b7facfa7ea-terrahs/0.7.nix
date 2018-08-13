@@ -31,7 +31,7 @@
           (hsPkgs.haskell98)
           (hsPkgs.old-time)
         ];
-        libs = [ (pkgs.terrahsc) ];
+        libs = [ (pkgs."terrahsc") ];
       };
     };
   }

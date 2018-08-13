@@ -34,7 +34,7 @@
             (hsPkgs.syb)
           ]
           else [ (hsPkgs.base) ];
-        libs = [ (pkgs.X11) ];
+        libs = [ (pkgs."X11") ];
       };
     };
   }

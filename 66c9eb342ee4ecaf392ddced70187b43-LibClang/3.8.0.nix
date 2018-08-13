@@ -39,7 +39,7 @@
           (hsPkgs.transformers-base)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.clang-3.8) ];
+        libs = [ (pkgs."clang-3.8") ];
         pkgconfig = [
           (pkgconfPkgs.ncurses)
         ];

@@ -37,9 +37,9 @@
           (hsPkgs.bytestring-show)
         ];
         libs = [
-          (pkgs.newrelic-collector-client)
-          (pkgs.newrelic-transaction)
-          (pkgs.newrelic-common)
+          (pkgs."newrelic-collector-client")
+          (pkgs."newrelic-transaction")
+          (pkgs."newrelic-common")
         ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

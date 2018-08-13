@@ -76,8 +76,8 @@
           ]
           else [ (hsPkgs.network) ]);
         libs = [
-          (pkgs.ssl)
-        ] ++ pkgs.lib.optional (!system.isOsx) (pkgs.cryptopp);
+          (pkgs."ssl")
+        ] ++ pkgs.lib.optional (!system.isOsx) (pkgs."cryptopp");
       };
     };
   }

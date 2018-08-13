@@ -33,7 +33,7 @@
           (hsPkgs.time)
           (hsPkgs.utf8-string)
         ];
-        libs = [ (pkgs.mysqlclient) ];
+        libs = [ (pkgs."mysqlclient") ];
       };
     };
   }

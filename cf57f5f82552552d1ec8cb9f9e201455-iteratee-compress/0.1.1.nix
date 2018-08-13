@@ -34,7 +34,7 @@
           (hsPkgs.iteratee)
           (hsPkgs.monads-fd)
         ];
-        libs = [ (pkgs.z) ];
+        libs = [ (pkgs."z") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

@@ -29,7 +29,7 @@
         depends  = ([
           (hsPkgs.bindings-DSL)
         ] ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.base)) ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.base);
-        libs = [ (pkgs.dttools) ];
+        libs = [ (pkgs."dttools") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

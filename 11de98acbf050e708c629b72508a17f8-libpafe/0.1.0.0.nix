@@ -27,7 +27,7 @@
     components = {
       "libpafe" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.pafe) ];
+        libs = [ (pkgs."pafe") ];
       };
       tests = {
         "test-read" = {

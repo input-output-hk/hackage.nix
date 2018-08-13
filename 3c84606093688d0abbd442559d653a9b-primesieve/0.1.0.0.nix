@@ -38,7 +38,7 @@
             (hsPkgs.foundation)
             (hsPkgs.primesieve)
           ];
-          libs = [ (pkgs.primesieve) ];
+          libs = [ (pkgs."primesieve") ];
         };
       };
     };

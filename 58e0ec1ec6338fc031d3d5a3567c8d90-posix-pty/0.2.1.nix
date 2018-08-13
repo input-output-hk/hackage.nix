@@ -32,7 +32,7 @@
           (hsPkgs.process)
           (hsPkgs.unix)
         ];
-        libs = pkgs.lib.optional (system.isLinux || system.isFreebsd) (pkgs.util);
+        libs = pkgs.lib.optional (system.isLinux || system.isFreebsd) (pkgs."util");
       };
     };
   }

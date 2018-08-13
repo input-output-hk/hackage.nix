@@ -40,7 +40,7 @@
           (hsPkgs.conduit)
           (hsPkgs.monad-logger)
         ];
-        libs = pkgs.lib.optional (_flags.systemlib) (pkgs.sqlite3);
+        libs = pkgs.lib.optional (_flags.systemlib) (pkgs."sqlite3");
       };
     };
   }

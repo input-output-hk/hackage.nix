@@ -42,7 +42,7 @@
           (hsPkgs.uniplate)
         ];
         libs = [
-          (pkgs.systemd-journal)
+          (pkgs."systemd-journal")
         ];
       };
     };

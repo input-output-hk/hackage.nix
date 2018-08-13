@@ -55,7 +55,7 @@
             (hsPkgs.text)
             (hsPkgs.unordered-containers)
           ];
-          libs = [ (pkgs.yaml) ];
+          libs = [ (pkgs."yaml") ];
           pkgconfig = [
             (pkgconfPkgs.yaml-0.1)
           ];

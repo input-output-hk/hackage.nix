@@ -27,7 +27,7 @@
     components = {
       "hsseccomp" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.seccomp) ];
+        libs = [ (pkgs."seccomp") ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

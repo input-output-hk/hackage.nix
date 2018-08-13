@@ -35,8 +35,8 @@
           (hsPkgs.bytestring)
         ];
         libs = pkgs.lib.optionals (_flags.system-lua) (if _flags.luajit
-          then [ (pkgs.luajit-5.1) ]
-          else [ (pkgs.lua) ]);
+          then [ (pkgs."luajit-5.1") ]
+          else [ (pkgs."lua") ]);
       };
       tests = {
         "simple-test" = {

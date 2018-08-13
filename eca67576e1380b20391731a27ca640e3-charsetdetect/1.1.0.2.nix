@@ -33,14 +33,14 @@
         libs = if system.isWindows
           then if system.isX86_64
             then [
-              (pkgs.stdc++-6)
-              (pkgs.gcc_s_seh-1)
+              (pkgs."stdc++-6")
+              (pkgs."gcc_s_seh-1")
             ]
             else [
-              (pkgs.stdc++-6)
-              (pkgs.gcc_s_dw2-1)
+              (pkgs."stdc++-6")
+              (pkgs."gcc_s_dw2-1")
             ]
-          else [ (pkgs.stdc++) ];
+          else [ (pkgs."stdc++") ];
       };
     };
   }

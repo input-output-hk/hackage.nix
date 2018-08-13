@@ -39,10 +39,10 @@
           (hsPkgs.bytestring)
         ];
         libs = if system.isWindows || system.isWindows
-          then [ (pkgs.odbc32) ]
+          then [ (pkgs."odbc32") ]
           else [
-            (pkgs.odbc)
-            (pkgs.pthread)
+            (pkgs."odbc")
+            (pkgs."pthread")
           ];
       };
       exes = {

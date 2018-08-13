@@ -43,7 +43,7 @@
           (hsPkgs.setenv)
           (hsPkgs.llvm-general-pure)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
       };
       tests = {
         "test" = {

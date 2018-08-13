@@ -33,8 +33,8 @@
           (hsPkgs.text)
         ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.bytestring);
         libs = pkgs.lib.optionals (system.isWindows) [
-          (pkgs.comdlg32)
-          (pkgs.ole32)
+          (pkgs."comdlg32")
+          (pkgs."ole32")
         ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

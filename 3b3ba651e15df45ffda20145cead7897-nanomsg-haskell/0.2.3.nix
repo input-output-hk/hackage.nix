@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.binary)
         ];
-        libs = [ (pkgs.nanomsg) ];
+        libs = [ (pkgs."nanomsg") ];
       };
       tests = {
         "tests" = {

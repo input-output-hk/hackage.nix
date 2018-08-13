@@ -28,7 +28,7 @@
       "fs-events" = {
         depends  = [ (hsPkgs.base) ];
         frameworks = [
-          (pkgs.CoreServices)
+          (pkgs."CoreServices")
         ];
       };
     };

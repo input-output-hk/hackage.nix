@@ -33,7 +33,7 @@
           (hsPkgs.semigroups)
           (hsPkgs.vector)
         ];
-        libs = [ (pkgs.openblas) ];
+        libs = [ (pkgs."openblas") ];
       };
     };
   }

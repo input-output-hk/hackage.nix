@@ -31,7 +31,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.socket)
         ];
-        libs = pkgs.lib.optional (!system.isFreebsd) (pkgs.sctp);
+        libs = pkgs.lib.optional (!system.isFreebsd) (pkgs."sctp");
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)
         ];

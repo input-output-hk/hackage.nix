@@ -42,7 +42,7 @@
             (hsPkgs.safe-exceptions)
             (hsPkgs.hspec)
           ];
-          libs = [ (pkgs.stdc++) ];
+          libs = [ (pkgs."stdc++") ];
         };
       };
     };

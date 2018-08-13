@@ -34,7 +34,7 @@
           (hsPkgs.vector)
           (hsPkgs.limp)
         ];
-        libs = [ (pkgs.stdc++) ];
+        libs = [ (pkgs."stdc++") ];
         pkgconfig = pkgs.lib.optional (!_flags.embedded) (pkgconfPkgs.cbc);
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

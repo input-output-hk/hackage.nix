@@ -32,8 +32,8 @@
           (hsPkgs.base)
         ];
         libs = [
-          (pkgs.terralib4c)
-          (pkgs.translib)
+          (pkgs."terralib4c")
+          (pkgs."translib")
         ];
       };
     };

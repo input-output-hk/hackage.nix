@@ -40,13 +40,13 @@
           (hsPkgs.Monatron)
         ];
         libs = pkgs.lib.optionals (_flags.runtimegecode) [
-          (pkgs.gecodesupport)
-          (pkgs.gecodeset)
-          (pkgs.gecodeint)
-          (pkgs.gecodekernel)
-          (pkgs.gecodesearch)
+          (pkgs."gecodesupport")
+          (pkgs."gecodeset")
+          (pkgs."gecodeint")
+          (pkgs."gecodekernel")
+          (pkgs."gecodesearch")
         ];
-        frameworks = pkgs.lib.optional (_flags.runtimegecode) (pkgs.gecode);
+        frameworks = pkgs.lib.optional (_flags.runtimegecode) (pkgs."gecode");
       };
     };
   }

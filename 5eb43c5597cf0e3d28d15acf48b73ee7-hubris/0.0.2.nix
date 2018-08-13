@@ -39,7 +39,7 @@
           (hsPkgs.ghc-paths)
           (hsPkgs.hint)
         ];
-        libs = [ (pkgs.ruby) ];
+        libs = [ (pkgs."ruby") ];
       };
       exes = {
         "Hubrify" = {
@@ -58,7 +58,7 @@
             (hsPkgs.hint)
             (hsPkgs.process)
           ];
-          libs = [ (pkgs.ruby) ];
+          libs = [ (pkgs."ruby") ];
         };
       };
     };

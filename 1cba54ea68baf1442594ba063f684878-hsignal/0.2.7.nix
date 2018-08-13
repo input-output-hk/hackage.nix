@@ -41,19 +41,19 @@
           (hsPkgs.hstatistics)
         ];
         libs = ((if _flags.openblas
-          then [ (pkgs.openblas) ]
+          then [ (pkgs."openblas") ]
           else [
-            (pkgs.blas)
-            (pkgs.lapack)
+            (pkgs."blas")
+            (pkgs."lapack")
           ]) ++ pkgs.lib.optionals (system.isFreebsd) [
-          (pkgs.blas)
-          (pkgs.lapack)
-          (pkgs.gfortran)
+          (pkgs."blas")
+          (pkgs."lapack")
+          (pkgs."gfortran")
         ]) ++ pkgs.lib.optionals (system.isWindows) [
-          (pkgs.blas)
-          (pkgs.lapack)
+          (pkgs."blas")
+          (pkgs."lapack")
         ];
-        frameworks = pkgs.lib.optional (system.isOsx) (pkgs.Accelerate);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate");
       };
     };
   }

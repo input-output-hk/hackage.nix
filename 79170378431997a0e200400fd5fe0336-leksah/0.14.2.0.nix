@@ -118,7 +118,7 @@
           else [
             (hsPkgs.network)
           ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") (hsPkgs.binary-shared);
-        libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
       };
       exes = {
         "leksah" = {
@@ -130,7 +130,7 @@
             (hsPkgs.hgettext)
             (hsPkgs.setlocale)
           ];
-          libs = pkgs.lib.optional (system.isWindows) (pkgs.kernel32);
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32");
         };
         "bewleksah" = {
           depends  = [

@@ -37,7 +37,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.lens)
         ];
-        libs = [ (pkgs.git2) ];
+        libs = [ (pkgs."git2") ];
       };
       tests = {
         "smoke" = {

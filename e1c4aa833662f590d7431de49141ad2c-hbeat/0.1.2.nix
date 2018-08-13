@@ -37,8 +37,8 @@
             (hsPkgs.mtl)
           ];
           libs = [
-            (pkgs.SDL)
-            (pkgs.SDL_mixer)
+            (pkgs."SDL")
+            (pkgs."SDL_mixer")
           ];
         };
       };

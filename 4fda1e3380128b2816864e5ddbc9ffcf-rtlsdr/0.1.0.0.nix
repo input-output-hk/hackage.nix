@@ -30,7 +30,7 @@
           (hsPkgs.base)
           (hsPkgs.array)
         ];
-        libs = [ (pkgs.rtlsdr) ];
+        libs = [ (pkgs."rtlsdr") ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)
         ];

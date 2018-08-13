@@ -27,7 +27,7 @@
     components = {
       "foma" = {
         depends  = [ (hsPkgs.base) ];
-        libs = [ (pkgs.foma) ];
+        libs = [ (pkgs."foma") ];
       };
     };
   }

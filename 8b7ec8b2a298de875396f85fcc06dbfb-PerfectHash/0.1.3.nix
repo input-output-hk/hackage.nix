@@ -36,7 +36,7 @@
           (hsPkgs.time)
           (hsPkgs.binary)
         ];
-        libs = [ (pkgs.cmph) ];
+        libs = [ (pkgs."cmph") ];
       };
     };
   }

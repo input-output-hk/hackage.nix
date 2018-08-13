@@ -35,7 +35,7 @@
             (hsPkgs.array)
           ]
           else [ (hsPkgs.base) ];
-        libs = pkgs.lib.optional (_flags.useffi) (pkgs.m);
+        libs = pkgs.lib.optional (_flags.useffi) (pkgs."m");
       };
     };
   }

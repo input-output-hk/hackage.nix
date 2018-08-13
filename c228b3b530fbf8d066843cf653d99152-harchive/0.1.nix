@@ -35,7 +35,7 @@
             (hsPkgs.unix)
             (hsPkgs.parsec)
           ];
-          libs = [ (pkgs.ssl) ];
+          libs = [ (pkgs."ssl") ];
         };
         "hpool" = {
           depends  = [
@@ -47,8 +47,8 @@
             (hsPkgs.parsec)
           ];
           libs = [
-            (pkgs.ssl)
-            (pkgs.sqlite3)
+            (pkgs."ssl")
+            (pkgs."sqlite3")
           ];
         };
       };

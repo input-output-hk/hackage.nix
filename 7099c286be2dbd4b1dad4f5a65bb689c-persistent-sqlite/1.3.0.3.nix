@@ -41,7 +41,7 @@
           (hsPkgs.conduit)
           (hsPkgs.monad-logger)
         ];
-        libs = pkgs.lib.optional (_flags.systemlib) (pkgs.sqlite3) ++ pkgs.lib.optional (!system.isWindows) (pkgs.pthread);
+        libs = pkgs.lib.optional (_flags.systemlib) (pkgs."sqlite3") ++ pkgs.lib.optional (!system.isWindows) (pkgs."pthread");
       };
       exes = {
         "sanity" = {

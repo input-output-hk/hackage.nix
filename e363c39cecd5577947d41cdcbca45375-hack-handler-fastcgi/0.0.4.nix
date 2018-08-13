@@ -32,7 +32,7 @@
           (hsPkgs.bytestring)
           (hsPkgs.hack-handler-cgi)
         ];
-        libs = [ (pkgs.fcgi) ];
+        libs = [ (pkgs."fcgi") ];
       };
     };
   }

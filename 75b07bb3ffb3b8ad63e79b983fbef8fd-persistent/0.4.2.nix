@@ -68,7 +68,7 @@
             (hsPkgs.HDBC)
             (hsPkgs.utf8-string)
           ];
-          libs = [ (pkgs.sqlite3) ];
+          libs = [ (pkgs."sqlite3") ];
         };
       };
     };

@@ -32,7 +32,9 @@
           (hsPkgs.resource-pool)
           (hsPkgs.time)
         ];
-        libs = [ (pkgs.zookeeper_mt) ];
+        libs = [
+          (pkgs."zookeeper_mt")
+        ];
       };
       tests = {
         "test-zookeeper" = {
@@ -44,7 +46,9 @@
             (hsPkgs.resource-pool)
             (hsPkgs.time)
           ];
-          libs = [ (pkgs.zookeeper_mt) ];
+          libs = [
+            (pkgs."zookeeper_mt")
+          ];
         };
       };
     };

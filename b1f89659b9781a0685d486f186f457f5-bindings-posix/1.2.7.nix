@@ -31,8 +31,8 @@
           (hsPkgs.bindings-DSL)
         ];
         libs = [
-          (pkgs.pthread)
-        ] ++ pkgs.lib.optional (!system.isOsx) (pkgs.rt);
+          (pkgs."pthread")
+        ] ++ pkgs.lib.optional (!system.isOsx) (pkgs."rt");
       };
     };
   }

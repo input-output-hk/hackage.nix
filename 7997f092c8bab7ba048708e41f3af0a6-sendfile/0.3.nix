@@ -34,7 +34,7 @@
         ] ++ (if system.isWindows && !_flags.portable
           then [ (hsPkgs.Win32) ]
           else pkgs.lib.optional (!(system.isLinux && !_flags.portable)) (hsPkgs.bytestring));
-        libs = pkgs.lib.optional (system.isWindows && !_flags.portable) (pkgs.mswsock);
+        libs = pkgs.lib.optional (system.isWindows && !_flags.portable) (pkgs."mswsock");
       };
     };
   }

@@ -31,7 +31,7 @@
           (hsPkgs.transformers)
         ];
         libs = [
-          (pkgs.atomspace-cwrapper)
+          (pkgs."atomspace-cwrapper")
         ];
       };
     };

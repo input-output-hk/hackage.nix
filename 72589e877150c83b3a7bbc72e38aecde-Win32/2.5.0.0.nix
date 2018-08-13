@@ -32,16 +32,16 @@
           (hsPkgs.filepath)
         ];
         libs = [
-          (pkgs.user32)
-          (pkgs.gdi32)
-          (pkgs.winmm)
-          (pkgs.advapi32)
-          (pkgs.shell32)
-          (pkgs.shfolder)
-          (pkgs.shlwapi)
-          (pkgs.msimg32)
-          (pkgs.imm32)
-          (pkgs.ntdll)
+          (pkgs."user32")
+          (pkgs."gdi32")
+          (pkgs."winmm")
+          (pkgs."advapi32")
+          (pkgs."shell32")
+          (pkgs."shfolder")
+          (pkgs."shlwapi")
+          (pkgs."msimg32")
+          (pkgs."imm32")
+          (pkgs."ntdll")
         ];
       };
     };

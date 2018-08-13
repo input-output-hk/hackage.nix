@@ -31,7 +31,7 @@
           (hsPkgs.Win32)
           (hsPkgs.dx9base)
         ];
-        libs = [ (pkgs.d3d9) ];
+        libs = [ (pkgs."d3d9") ];
       };
     };
   }
