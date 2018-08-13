@@ -1,60 +1,65 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       buildtests = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "adp-multi";
-          version = "0.1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Maik Riechert, 2012";
-        maintainer = "Maik Riechert";
-        author = "Maik Riechert";
-        homepage = "http://adp-multi.ruhoh.com";
-        url = "";
-        synopsis = "ADP for multiple context-free languages";
-        description = "adp-multi is an implementation of Algebraic Dynamic Programming\nfor multiple context-free languages.\nIt is a library based on the original Haskell implementation\nand can be considered an unoptimized prototype.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "adp-multi";
+        version = "0.1.0";
       };
-      components = {
-        "adp-multi" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.array
-            hsPkgs.containers
-            hsPkgs.htrace
-            hsPkgs.mtl
-            hsPkgs.monadiccp
+      license = "BSD-3-Clause";
+      copyright = "Maik Riechert, 2012";
+      maintainer = "Maik Riechert";
+      author = "Maik Riechert";
+      homepage = "http://adp-multi.ruhoh.com";
+      url = "";
+      synopsis = "ADP for multiple context-free languages";
+      description = "adp-multi is an implementation of Algebraic Dynamic Programming\nfor multiple context-free languages.\nIt is a library based on the original Haskell implementation\nand can be considered an unoptimized prototype.";
+      buildType = "Simple";
+    };
+    components = {
+      "adp-multi" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.array)
+          (hsPkgs.containers)
+          (hsPkgs.htrace)
+          (hsPkgs.mtl)
+          (hsPkgs.monadiccp)
+        ];
+      };
+      exes = {
+        "adp-multi-benchmarks" = {
+          depends  = pkgs.lib.optionals (_flags.buildtests) [
+            (hsPkgs.base)
+            (hsPkgs.criterion)
           ];
         };
-        exes = {
-          "adp-multi-benchmarks" = {
-            depends  = pkgs.lib.optionals _flags.buildtests [
-              hsPkgs.base
-              hsPkgs.criterion
-            ];
-          };
-          "adp-test" = {
-            depends  = [ hsPkgs.base ];
-          };
-        };
-        tests = {
-          "MainTestSuite" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.HUnit
-              hsPkgs.QuickCheck
-              hsPkgs.test-framework
-              hsPkgs.test-framework-quickcheck2
-              hsPkgs.test-framework-hunit
-              hsPkgs.random-shuffle
-            ];
-          };
+        "adp-test" = {
+          depends  = [ (hsPkgs.base) ];
         };
       };
-    }
+      tests = {
+        "MainTestSuite" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.HUnit)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.test-framework)
+            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs.test-framework-hunit)
+            (hsPkgs.random-shuffle)
+          ];
+        };
+      };
+    };
+  }

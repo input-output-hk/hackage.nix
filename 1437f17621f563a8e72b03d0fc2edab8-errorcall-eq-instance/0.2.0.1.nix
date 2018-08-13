@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "errorcall-eq-instance";
-          version = "0.2.0.1";
-        };
-        license = "MIT";
-        copyright = "(c) 2013 Simon Hengel";
-        maintainer = "";
-        author = "";
-        homepage = "";
-        url = "";
-        synopsis = "An orphan Eq instance for ErrorCall";
-        description = "Prior to @base-4.7.0.0@ there was no @Eq@ instance for\n@ErrorCall@.  This package provides an orphan instance.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "errorcall-eq-instance";
+        version = "0.2.0.1";
       };
-      components = {
-        "errorcall-eq-instance" = {
+      license = "MIT";
+      copyright = "(c) 2013 Simon Hengel";
+      maintainer = "";
+      author = "";
+      homepage = "";
+      url = "";
+      synopsis = "An orphan Eq instance for ErrorCall";
+      description = "Prior to @base-4.7.0.0@ there was no @Eq@ instance for\n@ErrorCall@.  This package provides an orphan instance.";
+      buildType = "Simple";
+    };
+    components = {
+      "errorcall-eq-instance" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.base-compat)
+        ];
+      };
+      tests = {
+        "spec" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.base-compat
+            (hsPkgs.base)
+            (hsPkgs.errorcall-eq-instance)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.hspec)
           ];
         };
-        tests = {
-          "spec" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.errorcall-eq-instance
-              hsPkgs.QuickCheck
-              hsPkgs.hspec
-            ];
-          };
-        };
       };
-    }
+    };
+  }

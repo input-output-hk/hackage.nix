@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "ast-monad-json";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2017 Masato Mouri";
-        maintainer = "8128jp@gmail.com";
-        author = "Masato Mouri";
-        homepage = "https://github.com/mouri111/ast-monad-json#readme";
-        url = "";
-        synopsis = "A library for writing JSON";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "ast-monad-json";
+        version = "0.1.0.0";
       };
-      components = {
-        "ast-monad-json" = {
+      license = "BSD-3-Clause";
+      copyright = "2017 Masato Mouri";
+      maintainer = "8128jp@gmail.com";
+      author = "Masato Mouri";
+      homepage = "https://github.com/mouri111/ast-monad-json#readme";
+      url = "";
+      synopsis = "A library for writing JSON";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "ast-monad-json" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.text)
+          (hsPkgs.ast-monad)
+        ];
+      };
+      tests = {
+        "ast-monad-json-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.text
-            hsPkgs.ast-monad
+            (hsPkgs.base)
+            (hsPkgs.ast-monad)
+            (hsPkgs.ast-monad-json)
           ];
         };
-        tests = {
-          "ast-monad-json-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.ast-monad
-              hsPkgs.ast-monad-json
-            ];
-          };
-        };
       };
-    }
+    };
+  }

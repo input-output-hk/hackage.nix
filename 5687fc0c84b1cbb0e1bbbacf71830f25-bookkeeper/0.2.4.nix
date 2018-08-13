@@ -1,76 +1,81 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "bookkeeper";
-          version = "0.2.4";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) Julian K. Arni";
-        maintainer = "jkarni@gmail.com";
-        author = "Julian K. Arni";
-        homepage = "http://github.com/turingjump/bookkeeper#readme";
-        url = "";
-        synopsis = "Anonymous records and overloaded labels";
-        description = "Please see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "bookkeeper";
+        version = "0.2.4";
       };
-      components = {
-        "bookkeeper" = {
+      license = "BSD-3-Clause";
+      copyright = "(c) Julian K. Arni";
+      maintainer = "jkarni@gmail.com";
+      author = "Julian K. Arni";
+      homepage = "http://github.com/turingjump/bookkeeper#readme";
+      url = "";
+      synopsis = "Anonymous records and overloaded labels";
+      description = "Please see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "bookkeeper" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.type-level-sets)
+          (hsPkgs.data-default-class)
+        ];
+      };
+      exes = {
+        "readme" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.type-level-sets
-            hsPkgs.data-default-class
+            (hsPkgs.base)
+            (hsPkgs.type-level-sets)
+            (hsPkgs.data-default-class)
+            (hsPkgs.base)
+            (hsPkgs.bookkeeper)
+            (hsPkgs.markdown-unlit)
           ];
         };
-        exes = {
-          "readme" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.type-level-sets
-              hsPkgs.data-default-class
-              hsPkgs.base
-              hsPkgs.bookkeeper
-              hsPkgs.markdown-unlit
-            ];
-          };
+      };
+      tests = {
+        "doctest" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.type-level-sets)
+            (hsPkgs.data-default-class)
+            (hsPkgs.doctest)
+            (hsPkgs.Glob)
+            (hsPkgs.yaml)
+          ];
         };
-        tests = {
-          "doctest" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.type-level-sets
-              hsPkgs.data-default-class
-              hsPkgs.doctest
-              hsPkgs.Glob
-              hsPkgs.yaml
-            ];
-          };
-          "spec" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.type-level-sets
-              hsPkgs.data-default-class
-              hsPkgs.bookkeeper
-              hsPkgs.hspec
-              hsPkgs.QuickCheck
-            ];
-          };
-        };
-        benchmarks = {
-          "bench" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.type-level-sets
-              hsPkgs.data-default-class
-              hsPkgs.bookkeeper
-              hsPkgs.criterion
-            ];
-          };
+        "spec" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.type-level-sets)
+            (hsPkgs.data-default-class)
+            (hsPkgs.bookkeeper)
+            (hsPkgs.hspec)
+            (hsPkgs.QuickCheck)
+          ];
         };
       };
-    }
+      benchmarks = {
+        "bench" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.type-level-sets)
+            (hsPkgs.data-default-class)
+            (hsPkgs.bookkeeper)
+            (hsPkgs.criterion)
+          ];
+        };
+      };
+    };
+  }

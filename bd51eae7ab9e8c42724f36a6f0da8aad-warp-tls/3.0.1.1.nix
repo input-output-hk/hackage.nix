@@ -1,37 +1,42 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "warp-tls";
-          version = "3.0.1.1";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "michael@snoyman.com";
-        author = "Michael Snoyman";
-        homepage = "http://github.com/yesodweb/wai";
-        url = "";
-        synopsis = "HTTP over SSL/TLS support for Warp via the TLS package";
-        description = "API docs and the README are available at <http://www.stackage.org/package/warp-tls>.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "warp-tls";
+        version = "3.0.1.1";
       };
-      components = {
-        "warp-tls" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.wai
-            hsPkgs.warp
-            hsPkgs.data-default-class
-            hsPkgs.tls
-            hsPkgs.network
-            hsPkgs.cprng-aes
-            hsPkgs.streaming-commons
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "michael@snoyman.com";
+      author = "Michael Snoyman";
+      homepage = "http://github.com/yesodweb/wai";
+      url = "";
+      synopsis = "HTTP over SSL/TLS support for Warp via the TLS package";
+      description = "API docs and the README are available at <http://www.stackage.org/package/warp-tls>.";
+      buildType = "Simple";
+    };
+    components = {
+      "warp-tls" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.wai)
+          (hsPkgs.warp)
+          (hsPkgs.data-default-class)
+          (hsPkgs.tls)
+          (hsPkgs.network)
+          (hsPkgs.cprng-aes)
+          (hsPkgs.streaming-commons)
+        ];
       };
-    }
+    };
+  }

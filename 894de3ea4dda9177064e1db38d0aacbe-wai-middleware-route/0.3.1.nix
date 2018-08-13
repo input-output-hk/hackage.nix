@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "wai-middleware-route";
-          version = "0.3.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "aka.spin@gmail.com";
-        author = "Alexander Dorofeev";
-        homepage = "https://github.com/akaspin/wai-middleware-route";
-        url = "";
-        synopsis = "Wai routing middleware";
-        description = "\\\"Just enough\\\" request dispatching Middleware for Wai.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "wai-middleware-route";
+        version = "0.3.1";
       };
-      components = {
-        "wai-middleware-route" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.wai
-            hsPkgs.bytestring
-            hsPkgs.regex-posix
-            hsPkgs.http-types
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "aka.spin@gmail.com";
+      author = "Alexander Dorofeev";
+      homepage = "https://github.com/akaspin/wai-middleware-route";
+      url = "";
+      synopsis = "Wai routing middleware";
+      description = "\\\"Just enough\\\" request dispatching Middleware for Wai.";
+      buildType = "Simple";
+    };
+    components = {
+      "wai-middleware-route" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.wai)
+          (hsPkgs.bytestring)
+          (hsPkgs.regex-posix)
+          (hsPkgs.http-types)
+        ];
       };
-    }
+    };
+  }

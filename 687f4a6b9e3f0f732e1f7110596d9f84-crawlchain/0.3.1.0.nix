@@ -1,76 +1,81 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.22";
-        identifier = {
-          name = "crawlchain";
-          version = "0.3.1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "7a3ggptwts@snkmail.com";
-        author = "Axel Mannhardt";
-        homepage = "";
-        url = "";
-        synopsis = "Simulation user crawl paths";
-        description = "Library for simulating user crawl paths (trees) with selectors - takes an initial action and a chain of processing actions to crawl a tree (lazy, depth first) searching for a matching branch.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.22";
+      identifier = {
+        name = "crawlchain";
+        version = "0.3.1.0";
       };
-      components = {
-        "crawlchain" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "7a3ggptwts@snkmail.com";
+      author = "Axel Mannhardt";
+      homepage = "";
+      url = "";
+      synopsis = "Simulation user crawl paths";
+      description = "Library for simulating user crawl paths (trees) with selectors - takes an initial action and a chain of processing actions to crawl a tree (lazy, depth first) searching for a matching branch.";
+      buildType = "Simple";
+    };
+    components = {
+      "crawlchain" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.directory)
+          (hsPkgs.http-streams)
+          (hsPkgs.HsOpenSSL)
+          (hsPkgs.network-uri)
+          (hsPkgs.split)
+          (hsPkgs.tagsoup)
+          (hsPkgs.text)
+          (hsPkgs.time)
+        ];
+      };
+      tests = {
+        "http-tests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.directory
-            hsPkgs.http-streams
-            hsPkgs.HsOpenSSL
-            hsPkgs.network-uri
-            hsPkgs.split
-            hsPkgs.tagsoup
-            hsPkgs.text
-            hsPkgs.time
+            (hsPkgs.base)
+            (hsPkgs.crawlchain)
+            (hsPkgs.bytestring)
+            (hsPkgs.http-streams)
+            (hsPkgs.HsOpenSSL)
+            (hsPkgs.network-uri)
+            (hsPkgs.split)
+            (hsPkgs.text)
+            (hsPkgs.time)
           ];
         };
-        tests = {
-          "http-tests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.crawlchain
-              hsPkgs.bytestring
-              hsPkgs.http-streams
-              hsPkgs.HsOpenSSL
-              hsPkgs.network-uri
-              hsPkgs.split
-              hsPkgs.text
-              hsPkgs.time
-            ];
-          };
-          "html-tests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.crawlchain
-              hsPkgs.split
-              hsPkgs.tagsoup
-            ];
-          };
-          "crawling-tests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.crawlchain
-              hsPkgs.bytestring
-              hsPkgs.directory
-              hsPkgs.http-streams
-              hsPkgs.HsOpenSSL
-              hsPkgs.network-uri
-              hsPkgs.text
-              hsPkgs.time
-              hsPkgs.tagsoup
-              hsPkgs.split
-            ];
-          };
+        "html-tests" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.crawlchain)
+            (hsPkgs.split)
+            (hsPkgs.tagsoup)
+          ];
+        };
+        "crawling-tests" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.crawlchain)
+            (hsPkgs.bytestring)
+            (hsPkgs.directory)
+            (hsPkgs.http-streams)
+            (hsPkgs.HsOpenSSL)
+            (hsPkgs.network-uri)
+            (hsPkgs.text)
+            (hsPkgs.time)
+            (hsPkgs.tagsoup)
+            (hsPkgs.split)
+          ];
         };
       };
-    }
+    };
+  }

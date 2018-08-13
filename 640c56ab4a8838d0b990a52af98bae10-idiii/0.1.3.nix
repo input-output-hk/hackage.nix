@@ -1,52 +1,57 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "idiii";
-          version = "0.1.3";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "christopher.t.wagner@gmail.com, alekhin.alexey@gmail.com";
-        author = "Alexey Alekhin, Chris Wagner";
-        homepage = "";
-        url = "";
-        synopsis = "ID3v2 (tagging standard for MP3 files) library";
-        description = "ID3v2 (tagging standard for MP3 files) library";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "idiii";
+        version = "0.1.3";
       };
-      components = {
-        "idiii" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "christopher.t.wagner@gmail.com, alekhin.alexey@gmail.com";
+      author = "Alexey Alekhin, Chris Wagner";
+      homepage = "";
+      url = "";
+      synopsis = "ID3v2 (tagging standard for MP3 files) library";
+      description = "ID3v2 (tagging standard for MP3 files) library";
+      buildType = "Simple";
+    };
+    components = {
+      "idiii" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.polyparse)
+          (hsPkgs.text)
+          (hsPkgs.data-accessor)
+          (hsPkgs.utf8-string)
+          (hsPkgs.containers)
+          (hsPkgs.MissingH)
+        ];
+      };
+      exes = {
+        "read-idiii" = {
+          depends  = [ (hsPkgs.base) ];
+        };
+      };
+      tests = {
+        "test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.polyparse
-            hsPkgs.text
-            hsPkgs.data-accessor
-            hsPkgs.utf8-string
-            hsPkgs.containers
-            hsPkgs.MissingH
+            (hsPkgs.base)
+            (hsPkgs.filepath)
+            (hsPkgs.process)
+            (hsPkgs.directory)
+            (hsPkgs.HUnit)
           ];
         };
-        exes = {
-          "read-idiii" = {
-            depends  = [ hsPkgs.base ];
-          };
-        };
-        tests = {
-          "test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.filepath
-              hsPkgs.process
-              hsPkgs.directory
-              hsPkgs.HUnit
-            ];
-          };
-        };
       };
-    }
+    };
+  }

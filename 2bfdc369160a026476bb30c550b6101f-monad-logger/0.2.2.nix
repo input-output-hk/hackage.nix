@@ -1,35 +1,40 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "monad-logger";
-          version = "0.2.2";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "michael@snoyman.com";
-        author = "Michael Snoyman";
-        homepage = "https://github.com/kazu-yamamoto/logger";
-        url = "";
-        synopsis = "A class of monads which can log messages.";
-        description = "This package uses template-haskell for determining source code locations of messages.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "monad-logger";
+        version = "0.2.2";
       };
-      components = {
-        "monad-logger" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.template-haskell
-            hsPkgs.transformers
-            hsPkgs.text
-            hsPkgs.resourcet
-            hsPkgs.conduit
-            hsPkgs.fast-logger
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "michael@snoyman.com";
+      author = "Michael Snoyman";
+      homepage = "https://github.com/kazu-yamamoto/logger";
+      url = "";
+      synopsis = "A class of monads which can log messages.";
+      description = "This package uses template-haskell for determining source code locations of messages.";
+      buildType = "Simple";
+    };
+    components = {
+      "monad-logger" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.template-haskell)
+          (hsPkgs.transformers)
+          (hsPkgs.text)
+          (hsPkgs.resourcet)
+          (hsPkgs.conduit)
+          (hsPkgs.fast-logger)
+        ];
       };
-    }
+    };
+  }

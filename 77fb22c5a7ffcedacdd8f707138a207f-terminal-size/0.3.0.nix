@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "terminal-size";
-          version = "0.3.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "matvey.aksenov@gmail.com";
-        author = "Andreas Hammar, Matvey Aksenov";
-        homepage = "";
-        url = "";
-        synopsis = "Get terminal window height and width";
-        description = "Get terminal window height and width without ncurses dependency.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "terminal-size";
+        version = "0.3.0";
       };
-      components = {
-        "terminal-size" = {
-          depends  = [ hsPkgs.base ];
-          build-tools = [
-            hsPkgs.buildPackages.hsc2hs
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "matvey.aksenov@gmail.com";
+      author = "Andreas Hammar, Matvey Aksenov";
+      homepage = "";
+      url = "";
+      synopsis = "Get terminal window height and width";
+      description = "Get terminal window height and width without ncurses dependency.";
+      buildType = "Simple";
+    };
+    components = {
+      "terminal-size" = {
+        depends  = [ (hsPkgs.base) ];
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs)
+        ];
       };
-    }
+    };
+  }

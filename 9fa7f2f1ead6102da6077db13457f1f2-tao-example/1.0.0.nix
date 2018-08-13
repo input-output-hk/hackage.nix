@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "tao-example";
-          version = "1.0.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "Jason Shipman";
-        author = "Jason Shipman";
-        homepage = "https://github.com/jship/tao#readme";
-        url = "";
-        synopsis = "Example usage of the tao package.";
-        description = "Example usage of type-level assertions using tao.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "tao-example";
+        version = "1.0.0";
       };
-      components = {
-        "tao-example" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.tao
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "Jason Shipman";
+      author = "Jason Shipman";
+      homepage = "https://github.com/jship/tao#readme";
+      url = "";
+      synopsis = "Example usage of the tao package.";
+      description = "Example usage of type-level assertions using tao.";
+      buildType = "Simple";
+    };
+    components = {
+      "tao-example" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.tao)
+        ];
       };
-    }
+    };
+  }

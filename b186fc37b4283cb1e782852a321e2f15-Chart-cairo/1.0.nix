@@ -1,38 +1,43 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "Chart-cairo";
-          version = "1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Tim Docker, 2006-2010";
-        maintainer = "Tim Docker <tim@dockerz.net>";
-        author = "Tim Docker <tim@dockerz.net>";
-        homepage = "https://github.com/timbod7/haskell-chart/wiki";
-        url = "";
-        synopsis = "Cairo backend for Charts.";
-        description = "Cairo backend for Charts.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "Chart-cairo";
+        version = "1.0";
       };
-      components = {
-        "Chart-cairo" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.old-locale
-            hsPkgs.time
-            hsPkgs.mtl
-            hsPkgs.array
-            hsPkgs.cairo
-            hsPkgs.colour
-            hsPkgs.data-default-class
-            hsPkgs.operational
-            hsPkgs.Chart
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Tim Docker, 2006-2010";
+      maintainer = "Tim Docker <tim@dockerz.net>";
+      author = "Tim Docker <tim@dockerz.net>";
+      homepage = "https://github.com/timbod7/haskell-chart/wiki";
+      url = "";
+      synopsis = "Cairo backend for Charts.";
+      description = "Cairo backend for Charts.";
+      buildType = "Simple";
+    };
+    components = {
+      "Chart-cairo" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.old-locale)
+          (hsPkgs.time)
+          (hsPkgs.mtl)
+          (hsPkgs.array)
+          (hsPkgs.cairo)
+          (hsPkgs.colour)
+          (hsPkgs.data-default-class)
+          (hsPkgs.operational)
+          (hsPkgs.Chart)
+        ];
       };
-    }
+    };
+  }

@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "ghc-man-completion";
-          version = "0.0.0.3";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "headprogrammingczar@gmail.com";
-        author = "Joe Quinn";
-        homepage = "";
-        url = "";
-        synopsis = "Generate a bash completion from the GHC manpage";
-        description = "Parses the output of GHC's man page and generates a bash completion file.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "ghc-man-completion";
+        version = "0.0.0.3";
       };
-      components = {
-        exes = {
-          "ghc-man-completion" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.parsec
-              hsPkgs.process
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "headprogrammingczar@gmail.com";
+      author = "Joe Quinn";
+      homepage = "";
+      url = "";
+      synopsis = "Generate a bash completion from the GHC manpage";
+      description = "Parses the output of GHC's man page and generates a bash completion file.";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "ghc-man-completion" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.parsec)
+            (hsPkgs.process)
+          ];
         };
       };
-    }
+    };
+  }

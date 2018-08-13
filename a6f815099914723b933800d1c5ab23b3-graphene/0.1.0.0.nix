@@ -1,36 +1,41 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "graphene";
-          version = "0.1.0.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "bkovach13@gmail.com";
-        author = "Benjamin Kovach";
-        homepage = "https://github.com/5outh/graphene";
-        url = "";
-        synopsis = "Graph Library built as a final project for a Graph Theory class";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "graphene";
+        version = "0.1.0.0";
       };
-      components = {
-        "graphene" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.lens-family
-            hsPkgs.lens-family-core
-            hsPkgs.transformers
-            hsPkgs.mtl
-            hsPkgs.bifunctors
-            hsPkgs.containers
-            hsPkgs.hashable
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "bkovach13@gmail.com";
+      author = "Benjamin Kovach";
+      homepage = "https://github.com/5outh/graphene";
+      url = "";
+      synopsis = "Graph Library built as a final project for a Graph Theory class";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "graphene" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.lens-family)
+          (hsPkgs.lens-family-core)
+          (hsPkgs.transformers)
+          (hsPkgs.mtl)
+          (hsPkgs.bifunctors)
+          (hsPkgs.containers)
+          (hsPkgs.hashable)
+        ];
       };
-    }
+    };
+  }

@@ -1,60 +1,65 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       enable-hlint-test = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "conduit-parse";
-          version = "0.2.1.0";
-        };
-        license = "LicenseRef-PublicDomain";
-        copyright = "";
-        maintainer = "chahine.moreau@gmail.com";
-        author = "chahine.moreau@gmail.com";
-        homepage = "https://github.com/k0ral/conduit-parse";
-        url = "";
-        synopsis = "Parsing framework based on conduit.";
-        description = "Please refer to README.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "conduit-parse";
+        version = "0.2.1.0";
       };
-      components = {
-        "conduit-parse" = {
+      license = "LicenseRef-PublicDomain";
+      copyright = "";
+      maintainer = "chahine.moreau@gmail.com";
+      author = "chahine.moreau@gmail.com";
+      homepage = "https://github.com/k0ral/conduit-parse";
+      url = "";
+      synopsis = "Parsing framework based on conduit.";
+      description = "Please refer to README.";
+      buildType = "Simple";
+    };
+    components = {
+      "conduit-parse" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.conduit)
+          (hsPkgs.dlist)
+          (hsPkgs.mtl)
+          (hsPkgs.parsers)
+          (hsPkgs.safe)
+          (hsPkgs.safe-exceptions)
+          (hsPkgs.text)
+          (hsPkgs.transformers)
+        ];
+      };
+      tests = {
+        "tests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.conduit
-            hsPkgs.dlist
-            hsPkgs.mtl
-            hsPkgs.parsers
-            hsPkgs.safe
-            hsPkgs.safe-exceptions
-            hsPkgs.text
-            hsPkgs.transformers
+            (hsPkgs.base)
+            (hsPkgs.conduit)
+            (hsPkgs.conduit-parse)
+            (hsPkgs.mtl)
+            (hsPkgs.parsers)
+            (hsPkgs.resourcet)
+            (hsPkgs.safe-exceptions)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-hunit)
           ];
         };
-        tests = {
-          "tests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.conduit
-              hsPkgs.conduit-parse
-              hsPkgs.mtl
-              hsPkgs.parsers
-              hsPkgs.resourcet
-              hsPkgs.safe-exceptions
-              hsPkgs.tasty
-              hsPkgs.tasty-hunit
-            ];
-          };
-          "hlint" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hlint
-            ];
-          };
+        "hlint" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.hlint)
+          ];
         };
       };
-    }
+    };
+  }

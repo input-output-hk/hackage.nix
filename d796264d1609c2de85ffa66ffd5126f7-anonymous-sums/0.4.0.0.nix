@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       build-generator = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "anonymous-sums";
-          version = "0.4.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "omari@smileystation.com";
-        author = "Omari Norman";
-        homepage = "http://www.github.com/massysett/anonymous-sums";
-        url = "";
-        synopsis = "Anonymous sum types";
-        description = "Anonymous sum types.  Like tuples, but for sum types rather than\nfor product types.  Or, like Either, but for more than two types.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "anonymous-sums";
+        version = "0.4.0.0";
       };
-      components = {
-        "anonymous-sums" = {
-          depends  = [ hsPkgs.base ];
-        };
-        exes = {
-          "generate-sums" = {
-            depends  = [ hsPkgs.base ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "omari@smileystation.com";
+      author = "Omari Norman";
+      homepage = "http://www.github.com/massysett/anonymous-sums";
+      url = "";
+      synopsis = "Anonymous sum types";
+      description = "Anonymous sum types.  Like tuples, but for sum types rather than\nfor product types.  Or, like Either, but for more than two types.";
+      buildType = "Simple";
+    };
+    components = {
+      "anonymous-sums" = {
+        depends  = [ (hsPkgs.base) ];
+      };
+      exes = {
+        "generate-sums" = {
+          depends  = [ (hsPkgs.base) ];
         };
       };
-    }
+    };
+  }

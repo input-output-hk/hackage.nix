@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       base4 = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "stm";
-          version = "2.3";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "libraries@haskell.org";
-        author = "";
-        homepage = "";
-        url = "";
-        synopsis = "Software Transactional Memory";
-        description = "A modular composable concurrency abstraction.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "stm";
+        version = "2.3";
       };
-      components = {
-        "stm" = {
-          depends  = ([
-            hsPkgs.base
-            hsPkgs.array
-          ] ++ [
-            hsPkgs.base
-          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") hsPkgs.base;
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "libraries@haskell.org";
+      author = "";
+      homepage = "";
+      url = "";
+      synopsis = "Software Transactional Memory";
+      description = "A modular composable concurrency abstraction.";
+      buildType = "Simple";
+    };
+    components = {
+      "stm" = {
+        depends  = ([
+          (hsPkgs.base)
+          (hsPkgs.array)
+        ] ++ [
+          (hsPkgs.base)
+        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs.base);
       };
-    }
+    };
+  }

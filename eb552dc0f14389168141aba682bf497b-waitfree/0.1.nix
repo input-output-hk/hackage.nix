@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "waitfree";
-          version = "0.1";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "yhirai@pira.jp";
-        author = "Yoichi Hirai";
-        homepage = "";
-        url = "";
-        synopsis = "A wrapping library for waitfree comnputation.";
-        description = "A combinator library for asynchronous waitfree computation among forkIO threads.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "waitfree";
+        version = "0.1";
       };
-      components = {
-        "waitfree" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.containers
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "yhirai@pira.jp";
+      author = "Yoichi Hirai";
+      homepage = "";
+      url = "";
+      synopsis = "A wrapping library for waitfree comnputation.";
+      description = "A combinator library for asynchronous waitfree computation among forkIO threads.";
+      buildType = "Simple";
+    };
+    components = {
+      "waitfree" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+        ];
       };
-    }
+    };
+  }

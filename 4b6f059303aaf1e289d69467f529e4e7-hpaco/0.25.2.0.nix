@@ -1,35 +1,40 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "hpaco";
-          version = "0.25.2.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "tdammers@gmail.com";
-        author = "Tobias Dammers";
-        homepage = "https://bitbucket.org/tdammers/hpaco";
-        url = "";
-        synopsis = "Modular template compiler";
-        description = "CLI front-end to the hpaco-lib library. Compiles Paco\ntemplate source code to JavaScript or PHP, or interprets\nit directly.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "hpaco";
+        version = "0.25.2.0";
       };
-      components = {
-        exes = {
-          "hpaco" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.filepath
-              hsPkgs.cmdargs
-              hsPkgs.hpaco-lib
-              hsPkgs.strict
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "tdammers@gmail.com";
+      author = "Tobias Dammers";
+      homepage = "https://bitbucket.org/tdammers/hpaco";
+      url = "";
+      synopsis = "Modular template compiler";
+      description = "CLI front-end to the hpaco-lib library. Compiles Paco\ntemplate source code to JavaScript or PHP, or interprets\nit directly.";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "hpaco" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.filepath)
+            (hsPkgs.cmdargs)
+            (hsPkgs.hpaco-lib)
+            (hsPkgs.strict)
+          ];
         };
       };
-    }
+    };
+  }

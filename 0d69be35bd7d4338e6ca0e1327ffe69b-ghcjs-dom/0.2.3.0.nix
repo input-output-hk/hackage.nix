@@ -1,5 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       jsffi = true;
       webkit = false;
@@ -7,46 +12,46 @@ let
       jsc = false;
       gtk3 = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "ghcjs-dom";
-          version = "0.2.3.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
-        author = "Hamish Mackenzie";
-        homepage = "";
-        url = "";
-        synopsis = "DOM library that supports both GHCJS and WebKitGTK";
-        description = "Documentent Object Model (DOM) functions that work with\nGHCJS, but can also be used with GHC and WebKitGTK.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "ghcjs-dom";
+        version = "0.2.3.0";
       };
-      components = {
-        "ghcjs-dom" = {
-          depends  = ([
-            hsPkgs.base
-            hsPkgs.transformers
-            hsPkgs.text
-          ] ++ pkgs.lib.optionals (compiler.isGhcjs && true && _flags.jsffi) [
-            hsPkgs.ghcjs-base
-            hsPkgs.ghcjs-prim
-            hsPkgs.ghc-prim
-          ]) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true) || _flags.webkit) ([
-            hsPkgs.glib
-            hsPkgs.transformers
-          ] ++ (if _flags.gtk3
-            then [
-              hsPkgs.gtk3
-              hsPkgs.webkitgtk3
-            ]
-            else [
-              hsPkgs.gtk
-              hsPkgs.webkit
-            ]));
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
+      author = "Hamish Mackenzie";
+      homepage = "";
+      url = "";
+      synopsis = "DOM library that supports both GHCJS and WebKitGTK";
+      description = "Documentent Object Model (DOM) functions that work with\nGHCJS, but can also be used with GHC and WebKitGTK.";
+      buildType = "Simple";
+    };
+    components = {
+      "ghcjs-dom" = {
+        depends  = ([
+          (hsPkgs.base)
+          (hsPkgs.transformers)
+          (hsPkgs.text)
+        ] ++ pkgs.lib.optionals (compiler.isGhcjs && true && _flags.jsffi) [
+          (hsPkgs.ghcjs-base)
+          (hsPkgs.ghcjs-prim)
+          (hsPkgs.ghc-prim)
+        ]) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true) || _flags.webkit) ([
+          (hsPkgs.glib)
+          (hsPkgs.transformers)
+        ] ++ (if _flags.gtk3
+          then [
+            (hsPkgs.gtk3)
+            (hsPkgs.webkitgtk3)
+          ]
+          else [
+            (hsPkgs.gtk)
+            (hsPkgs.webkit)
+          ]));
       };
-    }
+    };
+  }

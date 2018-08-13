@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "bktrees";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "josef.svenningsson@gmail.com";
-        author = "Josef Svenningsson";
-        homepage = "";
-        url = "";
-        synopsis = "A set data structure with approximate searching";
-        description = "Burhard-Keller trees provide an implementation of sets\nwhich apart from the ordinary operations also has an\napproximate member search, allowing you to search for\nelements that are of a certain distance from the element\nyou are searching for.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "bktrees";
+        version = "0.1";
       };
-      components = {
-        "bktrees" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.containers
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "josef.svenningsson@gmail.com";
+      author = "Josef Svenningsson";
+      homepage = "";
+      url = "";
+      synopsis = "A set data structure with approximate searching";
+      description = "Burhard-Keller trees provide an implementation of sets\nwhich apart from the ordinary operations also has an\napproximate member search, allowing you to search for\nelements that are of a certain distance from the element\nyou are searching for.";
+      buildType = "Custom";
+    };
+    components = {
+      "bktrees" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+        ];
       };
-    }
+    };
+  }

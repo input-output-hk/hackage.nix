@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "spacefill";
-          version = "0.1";
-        };
-        license = "LicenseRef-PublicDomain";
-        copyright = "";
-        maintainer = "knz@thaumogen.net";
-        author = "Raphael 'kena' Poss";
-        homepage = "https://github.com/knz/spacefill";
-        url = "";
-        synopsis = "Generators for space-filling curves.";
-        description = "Generators of Hilbert and Moore space-filling curves in configurable\ncoordinate domains.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "spacefill";
+        version = "0.1";
       };
-      components = {
-        "spacefill" = {
-          depends  = [ hsPkgs.base ];
-        };
-        tests = {
-          "doc-tests" = {
-            depends  = [ hsPkgs.base ];
-          };
+      license = "LicenseRef-PublicDomain";
+      copyright = "";
+      maintainer = "knz@thaumogen.net";
+      author = "Raphael 'kena' Poss";
+      homepage = "https://github.com/knz/spacefill";
+      url = "";
+      synopsis = "Generators for space-filling curves.";
+      description = "Generators of Hilbert and Moore space-filling curves in configurable\ncoordinate domains.";
+      buildType = "Simple";
+    };
+    components = {
+      "spacefill" = {
+        depends  = [ (hsPkgs.base) ];
+      };
+      tests = {
+        "doc-tests" = {
+          depends  = [ (hsPkgs.base) ];
         };
       };
-    }
+    };
+  }

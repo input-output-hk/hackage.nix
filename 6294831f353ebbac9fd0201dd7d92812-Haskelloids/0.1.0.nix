@@ -1,38 +1,43 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "Haskelloids";
-          version = "0.1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "mrehayden@googlemail.com";
-        author = "Matthew Hayden";
-        homepage = "http://www.matthewhayden.co.uk";
-        url = "";
-        synopsis = "A reproduction of the Atari 1979 classic \"Asteroids\"";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "Haskelloids";
+        version = "0.1.0";
       };
-      components = {
-        exes = {
-          "Haskelloids" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.haskell98
-              hsPkgs.containers
-              hsPkgs.random
-              hsPkgs.MonadRandom
-              hsPkgs.hmatrix
-              hsPkgs.HGL
-              hsPkgs.Yampa
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "mrehayden@googlemail.com";
+      author = "Matthew Hayden";
+      homepage = "http://www.matthewhayden.co.uk";
+      url = "";
+      synopsis = "A reproduction of the Atari 1979 classic \"Asteroids\"";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "Haskelloids" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.haskell98)
+            (hsPkgs.containers)
+            (hsPkgs.random)
+            (hsPkgs.MonadRandom)
+            (hsPkgs.hmatrix)
+            (hsPkgs.HGL)
+            (hsPkgs.Yampa)
+          ];
         };
       };
-    }
+    };
+  }

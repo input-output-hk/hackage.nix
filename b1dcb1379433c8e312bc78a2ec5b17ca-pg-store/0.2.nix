@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "pg-store";
-          version = "0.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) Ole Krüger 2015";
-        maintainer = "Ole Krüger <ole@vprsm.de>";
-        author = "Ole Krüger <ole@vprsm.de>";
-        homepage = "https://github.com/vapourismo/pg-store";
-        url = "";
-        synopsis = "Simple storage interface to PostgreSQL";
-        description = "Simple storage interface to PostgreSQL";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "pg-store";
+        version = "0.2";
       };
-      components = {
-        "pg-store" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.template-haskell
-            hsPkgs.bytestring
-            hsPkgs.blaze-builder
-            hsPkgs.text
-            hsPkgs.postgresql-libpq
-            hsPkgs.attoparsec
-            hsPkgs.mtl
-            hsPkgs.time
-            hsPkgs.haskell-src-meta
-            hsPkgs.aeson
-            hsPkgs.scientific
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "(c) Ole Krüger 2015";
+      maintainer = "Ole Krüger <ole@vprsm.de>";
+      author = "Ole Krüger <ole@vprsm.de>";
+      homepage = "https://github.com/vapourismo/pg-store";
+      url = "";
+      synopsis = "Simple storage interface to PostgreSQL";
+      description = "Simple storage interface to PostgreSQL";
+      buildType = "Simple";
+    };
+    components = {
+      "pg-store" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.template-haskell)
+          (hsPkgs.bytestring)
+          (hsPkgs.blaze-builder)
+          (hsPkgs.text)
+          (hsPkgs.postgresql-libpq)
+          (hsPkgs.attoparsec)
+          (hsPkgs.mtl)
+          (hsPkgs.time)
+          (hsPkgs.haskell-src-meta)
+          (hsPkgs.aeson)
+          (hsPkgs.scientific)
+        ];
       };
-    }
+    };
+  }

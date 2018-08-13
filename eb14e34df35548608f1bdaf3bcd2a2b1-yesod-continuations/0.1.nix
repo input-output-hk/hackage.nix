@@ -1,39 +1,44 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "yesod-continuations";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "matt@softmechanics.net";
-        author = "Matt Brown";
-        homepage = "https://github.com/softmechanics/yesod-continuations/";
-        url = "";
-        synopsis = "Continuations for Yesod";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "yesod-continuations";
+        version = "0.1";
       };
-      components = {
-        "yesod-continuations" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.yesod
-            hsPkgs.stm
-            hsPkgs.datetime
-            hsPkgs.hashmap
-            hsPkgs.hashable
-            hsPkgs.system-uuid
-            hsPkgs.template-haskell
-          ];
-        };
-        exes = {
-          "yesodContinuationsTest" = {};
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "matt@softmechanics.net";
+      author = "Matt Brown";
+      homepage = "https://github.com/softmechanics/yesod-continuations/";
+      url = "";
+      synopsis = "Continuations for Yesod";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "yesod-continuations" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.yesod)
+          (hsPkgs.stm)
+          (hsPkgs.datetime)
+          (hsPkgs.hashmap)
+          (hsPkgs.hashable)
+          (hsPkgs.system-uuid)
+          (hsPkgs.template-haskell)
+        ];
       };
-    }
+      exes = {
+        "yesodContinuationsTest" = {};
+      };
+    };
+  }

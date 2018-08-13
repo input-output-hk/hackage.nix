@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "hmatrix-vector-sized";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) Justin Le 2018";
-        maintainer = "justin@jle.im";
-        author = "Justin Le";
-        homepage = "https://github.com/mstksg/hmatrix-vector-sized#readme";
-        url = "";
-        synopsis = "Conversions between hmatrix and vector-sized types";
-        description = "Conversions between statically sized types in hmatrix and vector-sized.\n\nSee README on Github <https://github.com/mstksg/hmatrix-vector-sized#readme>";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "hmatrix-vector-sized";
+        version = "0.1.0.0";
       };
-      components = {
-        "hmatrix-vector-sized" = {
+      license = "BSD-3-Clause";
+      copyright = "(c) Justin Le 2018";
+      maintainer = "justin@jle.im";
+      author = "Justin Le";
+      homepage = "https://github.com/mstksg/hmatrix-vector-sized#readme";
+      url = "";
+      synopsis = "Conversions between hmatrix and vector-sized types";
+      description = "Conversions between statically sized types in hmatrix and vector-sized.\n\nSee README on Github <https://github.com/mstksg/hmatrix-vector-sized#readme>";
+      buildType = "Simple";
+    };
+    components = {
+      "hmatrix-vector-sized" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.hmatrix)
+          (hsPkgs.vector)
+          (hsPkgs.vector-sized)
+        ];
+      };
+      tests = {
+        "hmatrix-vector-sized-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.hmatrix
-            hsPkgs.vector
-            hsPkgs.vector-sized
+            (hsPkgs.base)
+            (hsPkgs.hedgehog)
+            (hsPkgs.hmatrix)
+            (hsPkgs.hmatrix-vector-sized)
+            (hsPkgs.vector)
+            (hsPkgs.vector-sized)
           ];
         };
-        tests = {
-          "hmatrix-vector-sized-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hedgehog
-              hsPkgs.hmatrix
-              hsPkgs.hmatrix-vector-sized
-              hsPkgs.vector
-              hsPkgs.vector-sized
-            ];
-          };
-        };
       };
-    }
+    };
+  }

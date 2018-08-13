@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "netwire-input-javascript";
-          version = "0.0.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "ziocroc@gmail.com";
-        author = "Luca \"ziocroc\" Prezzavento";
-        homepage = "https://github.com/ziocroc/netwire-input-javascript";
-        url = "";
-        synopsis = "JavaScript instance of netwire-input";
-        description = "GHCJS implementation of netwire-input.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "netwire-input-javascript";
+        version = "0.0.2";
       };
-      components = {
-        "netwire-input-javascript" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.ghcjs-base
-            hsPkgs.transformers
-            hsPkgs.netwire
-            hsPkgs.netwire-input
-            hsPkgs.containers
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "ziocroc@gmail.com";
+      author = "Luca \"ziocroc\" Prezzavento";
+      homepage = "https://github.com/ziocroc/netwire-input-javascript";
+      url = "";
+      synopsis = "JavaScript instance of netwire-input";
+      description = "GHCJS implementation of netwire-input.";
+      buildType = "Simple";
+    };
+    components = {
+      "netwire-input-javascript" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.ghcjs-base)
+          (hsPkgs.transformers)
+          (hsPkgs.netwire)
+          (hsPkgs.netwire-input)
+          (hsPkgs.containers)
+        ];
       };
-    }
+    };
+  }

@@ -1,55 +1,60 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.14";
-        identifier = {
-          name = "tasty-golden";
-          version = "2.3.0.1";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "Roman Cheplyaka <roma@ro-che.info>";
-        author = "Roman Cheplyaka";
-        homepage = "https://github.com/feuerbach/tasty-golden";
-        url = "";
-        synopsis = "Golden tests support for tasty";
-        description = "This package provides support for «golden testing».\nA golden test is an IO action that writes its result to a file.\nTo pass the test, this output file should be identical to the corresponding\n«golden» file, which contains the correct result for the test.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.14";
+      identifier = {
+        name = "tasty-golden";
+        version = "2.3.0.1";
       };
-      components = {
-        "tasty-golden" = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "Roman Cheplyaka <roma@ro-che.info>";
+      author = "Roman Cheplyaka";
+      homepage = "https://github.com/feuerbach/tasty-golden";
+      url = "";
+      synopsis = "Golden tests support for tasty";
+      description = "This package provides support for «golden testing».\nA golden test is an IO action that writes its result to a file.\nTo pass the test, this output file should be identical to the corresponding\n«golden» file, which contains the correct result for the test.";
+      buildType = "Simple";
+    };
+    components = {
+      "tasty-golden" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.tasty)
+          (hsPkgs.bytestring)
+          (hsPkgs.process)
+          (hsPkgs.mtl)
+          (hsPkgs.optparse-applicative)
+          (hsPkgs.filepath)
+          (hsPkgs.temporary-rc)
+          (hsPkgs.tagged)
+          (hsPkgs.deepseq)
+          (hsPkgs.containers)
+          (hsPkgs.directory)
+          (hsPkgs.async)
+        ];
+      };
+      tests = {
+        "test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.tasty
-            hsPkgs.bytestring
-            hsPkgs.process
-            hsPkgs.mtl
-            hsPkgs.optparse-applicative
-            hsPkgs.filepath
-            hsPkgs.temporary-rc
-            hsPkgs.tagged
-            hsPkgs.deepseq
-            hsPkgs.containers
-            hsPkgs.directory
-            hsPkgs.async
+            (hsPkgs.base)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-hunit)
+            (hsPkgs.tasty-golden)
+            (hsPkgs.filepath)
+            (hsPkgs.directory)
+            (hsPkgs.process)
+            (hsPkgs.temporary-rc)
           ];
         };
-        tests = {
-          "test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.tasty
-              hsPkgs.tasty-hunit
-              hsPkgs.tasty-golden
-              hsPkgs.filepath
-              hsPkgs.directory
-              hsPkgs.process
-              hsPkgs.temporary-rc
-            ];
-          };
-        };
       };
-    }
+    };
+  }

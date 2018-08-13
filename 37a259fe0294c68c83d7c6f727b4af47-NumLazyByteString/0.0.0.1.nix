@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       small_base = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "NumLazyByteString";
-          version = "0.0.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Thomas DuBuisson";
-        author = "Thomas DuBuisson <thomas.dubuisson@gmail.com>";
-        homepage = "";
-        url = "";
-        synopsis = "Num, Enum, Eq, Integral, Ord, Real, and Show instances for Lazy ByteStrings";
-        description = "Num, Enum, Eq, Integral, Ord, Real, and Show instances for Lazy ByteStrings";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "NumLazyByteString";
+        version = "0.0.0.1";
       };
-      components = {
-        "NumLazyByteString" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.binary
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Thomas DuBuisson";
+      author = "Thomas DuBuisson <thomas.dubuisson@gmail.com>";
+      homepage = "";
+      url = "";
+      synopsis = "Num, Enum, Eq, Integral, Ord, Real, and Show instances for Lazy ByteStrings";
+      description = "Num, Enum, Eq, Integral, Ord, Real, and Show instances for Lazy ByteStrings";
+      buildType = "Simple";
+    };
+    components = {
+      "NumLazyByteString" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.binary)
+        ];
       };
-    }
+    };
+  }

@@ -1,62 +1,67 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       library = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "xmonad-vanessa";
-          version = "0.1.1.8";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2017-2018 Vanessa McHale";
-        maintainer = "vamchale@gmail.com";
-        author = "Vanessa McHale";
-        homepage = "https://hub.darcs.net/vmchale/xmonad-vanessa";
-        url = "";
-        synopsis = "Custom xmonad, which builds with stack or cabal.";
-        description = "Custom xmonad example, plus several bits of functionality for managing media within XMonad.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "xmonad-vanessa";
+        version = "0.1.1.8";
       };
-      components = {
-        "xmonad-vanessa" = {
+      license = "BSD-3-Clause";
+      copyright = "2017-2018 Vanessa McHale";
+      maintainer = "vamchale@gmail.com";
+      author = "Vanessa McHale";
+      homepage = "https://hub.darcs.net/vmchale/xmonad-vanessa";
+      url = "";
+      synopsis = "Custom xmonad, which builds with stack or cabal.";
+      description = "Custom xmonad example, plus several bits of functionality for managing media within XMonad.";
+      buildType = "Simple";
+    };
+    components = {
+      "xmonad-vanessa" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.xmonad)
+          (hsPkgs.xmonad-contrib)
+          (hsPkgs.composition-prelude)
+          (hsPkgs.containers)
+          (hsPkgs.process)
+          (hsPkgs.X11)
+          (hsPkgs.transformers)
+        ];
+      };
+      exes = {
+        "xmonad" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.xmonad
-            hsPkgs.xmonad-contrib
-            hsPkgs.composition-prelude
-            hsPkgs.containers
-            hsPkgs.process
-            hsPkgs.X11
-            hsPkgs.transformers
+            (hsPkgs.base)
+            (hsPkgs.xmonad-vanessa)
           ];
         };
-        exes = {
-          "xmonad" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.xmonad-vanessa
-            ];
-          };
-          "getkb" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.xmonad-vanessa
-            ];
-          };
-        };
-        tests = {
-          "xmonad-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.xmonad-vanessa
-              hsPkgs.hspec
-              hsPkgs.xmonad
-            ];
-          };
+        "getkb" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.xmonad-vanessa)
+          ];
         };
       };
-    }
+      tests = {
+        "xmonad-test" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.xmonad-vanessa)
+            (hsPkgs.hspec)
+            (hsPkgs.xmonad)
+          ];
+        };
+      };
+    };
+  }

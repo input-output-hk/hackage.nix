@@ -1,47 +1,52 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.18";
-        identifier = {
-          name = "numhask-range";
-          version = "0.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Tony Day";
-        maintainer = "tonyday567@gmail.com";
-        author = "Tony Day";
-        homepage = "https://github.com/tonyday567/numhask-range";
-        url = "";
-        synopsis = "Numbers that are range representations";
-        description = "Numbers that represent ranges of all sorts.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.18";
+      identifier = {
+        name = "numhask-range";
+        version = "0.1.1";
       };
-      components = {
-        "numhask-range" = {
+      license = "BSD-3-Clause";
+      copyright = "Tony Day";
+      maintainer = "tonyday567@gmail.com";
+      author = "Tony Day";
+      homepage = "https://github.com/tonyday567/numhask-range";
+      url = "";
+      synopsis = "Numbers that are range representations";
+      description = "Numbers that represent ranges of all sorts.";
+      buildType = "Simple";
+    };
+    components = {
+      "numhask-range" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.numhask)
+          (hsPkgs.protolude)
+          (hsPkgs.QuickCheck)
+          (hsPkgs.adjunctions)
+          (hsPkgs.distributive)
+          (hsPkgs.semigroupoids)
+        ];
+      };
+      tests = {
+        "test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.numhask
-            hsPkgs.protolude
-            hsPkgs.QuickCheck
-            hsPkgs.adjunctions
-            hsPkgs.distributive
-            hsPkgs.semigroupoids
+            (hsPkgs.base)
+            (hsPkgs.doctest)
+            (hsPkgs.numhask)
+            (hsPkgs.numhask-range)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-quickcheck)
           ];
         };
-        tests = {
-          "test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-              hsPkgs.numhask
-              hsPkgs.numhask-range
-              hsPkgs.tasty
-              hsPkgs.tasty-quickcheck
-            ];
-          };
-        };
       };
-    }
+    };
+  }

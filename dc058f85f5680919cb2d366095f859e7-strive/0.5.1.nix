@@ -1,56 +1,61 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "strive";
-          version = "0.5.1";
-        };
-        license = "MIT";
-        copyright = "2014 Taylor Fausak <taylor@fausak.me>";
-        maintainer = "taylor@fausak.me";
-        author = "Taylor Fausak";
-        homepage = "http://taylor.fausak.me/strive/";
-        url = "";
-        synopsis = "A Haskell client for the Strava V3 API.";
-        description = "A Haskell client for the <http://strava.github.io/api/ Strava V3 API>.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "strive";
+        version = "0.5.1";
       };
-      components = {
-        "strive" = {
+      license = "MIT";
+      copyright = "2014 Taylor Fausak <taylor@fausak.me>";
+      maintainer = "taylor@fausak.me";
+      author = "Taylor Fausak";
+      homepage = "http://taylor.fausak.me/strive/";
+      url = "";
+      synopsis = "A Haskell client for the Strava V3 API.";
+      description = "A Haskell client for the <http://strava.github.io/api/ Strava V3 API>.";
+      buildType = "Simple";
+    };
+    components = {
+      "strive" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.aeson)
+          (hsPkgs.bytestring)
+          (hsPkgs.data-default)
+          (hsPkgs.gpolyline)
+          (hsPkgs.http-conduit)
+          (hsPkgs.http-types)
+          (hsPkgs.text)
+          (hsPkgs.time)
+        ];
+      };
+      tests = {
+        "readme" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.aeson
-            hsPkgs.bytestring
-            hsPkgs.data-default
-            hsPkgs.gpolyline
-            hsPkgs.http-conduit
-            hsPkgs.http-types
-            hsPkgs.text
-            hsPkgs.time
+            (hsPkgs.base)
+            (hsPkgs.strive)
+            (hsPkgs.aeson)
+            (hsPkgs.bytestring)
+            (hsPkgs.data-default)
+            (hsPkgs.markdown-unlit)
+            (hsPkgs.time)
           ];
         };
-        tests = {
-          "readme" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.strive
-              hsPkgs.aeson
-              hsPkgs.bytestring
-              hsPkgs.data-default
-              hsPkgs.markdown-unlit
-              hsPkgs.time
-            ];
-          };
-          "hlint" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hlint
-            ];
-          };
+        "hlint" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.hlint)
+          ];
         };
       };
-    }
+    };
+  }

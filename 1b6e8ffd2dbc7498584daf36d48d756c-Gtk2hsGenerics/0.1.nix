@@ -1,36 +1,41 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "Gtk2hsGenerics";
-          version = "0.1";
-        };
-        license = "LicenseRef-GPL";
-        copyright = "";
-        maintainer = "michael.dever2@mail.dcu.ie";
-        author = "Michael Dever";
-        homepage = "";
-        url = "";
-        synopsis = "Convenience functions to extend Gtk2hs.";
-        description = "Convenience functions to extend Gtk2hs.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "Gtk2hsGenerics";
+        version = "0.1";
       };
-      components = {
-        "Gtk2hsGenerics" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.array
-            hsPkgs.containers
-            hsPkgs.haskell98
-            hsPkgs.mtl
-            hsPkgs.glib
-            hsPkgs.cairo
-            hsPkgs.gtk
-          ];
-        };
+      license = "LicenseRef-GPL";
+      copyright = "";
+      maintainer = "michael.dever2@mail.dcu.ie";
+      author = "Michael Dever";
+      homepage = "";
+      url = "";
+      synopsis = "Convenience functions to extend Gtk2hs.";
+      description = "Convenience functions to extend Gtk2hs.";
+      buildType = "Simple";
+    };
+    components = {
+      "Gtk2hsGenerics" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.array)
+          (hsPkgs.containers)
+          (hsPkgs.haskell98)
+          (hsPkgs.mtl)
+          (hsPkgs.glib)
+          (hsPkgs.cairo)
+          (hsPkgs.gtk)
+        ];
       };
-    }
+    };
+  }

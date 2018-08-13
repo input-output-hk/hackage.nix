@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "heist";
-          version = "0.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "snap@snapframework.com";
-        author = "Doug Beardsley, Gregory Collins";
-        homepage = "http://snapframework.com/";
-        url = "";
-        synopsis = "An xhtml templating system";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "heist";
+        version = "0.1.1";
       };
-      components = {
-        "heist" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.containers
-            hsPkgs.directory
-            hsPkgs.directory-tree
-            hsPkgs.filepath
-            hsPkgs.process
-            hsPkgs.hexpat
-            hsPkgs.monads-fd
-            hsPkgs.random
-            hsPkgs.MonadCatchIO-transformers
-            hsPkgs.transformers
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "snap@snapframework.com";
+      author = "Doug Beardsley, Gregory Collins";
+      homepage = "http://snapframework.com/";
+      url = "";
+      synopsis = "An xhtml templating system";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "heist" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.containers)
+          (hsPkgs.directory)
+          (hsPkgs.directory-tree)
+          (hsPkgs.filepath)
+          (hsPkgs.process)
+          (hsPkgs.hexpat)
+          (hsPkgs.monads-fd)
+          (hsPkgs.random)
+          (hsPkgs.MonadCatchIO-transformers)
+          (hsPkgs.transformers)
+        ];
       };
-    }
+    };
+  }

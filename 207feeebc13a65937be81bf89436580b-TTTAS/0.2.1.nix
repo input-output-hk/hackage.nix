@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "TTTAS";
-          version = "0.2.1";
-        };
-        license = "LicenseRef-LGPL";
-        copyright = "Universiteit Utrecht";
-        maintainer = "Arthur Baars <abaars@iti.upv.es>";
-        author = "";
-        homepage = "http://www.cs.uu.nl/wiki/bin/view/Center/TTTAS";
-        url = "";
-        synopsis = "Typed Transformations of Typed Abstract Syntax";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "TTTAS";
+        version = "0.2.1";
       };
-      components = {
-        "TTTAS" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.haskell98
-          ];
-        };
+      license = "LicenseRef-LGPL";
+      copyright = "Universiteit Utrecht";
+      maintainer = "Arthur Baars <abaars@iti.upv.es>";
+      author = "";
+      homepage = "http://www.cs.uu.nl/wiki/bin/view/Center/TTTAS";
+      url = "";
+      synopsis = "Typed Transformations of Typed Abstract Syntax";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "TTTAS" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.haskell98)
+        ];
       };
-    }
+    };
+  }

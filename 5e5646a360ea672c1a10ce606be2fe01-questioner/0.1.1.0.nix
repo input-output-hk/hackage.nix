@@ -1,60 +1,65 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       examples = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "questioner";
-          version = "0.1.1.0";
-        };
-        license = "MIT";
-        copyright = "(c) 2014 Pedro Tacla Yamada";
-        maintainer = "tacla.yamada@gmail.com";
-        author = "Pedro Tacla Yamada";
-        homepage = "https://github.com/yamadapc/haskell-questioner.git";
-        url = "";
-        synopsis = "A package for prompting values from the command-line.";
-        description = "This is still being developed";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "questioner";
+        version = "0.1.1.0";
       };
-      components = {
-        "questioner" = {
+      license = "MIT";
+      copyright = "(c) 2014 Pedro Tacla Yamada";
+      maintainer = "tacla.yamada@gmail.com";
+      author = "Pedro Tacla Yamada";
+      homepage = "https://github.com/yamadapc/haskell-questioner.git";
+      url = "";
+      synopsis = "A package for prompting values from the command-line.";
+      description = "This is still being developed";
+      buildType = "Simple";
+    };
+    components = {
+      "questioner" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.ansi-terminal)
+          (hsPkgs.terminal-size)
+          (hsPkgs.readline)
+        ];
+      };
+      exes = {
+        "questioner-list-prompt" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.ansi-terminal
-            hsPkgs.terminal-size
-            hsPkgs.readline
+            (hsPkgs.base)
+            (hsPkgs.questioner)
           ];
         };
-        exes = {
-          "questioner-list-prompt" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.questioner
-            ];
-          };
-          "questioner-checkbox-prompt" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.questioner
-            ];
-          };
-          "questioner-spinner" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.questioner
-            ];
-          };
-          "questioner-progressbar" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.questioner
-            ];
-          };
+        "questioner-checkbox-prompt" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.questioner)
+          ];
+        };
+        "questioner-spinner" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.questioner)
+          ];
+        };
+        "questioner-progressbar" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.questioner)
+          ];
         };
       };
-    }
+    };
+  }

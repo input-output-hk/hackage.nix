@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "supero";
-          version = "3.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Neil Mitchell 2006-2010";
-        maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
-        author = "Neil Mitchell <ndmitchell@gmail.com>";
-        homepage = "http://community.haskell.org/~ndm/supero/";
-        url = "";
-        synopsis = "A Supercompiler";
-        description = "A demo supercompiler - not really ready for public use yet.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "supero";
+        version = "3.0";
       };
-      components = {
-        exes = {
-          "supero" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.directory
-              hsPkgs.process
-              hsPkgs.filepath
-              hsPkgs.time
-              hsPkgs.mtl
-              hsPkgs.containers
-              hsPkgs.haskell-src-exts
-              hsPkgs.cpphs
-              hsPkgs.uniplate
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "Neil Mitchell 2006-2010";
+      maintainer = "Neil Mitchell <ndmitchell@gmail.com>";
+      author = "Neil Mitchell <ndmitchell@gmail.com>";
+      homepage = "http://community.haskell.org/~ndm/supero/";
+      url = "";
+      synopsis = "A Supercompiler";
+      description = "A demo supercompiler - not really ready for public use yet.";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "supero" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.directory)
+            (hsPkgs.process)
+            (hsPkgs.filepath)
+            (hsPkgs.time)
+            (hsPkgs.mtl)
+            (hsPkgs.containers)
+            (hsPkgs.haskell-src-exts)
+            (hsPkgs.cpphs)
+            (hsPkgs.uniplate)
+          ];
         };
       };
-    }
+    };
+  }

@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "easyjson";
-          version = "0.1.0.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "ithinkican@gmail.com";
-        author = "Allen Nelson";
-        homepage = "https://github.com/thinkpad20/easyjson";
-        url = "";
-        synopsis = "Haskell JSON library with an emphasis on simplicity, minimal dependencies, and ease of use.";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "easyjson";
+        version = "0.1.0.0";
       };
-      components = {
-        "easyjson" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.parsec
-            hsPkgs.text
-            hsPkgs.unordered-containers
-            hsPkgs.vector
-            hsPkgs.mtl
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "ithinkican@gmail.com";
+      author = "Allen Nelson";
+      homepage = "https://github.com/thinkpad20/easyjson";
+      url = "";
+      synopsis = "Haskell JSON library with an emphasis on simplicity, minimal dependencies, and ease of use.";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "easyjson" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.parsec)
+          (hsPkgs.text)
+          (hsPkgs.unordered-containers)
+          (hsPkgs.vector)
+          (hsPkgs.mtl)
+        ];
       };
-    }
+    };
+  }

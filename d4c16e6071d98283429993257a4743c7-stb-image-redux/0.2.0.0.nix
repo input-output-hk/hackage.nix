@@ -1,41 +1,46 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "stb-image-redux";
-          version = "0.2.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright: (c) 2016 Alexis Williams";
-        maintainer = "sasinestro@gmail.com";
-        author = "Alexis Williams";
-        homepage = "https://github.com/sasinestro/stb-image-redux#readme";
-        url = "";
-        synopsis = "Image loading and writing microlibrary";
-        description = "See <https://github.com/SASinestro/stb-image-redux/blob/master/README.md>.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "stb-image-redux";
+        version = "0.2.0.0";
       };
-      components = {
-        "stb-image-redux" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright: (c) 2016 Alexis Williams";
+      maintainer = "sasinestro@gmail.com";
+      author = "Alexis Williams";
+      homepage = "https://github.com/sasinestro/stb-image-redux#readme";
+      url = "";
+      synopsis = "Image loading and writing microlibrary";
+      description = "See <https://github.com/SASinestro/stb-image-redux/blob/master/README.md>.";
+      buildType = "Simple";
+    };
+    components = {
+      "stb-image-redux" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.primitive)
+          (hsPkgs.vector)
+        ];
+      };
+      tests = {
+        "stb-image-redux-tests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.primitive
-            hsPkgs.vector
+            (hsPkgs.base)
+            (hsPkgs.stb-image-redux)
+            (hsPkgs.vector)
+            (hsPkgs.hspec)
           ];
         };
-        tests = {
-          "stb-image-redux-tests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.stb-image-redux
-              hsPkgs.vector
-              hsPkgs.hspec
-            ];
-          };
-        };
       };
-    }
+    };
+  }

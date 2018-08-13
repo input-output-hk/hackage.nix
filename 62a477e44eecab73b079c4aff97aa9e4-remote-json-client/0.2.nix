@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "remote-json-client";
-          version = "0.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) 2016 The University of Kansas";
-        maintainer = "JDawson@ku.edu";
-        author = "Justin Dawson and Andy Gill";
-        homepage = "";
-        url = "";
-        synopsis = "Web client wrapper for remote-json";
-        description = "Web client, using wreq, for the JSON RPC protocol.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "remote-json-client";
+        version = "0.2";
       };
-      components = {
-        "remote-json-client" = {
-          depends  = [
-            hsPkgs.aeson
-            hsPkgs.base
-            hsPkgs.lens
-            hsPkgs.wreq
-            hsPkgs.natural-transformation
-            hsPkgs.remote-json
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "(c) 2016 The University of Kansas";
+      maintainer = "JDawson@ku.edu";
+      author = "Justin Dawson and Andy Gill";
+      homepage = "";
+      url = "";
+      synopsis = "Web client wrapper for remote-json";
+      description = "Web client, using wreq, for the JSON RPC protocol.";
+      buildType = "Simple";
+    };
+    components = {
+      "remote-json-client" = {
+        depends  = [
+          (hsPkgs.aeson)
+          (hsPkgs.base)
+          (hsPkgs.lens)
+          (hsPkgs.wreq)
+          (hsPkgs.natural-transformation)
+          (hsPkgs.remote-json)
+        ];
       };
-    }
+    };
+  }

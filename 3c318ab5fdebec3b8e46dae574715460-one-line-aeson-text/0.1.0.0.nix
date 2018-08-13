@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "one-line-aeson-text";
-          version = "0.1.0.0";
-        };
-        license = "Apache-2.0";
-        copyright = "2018 Typeclass Consulting, LLC";
-        maintainer = "Chris Martin, Julie Moronuki";
-        author = "Chris Martin";
-        homepage = "https://github.com/typeclasses/one-line-aeson-text";
-        url = "";
-        synopsis = "Pretty-printing short Aeson values as text.";
-        description = "A very simply pretty-printer for Aeson values that\nproduces single-line output, which you may want for\ndisplaying short JSON data in log files.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "one-line-aeson-text";
+        version = "0.1.0.0";
       };
-      components = {
-        "one-line-aeson-text" = {
+      license = "Apache-2.0";
+      copyright = "2018 Typeclass Consulting, LLC";
+      maintainer = "Chris Martin, Julie Moronuki";
+      author = "Chris Martin";
+      homepage = "https://github.com/typeclasses/one-line-aeson-text";
+      url = "";
+      synopsis = "Pretty-printing short Aeson values as text.";
+      description = "A very simply pretty-printer for Aeson values that\nproduces single-line output, which you may want for\ndisplaying short JSON data in log files.";
+      buildType = "Simple";
+    };
+    components = {
+      "one-line-aeson-text" = {
+        depends  = [
+          (hsPkgs.aeson)
+          (hsPkgs.base)
+          (hsPkgs.text)
+          (hsPkgs.unordered-containers)
+        ];
+      };
+      tests = {
+        "doctest" = {
           depends  = [
-            hsPkgs.aeson
-            hsPkgs.base
-            hsPkgs.text
-            hsPkgs.unordered-containers
+            (hsPkgs.base)
+            (hsPkgs.doctest)
           ];
         };
-        tests = {
-          "doctest" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-            ];
-          };
-        };
       };
-    }
+    };
+  }

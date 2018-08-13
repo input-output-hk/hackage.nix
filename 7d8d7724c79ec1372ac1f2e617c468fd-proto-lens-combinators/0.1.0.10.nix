@@ -1,48 +1,53 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "proto-lens-combinators";
-          version = "0.1.0.10";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Google Inc.";
-        maintainer = "zearen+protolens@google.com";
-        author = "Zie Weaver";
-        homepage = "https://github.com/google/proto-lens#readme";
-        url = "";
-        synopsis = "Utilities functions to proto-lens.";
-        description = "Useful things for working with protos.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "proto-lens-combinators";
+        version = "0.1.0.10";
       };
-      components = {
-        "proto-lens-combinators" = {
+      license = "BSD-3-Clause";
+      copyright = "Google Inc.";
+      maintainer = "zearen+protolens@google.com";
+      author = "Zie Weaver";
+      homepage = "https://github.com/google/proto-lens#readme";
+      url = "";
+      synopsis = "Utilities functions to proto-lens.";
+      description = "Useful things for working with protos.";
+      buildType = "Custom";
+    };
+    components = {
+      "proto-lens-combinators" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.data-default-class)
+          (hsPkgs.lens-family)
+          (hsPkgs.proto-lens-protoc)
+          (hsPkgs.transformers)
+        ];
+      };
+      tests = {
+        "combinators_test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.data-default-class
-            hsPkgs.lens-family
-            hsPkgs.proto-lens-protoc
-            hsPkgs.transformers
+            (hsPkgs.HUnit)
+            (hsPkgs.base)
+            (hsPkgs.lens-family)
+            (hsPkgs.lens-family-core)
+            (hsPkgs.proto-lens)
+            (hsPkgs.proto-lens-combinators)
+            (hsPkgs.proto-lens-protoc)
+            (hsPkgs.test-framework)
+            (hsPkgs.test-framework-hunit)
           ];
         };
-        tests = {
-          "combinators_test" = {
-            depends  = [
-              hsPkgs.HUnit
-              hsPkgs.base
-              hsPkgs.lens-family
-              hsPkgs.lens-family-core
-              hsPkgs.proto-lens
-              hsPkgs.proto-lens-combinators
-              hsPkgs.proto-lens-protoc
-              hsPkgs.test-framework
-              hsPkgs.test-framework-hunit
-            ];
-          };
-        };
       };
-    }
+    };
+  }

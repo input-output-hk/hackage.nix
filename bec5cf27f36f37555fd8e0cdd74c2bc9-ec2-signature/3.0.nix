@@ -1,42 +1,47 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "ec2-signature";
-          version = "3.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Yusuke Nomura<yunomu@gmail.com>";
-        author = "Yusuke Nomura<yunomu@gmail.com>";
-        homepage = "https://github.com/worksap-ate/ec2-signature";
-        url = "";
-        synopsis = "The Amazon EC2 style signature calculator.";
-        description = "The Amazon EC2 style signature calculator.\n<http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html>";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "ec2-signature";
+        version = "3.0";
       };
-      components = {
-        "ec2-signature" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Yusuke Nomura<yunomu@gmail.com>";
+      author = "Yusuke Nomura<yunomu@gmail.com>";
+      homepage = "https://github.com/worksap-ate/ec2-signature";
+      url = "";
+      synopsis = "The Amazon EC2 style signature calculator.";
+      description = "The Amazon EC2 style signature calculator.\n<http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html>";
+      buildType = "Simple";
+    };
+    components = {
+      "ec2-signature" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.base64-bytestring)
+          (hsPkgs.SHA)
+          (hsPkgs.http-types)
+          (hsPkgs.http-querystring)
+        ];
+      };
+      tests = {
+        "doctest" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.base64-bytestring
-            hsPkgs.SHA
-            hsPkgs.http-types
-            hsPkgs.http-querystring
+            (hsPkgs.base)
+            (hsPkgs.doctest)
           ];
         };
-        tests = {
-          "doctest" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-            ];
-          };
-        };
       };
-    }
+    };
+  }

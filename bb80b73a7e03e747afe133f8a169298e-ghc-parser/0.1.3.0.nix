@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.16";
-        identifier = {
-          name = "ghc-parser";
-          version = "0.1.3.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "andrew.gibiansky@gmail.com";
-        author = "Andrew Gibiansky";
-        homepage = "https://github.com/gibiansky/IHaskell";
-        url = "";
-        synopsis = "Haskell source parser from GHC.";
-        description = "";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.16";
+      identifier = {
+        name = "ghc-parser";
+        version = "0.1.3.0";
       };
-      components = {
-        "ghc-parser" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.ghc
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "andrew.gibiansky@gmail.com";
+      author = "Andrew Gibiansky";
+      homepage = "https://github.com/gibiansky/IHaskell";
+      url = "";
+      synopsis = "Haskell source parser from GHC.";
+      description = "";
+      buildType = "Custom";
+    };
+    components = {
+      "ghc-parser" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.ghc)
+        ];
       };
-    }
+    };
+  }

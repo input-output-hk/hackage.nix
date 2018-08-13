@@ -1,45 +1,50 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "system-filepath";
-          version = "0.4.13";
-        };
-        license = "MIT";
-        copyright = "John Millikin 2010-2012";
-        maintainer = "FP Complete <michael@fpcomplete.com>";
-        author = "John Millikin <jmillikin@gmail.com>";
-        homepage = "https://github.com/fpco/haskell-filesystem";
-        url = "";
-        synopsis = "High-level, byte-based file and directory path manipulations";
-        description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/system-filepath>.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "system-filepath";
+        version = "0.4.13";
       };
-      components = {
-        "system-filepath" = {
+      license = "MIT";
+      copyright = "John Millikin 2010-2012";
+      maintainer = "FP Complete <michael@fpcomplete.com>";
+      author = "John Millikin <jmillikin@gmail.com>";
+      homepage = "https://github.com/fpco/haskell-filesystem";
+      url = "";
+      synopsis = "High-level, byte-based file and directory path manipulations";
+      description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/system-filepath>.";
+      buildType = "Custom";
+    };
+    components = {
+      "system-filepath" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.deepseq)
+          (hsPkgs.text)
+        ];
+      };
+      tests = {
+        "filesystem_path_tests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.deepseq
-            hsPkgs.text
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.chell)
+            (hsPkgs.chell-quickcheck)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.system-filepath)
+            (hsPkgs.text)
           ];
         };
-        tests = {
-          "filesystem_path_tests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.chell
-              hsPkgs.chell-quickcheck
-              hsPkgs.QuickCheck
-              hsPkgs.system-filepath
-              hsPkgs.text
-            ];
-          };
-        };
       };
-    }
+    };
+  }

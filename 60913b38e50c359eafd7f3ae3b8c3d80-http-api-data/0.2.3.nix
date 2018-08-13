@@ -1,55 +1,60 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       use-text-show = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "http-api-data";
-          version = "0.2.3";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Nickolay Kudasov <nickolay.kudasov@gmail.com>";
-        author = "Nickolay Kudasov <nickolay.kudasov@gmail.com>";
-        homepage = "http://github.com/fizruk/http-api-data";
-        url = "";
-        synopsis = "Converting to/from HTTP API data like URL pieces, headers and query parameters.";
-        description = "Please see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "http-api-data";
+        version = "0.2.3";
       };
-      components = {
-        "http-api-data" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Nickolay Kudasov <nickolay.kudasov@gmail.com>";
+      author = "Nickolay Kudasov <nickolay.kudasov@gmail.com>";
+      homepage = "http://github.com/fizruk/http-api-data";
+      url = "";
+      synopsis = "Converting to/from HTTP API data like URL pieces, headers and query parameters.";
+      description = "Please see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "http-api-data" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.text)
+          (hsPkgs.bytestring)
+          (hsPkgs.time)
+          (hsPkgs.time-locale-compat)
+        ] ++ pkgs.lib.optional (_flags.use-text-show) (hsPkgs.text-show);
+      };
+      tests = {
+        "spec" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.text
-            hsPkgs.bytestring
-            hsPkgs.time
-            hsPkgs.time-locale-compat
-          ] ++ pkgs.lib.optional _flags.use-text-show hsPkgs.text-show;
+            (hsPkgs.HUnit)
+            (hsPkgs.hspec)
+            (hsPkgs.base)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.http-api-data)
+            (hsPkgs.text)
+            (hsPkgs.time)
+          ];
         };
-        tests = {
-          "spec" = {
-            depends  = [
-              hsPkgs.HUnit
-              hsPkgs.hspec
-              hsPkgs.base
-              hsPkgs.QuickCheck
-              hsPkgs.http-api-data
-              hsPkgs.text
-              hsPkgs.time
-            ];
-          };
-          "doctest" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-              hsPkgs.Glob
-            ];
-          };
+        "doctest" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.doctest)
+            (hsPkgs.Glob)
+          ];
         };
       };
-    }
+    };
+  }

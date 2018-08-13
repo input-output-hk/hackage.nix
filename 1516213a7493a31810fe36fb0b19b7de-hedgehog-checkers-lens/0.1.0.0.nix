@@ -1,43 +1,48 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "hedgehog-checkers-lens";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2017, Chris Allen";
-        maintainer = "cma@bitemyapp.com";
-        author = "Chris Allen";
-        homepage = "https://github.com/bitemyapp/hedgehog-checkers#readme";
-        url = "";
-        synopsis = "";
-        description = "hedgehog-checkers-lens provides the various lens, prism, setter, and traversal laws as ready-to-use properties.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "hedgehog-checkers-lens";
+        version = "0.1.0.0";
       };
-      components = {
-        "hedgehog-checkers-lens" = {
+      license = "BSD-3-Clause";
+      copyright = "2017, Chris Allen";
+      maintainer = "cma@bitemyapp.com";
+      author = "Chris Allen";
+      homepage = "https://github.com/bitemyapp/hedgehog-checkers#readme";
+      url = "";
+      synopsis = "";
+      description = "hedgehog-checkers-lens provides the various lens, prism, setter, and traversal laws as ready-to-use properties.";
+      buildType = "Simple";
+    };
+    components = {
+      "hedgehog-checkers-lens" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.hedgehog)
+          (hsPkgs.hedgehog-checkers)
+          (hsPkgs.lens)
+        ];
+      };
+      tests = {
+        "tests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.hedgehog
-            hsPkgs.hedgehog-checkers
-            hsPkgs.lens
+            (hsPkgs.base)
+            (hsPkgs.hedgehog)
+            (hsPkgs.hedgehog-checkers)
+            (hsPkgs.lens)
+            (hsPkgs.hedgehog-checkers-lens)
           ];
         };
-        tests = {
-          "tests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hedgehog
-              hsPkgs.hedgehog-checkers
-              hsPkgs.lens
-              hsPkgs.hedgehog-checkers-lens
-            ];
-          };
-        };
       };
-    }
+    };
+  }

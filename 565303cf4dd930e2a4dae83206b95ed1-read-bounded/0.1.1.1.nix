@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "read-bounded";
-          version = "0.1.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "thomasedingcode@gmail.com";
-        author = "Thomas Eding";
-        homepage = "https://github.com/thomaseding/read-bounded";
-        url = "";
-        synopsis = "Class for reading bounded values";
-        description = "Class for reading bounded values from strings.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "read-bounded";
+        version = "0.1.1.1";
       };
-      components = {
-        "read-bounded" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "thomasedingcode@gmail.com";
+      author = "Thomas Eding";
+      homepage = "https://github.com/thomaseding/read-bounded";
+      url = "";
+      synopsis = "Class for reading bounded values";
+      description = "Class for reading bounded values from strings.";
+      buildType = "Simple";
+    };
+    components = {
+      "read-bounded" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

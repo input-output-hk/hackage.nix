@@ -1,66 +1,71 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "rest-gen";
-          version = "0.15.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "code@silk.co";
-        author = "";
-        homepage = "";
-        url = "";
-        synopsis = "Documentation and client generation from rest definition.";
-        description = "Documentation and client generation from rest definition.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "rest-gen";
+        version = "0.15.0.1";
       };
-      components = {
-        "rest-gen" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "code@silk.co";
+      author = "";
+      homepage = "";
+      url = "";
+      synopsis = "Documentation and client generation from rest definition.";
+      description = "Documentation and client generation from rest definition.";
+      buildType = "Simple";
+    };
+    components = {
+      "rest-gen" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.Cabal)
+          (hsPkgs.HStringTemplate)
+          (hsPkgs.aeson)
+          (hsPkgs.blaze-html)
+          (hsPkgs.code-builder)
+          (hsPkgs.directory)
+          (hsPkgs.fclabels)
+          (hsPkgs.filepath)
+          (hsPkgs.hashable)
+          (hsPkgs.haskell-src-exts)
+          (hsPkgs.hslogger)
+          (hsPkgs.hxt)
+          (hsPkgs.json-schema)
+          (hsPkgs.pretty)
+          (hsPkgs.process)
+          (hsPkgs.rest-core)
+          (hsPkgs.safe)
+          (hsPkgs.scientific)
+          (hsPkgs.split)
+          (hsPkgs.tagged)
+          (hsPkgs.text)
+          (hsPkgs.uniplate)
+          (hsPkgs.unordered-containers)
+          (hsPkgs.vector)
+        ];
+      };
+      tests = {
+        "rest-gen-tests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.Cabal
-            hsPkgs.HStringTemplate
-            hsPkgs.aeson
-            hsPkgs.blaze-html
-            hsPkgs.code-builder
-            hsPkgs.directory
-            hsPkgs.fclabels
-            hsPkgs.filepath
-            hsPkgs.hashable
-            hsPkgs.haskell-src-exts
-            hsPkgs.hslogger
-            hsPkgs.hxt
-            hsPkgs.json-schema
-            hsPkgs.pretty
-            hsPkgs.process
-            hsPkgs.rest-core
-            hsPkgs.safe
-            hsPkgs.scientific
-            hsPkgs.split
-            hsPkgs.tagged
-            hsPkgs.text
-            hsPkgs.uniplate
-            hsPkgs.unordered-containers
-            hsPkgs.vector
+            (hsPkgs.base)
+            (hsPkgs.HUnit)
+            (hsPkgs.haskell-src-exts)
+            (hsPkgs.rest-core)
+            (hsPkgs.rest-gen)
+            (hsPkgs.test-framework)
+            (hsPkgs.test-framework-hunit)
           ];
         };
-        tests = {
-          "rest-gen-tests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.HUnit
-              hsPkgs.haskell-src-exts
-              hsPkgs.rest-core
-              hsPkgs.rest-gen
-              hsPkgs.test-framework
-              hsPkgs.test-framework-hunit
-            ];
-          };
-        };
       };
-    }
+    };
+  }

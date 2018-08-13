@@ -1,41 +1,46 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "interlude-l";
-          version = "0.4.0.0";
-        };
-        license = "MIT";
-        copyright = "2016 Luka Horvat";
-        maintainer = "luka.horvat9@gmail.com";
-        author = "Luka Horvat";
-        homepage = "";
-        url = "";
-        synopsis = "Prelude replacement based on protolude";
-        description = "Prelude replacement based on protolude";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "interlude-l";
+        version = "0.4.0.0";
       };
-      components = {
-        "interlude-l" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.protolude
-            hsPkgs.string-conv
-            hsPkgs.exceptions
-            hsPkgs.mtl
-            hsPkgs.lens
-            hsPkgs.aeson
-            hsPkgs.witherable
-            hsPkgs.transformers
-            hsPkgs.mtl
-            hsPkgs.monad-control
-            hsPkgs.MonadRandom
-            hsPkgs.text
-          ];
-        };
+      license = "MIT";
+      copyright = "2016 Luka Horvat";
+      maintainer = "luka.horvat9@gmail.com";
+      author = "Luka Horvat";
+      homepage = "";
+      url = "";
+      synopsis = "Prelude replacement based on protolude";
+      description = "Prelude replacement based on protolude";
+      buildType = "Simple";
+    };
+    components = {
+      "interlude-l" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.protolude)
+          (hsPkgs.string-conv)
+          (hsPkgs.exceptions)
+          (hsPkgs.mtl)
+          (hsPkgs.lens)
+          (hsPkgs.aeson)
+          (hsPkgs.witherable)
+          (hsPkgs.transformers)
+          (hsPkgs.mtl)
+          (hsPkgs.monad-control)
+          (hsPkgs.MonadRandom)
+          (hsPkgs.text)
+        ];
       };
-    }
+    };
+  }

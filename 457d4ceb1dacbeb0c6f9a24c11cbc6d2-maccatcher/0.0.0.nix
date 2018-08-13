@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "maccatcher";
-          version = "0.0.0";
-        };
-        license = "LicenseRef-GPL";
-        copyright = "";
-        maintainer = "jason.dusek@gmail.com";
-        author = "Jason Dusek";
-        homepage = "";
-        url = "";
-        synopsis = "Obtain the host MAC address on *NIX and Windows.";
-        description = "Obtain the host MAC address on *NIX and Windows.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "maccatcher";
+        version = "0.0.0";
       };
-      components = {
-        "maccatcher" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.haskell98
-            hsPkgs.binary
-            hsPkgs.process
-            hsPkgs.parsec
-          ];
-        };
+      license = "LicenseRef-GPL";
+      copyright = "";
+      maintainer = "jason.dusek@gmail.com";
+      author = "Jason Dusek";
+      homepage = "";
+      url = "";
+      synopsis = "Obtain the host MAC address on *NIX and Windows.";
+      description = "Obtain the host MAC address on *NIX and Windows.";
+      buildType = "Simple";
+    };
+    components = {
+      "maccatcher" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.haskell98)
+          (hsPkgs.binary)
+          (hsPkgs.process)
+          (hsPkgs.parsec)
+        ];
       };
-    }
+    };
+  }

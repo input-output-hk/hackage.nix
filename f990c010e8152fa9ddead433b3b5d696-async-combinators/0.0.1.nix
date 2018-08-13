@@ -1,51 +1,56 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "2.0";
-        identifier = {
-          name = "async-combinators";
-          version = "0.0.1";
-        };
-        license = "MPL-2.0";
-        copyright = "2018 Serokell";
-        maintainer = "Serokell <hi@serokell.io>";
-        author = "@serokell";
-        homepage = "https://github.com/serokell/async-combinators";
-        url = "";
-        synopsis = "Async combinators";
-        description = "Async combinators";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "2.0";
+      identifier = {
+        name = "async-combinators";
+        version = "0.0.1";
       };
-      components = {
-        "async-combinators" = {
+      license = "MPL-2.0";
+      copyright = "2018 Serokell";
+      maintainer = "Serokell <hi@serokell.io>";
+      author = "@serokell";
+      homepage = "https://github.com/serokell/async-combinators";
+      url = "";
+      synopsis = "Async combinators";
+      description = "Async combinators";
+      buildType = "Simple";
+    };
+    components = {
+      "async-combinators" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.async)
+          (hsPkgs.safe-exceptions)
+          (hsPkgs.text)
+          (hsPkgs.unliftio-core)
+        ];
+      };
+      tests = {
+        "async-combinators-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.async
-            hsPkgs.safe-exceptions
-            hsPkgs.text
-            hsPkgs.unliftio-core
+            (hsPkgs.base)
+            (hsPkgs.async-combinators)
+            (hsPkgs.HUnit)
+            (hsPkgs.hedgehog)
+            (hsPkgs.safe-exceptions)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-discover)
+            (hsPkgs.tasty-hedgehog)
+            (hsPkgs.tasty-hunit)
+          ];
+          build-tools = [
+            (hsPkgs.buildPackages.tasty-discover)
           ];
         };
-        tests = {
-          "async-combinators-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.async-combinators
-              hsPkgs.HUnit
-              hsPkgs.hedgehog
-              hsPkgs.safe-exceptions
-              hsPkgs.tasty
-              hsPkgs.tasty-discover
-              hsPkgs.tasty-hedgehog
-              hsPkgs.tasty-hunit
-            ];
-            build-tools = [
-              hsPkgs.buildPackages.tasty-discover
-            ];
-          };
-        };
       };
-    }
+    };
+  }

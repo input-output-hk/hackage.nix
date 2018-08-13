@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.12";
-        identifier = {
-          name = "direct-binary-files";
-          version = "1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (c) 2012 Irene Knapp";
-        maintainer = "irene.knapp@icloud.com";
-        author = "Irene Knapp <irene.knapp@icloud.com>";
-        homepage = "http://ireneknapp.com/software/";
-        url = "";
-        synopsis = "Serialization and deserialization monads for streams and ByteStrings.";
-        description = "Serialization and deserialization monads which can work on either streams\nor ByteStrings, running under IO in the former case and as pure functions\nin the latter.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.12";
+      identifier = {
+        name = "direct-binary-files";
+        version = "1.0";
       };
-      components = {
-        "direct-binary-files" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.mtl
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) 2012 Irene Knapp";
+      maintainer = "irene.knapp@icloud.com";
+      author = "Irene Knapp <irene.knapp@icloud.com>";
+      homepage = "http://ireneknapp.com/software/";
+      url = "";
+      synopsis = "Serialization and deserialization monads for streams and ByteStrings.";
+      description = "Serialization and deserialization monads which can work on either streams\nor ByteStrings, running under IO in the former case and as pure functions\nin the latter.";
+      buildType = "Simple";
+    };
+    components = {
+      "direct-binary-files" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.mtl)
+        ];
       };
-    }
+    };
+  }

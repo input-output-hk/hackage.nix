@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "dates";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "portnov84@rambler.ru";
-        author = "IlyaPortnov";
-        homepage = "http://redmine.iportnov.ru/projects/dates/";
-        url = "";
-        synopsis = "Small library for parsing different dates formats.";
-        description = "This package allows to parse many different formats\nof dates. Both absolute and relative dates are supported.\nSupported date formats are:\n\n* DD.MM.YYYY\n\n* YYYY\\/MM\\/DD\n\n* `12 September 2012'\n\n* `today', `tomorrow', `yesterday'\n\n* `in 2 days', '3 weeks ago'\n\n4-digits years may be abbreviated (such as 12 for 2012).\nBoth 12-hour and 24-hour time formats are supported.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "dates";
+        version = "0.1.0.0";
       };
-      components = {
-        "dates" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.base-unicode-symbols
-            hsPkgs.time
-            hsPkgs.parsec
-            hsPkgs.syb
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "portnov84@rambler.ru";
+      author = "IlyaPortnov";
+      homepage = "http://redmine.iportnov.ru/projects/dates/";
+      url = "";
+      synopsis = "Small library for parsing different dates formats.";
+      description = "This package allows to parse many different formats\nof dates. Both absolute and relative dates are supported.\nSupported date formats are:\n\n* DD.MM.YYYY\n\n* YYYY\\/MM\\/DD\n\n* `12 September 2012'\n\n* `today', `tomorrow', `yesterday'\n\n* `in 2 days', '3 weeks ago'\n\n4-digits years may be abbreviated (such as 12 for 2012).\nBoth 12-hour and 24-hour time formats are supported.";
+      buildType = "Simple";
+    };
+    components = {
+      "dates" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.base-unicode-symbols)
+          (hsPkgs.time)
+          (hsPkgs.parsec)
+          (hsPkgs.syb)
+        ];
       };
-    }
+    };
+  }

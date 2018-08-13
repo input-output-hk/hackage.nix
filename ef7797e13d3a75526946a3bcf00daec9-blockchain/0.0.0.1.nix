@@ -1,67 +1,72 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "blockchain";
-          version = "0.0.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2017 Tyler Olson";
-        maintainer = "tydotg@gmail.com";
-        author = "Tyler Olson";
-        homepage = "https://github.com/TGOlson/blockchain";
-        url = "";
-        synopsis = "Generic blockchain implementation.";
-        description = "Please see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "blockchain";
+        version = "0.0.0.1";
       };
-      components = {
-        "blockchain" = {
+      license = "BSD-3-Clause";
+      copyright = "2017 Tyler Olson";
+      maintainer = "tydotg@gmail.com";
+      author = "Tyler Olson";
+      homepage = "https://github.com/TGOlson/blockchain";
+      url = "";
+      synopsis = "Generic blockchain implementation.";
+      description = "Please see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "blockchain" = {
+        depends  = [
+          (hsPkgs.aeson)
+          (hsPkgs.base)
+          (hsPkgs.byteable)
+          (hsPkgs.bytestring)
+          (hsPkgs.cryptonite)
+          (hsPkgs.either)
+          (hsPkgs.errors)
+          (hsPkgs.hashable)
+          (hsPkgs.memory)
+          (hsPkgs.mtl)
+          (hsPkgs.text)
+          (hsPkgs.time)
+          (hsPkgs.transformers)
+          (hsPkgs.unordered-containers)
+        ];
+      };
+      tests = {
+        "spec" = {
           depends  = [
-            hsPkgs.aeson
-            hsPkgs.base
-            hsPkgs.byteable
-            hsPkgs.bytestring
-            hsPkgs.cryptonite
-            hsPkgs.either
-            hsPkgs.errors
-            hsPkgs.hashable
-            hsPkgs.memory
-            hsPkgs.mtl
-            hsPkgs.text
-            hsPkgs.time
-            hsPkgs.transformers
-            hsPkgs.unordered-containers
+            (hsPkgs.aeson)
+            (hsPkgs.base)
+            (hsPkgs.byteable)
+            (hsPkgs.bytestring)
+            (hsPkgs.cryptonite)
+            (hsPkgs.either)
+            (hsPkgs.errors)
+            (hsPkgs.hashable)
+            (hsPkgs.memory)
+            (hsPkgs.mtl)
+            (hsPkgs.text)
+            (hsPkgs.time)
+            (hsPkgs.transformers)
+            (hsPkgs.unordered-containers)
+            (hsPkgs.async)
+            (hsPkgs.blockchain)
+            (hsPkgs.deepseq)
+            (hsPkgs.hspec)
+            (hsPkgs.QuickCheck)
           ];
         };
-        tests = {
-          "spec" = {
-            depends  = [
-              hsPkgs.aeson
-              hsPkgs.base
-              hsPkgs.byteable
-              hsPkgs.bytestring
-              hsPkgs.cryptonite
-              hsPkgs.either
-              hsPkgs.errors
-              hsPkgs.hashable
-              hsPkgs.memory
-              hsPkgs.mtl
-              hsPkgs.text
-              hsPkgs.time
-              hsPkgs.transformers
-              hsPkgs.unordered-containers
-              hsPkgs.async
-              hsPkgs.blockchain
-              hsPkgs.deepseq
-              hsPkgs.hspec
-              hsPkgs.QuickCheck
-            ];
-          };
-        };
       };
-    }
+    };
+  }

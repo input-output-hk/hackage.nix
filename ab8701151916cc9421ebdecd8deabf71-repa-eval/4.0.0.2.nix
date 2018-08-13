@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "repa-eval";
-          version = "4.0.0.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Ben Lippmeier <benl@ouroborus.net>";
-        author = "The Repa Development Team";
-        homepage = "http://repa.ouroborus.net";
-        url = "";
-        synopsis = "Low-level parallel operators on bulk random-accessble arrays.";
-        description = "Low-level parallel operators on bulk random-accessble arrays.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "repa-eval";
+        version = "4.0.0.2";
       };
-      components = {
-        "repa-eval" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.ghc-prim
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Ben Lippmeier <benl@ouroborus.net>";
+      author = "The Repa Development Team";
+      homepage = "http://repa.ouroborus.net";
+      url = "";
+      synopsis = "Low-level parallel operators on bulk random-accessble arrays.";
+      description = "Low-level parallel operators on bulk random-accessble arrays.";
+      buildType = "Simple";
+    };
+    components = {
+      "repa-eval" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.ghc-prim)
+        ];
       };
-    }
+    };
+  }

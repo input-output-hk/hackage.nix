@@ -1,36 +1,41 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "persistable-record";
-          version = "0.4.0.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (c) 2013-2016 Kei Hibino";
-        maintainer = "ex8k.hibino@gmail.com";
-        author = "Kei Hibino";
-        homepage = "http://khibino.github.io/haskell-relational-record/";
-        url = "";
-        synopsis = "Binding between SQL database values and haskell records.";
-        description = "This package contiains types to represent table constraints and\ninterfaces to bind between SQL database values and Haskell records.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "persistable-record";
+        version = "0.4.0.2";
       };
-      components = {
-        "persistable-record" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.template-haskell
-            hsPkgs.th-data-compat
-            hsPkgs.array
-            hsPkgs.containers
-            hsPkgs.transformers
-            hsPkgs.dlist
-            hsPkgs.names-th
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) 2013-2016 Kei Hibino";
+      maintainer = "ex8k.hibino@gmail.com";
+      author = "Kei Hibino";
+      homepage = "http://khibino.github.io/haskell-relational-record/";
+      url = "";
+      synopsis = "Binding between SQL database values and haskell records.";
+      description = "This package contiains types to represent table constraints and\ninterfaces to bind between SQL database values and Haskell records.";
+      buildType = "Simple";
+    };
+    components = {
+      "persistable-record" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.template-haskell)
+          (hsPkgs.th-data-compat)
+          (hsPkgs.array)
+          (hsPkgs.containers)
+          (hsPkgs.transformers)
+          (hsPkgs.dlist)
+          (hsPkgs.names-th)
+        ];
       };
-    }
+    };
+  }

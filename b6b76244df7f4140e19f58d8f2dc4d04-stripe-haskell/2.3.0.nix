@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "stripe-haskell";
-          version = "2.3.0";
-        };
-        license = "MIT";
-        copyright = "Copyright (c) 2016 David M. Johnson, Jeremy Shaw";
-        maintainer = "djohnson.m@gmail.com";
-        author = "David Johnson, Jeremy Shaw";
-        homepage = "https://github.com/dmjio/stripe";
-        url = "";
-        synopsis = "Stripe API for Haskell";
-        description = "For usage information please consult README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "stripe-haskell";
+        version = "2.3.0";
       };
-      components = {
-        "stripe-haskell" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.stripe-core
-            hsPkgs.stripe-http-streams
-          ];
-        };
+      license = "MIT";
+      copyright = "Copyright (c) 2016 David M. Johnson, Jeremy Shaw";
+      maintainer = "djohnson.m@gmail.com";
+      author = "David Johnson, Jeremy Shaw";
+      homepage = "https://github.com/dmjio/stripe";
+      url = "";
+      synopsis = "Stripe API for Haskell";
+      description = "For usage information please consult README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "stripe-haskell" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.stripe-core)
+          (hsPkgs.stripe-http-streams)
+        ];
       };
-    }
+    };
+  }

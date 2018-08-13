@@ -1,37 +1,42 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "infinity";
-          version = "0.3";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "austin@youareinferior.net";
-        author = "Austin Seipp";
-        homepage = "";
-        url = "";
-        synopsis = "";
-        description = "a tiny, pluggable irc bot";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "infinity";
+        version = "0.3";
       };
-      components = {
-        exes = {
-          "infinity" = {
-            depends  = [
-              hsPkgs.Cabal
-              hsPkgs.plugins
-              hsPkgs.ghc
-              hsPkgs.binary
-              hsPkgs.filepath
-              hsPkgs.irc
-              hsPkgs.base
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "austin@youareinferior.net";
+      author = "Austin Seipp";
+      homepage = "";
+      url = "";
+      synopsis = "";
+      description = "a tiny, pluggable irc bot";
+      buildType = "Custom";
+    };
+    components = {
+      exes = {
+        "infinity" = {
+          depends  = [
+            (hsPkgs.Cabal)
+            (hsPkgs.plugins)
+            (hsPkgs.ghc)
+            (hsPkgs.binary)
+            (hsPkgs.filepath)
+            (hsPkgs.irc)
+            (hsPkgs.base)
+          ];
         };
       };
-    }
+    };
+  }

@@ -1,45 +1,50 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "zoom";
-          version = "0.1.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "iand675@gmail.com";
-        author = "Ian Duncan";
-        homepage = "http://github.com/iand675/Zoom";
-        url = "";
-        synopsis = "A rake/thor-like task runner written in Haskell";
-        description = "See documentation on the project homepage for more information";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "zoom";
+        version = "0.1.0.1";
       };
-      components = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "iand675@gmail.com";
+      author = "Ian Duncan";
+      homepage = "http://github.com/iand675/Zoom";
+      url = "";
+      synopsis = "A rake/thor-like task runner written in Haskell";
+      description = "See documentation on the project homepage for more information";
+      buildType = "Simple";
+    };
+    components = {
+      "zoom" = {
+        depends  = [
+          (hsPkgs.ghc)
+          (hsPkgs.base)
+          (hsPkgs.hamlet)
+          (hsPkgs.text)
+          (hsPkgs.template-haskell)
+        ];
+      };
+      exes = {
         "zoom" = {
           depends  = [
-            hsPkgs.ghc
-            hsPkgs.base
-            hsPkgs.hamlet
-            hsPkgs.text
-            hsPkgs.template-haskell
+            (hsPkgs.ghc)
+            (hsPkgs.base)
+            (hsPkgs.hint)
+            (hsPkgs.mtl)
+            (hsPkgs.filepath)
+            (hsPkgs.directory)
           ];
         };
-        exes = {
-          "zoom" = {
-            depends  = [
-              hsPkgs.ghc
-              hsPkgs.base
-              hsPkgs.hint
-              hsPkgs.mtl
-              hsPkgs.filepath
-              hsPkgs.directory
-            ];
-          };
-        };
       };
-    }
+    };
+  }

@@ -1,55 +1,60 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "pipes-binary";
-          version = "0.4.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (c) Renzo Carbonara 2013-2014";
-        maintainer = "renzocarbonaraλgmail.com";
-        author = "Renzo Carbonara";
-        homepage = "https://github.com/k0001/pipes-binary";
-        url = "";
-        synopsis = "Encode and decode binary streams using the pipes and binary libraries.";
-        description = "Encode and decode binary Pipes streams using the @binary@ library.\n\nSee the @changelog.md@ file in the source distribution to learn about any\nimportant changes between version.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "pipes-binary";
+        version = "0.4.0.1";
       };
-      components = {
-        "pipes-binary" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) Renzo Carbonara 2013-2014";
+      maintainer = "renzocarbonaraλgmail.com";
+      author = "Renzo Carbonara";
+      homepage = "https://github.com/k0001/pipes-binary";
+      url = "";
+      synopsis = "Encode and decode binary streams using the pipes and binary libraries.";
+      description = "Encode and decode binary Pipes streams using the @binary@ library.\n\nSee the @changelog.md@ file in the source distribution to learn about any\nimportant changes between version.";
+      buildType = "Simple";
+    };
+    components = {
+      "pipes-binary" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.binary)
+          (hsPkgs.bytestring)
+          (hsPkgs.ghc-prim)
+          (hsPkgs.pipes)
+          (hsPkgs.pipes-parse)
+          (hsPkgs.pipes-bytestring)
+          (hsPkgs.transformers)
+        ];
+      };
+      tests = {
+        "tests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.binary
-            hsPkgs.bytestring
-            hsPkgs.ghc-prim
-            hsPkgs.pipes
-            hsPkgs.pipes-parse
-            hsPkgs.pipes-bytestring
-            hsPkgs.transformers
+            (hsPkgs.base)
+            (hsPkgs.binary)
+            (hsPkgs.bytestring)
+            (hsPkgs.ghc-prim)
+            (hsPkgs.lens-family-core)
+            (hsPkgs.pipes)
+            (hsPkgs.pipes-binary)
+            (hsPkgs.pipes-parse)
+            (hsPkgs.smallcheck)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-hunit)
+            (hsPkgs.tasty-smallcheck)
+            (hsPkgs.transformers)
           ];
         };
-        tests = {
-          "tests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.binary
-              hsPkgs.bytestring
-              hsPkgs.ghc-prim
-              hsPkgs.lens-family-core
-              hsPkgs.pipes
-              hsPkgs.pipes-binary
-              hsPkgs.pipes-parse
-              hsPkgs.smallcheck
-              hsPkgs.tasty
-              hsPkgs.tasty-hunit
-              hsPkgs.tasty-smallcheck
-              hsPkgs.transformers
-            ];
-          };
-        };
       };
-    }
+    };
+  }

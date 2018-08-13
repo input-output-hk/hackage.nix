@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "Shrub";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) 2014-2015 Rob O'Callahan";
-        maintainer = "rcallahan@eurekagenomics.com";
-        author = "Rob O'Callahan";
-        homepage = "";
-        url = "";
-        synopsis = "4-way trie fuzzy search";
-        description = "Nucleotide sequence approximate matching";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "Shrub";
+        version = "0.1.0.0";
       };
-      components = {
-        "Shrub" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "(c) 2014-2015 Rob O'Callahan";
+      maintainer = "rcallahan@eurekagenomics.com";
+      author = "Rob O'Callahan";
+      homepage = "";
+      url = "";
+      synopsis = "4-way trie fuzzy search";
+      description = "Nucleotide sequence approximate matching";
+      buildType = "Simple";
+    };
+    components = {
+      "Shrub" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

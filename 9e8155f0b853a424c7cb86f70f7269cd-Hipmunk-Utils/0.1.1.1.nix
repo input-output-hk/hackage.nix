@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "Hipmunk-Utils";
-          version = "0.1.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (C) 2016-2017 Suzumiya";
-        maintainer = "suzumiyasmith@gmail.com";
-        author = "Suzumiya";
-        homepage = "https://github.com/suzumiyasmith/Hipmunk-Utils#readme";
-        url = "";
-        synopsis = "Useful functions for Hipmunk";
-        description = "Pack some functions for Hipmunk using Linear package";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "Hipmunk-Utils";
+        version = "0.1.1.1";
       };
-      components = {
-        "Hipmunk-Utils" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright (C) 2016-2017 Suzumiya";
+      maintainer = "suzumiyasmith@gmail.com";
+      author = "Suzumiya";
+      homepage = "https://github.com/suzumiyasmith/Hipmunk-Utils#readme";
+      url = "";
+      synopsis = "Useful functions for Hipmunk";
+      description = "Pack some functions for Hipmunk using Linear package";
+      buildType = "Simple";
+    };
+    components = {
+      "Hipmunk-Utils" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.Hipmunk)
+          (hsPkgs.linear)
+          (hsPkgs.StateVar)
+        ];
+      };
+      tests = {
+        "Hipmunk-Utils-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.Hipmunk
-            hsPkgs.linear
-            hsPkgs.StateVar
+            (hsPkgs.base)
+            (hsPkgs.Hipmunk-Utils)
           ];
         };
-        tests = {
-          "Hipmunk-Utils-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.Hipmunk-Utils
-            ];
-          };
-        };
       };
-    }
+    };
+  }

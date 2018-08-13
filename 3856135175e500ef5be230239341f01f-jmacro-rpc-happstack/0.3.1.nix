@@ -1,38 +1,43 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "jmacro-rpc-happstack";
-          version = "0.3.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "gershomb@gmail.com";
-        author = "Gershom Bazerman";
-        homepage = "http://hub.darcs.net/gershomb/jmacro-rpc";
-        url = "";
-        synopsis = "Happstack backend for jmacro-rpc";
-        description = "Provides functions for serving jmacro-rpc json rpcs and panels from Happstack.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "jmacro-rpc-happstack";
+        version = "0.3.1";
       };
-      components = {
-        "jmacro-rpc-happstack" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.jmacro
-            hsPkgs.happstack-server
-            hsPkgs.jmacro-rpc
-            hsPkgs.mtl
-            hsPkgs.containers
-            hsPkgs.aeson
-            hsPkgs.blaze-html
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "gershomb@gmail.com";
+      author = "Gershom Bazerman";
+      homepage = "http://hub.darcs.net/gershomb/jmacro-rpc";
+      url = "";
+      synopsis = "Happstack backend for jmacro-rpc";
+      description = "Provides functions for serving jmacro-rpc json rpcs and panels from Happstack.";
+      buildType = "Simple";
+    };
+    components = {
+      "jmacro-rpc-happstack" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.jmacro)
+          (hsPkgs.happstack-server)
+          (hsPkgs.jmacro-rpc)
+          (hsPkgs.mtl)
+          (hsPkgs.containers)
+          (hsPkgs.aeson)
+          (hsPkgs.blaze-html)
+        ];
       };
-    }
+    };
+  }

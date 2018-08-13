@@ -1,41 +1,46 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.24";
-        identifier = {
-          name = "flow-er";
-          version = "1.0.1";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "bez@brooklynzelenka.com";
-        author = "Brooklyn Zelenka";
-        homepage = "https://github.com/expede/flower#README";
-        url = "";
-        synopsis = "Directional operators to for common combinators";
-        description = "Please see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.24";
+      identifier = {
+        name = "flow-er";
+        version = "1.0.1";
       };
-      components = {
-        "flow-er" = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "bez@brooklynzelenka.com";
+      author = "Brooklyn Zelenka";
+      homepage = "https://github.com/expede/flower#README";
+      url = "";
+      synopsis = "Directional operators to for common combinators";
+      description = "Please see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "flow-er" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.flow)
+        ];
+      };
+      tests = {
+        "doctests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.flow
+            (hsPkgs.base)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.doctest)
+            (hsPkgs.flow)
+            (hsPkgs.flow-er)
           ];
         };
-        tests = {
-          "doctests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.QuickCheck
-              hsPkgs.doctest
-              hsPkgs.flow
-              hsPkgs.flow-er
-            ];
-          };
-        };
       };
-    }
+    };
+  }

@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "monadLib";
-          version = "3.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "diatchki@csee.ogi.edu";
-        author = "Iavor S. Diatchki";
-        homepage = "http://www.csee.ogi.edu/~diacthki/monadLib";
-        url = "";
-        synopsis = "A collection of monad transformers.";
-        description = "";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "monadLib";
+        version = "3.0.0";
       };
-      components = {
-        "monadLib" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "diatchki@csee.ogi.edu";
+      author = "Iavor S. Diatchki";
+      homepage = "http://www.csee.ogi.edu/~diacthki/monadLib";
+      url = "";
+      synopsis = "A collection of monad transformers.";
+      description = "";
+      buildType = "Custom";
+    };
+    components = {
+      "monadLib" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

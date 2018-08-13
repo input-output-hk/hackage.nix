@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2.3";
-        identifier = {
-          name = "regexpr-symbolic";
-          version = "0.4";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "martin.sulzmann@gmail.com";
-        author = "Martin Sulzmann";
-        homepage = "http://sulzmann.blogspot.com/2008/12/equality-containment-and-intersection.html";
-        url = "";
-        synopsis = "Regular expressions via symbolic manipulation";
-        description = "Equality, containment, intersection among regular expressions via symbolic manipulation";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2.3";
+      identifier = {
+        name = "regexpr-symbolic";
+        version = "0.4";
       };
-      components = {
-        "regexpr-symbolic" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.haskell98
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "martin.sulzmann@gmail.com";
+      author = "Martin Sulzmann";
+      homepage = "http://sulzmann.blogspot.com/2008/12/equality-containment-and-intersection.html";
+      url = "";
+      synopsis = "Regular expressions via symbolic manipulation";
+      description = "Equality, containment, intersection among regular expressions via symbolic manipulation";
+      buildType = "Simple";
+    };
+    components = {
+      "regexpr-symbolic" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.haskell98)
+        ];
       };
-    }
+    };
+  }

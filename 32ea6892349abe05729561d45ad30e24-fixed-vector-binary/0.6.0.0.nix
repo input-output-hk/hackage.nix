@@ -1,43 +1,48 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "fixed-vector-binary";
-          version = "0.6.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Aleksey Khudyakov <alexey.skladnoy@gmail.com>";
-        author = "Aleksey Khudyakov <alexey.skladnoy@gmail.com>";
-        homepage = "";
-        url = "";
-        synopsis = "Binary instances for fixed-vector";
-        description = "Binary instances for fixed-vector";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "fixed-vector-binary";
+        version = "0.6.0.0";
       };
-      components = {
-        "fixed-vector-binary" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Aleksey Khudyakov <alexey.skladnoy@gmail.com>";
+      author = "Aleksey Khudyakov <alexey.skladnoy@gmail.com>";
+      homepage = "";
+      url = "";
+      synopsis = "Binary instances for fixed-vector";
+      description = "Binary instances for fixed-vector";
+      buildType = "Simple";
+    };
+    components = {
+      "fixed-vector-binary" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.fixed-vector)
+          (hsPkgs.binary)
+        ];
+      };
+      tests = {
+        "test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.fixed-vector
-            hsPkgs.binary
+            (hsPkgs.base)
+            (hsPkgs.fixed-vector)
+            (hsPkgs.fixed-vector-binary)
+            (hsPkgs.binary)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-quickcheck)
           ];
         };
-        tests = {
-          "test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.fixed-vector
-              hsPkgs.fixed-vector-binary
-              hsPkgs.binary
-              hsPkgs.tasty
-              hsPkgs.tasty-quickcheck
-            ];
-          };
-        };
       };
-    }
+    };
+  }

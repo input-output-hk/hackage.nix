@@ -1,41 +1,46 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "quiver-interleave";
-          version = "0.2.0.2";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "Ivan.Miljenovic@gmail.com";
-        author = "Ivan Lazar Miljenovic";
-        homepage = "";
-        url = "";
-        synopsis = "Interleave values from multiple Quivers";
-        description = "Combine multiple Quivers into one.  Useful when merging\nvalues from multiple source.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "quiver-interleave";
+        version = "0.2.0.2";
       };
-      components = {
-        "quiver-interleave" = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "Ivan.Miljenovic@gmail.com";
+      author = "Ivan Lazar Miljenovic";
+      homepage = "";
+      url = "";
+      synopsis = "Interleave values from multiple Quivers";
+      description = "Combine multiple Quivers into one.  Useful when merging\nvalues from multiple source.";
+      buildType = "Simple";
+    };
+    components = {
+      "quiver-interleave" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.quiver)
+        ];
+      };
+      tests = {
+        "interleave-tests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.quiver
+            (hsPkgs.quiver-interleave)
+            (hsPkgs.base)
+            (hsPkgs.quiver)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.hspec)
           ];
         };
-        tests = {
-          "interleave-tests" = {
-            depends  = [
-              hsPkgs.quiver-interleave
-              hsPkgs.base
-              hsPkgs.quiver
-              hsPkgs.QuickCheck
-              hsPkgs.hspec
-            ];
-          };
-        };
       };
-    }
+    };
+  }

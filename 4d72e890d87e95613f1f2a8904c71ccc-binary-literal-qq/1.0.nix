@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.9.2";
-        identifier = {
-          name = "binary-literal-qq";
-          version = "1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "© 2012 Mathieu Boespflug";
-        maintainer = "Mathieu Boespflug <mboes@tweag.net>";
-        author = "Mathieu Boespflug";
-        homepage = "";
-        url = "";
-        synopsis = "Extends Haskell with binary literals.";
-        description = "__Deprecated: use -XBinaryLiterals instead.__\n\nThe Haskell'98 and Haskell'2010 standards define decimal, octal\nand hexadecimal integer literals. Binary literals are\nconspicuously missing. Here's a quasiquoter to remedy the\nsituation.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.9.2";
+      identifier = {
+        name = "binary-literal-qq";
+        version = "1.0";
       };
-      components = {
-        "binary-literal-qq" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.template-haskell
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "© 2012 Mathieu Boespflug";
+      maintainer = "Mathieu Boespflug <mboes@tweag.net>";
+      author = "Mathieu Boespflug";
+      homepage = "";
+      url = "";
+      synopsis = "Extends Haskell with binary literals.";
+      description = "__Deprecated: use -XBinaryLiterals instead.__\n\nThe Haskell'98 and Haskell'2010 standards define decimal, octal\nand hexadecimal integer literals. Binary literals are\nconspicuously missing. Here's a quasiquoter to remedy the\nsituation.";
+      buildType = "Simple";
+    };
+    components = {
+      "binary-literal-qq" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.template-haskell)
+        ];
       };
-    }
+    };
+  }

@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "AC-Vector";
-          version = "2.2.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "MathematicalOrchid@hotmail.com";
-        author = "Andrew Coppin";
-        homepage = "";
-        url = "";
-        synopsis = "Efficient geometric vectors and transformations.";
-        description = "This Haskell library implements several small vectors types\nwith @Double@ fields, with seperate types for each size of\nvector, and a type class for handling vectors generally.\n(Note that although this package is listed in the \\\"graphics\\\"\ncategory, the package itself has no graphics facilities. It\njust contains data structures that are useful for graphics\nwork.)\nRemoved gather modules. Some name changes for bounding boxes.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "AC-Vector";
+        version = "2.2.0";
       };
-      components = {
-        "AC-Vector" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "MathematicalOrchid@hotmail.com";
+      author = "Andrew Coppin";
+      homepage = "";
+      url = "";
+      synopsis = "Efficient geometric vectors and transformations.";
+      description = "This Haskell library implements several small vectors types\nwith @Double@ fields, with seperate types for each size of\nvector, and a type class for handling vectors generally.\n(Note that although this package is listed in the \\\"graphics\\\"\ncategory, the package itself has no graphics facilities. It\njust contains data structures that are useful for graphics\nwork.)\nRemoved gather modules. Some name changes for bounding boxes.";
+      buildType = "Simple";
+    };
+    components = {
+      "AC-Vector" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

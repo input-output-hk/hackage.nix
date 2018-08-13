@@ -1,35 +1,40 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "profunctors";
-          version = "5.1.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (C) 2011-2015 Edward A. Kmett";
-        maintainer = "Edward A. Kmett <ekmett@gmail.com>";
-        author = "Edward A. Kmett";
-        homepage = "http://github.com/ekmett/profunctors/";
-        url = "";
-        synopsis = "Profunctors";
-        description = "Profunctors";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "profunctors";
+        version = "5.1.2";
       };
-      components = {
-        "profunctors" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bifunctors
-            hsPkgs.comonad
-            hsPkgs.contravariant
-            hsPkgs.distributive
-            hsPkgs.tagged
-            hsPkgs.transformers
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (C) 2011-2015 Edward A. Kmett";
+      maintainer = "Edward A. Kmett <ekmett@gmail.com>";
+      author = "Edward A. Kmett";
+      homepage = "http://github.com/ekmett/profunctors/";
+      url = "";
+      synopsis = "Profunctors";
+      description = "Profunctors";
+      buildType = "Simple";
+    };
+    components = {
+      "profunctors" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bifunctors)
+          (hsPkgs.comonad)
+          (hsPkgs.contravariant)
+          (hsPkgs.distributive)
+          (hsPkgs.tagged)
+          (hsPkgs.transformers)
+        ];
       };
-    }
+    };
+  }

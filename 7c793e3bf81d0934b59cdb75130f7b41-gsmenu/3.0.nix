@@ -1,38 +1,43 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "gsmenu";
-          version = "3.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "athas@sigkill.dk";
-        author = "Troels Henriksen";
-        homepage = "http://sigkill.dk/programs/gsmenu";
-        url = "";
-        synopsis = "A visual generic menu";
-        description = "Grid-oriented element selection inspired by XMonadContrib's GridSelect.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "gsmenu";
+        version = "3.0";
       };
-      components = {
-        exes = {
-          "gsmenu" = {
-            depends  = [
-              hsPkgs.X11
-              hsPkgs.mtl
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.parsec
-              hsPkgs.sindre
-              hsPkgs.text
-              hsPkgs.permute
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "athas@sigkill.dk";
+      author = "Troels Henriksen";
+      homepage = "http://sigkill.dk/programs/gsmenu";
+      url = "";
+      synopsis = "A visual generic menu";
+      description = "Grid-oriented element selection inspired by XMonadContrib's GridSelect.";
+      buildType = "Custom";
+    };
+    components = {
+      exes = {
+        "gsmenu" = {
+          depends  = [
+            (hsPkgs.X11)
+            (hsPkgs.mtl)
+            (hsPkgs.base)
+            (hsPkgs.containers)
+            (hsPkgs.parsec)
+            (hsPkgs.sindre)
+            (hsPkgs.text)
+            (hsPkgs.permute)
+          ];
         };
       };
-    }
+    };
+  }

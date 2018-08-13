@@ -1,38 +1,43 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       new-base = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "curl";
-          version = "1.3";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "emertens@galois.com";
-        author = "Sigbjorn Finne";
-        homepage = "";
-        url = "";
-        synopsis = "Haskell binding to libcurl";
-        description = "libcurl is a client-side URL transfer library, supporting FTP, FTPS, HTTP,\nHTTPS, SCP, SFTP, TFTP, TELNET, DICT, LDAP, LDAPS and FILE.  libcurl supports\nSSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload,\nproxies, cookies, user+password authentication (Basic, Digest, NTLM, Negotiate,\nKerberos4), file transfer resume, http proxy tunneling and more!\n\nThis package provides a Haskell binding to libcurl.\n";
-        buildType = "Configure";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "curl";
+        version = "1.3";
       };
-      components = {
-        "curl" = {
-          depends  = [
-            hsPkgs.base
-          ] ++ (if _flags.new-base
-            then [
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.haskell98
-            ]
-            else [ hsPkgs.base ]);
-          libs = [ pkgs.curl ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "emertens@galois.com";
+      author = "Sigbjorn Finne";
+      homepage = "";
+      url = "";
+      synopsis = "Haskell binding to libcurl";
+      description = "libcurl is a client-side URL transfer library, supporting FTP, FTPS, HTTP,\nHTTPS, SCP, SFTP, TFTP, TELNET, DICT, LDAP, LDAPS and FILE.  libcurl supports\nSSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload,\nproxies, cookies, user+password authentication (Basic, Digest, NTLM, Negotiate,\nKerberos4), file transfer resume, http proxy tunneling and more!\n\nThis package provides a Haskell binding to libcurl.\n";
+      buildType = "Configure";
+    };
+    components = {
+      "curl" = {
+        depends  = [
+          (hsPkgs.base)
+        ] ++ (if _flags.new-base
+          then [
+            (hsPkgs.base)
+            (hsPkgs.containers)
+            (hsPkgs.haskell98)
+          ]
+          else [ (hsPkgs.base) ]);
+        libs = [ (pkgs.curl) ];
       };
-    }
+    };
+  }

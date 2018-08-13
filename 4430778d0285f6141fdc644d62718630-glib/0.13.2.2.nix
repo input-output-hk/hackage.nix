@@ -1,39 +1,44 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       closure_signals = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.18";
-        identifier = {
-          name = "glib";
-          version = "0.13.2.2";
-        };
-        license = "LGPL-2.1-only";
-        copyright = "(c) 2001-2010 The Gtk2Hs Team";
-        maintainer = "gtk2hs-users@lists.sourceforge.net";
-        author = "Axel Simon, Duncan Coutts";
-        homepage = "http://projects.haskell.org/gtk2hs/";
-        url = "";
-        synopsis = "Binding to the GLIB library for Gtk2Hs.";
-        description = "GLib is a collection of C data structures and utility functions\nfor the GObject system, main loop implementation, for strings and\ncommon data structures dealing with Unicode. This package only binds\nas much functionality as required to support the packages that\nwrap libraries that are themselves based on GLib.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.18";
+      identifier = {
+        name = "glib";
+        version = "0.13.2.2";
       };
-      components = {
-        "glib" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.utf8-string
-            hsPkgs.bytestring
-            hsPkgs.text
-            hsPkgs.containers
-          ];
-          pkgconfig = [
-            pkgconfPkgs."glib-2.0"
-            pkgconfPkgs."gobject-2.0"
-          ];
-        };
+      license = "LGPL-2.1-only";
+      copyright = "(c) 2001-2010 The Gtk2Hs Team";
+      maintainer = "gtk2hs-users@lists.sourceforge.net";
+      author = "Axel Simon, Duncan Coutts";
+      homepage = "http://projects.haskell.org/gtk2hs/";
+      url = "";
+      synopsis = "Binding to the GLIB library for Gtk2Hs.";
+      description = "GLib is a collection of C data structures and utility functions\nfor the GObject system, main loop implementation, for strings and\ncommon data structures dealing with Unicode. This package only binds\nas much functionality as required to support the packages that\nwrap libraries that are themselves based on GLib.";
+      buildType = "Custom";
+    };
+    components = {
+      "glib" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.utf8-string)
+          (hsPkgs.bytestring)
+          (hsPkgs.text)
+          (hsPkgs.containers)
+        ];
+        pkgconfig = [
+          (pkgconfPkgs.glib-2.0)
+          (pkgconfPkgs.gobject-2.0)
+        ];
       };
-    }
+    };
+  }

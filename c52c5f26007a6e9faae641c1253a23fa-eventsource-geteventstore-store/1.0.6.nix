@@ -1,49 +1,54 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "eventsource-geteventstore-store";
-          version = "1.0.6";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "yo.eight@gmail.com";
-        author = "Yorick Laupa";
-        homepage = "https://github.com/YoEight/eventsource-api#readme";
-        url = "";
-        synopsis = "GetEventStore store implementation.";
-        description = "GetEventStore store implementation.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "eventsource-geteventstore-store";
+        version = "1.0.6";
       };
-      components = {
-        "eventsource-geteventstore-store" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "yo.eight@gmail.com";
+      author = "Yorick Laupa";
+      homepage = "https://github.com/YoEight/eventsource-api#readme";
+      url = "";
+      synopsis = "GetEventStore store implementation.";
+      description = "GetEventStore store implementation.";
+      buildType = "Simple";
+    };
+    components = {
+      "eventsource-geteventstore-store" = {
+        depends  = [
+          (hsPkgs.aeson)
+          (hsPkgs.base)
+          (hsPkgs.eventsource-api)
+          (hsPkgs.eventstore)
+          (hsPkgs.mtl)
+          (hsPkgs.string-conversions)
+          (hsPkgs.transformers-base)
+        ];
+      };
+      tests = {
+        "geteventstore-store-test-suite" = {
           depends  = [
-            hsPkgs.aeson
-            hsPkgs.base
-            hsPkgs.eventsource-api
-            hsPkgs.eventstore
-            hsPkgs.mtl
-            hsPkgs.string-conversions
-            hsPkgs.transformers-base
+            (hsPkgs.base)
+            (hsPkgs.eventsource-api)
+            (hsPkgs.eventsource-geteventstore-store)
+            (hsPkgs.eventsource-store-specs)
+            (hsPkgs.eventstore)
+            (hsPkgs.protolude)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-hspec)
           ];
         };
-        tests = {
-          "geteventstore-store-test-suite" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.eventsource-api
-              hsPkgs.eventsource-geteventstore-store
-              hsPkgs.eventsource-store-specs
-              hsPkgs.eventstore
-              hsPkgs.protolude
-              hsPkgs.tasty
-              hsPkgs.tasty-hspec
-            ];
-          };
-        };
       };
-    }
+    };
+  }

@@ -1,53 +1,58 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "microlens-aeson";
-          version = "2.2.0.1";
-        };
-        license = "MIT";
-        copyright = "Copyright (C) 2012 Paul Wilson\nCopyright (C) 2013 Edward A. Kmett\nCopyright (C) 2015 Colin Woodbury";
-        maintainer = "Colin Woodbury <colingw@gmail.com>";
-        author = "Colin Woodbury";
-        homepage = "http://github.com/fosskers/microlens-aeson/";
-        url = "";
-        synopsis = "Law-abiding lenses for Aeson, using microlens.";
-        description = "Law-abiding lenses for Aeson, using microlens.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "microlens-aeson";
+        version = "2.2.0.1";
       };
-      components = {
-        "microlens-aeson" = {
+      license = "MIT";
+      copyright = "Copyright (C) 2012 Paul Wilson\nCopyright (C) 2013 Edward A. Kmett\nCopyright (C) 2015 Colin Woodbury";
+      maintainer = "Colin Woodbury <colingw@gmail.com>";
+      author = "Colin Woodbury";
+      homepage = "http://github.com/fosskers/microlens-aeson/";
+      url = "";
+      synopsis = "Law-abiding lenses for Aeson, using microlens.";
+      description = "Law-abiding lenses for Aeson, using microlens.";
+      buildType = "Simple";
+    };
+    components = {
+      "microlens-aeson" = {
+        depends  = [
+          (hsPkgs.aeson)
+          (hsPkgs.attoparsec)
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.microlens)
+          (hsPkgs.scientific)
+          (hsPkgs.text)
+          (hsPkgs.unordered-containers)
+          (hsPkgs.vector)
+        ];
+      };
+      tests = {
+        "microlens-aeson-test" = {
           depends  = [
-            hsPkgs.aeson
-            hsPkgs.attoparsec
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.microlens
-            hsPkgs.scientific
-            hsPkgs.text
-            hsPkgs.unordered-containers
-            hsPkgs.vector
+            (hsPkgs.base)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-hunit)
+            (hsPkgs.text)
+            (hsPkgs.microlens-aeson)
+            (hsPkgs.microlens)
+            (hsPkgs.bytestring)
+            (hsPkgs.vector)
+            (hsPkgs.aeson)
+            (hsPkgs.unordered-containers)
           ];
         };
-        tests = {
-          "microlens-aeson-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.tasty
-              hsPkgs.tasty-hunit
-              hsPkgs.text
-              hsPkgs.microlens-aeson
-              hsPkgs.microlens
-              hsPkgs.bytestring
-              hsPkgs.vector
-              hsPkgs.aeson
-              hsPkgs.unordered-containers
-            ];
-          };
-        };
       };
-    }
+    };
+  }

@@ -1,35 +1,40 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "hookup";
-          version = "0.1.1.0";
-        };
-        license = "ISC";
-        copyright = "2016 Eric Mertens";
-        maintainer = "emertens@gmail.com";
-        author = "Eric Mertens";
-        homepage = "https://github.com/glguy/irc-core";
-        url = "";
-        synopsis = "Abstraction over creating network connections with SOCKS5 and TLS";
-        description = "This package provides an abstraction for communicating with line-oriented\nnetwork services while abstracting over the use of SOCKS5 and TLS (via OpenSSL)";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "hookup";
+        version = "0.1.1.0";
       };
-      components = {
-        "hookup" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.socks
-            hsPkgs.network
-            hsPkgs.bytestring
-            hsPkgs.HsOpenSSL
-            hsPkgs.HsOpenSSL-x509-system
-          ];
-          libs = [ pkgs.ssl ];
-        };
+      license = "ISC";
+      copyright = "2016 Eric Mertens";
+      maintainer = "emertens@gmail.com";
+      author = "Eric Mertens";
+      homepage = "https://github.com/glguy/irc-core";
+      url = "";
+      synopsis = "Abstraction over creating network connections with SOCKS5 and TLS";
+      description = "This package provides an abstraction for communicating with line-oriented\nnetwork services while abstracting over the use of SOCKS5 and TLS (via OpenSSL)";
+      buildType = "Simple";
+    };
+    components = {
+      "hookup" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.socks)
+          (hsPkgs.network)
+          (hsPkgs.bytestring)
+          (hsPkgs.HsOpenSSL)
+          (hsPkgs.HsOpenSSL-x509-system)
+        ];
+        libs = [ (pkgs.ssl) ];
       };
-    }
+    };
+  }

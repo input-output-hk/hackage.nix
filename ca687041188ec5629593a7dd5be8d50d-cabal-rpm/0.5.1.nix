@@ -1,48 +1,53 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       splitbase = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2.3.0";
-        identifier = {
-          name = "cabal-rpm";
-          version = "0.5.1";
-        };
-        license = "LicenseRef-GPL";
-        copyright = "2007, 2008 Bryan O'Sullivan <bos@serpentine.com>";
-        maintainer = "Bryan O'Sullivan <bos@serpentine.com>";
-        author = "Bryan O'Sullivan <bos@serpentine.com>";
-        homepage = "http://www.serpentine.com/software/cabal-rpm/";
-        url = "";
-        synopsis = "RPM package builder for Haskell Cabal source packages.";
-        description = "This package turns Haskell Cabal source packages into source and\nbinary RPM packages.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2.3.0";
+      identifier = {
+        name = "cabal-rpm";
+        version = "0.5.1";
       };
-      components = {
-        exes = {
-          "cabal-rpm" = {
-            depends  = if _flags.splitbase
-              then [
-                hsPkgs.base
-                hsPkgs.Cabal
-                hsPkgs.directory
-                hsPkgs.filepath
-                hsPkgs.old-locale
-                hsPkgs.process
-                hsPkgs.time
-                hsPkgs.unix
-              ]
-              else [
-                hsPkgs.base
-                hsPkgs.Cabal
-                hsPkgs.filepath
-                hsPkgs.time
-                hsPkgs.unix
-              ];
-          };
+      license = "LicenseRef-GPL";
+      copyright = "2007, 2008 Bryan O'Sullivan <bos@serpentine.com>";
+      maintainer = "Bryan O'Sullivan <bos@serpentine.com>";
+      author = "Bryan O'Sullivan <bos@serpentine.com>";
+      homepage = "http://www.serpentine.com/software/cabal-rpm/";
+      url = "";
+      synopsis = "RPM package builder for Haskell Cabal source packages.";
+      description = "This package turns Haskell Cabal source packages into source and\nbinary RPM packages.";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "cabal-rpm" = {
+          depends  = if _flags.splitbase
+            then [
+              (hsPkgs.base)
+              (hsPkgs.Cabal)
+              (hsPkgs.directory)
+              (hsPkgs.filepath)
+              (hsPkgs.old-locale)
+              (hsPkgs.process)
+              (hsPkgs.time)
+              (hsPkgs.unix)
+            ]
+            else [
+              (hsPkgs.base)
+              (hsPkgs.Cabal)
+              (hsPkgs.filepath)
+              (hsPkgs.time)
+              (hsPkgs.unix)
+            ];
         };
       };
-    }
+    };
+  }

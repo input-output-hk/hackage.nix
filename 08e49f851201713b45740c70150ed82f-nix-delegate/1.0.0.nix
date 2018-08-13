@@ -1,43 +1,48 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8.0.2";
-        identifier = {
-          name = "nix-delegate";
-          version = "1.0.0";
-        };
-        license = "Apache-2.0";
-        copyright = "2017 Awake Networks";
-        maintainer = "opensource@awakenetworks.com";
-        author = "Awake Networks";
-        homepage = "";
-        url = "";
-        synopsis = "Convenient utility for distributed Nix builds";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8.0.2";
+      identifier = {
+        name = "nix-delegate";
+        version = "1.0.0";
       };
-      components = {
+      license = "Apache-2.0";
+      copyright = "2017 Awake Networks";
+      maintainer = "opensource@awakenetworks.com";
+      author = "Awake Networks";
+      homepage = "";
+      url = "";
+      synopsis = "Convenient utility for distributed Nix builds";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "nix-delegate" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.neat-interpolation)
+          (hsPkgs.optparse-applicative)
+          (hsPkgs.foldl)
+          (hsPkgs.managed)
+          (hsPkgs.text)
+          (hsPkgs.turtle)
+        ];
+      };
+      exes = {
         "nix-delegate" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.neat-interpolation
-            hsPkgs.optparse-applicative
-            hsPkgs.foldl
-            hsPkgs.managed
-            hsPkgs.text
-            hsPkgs.turtle
+            (hsPkgs.base)
+            (hsPkgs.nix-delegate)
           ];
         };
-        exes = {
-          "nix-delegate" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.nix-delegate
-            ];
-          };
-        };
       };
-    }
+    };
+  }

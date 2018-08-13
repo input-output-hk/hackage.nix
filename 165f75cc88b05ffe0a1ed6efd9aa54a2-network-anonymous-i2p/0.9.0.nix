@@ -1,61 +1,66 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       debug = false;
       eventlog = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "network-anonymous-i2p";
-          version = "0.9.0";
-        };
-        license = "MIT";
-        copyright = "(c) 2014 Leon Mergen";
-        maintainer = "leon@solatis.com";
-        author = "Leon Mergen";
-        homepage = "";
-        url = "";
-        synopsis = "Haskell API for I2P anonymous networking";
-        description = "Haskell API for I2P anonymous networking";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "network-anonymous-i2p";
+        version = "0.9.0";
       };
-      components = {
-        "network-anonymous-i2p" = {
+      license = "MIT";
+      copyright = "(c) 2014 Leon Mergen";
+      maintainer = "leon@solatis.com";
+      author = "Leon Mergen";
+      homepage = "";
+      url = "";
+      synopsis = "Haskell API for I2P anonymous networking";
+      description = "Haskell API for I2P anonymous networking";
+      buildType = "Simple";
+    };
+    components = {
+      "network-anonymous-i2p" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.network)
+          (hsPkgs.network-simple)
+          (hsPkgs.attoparsec)
+          (hsPkgs.network-attoparsec)
+          (hsPkgs.exceptions)
+          (hsPkgs.text)
+          (hsPkgs.bytestring)
+          (hsPkgs.uuid)
+          (hsPkgs.transformers)
+          (hsPkgs.mtl)
+        ];
+      };
+      tests = {
+        "test-suite" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.network
-            hsPkgs.network-simple
-            hsPkgs.attoparsec
-            hsPkgs.network-attoparsec
-            hsPkgs.exceptions
-            hsPkgs.text
-            hsPkgs.bytestring
-            hsPkgs.uuid
-            hsPkgs.transformers
-            hsPkgs.mtl
+            (hsPkgs.base)
+            (hsPkgs.exceptions)
+            (hsPkgs.mtl)
+            (hsPkgs.transformers)
+            (hsPkgs.attoparsec)
+            (hsPkgs.bytestring)
+            (hsPkgs.uuid)
+            (hsPkgs.network)
+            (hsPkgs.network-simple)
+            (hsPkgs.hspec)
+            (hsPkgs.hspec-expectations)
+            (hsPkgs.hspec-attoparsec)
+            (hsPkgs.network-anonymous-i2p)
           ];
         };
-        tests = {
-          "test-suite" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.exceptions
-              hsPkgs.mtl
-              hsPkgs.transformers
-              hsPkgs.attoparsec
-              hsPkgs.bytestring
-              hsPkgs.uuid
-              hsPkgs.network
-              hsPkgs.network-simple
-              hsPkgs.hspec
-              hsPkgs.hspec-expectations
-              hsPkgs.hspec-attoparsec
-              hsPkgs.network-anonymous-i2p
-            ];
-          };
-        };
       };
-    }
+    };
+  }

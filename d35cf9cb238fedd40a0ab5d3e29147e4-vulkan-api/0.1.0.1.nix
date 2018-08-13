@@ -1,5 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       useplatformandroidkhr = false;
       useplatformiosmvk = false;
@@ -12,31 +17,31 @@ let
       useplatformxlibkhr = false;
       useplatformxlibxrandrext = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.22";
-        identifier = {
-          name = "vulkan-api";
-          version = "0.1.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright: (c) 2018 Artem Chirkin";
-        maintainer = "chirkin@arch.ethz.ch";
-        author = "Artem Chirkin";
-        homepage = "https://github.com/achirkin/genvulkan#readme";
-        url = "";
-        synopsis = "Low-level low-overhead vulkan api bindings";
-        description = "Haskell bindings for vulkan api as described in vk.xml.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.22";
+      identifier = {
+        name = "vulkan-api";
+        version = "0.1.0.1";
       };
-      components = {
-        "vulkan-api" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.ghc-prim
-          ];
-          libs = [ pkgs.vulkan ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Copyright: (c) 2018 Artem Chirkin";
+      maintainer = "chirkin@arch.ethz.ch";
+      author = "Artem Chirkin";
+      homepage = "https://github.com/achirkin/genvulkan#readme";
+      url = "";
+      synopsis = "Low-level low-overhead vulkan api bindings";
+      description = "Haskell bindings for vulkan api as described in vk.xml.";
+      buildType = "Simple";
+    };
+    components = {
+      "vulkan-api" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.ghc-prim)
+        ];
+        libs = [ (pkgs.vulkan) ];
       };
-    }
+    };
+  }

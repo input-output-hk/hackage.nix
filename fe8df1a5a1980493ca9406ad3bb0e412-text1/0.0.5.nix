@@ -1,48 +1,53 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       small_base = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "text1";
-          version = "0.0.5";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (C) 2017 Commonwealth Scientific and Industrial Research Organisation (CSIRO)";
-        maintainer = "Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>";
-        author = "Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>";
-        homepage = "https://github.com/qfpl/text1";
-        url = "";
-        synopsis = "Non-empty values of `Data.Text`.";
-        description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nNon-empty values of `Data.Text`.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "text1";
+        version = "0.0.5";
       };
-      components = {
-        "text1" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright (C) 2017 Commonwealth Scientific and Industrial Research Organisation (CSIRO)";
+      maintainer = "Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>";
+      author = "Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>";
+      homepage = "https://github.com/qfpl/text1";
+      url = "";
+      synopsis = "Non-empty values of `Data.Text`.";
+      description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nNon-empty values of `Data.Text`.";
+      buildType = "Custom";
+    };
+    components = {
+      "text1" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.semigroups)
+          (hsPkgs.text)
+          (hsPkgs.lens)
+          (hsPkgs.binary)
+          (hsPkgs.papa)
+        ];
+      };
+      tests = {
+        "doctests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.semigroups
-            hsPkgs.text
-            hsPkgs.lens
-            hsPkgs.binary
-            hsPkgs.papa
+            (hsPkgs.base)
+            (hsPkgs.doctest)
+            (hsPkgs.filepath)
+            (hsPkgs.directory)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.template-haskell)
           ];
         };
-        tests = {
-          "doctests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-              hsPkgs.filepath
-              hsPkgs.directory
-              hsPkgs.QuickCheck
-              hsPkgs.template-haskell
-            ];
-          };
-        };
       };
-    }
+    };
+  }

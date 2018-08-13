@@ -1,41 +1,46 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       test = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "cryptohash";
-          version = "0.5";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "vincent@snarc.org";
-        author = "Vincent Hanquez";
-        homepage = "";
-        url = "";
-        synopsis = "collection of crypto hashes, fast, pure and pratical";
-        description = "A collection of crypto hashes, with a practical incremental and one-pass, pure APIs,\nwith performance close to the fastest implementations available in others languages.\n\nThe implementations are made in C with a haskell FFI wrapper that hide the C implementation.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "cryptohash";
+        version = "0.5";
       };
-      components = {
-        "cryptohash" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "vincent@snarc.org";
+      author = "Vincent Hanquez";
+      homepage = "";
+      url = "";
+      synopsis = "collection of crypto hashes, fast, pure and pratical";
+      description = "A collection of crypto hashes, with a practical incremental and one-pass, pure APIs,\nwith performance close to the fastest implementations available in others languages.\n\nThe implementations are made in C with a haskell FFI wrapper that hide the C implementation.";
+      buildType = "Simple";
+    };
+    components = {
+      "cryptohash" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+        ];
+      };
+      exes = {
+        "Tests" = {
+          depends  = pkgs.lib.optionals (_flags.test) [
+            (hsPkgs.base)
+            (hsPkgs.HUnit)
+            (hsPkgs.bytestring)
           ];
         };
-        exes = {
-          "Tests" = {
-            depends  = pkgs.lib.optionals _flags.test [
-              hsPkgs.base
-              hsPkgs.HUnit
-              hsPkgs.bytestring
-            ];
-          };
-        };
       };
-    }
+    };
+  }

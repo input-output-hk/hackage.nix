@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.4";
-        identifier = {
-          name = "PastePipe";
-          version = "1.7";
-        };
-        license = "GPL-3.0-only";
-        copyright = "";
-        maintainer = "fuuzetsu@fuuzetsu.co.uk";
-        author = "Rogan Creswick";
-        homepage = "http://github.com/Fuuzetsu/pastepipe";
-        url = "";
-        synopsis = "CLI for pasting to lpaste.net";
-        description = "PastePipe reads from standard in and posts to <lpaste.net>.\nIt will auto-detect your username, but that can be\noverridden with command line options (--user)\nTitles are set with -t, language with -l.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.4";
+      identifier = {
+        name = "PastePipe";
+        version = "1.7";
       };
-      components = {
-        "PastePipe" = {
+      license = "GPL-3.0-only";
+      copyright = "";
+      maintainer = "fuuzetsu@fuuzetsu.co.uk";
+      author = "Rogan Creswick";
+      homepage = "http://github.com/Fuuzetsu/pastepipe";
+      url = "";
+      synopsis = "CLI for pasting to lpaste.net";
+      description = "PastePipe reads from standard in and posts to <lpaste.net>.\nIt will auto-detect your username, but that can be\noverridden with command line options (--user)\nTitles are set with -t, language with -l.";
+      buildType = "Simple";
+    };
+    components = {
+      "PastePipe" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.HTTP)
+          (hsPkgs.network)
+          (hsPkgs.cmdargs)
+          (hsPkgs.network-uri)
+        ];
+      };
+      exes = {
+        "pastepipe" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.HTTP
-            hsPkgs.network
-            hsPkgs.cmdargs
-            hsPkgs.network-uri
+            (hsPkgs.base)
+            (hsPkgs.HTTP)
+            (hsPkgs.network)
+            (hsPkgs.cmdargs)
+            (hsPkgs.network-uri)
           ];
         };
-        exes = {
-          "pastepipe" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.HTTP
-              hsPkgs.network
-              hsPkgs.cmdargs
-              hsPkgs.network-uri
-            ];
-          };
-        };
       };
-    }
+    };
+  }

@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "oeis";
-          version = "0.3.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Brian Lewis <brian@lorf.org>";
-        author = "Brent Yorgey";
-        homepage = "";
-        url = "";
-        synopsis = "Interface to the Online Encyclopedia of Integer Sequences";
-        description = "Interface to the Online Encyclopedia of Integer Sequences. See <http://oeis.org/>.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "oeis";
+        version = "0.3.1";
       };
-      components = {
-        "oeis" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.network
-            hsPkgs.HTTP
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Brian Lewis <brian@lorf.org>";
+      author = "Brent Yorgey";
+      homepage = "";
+      url = "";
+      synopsis = "Interface to the Online Encyclopedia of Integer Sequences";
+      description = "Interface to the Online Encyclopedia of Integer Sequences. See <http://oeis.org/>.";
+      buildType = "Custom";
+    };
+    components = {
+      "oeis" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.network)
+          (hsPkgs.HTTP)
+        ];
       };
-    }
+    };
+  }

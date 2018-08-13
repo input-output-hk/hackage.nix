@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "ranges";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "George Pollard <porges@porg.es>";
-        author = "George Pollard <porges@porg.es>";
-        homepage = "";
-        url = "";
-        synopsis = "";
-        description = "Ranges and various functions on them.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "ranges";
+        version = "0.1";
       };
-      components = {
-        "ranges" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "George Pollard <porges@porg.es>";
+      author = "George Pollard <porges@porg.es>";
+      homepage = "";
+      url = "";
+      synopsis = "";
+      description = "Ranges and various functions on them.";
+      buildType = "Simple";
+    };
+    components = {
+      "ranges" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

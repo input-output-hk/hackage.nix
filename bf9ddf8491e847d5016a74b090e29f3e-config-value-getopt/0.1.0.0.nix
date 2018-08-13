@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "config-value-getopt";
-          version = "0.1.0.0";
-        };
-        license = "MIT";
-        copyright = "2016 Galois, Inc.";
-        maintainer = "emertens@galois.com";
-        author = "Eric Mertens";
-        homepage = "https://github.com/GaloisInc/config-value-getopt";
-        url = "";
-        synopsis = "Interface between config-value and System.GetOpt";
-        description = "This package allows to set command line configuration\noptions from a file using the config-value syntax.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "config-value-getopt";
+        version = "0.1.0.0";
       };
-      components = {
-        "config-value-getopt" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.text
-            hsPkgs.config-value
-          ];
-        };
+      license = "MIT";
+      copyright = "2016 Galois, Inc.";
+      maintainer = "emertens@galois.com";
+      author = "Eric Mertens";
+      homepage = "https://github.com/GaloisInc/config-value-getopt";
+      url = "";
+      synopsis = "Interface between config-value and System.GetOpt";
+      description = "This package allows to set command line configuration\noptions from a file using the config-value syntax.";
+      buildType = "Simple";
+    };
+    components = {
+      "config-value-getopt" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.text)
+          (hsPkgs.config-value)
+        ];
       };
-    }
+    };
+  }

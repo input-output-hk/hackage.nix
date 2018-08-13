@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "Moe";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "fnnirvana@gmail.com";
-        author = "Xinyu Jiang";
-        homepage = "";
-        url = "";
-        synopsis = "A FRP library based on signal functions.";
-        description = "A FRP library based on signal functions.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "Moe";
+        version = "0.1";
       };
-      components = {
-        "Moe" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "fnnirvana@gmail.com";
+      author = "Xinyu Jiang";
+      homepage = "";
+      url = "";
+      synopsis = "A FRP library based on signal functions.";
+      description = "A FRP library based on signal functions.";
+      buildType = "Simple";
+    };
+    components = {
+      "Moe" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.random)
+          (hsPkgs.GLUT)
+        ];
+      };
+      exes = {
+        "MoeExample" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.random
-            hsPkgs.GLUT
+            (hsPkgs.base)
+            (hsPkgs.random)
+            (hsPkgs.GLUT)
           ];
         };
-        exes = {
-          "MoeExample" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.random
-              hsPkgs.GLUT
-            ];
-          };
-        };
       };
-    }
+    };
+  }

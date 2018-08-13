@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "network-msg";
-          version = "0.1";
-        };
-        license = "LicenseRef-OtherLicense";
-        copyright = "";
-        maintainer = "Lana Black <sickmind@i2pmail.org>";
-        author = "";
-        homepage = "";
-        url = "";
-        synopsis = "Recvmsg and sendmsg bindings.";
-        description = "Bindings to sendmsg and recvmsg POSIX functions.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "network-msg";
+        version = "0.1";
       };
-      components = {
-        "network-msg" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.network
-            hsPkgs.unix
-          ];
-        };
+      license = "LicenseRef-OtherLicense";
+      copyright = "";
+      maintainer = "Lana Black <sickmind@i2pmail.org>";
+      author = "";
+      homepage = "";
+      url = "";
+      synopsis = "Recvmsg and sendmsg bindings.";
+      description = "Bindings to sendmsg and recvmsg POSIX functions.";
+      buildType = "Simple";
+    };
+    components = {
+      "network-msg" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.network)
+          (hsPkgs.unix)
+        ];
       };
-    }
+    };
+  }

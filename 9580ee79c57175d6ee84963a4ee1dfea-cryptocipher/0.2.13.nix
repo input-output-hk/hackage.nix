@@ -1,57 +1,62 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       test = false;
       benchmark = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "cryptocipher";
-          version = "0.2.13";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Vincent Hanquez <vincent@snarc.org>";
-        maintainer = "Vincent Hanquez <vincent@snarc.org>";
-        author = "Vincent Hanquez <vincent@snarc.org>";
-        homepage = "http://github.com/vincenthz/hs-cryptocipher";
-        url = "";
-        synopsis = "Symmetrical Block, Stream and PubKey Ciphers";
-        description = "Symmetrical Block, Stream and PubKey Ciphers";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "cryptocipher";
+        version = "0.2.13";
       };
-      components = {
-        "cryptocipher" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.vector
-            hsPkgs.ghc-prim
-            hsPkgs.primitive
-            hsPkgs.crypto-api
-            hsPkgs.tagged
-            hsPkgs.cereal
+      license = "BSD-3-Clause";
+      copyright = "Vincent Hanquez <vincent@snarc.org>";
+      maintainer = "Vincent Hanquez <vincent@snarc.org>";
+      author = "Vincent Hanquez <vincent@snarc.org>";
+      homepage = "http://github.com/vincenthz/hs-cryptocipher";
+      url = "";
+      synopsis = "Symmetrical Block, Stream and PubKey Ciphers";
+      description = "Symmetrical Block, Stream and PubKey Ciphers";
+      buildType = "Simple";
+    };
+    components = {
+      "cryptocipher" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.vector)
+          (hsPkgs.ghc-prim)
+          (hsPkgs.primitive)
+          (hsPkgs.crypto-api)
+          (hsPkgs.tagged)
+          (hsPkgs.cereal)
+        ];
+      };
+      exes = {
+        "Tests" = {
+          depends  = pkgs.lib.optionals (_flags.test) [
+            (hsPkgs.base)
+            (hsPkgs.HUnit)
+            (hsPkgs.bytestring)
+            (hsPkgs.cryptohash)
+            (hsPkgs.QuickCheck)
           ];
         };
-        exes = {
-          "Tests" = {
-            depends  = pkgs.lib.optionals _flags.test [
-              hsPkgs.base
-              hsPkgs.HUnit
-              hsPkgs.bytestring
-              hsPkgs.cryptohash
-              hsPkgs.QuickCheck
-            ];
-          };
-          "Benchmarks" = {
-            depends  = pkgs.lib.optionals _flags.benchmark [
-              hsPkgs.base
-              hsPkgs.criterion
-              hsPkgs.mtl
-            ];
-          };
+        "Benchmarks" = {
+          depends  = pkgs.lib.optionals (_flags.benchmark) [
+            (hsPkgs.base)
+            (hsPkgs.criterion)
+            (hsPkgs.mtl)
+          ];
         };
       };
-    }
+    };
+  }

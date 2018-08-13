@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.9.2";
-        identifier = {
-          name = "clist";
-          version = "0.1.0.0";
-        };
-        license = "LicenseRef-OtherLicense";
-        copyright = "";
-        maintainer = "strake888@gmail.com";
-        author = "M Farkas-Dyck";
-        homepage = "https://github.com/strake/clist.hs";
-        url = "";
-        synopsis = "Counted list";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.9.2";
+      identifier = {
+        name = "clist";
+        version = "0.1.0.0";
       };
-      components = {
-        "clist" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.base-unicode-symbols
-            hsPkgs.peano
-          ];
-        };
+      license = "LicenseRef-OtherLicense";
+      copyright = "";
+      maintainer = "strake888@gmail.com";
+      author = "M Farkas-Dyck";
+      homepage = "https://github.com/strake/clist.hs";
+      url = "";
+      synopsis = "Counted list";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "clist" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.base-unicode-symbols)
+          (hsPkgs.peano)
+        ];
       };
-    }
+    };
+  }

@@ -1,47 +1,52 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       old-locale = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "Graphalyze";
-          version = "0.15.0.0";
-        };
-        license = "LicenseRef-OtherLicense";
-        copyright = "(c) Ivan Lazar Miljenovic";
-        maintainer = "Ivan.Miljenovic@gmail.com";
-        author = "Ivan Lazar Miljenovic";
-        homepage = "";
-        url = "";
-        synopsis = "Graph-Theoretic Analysis library.";
-        description = "A library to use graph theory to analyse the relationships\ninherent in discrete data.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "Graphalyze";
+        version = "0.15.0.0";
       };
-      components = {
-        "Graphalyze" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.array
-            hsPkgs.containers
-            hsPkgs.directory
-            hsPkgs.filepath
-            hsPkgs.process
-            hsPkgs.random
-            hsPkgs.bktrees
-            hsPkgs.fgl
-            hsPkgs.graphviz
-            hsPkgs.pandoc
-            hsPkgs.text
-          ] ++ (if _flags.old-locale
-            then [
-              hsPkgs.time
-              hsPkgs.old-locale
-            ]
-            else [ hsPkgs.time ]);
-        };
+      license = "LicenseRef-OtherLicense";
+      copyright = "(c) Ivan Lazar Miljenovic";
+      maintainer = "Ivan.Miljenovic@gmail.com";
+      author = "Ivan Lazar Miljenovic";
+      homepage = "";
+      url = "";
+      synopsis = "Graph-Theoretic Analysis library.";
+      description = "A library to use graph theory to analyse the relationships\ninherent in discrete data.";
+      buildType = "Simple";
+    };
+    components = {
+      "Graphalyze" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.array)
+          (hsPkgs.containers)
+          (hsPkgs.directory)
+          (hsPkgs.filepath)
+          (hsPkgs.process)
+          (hsPkgs.random)
+          (hsPkgs.bktrees)
+          (hsPkgs.fgl)
+          (hsPkgs.graphviz)
+          (hsPkgs.pandoc)
+          (hsPkgs.text)
+        ] ++ (if _flags.old-locale
+          then [
+            (hsPkgs.time)
+            (hsPkgs.old-locale)
+          ]
+          else [ (hsPkgs.time) ]);
       };
-    }
+    };
+  }

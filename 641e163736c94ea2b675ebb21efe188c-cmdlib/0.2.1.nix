@@ -1,38 +1,43 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       test = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "cmdlib";
-          version = "0.2.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "me@mornfall.net";
-        author = "Petr Rockai";
-        homepage = "";
-        url = "";
-        synopsis = "a library for command line parsing & online help";
-        description = "An alternative to cmdargs, based on getopt. Comes with a powerful\nattribute system. Supports complex interfaces with many options\nand commands, with option & command grouping, while at the same\ntime keeping simple things simple.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "cmdlib";
+        version = "0.2.1";
       };
-      components = {
-        "cmdlib" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.syb
-            hsPkgs.mtl
-            hsPkgs.split
-          ];
-        };
-        exes = {
-          "cmdlib-test" = {};
-          "cmdlib-rectest" = {};
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "me@mornfall.net";
+      author = "Petr Rockai";
+      homepage = "";
+      url = "";
+      synopsis = "a library for command line parsing & online help";
+      description = "An alternative to cmdargs, based on getopt. Comes with a powerful\nattribute system. Supports complex interfaces with many options\nand commands, with option & command grouping, while at the same\ntime keeping simple things simple.";
+      buildType = "Simple";
+    };
+    components = {
+      "cmdlib" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.syb)
+          (hsPkgs.mtl)
+          (hsPkgs.split)
+        ];
       };
-    }
+      exes = {
+        "cmdlib-test" = {};
+        "cmdlib-rectest" = {};
+      };
+    };
+  }

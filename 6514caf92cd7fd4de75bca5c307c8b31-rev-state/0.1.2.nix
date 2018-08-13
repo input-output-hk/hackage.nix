@@ -1,38 +1,43 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "rev-state";
-          version = "0.1.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "danburton.email@gmail.com";
-        author = "Dan Burton";
-        homepage = "https://github.com/DanBurton/rev-state#readme";
-        url = "";
-        synopsis = "Reverse State monad transformer";
-        description = "It's like the State monad transformer.\nBut Reversed! The state goes backwards.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "rev-state";
+        version = "0.1.2";
       };
-      components = {
-        "rev-state" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "danburton.email@gmail.com";
+      author = "Dan Burton";
+      homepage = "https://github.com/DanBurton/rev-state#readme";
+      url = "";
+      synopsis = "Reverse State monad transformer";
+      description = "It's like the State monad transformer.\nBut Reversed! The state goes backwards.";
+      buildType = "Simple";
+    };
+    components = {
+      "rev-state" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+        ];
+      };
+      tests = {
+        "rev-state-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
+            (hsPkgs.base)
+            (hsPkgs.rev-state)
           ];
         };
-        tests = {
-          "rev-state-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.rev-state
-            ];
-          };
-        };
       };
-    }
+    };
+  }

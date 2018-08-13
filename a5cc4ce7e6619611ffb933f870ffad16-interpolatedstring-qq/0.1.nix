@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "interpolatedstring-qq";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Erik Charlebois";
-        maintainer = "Erik Charlebois <erikcharlebois@gmail.com>";
-        author = "Erik Charlebois";
-        homepage = "";
-        url = "";
-        synopsis = "QuasiQuoter for Ruby-style multi-line interpolated strings.";
-        description = "QuasiQuoter for Ruby-style multi-line interpolated strings.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "interpolatedstring-qq";
+        version = "0.1";
       };
-      components = {
-        "interpolatedstring-qq" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.template-haskell
-            hsPkgs.haskell-src-meta
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Erik Charlebois";
+      maintainer = "Erik Charlebois <erikcharlebois@gmail.com>";
+      author = "Erik Charlebois";
+      homepage = "";
+      url = "";
+      synopsis = "QuasiQuoter for Ruby-style multi-line interpolated strings.";
+      description = "QuasiQuoter for Ruby-style multi-line interpolated strings.";
+      buildType = "Custom";
+    };
+    components = {
+      "interpolatedstring-qq" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.template-haskell)
+          (hsPkgs.haskell-src-meta)
+        ];
       };
-    }
+    };
+  }

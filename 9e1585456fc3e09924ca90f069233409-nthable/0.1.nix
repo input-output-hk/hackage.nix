@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "nthable";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "porges@porg.es";
-        author = "George Pollard";
-        homepage = "";
-        url = "";
-        synopsis = "";
-        description = "Generalization of 'fst', 'snd', etc.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "nthable";
+        version = "0.1";
       };
-      components = {
-        "nthable" = {
-          depends  = [
-            hsPkgs.type-level
-            hsPkgs.base
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "porges@porg.es";
+      author = "George Pollard";
+      homepage = "";
+      url = "";
+      synopsis = "";
+      description = "Generalization of 'fst', 'snd', etc.";
+      buildType = "Simple";
+    };
+    components = {
+      "nthable" = {
+        depends  = [
+          (hsPkgs.type-level)
+          (hsPkgs.base)
+        ];
       };
-    }
+    };
+  }

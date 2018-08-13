@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "logging-facade";
-          version = "0.3.0";
-        };
-        license = "MIT";
-        copyright = "(c) 2014-2017 Simon Hengel";
-        maintainer = "Simon Hengel <sol@typeful.net>";
-        author = "Simon Hengel <sol@typeful.net>";
-        homepage = "https://github.com/sol/logging-facade#readme";
-        url = "";
-        synopsis = "Simple logging abstraction that allows multiple back-ends";
-        description = "Simple logging abstraction that allows multiple back-ends";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "logging-facade";
+        version = "0.3.0";
       };
-      components = {
-        "logging-facade" = {
+      license = "MIT";
+      copyright = "(c) 2014-2017 Simon Hengel";
+      maintainer = "Simon Hengel <sol@typeful.net>";
+      author = "Simon Hengel <sol@typeful.net>";
+      homepage = "https://github.com/sol/logging-facade#readme";
+      url = "";
+      synopsis = "Simple logging abstraction that allows multiple back-ends";
+      description = "Simple logging abstraction that allows multiple back-ends";
+      buildType = "Simple";
+    };
+    components = {
+      "logging-facade" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.call-stack)
+          (hsPkgs.transformers)
+        ];
+      };
+      tests = {
+        "spec" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.call-stack
-            hsPkgs.transformers
+            (hsPkgs.base)
+            (hsPkgs.logging-facade)
+            (hsPkgs.hspec)
           ];
         };
-        tests = {
-          "spec" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.logging-facade
-              hsPkgs.hspec
-            ];
-          };
-        };
       };
-    }
+    };
+  }

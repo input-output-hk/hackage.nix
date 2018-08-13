@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       test = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "dtrace";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Aaron Tomb <aarontomb@gmail.com>";
-        author = "Aaron Tomb <aarontomb@gmail.com>";
-        homepage = "";
-        url = "";
-        synopsis = "Haskell interface to the DTrace system tracing utility";
-        description = "Haskell interface to the DTrace system tracing utility";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "dtrace";
+        version = "0.1";
       };
-      components = {
-        "dtrace" = {
-          depends  = [ hsPkgs.base ];
-        };
-        exes = { "DTTest" = {}; };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Aaron Tomb <aarontomb@gmail.com>";
+      author = "Aaron Tomb <aarontomb@gmail.com>";
+      homepage = "";
+      url = "";
+      synopsis = "Haskell interface to the DTrace system tracing utility";
+      description = "Haskell interface to the DTrace system tracing utility";
+      buildType = "Simple";
+    };
+    components = {
+      "dtrace" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+      exes = { "DTTest" = {}; };
+    };
+  }

@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       small_base = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "digit";
-          version = "0.1.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (C) 2010-2013 NICTA Limited";
-        maintainer = "Tony Morris";
-        author = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>";
-        homepage = "https://github.com/NICTA/digit";
-        url = "";
-        synopsis = "A data-type representing digits 0-9 and other combinations";
-        description = "<<http://i.imgur.com/Ns5hntl.jpg>>\n\n@Digit@ is a data-type that represents the digits 0-9 and other combinations.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "digit";
+        version = "0.1.2";
       };
-      components = {
-        "digit" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright (C) 2010-2013 NICTA Limited";
+      maintainer = "Tony Morris";
+      author = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>";
+      homepage = "https://github.com/NICTA/digit";
+      url = "";
+      synopsis = "A data-type representing digits 0-9 and other combinations";
+      description = "<<http://i.imgur.com/Ns5hntl.jpg>>\n\n@Digit@ is a data-type that represents the digits 0-9 and other combinations.";
+      buildType = "Custom";
+    };
+    components = {
+      "digit" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.lens)
+          (hsPkgs.template-haskell)
+        ];
+      };
+      tests = {
+        "doctests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.lens
-            hsPkgs.template-haskell
+            (hsPkgs.base)
+            (hsPkgs.doctest)
+            (hsPkgs.filepath)
+            (hsPkgs.directory)
+            (hsPkgs.QuickCheck)
           ];
         };
-        tests = {
-          "doctests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-              hsPkgs.filepath
-              hsPkgs.directory
-              hsPkgs.QuickCheck
-            ];
-          };
-        };
       };
-    }
+    };
+  }

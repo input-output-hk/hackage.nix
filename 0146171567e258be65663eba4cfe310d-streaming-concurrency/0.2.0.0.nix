@@ -1,52 +1,57 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "streaming-concurrency";
-          version = "0.2.0.0";
-        };
-        license = "MIT";
-        copyright = "Ivan Lazar Miljenovic";
-        maintainer = "Ivan.Miljenovic@gmail.com";
-        author = "Ivan Lazar Miljenovic";
-        homepage = "";
-        url = "";
-        synopsis = "Concurrency support for the streaming ecosystem";
-        description = "The primary purpose for this library is to be able to merge multiple\n@Stream@s together.  However, it is possible to build higher\nabstractions on top of this to be able to also feed multiple\nstreams.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "streaming-concurrency";
+        version = "0.2.0.0";
       };
-      components = {
-        "streaming-concurrency" = {
+      license = "MIT";
+      copyright = "Ivan Lazar Miljenovic";
+      maintainer = "Ivan.Miljenovic@gmail.com";
+      author = "Ivan Lazar Miljenovic";
+      homepage = "";
+      url = "";
+      synopsis = "Concurrency support for the streaming ecosystem";
+      description = "The primary purpose for this library is to be able to merge multiple\n@Stream@s together.  However, it is possible to build higher\nabstractions on top of this to be able to also feed multiple\nstreams.";
+      buildType = "Simple";
+    };
+    components = {
+      "streaming-concurrency" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.exceptions)
+          (hsPkgs.lifted-async)
+          (hsPkgs.monad-control)
+          (hsPkgs.stm)
+          (hsPkgs.streaming)
+          (hsPkgs.streaming-bytestring)
+          (hsPkgs.streaming-with)
+          (hsPkgs.transformers-base)
+        ];
+      };
+      tests = {
+        "merging" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.exceptions
-            hsPkgs.lifted-async
-            hsPkgs.monad-control
-            hsPkgs.stm
-            hsPkgs.streaming
-            hsPkgs.streaming-bytestring
-            hsPkgs.streaming-with
-            hsPkgs.transformers-base
+            (hsPkgs.streaming-concurrency)
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.hspec)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.quickcheck-instances)
+            (hsPkgs.streaming)
+            (hsPkgs.streaming-bytestring)
           ];
         };
-        tests = {
-          "merging" = {
-            depends  = [
-              hsPkgs.streaming-concurrency
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.hspec
-              hsPkgs.QuickCheck
-              hsPkgs.quickcheck-instances
-              hsPkgs.streaming
-              hsPkgs.streaming-bytestring
-            ];
-          };
-        };
       };
-    }
+    };
+  }

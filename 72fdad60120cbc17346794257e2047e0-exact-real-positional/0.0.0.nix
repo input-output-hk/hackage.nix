@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "exact-real-positional";
-          version = "0.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "lukas9@mi.fu-berlin.de";
-        author = "grlks";
-        homepage = "";
-        url = "";
-        synopsis = "Framework for Exact Real Arithmetic in the Positional Number System";
-        description = "Computable real numbers are represented in a signed digit floating point representation. Each number consists of an infinitly sequence of these digits. Basic arithmetic operators are implemented, conversion from and into other Haskell number types is possible.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "exact-real-positional";
+        version = "0.0.0";
       };
-      components = {
-        "exact-real-positional" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "lukas9@mi.fu-berlin.de";
+      author = "grlks";
+      homepage = "";
+      url = "";
+      synopsis = "Framework for Exact Real Arithmetic in the Positional Number System";
+      description = "Computable real numbers are represented in a signed digit floating point representation. Each number consists of an infinitly sequence of these digits. Basic arithmetic operators are implemented, conversion from and into other Haskell number types is possible.";
+      buildType = "Simple";
+    };
+    components = {
+      "exact-real-positional" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

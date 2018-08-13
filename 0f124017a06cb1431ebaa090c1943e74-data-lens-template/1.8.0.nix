@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "data-lens-template";
-          version = "1.8.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Edward Kmett <ekmett@gmail.com>";
-        author = "Joel Burget <joelburget@gmail.com>";
-        homepage = "";
-        url = "";
-        synopsis = "Utilities for Data.Lens";
-        description = "Automatically derive @Lens@es for your data type for use with @Data.Lens@. Note: the code is derived from data-accessor-template <http://hackage.haskell.org/package/data-accessor-template> by Luke Palmer and Henning Thielemann.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "data-lens-template";
+        version = "1.8.0";
       };
-      components = {
-        "data-lens-template" = {
-          depends  = [
-            hsPkgs.data-lens
-            hsPkgs.base
-            hsPkgs.template-haskell
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Edward Kmett <ekmett@gmail.com>";
+      author = "Joel Burget <joelburget@gmail.com>";
+      homepage = "";
+      url = "";
+      synopsis = "Utilities for Data.Lens";
+      description = "Automatically derive @Lens@es for your data type for use with @Data.Lens@. Note: the code is derived from data-accessor-template <http://hackage.haskell.org/package/data-accessor-template> by Luke Palmer and Henning Thielemann.";
+      buildType = "Simple";
+    };
+    components = {
+      "data-lens-template" = {
+        depends  = [
+          (hsPkgs.data-lens)
+          (hsPkgs.base)
+          (hsPkgs.template-haskell)
+        ];
       };
-    }
+    };
+  }

@@ -1,60 +1,65 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "zifter";
-          version = "0.0.1.1";
-        };
-        license = "MIT";
-        copyright = "Copyright: (c) 2017 Tom Sydney Kerckhove";
-        maintainer = "syd.kerckhove@gmail.com";
-        author = "Tom Sydney Kerckhove";
-        homepage = "http://cs-syd.eu";
-        url = "";
-        synopsis = "zifter";
-        description = "zifter";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "zifter";
+        version = "0.0.1.1";
       };
-      components = {
-        "zifter" = {
+      license = "MIT";
+      copyright = "Copyright: (c) 2017 Tom Sydney Kerckhove";
+      maintainer = "syd.kerckhove@gmail.com";
+      author = "Tom Sydney Kerckhove";
+      homepage = "http://cs-syd.eu";
+      url = "";
+      synopsis = "zifter";
+      description = "zifter";
+      buildType = "Simple";
+    };
+    components = {
+      "zifter" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.async)
+          (hsPkgs.directory)
+          (hsPkgs.exceptions)
+          (hsPkgs.filepath)
+          (hsPkgs.optparse-applicative)
+          (hsPkgs.path)
+          (hsPkgs.path-io)
+          (hsPkgs.process)
+          (hsPkgs.safe)
+          (hsPkgs.validity)
+          (hsPkgs.stm)
+          (hsPkgs.ansi-terminal)
+          (hsPkgs.validity-path)
+        ];
+      };
+      tests = {
+        "zifter-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.async
-            hsPkgs.directory
-            hsPkgs.exceptions
-            hsPkgs.filepath
-            hsPkgs.optparse-applicative
-            hsPkgs.path
-            hsPkgs.path-io
-            hsPkgs.process
-            hsPkgs.safe
-            hsPkgs.validity
-            hsPkgs.stm
-            hsPkgs.ansi-terminal
-            hsPkgs.validity-path
+            (hsPkgs.base)
+            (hsPkgs.zifter)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.genvalidity)
+            (hsPkgs.genvalidity-hspec)
+            (hsPkgs.genvalidity-path)
+            (hsPkgs.hspec)
+            (hsPkgs.path)
+            (hsPkgs.path-io)
+            (hsPkgs.stm)
+            (hsPkgs.ansi-terminal)
+            (hsPkgs.directory)
           ];
         };
-        tests = {
-          "zifter-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.zifter
-              hsPkgs.QuickCheck
-              hsPkgs.genvalidity
-              hsPkgs.genvalidity-hspec
-              hsPkgs.genvalidity-path
-              hsPkgs.hspec
-              hsPkgs.path
-              hsPkgs.path-io
-              hsPkgs.stm
-              hsPkgs.ansi-terminal
-              hsPkgs.directory
-            ];
-          };
-        };
       };
-    }
+    };
+  }

@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "quickterm";
-          version = "0.2.0.0";
-        };
-        license = "GPL-3.0-only";
-        copyright = "";
-        maintainer = "sgschlesinger@gmail.com,aka.bash0r@gmail.com";
-        author = "Samuel Schlesinger, Nils 'bash0r' Jonsson";
-        homepage = "https://github.com/SamuelSchlesinger/Quickterm";
-        url = "";
-        synopsis = "An interface for describing and executing terminal applications";
-        description = "A quick and modular way to construct terminal interfaces.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "quickterm";
+        version = "0.2.0.0";
       };
-      components = {
-        "quickterm" = {
+      license = "GPL-3.0-only";
+      copyright = "";
+      maintainer = "sgschlesinger@gmail.com,aka.bash0r@gmail.com";
+      author = "Samuel Schlesinger, Nils 'bash0r' Jonsson";
+      homepage = "https://github.com/SamuelSchlesinger/Quickterm";
+      url = "";
+      synopsis = "An interface for describing and executing terminal applications";
+      description = "A quick and modular way to construct terminal interfaces.";
+      buildType = "Simple";
+    };
+    components = {
+      "quickterm" = {
+        depends  = [
+          (hsPkgs.edit-distance)
+          (hsPkgs.hashmap)
+          (hsPkgs.base)
+          (hsPkgs.edit-distance)
+          (hsPkgs.regex-base)
+          (hsPkgs.regex-tdfa)
+          (hsPkgs.uu-parsinglib)
+          (hsPkgs.base)
+        ];
+      };
+      exes = {
+        "qt-demo" = {
           depends  = [
-            hsPkgs.edit-distance
-            hsPkgs.hashmap
-            hsPkgs.base
-            hsPkgs.edit-distance
-            hsPkgs.regex-base
-            hsPkgs.regex-tdfa
-            hsPkgs.uu-parsinglib
-            hsPkgs.base
+            (hsPkgs.base)
+            (hsPkgs.quickterm)
           ];
         };
-        exes = {
-          "qt-demo" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.quickterm
-            ];
-          };
-        };
       };
-    }
+    };
+  }

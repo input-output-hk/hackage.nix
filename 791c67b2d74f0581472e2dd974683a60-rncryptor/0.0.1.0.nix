@@ -1,61 +1,66 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "rncryptor";
-          version = "0.0.1.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "alfredo.dinapoli@gmail.com";
-        author = "Alfredo Di Napoli";
-        homepage = "";
-        url = "";
-        synopsis = "Haskell implementation of the RNCryptor file format";
-        description = "Pure Haskell implementation of the RNCrytor spec.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "rncryptor";
+        version = "0.0.1.0";
       };
-      components = {
-        "rncryptor" = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "alfredo.dinapoli@gmail.com";
+      author = "Alfredo Di Napoli";
+      homepage = "";
+      url = "";
+      synopsis = "Haskell implementation of the RNCryptor file format";
+      description = "Pure Haskell implementation of the RNCrytor spec.";
+      buildType = "Simple";
+    };
+    components = {
+      "rncryptor" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.mtl)
+          (hsPkgs.base64-bytestring)
+          (hsPkgs.QuickCheck)
+          (hsPkgs.io-streams)
+          (hsPkgs.cipher-aes)
+          (hsPkgs.pbkdf)
+        ];
+      };
+      exes = {
+        "rncryptor-stream" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.mtl
-            hsPkgs.base64-bytestring
-            hsPkgs.QuickCheck
-            hsPkgs.io-streams
-            hsPkgs.cipher-aes
-            hsPkgs.pbkdf
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.io-streams)
+            (hsPkgs.base64-bytestring)
+            (hsPkgs.cipher-aes)
+            (hsPkgs.rncryptor)
           ];
         };
-        exes = {
-          "rncryptor-stream" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.io-streams
-              hsPkgs.base64-bytestring
-              hsPkgs.cipher-aes
-              hsPkgs.rncryptor
-            ];
-          };
-        };
-        tests = {
-          "rncryptor-tests" = {
-            depends  = [
-              hsPkgs.rncryptor
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.QuickCheck
-              hsPkgs.tasty
-              hsPkgs.tasty-quickcheck
-              hsPkgs.tasty-hunit
-            ];
-          };
+      };
+      tests = {
+        "rncryptor-tests" = {
+          depends  = [
+            (hsPkgs.rncryptor)
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-quickcheck)
+            (hsPkgs.tasty-hunit)
+          ];
         };
       };
-    }
+    };
+  }

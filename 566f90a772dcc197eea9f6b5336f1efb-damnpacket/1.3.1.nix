@@ -1,49 +1,54 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "damnpacket";
-          version = "1.3.1";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "me@jude.xyz";
-        author = "Jude Taylor";
-        homepage = "";
-        url = "";
-        synopsis = "Parsing dAmn messages";
-        description = "This module provides a datatype and convenience functions for parsing,\nmanipulating, and rendering deviantART Message Network messages.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "damnpacket";
+        version = "1.3.1";
       };
-      components = {
-        "damnpacket" = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "me@jude.xyz";
+      author = "Jude Taylor";
+      homepage = "";
+      url = "";
+      synopsis = "Parsing dAmn messages";
+      description = "This module provides a datatype and convenience functions for parsing,\nmanipulating, and rendering deviantART Message Network messages.";
+      buildType = "Simple";
+    };
+    components = {
+      "damnpacket" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.attoparsec)
+          (hsPkgs.bytestring)
+          (hsPkgs.fail)
+          (hsPkgs.html-entity)
+          (hsPkgs.semigroups)
+          (hsPkgs.template-haskell)
+          (hsPkgs.text)
+          (hsPkgs.th-lift-instances)
+        ];
+      };
+      tests = {
+        "parse" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.attoparsec
-            hsPkgs.bytestring
-            hsPkgs.fail
-            hsPkgs.html-entity
-            hsPkgs.semigroups
-            hsPkgs.template-haskell
-            hsPkgs.text
-            hsPkgs.th-lift-instances
+            (hsPkgs.base)
+            (hsPkgs.HUnit)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.bytestring)
+            (hsPkgs.damnpacket)
+            (hsPkgs.hspec)
           ];
         };
-        tests = {
-          "parse" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.HUnit
-              hsPkgs.QuickCheck
-              hsPkgs.bytestring
-              hsPkgs.damnpacket
-              hsPkgs.hspec
-            ];
-          };
-        };
       };
-    }
+    };
+  }

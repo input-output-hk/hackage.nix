@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "list-mux";
-          version = "1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "hellertime@gmail.com";
-        author = "Chris Heller";
-        homepage = "http://github.com/hellertime/list-mux";
-        url = "";
-        synopsis = "List Multiplexing";
-        description = "Functions for multiplexing lists";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "list-mux";
+        version = "1.0";
       };
-      components = {
-        "list-mux" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "hellertime@gmail.com";
+      author = "Chris Heller";
+      homepage = "http://github.com/hellertime/list-mux";
+      url = "";
+      synopsis = "List Multiplexing";
+      description = "Functions for multiplexing lists";
+      buildType = "Simple";
+    };
+    components = {
+      "list-mux" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

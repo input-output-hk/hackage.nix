@@ -1,51 +1,56 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "fsnotify-conduit";
-          version = "0.1.0.0";
-        };
-        license = "MIT";
-        copyright = "2016 FP Complete";
-        maintainer = "michael@snoyman.com";
-        author = "Michael Snoyman";
-        homepage = "https://github.com/fpco/fsnotify-conduit#readme";
-        url = "";
-        synopsis = "Get filesystem notifications as a stream of events";
-        description = "Please see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "fsnotify-conduit";
+        version = "0.1.0.0";
       };
-      components = {
-        "fsnotify-conduit" = {
+      license = "MIT";
+      copyright = "2016 FP Complete";
+      maintainer = "michael@snoyman.com";
+      author = "Michael Snoyman";
+      homepage = "https://github.com/fpco/fsnotify-conduit#readme";
+      url = "";
+      synopsis = "Get filesystem notifications as a stream of events";
+      description = "Please see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "fsnotify-conduit" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.conduit)
+          (hsPkgs.directory)
+          (hsPkgs.filepath)
+          (hsPkgs.fsnotify)
+          (hsPkgs.resourcet)
+          (hsPkgs.transformers)
+        ];
+      };
+      tests = {
+        "fsnotify-conduit-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.conduit
-            hsPkgs.directory
-            hsPkgs.filepath
-            hsPkgs.fsnotify
-            hsPkgs.resourcet
-            hsPkgs.transformers
+            (hsPkgs.base)
+            (hsPkgs.async)
+            (hsPkgs.conduit)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+            (hsPkgs.fsnotify-conduit)
+            (hsPkgs.hspec)
+            (hsPkgs.resourcet)
+            (hsPkgs.temporary)
+            (hsPkgs.transformers)
           ];
         };
-        tests = {
-          "fsnotify-conduit-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.async
-              hsPkgs.conduit
-              hsPkgs.directory
-              hsPkgs.filepath
-              hsPkgs.fsnotify-conduit
-              hsPkgs.hspec
-              hsPkgs.resourcet
-              hsPkgs.temporary
-              hsPkgs.transformers
-            ];
-          };
-        };
       };
-    }
+    };
+  }

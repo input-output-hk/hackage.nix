@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       development = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.18";
-        identifier = {
-          name = "shake-ext";
-          version = "0.1.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright: (c) 2018 Vanessa McHale";
-        maintainer = "vamchale@gmail.com";
-        author = "Vanessa McHale";
-        homepage = "https://hub.darcs.net/vmchale/shake-ext";
-        url = "";
-        synopsis = "Helper functions for linting with [shake](http://shakebuild.com/)";
-        description = "This package provides several linters out of the box, as well as several helper functions for build ATS projects.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.18";
+      identifier = {
+        name = "shake-ext";
+        version = "0.1.0.1";
       };
-      components = {
-        "shake-ext" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.shake
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Copyright: (c) 2018 Vanessa McHale";
+      maintainer = "vamchale@gmail.com";
+      author = "Vanessa McHale";
+      homepage = "https://hub.darcs.net/vmchale/shake-ext";
+      url = "";
+      synopsis = "Helper functions for linting with [shake](http://shakebuild.com/)";
+      description = "This package provides several linters out of the box, as well as several helper functions for build ATS projects.";
+      buildType = "Simple";
+    };
+    components = {
+      "shake-ext" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.shake)
+        ];
       };
-    }
+    };
+  }

@@ -1,42 +1,47 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "cryptsy-api";
-          version = "0.1";
-        };
-        license = "LicenseRef-OtherLicense";
-        copyright = "2013 Boyd Stephen Smith Jr.";
-        maintainer = "bss@iguanasuicide.net";
-        author = "Boyd Stephen Smith Jr.";
-        homepage = "";
-        url = "";
-        synopsis = "Bindings for Cryptsy cryptocurrency exchange API.";
-        description = "Bindings for Cryptsy cryptocurrency exchange API.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "cryptsy-api";
+        version = "0.1";
       };
-      components = {
-        "cryptsy-api" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.HTTP
-            hsPkgs.either
-            hsPkgs.text
-            hsPkgs.transformers
-            hsPkgs.unordered-containers
-            hsPkgs.vector
-            hsPkgs.aeson
-            hsPkgs.errors
-            hsPkgs.network
-            hsPkgs.bytestring
-            hsPkgs.deepseq
-            hsPkgs.old-locale
-            hsPkgs.time
-          ];
-        };
+      license = "LicenseRef-OtherLicense";
+      copyright = "2013 Boyd Stephen Smith Jr.";
+      maintainer = "bss@iguanasuicide.net";
+      author = "Boyd Stephen Smith Jr.";
+      homepage = "";
+      url = "";
+      synopsis = "Bindings for Cryptsy cryptocurrency exchange API.";
+      description = "Bindings for Cryptsy cryptocurrency exchange API.";
+      buildType = "Simple";
+    };
+    components = {
+      "cryptsy-api" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.HTTP)
+          (hsPkgs.either)
+          (hsPkgs.text)
+          (hsPkgs.transformers)
+          (hsPkgs.unordered-containers)
+          (hsPkgs.vector)
+          (hsPkgs.aeson)
+          (hsPkgs.errors)
+          (hsPkgs.network)
+          (hsPkgs.bytestring)
+          (hsPkgs.deepseq)
+          (hsPkgs.old-locale)
+          (hsPkgs.time)
+        ];
       };
-    }
+    };
+  }

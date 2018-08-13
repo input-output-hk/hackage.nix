@@ -1,42 +1,47 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "crdt";
-          version = "0.3";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Yuriy Syrovetskiy <cblp@cblp.su>";
-        author = "";
-        homepage = "https://github.com/cblp/crdt#readme";
-        url = "";
-        synopsis = "Conflict-free replicated data types";
-        description = "Definitions of CmRDT and CvRDT. Implementations for some classic CRDTs.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "crdt";
+        version = "0.3";
       };
-      components = {
-        "crdt" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Yuriy Syrovetskiy <cblp@cblp.su>";
+      author = "";
+      homepage = "https://github.com/cblp/crdt#readme";
+      url = "";
+      synopsis = "Conflict-free replicated data types";
+      description = "Definitions of CmRDT and CvRDT. Implementations for some classic CRDTs.";
+      buildType = "Simple";
+    };
+    components = {
+      "crdt" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+        ];
+      };
+      tests = {
+        "test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.containers
+            (hsPkgs.base)
+            (hsPkgs.containers)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-quickcheck)
+            (hsPkgs.crdt)
           ];
         };
-        tests = {
-          "test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.QuickCheck
-              hsPkgs.tasty
-              hsPkgs.tasty-quickcheck
-              hsPkgs.crdt
-            ];
-          };
-        };
       };
-    }
+    };
+  }

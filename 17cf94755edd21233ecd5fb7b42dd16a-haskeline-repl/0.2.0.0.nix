@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "haskeline-repl";
-          version = "0.2.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2017 Rein van der Woerd";
-        maintainer = "reinvanderwoerd@me.com";
-        author = "Rein van der Woerd";
-        homepage = "https://github.com/githubuser/haskeline-repl#readme";
-        url = "";
-        synopsis = "";
-        description = "A convenient Haskeline wrapper";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "haskeline-repl";
+        version = "0.2.0.0";
       };
-      components = {
-        "haskeline-repl" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.haskeline
-            hsPkgs.mtl
-            hsPkgs.ansi-terminal
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "2017 Rein van der Woerd";
+      maintainer = "reinvanderwoerd@me.com";
+      author = "Rein van der Woerd";
+      homepage = "https://github.com/githubuser/haskeline-repl#readme";
+      url = "";
+      synopsis = "";
+      description = "A convenient Haskeline wrapper";
+      buildType = "Simple";
+    };
+    components = {
+      "haskeline-repl" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.haskeline)
+          (hsPkgs.mtl)
+          (hsPkgs.ansi-terminal)
+        ];
       };
-    }
+    };
+  }

@@ -1,53 +1,58 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "xml-html-conduit-lens";
-          version = "0.3.2.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (C) 2013 Fumiaki Kinoshita, 2014-2016 Matvey Aksenov";
-        maintainer = "Matvey Aksenov <matvey.aksenov@gmail.com>";
-        author = "Fumiaki Kinoshita, Matvey Aksenov";
-        homepage = "https://github.com/supki/xml-html-conduit-lens#readme";
-        url = "";
-        synopsis = "Optics for xml-conduit and html-conduit";
-        description = "Optics for xml-conduit and html-conduit";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "xml-html-conduit-lens";
+        version = "0.3.2.2";
       };
-      components = {
-        "xml-html-conduit-lens" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright (C) 2013 Fumiaki Kinoshita, 2014-2016 Matvey Aksenov";
+      maintainer = "Matvey Aksenov <matvey.aksenov@gmail.com>";
+      author = "Fumiaki Kinoshita, Matvey Aksenov";
+      homepage = "https://github.com/supki/xml-html-conduit-lens#readme";
+      url = "";
+      synopsis = "Optics for xml-conduit and html-conduit";
+      description = "Optics for xml-conduit and html-conduit";
+      buildType = "Simple";
+    };
+    components = {
+      "xml-html-conduit-lens" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.lens)
+          (hsPkgs.containers)
+          (hsPkgs.text)
+          (hsPkgs.xml-conduit)
+          (hsPkgs.html-conduit)
+        ];
+      };
+      tests = {
+        "doctest" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.lens
-            hsPkgs.containers
-            hsPkgs.text
-            hsPkgs.xml-conduit
-            hsPkgs.html-conduit
+            (hsPkgs.base)
+            (hsPkgs.doctest)
           ];
         };
-        tests = {
-          "doctest" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-            ];
-          };
-          "hspec" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hspec
-              hsPkgs.hspec-expectations-lens
-              hsPkgs.lens
-              hsPkgs.xml-conduit
-              hsPkgs.xml-html-conduit-lens
-            ];
-          };
+        "hspec" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.hspec)
+            (hsPkgs.hspec-expectations-lens)
+            (hsPkgs.lens)
+            (hsPkgs.xml-conduit)
+            (hsPkgs.xml-html-conduit-lens)
+          ];
         };
       };
-    }
+    };
+  }

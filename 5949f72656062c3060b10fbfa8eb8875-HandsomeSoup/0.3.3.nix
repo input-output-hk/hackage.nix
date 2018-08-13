@@ -1,60 +1,65 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       buildexamples = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "HandsomeSoup";
-          version = "0.3.3";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "bluemangroupie@gmail.com";
-        author = "Aditya Bhargava";
-        homepage = "https://github.com/egonSchiele/HandsomeSoup";
-        url = "";
-        synopsis = "Work with HTML more easily in HXT";
-        description = "See examples and full readme on the Github page: https:\\/\\/github.com\\/egonSchiele\\/HandsomeSoup";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "HandsomeSoup";
+        version = "0.3.3";
       };
-      components = {
-        "HandsomeSoup" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "bluemangroupie@gmail.com";
+      author = "Aditya Bhargava";
+      homepage = "https://github.com/egonSchiele/HandsomeSoup";
+      url = "";
+      synopsis = "Work with HTML more easily in HXT";
+      description = "See examples and full readme on the Github page: https:\\/\\/github.com\\/egonSchiele\\/HandsomeSoup";
+      buildType = "Simple";
+    };
+    components = {
+      "HandsomeSoup" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.transformers)
+          (hsPkgs.HTTP)
+          (hsPkgs.parsec)
+          (hsPkgs.containers)
+          (hsPkgs.mtl)
+          (hsPkgs.MaybeT)
+          (hsPkgs.hxt)
+          (hsPkgs.network)
+          (hsPkgs.network-uri)
+          (hsPkgs.hxt-http)
+        ];
+      };
+      exes = {
+        "handsomesoup" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.transformers
-            hsPkgs.HTTP
-            hsPkgs.parsec
-            hsPkgs.containers
-            hsPkgs.mtl
-            hsPkgs.MaybeT
-            hsPkgs.hxt
-            hsPkgs.network
-            hsPkgs.network-uri
-            hsPkgs.hxt-http
+            (hsPkgs.base)
+            (hsPkgs.HandsomeSoup)
+            (hsPkgs.hxt)
           ];
         };
-        exes = {
-          "handsomesoup" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.HandsomeSoup
-              hsPkgs.hxt
-            ];
-          };
-        };
-        tests = {
-          "hspec" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hspec
-              hsPkgs.HandsomeSoup
-              hsPkgs.hxt
-            ];
-          };
+      };
+      tests = {
+        "hspec" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.hspec)
+            (hsPkgs.HandsomeSoup)
+            (hsPkgs.hxt)
+          ];
         };
       };
-    }
+    };
+  }

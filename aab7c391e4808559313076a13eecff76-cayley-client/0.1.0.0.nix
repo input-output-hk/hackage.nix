@@ -1,43 +1,48 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "cayley-client";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright © 2015 - Michel Boucey";
-        maintainer = "michel.boucey@gmail.com";
-        author = "Michel Boucey";
-        homepage = "http://mb.cybervisible.fr/haskell-cayley-client";
-        url = "";
-        synopsis = "An Haskell client for Cayley graph database";
-        description = "cayley-client implements the RESTful API of the Cayley database graph.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "cayley-client";
+        version = "0.1.0.0";
       };
-      components = {
-        "cayley-client" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.transformers
-            hsPkgs.attoparsec
-            hsPkgs.bytestring
-            hsPkgs.text
-            hsPkgs.vector
-            hsPkgs.http-conduit
-            hsPkgs.http-client
-            hsPkgs.aeson
-            hsPkgs.lens
-            hsPkgs.lens-aeson
-            hsPkgs.unordered-containers
-            hsPkgs.exceptions
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Copyright © 2015 - Michel Boucey";
+      maintainer = "michel.boucey@gmail.com";
+      author = "Michel Boucey";
+      homepage = "http://mb.cybervisible.fr/haskell-cayley-client";
+      url = "";
+      synopsis = "An Haskell client for Cayley graph database";
+      description = "cayley-client implements the RESTful API of the Cayley database graph.";
+      buildType = "Simple";
+    };
+    components = {
+      "cayley-client" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.transformers)
+          (hsPkgs.attoparsec)
+          (hsPkgs.bytestring)
+          (hsPkgs.text)
+          (hsPkgs.vector)
+          (hsPkgs.http-conduit)
+          (hsPkgs.http-client)
+          (hsPkgs.aeson)
+          (hsPkgs.lens)
+          (hsPkgs.lens-aeson)
+          (hsPkgs.unordered-containers)
+          (hsPkgs.exceptions)
+        ];
       };
-    }
+    };
+  }

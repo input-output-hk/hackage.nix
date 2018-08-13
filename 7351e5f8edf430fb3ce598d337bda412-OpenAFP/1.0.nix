@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "OpenAFP";
-          version = "1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "audreyt@audreyt.org";
-        author = "Audrey Tang";
-        homepage = "";
-        url = "";
-        synopsis = "IBM AFP document format parser and generator";
-        description = "IBM AFP document format parser and generator";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "OpenAFP";
+        version = "1.0";
       };
-      components = {
-        "OpenAFP" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.haskell98
-            hsPkgs.regex-compat
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "audreyt@audreyt.org";
+      author = "Audrey Tang";
+      homepage = "";
+      url = "";
+      synopsis = "IBM AFP document format parser and generator";
+      description = "IBM AFP document format parser and generator";
+      buildType = "Custom";
+    };
+    components = {
+      "OpenAFP" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.haskell98)
+          (hsPkgs.regex-compat)
+        ];
       };
-    }
+    };
+  }

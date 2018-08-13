@@ -1,49 +1,54 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "pipes-zlib";
-          version = "0.4.4.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (c) Paolo Capriotti 2012,\nRenzo Carbonara 2013-2016";
-        maintainer = "renzocarbonaraλgmail.com";
-        author = "Renzo Carbonara, Paolo Capriotti";
-        homepage = "https://github.com/k0001/pipes-zlib";
-        url = "";
-        synopsis = "Zlib and GZip compression and decompression for Pipes streams";
-        description = "Zlib and GZip compression and decompression for Pipes streams";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "pipes-zlib";
+        version = "0.4.4.1";
       };
-      components = {
-        "pipes-zlib" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) Paolo Capriotti 2012,\nRenzo Carbonara 2013-2016";
+      maintainer = "renzocarbonaraλgmail.com";
+      author = "Renzo Carbonara, Paolo Capriotti";
+      homepage = "https://github.com/k0001/pipes-zlib";
+      url = "";
+      synopsis = "Zlib and GZip compression and decompression for Pipes streams";
+      description = "Zlib and GZip compression and decompression for Pipes streams";
+      buildType = "Simple";
+    };
+    components = {
+      "pipes-zlib" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.transformers)
+          (hsPkgs.pipes)
+          (hsPkgs.bytestring)
+          (hsPkgs.streaming-commons)
+        ];
+      };
+      tests = {
+        "test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.transformers
-            hsPkgs.pipes
-            hsPkgs.bytestring
-            hsPkgs.streaming-commons
+            (hsPkgs.base)
+            (hsPkgs.pipes-zlib)
+            (hsPkgs.pipes)
+            (hsPkgs.bytestring)
+            (hsPkgs.HUnit)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.quickcheck-instances)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-quickcheck)
+            (hsPkgs.tasty-hunit)
           ];
         };
-        tests = {
-          "test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.pipes-zlib
-              hsPkgs.pipes
-              hsPkgs.bytestring
-              hsPkgs.HUnit
-              hsPkgs.QuickCheck
-              hsPkgs.quickcheck-instances
-              hsPkgs.tasty
-              hsPkgs.tasty-quickcheck
-              hsPkgs.tasty-hunit
-            ];
-          };
-        };
       };
-    }
+    };
+  }

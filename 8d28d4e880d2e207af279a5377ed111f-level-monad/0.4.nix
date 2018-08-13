@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "level-monad";
-          version = "0.4";
-        };
-        license = "LicenseRef-PublicDomain";
-        copyright = "";
-        maintainer = "sebf@informatik.uni-kiel.de";
-        author = "Sebastian Fischer";
-        homepage = "http://github.com/sebfisch/level-monad";
-        url = "";
-        synopsis = "Non-Determinism Monad for Level-Wise Search";
-        description = "This Haskell library provides an implementation of the\nMonadPlus type class that enumerates the levels of the\nsearch space using breadth-first search or iterativ\ndeepening depth-first search.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "level-monad";
+        version = "0.4";
       };
-      components = {
-        "level-monad" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.fmlist
-          ];
-        };
+      license = "LicenseRef-PublicDomain";
+      copyright = "";
+      maintainer = "sebf@informatik.uni-kiel.de";
+      author = "Sebastian Fischer";
+      homepage = "http://github.com/sebfisch/level-monad";
+      url = "";
+      synopsis = "Non-Determinism Monad for Level-Wise Search";
+      description = "This Haskell library provides an implementation of the\nMonadPlus type class that enumerates the levels of the\nsearch space using breadth-first search or iterativ\ndeepening depth-first search.";
+      buildType = "Simple";
+    };
+    components = {
+      "level-monad" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.fmlist)
+        ];
       };
-    }
+    };
+  }

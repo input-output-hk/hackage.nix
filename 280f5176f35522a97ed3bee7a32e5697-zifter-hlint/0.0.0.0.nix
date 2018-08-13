@@ -1,35 +1,40 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "zifter-hlint";
-          version = "0.0.0.0";
-        };
-        license = "MIT";
-        copyright = "Copyright: (c) 2017 Tom Sydney Kerckhove";
-        maintainer = "syd.kerckhove@gmail.com";
-        author = "Tom Sydney Kerckhove";
-        homepage = "http://cs-syd.eu";
-        url = "";
-        synopsis = "zifter-hlint";
-        description = "zifter-hlint";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "zifter-hlint";
+        version = "0.0.0.0";
       };
-      components = {
-        "zifter-hlint" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.filepath
-            hsPkgs.hlint
-            hsPkgs.path
-            hsPkgs.path-io
-            hsPkgs.safe
-            hsPkgs.zifter
-          ];
-        };
+      license = "MIT";
+      copyright = "Copyright: (c) 2017 Tom Sydney Kerckhove";
+      maintainer = "syd.kerckhove@gmail.com";
+      author = "Tom Sydney Kerckhove";
+      homepage = "http://cs-syd.eu";
+      url = "";
+      synopsis = "zifter-hlint";
+      description = "zifter-hlint";
+      buildType = "Simple";
+    };
+    components = {
+      "zifter-hlint" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.filepath)
+          (hsPkgs.hlint)
+          (hsPkgs.path)
+          (hsPkgs.path-io)
+          (hsPkgs.safe)
+          (hsPkgs.zifter)
+        ];
       };
-    }
+    };
+  }

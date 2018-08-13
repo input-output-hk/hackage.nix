@@ -1,38 +1,43 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       production = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "rfc-psql";
-          version = "0.0.0.1";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "smokejumperit+rfc@gmail.com";
-        author = "Robert Fischer";
-        homepage = "https://github.com/RobertFischer/rfc#readme";
-        url = "";
-        synopsis = "The PostgreSQL extensions from the Robert Fischer Commons.";
-        description = "Provides best-of-breed support for PostgreSQL, currently based on @postgresql-typed@.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "rfc-psql";
+        version = "0.0.0.1";
       };
-      components = {
-        "rfc-psql" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.network
-            hsPkgs.postgresql-typed
-            hsPkgs.resource-pool
-            hsPkgs.rfc-env
-            hsPkgs.rfc-prelude
-            hsPkgs.transformers
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "smokejumperit+rfc@gmail.com";
+      author = "Robert Fischer";
+      homepage = "https://github.com/RobertFischer/rfc#readme";
+      url = "";
+      synopsis = "The PostgreSQL extensions from the Robert Fischer Commons.";
+      description = "Provides best-of-breed support for PostgreSQL, currently based on @postgresql-typed@.";
+      buildType = "Simple";
+    };
+    components = {
+      "rfc-psql" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.network)
+          (hsPkgs.postgresql-typed)
+          (hsPkgs.resource-pool)
+          (hsPkgs.rfc-env)
+          (hsPkgs.rfc-prelude)
+          (hsPkgs.transformers)
+        ];
       };
-    }
+    };
+  }

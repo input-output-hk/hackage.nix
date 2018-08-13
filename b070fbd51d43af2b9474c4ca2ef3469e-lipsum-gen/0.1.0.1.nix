@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "lipsum-gen";
-          version = "0.1.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "peter@insella.se";
-        author = "Peter Holm";
-        homepage = "";
-        url = "";
-        synopsis = "Generators for random sequences of English-like nonsense\ntext.";
-        description = "The generators in this package are based on syllable\nstatistics from ~44000 English words.\nThe words have been split into syllables, which are\ncategorized into initials, intermediates, and finals.\nSingle-syllable words have been removed.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "lipsum-gen";
+        version = "0.1.0.1";
       };
-      components = {
-        "lipsum-gen" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.QuickCheck
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "peter@insella.se";
+      author = "Peter Holm";
+      homepage = "";
+      url = "";
+      synopsis = "Generators for random sequences of English-like nonsense\ntext.";
+      description = "The generators in this package are based on syllable\nstatistics from ~44000 English words.\nThe words have been split into syllables, which are\ncategorized into initials, intermediates, and finals.\nSingle-syllable words have been removed.";
+      buildType = "Simple";
+    };
+    components = {
+      "lipsum-gen" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.QuickCheck)
+        ];
       };
-    }
+    };
+  }

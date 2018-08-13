@@ -1,36 +1,41 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "nats-queue";
-          version = "0.1.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "palkovsky.ondrej@gmail.com";
-        author = "Ondrej Palkovsky";
-        homepage = "";
-        url = "";
-        synopsis = "Haskell API for NATS messaging system";
-        description = "This library is a Haskell driver for NATS <http://nats.io>.\nNATS is a fast and lightweight publish-subscribe messaging system.\nThis version supports authentication but does not support SSL as the current\nversion of gnatsd (go server 0.5.6) does not support it either.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "nats-queue";
+        version = "0.1.0.1";
       };
-      components = {
-        "nats-queue" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.network
-            hsPkgs.dequeue
-            hsPkgs.random
-            hsPkgs.containers
-            hsPkgs.bytestring
-            hsPkgs.text
-            hsPkgs.aeson
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "palkovsky.ondrej@gmail.com";
+      author = "Ondrej Palkovsky";
+      homepage = "";
+      url = "";
+      synopsis = "Haskell API for NATS messaging system";
+      description = "This library is a Haskell driver for NATS <http://nats.io>.\nNATS is a fast and lightweight publish-subscribe messaging system.\nThis version supports authentication but does not support SSL as the current\nversion of gnatsd (go server 0.5.6) does not support it either.";
+      buildType = "Simple";
+    };
+    components = {
+      "nats-queue" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.network)
+          (hsPkgs.dequeue)
+          (hsPkgs.random)
+          (hsPkgs.containers)
+          (hsPkgs.bytestring)
+          (hsPkgs.text)
+          (hsPkgs.aeson)
+        ];
       };
-    }
+    };
+  }

@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "csound-expression";
-          version = "0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "<anton.kholomiov@gmail.com>";
-        author = "Anton Kholomiov";
-        homepage = "";
-        url = "";
-        synopsis = "Csound combinator library";
-        description = "Csound code generator";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "csound-expression";
+        version = "0.0";
       };
-      components = {
-        "csound-expression" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.base
-            hsPkgs.containers
-            hsPkgs.mtl
-            hsPkgs.pretty
-            hsPkgs.temporal-media
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "<anton.kholomiov@gmail.com>";
+      author = "Anton Kholomiov";
+      homepage = "";
+      url = "";
+      synopsis = "Csound combinator library";
+      description = "Csound code generator";
+      buildType = "Simple";
+    };
+    components = {
+      "csound-expression" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.base)
+          (hsPkgs.containers)
+          (hsPkgs.mtl)
+          (hsPkgs.pretty)
+          (hsPkgs.temporal-media)
+        ];
       };
-    }
+    };
+  }

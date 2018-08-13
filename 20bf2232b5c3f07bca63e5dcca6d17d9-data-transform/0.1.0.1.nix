@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "data-transform";
-          version = "0.1.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) 2014 Jonas Scholl";
-        maintainer = "jonas.scholl@gmx.de";
-        author = "Jonas Scholl";
-        homepage = "";
-        url = "";
-        synopsis = "Functions to transform data structures.";
-        description = "This library provides a simple way to transform parts of\ncomplex data structures. It is based on Data.Data.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "data-transform";
+        version = "0.1.0.1";
       };
-      components = {
-        "data-transform" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.containers
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "(c) 2014 Jonas Scholl";
+      maintainer = "jonas.scholl@gmx.de";
+      author = "Jonas Scholl";
+      homepage = "";
+      url = "";
+      synopsis = "Functions to transform data structures.";
+      description = "This library provides a simple way to transform parts of\ncomplex data structures. It is based on Data.Data.";
+      buildType = "Simple";
+    };
+    components = {
+      "data-transform" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.containers)
+        ];
       };
-    }
+    };
+  }

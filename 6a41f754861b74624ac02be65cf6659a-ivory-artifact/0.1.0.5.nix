@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "ivory-artifact";
-          version = "0.1.0.5";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "leepike@galois.com";
-        author = "Galois, Inc.";
-        homepage = "http://ivorylang.org";
-        url = "";
-        synopsis = "Manage additional data files during Ivory compilation.";
-        description = "Mostly used by other Ivory libraries and backends and typically shouldn't have to be used directly by the user.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "ivory-artifact";
+        version = "0.1.0.5";
       };
-      components = {
-        "ivory-artifact" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.filepath
-            hsPkgs.directory
-            hsPkgs.text
-            hsPkgs.utf8-string
-            hsPkgs.HStringTemplate
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "leepike@galois.com";
+      author = "Galois, Inc.";
+      homepage = "http://ivorylang.org";
+      url = "";
+      synopsis = "Manage additional data files during Ivory compilation.";
+      description = "Mostly used by other Ivory libraries and backends and typically shouldn't have to be used directly by the user.";
+      buildType = "Simple";
+    };
+    components = {
+      "ivory-artifact" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.filepath)
+          (hsPkgs.directory)
+          (hsPkgs.text)
+          (hsPkgs.utf8-string)
+          (hsPkgs.HStringTemplate)
+        ];
       };
-    }
+    };
+  }

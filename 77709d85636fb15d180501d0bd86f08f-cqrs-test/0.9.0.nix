@@ -1,37 +1,42 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "cqrs-test";
-          version = "0.9.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "Bardur Arantsson <bardur@scientician.net>";
-        author = "Bardur Arantsson";
-        homepage = "";
-        url = "";
-        synopsis = "Command-Query Responsibility Segregation Test Support";
-        description = "Test Support for CQRS integration components.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "cqrs-test";
+        version = "0.9.0";
       };
-      components = {
-        "cqrs-test" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.conduit
-            hsPkgs.cqrs-types
-            hsPkgs.pool-conduit
-            hsPkgs.stm
-            hsPkgs.transformers
-            hsPkgs.hspec
-            hsPkgs.HUnit
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "Bardur Arantsson <bardur@scientician.net>";
+      author = "Bardur Arantsson";
+      homepage = "";
+      url = "";
+      synopsis = "Command-Query Responsibility Segregation Test Support";
+      description = "Test Support for CQRS integration components.";
+      buildType = "Simple";
+    };
+    components = {
+      "cqrs-test" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.conduit)
+          (hsPkgs.cqrs-types)
+          (hsPkgs.pool-conduit)
+          (hsPkgs.stm)
+          (hsPkgs.transformers)
+          (hsPkgs.hspec)
+          (hsPkgs.HUnit)
+        ];
       };
-    }
+    };
+  }

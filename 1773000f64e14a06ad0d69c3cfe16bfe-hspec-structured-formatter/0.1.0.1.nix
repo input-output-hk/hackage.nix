@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "hspec-structured-formatter";
-          version = "0.1.0.1";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "flbulgarelli@yahoo.com.ar";
-        author = "Franco Leonardo Bulgarelli";
-        homepage = "";
-        url = "";
-        synopsis = "";
-        description = "Structured formatted for hspec";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "hspec-structured-formatter";
+        version = "0.1.0.1";
       };
-      components = {
-        "hspec-structured-formatter" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.hspec
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "flbulgarelli@yahoo.com.ar";
+      author = "Franco Leonardo Bulgarelli";
+      homepage = "";
+      url = "";
+      synopsis = "";
+      description = "Structured formatted for hspec";
+      buildType = "Simple";
+    };
+    components = {
+      "hspec-structured-formatter" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.hspec)
+        ];
       };
-    }
+    };
+  }

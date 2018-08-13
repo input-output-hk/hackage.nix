@@ -1,39 +1,44 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       haste-inst = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "haste-perch";
-          version = "0.1.0.8";
-        };
-        license = "GPL-3.0-only";
-        copyright = "";
-        maintainer = "agocorona@gmail.com";
-        author = "Alberto G. Corona";
-        homepage = "https://github.com/agocorona/haste-perch";
-        url = "";
-        synopsis = "Create, navigate and modify the DOM tree with composable syntax, with the haste compiler";
-        description = "see the description at the homepage.\nThis version add support for the Client Monad (Module Haste.App.Perch)";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "haste-perch";
+        version = "0.1.0.8";
       };
-      components = {
-        "haste-perch" = {
-          depends  = if _flags.haste-inst
-            then [
-              hsPkgs.base
-              hsPkgs.transformers
-              hsPkgs.haste-lib
-            ]
-            else [
-              hsPkgs.base
-              hsPkgs.transformers
-              hsPkgs.haste-compiler
-            ];
-        };
+      license = "GPL-3.0-only";
+      copyright = "";
+      maintainer = "agocorona@gmail.com";
+      author = "Alberto G. Corona";
+      homepage = "https://github.com/agocorona/haste-perch";
+      url = "";
+      synopsis = "Create, navigate and modify the DOM tree with composable syntax, with the haste compiler";
+      description = "see the description at the homepage.\nThis version add support for the Client Monad (Module Haste.App.Perch)";
+      buildType = "Simple";
+    };
+    components = {
+      "haste-perch" = {
+        depends  = if _flags.haste-inst
+          then [
+            (hsPkgs.base)
+            (hsPkgs.transformers)
+            (hsPkgs.haste-lib)
+          ]
+          else [
+            (hsPkgs.base)
+            (hsPkgs.transformers)
+            (hsPkgs.haste-compiler)
+          ];
       };
-    }
+    };
+  }

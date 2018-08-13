@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "singnal";
-          version = "0.1.0.0";
-        };
-        license = "AGPL-3.0-only";
-        copyright = "";
-        maintainer = "zaomir@outlook.com";
-        author = "Zaoqi";
-        homepage = "";
-        url = "";
-        synopsis = "";
-        description = "Singnal";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "singnal";
+        version = "0.1.0.0";
       };
-      components = {
-        "singnal" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "AGPL-3.0-only";
+      copyright = "";
+      maintainer = "zaomir@outlook.com";
+      author = "Zaoqi";
+      homepage = "";
+      url = "";
+      synopsis = "";
+      description = "Singnal";
+      buildType = "Simple";
+    };
+    components = {
+      "singnal" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "Boolean";
-          version = "0.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) 2009 by Conal Elliott";
-        maintainer = "conal@conal.net";
-        author = "Conal Elliott";
-        homepage = "";
-        url = "http://code.haskell.org/~conal/code/Boolean";
-        synopsis = "Generalized booleans";
-        description = "Some classes for generalized boolean operations.\n\nCopyright 2009 Conal Elliott; BSD3 license.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "Boolean";
+        version = "0.0.1";
       };
-      components = {
-        "Boolean" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "(c) 2009 by Conal Elliott";
+      maintainer = "conal@conal.net";
+      author = "Conal Elliott";
+      homepage = "";
+      url = "http://code.haskell.org/~conal/code/Boolean";
+      synopsis = "Generalized booleans";
+      description = "Some classes for generalized boolean operations.\n\nCopyright 2009 Conal Elliott; BSD3 license.";
+      buildType = "Simple";
+    };
+    components = {
+      "Boolean" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

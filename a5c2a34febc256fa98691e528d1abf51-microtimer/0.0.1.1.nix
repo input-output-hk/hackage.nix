@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "microtimer";
-          version = "0.0.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (c) Bryan O'Sullivan 2009-2010,\n(c) Austin Seipp 2013";
-        maintainer = "Austin Seipp <aseipp@pobox.com>";
-        author = "Bryan O'Sullivan";
-        homepage = "http://thoughtpolice.github.com/microtimer";
-        url = "";
-        synopsis = "A tiny library for benchmarking IO actions.";
-        description = "A tiny library for benchmarking IO actions.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "microtimer";
+        version = "0.0.1.1";
       };
-      components = {
-        "microtimer" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.time
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) Bryan O'Sullivan 2009-2010,\n(c) Austin Seipp 2013";
+      maintainer = "Austin Seipp <aseipp@pobox.com>";
+      author = "Bryan O'Sullivan";
+      homepage = "http://thoughtpolice.github.com/microtimer";
+      url = "";
+      synopsis = "A tiny library for benchmarking IO actions.";
+      description = "A tiny library for benchmarking IO actions.";
+      buildType = "Simple";
+    };
+    components = {
+      "microtimer" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.time)
+        ];
       };
-    }
+    };
+  }

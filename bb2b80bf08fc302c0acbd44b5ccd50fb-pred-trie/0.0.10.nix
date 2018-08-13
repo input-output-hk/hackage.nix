@@ -1,50 +1,55 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "pred-trie";
-          version = "0.0.10";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Athan Clark <athan.clark@gmail.com>";
-        author = "Athan Clark <athan.clark@gmail.com>";
-        homepage = "";
-        url = "";
-        synopsis = "Predicative tries";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "pred-trie";
+        version = "0.0.10";
       };
-      components = {
-        "pred-trie" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Athan Clark <athan.clark@gmail.com>";
+      author = "Athan Clark <athan.clark@gmail.com>";
+      homepage = "";
+      url = "";
+      synopsis = "Predicative tries";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "pred-trie" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.semigroups)
+          (hsPkgs.bifunctors)
+        ];
+      };
+      tests = {
+        "spec" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.semigroups
-            hsPkgs.bifunctors
+            (hsPkgs.base)
+            (hsPkgs.hspec)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.quickcheck-instances)
           ];
         };
-        tests = {
-          "spec" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hspec
-              hsPkgs.QuickCheck
-              hsPkgs.quickcheck-instances
-            ];
-          };
-        };
-        benchmarks = {
-          "simplevshort" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.criterion
-              hsPkgs.semigroups
-            ];
-          };
+      };
+      benchmarks = {
+        "simplevshort" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.criterion)
+            (hsPkgs.semigroups)
+          ];
         };
       };
-    }
+    };
+  }

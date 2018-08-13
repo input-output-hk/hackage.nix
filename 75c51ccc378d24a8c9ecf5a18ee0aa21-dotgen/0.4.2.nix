@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       devel = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "dotgen";
-          version = "0.4.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Andy Gill <andygill@ku.edu>";
-        author = "Andy Gill";
-        homepage = "https://github.com/ku-fpg/dotgen";
-        url = "";
-        synopsis = "A simple interface for building .dot graph files.";
-        description = "This package provides a simple interface for building .dot graph files,\nfor input into the dot and graphviz tools.\nIt includes a monadic interface for building graphs.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "dotgen";
+        version = "0.4.2";
       };
-      components = {
-        "dotgen" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Andy Gill <andygill@ku.edu>";
+      author = "Andy Gill";
+      homepage = "https://github.com/ku-fpg/dotgen";
+      url = "";
+      synopsis = "A simple interface for building .dot graph files.";
+      description = "This package provides a simple interface for building .dot graph files,\nfor input into the dot and graphviz tools.\nIt includes a monadic interface for building graphs.";
+      buildType = "Simple";
+    };
+    components = {
+      "dotgen" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+        ];
+      };
+      exes = {
+        "dotgen-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.containers
+            (hsPkgs.base)
+            (hsPkgs.dotgen)
           ];
         };
-        exes = {
-          "dotgen-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.dotgen
-            ];
-          };
-        };
       };
-    }
+    };
+  }

@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "cabal";
-          version = "0.0.0.0";
-        };
-        license = "BSD-2-Clause";
-        copyright = "";
-        maintainer = "carter.schonwald@gmail.com";
-        author = "Carter Tazio Schonwald";
-        homepage = "";
-        url = "";
-        synopsis = "placeholder for Cabal package, you want the upper case Cabal";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "cabal";
+        version = "0.0.0.0";
       };
-      components = {
-        "cabal" = {
-          depends  = [
-            hsPkgs.youProbablyWantCapitalCabal
-            hsPkgs.base
-          ];
-        };
+      license = "BSD-2-Clause";
+      copyright = "";
+      maintainer = "carter.schonwald@gmail.com";
+      author = "Carter Tazio Schonwald";
+      homepage = "";
+      url = "";
+      synopsis = "placeholder for Cabal package, you want the upper case Cabal";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "cabal" = {
+        depends  = [
+          (hsPkgs.youProbablyWantCapitalCabal)
+          (hsPkgs.base)
+        ];
       };
-    }
+    };
+  }

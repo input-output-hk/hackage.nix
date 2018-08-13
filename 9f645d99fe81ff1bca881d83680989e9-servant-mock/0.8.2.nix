@@ -1,66 +1,71 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       example = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "servant-mock";
-          version = "0.8.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2015-2016 Servant Contributors";
-        maintainer = "haskell-servant-maintainers@googlegroups.com";
-        author = "Servant Contributors";
-        homepage = "http://haskell-servant.readthedocs.org/";
-        url = "";
-        synopsis = "Derive a mock server for free from your servant API types";
-        description = "Derive a mock server for free from your servant API types\n\nSee the @Servant.Mock@ module for the documentation and an example.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "servant-mock";
+        version = "0.8.2";
       };
-      components = {
-        "servant-mock" = {
+      license = "BSD-3-Clause";
+      copyright = "2015-2016 Servant Contributors";
+      maintainer = "haskell-servant-maintainers@googlegroups.com";
+      author = "Servant Contributors";
+      homepage = "http://haskell-servant.readthedocs.org/";
+      url = "";
+      synopsis = "Derive a mock server for free from your servant API types";
+      description = "Derive a mock server for free from your servant API types\n\nSee the @Servant.Mock@ module for the documentation and an example.";
+      buildType = "Simple";
+    };
+    components = {
+      "servant-mock" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.http-types)
+          (hsPkgs.servant)
+          (hsPkgs.servant-server)
+          (hsPkgs.transformers)
+          (hsPkgs.QuickCheck)
+          (hsPkgs.wai)
+        ];
+      };
+      exes = {
+        "mock-app" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.http-types
-            hsPkgs.servant
-            hsPkgs.servant-server
-            hsPkgs.transformers
-            hsPkgs.QuickCheck
-            hsPkgs.wai
+            (hsPkgs.aeson)
+            (hsPkgs.base)
+            (hsPkgs.servant-mock)
+            (hsPkgs.servant-server)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.warp)
           ];
         };
-        exes = {
-          "mock-app" = {
-            depends  = [
-              hsPkgs.aeson
-              hsPkgs.base
-              hsPkgs.servant-mock
-              hsPkgs.servant-server
-              hsPkgs.QuickCheck
-              hsPkgs.warp
-            ];
-          };
-        };
-        tests = {
-          "spec" = {
-            depends  = [
-              hsPkgs.bytestring-conversion
-              hsPkgs.base
-              hsPkgs.hspec
-              hsPkgs.hspec-wai
-              hsPkgs.QuickCheck
-              hsPkgs.servant
-              hsPkgs.servant-server
-              hsPkgs.servant-mock
-              hsPkgs.aeson
-              hsPkgs.wai
-            ];
-          };
+      };
+      tests = {
+        "spec" = {
+          depends  = [
+            (hsPkgs.bytestring-conversion)
+            (hsPkgs.base)
+            (hsPkgs.hspec)
+            (hsPkgs.hspec-wai)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.servant)
+            (hsPkgs.servant-server)
+            (hsPkgs.servant-mock)
+            (hsPkgs.aeson)
+            (hsPkgs.wai)
+          ];
         };
       };
-    }
+    };
+  }

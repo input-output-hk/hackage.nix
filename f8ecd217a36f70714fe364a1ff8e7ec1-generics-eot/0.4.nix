@@ -1,52 +1,57 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "generics-eot";
-          version = "0.4";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "soenkehahn@gmail.com";
-        author = "";
-        homepage = "https://generics-eot.readthedocs.io/";
-        url = "";
-        synopsis = "A library for generic programming that aims to be easy to understand";
-        description = "Documentation is here: <https://generics-eot.readthedocs.io/>";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "generics-eot";
+        version = "0.4";
       };
-      components = {
-        "generics-eot" = {
-          depends  = [ hsPkgs.base ];
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "soenkehahn@gmail.com";
+      author = "";
+      homepage = "https://generics-eot.readthedocs.io/";
+      url = "";
+      synopsis = "A library for generic programming that aims to be easy to understand";
+      description = "Documentation is here: <https://generics-eot.readthedocs.io/>";
+      buildType = "Simple";
+    };
+    components = {
+      "generics-eot" = {
+        depends  = [ (hsPkgs.base) ];
+      };
+      tests = {
+        "quickcheck" = {
+          depends  = [
+            (hsPkgs.QuickCheck)
+            (hsPkgs.base)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+            (hsPkgs.hspec)
+            (hsPkgs.interpolate)
+            (hsPkgs.mockery)
+            (hsPkgs.shake)
+            (hsPkgs.silently)
+          ];
         };
-        tests = {
-          "quickcheck" = {
-            depends  = [
-              hsPkgs.QuickCheck
-              hsPkgs.base
-              hsPkgs.directory
-              hsPkgs.filepath
-              hsPkgs.hspec
-              hsPkgs.interpolate
-              hsPkgs.mockery
-              hsPkgs.shake
-              hsPkgs.silently
-            ];
-          };
-          "spec" = {
-            depends  = [
-              hsPkgs.QuickCheck
-              hsPkgs.base
-              hsPkgs.doctest
-              hsPkgs.hspec
-              hsPkgs.interpolate
-              hsPkgs.markdown-unlit
-            ];
-          };
+        "spec" = {
+          depends  = [
+            (hsPkgs.QuickCheck)
+            (hsPkgs.base)
+            (hsPkgs.doctest)
+            (hsPkgs.hspec)
+            (hsPkgs.interpolate)
+            (hsPkgs.markdown-unlit)
+          ];
         };
       };
-    }
+    };
+  }

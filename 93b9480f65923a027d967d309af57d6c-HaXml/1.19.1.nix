@@ -1,82 +1,87 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "HaXml";
-          version = "1.19.1";
-        };
-        license = "LicenseRef-LGPL";
-        copyright = "";
-        maintainer = "";
-        author = "Malcolm Wallace <Malcolm.Wallace@cs.york.ac.uk>";
-        homepage = "http://www.cs.york.ac.uk/fp/HaXml/";
-        url = "";
-        synopsis = "Utilities for manipulating XML documents";
-        description = "Haskell utilities for parsing, filtering, transforming and\ngenerating XML documents.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "HaXml";
+        version = "1.19.1";
       };
-      components = {
-        "HaXml" = {
+      license = "LicenseRef-LGPL";
+      copyright = "";
+      maintainer = "";
+      author = "Malcolm Wallace <Malcolm.Wallace@cs.york.ac.uk>";
+      homepage = "http://www.cs.york.ac.uk/fp/HaXml/";
+      url = "";
+      synopsis = "Utilities for manipulating XML documents";
+      description = "Haskell utilities for parsing, filtering, transforming and\ngenerating XML documents.";
+      buildType = "Custom";
+    };
+    components = {
+      "HaXml" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.haskell98)
+          (hsPkgs.polyparse)
+        ];
+      };
+      exes = {
+        "Canonicalise" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.haskell98
-            hsPkgs.polyparse
+            (hsPkgs.base)
+            (hsPkgs.haskell98)
+            (hsPkgs.polyparse)
           ];
         };
-        exes = {
-          "Canonicalise" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.haskell98
-              hsPkgs.polyparse
-            ];
-          };
-          "CanonicaliseLazy" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.haskell98
-              hsPkgs.polyparse
-            ];
-          };
-          "Xtract" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.haskell98
-              hsPkgs.polyparse
-            ];
-          };
-          "XtractLazy" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.haskell98
-              hsPkgs.polyparse
-            ];
-          };
-          "Validate" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.haskell98
-              hsPkgs.polyparse
-            ];
-          };
-          "MkOneOf" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.haskell98
-              hsPkgs.polyparse
-            ];
-          };
-          "DtdToHaskell" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.haskell98
-              hsPkgs.polyparse
-            ];
-          };
+        "CanonicaliseLazy" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.haskell98)
+            (hsPkgs.polyparse)
+          ];
+        };
+        "Xtract" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.haskell98)
+            (hsPkgs.polyparse)
+          ];
+        };
+        "XtractLazy" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.haskell98)
+            (hsPkgs.polyparse)
+          ];
+        };
+        "Validate" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.haskell98)
+            (hsPkgs.polyparse)
+          ];
+        };
+        "MkOneOf" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.haskell98)
+            (hsPkgs.polyparse)
+          ];
+        };
+        "DtdToHaskell" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.haskell98)
+            (hsPkgs.polyparse)
+          ];
         };
       };
-    }
+    };
+  }

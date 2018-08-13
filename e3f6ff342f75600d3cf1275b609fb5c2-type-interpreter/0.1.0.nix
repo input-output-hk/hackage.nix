@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "2.0";
-        identifier = {
-          name = "type-interpreter";
-          version = "0.1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) Ole Krüger 2018";
-        maintainer = "ole@vprsm.de";
-        author = "Ole Krüger";
-        homepage = "";
-        url = "";
-        synopsis = "Interpreter for Template Haskell types";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "2.0";
+      identifier = {
+        name = "type-interpreter";
+        version = "0.1.0";
       };
-      components = {
-        "type-interpreter" = {
+      license = "BSD-3-Clause";
+      copyright = "(c) Ole Krüger 2018";
+      maintainer = "ole@vprsm.de";
+      author = "Ole Krüger";
+      homepage = "";
+      url = "";
+      synopsis = "Interpreter for Template Haskell types";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "type-interpreter" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.template-haskell)
+          (hsPkgs.containers)
+        ];
+      };
+      tests = {
+        "type-interpreter-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.template-haskell
-            hsPkgs.containers
+            (hsPkgs.base)
+            (hsPkgs.type-interpreter)
+            (hsPkgs.template-haskell)
           ];
         };
-        tests = {
-          "type-interpreter-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.type-interpreter
-              hsPkgs.template-haskell
-            ];
-          };
-        };
       };
-    }
+    };
+  }

@@ -1,41 +1,46 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "hsinstall";
-          version = "1.3";
-        };
-        license = "ISC";
-        copyright = "2016 Dino Morelli";
-        maintainer = "Dino Morelli <dino@ui3.info>";
-        author = "Dino Morelli";
-        homepage = "";
-        url = "";
-        synopsis = "Install Haskell software";
-        description = "This is a utility to install Haskell programs on a system using stack. Even though stack has an `install` command, I found it to be not enough for my needs. This software tries to install the binaries, the LICENSE file and also the resources directory if it finds one. There is also an optional library component to assist with locating installed data files at runtime.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "hsinstall";
+        version = "1.3";
       };
-      components = {
-        "hsinstall" = {
+      license = "ISC";
+      copyright = "2016 Dino Morelli";
+      maintainer = "Dino Morelli <dino@ui3.info>";
+      author = "Dino Morelli";
+      homepage = "";
+      url = "";
+      synopsis = "Install Haskell software";
+      description = "This is a utility to install Haskell programs on a system using stack. Even though stack has an `install` command, I found it to be not enough for my needs. This software tries to install the binaries, the LICENSE file and also the resources directory if it finds one. There is also an optional library component to assist with locating installed data files at runtime.";
+      buildType = "Simple";
+    };
+    components = {
+      "hsinstall" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.directory)
+          (hsPkgs.filepath)
+        ];
+      };
+      exes = {
+        "an-app" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.directory
-            hsPkgs.filepath
+            (hsPkgs.base)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+            (hsPkgs.hsinstall)
           ];
         };
-        exes = {
-          "an-app" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.directory
-              hsPkgs.filepath
-              hsPkgs.hsinstall
-            ];
-          };
-        };
       };
-    }
+    };
+  }

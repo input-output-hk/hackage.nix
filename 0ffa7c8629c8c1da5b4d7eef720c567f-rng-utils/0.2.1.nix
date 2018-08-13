@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "rng-utils";
-          version = "0.2.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "ozgun.ataman@soostone.com";
-        author = "Ozgun Ataman, Snap Framework Authors";
-        homepage = "";
-        url = "";
-        synopsis = "RNG within an MVar for convenient concurrent use";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "rng-utils";
+        version = "0.2.1";
       };
-      components = {
-        "rng-utils" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.mwc-random
-            hsPkgs.vector
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "ozgun.ataman@soostone.com";
+      author = "Ozgun Ataman, Snap Framework Authors";
+      homepage = "";
+      url = "";
+      synopsis = "RNG within an MVar for convenient concurrent use";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "rng-utils" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.mwc-random)
+          (hsPkgs.vector)
+        ];
       };
-    }
+    };
+  }

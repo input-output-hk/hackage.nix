@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "RBTree";
-          version = "0.0.3";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2011 Wu Xingbo (wuxb45@gmail.com)";
-        maintainer = "Wu Xingbo";
-        author = "Wu Xingbo";
-        homepage = "git://github.com/wuxb45/Haskell-RBTree.git";
-        url = "";
-        synopsis = "Pure haskell Red-Black-Tree implemetation";
-        description = "This package implemets Red-Black tree data-structure.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "RBTree";
+        version = "0.0.3";
       };
-      components = {
-        "RBTree" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "2011 Wu Xingbo (wuxb45@gmail.com)";
+      maintainer = "Wu Xingbo";
+      author = "Wu Xingbo";
+      homepage = "git://github.com/wuxb45/Haskell-RBTree.git";
+      url = "";
+      synopsis = "Pure haskell Red-Black-Tree implemetation";
+      description = "This package implemets Red-Black tree data-structure.";
+      buildType = "Simple";
+    };
+    components = {
+      "RBTree" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

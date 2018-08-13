@@ -1,49 +1,54 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "xml-hamlet";
-          version = "0.1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "michael@snoyman.com";
-        author = "Michael Snoyman";
-        homepage = "http://www.yesodweb.com/";
-        url = "";
-        synopsis = "Hamlet-style quasiquoter for XML content";
-        description = "Hamlet-style quasiquoter for XML content";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "xml-hamlet";
+        version = "0.1.0";
       };
-      components = {
-        "xml-hamlet" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "michael@snoyman.com";
+      author = "Michael Snoyman";
+      homepage = "http://www.yesodweb.com/";
+      url = "";
+      synopsis = "Hamlet-style quasiquoter for XML content";
+      description = "Hamlet-style quasiquoter for XML content";
+      buildType = "Simple";
+    };
+    components = {
+      "xml-hamlet" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.shakespeare)
+          (hsPkgs.xml-enumerator)
+          (hsPkgs.text)
+          (hsPkgs.template-haskell)
+          (hsPkgs.parsec)
+        ];
+      };
+      tests = {
+        "test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.shakespeare
-            hsPkgs.xml-enumerator
-            hsPkgs.text
-            hsPkgs.template-haskell
-            hsPkgs.parsec
+            (hsPkgs.hspec)
+            (hsPkgs.HUnit)
+            (hsPkgs.base)
+            (hsPkgs.shakespeare)
+            (hsPkgs.xml-enumerator)
+            (hsPkgs.text)
+            (hsPkgs.template-haskell)
+            (hsPkgs.parsec)
+            (hsPkgs.xml-hamlet)
           ];
         };
-        tests = {
-          "test" = {
-            depends  = [
-              hsPkgs.hspec
-              hsPkgs.HUnit
-              hsPkgs.base
-              hsPkgs.shakespeare
-              hsPkgs.xml-enumerator
-              hsPkgs.text
-              hsPkgs.template-haskell
-              hsPkgs.parsec
-              hsPkgs.xml-hamlet
-            ];
-          };
-        };
       };
-    }
+    };
+  }

@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "libnotify";
-          version = "0.0.2.1";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "Matvey Aksenov <matvey.aksenov@gmail.com>";
-        author = "Emon Tsukimiya, Matvey Aksenov";
-        homepage = "";
-        url = "";
-        synopsis = "Haskell binding for Libnotify";
-        description = "Usable binding to libnotify library.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "libnotify";
+        version = "0.0.2.1";
       };
-      components = {
-        "libnotify" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.glib
-            hsPkgs.gtk
-            hsPkgs.mtl
-          ];
-          libs = [ pkgs.notify ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "Matvey Aksenov <matvey.aksenov@gmail.com>";
+      author = "Emon Tsukimiya, Matvey Aksenov";
+      homepage = "";
+      url = "";
+      synopsis = "Haskell binding for Libnotify";
+      description = "Usable binding to libnotify library.";
+      buildType = "Simple";
+    };
+    components = {
+      "libnotify" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.glib)
+          (hsPkgs.gtk)
+          (hsPkgs.mtl)
+        ];
+        libs = [ (pkgs.notify) ];
       };
-    }
+    };
+  }

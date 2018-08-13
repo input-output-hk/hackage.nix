@@ -1,48 +1,53 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "ploton";
-          version = "0.3.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2017 ishiy1993";
-        maintainer = "y.ishihara.1993@gmail.com";
-        author = "ishiy";
-        homepage = "https://github.com/ishiy1993/ploton#readme";
-        url = "";
-        synopsis = "A useful cli tool to draw figures";
-        description = "Please see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "ploton";
+        version = "0.3.0.0";
       };
-      components = {
+      license = "BSD-3-Clause";
+      copyright = "2017 ishiy1993";
+      maintainer = "y.ishihara.1993@gmail.com";
+      author = "ishiy";
+      homepage = "https://github.com/ishiy1993/ploton#readme";
+      url = "";
+      synopsis = "A useful cli tool to draw figures";
+      description = "Please see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "ploton" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.optparse-applicative)
+          (hsPkgs.process)
+        ];
+      };
+      exes = {
         "ploton" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.optparse-applicative
-            hsPkgs.process
+            (hsPkgs.base)
+            (hsPkgs.ploton)
           ];
         };
-        exes = {
-          "ploton" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.ploton
-            ];
-          };
-        };
-        tests = {
-          "spec" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.ploton
-              hsPkgs.hspec
-            ];
-          };
+      };
+      tests = {
+        "spec" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.ploton)
+            (hsPkgs.hspec)
+          ];
         };
       };
-    }
+    };
+  }

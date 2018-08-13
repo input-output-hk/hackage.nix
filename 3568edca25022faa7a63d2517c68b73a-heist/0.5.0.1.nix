@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "heist";
-          version = "0.5.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "snap@snapframework.com";
-        author = "Doug Beardsley, Gregory Collins";
-        homepage = "http://snapframework.com/";
-        url = "";
-        synopsis = "An xhtml templating system";
-        description = "An xhtml templating system";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "heist";
+        version = "0.5.0.1";
       };
-      components = {
-        "heist" = {
-          depends  = [
-            hsPkgs.attoparsec
-            hsPkgs.attoparsec-text
-            hsPkgs.base
-            hsPkgs.blaze-builder
-            hsPkgs.bytestring
-            hsPkgs.containers
-            hsPkgs.directory
-            hsPkgs.directory-tree
-            hsPkgs.filepath
-            hsPkgs.MonadCatchIO-transformers
-            hsPkgs.mtl
-            hsPkgs.process
-            hsPkgs.random
-            hsPkgs.text
-            hsPkgs.transformers
-            hsPkgs.xmlhtml
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "snap@snapframework.com";
+      author = "Doug Beardsley, Gregory Collins";
+      homepage = "http://snapframework.com/";
+      url = "";
+      synopsis = "An xhtml templating system";
+      description = "An xhtml templating system";
+      buildType = "Simple";
+    };
+    components = {
+      "heist" = {
+        depends  = [
+          (hsPkgs.attoparsec)
+          (hsPkgs.attoparsec-text)
+          (hsPkgs.base)
+          (hsPkgs.blaze-builder)
+          (hsPkgs.bytestring)
+          (hsPkgs.containers)
+          (hsPkgs.directory)
+          (hsPkgs.directory-tree)
+          (hsPkgs.filepath)
+          (hsPkgs.MonadCatchIO-transformers)
+          (hsPkgs.mtl)
+          (hsPkgs.process)
+          (hsPkgs.random)
+          (hsPkgs.text)
+          (hsPkgs.transformers)
+          (hsPkgs.xmlhtml)
+        ];
       };
-    }
+    };
+  }

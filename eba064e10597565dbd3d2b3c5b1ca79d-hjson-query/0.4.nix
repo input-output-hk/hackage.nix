@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "hjson-query";
-          version = "0.4";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (c) 2010 Yuriy Iskra";
-        maintainer = "YuriyIskra  <iskra.yw@gmail.com>";
-        author = "YuriyIskra  <iskra.yw@gmail.com>";
-        homepage = "";
-        url = "";
-        synopsis = "library for querying from JSON";
-        description = "library(HXT-like) for querying from JSON";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "hjson-query";
+        version = "0.4";
       };
-      components = {
-        "hjson-query" = {
-          depends  = [
-            hsPkgs.hjson
-            hsPkgs.base
-            hsPkgs.containers
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) 2010 Yuriy Iskra";
+      maintainer = "YuriyIskra  <iskra.yw@gmail.com>";
+      author = "YuriyIskra  <iskra.yw@gmail.com>";
+      homepage = "";
+      url = "";
+      synopsis = "library for querying from JSON";
+      description = "library(HXT-like) for querying from JSON";
+      buildType = "Simple";
+    };
+    components = {
+      "hjson-query" = {
+        depends  = [
+          (hsPkgs.hjson)
+          (hsPkgs.base)
+          (hsPkgs.containers)
+        ];
       };
-    }
+    };
+  }

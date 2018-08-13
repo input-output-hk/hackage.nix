@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "strings";
-          version = "1.0.2";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "Julian Fleischer <julian.fleischer@fu-berlin.de>";
-        author = "Julian Fleischer <julian.fleischer@fu-berlin.de>";
-        homepage = "http://hub.darcs.net/scravy/strings";
-        url = "";
-        synopsis = "Functions for working with strings, including Text, ByteString, etc.";
-        description = "Functions for working with strings, including Text, ByteString, etc.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "strings";
+        version = "1.0.2";
       };
-      components = {
-        "strings" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.text
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "Julian Fleischer <julian.fleischer@fu-berlin.de>";
+      author = "Julian Fleischer <julian.fleischer@fu-berlin.de>";
+      homepage = "http://hub.darcs.net/scravy/strings";
+      url = "";
+      synopsis = "Functions for working with strings, including Text, ByteString, etc.";
+      description = "Functions for working with strings, including Text, ByteString, etc.";
+      buildType = "Simple";
+    };
+    components = {
+      "strings" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.text)
+        ];
       };
-    }
+    };
+  }

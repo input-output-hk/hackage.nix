@@ -1,37 +1,42 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       tcp = false;
       simplelocalnet = false;
       p2p = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "cloud-haskell";
-          version = "0.0.1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "watson.timothy@gmail.com";
-        author = "Tim Watson";
-        homepage = "http://github.com/haskell-distributed/cloud-haskell";
-        url = "";
-        synopsis = "The Cloud Haskell Application Platform";
-        description = "Cloud Haskell is a set of libraries that bring Erlang-style\nconcurrency and distribution to Haskell programs. This\nproject is an implementation of that distributed computing\ninterface, where processes communicate with one another through\nexplicit message passing rather than shared memory.\n\nThis package is just a convenient wrapper\naround the @distributed-process-platform@, @distributed-process@ and\n@network-transport@ packages, so they can be\ninstalled with a single @cabal install cloud-haskell@\ncommand.\n\nThe package also comes with flags to enable\ndifferent @Network.Transport@ and /Cloud Haskell/\n(network topology) backends.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "cloud-haskell";
+        version = "0.0.1.0";
       };
-      components = {
-        "cloud-haskell" = {
-          depends  = (([
-            hsPkgs.rank1dynamic
-            hsPkgs.distributed-static
-            hsPkgs.network-transport
-            hsPkgs.distributed-process
-            hsPkgs.distributed-process-platform
-          ] ++ pkgs.lib.optional _flags.tcp hsPkgs.network-transport-tcp) ++ pkgs.lib.optional _flags.simplelocalnet hsPkgs.distributed-process-simplelocalnet) ++ pkgs.lib.optional _flags.p2p hsPkgs.distributed-process-p2p;
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "watson.timothy@gmail.com";
+      author = "Tim Watson";
+      homepage = "http://github.com/haskell-distributed/cloud-haskell";
+      url = "";
+      synopsis = "The Cloud Haskell Application Platform";
+      description = "Cloud Haskell is a set of libraries that bring Erlang-style\nconcurrency and distribution to Haskell programs. This\nproject is an implementation of that distributed computing\ninterface, where processes communicate with one another through\nexplicit message passing rather than shared memory.\n\nThis package is just a convenient wrapper\naround the @distributed-process-platform@, @distributed-process@ and\n@network-transport@ packages, so they can be\ninstalled with a single @cabal install cloud-haskell@\ncommand.\n\nThe package also comes with flags to enable\ndifferent @Network.Transport@ and /Cloud Haskell/\n(network topology) backends.";
+      buildType = "Simple";
+    };
+    components = {
+      "cloud-haskell" = {
+        depends  = (([
+          (hsPkgs.rank1dynamic)
+          (hsPkgs.distributed-static)
+          (hsPkgs.network-transport)
+          (hsPkgs.distributed-process)
+          (hsPkgs.distributed-process-platform)
+        ] ++ pkgs.lib.optional (_flags.tcp) (hsPkgs.network-transport-tcp)) ++ pkgs.lib.optional (_flags.simplelocalnet) (hsPkgs.distributed-process-simplelocalnet)) ++ pkgs.lib.optional (_flags.p2p) (hsPkgs.distributed-process-p2p);
       };
-    }
+    };
+  }

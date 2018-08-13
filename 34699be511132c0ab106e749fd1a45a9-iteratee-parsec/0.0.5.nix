@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.4";
-        identifier = {
-          name = "iteratee-parsec";
-          version = "0.0.5";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "uzytkownik2@gmail.com";
-        author = "John Lato,\nMaciej Piechotka";
-        homepage = "";
-        url = "";
-        synopsis = "Package allowing parsec parser initeratee";
-        description = "Package providing instances of Stream in\nIteratee monad.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.4";
+      identifier = {
+        name = "iteratee-parsec";
+        version = "0.0.5";
       };
-      components = {
-        "iteratee-parsec" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.iteratee
-            hsPkgs.ListLike
-            hsPkgs.parsec
-            hsPkgs.transformers
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "uzytkownik2@gmail.com";
+      author = "John Lato,\nMaciej Piechotka";
+      homepage = "";
+      url = "";
+      synopsis = "Package allowing parsec parser initeratee";
+      description = "Package providing instances of Stream in\nIteratee monad.";
+      buildType = "Simple";
+    };
+    components = {
+      "iteratee-parsec" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.iteratee)
+          (hsPkgs.ListLike)
+          (hsPkgs.parsec)
+          (hsPkgs.transformers)
+        ];
       };
-    }
+    };
+  }

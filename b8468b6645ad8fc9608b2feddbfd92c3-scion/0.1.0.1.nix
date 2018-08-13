@@ -1,67 +1,72 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       testing = false;
       server = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "scion";
-          version = "0.1.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Thomas Schilling <nominolo@googlemail.com>";
-        author = "Thomas Schilling <nominolo@googlemail.com>";
-        homepage = "http://github.com/nominolo/scion";
-        url = "";
-        synopsis = "Haskell IDE library";
-        description = "Scion is a Haskell library that aims to implement those parts of a\nHaskell IDE which are independent of a particular front-end.  Scion\nis based on the GHC API and Cabal.  It provides both a Haskell API and\na server for non-Haskell clients such as Emacs and Vim.\n\nSee the homepage <http://code.google.com/p/scion-lib> and the README\n<http://github.com/nominolo/scion/blob/master/README.markdown> for\nmore information.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "scion";
+        version = "0.1.0.1";
       };
-      components = {
-        "scion" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.Cabal
-            hsPkgs.containers
-            hsPkgs.directory
-            hsPkgs.filepath
-            hsPkgs.ghc
-            hsPkgs.ghc-paths
-            hsPkgs.ghc-syb
-            hsPkgs.hslogger
-            hsPkgs.json
-            hsPkgs.multiset
-            hsPkgs.time
-            hsPkgs.uniplate
-          ] ++ pkgs.lib.optional _flags.testing hsPkgs.QuickCheck;
-        };
-        exes = {
-          "scion-server" = {
-            depends  = ([
-              hsPkgs.base
-              hsPkgs.Cabal
-              hsPkgs.containers
-              hsPkgs.directory
-              hsPkgs.filepath
-              hsPkgs.ghc
-              hsPkgs.ghc-paths
-              hsPkgs.ghc-syb
-              hsPkgs.hslogger
-              hsPkgs.json
-              hsPkgs.multiset
-              hsPkgs.time
-            ] ++ pkgs.lib.optionals _flags.server [
-              hsPkgs.bytestring
-              hsPkgs.network
-              hsPkgs.network-bytestring
-              hsPkgs.utf8-string
-            ]) ++ pkgs.lib.optional _flags.testing hsPkgs.QuickCheck;
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Thomas Schilling <nominolo@googlemail.com>";
+      author = "Thomas Schilling <nominolo@googlemail.com>";
+      homepage = "http://github.com/nominolo/scion";
+      url = "";
+      synopsis = "Haskell IDE library";
+      description = "Scion is a Haskell library that aims to implement those parts of a\nHaskell IDE which are independent of a particular front-end.  Scion\nis based on the GHC API and Cabal.  It provides both a Haskell API and\na server for non-Haskell clients such as Emacs and Vim.\n\nSee the homepage <http://code.google.com/p/scion-lib> and the README\n<http://github.com/nominolo/scion/blob/master/README.markdown> for\nmore information.";
+      buildType = "Simple";
+    };
+    components = {
+      "scion" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.Cabal)
+          (hsPkgs.containers)
+          (hsPkgs.directory)
+          (hsPkgs.filepath)
+          (hsPkgs.ghc)
+          (hsPkgs.ghc-paths)
+          (hsPkgs.ghc-syb)
+          (hsPkgs.hslogger)
+          (hsPkgs.json)
+          (hsPkgs.multiset)
+          (hsPkgs.time)
+          (hsPkgs.uniplate)
+        ] ++ pkgs.lib.optional (_flags.testing) (hsPkgs.QuickCheck);
+      };
+      exes = {
+        "scion-server" = {
+          depends  = ([
+            (hsPkgs.base)
+            (hsPkgs.Cabal)
+            (hsPkgs.containers)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+            (hsPkgs.ghc)
+            (hsPkgs.ghc-paths)
+            (hsPkgs.ghc-syb)
+            (hsPkgs.hslogger)
+            (hsPkgs.json)
+            (hsPkgs.multiset)
+            (hsPkgs.time)
+          ] ++ pkgs.lib.optionals (_flags.server) [
+            (hsPkgs.bytestring)
+            (hsPkgs.network)
+            (hsPkgs.network-bytestring)
+            (hsPkgs.utf8-string)
+          ]) ++ pkgs.lib.optional (_flags.testing) (hsPkgs.QuickCheck);
         };
       };
-    }
+    };
+  }

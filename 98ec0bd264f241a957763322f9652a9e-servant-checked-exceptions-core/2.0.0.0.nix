@@ -1,65 +1,70 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       buildexample = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "servant-checked-exceptions-core";
-          version = "2.0.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2017-2018 Dennis Gosnell";
-        maintainer = "cdep.illabout@gmail.com";
-        author = "Dennis Gosnell";
-        homepage = "https://github.com/cdepillabout/servant-checked-exceptions";
-        url = "";
-        synopsis = "Checked exceptions for Servant APIs.";
-        description = "Please see <https://github.com/cdepillabout/servant-checked-exceptions#readme README.md>.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "servant-checked-exceptions-core";
+        version = "2.0.0.0";
       };
-      components = {
-        "servant-checked-exceptions-core" = {
+      license = "BSD-3-Clause";
+      copyright = "2017-2018 Dennis Gosnell";
+      maintainer = "cdep.illabout@gmail.com";
+      author = "Dennis Gosnell";
+      homepage = "https://github.com/cdepillabout/servant-checked-exceptions";
+      url = "";
+      synopsis = "Checked exceptions for Servant APIs.";
+      description = "Please see <https://github.com/cdepillabout/servant-checked-exceptions#readme README.md>.";
+      buildType = "Simple";
+    };
+    components = {
+      "servant-checked-exceptions-core" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.aeson)
+          (hsPkgs.bytestring)
+          (hsPkgs.deepseq)
+          (hsPkgs.http-media)
+          (hsPkgs.http-types)
+          (hsPkgs.profunctors)
+          (hsPkgs.tagged)
+          (hsPkgs.servant)
+          (hsPkgs.servant-docs)
+          (hsPkgs.text)
+          (hsPkgs.world-peace)
+        ];
+      };
+      exes = {
+        "servant-checked-exceptions-example-docs" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.aeson
-            hsPkgs.bytestring
-            hsPkgs.deepseq
-            hsPkgs.http-media
-            hsPkgs.http-types
-            hsPkgs.profunctors
-            hsPkgs.tagged
-            hsPkgs.servant
-            hsPkgs.servant-docs
-            hsPkgs.text
-            hsPkgs.world-peace
+            (hsPkgs.base)
+            (hsPkgs.aeson)
+            (hsPkgs.http-api-data)
+            (hsPkgs.http-types)
+            (hsPkgs.servant)
+            (hsPkgs.servant-checked-exceptions-core)
+            (hsPkgs.servant-docs)
+            (hsPkgs.text)
           ];
         };
-        exes = {
-          "servant-checked-exceptions-example-docs" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.aeson
-              hsPkgs.http-api-data
-              hsPkgs.http-types
-              hsPkgs.servant
-              hsPkgs.servant-checked-exceptions-core
-              hsPkgs.servant-docs
-              hsPkgs.text
-            ];
-          };
-        };
-        tests = {
-          "servant-checked-exceptions-doctest" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-              hsPkgs.Glob
-            ];
-          };
+      };
+      tests = {
+        "servant-checked-exceptions-doctest" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.doctest)
+            (hsPkgs.Glob)
+          ];
         };
       };
-    }
+    };
+  }

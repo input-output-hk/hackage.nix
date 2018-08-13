@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "brain-bleep";
-          version = "0.1.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "hawk.alan@gmail.com";
-        author = "Alan Hawkins";
-        homepage = "";
-        url = "";
-        synopsis = "primitive imperative language";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "brain-bleep";
+        version = "0.1.0.1";
       };
-      components = {
-        exes = {
-          "brain-bleep" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.array
-              hsPkgs.parsec
-              hsPkgs.containers
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "hawk.alan@gmail.com";
+      author = "Alan Hawkins";
+      homepage = "";
+      url = "";
+      synopsis = "primitive imperative language";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "brain-bleep" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.array)
+            (hsPkgs.parsec)
+            (hsPkgs.containers)
+          ];
         };
       };
-    }
+    };
+  }

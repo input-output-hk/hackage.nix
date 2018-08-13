@@ -1,47 +1,52 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "regex-genex";
-          version = "0.5.1";
-        };
-        license = "LicenseRef-OtherLicense";
-        copyright = "2011-2012 Audrey Tang";
-        maintainer = "Audrey Tang <audreyt@audreyt.org>";
-        author = "Audrey Tang <audreyt@audreyt.org>";
-        homepage = "https://github.com/audreyt/regex-genex";
-        url = "";
-        synopsis = "From a regex, generate all possible strings it can match";
-        description = "From a regex, generate all possible strings it can match";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "regex-genex";
+        version = "0.5.1";
       };
-      components = {
-        "regex-genex" = {
+      license = "LicenseRef-OtherLicense";
+      copyright = "2011-2012 Audrey Tang";
+      maintainer = "Audrey Tang <audreyt@audreyt.org>";
+      author = "Audrey Tang <audreyt@audreyt.org>";
+      homepage = "https://github.com/audreyt/regex-genex";
+      url = "";
+      synopsis = "From a regex, generate all possible strings it can match";
+      description = "From a regex, generate all possible strings it can match";
+      buildType = "Simple";
+    };
+    components = {
+      "regex-genex" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.containers)
+          (hsPkgs.sbv)
+          (hsPkgs.regex-tdfa)
+          (hsPkgs.stream-monad)
+          (hsPkgs.text)
+          (hsPkgs.logict)
+        ];
+      };
+      exes = {
+        "genex" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.containers
-            hsPkgs.sbv
-            hsPkgs.regex-tdfa
-            hsPkgs.stream-monad
-            hsPkgs.text
-            hsPkgs.logict
+            (hsPkgs.base)
+            (hsPkgs.mtl)
+            (hsPkgs.containers)
+            (hsPkgs.sbv)
+            (hsPkgs.regex-tdfa)
           ];
         };
-        exes = {
-          "genex" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.mtl
-              hsPkgs.containers
-              hsPkgs.sbv
-              hsPkgs.regex-tdfa
-            ];
-          };
-        };
       };
-    }
+    };
+  }

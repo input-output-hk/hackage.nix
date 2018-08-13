@@ -1,47 +1,52 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "Proper";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "";
-        author = "";
-        homepage = "";
-        url = "";
-        synopsis = "An implementation of propositional logic in Haskell";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "Proper";
+        version = "0.1.0.0";
       };
-      components = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "";
+      author = "";
+      homepage = "";
+      url = "";
+      synopsis = "An implementation of propositional logic in Haskell";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "Proper" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+        ];
+      };
+      exes = {
         "Proper" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.containers
+            (hsPkgs.base)
+            (hsPkgs.containers)
+            (hsPkgs.parsec)
           ];
         };
-        exes = {
-          "Proper" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.parsec
-            ];
-          };
-          "Proper-tests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.HUnit
-              hsPkgs.containers
-              hsPkgs.parsec
-            ];
-          };
+        "Proper-tests" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.HUnit)
+            (hsPkgs.containers)
+            (hsPkgs.parsec)
+          ];
         };
       };
-    }
+    };
+  }

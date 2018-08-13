@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "portable-template-haskell-lens";
-          version = "0.1.0.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "simon.hudon@gmail.com";
-        author = "Simon Hudon";
-        homepage = "";
-        url = "";
-        synopsis = "Lenses for the AST of Template Haskell 2.11 and Template Haskell < 2.11";
-        description = "Template Haskell 2.11 changes its constructors. In order to write portable code, this package provides lenses / prisms to work across versions of template haskell";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "portable-template-haskell-lens";
+        version = "0.1.0.0";
       };
-      components = {
-        "portable-template-haskell-lens" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.template-haskell
-            hsPkgs.lens
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "simon.hudon@gmail.com";
+      author = "Simon Hudon";
+      homepage = "";
+      url = "";
+      synopsis = "Lenses for the AST of Template Haskell 2.11 and Template Haskell < 2.11";
+      description = "Template Haskell 2.11 changes its constructors. In order to write portable code, this package provides lenses / prisms to work across versions of template haskell";
+      buildType = "Simple";
+    };
+    components = {
+      "portable-template-haskell-lens" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.template-haskell)
+          (hsPkgs.lens)
+        ];
       };
-    }
+    };
+  }

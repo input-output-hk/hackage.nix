@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "WAVE";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (C) 2007 Bart Massey";
-        maintainer = "Bart Massey <bart@cs.pdx.edu>";
-        author = "Bart Massey <bart@cs.pdx.edu>";
-        homepage = "http://wiki.cs.pdx.edu/bartforge/wave";
-        url = "";
-        synopsis = "WAVE audio file IO library";
-        description = "Module for reading and writing audio files in the WAVE audio format.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "WAVE";
+        version = "0.1";
       };
-      components = {
-        "WAVE" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (C) 2007 Bart Massey";
+      maintainer = "Bart Massey <bart@cs.pdx.edu>";
+      author = "Bart Massey <bart@cs.pdx.edu>";
+      homepage = "http://wiki.cs.pdx.edu/bartforge/wave";
+      url = "";
+      synopsis = "WAVE audio file IO library";
+      description = "Module for reading and writing audio files in the WAVE audio format.";
+      buildType = "Simple";
+    };
+    components = {
+      "WAVE" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+        ];
       };
-    }
+    };
+  }

@@ -1,43 +1,48 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "fcache";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Yu Li";
-        maintainer = "ylilarry@gmail.com";
-        author = "Yu Li";
-        homepage = "http://github.com/ylilarry/fcache#readme";
-        url = "";
-        synopsis = "Cache a function (a -> b)";
-        description = "Please see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "fcache";
+        version = "0.1.0.0";
       };
-      components = {
-        "fcache" = {
+      license = "BSD-3-Clause";
+      copyright = "Yu Li";
+      maintainer = "ylilarry@gmail.com";
+      author = "Yu Li";
+      homepage = "http://github.com/ylilarry/fcache#readme";
+      url = "";
+      synopsis = "Cache a function (a -> b)";
+      description = "Please see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "fcache" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.unordered-containers)
+          (hsPkgs.hashable)
+          (hsPkgs.containers)
+          (hsPkgs.mtl)
+        ];
+      };
+      tests = {
+        "fcache-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.unordered-containers
-            hsPkgs.hashable
-            hsPkgs.containers
-            hsPkgs.mtl
+            (hsPkgs.base)
+            (hsPkgs.fcache)
+            (hsPkgs.hspec)
+            (hsPkgs.mtl)
           ];
         };
-        tests = {
-          "fcache-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.fcache
-              hsPkgs.hspec
-              hsPkgs.mtl
-            ];
-          };
-        };
       };
-    }
+    };
+  }

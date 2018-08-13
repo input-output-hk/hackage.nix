@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "data-partition";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "lrpalmer@gmail.com";
-        author = "Luke Palmer";
-        homepage = "https://github.com/luqui/data-partition";
-        url = "";
-        synopsis = "A pure disjoint set (union find) data structure";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "data-partition";
+        version = "0.1.0.0";
       };
-      components = {
-        "data-partition" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.containers
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "lrpalmer@gmail.com";
+      author = "Luke Palmer";
+      homepage = "https://github.com/luqui/data-partition";
+      url = "";
+      synopsis = "A pure disjoint set (union find) data structure";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "data-partition" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+        ];
       };
-    }
+    };
+  }

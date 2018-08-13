@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       dev = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "hspec-megaparsec";
-          version = "0.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Mark Karpov <markkarpov@opmbx.org>";
-        author = "Mark Karpov <markkarpov@opmbx.org>";
-        homepage = "https://github.com/mrkkrp/hspec-megaparsec";
-        url = "";
-        synopsis = "Utility functions for testing Megaparsec parsers with Hspec";
-        description = "Utility functions for testing Megaparsec parsers with Hspec.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "hspec-megaparsec";
+        version = "0.1.1";
       };
-      components = {
-        "hspec-megaparsec" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Mark Karpov <markkarpov@opmbx.org>";
+      author = "Mark Karpov <markkarpov@opmbx.org>";
+      homepage = "https://github.com/mrkkrp/hspec-megaparsec";
+      url = "";
+      synopsis = "Utility functions for testing Megaparsec parsers with Hspec";
+      description = "Utility functions for testing Megaparsec parsers with Hspec.";
+      buildType = "Simple";
+    };
+    components = {
+      "hspec-megaparsec" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.hspec-expectations)
+          (hsPkgs.megaparsec)
+        ];
+      };
+      tests = {
+        "tests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.hspec-expectations
-            hsPkgs.megaparsec
+            (hsPkgs.base)
+            (hsPkgs.hspec)
+            (hsPkgs.hspec-expectations)
+            (hsPkgs.hspec-megaparsec)
+            (hsPkgs.megaparsec)
           ];
         };
-        tests = {
-          "tests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hspec
-              hsPkgs.hspec-expectations
-              hsPkgs.hspec-megaparsec
-              hsPkgs.megaparsec
-            ];
-          };
-        };
       };
-    }
+    };
+  }

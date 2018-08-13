@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "text-render";
-          version = "0.1.0.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "ithinkican@gmail.com";
-        author = "Allen Nelson";
-        homepage = "http://github.com/thinkpad20/text-render";
-        url = "";
-        synopsis = "A type class for rendering objects as text, pretty-printing, etc.";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "text-render";
+        version = "0.1.0.0";
       };
-      components = {
-        "text-render" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.text
-            hsPkgs.parsec
-            hsPkgs.mtl
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "ithinkican@gmail.com";
+      author = "Allen Nelson";
+      homepage = "http://github.com/thinkpad20/text-render";
+      url = "";
+      synopsis = "A type class for rendering objects as text, pretty-printing, etc.";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "text-render" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.text)
+          (hsPkgs.parsec)
+          (hsPkgs.mtl)
+        ];
       };
-    }
+    };
+  }

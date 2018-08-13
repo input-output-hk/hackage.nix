@@ -1,68 +1,73 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "ersatz";
-          version = "0.2.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) 2010-2013 Edward Kmett, (c) 2013 Johan Kiviniemi";
-        maintainer = "Edward A. Kmett <ekmett@gmail.com>";
-        author = "Edward A. Kmett, Johan Kiviniemi";
-        homepage = "http://github.com/ekmett/ersatz";
-        url = "";
-        synopsis = "A monad for expressing SAT or QSAT problems using observable sharing.";
-        description = "A monad for expressing SAT or QSAT problems using observable sharing.\n\nFor example, we can express a full-adder with:\n\n> full_adder :: Bit -> Bit -> Bit -> (Bit, Bit)\n> full_adder a b cin = (s2, c1 || c2)\n>   where (s1,c1) = half_adder a b\n>         (s2,c2) = half_adder s1 cin\n\n> half_adder :: Bit -> Bit -> (Bit, Bit)\n> half_adder a b = (a `xor` b, a && b)";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "ersatz";
+        version = "0.2.0.1";
       };
-      components = {
-        "ersatz" = {
+      license = "BSD-3-Clause";
+      copyright = "(c) 2010-2013 Edward Kmett, (c) 2013 Johan Kiviniemi";
+      maintainer = "Edward A. Kmett <ekmett@gmail.com>";
+      author = "Edward A. Kmett, Johan Kiviniemi";
+      homepage = "http://github.com/ekmett/ersatz";
+      url = "";
+      synopsis = "A monad for expressing SAT or QSAT problems using observable sharing.";
+      description = "A monad for expressing SAT or QSAT problems using observable sharing.\n\nFor example, we can express a full-adder with:\n\n> full_adder :: Bit -> Bit -> Bit -> (Bit, Bit)\n> full_adder a b cin = (s2, c1 || c2)\n>   where (s1,c1) = half_adder a b\n>         (s2,c2) = half_adder s1 cin\n\n> half_adder :: Bit -> Bit -> (Bit, Bit)\n> half_adder a b = (a `xor` b, a && b)";
+      buildType = "Custom";
+    };
+    components = {
+      "ersatz" = {
+        depends  = [
+          (hsPkgs.array)
+          (hsPkgs.base)
+          (hsPkgs.blaze-builder)
+          (hsPkgs.blaze-textual)
+          (hsPkgs.bytestring)
+          (hsPkgs.containers)
+          (hsPkgs.data-default)
+          (hsPkgs.ghc-prim)
+          (hsPkgs.lens)
+          (hsPkgs.mtl)
+          (hsPkgs.process)
+          (hsPkgs.temporary)
+          (hsPkgs.transformers)
+          (hsPkgs.unordered-containers)
+        ];
+      };
+      tests = {
+        "properties" = {
           depends  = [
-            hsPkgs.array
-            hsPkgs.base
-            hsPkgs.blaze-builder
-            hsPkgs.blaze-textual
-            hsPkgs.bytestring
-            hsPkgs.containers
-            hsPkgs.data-default
-            hsPkgs.ghc-prim
-            hsPkgs.lens
-            hsPkgs.mtl
-            hsPkgs.process
-            hsPkgs.temporary
-            hsPkgs.transformers
-            hsPkgs.unordered-containers
+            (hsPkgs.ersatz)
+            (hsPkgs.base)
+            (hsPkgs.mtl)
+            (hsPkgs.transformers)
+            (hsPkgs.containers)
+            (hsPkgs.array)
+            (hsPkgs.data-reify)
+            (hsPkgs.test-framework)
+            (hsPkgs.test-framework-quickcheck)
+            (hsPkgs.test-framework-hunit)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.HUnit)
           ];
         };
-        tests = {
-          "properties" = {
-            depends  = [
-              hsPkgs.ersatz
-              hsPkgs.base
-              hsPkgs.mtl
-              hsPkgs.transformers
-              hsPkgs.containers
-              hsPkgs.array
-              hsPkgs.data-reify
-              hsPkgs.test-framework
-              hsPkgs.test-framework-quickcheck
-              hsPkgs.test-framework-hunit
-              hsPkgs.QuickCheck
-              hsPkgs.HUnit
-            ];
-          };
-          "doctests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.directory
-              hsPkgs.doctest
-              hsPkgs.filepath
-            ];
-          };
+        "doctests" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.directory)
+            (hsPkgs.doctest)
+            (hsPkgs.filepath)
+          ];
         };
       };
-    }
+    };
+  }

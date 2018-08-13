@@ -1,50 +1,55 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "haskell-tools-demo";
-          version = "0.3.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "kelemzol@elte.hu";
-        author = "Zoltán Kelemen";
-        homepage = "https://github.com/haskell-tools/haskell-tools";
-        url = "";
-        synopsis = "A web-based demo for Haskell-tools Refactor.";
-        description = "Allows websocket clients to connect and performs refactorings on demand. The clients maintain a continous connection with the server, sending changes in the source files. When a refactor request is received, it performs the changes and sends the modified source files to the client.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "haskell-tools-demo";
+        version = "0.3.0.1";
       };
-      components = {
-        exes = {
-          "haskell-tools-demo" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.mtl
-              hsPkgs.transformers
-              hsPkgs.directory
-              hsPkgs.containers
-              hsPkgs.aeson
-              hsPkgs.bytestring
-              hsPkgs.http-types
-              hsPkgs.warp
-              hsPkgs.wai
-              hsPkgs.websockets
-              hsPkgs.wai-websockets
-              hsPkgs.references
-              hsPkgs.ghc
-              hsPkgs.ghc-paths
-              hsPkgs.filepath
-              hsPkgs.haskell-tools-ast
-              hsPkgs.haskell-tools-backend-ghc
-              hsPkgs.haskell-tools-prettyprint
-              hsPkgs.haskell-tools-refactor
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "kelemzol@elte.hu";
+      author = "Zoltán Kelemen";
+      homepage = "https://github.com/haskell-tools/haskell-tools";
+      url = "";
+      synopsis = "A web-based demo for Haskell-tools Refactor.";
+      description = "Allows websocket clients to connect and performs refactorings on demand. The clients maintain a continous connection with the server, sending changes in the source files. When a refactor request is received, it performs the changes and sends the modified source files to the client.";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "haskell-tools-demo" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.mtl)
+            (hsPkgs.transformers)
+            (hsPkgs.directory)
+            (hsPkgs.containers)
+            (hsPkgs.aeson)
+            (hsPkgs.bytestring)
+            (hsPkgs.http-types)
+            (hsPkgs.warp)
+            (hsPkgs.wai)
+            (hsPkgs.websockets)
+            (hsPkgs.wai-websockets)
+            (hsPkgs.references)
+            (hsPkgs.ghc)
+            (hsPkgs.ghc-paths)
+            (hsPkgs.filepath)
+            (hsPkgs.haskell-tools-ast)
+            (hsPkgs.haskell-tools-backend-ghc)
+            (hsPkgs.haskell-tools-prettyprint)
+            (hsPkgs.haskell-tools-refactor)
+          ];
         };
       };
-    }
+    };
+  }

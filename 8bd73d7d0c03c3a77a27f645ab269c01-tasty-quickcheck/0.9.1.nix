@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "tasty-quickcheck";
-          version = "0.9.1";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "Roman Cheplyaka <roma@ro-che.info>";
-        author = "Roman Cheplyaka <roma@ro-che.info>";
-        homepage = "http://documentup.com/feuerbach/tasty";
-        url = "";
-        synopsis = "QuickCheck support for the Tasty test framework.";
-        description = "QuickCheck support for the Tasty test framework.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "tasty-quickcheck";
+        version = "0.9.1";
       };
-      components = {
-        "tasty-quickcheck" = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "Roman Cheplyaka <roma@ro-che.info>";
+      author = "Roman Cheplyaka <roma@ro-che.info>";
+      homepage = "http://documentup.com/feuerbach/tasty";
+      url = "";
+      synopsis = "QuickCheck support for the Tasty test framework.";
+      description = "QuickCheck support for the Tasty test framework.";
+      buildType = "Simple";
+    };
+    components = {
+      "tasty-quickcheck" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.tagged)
+          (hsPkgs.tasty)
+          (hsPkgs.random)
+          (hsPkgs.QuickCheck)
+        ];
+      };
+      tests = {
+        "test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.tagged
-            hsPkgs.tasty
-            hsPkgs.random
-            hsPkgs.QuickCheck
+            (hsPkgs.base)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-quickcheck)
+            (hsPkgs.tasty-hunit)
+            (hsPkgs.pcre-light)
           ];
         };
-        tests = {
-          "test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.tasty
-              hsPkgs.tasty-quickcheck
-              hsPkgs.tasty-hunit
-              hsPkgs.pcre-light
-            ];
-          };
-        };
       };
-    }
+    };
+  }

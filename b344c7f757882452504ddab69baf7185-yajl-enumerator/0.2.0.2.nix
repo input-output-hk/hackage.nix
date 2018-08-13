@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "yajl-enumerator";
-          version = "0.2.0.2";
-        };
-        license = "GPL-3.0-only";
-        copyright = "Copyright (c) John Millikin 2010";
-        maintainer = "jmillikin@gmail.com";
-        author = "John Millikin <jmillikin@gmail.com>";
-        homepage = "";
-        url = "";
-        synopsis = "Enumerator-based interface to YAJL, an event-based JSON implementation";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "yajl-enumerator";
+        version = "0.2.0.2";
       };
-      components = {
-        "yajl-enumerator" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.text
-            hsPkgs.yajl
-            hsPkgs.enumerator
-            hsPkgs.transformers
-          ];
-        };
+      license = "GPL-3.0-only";
+      copyright = "Copyright (c) John Millikin 2010";
+      maintainer = "jmillikin@gmail.com";
+      author = "John Millikin <jmillikin@gmail.com>";
+      homepage = "";
+      url = "";
+      synopsis = "Enumerator-based interface to YAJL, an event-based JSON implementation";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "yajl-enumerator" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.text)
+          (hsPkgs.yajl)
+          (hsPkgs.enumerator)
+          (hsPkgs.transformers)
+        ];
       };
-    }
+    };
+  }

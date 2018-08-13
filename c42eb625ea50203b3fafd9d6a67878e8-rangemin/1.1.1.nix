@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "rangemin";
-          version = "1.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "wasserman.louis@gmail.com";
-        author = "Louis Wasserman";
-        homepage = "";
-        url = "";
-        synopsis = "Linear range-min algorithms.";
-        description = "Rapidly and lazily preprocesses an array or list so that the smallest element in an arbitrary subrange can be found in constant time.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "rangemin";
+        version = "1.1.1";
       };
-      components = {
-        "rangemin" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.array
-            hsPkgs.containers
-            hsPkgs.ghc-prim
-            hsPkgs.mtl
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "wasserman.louis@gmail.com";
+      author = "Louis Wasserman";
+      homepage = "";
+      url = "";
+      synopsis = "Linear range-min algorithms.";
+      description = "Rapidly and lazily preprocesses an array or list so that the smallest element in an arbitrary subrange can be found in constant time.";
+      buildType = "Simple";
+    };
+    components = {
+      "rangemin" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.array)
+          (hsPkgs.containers)
+          (hsPkgs.ghc-prim)
+          (hsPkgs.mtl)
+        ];
       };
-    }
+    };
+  }

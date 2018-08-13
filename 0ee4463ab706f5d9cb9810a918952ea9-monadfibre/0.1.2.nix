@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "monadfibre";
-          version = "0.1.2";
-        };
-        license = "LicenseRef-GPL";
-        copyright = "";
-        maintainer = "ajnsit@gmail.com";
-        author = "Anupam Jain";
-        homepage = "https://github.com/ajnsit/monadfibre";
-        url = "";
-        synopsis = "Monadic functions which provide Choice and Parallelism.";
-        description = "This package defines Monadic functions which provide Choice and Parallelism - (&lt;||&rt;) and (&lt;&&&rt;)\n- that work on Monads that provide a (MonadBi m IO) instance.\nDepends on the @monadbi@ library for extracting the IO actions from m. Also provides a good example of how to use the library.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "monadfibre";
+        version = "0.1.2";
       };
-      components = {
-        "monadfibre" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.stm
-            hsPkgs.monadbi
-          ];
-        };
+      license = "LicenseRef-GPL";
+      copyright = "";
+      maintainer = "ajnsit@gmail.com";
+      author = "Anupam Jain";
+      homepage = "https://github.com/ajnsit/monadfibre";
+      url = "";
+      synopsis = "Monadic functions which provide Choice and Parallelism.";
+      description = "This package defines Monadic functions which provide Choice and Parallelism - (&lt;||&rt;) and (&lt;&&&rt;)\n- that work on Monads that provide a (MonadBi m IO) instance.\nDepends on the @monadbi@ library for extracting the IO actions from m. Also provides a good example of how to use the library.";
+      buildType = "Simple";
+    };
+    components = {
+      "monadfibre" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.stm)
+          (hsPkgs.monadbi)
+        ];
       };
-    }
+    };
+  }

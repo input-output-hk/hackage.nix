@@ -1,47 +1,52 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "legion-extra";
-          version = "0.1.0.5";
-        };
-        license = "Apache-2.0";
-        copyright = "2016 Rick Owens";
-        maintainer = "rick@owensmurray.com";
-        author = "Rick Owens";
-        homepage = "https://github.com/owensmurray/legion-extra#readme";
-        url = "";
-        synopsis = "Extra non-essential utilities for building legion applications.";
-        description = "Please see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "legion-extra";
+        version = "0.1.0.5";
       };
-      components = {
-        "legion-extra" = {
+      license = "Apache-2.0";
+      copyright = "2016 Rick Owens";
+      maintainer = "rick@owensmurray.com";
+      author = "Rick Owens";
+      homepage = "https://github.com/owensmurray/legion-extra#readme";
+      url = "";
+      synopsis = "Extra non-essential utilities for building legion applications.";
+      description = "Please see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "legion-extra" = {
+        depends  = [
+          (hsPkgs.aeson)
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.canteven-log)
+          (hsPkgs.containers)
+          (hsPkgs.data-default-class)
+          (hsPkgs.legion)
+          (hsPkgs.network)
+          (hsPkgs.safe)
+          (hsPkgs.split)
+          (hsPkgs.yaml)
+        ];
+      };
+      tests = {
+        "legion-extra-test" = {
           depends  = [
-            hsPkgs.aeson
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.canteven-log
-            hsPkgs.containers
-            hsPkgs.data-default-class
-            hsPkgs.legion
-            hsPkgs.network
-            hsPkgs.safe
-            hsPkgs.split
-            hsPkgs.yaml
+            (hsPkgs.base)
+            (hsPkgs.legion-extra)
           ];
         };
-        tests = {
-          "legion-extra-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.legion-extra
-            ];
-          };
-        };
       };
-    }
+    };
+  }

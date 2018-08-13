@@ -1,45 +1,50 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "hspec-wai-json";
-          version = "0.9.0";
-        };
-        license = "MIT";
-        copyright = "(c) 2012-2014 Fujimura Daisuke,\n(c) 2014 Simon Hengel";
-        maintainer = "Fujimura Daisuke <me@fujimuradaisuke.com>,\nSimon Hengel <sol@typeful.net>";
-        author = "Fujimura Daisuke <me@fujimuradaisuke.com>,\nSimon Hengel <sol@typeful.net>";
-        homepage = "https://github.com/hspec/hspec-wai#readme";
-        url = "";
-        synopsis = "Testing JSON APIs with hspec-wai";
-        description = "Testing JSON APIs with hspec-wai";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "hspec-wai-json";
+        version = "0.9.0";
       };
-      components = {
-        "hspec-wai-json" = {
+      license = "MIT";
+      copyright = "(c) 2012-2014 Fujimura Daisuke,\n(c) 2014 Simon Hengel";
+      maintainer = "Fujimura Daisuke <me@fujimuradaisuke.com>,\nSimon Hengel <sol@typeful.net>";
+      author = "Fujimura Daisuke <me@fujimuradaisuke.com>,\nSimon Hengel <sol@typeful.net>";
+      homepage = "https://github.com/hspec/hspec-wai#readme";
+      url = "";
+      synopsis = "Testing JSON APIs with hspec-wai";
+      description = "Testing JSON APIs with hspec-wai";
+      buildType = "Simple";
+    };
+    components = {
+      "hspec-wai-json" = {
+        depends  = [
+          (hsPkgs.aeson)
+          (hsPkgs.aeson-qq)
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.case-insensitive)
+          (hsPkgs.hspec-wai)
+          (hsPkgs.template-haskell)
+        ];
+      };
+      tests = {
+        "spec" = {
           depends  = [
-            hsPkgs.aeson
-            hsPkgs.aeson-qq
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.case-insensitive
-            hsPkgs.hspec-wai
-            hsPkgs.template-haskell
+            (hsPkgs.base)
+            (hsPkgs.hspec)
+            (hsPkgs.hspec-wai)
+            (hsPkgs.hspec-wai-json)
           ];
         };
-        tests = {
-          "spec" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hspec
-              hsPkgs.hspec-wai
-              hsPkgs.hspec-wai-json
-            ];
-          };
-        };
       };
-    }
+    };
+  }

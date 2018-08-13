@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "c-storable-deriving";
-          version = "0.1.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "maurer@matthewmaurer.org";
-        author = "Matthew Maurer";
-        homepage = "https://github.com/maurer/c-storable-deriving";
-        url = "";
-        synopsis = "Generate C-like storable instances from datatypes";
-        description = "Automatically generates struct-rule based Storable\ninstances based on the Generic typeclass.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "c-storable-deriving";
+        version = "0.1.2";
       };
-      components = {
-        "c-storable-deriving" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.ghc-prim
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "maurer@matthewmaurer.org";
+      author = "Matthew Maurer";
+      homepage = "https://github.com/maurer/c-storable-deriving";
+      url = "";
+      synopsis = "Generate C-like storable instances from datatypes";
+      description = "Automatically generates struct-rule based Storable\ninstances based on the Generic typeclass.";
+      buildType = "Simple";
+    };
+    components = {
+      "c-storable-deriving" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.ghc-prim)
+        ];
       };
-    }
+    };
+  }

@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "star-to-star";
-          version = "1.0";
-        };
-        license = "LicenseRef-OtherLicense";
-        copyright = "";
-        maintainer = "nicolas.frisby@gmail.com";
-        author = "";
-        homepage = "";
-        url = "";
-        synopsis = "the * -> * types, operators, and covariant instances.";
-        description = "Fundamental * -> * types, operators, and covariant instances.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "star-to-star";
+        version = "1.0";
       };
-      components = {
-        "star-to-star" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "LicenseRef-OtherLicense";
+      copyright = "";
+      maintainer = "nicolas.frisby@gmail.com";
+      author = "";
+      homepage = "";
+      url = "";
+      synopsis = "the * -> * types, operators, and covariant instances.";
+      description = "Fundamental * -> * types, operators, and covariant instances.";
+      buildType = "Simple";
+    };
+    components = {
+      "star-to-star" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

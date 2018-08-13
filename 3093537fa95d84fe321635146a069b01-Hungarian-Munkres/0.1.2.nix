@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "Hungarian-Munkres";
-          version = "0.1.2";
-        };
-        license = "GPL-3.0-only";
-        copyright = "(c) 2014 Kai Zhang";
-        maintainer = "Kai Zhang <kai@kzhang.org>";
-        author = "Kai Zhang <kai@kzhang.org>";
-        homepage = "";
-        url = "";
-        synopsis = "A Linear Sum Assignment Problem (LSAP) solver";
-        description = "This library provide a Haskell binding to the libhungarian,\na solver for Linear Sum Assignment Problem (LSAP) implemented\nin C language. It uses Hungarian algorithm\n<http://en.wikipedia.org/wiki/Hungarian_algorithm>, and runs\nin O(n^3) time.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "Hungarian-Munkres";
+        version = "0.1.2";
       };
-      components = {
-        "Hungarian-Munkres" = {
-          depends  = [ hsPkgs.base ];
-        };
-        tests = {
-          "tests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.array
-              hsPkgs.Hungarian-Munkres
-              hsPkgs.Munkres
-              hsPkgs.tasty
-              hsPkgs.tasty-quickcheck
-              hsPkgs.random
-            ];
-          };
+      license = "GPL-3.0-only";
+      copyright = "(c) 2014 Kai Zhang";
+      maintainer = "Kai Zhang <kai@kzhang.org>";
+      author = "Kai Zhang <kai@kzhang.org>";
+      homepage = "";
+      url = "";
+      synopsis = "A Linear Sum Assignment Problem (LSAP) solver";
+      description = "This library provide a Haskell binding to the libhungarian,\na solver for Linear Sum Assignment Problem (LSAP) implemented\nin C language. It uses Hungarian algorithm\n<http://en.wikipedia.org/wiki/Hungarian_algorithm>, and runs\nin O(n^3) time.";
+      buildType = "Simple";
+    };
+    components = {
+      "Hungarian-Munkres" = {
+        depends  = [ (hsPkgs.base) ];
+      };
+      tests = {
+        "tests" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.array)
+            (hsPkgs.Hungarian-Munkres)
+            (hsPkgs.Munkres)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-quickcheck)
+            (hsPkgs.random)
+          ];
         };
       };
-    }
+    };
+  }

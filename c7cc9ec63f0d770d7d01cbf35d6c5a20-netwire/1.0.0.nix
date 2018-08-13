@@ -1,36 +1,41 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "netwire";
-          version = "1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) 2011 Ertugrul Söylemez";
-        maintainer = "Ertugrul Söylemez <es@ertes.de>";
-        author = "Ertugrul Söylemez <es@ertes.de>";
-        homepage = "";
-        url = "";
-        synopsis = "Arrowized FRP implementation";
-        description = "This library provides an arrowized functional reactive programming\n(FRP) implementation.  It is similar to Yampa and Animas, but has a\nmuch simpler internal representation and a lot of new features.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "netwire";
+        version = "1.0.0";
       };
-      components = {
-        "netwire" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.containers
-            hsPkgs.deepseq
-            hsPkgs.mersenne-random
-            hsPkgs.stm
-            hsPkgs.time
-            hsPkgs.vector
-            hsPkgs.vector-space
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "(c) 2011 Ertugrul Söylemez";
+      maintainer = "Ertugrul Söylemez <es@ertes.de>";
+      author = "Ertugrul Söylemez <es@ertes.de>";
+      homepage = "";
+      url = "";
+      synopsis = "Arrowized FRP implementation";
+      description = "This library provides an arrowized functional reactive programming\n(FRP) implementation.  It is similar to Yampa and Animas, but has a\nmuch simpler internal representation and a lot of new features.";
+      buildType = "Simple";
+    };
+    components = {
+      "netwire" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+          (hsPkgs.deepseq)
+          (hsPkgs.mersenne-random)
+          (hsPkgs.stm)
+          (hsPkgs.time)
+          (hsPkgs.vector)
+          (hsPkgs.vector-space)
+        ];
       };
-    }
+    };
+  }

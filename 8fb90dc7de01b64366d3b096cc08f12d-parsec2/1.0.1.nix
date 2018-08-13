@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "parsec2";
-          version = "1.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Antoine Latter <aslatter@gmail.com>";
-        author = "Daan Leijen <daan@cs.uu.nl>";
-        homepage = "https://github.com/aslatter/parsec2";
-        url = "";
-        synopsis = "Monadic parser combinators";
-        description = "Parsec is designed from scratch as an industrial-strength parser\nlibrary.  It is simple, safe, well documented (on the package\nhomepage), has extensive libraries and good error messages,\nand is also fast.\n\nThis package is a maintained fork of version 2.1 of the parsec\npackage, intended to preserve its simplicity and portability.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "parsec2";
+        version = "1.0.1";
       };
-      components = {
-        "parsec2" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Antoine Latter <aslatter@gmail.com>";
+      author = "Daan Leijen <daan@cs.uu.nl>";
+      homepage = "https://github.com/aslatter/parsec2";
+      url = "";
+      synopsis = "Monadic parser combinators";
+      description = "Parsec is designed from scratch as an industrial-strength parser\nlibrary.  It is simple, safe, well documented (on the package\nhomepage), has extensive libraries and good error messages,\nand is also fast.\n\nThis package is a maintained fork of version 2.1 of the parsec\npackage, intended to preserve its simplicity and portability.";
+      buildType = "Simple";
+    };
+    components = {
+      "parsec2" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

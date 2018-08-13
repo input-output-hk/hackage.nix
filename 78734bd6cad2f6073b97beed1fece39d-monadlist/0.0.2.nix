@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "monadlist";
-          version = "0.0.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "thomasedingcode@gmail.com";
-        author = "Thomas Eding";
-        homepage = "";
-        url = "";
-        synopsis = "Monadic versions of list functions";
-        description = "Monadic versions of list functions seen in Data.List.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "monadlist";
+        version = "0.0.2";
       };
-      components = {
-        "monadlist" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "thomasedingcode@gmail.com";
+      author = "Thomas Eding";
+      homepage = "";
+      url = "";
+      synopsis = "Monadic versions of list functions";
+      description = "Monadic versions of list functions seen in Data.List.";
+      buildType = "Simple";
+    };
+    components = {
+      "monadlist" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

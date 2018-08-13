@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "bindings-lxc";
-          version = "0.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "nickolay.kudasov@gmail.com";
-        author = "Nickolay Kudasov";
-        homepage = "https://github.com/fizruk/bindings-lxc";
-        url = "";
-        synopsis = "Direct Haskell bindings to LXC (Linux containers) C API.";
-        description = "The package provides direct bindings to LXC C API through @bindings-dsl@.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "bindings-lxc";
+        version = "0.2";
       };
-      components = {
-        "bindings-lxc" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bindings-DSL
-          ];
-          libs = [ pkgs.lxc ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "nickolay.kudasov@gmail.com";
+      author = "Nickolay Kudasov";
+      homepage = "https://github.com/fizruk/bindings-lxc";
+      url = "";
+      synopsis = "Direct Haskell bindings to LXC (Linux containers) C API.";
+      description = "The package provides direct bindings to LXC C API through @bindings-dsl@.";
+      buildType = "Simple";
+    };
+    components = {
+      "bindings-lxc" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bindings-DSL)
+        ];
+        libs = [ (pkgs.lxc) ];
       };
-    }
+    };
+  }

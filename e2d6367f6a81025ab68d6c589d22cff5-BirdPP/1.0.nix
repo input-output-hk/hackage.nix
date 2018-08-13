@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "BirdPP";
-          version = "1.0";
-        };
-        license = "LicenseRef-GPL";
-        copyright = "";
-        maintainer = "seanmcl@gmail.com";
-        author = "Sean McLaughlin";
-        homepage = "";
-        url = "";
-        synopsis = "A preprocessor for Bird-style Literate Haskell comments with Haddock markup.";
-        description = "Literate preprocessor that allows intuitive Haddock comments.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "BirdPP";
+        version = "1.0";
       };
-      components = {
-        exes = {
-          "BirdPP" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.haskell98
-            ];
-          };
+      license = "LicenseRef-GPL";
+      copyright = "";
+      maintainer = "seanmcl@gmail.com";
+      author = "Sean McLaughlin";
+      homepage = "";
+      url = "";
+      synopsis = "A preprocessor for Bird-style Literate Haskell comments with Haddock markup.";
+      description = "Literate preprocessor that allows intuitive Haddock comments.";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "BirdPP" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.haskell98)
+          ];
         };
       };
-    }
+    };
+  }

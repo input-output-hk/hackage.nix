@@ -1,51 +1,56 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       author-test = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "boring-window-switcher";
-          version = "0.1.0.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Toshio Ito <debug.ito@gmail.com>";
-        author = "Toshio Ito <debug.ito@gmail.com>";
-        homepage = "https://github.com/debug-ito/boring-window-switcher";
-        url = "";
-        synopsis = "A boring window switcher.";
-        description = "A boring window switcher. See README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "boring-window-switcher";
+        version = "0.1.0.2";
       };
-      components = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Toshio Ito <debug.ito@gmail.com>";
+      author = "Toshio Ito <debug.ito@gmail.com>";
+      homepage = "https://github.com/debug-ito/boring-window-switcher";
+      url = "";
+      synopsis = "A boring window switcher.";
+      description = "A boring window switcher. See README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "boring-window-switcher" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.X11)
+          (hsPkgs.transformers)
+          (hsPkgs.gtk)
+        ];
+      };
+      exes = {
         "boring-window-switcher" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.X11
-            hsPkgs.transformers
-            hsPkgs.gtk
+            (hsPkgs.base)
+            (hsPkgs.boring-window-switcher)
           ];
         };
-        exes = {
-          "boring-window-switcher" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.boring-window-switcher
-            ];
-          };
-        };
-        tests = {
-          "author-spec" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.boring-window-switcher
-              hsPkgs.hspec
-            ];
-          };
+      };
+      tests = {
+        "author-spec" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.boring-window-switcher)
+            (hsPkgs.hspec)
+          ];
         };
       };
-    }
+    };
+  }

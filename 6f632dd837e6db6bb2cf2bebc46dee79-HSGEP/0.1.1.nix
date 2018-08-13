@@ -1,43 +1,48 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "HSGEP";
-          version = "0.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) 2009-2010 Matthew Sottile";
-        maintainer = "Matthew Sottile <mjsottile@computer.org>";
-        author = "Matthew Sottile";
-        homepage = "http://github.com/mjsottile/hsgep/";
-        url = "";
-        synopsis = "Gene Expression Programming evolutionary algorithm in Haskell";
-        description = "Gene Expression Programming evolutionary algorithm implemented\nin Haskell.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "HSGEP";
+        version = "0.1.1";
       };
-      components = {
-        "HSGEP" = {
+      license = "BSD-3-Clause";
+      copyright = "(c) 2009-2010 Matthew Sottile";
+      maintainer = "Matthew Sottile <mjsottile@computer.org>";
+      author = "Matthew Sottile";
+      homepage = "http://github.com/mjsottile/hsgep/";
+      url = "";
+      synopsis = "Gene Expression Programming evolutionary algorithm in Haskell";
+      description = "Gene Expression Programming evolutionary algorithm implemented\nin Haskell.";
+      buildType = "Simple";
+    };
+    components = {
+      "HSGEP" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.haskell98)
+          (hsPkgs.mersenne-random-pure64)
+          (hsPkgs.monad-mersenne-random)
+          (hsPkgs.vector)
+        ];
+      };
+      exes = {
+        "HSGEP_Regression" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.haskell98
-            hsPkgs.mersenne-random-pure64
-            hsPkgs.monad-mersenne-random
-            hsPkgs.vector
+            (hsPkgs.network)
+            (hsPkgs.csv)
           ];
         };
-        exes = {
-          "HSGEP_Regression" = {
-            depends  = [
-              hsPkgs.network
-              hsPkgs.csv
-            ];
-          };
-          "HSGEP_CADensity" = {};
-        };
+        "HSGEP_CADensity" = {};
       };
-    }
+    };
+  }

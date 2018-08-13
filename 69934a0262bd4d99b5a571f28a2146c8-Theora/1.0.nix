@@ -1,28 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "Theora";
-          version = "1.0";
-        };
-        license = "LicenseRef-GPL";
-        copyright = "";
-        maintainer = "pierreetienne.meunier@gmail.com";
-        author = "Pierre-Etienne Meunier";
-        homepage = "";
-        url = "";
-        synopsis = "";
-        description = "Video Compression Library (see http://theora.org)";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "Theora";
+        version = "1.0";
       };
-      components = {
-        "Theora" = {
-          depends  = [ hsPkgs.base ];
-          libs = [ pkgs.ogg pkgs.theora ];
-        };
+      license = "LicenseRef-GPL";
+      copyright = "";
+      maintainer = "pierreetienne.meunier@gmail.com";
+      author = "Pierre-Etienne Meunier";
+      homepage = "";
+      url = "";
+      synopsis = "";
+      description = "Video Compression Library (see http://theora.org)";
+      buildType = "Simple";
+    };
+    components = {
+      "Theora" = {
+        depends  = [ (hsPkgs.base) ];
+        libs = [
+          (pkgs.ogg)
+          (pkgs.theora)
+        ];
       };
-    }
+    };
+  }

@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "yabi";
-          version = "0.2.0.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "fgaz@users.noreply.github.com";
-        author = "Francesco Gazzetta";
-        homepage = "https://github.com/fgaz/yabi";
-        url = "";
-        synopsis = "Yet Another Brainfuck Interpreter";
-        description = "Yet Another Brainfuck Interpreter. Usage: yabi path";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "yabi";
+        version = "0.2.0.0";
       };
-      components = {
-        exes = {
-          "yabi" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.word8
-            ];
-          };
+      license = "MIT";
+      copyright = "";
+      maintainer = "fgaz@users.noreply.github.com";
+      author = "Francesco Gazzetta";
+      homepage = "https://github.com/fgaz/yabi";
+      url = "";
+      synopsis = "Yet Another Brainfuck Interpreter";
+      description = "Yet Another Brainfuck Interpreter. Usage: yabi path";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "yabi" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.word8)
+          ];
         };
       };
-    }
+    };
+  }

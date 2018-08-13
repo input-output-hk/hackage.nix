@@ -1,35 +1,40 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       boundschecks = true;
       unsafechecks = false;
       internalchecks = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2.3";
-        identifier = {
-          name = "vector-algorithms";
-          version = "0.3";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Dan Doel <dan.doel@gmail.com>";
-        author = "Dan Doel";
-        homepage = "http://code.haskell.org/~dolio/";
-        url = "";
-        synopsis = "Efficient algorithms for vector arrays";
-        description = "Efficient algorithms for vector arrays\nbe sure to compile with -O2, and -fvia-C -optc-O3 is\nrecommended.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2.3";
+      identifier = {
+        name = "vector-algorithms";
+        version = "0.3";
       };
-      components = {
-        "vector-algorithms" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.vector
-            hsPkgs.primitive
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Dan Doel <dan.doel@gmail.com>";
+      author = "Dan Doel";
+      homepage = "http://code.haskell.org/~dolio/";
+      url = "";
+      synopsis = "Efficient algorithms for vector arrays";
+      description = "Efficient algorithms for vector arrays\nbe sure to compile with -O2, and -fvia-C -optc-O3 is\nrecommended.";
+      buildType = "Simple";
+    };
+    components = {
+      "vector-algorithms" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.vector)
+          (hsPkgs.primitive)
+        ];
       };
-    }
+    };
+  }

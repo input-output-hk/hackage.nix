@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "hoodle-parser";
-          version = "0.2.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
-        author = "Ian-Woo Kim";
-        homepage = "http://ianwookim.org/hoodle";
-        url = "";
-        synopsis = "Hoodle file parser";
-        description = "Text parser for hoodle xml file";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "hoodle-parser";
+        version = "0.2.2";
       };
-      components = {
-        "hoodle-parser" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.transformers
-            hsPkgs.attoparsec
-            hsPkgs.bytestring
-            hsPkgs.containers
-            hsPkgs.strict
-            hsPkgs.hoodle-types
-            hsPkgs.xournal-types
-            hsPkgs.text
-            hsPkgs.lens
-            hsPkgs.either
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Ian-Woo Kim <ianwookim@gmail.com>";
+      author = "Ian-Woo Kim";
+      homepage = "http://ianwookim.org/hoodle";
+      url = "";
+      synopsis = "Hoodle file parser";
+      description = "Text parser for hoodle xml file";
+      buildType = "Simple";
+    };
+    components = {
+      "hoodle-parser" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.transformers)
+          (hsPkgs.attoparsec)
+          (hsPkgs.bytestring)
+          (hsPkgs.containers)
+          (hsPkgs.strict)
+          (hsPkgs.hoodle-types)
+          (hsPkgs.xournal-types)
+          (hsPkgs.text)
+          (hsPkgs.lens)
+          (hsPkgs.either)
+        ];
       };
-    }
+    };
+  }

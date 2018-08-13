@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "log-effect";
-          version = "0.4.0.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "tob@butter.sh";
-        author = "Tobias Florek";
-        homepage = "https://github.com/ibotty/log-effect";
-        url = "";
-        synopsis = "An extensible log effect using extensible-effects";
-        description = "Any help (especially documentation) is very welcome,";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "log-effect";
+        version = "0.4.0.0";
       };
-      components = {
-        "log-effect" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.extensible-effects
-            hsPkgs.fast-logger
-            hsPkgs.time
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "tob@butter.sh";
+      author = "Tobias Florek";
+      homepage = "https://github.com/ibotty/log-effect";
+      url = "";
+      synopsis = "An extensible log effect using extensible-effects";
+      description = "Any help (especially documentation) is very welcome,";
+      buildType = "Simple";
+    };
+    components = {
+      "log-effect" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.extensible-effects)
+          (hsPkgs.fast-logger)
+          (hsPkgs.time)
+        ];
       };
-    }
+    };
+  }

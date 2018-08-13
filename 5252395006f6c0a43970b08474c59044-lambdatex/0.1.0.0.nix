@@ -1,45 +1,50 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "lambdatex";
-          version = "0.1.0.0";
-        };
-        license = "LicenseRef-GPL";
-        copyright = "2015 Tom Sydney Kerckhove";
-        maintainer = "syd.kerckhove@gmail.com";
-        author = "Tom Sydney Kerckhove";
-        homepage = "http://github.com/NorfairKing/lambdatex";
-        url = "";
-        synopsis = "Type-Safe LaTeX EDSL";
-        description = "ΛTeX, pronounced 'LambdaTeX' is a Haskell EDSL that adds type-safety to LaTeX.\nΛTeX-generated LaTeX code should compile without errors.\nTODO(kerckhove) big fancy example";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "lambdatex";
+        version = "0.1.0.0";
       };
-      components = {
-        "lambdatex" = {
+      license = "LicenseRef-GPL";
+      copyright = "2015 Tom Sydney Kerckhove";
+      maintainer = "syd.kerckhove@gmail.com";
+      author = "Tom Sydney Kerckhove";
+      homepage = "http://github.com/NorfairKing/lambdatex";
+      url = "";
+      synopsis = "Type-Safe LaTeX EDSL";
+      description = "ΛTeX, pronounced 'LambdaTeX' is a Haskell EDSL that adds type-safety to LaTeX.\nΛTeX-generated LaTeX code should compile without errors.\nTODO(kerckhove) big fancy example";
+      buildType = "Simple";
+    };
+    components = {
+      "lambdatex" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.HaTeX)
+          (hsPkgs.mtl)
+          (hsPkgs.text)
+          (hsPkgs.containers)
+          (hsPkgs.transformers)
+          (hsPkgs.directory)
+        ];
+      };
+      tests = {
+        "lambdatex-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.HaTeX
-            hsPkgs.mtl
-            hsPkgs.text
-            hsPkgs.containers
-            hsPkgs.transformers
-            hsPkgs.directory
+            (hsPkgs.base)
+            (hsPkgs.lambdatex)
+            (hsPkgs.hspec)
+            (hsPkgs.QuickCheck)
           ];
         };
-        tests = {
-          "lambdatex-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.lambdatex
-              hsPkgs.hspec
-              hsPkgs.QuickCheck
-            ];
-          };
-        };
       };
-    }
+    };
+  }

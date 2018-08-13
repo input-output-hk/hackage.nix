@@ -1,39 +1,44 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "snap-app";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "chrisdone@gmail.com";
-        author = "Chris Done";
-        homepage = "Simple modules for writing apps with Snap, abstracted from hpaste.";
-        url = "";
-        synopsis = "Simple modules for writing apps with Snap, abstracted from hpaste.";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "snap-app";
+        version = "0.1.0.0";
       };
-      components = {
-        "snap-app" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.snap-core
-            hsPkgs.network
-            hsPkgs.pgsql-simple
-            hsPkgs.mtl
-            hsPkgs.blaze-html
-            hsPkgs.safe
-            hsPkgs.text
-            hsPkgs.utf8-string
-            hsPkgs.bytestring
-            hsPkgs.MonadCatchIO-transformers
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "chrisdone@gmail.com";
+      author = "Chris Done";
+      homepage = "Simple modules for writing apps with Snap, abstracted from hpaste.";
+      url = "";
+      synopsis = "Simple modules for writing apps with Snap, abstracted from hpaste.";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "snap-app" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.snap-core)
+          (hsPkgs.network)
+          (hsPkgs.pgsql-simple)
+          (hsPkgs.mtl)
+          (hsPkgs.blaze-html)
+          (hsPkgs.safe)
+          (hsPkgs.text)
+          (hsPkgs.utf8-string)
+          (hsPkgs.bytestring)
+          (hsPkgs.MonadCatchIO-transformers)
+        ];
       };
-    }
+    };
+  }

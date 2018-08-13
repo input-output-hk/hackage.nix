@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "augeas";
-          version = "0.3.5";
-        };
-        license = "LicenseRef-LGPL";
-        copyright = "";
-        maintainer = "jude@pwan.org";
-        author = "Jude Nagurney";
-        homepage = "http://trac.haskell.org/augeas";
-        url = "http://hackage.haskell.org/packages/archive/augeas/0.3.3/augeas-0.3.3.tar.gz";
-        synopsis = "A Haskell FFI wrapper for the Augeas API";
-        description = "A Haskell FFI wrapper for the Augeas API";
-        buildType = "Configure";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "augeas";
+        version = "0.3.5";
       };
-      components = {
-        "augeas" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.directory
-            hsPkgs.unix
-            hsPkgs.bytestring
-          ];
+      license = "LicenseRef-LGPL";
+      copyright = "";
+      maintainer = "jude@pwan.org";
+      author = "Jude Nagurney";
+      homepage = "http://trac.haskell.org/augeas";
+      url = "http://hackage.haskell.org/packages/archive/augeas/0.3.3/augeas-0.3.3.tar.gz";
+      synopsis = "A Haskell FFI wrapper for the Augeas API";
+      description = "A Haskell FFI wrapper for the Augeas API";
+      buildType = "Configure";
+    };
+    components = {
+      "augeas" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.directory)
+          (hsPkgs.unix)
+          (hsPkgs.bytestring)
+        ];
+        pkgconfig = [
+          (pkgconfPkgs.augeas)
+        ];
+      };
+      exes = {
+        "test-haskell-augeas" = {
+          depends  = [ (hsPkgs.HUnit) ];
+          libs = [ (pkgs.augeas) ];
           pkgconfig = [
-            pkgconfPkgs.augeas
+            (pkgconfPkgs.augeas)
           ];
         };
-        exes = {
-          "test-haskell-augeas" = {
-            depends  = [ hsPkgs.HUnit ];
-            libs = [ pkgs.augeas ];
-            pkgconfig = [
-              pkgconfPkgs.augeas
-            ];
-          };
-        };
       };
-    }
+    };
+  }

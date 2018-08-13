@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "verbalexpressions";
-          version = "1.0.0.0";
-        };
-        license = "MIT";
-        copyright = "(c) 2013, whackashoe";
-        maintainer = "";
-        author = "whackashoe";
-        homepage = "https://github.com/VerbalExpressions/HaskellVerbalExpressions";
-        url = "";
-        synopsis = "Regular expressions made easy";
-        description = "VerbalExpressions is a Haskell library that helps to construct\ndifficult regular expressions.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "verbalexpressions";
+        version = "1.0.0.0";
       };
-      components = {
-        "verbalexpressions" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.regex-pcre
-          ];
-        };
+      license = "MIT";
+      copyright = "(c) 2013, whackashoe";
+      maintainer = "";
+      author = "whackashoe";
+      homepage = "https://github.com/VerbalExpressions/HaskellVerbalExpressions";
+      url = "";
+      synopsis = "Regular expressions made easy";
+      description = "VerbalExpressions is a Haskell library that helps to construct\ndifficult regular expressions.";
+      buildType = "Simple";
+    };
+    components = {
+      "verbalexpressions" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.regex-pcre)
+        ];
       };
-    }
+    };
+  }

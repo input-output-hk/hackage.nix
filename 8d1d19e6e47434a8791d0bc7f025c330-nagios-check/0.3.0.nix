@@ -1,45 +1,50 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "nagios-check";
-          version = "0.3.0";
-        };
-        license = "MIT";
-        copyright = "2014 Sharif Olorin";
-        maintainer = "sio@tesser.org";
-        author = "Sharif Olorin";
-        homepage = "https://github.com/fractalcat/haskell-nagios-check";
-        url = "";
-        synopsis = "Package for writing monitoring plugins";
-        description = "Implements Nagios plugin development guidelines\nwithin a Haskell framework for writing Nagios\nchecks.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "nagios-check";
+        version = "0.3.0";
       };
-      components = {
-        "nagios-check" = {
+      license = "MIT";
+      copyright = "2014 Sharif Olorin";
+      maintainer = "sio@tesser.org";
+      author = "Sharif Olorin";
+      homepage = "https://github.com/fractalcat/haskell-nagios-check";
+      url = "";
+      synopsis = "Package for writing monitoring plugins";
+      description = "Implements Nagios plugin development guidelines\nwithin a Haskell framework for writing Nagios\nchecks.";
+      buildType = "Simple";
+    };
+    components = {
+      "nagios-check" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.text)
+          (hsPkgs.bifunctors)
+          (hsPkgs.exceptions)
+          (hsPkgs.nagios-perfdata)
+        ];
+      };
+      tests = {
+        "nagios-check-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.text
-            hsPkgs.bifunctors
-            hsPkgs.exceptions
-            hsPkgs.nagios-perfdata
+            (hsPkgs.base)
+            (hsPkgs.hspec)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.text)
+            (hsPkgs.nagios-check)
           ];
         };
-        tests = {
-          "nagios-check-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hspec
-              hsPkgs.QuickCheck
-              hsPkgs.text
-              hsPkgs.nagios-check
-            ];
-          };
-        };
       };
-    }
+    };
+  }

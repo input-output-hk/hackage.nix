@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "hashable";
-          version = "1.1.1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "johan.tibell@gmail.com";
-        author = "Milan Straka <fox@ucw.cz>\nJohan Tibell <johan.tibell@gmail.com>";
-        homepage = "http://github.com/tibbe/hashable";
-        url = "";
-        synopsis = "A class for types that can be converted to a hash value";
-        description = "This package defines a class, 'Hashable', for types that\ncan be converted to a hash value.  This class\nexists for the benefit of hashing-based data\nstructures.  The package provides instances for\nbasic types and a way to combine hash values.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "hashable";
+        version = "1.1.1.0";
       };
-      components = {
-        "hashable" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.ghc-prim
-            hsPkgs.text
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "johan.tibell@gmail.com";
+      author = "Milan Straka <fox@ucw.cz>\nJohan Tibell <johan.tibell@gmail.com>";
+      homepage = "http://github.com/tibbe/hashable";
+      url = "";
+      synopsis = "A class for types that can be converted to a hash value";
+      description = "This package defines a class, 'Hashable', for types that\ncan be converted to a hash value.  This class\nexists for the benefit of hashing-based data\nstructures.  The package provides instances for\nbasic types and a way to combine hash values.";
+      buildType = "Simple";
+    };
+    components = {
+      "hashable" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.ghc-prim)
+          (hsPkgs.text)
+        ];
       };
-    }
+    };
+  }

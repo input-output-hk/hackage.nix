@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "meldable-heap";
-          version = "2.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "http://code.google.com/p/priority-queues/";
-        author = "Jim Apple";
-        homepage = "http://code.google.com/p/priority-queues/";
-        url = "";
-        synopsis = "Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues";
-        description = "A heap is a container supporting the insertion of elements and the extraction of the minimum element. This library additionally supports melding two heaps. This library models the implementation of asymptotically optimal purely functional heaps given by Brodal and Okasaki in their paper \\\"Optimal Purely Functional Priority Queues\\\". It has been proved correct using the Coq proof assistant.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "meldable-heap";
+        version = "2.0.1";
       };
-      components = {
-        "meldable-heap" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "http://code.google.com/p/priority-queues/";
+      author = "Jim Apple";
+      homepage = "http://code.google.com/p/priority-queues/";
+      url = "";
+      synopsis = "Asymptotically optimal, Coq-verified meldable heaps, AKA priority queues";
+      description = "A heap is a container supporting the insertion of elements and the extraction of the minimum element. This library additionally supports melding two heaps. This library models the implementation of asymptotically optimal purely functional heaps given by Brodal and Okasaki in their paper \\\"Optimal Purely Functional Priority Queues\\\". It has been proved correct using the Coq proof assistant.";
+      buildType = "Simple";
+    };
+    components = {
+      "meldable-heap" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       small_base = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "papa-lens-implement";
-          version = "0.2.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (c) 2017, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
-        maintainer = "Tony Morris";
-        author = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>";
-        homepage = "https://github.com/data61/papa-lens-implement";
-        url = "";
-        synopsis = "useful `lens` functions reimplemented";
-        description = "useful `lens` functions reimplemented";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "papa-lens-implement";
+        version = "0.2.0";
       };
-      components = {
-        "papa-lens-implement" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) 2017, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
+      maintainer = "Tony Morris";
+      author = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>";
+      homepage = "https://github.com/data61/papa-lens-implement";
+      url = "";
+      synopsis = "useful `lens` functions reimplemented";
+      description = "useful `lens` functions reimplemented";
+      buildType = "Custom";
+    };
+    components = {
+      "papa-lens-implement" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.lens)
+        ];
+      };
+      tests = {
+        "doctests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.lens
+            (hsPkgs.base)
+            (hsPkgs.doctest)
+            (hsPkgs.filepath)
+            (hsPkgs.directory)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.template-haskell)
           ];
         };
-        tests = {
-          "doctests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-              hsPkgs.filepath
-              hsPkgs.directory
-              hsPkgs.QuickCheck
-              hsPkgs.template-haskell
-            ];
-          };
-        };
       };
-    }
+    };
+  }

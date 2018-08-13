@@ -1,25 +1,30 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "nixos-types";
-          version = "1.5";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Peter Simons, Andres Loeh";
-        maintainer = "Nix Developers <nix-dev@lists.science.uu.nl>";
-        author = "Peter Simons <simons@cryp.to>, Andres Loeh <mail@andres-loeh.de>";
-        homepage = "http://hackage.haskell.org/package/cabal2nix";
-        url = "";
-        synopsis = "this package is obsolete; see cabal2nix instead";
-        description = "This package is obsolete. It's functionality has been merged into <http://hackage.haskell.org/package/cabal2nix>.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "nixos-types";
+        version = "1.5";
       };
-      components = {
-        "nixos-types" = {};
-      };
-    }
+      license = "BSD-3-Clause";
+      copyright = "Peter Simons, Andres Loeh";
+      maintainer = "Nix Developers <nix-dev@lists.science.uu.nl>";
+      author = "Peter Simons <simons@cryp.to>, Andres Loeh <mail@andres-loeh.de>";
+      homepage = "http://hackage.haskell.org/package/cabal2nix";
+      url = "";
+      synopsis = "this package is obsolete; see cabal2nix instead";
+      description = "This package is obsolete. It's functionality has been merged into <http://hackage.haskell.org/package/cabal2nix>.";
+      buildType = "Simple";
+    };
+    components = {
+      "nixos-types" = {};
+    };
+  }

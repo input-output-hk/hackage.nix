@@ -1,51 +1,56 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.9";
-        identifier = {
-          name = "elm-get";
-          version = "0.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright: (c) 2013-2014 Evan Czaplicki";
-        maintainer = "info@elm-lang.org";
-        author = "Evan Czaplicki";
-        homepage = "http://github.com/elm-lang/elm-get";
-        url = "";
-        synopsis = "Tool for sharing and using Elm libraries";
-        description = "elm-get lets you install, update, and publish Elm libraries";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.9";
+      identifier = {
+        name = "elm-get";
+        version = "0.1.1";
       };
-      components = {
-        exes = {
-          "elm-get" = {
-            depends  = [
-              hsPkgs.aeson
-              hsPkgs.base
-              hsPkgs.binary
-              hsPkgs.bytestring
-              hsPkgs.containers
-              hsPkgs.directory
-              hsPkgs.Elm
-              hsPkgs.filepath
-              hsPkgs.HTTP
-              hsPkgs.http-client
-              hsPkgs.http-client-multipart
-              hsPkgs.http-types
-              hsPkgs.json
-              hsPkgs.mtl
-              hsPkgs.network
-              hsPkgs.optparse-applicative
-              hsPkgs.pretty
-              hsPkgs.process
-              hsPkgs.resourcet
-              hsPkgs.text
-              hsPkgs.vector
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "Copyright: (c) 2013-2014 Evan Czaplicki";
+      maintainer = "info@elm-lang.org";
+      author = "Evan Czaplicki";
+      homepage = "http://github.com/elm-lang/elm-get";
+      url = "";
+      synopsis = "Tool for sharing and using Elm libraries";
+      description = "elm-get lets you install, update, and publish Elm libraries";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "elm-get" = {
+          depends  = [
+            (hsPkgs.aeson)
+            (hsPkgs.base)
+            (hsPkgs.binary)
+            (hsPkgs.bytestring)
+            (hsPkgs.containers)
+            (hsPkgs.directory)
+            (hsPkgs.Elm)
+            (hsPkgs.filepath)
+            (hsPkgs.HTTP)
+            (hsPkgs.http-client)
+            (hsPkgs.http-client-multipart)
+            (hsPkgs.http-types)
+            (hsPkgs.json)
+            (hsPkgs.mtl)
+            (hsPkgs.network)
+            (hsPkgs.optparse-applicative)
+            (hsPkgs.pretty)
+            (hsPkgs.process)
+            (hsPkgs.resourcet)
+            (hsPkgs.text)
+            (hsPkgs.vector)
+          ];
         };
       };
-    }
+    };
+  }

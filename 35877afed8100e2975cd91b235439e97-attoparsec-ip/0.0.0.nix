@@ -1,39 +1,44 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "attoparsec-ip";
-          version = "0.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "BSD-3";
-        maintainer = "athan.clark@gmail.com";
-        author = "Athan Clark";
-        homepage = "https://github.com/athanclark/attoparsec-ip#readme";
-        url = "";
-        synopsis = "Parse IP data types with attoparsec";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "attoparsec-ip";
+        version = "0.0.0";
       };
-      components = {
-        "attoparsec-ip" = {
+      license = "BSD-3-Clause";
+      copyright = "BSD-3";
+      maintainer = "athan.clark@gmail.com";
+      author = "Athan Clark";
+      homepage = "https://github.com/athanclark/attoparsec-ip#readme";
+      url = "";
+      synopsis = "Parse IP data types with attoparsec";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "attoparsec-ip" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.attoparsec)
+          (hsPkgs.ip)
+        ];
+      };
+      tests = {
+        "attoparsec-ip-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.attoparsec
-            hsPkgs.ip
+            (hsPkgs.base)
+            (hsPkgs.attoparsec-ip)
           ];
         };
-        tests = {
-          "attoparsec-ip-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.attoparsec-ip
-            ];
-          };
-        };
       };
-    }
+    };
+  }

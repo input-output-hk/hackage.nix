@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "expand";
-          version = "0.0.1";
-        };
-        license = "LicenseRef-LGPL";
-        copyright = "";
-        maintainer = "jaccokrijnen@gmail.com";
-        author = "Jacco Krijnen";
-        homepage = "";
-        url = "";
-        synopsis = "Extensible Pandoc";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "expand";
+        version = "0.0.1";
       };
-      components = {
-        "expand" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.murder
-            hsPkgs.uu-parsinglib
-            hsPkgs.AspectAG
-            hsPkgs.HList
-          ];
-        };
+      license = "LicenseRef-LGPL";
+      copyright = "";
+      maintainer = "jaccokrijnen@gmail.com";
+      author = "Jacco Krijnen";
+      homepage = "";
+      url = "";
+      synopsis = "Extensible Pandoc";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "expand" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.murder)
+          (hsPkgs.uu-parsinglib)
+          (hsPkgs.AspectAG)
+          (hsPkgs.HList)
+        ];
       };
-    }
+    };
+  }

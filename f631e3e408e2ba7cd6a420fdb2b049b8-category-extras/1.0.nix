@@ -1,54 +1,59 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "category-extras";
-          version = "1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (C) 2012 Daniel Wagner,\nCopyright (C) 2008 Edward A. Kmett,\nCopyright (C) 2004--2008 Dave Menendez,\nCopyright (C) 2007 Iavor Diatchki";
-        maintainer = "Daniel Wagner <daniel@wagner-home.com>";
-        author = "Edward A. Kmett";
-        homepage = "http://comonad.com/reader/";
-        url = "";
-        synopsis = "A meta-package documenting various packages inspired by category theory";
-        description = "The obsolete @category-extras@ package provided a monolithic set\nof modules designed for the use of category theory in Haskell.\nIt was exploded into more focused, self-contained packages\n(listed in the dependencies below); this meta-package documents\nwhere the code has gone. In addition to the core definitions,\nthe original category-extras library included several concrete\ndata types as instances of the core concepts. These are now\navailable from the following packages:\n\n* data-lens\n\n* data-lens-fd\n\n* data-lens-template\n\n* eq\n\n* representable-tries\n\n* streams\n\n* vector-instances\n\nA quick overview of the packages in dependency order is\navailable from\n<http://dmwit.com/category-extras/dependencies.png>. A more\ndetailed (but very incomplete -- help me complete it!) overview\nmapping each module in the old package into its new location in\nthe new hierarchy follows. Not all modules have exact analogs;\nwhere possible, similar alternatives are listed.\n\n> Control\n>     Control.Allegory: use alternative profunctors-Data.Profunctor\n>     Applicative\n>         Control.Applicative.Parameterized\n>     Arrow\n>         Control.Arrow.BiKleisli\n>         Control.Arrow.CoKleisli: comonad-Control.Comonad\n>     Control.Category: base-Control.Category\n>         Control.Category.Associative: categories-Control.Category.Associative\n>         Control.Category.Braided: categories-Control.Category.Braided\n>         Control.Category.Cartesian: categories-Control.Category.Cartesian\n>             Control.Category.Cartesian.Closed: categories-Control.Category.Cartesian.Closed\n>         Control.Category.Discrete: categories-Control.Category.Discrete\n>         Control.Category.Distributive: categories-Control.Category.Distributive\n>         Control.Category.Dual: categories-Control.Category.Dual\n>         Control.Category.Hask: just use \"(->)\" instead of \"Hask\"\n>         Control.Category.Monoidal: categories-Control.Category.Monoidal\n>         Control.Category.Object: categories-Control.Categorical.Object\n>     Control.Comonad: comonad-Control.Comonad\n>         Control.Comonad.Cofree: free-Control.Comonad.Cofree\n>         Control.Comonad.Coideal\n>         Control.Comonad.Context: comonad-transformers-Control.Comonad.Trans.Store\n>         Control.Comonad.Density: kan-extensions-Control.Comonad.Density\n>         Control.Comonad.Exponent: comonad-transformers-Control.Comonad.Trans.Trace\n>         Control.Comonad.Fix: comonad-Control.Comonad\n>         Control.Comonad.HigherOrder\n>         Control.Comonad.Indexed\n>         Control.Comonad.Parameterized\n>         Control.Comonad.Pointer: comonad-extras-Control.Comonad.Store.Pointer\n>         Control.Comonad.Reader: comonad-transformers-Control.Comonad.Trans.Env\n>         Control.Comonad.Stream: use alternative package streams\n>         Control.Comonad.Supply\n>         Control.Comonad.Trans: comonad-transformers-Control.Comonad.Trans.Class\n>     Control.Dyad\n>     Control.Functor: bifunctors-Data.Bifunctor\n>         Control.Functor.Adjunction: adjunctions-Data.Functor.Adjunction\n>             Control.Functor.Adjunction.HigherOrder\n>         Control.Functor.Algebra\n>         Control.Functor.Algebra.Elgot: recursion-schemes-Data.Functor.Foldable\n>         Control.Functor.Categorical: categories-Control.Categorical.Functor\n>         Combinators\n>             Control.Functor.Combinators.Biff\n>             Control.Functor.Combinators.Const\n>             Control.Functor.Combinators.Flip\n>             Control.Functor.Combinators.Join\n>             Control.Functor.Combinators.Lift\n>             Control.Functor.Combinators.Of\n>         Control.Functor.Composition: transformers-Data.Functor.Compose and comonad-transformers-Data.Functor.Composition\n>         Control.Functor.Cone\n>         Control.Functor.Contra: contravariant-Data.Functor.Contravariant\n>         Control.Functor.Exponential\n>         Control.Functor.Extras: distributive-Data.Distributive, semigroupoids-Data.Functor.Plus, and semigroupoids-Data.Functor.Alt\n>         Control.Functor.Fix: recursion-schemes-Data.Functor.Foldable\n>         Control.Functor.Full\n>         Control.Functor.HigherOrder\n>             Control.Functor.HigherOrder.Composition\n>         Control.Functor.Indexed\n>         Control.Functor.KanExtension: kan-extensions-Data.Functor.KanExtension\n>             Control.Functor.KanExtension.Interpreter\n>         Control.Functor.Lambek\n>         Control.Functor.Limit\n>         Control.Functor.Pointed: pointed-Data.Pointed and pointed-Data.Copointed\n>             Control.Functor.Pointed.Composition: pointed-Data.Pointed and pointed-Data.Copointed\n>         Control.Functor.Representable: representable-functors-Data.Functor.Representable\n>         Control.Functor.Strong\n>         Control.Functor.Yoneda: kan-extensions-Data.Functor.Yoneda\n>         Control.Functor.Zap: keys-Data.Key\n>         Control.Functor.Zip: keys-Data.Key\n>     Monad\n>         Control.Monad.Categorical: pointed-Data.Pointed and semigroupoids-Data.Functor.Bind\n>         Control.Monad.Codensity: kan-extensions-Control.Monad.Codensity\n>         Control.Monad.Either: either-Control.Monad.Trans.Either\n>         Control.Monad.Free: free-Control.Monad.Free\n>         Control.Monad.HigherOrder\n>         Control.Monad.Hyper\n>         Control.Monad.Ideal\n>         Control.Monad.Indexed\n>             Control.Monad.Indexed.Cont\n>             Control.Monad.Indexed.Fix\n>             Control.Monad.Indexed.State\n>             Control.Monad.Indexed.Trans\n>         Control.Monad.Parameterized\n>     Morphism\n>         Control.Morphism.Ana: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Apo: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Build\n>         Control.Morphism.Cata: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Chrono\n>         Control.Morphism.Destroy\n>         Control.Morphism.Dyna\n>         Control.Morphism.Exo\n>         Control.Morphism.Futu: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Histo: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Hylo: recursion-schemes-Data.Functor.Foldable\n>         Meta\n>             Control.Morphism.Meta.Erwig\n>             Control.Morphism.Meta.Gibbons\n>         Control.Morphism.Para: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Postpro: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Prepro: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Span\n>         Control.Morphism.Synchro\n>         Control.Morphism.Universal\n>         Control.Morphism.Zygo: recursion-schemes-Data.Functor.Foldable\n> Data\n>     Data.Void: void-Data.Void";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "category-extras";
+        version = "1.0";
       };
-      components = {
-        "category-extras" = {
-          depends  = [
-            hsPkgs.adjunctions
-            hsPkgs.bifunctors
-            hsPkgs.categories
-            hsPkgs.comonad
-            hsPkgs.comonad-extras
-            hsPkgs.comonads-fd
-            hsPkgs.comonad-transformers
-            hsPkgs.contravariant
-            hsPkgs.distributive
-            hsPkgs.either
-            hsPkgs.free
-            hsPkgs.groupoids
-            hsPkgs.kan-extensions
-            hsPkgs.keys
-            hsPkgs.monad-products
-            hsPkgs.pointed
-            hsPkgs.profunctor-extras
-            hsPkgs.profunctors
-            hsPkgs.recursion-schemes
-            hsPkgs.reducers
-            hsPkgs.representable-functors
-            hsPkgs.representable-profunctors
-            hsPkgs.semigroupoid-extras
-            hsPkgs.semigroupoids
-            hsPkgs.semigroups
-            hsPkgs.void
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (C) 2012 Daniel Wagner,\nCopyright (C) 2008 Edward A. Kmett,\nCopyright (C) 2004--2008 Dave Menendez,\nCopyright (C) 2007 Iavor Diatchki";
+      maintainer = "Daniel Wagner <daniel@wagner-home.com>";
+      author = "Edward A. Kmett";
+      homepage = "http://comonad.com/reader/";
+      url = "";
+      synopsis = "A meta-package documenting various packages inspired by category theory";
+      description = "The obsolete @category-extras@ package provided a monolithic set\nof modules designed for the use of category theory in Haskell.\nIt was exploded into more focused, self-contained packages\n(listed in the dependencies below); this meta-package documents\nwhere the code has gone. In addition to the core definitions,\nthe original category-extras library included several concrete\ndata types as instances of the core concepts. These are now\navailable from the following packages:\n\n* data-lens\n\n* data-lens-fd\n\n* data-lens-template\n\n* eq\n\n* representable-tries\n\n* streams\n\n* vector-instances\n\nA quick overview of the packages in dependency order is\navailable from\n<http://dmwit.com/category-extras/dependencies.png>. A more\ndetailed (but very incomplete -- help me complete it!) overview\nmapping each module in the old package into its new location in\nthe new hierarchy follows. Not all modules have exact analogs;\nwhere possible, similar alternatives are listed.\n\n> Control\n>     Control.Allegory: use alternative profunctors-Data.Profunctor\n>     Applicative\n>         Control.Applicative.Parameterized\n>     Arrow\n>         Control.Arrow.BiKleisli\n>         Control.Arrow.CoKleisli: comonad-Control.Comonad\n>     Control.Category: base-Control.Category\n>         Control.Category.Associative: categories-Control.Category.Associative\n>         Control.Category.Braided: categories-Control.Category.Braided\n>         Control.Category.Cartesian: categories-Control.Category.Cartesian\n>             Control.Category.Cartesian.Closed: categories-Control.Category.Cartesian.Closed\n>         Control.Category.Discrete: categories-Control.Category.Discrete\n>         Control.Category.Distributive: categories-Control.Category.Distributive\n>         Control.Category.Dual: categories-Control.Category.Dual\n>         Control.Category.Hask: just use \"(->)\" instead of \"Hask\"\n>         Control.Category.Monoidal: categories-Control.Category.Monoidal\n>         Control.Category.Object: categories-Control.Categorical.Object\n>     Control.Comonad: comonad-Control.Comonad\n>         Control.Comonad.Cofree: free-Control.Comonad.Cofree\n>         Control.Comonad.Coideal\n>         Control.Comonad.Context: comonad-transformers-Control.Comonad.Trans.Store\n>         Control.Comonad.Density: kan-extensions-Control.Comonad.Density\n>         Control.Comonad.Exponent: comonad-transformers-Control.Comonad.Trans.Trace\n>         Control.Comonad.Fix: comonad-Control.Comonad\n>         Control.Comonad.HigherOrder\n>         Control.Comonad.Indexed\n>         Control.Comonad.Parameterized\n>         Control.Comonad.Pointer: comonad-extras-Control.Comonad.Store.Pointer\n>         Control.Comonad.Reader: comonad-transformers-Control.Comonad.Trans.Env\n>         Control.Comonad.Stream: use alternative package streams\n>         Control.Comonad.Supply\n>         Control.Comonad.Trans: comonad-transformers-Control.Comonad.Trans.Class\n>     Control.Dyad\n>     Control.Functor: bifunctors-Data.Bifunctor\n>         Control.Functor.Adjunction: adjunctions-Data.Functor.Adjunction\n>             Control.Functor.Adjunction.HigherOrder\n>         Control.Functor.Algebra\n>         Control.Functor.Algebra.Elgot: recursion-schemes-Data.Functor.Foldable\n>         Control.Functor.Categorical: categories-Control.Categorical.Functor\n>         Combinators\n>             Control.Functor.Combinators.Biff\n>             Control.Functor.Combinators.Const\n>             Control.Functor.Combinators.Flip\n>             Control.Functor.Combinators.Join\n>             Control.Functor.Combinators.Lift\n>             Control.Functor.Combinators.Of\n>         Control.Functor.Composition: transformers-Data.Functor.Compose and comonad-transformers-Data.Functor.Composition\n>         Control.Functor.Cone\n>         Control.Functor.Contra: contravariant-Data.Functor.Contravariant\n>         Control.Functor.Exponential\n>         Control.Functor.Extras: distributive-Data.Distributive, semigroupoids-Data.Functor.Plus, and semigroupoids-Data.Functor.Alt\n>         Control.Functor.Fix: recursion-schemes-Data.Functor.Foldable\n>         Control.Functor.Full\n>         Control.Functor.HigherOrder\n>             Control.Functor.HigherOrder.Composition\n>         Control.Functor.Indexed\n>         Control.Functor.KanExtension: kan-extensions-Data.Functor.KanExtension\n>             Control.Functor.KanExtension.Interpreter\n>         Control.Functor.Lambek\n>         Control.Functor.Limit\n>         Control.Functor.Pointed: pointed-Data.Pointed and pointed-Data.Copointed\n>             Control.Functor.Pointed.Composition: pointed-Data.Pointed and pointed-Data.Copointed\n>         Control.Functor.Representable: representable-functors-Data.Functor.Representable\n>         Control.Functor.Strong\n>         Control.Functor.Yoneda: kan-extensions-Data.Functor.Yoneda\n>         Control.Functor.Zap: keys-Data.Key\n>         Control.Functor.Zip: keys-Data.Key\n>     Monad\n>         Control.Monad.Categorical: pointed-Data.Pointed and semigroupoids-Data.Functor.Bind\n>         Control.Monad.Codensity: kan-extensions-Control.Monad.Codensity\n>         Control.Monad.Either: either-Control.Monad.Trans.Either\n>         Control.Monad.Free: free-Control.Monad.Free\n>         Control.Monad.HigherOrder\n>         Control.Monad.Hyper\n>         Control.Monad.Ideal\n>         Control.Monad.Indexed\n>             Control.Monad.Indexed.Cont\n>             Control.Monad.Indexed.Fix\n>             Control.Monad.Indexed.State\n>             Control.Monad.Indexed.Trans\n>         Control.Monad.Parameterized\n>     Morphism\n>         Control.Morphism.Ana: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Apo: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Build\n>         Control.Morphism.Cata: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Chrono\n>         Control.Morphism.Destroy\n>         Control.Morphism.Dyna\n>         Control.Morphism.Exo\n>         Control.Morphism.Futu: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Histo: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Hylo: recursion-schemes-Data.Functor.Foldable\n>         Meta\n>             Control.Morphism.Meta.Erwig\n>             Control.Morphism.Meta.Gibbons\n>         Control.Morphism.Para: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Postpro: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Prepro: recursion-schemes-Data.Functor.Foldable\n>         Control.Morphism.Span\n>         Control.Morphism.Synchro\n>         Control.Morphism.Universal\n>         Control.Morphism.Zygo: recursion-schemes-Data.Functor.Foldable\n> Data\n>     Data.Void: void-Data.Void";
+      buildType = "Simple";
+    };
+    components = {
+      "category-extras" = {
+        depends  = [
+          (hsPkgs.adjunctions)
+          (hsPkgs.bifunctors)
+          (hsPkgs.categories)
+          (hsPkgs.comonad)
+          (hsPkgs.comonad-extras)
+          (hsPkgs.comonads-fd)
+          (hsPkgs.comonad-transformers)
+          (hsPkgs.contravariant)
+          (hsPkgs.distributive)
+          (hsPkgs.either)
+          (hsPkgs.free)
+          (hsPkgs.groupoids)
+          (hsPkgs.kan-extensions)
+          (hsPkgs.keys)
+          (hsPkgs.monad-products)
+          (hsPkgs.pointed)
+          (hsPkgs.profunctor-extras)
+          (hsPkgs.profunctors)
+          (hsPkgs.recursion-schemes)
+          (hsPkgs.reducers)
+          (hsPkgs.representable-functors)
+          (hsPkgs.representable-profunctors)
+          (hsPkgs.semigroupoid-extras)
+          (hsPkgs.semigroupoids)
+          (hsPkgs.semigroups)
+          (hsPkgs.void)
+        ];
       };
-    }
+    };
+  }

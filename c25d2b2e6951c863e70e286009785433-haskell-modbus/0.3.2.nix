@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "haskell-modbus";
-          version = "0.3.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "jhickner@gmail.com";
-        author = "Jason Hickner";
-        homepage = "http://www.github.com/jhickner/haskell-modbus";
-        url = "";
-        synopsis = "A cereal-based parser for the Modbus protocol";
-        description = "A cereal-based parser for the Modbus protocol";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "haskell-modbus";
+        version = "0.3.2";
       };
-      components = {
-        "haskell-modbus" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "jhickner@gmail.com";
+      author = "Jason Hickner";
+      homepage = "http://www.github.com/jhickner/haskell-modbus";
+      url = "";
+      synopsis = "A cereal-based parser for the Modbus protocol";
+      description = "A cereal-based parser for the Modbus protocol";
+      buildType = "Simple";
+    };
+    components = {
+      "haskell-modbus" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.array)
+          (hsPkgs.bytestring)
+          (hsPkgs.cereal)
+        ];
+      };
+      tests = {
+        "spec" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.array
-            hsPkgs.bytestring
-            hsPkgs.cereal
+            (hsPkgs.base)
+            (hsPkgs.hspec)
+            (hsPkgs.haskell-modbus)
+            (hsPkgs.cereal)
+            (hsPkgs.bytestring)
+            (hsPkgs.array)
           ];
         };
-        tests = {
-          "spec" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hspec
-              hsPkgs.haskell-modbus
-              hsPkgs.cereal
-              hsPkgs.bytestring
-              hsPkgs.array
-            ];
-          };
-        };
       };
-    }
+    };
+  }

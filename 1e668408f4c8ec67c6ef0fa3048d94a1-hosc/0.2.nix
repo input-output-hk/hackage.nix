@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "hosc";
-          version = "0.2";
-        };
-        license = "LicenseRef-GPL";
-        copyright = "Rohan Drape, 2006-2008";
-        maintainer = "rd@slavepianos.org";
-        author = "Rohan Drape";
-        homepage = "http://slavepianos.org/rd/f/269573/";
-        url = "";
-        synopsis = "Haskell Open Sound Control";
-        description = "Haskell implementation of the Open Sound Control byte protocol";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "hosc";
+        version = "0.2";
       };
-      components = {
-        "hosc" = {
-          depends  = [
-            hsPkgs.array
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.binary
-            hsPkgs.network
-            hsPkgs.time
-          ];
-        };
+      license = "LicenseRef-GPL";
+      copyright = "Rohan Drape, 2006-2008";
+      maintainer = "rd@slavepianos.org";
+      author = "Rohan Drape";
+      homepage = "http://slavepianos.org/rd/f/269573/";
+      url = "";
+      synopsis = "Haskell Open Sound Control";
+      description = "Haskell implementation of the Open Sound Control byte protocol";
+      buildType = "Simple";
+    };
+    components = {
+      "hosc" = {
+        depends  = [
+          (hsPkgs.array)
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.binary)
+          (hsPkgs.network)
+          (hsPkgs.time)
+        ];
       };
-    }
+    };
+  }

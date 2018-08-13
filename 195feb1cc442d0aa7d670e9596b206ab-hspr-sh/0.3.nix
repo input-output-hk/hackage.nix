@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "hspr-sh";
-          version = "0.3";
-        };
-        license = "LicenseRef-PublicDomain";
-        copyright = "";
-        maintainer = "Niklas Broberg <nibro@cs.chalmers.se>";
-        author = "Niklas Broberg";
-        homepage = "http://www.cs.chalmers.se/~d00nibro/hsp/";
-        url = "";
-        synopsis = "Session handler for HSP";
-        description = "A simple session handler for the HSP package, needed\nby the HSPR tools.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "hspr-sh";
+        version = "0.3";
       };
-      components = {
-        "hspr-sh" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.old-time
-          ];
-        };
+      license = "LicenseRef-PublicDomain";
+      copyright = "";
+      maintainer = "Niklas Broberg <nibro@cs.chalmers.se>";
+      author = "Niklas Broberg";
+      homepage = "http://www.cs.chalmers.se/~d00nibro/hsp/";
+      url = "";
+      synopsis = "Session handler for HSP";
+      description = "A simple session handler for the HSP package, needed\nby the HSPR tools.";
+      buildType = "Simple";
+    };
+    components = {
+      "hspr-sh" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.old-time)
+        ];
       };
-    }
+    };
+  }

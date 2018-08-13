@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "lambda-options";
-          version = "0.9.0.0";
-        };
-        license = "LicenseRef-OtherLicense";
-        copyright = "";
-        maintainer = "thomasedingcode@gmail.com";
-        author = "Thomas Eding";
-        homepage = "https://github.com/thomaseding/lambda-options";
-        url = "";
-        synopsis = "A modern command-line parser for Haskell.";
-        description = "A modern command-line parser for Haskell.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "lambda-options";
+        version = "0.9.0.0";
       };
-      components = {
-        "lambda-options" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.containers
-            hsPkgs.read-bounded
-          ];
-        };
+      license = "LicenseRef-OtherLicense";
+      copyright = "";
+      maintainer = "thomasedingcode@gmail.com";
+      author = "Thomas Eding";
+      homepage = "https://github.com/thomaseding/lambda-options";
+      url = "";
+      synopsis = "A modern command-line parser for Haskell.";
+      description = "A modern command-line parser for Haskell.";
+      buildType = "Simple";
+    };
+    components = {
+      "lambda-options" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.containers)
+          (hsPkgs.read-bounded)
+        ];
       };
-    }
+    };
+  }

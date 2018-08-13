@@ -1,52 +1,57 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "HList";
-          version = "0.3.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "oleg@pobox.com";
-        author = "2004 Oleg Kiselyov (FNMOC, Monterey), Ralf Laemmel (CWI/VU, Amsterdam),\nKeean Schupke (London)";
-        homepage = "";
-        url = "";
-        synopsis = "Heterogeneous lists";
-        description = "HList is a record system providing strongly typed heterogenous lists, records,\ntype-indexed products (TIP) and co-products; licensed under the MIT X License.\n\nUser code should import \"Data.HList\" or\n\"Data.HList.CommonMain\" for a slightly more limited scope";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "HList";
+        version = "0.3.0";
       };
-      components = {
-        "HList" = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "oleg@pobox.com";
+      author = "2004 Oleg Kiselyov (FNMOC, Monterey), Ralf Laemmel (CWI/VU, Amsterdam),\nKeean Schupke (London)";
+      homepage = "";
+      url = "";
+      synopsis = "Heterogeneous lists";
+      description = "HList is a record system providing strongly typed heterogenous lists, records,\ntype-indexed products (TIP) and co-products; licensed under the MIT X License.\n\nUser code should import \"Data.HList\" or\n\"Data.HList.CommonMain\" for a slightly more limited scope";
+      buildType = "Simple";
+    };
+    components = {
+      "HList" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.template-haskell)
+          (hsPkgs.ghc-prim)
+          (hsPkgs.mtl)
+        ];
+      };
+      tests = {
+        "examples" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.template-haskell
-            hsPkgs.ghc-prim
-            hsPkgs.mtl
+            (hsPkgs.base)
+            (hsPkgs.hspec)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+            (hsPkgs.process)
+            (hsPkgs.syb)
+            (hsPkgs.cmdargs)
+            (hsPkgs.lens)
           ];
         };
-        tests = {
-          "examples" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hspec
-              hsPkgs.directory
-              hsPkgs.filepath
-              hsPkgs.process
-              hsPkgs.syb
-              hsPkgs.cmdargs
-              hsPkgs.lens
-            ];
-          };
-          "doctests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-            ];
-          };
+        "doctests" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.doctest)
+          ];
         };
       };
-    }
+    };
+  }

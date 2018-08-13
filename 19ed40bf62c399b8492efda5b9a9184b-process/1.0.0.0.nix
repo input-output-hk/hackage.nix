@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "process";
-          version = "1.0.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "libraries@haskell.org";
-        author = "";
-        homepage = "";
-        url = "";
-        synopsis = "Process libraries";
-        description = "This package contains libraries for dealing with system processes.";
-        buildType = "Configure";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "process";
+        version = "1.0.0.0";
       };
-      components = {
-        "process" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.directory
-            hsPkgs.filepath
-          ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.unix;
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "libraries@haskell.org";
+      author = "";
+      homepage = "";
+      url = "";
+      synopsis = "Process libraries";
+      description = "This package contains libraries for dealing with system processes.";
+      buildType = "Configure";
+    };
+    components = {
+      "process" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.directory)
+          (hsPkgs.filepath)
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.unix);
       };
-    }
+    };
+  }

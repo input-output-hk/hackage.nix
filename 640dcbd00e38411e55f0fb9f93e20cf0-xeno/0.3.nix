@@ -1,73 +1,78 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       libxml2 = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "xeno";
-          version = "0.3";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Marco Zocca (zocca.marco gmail)";
-        author = "Christopher Done";
-        homepage = "https://github.com/ocramz/xeno";
-        url = "";
-        synopsis = "A fast event-based XML parser in pure Haskell";
-        description = "Please see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "xeno";
+        version = "0.3";
       };
-      components = {
-        "xeno" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Marco Zocca (zocca.marco gmail)";
+      author = "Christopher Done";
+      homepage = "https://github.com/ocramz/xeno";
+      url = "";
+      synopsis = "A fast event-based XML parser in pure Haskell";
+      description = "Please see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "xeno" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.vector)
+          (hsPkgs.deepseq)
+          (hsPkgs.array)
+          (hsPkgs.mutable-containers)
+          (hsPkgs.mtl)
+        ];
+      };
+      tests = {
+        "xeno-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.vector
-            hsPkgs.deepseq
-            hsPkgs.array
-            hsPkgs.mutable-containers
-            hsPkgs.mtl
+            (hsPkgs.base)
+            (hsPkgs.xeno)
+            (hsPkgs.hexml)
+            (hsPkgs.hspec)
+            (hsPkgs.bytestring)
           ];
         };
-        tests = {
-          "xeno-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.xeno
-              hsPkgs.hexml
-              hsPkgs.hspec
-              hsPkgs.bytestring
-            ];
-          };
+      };
+      benchmarks = {
+        "xeno-speed-bench" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.xeno)
+            (hsPkgs.hexml)
+            (hsPkgs.criterion)
+            (hsPkgs.bytestring)
+            (hsPkgs.deepseq)
+            (hsPkgs.ghc-prim)
+            (hsPkgs.xml)
+            (hsPkgs.hexpat)
+          ] ++ pkgs.lib.optional (_flags.libxml2) (hsPkgs.libxml);
         };
-        benchmarks = {
-          "xeno-speed-bench" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.xeno
-              hsPkgs.hexml
-              hsPkgs.criterion
-              hsPkgs.bytestring
-              hsPkgs.deepseq
-              hsPkgs.ghc-prim
-              hsPkgs.xml
-              hsPkgs.hexpat
-            ] ++ pkgs.lib.optional _flags.libxml2 hsPkgs.libxml;
-          };
-          "xeno-memory-bench" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.xeno
-              hsPkgs.weigh
-              hsPkgs.bytestring
-              hsPkgs.deepseq
-              hsPkgs.hexml
-            ];
-          };
+        "xeno-memory-bench" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.xeno)
+            (hsPkgs.weigh)
+            (hsPkgs.bytestring)
+            (hsPkgs.deepseq)
+            (hsPkgs.hexml)
+          ];
         };
       };
-    }
+    };
+  }

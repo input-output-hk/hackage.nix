@@ -1,45 +1,50 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "sax";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "denis.redozubov@gmail.com";
-        author = "Denis Redozubov";
-        homepage = "https://github.com/dredozubov/sax-parser";
-        url = "";
-        synopsis = "Monadic streaming XML parser";
-        description = "Fast monadic streaming XML parser. 🎷\nIt feels and looks like any other parser combinators library.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "sax";
+        version = "0.1.0.0";
       };
-      components = {
-        "sax" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "denis.redozubov@gmail.com";
+      author = "Denis Redozubov";
+      homepage = "https://github.com/dredozubov/sax-parser";
+      url = "";
+      synopsis = "Monadic streaming XML parser";
+      description = "Fast monadic streaming XML parser. 🎷\nIt feels and looks like any other parser combinators library.";
+      buildType = "Simple";
+    };
+    components = {
+      "sax" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.deepseq)
+          (hsPkgs.bytestring)
+          (hsPkgs.mtl)
+          (hsPkgs.streaming)
+          (hsPkgs.text)
+          (hsPkgs.xeno)
+        ];
+      };
+      tests = {
+        "xeno-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.deepseq
-            hsPkgs.bytestring
-            hsPkgs.mtl
-            hsPkgs.streaming
-            hsPkgs.text
-            hsPkgs.xeno
+            (hsPkgs.base)
+            (hsPkgs.sax)
+            (hsPkgs.hspec)
+            (hsPkgs.bytestring)
           ];
         };
-        tests = {
-          "xeno-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.sax
-              hsPkgs.hspec
-              hsPkgs.bytestring
-            ];
-          };
-        };
       };
-    }
+    };
+  }

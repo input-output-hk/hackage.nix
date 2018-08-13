@@ -1,35 +1,40 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "aivika-transformers";
-          version = "4.3.4";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) 2009-2016. David Sorokin <david.sorokin@gmail.com>";
-        maintainer = "David Sorokin <david.sorokin@gmail.com>";
-        author = "David Sorokin";
-        homepage = "http://www.aivikasoft.com/en/products/aivika.html";
-        url = "";
-        synopsis = "Transformers for the Aivika simulation library";
-        description = "This package is a generalization of the Aivika [1] simulation library\nwith extensive use of monad transformers and type families.\n\n\\[1] <http://hackage.haskell.org/package/aivika>\n";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "aivika-transformers";
+        version = "4.3.4";
       };
-      components = {
-        "aivika-transformers" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.array
-            hsPkgs.containers
-            hsPkgs.random
-            hsPkgs.vector
-            hsPkgs.aivika
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "(c) 2009-2016. David Sorokin <david.sorokin@gmail.com>";
+      maintainer = "David Sorokin <david.sorokin@gmail.com>";
+      author = "David Sorokin";
+      homepage = "http://www.aivikasoft.com/en/products/aivika.html";
+      url = "";
+      synopsis = "Transformers for the Aivika simulation library";
+      description = "This package is a generalization of the Aivika [1] simulation library\nwith extensive use of monad transformers and type families.\n\n\\[1] <http://hackage.haskell.org/package/aivika>\n";
+      buildType = "Simple";
+    };
+    components = {
+      "aivika-transformers" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.array)
+          (hsPkgs.containers)
+          (hsPkgs.random)
+          (hsPkgs.vector)
+          (hsPkgs.aivika)
+        ];
       };
-    }
+    };
+  }

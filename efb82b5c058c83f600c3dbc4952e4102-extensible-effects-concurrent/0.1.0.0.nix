@@ -1,51 +1,56 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "extensible-effects-concurrent";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright Sven Heyll";
-        maintainer = "sven.heyll@gmail.com";
-        author = "Sven Heyll";
-        homepage = "https://github.com/sheyll/extensible-effects-concurrent#readme";
-        url = "";
-        synopsis = "";
-        description = "Please see the README on GitHub at <https://github.com/sheyll/extensible-effects-concurrent#readme>";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "extensible-effects-concurrent";
+        version = "0.1.0.0";
       };
-      components = {
-        "extensible-effects-concurrent" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright Sven Heyll";
+      maintainer = "sven.heyll@gmail.com";
+      author = "Sven Heyll";
+      homepage = "https://github.com/sheyll/extensible-effects-concurrent#readme";
+      url = "";
+      synopsis = "";
+      description = "Please see the README on GitHub at <https://github.com/sheyll/extensible-effects-concurrent#readme>";
+      buildType = "Simple";
+    };
+    components = {
+      "extensible-effects-concurrent" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.directory)
+          (hsPkgs.filepath)
+          (hsPkgs.time)
+          (hsPkgs.mtl)
+          (hsPkgs.containers)
+          (hsPkgs.QuickCheck)
+          (hsPkgs.lens)
+          (hsPkgs.transformers)
+          (hsPkgs.parallel)
+          (hsPkgs.process)
+          (hsPkgs.random)
+          (hsPkgs.extensible-effects)
+          (hsPkgs.stm)
+          (hsPkgs.tagged)
+        ];
+      };
+      tests = {
+        "extensible-effects-concurrent-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.directory
-            hsPkgs.filepath
-            hsPkgs.time
-            hsPkgs.mtl
-            hsPkgs.containers
-            hsPkgs.QuickCheck
-            hsPkgs.lens
-            hsPkgs.transformers
-            hsPkgs.parallel
-            hsPkgs.process
-            hsPkgs.random
-            hsPkgs.extensible-effects
-            hsPkgs.stm
-            hsPkgs.tagged
+            (hsPkgs.base)
+            (hsPkgs.extensible-effects-concurrent)
           ];
         };
-        tests = {
-          "extensible-effects-concurrent-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.extensible-effects-concurrent
-            ];
-          };
-        };
       };
-    }
+    };
+  }

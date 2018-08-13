@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "TypeClass";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "jpmoresmau@gmail.com";
-        author = "JP Moresmau";
-        homepage = "";
-        url = "";
-        synopsis = "Typing speed game";
-        description = "A simple game where you need to type the letters scrolling down the screen before they reach the bottom. Using SDL and SDL_ttf.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "TypeClass";
+        version = "0.1";
       };
-      components = {
-        exes = {
-          "TypeClass" = {
-            depends  = [
-              hsPkgs.SDL
-              hsPkgs.SDL-ttf
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "jpmoresmau@gmail.com";
+      author = "JP Moresmau";
+      homepage = "";
+      url = "";
+      synopsis = "Typing speed game";
+      description = "A simple game where you need to type the letters scrolling down the screen before they reach the bottom. Using SDL and SDL_ttf.";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "TypeClass" = {
+          depends  = [
+            (hsPkgs.SDL)
+            (hsPkgs.SDL-ttf)
+          ];
         };
       };
-    }
+    };
+  }

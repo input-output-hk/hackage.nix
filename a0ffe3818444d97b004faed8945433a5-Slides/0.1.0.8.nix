@@ -1,43 +1,48 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "Slides";
-          version = "0.1.0.8";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "lukahorvat9@gmail.com";
-        author = "Luka Horvat";
-        homepage = "";
-        url = "";
-        synopsis = "Generate slides from Haskell code";
-        description = "Make presentations in Haskell with diagrams";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "Slides";
+        version = "0.1.0.8";
       };
-      components = {
-        "Slides" = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "lukahorvat9@gmail.com";
+      author = "Luka Horvat";
+      homepage = "";
+      url = "";
+      synopsis = "Generate slides from Haskell code";
+      description = "Make presentations in Haskell with diagrams";
+      buildType = "Simple";
+    };
+    components = {
+      "Slides" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.diagrams-svg)
+          (hsPkgs.colour)
+          (hsPkgs.file-embed)
+          (hsPkgs.regex-applicative)
+          (hsPkgs.diagrams-lib)
+        ];
+      };
+      tests = {
+        "sample" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.diagrams-svg
-            hsPkgs.colour
-            hsPkgs.file-embed
-            hsPkgs.regex-applicative
-            hsPkgs.diagrams-lib
+            (hsPkgs.base)
+            (hsPkgs.file-embed)
+            (hsPkgs.Slides)
           ];
         };
-        tests = {
-          "sample" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.file-embed
-              hsPkgs.Slides
-            ];
-          };
-        };
       };
-    }
+    };
+  }

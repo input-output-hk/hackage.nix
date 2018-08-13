@@ -1,42 +1,47 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "taco";
-          version = "0.2.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2017 Marco Zocca";
-        maintainer = "zocca.marco gmail";
-        author = "Marco Zocca";
-        homepage = "https://github.com/ocramz/taco-hs#readme";
-        url = "";
-        synopsis = "Tensor Algebra COmpiler";
-        description = "This library provides types and a compiler for tensor expressions.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "taco";
+        version = "0.2.0.0";
       };
-      components = {
-        "taco" = {
+      license = "BSD-3-Clause";
+      copyright = "2017 Marco Zocca";
+      maintainer = "zocca.marco gmail";
+      author = "Marco Zocca";
+      homepage = "https://github.com/ocramz/taco-hs#readme";
+      url = "";
+      synopsis = "Tensor Algebra COmpiler";
+      description = "This library provides types and a compiler for tensor expressions.";
+      buildType = "Simple";
+    };
+    components = {
+      "taco" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.exceptions)
+          (hsPkgs.mtl)
+          (hsPkgs.vector)
+          (hsPkgs.vector-algorithms)
+          (hsPkgs.containers)
+        ];
+      };
+      tests = {
+        "test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.exceptions
-            hsPkgs.mtl
-            hsPkgs.vector
-            hsPkgs.vector-algorithms
-            hsPkgs.containers
+            (hsPkgs.base)
+            (hsPkgs.taco)
           ];
         };
-        tests = {
-          "test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.taco
-            ];
-          };
-        };
       };
-    }
+    };
+  }

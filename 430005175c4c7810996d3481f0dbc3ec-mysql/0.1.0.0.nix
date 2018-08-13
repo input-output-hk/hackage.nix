@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       developer = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "mysql";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2011 MailRank, Inc.";
-        maintainer = "Bryan O'Sullivan <bos@mailrank.com>";
-        author = "Bryan O'Sullivan <bos@mailrank.com>";
-        homepage = "https://github.com/mailrank/mysql";
-        url = "";
-        synopsis = "A low-level MySQL client library.";
-        description = "A low-level client library for the MySQL database, implemented as\nbindings to the C @mysqlclient@ API.\n\n/Important licensing note/: This library is BSD-licensed under the\nterms of the MySQL FOSS License Exception\n<http://www.mysql.com/about/legal/licensing/foss-exception/>.\n\nSince this library links against the GPL-licensed @mysqlclient@\nlibrary, a non-open-source application that uses it /may/ be\nsubject to the terms of the GPL.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "mysql";
+        version = "0.1.0.0";
       };
-      components = {
-        "mysql" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.containers
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "2011 MailRank, Inc.";
+      maintainer = "Bryan O'Sullivan <bos@mailrank.com>";
+      author = "Bryan O'Sullivan <bos@mailrank.com>";
+      homepage = "https://github.com/mailrank/mysql";
+      url = "";
+      synopsis = "A low-level MySQL client library.";
+      description = "A low-level client library for the MySQL database, implemented as\nbindings to the C @mysqlclient@ API.\n\n/Important licensing note/: This library is BSD-licensed under the\nterms of the MySQL FOSS License Exception\n<http://www.mysql.com/about/legal/licensing/foss-exception/>.\n\nSince this library links against the GPL-licensed @mysqlclient@\nlibrary, a non-open-source application that uses it /may/ be\nsubject to the terms of the GPL.";
+      buildType = "Custom";
+    };
+    components = {
+      "mysql" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.containers)
+        ];
       };
-    }
+    };
+  }

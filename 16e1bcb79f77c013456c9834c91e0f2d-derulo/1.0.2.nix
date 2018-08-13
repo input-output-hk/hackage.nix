@@ -1,43 +1,48 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "derulo";
-          version = "1.0.2";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "Taylor Fausak";
-        author = "";
-        homepage = "https://github.com/tfausak/derulo#readme";
-        url = "";
-        synopsis = "Parse and render JSON simply.";
-        description = "Derulo parses and renders JSON simply.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "derulo";
+        version = "1.0.2";
       };
-      components = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "Taylor Fausak";
+      author = "";
+      homepage = "https://github.com/tfausak/derulo#readme";
+      url = "";
+      synopsis = "Parse and render JSON simply.";
+      description = "Derulo parses and renders JSON simply.";
+      buildType = "Simple";
+    };
+    components = {
+      "derulo" = {
+        depends  = [ (hsPkgs.base) ];
+      };
+      exes = {
         "derulo" = {
-          depends  = [ hsPkgs.base ];
-        };
-        exes = {
-          "derulo" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.derulo
-            ];
-          };
-        };
-        tests = {
-          "test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-            ];
-          };
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.derulo)
+          ];
         };
       };
-    }
+      tests = {
+        "test" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.doctest)
+          ];
+        };
+      };
+    };
+  }

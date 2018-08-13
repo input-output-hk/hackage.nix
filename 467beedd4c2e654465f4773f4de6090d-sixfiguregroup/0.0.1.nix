@@ -1,47 +1,52 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       small_base = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "sixfiguregroup";
-          version = "0.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (c) 2016, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
-        maintainer = "Tony Morris";
-        author = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>";
-        homepage = "https://github.com/data61/sixfiguregroup";
-        url = "";
-        synopsis = "A six figure group of time";
-        description = "A six figure group of time as described by AirServices Australia (airservices) in the Aeronautical Information Package (AIP)";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "sixfiguregroup";
+        version = "0.0.1";
       };
-      components = {
-        "sixfiguregroup" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) 2016, Commonwealth Scientific and Industrial Research Organisation (CSIRO) ABN 41 687 119 230.";
+      maintainer = "Tony Morris";
+      author = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>";
+      homepage = "https://github.com/data61/sixfiguregroup";
+      url = "";
+      synopsis = "A six figure group of time";
+      description = "A six figure group of time as described by AirServices Australia (airservices) in the Aeronautical Information Package (AIP)";
+      buildType = "Custom";
+    };
+    components = {
+      "sixfiguregroup" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.digit)
+          (hsPkgs.lens)
+          (hsPkgs.parsers)
+        ];
+      };
+      tests = {
+        "doctests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.digit
-            hsPkgs.lens
-            hsPkgs.parsers
+            (hsPkgs.base)
+            (hsPkgs.doctest)
+            (hsPkgs.filepath)
+            (hsPkgs.directory)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.template-haskell)
+            (hsPkgs.parsec)
           ];
         };
-        tests = {
-          "doctests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-              hsPkgs.filepath
-              hsPkgs.directory
-              hsPkgs.QuickCheck
-              hsPkgs.template-haskell
-              hsPkgs.parsec
-            ];
-          };
-        };
       };
-    }
+    };
+  }

@@ -1,35 +1,40 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "log-effect-syslog";
-          version = "0.1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "lanablack@amok.cc";
-        author = "Lana Black";
-        homepage = "https://github.com/greydot/log-effect-syslog";
-        url = "";
-        synopsis = "Syslog functions for log-effect";
-        description = "Utility functions for combining log-effect and syslog";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "log-effect-syslog";
+        version = "0.1.0";
       };
-      components = {
-        "log-effect-syslog" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.extensible-effects
-            hsPkgs.hsyslog
-            hsPkgs.log-effect
-            hsPkgs.monad-control
-            hsPkgs.transformers-base
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "lanablack@amok.cc";
+      author = "Lana Black";
+      homepage = "https://github.com/greydot/log-effect-syslog";
+      url = "";
+      synopsis = "Syslog functions for log-effect";
+      description = "Utility functions for combining log-effect and syslog";
+      buildType = "Simple";
+    };
+    components = {
+      "log-effect-syslog" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.extensible-effects)
+          (hsPkgs.hsyslog)
+          (hsPkgs.log-effect)
+          (hsPkgs.monad-control)
+          (hsPkgs.transformers-base)
+        ];
       };
-    }
+    };
+  }

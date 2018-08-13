@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       small_base = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "Semigroup";
-          version = "0.0.5";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2010 Tony Morris";
-        maintainer = "code@tmorris.net";
-        author = "Tony Morris";
-        homepage = "http://code.google.com/p/semigroup/";
-        url = "";
-        synopsis = "A semigroup";
-        description = "A semigroup is a binary associative operation";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "Semigroup";
+        version = "0.0.5";
       };
-      components = {
-        "Semigroup" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "2010 Tony Morris";
+      maintainer = "code@tmorris.net";
+      author = "Tony Morris";
+      homepage = "http://code.google.com/p/semigroup/";
+      url = "";
+      synopsis = "A semigroup";
+      description = "A semigroup is a binary associative operation";
+      buildType = "Simple";
+    };
+    components = {
+      "Semigroup" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+        ];
       };
-    }
+    };
+  }

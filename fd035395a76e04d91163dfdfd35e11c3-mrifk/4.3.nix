@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "mrifk";
-          version = "4.3";
-        };
-        license = "LicenseRef-GPL";
-        copyright = "";
-        maintainer = "ennisbaradine@gmail.com";
-        author = "";
-        homepage = "";
-        url = "";
-        synopsis = "Decompiles Glulx files";
-        description = "Update of the mrifk decompiler to modern Haskell";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "mrifk";
+        version = "4.3";
       };
-      components = {
-        exes = {
-          "mrifk" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.mtl
-              hsPkgs.array
-              hsPkgs.containers
-            ];
-          };
+      license = "LicenseRef-GPL";
+      copyright = "";
+      maintainer = "ennisbaradine@gmail.com";
+      author = "";
+      homepage = "";
+      url = "";
+      synopsis = "Decompiles Glulx files";
+      description = "Update of the mrifk decompiler to modern Haskell";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "mrifk" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.mtl)
+            (hsPkgs.array)
+            (hsPkgs.containers)
+          ];
         };
       };
-    }
+    };
+  }

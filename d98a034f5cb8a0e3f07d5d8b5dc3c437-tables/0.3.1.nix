@@ -1,57 +1,62 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       test-properties = true;
       transformers2 = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "tables";
-          version = "0.3.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (C) 2012-2013 Edward A. Kmett";
-        maintainer = "Edward A. Kmett <ekmett@gmail.com>";
-        author = "Edward A. Kmett";
-        homepage = "http://github.com/ekmett/tables/";
-        url = "";
-        synopsis = "In-memory storage with multiple keys using lenses and traversals";
-        description = "In-memory storage with multiple keys using lenses and traversals\n\nFor a quick tour, see <https://github.com/ekmett/tables#examples>";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "tables";
+        version = "0.3.1";
       };
-      components = {
-        "tables" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright (C) 2012-2013 Edward A. Kmett";
+      maintainer = "Edward A. Kmett <ekmett@gmail.com>";
+      author = "Edward A. Kmett";
+      homepage = "http://github.com/ekmett/tables/";
+      url = "";
+      synopsis = "In-memory storage with multiple keys using lenses and traversals";
+      description = "In-memory storage with multiple keys using lenses and traversals\n\nFor a quick tour, see <https://github.com/ekmett/tables#examples>";
+      buildType = "Custom";
+    };
+    components = {
+      "tables" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.binary)
+          (hsPkgs.cereal)
+          (hsPkgs.comonad)
+          (hsPkgs.containers)
+          (hsPkgs.hashable)
+          (hsPkgs.lens)
+          (hsPkgs.profunctors)
+          (hsPkgs.safecopy)
+          (hsPkgs.transformers)
+          (hsPkgs.transformers-compat)
+          (hsPkgs.unordered-containers)
+        ];
+      };
+      tests = {
+        "doctests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.binary
-            hsPkgs.cereal
-            hsPkgs.comonad
-            hsPkgs.containers
-            hsPkgs.hashable
-            hsPkgs.lens
-            hsPkgs.profunctors
-            hsPkgs.safecopy
-            hsPkgs.transformers
-            hsPkgs.transformers-compat
-            hsPkgs.unordered-containers
+            (hsPkgs.base)
+            (hsPkgs.containers)
+            (hsPkgs.directory)
+            (hsPkgs.doctest)
+            (hsPkgs.filepath)
+            (hsPkgs.lens)
+            (hsPkgs.transformers)
+            (hsPkgs.unordered-containers)
           ];
         };
-        tests = {
-          "doctests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.directory
-              hsPkgs.doctest
-              hsPkgs.filepath
-              hsPkgs.lens
-              hsPkgs.transformers
-              hsPkgs.unordered-containers
-            ];
-          };
-        };
       };
-    }
+    };
+  }

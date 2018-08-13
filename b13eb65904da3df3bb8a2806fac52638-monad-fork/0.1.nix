@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "monad-fork";
-          version = "0.1";
-        };
-        license = "LicenseRef-PublicDomain";
-        copyright = "";
-        maintainer = "anarchomorphism@seomraspraoi.org";
-        author = "Robin Banks";
-        homepage = "";
-        url = "";
-        synopsis = "Type class for monads which support a fork operation.";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "monad-fork";
+        version = "0.1";
       };
-      components = {
-        "monad-fork" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.monad-control
-          ];
-        };
+      license = "LicenseRef-PublicDomain";
+      copyright = "";
+      maintainer = "anarchomorphism@seomraspraoi.org";
+      author = "Robin Banks";
+      homepage = "";
+      url = "";
+      synopsis = "Type class for monads which support a fork operation.";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "monad-fork" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.monad-control)
+        ];
       };
-    }
+    };
+  }

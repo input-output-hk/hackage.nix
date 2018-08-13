@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "honk";
-          version = "1.2.0.0";
-        };
-        license = "LicenseRef-OtherLicense";
-        copyright = "";
-        maintainer = "lambda.fairy@gmail.com";
-        author = "Chris Wong";
-        homepage = "http://lfairy.github.io/honk/";
-        url = "";
-        synopsis = "Cross-platform interface to the PC speaker.";
-        description = "A unified, cross-platform interface to the PC speaker.\n\nBeep to your heart's content!";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "honk";
+        version = "1.2.0.0";
       };
-      components = {
-        "honk" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "LicenseRef-OtherLicense";
+      copyright = "";
+      maintainer = "lambda.fairy@gmail.com";
+      author = "Chris Wong";
+      homepage = "http://lfairy.github.io/honk/";
+      url = "";
+      synopsis = "Cross-platform interface to the PC speaker.";
+      description = "A unified, cross-platform interface to the PC speaker.\n\nBeep to your heart's content!";
+      buildType = "Simple";
+    };
+    components = {
+      "honk" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

@@ -1,37 +1,42 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "up";
-          version = "1.0.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "";
-        author = "Thomas Eding";
-        homepage = "https://github.com/thomaseding/up";
-        url = "";
-        synopsis = "Command line tool to generate pathnames to facilitate moving upward in a file system.";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "up";
+        version = "1.0.0.1";
       };
-      components = {
-        exes = {
-          "up" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.split
-              hsPkgs.directory
-              hsPkgs.filepath
-              hsPkgs.mtl
-              hsPkgs.transformers
-              hsPkgs.parsec
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "";
+      author = "Thomas Eding";
+      homepage = "https://github.com/thomaseding/up";
+      url = "";
+      synopsis = "Command line tool to generate pathnames to facilitate moving upward in a file system.";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "up" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.split)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+            (hsPkgs.mtl)
+            (hsPkgs.transformers)
+            (hsPkgs.parsec)
+          ];
         };
       };
-    }
+    };
+  }

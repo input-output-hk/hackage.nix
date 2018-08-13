@@ -1,35 +1,40 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "eventful-test-helpers";
-          version = "0.1.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "David Reaver";
-        author = "";
-        homepage = "";
-        url = "";
-        synopsis = "Common module used for eventful tests";
-        description = "Common module used for eventful tests";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "eventful-test-helpers";
+        version = "0.1.0";
       };
-      components = {
-        "eventful-test-helpers" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.eventful-core
-            hsPkgs.aeson
-            hsPkgs.aeson-casing
-            hsPkgs.extra
-            hsPkgs.hspec
-            hsPkgs.monad-logger
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "David Reaver";
+      author = "";
+      homepage = "";
+      url = "";
+      synopsis = "Common module used for eventful tests";
+      description = "Common module used for eventful tests";
+      buildType = "Simple";
+    };
+    components = {
+      "eventful-test-helpers" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.eventful-core)
+          (hsPkgs.aeson)
+          (hsPkgs.aeson-casing)
+          (hsPkgs.extra)
+          (hsPkgs.hspec)
+          (hsPkgs.monad-logger)
+        ];
       };
-    }
+    };
+  }

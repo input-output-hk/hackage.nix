@@ -1,5 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       base-transformers-1 = true;
       base-transformers-2 = true;
@@ -7,49 +12,49 @@ let
       containers = true;
       unordered-containers = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "functor-classes-compat";
-          version = "1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2016 Oleg Grenrus";
-        maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
-        author = "Oleg Grenrus <oleg.grenrus@iki.fi>";
-        homepage = "https://github.com/phadej/functor-classes-compat#readme";
-        url = "";
-        synopsis = "Data.Functor.Classes instances for core packages";
-        description = "\"Data.Functor.Classes\" instances for core packages:\n\n* containers\n\n* vector\n\n* unordered-containers";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "functor-classes-compat";
+        version = "1";
       };
-      components = {
-        "functor-classes-compat" = {
-          depends  = ((([
-            hsPkgs.hashable
-          ] ++ (if _flags.base-transformers-1
-            then if _flags.base-transformers-2
-              then [ hsPkgs.base ]
-              else [
-                hsPkgs.base
-                hsPkgs.transformers
-              ]
-            else if _flags.base-transformers-2
-              then [
-                hsPkgs.base
-                hsPkgs.transformers
-                hsPkgs.transformers-compat
-              ]
-              else [
-                hsPkgs.base
-                hsPkgs.transformers
-              ])) ++ [
-            hsPkgs.containers
-          ]) ++ [
-            hsPkgs.unordered-containers
-          ]) ++ [ hsPkgs.vector ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "2016 Oleg Grenrus";
+      maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
+      author = "Oleg Grenrus <oleg.grenrus@iki.fi>";
+      homepage = "https://github.com/phadej/functor-classes-compat#readme";
+      url = "";
+      synopsis = "Data.Functor.Classes instances for core packages";
+      description = "\"Data.Functor.Classes\" instances for core packages:\n\n* containers\n\n* vector\n\n* unordered-containers";
+      buildType = "Simple";
+    };
+    components = {
+      "functor-classes-compat" = {
+        depends  = ((([
+          (hsPkgs.hashable)
+        ] ++ (if _flags.base-transformers-1
+          then if _flags.base-transformers-2
+            then [ (hsPkgs.base) ]
+            else [
+              (hsPkgs.base)
+              (hsPkgs.transformers)
+            ]
+          else if _flags.base-transformers-2
+            then [
+              (hsPkgs.base)
+              (hsPkgs.transformers)
+              (hsPkgs.transformers-compat)
+            ]
+            else [
+              (hsPkgs.base)
+              (hsPkgs.transformers)
+            ])) ++ [
+          (hsPkgs.containers)
+        ]) ++ [
+          (hsPkgs.unordered-containers)
+        ]) ++ [ (hsPkgs.vector) ];
       };
-    }
+    };
+  }

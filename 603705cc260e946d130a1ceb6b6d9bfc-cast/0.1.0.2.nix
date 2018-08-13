@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "cast";
-          version = "0.1.0.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright: (c) 2016 Bogdan Neterebskii";
-        maintainer = "bog2dan1@gmail.com";
-        author = "Bogdan Neterebskii";
-        homepage = "https://github.com/haskell-patterns/cast#readme";
-        url = "";
-        synopsis = "Abstact cast pattern";
-        description = "Generalized pattern that allow cast one type for another.\nLook at README for example.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "cast";
+        version = "0.1.0.2";
       };
-      components = {
-        "cast" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Copyright: (c) 2016 Bogdan Neterebskii";
+      maintainer = "bog2dan1@gmail.com";
+      author = "Bogdan Neterebskii";
+      homepage = "https://github.com/haskell-patterns/cast#readme";
+      url = "";
+      synopsis = "Abstact cast pattern";
+      description = "Generalized pattern that allow cast one type for another.\nLook at README for example.";
+      buildType = "Simple";
+    };
+    components = {
+      "cast" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

@@ -1,51 +1,56 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       test-doctests = true;
       test-hlint = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.22";
-        identifier = {
-          name = "rcu";
-          version = "0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (C) 2015 Edward A. Kmett";
-        maintainer = "Edward A. Kmett <ekmett@gmail.com>";
-        author = "Edward A. Kmett";
-        homepage = "http://github.com/ekmett/rcu/";
-        url = "";
-        synopsis = "STM-based Read-Copy-Update";
-        description = "STM-based Read-Copy-Update";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.22";
+      identifier = {
+        name = "rcu";
+        version = "0";
       };
-      components = {
-        "rcu" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.stm
-            hsPkgs.transformers
+      license = "BSD-3-Clause";
+      copyright = "Copyright (C) 2015 Edward A. Kmett";
+      maintainer = "Edward A. Kmett <ekmett@gmail.com>";
+      author = "Edward A. Kmett";
+      homepage = "http://github.com/ekmett/rcu/";
+      url = "";
+      synopsis = "STM-based Read-Copy-Update";
+      description = "STM-based Read-Copy-Update";
+      buildType = "Custom";
+    };
+    components = {
+      "rcu" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.stm)
+          (hsPkgs.transformers)
+        ];
+      };
+      tests = {
+        "doctests" = {
+          depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
+            (hsPkgs.base)
+            (hsPkgs.directory)
+            (hsPkgs.doctest)
+            (hsPkgs.filepath)
+            (hsPkgs.parallel)
           ];
         };
-        tests = {
-          "doctests" = {
-            depends  = pkgs.lib.optionals (!(!_flags.test-doctests)) [
-              hsPkgs.base
-              hsPkgs.directory
-              hsPkgs.doctest
-              hsPkgs.filepath
-              hsPkgs.parallel
-            ];
-          };
-          "hlint" = {
-            depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
-              hsPkgs.base
-              hsPkgs.hlint
-            ];
-          };
+        "hlint" = {
+          depends  = pkgs.lib.optionals (!(!_flags.test-hlint)) [
+            (hsPkgs.base)
+            (hsPkgs.hlint)
+          ];
         };
       };
-    }
+    };
+  }

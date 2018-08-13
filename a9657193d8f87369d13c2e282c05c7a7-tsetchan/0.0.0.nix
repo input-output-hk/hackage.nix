@@ -1,41 +1,46 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "tsetchan";
-          version = "0.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2017 Author name here";
-        maintainer = "example@example.com";
-        author = "Author name here";
-        homepage = "https://github.com/githubuser/tsetchan#readme";
-        url = "";
-        synopsis = "Hides duplicating channels when broadcasting";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "tsetchan";
+        version = "0.0.0";
       };
-      components = {
-        "tsetchan" = {
+      license = "BSD-3-Clause";
+      copyright = "2017 Author name here";
+      maintainer = "example@example.com";
+      author = "Author name here";
+      homepage = "https://github.com/githubuser/tsetchan#readme";
+      url = "";
+      synopsis = "Hides duplicating channels when broadcasting";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "tsetchan" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.stm)
+          (hsPkgs.containers)
+        ];
+      };
+      tests = {
+        "tsetchan-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.stm
-            hsPkgs.containers
+            (hsPkgs.base)
+            (hsPkgs.tsetchan)
+            (hsPkgs.async)
+            (hsPkgs.stm)
           ];
         };
-        tests = {
-          "tsetchan-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.tsetchan
-              hsPkgs.async
-              hsPkgs.stm
-            ];
-          };
-        };
       };
-    }
+    };
+  }

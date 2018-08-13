@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "porte";
-          version = "0.0.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "sbahra@kerneled.org";
-        author = "Samy Al Bahra";
-        homepage = "";
-        url = "";
-        synopsis = "FreeBSD ports interface";
-        description = "Haskell FreeBSD ports analysis library";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "porte";
+        version = "0.0.2";
       };
-      components = {
-        "porte" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.containers
-            hsPkgs.stringsearch
-          ];
-        };
-        exes = { "porte" = {}; };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "sbahra@kerneled.org";
+      author = "Samy Al Bahra";
+      homepage = "";
+      url = "";
+      synopsis = "FreeBSD ports interface";
+      description = "Haskell FreeBSD ports analysis library";
+      buildType = "Simple";
+    };
+    components = {
+      "porte" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.containers)
+          (hsPkgs.stringsearch)
+        ];
       };
-    }
+      exes = { "porte" = {}; };
+    };
+  }

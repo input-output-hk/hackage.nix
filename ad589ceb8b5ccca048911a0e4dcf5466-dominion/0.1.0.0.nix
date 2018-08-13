@@ -1,50 +1,55 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "dominion";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "bluemangroupie@gmail.com";
-        author = "Aditya Bhargava";
-        homepage = "http://github.com/egonschiele/dominion";
-        url = "";
-        synopsis = "A simulator for dominion (the board game).";
-        description = "A simulator for dominion (the board game).";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "dominion";
+        version = "0.1.0.0";
       };
-      components = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "bluemangroupie@gmail.com";
+      author = "Aditya Bhargava";
+      homepage = "http://github.com/egonschiele/dominion";
+      url = "";
+      synopsis = "A simulator for dominion (the board game).";
+      description = "A simulator for dominion (the board game).";
+      buildType = "Simple";
+    };
+    components = {
+      "dominion" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.lens)
+          (hsPkgs.transformers)
+          (hsPkgs.random-fu)
+          (hsPkgs.random-extras)
+          (hsPkgs.random)
+          (hsPkgs.hscolour)
+        ];
+      };
+      exes = {
         "dominion" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.lens
-            hsPkgs.transformers
-            hsPkgs.random-fu
-            hsPkgs.random-extras
-            hsPkgs.random
-            hsPkgs.hscolour
+            (hsPkgs.base)
+            (hsPkgs.mtl)
+            (hsPkgs.lens)
+            (hsPkgs.transformers)
+            (hsPkgs.random-fu)
+            (hsPkgs.random-extras)
+            (hsPkgs.random)
+            (hsPkgs.hscolour)
           ];
         };
-        exes = {
-          "dominion" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.mtl
-              hsPkgs.lens
-              hsPkgs.transformers
-              hsPkgs.random-fu
-              hsPkgs.random-extras
-              hsPkgs.random
-              hsPkgs.hscolour
-            ];
-          };
-        };
       };
-    }
+    };
+  }

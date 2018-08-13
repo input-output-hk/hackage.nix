@@ -1,45 +1,50 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "definitive-graphics";
-          version = "1.0";
-        };
-        license = "LicenseRef-OtherLicense";
-        copyright = "";
-        maintainer = "marc.coiffier@gmail.com";
-        author = "Marc Coiffier";
-        homepage = "";
-        url = "";
-        synopsis = "A definitive package allowing you to open windows, read image files and render text to be displayed or saved";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "definitive-graphics";
+        version = "1.0";
       };
-      components = {
-        "definitive-graphics" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.definitive-base
-            hsPkgs.containers
-            hsPkgs.deepseq
-            hsPkgs.array
-            hsPkgs.bytestring
-            hsPkgs.definitive-parser
-            hsPkgs.vector
-            hsPkgs.primitive
-            hsPkgs.cpu
-            hsPkgs.utf8-string
-            hsPkgs.JuicyPixels
-            hsPkgs.binary
-            hsPkgs.mtl
-            hsPkgs.transformers
-            hsPkgs.zlib
-            hsPkgs.stb-truetype
-          ];
-        };
+      license = "LicenseRef-OtherLicense";
+      copyright = "";
+      maintainer = "marc.coiffier@gmail.com";
+      author = "Marc Coiffier";
+      homepage = "";
+      url = "";
+      synopsis = "A definitive package allowing you to open windows, read image files and render text to be displayed or saved";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "definitive-graphics" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.definitive-base)
+          (hsPkgs.containers)
+          (hsPkgs.deepseq)
+          (hsPkgs.array)
+          (hsPkgs.bytestring)
+          (hsPkgs.definitive-parser)
+          (hsPkgs.vector)
+          (hsPkgs.primitive)
+          (hsPkgs.cpu)
+          (hsPkgs.utf8-string)
+          (hsPkgs.JuicyPixels)
+          (hsPkgs.binary)
+          (hsPkgs.mtl)
+          (hsPkgs.transformers)
+          (hsPkgs.zlib)
+          (hsPkgs.stb-truetype)
+        ];
       };
-    }
+    };
+  }

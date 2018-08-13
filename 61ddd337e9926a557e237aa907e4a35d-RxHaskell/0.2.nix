@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.14";
-        identifier = {
-          name = "RxHaskell";
-          version = "0.2";
-        };
-        license = "MIT";
-        copyright = "Copyright (c) 2013 Justin Spahr-Summers";
-        maintainer = "justin.spahrsummers@gmail.com";
-        author = "Justin Spahr-Summers";
-        homepage = "https://github.com/jspahrsummers/RxHaskell";
-        url = "";
-        synopsis = "Reactive Extensions for Haskell";
-        description = "An implementation of functional reactive programming based on Microsoft's Reactive Extensions for .NET: <http://msdn.microsoft.com/en-us/library/hh242985(v=VS.103).aspx>.\n\nRxHaskell offers a monadic API, making it easier to interleave side effects and imperative-style code.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.14";
+      identifier = {
+        name = "RxHaskell";
+        version = "0.2";
       };
-      components = {
-        "RxHaskell" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.containers
-            hsPkgs.stm
-            hsPkgs.transformers
-          ];
-        };
+      license = "MIT";
+      copyright = "Copyright (c) 2013 Justin Spahr-Summers";
+      maintainer = "justin.spahrsummers@gmail.com";
+      author = "Justin Spahr-Summers";
+      homepage = "https://github.com/jspahrsummers/RxHaskell";
+      url = "";
+      synopsis = "Reactive Extensions for Haskell";
+      description = "An implementation of functional reactive programming based on Microsoft's Reactive Extensions for .NET: <http://msdn.microsoft.com/en-us/library/hh242985(v=VS.103).aspx>.\n\nRxHaskell offers a monadic API, making it easier to interleave side effects and imperative-style code.";
+      buildType = "Simple";
+    };
+    components = {
+      "RxHaskell" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+          (hsPkgs.stm)
+          (hsPkgs.transformers)
+        ];
       };
-    }
+    };
+  }

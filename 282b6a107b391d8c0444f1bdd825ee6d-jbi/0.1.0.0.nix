@@ -1,46 +1,51 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "jbi";
-          version = "0.1.0.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "Ivan.Miljenovic@gmail.com";
-        author = "Ivan Lazar Miljenovic";
-        homepage = "";
-        url = "";
-        synopsis = "Just Build It - a \"do what I mean\" abstraction for Haskell build tools";
-        description = "If you work with multiple Haskell projects, it can be annoying have to\nchange gears mentally as to which set of tooling you have to work with\nfor each one (configuring your editor, or even just the command-line).\n\n@jbi@ aims to provide a common interface to the various Haskell build\ntools available and automatically determine which one you should use,\nso you can get back to hacking on your code, rather than on your\nenvironment.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "jbi";
+        version = "0.1.0.0";
       };
-      components = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "Ivan.Miljenovic@gmail.com";
+      author = "Ivan Lazar Miljenovic";
+      homepage = "";
+      url = "";
+      synopsis = "Just Build It - a \"do what I mean\" abstraction for Haskell build tools";
+      description = "If you work with multiple Haskell projects, it can be annoying have to\nchange gears mentally as to which set of tooling you have to work with\nfor each one (configuring your editor, or even just the command-line).\n\n@jbi@ aims to provide a common interface to the various Haskell build\ntools available and automatically determine which one you should use,\nso you can get back to hacking on your code, rather than on your\nenvironment.";
+      buildType = "Simple";
+    };
+    components = {
+      "jbi" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.aeson)
+          (hsPkgs.Cabal)
+          (hsPkgs.directory)
+          (hsPkgs.filepath)
+          (hsPkgs.process)
+          (hsPkgs.tagged)
+        ];
+      };
+      exes = {
         "jbi" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.aeson
-            hsPkgs.Cabal
-            hsPkgs.directory
-            hsPkgs.filepath
-            hsPkgs.process
-            hsPkgs.tagged
+            (hsPkgs.jbi)
+            (hsPkgs.base)
+            (hsPkgs.aeson-pretty)
+            (hsPkgs.optparse-applicative)
+            (hsPkgs.text)
           ];
         };
-        exes = {
-          "jbi" = {
-            depends  = [
-              hsPkgs.jbi
-              hsPkgs.base
-              hsPkgs.aeson-pretty
-              hsPkgs.optparse-applicative
-              hsPkgs.text
-            ];
-          };
-        };
       };
-    }
+    };
+  }

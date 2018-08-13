@@ -1,47 +1,52 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "snmp";
-          version = "0.1.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Alexey Smirnov <chemistmail@gmail.com>";
-        author = "Alexey Smirnov";
-        homepage = "";
-        url = "";
-        synopsis = "API for write snmp client.";
-        description = "API for write snmp client.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "snmp";
+        version = "0.1.0.1";
       };
-      components = {
-        "snmp" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.asn1-encoding
-            hsPkgs.asn1-types
-            hsPkgs.asn1-parse
-            hsPkgs.bytestring
-            hsPkgs.network
-            hsPkgs.mtl
-            hsPkgs.text
-            hsPkgs.time
-            hsPkgs.containers
-            hsPkgs.async
-            hsPkgs.binary
-            hsPkgs.network-info
-            hsPkgs.cryptohash
-            hsPkgs.cipher-des
-            hsPkgs.crypto-cipher-types
-            hsPkgs.securemem
-            hsPkgs.random
-            hsPkgs.cipher-aes
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Alexey Smirnov <chemistmail@gmail.com>";
+      author = "Alexey Smirnov";
+      homepage = "";
+      url = "";
+      synopsis = "API for write snmp client.";
+      description = "API for write snmp client.";
+      buildType = "Simple";
+    };
+    components = {
+      "snmp" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.asn1-encoding)
+          (hsPkgs.asn1-types)
+          (hsPkgs.asn1-parse)
+          (hsPkgs.bytestring)
+          (hsPkgs.network)
+          (hsPkgs.mtl)
+          (hsPkgs.text)
+          (hsPkgs.time)
+          (hsPkgs.containers)
+          (hsPkgs.async)
+          (hsPkgs.binary)
+          (hsPkgs.network-info)
+          (hsPkgs.cryptohash)
+          (hsPkgs.cipher-des)
+          (hsPkgs.crypto-cipher-types)
+          (hsPkgs.securemem)
+          (hsPkgs.random)
+          (hsPkgs.cipher-aes)
+        ];
       };
-    }
+    };
+  }

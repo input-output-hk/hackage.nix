@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "sophia";
-          version = "0.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Eyal Lotem <eyal.lotem+hackage@gmail.com>";
-        author = "Eyal Lotem <eyal.lotem+hackage@gmail.com>";
-        homepage = "";
-        url = "";
-        synopsis = "Bindings to Sophia library";
-        description = "Bindings to <http://sphia.org/ sophia>, an open source, modern, fast\nkey/value store.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "sophia";
+        version = "0.1.1";
       };
-      components = {
-        "sophia" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Eyal Lotem <eyal.lotem+hackage@gmail.com>";
+      author = "Eyal Lotem <eyal.lotem+hackage@gmail.com>";
+      homepage = "";
+      url = "";
+      synopsis = "Bindings to Sophia library";
+      description = "Bindings to <http://sphia.org/ sophia>, an open source, modern, fast\nkey/value store.";
+      buildType = "Simple";
+    };
+    components = {
+      "sophia" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bindings-sophia)
+          (hsPkgs.bytestring)
+        ];
+      };
+      tests = {
+        "main" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bindings-sophia
-            hsPkgs.bytestring
+            (hsPkgs.base)
+            (hsPkgs.sophia)
+            (hsPkgs.bindings-sophia)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-hunit)
+            (hsPkgs.directory)
+            (hsPkgs.bytestring)
           ];
         };
-        tests = {
-          "main" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.sophia
-              hsPkgs.bindings-sophia
-              hsPkgs.tasty
-              hsPkgs.tasty-hunit
-              hsPkgs.directory
-              hsPkgs.bytestring
-            ];
-          };
-        };
       };
-    }
+    };
+  }

@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "sundown";
-          version = "0.2.1";
-        };
-        license = "LicenseRef-PublicDomain";
-        copyright = "";
-        maintainer = "Francesco Mazzoli (f@mazzo.li)";
-        author = "Francesco Mazzoli (f@mazzo.li)";
-        homepage = "";
-        url = "";
-        synopsis = "Binding to upskirt";
-        description = "Bindings to the github fork of sundown, a nice C markdown library:\n<https://github.com/tanoku/sundown>";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "sundown";
+        version = "0.2.1";
       };
-      components = {
-        "sundown" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-          ];
-        };
+      license = "LicenseRef-PublicDomain";
+      copyright = "";
+      maintainer = "Francesco Mazzoli (f@mazzo.li)";
+      author = "Francesco Mazzoli (f@mazzo.li)";
+      homepage = "";
+      url = "";
+      synopsis = "Binding to upskirt";
+      description = "Bindings to the github fork of sundown, a nice C markdown library:\n<https://github.com/tanoku/sundown>";
+      buildType = "Simple";
+    };
+    components = {
+      "sundown" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+        ];
       };
-    }
+    };
+  }

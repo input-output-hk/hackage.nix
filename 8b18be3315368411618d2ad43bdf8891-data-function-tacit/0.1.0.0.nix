@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "data-function-tacit";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (c) 2016, Eric Brisco";
-        maintainer = "eric.brisco@gmail.com";
-        author = "Eric Brisco";
-        homepage = "https://github.com/erisco/data-function-tacit";
-        url = "";
-        synopsis = "Write functions in tacit (pointless) style using Applicative and De Bruijn index notation.";
-        description = "Write functions in tacit (pointless) style using Applicative and De Bruijn index notation.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "data-function-tacit";
+        version = "0.1.0.0";
       };
-      components = {
-        "data-function-tacit" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) 2016, Eric Brisco";
+      maintainer = "eric.brisco@gmail.com";
+      author = "Eric Brisco";
+      homepage = "https://github.com/erisco/data-function-tacit";
+      url = "";
+      synopsis = "Write functions in tacit (pointless) style using Applicative and De Bruijn index notation.";
+      description = "Write functions in tacit (pointless) style using Applicative and De Bruijn index notation.";
+      buildType = "Simple";
+    };
+    components = {
+      "data-function-tacit" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

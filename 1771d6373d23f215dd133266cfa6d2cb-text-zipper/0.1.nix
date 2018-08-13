@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "text-zipper";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "(c) 2015 Jonathan Daugherty";
-        maintainer = "cygnus@foobox.com";
-        author = "Jonathan Daugherty";
-        homepage = "";
-        url = "";
-        synopsis = "A text editor zipper library";
-        description = "This library provides a zipper and API for editing text.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "text-zipper";
+        version = "0.1";
       };
-      components = {
-        "text-zipper" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.text
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "(c) 2015 Jonathan Daugherty";
+      maintainer = "cygnus@foobox.com";
+      author = "Jonathan Daugherty";
+      homepage = "";
+      url = "";
+      synopsis = "A text editor zipper library";
+      description = "This library provides a zipper and API for editing text.";
+      buildType = "Simple";
+    };
+    components = {
+      "text-zipper" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.text)
+        ];
       };
-    }
+    };
+  }

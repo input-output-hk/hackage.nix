@@ -1,71 +1,76 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "octane";
-          version = "0.4.4";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "Taylor Fausak";
-        author = "";
-        homepage = "https://github.com/tfausak/octane#readme";
-        url = "";
-        synopsis = "Parse Rocket League replays.";
-        description = "Octane parses Rocket League replays.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "octane";
+        version = "0.4.4";
       };
-      components = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "Taylor Fausak";
+      author = "";
+      homepage = "https://github.com/tfausak/octane#readme";
+      url = "";
+      synopsis = "Parse Rocket League replays.";
+      description = "Octane parses Rocket League replays.";
+      buildType = "Simple";
+    };
+    components = {
+      "octane" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.binary)
+          (hsPkgs.binary-bits)
+          (hsPkgs.bytestring)
+          (hsPkgs.containers)
+          (hsPkgs.data-binary-ieee754)
+          (hsPkgs.deepseq)
+          (hsPkgs.text)
+        ];
+      };
+      exes = {
         "octane" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.binary
-            hsPkgs.binary-bits
-            hsPkgs.bytestring
-            hsPkgs.containers
-            hsPkgs.data-binary-ieee754
-            hsPkgs.deepseq
-            hsPkgs.text
+            (hsPkgs.base)
+            (hsPkgs.octane)
           ];
         };
-        exes = {
-          "octane" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.octane
-            ];
-          };
-        };
-        tests = {
-          "octane-test-suite" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.binary
-              hsPkgs.binary-bits
-              hsPkgs.bytestring
-              hsPkgs.containers
-              hsPkgs.octane
-              hsPkgs.tasty
-              hsPkgs.tasty-hspec
-            ];
-          };
-        };
-        benchmarks = {
-          "octane-benchmark" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.binary
-              hsPkgs.binary-bits
-              hsPkgs.bytestring
-              hsPkgs.containers
-              hsPkgs.criterion
-              hsPkgs.octane
-            ];
-          };
+      };
+      tests = {
+        "octane-test-suite" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.binary)
+            (hsPkgs.binary-bits)
+            (hsPkgs.bytestring)
+            (hsPkgs.containers)
+            (hsPkgs.octane)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-hspec)
+          ];
         };
       };
-    }
+      benchmarks = {
+        "octane-benchmark" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.binary)
+            (hsPkgs.binary-bits)
+            (hsPkgs.bytestring)
+            (hsPkgs.containers)
+            (hsPkgs.criterion)
+            (hsPkgs.octane)
+          ];
+        };
+      };
+    };
+  }

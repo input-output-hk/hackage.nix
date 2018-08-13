@@ -1,35 +1,40 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "SVGFonts";
-          version = "0.2";
-        };
-        license = "LicenseRef-GPL";
-        copyright = "";
-        maintainer = "Tillmann.Vogt@rwth-aachen.de";
-        author = "Tillmann Vogt";
-        homepage = "";
-        url = "";
-        synopsis = "";
-        description = "parse svg-font files and generate outlines of letters and sentences";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "SVGFonts";
+        version = "0.2";
       };
-      components = {
-        "SVGFonts" = {
-          depends  = [
-            hsPkgs.haskell98
-            hsPkgs.base
-            hsPkgs.OpenGL
-            hsPkgs.GLUT
-            hsPkgs.xml
-            hsPkgs.parsec
-          ];
-        };
-        exes = { "Fonts" = {}; };
+      license = "LicenseRef-GPL";
+      copyright = "";
+      maintainer = "Tillmann.Vogt@rwth-aachen.de";
+      author = "Tillmann Vogt";
+      homepage = "";
+      url = "";
+      synopsis = "";
+      description = "parse svg-font files and generate outlines of letters and sentences";
+      buildType = "Simple";
+    };
+    components = {
+      "SVGFonts" = {
+        depends  = [
+          (hsPkgs.haskell98)
+          (hsPkgs.base)
+          (hsPkgs.OpenGL)
+          (hsPkgs.GLUT)
+          (hsPkgs.xml)
+          (hsPkgs.parsec)
+        ];
       };
-    }
+      exes = { "Fonts" = {}; };
+    };
+  }

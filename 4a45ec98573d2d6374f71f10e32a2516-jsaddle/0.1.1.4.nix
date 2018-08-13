@@ -1,5 +1,10 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       ghcjs = true;
       gtk3 = true;
@@ -7,66 +12,66 @@ let
       webkit = false;
       jmacro = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "jsaddle";
-          version = "0.1.1.4";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
-        author = "Hamish Mackenzie";
-        homepage = "";
-        url = "";
-        synopsis = "High level interface for webkit-javascriptcore";
-        description = "This package provides an EDSL for calling JavaScript code using\nthe JavaScriptCore engine and low level Haskell bindings\nin the webkit-javascriptcore library <https://github.com/ghcjs/webkit-javascriptcore>.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "jsaddle";
+        version = "0.1.1.4";
       };
-      components = {
-        "jsaddle" = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "Hamish Mackenzie <Hamish.K.Mackenzie@googlemail.com>";
+      author = "Hamish Mackenzie";
+      homepage = "";
+      url = "";
+      synopsis = "High level interface for webkit-javascriptcore";
+      description = "This package provides an EDSL for calling JavaScript code using\nthe JavaScriptCore engine and low level Haskell bindings\nin the webkit-javascriptcore library <https://github.com/ghcjs/webkit-javascriptcore>.";
+      buildType = "Simple";
+    };
+    components = {
+      "jsaddle" = {
+        depends  = (([
+          (hsPkgs.template-haskell)
+          (hsPkgs.base)
+          (hsPkgs.lens)
+          (hsPkgs.text)
+          (hsPkgs.transformers)
+        ] ++ pkgs.lib.optional (_flags.ghcjs && _flags.jsffi) (hsPkgs.ghcjs-base)) ++ pkgs.lib.optionals (!_flags.ghcjs || _flags.webkit) (if _flags.gtk3
+          then [
+            (hsPkgs.webkitgtk3)
+            (hsPkgs.webkitgtk3-javascriptcore)
+          ]
+          else [
+            (hsPkgs.webkit)
+            (hsPkgs.webkit-javascriptcore)
+          ])) ++ pkgs.lib.optional (_flags.jmacro) (hsPkgs.jmacro);
+      };
+      tests = {
+        "test-tool" = {
           depends  = (([
-            hsPkgs.template-haskell
-            hsPkgs.base
-            hsPkgs.lens
-            hsPkgs.text
-            hsPkgs.transformers
-          ] ++ pkgs.lib.optional (_flags.ghcjs && _flags.jsffi) hsPkgs.ghcjs-base) ++ pkgs.lib.optionals (!_flags.ghcjs || _flags.webkit) (if _flags.gtk3
+            (hsPkgs.template-haskell)
+            (hsPkgs.base)
+            (hsPkgs.lens)
+            (hsPkgs.text)
+            (hsPkgs.transformers)
+            (hsPkgs.hslogger)
+            (hsPkgs.jsaddle)
+          ] ++ pkgs.lib.optional (_flags.ghcjs && _flags.jsffi) (hsPkgs.ghcjs-base)) ++ pkgs.lib.optionals (!_flags.ghcjs || _flags.webkit) ([
+            (hsPkgs.glib)
+          ] ++ (if _flags.gtk3
             then [
-              hsPkgs.webkitgtk3
-              hsPkgs.webkitgtk3-javascriptcore
+              (hsPkgs.gtk3)
+              (hsPkgs.webkitgtk3)
+              (hsPkgs.webkitgtk3-javascriptcore)
             ]
             else [
-              hsPkgs.webkit
-              hsPkgs.webkit-javascriptcore
-            ])) ++ pkgs.lib.optional _flags.jmacro hsPkgs.jmacro;
-        };
-        tests = {
-          "test-tool" = {
-            depends  = (([
-              hsPkgs.template-haskell
-              hsPkgs.base
-              hsPkgs.lens
-              hsPkgs.text
-              hsPkgs.transformers
-              hsPkgs.hslogger
-              hsPkgs.jsaddle
-            ] ++ pkgs.lib.optional (_flags.ghcjs && _flags.jsffi) hsPkgs.ghcjs-base) ++ pkgs.lib.optionals (!_flags.ghcjs || _flags.webkit) ([
-              hsPkgs.glib
-            ] ++ (if _flags.gtk3
-              then [
-                hsPkgs.gtk3
-                hsPkgs.webkitgtk3
-                hsPkgs.webkitgtk3-javascriptcore
-              ]
-              else [
-                hsPkgs.gtk
-                hsPkgs.webkit
-                hsPkgs.webkit-javascriptcore
-              ]))) ++ pkgs.lib.optional _flags.jmacro hsPkgs.jmacro;
-          };
+              (hsPkgs.gtk)
+              (hsPkgs.webkit)
+              (hsPkgs.webkit-javascriptcore)
+            ]))) ++ pkgs.lib.optional (_flags.jmacro) (hsPkgs.jmacro);
         };
       };
-    }
+    };
+  }

@@ -1,52 +1,57 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "codec-libevent";
-          version = "0.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "";
-        author = "Adam Langley <agl@imperialviolet.org>";
-        homepage = "";
-        url = "";
-        synopsis = "Cross-platform structure serialisation";
-        description = "This package parses and generates Haskell code for\nserialising and deserialising the tagging format in\nlibevent 1.4.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "codec-libevent";
+        version = "0.1.1";
       };
-      components = {
-        "codec-libevent" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "";
+      author = "Adam Langley <agl@imperialviolet.org>";
+      homepage = "";
+      url = "";
+      synopsis = "Cross-platform structure serialisation";
+      description = "This package parses and generates Haskell code for\nserialising and deserialising the tagging format in\nlibevent 1.4.";
+      buildType = "Custom";
+    };
+    components = {
+      "codec-libevent" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+          (hsPkgs.array)
+          (hsPkgs.bytestring)
+          (hsPkgs.QuickCheck)
+          (hsPkgs.binary-strict)
+          (hsPkgs.binary)
+          (hsPkgs.parsec)
+          (hsPkgs.regex-compat)
+        ];
+      };
+      exes = {
+        "codec-libevent-generate" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.containers
-            hsPkgs.array
-            hsPkgs.bytestring
-            hsPkgs.QuickCheck
-            hsPkgs.binary-strict
-            hsPkgs.binary
-            hsPkgs.parsec
-            hsPkgs.regex-compat
+            (hsPkgs.base)
+            (hsPkgs.containers)
+            (hsPkgs.array)
+            (hsPkgs.bytestring)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.binary-strict)
+            (hsPkgs.binary)
+            (hsPkgs.parsec)
+            (hsPkgs.regex-compat)
           ];
         };
-        exes = {
-          "codec-libevent-generate" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.array
-              hsPkgs.bytestring
-              hsPkgs.QuickCheck
-              hsPkgs.binary-strict
-              hsPkgs.binary
-              hsPkgs.parsec
-              hsPkgs.regex-compat
-            ];
-          };
-        };
       };
-    }
+    };
+  }

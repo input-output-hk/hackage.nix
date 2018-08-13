@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "bindings-uname";
-          version = "0.1";
-        };
-        license = "LicenseRef-PublicDomain";
-        copyright = "";
-        maintainer = "PHO <pho at cielonegro.org>";
-        author = "PHO <pho at cielonegro.org>";
-        homepage = "";
-        url = "";
-        synopsis = "Low-level binding to POSIX uname(3)";
-        description = "This is a low-level binding to POSIX uname(3)\nfunction. Perhaps it shoule be part of unix package.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "bindings-uname";
+        version = "0.1";
       };
-      components = {
-        "bindings-uname" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "LicenseRef-PublicDomain";
+      copyright = "";
+      maintainer = "PHO <pho at cielonegro.org>";
+      author = "PHO <pho at cielonegro.org>";
+      homepage = "";
+      url = "";
+      synopsis = "Low-level binding to POSIX uname(3)";
+      description = "This is a low-level binding to POSIX uname(3)\nfunction. Perhaps it shoule be part of unix package.";
+      buildType = "Simple";
+    };
+    components = {
+      "bindings-uname" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

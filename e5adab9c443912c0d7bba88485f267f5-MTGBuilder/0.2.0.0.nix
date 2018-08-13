@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "MTGBuilder";
-          version = "0.2.0.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "elvishjerricco@gmail.com";
-        author = "ElvishJerricco";
-        homepage = "";
-        url = "";
-        synopsis = "Builds decks out of a meta";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "MTGBuilder";
+        version = "0.2.0.0";
       };
-      components = {
-        exes = {
-          "mtg-builder" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.parsec
-              hsPkgs.containers
-              hsPkgs.mtl
-            ];
-          };
+      license = "MIT";
+      copyright = "";
+      maintainer = "elvishjerricco@gmail.com";
+      author = "ElvishJerricco";
+      homepage = "";
+      url = "";
+      synopsis = "Builds decks out of a meta";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "mtg-builder" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.parsec)
+            (hsPkgs.containers)
+            (hsPkgs.mtl)
+          ];
         };
       };
-    }
+    };
+  }

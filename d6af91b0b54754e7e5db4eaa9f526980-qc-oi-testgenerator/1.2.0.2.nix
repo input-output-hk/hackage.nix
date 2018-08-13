@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "qc-oi-testgenerator";
-          version = "1.2.0.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "haskell@tobias.goedderz.info";
-        author = "Tobias Gödderz";
-        homepage = "http://www.iai.uni-bonn.de/~jv/GV14.html";
-        url = "";
-        synopsis = "Compile time generation of operation invariance tests for QuickCheck";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "qc-oi-testgenerator";
+        version = "1.2.0.2";
       };
-      components = {
-        "qc-oi-testgenerator" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.template-haskell
-            hsPkgs.QuickCheck
-            hsPkgs.fclabels
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "haskell@tobias.goedderz.info";
+      author = "Tobias Gödderz";
+      homepage = "http://www.iai.uni-bonn.de/~jv/GV14.html";
+      url = "";
+      synopsis = "Compile time generation of operation invariance tests for QuickCheck";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "qc-oi-testgenerator" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.template-haskell)
+          (hsPkgs.QuickCheck)
+          (hsPkgs.fclabels)
+        ];
       };
-    }
+    };
+  }

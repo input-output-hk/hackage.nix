@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "twisty";
-          version = "0.1.0";
-        };
-        license = "LicenseRef-OtherLicense";
-        copyright = "Copyright 2011 Google Inc.";
-        maintainer = "leadpipe@google.com";
-        author = "Luke Blanshard";
-        homepage = "";
-        url = "";
-        synopsis = "Simulator of twisty puzzles à la Rubik's Cube";
-        description = "Library with tools for simulating Rubik's Cube and similar puzzles.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "twisty";
+        version = "0.1.0";
       };
-      components = {
-        "twisty" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.array
-            hsPkgs.containers
-            hsPkgs.data-memocombinators
-            hsPkgs.MonadRandom
-            hsPkgs.parallel
-          ];
-        };
+      license = "LicenseRef-OtherLicense";
+      copyright = "Copyright 2011 Google Inc.";
+      maintainer = "leadpipe@google.com";
+      author = "Luke Blanshard";
+      homepage = "";
+      url = "";
+      synopsis = "Simulator of twisty puzzles à la Rubik's Cube";
+      description = "Library with tools for simulating Rubik's Cube and similar puzzles.";
+      buildType = "Simple";
+    };
+    components = {
+      "twisty" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.array)
+          (hsPkgs.containers)
+          (hsPkgs.data-memocombinators)
+          (hsPkgs.MonadRandom)
+          (hsPkgs.parallel)
+        ];
       };
-    }
+    };
+  }

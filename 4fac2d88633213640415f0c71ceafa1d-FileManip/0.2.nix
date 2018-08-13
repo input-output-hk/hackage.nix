@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "FileManip";
-          version = "0.2";
-        };
-        license = "LicenseRef-LGPL";
-        copyright = "";
-        maintainer = "Bryan O'Sullivan";
-        author = "Bryan O'Sullivan <bos@serpentine.com>";
-        homepage = "";
-        url = "";
-        synopsis = "Expressive file and directory manipulation for Haskell.";
-        description = "A Haskell library for working with files and directories.\nIncludes code for pattern matching, finding files,\nmodifying file contents, and more.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "FileManip";
+        version = "0.2";
       };
-      components = {
-        "FileManip" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.filepath
-            hsPkgs.mtl
-            hsPkgs.unix
-          ];
-        };
+      license = "LicenseRef-LGPL";
+      copyright = "";
+      maintainer = "Bryan O'Sullivan";
+      author = "Bryan O'Sullivan <bos@serpentine.com>";
+      homepage = "";
+      url = "";
+      synopsis = "Expressive file and directory manipulation for Haskell.";
+      description = "A Haskell library for working with files and directories.\nIncludes code for pattern matching, finding files,\nmodifying file contents, and more.";
+      buildType = "Custom";
+    };
+    components = {
+      "FileManip" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.filepath)
+          (hsPkgs.mtl)
+          (hsPkgs.unix)
+        ];
       };
-    }
+    };
+  }

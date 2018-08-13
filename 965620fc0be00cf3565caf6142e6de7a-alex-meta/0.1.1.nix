@@ -1,35 +1,40 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "alex-meta";
-          version = "0.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "jonas.duregard@gmail.com";
-        author = "Jonas Duregard";
-        homepage = "";
-        url = "";
-        synopsis = "Quasi-quoter for Alex lexers";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "alex-meta";
+        version = "0.1.1";
       };
-      components = {
-        "alex-meta" = {
-          depends  = [
-            hsPkgs.template-haskell
-            hsPkgs.th-lift
-            hsPkgs.haskell-src-meta
-            hsPkgs.base
-            hsPkgs.array
-            hsPkgs.containers
-            hsPkgs.directory
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "jonas.duregard@gmail.com";
+      author = "Jonas Duregard";
+      homepage = "";
+      url = "";
+      synopsis = "Quasi-quoter for Alex lexers";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "alex-meta" = {
+        depends  = [
+          (hsPkgs.template-haskell)
+          (hsPkgs.th-lift)
+          (hsPkgs.haskell-src-meta)
+          (hsPkgs.base)
+          (hsPkgs.array)
+          (hsPkgs.containers)
+          (hsPkgs.directory)
+        ];
       };
-    }
+    };
+  }

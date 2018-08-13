@@ -1,42 +1,47 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "twill";
-          version = "0.1.0.3";
-        };
-        license = "MIT";
-        copyright = "2012 Joseph Abrahamson, Reify Health LLC";
-        maintainer = "Joseph Abrahamson <me@jspha.com>";
-        author = "Joseph Abrahamson <me@jspha.com>";
-        homepage = "";
-        url = "";
-        synopsis = "Twilio API interaction";
-        description = "A little Twilio library";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "twill";
+        version = "0.1.0.3";
       };
-      components = {
-        "twill" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.QuickCheck
-            hsPkgs.errors
-            hsPkgs.text
-            hsPkgs.bytestring
-            hsPkgs.base16-bytestring
-            hsPkgs.base64-bytestring
-            hsPkgs.datetime
-            hsPkgs.old-locale
-            hsPkgs.time
-            hsPkgs.attoparsec
-            hsPkgs.aeson
-            hsPkgs.cryptohash
-            hsPkgs.data-default
-          ];
-        };
+      license = "MIT";
+      copyright = "2012 Joseph Abrahamson, Reify Health LLC";
+      maintainer = "Joseph Abrahamson <me@jspha.com>";
+      author = "Joseph Abrahamson <me@jspha.com>";
+      homepage = "";
+      url = "";
+      synopsis = "Twilio API interaction";
+      description = "A little Twilio library";
+      buildType = "Simple";
+    };
+    components = {
+      "twill" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.QuickCheck)
+          (hsPkgs.errors)
+          (hsPkgs.text)
+          (hsPkgs.bytestring)
+          (hsPkgs.base16-bytestring)
+          (hsPkgs.base64-bytestring)
+          (hsPkgs.datetime)
+          (hsPkgs.old-locale)
+          (hsPkgs.time)
+          (hsPkgs.attoparsec)
+          (hsPkgs.aeson)
+          (hsPkgs.cryptohash)
+          (hsPkgs.data-default)
+        ];
       };
-    }
+    };
+  }

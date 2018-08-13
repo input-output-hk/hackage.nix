@@ -1,43 +1,48 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "pomodoro";
-          version = "0.1.0.0";
-        };
-        license = "GPL-3.0-only";
-        copyright = "";
-        maintainer = "Al Zohali <zohl@fmap.me>";
-        author = "Al Zohali";
-        homepage = "";
-        url = "";
-        synopsis = "pomodoro timer";
-        description = "A simple pomodoro timer. Features: task bar, popup and\nsound notifications, tracking to file, command\nline interface.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "pomodoro";
+        version = "0.1.0.0";
       };
-      components = {
-        exes = {
-          "pomodoro" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.cereal
-              hsPkgs.directory
-              hsPkgs.filepath
-              hsPkgs.heredoc
-              hsPkgs.libnotify
-              hsPkgs.network
-              hsPkgs.process
-              hsPkgs.time
-              hsPkgs.unix
-              hsPkgs.wx
-              hsPkgs.wxcore
-            ];
-          };
+      license = "GPL-3.0-only";
+      copyright = "";
+      maintainer = "Al Zohali <zohl@fmap.me>";
+      author = "Al Zohali";
+      homepage = "";
+      url = "";
+      synopsis = "pomodoro timer";
+      description = "A simple pomodoro timer. Features: task bar, popup and\nsound notifications, tracking to file, command\nline interface.";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "pomodoro" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.cereal)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+            (hsPkgs.heredoc)
+            (hsPkgs.libnotify)
+            (hsPkgs.network)
+            (hsPkgs.process)
+            (hsPkgs.time)
+            (hsPkgs.unix)
+            (hsPkgs.wx)
+            (hsPkgs.wxcore)
+          ];
         };
       };
-    }
+    };
+  }

@@ -1,57 +1,62 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       client = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "yu-auth";
-          version = "0.1.0.0";
-        };
-        license = "GPL-3.0-only";
-        copyright = "Copyright (C) 2017 Johann Lee";
-        maintainer = "qinka@live.com";
-        author = "Johann Lee";
-        homepage = "https://github.com/Qinka/Yu";
-        url = "";
-        synopsis = "Auth module for Yu.";
-        description = "Helper of auth via SHA for Yu";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "yu-auth";
+        version = "0.1.0.0";
       };
-      components = {
-        "yu-auth" = {
+      license = "GPL-3.0-only";
+      copyright = "Copyright (C) 2017 Johann Lee";
+      maintainer = "qinka@live.com";
+      author = "Johann Lee";
+      homepage = "https://github.com/Qinka/Yu";
+      url = "";
+      synopsis = "Auth module for Yu.";
+      description = "Helper of auth via SHA for Yu";
+      buildType = "Simple";
+    };
+    components = {
+      "yu-auth" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.cryptonite)
+          (hsPkgs.yu-utils)
+          (hsPkgs.memory)
+        ];
+      };
+      tests = {
+        "test-core" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.cryptonite
-            hsPkgs.yu-utils
-            hsPkgs.memory
+            (hsPkgs.base)
+            (hsPkgs.yu-utils)
+            (hsPkgs.random)
+            (hsPkgs.MonadRandom)
+            (hsPkgs.yu-auth)
           ];
         };
-        tests = {
-          "test-core" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.yu-utils
-              hsPkgs.random
-              hsPkgs.MonadRandom
-              hsPkgs.yu-auth
-            ];
-          };
-          "test-auth" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.yu-auth
-              hsPkgs.yu-utils
-              hsPkgs.hspec
-              hsPkgs.hspec-wai
-              hsPkgs.yesod-test
-              hsPkgs.yesod-core
-              hsPkgs.wai
-            ];
-          };
+        "test-auth" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.yu-auth)
+            (hsPkgs.yu-utils)
+            (hsPkgs.hspec)
+            (hsPkgs.hspec-wai)
+            (hsPkgs.yesod-test)
+            (hsPkgs.yesod-core)
+            (hsPkgs.wai)
+          ];
         };
       };
-    }
+    };
+  }

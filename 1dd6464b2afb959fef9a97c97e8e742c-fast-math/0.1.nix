@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2.3";
-        identifier = {
-          name = "fast-math";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "© 2011, Liyang HU";
-        maintainer = "fast-math@liyang.hu";
-        author = "Liyang HU";
-        homepage = "";
-        url = "";
-        synopsis = "Non IEEE-754 compliant compile-time floating-point optimisations";
-        description = "The \"Numeric.FastMath\" module brings into scope RULES for 'Float's and\n'Double's that rewrite @x-x@, @0*x@ and @x*0@ to @0@. This disagrees\nwith IEEE-754 when @x@ is @NaN@, but is acceptable for most\napplications.\n\nImporting \"Numeric.FastMath.Infinitesimal\" also rewrites @0/x@ to @0@.\n\nOptimisation (at least @-O1@) must be enabled for any RULES to take effect.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2.3";
+      identifier = {
+        name = "fast-math";
+        version = "0.1";
       };
-      components = {
-        "fast-math" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "© 2011, Liyang HU";
+      maintainer = "fast-math@liyang.hu";
+      author = "Liyang HU";
+      homepage = "";
+      url = "";
+      synopsis = "Non IEEE-754 compliant compile-time floating-point optimisations";
+      description = "The \"Numeric.FastMath\" module brings into scope RULES for 'Float's and\n'Double's that rewrite @x-x@, @0*x@ and @x*0@ to @0@. This disagrees\nwith IEEE-754 when @x@ is @NaN@, but is acceptable for most\napplications.\n\nImporting \"Numeric.FastMath.Infinitesimal\" also rewrites @0/x@ to @0@.\n\nOptimisation (at least @-O1@) must be enabled for any RULES to take effect.";
+      buildType = "Simple";
+    };
+    components = {
+      "fast-math" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

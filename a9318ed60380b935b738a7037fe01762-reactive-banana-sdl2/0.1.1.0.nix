@@ -1,39 +1,44 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "reactive-banana-sdl2";
-          version = "0.1.1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "GPL-3";
-        maintainer = "cies.breijs@gmail.com";
-        author = "R. Kyle Murphy, JP Moresmau";
-        homepage = "http://github.com/cies/reactive-banana-sdl2#readme";
-        url = "";
-        synopsis = "Reactive Banana integration with SDL2";
-        description = "Provides bindings and convenience functions for using Reactive Banana with SDL2.\nPlease see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "reactive-banana-sdl2";
+        version = "0.1.1.0";
       };
-      components = {
-        "reactive-banana-sdl2" = {
+      license = "BSD-3-Clause";
+      copyright = "GPL-3";
+      maintainer = "cies.breijs@gmail.com";
+      author = "R. Kyle Murphy, JP Moresmau";
+      homepage = "http://github.com/cies/reactive-banana-sdl2#readme";
+      url = "";
+      synopsis = "Reactive Banana integration with SDL2";
+      description = "Provides bindings and convenience functions for using Reactive Banana with SDL2.\nPlease see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "reactive-banana-sdl2" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.reactive-banana)
+          (hsPkgs.sdl2)
+        ];
+      };
+      tests = {
+        "reactive-banana-sdl2-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.reactive-banana
-            hsPkgs.sdl2
+            (hsPkgs.base)
+            (hsPkgs.reactive-banana-sdl2)
           ];
         };
-        tests = {
-          "reactive-banana-sdl2-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.reactive-banana-sdl2
-            ];
-          };
-        };
       };
-    }
+    };
+  }

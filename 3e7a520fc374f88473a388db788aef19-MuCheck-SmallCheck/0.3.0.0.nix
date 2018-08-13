@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "MuCheck-SmallCheck";
-          version = "0.3.0.0";
-        };
-        license = "GPL-2.0-only";
-        copyright = "";
-        maintainer = "rahul@gopinath.org";
-        author = "Rahul Gopinath <rahul@gopinath.org>";
-        homepage = "https://bitbucket.com/osu-testing/mucheck-smallcheck";
-        url = "";
-        synopsis = "Automated Mutation Testing for SmallCheck tests";
-        description = "This package contains the test adapter for SmallCheck tests to use it with MuCheck";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "MuCheck-SmallCheck";
+        version = "0.3.0.0";
       };
-      components = {
-        "MuCheck-SmallCheck" = {
+      license = "GPL-2.0-only";
+      copyright = "";
+      maintainer = "rahul@gopinath.org";
+      author = "Rahul Gopinath <rahul@gopinath.org>";
+      homepage = "https://bitbucket.com/osu-testing/mucheck-smallcheck";
+      url = "";
+      synopsis = "Automated Mutation Testing for SmallCheck tests";
+      description = "This package contains the test adapter for SmallCheck tests to use it with MuCheck";
+      buildType = "Simple";
+    };
+    components = {
+      "MuCheck-SmallCheck" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.smallcheck)
+          (hsPkgs.MuCheck)
+        ];
+      };
+      exes = {
+        "mucheck-smallcheck" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.smallcheck
-            hsPkgs.MuCheck
+            (hsPkgs.base)
+            (hsPkgs.smallcheck)
+            (hsPkgs.MuCheck)
           ];
         };
-        exes = {
-          "mucheck-smallcheck" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.smallcheck
-              hsPkgs.MuCheck
-            ];
-          };
-        };
       };
-    }
+    };
+  }

@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "timeless";
-          version = "0.8.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "karl_1702@188.com";
-        author = "Rongcui Dong";
-        homepage = "";
-        url = "";
-        synopsis = "Timeless is a Arrow based Functional Reactive Programming library";
-        description = "Timeless is based on a almost completely rewriten Netwire 5 core, plus numerous (not yet for now) extensions to provide an extensive library for Arrowrized Functional Reactive Programming with continuous time semantics.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "timeless";
+        version = "0.8.0.0";
       };
-      components = {
-        "timeless" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.time
-            hsPkgs.transformers
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "karl_1702@188.com";
+      author = "Rongcui Dong";
+      homepage = "";
+      url = "";
+      synopsis = "Timeless is a Arrow based Functional Reactive Programming library";
+      description = "Timeless is based on a almost completely rewriten Netwire 5 core, plus numerous (not yet for now) extensions to provide an extensive library for Arrowrized Functional Reactive Programming with continuous time semantics.";
+      buildType = "Simple";
+    };
+    components = {
+      "timeless" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.time)
+          (hsPkgs.transformers)
+        ];
       };
-    }
+    };
+  }

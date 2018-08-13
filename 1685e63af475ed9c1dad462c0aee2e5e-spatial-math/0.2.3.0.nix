@@ -1,41 +1,46 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "spatial-math";
-          version = "0.2.3.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (c) 2012, Greg Horn";
-        maintainer = "gregmainland@gmail.com";
-        author = "Greg Horn";
-        homepage = "";
-        url = "";
-        synopsis = "3d math including quaternions/euler angles/dcms and utility functions";
-        description = "This is a port of my 'mathlib' C library: `https://github.com/ghorn/mathlib`";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "spatial-math";
+        version = "0.2.3.0";
       };
-      components = {
-        "spatial-math" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) 2012, Greg Horn";
+      maintainer = "gregmainland@gmail.com";
+      author = "Greg Horn";
+      homepage = "";
+      url = "";
+      synopsis = "3d math including quaternions/euler angles/dcms and utility functions";
+      description = "This is a port of my 'mathlib' C library: `https://github.com/ghorn/mathlib`";
+      buildType = "Simple";
+    };
+    components = {
+      "spatial-math" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.ghc-prim)
+          (hsPkgs.cereal)
+          (hsPkgs.binary)
+          (hsPkgs.linear)
+        ];
+      };
+      tests = {
+        "doctests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.ghc-prim
-            hsPkgs.cereal
-            hsPkgs.binary
-            hsPkgs.linear
+            (hsPkgs.base)
+            (hsPkgs.doctest)
           ];
         };
-        tests = {
-          "doctests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-            ];
-          };
-        };
       };
-    }
+    };
+  }

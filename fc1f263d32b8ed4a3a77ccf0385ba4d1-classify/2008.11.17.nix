@@ -1,31 +1,36 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "classify";
-          version = "2008.11.17";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2004-2008, Lemmih";
-        maintainer = "Lemmih <lemmih@gmail.com>";
-        author = "Lemmih <lemmih@gmail.com>";
-        homepage = "";
-        url = "";
-        synopsis = "Library for classification of media files.";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "classify";
+        version = "2008.11.17";
       };
-      components = {
-        "classify" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.containers
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "2004-2008, Lemmih";
+      maintainer = "Lemmih <lemmih@gmail.com>";
+      author = "Lemmih <lemmih@gmail.com>";
+      homepage = "";
+      url = "";
+      synopsis = "Library for classification of media files.";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "classify" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.containers)
+        ];
       };
-    }
+    };
+  }

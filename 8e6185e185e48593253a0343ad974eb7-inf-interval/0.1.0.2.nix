@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "inf-interval";
-          version = "0.1.0.2";
-        };
-        license = "GPL-3.0-only";
-        copyright = "2008-2015 Ramin Honary";
-        maintainer = "ramin.honary@gmail.com";
-        author = "Ramin Honary";
-        homepage = "https://github.com/RaminHAL9001/inf-interval";
-        url = "";
-        synopsis = "Non-contiguous interval data types with potentially infinite ranges.";
-        description = "\nNon-contiguous interval data types with potentially infinite ranges.\n\nThis library was originally part of the Dao package, but has been branched\ninto it's own package in the hopes that it will be useful in a wider\nvariety of projects.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "inf-interval";
+        version = "0.1.0.2";
       };
-      components = {
-        "inf-interval" = {
+      license = "GPL-3.0-only";
+      copyright = "2008-2015 Ramin Honary";
+      maintainer = "ramin.honary@gmail.com";
+      author = "Ramin Honary";
+      homepage = "https://github.com/RaminHAL9001/inf-interval";
+      url = "";
+      synopsis = "Non-contiguous interval data types with potentially infinite ranges.";
+      description = "\nNon-contiguous interval data types with potentially infinite ranges.\n\nThis library was originally part of the Dao package, but has been branched\ninto it's own package in the hopes that it will be useful in a wider\nvariety of projects.";
+      buildType = "Simple";
+    };
+    components = {
+      "inf-interval" = {
+        depends  = [
+          (hsPkgs.array)
+          (hsPkgs.deepseq)
+          (hsPkgs.vector)
+          (hsPkgs.base)
+        ];
+      };
+      tests = {
+        "Interval" = {
           depends  = [
-            hsPkgs.array
-            hsPkgs.deepseq
-            hsPkgs.vector
-            hsPkgs.base
+            (hsPkgs.array)
+            (hsPkgs.deepseq)
+            (hsPkgs.vector)
+            (hsPkgs.text)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.base)
           ];
         };
-        tests = {
-          "Interval" = {
-            depends  = [
-              hsPkgs.array
-              hsPkgs.deepseq
-              hsPkgs.vector
-              hsPkgs.text
-              hsPkgs.QuickCheck
-              hsPkgs.base
-            ];
-          };
-        };
       };
-    }
+    };
+  }

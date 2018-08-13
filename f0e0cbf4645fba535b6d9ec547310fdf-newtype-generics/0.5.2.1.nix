@@ -1,53 +1,58 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "newtype-generics";
-          version = "0.5.2.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Simon Jakobi <simon.jakobi@gmail.com>";
-        author = "Darius Jahandarie, Conor McBride, João Cristóvão";
-        homepage = "";
-        url = "";
-        synopsis = "A typeclass and set of functions for working with newtypes, with generics support.";
-        description = "Per Conor McBride, the Newtype typeclass represents the packing and unpacking of a newtype,\nand allows you to operate under that newtype with functions such as ala.\nGenerics support was added in version 0.4, making this package a full replacement\nfor the original newtype package, and a better alternative to newtype-th.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "newtype-generics";
+        version = "0.5.2.1";
       };
-      components = {
-        "newtype-generics" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Simon Jakobi <simon.jakobi@gmail.com>";
+      author = "Darius Jahandarie, Conor McBride, João Cristóvão";
+      homepage = "";
+      url = "";
+      synopsis = "A typeclass and set of functions for working with newtypes, with generics support.";
+      description = "Per Conor McBride, the Newtype typeclass represents the packing and unpacking of a newtype,\nand allows you to operate under that newtype with functions such as ala.\nGenerics support was added in version 0.4, making this package a full replacement\nfor the original newtype package, and a better alternative to newtype-th.";
+      buildType = "Simple";
+    };
+    components = {
+      "newtype-generics" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.transformers)
+        ];
+      };
+      tests = {
+        "test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.transformers
+            (hsPkgs.base)
+            (hsPkgs.newtype-generics)
+            (hsPkgs.hspec)
+            (hsPkgs.HUnit)
+          ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover)
           ];
         };
-        tests = {
-          "test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.newtype-generics
-              hsPkgs.hspec
-              hsPkgs.HUnit
-            ];
-            build-tools = [
-              hsPkgs.buildPackages.hspec-discover
-            ];
-          };
-        };
-        benchmarks = {
-          "bench" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.criterion
-              hsPkgs.newtype-generics
-              hsPkgs.semigroups
-            ];
-          };
+      };
+      benchmarks = {
+        "bench" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.criterion)
+            (hsPkgs.newtype-generics)
+            (hsPkgs.semigroups)
+          ];
         };
       };
-    }
+    };
+  }

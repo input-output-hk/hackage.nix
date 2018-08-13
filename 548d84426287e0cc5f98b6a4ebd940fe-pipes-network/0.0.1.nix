@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "pipes-network";
-          version = "0.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "p.capriotti@gmail.com";
-        author = "Paolo Capriotti";
-        homepage = "https://github.com/pcapriotti/pipes-extra";
-        url = "";
-        synopsis = "Utilities to deal with sockets.";
-        description = "Utilities to deal with sockets.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "pipes-network";
+        version = "0.0.1";
       };
-      components = {
-        "pipes-network" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.pipes-core
-            hsPkgs.bytestring
-            hsPkgs.network
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "p.capriotti@gmail.com";
+      author = "Paolo Capriotti";
+      homepage = "https://github.com/pcapriotti/pipes-extra";
+      url = "";
+      synopsis = "Utilities to deal with sockets.";
+      description = "Utilities to deal with sockets.";
+      buildType = "Simple";
+    };
+    components = {
+      "pipes-network" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.pipes-core)
+          (hsPkgs.bytestring)
+          (hsPkgs.network)
+        ];
       };
-    }
+    };
+  }

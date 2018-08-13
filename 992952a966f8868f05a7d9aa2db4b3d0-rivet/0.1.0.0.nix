@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "rivet";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "dbp@dbpmail.net";
-        author = "Daniel Patterson";
-        homepage = "https://github.com/dbp/rivet";
-        url = "";
-        synopsis = "A project management tool for Haskell applications.";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "rivet";
+        version = "0.1.0.0";
       };
-      components = {
-        exes = {
-          "rivet" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.rivet-core
-              hsPkgs.rivet-simple-deploy
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "dbp@dbpmail.net";
+      author = "Daniel Patterson";
+      homepage = "https://github.com/dbp/rivet";
+      url = "";
+      synopsis = "A project management tool for Haskell applications.";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "rivet" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.rivet-core)
+            (hsPkgs.rivet-simple-deploy)
+          ];
         };
       };
-    }
+    };
+  }

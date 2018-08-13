@@ -1,47 +1,52 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       splitbase = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "jarfind";
-          version = "0.1.0.3";
-        };
-        license = "LicenseRef-GPL";
-        copyright = "";
-        maintainer = "ekirpichov@gmail.com";
-        author = "Eugene Kirpichov";
-        homepage = "";
-        url = "";
-        synopsis = "Tool for searching java classes, members and fields in classfiles and JAR archives";
-        description = "Search classfiles and JARs: like, all public 'close' methods in classes with 'Stream' in their name in a JAR.\nMostly for debugging NoSuchMethodError's etc. resulting from an outdated JAR and alike.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "jarfind";
+        version = "0.1.0.3";
       };
-      components = {
-        "jarfind" = {
+      license = "LicenseRef-GPL";
+      copyright = "";
+      maintainer = "ekirpichov@gmail.com";
+      author = "Eugene Kirpichov";
+      homepage = "";
+      url = "";
+      synopsis = "Tool for searching java classes, members and fields in classfiles and JAR archives";
+      description = "Search classfiles and JARs: like, all public 'close' methods in classes with 'Stream' in their name in a JAR.\nMostly for debugging NoSuchMethodError's etc. resulting from an outdated JAR and alike.";
+      buildType = "Simple";
+    };
+    components = {
+      "jarfind" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.binary)
+          (hsPkgs.bytestring)
+          (hsPkgs.array)
+          (hsPkgs.zip-archive)
+          (hsPkgs.regex-tdfa)
+        ];
+      };
+      exes = {
+        "jarf" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.binary
-            hsPkgs.bytestring
-            hsPkgs.array
-            hsPkgs.zip-archive
-            hsPkgs.regex-tdfa
-          ];
-        };
-        exes = {
-          "jarf" = {
-            depends  = [
-              hsPkgs.binary
-              hsPkgs.bytestring
-              hsPkgs.array
-              hsPkgs.zip-archive
-              hsPkgs.regex-tdfa
-            ] ++ [ hsPkgs.base ];
-          };
+            (hsPkgs.binary)
+            (hsPkgs.bytestring)
+            (hsPkgs.array)
+            (hsPkgs.zip-archive)
+            (hsPkgs.regex-tdfa)
+          ] ++ [ (hsPkgs.base) ];
         };
       };
-    }
+    };
+  }

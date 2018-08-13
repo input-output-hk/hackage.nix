@@ -1,33 +1,38 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "canon";
-          version = "0.1.0.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "frederick dot schneider2011 at gmail dot com";
-        author = "Frederick Schneider";
-        homepage = "https://github.com/grandpascorpion/canon";
-        url = "";
-        synopsis = "Massive Number Arithmetic";
-        description = "This library allows one to manipulate of practically unlimited by keeping them in factored \"canonical\" form.\nFor manipulating sums and differences, there is additional code to factor expressions of special forms.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "canon";
+        version = "0.1.0.0";
       };
-      components = {
-        "canon" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.arithmoi
-            hsPkgs.polynomial
-            hsPkgs.array
-            hsPkgs.containers
-          ];
-        };
+      license = "MIT";
+      copyright = "";
+      maintainer = "frederick dot schneider2011 at gmail dot com";
+      author = "Frederick Schneider";
+      homepage = "https://github.com/grandpascorpion/canon";
+      url = "";
+      synopsis = "Massive Number Arithmetic";
+      description = "This library allows one to manipulate of practically unlimited by keeping them in factored \"canonical\" form.\nFor manipulating sums and differences, there is additional code to factor expressions of special forms.";
+      buildType = "Simple";
+    };
+    components = {
+      "canon" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.arithmoi)
+          (hsPkgs.polynomial)
+          (hsPkgs.array)
+          (hsPkgs.containers)
+        ];
       };
-    }
+    };
+  }

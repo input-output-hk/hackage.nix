@@ -1,71 +1,76 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       lib-werror = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "ridley";
-          version = "0.3.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2017 IRIS Connect Ltd.";
-        maintainer = "alfredo@irisconnect.co.uk";
-        author = "Alfredo Di Napoli & the IRIS Connect Engineering Team";
-        homepage = "https://github.com/iconnect/ridley#readme";
-        url = "";
-        synopsis = "Quick metrics to grow you app strong.";
-        description = "Please see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "ridley";
+        version = "0.3.0.0";
       };
-      components = {
-        "ridley" = {
+      license = "BSD-3-Clause";
+      copyright = "2017 IRIS Connect Ltd.";
+      maintainer = "alfredo@irisconnect.co.uk";
+      author = "Alfredo Di Napoli & the IRIS Connect Engineering Team";
+      homepage = "https://github.com/iconnect/ridley#readme";
+      url = "";
+      synopsis = "Quick metrics to grow you app strong.";
+      description = "Please see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "ridley" = {
+        depends  = [
+          (hsPkgs.async)
+          (hsPkgs.base)
+          (hsPkgs.containers)
+          (hsPkgs.katip)
+          (hsPkgs.wai-middleware-metrics)
+          (hsPkgs.template-haskell)
+          (hsPkgs.ekg-core)
+          (hsPkgs.time)
+          (hsPkgs.text)
+          (hsPkgs.mtl)
+          (hsPkgs.shelly)
+          (hsPkgs.transformers)
+          (hsPkgs.prometheus)
+          (hsPkgs.raw-strings-qq)
+          (hsPkgs.microlens)
+          (hsPkgs.microlens-th)
+          (hsPkgs.process)
+          (hsPkgs.ekg-prometheus-adapter)
+          (hsPkgs.inline-c)
+          (hsPkgs.vector)
+          (hsPkgs.unix)
+        ];
+      };
+      tests = {
+        "ridley-test" = {
           depends  = [
-            hsPkgs.async
-            hsPkgs.base
-            hsPkgs.containers
-            hsPkgs.katip
-            hsPkgs.wai-middleware-metrics
-            hsPkgs.template-haskell
-            hsPkgs.ekg-core
-            hsPkgs.time
-            hsPkgs.text
-            hsPkgs.mtl
-            hsPkgs.shelly
-            hsPkgs.transformers
-            hsPkgs.prometheus
-            hsPkgs.raw-strings-qq
-            hsPkgs.microlens
-            hsPkgs.microlens-th
-            hsPkgs.process
-            hsPkgs.ekg-prometheus-adapter
-            hsPkgs.inline-c
-            hsPkgs.vector
-            hsPkgs.unix
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.ridley)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-hunit)
+            (hsPkgs.tasty-quickcheck)
+            (hsPkgs.ekg-core)
+            (hsPkgs.prometheus)
+            (hsPkgs.containers)
+            (hsPkgs.microlens)
+            (hsPkgs.ekg-prometheus-adapter)
+            (hsPkgs.text)
+            (hsPkgs.string-conv)
+            (hsPkgs.http-client)
           ];
         };
-        tests = {
-          "ridley-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.ridley
-              hsPkgs.tasty
-              hsPkgs.tasty-hunit
-              hsPkgs.tasty-quickcheck
-              hsPkgs.ekg-core
-              hsPkgs.prometheus
-              hsPkgs.containers
-              hsPkgs.microlens
-              hsPkgs.ekg-prometheus-adapter
-              hsPkgs.text
-              hsPkgs.string-conv
-              hsPkgs.http-client
-            ];
-          };
-        };
       };
-    }
+    };
+  }

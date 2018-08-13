@@ -1,58 +1,63 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "bytestring-tree-builder";
-          version = "0.2.7.1";
-        };
-        license = "MIT";
-        copyright = "(c) 2015, Nikita Volkov";
-        maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
-        author = "Nikita Volkov <nikita.y.volkov@mail.ru>";
-        homepage = "https://github.com/nikita-volkov/bytestring-tree-builder";
-        url = "";
-        synopsis = "A very efficient ByteString builder implementation based on the binary tree";
-        description = "According to\n<https://github.com/nikita-volkov/bytestring-builders-benchmark the benchmarks>\nthis builder implementation beats all the alternatives.\nIt is especially well-suited for generating strict bytestrings,\nbeating the standard builder by at least the factor of 4.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "bytestring-tree-builder";
+        version = "0.2.7.1";
       };
-      components = {
-        "bytestring-tree-builder" = {
+      license = "MIT";
+      copyright = "(c) 2015, Nikita Volkov";
+      maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
+      author = "Nikita Volkov <nikita.y.volkov@mail.ru>";
+      homepage = "https://github.com/nikita-volkov/bytestring-tree-builder";
+      url = "";
+      synopsis = "A very efficient ByteString builder implementation based on the binary tree";
+      description = "According to\n<https://github.com/nikita-volkov/bytestring-builders-benchmark the benchmarks>\nthis builder implementation beats all the alternatives.\nIt is especially well-suited for generating strict bytestrings,\nbeating the standard builder by at least the factor of 4.";
+      buildType = "Simple";
+    };
+    components = {
+      "bytestring-tree-builder" = {
+        depends  = [
+          (hsPkgs.semigroups)
+          (hsPkgs.bytestring)
+          (hsPkgs.text)
+          (hsPkgs.base-prelude)
+          (hsPkgs.base)
+        ];
+      };
+      tests = {
+        "tasty" = {
           depends  = [
-            hsPkgs.semigroups
-            hsPkgs.bytestring
-            hsPkgs.text
-            hsPkgs.base-prelude
-            hsPkgs.base
+            (hsPkgs.bytestring-tree-builder)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-quickcheck)
+            (hsPkgs.tasty-smallcheck)
+            (hsPkgs.tasty-hunit)
+            (hsPkgs.quickcheck-instances)
+            (hsPkgs.bytestring)
+            (hsPkgs.base-prelude)
           ];
         };
-        tests = {
-          "tasty" = {
-            depends  = [
-              hsPkgs.bytestring-tree-builder
-              hsPkgs.tasty
-              hsPkgs.tasty-quickcheck
-              hsPkgs.tasty-smallcheck
-              hsPkgs.tasty-hunit
-              hsPkgs.quickcheck-instances
-              hsPkgs.bytestring
-              hsPkgs.base-prelude
-            ];
-          };
-        };
-        benchmarks = {
-          "benchmark" = {
-            depends  = [
-              hsPkgs.bytestring-tree-builder
-              hsPkgs.criterion
-              hsPkgs.bytestring
-              hsPkgs.deepseq
-              hsPkgs.base-prelude
-            ];
-          };
+      };
+      benchmarks = {
+        "benchmark" = {
+          depends  = [
+            (hsPkgs.bytestring-tree-builder)
+            (hsPkgs.criterion)
+            (hsPkgs.bytestring)
+            (hsPkgs.deepseq)
+            (hsPkgs.base-prelude)
+          ];
         };
       };
-    }
+    };
+  }

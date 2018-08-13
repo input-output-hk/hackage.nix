@@ -1,48 +1,53 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "imgurder";
-          version = "1.2";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "dcolish@gmail.com";
-        author = "Dan Colish";
-        homepage = "";
-        url = "";
-        synopsis = "Uploader for Imgur";
-        description = "A simple uploader for the Imgur api.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "imgurder";
+        version = "1.2";
       };
-      components = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "dcolish@gmail.com";
+      author = "Dan Colish";
+      homepage = "";
+      url = "";
+      synopsis = "Uploader for Imgur";
+      description = "A simple uploader for the Imgur api.";
+      buildType = "Simple";
+    };
+    components = {
+      "imgurder" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.hxt-xpath)
+          (hsPkgs.hxt)
+          (hsPkgs.curl)
+          (hsPkgs.directory)
+          (hsPkgs.haskell98)
+          (hsPkgs.url)
+        ];
+      };
+      exes = {
         "imgurder" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.hxt-xpath
-            hsPkgs.hxt
-            hsPkgs.curl
-            hsPkgs.directory
-            hsPkgs.haskell98
-            hsPkgs.url
+            (hsPkgs.base)
+            (hsPkgs.hxt-xpath)
+            (hsPkgs.hxt)
+            (hsPkgs.curl)
+            (hsPkgs.directory)
+            (hsPkgs.haskell98)
+            (hsPkgs.url)
           ];
         };
-        exes = {
-          "imgurder" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hxt-xpath
-              hsPkgs.hxt
-              hsPkgs.curl
-              hsPkgs.directory
-              hsPkgs.haskell98
-              hsPkgs.url
-            ];
-          };
-        };
       };
-    }
+    };
+  }

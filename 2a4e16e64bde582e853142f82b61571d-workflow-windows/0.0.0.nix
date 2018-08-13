@@ -1,59 +1,64 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "workflow-windows";
-          version = "0.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "2016 Spiros Boosalis";
-        maintainer = "samboosalis@gmail.com";
-        author = "Spiros Boosalis";
-        homepage = "http://github.com/sboosali/workflow-windows#readme";
-        url = "";
-        synopsis = "Automate keyboard/mouse/clipboard/application interaction.";
-        description = "see http://github.com/sboosali/workflow-windows#readme for\ndocumentation and examples.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "workflow-windows";
+        version = "0.0.0";
       };
-      components = {
-        "workflow-windows" = {
+      license = "BSD-3-Clause";
+      copyright = "2016 Spiros Boosalis";
+      maintainer = "samboosalis@gmail.com";
+      author = "Spiros Boosalis";
+      homepage = "http://github.com/sboosali/workflow-windows#readme";
+      url = "";
+      synopsis = "Automate keyboard/mouse/clipboard/application interaction.";
+      description = "see http://github.com/sboosali/workflow-windows#readme for\ndocumentation and examples.";
+      buildType = "Simple";
+    };
+    components = {
+      "workflow-windows" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.transformers)
+          (hsPkgs.workflow-types)
+          (hsPkgs.free)
+          (hsPkgs.c-storable-deriving)
+          (hsPkgs.StateVar)
+        ];
+      };
+      exes = {
+        "workflow-windows-example" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.transformers
-            hsPkgs.workflow-types
-            hsPkgs.free
-            hsPkgs.c-storable-deriving
-            hsPkgs.StateVar
+            (hsPkgs.base)
+            (hsPkgs.workflow-windows)
           ];
         };
-        exes = {
-          "workflow-windows-example" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.workflow-windows
-            ];
-          };
+      };
+      tests = {
+        "doctest" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.workflow-windows)
+            (hsPkgs.doctest)
+          ];
         };
-        tests = {
-          "doctest" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.workflow-windows
-              hsPkgs.doctest
-            ];
-          };
-          "unittest" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.workflow-windows
-              hsPkgs.hspec
-              hsPkgs.QuickCheck
-            ];
-          };
+        "unittest" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.workflow-windows)
+            (hsPkgs.hspec)
+            (hsPkgs.QuickCheck)
+          ];
         };
       };
-    }
+    };
+  }

@@ -1,52 +1,57 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "nested-routes";
-          version = "0.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Athan Clark <athan.clark@gmail.com>";
-        author = "Athan Clark <athan.clark@gmail.com>";
-        homepage = "";
-        url = "";
-        synopsis = "Declarative, compositional Wai responses";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "nested-routes";
+        version = "0.1.1";
       };
-      components = {
-        "nested-routes" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Athan Clark <athan.clark@gmail.com>";
+      author = "Athan Clark <athan.clark@gmail.com>";
+      homepage = "";
+      url = "";
+      synopsis = "Declarative, compositional Wai responses";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "nested-routes" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.wai)
+          (hsPkgs.wai-extra)
+          (hsPkgs.http-types)
+          (hsPkgs.mtl)
+          (hsPkgs.transformers)
+          (hsPkgs.semigroups)
+          (hsPkgs.containers)
+          (hsPkgs.pseudo-trie)
+          (hsPkgs.text)
+          (hsPkgs.aeson)
+          (hsPkgs.blaze-html)
+          (hsPkgs.lucid)
+          (hsPkgs.bytestring)
+        ];
+      };
+      tests = {
+        "spec" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.wai
-            hsPkgs.wai-extra
-            hsPkgs.http-types
-            hsPkgs.mtl
-            hsPkgs.transformers
-            hsPkgs.semigroups
-            hsPkgs.containers
-            hsPkgs.pseudo-trie
-            hsPkgs.text
-            hsPkgs.aeson
-            hsPkgs.blaze-html
-            hsPkgs.lucid
-            hsPkgs.bytestring
+            (hsPkgs.base)
+            (hsPkgs.hspec)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.quickcheck-instances)
           ];
         };
-        tests = {
-          "spec" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.hspec
-              hsPkgs.QuickCheck
-              hsPkgs.quickcheck-instances
-            ];
-          };
-        };
       };
-    }
+    };
+  }

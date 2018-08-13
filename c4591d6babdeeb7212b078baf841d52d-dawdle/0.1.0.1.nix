@@ -1,45 +1,50 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "dawdle";
-          version = "0.1.0.1";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "arnon.shimoni@gmail.com";
-        author = "Arnon Shimoni";
-        homepage = "https://github.com/arnons1/dawdle";
-        url = "";
-        synopsis = "Generates DDL suggestions based on a CSV file";
-        description = "Generates DDL suggestions based on a CSV file";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "dawdle";
+        version = "0.1.0.1";
       };
-      components = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "arnon.shimoni@gmail.com";
+      author = "Arnon Shimoni";
+      homepage = "https://github.com/arnons1/dawdle";
+      url = "";
+      synopsis = "Generates DDL suggestions based on a CSV file";
+      description = "Generates DDL suggestions based on a CSV file";
+      buildType = "Simple";
+    };
+    components = {
+      "dawdle" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.parsec)
+          (hsPkgs.pretty)
+          (hsPkgs.text)
+          (hsPkgs.time)
+        ];
+      };
+      exes = {
         "dawdle" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.parsec
-            hsPkgs.pretty
-            hsPkgs.text
-            hsPkgs.time
+            (hsPkgs.base)
+            (hsPkgs.parsec)
+            (hsPkgs.pretty)
+            (hsPkgs.text)
+            (hsPkgs.filepath)
+            (hsPkgs.dawdle)
           ];
         };
-        exes = {
-          "dawdle" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.parsec
-              hsPkgs.pretty
-              hsPkgs.text
-              hsPkgs.filepath
-              hsPkgs.dawdle
-            ];
-          };
-        };
       };
-    }
+    };
+  }

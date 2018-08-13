@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "positive";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Hans Hoglund <hans@hanshoglund.se>";
-        author = "Hans Hoglund";
-        homepage = "";
-        url = "";
-        synopsis = "Positive numbers.";
-        description = "To be written.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "positive";
+        version = "0.1";
       };
-      components = {
-        "positive" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.nats
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Hans Hoglund <hans@hanshoglund.se>";
+      author = "Hans Hoglund";
+      homepage = "";
+      url = "";
+      synopsis = "Positive numbers.";
+      description = "To be written.";
+      buildType = "Simple";
+    };
+    components = {
+      "positive" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.nats)
+        ];
       };
-    }
+    };
+  }

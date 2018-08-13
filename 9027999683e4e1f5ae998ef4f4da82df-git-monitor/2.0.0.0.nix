@@ -1,44 +1,49 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "git-monitor";
-          version = "2.0.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "John Wiegley <johnw@fpcomplete.com>";
-        author = "John Wiegley";
-        homepage = "http://github.com/fpco/gitlib";
-        url = "";
-        synopsis = "Passively snapshots working tree changes efficiently.";
-        description = "Passively snapshots working tree changes efficiently.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "git-monitor";
+        version = "2.0.0.0";
       };
-      components = {
-        exes = {
-          "git-monitor" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.containers
-              hsPkgs.gitlib
-              hsPkgs.gitlib-libgit2
-              hsPkgs.hslogger
-              hsPkgs.old-locale
-              hsPkgs.optparse-applicative
-              hsPkgs.shelly
-              hsPkgs.system-fileio
-              hsPkgs.system-filepath
-              hsPkgs.text
-              hsPkgs.time
-              hsPkgs.transformers
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "John Wiegley <johnw@fpcomplete.com>";
+      author = "John Wiegley";
+      homepage = "http://github.com/fpco/gitlib";
+      url = "";
+      synopsis = "Passively snapshots working tree changes efficiently.";
+      description = "Passively snapshots working tree changes efficiently.";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "git-monitor" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.containers)
+            (hsPkgs.gitlib)
+            (hsPkgs.gitlib-libgit2)
+            (hsPkgs.hslogger)
+            (hsPkgs.old-locale)
+            (hsPkgs.optparse-applicative)
+            (hsPkgs.shelly)
+            (hsPkgs.system-fileio)
+            (hsPkgs.system-filepath)
+            (hsPkgs.text)
+            (hsPkgs.time)
+            (hsPkgs.transformers)
+          ];
         };
       };
-    }
+    };
+  }

@@ -1,50 +1,55 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "monarch";
-          version = "0.3.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Noriyuki OHKAWA <n.ohkawa@gmail.com>";
-        author = "Noriyuki OHKAWA <n.ohkawa@gmail.com>";
-        homepage = "https://github.com/notogawa/monarch";
-        url = "";
-        synopsis = "Monadic interface for TokyoTyrant.";
-        description = "This package provides simple monadic interface for TokyoTyrant.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "monarch";
+        version = "0.3.0.0";
       };
-      components = {
-        "monarch" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Noriyuki OHKAWA <n.ohkawa@gmail.com>";
+      author = "Noriyuki OHKAWA <n.ohkawa@gmail.com>";
+      homepage = "https://github.com/notogawa/monarch";
+      url = "";
+      synopsis = "Monadic interface for TokyoTyrant.";
+      description = "This package provides simple monadic interface for TokyoTyrant.";
+      buildType = "Simple";
+    };
+    components = {
+      "monarch" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.bytestring)
+          (hsPkgs.conduit)
+          (hsPkgs.network-conduit)
+          (hsPkgs.binary)
+          (hsPkgs.msgpack)
+        ];
+      };
+      tests = {
+        "specs" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.bytestring
-            hsPkgs.conduit
-            hsPkgs.network-conduit
-            hsPkgs.binary
-            hsPkgs.msgpack
+            (hsPkgs.base)
+            (hsPkgs.mtl)
+            (hsPkgs.bytestring)
+            (hsPkgs.conduit)
+            (hsPkgs.network-conduit)
+            (hsPkgs.binary)
+            (hsPkgs.msgpack)
+            (hsPkgs.hspec)
+            (hsPkgs.HUnit)
           ];
         };
-        tests = {
-          "specs" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.mtl
-              hsPkgs.bytestring
-              hsPkgs.conduit
-              hsPkgs.network-conduit
-              hsPkgs.binary
-              hsPkgs.msgpack
-              hsPkgs.hspec
-              hsPkgs.HUnit
-            ];
-          };
-        };
       };
-    }
+    };
+  }

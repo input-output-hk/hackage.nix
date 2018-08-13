@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "ecstasy";
-          version = "0.1.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "sandy@sandymaguire.me";
-        author = "Sandy Maguire";
-        homepage = "http://github.com/isovector/ecstasy/";
-        url = "";
-        synopsis = "A GHC.Generics based entity component system.";
-        description = "Ecstasy is an entity-component system for Haskell. It's inspired by\n<https://hackage.haskell.org/package/apecs apecs>, but makes the design\ndecision to focus on being idiomatic rather than being fast. Maybe. I haven't\nactually benchmarked it.\n\nWe achieve being idiomatic by using 'GHC.Generics' and tricky type families\nto derive performant data stores given only a record of the desired\ncomponents.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "ecstasy";
+        version = "0.1.1.1";
       };
-      components = {
-        "ecstasy" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.containers
-            hsPkgs.mtl
-            hsPkgs.transformers
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "sandy@sandymaguire.me";
+      author = "Sandy Maguire";
+      homepage = "http://github.com/isovector/ecstasy/";
+      url = "";
+      synopsis = "A GHC.Generics based entity component system.";
+      description = "Ecstasy is an entity-component system for Haskell. It's inspired by\n<https://hackage.haskell.org/package/apecs apecs>, but makes the design\ndecision to focus on being idiomatic rather than being fast. Maybe. I haven't\nactually benchmarked it.\n\nWe achieve being idiomatic by using 'GHC.Generics' and tricky type families\nto derive performant data stores given only a record of the desired\ncomponents.";
+      buildType = "Simple";
+    };
+    components = {
+      "ecstasy" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+          (hsPkgs.mtl)
+          (hsPkgs.transformers)
+        ];
       };
-    }
+    };
+  }

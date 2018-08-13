@@ -1,39 +1,44 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "lifter";
-          version = "0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Edwin Brady <eb@cs.st-andrews.ac.uk>";
-        author = "ICFP Contest 2012 Organisers";
-        homepage = "http://icfpcontest2012.wordpress.com/";
-        url = "";
-        synopsis = "A boulderdash-like game and solution validator";
-        description = "ICFP Contest 2012 task";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "lifter";
+        version = "0.1";
       };
-      components = {
-        exes = {
-          "lifter" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.mtl
-              hsPkgs.gloss
-              hsPkgs.bytestring
-              hsPkgs.stb-image
-              hsPkgs.bitmap
-              hsPkgs.array
-              hsPkgs.directory
-              hsPkgs.filepath
-            ];
-          };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Edwin Brady <eb@cs.st-andrews.ac.uk>";
+      author = "ICFP Contest 2012 Organisers";
+      homepage = "http://icfpcontest2012.wordpress.com/";
+      url = "";
+      synopsis = "A boulderdash-like game and solution validator";
+      description = "ICFP Contest 2012 task";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "lifter" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.mtl)
+            (hsPkgs.gloss)
+            (hsPkgs.bytestring)
+            (hsPkgs.stb-image)
+            (hsPkgs.bitmap)
+            (hsPkgs.array)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+          ];
         };
       };
-    }
+    };
+  }

@@ -1,45 +1,50 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       small_base = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "coordinate";
-          version = "0.0.10";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (C) 2013-2014 Tony Morris";
-        maintainer = "Tony Morris";
-        author = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>";
-        homepage = "https://github.com/tonymorris/coordinate";
-        url = "";
-        synopsis = "A representation of latitude and longitude";
-        description = "A representation of latitude and longitude";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "coordinate";
+        version = "0.0.10";
       };
-      components = {
-        "coordinate" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright (C) 2013-2014 Tony Morris";
+      maintainer = "Tony Morris";
+      author = "Tony Morris <ʇǝu˙sıɹɹoɯʇ@ןןǝʞsɐɥ>";
+      homepage = "https://github.com/tonymorris/coordinate";
+      url = "";
+      synopsis = "A representation of latitude and longitude";
+      description = "A representation of latitude and longitude";
+      buildType = "Custom";
+    };
+    components = {
+      "coordinate" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.lens)
+          (hsPkgs.transformers)
+        ];
+      };
+      tests = {
+        "doctests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.lens
-            hsPkgs.transformers
+            (hsPkgs.base)
+            (hsPkgs.doctest)
+            (hsPkgs.filepath)
+            (hsPkgs.directory)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.template-haskell)
           ];
         };
-        tests = {
-          "doctests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.doctest
-              hsPkgs.filepath
-              hsPkgs.directory
-              hsPkgs.QuickCheck
-              hsPkgs.template-haskell
-            ];
-          };
-        };
       };
-    }
+    };
+  }

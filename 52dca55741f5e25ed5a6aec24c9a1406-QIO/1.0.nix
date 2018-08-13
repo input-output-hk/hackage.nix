@@ -1,34 +1,39 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "QIO";
-          version = "1.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "";
-        author = "Alexander S. Green";
-        homepage = "http://www.cs.nott.ac.uk/~asg/QIO/";
-        url = "";
-        synopsis = "The Quantum IO Monad is a library for defining quantum computations in Haskell";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "QIO";
+        version = "1.0";
       };
-      components = {
-        "QIO" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.containers
-            hsPkgs.haskell98
-            hsPkgs.mtl
-            hsPkgs.random
-            hsPkgs.old-time
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "";
+      author = "Alexander S. Green";
+      homepage = "http://www.cs.nott.ac.uk/~asg/QIO/";
+      url = "";
+      synopsis = "The Quantum IO Monad is a library for defining quantum computations in Haskell";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "QIO" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+          (hsPkgs.haskell98)
+          (hsPkgs.mtl)
+          (hsPkgs.random)
+          (hsPkgs.old-time)
+        ];
       };
-    }
+    };
+  }

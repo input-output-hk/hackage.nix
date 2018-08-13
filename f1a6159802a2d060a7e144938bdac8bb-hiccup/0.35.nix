@@ -1,35 +1,40 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "0";
-        identifier = {
-          name = "hiccup";
-          version = "0.35";
-        };
-        license = "LicenseRef-GPL";
-        copyright = "";
-        maintainer = "consalus+hiccup@google.com";
-        author = "Kyle Consalus";
-        homepage = "http://code.google.com/p/hiccup/";
-        url = "";
-        synopsis = "Relatively efficient Tcl interpreter with support for basic operations";
-        description = "Interpreter for a subset of tcl";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "0";
+      identifier = {
+        name = "hiccup";
+        version = "0.35";
       };
-      components = {
-        exes = {
-          "hiccup" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.HUnit
-              hsPkgs.mtl
-              hsPkgs.haskell98
-              hsPkgs.readline
-            ];
-          };
+      license = "LicenseRef-GPL";
+      copyright = "";
+      maintainer = "consalus+hiccup@google.com";
+      author = "Kyle Consalus";
+      homepage = "http://code.google.com/p/hiccup/";
+      url = "";
+      synopsis = "Relatively efficient Tcl interpreter with support for basic operations";
+      description = "Interpreter for a subset of tcl";
+      buildType = "Custom";
+    };
+    components = {
+      exes = {
+        "hiccup" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.HUnit)
+            (hsPkgs.mtl)
+            (hsPkgs.haskell98)
+            (hsPkgs.readline)
+          ];
         };
       };
-    }
+    };
+  }

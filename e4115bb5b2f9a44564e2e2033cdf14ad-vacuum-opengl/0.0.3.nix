@@ -1,52 +1,57 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       base4 = true;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.2";
-        identifier = {
-          name = "vacuum-opengl";
-          version = "0.0.3";
-        };
-        license = "LicenseRef-PublicDomain";
-        copyright = "";
-        maintainer = "bkomuves (plus) hackage (at) gmail (dot) com";
-        author = "Balazs Komuves";
-        homepage = "http://code.haskell.org/~bkomuves/";
-        url = "";
-        synopsis = "Visualize live Haskell data structures using vacuum, graphviz and OpenGL.";
-        description = "Visualize live Haskell data structures using vacuum, graphviz and OpenGL.\nIntended as an easier-to-build alternative (no large dependency chain)\nto vacuum-cairo. Because of severe problems with GHCi+GLUT, it is\nimplemented using a client-server architecture.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.2";
+      identifier = {
+        name = "vacuum-opengl";
+        version = "0.0.3";
       };
-      components = {
-        "vacuum-opengl" = {
+      license = "LicenseRef-PublicDomain";
+      copyright = "";
+      maintainer = "bkomuves (plus) hackage (at) gmail (dot) com";
+      author = "Balazs Komuves";
+      homepage = "http://code.haskell.org/~bkomuves/";
+      url = "";
+      synopsis = "Visualize live Haskell data structures using vacuum, graphviz and OpenGL.";
+      description = "Visualize live Haskell data structures using vacuum, graphviz and OpenGL.\nIntended as an easier-to-build alternative (no large dependency chain)\nto vacuum-cairo. Because of severe problems with GHCi+GLUT, it is\nimplemented using a client-server architecture.";
+      buildType = "Simple";
+    };
+    components = {
+      "vacuum-opengl" = {
+        depends  = [
+          (hsPkgs.vacuum)
+        ] ++ [
+          (hsPkgs.base)
+          (hsPkgs.pretty)
+          (hsPkgs.network)
+        ];
+      };
+      exes = {
+        "vacuum-opengl-server" = {
           depends  = [
-            hsPkgs.vacuum
+            (hsPkgs.stb-image)
+            (hsPkgs.bitmap)
+            (hsPkgs.bitmap-opengl)
+            (hsPkgs.OpenGL)
+            (hsPkgs.GLUT)
           ] ++ [
-            hsPkgs.base
-            hsPkgs.pretty
-            hsPkgs.network
+            (hsPkgs.base)
+            (hsPkgs.directory)
+            (hsPkgs.process)
+            (hsPkgs.network)
+            (hsPkgs.filepath)
           ];
         };
-        exes = {
-          "vacuum-opengl-server" = {
-            depends  = [
-              hsPkgs.stb-image
-              hsPkgs.bitmap
-              hsPkgs.bitmap-opengl
-              hsPkgs.OpenGL
-              hsPkgs.GLUT
-            ] ++ [
-              hsPkgs.base
-              hsPkgs.directory
-              hsPkgs.process
-              hsPkgs.network
-              hsPkgs.filepath
-            ];
-          };
-        };
       };
-    }
+    };
+  }

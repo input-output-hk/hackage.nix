@@ -1,69 +1,74 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "obd";
-          version = "0.2.1.0";
-        };
-        license = "GPL-3.0-only";
-        copyright = "2016 Henri Verroken";
-        maintainer = "henriverroken@gmail.com";
-        author = "Henri Verroken";
-        homepage = "https://github.com/hverr/haskell-obd#readme";
-        url = "";
-        synopsis = "Communicate to OBD interfaces over ELM327";
-        description = "Haskell library to communicate with OBD-II over ELM327,\nwith terminal and simulator included.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "obd";
+        version = "0.2.1.0";
       };
-      components = {
-        "obd" = {
+      license = "GPL-3.0-only";
+      copyright = "2016 Henri Verroken";
+      maintainer = "henriverroken@gmail.com";
+      author = "Henri Verroken";
+      homepage = "https://github.com/hverr/haskell-obd#readme";
+      url = "";
+      synopsis = "Communicate to OBD interfaces over ELM327";
+      description = "Haskell library to communicate with OBD-II over ELM327,\nwith terminal and simulator included.";
+      buildType = "Simple";
+    };
+    components = {
+      "obd" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.dimensional)
+          (hsPkgs.either)
+          (hsPkgs.io-streams)
+          (hsPkgs.lens)
+          (hsPkgs.mtl)
+          (hsPkgs.serialport)
+          (hsPkgs.split)
+          (hsPkgs.stm)
+          (hsPkgs.stm-chans)
+          (hsPkgs.transformers)
+        ];
+      };
+      exes = {
+        "obd-terminal" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.dimensional
-            hsPkgs.either
-            hsPkgs.io-streams
-            hsPkgs.lens
-            hsPkgs.mtl
-            hsPkgs.serialport
-            hsPkgs.split
-            hsPkgs.stm
-            hsPkgs.stm-chans
-            hsPkgs.transformers
+            (hsPkgs.base)
+            (hsPkgs.obd)
+            (hsPkgs.bytestring)
+            (hsPkgs.haskeline)
+            (hsPkgs.mtl)
+            (hsPkgs.optparse-applicative)
+            (hsPkgs.transformers)
           ];
         };
-        exes = {
-          "obd-terminal" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.obd
-              hsPkgs.bytestring
-              hsPkgs.haskeline
-              hsPkgs.mtl
-              hsPkgs.optparse-applicative
-              hsPkgs.transformers
-            ];
-          };
-          "obd-example" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.obd
-              hsPkgs.lens
-              hsPkgs.transformers
-            ];
-          };
-        };
-        tests = {
-          "obd-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.obd
-            ];
-          };
+        "obd-example" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.obd)
+            (hsPkgs.lens)
+            (hsPkgs.transformers)
+          ];
         };
       };
-    }
+      tests = {
+        "obd-test" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.obd)
+          ];
+        };
+      };
+    };
+  }

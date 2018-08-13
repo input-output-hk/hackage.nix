@@ -1,47 +1,52 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "genvalidity-scientific";
-          version = "0.1.0.0";
-        };
-        license = "MIT";
-        copyright = "Copyright: (c) 2017 Tom Sydney Kerckhove";
-        maintainer = "syd.kerckhove@gmail.com";
-        author = "Tom Sydney Kerckhove";
-        homepage = "https://github.com/NorfairKing/validity#readme";
-        url = "";
-        synopsis = "GenValidity support for Scientific";
-        description = "Please see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "genvalidity-scientific";
+        version = "0.1.0.0";
       };
-      components = {
-        "genvalidity-scientific" = {
+      license = "MIT";
+      copyright = "Copyright: (c) 2017 Tom Sydney Kerckhove";
+      maintainer = "syd.kerckhove@gmail.com";
+      author = "Tom Sydney Kerckhove";
+      homepage = "https://github.com/NorfairKing/validity#readme";
+      url = "";
+      synopsis = "GenValidity support for Scientific";
+      description = "Please see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "genvalidity-scientific" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.QuickCheck)
+          (hsPkgs.genvalidity)
+          (hsPkgs.scientific)
+          (hsPkgs.validity)
+          (hsPkgs.validity-scientific)
+        ];
+      };
+      tests = {
+        "genvalidity-scientific-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.QuickCheck
-            hsPkgs.genvalidity
-            hsPkgs.scientific
-            hsPkgs.validity
-            hsPkgs.validity-scientific
+            (hsPkgs.base)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.genvalidity)
+            (hsPkgs.genvalidity-hspec)
+            (hsPkgs.genvalidity-scientific)
+            (hsPkgs.hspec)
+            (hsPkgs.scientific)
           ];
         };
-        tests = {
-          "genvalidity-scientific-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.QuickCheck
-              hsPkgs.genvalidity
-              hsPkgs.genvalidity-hspec
-              hsPkgs.genvalidity-scientific
-              hsPkgs.hspec
-              hsPkgs.scientific
-            ];
-          };
-        };
       };
-    }
+    };
+  }

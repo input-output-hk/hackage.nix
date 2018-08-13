@@ -1,42 +1,47 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "pointful";
-          version = "1.0.9";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Mikhail Glushenkov <mikhail.glushenkov@gmail.com>";
-        author = "Thomas Jäger, Bertram Felgenhauer, James Cook et al.";
-        homepage = "http://github.com/23Skidoo/pointful";
-        url = "";
-        synopsis = "Pointful refactoring tool";
-        description = "Stand-alone command-line version of the pointful plugin\nfor Lambdabot.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "pointful";
+        version = "1.0.9";
       };
-      components = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Mikhail Glushenkov <mikhail.glushenkov@gmail.com>";
+      author = "Thomas Jäger, Bertram Felgenhauer, James Cook et al.";
+      homepage = "http://github.com/23Skidoo/pointful";
+      url = "";
+      synopsis = "Pointful refactoring tool";
+      description = "Stand-alone command-line version of the pointful plugin\nfor Lambdabot.";
+      buildType = "Simple";
+    };
+    components = {
+      "pointful" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+          (hsPkgs.haskell-src-exts-simple)
+          (hsPkgs.mtl)
+          (hsPkgs.syb)
+          (hsPkgs.transformers)
+        ];
+      };
+      exes = {
         "pointful" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.containers
-            hsPkgs.haskell-src-exts-simple
-            hsPkgs.mtl
-            hsPkgs.syb
-            hsPkgs.transformers
+            (hsPkgs.base)
+            (hsPkgs.pointful)
           ];
         };
-        exes = {
-          "pointful" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.pointful
-            ];
-          };
-        };
       };
-    }
+    };
+  }

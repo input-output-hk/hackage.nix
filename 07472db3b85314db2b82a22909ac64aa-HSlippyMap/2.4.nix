@@ -1,27 +1,32 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "HSlippyMap";
-          version = "2.4";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "alex@xn--wxa.email";
-        author = "Alexandre Peyroux";
-        homepage = "https://github.com/apeyroux/HSlippyMap";
-        url = "";
-        synopsis = "OpenStreetMap Slippy Map";
-        description = "OpenStreetMap Slippy Map algorithm";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "HSlippyMap";
+        version = "2.4";
       };
-      components = {
-        "HSlippyMap" = {
-          depends  = [ hsPkgs.base ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "alex@xn--wxa.email";
+      author = "Alexandre Peyroux";
+      homepage = "https://github.com/apeyroux/HSlippyMap";
+      url = "";
+      synopsis = "OpenStreetMap Slippy Map";
+      description = "OpenStreetMap Slippy Map algorithm";
+      buildType = "Simple";
+    };
+    components = {
+      "HSlippyMap" = {
+        depends  = [ (hsPkgs.base) ];
       };
-    }
+    };
+  }

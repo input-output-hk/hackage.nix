@@ -1,48 +1,53 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "secd";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "BSD-3-Clause";
-        maintainer = "kwangyul.seo@gmail.com";
-        author = "Kwang Yul Seo";
-        homepage = "http://github.com/kseo/secd#readme";
-        url = "";
-        synopsis = "A Haskell implementation of the SECD abstract machine";
-        description = "Please see README.md";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "secd";
+        version = "0.1.0.0";
       };
-      components = {
-        "secd" = {
+      license = "BSD-3-Clause";
+      copyright = "BSD-3-Clause";
+      maintainer = "kwangyul.seo@gmail.com";
+      author = "Kwang Yul Seo";
+      homepage = "http://github.com/kseo/secd#readme";
+      url = "";
+      synopsis = "A Haskell implementation of the SECD abstract machine";
+      description = "Please see README.md";
+      buildType = "Simple";
+    };
+    components = {
+      "secd" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.mtl)
+          (hsPkgs.parsec)
+        ];
+      };
+      exes = {
+        "secdi" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.mtl
-            hsPkgs.parsec
+            (hsPkgs.base)
+            (hsPkgs.haskeline)
+            (hsPkgs.secd)
           ];
         };
-        exes = {
-          "secdi" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.haskeline
-              hsPkgs.secd
-            ];
-          };
-        };
-        tests = {
-          "secd-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.secd
-            ];
-          };
+      };
+      tests = {
+        "secd-test" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.secd)
+          ];
         };
       };
-    }
+    };
+  }

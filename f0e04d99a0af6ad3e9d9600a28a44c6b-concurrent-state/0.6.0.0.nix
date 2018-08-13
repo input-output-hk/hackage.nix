@@ -1,45 +1,50 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       examples = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "concurrent-state";
-          version = "0.6.0.0";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "me@joelt.io";
-        author = "Joel Taylor";
-        homepage = "https://github.com/joelteon/concurrent-state";
-        url = "";
-        synopsis = "MTL-like library using TVars";
-        description = "Writer, State, RWS backed by TVar";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "concurrent-state";
+        version = "0.6.0.0";
       };
-      components = {
-        "concurrent-state" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.exceptions
-            hsPkgs.mtl
-            hsPkgs.stm
-            hsPkgs.transformers
+      license = "MIT";
+      copyright = "";
+      maintainer = "me@joelt.io";
+      author = "Joel Taylor";
+      homepage = "https://github.com/joelteon/concurrent-state";
+      url = "";
+      synopsis = "MTL-like library using TVars";
+      description = "Writer, State, RWS backed by TVar";
+      buildType = "Simple";
+    };
+    components = {
+      "concurrent-state" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.exceptions)
+          (hsPkgs.mtl)
+          (hsPkgs.stm)
+          (hsPkgs.transformers)
+        ];
+      };
+      exes = {
+        "chat-server" = {
+          depends  = pkgs.lib.optionals (_flags.examples) [
+            (hsPkgs.base)
+            (hsPkgs.concurrent-state)
+            (hsPkgs.network)
+            (hsPkgs.stm)
           ];
         };
-        exes = {
-          "chat-server" = {
-            depends  = pkgs.lib.optionals _flags.examples [
-              hsPkgs.base
-              hsPkgs.concurrent-state
-              hsPkgs.network
-              hsPkgs.stm
-            ];
-          };
-        };
       };
-    }
+    };
+  }

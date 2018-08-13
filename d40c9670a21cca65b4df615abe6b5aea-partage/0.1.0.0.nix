@@ -1,52 +1,57 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "partage";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Copyright (c) 2015-2016 Jakub Waszczuk";
-        maintainer = "waszczuk.kuba@gmail.com";
-        author = "Jakub Waszczuk";
-        homepage = "https://github.com/kawu/partage";
-        url = "";
-        synopsis = "Parsing factorized";
-        description = "Parsing factorized tree adjoining grammars.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "partage";
+        version = "0.1.0.0";
       };
-      components = {
-        "partage" = {
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) 2015-2016 Jakub Waszczuk";
+      maintainer = "waszczuk.kuba@gmail.com";
+      author = "Jakub Waszczuk";
+      homepage = "https://github.com/kawu/partage";
+      url = "";
+      synopsis = "Parsing factorized";
+      description = "Parsing factorized tree adjoining grammars.";
+      buildType = "Simple";
+    };
+    components = {
+      "partage" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+          (hsPkgs.mtl)
+          (hsPkgs.transformers)
+          (hsPkgs.pipes)
+          (hsPkgs.PSQueue)
+          (hsPkgs.data-partition)
+          (hsPkgs.mmorph)
+          (hsPkgs.dawg-ord)
+          (hsPkgs.data-lens-light)
+          (hsPkgs.random)
+          (hsPkgs.vector)
+        ];
+      };
+      tests = {
+        "test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.containers
-            hsPkgs.mtl
-            hsPkgs.transformers
-            hsPkgs.pipes
-            hsPkgs.PSQueue
-            hsPkgs.data-partition
-            hsPkgs.mmorph
-            hsPkgs.dawg-ord
-            hsPkgs.data-lens-light
-            hsPkgs.random
-            hsPkgs.vector
+            (hsPkgs.partage)
+            (hsPkgs.base)
+            (hsPkgs.containers)
+            (hsPkgs.tasty)
+            (hsPkgs.tasty-hunit)
+            (hsPkgs.HUnit)
           ];
         };
-        tests = {
-          "test" = {
-            depends  = [
-              hsPkgs.partage
-              hsPkgs.base
-              hsPkgs.containers
-              hsPkgs.tasty
-              hsPkgs.tasty-hunit
-              hsPkgs.HUnit
-            ];
-          };
-        };
       };
-    }
+    };
+  }

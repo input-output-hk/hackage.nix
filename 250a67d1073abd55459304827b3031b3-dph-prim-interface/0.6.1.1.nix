@@ -1,32 +1,37 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "dph-prim-interface";
-          version = "0.6.1.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Ben Lippmeier <benl@cse.unsw.edu.au>";
-        author = "The DPH Team";
-        homepage = "http://www.haskell.org/haskellwiki/GHC/Data_Parallel_Haskell";
-        url = "";
-        synopsis = "Data Parallel Haskell segmented arrays. (abstract interface)";
-        description = "Empty implementation of flat parallel arrays.\nThis package exists only so that dph-prim-par and dph-prim-seq\ncan provide the same interface.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "dph-prim-interface";
+        version = "0.6.1.1";
       };
-      components = {
-        "dph-prim-interface" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.random
-            hsPkgs.vector
-            hsPkgs.dph-base
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Ben Lippmeier <benl@cse.unsw.edu.au>";
+      author = "The DPH Team";
+      homepage = "http://www.haskell.org/haskellwiki/GHC/Data_Parallel_Haskell";
+      url = "";
+      synopsis = "Data Parallel Haskell segmented arrays. (abstract interface)";
+      description = "Empty implementation of flat parallel arrays.\nThis package exists only so that dph-prim-par and dph-prim-seq\ncan provide the same interface.";
+      buildType = "Simple";
+    };
+    components = {
+      "dph-prim-interface" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.random)
+          (hsPkgs.vector)
+          (hsPkgs.dph-base)
+        ];
       };
-    }
+    };
+  }

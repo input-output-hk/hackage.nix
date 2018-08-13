@@ -1,43 +1,48 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "stack-run";
-          version = "0.1.1.4";
-        };
-        license = "MIT";
-        copyright = "Copyright (c) 2016 Pedro Tacla Yamada";
-        maintainer = "tacla.yamada@gmail.com";
-        author = "Pedro Tacla Yamada";
-        homepage = "https://github.com/yamadapc/stack-run";
-        url = "";
-        synopsis = "An equivalent to cabal run for stack.";
-        description = "Finds the project root, compiles your code and runs the\nfirst or set default executable. It's a shorthand for\n@stack build && stack run executable@, much like\n@cabal run@.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "stack-run";
+        version = "0.1.1.4";
       };
-      components = {
-        exes = {
-          "stack-run" = {
-            depends  = [
-              hsPkgs.Cabal
-              hsPkgs.terminal-size
-              hsPkgs.stm
-              hsPkgs.MissingH
-              hsPkgs.ansi-terminal
-              hsPkgs.async
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.conduit
-              hsPkgs.conduit-extra
-              hsPkgs.directory
-              hsPkgs.filepath
-              hsPkgs.time
-            ] ++ pkgs.lib.optional (!system.isWindows) hsPkgs.vty;
-          };
+      license = "MIT";
+      copyright = "Copyright (c) 2016 Pedro Tacla Yamada";
+      maintainer = "tacla.yamada@gmail.com";
+      author = "Pedro Tacla Yamada";
+      homepage = "https://github.com/yamadapc/stack-run";
+      url = "";
+      synopsis = "An equivalent to cabal run for stack.";
+      description = "Finds the project root, compiles your code and runs the\nfirst or set default executable. It's a shorthand for\n@stack build && stack run executable@, much like\n@cabal run@.";
+      buildType = "Simple";
+    };
+    components = {
+      exes = {
+        "stack-run" = {
+          depends  = [
+            (hsPkgs.Cabal)
+            (hsPkgs.terminal-size)
+            (hsPkgs.stm)
+            (hsPkgs.MissingH)
+            (hsPkgs.ansi-terminal)
+            (hsPkgs.async)
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.conduit)
+            (hsPkgs.conduit-extra)
+            (hsPkgs.directory)
+            (hsPkgs.filepath)
+            (hsPkgs.time)
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.vty);
         };
       };
-    }
+    };
+  }

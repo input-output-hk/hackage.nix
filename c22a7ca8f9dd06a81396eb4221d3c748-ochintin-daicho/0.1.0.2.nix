@@ -1,47 +1,52 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "ochintin-daicho";
-          version = "0.1.0.2";
-        };
-        license = "MIT";
-        copyright = "2017 Kadzuya Okamoto";
-        maintainer = "arow.okamoto+github@gmail.com";
-        author = "Kadzuya Okamoto";
-        homepage = "https://github.com/arowM/haskell-ochintin-daicho#readme";
-        url = "";
-        synopsis = "A module to manage payroll books for Japanese companies.";
-        description = "A module to manage payroll books for Japanese companies. This enable to export data to tax withholding book, etc...";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "ochintin-daicho";
+        version = "0.1.0.2";
       };
-      components = {
-        "ochintin-daicho" = {
+      license = "MIT";
+      copyright = "2017 Kadzuya Okamoto";
+      maintainer = "arow.okamoto+github@gmail.com";
+      author = "Kadzuya Okamoto";
+      homepage = "https://github.com/arowM/haskell-ochintin-daicho#readme";
+      url = "";
+      synopsis = "A module to manage payroll books for Japanese companies.";
+      description = "A module to manage payroll books for Japanese companies. This enable to export data to tax withholding book, etc...";
+      buildType = "Simple";
+    };
+    components = {
+      "ochintin-daicho" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bookkeeping)
+          (hsPkgs.text)
+        ];
+      };
+      tests = {
+        "ochintin-daicho-test" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bookkeeping
-            hsPkgs.text
+            (hsPkgs.base)
+            (hsPkgs.ochintin-daicho)
           ];
         };
-        tests = {
-          "ochintin-daicho-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.ochintin-daicho
-            ];
-          };
-          "doctest" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.Glob
-              hsPkgs.doctest
-              hsPkgs.ochintin-daicho
-            ];
-          };
+        "doctest" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.Glob)
+            (hsPkgs.doctest)
+            (hsPkgs.ochintin-daicho)
+          ];
         };
       };
-    }
+    };
+  }

@@ -1,67 +1,72 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       benchmark = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "crypto-pubkey";
-          version = "0.1.4";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Vincent Hanquez <vincent@snarc.org>";
-        maintainer = "Vincent Hanquez <vincent@snarc.org>";
-        author = "Vincent Hanquez <vincent@snarc.org>";
-        homepage = "http://github.com/vincenthz/hs-crypto-pubkey";
-        url = "";
-        synopsis = "Public Key cryptography";
-        description = "Public Key cryptography\n\nSupports RSA PKCS15, RSA OAEP, RSA PSS, DSA, ElGamal signature.\n\nAlso have primitive support for Diffie Hellman, and ElGamal encryption";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "crypto-pubkey";
+        version = "0.1.4";
       };
-      components = {
-        "crypto-pubkey" = {
+      license = "BSD-3-Clause";
+      copyright = "Vincent Hanquez <vincent@snarc.org>";
+      maintainer = "Vincent Hanquez <vincent@snarc.org>";
+      author = "Vincent Hanquez <vincent@snarc.org>";
+      homepage = "http://github.com/vincenthz/hs-crypto-pubkey";
+      url = "";
+      synopsis = "Public Key cryptography";
+      description = "Public Key cryptography\n\nSupports RSA PKCS15, RSA OAEP, RSA PSS, DSA, ElGamal signature.\n\nAlso have primitive support for Diffie Hellman, and ElGamal encryption";
+      buildType = "Simple";
+    };
+    components = {
+      "crypto-pubkey" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.crypto-random-api)
+          (hsPkgs.crypto-pubkey-types)
+          (hsPkgs.cryptohash)
+          (hsPkgs.crypto-numbers)
+        ];
+      };
+      tests = {
+        "test-crypto-pubkey" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.bytestring
-            hsPkgs.crypto-random-api
-            hsPkgs.crypto-pubkey-types
-            hsPkgs.cryptohash
-            hsPkgs.crypto-numbers
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.cryptohash)
+            (hsPkgs.crypto-pubkey)
+            (hsPkgs.crypto-numbers)
+            (hsPkgs.crypto-random-api)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.HUnit)
+            (hsPkgs.test-framework)
+            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs.test-framework-hunit)
           ];
         };
-        tests = {
-          "test-crypto-pubkey" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.cryptohash
-              hsPkgs.crypto-pubkey
-              hsPkgs.crypto-numbers
-              hsPkgs.crypto-random-api
-              hsPkgs.QuickCheck
-              hsPkgs.HUnit
-              hsPkgs.test-framework
-              hsPkgs.test-framework-quickcheck2
-              hsPkgs.test-framework-hunit
-            ];
-          };
-        };
-        benchmarks = {
-          "bench-crypto-pubkey" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.bytestring
-              hsPkgs.cprng-aes
-              hsPkgs.cryptohash
-              hsPkgs.crypto-random-api
-              hsPkgs.crypto-pubkey
-              hsPkgs.criterion
-              hsPkgs.mtl
-            ];
-          };
+      };
+      benchmarks = {
+        "bench-crypto-pubkey" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.bytestring)
+            (hsPkgs.cprng-aes)
+            (hsPkgs.cryptohash)
+            (hsPkgs.crypto-random-api)
+            (hsPkgs.crypto-pubkey)
+            (hsPkgs.criterion)
+            (hsPkgs.mtl)
+          ];
         };
       };
-    }
+    };
+  }

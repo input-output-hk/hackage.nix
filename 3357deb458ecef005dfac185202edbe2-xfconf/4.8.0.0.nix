@@ -1,53 +1,58 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {
       buildtests = false;
     } // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.6";
-        identifier = {
-          name = "xfconf";
-          version = "4.8.0.0";
-        };
-        license = "GPL-3.0-only";
-        copyright = "";
-        maintainer = "john.obbele@gmail.com";
-        author = "John Obbele";
-        homepage = "http://patch-tag.com/r/obbele/xfconf/home";
-        url = "";
-        synopsis = "FFI bindings to xfconf";
-        description = "Xfconf is a simple client-server configuration storage and query\nsystem build on top of glib and used by XFCE.";
-        buildType = "Custom";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "xfconf";
+        version = "4.8.0.0";
       };
-      components = {
-        "xfconf" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.glib
-          ] ++ pkgs.lib.optionals _flags.buildtests [
-            hsPkgs.test-framework
-            hsPkgs.test-framework-hunit
-            hsPkgs.test-framework-quickcheck2
-            hsPkgs.HUnit
-            hsPkgs.QuickCheck
-          ];
+      license = "GPL-3.0-only";
+      copyright = "";
+      maintainer = "john.obbele@gmail.com";
+      author = "John Obbele";
+      homepage = "http://patch-tag.com/r/obbele/xfconf/home";
+      url = "";
+      synopsis = "FFI bindings to xfconf";
+      description = "Xfconf is a simple client-server configuration storage and query\nsystem build on top of glib and used by XFCE.";
+      buildType = "Custom";
+    };
+    components = {
+      "xfconf" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.glib)
+        ] ++ pkgs.lib.optionals (_flags.buildtests) [
+          (hsPkgs.test-framework)
+          (hsPkgs.test-framework-hunit)
+          (hsPkgs.test-framework-quickcheck2)
+          (hsPkgs.HUnit)
+          (hsPkgs.QuickCheck)
+        ];
+        pkgconfig = [
+          (pkgconfPkgs.libxfconf-0)
+        ];
+      };
+      exes = {
+        "tests" = {
           pkgconfig = [
-            pkgconfPkgs.libxfconf-0
+            (pkgconfPkgs.libxfconf-0)
           ];
         };
-        exes = {
-          "tests" = {
-            pkgconfig = [
-              pkgconfPkgs.libxfconf-0
-            ];
-          };
-          "testGlib" = {
-            pkgconfig = [
-              pkgconfPkgs.libxfconf-0
-            ];
-          };
+        "testGlib" = {
+          pkgconfig = [
+            (pkgconfPkgs.libxfconf-0)
+          ];
         };
       };
-    }
+    };
+  }

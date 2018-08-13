@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "Kalman";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "Dominic Steinitz";
-        maintainer = "dominic@steinitz.org";
-        author = "Dominic Steinitz";
-        homepage = "https://github.com/idontgetoutmuch/Kalman";
-        url = "";
-        synopsis = "A slightly extended Kalman filter";
-        description = "";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "Kalman";
+        version = "0.1.0.0";
       };
-      components = {
-        "Kalman" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.hmatrix
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "Dominic Steinitz";
+      maintainer = "dominic@steinitz.org";
+      author = "Dominic Steinitz";
+      homepage = "https://github.com/idontgetoutmuch/Kalman";
+      url = "";
+      synopsis = "A slightly extended Kalman filter";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "Kalman" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.hmatrix)
+        ];
       };
-    }
+    };
+  }

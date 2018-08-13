@@ -1,40 +1,45 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "simple-vec3";
-          version = "0.1.0.0";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "<dima@dzhus.org>";
-        author = "Dmitry Dzhus";
-        homepage = "http://github.com/dzhus/simple-vec3/";
-        url = "";
-        synopsis = "Three-dimensional vectors of doubles with basic operations,\nsupporting Unbox and Storable class";
-        description = "A class of 3-vectors with a set of basic methods for\ngeometry operations on vectors and an associated\nmatrix type. Several instances are provided for\nuse with \"Data.Vector.Unboxed\" and\n\"Data.Vector.Storable\" as container types.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "simple-vec3";
+        version = "0.1.0.0";
       };
-      components = {
-        "simple-vec3" = {
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "<dima@dzhus.org>";
+      author = "Dmitry Dzhus";
+      homepage = "http://github.com/dzhus/simple-vec3/";
+      url = "";
+      synopsis = "Three-dimensional vectors of doubles with basic operations,\nsupporting Unbox and Storable class";
+      description = "A class of 3-vectors with a set of basic methods for\ngeometry operations on vectors and an associated\nmatrix type. Several instances are provided for\nuse with \"Data.Vector.Unboxed\" and\n\"Data.Vector.Storable\" as container types.";
+      buildType = "Simple";
+    };
+    components = {
+      "simple-vec3" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.vector)
+        ];
+      };
+      exes = {
+        "simple-vec3-benchmark" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.vector
+            (hsPkgs.base)
+            (hsPkgs.criterion)
+            (hsPkgs.simple-vec3)
+            (hsPkgs.vector)
           ];
         };
-        exes = {
-          "simple-vec3-benchmark" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.criterion
-              hsPkgs.simple-vec3
-              hsPkgs.vector
-            ];
-          };
-        };
       };
-    }
+    };
+  }

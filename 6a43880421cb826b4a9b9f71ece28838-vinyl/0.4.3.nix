@@ -1,55 +1,60 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "vinyl";
-          version = "0.4.3";
-        };
-        license = "MIT";
-        copyright = "";
-        maintainer = "jonsterling@me.com";
-        author = "Jonathan Sterling";
-        homepage = "";
-        url = "";
-        synopsis = "Extensible Records";
-        description = "Extensible records for Haskell with lenses using modern GHC features.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "vinyl";
+        version = "0.4.3";
       };
-      components = {
-        "vinyl" = {
+      license = "MIT";
+      copyright = "";
+      maintainer = "jonsterling@me.com";
+      author = "Jonathan Sterling";
+      homepage = "";
+      url = "";
+      synopsis = "Extensible Records";
+      description = "Extensible records for Haskell with lenses using modern GHC features.";
+      buildType = "Simple";
+    };
+    components = {
+      "vinyl" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.ghc-prim)
+          (hsPkgs.template-haskell)
+        ];
+      };
+      tests = {
+        "doctests" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.ghc-prim
-            hsPkgs.template-haskell
+            (hsPkgs.base)
+            (hsPkgs.lens)
+            (hsPkgs.vinyl)
+            (hsPkgs.doctest)
+            (hsPkgs.singletons)
           ];
         };
-        tests = {
-          "doctests" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.lens
-              hsPkgs.vinyl
-              hsPkgs.doctest
-              hsPkgs.singletons
-            ];
-          };
-        };
-        benchmarks = {
-          "bench-builder-all" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.vector
-              hsPkgs.criterion
-              hsPkgs.vinyl
-              hsPkgs.mwc-random
-              hsPkgs.lens
-              hsPkgs.linear
-            ];
-          };
+      };
+      benchmarks = {
+        "bench-builder-all" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.vector)
+            (hsPkgs.criterion)
+            (hsPkgs.vinyl)
+            (hsPkgs.mwc-random)
+            (hsPkgs.lens)
+            (hsPkgs.linear)
+          ];
         };
       };
-    }
+    };
+  }

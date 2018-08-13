@@ -1,30 +1,35 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.8";
-        identifier = {
-          name = "despair";
-          version = "0.0.1";
-        };
-        license = "BSD-3-Clause";
-        copyright = "";
-        maintainer = "Heather Cynede <Cynede@Gentoo.org>";
-        author = "Heather Cynede";
-        homepage = "";
-        url = "";
-        synopsis = "Despair";
-        description = "Despair";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "despair";
+        version = "0.0.1";
       };
-      components = {
-        "despair" = {
-          depends  = [
-            hsPkgs.base
-            hsPkgs.random
-          ];
-        };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Heather Cynede <Cynede@Gentoo.org>";
+      author = "Heather Cynede";
+      homepage = "";
+      url = "";
+      synopsis = "Despair";
+      description = "Despair";
+      buildType = "Simple";
+    };
+    components = {
+      "despair" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.random)
+        ];
       };
-    }
+    };
+  }

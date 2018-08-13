@@ -1,51 +1,56 @@
-{ compiler, flags ? {}, hsPkgs, pkgconfPkgs, pkgs, system }:
-let
+{ system
+, compiler
+, flags ? {}
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  let
     _flags = {} // flags;
-    in {
-      flags = _flags;
-      package = {
-        specVersion = "1.10";
-        identifier = {
-          name = "bunz";
-          version = "0.0.6";
-        };
-        license = "MIT";
-        copyright = "(c) 2017 Sendy Halim";
-        maintainer = "Sendy Halim <sendyhalim93@gmail.com>";
-        author = "Sendy Halim <sendyhalim93@gmail.com>";
-        homepage = "https://github.com/sendyhalim/bunz";
-        url = "";
-        synopsis = "CLI tool to beautify JSON string.";
-        description = "CLI tool to beautify JSON string.";
-        buildType = "Simple";
+  in {
+    flags = _flags;
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "bunz";
+        version = "0.0.6";
       };
-      components = {
+      license = "MIT";
+      copyright = "(c) 2017 Sendy Halim";
+      maintainer = "Sendy Halim <sendyhalim93@gmail.com>";
+      author = "Sendy Halim <sendyhalim93@gmail.com>";
+      homepage = "https://github.com/sendyhalim/bunz";
+      url = "";
+      synopsis = "CLI tool to beautify JSON string.";
+      description = "CLI tool to beautify JSON string.";
+      buildType = "Simple";
+    };
+    components = {
+      "bunz" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.text)
+        ];
+      };
+      exes = {
         "bunz" = {
           depends  = [
-            hsPkgs.base
-            hsPkgs.text
+            (hsPkgs.base)
+            (hsPkgs.bunz)
+            (hsPkgs.text)
+            (hsPkgs.unix)
+            (hsPkgs.cmdargs)
           ];
         };
-        exes = {
-          "bunz" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.bunz
-              hsPkgs.text
-              hsPkgs.unix
-              hsPkgs.cmdargs
-            ];
-          };
-        };
-        tests = {
-          "bunz-test" = {
-            depends  = [
-              hsPkgs.base
-              hsPkgs.bunz
-              hsPkgs.doctest
-              hsPkgs.hspec
-            ];
-          };
+      };
+      tests = {
+        "bunz-test" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.bunz)
+            (hsPkgs.doctest)
+            (hsPkgs.hspec)
+          ];
         };
       };
-    }
+    };
+  }
