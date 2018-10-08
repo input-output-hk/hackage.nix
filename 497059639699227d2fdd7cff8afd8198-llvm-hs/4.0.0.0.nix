@@ -47,6 +47,9 @@
             (hsPkgs.semigroups)
           ]
           else [ (hsPkgs.base) ]);
+        build-tools = [
+          (hsPkgs.buildPackages.hsc2hs)
+        ];
       };
       tests = {
         "test" = {

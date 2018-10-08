@@ -28,7 +28,6 @@
       "shell-monad" = {
         depends  = [
           (hsPkgs.base)
-          (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.text)
           (hsPkgs.unix)

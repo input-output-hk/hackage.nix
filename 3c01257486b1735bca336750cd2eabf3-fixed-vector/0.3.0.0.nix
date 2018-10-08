@@ -28,6 +28,7 @@
       "fixed-vector" = {
         depends  = [
           (hsPkgs.base)
+          (hsPkgs.base)
           (hsPkgs.primitive)
         ];
       };

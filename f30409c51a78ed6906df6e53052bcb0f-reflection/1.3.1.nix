@@ -30,6 +30,7 @@
       "reflection" = {
         depends  = [
           (hsPkgs.base)
+          (hsPkgs.base)
           (hsPkgs.tagged)
           (hsPkgs.template-haskell)
         ];

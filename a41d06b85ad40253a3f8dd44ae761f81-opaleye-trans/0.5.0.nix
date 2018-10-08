@@ -16,9 +16,9 @@
       };
       license = "BSD-3-Clause";
       copyright = "(c) 2015 Bitnomial, Inc";
-      maintainer = "wraithm@gmail.com";
+      maintainer = "wraithm@gmail.com, opensource@bitnomial.com";
       author = "Matthew Wraith";
-      homepage = "https://github.com/WraithM/opaleye-trans";
+      homepage = "https://github.com/bitnomial/opaleye-trans";
       url = "";
       synopsis = "A monad transformer for Opaleye";
       description = "A monad transformer for Opaleye with exceptions";

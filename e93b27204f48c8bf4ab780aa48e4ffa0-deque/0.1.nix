@@ -28,6 +28,7 @@
       "deque" = {
         depends  = [
           (hsPkgs.base-prelude)
+          (hsPkgs.base)
         ];
       };
     };

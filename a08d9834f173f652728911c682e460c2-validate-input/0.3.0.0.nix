@@ -27,6 +27,7 @@
     components = {
       "validate-input" = {
         depends  = [
+          (hsPkgs.either)
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.either)

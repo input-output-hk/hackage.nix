@@ -27,6 +27,7 @@
     components = {
       "thumbnail-plus" = {
         depends  = [
+          (hsPkgs.either)
           (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.data-default)

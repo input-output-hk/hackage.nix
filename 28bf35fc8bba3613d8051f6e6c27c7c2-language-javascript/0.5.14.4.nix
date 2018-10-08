@@ -28,6 +28,7 @@
       "language-javascript" = {
         depends  = [
           (hsPkgs.base)
+          (hsPkgs.base)
           (hsPkgs.array)
           (hsPkgs.mtl)
           (hsPkgs.containers)

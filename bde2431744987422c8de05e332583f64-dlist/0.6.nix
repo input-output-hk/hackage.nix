@@ -26,7 +26,10 @@
     };
     components = {
       "dlist" = {
-        depends  = [ (hsPkgs.base) ];
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.base)
+        ];
       };
       tests = {
         "test" = {

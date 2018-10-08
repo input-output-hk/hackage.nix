@@ -36,7 +36,6 @@
           (hsPkgs.maccatcher)
           (hsPkgs.time)
           (hsPkgs.base)
-          (hsPkgs.base)
         ];
       };
       exes = {

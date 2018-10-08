@@ -40,7 +40,6 @@
         ] ++ (if _flags.splitbase
           then [
             (hsPkgs.base)
-            (hsPkgs.base)
             (hsPkgs.directory)
             (hsPkgs.random)
             (hsPkgs.process)

@@ -30,6 +30,7 @@
       "http-conduit" = {
         depends  = [
           (hsPkgs.base)
+          (hsPkgs.base)
           (hsPkgs.bytestring)
           (hsPkgs.transformers)
           (hsPkgs.failure)

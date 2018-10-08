@@ -31,6 +31,7 @@
       "llvm-hs" = {
         depends  = [
           (hsPkgs.base)
+          (hsPkgs.base)
           (hsPkgs.attoparsec)
           (hsPkgs.exceptions)
           (hsPkgs.utf8-string)

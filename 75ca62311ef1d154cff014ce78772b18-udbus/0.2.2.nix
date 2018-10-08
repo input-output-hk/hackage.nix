@@ -39,7 +39,7 @@
           (hsPkgs.mtl)
           (hsPkgs.unix)
           (hsPkgs.ghc-prim)
-        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.lt "8.0")) (hsPkgs.base);
+        ] ++ [ (hsPkgs.base) ];
       };
       exes = {
         "dbus" = {

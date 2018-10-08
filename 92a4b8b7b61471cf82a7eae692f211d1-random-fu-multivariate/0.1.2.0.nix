@@ -18,7 +18,7 @@
       copyright = "(c) 2016 FP Complete Corporation";
       maintainer = "dominic@steinitz.org";
       author = "Dominic Steinitz, Jacob West";
-      homepage = "https://github.com/fpco/random-fu-multivariate";
+      homepage = "https://github.com/idontgetoutmuch/random-fu-multivariate";
       url = "";
       synopsis = "Multivariate distributions for random-fu";
       description = "Please see README.md";

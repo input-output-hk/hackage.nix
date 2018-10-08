@@ -29,13 +29,11 @@
         depends  = [
           (hsPkgs.network)
           (hsPkgs.parsec)
-          (hsPkgs.base)
           (hsPkgs.mtl)
           (hsPkgs.HUnit)
           (hsPkgs.regex-compat)
           (hsPkgs.filepath)
           (hsPkgs.hslogger)
-          (hsPkgs.base)
           (hsPkgs.base)
           (hsPkgs.directory)
           (hsPkgs.random)

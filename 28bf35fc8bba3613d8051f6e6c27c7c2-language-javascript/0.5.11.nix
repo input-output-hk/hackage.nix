@@ -37,6 +37,7 @@
         ];
         build-tools = [
           (hsPkgs.buildPackages.happy)
+          (hsPkgs.buildPackages.alex)
           (hsPkgs.buildPackages.happy)
         ];
       };

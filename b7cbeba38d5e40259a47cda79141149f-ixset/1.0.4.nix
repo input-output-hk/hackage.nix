@@ -29,6 +29,7 @@
     components = {
       "ixset" = {
         depends  = ([
+          (hsPkgs.base)
           (hsPkgs.containers)
           (hsPkgs.safecopy)
           (hsPkgs.template-haskell)

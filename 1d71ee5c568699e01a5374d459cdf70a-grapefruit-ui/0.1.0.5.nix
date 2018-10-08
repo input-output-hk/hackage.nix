@@ -27,6 +27,7 @@
     components = {
       "grapefruit-ui" = {
         depends  = [
+          (hsPkgs.base)
           (hsPkgs.arrows)
           (hsPkgs.base)
           (hsPkgs.colour)

@@ -31,6 +31,7 @@
       "reflection" = {
         depends  = ([
           (hsPkgs.base)
+          (hsPkgs.base)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.tagged)) ++ pkgs.lib.optional (_flags.th && (compiler.isGhc && true)) (hsPkgs.template-haskell);
       };
     };

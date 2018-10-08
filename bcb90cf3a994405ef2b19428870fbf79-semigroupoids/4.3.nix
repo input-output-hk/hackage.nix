@@ -34,6 +34,7 @@
       "semigroupoids" = {
         depends  = ((([
           (hsPkgs.base)
+          (hsPkgs.base-orphans)
           (hsPkgs.base)
           (hsPkgs.semigroups)
           (hsPkgs.transformers)

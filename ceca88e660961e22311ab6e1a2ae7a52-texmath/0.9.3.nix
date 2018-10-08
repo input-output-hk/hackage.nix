@@ -30,6 +30,7 @@
     components = {
       "texmath" = {
         depends  = [
+          (hsPkgs.base)
           (hsPkgs.xml)
           (hsPkgs.parsec)
           (hsPkgs.containers)

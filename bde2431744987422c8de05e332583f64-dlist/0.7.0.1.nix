@@ -28,6 +28,7 @@
       "dlist" = {
         depends  = [
           (hsPkgs.base)
+          (hsPkgs.base)
           (hsPkgs.deepseq)
         ];
       };
