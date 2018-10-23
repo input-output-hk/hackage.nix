@@ -1,0 +1,64 @@
+{ system
+, compiler
+, flags
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "myTestlll";
+        version = "1.0.0";
+      };
+      license = "BSD-3-Clause";
+      copyright = "Copyright (c) 2008-2014 Paul Hudak";
+      maintainer = "Mark Santolucito <mark.santolucito@yale.edu>,";
+      author = "Mark Santolucito <mark.santolucito@yale.edu>,";
+      homepage = "http://haskell.cs.yale.edu/";
+      url = "";
+      synopsis = "testign upload";
+      description = "high-performance back-end for real-time audio.";
+      buildType = "Custom";
+    };
+    components = {
+      "myTestlll" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.array)
+          (hsPkgs.bytestring)
+          (hsPkgs.random)
+          (hsPkgs.mtl)
+          (hsPkgs.containers)
+          (hsPkgs.markov-chain)
+          (hsPkgs.CCA)
+          (hsPkgs.UISF)
+          (hsPkgs.PortMidi)
+          (hsPkgs.HCodecs)
+          (hsPkgs.heap)
+          (hsPkgs.template-haskell)
+          (hsPkgs.monadIO)
+          (hsPkgs.deepseq)
+          (hsPkgs.pure-fft)
+          (hsPkgs.stm)
+          (hsPkgs.arrows)
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
+          (hsPkgs.base)
+          (hsPkgs.syb)
+          (hsPkgs.ghc-prim)
+        ];
+      };
+      tests = {
+        "test-euterpea" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.Euterpea)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.Cabal)
+            (hsPkgs.ansi-terminal)
+          ];
+        };
+      };
+    };
+  }

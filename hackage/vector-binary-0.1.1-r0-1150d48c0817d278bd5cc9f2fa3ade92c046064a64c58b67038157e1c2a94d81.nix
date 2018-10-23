@@ -1,0 +1,34 @@
+{ system
+, compiler
+, flags
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.6";
+      identifier = {
+        name = "vector-binary";
+        version = "0.1.1";
+      };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "waszczuk.kuba@gmail.com";
+      author = "Jakub Waszczuk";
+      homepage = "https://github.com/kawu/vector-binary";
+      url = "";
+      synopsis = "Binary instances for vector types (deprecated)";
+      description = "DEPRECATED.  Use vector-binary-instances >= 0.2 instead.\n\nThe library provides binary instances for boxed and unboxed vector types.\nThe code is based on the vector-binary-instances package but restricts\ninstances to monomorphic vector types.";
+      buildType = "Simple";
+    };
+    components = {
+      "vector-binary" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.vector)
+          (hsPkgs.binary)
+        ];
+      };
+    };
+  }

@@ -1,0 +1,85 @@
+{ system
+, compiler
+, flags
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  {
+    flags = { perf = false; };
+    package = {
+      specVersion = "1.8";
+      identifier = {
+        name = "distributed-process-extras";
+        version = "0.1.0";
+      };
+      license = "BSD-3-Clause";
+      copyright = "Tim Watson 2012 - 2013";
+      maintainer = "watson.timothy@gmail.com";
+      author = "Tim Watson";
+      homepage = "http://github.com/haskell-distributed/distributed-process-extras";
+      url = "";
+      synopsis = "Cloud Haskell Extras";
+      description = "Supporting library, providing common types and utilities used by the\nvarious components that make up the distributed-process-platform package.";
+      buildType = "Simple";
+    };
+    components = {
+      "distributed-process-extras" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.distributed-process)
+          (hsPkgs.binary)
+          (hsPkgs.deepseq)
+          (hsPkgs.mtl)
+          (hsPkgs.containers)
+          (hsPkgs.hashable)
+          (hsPkgs.unordered-containers)
+          (hsPkgs.fingertree)
+          (hsPkgs.stm)
+          (hsPkgs.time)
+          (hsPkgs.transformers)
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.5") [
+          (hsPkgs.template-haskell)
+          (hsPkgs.derive)
+          (hsPkgs.uniplate)
+          (hsPkgs.ghc-prim)
+        ];
+      };
+      tests = {
+        "InternalQueueTests" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.ansi-terminal)
+            (hsPkgs.distributed-process)
+            (hsPkgs.distributed-process-extras)
+            (hsPkgs.distributed-process-tests)
+            (hsPkgs.HUnit)
+            (hsPkgs.test-framework)
+            (hsPkgs.test-framework-hunit)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs.rematch)
+            (hsPkgs.ghc-prim)
+          ];
+        };
+        "TimerTests" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.ansi-terminal)
+            (hsPkgs.deepseq)
+            (hsPkgs.distributed-process)
+            (hsPkgs.distributed-process-extras)
+            (hsPkgs.distributed-process-tests)
+            (hsPkgs.network-transport)
+            (hsPkgs.network-transport-tcp)
+            (hsPkgs.HUnit)
+            (hsPkgs.test-framework)
+            (hsPkgs.test-framework-hunit)
+            (hsPkgs.QuickCheck)
+            (hsPkgs.test-framework-quickcheck2)
+            (hsPkgs.rematch)
+            (hsPkgs.ghc-prim)
+          ];
+        };
+      };
+    };
+  }
