@@ -1,0 +1,44 @@
+{ system
+, compiler
+, flags
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.6.0";
+      identifier = {
+        name = "svgcairo";
+        version = "0.11.0";
+      };
+      license = "LicenseRef-GPL";
+      copyright = "(c) 2001-2010 The Gtk2Hs Team";
+      maintainer = "gtk2hs-users@sourceforge.net";
+      author = "Duncan Coutts";
+      homepage = "http://www.haskell.org/gtk2hs/";
+      url = "";
+      synopsis = "Binding to the GTK+ OpenGL Extension";
+      description = "Svgcairo provides the GDK objects to support OpenGL rendering in GTK+,\nand GtkWidget API add-ons to make GTK+ widgets OpenGL-capable.";
+      buildType = "Custom";
+    };
+    components = {
+      "svgcairo" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.array)
+          (hsPkgs.containers)
+          (hsPkgs.haskell98)
+          (hsPkgs.mtl)
+          (hsPkgs.glib)
+          (hsPkgs.pango)
+          (hsPkgs.cairo)
+          (hsPkgs.gtk)
+        ];
+        pkgconfig = [
+          (pkgconfPkgs.librsvg-2.0)
+          (pkgconfPkgs.cairo-svg)
+        ];
+      };
+    };
+  }

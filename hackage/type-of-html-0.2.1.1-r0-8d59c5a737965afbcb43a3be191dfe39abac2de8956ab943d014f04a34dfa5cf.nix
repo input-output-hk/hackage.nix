@@ -1,0 +1,55 @@
+{ system
+, compiler
+, flags
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "type-of-html";
+        version = "0.2.1.1";
+      };
+      license = "BSD-3-Clause";
+      copyright = "2017, Florian Knupfer";
+      maintainer = "fknupfer@gmail.com";
+      author = "Florian Knupfer";
+      homepage = "https://github.com/knupfer/type-of-html";
+      url = "";
+      synopsis = "High performance type driven html generation.";
+      description = "This library makes most invalid html documents compile time errors and uses advanced type level features to realise compile time computations.";
+      buildType = "Simple";
+    };
+    components = {
+      "type-of-html" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.text)
+        ];
+      };
+      tests = {
+        "test" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.type-of-html)
+            (hsPkgs.hspec)
+            (hsPkgs.text)
+          ];
+        };
+      };
+      benchmarks = {
+        "bench" = {
+          depends  = [
+            (hsPkgs.base)
+            (hsPkgs.type-of-html)
+            (hsPkgs.text)
+            (hsPkgs.bytestring)
+            (hsPkgs.blaze-html)
+            (hsPkgs.criterion)
+          ];
+        };
+      };
+    };
+  }

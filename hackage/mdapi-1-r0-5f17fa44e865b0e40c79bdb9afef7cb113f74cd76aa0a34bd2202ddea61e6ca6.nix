@@ -1,0 +1,40 @@
+{ system
+, compiler
+, flags
+, pkgs
+, hsPkgs
+, pkgconfPkgs }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.10";
+      identifier = {
+        name = "mdapi";
+        version = "1";
+      };
+      license = "BSD-2-Clause";
+      copyright = "(c) 2015 Red Hat, Inc.";
+      maintainer = "relrod@redhat.com";
+      author = "Ricky Elrod";
+      homepage = "https://github.com/relrod/mdapi-hs";
+      url = "";
+      synopsis = "Haskell interface to Fedora's mdapi";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "mdapi" = {
+        depends  = [
+          (hsPkgs.aeson)
+          (hsPkgs.base)
+          (hsPkgs.bytestring)
+          (hsPkgs.data-default)
+          (hsPkgs.lens)
+          (hsPkgs.lens-aeson)
+          (hsPkgs.text)
+          (hsPkgs.transformers)
+          (hsPkgs.wreq)
+        ];
+      };
+    };
+  }
