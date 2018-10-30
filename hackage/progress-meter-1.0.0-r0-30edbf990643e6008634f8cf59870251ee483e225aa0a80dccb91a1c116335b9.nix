@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       devel = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "progress-meter" = {
+      "library" = {
         depends  = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.async)

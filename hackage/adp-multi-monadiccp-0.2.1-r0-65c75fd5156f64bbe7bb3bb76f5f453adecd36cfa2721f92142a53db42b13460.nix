@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildbenchmark = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "adp-multi-monadiccp" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

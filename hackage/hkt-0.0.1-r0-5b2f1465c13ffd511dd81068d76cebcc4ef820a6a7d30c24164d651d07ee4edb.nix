@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       reduce-core-output = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hkt" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.protolude)

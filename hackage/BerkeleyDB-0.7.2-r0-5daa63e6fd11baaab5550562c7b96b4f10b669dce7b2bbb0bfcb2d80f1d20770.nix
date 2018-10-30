@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { cxx = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "BerkeleyDB" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.extensible-exceptions)

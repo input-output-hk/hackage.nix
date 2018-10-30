@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test_delay_upper_bound = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "stopwatch" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.transformers)

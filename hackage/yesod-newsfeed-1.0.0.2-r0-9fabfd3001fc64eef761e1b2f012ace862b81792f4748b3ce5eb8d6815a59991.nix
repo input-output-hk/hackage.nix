@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       blaze_html_0_5 = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "yesod-newsfeed" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.yesod-core)

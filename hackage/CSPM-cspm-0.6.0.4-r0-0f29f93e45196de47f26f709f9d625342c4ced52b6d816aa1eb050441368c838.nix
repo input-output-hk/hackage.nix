@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "CSPM-cspm" = {
+      "library" = {
         depends  = [
           (hsPkgs.CSPM-Frontend)
           (hsPkgs.CSPM-CoreLanguage)

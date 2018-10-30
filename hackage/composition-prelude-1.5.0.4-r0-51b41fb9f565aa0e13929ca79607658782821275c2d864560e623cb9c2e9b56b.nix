@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       development = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "composition-prelude" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         build-tools = pkgs.lib.optional (!flags.cross) (hsPkgs.buildPackages.cpphs);
       };

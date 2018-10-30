@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       instanceinbase = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "storable-complex" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
       };
     };

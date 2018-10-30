@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { bmi2 = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "hw-rankselect" = {
+      "library" = {
         depends  = [
           (hsPkgs.hw-rankselect-base)
           (hsPkgs.vector)

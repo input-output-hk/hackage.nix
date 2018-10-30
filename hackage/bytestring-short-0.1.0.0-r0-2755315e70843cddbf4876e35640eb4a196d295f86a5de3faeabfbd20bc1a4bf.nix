@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-backport = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "bytestring-short" = {
+      "library" = {
         depends  = if flags.use-backport
           then [
             (hsPkgs.base)

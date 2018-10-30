@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       ghcjsnativerecord = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "superrecord" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.constraints)

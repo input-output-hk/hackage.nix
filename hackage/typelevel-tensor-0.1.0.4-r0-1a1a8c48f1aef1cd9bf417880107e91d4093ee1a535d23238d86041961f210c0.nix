@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { test = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "typelevel-tensor" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.control-monad-failure)

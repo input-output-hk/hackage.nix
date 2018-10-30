@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       foreign-api = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "myo" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

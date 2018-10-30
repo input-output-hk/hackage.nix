@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "libmpd" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.network)

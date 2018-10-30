@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -22,5 +23,7 @@
       description = "Currently being prepared for release, reserving the namespace here.";
       buildType = "Simple";
     };
-    components = { "freq" = {}; };
+    components = {
+      "library" = {};
+    };
   }

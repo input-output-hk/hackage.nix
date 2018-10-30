@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       warp = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "ghcjs-dom-hello" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ghcjs-dom)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       mtl2 = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "cmdlib" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.syb)

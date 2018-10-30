@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       disable-default-paths = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hmatrix-glpk" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       llvm = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "squeeze" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.Cabal)

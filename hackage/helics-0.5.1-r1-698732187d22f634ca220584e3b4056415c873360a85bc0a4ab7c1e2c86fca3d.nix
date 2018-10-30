@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       example = false;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "helics" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.data-default-class)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { web = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "packdeps" = {
+      "library" = {
         depends  = pkgs.lib.optionals (!flags.web) [
           (hsPkgs.base)
           (hsPkgs.tar)

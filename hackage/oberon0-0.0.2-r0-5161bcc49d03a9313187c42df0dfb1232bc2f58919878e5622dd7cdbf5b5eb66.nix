@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       l1 = false;
@@ -32,7 +33,7 @@
       buildType = "Custom";
     };
     components = {
-      "oberon0" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base)

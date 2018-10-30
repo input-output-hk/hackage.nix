@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       cairo_pdf = true;
@@ -27,7 +28,7 @@
       buildType = "Custom";
     };
     components = {
-      "cairo" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.utf8-string)

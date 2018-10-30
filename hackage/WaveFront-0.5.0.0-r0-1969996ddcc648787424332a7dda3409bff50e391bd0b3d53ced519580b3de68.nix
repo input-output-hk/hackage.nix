@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       pedantic = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "WaveFront" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.lens)

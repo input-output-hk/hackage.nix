@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       extensibleexceptions = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "control-monad-exception" = {
+      "library" = {
         depends  = [
           (hsPkgs.failure)
           (hsPkgs.monadloc)

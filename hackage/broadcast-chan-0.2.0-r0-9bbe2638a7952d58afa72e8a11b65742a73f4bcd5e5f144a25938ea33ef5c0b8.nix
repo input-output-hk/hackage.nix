@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       sync = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "broadcast-chan" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.unliftio-core)

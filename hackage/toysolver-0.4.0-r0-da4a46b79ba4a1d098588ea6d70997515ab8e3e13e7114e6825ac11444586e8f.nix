@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       forcechar8 = false;
@@ -33,7 +34,7 @@
       buildType = "Simple";
     };
     components = {
-      "toysolver" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.base)
           (hsPkgs.template-haskell)

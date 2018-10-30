@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build_fs_events = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "delta" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

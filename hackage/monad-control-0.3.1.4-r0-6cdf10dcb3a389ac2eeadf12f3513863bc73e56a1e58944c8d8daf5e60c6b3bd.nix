@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { instancest = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "monad-control" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       optimize = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "tomlcheck" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.htoml-megaparsec)

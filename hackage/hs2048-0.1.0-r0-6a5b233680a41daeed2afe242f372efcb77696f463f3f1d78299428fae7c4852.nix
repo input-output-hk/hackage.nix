@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       documentation = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hs2048" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.random)

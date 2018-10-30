@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       examples = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "servant-elm" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.elm-export)

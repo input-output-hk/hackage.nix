@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       arrows = true;
@@ -32,7 +33,7 @@
       buildType = "Simple";
     };
     components = {
-      "invertible" = {
+      "library" = {
         depends  = ((((((([
           (hsPkgs.base)
           (hsPkgs.haskell-src-meta)

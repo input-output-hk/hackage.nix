@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { examples = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "netwire-input-glfw" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.netwire-input)

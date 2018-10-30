@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       w3ctests = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "swish" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

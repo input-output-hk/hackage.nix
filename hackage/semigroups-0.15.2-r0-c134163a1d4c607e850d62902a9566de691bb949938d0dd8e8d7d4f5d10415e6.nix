@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       hashable = true;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "semigroups" = {
+      "library" = {
         depends  = ((((([
           (hsPkgs.base)
           (hsPkgs.nats)

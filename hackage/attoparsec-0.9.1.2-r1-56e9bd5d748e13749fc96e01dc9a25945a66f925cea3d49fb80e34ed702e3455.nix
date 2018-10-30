@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       developer = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "attoparsec" = {
+      "library" = {
         depends  = ([
           (hsPkgs.deepseq)
         ] ++ (if flags.split-base

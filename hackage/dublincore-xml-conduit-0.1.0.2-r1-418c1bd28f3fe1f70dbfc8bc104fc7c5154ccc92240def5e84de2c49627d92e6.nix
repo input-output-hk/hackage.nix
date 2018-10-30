@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       enable-hlint-test = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "dublincore-xml-conduit" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.conduit)

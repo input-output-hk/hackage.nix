@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { small_base = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "hprotoc-fork" = {
+      "library" = {
         depends  = [
           (hsPkgs.protocol-buffers-fork)
           (hsPkgs.protocol-buffers-descriptor-fork)

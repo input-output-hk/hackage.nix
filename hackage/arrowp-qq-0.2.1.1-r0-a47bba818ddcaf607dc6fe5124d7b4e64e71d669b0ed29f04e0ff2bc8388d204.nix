@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debug = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "arrowp-qq" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

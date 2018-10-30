@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       warn-as-error = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "rmonad" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

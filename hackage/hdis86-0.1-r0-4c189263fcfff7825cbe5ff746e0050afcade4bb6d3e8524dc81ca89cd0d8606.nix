@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       external-udis86 = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hdis86" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

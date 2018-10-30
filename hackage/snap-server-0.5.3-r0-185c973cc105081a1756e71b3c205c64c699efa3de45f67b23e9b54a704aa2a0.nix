@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       libev = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "snap-server" = {
+      "library" = {
         depends  = (([
           (hsPkgs.array)
           (hsPkgs.attoparsec)

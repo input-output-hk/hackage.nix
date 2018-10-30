@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { use_parsec = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "ghci-history-parser" = {
+      "library" = {
         depends  = if flags.use_parsec
           then [
             (hsPkgs.base)

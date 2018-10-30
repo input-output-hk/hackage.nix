@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       atlas = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "gsl-random" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = (((pkgs.lib.optionals (flags.atlas) [
           (pkgs."gsl")

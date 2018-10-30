@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildtests = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "data-object-yaml" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.data-object)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { tfp = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "fixed-length" = {
+      "library" = {
         depends  = [
           (hsPkgs.non-empty)
           (hsPkgs.utility-ht)

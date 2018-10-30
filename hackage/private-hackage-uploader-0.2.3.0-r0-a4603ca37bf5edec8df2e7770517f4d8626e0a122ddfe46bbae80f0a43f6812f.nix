@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       library-only = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "private-hackage-uploader" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.directory)

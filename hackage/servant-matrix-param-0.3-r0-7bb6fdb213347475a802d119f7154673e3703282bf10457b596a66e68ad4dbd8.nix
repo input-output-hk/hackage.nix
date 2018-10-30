@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       with-servant-aeson-specs = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "servant-matrix-param" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.servant)

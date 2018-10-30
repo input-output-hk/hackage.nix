@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { llvm = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "clock" = {
+      "library" = {
         depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.6") [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)

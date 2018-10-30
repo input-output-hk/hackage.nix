@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       semigroup-in-base = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "partial-semigroup" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (flags.identity-in-base) (hsPkgs.base)) ++ (if flags.semigroup-in-base

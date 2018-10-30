@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       usenativewindowslibraries = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "gl" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

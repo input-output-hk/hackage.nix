@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "fail" = {
+      "library" = {
         depends  = pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.base);
       };
     };

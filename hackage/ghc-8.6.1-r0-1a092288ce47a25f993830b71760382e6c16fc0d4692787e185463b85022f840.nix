@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       terminfo = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "ghc" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.deepseq)

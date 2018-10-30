@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       oldquickcheck = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "barecheck" = {
+      "library" = {
         depends  = [
           (hsPkgs.QuickCheck)
           (hsPkgs.base)

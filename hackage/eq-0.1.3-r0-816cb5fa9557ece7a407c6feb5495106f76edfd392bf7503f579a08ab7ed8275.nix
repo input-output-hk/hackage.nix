@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       typefamilies = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "eq" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
       };
     };

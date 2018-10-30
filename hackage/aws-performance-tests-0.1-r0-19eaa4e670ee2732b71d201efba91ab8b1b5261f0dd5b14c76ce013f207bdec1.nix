@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { with-chart = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "aws-performance-tests" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.aws)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-integer-simple = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hmpfr" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ (if flags.use-integer-simple

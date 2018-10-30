@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bibutils = true;
@@ -30,7 +31,7 @@
       buildType = "Custom";
     };
     components = {
-      "pandoc-citeproc" = {
+      "library" = {
         depends  = (((((([
           (hsPkgs.containers)
           (hsPkgs.directory)

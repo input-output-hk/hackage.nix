@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       doctests = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "clash-prelude" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.data-default)

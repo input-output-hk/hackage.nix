@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       ghc7 = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "yesod" = {
+      "library" = {
         depends  = ([
           (hsPkgs.yesod-core)
           (hsPkgs.yesod-auth)

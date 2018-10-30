@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       pkgconfig = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "jack" = {
+      "library" = {
         depends  = [
           (hsPkgs.midi)
           (hsPkgs.event-list)

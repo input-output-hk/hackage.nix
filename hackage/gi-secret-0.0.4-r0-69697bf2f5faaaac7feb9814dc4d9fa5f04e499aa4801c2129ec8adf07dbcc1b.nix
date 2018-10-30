@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       enable-overloading = true;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "gi-secret" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.haskell-gi-base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       experimental = false;
@@ -30,7 +31,7 @@
       buildType = "Simple";
     };
     components = {
-      "foundation" = {
+      "library" = {
         depends  = [
           (hsPkgs.basement)
         ] ++ (if compiler.isGhc && compiler.version.lt "8.0"

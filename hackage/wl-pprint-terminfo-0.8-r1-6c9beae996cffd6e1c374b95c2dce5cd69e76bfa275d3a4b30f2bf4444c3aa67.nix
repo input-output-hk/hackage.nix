@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { cursed = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "wl-pprint-terminfo" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.semigroups)

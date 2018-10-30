@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       high_precision_date = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "persistent-mongoDB" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.persistent)

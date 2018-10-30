@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       typeable_fingerprint = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "uniplate" = {
+      "library" = {
         depends  = if flags.typeable_fingerprint
           then [
             (hsPkgs.base)

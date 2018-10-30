@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       examples = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "computational-algebra" = {
+      "library" = {
         depends  = [
           (hsPkgs.ListLike)
           (hsPkgs.MonadRandom)

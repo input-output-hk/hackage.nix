@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       remote-configs = true;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "configuration-tools" = {
+      "library" = {
         depends  = [
           (hsPkgs.Cabal)
           (hsPkgs.aeson)

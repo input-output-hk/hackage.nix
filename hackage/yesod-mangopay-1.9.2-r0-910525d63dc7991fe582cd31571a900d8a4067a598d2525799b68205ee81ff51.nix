@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       dev = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "yesod-mangopay" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.mangopay)

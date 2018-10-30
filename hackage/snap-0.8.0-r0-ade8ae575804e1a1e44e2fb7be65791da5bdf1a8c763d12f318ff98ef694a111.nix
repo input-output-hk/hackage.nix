@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { hint = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "snap" = {
+      "library" = {
         depends  = ([
           (hsPkgs.MonadCatchIO-transformers)
           (hsPkgs.aeson)

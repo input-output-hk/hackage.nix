@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       optimize = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "hnix" = {
+      "library" = {
         depends  = (((([
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)

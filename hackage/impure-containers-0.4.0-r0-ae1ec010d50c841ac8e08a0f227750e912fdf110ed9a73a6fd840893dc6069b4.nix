@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       unsafe-tricks = true;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "impure-containers" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.hashable)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       officialcsfmlforwindows = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "SFML" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = if system.isWindows
           then [

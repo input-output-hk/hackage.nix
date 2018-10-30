@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       usebytestrings = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "language-c" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.array)

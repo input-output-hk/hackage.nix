@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       install-examples = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "fraxl" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.async)

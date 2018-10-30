@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { semigroups = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "llvm-hs-pure" = {
+      "library" = {
         depends  = [
           (hsPkgs.attoparsec)
           (hsPkgs.bytestring)

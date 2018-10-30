@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bounded-channels = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "hans" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.cereal)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-hackage = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "stylish-cabal" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.Cabal)

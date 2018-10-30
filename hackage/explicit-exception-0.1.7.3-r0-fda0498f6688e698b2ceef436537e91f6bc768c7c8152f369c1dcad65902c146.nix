@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildtests = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "explicit-exception" = {
+      "library" = {
         depends  = [
           (hsPkgs.transformers)
         ] ++ (if compiler.isJhc && true

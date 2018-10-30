@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { examples = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "gore-and-ash-lambdacube" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

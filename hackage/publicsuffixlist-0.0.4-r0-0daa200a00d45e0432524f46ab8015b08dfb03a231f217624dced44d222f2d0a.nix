@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       create = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "publicsuffixlist" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-executables = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "time-warp" = {
+      "library" = {
         depends  = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.array)

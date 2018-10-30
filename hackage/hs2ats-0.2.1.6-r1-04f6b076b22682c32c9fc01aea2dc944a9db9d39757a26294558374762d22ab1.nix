@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       development = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hs2ats" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.haskell-src-exts)

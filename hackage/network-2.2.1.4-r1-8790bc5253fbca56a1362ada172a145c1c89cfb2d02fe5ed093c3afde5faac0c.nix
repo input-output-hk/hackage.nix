@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { base4 = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Configure";
     };
     components = {
-      "network" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.parsec)

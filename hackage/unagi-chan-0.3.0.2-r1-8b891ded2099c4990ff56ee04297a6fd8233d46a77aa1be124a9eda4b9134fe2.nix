@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       compare-benchmarks = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "unagi-chan" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.atomic-primops)

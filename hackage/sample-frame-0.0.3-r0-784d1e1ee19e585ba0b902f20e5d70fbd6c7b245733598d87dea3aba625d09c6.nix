@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildbenchmarks = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "sample-frame" = {
+      "library" = {
         depends  = [
           (hsPkgs.storable-record)
           (hsPkgs.QuickCheck)

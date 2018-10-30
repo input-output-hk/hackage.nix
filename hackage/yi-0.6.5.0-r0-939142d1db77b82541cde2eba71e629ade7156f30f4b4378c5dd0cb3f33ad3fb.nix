@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       cocoa = false;
@@ -33,7 +34,7 @@
       buildType = "Simple";
     };
     components = {
-      "yi" = {
+      "library" = {
         depends  = (((((([
           (hsPkgs.Cabal)
           (hsPkgs.Diff)

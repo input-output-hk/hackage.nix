@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "hsseccomp" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = [ (pkgs."seccomp") ];
         build-tools = [

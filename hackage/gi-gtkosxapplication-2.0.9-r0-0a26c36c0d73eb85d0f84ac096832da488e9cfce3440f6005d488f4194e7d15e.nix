@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       overloaded-methods = true;
@@ -27,7 +28,7 @@
       buildType = "Custom";
     };
     components = {
-      "gi-gtkosxapplication" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.haskell-gi-base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-doctests = true;
@@ -28,7 +29,7 @@
       buildType = "Custom";
     };
     components = {
-      "rcu" = {
+      "library" = {
         depends  = [
           (hsPkgs.atomic-primops)
           (hsPkgs.base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { demo = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "load-font" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs)

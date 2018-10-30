@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-interactive = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "wild-bind-x11" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.wild-bind)

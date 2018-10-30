@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       gui = false;
@@ -27,7 +28,7 @@
       buildType = "Custom";
     };
     components = {
-      "GenI" = {
+      "library" = {
         depends  = [
           (hsPkgs.parsec)
           (hsPkgs.QuickCheck)

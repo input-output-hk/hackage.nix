@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       development = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "dependency" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)

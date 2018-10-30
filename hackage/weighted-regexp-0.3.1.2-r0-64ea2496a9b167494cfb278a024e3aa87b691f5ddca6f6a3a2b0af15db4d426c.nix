@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       quickcheck = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "weighted-regexp" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       small_base = true;
@@ -30,7 +31,7 @@
       buildType = "Simple";
     };
     components = {
-      "xmonad-extras" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.mtl)
           (hsPkgs.unix)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       patched-for-trac-9262 = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "th-context" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

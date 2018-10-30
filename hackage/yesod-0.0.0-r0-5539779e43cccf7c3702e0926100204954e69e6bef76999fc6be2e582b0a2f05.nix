@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildtests = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "yesod" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.old-locale)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       base3 = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "NaturalSort" = {
+      "library" = {
         depends  = [
           (hsPkgs.bytestring)
           (hsPkgs.strict)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-samples = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "lens-regex" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

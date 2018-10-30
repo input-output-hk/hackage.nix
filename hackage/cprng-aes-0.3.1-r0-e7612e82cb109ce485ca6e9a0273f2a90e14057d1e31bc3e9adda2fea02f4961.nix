@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       fastaes = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "cprng-aes" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.bytestring)

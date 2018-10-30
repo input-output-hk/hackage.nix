@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       aeson = true;
@@ -32,7 +33,7 @@
       buildType = "Simple";
     };
     components = {
-      "safe-money" = {
+      "library" = {
         depends  = ((((((([
           (hsPkgs.base)
           (hsPkgs.constraints)

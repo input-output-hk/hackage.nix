@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       explicittext = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hydrogen-prelude" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

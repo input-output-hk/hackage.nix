@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       split-base = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "regex-base" = {
+      "library" = {
         depends  = (if flags.split-base
           then [
             (hsPkgs.base)

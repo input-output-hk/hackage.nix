@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       blaze_html_0_5 = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "pandoc" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.syb)

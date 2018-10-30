@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debugandersenconstraints = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "llvm-analysis" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.vector)

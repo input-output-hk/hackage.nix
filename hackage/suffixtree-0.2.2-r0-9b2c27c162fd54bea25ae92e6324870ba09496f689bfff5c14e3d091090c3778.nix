@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bytestring-in-base = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "suffixtree" = {
+      "library" = {
         depends  = ([
           (hsPkgs.QuickCheck)
         ] ++ (if flags.bytestring-in-base

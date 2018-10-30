@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       optimize-gmp = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "cborg" = {
+      "library" = {
         depends  = ([
           (hsPkgs.array)
           (hsPkgs.base)

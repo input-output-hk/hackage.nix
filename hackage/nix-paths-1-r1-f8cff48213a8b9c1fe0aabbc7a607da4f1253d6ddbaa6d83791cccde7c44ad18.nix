@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       allow-relative-paths = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "nix-paths" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.process)

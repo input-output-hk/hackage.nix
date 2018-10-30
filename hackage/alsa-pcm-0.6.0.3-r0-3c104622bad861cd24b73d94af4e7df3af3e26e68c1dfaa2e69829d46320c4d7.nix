@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildexamples = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "alsa-pcm" = {
+      "library" = {
         depends  = [
           (hsPkgs.alsa-core)
           (hsPkgs.storable-record)

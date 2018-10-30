@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       wasapi = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "bindings-portaudio" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)

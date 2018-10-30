@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       hasnumsparks = true;
@@ -29,7 +30,7 @@
       buildType = "Custom";
     };
     components = {
-      "speculation" = {
+      "library" = {
         depends  = [
           (hsPkgs.ghc-prim)
           (hsPkgs.tag-bits)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       lifted = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "shelly" = {
+      "library" = {
         depends  = [
           (hsPkgs.containers)
           (hsPkgs.time)

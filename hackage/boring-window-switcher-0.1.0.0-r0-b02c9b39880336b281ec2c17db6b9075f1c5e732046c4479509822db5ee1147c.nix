@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       author-test = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "boring-window-switcher" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.X11)

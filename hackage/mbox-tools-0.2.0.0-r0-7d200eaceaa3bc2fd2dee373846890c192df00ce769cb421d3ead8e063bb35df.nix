@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use_hutt = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "mbox-tools" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

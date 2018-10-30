@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { profunctors = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "semigroupoid-extras" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.semigroupoids)

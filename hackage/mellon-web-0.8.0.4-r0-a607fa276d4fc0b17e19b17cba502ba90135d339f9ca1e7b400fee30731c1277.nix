@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       client-unlock-example = true;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "mellon-web" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)

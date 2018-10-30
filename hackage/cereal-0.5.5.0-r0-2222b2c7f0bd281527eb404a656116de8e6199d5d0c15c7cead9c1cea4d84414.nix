@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bytestring-builder = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "cereal" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.containers)

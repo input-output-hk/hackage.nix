@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       externallibsass = false;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "hlibsass" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = if flags.externallibsass
           then [ (pkgs."sass") ]

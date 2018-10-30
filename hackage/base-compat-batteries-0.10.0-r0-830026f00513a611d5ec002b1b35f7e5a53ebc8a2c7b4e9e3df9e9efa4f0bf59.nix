@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "base-compat-batteries" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.base)
           (hsPkgs.base-compat)

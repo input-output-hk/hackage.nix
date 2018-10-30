@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       oauth-not-supported = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "yesod-auth-oauth" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.yesod-auth)

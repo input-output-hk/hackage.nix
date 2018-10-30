@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       no_arbitrary = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "edit" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.deepseq)

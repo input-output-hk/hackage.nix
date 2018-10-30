@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       gpl = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "git-vogue" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

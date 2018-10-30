@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       allbackends = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "keyring" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (system.isOsx) [

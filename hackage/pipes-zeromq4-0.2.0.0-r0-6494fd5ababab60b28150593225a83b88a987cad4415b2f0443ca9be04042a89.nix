@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { examples = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "pipes-zeromq4" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.zeromq4-haskell)

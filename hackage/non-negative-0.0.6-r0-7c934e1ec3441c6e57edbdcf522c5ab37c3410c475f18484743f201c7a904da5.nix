@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       splitbase = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "non-negative" = {
+      "library" = {
         depends  = [
           (hsPkgs.QuickCheck)
         ] ++ [ (hsPkgs.base) ];

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       executables = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "pinchot" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

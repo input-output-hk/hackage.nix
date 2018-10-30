@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       syb-with-class = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "HStringTemplate" = {
+      "library" = {
         depends  = ([
           (hsPkgs.syb)
           (hsPkgs.base)

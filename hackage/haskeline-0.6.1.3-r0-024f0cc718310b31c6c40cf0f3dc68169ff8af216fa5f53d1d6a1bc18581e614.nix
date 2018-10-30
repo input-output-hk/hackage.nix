@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       old-base = true;
@@ -27,7 +28,7 @@
       buildType = "Custom";
     };
     components = {
-      "haskeline" = {
+      "library" = {
         depends  = ([
           (hsPkgs.filepath)
           (hsPkgs.mtl)

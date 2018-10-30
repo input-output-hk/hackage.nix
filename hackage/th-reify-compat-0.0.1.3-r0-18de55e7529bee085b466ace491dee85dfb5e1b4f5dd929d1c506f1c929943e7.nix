@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       template-haskell-210 = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "th-reify-compat" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ [

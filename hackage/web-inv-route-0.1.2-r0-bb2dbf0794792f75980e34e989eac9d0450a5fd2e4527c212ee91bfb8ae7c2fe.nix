@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       uri = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "web-inv-route" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.base)
           (hsPkgs.containers)

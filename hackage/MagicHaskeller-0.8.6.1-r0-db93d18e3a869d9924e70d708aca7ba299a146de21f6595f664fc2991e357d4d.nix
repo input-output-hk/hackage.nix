@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       ghcapi = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "MagicHaskeller" = {
+      "library" = {
         depends  = (([
           (hsPkgs.template-haskell)
           (hsPkgs.base)

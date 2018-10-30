@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       development = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "fast-arithmetic" = {
+      "library" = {
         depends  = if compiler.isGhc && compiler.version.lt "7.10"
           then [
             (hsPkgs.base)

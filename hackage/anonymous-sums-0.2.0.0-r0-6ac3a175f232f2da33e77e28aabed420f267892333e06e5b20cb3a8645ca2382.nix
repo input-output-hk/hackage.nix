@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-generator = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "anonymous-sums" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
       };
       exes = {

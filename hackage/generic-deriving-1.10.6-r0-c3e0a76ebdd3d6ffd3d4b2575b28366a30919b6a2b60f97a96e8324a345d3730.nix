@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { base-4-9 = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "generic-deriving" = {
+      "library" = {
         depends  = [
           (hsPkgs.containers)
           (hsPkgs.ghc-prim)

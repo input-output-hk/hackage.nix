@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       md5 = true;
@@ -30,7 +31,7 @@
       buildType = "Simple";
     };
     components = {
-      "postgresql-typed" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.array)

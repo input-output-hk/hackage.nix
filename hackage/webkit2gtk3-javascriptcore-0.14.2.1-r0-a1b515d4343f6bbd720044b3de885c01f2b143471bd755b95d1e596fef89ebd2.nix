@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "webkit2gtk3-javascriptcore" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         pkgconfig = [
           (pkgconfPkgs.webkit2gtk-4.0)

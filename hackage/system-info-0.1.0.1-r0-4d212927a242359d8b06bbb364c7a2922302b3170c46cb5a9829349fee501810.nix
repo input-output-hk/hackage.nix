@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "system-info" = {
+      "library" = {
         depends  = pkgs.lib.optional (system.isLinux) (hsPkgs.base) ++ pkgs.lib.optionals (system.isWindows) [
           (hsPkgs.base)
           (hsPkgs.Win32)

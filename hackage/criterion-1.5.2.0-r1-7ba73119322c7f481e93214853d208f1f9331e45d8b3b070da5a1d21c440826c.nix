@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       fast = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "criterion" = {
+      "library" = {
         depends  = (([
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)

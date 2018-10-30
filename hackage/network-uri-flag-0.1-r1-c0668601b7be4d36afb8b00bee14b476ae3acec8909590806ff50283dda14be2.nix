@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { network-uri = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "network-uri-flag" = {
+      "library" = {
         depends  = [
           (hsPkgs.network-uri)
           (hsPkgs.network)

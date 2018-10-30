@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-executable = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "ede" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-wl-pprint)

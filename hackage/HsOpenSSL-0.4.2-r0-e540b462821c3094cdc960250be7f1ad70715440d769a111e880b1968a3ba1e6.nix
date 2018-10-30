@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { splitbase = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Configure";
     };
     components = {
-      "HsOpenSSL" = {
+      "library" = {
         depends  = if flags.splitbase
           then [
             (hsPkgs.base)

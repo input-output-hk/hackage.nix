@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       unsafe-operations = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "parameterized-utils" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.th-abstraction)

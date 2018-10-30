@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-properties = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "ed25519" = {
+      "library" = {
         depends  = [
           (hsPkgs.ghc-prim)
           (hsPkgs.base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { split-base = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Configure";
     };
     components = {
-      "GLUT" = {
+      "library" = {
         depends  = [
           (hsPkgs.OpenGL)
         ] ++ (if flags.split-base

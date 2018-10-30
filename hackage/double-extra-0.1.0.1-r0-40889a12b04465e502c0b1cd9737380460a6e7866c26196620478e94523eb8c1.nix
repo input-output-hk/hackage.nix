@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       cassava = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "double-extra" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.double-conversion)

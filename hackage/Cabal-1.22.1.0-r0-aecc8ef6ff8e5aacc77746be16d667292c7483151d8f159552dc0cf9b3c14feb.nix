@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bundled-binary-generic = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "Cabal" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.deepseq)

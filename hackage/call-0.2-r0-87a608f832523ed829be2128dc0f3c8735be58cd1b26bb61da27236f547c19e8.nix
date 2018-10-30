@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildhelloworld = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "call" = {
+      "library" = {
         depends  = [
           (hsPkgs.audiovisual)
           (hsPkgs.base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       mkl = false;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "bindings-levmar" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = pkgs.lib.optionals (flags.mkl) (if system.isX86_64
           then [

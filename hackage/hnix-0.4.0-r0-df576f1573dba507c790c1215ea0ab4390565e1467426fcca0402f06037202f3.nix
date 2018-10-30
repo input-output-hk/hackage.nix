@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { parsec = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "hnix" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)

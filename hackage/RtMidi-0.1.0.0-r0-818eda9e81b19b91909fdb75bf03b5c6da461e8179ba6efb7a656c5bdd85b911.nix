@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       alsa = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "RtMidi" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = (([
           (pkgs."stdc++")

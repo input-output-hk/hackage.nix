@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "pandoc-types" = {
+      "library" = {
         depends  = (if compiler.isGhc && compiler.version.ge "6.10"
           then [
             (hsPkgs.base)

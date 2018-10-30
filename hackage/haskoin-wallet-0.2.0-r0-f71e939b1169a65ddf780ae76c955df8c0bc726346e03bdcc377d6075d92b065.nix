@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       mysql = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "haskoin-wallet" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)

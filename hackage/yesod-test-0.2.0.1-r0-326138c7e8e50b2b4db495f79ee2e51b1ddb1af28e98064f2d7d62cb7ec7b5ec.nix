@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       ghc7 = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "yesod-test" = {
+      "library" = {
         depends  = ([
           (hsPkgs.hxt)
           (hsPkgs.attoparsec)

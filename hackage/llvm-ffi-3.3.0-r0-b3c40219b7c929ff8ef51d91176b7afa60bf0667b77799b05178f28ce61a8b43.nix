@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       developer = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "llvm-ffi" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         pkgconfig = if flags.specificpkgconfig
           then [ (pkgconfPkgs.llvm-3.3) ]

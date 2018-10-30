@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-penny = true;
@@ -32,7 +33,7 @@
       buildType = "Simple";
     };
     components = {
-      "penny" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.action-permutations)

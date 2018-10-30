@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       warnings = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "LogicGrowsOnTrees" = {
+      "library" = {
         depends  = [
           (hsPkgs.AbortT-transformers)
           (hsPkgs.AbortT-mtl)

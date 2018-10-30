@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -22,5 +23,7 @@
       description = "This is very small helper package without any dependencies";
       buildType = "Simple";
     };
-    components = { "with" = {}; };
+    components = {
+      "library" = {};
+    };
   }

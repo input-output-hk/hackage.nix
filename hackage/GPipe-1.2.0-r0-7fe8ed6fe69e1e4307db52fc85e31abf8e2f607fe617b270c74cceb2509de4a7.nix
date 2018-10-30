@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       containers03 = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "GPipe" = {
+      "library" = {
         depends  = [
           (hsPkgs.containers)
           (hsPkgs.mtl)

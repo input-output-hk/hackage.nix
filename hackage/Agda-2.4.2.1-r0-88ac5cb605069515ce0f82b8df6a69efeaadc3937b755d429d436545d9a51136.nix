@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       cpphs = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "Agda" = {
+      "library" = {
         depends  = (([
           (hsPkgs.array)
           (hsPkgs.base)

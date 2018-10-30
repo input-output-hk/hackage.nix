@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       link-nlopt-cxx = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "nlopt-haskell" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.vector)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { withcairo = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "approx-rand-test" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.vector)

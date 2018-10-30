@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       th = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "distributed-process" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.binary)

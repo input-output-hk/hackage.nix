@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       with-bytestring = true;
@@ -32,7 +33,7 @@
       buildType = "Simple";
     };
     components = {
-      "data-default-extra" = {
+      "library" = {
         depends  = (((((((([
           (hsPkgs.base)
           (hsPkgs.data-default-class)

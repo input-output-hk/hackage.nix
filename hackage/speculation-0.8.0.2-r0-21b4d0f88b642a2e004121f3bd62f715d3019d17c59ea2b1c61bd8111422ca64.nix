@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       lib = true;
@@ -29,7 +30,7 @@
       buildType = "Custom";
     };
     components = {
-      "speculation" = {
+      "library" = {
         depends  = pkgs.lib.optionals (!(!flags.lib)) [
           (hsPkgs.base)
           (hsPkgs.parallel)

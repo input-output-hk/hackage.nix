@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       text-names-broken = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "enumerator" = {
+      "library" = {
         depends  = ([
           (hsPkgs.transformers)
           (hsPkgs.bytestring)

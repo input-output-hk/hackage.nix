@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { splitbase = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "test-framework-hunit" = {
+      "library" = {
         depends  = [
           (hsPkgs.test-framework)
           (hsPkgs.HUnit)

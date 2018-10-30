@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { profile = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "reactive-thread" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.monad-parallel)

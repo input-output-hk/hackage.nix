@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       old-base = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "HTTP" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.network)

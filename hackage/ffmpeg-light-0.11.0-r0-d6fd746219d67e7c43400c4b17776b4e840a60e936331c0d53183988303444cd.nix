@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       builddemo = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "ffmpeg-light" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.either)

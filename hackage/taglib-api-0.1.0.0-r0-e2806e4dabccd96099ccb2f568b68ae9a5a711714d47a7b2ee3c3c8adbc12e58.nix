@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       usepkgconfig = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "taglib-api" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.text)

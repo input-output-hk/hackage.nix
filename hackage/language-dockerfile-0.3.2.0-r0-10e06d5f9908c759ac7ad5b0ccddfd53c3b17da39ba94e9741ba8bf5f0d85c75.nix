@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       dockerfmt = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "language-dockerfile" = {
+      "library" = {
         depends  = [
           (hsPkgs.ShellCheck)
           (hsPkgs.base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       benchmark-uniplate = false;
@@ -34,7 +35,7 @@
       buildType = "Custom";
     };
     components = {
-      "lens" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.bytestring)

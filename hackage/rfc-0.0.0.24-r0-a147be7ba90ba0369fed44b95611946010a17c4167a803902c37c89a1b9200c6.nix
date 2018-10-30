@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       browser = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "rfc" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.base)

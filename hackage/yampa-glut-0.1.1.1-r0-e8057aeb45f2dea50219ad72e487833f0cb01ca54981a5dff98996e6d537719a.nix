@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       yampa-core = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "yampa-glut" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.OpenGL)

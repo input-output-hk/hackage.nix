@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "acme-everything" = {
+      "library" = {
         depends  = [
           (hsPkgs.3d-graphics-examples)
           (hsPkgs.3dmodels)

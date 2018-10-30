@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       flat-perm-symbols = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "servant-auth-token-api" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.aeson)

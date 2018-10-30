@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "array-primops" = {
+      "library" = {
         depends  = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)

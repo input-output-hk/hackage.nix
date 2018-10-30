@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "hp2any-graph" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.hp2any-core)

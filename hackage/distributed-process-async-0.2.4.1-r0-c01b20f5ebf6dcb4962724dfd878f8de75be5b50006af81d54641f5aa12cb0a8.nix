@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { perf = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "distributed-process-async" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.data-accessor)

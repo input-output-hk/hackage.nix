@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildanatool = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "concraft" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

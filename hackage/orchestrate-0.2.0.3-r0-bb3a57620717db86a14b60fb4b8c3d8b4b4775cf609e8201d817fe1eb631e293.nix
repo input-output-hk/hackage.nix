@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       network-specs = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "orchestrate" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.text)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bounds-checks = true;
@@ -27,7 +28,7 @@
       buildType = "Custom";
     };
     components = {
-      "accelerate-io" = {
+      "library" = {
         depends  = [
           (hsPkgs.accelerate)
           (hsPkgs.base)

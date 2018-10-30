@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bundled-binary-generic = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "Cabal" = {
+      "library" = {
         depends  = ((((([
           (hsPkgs.array)
           (hsPkgs.base)

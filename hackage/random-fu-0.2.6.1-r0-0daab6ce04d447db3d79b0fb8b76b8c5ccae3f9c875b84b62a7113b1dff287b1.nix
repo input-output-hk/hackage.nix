@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       base4_2 = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "random-fu" = {
+      "library" = {
         depends  = (([
           (hsPkgs.math-functions)
           (hsPkgs.monad-loops)

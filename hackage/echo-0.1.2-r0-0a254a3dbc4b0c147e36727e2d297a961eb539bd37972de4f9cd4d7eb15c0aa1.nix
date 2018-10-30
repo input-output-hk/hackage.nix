@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       win32-2-5 = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "echo" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.process)

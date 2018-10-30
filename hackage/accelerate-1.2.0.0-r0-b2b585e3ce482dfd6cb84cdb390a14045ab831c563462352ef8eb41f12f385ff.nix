@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debug = false;
@@ -30,7 +31,7 @@
       buildType = "Custom";
     };
     components = {
-      "accelerate" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)

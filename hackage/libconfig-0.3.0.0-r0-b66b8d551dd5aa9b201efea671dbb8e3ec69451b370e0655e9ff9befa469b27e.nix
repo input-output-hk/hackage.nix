@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       prisms = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "libconfig" = {
+      "library" = {
         depends  = if flags.prisms && flags.binary && flags.cereal
           then [
             (hsPkgs.base)

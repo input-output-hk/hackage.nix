@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       native-dns = true;
@@ -30,7 +31,7 @@
       buildType = "Custom";
     };
     components = {
-      "cabal-install" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.async)
           (hsPkgs.array)

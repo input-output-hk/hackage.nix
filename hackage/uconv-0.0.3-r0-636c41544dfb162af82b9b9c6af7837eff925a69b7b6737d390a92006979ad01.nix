@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bytestring_in_base = true;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "uconv" = {
+      "library" = {
         depends  = if flags.bytestring_in_base
           then [ (hsPkgs.base) ]
           else [

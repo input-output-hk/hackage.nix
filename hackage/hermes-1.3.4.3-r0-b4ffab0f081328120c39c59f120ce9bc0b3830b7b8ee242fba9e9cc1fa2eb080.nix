@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       hpc = false;
@@ -30,7 +31,7 @@
       buildType = "Simple";
     };
     components = {
-      "hermes" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.binary)

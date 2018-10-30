@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       chart = false;
@@ -28,7 +29,7 @@
       buildType = "Custom";
     };
     components = {
-      "hledger" = {
+      "library" = {
         depends  = [
           (hsPkgs.hledger-lib)
           (hsPkgs.HUnit)

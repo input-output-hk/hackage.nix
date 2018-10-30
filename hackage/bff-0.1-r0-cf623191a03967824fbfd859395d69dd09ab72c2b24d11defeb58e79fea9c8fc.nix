@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       binaries = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "bff" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

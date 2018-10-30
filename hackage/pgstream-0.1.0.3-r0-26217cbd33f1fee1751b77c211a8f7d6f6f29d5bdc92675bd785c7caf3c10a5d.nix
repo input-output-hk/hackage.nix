@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       optimized = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "pgstream" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.text)

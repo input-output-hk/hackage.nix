@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { haste-inst = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "haste-gapi" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.data-default)

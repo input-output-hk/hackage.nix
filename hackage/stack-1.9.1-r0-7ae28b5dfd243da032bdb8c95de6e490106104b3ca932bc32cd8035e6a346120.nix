@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       disable-git-info = false;
@@ -29,7 +30,7 @@
       buildType = "Custom";
     };
     components = {
-      "stack" = {
+      "library" = {
         depends  = [
           (hsPkgs.Cabal)
           (hsPkgs.aeson)

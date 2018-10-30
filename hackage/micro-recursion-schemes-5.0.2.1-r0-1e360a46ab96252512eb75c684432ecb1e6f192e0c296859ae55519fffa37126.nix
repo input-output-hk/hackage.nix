@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       template-haskell = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "micro-recursion-schemes" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (flags.template-haskell) [

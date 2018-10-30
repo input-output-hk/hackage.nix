@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       threaded = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "hledger-web" = {};
+      "library" = {};
       exes = {
         "hledger-web" = {
           depends  = [

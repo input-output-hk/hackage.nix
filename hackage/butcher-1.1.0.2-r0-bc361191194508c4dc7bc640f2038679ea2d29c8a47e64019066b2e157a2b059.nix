@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       butcher-dev = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "butcher" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.free)

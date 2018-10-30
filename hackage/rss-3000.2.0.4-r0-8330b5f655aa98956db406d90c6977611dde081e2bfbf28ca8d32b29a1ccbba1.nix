@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       old-locale = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "rss" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.HaXml)

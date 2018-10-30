@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       developer = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "llvm-tf" = {
+      "library" = {
         depends  = [
           (hsPkgs.llvm-ffi)
           (hsPkgs.tfp)

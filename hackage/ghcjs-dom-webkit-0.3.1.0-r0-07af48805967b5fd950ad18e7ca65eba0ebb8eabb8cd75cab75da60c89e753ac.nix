@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       old-webkit = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "ghcjs-dom-webkit" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.transformers)

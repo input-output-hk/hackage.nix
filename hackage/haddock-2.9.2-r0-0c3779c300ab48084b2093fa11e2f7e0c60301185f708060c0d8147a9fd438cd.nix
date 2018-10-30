@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       in-ghc-tree = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "haddock" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.filepath)

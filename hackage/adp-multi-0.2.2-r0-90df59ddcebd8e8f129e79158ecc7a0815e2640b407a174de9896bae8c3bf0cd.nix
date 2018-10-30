@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildtests = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "adp-multi" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

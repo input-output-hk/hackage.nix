@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       gsl-example = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "inline-c" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)

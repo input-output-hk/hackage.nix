@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       two-point-one = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "mtl-compat" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ (if flags.two-point-one

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       check = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "linear-maps" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

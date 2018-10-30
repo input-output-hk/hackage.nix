@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       blaze_html_0_5 = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "xml2html" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.text)

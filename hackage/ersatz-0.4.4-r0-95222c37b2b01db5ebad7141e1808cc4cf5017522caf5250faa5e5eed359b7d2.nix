@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       examples = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "ersatz" = {
+      "library" = {
         depends  = [
           (hsPkgs.array)
           (hsPkgs.base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "configurator-export" = {
+      "library" = {
         depends  = if compiler.isGhc && compiler.version.ge "7.10"
           then [
             (hsPkgs.base)

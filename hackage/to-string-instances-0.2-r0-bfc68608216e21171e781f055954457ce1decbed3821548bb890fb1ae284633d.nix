@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bytestring = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "to-string-instances" = {
+      "library" = {
         depends  = (([
           (hsPkgs.to-string-class)
         ] ++ pkgs.lib.optional (flags.bytestring) (hsPkgs.bytestring)) ++ pkgs.lib.optional (flags.doc) (hsPkgs.pretty)) ++ pkgs.lib.optional (flags.text) (hsPkgs.text);

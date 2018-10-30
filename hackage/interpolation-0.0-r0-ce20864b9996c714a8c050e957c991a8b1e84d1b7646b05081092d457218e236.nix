@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildexamples = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "interpolation" = {
+      "library" = {
         depends  = [
           (hsPkgs.utility-ht)
           (hsPkgs.base)

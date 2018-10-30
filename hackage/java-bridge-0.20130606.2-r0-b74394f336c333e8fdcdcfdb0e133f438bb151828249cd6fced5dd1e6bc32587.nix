@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       only_core = false;
@@ -30,7 +31,7 @@
       buildType = "Custom";
     };
     components = {
-      "java-bridge" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.directory)

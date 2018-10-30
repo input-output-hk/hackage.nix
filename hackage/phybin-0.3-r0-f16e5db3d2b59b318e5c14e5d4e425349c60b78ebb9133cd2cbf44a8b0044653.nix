@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       hashrf = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "phybin" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.directory)

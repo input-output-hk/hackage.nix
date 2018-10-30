@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "mpg123-bindings" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = [ (pkgs."mpg123") ];
         build-tools = [

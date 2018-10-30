@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       double = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "hledger-lib" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.base-compat)

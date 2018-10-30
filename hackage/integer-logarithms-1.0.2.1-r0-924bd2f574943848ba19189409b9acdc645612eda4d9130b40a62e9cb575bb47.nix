@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       integer-gmp = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "integer-logarithms" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.array)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       applicative-in-base = true;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "dlist" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ [ (hsPkgs.base) ];

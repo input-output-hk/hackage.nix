@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       minisat = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "jukebox" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

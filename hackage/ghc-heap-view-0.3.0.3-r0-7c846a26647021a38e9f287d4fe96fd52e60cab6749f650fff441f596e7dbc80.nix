@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       prim-supports-any = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "ghc-heap-view" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ghc)

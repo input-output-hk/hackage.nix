@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       include-ghc-prim = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "ghc-prim" = {
+      "library" = {
         depends  = [ (hsPkgs.rts) ];
       };
     };

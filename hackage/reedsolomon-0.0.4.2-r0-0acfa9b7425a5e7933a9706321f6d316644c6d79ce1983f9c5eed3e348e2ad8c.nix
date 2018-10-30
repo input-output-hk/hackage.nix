@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       simd = true;
@@ -27,7 +28,7 @@
       buildType = "Custom";
     };
     components = {
-      "reedsolomon" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.vector)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "awesomium-raw" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = [
           (pkgs."awesomium-1.6.5")

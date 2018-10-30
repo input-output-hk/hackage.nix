@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debug = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "conduit" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.lifted-base)

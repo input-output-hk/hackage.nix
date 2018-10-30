@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       base2 = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "bibtex" = {
+      "library" = {
         depends  = [
           (hsPkgs.parsec)
           (hsPkgs.containers)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       systemencoding = true;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "encoding" = {
+      "library" = {
         depends  = [
           (hsPkgs.array)
           (hsPkgs.base)

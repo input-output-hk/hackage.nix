@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       nopkgconfig = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "bindings-libzip" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)

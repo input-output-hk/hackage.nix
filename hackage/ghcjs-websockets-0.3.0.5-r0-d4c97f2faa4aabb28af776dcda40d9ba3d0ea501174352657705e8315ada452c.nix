@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { ghcjs = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "ghcjs-websockets" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)

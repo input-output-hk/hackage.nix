@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       ghcjs = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "jsaddle" = {
+      "library" = {
         depends  = (([
           (hsPkgs.template-haskell)
           (hsPkgs.base)

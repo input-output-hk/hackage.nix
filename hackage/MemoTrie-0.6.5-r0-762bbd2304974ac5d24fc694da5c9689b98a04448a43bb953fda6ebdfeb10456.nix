@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { examples = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "MemoTrie" = {
+      "library" = {
         depends  = if compiler.isGhc && compiler.version.ge "7.10.0"
           then [
             (hsPkgs.base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       previewserver = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "hakyll" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.binary)

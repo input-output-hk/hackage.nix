@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       hello_hackage_visitor = false;
@@ -38,7 +39,7 @@
       buildType = "Simple";
     };
     components = {
-      "seqaid" = {
+      "library" = {
         depends  = (((([
           (hsPkgs.base)
           (hsPkgs.deepseq-bounded)

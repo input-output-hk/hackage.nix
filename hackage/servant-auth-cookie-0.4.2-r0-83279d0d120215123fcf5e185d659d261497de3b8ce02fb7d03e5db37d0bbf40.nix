@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       dev = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "servant-auth-cookie" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)

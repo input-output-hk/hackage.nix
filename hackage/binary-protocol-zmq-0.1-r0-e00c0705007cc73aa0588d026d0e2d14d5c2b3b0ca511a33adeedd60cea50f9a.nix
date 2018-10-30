@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       tests = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "binary-protocol-zmq" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.binary)

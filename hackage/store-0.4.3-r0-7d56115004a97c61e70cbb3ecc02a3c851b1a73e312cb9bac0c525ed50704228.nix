@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       comparison-bench = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "store" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.store-core)

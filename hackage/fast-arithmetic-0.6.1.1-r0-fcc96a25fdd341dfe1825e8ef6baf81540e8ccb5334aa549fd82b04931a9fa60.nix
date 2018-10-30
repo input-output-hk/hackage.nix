@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       no-integer-gmp = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "fast-arithmetic" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.composition-prelude)

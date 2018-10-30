@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       pre-bytestring-0-10-4 = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "cassava" = {
+      "library" = {
         depends  = (([
           (hsPkgs.array)
           (hsPkgs.attoparsec)

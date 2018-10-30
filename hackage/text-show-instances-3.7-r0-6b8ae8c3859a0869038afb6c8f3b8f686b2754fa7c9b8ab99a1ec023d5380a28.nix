@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       base-4-9 = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "text-show-instances" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.base-compat-batteries)
           (hsPkgs.bifunctors)

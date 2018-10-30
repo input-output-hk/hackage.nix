@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       category = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "data-accessor" = {
+      "library" = {
         depends  = [
           (hsPkgs.transformers)
         ] ++ (if flags.splitbase

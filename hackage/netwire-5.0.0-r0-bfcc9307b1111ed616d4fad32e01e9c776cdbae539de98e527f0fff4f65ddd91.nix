@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       testprogram = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "netwire" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       base4 = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "bytestring-trie" = {
+      "library" = {
         depends  = (([
           (hsPkgs.binary)
         ] ++ [

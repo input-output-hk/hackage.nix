@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildsampleprograms = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "nonlinear-optimization-ad" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.nonlinear-optimization)

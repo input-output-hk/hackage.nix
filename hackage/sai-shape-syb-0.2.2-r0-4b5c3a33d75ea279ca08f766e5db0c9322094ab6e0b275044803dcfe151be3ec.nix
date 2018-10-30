@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use_data_tree = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "sai-shape-syb" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.syb)

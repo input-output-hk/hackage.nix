@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       no-tests = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "drawille" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       http-streams = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "stripe-haskell" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.stripe-core)

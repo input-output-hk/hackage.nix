@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       withconstraints = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "smtlib2" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.text)

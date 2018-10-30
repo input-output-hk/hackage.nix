@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       no-netlib = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "blas-hs" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.storable-complex)

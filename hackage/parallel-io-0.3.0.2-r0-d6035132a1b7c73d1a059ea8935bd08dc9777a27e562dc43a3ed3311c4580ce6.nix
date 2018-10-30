@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       benchmark = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "parallel-io" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.extensible-exceptions)

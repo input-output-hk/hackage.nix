@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       splitbase = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "synthesizer-midi" = {
+      "library" = {
         depends  = [
           (hsPkgs.synthesizer-dimensional)
           (hsPkgs.synthesizer-core)

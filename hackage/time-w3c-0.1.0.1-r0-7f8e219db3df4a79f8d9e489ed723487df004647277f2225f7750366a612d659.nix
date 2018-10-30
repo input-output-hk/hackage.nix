@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-test-suite = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "time-w3c" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.convertible)

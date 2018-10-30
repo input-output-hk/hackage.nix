@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       onlytestsuite = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "lambdacube-compiler" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { old-locale = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "amazonka-core" = {
+      "library" = {
         depends  = ([
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)

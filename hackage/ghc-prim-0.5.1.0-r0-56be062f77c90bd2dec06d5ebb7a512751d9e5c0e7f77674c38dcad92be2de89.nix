@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       include-ghc-prim = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "ghc-prim" = {
+      "library" = {
         depends  = [ (hsPkgs.rts) ];
         libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."user32")

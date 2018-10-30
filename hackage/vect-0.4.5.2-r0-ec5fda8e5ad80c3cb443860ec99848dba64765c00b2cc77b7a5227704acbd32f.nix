@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       splitbase = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "vect" = {
+      "library" = {
         depends  = (if flags.splitbase
           then [
             (hsPkgs.base)

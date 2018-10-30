@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildexamples = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "alsa-seq" = {
+      "library" = {
         depends  = [
           (hsPkgs.alsa-core)
           (hsPkgs.enumset)

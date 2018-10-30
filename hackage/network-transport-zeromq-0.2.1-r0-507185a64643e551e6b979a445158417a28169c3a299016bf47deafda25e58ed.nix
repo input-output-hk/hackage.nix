@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       install-benchmarks = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "network-transport-zeromq" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.binary)

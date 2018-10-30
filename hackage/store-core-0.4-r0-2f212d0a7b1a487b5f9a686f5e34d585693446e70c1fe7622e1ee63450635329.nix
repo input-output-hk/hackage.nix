@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       force-alignment = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "store-core" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.primitive)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       warnings = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "LogicGrowsOnTrees-MPI" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

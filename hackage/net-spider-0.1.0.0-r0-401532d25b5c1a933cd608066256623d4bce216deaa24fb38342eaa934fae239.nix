@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       server-test = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "net-spider" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.time)

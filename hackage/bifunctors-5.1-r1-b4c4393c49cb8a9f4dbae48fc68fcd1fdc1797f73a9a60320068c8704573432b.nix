@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       semigroups = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "bifunctors" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.containers)

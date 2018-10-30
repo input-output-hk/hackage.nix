@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "ForSyDe" = {
+      "library" = {
         depends  = [
           (hsPkgs.type-level)
           (hsPkgs.parameterized-data)

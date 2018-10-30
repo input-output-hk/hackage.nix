@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "Prelude" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base-noprelude)
         ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [

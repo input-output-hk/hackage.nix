@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       shared-llvm = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "llvm-hs" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base)

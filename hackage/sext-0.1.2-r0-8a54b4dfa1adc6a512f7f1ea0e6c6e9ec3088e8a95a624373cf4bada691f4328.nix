@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bytestring = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "sext" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.template-haskell)

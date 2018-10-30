@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       verbose = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "affection" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.sdl2)

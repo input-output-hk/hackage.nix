@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       compatibility1 = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "uuagc" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base)

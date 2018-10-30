@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       usepkgconfig = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hydra-hs" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)

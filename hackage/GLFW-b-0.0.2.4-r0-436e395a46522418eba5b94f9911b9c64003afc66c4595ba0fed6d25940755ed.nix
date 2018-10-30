@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "GLFW-b" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = if system.isLinux
           then [

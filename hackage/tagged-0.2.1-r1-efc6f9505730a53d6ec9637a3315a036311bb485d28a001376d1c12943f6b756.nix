@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       derivedatatypeable = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "tagged" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.semigroups)

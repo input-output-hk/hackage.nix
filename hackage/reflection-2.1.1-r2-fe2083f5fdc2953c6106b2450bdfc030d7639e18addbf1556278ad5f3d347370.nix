@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       slow = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "reflection" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs.tagged)) ++ pkgs.lib.optional (flags.template-haskell && (compiler.isGhc && true)) (hsPkgs.template-haskell);

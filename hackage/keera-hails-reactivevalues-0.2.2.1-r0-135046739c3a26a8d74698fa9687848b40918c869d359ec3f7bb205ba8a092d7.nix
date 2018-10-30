@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-hlint = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "keera-hails-reactivevalues" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.contravariant)

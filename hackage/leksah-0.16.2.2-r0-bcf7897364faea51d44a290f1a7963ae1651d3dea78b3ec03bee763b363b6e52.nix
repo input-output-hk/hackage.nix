@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       webkit2 = true;
@@ -33,7 +34,7 @@
       buildType = "Simple";
     };
     components = {
-      "leksah" = {
+      "library" = {
         depends  = ((((((((([
           (hsPkgs.base-compat)
           (hsPkgs.haskell-gi-base)

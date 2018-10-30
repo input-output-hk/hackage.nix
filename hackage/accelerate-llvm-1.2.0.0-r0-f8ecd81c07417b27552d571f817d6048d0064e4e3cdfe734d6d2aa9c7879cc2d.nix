@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { chase-lev = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "accelerate-llvm" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.abstract-deque)

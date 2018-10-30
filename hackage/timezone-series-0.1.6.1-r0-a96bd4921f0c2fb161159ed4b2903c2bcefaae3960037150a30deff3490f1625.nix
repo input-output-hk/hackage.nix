@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       time_pre_1_6 = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "timezone-series" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ [ (hsPkgs.time) ];

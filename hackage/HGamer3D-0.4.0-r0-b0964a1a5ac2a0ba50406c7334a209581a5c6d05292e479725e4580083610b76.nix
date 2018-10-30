@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       audio = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "HGamer3D" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.ghc-prim)

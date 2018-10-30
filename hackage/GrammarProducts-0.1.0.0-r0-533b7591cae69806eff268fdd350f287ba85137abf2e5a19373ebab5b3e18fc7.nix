@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       examples = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "GrammarProducts" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)

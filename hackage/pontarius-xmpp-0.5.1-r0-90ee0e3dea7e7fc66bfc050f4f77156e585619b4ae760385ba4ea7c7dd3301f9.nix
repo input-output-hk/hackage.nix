@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { with-th = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "pontarius-xmpp" = {
+      "library" = {
         depends  = ([
           (hsPkgs.attoparsec)
           (hsPkgs.base)

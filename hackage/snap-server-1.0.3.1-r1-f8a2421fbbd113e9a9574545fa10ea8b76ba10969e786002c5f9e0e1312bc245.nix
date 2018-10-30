@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       portable = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "snap-server" = {
+      "library" = {
         depends  = ([
           (hsPkgs.attoparsec)
           (hsPkgs.base)

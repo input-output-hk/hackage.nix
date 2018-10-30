@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { tutorial = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "kaleidoscope" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.haskeline)

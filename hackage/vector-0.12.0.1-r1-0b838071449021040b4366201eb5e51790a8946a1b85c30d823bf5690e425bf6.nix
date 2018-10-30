@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       boundschecks = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "vector" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.primitive)

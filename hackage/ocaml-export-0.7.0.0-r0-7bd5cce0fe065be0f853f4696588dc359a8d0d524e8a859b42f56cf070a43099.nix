@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       servant-spec = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "ocaml-export" = {
+      "library" = {
         depends  = [
           (hsPkgs.QuickCheck)
           (hsPkgs.aeson)

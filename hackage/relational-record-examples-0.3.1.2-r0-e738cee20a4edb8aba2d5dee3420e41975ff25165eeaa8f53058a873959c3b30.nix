@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       ghc74-generic = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "relational-record-examples" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.HDBC)

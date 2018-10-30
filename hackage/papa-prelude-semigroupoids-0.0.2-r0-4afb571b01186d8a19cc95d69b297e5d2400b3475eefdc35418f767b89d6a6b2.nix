@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { small_base = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "papa-prelude-semigroupoids" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.semigroupoids)

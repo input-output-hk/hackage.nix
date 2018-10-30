@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       have-mmap = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "hPDB" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.ghc-prim)

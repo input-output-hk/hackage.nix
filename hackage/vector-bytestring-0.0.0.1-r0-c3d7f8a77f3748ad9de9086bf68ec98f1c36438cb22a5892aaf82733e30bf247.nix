@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { benchmark = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "vector-bytestring" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.primitive)

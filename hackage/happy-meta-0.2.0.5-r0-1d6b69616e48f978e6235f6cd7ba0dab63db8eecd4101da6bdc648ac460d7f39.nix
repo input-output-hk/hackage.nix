@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "happy-meta" = {
+      "library" = {
         depends  = [
           (hsPkgs.template-haskell)
           (hsPkgs.haskell-src-meta)

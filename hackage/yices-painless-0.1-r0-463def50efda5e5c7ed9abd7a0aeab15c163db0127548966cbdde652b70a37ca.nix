@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       yices-dynamic = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "yices-painless" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.pretty)

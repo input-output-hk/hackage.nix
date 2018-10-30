@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       rnaforestry = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "Forestry" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

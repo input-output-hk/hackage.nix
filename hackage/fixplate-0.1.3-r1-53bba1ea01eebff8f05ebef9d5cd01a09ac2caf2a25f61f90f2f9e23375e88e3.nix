@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       withquickcheck = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "fixplate" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (flags.withquickcheck) (hsPkgs.QuickCheck);

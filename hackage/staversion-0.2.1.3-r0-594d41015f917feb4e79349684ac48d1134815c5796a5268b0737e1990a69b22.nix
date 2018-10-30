@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       network-test = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "staversion" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.unordered-containers)

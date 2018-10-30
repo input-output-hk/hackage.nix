@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       old-bytestring = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "parsestar" = {
+      "library" = {
         depends  = [
           (hsPkgs.array)
           (hsPkgs.base)

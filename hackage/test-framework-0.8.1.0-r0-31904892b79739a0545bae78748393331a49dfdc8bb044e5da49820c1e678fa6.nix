@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { tests = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "test-framework" = {
+      "library" = {
         depends  = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.ansi-wl-pprint)

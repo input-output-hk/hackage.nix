@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       integration-tests = false;
@@ -28,7 +29,7 @@
       buildType = "Custom";
     };
     components = {
-      "stack" = {
+      "library" = {
         depends  = [
           (hsPkgs.Cabal)
           (hsPkgs.aeson)

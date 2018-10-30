@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build_examples = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hgrib" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = [ (pkgs."grib_api") ];
         build-tools = [

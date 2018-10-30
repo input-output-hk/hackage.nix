@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "digestive-functors-hsp" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.digestive-functors)

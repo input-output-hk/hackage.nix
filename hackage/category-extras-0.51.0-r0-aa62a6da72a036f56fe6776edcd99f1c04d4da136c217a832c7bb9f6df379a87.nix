@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       arrowsubclassescategory = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "category-extras" = {
+      "library" = {
         depends  = ([
           (hsPkgs.mtl)
         ] ++ (if flags.arrowsubclassescategory

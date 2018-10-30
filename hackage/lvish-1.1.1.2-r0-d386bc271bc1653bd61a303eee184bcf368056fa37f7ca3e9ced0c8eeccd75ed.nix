@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debug = false;
@@ -30,7 +31,7 @@
       buildType = "Simple";
     };
     components = {
-      "lvish" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.base)
           (hsPkgs.deepseq)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-doctests = true;
@@ -27,7 +28,7 @@
       buildType = "Custom";
     };
     components = {
-      "folds" = {
+      "library" = {
         depends  = ([
           (hsPkgs.adjunctions)
           (hsPkgs.base)

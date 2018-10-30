@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       old-data-default-class = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "data-default-instances-new-base" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ (if flags.old-data-default-class

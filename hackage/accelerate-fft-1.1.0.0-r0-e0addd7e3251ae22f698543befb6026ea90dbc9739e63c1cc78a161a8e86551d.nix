@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       llvm-ptx = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "accelerate-fft" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.accelerate)

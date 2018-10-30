@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       useicc = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "lol" = {
+      "library" = {
         depends  = [
           (hsPkgs.arithmoi)
           (hsPkgs.base)

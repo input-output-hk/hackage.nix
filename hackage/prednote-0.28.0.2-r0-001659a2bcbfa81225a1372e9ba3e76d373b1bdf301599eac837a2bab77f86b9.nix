@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       visual-tests = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "prednote" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.rainbow)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       lib-werror = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "extensible-effects" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.type-aligned)

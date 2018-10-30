@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-search-demo = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "full-text-search" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

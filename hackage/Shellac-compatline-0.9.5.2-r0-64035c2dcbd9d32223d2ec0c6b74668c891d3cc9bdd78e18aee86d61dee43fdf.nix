@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       useeditline = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "Shellac-compatline" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.Shellac)

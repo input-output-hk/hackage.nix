@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-tests = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "Win32-security" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.text)

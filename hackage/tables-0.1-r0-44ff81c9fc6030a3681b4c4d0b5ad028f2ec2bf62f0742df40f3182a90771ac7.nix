@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-properties = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "tables" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.comonad)

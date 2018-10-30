@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       splitbase = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "synthesizer-alsa" = {
+      "library" = {
         depends  = ([
           (hsPkgs.sox)
           (hsPkgs.alsa)

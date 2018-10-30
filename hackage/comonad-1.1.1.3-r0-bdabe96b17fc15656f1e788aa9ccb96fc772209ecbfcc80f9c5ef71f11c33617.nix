@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       oldtypeable = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "comonad" = {
+      "library" = {
         depends  = [
           (hsPkgs.transformers)
           (hsPkgs.containers)

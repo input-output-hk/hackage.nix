@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       jsffi = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "ghcjs-dom" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.transformers)

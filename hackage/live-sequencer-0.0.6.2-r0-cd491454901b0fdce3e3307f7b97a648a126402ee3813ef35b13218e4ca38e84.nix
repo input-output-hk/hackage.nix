@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       gui = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "live-sequencer" = {
+      "library" = {
         depends  = [
           (hsPkgs.non-negative)
           (hsPkgs.event-list)

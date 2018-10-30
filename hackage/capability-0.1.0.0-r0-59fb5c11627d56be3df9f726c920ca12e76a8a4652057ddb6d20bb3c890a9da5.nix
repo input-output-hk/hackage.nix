@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       hspec-jenkins = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "capability" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.dlist)

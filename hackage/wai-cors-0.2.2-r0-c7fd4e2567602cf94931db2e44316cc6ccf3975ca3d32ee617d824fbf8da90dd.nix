@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       transformers-3 = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "wai-cors" = {
+      "library" = {
         depends  = ([
           (hsPkgs.attoparsec)
           (hsPkgs.base)

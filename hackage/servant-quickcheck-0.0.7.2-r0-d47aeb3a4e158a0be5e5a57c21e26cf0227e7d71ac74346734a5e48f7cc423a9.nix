@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { long-tests = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "servant-quickcheck" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base-compat-batteries)

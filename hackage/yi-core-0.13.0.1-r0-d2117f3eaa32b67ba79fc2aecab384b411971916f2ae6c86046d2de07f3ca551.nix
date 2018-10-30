@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       eventlog = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "yi-core" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.array)

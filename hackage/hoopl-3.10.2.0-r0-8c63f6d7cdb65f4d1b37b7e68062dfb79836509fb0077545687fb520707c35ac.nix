@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       testcoverage = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hoopl" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

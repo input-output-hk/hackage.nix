@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       avx2 = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "hw-dsv" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bits-extra)

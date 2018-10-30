@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bytestring = true;
@@ -35,7 +36,7 @@
       buildType = "Simple";
     };
     components = {
-      "monoids" = {
+      "library" = {
         depends  = (((((((([
           (hsPkgs.base)
           (hsPkgs.category-extras)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bounds-checking-enabled = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hw-prim" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

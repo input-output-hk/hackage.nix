@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "bindings-cctools" = {
+      "library" = {
         depends  = ([
           (hsPkgs.bindings-DSL)
         ] ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.base)) ++ pkgs.lib.optional (compiler.isGhc && false) (hsPkgs.base);

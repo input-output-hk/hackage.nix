@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { monotrav1 = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "conduit-combinators" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.base16-bytestring)

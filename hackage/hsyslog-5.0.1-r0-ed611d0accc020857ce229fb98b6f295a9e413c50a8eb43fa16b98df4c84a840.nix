@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       install-examples = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "hsyslog" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

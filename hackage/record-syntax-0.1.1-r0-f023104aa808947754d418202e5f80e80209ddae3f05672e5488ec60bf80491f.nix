@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { doctest = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "record-syntax" = {
+      "library" = {
         depends  = [
           (hsPkgs.record)
           (hsPkgs.haskell-src-exts)

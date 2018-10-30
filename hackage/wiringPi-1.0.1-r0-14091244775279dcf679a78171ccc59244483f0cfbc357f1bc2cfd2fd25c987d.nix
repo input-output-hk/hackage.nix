@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "wiringPi" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = pkgs.lib.optional (!system.isX86_64) (pkgs."wiringPi");
         build-tools = [

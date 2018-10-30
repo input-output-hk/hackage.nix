@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       llvm = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "mios" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.vector)

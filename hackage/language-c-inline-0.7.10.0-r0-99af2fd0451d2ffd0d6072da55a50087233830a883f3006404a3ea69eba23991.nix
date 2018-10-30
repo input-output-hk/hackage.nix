@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       manualtests = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "language-c-inline" = {
+      "library" = {
         depends  = [
           (hsPkgs.array)
           (hsPkgs.base)

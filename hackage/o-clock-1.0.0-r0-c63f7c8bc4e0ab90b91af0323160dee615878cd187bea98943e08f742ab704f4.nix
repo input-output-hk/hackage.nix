@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       aeson = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "o-clock" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.base)
           (hsPkgs.ghc-prim)

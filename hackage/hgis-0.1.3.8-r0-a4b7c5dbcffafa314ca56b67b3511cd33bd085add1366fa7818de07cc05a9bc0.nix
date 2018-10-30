@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       llvm-fast = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "hgis" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.optparse-applicative)

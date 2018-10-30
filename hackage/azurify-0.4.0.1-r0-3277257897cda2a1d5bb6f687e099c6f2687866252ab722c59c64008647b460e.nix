@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       no-hxt = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "azurify" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.text)

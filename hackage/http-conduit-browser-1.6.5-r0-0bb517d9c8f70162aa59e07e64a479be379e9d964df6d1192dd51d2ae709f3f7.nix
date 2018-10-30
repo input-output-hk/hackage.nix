@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       new-http-conduit = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "http-conduit-browser" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.data-default)

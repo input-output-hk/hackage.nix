@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-system-progressbar = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "bytestring-progress" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.time)
