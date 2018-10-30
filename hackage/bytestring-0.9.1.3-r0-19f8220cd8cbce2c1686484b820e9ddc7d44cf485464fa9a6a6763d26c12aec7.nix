@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { split-syb = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "bytestring" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
         ] ++ (if flags.split-syb

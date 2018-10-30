@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debug = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "accelerate-llvm-native" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.accelerate)

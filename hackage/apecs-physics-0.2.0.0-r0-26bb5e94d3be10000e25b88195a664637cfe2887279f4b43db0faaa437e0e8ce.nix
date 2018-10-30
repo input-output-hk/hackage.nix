@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { release = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "apecs-physics" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.apecs)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { chart = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "criterion" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

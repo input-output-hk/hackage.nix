@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       curl = true;
@@ -39,7 +40,7 @@
       buildType = "Custom";
     };
     components = {
-      "darcs" = {
+      "library" = {
         depends  = ((((((([
           (hsPkgs.base)
           (hsPkgs.binary)

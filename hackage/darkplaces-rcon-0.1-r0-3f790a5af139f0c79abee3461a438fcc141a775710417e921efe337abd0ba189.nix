@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       integrationtest = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "darkplaces-rcon" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

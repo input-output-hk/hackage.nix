@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-sample = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "wss-client" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

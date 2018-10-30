@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       hint-test = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "greskell" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.greskell-core)

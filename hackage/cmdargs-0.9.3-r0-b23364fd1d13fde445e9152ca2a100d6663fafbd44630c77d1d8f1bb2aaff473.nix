@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       testprog = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "cmdargs" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.filepath)

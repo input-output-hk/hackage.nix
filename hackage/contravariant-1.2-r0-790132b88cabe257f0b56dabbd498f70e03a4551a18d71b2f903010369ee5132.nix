@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { tagged = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "contravariant" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.semigroups)

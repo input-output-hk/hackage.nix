@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       pinpon-executable = true;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "pinpon" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)

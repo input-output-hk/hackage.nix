@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { httpserver = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "live-sequencer" = {
+      "library" = {
         depends  = [
           (hsPkgs.non-negative)
           (hsPkgs.event-list)

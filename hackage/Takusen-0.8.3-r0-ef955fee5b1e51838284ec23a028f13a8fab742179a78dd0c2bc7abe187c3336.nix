@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       odbc = false;
@@ -28,7 +29,7 @@
       buildType = "Custom";
     };
     components = {
-      "Takusen" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.mtl)

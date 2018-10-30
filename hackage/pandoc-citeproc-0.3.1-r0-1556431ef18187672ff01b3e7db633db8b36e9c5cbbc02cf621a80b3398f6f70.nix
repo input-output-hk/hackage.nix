@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       small_base = true;
@@ -31,7 +32,7 @@
       buildType = "Custom";
     };
     components = {
-      "pandoc-citeproc" = {
+      "library" = {
         depends  = ((((([
           (hsPkgs.containers)
           (hsPkgs.directory)

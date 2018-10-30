@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       data_object_uses_lazy_bytestrings = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "property-list" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { buildtests = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "hjsmin" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

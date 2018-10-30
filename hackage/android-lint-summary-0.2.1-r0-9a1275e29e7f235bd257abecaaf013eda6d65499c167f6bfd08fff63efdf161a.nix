@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       documentation = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "android-lint-summary" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.basic-prelude)

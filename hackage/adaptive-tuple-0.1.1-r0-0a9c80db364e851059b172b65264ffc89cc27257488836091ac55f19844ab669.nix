@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { splitbase = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "adaptive-tuple" = {
+      "library" = {
         depends  = [
           (hsPkgs.type-level)
           (hsPkgs.template-haskell)

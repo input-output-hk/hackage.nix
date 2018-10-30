@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { server-side = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "yu-auth" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.cryptonite)

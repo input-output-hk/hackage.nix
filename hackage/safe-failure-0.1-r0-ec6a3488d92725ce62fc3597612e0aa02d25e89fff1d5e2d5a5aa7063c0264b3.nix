@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       cme = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "safe-failure" = {
+      "library" = {
         depends  = [
           (hsPkgs.control-monad-failure)
         ] ++ (if flags.extensibleexceptions

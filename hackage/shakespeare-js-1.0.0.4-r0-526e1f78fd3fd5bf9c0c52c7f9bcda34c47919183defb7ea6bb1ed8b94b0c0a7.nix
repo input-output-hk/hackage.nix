@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test_export = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "shakespeare-js" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.shakespeare)

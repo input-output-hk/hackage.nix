@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       integer-simple = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "numerals" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

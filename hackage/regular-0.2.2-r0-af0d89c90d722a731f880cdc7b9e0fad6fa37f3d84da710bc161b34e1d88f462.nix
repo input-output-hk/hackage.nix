@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { th24 = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "regular" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ [

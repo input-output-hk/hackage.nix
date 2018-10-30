@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       quickcheck = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "infernu" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.mtl)

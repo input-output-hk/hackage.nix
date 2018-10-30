@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-examples = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "mcpi" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.network)

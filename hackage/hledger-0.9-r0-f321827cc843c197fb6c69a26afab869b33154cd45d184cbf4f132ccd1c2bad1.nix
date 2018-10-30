@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       vty = false;
@@ -28,7 +29,7 @@
       buildType = "Custom";
     };
     components = {
-      "hledger" = {};
+      "library" = {};
       exes = {
         "hledger" = {
           depends  = ((([

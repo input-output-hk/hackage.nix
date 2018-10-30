@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       old-time = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "pathtype" = {
+      "library" = {
         depends  = [
           (hsPkgs.QuickCheck)
           (hsPkgs.deepseq)

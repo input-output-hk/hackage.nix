@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       builtin-sqlite3 = false;
@@ -25,7 +26,7 @@
       buildType = "Configure";
     };
     components = {
-      "sqlite" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.pretty)

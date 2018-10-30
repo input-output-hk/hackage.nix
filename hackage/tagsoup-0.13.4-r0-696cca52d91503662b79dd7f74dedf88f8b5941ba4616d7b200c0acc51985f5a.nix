@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       testprog = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "tagsoup" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { bench = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "csv-conduit" = {
+      "library" = {
         depends  = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)

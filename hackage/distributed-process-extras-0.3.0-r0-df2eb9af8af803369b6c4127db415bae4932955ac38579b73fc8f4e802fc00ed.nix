@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { old-locale = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "distributed-process-extras" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.data-accessor)

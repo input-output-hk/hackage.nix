@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       skiptests = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "RSA" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)

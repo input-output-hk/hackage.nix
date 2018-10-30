@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       interrupt = true;
@@ -28,7 +29,7 @@
       buildType = "Custom";
     };
     components = {
-      "gf" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

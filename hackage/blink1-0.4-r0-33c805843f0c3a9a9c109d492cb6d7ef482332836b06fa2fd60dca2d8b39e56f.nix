@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { usb = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "blink1" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (system.isLinux) (hsPkgs.unix)) ++ pkgs.lib.optionals (flags.usb) [

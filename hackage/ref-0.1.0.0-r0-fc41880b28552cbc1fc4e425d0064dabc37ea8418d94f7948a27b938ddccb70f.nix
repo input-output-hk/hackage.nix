@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       safe-st = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "ref" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.transformers)

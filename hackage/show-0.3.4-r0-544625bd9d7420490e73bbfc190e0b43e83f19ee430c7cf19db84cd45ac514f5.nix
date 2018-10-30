@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       base4ornewer = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "show" = {
+      "library" = {
         depends  = [
           (hsPkgs.random)
           (hsPkgs.QuickCheck)

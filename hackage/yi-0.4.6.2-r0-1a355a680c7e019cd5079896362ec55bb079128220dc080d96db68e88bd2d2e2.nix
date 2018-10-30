@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       ghcapi = false;
@@ -30,7 +31,7 @@
       buildType = "Simple";
     };
     components = {
-      "yi" = {};
+      "library" = {};
       exes = {
         "yi" = {
           depends  = (((((([

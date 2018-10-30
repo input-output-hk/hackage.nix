@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       noupperbounds = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "HaskellNet-SSL" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.HaskellNet)

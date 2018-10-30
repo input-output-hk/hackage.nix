@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       closure_signals = true;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "glib" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

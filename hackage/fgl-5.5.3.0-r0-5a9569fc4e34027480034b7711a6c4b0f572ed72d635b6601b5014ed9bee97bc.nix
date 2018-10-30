@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       containers042 = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "fgl" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.transformers)

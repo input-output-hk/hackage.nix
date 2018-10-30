@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       have_ghc_prim = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "uulib" = {
+      "library" = {
         depends  = [
           (hsPkgs.haskell98)
         ] ++ (if flags.have_ghc_prim

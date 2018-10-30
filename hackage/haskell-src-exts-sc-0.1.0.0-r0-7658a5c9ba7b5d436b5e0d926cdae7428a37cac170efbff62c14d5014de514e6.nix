@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-example = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "haskell-src-exts-sc" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.haskell-src-exts)

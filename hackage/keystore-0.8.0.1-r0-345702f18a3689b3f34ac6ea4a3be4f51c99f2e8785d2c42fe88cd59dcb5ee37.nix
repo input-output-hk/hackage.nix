@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       hpc = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "keystore" = {
+      "library" = {
         depends  = [
           (hsPkgs.api-tools)
           (hsPkgs.asn1-types)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       hello_hackage_visitor = false;
@@ -48,7 +49,7 @@
       buildType = "Simple";
     };
     components = {
-      "deepseq-bounded" = {
+      "library" = {
         depends  = ((((((([
           (hsPkgs.base)
           (hsPkgs.cpphs)

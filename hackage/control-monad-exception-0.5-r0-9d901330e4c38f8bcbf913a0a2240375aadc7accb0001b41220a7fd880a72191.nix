@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       transformers = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "control-monad-exception" = {
+      "library" = {
         depends  = ([
           (hsPkgs.control-monad-failure)
           (hsPkgs.monadloc)

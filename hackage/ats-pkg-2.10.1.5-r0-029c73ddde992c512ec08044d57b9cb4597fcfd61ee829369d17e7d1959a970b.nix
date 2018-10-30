@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       profile = false;
@@ -28,7 +29,7 @@
       buildType = "Custom";
     };
     components = {
-      "ats-pkg" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.http-client)

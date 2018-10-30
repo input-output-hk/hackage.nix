@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       compat = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "tls" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.mtl)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { splitbase = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "hsc3" = {
+      "library" = {
         depends  = [
           (hsPkgs.binary)
           (hsPkgs.bytestring)

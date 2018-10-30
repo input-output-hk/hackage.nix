@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { terminfo = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "haskeline" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

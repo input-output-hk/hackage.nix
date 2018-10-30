@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       small_base = false;
@@ -28,7 +29,7 @@
       buildType = "Configure";
     };
     components = {
-      "mersenne-random" = {
+      "library" = {
         depends  = if flags.small_base
           then [ (hsPkgs.base) ]
           else [

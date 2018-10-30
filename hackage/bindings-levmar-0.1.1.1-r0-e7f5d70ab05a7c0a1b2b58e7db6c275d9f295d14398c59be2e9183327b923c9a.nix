@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       mkl = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "bindings-levmar" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = if flags.mkl
           then [

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       tfrandom = true;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "MagicHaskeller" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.time)
           (hsPkgs.template-haskell)

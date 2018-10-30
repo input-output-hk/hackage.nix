@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       splitbase = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "storable-tuple" = {
+      "library" = {
         depends  = [
           (hsPkgs.storable-record)
           (hsPkgs.utility-ht)

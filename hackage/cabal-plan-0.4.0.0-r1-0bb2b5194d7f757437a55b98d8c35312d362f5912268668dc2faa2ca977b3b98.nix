@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       exe = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "cabal-plan" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.aeson)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       vec128 = false;
@@ -27,7 +28,7 @@
       buildType = "Custom";
     };
     components = {
-      "neural-network-blashs" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.blas-hs)

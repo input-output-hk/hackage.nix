@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       ghc74-generic = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "persistable-record" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)

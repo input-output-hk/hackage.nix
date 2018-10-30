@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       print = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "wai-app-static" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.wai)

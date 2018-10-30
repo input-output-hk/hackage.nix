@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bytestring_has_itoa_c = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "bytestring-builder" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-undecidable-instances = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "tardis" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.mtl)

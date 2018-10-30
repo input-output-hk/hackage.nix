@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       dev-wall-werror = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "bytestring-encodings" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

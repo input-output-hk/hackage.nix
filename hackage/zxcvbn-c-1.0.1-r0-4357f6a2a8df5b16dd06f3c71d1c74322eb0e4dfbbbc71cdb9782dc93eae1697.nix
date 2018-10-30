@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-shared-lib = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "zxcvbn-c" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = pkgs.lib.optional (flags.use-shared-lib) (pkgs."zxcvbn");
       };

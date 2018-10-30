@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildexamples = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "cpuid" = {
+      "library" = {
         depends  = pkgs.lib.optionals (system.isI386 || system.isX86_64) [
           (hsPkgs.data-accessor)
           (hsPkgs.enumset)

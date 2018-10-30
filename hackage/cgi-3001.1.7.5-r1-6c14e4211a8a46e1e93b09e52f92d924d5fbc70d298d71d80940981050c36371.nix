@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       split-base = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "cgi" = {
+      "library" = {
         depends  = (([
           (hsPkgs.network)
           (hsPkgs.parsec)

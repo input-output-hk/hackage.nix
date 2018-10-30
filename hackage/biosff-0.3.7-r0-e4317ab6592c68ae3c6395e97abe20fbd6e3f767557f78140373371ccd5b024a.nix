@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       flower = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "biosff" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.biocore)

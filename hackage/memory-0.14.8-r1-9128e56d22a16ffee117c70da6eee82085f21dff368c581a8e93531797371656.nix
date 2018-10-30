@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       support_bytestring = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "memory" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.base)

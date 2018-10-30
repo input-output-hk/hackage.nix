@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debug = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "riak" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)

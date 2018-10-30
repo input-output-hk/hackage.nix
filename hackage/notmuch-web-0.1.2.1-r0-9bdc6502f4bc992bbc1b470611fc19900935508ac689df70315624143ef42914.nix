@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       dev = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "notmuch-web" = {
+      "library" = {
         depends  = if flags.no-icu
           then [
             (hsPkgs.base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       gui = true;
@@ -43,7 +44,7 @@
       buildType = "Simple";
     };
     components = {
-      "accelerate-examples" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.accelerate)

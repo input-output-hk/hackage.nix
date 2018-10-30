@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -22,5 +23,7 @@
       description = "hw-kafka-client implemented in more pragmatic haskell";
       buildType = "Simple";
     };
-    components = { "kafka" = {}; };
+    components = {
+      "library" = {};
+    };
   }

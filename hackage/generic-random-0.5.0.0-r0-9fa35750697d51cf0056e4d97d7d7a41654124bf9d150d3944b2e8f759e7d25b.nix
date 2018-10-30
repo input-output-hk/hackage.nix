@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { boltzmann = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "generic-random" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)

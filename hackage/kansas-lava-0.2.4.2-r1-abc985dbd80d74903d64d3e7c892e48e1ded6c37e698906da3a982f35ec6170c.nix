@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       all = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "kansas-lava" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.dotgen)

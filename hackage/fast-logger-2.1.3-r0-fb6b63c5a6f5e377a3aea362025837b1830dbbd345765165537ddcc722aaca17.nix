@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       usebytestring102 = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "fast-logger" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-examples = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "persistent-relational-record" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.conduit)

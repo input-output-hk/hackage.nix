@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-semigroups = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "config-schema" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.config-value)

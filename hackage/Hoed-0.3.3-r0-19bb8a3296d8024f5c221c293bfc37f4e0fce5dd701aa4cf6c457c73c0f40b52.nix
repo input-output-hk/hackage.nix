@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildexamples = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "Hoed" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)

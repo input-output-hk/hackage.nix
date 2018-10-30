@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       dyre = false;
@@ -27,7 +28,7 @@
       buildType = "Custom";
     };
     components = {
-      "hoodle-core" = {
+      "library" = {
         depends  = (([
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)

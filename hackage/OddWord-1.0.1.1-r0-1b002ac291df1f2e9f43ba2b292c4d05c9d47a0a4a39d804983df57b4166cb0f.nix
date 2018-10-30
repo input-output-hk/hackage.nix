@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       typelitssupport = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "OddWord" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
       };
       tests = {

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       try_inject_noinline_on_requested_binds = false;
@@ -34,7 +35,7 @@
       buildType = "Simple";
     };
     components = {
-      "seqaid" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.ghc)

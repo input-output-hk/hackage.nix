@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-examples = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hedgehog-fn" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.contravariant)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { no-pgn = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "chesshs" = {
+      "library" = {
         depends  = [
           (hsPkgs.bytestring)
           (hsPkgs.base)

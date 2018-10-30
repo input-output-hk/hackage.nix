@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       gcrypt = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "libssh2" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.network)

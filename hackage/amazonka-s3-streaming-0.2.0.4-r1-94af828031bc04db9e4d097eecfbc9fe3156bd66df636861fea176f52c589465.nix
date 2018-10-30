@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       s3upload-exe = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "amazonka-s3-streaming" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.amazonka)

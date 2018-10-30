@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       system-expm1 = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "math-functions" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.deepseq)

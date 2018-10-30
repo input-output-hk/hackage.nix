@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-locale = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "Agda" = {
+      "library" = {
         depends  = ([
           (hsPkgs.mtl)
           (hsPkgs.QuickCheck)

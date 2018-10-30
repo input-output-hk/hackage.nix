@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       tests = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "edit-distance" = {
+      "library" = {
         depends  = if flags.splitbase
           then [
             (hsPkgs.base)

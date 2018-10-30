@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       highlighting = false;
@@ -29,7 +30,7 @@
       buildType = "Custom";
     };
     components = {
-      "pandoc" = {
+      "library" = {
         depends  = (([
           (hsPkgs.pretty)
           (hsPkgs.containers)

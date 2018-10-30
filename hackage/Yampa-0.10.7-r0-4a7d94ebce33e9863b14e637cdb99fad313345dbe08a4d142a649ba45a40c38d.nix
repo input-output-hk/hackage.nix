@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-hlint = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "Yampa" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.random)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use_xft = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "xmonad-contrib" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

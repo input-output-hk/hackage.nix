@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       development = false;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "ats-format" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.language-ats)

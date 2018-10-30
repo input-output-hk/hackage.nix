@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-properties = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "free-operational" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.transformers)

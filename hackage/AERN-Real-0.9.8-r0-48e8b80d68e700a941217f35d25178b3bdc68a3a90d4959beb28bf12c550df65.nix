@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       containers-in-base = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "AERN-Real" = {
+      "library" = {
         depends  = if flags.containers-in-base
           then if flags.use-hmpfr
             then [

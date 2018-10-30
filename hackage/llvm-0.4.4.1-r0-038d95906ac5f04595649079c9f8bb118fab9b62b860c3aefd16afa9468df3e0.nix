@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bytestring-in-base = true;
@@ -25,7 +26,7 @@
       buildType = "Configure";
     };
     components = {
-      "llvm" = {
+      "library" = {
         depends  = if flags.bytestring-in-base
           then [ (hsPkgs.base) ]
           else [

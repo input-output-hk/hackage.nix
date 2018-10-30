@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       curl = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "leksah-server" = {
+      "library" = {
         depends  = (([
           (hsPkgs.Cabal)
           (hsPkgs.base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { fuzz = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "llvm-pretty-bc-parser" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

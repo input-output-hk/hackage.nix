@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debug-gl = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "luminance" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

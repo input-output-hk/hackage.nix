@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       network-bytestring = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "warp" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.base)
           (hsPkgs.array)

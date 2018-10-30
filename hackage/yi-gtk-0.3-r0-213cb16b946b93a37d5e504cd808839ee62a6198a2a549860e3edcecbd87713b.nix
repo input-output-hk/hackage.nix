@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -22,5 +23,7 @@
       description = "This is a dummy package: do not install it! \"cabal install yi -fgtk\" is what you want.";
       buildType = "Simple";
     };
-    components = { "yi-gtk" = {}; };
+    components = {
+      "library" = {};
+    };
   }

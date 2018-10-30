@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       z3mem = false;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "liquid-fixpoint" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

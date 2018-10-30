@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { splitbase = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "haskell-src-exts" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ (if flags.splitbase

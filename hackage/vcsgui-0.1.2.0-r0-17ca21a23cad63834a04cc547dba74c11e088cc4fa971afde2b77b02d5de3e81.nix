@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { gtk3 = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "vcsgui" = {
+      "library" = {
         depends  = [
           (hsPkgs.filepath)
           (hsPkgs.base)

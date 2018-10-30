@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { quickcheck = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "CSPM-FiringRules" = {
+      "library" = {
         depends  = [
           (hsPkgs.CSPM-CoreLanguage)
           (hsPkgs.tree-monad)

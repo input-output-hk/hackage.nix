@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       usepkgconfig = false;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "hsqml-datamodel" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.hsqml)

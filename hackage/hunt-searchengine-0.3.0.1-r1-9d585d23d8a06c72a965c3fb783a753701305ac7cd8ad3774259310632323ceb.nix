@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-strict = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hunt-searchengine" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.aeson)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use_font_config = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "FreeTypeGL" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.freetype2)

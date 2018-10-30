@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       patakdebugskovorodabardaq = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "log-warper" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-terminal)

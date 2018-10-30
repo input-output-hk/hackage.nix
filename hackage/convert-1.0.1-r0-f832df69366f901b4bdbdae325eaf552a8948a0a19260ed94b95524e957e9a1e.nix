@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       dump-splices = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "convert" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.old-time)

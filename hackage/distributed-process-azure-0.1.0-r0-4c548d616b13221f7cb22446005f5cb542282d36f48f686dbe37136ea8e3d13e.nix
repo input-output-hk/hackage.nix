@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-demos = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "distributed-process-azure" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.azure-service-api)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       newbase = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "ansi-wl-pprint" = {
+      "library" = {
         depends  = ([
           (hsPkgs.ansi-terminal)
         ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs.semigroups)) ++ [

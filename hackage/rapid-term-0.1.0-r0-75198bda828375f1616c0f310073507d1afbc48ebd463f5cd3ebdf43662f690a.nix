@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { devel = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "rapid-term" = {
+      "library" = {
         depends  = [
           (hsPkgs.ansi-terminal)
           (hsPkgs.base)

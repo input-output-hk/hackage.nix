@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build_examples = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "ipopt-hs" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ad)

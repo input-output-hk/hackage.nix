@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       docs = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "hsdev" = {
+      "library" = {
         depends  = (((((([
           (hsPkgs.base)
           (hsPkgs.HTTP)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       liquidhaskell = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "liquidhaskell-cabal-demo" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.liquidhaskell-cabal)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       enable-hedgehog = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "partial-semigroup-test" = {
+      "library" = {
         depends  = pkgs.lib.optional (flags.enable-hedgehog) (hsPkgs.partial-semigroup-hedgehog);
       };
     };

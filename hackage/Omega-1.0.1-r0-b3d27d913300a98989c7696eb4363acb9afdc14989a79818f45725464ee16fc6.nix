@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       useinstalledomega = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "Omega" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

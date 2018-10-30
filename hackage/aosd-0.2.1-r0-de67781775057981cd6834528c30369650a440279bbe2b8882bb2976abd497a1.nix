@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debugmemory = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "aosd" = {
+      "library" = {
         depends  = [
           (hsPkgs.monad-control)
           (hsPkgs.colour)

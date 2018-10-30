@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       useffi = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "husk-scheme" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       havedeepseq = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "toolshed" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (flags.havedeepseq) (hsPkgs.deepseq);

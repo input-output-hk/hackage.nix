@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       llvm-cpu = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "accelerate-bignum" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.accelerate)

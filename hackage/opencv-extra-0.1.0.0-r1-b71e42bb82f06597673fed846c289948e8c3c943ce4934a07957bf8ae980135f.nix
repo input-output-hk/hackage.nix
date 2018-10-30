@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       internal-documentation = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "opencv-extra" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)

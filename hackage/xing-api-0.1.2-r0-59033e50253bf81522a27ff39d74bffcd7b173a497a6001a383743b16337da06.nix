@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       demos = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "xing-api" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       small_base = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "rdf4h" = {
+      "library" = {
         depends  = [
           (hsPkgs.parsec)
           (hsPkgs.HTTP)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       useplatformandroidkhr = false;
@@ -36,7 +37,7 @@
       buildType = "Simple";
     };
     components = {
-      "vulkan-api" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = pkgs.lib.optionals (flags.usenativeffi-1-0 || flags.usenativeffi-1-1) (pkgs.lib.optional (system.isWindows) (pkgs."vulkan-1") ++ pkgs.lib.optional (!system.isWindows && !system.isOsx) (pkgs."vulkan"));
         frameworks = pkgs.lib.optionals (flags.usenativeffi-1-0 || flags.usenativeffi-1-1) (pkgs.lib.optional (system.isOsx) (pkgs."MoltenVK"));

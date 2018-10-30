@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       useegl = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "opengles" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-text-show = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "http-api-data" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.attoparsec)

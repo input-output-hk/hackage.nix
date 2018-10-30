@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { parsec3 = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "parsec3-numbers" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ (if flags.parsec3

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       fast-bignum = false;
@@ -27,7 +28,7 @@
       buildType = "Custom";
     };
     components = {
-      "HsOpenSSL" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

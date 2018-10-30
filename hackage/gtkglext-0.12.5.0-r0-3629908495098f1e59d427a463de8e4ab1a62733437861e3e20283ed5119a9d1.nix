@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       have-quartz-gtk = false;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "gtkglext" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.glib)

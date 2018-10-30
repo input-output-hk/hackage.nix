@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       download-extras = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "shellmate" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.transformers)

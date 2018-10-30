@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       containers03 = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "list-tries" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

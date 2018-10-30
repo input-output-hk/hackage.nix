@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       examples = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "influxdb" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.attoparsec)

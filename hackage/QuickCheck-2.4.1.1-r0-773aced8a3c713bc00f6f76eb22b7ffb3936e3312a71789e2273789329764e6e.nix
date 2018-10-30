@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       base3 = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "QuickCheck" = {
+      "library" = {
         depends  = (((if flags.base4
           then [
             (hsPkgs.base)

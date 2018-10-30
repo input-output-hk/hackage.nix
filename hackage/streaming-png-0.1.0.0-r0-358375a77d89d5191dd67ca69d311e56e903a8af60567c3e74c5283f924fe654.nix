@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { build-demo = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "streaming-png" = {
+      "library" = {
         depends  = [
           (hsPkgs.JuicyPixels)
           (hsPkgs.base)

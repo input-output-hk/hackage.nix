@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { llvm = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "arb-fft" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

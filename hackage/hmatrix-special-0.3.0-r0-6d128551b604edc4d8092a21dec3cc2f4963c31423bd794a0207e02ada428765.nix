@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { safe-cheap = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "hmatrix-special" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)

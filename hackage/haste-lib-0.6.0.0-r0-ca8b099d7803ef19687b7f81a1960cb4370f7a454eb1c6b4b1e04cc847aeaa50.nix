@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { haste = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "haste-lib" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.integer-gmp)

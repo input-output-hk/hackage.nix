@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       transformers = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "control-monad-free" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.deepseq)

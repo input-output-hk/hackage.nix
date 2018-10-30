@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       newbase = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "regex-compat-tdfa" = {
+      "library" = {
         depends  = if flags.newbase
           then [
             (hsPkgs.base)

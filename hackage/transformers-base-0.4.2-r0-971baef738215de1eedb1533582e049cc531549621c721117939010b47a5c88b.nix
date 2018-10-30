@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       orphaninstances = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "transformers-base" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.transformers)

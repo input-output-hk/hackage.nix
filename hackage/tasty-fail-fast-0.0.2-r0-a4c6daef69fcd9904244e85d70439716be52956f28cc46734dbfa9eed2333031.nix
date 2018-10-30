@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { lib-werror = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "tasty-fail-fast" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.tasty)

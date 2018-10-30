@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { splitbase = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "HDBC-postgresql" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.mtl)

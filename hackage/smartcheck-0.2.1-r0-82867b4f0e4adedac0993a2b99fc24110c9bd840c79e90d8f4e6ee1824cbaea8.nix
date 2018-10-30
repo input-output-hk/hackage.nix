@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       regression-flag = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "smartcheck" = {
+      "library" = {
         depends  = if flags.regression-flag
           then [
             (hsPkgs.base)

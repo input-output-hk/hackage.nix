@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       opencv23 = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "CV" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.parallel)

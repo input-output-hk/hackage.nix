@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       splitbase = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "storablevector" = {
+      "library" = {
         depends  = [
           (hsPkgs.non-negative)
           (hsPkgs.utility-ht)

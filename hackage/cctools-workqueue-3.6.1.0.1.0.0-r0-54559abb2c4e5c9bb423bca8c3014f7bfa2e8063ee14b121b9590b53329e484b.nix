@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { warn = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "cctools-workqueue" = {
+      "library" = {
         depends  = ([
           (hsPkgs.bindings-cctools)
           (hsPkgs.lens)

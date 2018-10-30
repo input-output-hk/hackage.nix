@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       alg-tests = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "crypto-api" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)

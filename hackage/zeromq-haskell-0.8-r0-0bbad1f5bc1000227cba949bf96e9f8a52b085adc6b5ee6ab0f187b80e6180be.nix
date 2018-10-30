@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       zmq2 = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "zeromq-haskell" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

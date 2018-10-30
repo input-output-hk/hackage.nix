@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       macosxusechdir = true;
@@ -31,7 +32,7 @@
       buildType = "Simple";
     };
     components = {
-      "bindings-GLFW" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)

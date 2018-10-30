@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       haskell-tests = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "BNFC" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

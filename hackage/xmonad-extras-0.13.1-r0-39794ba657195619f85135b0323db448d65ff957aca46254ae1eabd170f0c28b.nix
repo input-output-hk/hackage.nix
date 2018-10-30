@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       with_sound = true;
@@ -31,7 +32,7 @@
       buildType = "Simple";
     };
     components = {
-      "xmonad-extras" = {
+      "library" = {
         depends  = (((([
           (hsPkgs.base)
           (hsPkgs.mtl)

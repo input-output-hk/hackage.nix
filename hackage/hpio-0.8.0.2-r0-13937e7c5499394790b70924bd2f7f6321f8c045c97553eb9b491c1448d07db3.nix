@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       linux-bbone-tests = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "hpio" = {
+      "library" = {
         depends  = [
           (hsPkgs.QuickCheck)
           (hsPkgs.base)

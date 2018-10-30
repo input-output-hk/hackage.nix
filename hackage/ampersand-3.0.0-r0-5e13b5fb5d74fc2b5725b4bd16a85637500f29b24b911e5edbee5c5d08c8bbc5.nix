@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       executable = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "ampersand" = {
+      "library" = {
         depends  = [
           (hsPkgs.graphviz)
           (hsPkgs.base)

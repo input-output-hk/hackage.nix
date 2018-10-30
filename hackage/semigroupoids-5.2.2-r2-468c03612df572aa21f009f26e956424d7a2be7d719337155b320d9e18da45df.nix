@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       containers = true;
@@ -31,7 +32,7 @@
       buildType = "Custom";
     };
     components = {
-      "semigroupoids" = {
+      "library" = {
         depends  = ((((((([
           (hsPkgs.base)
           (hsPkgs.base-orphans)

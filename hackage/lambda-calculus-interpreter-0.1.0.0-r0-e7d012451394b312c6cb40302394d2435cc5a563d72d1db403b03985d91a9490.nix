@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { ci = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "lambda-calculus-interpreter" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
       };
       exes = {

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { splot = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "lawless-concurrent-machines" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.monad-control)

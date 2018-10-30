@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       unsafe-checks = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "massiv" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)

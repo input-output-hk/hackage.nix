@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test_export = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "shakespeare" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.time)

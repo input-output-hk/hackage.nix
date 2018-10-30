@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       ftgl = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "graphics-drawingcombinators" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.OpenGL)

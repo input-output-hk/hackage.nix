@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       testing = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "vty-ui" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.vty)

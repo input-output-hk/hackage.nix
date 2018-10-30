@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       pedantic = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "verbosity" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (flags.ghc-generics) (pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6")) (hsPkgs.ghc-prim))) ++ pkgs.lib.optional (flags.binary) (hsPkgs.binary)) ++ pkgs.lib.optional (flags.data-default) (hsPkgs.data-default-class);

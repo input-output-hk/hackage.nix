@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       deprecated = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "gtk" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

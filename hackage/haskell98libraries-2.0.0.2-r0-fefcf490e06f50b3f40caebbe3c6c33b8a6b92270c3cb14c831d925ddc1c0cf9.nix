@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       utctime-in-directory = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "haskell98libraries" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.old-time)

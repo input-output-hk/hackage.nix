@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       boogaloo = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "language-boogie" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.random)

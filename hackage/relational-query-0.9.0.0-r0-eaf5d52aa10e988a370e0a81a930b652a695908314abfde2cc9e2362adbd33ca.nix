@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       ghc74-generic = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "relational-query" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

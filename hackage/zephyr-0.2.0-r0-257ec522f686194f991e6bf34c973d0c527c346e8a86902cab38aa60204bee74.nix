@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-with-cabal = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "zephyr" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.ansi-terminal)

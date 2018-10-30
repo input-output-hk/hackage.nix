@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       enable-timing-sensitive-tests = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "mellon-core" = {
+      "library" = {
         depends  = [
           (hsPkgs.async)
           (hsPkgs.base)

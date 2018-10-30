@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "stack-hpc-coveralls" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.hpc)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       curl = true;
@@ -38,7 +39,7 @@
       buildType = "Custom";
     };
     components = {
-      "darcs-beta" = {
+      "library" = {
         depends  = pkgs.lib.optionals (!(!flags.library)) (((((([
           (hsPkgs.extensible-exceptions)
           (hsPkgs.regex-compat)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { prof = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "threads-supervisor" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.unordered-containers)

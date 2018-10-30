@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { opengl29 = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "bitmap-opengl" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bitmap)

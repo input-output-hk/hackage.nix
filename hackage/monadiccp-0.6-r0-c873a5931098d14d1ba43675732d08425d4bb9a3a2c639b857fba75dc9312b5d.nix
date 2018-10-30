@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       runtimegecode = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "monadiccp" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

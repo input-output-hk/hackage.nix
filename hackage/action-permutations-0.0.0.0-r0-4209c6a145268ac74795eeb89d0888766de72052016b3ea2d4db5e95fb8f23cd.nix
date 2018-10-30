@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       applicativeinbase = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "action-permutations" = {
+      "library" = {
         depends  = if flags.applicativeinbase
           then [ (hsPkgs.base) ]
           else [

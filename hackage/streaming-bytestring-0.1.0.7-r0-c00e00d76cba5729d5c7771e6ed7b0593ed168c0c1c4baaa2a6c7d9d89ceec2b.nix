@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-bytestring-builder = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "streaming-bytestring" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

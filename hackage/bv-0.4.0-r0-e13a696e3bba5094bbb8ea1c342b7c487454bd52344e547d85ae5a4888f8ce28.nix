@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       gmp = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "bv" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (compiler.isGhc && true && flags.gmp) [

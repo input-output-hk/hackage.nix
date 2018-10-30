@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { cuda = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "accelerate-fft" = {
+      "library" = {
         depends  = [
           (hsPkgs.accelerate)
           (hsPkgs.base)

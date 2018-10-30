@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-template-haskell = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "rank2classes" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.transformers)

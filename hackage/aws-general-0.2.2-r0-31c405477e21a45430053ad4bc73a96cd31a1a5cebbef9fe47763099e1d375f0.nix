@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       normalize-signature-v4-date = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "aws-general" = {
+      "library" = {
         depends  = [
           (hsPkgs.QuickCheck)
           (hsPkgs.aeson)

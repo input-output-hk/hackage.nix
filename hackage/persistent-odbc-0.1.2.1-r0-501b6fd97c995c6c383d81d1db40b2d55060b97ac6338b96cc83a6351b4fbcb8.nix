@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debug = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "persistent-odbc" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.text)

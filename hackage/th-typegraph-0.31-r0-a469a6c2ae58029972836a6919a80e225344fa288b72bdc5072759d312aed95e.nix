@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       local-mtl-unleashed = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "th-typegraph" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base-compat)

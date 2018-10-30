@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       development = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "fast-arithmetic" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
       };
       tests = {

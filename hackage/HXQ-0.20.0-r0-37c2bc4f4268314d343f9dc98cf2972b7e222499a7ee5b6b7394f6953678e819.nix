@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       mysql = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "HXQ" = {
+      "library" = {
         depends  = ([
           (hsPkgs.array)
           (hsPkgs.regex-base)

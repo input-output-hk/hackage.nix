@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { shelltest = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "ghc-mod" = {
+      "library" = {
         depends  = ([
           (hsPkgs.binary)
           (hsPkgs.bytestring)

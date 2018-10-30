@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { cuda = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "gloss-raster-accelerate" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.accelerate)

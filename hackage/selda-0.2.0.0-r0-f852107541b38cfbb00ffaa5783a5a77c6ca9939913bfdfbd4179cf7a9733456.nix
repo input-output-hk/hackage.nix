@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       localcache = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "selda" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.bytestring)

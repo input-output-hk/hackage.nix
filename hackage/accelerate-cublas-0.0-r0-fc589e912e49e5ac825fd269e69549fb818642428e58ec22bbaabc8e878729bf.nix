@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildexamples = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "accelerate-cublas" = {
+      "library" = {
         depends  = [
           (hsPkgs.accelerate-arithmetic)
           (hsPkgs.accelerate-utility)

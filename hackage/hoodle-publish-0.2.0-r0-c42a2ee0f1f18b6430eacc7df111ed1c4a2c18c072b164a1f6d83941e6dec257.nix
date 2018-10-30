@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { gtk3 = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "hoodle-publish" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)

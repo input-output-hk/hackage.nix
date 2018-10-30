@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       two = false;
@@ -30,7 +31,7 @@
       buildType = "Simple";
     };
     components = {
-      "transformers-compat" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
         ] ++ (if flags.five

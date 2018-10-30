@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       new-typerep = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "concrete-typerep" = {
+      "library" = {
         depends  = [
           (hsPkgs.binary)
           (hsPkgs.hashable)

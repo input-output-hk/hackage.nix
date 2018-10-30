@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       builtin-sqlcipher = true;
@@ -25,7 +26,7 @@
       buildType = "Configure";
     };
     components = {
-      "sqlcipher" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.pretty)

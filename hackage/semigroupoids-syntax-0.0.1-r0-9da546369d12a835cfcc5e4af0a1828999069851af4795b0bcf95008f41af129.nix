@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       small_base = true;
@@ -29,7 +30,7 @@
       buildType = "Custom";
     };
     components = {
-      "semigroupoids-syntax" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.base)
           (hsPkgs.semigroups)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       enableassertions = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "vector" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ghc)

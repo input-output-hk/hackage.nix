@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { mtl2 = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "rvar" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.MonadPrompt)

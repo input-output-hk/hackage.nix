@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { base4 = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "haskell-type-exts" = {
+      "library" = {
         depends  = [
           (hsPkgs.haskell-src-exts)
           (hsPkgs.pretty)

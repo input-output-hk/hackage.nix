@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "Imlib" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = [ (pkgs."Imlib2") ];
       };

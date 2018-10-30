@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { pretty-112 = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "cabal-debian" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)

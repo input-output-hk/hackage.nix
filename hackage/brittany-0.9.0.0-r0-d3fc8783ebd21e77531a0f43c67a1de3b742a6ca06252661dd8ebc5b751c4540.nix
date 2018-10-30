@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       brittany-dev-lib = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "brittany" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ghc)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       monad-control-1 = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "lifted-async" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.async)

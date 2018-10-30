@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       base4 = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "bytestring-lexing" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
         ] ++ (if flags.bytestringinbase

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { separatesyb = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "pointful" = {
+      "library" = {
         depends  = [
           (hsPkgs.containers)
           (hsPkgs.haskell-src)

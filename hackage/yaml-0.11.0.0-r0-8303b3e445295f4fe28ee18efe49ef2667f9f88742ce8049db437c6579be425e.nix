@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       no-examples = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "yaml" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.attoparsec)

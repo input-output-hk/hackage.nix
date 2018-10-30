@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { wai2apiary = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "apiary-eventsource" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.apiary)

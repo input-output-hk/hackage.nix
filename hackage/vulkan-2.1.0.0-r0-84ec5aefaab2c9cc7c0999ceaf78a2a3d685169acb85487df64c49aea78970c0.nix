@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       xlib = true;
@@ -35,7 +36,7 @@
       buildType = "Simple";
     };
     components = {
-      "vulkan" = {
+      "library" = {
         depends  = [
           (hsPkgs.cpphs)
           (hsPkgs.base)

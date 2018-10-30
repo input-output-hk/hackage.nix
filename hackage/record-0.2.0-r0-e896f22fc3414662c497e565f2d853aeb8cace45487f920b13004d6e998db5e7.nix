@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       doctest = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "record" = {
+      "library" = {
         depends  = [
           (hsPkgs.attoparsec)
           (hsPkgs.text)

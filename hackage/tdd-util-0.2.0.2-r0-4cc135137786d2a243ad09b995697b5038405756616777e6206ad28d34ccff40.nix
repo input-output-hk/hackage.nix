@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       quickcheck26 = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "tdd-util" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.lens)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       developer = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "text-show-instances" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.base-compat)
           (hsPkgs.bifunctors)

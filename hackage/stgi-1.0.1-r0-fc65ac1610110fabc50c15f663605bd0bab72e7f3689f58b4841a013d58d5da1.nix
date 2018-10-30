@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { doctest = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "stgi" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ansi-wl-pprint)

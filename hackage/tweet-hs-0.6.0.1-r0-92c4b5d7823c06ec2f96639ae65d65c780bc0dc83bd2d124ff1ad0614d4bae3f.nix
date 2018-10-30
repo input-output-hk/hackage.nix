@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       llvm-fast = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "tweet-hs" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.http-client-tls)

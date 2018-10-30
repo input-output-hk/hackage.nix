@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { example = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "friday-scale-dct" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base-compat)

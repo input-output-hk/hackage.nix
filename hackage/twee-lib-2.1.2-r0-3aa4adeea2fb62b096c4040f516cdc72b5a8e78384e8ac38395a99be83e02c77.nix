@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       static = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "twee-lib" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

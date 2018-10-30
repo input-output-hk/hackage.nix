@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       testnet = false;
@@ -27,7 +28,7 @@
       buildType = "Custom";
     };
     components = {
-      "bitcoin-hs" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

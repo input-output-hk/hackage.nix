@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       transformers-four = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "text-show-instances" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.containers)

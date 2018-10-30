@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       force-has-iconv = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "xls" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.conduit)

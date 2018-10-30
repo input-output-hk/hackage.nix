@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       yi = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "leksah" = {
+      "library" = {
         depends  = (((((([
           (hsPkgs.gtk3)
           (hsPkgs.gtksourceview3)

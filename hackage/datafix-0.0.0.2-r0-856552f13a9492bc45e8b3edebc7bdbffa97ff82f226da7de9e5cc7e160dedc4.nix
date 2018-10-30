@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       no-lattices = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "datafix" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

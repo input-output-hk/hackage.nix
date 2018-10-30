@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "network-info" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = pkgs.lib.optional (system.isWindows) (pkgs."iphlpapi");
       };

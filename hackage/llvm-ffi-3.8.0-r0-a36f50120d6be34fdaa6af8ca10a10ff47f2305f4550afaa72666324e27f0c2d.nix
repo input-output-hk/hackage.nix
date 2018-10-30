@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       developer = false;
@@ -31,7 +32,7 @@
       buildType = "Simple";
     };
     components = {
-      "llvm-ffi" = {
+      "library" = {
         depends  = [
           (hsPkgs.enumset)
           (hsPkgs.base)

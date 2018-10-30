@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       hsx = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "BluePrintCSS" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.mtl)

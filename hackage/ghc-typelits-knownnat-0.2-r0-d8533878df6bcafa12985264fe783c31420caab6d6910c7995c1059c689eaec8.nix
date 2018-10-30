@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { deverror = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "ghc-typelits-knownnat" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ghc)

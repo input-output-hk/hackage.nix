@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       have-gio = true;
@@ -28,7 +29,7 @@
       buildType = "Custom";
     };
     components = {
-      "gtk3" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       pedantic = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "tagged-exception-core" = {
+      "library" = {
         depends  = [
           (hsPkgs.exceptions)
           (hsPkgs.transformers)

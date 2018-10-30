@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       library = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "xmonad-vanessa" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.xmonad)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       aeson = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "quickcheck-classes" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.bifunctors)

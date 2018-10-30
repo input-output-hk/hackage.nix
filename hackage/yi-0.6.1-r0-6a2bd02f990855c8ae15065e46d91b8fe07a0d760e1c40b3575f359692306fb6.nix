@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       ghcinterpreter = false;
@@ -31,7 +32,7 @@
       buildType = "Simple";
     };
     components = {
-      "yi" = {};
+      "library" = {};
       exes = {
         "yi" = {
           depends  = (((((([

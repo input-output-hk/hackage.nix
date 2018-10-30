@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       old-quickcheck = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "tasty-quickcheck" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.tagged)

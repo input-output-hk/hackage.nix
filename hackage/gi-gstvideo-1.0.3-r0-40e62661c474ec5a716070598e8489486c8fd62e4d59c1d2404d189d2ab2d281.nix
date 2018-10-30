@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "gi-gstvideo" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.haskell-gi-base)

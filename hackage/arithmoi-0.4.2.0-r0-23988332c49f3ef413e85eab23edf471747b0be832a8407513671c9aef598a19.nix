@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       check-bounds = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "arithmoi" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       engine = true;
@@ -27,7 +28,7 @@
       buildType = "Custom";
     };
     components = {
-      "matlab" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.unix)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       slow = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "reflection" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.base)

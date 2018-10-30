@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       mkl = false;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "hmatrix" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

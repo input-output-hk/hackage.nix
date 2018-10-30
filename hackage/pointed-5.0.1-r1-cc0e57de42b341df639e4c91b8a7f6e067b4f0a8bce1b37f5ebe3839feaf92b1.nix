@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       comonad = true;
@@ -33,7 +34,7 @@
       buildType = "Simple";
     };
     components = {
-      "pointed" = {
+      "library" = {
         depends  = (((((((((([
           (hsPkgs.base)
           (hsPkgs.data-default-class)

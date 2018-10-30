@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debug = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "accelerate" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.base-orphans)

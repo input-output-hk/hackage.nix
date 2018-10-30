@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       base4 = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "Cabal" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.filepath)
         ] ++ pkgs.lib.optional (flags.base4) (hsPkgs.base)) ++ pkgs.lib.optional (flags.base3) (hsPkgs.base)) ++ pkgs.lib.optional (!flags.base3 && !flags.base4) (hsPkgs.base)) ++ pkgs.lib.optionals (flags.base3 || flags.base4) [

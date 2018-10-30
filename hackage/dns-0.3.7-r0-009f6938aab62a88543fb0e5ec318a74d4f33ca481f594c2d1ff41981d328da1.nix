@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "dns" = {
+      "library" = {
         depends  = if compiler.isGhc && compiler.version.ge "7"
           then [
             (hsPkgs.base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "webkit-javascriptcore" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         pkgconfig = [
           (pkgconfPkgs.webkit-1.0)

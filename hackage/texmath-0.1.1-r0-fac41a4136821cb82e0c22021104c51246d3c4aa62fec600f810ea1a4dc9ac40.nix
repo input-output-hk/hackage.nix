@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       cgi = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "texmath" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.xml)

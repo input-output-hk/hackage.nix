@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { llvm = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "NaturalLanguageAlphabets" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

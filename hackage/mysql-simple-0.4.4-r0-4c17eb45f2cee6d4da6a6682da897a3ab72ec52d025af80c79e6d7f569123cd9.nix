@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { developer = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "mysql-simple" = {
+      "library" = {
         depends  = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)

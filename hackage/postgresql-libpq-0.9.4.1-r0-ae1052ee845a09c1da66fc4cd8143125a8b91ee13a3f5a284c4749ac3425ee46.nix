@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-pkg-config = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "postgresql-libpq" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.bytestring)

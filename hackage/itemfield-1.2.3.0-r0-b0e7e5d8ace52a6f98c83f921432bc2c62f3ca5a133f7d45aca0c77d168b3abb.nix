@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       examples = true;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "itemfield" = {
+      "library" = {
         depends  = ([
           (hsPkgs.vty)
           (hsPkgs.text)

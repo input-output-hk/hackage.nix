@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { old-base = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "hs-dotnet" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)

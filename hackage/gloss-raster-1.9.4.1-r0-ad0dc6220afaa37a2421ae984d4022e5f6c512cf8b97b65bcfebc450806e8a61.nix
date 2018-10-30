@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { llvm = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "gloss-raster" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)

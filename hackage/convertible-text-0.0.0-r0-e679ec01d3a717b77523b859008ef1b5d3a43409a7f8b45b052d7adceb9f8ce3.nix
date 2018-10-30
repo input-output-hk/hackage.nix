@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       time_gte_113 = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "convertible-text" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.old-time)

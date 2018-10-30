@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       enable-psql-test = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "gargoyle-postgresql" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

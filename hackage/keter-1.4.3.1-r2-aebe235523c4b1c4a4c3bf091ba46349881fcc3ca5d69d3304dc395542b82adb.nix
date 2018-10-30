@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       system-filepath = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "keter" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.directory)

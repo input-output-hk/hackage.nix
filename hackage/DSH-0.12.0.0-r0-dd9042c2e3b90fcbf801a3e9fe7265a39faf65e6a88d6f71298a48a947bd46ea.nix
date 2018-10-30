@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debugcomp = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "DSH" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.random)

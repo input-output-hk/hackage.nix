@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       vty = false;
@@ -31,7 +32,7 @@
       buildType = "Simple";
     };
     components = {
-      "LambdaHack" = {
+      "library" = {
         depends  = ([
           (hsPkgs.assert-failure)
           (hsPkgs.async)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       dev = false;
@@ -30,7 +31,7 @@
       buildType = "Simple";
     };
     components = {
-      "lol-calculus" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

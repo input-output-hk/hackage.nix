@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       threaded = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "regexchar" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

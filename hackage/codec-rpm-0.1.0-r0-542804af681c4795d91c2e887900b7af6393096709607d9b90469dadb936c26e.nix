@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "codec-rpm" = {
+      "library" = {
         depends  = [
           (hsPkgs.attoparsec)
           (hsPkgs.attoparsec-binary)

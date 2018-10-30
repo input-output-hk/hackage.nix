@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       useplatformandroidkhr = false;
@@ -34,7 +35,7 @@
       buildType = "Simple";
     };
     components = {
-      "vulkan-api" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ghc-prim)

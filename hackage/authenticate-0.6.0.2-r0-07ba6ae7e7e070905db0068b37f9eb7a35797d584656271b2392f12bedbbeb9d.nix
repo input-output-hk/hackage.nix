@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       transformers_02 = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "authenticate" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.json)

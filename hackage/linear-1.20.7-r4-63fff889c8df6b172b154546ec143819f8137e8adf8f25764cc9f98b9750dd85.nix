@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       template-haskell = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "linear" = {
+      "library" = {
         depends  = ([
           (hsPkgs.adjunctions)
           (hsPkgs.base)

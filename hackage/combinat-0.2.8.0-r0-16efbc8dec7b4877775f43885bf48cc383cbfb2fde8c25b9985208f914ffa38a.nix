@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       withquickcheck = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "combinat" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { small_base = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "casr-logbook-reports" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.casr-logbook-types)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { examples = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "hsSqlite3" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         pkgconfig = [
           (pkgconfPkgs.sqlite3)

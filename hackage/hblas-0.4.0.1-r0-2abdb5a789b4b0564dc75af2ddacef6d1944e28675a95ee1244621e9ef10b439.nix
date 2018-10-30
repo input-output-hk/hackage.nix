@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       openblas = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "hblas" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.storable-complex)

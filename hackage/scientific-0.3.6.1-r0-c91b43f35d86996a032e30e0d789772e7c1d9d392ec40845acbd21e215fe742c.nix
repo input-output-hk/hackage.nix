@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bytestring-builder = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "scientific" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.integer-logarithms)

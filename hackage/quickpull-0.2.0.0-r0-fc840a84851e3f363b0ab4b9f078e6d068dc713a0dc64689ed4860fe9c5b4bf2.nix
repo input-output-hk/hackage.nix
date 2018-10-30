@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-test-gen = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "quickpull" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.QuickCheck)

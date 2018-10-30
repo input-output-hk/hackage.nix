@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       mtl1 = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "HTTP" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.parsec)

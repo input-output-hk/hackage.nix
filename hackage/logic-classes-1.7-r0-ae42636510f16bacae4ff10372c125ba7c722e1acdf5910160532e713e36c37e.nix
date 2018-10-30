@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       local-atp-haskell = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "logic-classes" = {
+      "library" = {
         depends  = [
           (hsPkgs.applicative-extras)
           (hsPkgs.atp-haskell)

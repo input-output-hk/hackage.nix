@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       smaller-base = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "HStringTemplate" = {
+      "library" = {
         depends  = (pkgs.lib.optional (flags.syb-with-class) (hsPkgs.syb-with-class) ++ pkgs.lib.optionals (flags.quasi-quotation) [
           (hsPkgs.template-haskell)
           (hsPkgs.mtl)

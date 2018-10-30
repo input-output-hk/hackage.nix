@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       gdk-318 = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "ltk" = {
+      "library" = {
         depends  = [
           (hsPkgs.Cabal)
           (hsPkgs.base)

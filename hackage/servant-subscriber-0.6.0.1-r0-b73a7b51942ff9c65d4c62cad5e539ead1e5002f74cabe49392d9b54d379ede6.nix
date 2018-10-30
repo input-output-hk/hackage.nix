@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       websockets_0_11 = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "servant-subscriber" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.aeson)

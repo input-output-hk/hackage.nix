@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       dev = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "postgresql-simple-bind" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.attoparsec)

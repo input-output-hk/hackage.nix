@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       enable_flaky_tests = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "pandoc-crossref" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

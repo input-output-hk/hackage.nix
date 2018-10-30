@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       production = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "tkyprof" = {};
+      "library" = {};
       exes = {
         "tkyprof" = {
           depends  = [

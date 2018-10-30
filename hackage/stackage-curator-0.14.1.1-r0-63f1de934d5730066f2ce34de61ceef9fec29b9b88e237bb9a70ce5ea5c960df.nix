@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       monad_unlift_0_2 = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "stackage-curator" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

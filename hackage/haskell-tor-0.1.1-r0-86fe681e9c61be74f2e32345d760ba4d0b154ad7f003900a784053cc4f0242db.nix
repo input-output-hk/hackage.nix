@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       network = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "haskell-tor" = {
+      "library" = {
         depends  = ([
           (hsPkgs.array)
           (hsPkgs.asn1-encoding)

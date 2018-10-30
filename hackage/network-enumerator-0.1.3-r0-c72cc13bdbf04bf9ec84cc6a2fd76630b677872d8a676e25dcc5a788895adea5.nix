@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       network-includes-bytestring = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "network-enumerator" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.transformers)

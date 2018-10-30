@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { use_mono = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "Salsa" = {
+      "library" = {
         depends  = if !system.isWindows || flags.use_mono
           then [
             (hsPkgs.base)

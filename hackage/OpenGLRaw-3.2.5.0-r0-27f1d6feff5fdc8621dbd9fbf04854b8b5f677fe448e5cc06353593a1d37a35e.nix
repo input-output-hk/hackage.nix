@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       usenativewindowslibraries = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "OpenGLRaw" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

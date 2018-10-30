@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       transformers_02 = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "yaml" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.control-monad-failure)

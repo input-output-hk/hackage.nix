@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       broken-directory = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "curry-base" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.transformers)

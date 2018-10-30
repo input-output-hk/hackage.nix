@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { trustworthy = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "text-locale-encoding" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring-handle)

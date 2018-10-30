@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       new-exception = true;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "pango" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.process)

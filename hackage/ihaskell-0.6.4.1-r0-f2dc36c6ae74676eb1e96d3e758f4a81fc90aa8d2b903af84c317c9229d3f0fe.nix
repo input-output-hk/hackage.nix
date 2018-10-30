@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { binpkgdb = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "ihaskell" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.base)

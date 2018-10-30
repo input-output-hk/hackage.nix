@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { splitbase = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "xml-basic" = {
+      "library" = {
         depends  = [
           (hsPkgs.explicit-exception)
           (hsPkgs.data-accessor)

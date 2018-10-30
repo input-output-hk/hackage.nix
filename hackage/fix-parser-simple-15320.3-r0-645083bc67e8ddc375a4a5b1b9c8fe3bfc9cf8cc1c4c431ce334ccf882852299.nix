@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { use_mtl = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "fix-parser-simple" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ (if flags.use_mtl

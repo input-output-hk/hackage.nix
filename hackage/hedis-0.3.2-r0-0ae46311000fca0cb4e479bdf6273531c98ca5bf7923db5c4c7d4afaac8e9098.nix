@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       benchmark = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "hedis" = {
+      "library" = {
         depends  = [
           (hsPkgs.attoparsec)
           (hsPkgs.base)

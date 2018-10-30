@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       monadrandom = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "random-effin" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.effin)

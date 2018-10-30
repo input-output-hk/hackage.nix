@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       export-properties = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "heyting-algebras" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

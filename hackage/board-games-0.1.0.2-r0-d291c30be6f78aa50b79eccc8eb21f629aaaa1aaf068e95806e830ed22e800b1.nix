@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildexamples = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "board-games" = {
+      "library" = {
         depends  = [
           (hsPkgs.html)
           (hsPkgs.cgi)

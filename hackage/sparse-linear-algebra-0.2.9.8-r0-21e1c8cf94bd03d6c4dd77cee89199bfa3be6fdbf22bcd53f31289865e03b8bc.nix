@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { dump = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "sparse-linear-algebra" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.primitive)

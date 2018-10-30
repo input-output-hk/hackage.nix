@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "monad-par-extras" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.abstract-par)

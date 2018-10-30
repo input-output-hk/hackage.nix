@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       mkunicodedata = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "rfc5051" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

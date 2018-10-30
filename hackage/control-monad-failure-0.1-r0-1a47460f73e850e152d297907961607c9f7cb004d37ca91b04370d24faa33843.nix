@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       transformers = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "control-monad-failure" = {
+      "library" = {
         depends  = ([
           (hsPkgs.pretty)
           (hsPkgs.template-haskell)

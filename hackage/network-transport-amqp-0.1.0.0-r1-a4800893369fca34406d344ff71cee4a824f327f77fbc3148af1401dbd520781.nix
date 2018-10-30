@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       distributed-process-tests = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "network-transport-amqp" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.amqp)

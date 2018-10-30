@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       unsafeindices = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "dimensions" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
       };
       tests = {

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       haskell98_fragment = false;
@@ -31,7 +32,7 @@
       buildType = "Simple";
     };
     components = {
-      "deepseq-bounded" = {
+      "library" = {
         depends  = ((([
           (hsPkgs.base)
           (hsPkgs.array)

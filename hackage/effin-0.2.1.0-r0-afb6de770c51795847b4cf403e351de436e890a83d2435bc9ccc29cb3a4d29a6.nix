@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { mtl = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "effin" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (flags.mtl) (hsPkgs.mtl);

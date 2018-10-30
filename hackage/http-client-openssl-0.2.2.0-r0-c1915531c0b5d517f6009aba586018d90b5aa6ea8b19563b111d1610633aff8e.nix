@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { test-proxy = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "http-client-openssl" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.http-client)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { shellcheck = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "haskell-ci" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.Cabal)

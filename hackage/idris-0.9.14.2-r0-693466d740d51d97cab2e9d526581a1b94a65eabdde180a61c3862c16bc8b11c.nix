@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       llvm = false;
@@ -30,7 +31,7 @@
       buildType = "Custom";
     };
     components = {
-      "idris" = {
+      "library" = {
         depends  = (((((((([
           (hsPkgs.base)
           (hsPkgs.Cabal)

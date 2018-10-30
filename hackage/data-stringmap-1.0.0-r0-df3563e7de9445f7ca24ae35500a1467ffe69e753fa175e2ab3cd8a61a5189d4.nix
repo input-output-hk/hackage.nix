@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       with-sizeable = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "data-stringmap" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.deepseq)

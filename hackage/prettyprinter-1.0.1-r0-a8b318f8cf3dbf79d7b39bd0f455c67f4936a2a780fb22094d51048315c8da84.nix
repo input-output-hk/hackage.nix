@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildreadme = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "prettyprinter" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.text)

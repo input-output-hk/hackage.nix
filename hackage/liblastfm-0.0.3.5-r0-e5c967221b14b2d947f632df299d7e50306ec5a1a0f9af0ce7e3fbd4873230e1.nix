@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-authentication = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "liblastfm" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.template-haskell)

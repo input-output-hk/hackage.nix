@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       smaller_base = true;
@@ -25,7 +26,7 @@
       buildType = "Configure";
     };
     components = {
-      "X11" = {
+      "library" = {
         depends  = if flags.smaller_base
           then [
             (hsPkgs.base)

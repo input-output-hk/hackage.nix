@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       enable-pthreads = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "abcBridge" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.aig)

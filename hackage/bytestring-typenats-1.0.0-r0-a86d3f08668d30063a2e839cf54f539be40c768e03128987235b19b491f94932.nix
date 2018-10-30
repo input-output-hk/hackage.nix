@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       usecereal = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "bytestring-typenats" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.bytestring)

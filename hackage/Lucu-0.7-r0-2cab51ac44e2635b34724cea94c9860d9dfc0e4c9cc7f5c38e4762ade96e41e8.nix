@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       build-lucu-implant-file = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "Lucu" = {
+      "library" = {
         depends  = [
           (hsPkgs.HsOpenSSL)
           (hsPkgs.base)

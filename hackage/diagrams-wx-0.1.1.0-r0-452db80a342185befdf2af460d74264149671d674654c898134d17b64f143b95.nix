@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildexample = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "diagrams-wx" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.cairo)

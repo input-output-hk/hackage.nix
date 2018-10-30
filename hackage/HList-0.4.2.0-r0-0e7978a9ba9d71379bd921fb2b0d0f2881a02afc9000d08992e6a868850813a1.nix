@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       new_type_eq = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "HList" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base-orphans)

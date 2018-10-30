@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       splitbase = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "language-c" = {
+      "library" = {
         depends  = ([
           (hsPkgs.filepath)
         ] ++ (if flags.splitbase

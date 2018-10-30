@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       old-base = false;
@@ -28,7 +29,7 @@
       buildType = "Custom";
     };
     components = {
-      "bamse" = {
+      "library" = {
         depends  = [
           (hsPkgs.com)
           (hsPkgs.process)

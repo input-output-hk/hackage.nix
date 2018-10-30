@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       hashable = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "semirings" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.integer-gmp)

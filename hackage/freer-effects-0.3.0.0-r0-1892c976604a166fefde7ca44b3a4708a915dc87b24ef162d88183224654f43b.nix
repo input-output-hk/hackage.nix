@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       pedantic = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "freer-effects" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
       };
       exes = {

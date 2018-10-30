@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       portable = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "splice" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.network)

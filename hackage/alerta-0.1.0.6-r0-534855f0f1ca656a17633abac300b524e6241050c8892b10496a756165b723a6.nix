@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       servant-client-core = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "alerta" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.aeson-pretty)

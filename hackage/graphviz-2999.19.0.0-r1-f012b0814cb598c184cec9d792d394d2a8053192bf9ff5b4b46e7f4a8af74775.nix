@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-parsing = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "graphviz" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

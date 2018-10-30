@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       containers-old = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "containers-unicode-symbols" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base-unicode-symbols)

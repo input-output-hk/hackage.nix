@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       color-output = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "chell" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base)

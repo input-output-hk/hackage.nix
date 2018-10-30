@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       splitbase = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "synthesizer" = {
+      "library" = {
         depends  = [
           (hsPkgs.mtl)
           (hsPkgs.event-list)

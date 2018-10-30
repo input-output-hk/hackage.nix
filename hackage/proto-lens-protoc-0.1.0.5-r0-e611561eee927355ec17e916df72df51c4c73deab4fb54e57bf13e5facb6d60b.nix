@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       only-executable = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "proto-lens-protoc" = {
+      "library" = {
         depends  = pkgs.lib.optionals (!flags.only-executable) [
           (hsPkgs.Cabal)
           (hsPkgs.base)

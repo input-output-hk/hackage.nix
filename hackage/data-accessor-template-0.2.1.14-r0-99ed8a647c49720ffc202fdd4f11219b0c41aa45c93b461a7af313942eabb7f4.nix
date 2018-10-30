@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       template_2_4 = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "data-accessor-template" = {
+      "library" = {
         depends  = [
           (hsPkgs.data-accessor)
           (hsPkgs.utility-ht)

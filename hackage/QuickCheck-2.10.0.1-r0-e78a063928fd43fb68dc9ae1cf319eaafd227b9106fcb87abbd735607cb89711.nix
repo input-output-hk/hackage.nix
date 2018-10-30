@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       templatehaskell = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "QuickCheck" = {
+      "library" = {
         depends  = (((([
           (hsPkgs.base)
           (hsPkgs.random)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { stringable = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "string-combinators" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (flags.stringable) [

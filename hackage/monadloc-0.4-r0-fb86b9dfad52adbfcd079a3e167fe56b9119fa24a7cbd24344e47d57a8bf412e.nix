@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       syb-in-base = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "monadloc" = {
+      "library" = {
         depends  = (([
           (hsPkgs.pretty)
           (hsPkgs.template-haskell)

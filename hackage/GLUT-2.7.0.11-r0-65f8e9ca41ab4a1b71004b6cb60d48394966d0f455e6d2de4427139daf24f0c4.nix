@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       usenativewindowslibraries = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "GLUT" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

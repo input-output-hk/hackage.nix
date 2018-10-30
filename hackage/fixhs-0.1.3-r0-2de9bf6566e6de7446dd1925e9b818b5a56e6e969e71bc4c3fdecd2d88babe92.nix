@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       developer = false;
@@ -30,7 +31,7 @@
       buildType = "Simple";
     };
     components = {
-      "fixhs" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       support_bytestring = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "memory" = {
+      "library" = {
         depends  = (((if compiler.isGhc && compiler.version.lt "8.0"
           then [ (hsPkgs.base) ]
           else [

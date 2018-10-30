@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { ghc7 = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "yesod-auth-oauth" = {
+      "library" = {
         depends  = [
           (hsPkgs.authenticate-oauth)
           (hsPkgs.bytestring)

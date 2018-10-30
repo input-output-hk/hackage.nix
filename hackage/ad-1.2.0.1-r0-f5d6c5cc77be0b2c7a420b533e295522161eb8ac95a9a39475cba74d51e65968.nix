@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       templatehaskell24 = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "ad" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.data-reify)

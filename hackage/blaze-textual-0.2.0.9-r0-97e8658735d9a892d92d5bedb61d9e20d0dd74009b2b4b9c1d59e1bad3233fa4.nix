@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       developer = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "blaze-textual" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.blaze-builder)

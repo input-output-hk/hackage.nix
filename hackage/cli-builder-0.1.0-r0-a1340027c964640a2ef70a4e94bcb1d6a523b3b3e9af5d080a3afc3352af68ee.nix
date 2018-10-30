@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-doctest = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "cli-builder" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.either)

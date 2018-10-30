@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       extra = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "etc" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.aeson)

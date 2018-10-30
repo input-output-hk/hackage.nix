@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       integer-simple = false;
@@ -27,7 +28,7 @@
       buildType = "Configure";
     };
     components = {
-      "base" = {
+      "library" = {
         depends  = (([
           (hsPkgs.rts)
           (hsPkgs.ghc-prim)

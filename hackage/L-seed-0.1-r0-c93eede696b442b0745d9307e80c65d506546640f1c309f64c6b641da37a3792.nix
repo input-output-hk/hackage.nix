@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       database = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "L-seed" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.random)

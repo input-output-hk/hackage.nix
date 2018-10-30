@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildexe = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "pretty-simple" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)

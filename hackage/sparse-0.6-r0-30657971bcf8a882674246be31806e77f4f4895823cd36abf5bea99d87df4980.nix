@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-properties = true;
@@ -28,7 +29,7 @@
       buildType = "Custom";
     };
     components = {
-      "sparse" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.contravariant)

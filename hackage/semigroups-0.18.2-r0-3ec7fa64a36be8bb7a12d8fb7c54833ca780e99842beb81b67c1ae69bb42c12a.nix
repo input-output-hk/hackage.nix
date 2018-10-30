@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       hashable = true;
@@ -34,7 +35,7 @@
       buildType = "Simple";
     };
     components = {
-      "semigroups" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
         ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.11.20151002") ((((((((((pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.nats) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.5")) (hsPkgs.ghc-prim)) ++ pkgs.lib.optional (flags.binary) (hsPkgs.binary)) ++ pkgs.lib.optionals (flags.bytestring) (if flags.bytestring-builder

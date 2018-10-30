@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       example = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "lambdacube-gl" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

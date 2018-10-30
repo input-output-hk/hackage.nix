@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bytestring_has_builder = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "netrc" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.deepseq)

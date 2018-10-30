@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       base48 = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "hackage-security" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.base64-bytestring)

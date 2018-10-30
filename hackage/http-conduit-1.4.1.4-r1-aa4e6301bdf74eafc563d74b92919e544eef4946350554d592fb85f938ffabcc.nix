@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       network-bytestring = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "http-conduit" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "FModExRaw" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = if system.isX86_64
           then [ (pkgs."fmodex64") ]

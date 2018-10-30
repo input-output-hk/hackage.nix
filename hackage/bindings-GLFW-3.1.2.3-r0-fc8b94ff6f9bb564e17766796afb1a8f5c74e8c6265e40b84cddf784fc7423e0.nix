@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       system-glfw = false;
@@ -32,7 +33,7 @@
       buildType = "Simple";
     };
     components = {
-      "bindings-GLFW" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bindings-DSL)

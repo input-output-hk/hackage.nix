@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       documentation = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "opentok" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base-compat)

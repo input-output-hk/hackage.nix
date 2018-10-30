@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       curses = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "LambdaHack" = {
+      "library" = {
         depends  = [
           (hsPkgs.ConfigFile)
           (hsPkgs.array)

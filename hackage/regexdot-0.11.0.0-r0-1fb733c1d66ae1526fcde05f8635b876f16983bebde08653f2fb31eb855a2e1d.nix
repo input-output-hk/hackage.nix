@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       havedeepseq = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "regexdot" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.parsec)

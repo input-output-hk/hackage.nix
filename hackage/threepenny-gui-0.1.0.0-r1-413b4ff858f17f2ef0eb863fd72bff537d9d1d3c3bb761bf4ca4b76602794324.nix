@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildexamples = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "threepenny-gui" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.base)

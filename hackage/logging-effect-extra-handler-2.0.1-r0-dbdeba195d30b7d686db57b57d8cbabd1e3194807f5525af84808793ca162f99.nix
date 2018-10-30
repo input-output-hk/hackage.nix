@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "logging-effect-extra-handler" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.exceptions)

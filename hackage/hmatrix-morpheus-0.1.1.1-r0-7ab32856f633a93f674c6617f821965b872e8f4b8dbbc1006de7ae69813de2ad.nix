@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { openblas = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "hmatrix-morpheus" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.hmatrix)

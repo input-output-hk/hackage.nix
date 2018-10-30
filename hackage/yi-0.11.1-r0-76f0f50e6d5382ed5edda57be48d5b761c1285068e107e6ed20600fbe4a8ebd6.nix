@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       pango = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "yi" = {
+      "library" = {
         depends  = ((((([
           (hsPkgs.Cabal)
           (hsPkgs.array)

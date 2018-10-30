@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       sample_progs = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "ssh-known-hosts" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.iproute)

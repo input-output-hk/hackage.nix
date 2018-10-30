@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       include-app-delegate = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "jsaddle-wkwebview" = {
+      "library" = {
         depends  = [
           (hsPkgs.aeson)
           (hsPkgs.base)

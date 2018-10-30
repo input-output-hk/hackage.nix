@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       cairo = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "diagrams" = {
+      "library" = {
         depends  = (([
           (hsPkgs.diagrams-core)
           (hsPkgs.diagrams-lib)

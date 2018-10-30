@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -22,5 +23,7 @@
       description = "None";
       buildType = "Simple";
     };
-    components = { "blaze" = {}; };
+    components = {
+      "library" = {};
+    };
   }

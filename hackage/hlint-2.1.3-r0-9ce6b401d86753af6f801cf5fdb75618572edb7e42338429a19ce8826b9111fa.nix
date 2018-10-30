@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       threaded = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "hlint" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.process)

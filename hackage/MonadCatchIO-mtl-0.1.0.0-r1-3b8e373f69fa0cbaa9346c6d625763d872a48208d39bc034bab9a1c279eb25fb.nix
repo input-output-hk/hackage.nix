@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { base3 = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "MonadCatchIO-mtl" = {
+      "library" = {
         depends  = [ (hsPkgs.mtl) ] ++ [
           (hsPkgs.base)
           (hsPkgs.base)

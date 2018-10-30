@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-doctests = true;
@@ -26,7 +27,7 @@
       buildType = "Custom";
     };
     components = {
-      "hyperloglog" = {
+      "library" = {
         depends  = ([
           (hsPkgs.approximate)
           (hsPkgs.base)

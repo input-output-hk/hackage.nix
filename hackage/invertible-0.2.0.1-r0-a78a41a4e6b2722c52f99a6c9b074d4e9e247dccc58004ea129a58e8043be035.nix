@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       arrows = false;
@@ -32,7 +33,7 @@
       buildType = "Simple";
     };
     components = {
-      "invertible" = {
+      "library" = {
         depends  = ((((((([
           (hsPkgs.base)
           (hsPkgs.transformers)

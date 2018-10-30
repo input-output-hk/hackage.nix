@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       synthesis = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "array-forth" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.array)

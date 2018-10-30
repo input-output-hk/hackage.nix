@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { tcp = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "distributed-process-tests" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ansi-terminal)

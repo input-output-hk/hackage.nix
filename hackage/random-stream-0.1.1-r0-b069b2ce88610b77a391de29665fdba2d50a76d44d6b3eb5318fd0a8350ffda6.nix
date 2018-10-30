@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       have_urandom = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "random-stream" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.random)

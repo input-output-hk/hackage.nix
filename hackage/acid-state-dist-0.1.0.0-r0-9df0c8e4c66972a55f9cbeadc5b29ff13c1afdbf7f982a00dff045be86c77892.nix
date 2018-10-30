@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { debug = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "acid-state-dist" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.safecopy)

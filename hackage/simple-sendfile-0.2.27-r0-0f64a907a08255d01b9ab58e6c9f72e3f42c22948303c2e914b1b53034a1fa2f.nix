@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { allow-bsd = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "simple-sendfile" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.network)

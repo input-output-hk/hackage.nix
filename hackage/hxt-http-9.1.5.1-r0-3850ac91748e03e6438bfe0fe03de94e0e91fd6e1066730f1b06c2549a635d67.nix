@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       network-uri = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "hxt-http" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.parsec)

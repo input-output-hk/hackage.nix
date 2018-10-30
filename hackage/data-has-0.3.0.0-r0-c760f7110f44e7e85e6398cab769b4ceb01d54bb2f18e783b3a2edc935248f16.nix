@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "data-has" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs.base-compat)) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs.transformers);

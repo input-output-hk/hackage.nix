@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       bootstrap_external = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "uuagc" = {
+      "library" = {
         depends  = [
           (hsPkgs.uuagc-cabal)
           (hsPkgs.base)

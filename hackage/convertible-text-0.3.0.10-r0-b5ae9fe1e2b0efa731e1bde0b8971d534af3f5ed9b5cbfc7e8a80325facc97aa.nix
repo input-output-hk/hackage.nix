@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildtests = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "convertible-text" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.old-time)

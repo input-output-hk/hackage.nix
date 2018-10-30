@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       split-base = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "system-uuid" = {
+      "library" = {
         depends  = [
           (hsPkgs.containers)
           (hsPkgs.binary)

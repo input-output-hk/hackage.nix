@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -22,5 +23,7 @@
       description = "This package provides combinators for producing\nXHTML 1.0, including the Strict, Transitional and\nFrameset variants.";
       buildType = "Simple";
     };
-    components = { "xhtml" = {}; };
+    components = {
+      "library" = {};
+    };
   }

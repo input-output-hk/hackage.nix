@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "yesod-core" = {
+      "library" = {
         depends  = [
           (hsPkgs.time)
           (hsPkgs.wai)

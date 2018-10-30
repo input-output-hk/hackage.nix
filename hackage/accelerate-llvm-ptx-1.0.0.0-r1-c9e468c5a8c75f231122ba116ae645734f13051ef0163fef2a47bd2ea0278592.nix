@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       nvvm = false;
@@ -29,7 +30,7 @@
       buildType = "Simple";
     };
     components = {
-      "accelerate-llvm-ptx" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.accelerate)

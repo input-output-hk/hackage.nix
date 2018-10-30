@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { onlygsl = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "hmatrix-gsl-stats" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.binary)

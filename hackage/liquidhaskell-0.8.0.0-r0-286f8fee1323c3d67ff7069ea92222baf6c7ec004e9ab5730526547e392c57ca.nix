@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       devel = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "liquidhaskell" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.ghc)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       tcp = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "cloud-haskell" = {
+      "library" = {
         depends  = (([
           (hsPkgs.distributed-process)
           (hsPkgs.distributed-process-async)

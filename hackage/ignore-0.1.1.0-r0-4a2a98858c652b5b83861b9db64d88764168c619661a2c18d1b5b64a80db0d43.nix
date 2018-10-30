@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       without-pcre = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "ignore" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.path)

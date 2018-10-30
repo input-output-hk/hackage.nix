@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-pkgconfig = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "ncurses" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.containers)

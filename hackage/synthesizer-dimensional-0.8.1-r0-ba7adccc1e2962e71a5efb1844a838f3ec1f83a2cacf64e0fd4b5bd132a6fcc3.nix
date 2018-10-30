@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       optimizeadvanced = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "synthesizer-dimensional" = {
+      "library" = {
         depends  = [
           (hsPkgs.synthesizer-core)
           (hsPkgs.transformers)

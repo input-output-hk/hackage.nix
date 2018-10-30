@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       doctest = true;
@@ -28,7 +29,7 @@
       buildType = "Custom";
     };
     components = {
-      "wreq" = {
+      "library" = {
         depends  = [
           (hsPkgs.psqueues)
           (hsPkgs.aeson)

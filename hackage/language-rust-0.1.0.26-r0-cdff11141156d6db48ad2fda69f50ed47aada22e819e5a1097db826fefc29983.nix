@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       usebytestrings = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "language-rust" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.prettyprinter)

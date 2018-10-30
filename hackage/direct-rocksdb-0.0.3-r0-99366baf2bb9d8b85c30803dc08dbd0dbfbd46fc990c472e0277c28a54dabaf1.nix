@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       system-rocksdb = false;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "direct-rocksdb" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bytestring)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       data-dword-inst = true;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "memorable-bits" = {
+      "library" = {
         depends  = (([
           (hsPkgs.base)
           (hsPkgs.bits)

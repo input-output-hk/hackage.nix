@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       closuresignals = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "gtk2hs-buildtools" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.process)

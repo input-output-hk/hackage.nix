@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-properties = true;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "concurrent-supply" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.hashable)

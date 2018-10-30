@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       opengl = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "ombra" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.Boolean)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       debug = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "second-transfer" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.exceptions)

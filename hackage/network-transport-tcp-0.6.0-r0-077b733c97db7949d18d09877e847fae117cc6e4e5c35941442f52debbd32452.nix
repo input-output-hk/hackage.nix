@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       use-mock-network = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "network-transport-tcp" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.network-transport)

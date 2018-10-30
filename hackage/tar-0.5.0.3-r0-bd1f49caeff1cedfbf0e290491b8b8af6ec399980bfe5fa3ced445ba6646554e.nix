@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       old-time = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "tar" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.filepath)

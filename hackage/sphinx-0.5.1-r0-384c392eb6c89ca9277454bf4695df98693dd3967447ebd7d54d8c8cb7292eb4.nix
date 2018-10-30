@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       version-1-1-beta = false;
@@ -25,7 +26,7 @@
       buildType = "Simple";
     };
     components = {
-      "sphinx" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.binary)

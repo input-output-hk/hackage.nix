@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "setlocale" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs)

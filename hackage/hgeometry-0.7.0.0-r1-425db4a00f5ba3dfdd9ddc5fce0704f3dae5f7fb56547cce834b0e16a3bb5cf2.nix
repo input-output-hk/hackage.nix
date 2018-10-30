@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       examples = false;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "hgeometry" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.bifunctors)

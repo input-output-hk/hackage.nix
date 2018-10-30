@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       base4 = true;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "happstack-ixset" = {
+      "library" = {
         depends  = ([
           (hsPkgs.containers)
           (hsPkgs.happstack-data)

@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       warnings = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "LogicGrowsOnTrees-network" = {
+      "library" = {
         depends  = [
           (hsPkgs.LogicGrowsOnTrees)
           (hsPkgs.base)

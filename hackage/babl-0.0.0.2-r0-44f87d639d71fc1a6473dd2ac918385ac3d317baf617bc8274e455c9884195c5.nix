@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {};
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "babl" = {
+      "library" = {
         depends  = [ (hsPkgs.base) ];
         libs = [ (pkgs."babl-0.1") ];
         pkgconfig = [

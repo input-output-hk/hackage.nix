@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       develop = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "free-algebras" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.constraints)

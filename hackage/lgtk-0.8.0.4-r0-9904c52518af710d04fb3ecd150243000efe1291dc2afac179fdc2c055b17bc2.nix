@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       gtk = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "lgtk" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.groups)

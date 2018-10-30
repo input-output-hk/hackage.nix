@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { hruby = true; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Simple";
     };
     components = {
-      "language-puppet" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.strict-base-types)

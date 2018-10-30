@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       buildexamples = false;
@@ -28,7 +29,7 @@
       buildType = "Simple";
     };
     components = {
-      "synthesizer-llvm" = {
+      "library" = {
         depends  = [
           (hsPkgs.llvm-extra)
           (hsPkgs.llvm-tf)

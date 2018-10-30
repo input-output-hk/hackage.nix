@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       newaccelerate = true;
@@ -27,7 +28,7 @@
       buildType = "Simple";
     };
     components = {
-      "meta-par-accelerate" = {
+      "library" = {
         depends  = ([
           (hsPkgs.base)
           (hsPkgs.abstract-par)

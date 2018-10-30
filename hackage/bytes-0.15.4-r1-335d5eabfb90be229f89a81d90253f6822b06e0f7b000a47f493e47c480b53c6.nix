@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       test-doctests = true;
@@ -25,7 +26,7 @@
       buildType = "Custom";
     };
     components = {
-      "bytes" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.binary)

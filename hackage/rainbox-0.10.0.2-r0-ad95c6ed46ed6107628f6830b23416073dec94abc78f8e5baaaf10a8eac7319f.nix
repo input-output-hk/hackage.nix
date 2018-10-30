@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = {
       grid = false;
@@ -26,7 +27,7 @@
       buildType = "Simple";
     };
     components = {
-      "rainbox" = {
+      "library" = {
         depends  = [
           (hsPkgs.base)
           (hsPkgs.rainbow)

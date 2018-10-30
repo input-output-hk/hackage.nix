@@ -3,7 +3,8 @@
 , flags
 , pkgs
 , hsPkgs
-, pkgconfPkgs }:
+, pkgconfPkgs
+, ... }:
   {
     flags = { portable = false; };
     package = {
@@ -23,7 +24,7 @@
       buildType = "Custom";
     };
     components = {
-      "haste-compiler" = {
+      "library" = {
         depends  = [
           (hsPkgs.transformers)
           (hsPkgs.monads-tf)
