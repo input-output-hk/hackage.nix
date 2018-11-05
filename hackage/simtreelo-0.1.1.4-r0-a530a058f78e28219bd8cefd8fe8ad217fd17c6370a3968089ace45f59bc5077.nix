@@ -1,0 +1,34 @@
+{ system
+, compiler
+, flags
+, pkgs
+, hsPkgs
+, pkgconfPkgs
+, ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "1.18";
+      identifier = {
+        name = "simtreelo";
+        version = "0.1.1.4";
+      };
+      license = "GPL-3.0-only";
+      copyright = "(c) 2014-2018 Marcelo Garlet Millani";
+      maintainer = "marcelogmillani@gmail.com";
+      author = "Marcelo Garlet Millani";
+      homepage = "";
+      url = "";
+      synopsis = "Load data organized in a tree.";
+      description = "This library loads a string or file into a Tree. The hierarchy is given solely by the indentation, meaning that the input is human-readable.";
+      buildType = "Simple";
+    };
+    components = {
+      "library" = {
+        depends  = [
+          (hsPkgs.base)
+          (hsPkgs.containers)
+        ];
+      };
+    };
+  }
